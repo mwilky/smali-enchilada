@@ -31,31 +31,23 @@
 # direct methods
 .method public constructor <init>(Landroid/content/pm/PackageManager;)V
     .locals 1
-    .param p1, "pm"    # Landroid/content/pm/PackageManager;
 
-    .line 343
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 340
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/settingslib/wifi/AccessPointPreference$UserBadgeCache;->mBadges:Landroid/util/SparseArray;
 
-    .line 344
     iput-object p1, p0, Lcom/android/settingslib/wifi/AccessPointPreference$UserBadgeCache;->mPm:Landroid/content/pm/PackageManager;
 
-    .line 345
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/settingslib/wifi/AccessPointPreference$UserBadgeCache;I)Landroid/graphics/drawable/Drawable;
     .locals 1
-    .param p0, "x0"    # Lcom/android/settingslib/wifi/AccessPointPreference$UserBadgeCache;
-    .param p1, "x1"    # I
 
-    .line 339
     invoke-direct {p0, p1}, Lcom/android/settingslib/wifi/AccessPointPreference$UserBadgeCache;->getUserBadge(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -65,20 +57,15 @@
 
 .method private getUserBadge(I)Landroid/graphics/drawable/Drawable;
     .locals 4
-    .param p1, "userId"    # I
 
-    .line 348
     iget-object v0, p0, Lcom/android/settingslib/wifi/AccessPointPreference$UserBadgeCache;->mBadges:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->indexOfKey(I)I
 
     move-result v0
 
-    .line 349
-    .local v0, "index":I
     if-gez v0, :cond_0
 
-    .line 350
     iget-object v1, p0, Lcom/android/settingslib/wifi/AccessPointPreference$UserBadgeCache;->mPm:Landroid/content/pm/PackageManager;
 
     new-instance v2, Landroid/os/UserHandle;
@@ -91,17 +78,12 @@
 
     move-result-object v1
 
-    .line 351
-    .local v1, "badge":Landroid/graphics/drawable/Drawable;
     iget-object v2, p0, Lcom/android/settingslib/wifi/AccessPointPreference$UserBadgeCache;->mBadges:Landroid/util/SparseArray;
 
     invoke-virtual {v2, p1, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 352
     return-object v1
 
-    .line 354
-    .end local v1    # "badge":Landroid/graphics/drawable/Drawable;
     :cond_0
     iget-object v1, p0, Lcom/android/settingslib/wifi/AccessPointPreference$UserBadgeCache;->mBadges:Landroid/util/SparseArray;
 

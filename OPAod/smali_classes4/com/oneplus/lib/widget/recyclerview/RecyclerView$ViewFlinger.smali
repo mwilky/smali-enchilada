@@ -37,27 +37,22 @@
 .method public constructor <init>(Lcom/oneplus/lib/widget/recyclerview/RecyclerView;)V
     .locals 2
 
-    .line 3883
     iput-object p1, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3874
     invoke-static {}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->access$2200()Landroid/view/animation/Interpolator;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 3878
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mEatRunOnAnimationRequest:Z
 
-    .line 3881
     iput-boolean v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mReSchedulePostAnimationCallback:Z
 
-    .line 3884
     new-instance v0, Landroid/widget/Scroller;
 
     invoke-virtual {p1}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->getContext()Landroid/content/Context;
@@ -72,32 +67,22 @@
 
     iput-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mScroller:Landroid/widget/Scroller;
 
-    .line 3885
     return-void
 .end method
 
 .method private computeScrollDuration(IIII)I
     .locals 15
-    .param p1, "dx"    # I
-    .param p2, "dy"    # I
-    .param p3, "vx"    # I
-    .param p4, "vy"    # I
 
     move-object v0, p0
 
-    .line 4059
     invoke-static/range {p1 .. p1}, Ljava/lang/Math;->abs(I)I
 
     move-result v1
 
-    .line 4060
-    .local v1, "absDx":I
     invoke-static/range {p2 .. p2}, Ljava/lang/Math;->abs(I)I
 
     move-result v2
 
-    .line 4061
-    .local v2, "absDy":I
     if-le v1, v2, :cond_0
 
     const/4 v3, 0x1
@@ -107,8 +92,6 @@
     :cond_0
     const/4 v3, 0x0
 
-    .line 4062
-    .local v3, "horizontal":Z
     :goto_0
     mul-int v4, p3, p3
 
@@ -124,8 +107,6 @@
 
     double-to-int v4, v5
 
-    .line 4063
-    .local v4, "velocity":I
     mul-int v6, p1, p1
 
     mul-int v7, p2, p2
@@ -140,8 +121,6 @@
 
     double-to-int v6, v7
 
-    .line 4064
-    .local v6, "delta":I
     if-eqz v3, :cond_1
 
     iget-object v7, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
@@ -159,13 +138,9 @@
 
     move-result v7
 
-    .line 4065
-    .local v7, "containerSize":I
     :goto_1
     div-int/lit8 v8, v7, 0x2
 
-    .line 4066
-    .local v8, "halfContainerSize":I
     int-to-float v9, v6
 
     const/high16 v10, 0x3f800000    # 1.0f
@@ -180,13 +155,10 @@
 
     move-result v9
 
-    .line 4067
-    .local v9, "distanceRatio":F
     int-to-float v11, v8
 
     int-to-float v12, v8
 
-    .line 4068
     invoke-direct {v0, v9}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->distanceInfluenceForSnapDuration(F)F
 
     move-result v13
@@ -195,11 +167,8 @@
 
     add-float/2addr v11, v12
 
-    .line 4071
-    .local v11, "distance":F
     if-lez v4, :cond_2
 
-    .line 4072
     const/high16 v12, 0x447a0000    # 1000.0f
 
     int-to-float v10, v4
@@ -220,11 +189,8 @@
 
     mul-int/2addr v10, v12
 
-    .local v10, "duration":I
     goto :goto_3
 
-    .line 4074
-    .end local v10    # "duration":I
     :cond_2
     if-eqz v3, :cond_3
 
@@ -238,8 +204,6 @@
     :goto_2
     int-to-float v12, v12
 
-    .line 4075
-    .local v12, "absDelta":F
     int-to-float v0, v7
 
     div-float v0, v12, v0
@@ -252,14 +216,9 @@
 
     float-to-int v10, v0
 
-    .end local v12    # "absDelta":F
-    .restart local v10    # "duration":I
     :goto_3
     move v0, v10
 
-    .line 4077
-    .end local v10    # "duration":I
-    .local v0, "duration":I
     const/16 v10, 0x7d0
 
     invoke-static {v0, v10}, Ljava/lang/Math;->min(II)I
@@ -272,30 +231,24 @@
 .method private disableRunOnAnimationRequests()V
     .locals 1
 
-    .line 4016
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mReSchedulePostAnimationCallback:Z
 
-    .line 4017
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mEatRunOnAnimationRequest:Z
 
-    .line 4018
     return-void
 .end method
 
 .method private distanceInfluenceForSnapDuration(F)F
     .locals 4
-    .param p1, "f"    # F
 
-    .line 4053
     const/high16 v0, 0x3f000000    # 0.5f
 
     sub-float/2addr p1, v0
 
-    .line 4054
     float-to-double v0, p1
 
     const-wide v2, 0x3fde28c7460698c7L    # 0.4712389167638204
@@ -304,7 +257,6 @@
 
     double-to-float p1, v0
 
-    .line 4055
     float-to-double v0, p1
 
     invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
@@ -319,20 +271,16 @@
 .method private enableRunOnAnimationRequests()V
     .locals 1
 
-    .line 4021
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mEatRunOnAnimationRequest:Z
 
-    .line 4022
     iget-boolean v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mReSchedulePostAnimationCallback:Z
 
     if-eqz v0, :cond_0
 
-    .line 4023
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->postOnAnimation()V
 
-    .line 4025
     :cond_0
     return-void
 .end method
@@ -341,24 +289,19 @@
 # virtual methods
 .method public fling(II)V
     .locals 10
-    .param p1, "velocityX"    # I
-    .param p2, "velocityY"    # I
 
-    .line 4037
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     const/4 v1, 0x2
 
     invoke-static {v0, v1}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->access$3200(Lcom/oneplus/lib/widget/recyclerview/RecyclerView;I)V
 
-    .line 4038
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mLastFlingY:I
 
     iput v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mLastFlingX:I
 
-    .line 4039
     iget-object v1, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mScroller:Landroid/widget/Scroller;
 
     const/4 v2, 0x0
@@ -379,40 +322,33 @@
 
     invoke-virtual/range {v1 .. v9}, Landroid/widget/Scroller;->fling(IIIIIIII)V
 
-    .line 4041
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->postOnAnimation()V
 
-    .line 4042
     return-void
 .end method
 
 .method postOnAnimation()V
     .locals 1
 
-    .line 4028
     iget-boolean v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mEatRunOnAnimationRequest:Z
 
     if-eqz v0, :cond_0
 
-    .line 4029
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mReSchedulePostAnimationCallback:Z
 
     goto :goto_0
 
-    .line 4031
     :cond_0
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     invoke-virtual {v0, p0}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 4032
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     invoke-virtual {v0, p0}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->postOnAnimation(Ljava/lang/Runnable;)V
 
-    .line 4034
     :goto_0
     return-void
 .end method
@@ -420,21 +356,16 @@
 .method public run()V
     .locals 21
 
-    .line 3889
     move-object/from16 v0, p0
 
     invoke-direct/range {p0 .. p0}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->disableRunOnAnimationRequests()V
 
-    .line 3890
     iget-object v1, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     invoke-static {v1}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->access$2300(Lcom/oneplus/lib/widget/recyclerview/RecyclerView;)V
 
-    .line 3893
     iget-object v1, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mScroller:Landroid/widget/Scroller;
 
-    .line 3894
-    .local v1, "scroller":Landroid/widget/Scroller;
     iget-object v2, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     invoke-static {v2}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->access$1300(Lcom/oneplus/lib/widget/recyclerview/RecyclerView;)Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;
@@ -443,60 +374,40 @@
 
     iget-object v2, v2, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;->mSmoothScroller:Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SmoothScroller;
 
-    .line 3895
-    .local v2, "smoothScroller":Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SmoothScroller;
     invoke-virtual {v1}, Landroid/widget/Scroller;->computeScrollOffset()Z
 
     move-result v3
 
     if-eqz v3, :cond_21
 
-    .line 3896
     invoke-virtual {v1}, Landroid/widget/Scroller;->getCurrX()I
 
     move-result v3
 
-    .line 3897
-    .local v3, "x":I
     invoke-virtual {v1}, Landroid/widget/Scroller;->getCurrY()I
 
     move-result v5
 
-    .line 3898
-    .local v5, "y":I
     iget v6, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mLastFlingX:I
 
     sub-int v6, v3, v6
 
-    .line 3899
-    .local v6, "dx":I
     iget v7, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mLastFlingY:I
 
     sub-int v7, v5, v7
 
-    .line 3900
-    .local v7, "dy":I
     const/4 v8, 0x0
 
-    .line 3901
-    .local v8, "hresult":I
     const/4 v9, 0x0
 
-    .line 3902
-    .local v9, "vresult":I
     iput v3, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mLastFlingX:I
 
-    .line 3903
     iput v5, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mLastFlingY:I
 
-    .line 3904
     const/4 v10, 0x0
 
-    .local v10, "overscrollX":I
     const/4 v11, 0x0
 
-    .line 3905
-    .local v11, "overscrollY":I
     iget-object v12, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     invoke-static {v12}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->access$2400(Lcom/oneplus/lib/widget/recyclerview/RecyclerView;)Lcom/oneplus/lib/widget/recyclerview/RecyclerView$Adapter;
@@ -505,25 +416,20 @@
 
     if-eqz v12, :cond_9
 
-    .line 3906
     iget-object v12, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     invoke-virtual {v12}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->eatRequestLayout()V
 
-    .line 3907
     iget-object v12, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     invoke-static {v12}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->access$2500(Lcom/oneplus/lib/widget/recyclerview/RecyclerView;)V
 
-    .line 3908
     const-string v12, "RV Scroll"
 
     invoke-static {v12}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    .line 3909
     if-eqz v6, :cond_0
 
-    .line 3910
     iget-object v12, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     invoke-static {v12}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->access$1300(Lcom/oneplus/lib/widget/recyclerview/RecyclerView;)Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;
@@ -542,14 +448,11 @@
 
     move-result v8
 
-    .line 3911
     sub-int v10, v6, v8
 
-    .line 3913
     :cond_0
     if-eqz v7, :cond_1
 
-    .line 3914
     iget-object v12, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     invoke-static {v12}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->access$1300(Lcom/oneplus/lib/widget/recyclerview/RecyclerView;)Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;
@@ -568,14 +471,11 @@
 
     move-result v9
 
-    .line 3915
     sub-int v11, v7, v9
 
-    .line 3917
     :cond_1
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
-    .line 3918
     iget-object v12, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     invoke-static {v12}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->access$2600(Lcom/oneplus/lib/widget/recyclerview/RecyclerView;)Z
@@ -584,7 +484,6 @@
 
     if-eqz v12, :cond_5
 
-    .line 3920
     iget-object v12, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     iget-object v12, v12, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->mChildHelper:Lcom/oneplus/lib/widget/recyclerview/ChildHelper;
@@ -593,15 +492,11 @@
 
     move-result v12
 
-    .line 3921
-    .local v12, "count":I
     const/4 v13, 0x0
 
-    .local v13, "i":I
     :goto_0
     if-ge v13, v12, :cond_5
 
-    .line 3922
     iget-object v14, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     iget-object v14, v14, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->mChildHelper:Lcom/oneplus/lib/widget/recyclerview/ChildHelper;
@@ -610,76 +505,57 @@
 
     move-result-object v14
 
-    .line 3923
-    .local v14, "view":Landroid/view/View;
     iget-object v15, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     invoke-virtual {v15, v14}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->getChildViewHolder(Landroid/view/View;)Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewHolder;
 
     move-result-object v15
 
-    .line 3924
-    .local v15, "holder":Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewHolder;
     if-eqz v15, :cond_3
 
     iget-object v4, v15, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewHolder;->mShadowingHolder:Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewHolder;
 
     if-eqz v4, :cond_3
 
-    .line 3925
     iget-object v4, v15, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewHolder;->mShadowingHolder:Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewHolder;
 
     iget-object v4, v4, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    .line 3926
-    .local v4, "shadowingView":Landroid/view/View;
     move/from16 v16, v8
 
     invoke-virtual {v14}, Landroid/view/View;->getLeft()I
 
     move-result v8
 
-    .line 3927
-    .local v8, "left":I
-    .local v16, "hresult":I
     move/from16 v17, v9
 
     invoke-virtual {v14}, Landroid/view/View;->getTop()I
 
     move-result v9
 
-    .line 3928
-    .local v9, "top":I
-    .local v17, "vresult":I
     move/from16 v18, v12
 
     invoke-virtual {v4}, Landroid/view/View;->getLeft()I
 
     move-result v12
 
-    .end local v12    # "count":I
-    .local v18, "count":I
     if-ne v8, v12, :cond_2
 
-    .line 3929
     invoke-virtual {v4}, Landroid/view/View;->getTop()I
 
     move-result v12
 
     if-eq v9, v12, :cond_4
 
-    .line 3930
     :cond_2
     nop
 
-    .line 3931
     invoke-virtual {v4}, Landroid/view/View;->getWidth()I
 
     move-result v12
 
     add-int/2addr v12, v8
 
-    .line 3932
     invoke-virtual {v4}, Landroid/view/View;->getHeight()I
 
     move-result v19
@@ -688,25 +564,10 @@
 
     add-int v14, v9, v19
 
-    .line 3930
-    .end local v14    # "view":Landroid/view/View;
-    .local v20, "view":Landroid/view/View;
     invoke-virtual {v4, v8, v9, v12, v14}, Landroid/view/View;->layout(IIII)V
 
-    .end local v4    # "shadowingView":Landroid/view/View;
-    .end local v8    # "left":I
-    .end local v9    # "top":I
-    .end local v15    # "holder":Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewHolder;
-    .end local v20    # "view":Landroid/view/View;
     goto :goto_1
 
-    .line 3921
-    .end local v16    # "hresult":I
-    .end local v17    # "vresult":I
-    .end local v18    # "count":I
-    .local v8, "hresult":I
-    .local v9, "vresult":I
-    .restart local v12    # "count":I
     :cond_3
     move/from16 v16, v8
 
@@ -714,12 +575,6 @@
 
     move/from16 v18, v12
 
-    .end local v8    # "hresult":I
-    .end local v9    # "vresult":I
-    .end local v12    # "count":I
-    .restart local v16    # "hresult":I
-    .restart local v17    # "vresult":I
-    .restart local v18    # "count":I
     :cond_4
     :goto_1
     add-int/lit8 v13, v13, 0x1
@@ -732,34 +587,21 @@
 
     goto :goto_0
 
-    .line 3937
-    .end local v13    # "i":I
-    .end local v16    # "hresult":I
-    .end local v17    # "vresult":I
-    .end local v18    # "count":I
-    .restart local v8    # "hresult":I
-    .restart local v9    # "vresult":I
     :cond_5
     move/from16 v16, v8
 
     move/from16 v17, v9
 
-    .end local v8    # "hresult":I
-    .end local v9    # "vresult":I
-    .restart local v16    # "hresult":I
-    .restart local v17    # "vresult":I
     iget-object v4, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     invoke-static {v4}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->access$2700(Lcom/oneplus/lib/widget/recyclerview/RecyclerView;)V
 
-    .line 3938
     iget-object v4, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     const/4 v8, 0x0
 
     invoke-virtual {v4, v8}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->resumeRequestLayout(Z)V
 
-    .line 3940
     if-eqz v2, :cond_8
 
     invoke-virtual {v2}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SmoothScroller;->isPendingInitialRun()Z
@@ -768,14 +610,12 @@
 
     if-nez v4, :cond_8
 
-    .line 3941
     invoke-virtual {v2}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SmoothScroller;->isRunning()Z
 
     move-result v4
 
     if-eqz v4, :cond_8
 
-    .line 3942
     iget-object v4, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     iget-object v4, v4, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->mState:Lcom/oneplus/lib/widget/recyclerview/RecyclerView$State;
@@ -784,16 +624,12 @@
 
     move-result v4
 
-    .line 3943
-    .local v4, "adapterSize":I
     if-nez v4, :cond_6
 
-    .line 3944
     invoke-virtual {v2}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SmoothScroller;->stop()V
 
     goto :goto_2
 
-    .line 3945
     :cond_6
     invoke-virtual {v2}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SmoothScroller;->getTargetPosition()I
 
@@ -801,12 +637,10 @@
 
     if-lt v8, v4, :cond_7
 
-    .line 3946
     add-int/lit8 v8, v4, -0x1
 
     invoke-virtual {v2, v8}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SmoothScroller;->setTargetPosition(I)V
 
-    .line 3947
     sub-int v8, v6, v10
 
     sub-int v9, v7, v11
@@ -815,7 +649,6 @@
 
     goto :goto_2
 
-    .line 3949
     :cond_7
     sub-int v8, v6, v10
 
@@ -823,18 +656,12 @@
 
     invoke-static {v2, v8, v9}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SmoothScroller;->access$2800(Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SmoothScroller;II)V
 
-    .line 3953
-    .end local v4    # "adapterSize":I
     :cond_8
     :goto_2
     move/from16 v8, v16
 
     move/from16 v9, v17
 
-    .end local v16    # "hresult":I
-    .end local v17    # "vresult":I
-    .restart local v8    # "hresult":I
-    .restart local v9    # "vresult":I
     :cond_9
     iget-object v4, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
@@ -848,12 +675,10 @@
 
     if-nez v4, :cond_a
 
-    .line 3954
     iget-object v4, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     invoke-virtual {v4}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->invalidate()V
 
-    .line 3956
     :cond_a
     iget-object v4, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
@@ -865,18 +690,15 @@
 
     if-eq v4, v12, :cond_b
 
-    .line 3958
     iget-object v4, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     invoke-static {v4, v6, v7}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->access$3000(Lcom/oneplus/lib/widget/recyclerview/RecyclerView;II)V
 
-    .line 3960
     :cond_b
     if-nez v10, :cond_c
 
     if-eqz v11, :cond_16
 
-    .line 3961
     :cond_c
     invoke-virtual {v1}, Landroid/widget/Scroller;->getCurrVelocity()F
 
@@ -884,15 +706,10 @@
 
     float-to-int v4, v4
 
-    .line 3963
-    .local v4, "vel":I
     const/4 v13, 0x0
 
-    .line 3964
-    .local v13, "velX":I
     if-eq v10, v3, :cond_f
 
-    .line 3965
     if-gez v10, :cond_d
 
     neg-int v14, v4
@@ -912,15 +729,11 @@
     :goto_3
     move v13, v14
 
-    .line 3968
     :cond_f
     const/4 v14, 0x0
 
-    .line 3969
-    .local v14, "velY":I
     if-eq v11, v5, :cond_12
 
-    .line 3970
     if-gez v11, :cond_10
 
     neg-int v15, v4
@@ -940,7 +753,6 @@
     :goto_4
     move v14, v15
 
-    .line 3973
     :cond_12
     iget-object v15, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
@@ -950,12 +762,10 @@
 
     if-eq v15, v12, :cond_13
 
-    .line 3975
     iget-object v12, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     invoke-virtual {v12, v13, v14}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->absorbGlows(II)V
 
-    .line 3977
     :cond_13
     if-nez v13, :cond_14
 
@@ -972,33 +782,25 @@
 
     if-eq v11, v5, :cond_15
 
-    .line 3978
     invoke-virtual {v1}, Landroid/widget/Scroller;->getFinalY()I
 
     move-result v12
 
     if-nez v12, :cond_16
 
-    .line 3979
     :cond_15
     invoke-virtual {v1}, Landroid/widget/Scroller;->abortAnimation()V
 
-    .line 3982
-    .end local v4    # "vel":I
-    .end local v13    # "velX":I
-    .end local v14    # "velY":I
     :cond_16
     if-nez v8, :cond_17
 
     if-eqz v9, :cond_18
 
-    .line 3983
     :cond_17
     iget-object v4, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     invoke-virtual {v4, v8, v9}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->dispatchOnScrolled(II)V
 
-    .line 3986
     :cond_18
     iget-object v4, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
@@ -1008,12 +810,10 @@
 
     if-nez v4, :cond_19
 
-    .line 3987
     iget-object v4, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     invoke-virtual {v4}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->invalidate()V
 
-    .line 3990
     :cond_19
     const/4 v4, 0x1
 
@@ -1040,8 +840,6 @@
     :cond_1a
     const/4 v12, 0x0
 
-    .line 3992
-    .local v12, "fullyConsumedVertical":Z
     :goto_5
     if-eqz v6, :cond_1b
 
@@ -1066,8 +864,6 @@
     :cond_1b
     const/4 v13, 0x0
 
-    .line 3994
-    .local v13, "fullyConsumedHorizontal":Z
     :goto_6
     if-nez v6, :cond_1c
 
@@ -1085,8 +881,6 @@
 
     nop
 
-    .line 3997
-    .local v4, "fullyConsumedAny":Z
     :cond_1e
     :goto_7
     invoke-virtual {v1}, Landroid/widget/Scroller;->isFinished()Z
@@ -1099,35 +893,11 @@
 
     goto :goto_8
 
-    .line 4000
     :cond_1f
     invoke-virtual/range {p0 .. p0}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->postOnAnimation()V
 
-    .end local v3    # "x":I
-    .end local v4    # "fullyConsumedAny":Z
-    .end local v5    # "y":I
-    .end local v6    # "dx":I
-    .end local v7    # "dy":I
-    .end local v8    # "hresult":I
-    .end local v9    # "vresult":I
-    .end local v10    # "overscrollX":I
-    .end local v11    # "overscrollY":I
-    .end local v12    # "fullyConsumedVertical":Z
-    .end local v13    # "fullyConsumedHorizontal":Z
     goto :goto_9
 
-    .line 3998
-    .restart local v3    # "x":I
-    .restart local v4    # "fullyConsumedAny":Z
-    .restart local v5    # "y":I
-    .restart local v6    # "dx":I
-    .restart local v7    # "dy":I
-    .restart local v8    # "hresult":I
-    .restart local v9    # "vresult":I
-    .restart local v10    # "overscrollX":I
-    .restart local v11    # "overscrollY":I
-    .restart local v12    # "fullyConsumedVertical":Z
-    .restart local v13    # "fullyConsumedHorizontal":Z
     :cond_20
     :goto_8
     iget-object v14, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
@@ -1138,18 +908,6 @@
 
     goto :goto_a
 
-    .line 4004
-    .end local v3    # "x":I
-    .end local v4    # "fullyConsumedAny":Z
-    .end local v5    # "y":I
-    .end local v6    # "dx":I
-    .end local v7    # "dy":I
-    .end local v8    # "hresult":I
-    .end local v9    # "vresult":I
-    .end local v10    # "overscrollX":I
-    .end local v11    # "overscrollY":I
-    .end local v12    # "fullyConsumedVertical":Z
-    .end local v13    # "fullyConsumedHorizontal":Z
     :cond_21
     :goto_9
     const/4 v15, 0x0
@@ -1157,98 +915,70 @@
     :goto_a
     if-eqz v2, :cond_23
 
-    .line 4005
     invoke-virtual {v2}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SmoothScroller;->isPendingInitialRun()Z
 
     move-result v3
 
     if-eqz v3, :cond_22
 
-    .line 4006
     invoke-static {v2, v15, v15}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SmoothScroller;->access$2800(Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SmoothScroller;II)V
 
-    .line 4008
     :cond_22
     iget-boolean v3, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mReSchedulePostAnimationCallback:Z
 
     if-nez v3, :cond_23
 
-    .line 4009
     invoke-virtual {v2}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SmoothScroller;->stop()V
 
-    .line 4012
     :cond_23
     invoke-direct/range {p0 .. p0}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->enableRunOnAnimationRequests()V
 
-    .line 4013
     return-void
 .end method
 
 .method public smoothScrollBy(II)V
     .locals 1
-    .param p1, "dx"    # I
-    .param p2, "dy"    # I
 
-    .line 4045
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0, v0}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->smoothScrollBy(IIII)V
 
-    .line 4046
     return-void
 .end method
 
 .method public smoothScrollBy(III)V
     .locals 1
-    .param p1, "dx"    # I
-    .param p2, "dy"    # I
-    .param p3, "duration"    # I
 
-    .line 4081
     invoke-static {}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->access$2200()Landroid/view/animation/Interpolator;
 
     move-result-object v0
 
     invoke-virtual {p0, p1, p2, p3, v0}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->smoothScrollBy(IIILandroid/view/animation/Interpolator;)V
 
-    .line 4082
     return-void
 .end method
 
 .method public smoothScrollBy(IIII)V
     .locals 1
-    .param p1, "dx"    # I
-    .param p2, "dy"    # I
-    .param p3, "vx"    # I
-    .param p4, "vy"    # I
 
-    .line 4049
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->computeScrollDuration(IIII)I
 
     move-result v0
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->smoothScrollBy(III)V
 
-    .line 4050
     return-void
 .end method
 
 .method public smoothScrollBy(IIILandroid/view/animation/Interpolator;)V
     .locals 7
-    .param p1, "dx"    # I
-    .param p2, "dy"    # I
-    .param p3, "duration"    # I
-    .param p4, "interpolator"    # Landroid/view/animation/Interpolator;
 
-    .line 4085
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mInterpolator:Landroid/view/animation/Interpolator;
 
     if-eq v0, p4, :cond_0
 
-    .line 4086
     iput-object p4, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 4087
     new-instance v0, Landroid/widget/Scroller;
 
     iget-object v1, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
@@ -1261,7 +991,6 @@
 
     iput-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mScroller:Landroid/widget/Scroller;
 
-    .line 4089
     :cond_0
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
@@ -1269,14 +998,12 @@
 
     invoke-static {v0, v1}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->access$3200(Lcom/oneplus/lib/widget/recyclerview/RecyclerView;I)V
 
-    .line 4090
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mLastFlingY:I
 
     iput v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mLastFlingX:I
 
-    .line 4091
     iget-object v1, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mScroller:Landroid/widget/Scroller;
 
     const/4 v2, 0x0
@@ -1291,26 +1018,21 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/widget/Scroller;->startScroll(IIIII)V
 
-    .line 4092
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->postOnAnimation()V
 
-    .line 4093
     return-void
 .end method
 
 .method public stop()V
     .locals 1
 
-    .line 4096
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     invoke-virtual {v0, p0}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 4097
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewFlinger;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v0}, Landroid/widget/Scroller;->abortAnimation()V
 
-    .line 4098
     return-void
 .end method

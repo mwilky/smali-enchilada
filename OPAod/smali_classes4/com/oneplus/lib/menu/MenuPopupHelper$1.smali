@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/menu/MenuPopupHelper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/menu/MenuPopupHelper;
 
-    .line 357
     iput-object p1, p0, Lcom/oneplus/lib/menu/MenuPopupHelper$1;->this$0:Lcom/oneplus/lib/menu/MenuPopupHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +37,9 @@
 .method public onDismiss()V
     .locals 1
 
-    .line 360
     iget-object v0, p0, Lcom/oneplus/lib/menu/MenuPopupHelper$1;->this$0:Lcom/oneplus/lib/menu/MenuPopupHelper;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/menu/MenuPopupHelper;->onDismiss()V
 
-    .line 361
     return-void
 .end method

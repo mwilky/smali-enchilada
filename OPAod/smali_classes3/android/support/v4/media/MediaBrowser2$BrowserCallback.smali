@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 41
     invoke-direct {p0}, Landroid/support/v4/media/MediaController2$ControllerCallback;-><init>()V
 
     return-void
@@ -28,41 +27,37 @@
 # virtual methods
 .method public onChildrenChanged(Landroid/support/v4/media/MediaBrowser2;Ljava/lang/String;ILandroid/os/Bundle;)V
     .locals 0
-    .param p1, "browser"    # Landroid/support/v4/media/MediaBrowser2;
+    .param p1    # Landroid/support/v4/media/MediaBrowser2;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "parentId"    # Ljava/lang/String;
+    .param p2    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p3, "itemCount"    # I
-    .param p4, "extras"    # Landroid/os/Bundle;
+    .param p4    # Landroid/os/Bundle;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 70
     return-void
 .end method
 
 .method public onGetChildrenDone(Landroid/support/v4/media/MediaBrowser2;Ljava/lang/String;IILjava/util/List;Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "browser"    # Landroid/support/v4/media/MediaBrowser2;
+    .param p1    # Landroid/support/v4/media/MediaBrowser2;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "parentId"    # Ljava/lang/String;
+    .param p2    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p3, "page"    # I
-    .param p4, "pageSize"    # I
     .param p5    # Ljava/util/List;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
-    .param p6, "extras"    # Landroid/os/Bundle;
+    .param p6    # Landroid/os/Bundle;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
@@ -80,70 +75,64 @@
         }
     .end annotation
 
-    .line 87
-    .local p5, "result":Ljava/util/List;, "Ljava/util/List<Landroid/support/v4/media/MediaItem2;>;"
     return-void
 .end method
 
 .method public onGetItemDone(Landroid/support/v4/media/MediaBrowser2;Ljava/lang/String;Landroid/support/v4/media/MediaItem2;)V
     .locals 0
-    .param p1, "browser"    # Landroid/support/v4/media/MediaBrowser2;
+    .param p1    # Landroid/support/v4/media/MediaBrowser2;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "mediaId"    # Ljava/lang/String;
+    .param p2    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p3, "result"    # Landroid/support/v4/media/MediaItem2;
+    .param p3    # Landroid/support/v4/media/MediaItem2;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 100
     return-void
 .end method
 
 .method public onGetLibraryRootDone(Landroid/support/v4/media/MediaBrowser2;Landroid/os/Bundle;Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "browser"    # Landroid/support/v4/media/MediaBrowser2;
+    .param p1    # Landroid/support/v4/media/MediaBrowser2;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "rootHints"    # Landroid/os/Bundle;
+    .param p2    # Landroid/os/Bundle;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
-    .param p3, "rootMediaId"    # Ljava/lang/String;
+    .param p3    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
-    .param p4, "rootExtra"    # Landroid/os/Bundle;
+    .param p4    # Landroid/os/Bundle;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 54
     return-void
 .end method
 
 .method public onGetSearchResultDone(Landroid/support/v4/media/MediaBrowser2;Ljava/lang/String;IILjava/util/List;Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "browser"    # Landroid/support/v4/media/MediaBrowser2;
+    .param p1    # Landroid/support/v4/media/MediaBrowser2;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "query"    # Ljava/lang/String;
+    .param p2    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p3, "page"    # I
-    .param p4, "pageSize"    # I
     .param p5    # Ljava/util/List;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
-    .param p6, "extras"    # Landroid/os/Bundle;
+    .param p6    # Landroid/os/Bundle;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
@@ -161,27 +150,23 @@
         }
     .end annotation
 
-    .line 132
-    .local p5, "result":Ljava/util/List;, "Ljava/util/List<Landroid/support/v4/media/MediaItem2;>;"
     return-void
 .end method
 
 .method public onSearchResultChanged(Landroid/support/v4/media/MediaBrowser2;Ljava/lang/String;ILandroid/os/Bundle;)V
     .locals 0
-    .param p1, "browser"    # Landroid/support/v4/media/MediaBrowser2;
+    .param p1    # Landroid/support/v4/media/MediaBrowser2;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "query"    # Ljava/lang/String;
+    .param p2    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p3, "itemCount"    # I
-    .param p4, "extras"    # Landroid/os/Bundle;
+    .param p4    # Landroid/os/Bundle;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 112
     return-void
 .end method

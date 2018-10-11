@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/widget/TooltipCompatHandler;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/widget/TooltipCompatHandler;
 
-    .line 60
     iput-object p1, p0, Landroid/support/v7/widget/TooltipCompatHandler$2;->this$0:Landroid/support/v7/widget/TooltipCompatHandler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +37,9 @@
 .method public run()V
     .locals 1
 
-    .line 63
     iget-object v0, p0, Landroid/support/v7/widget/TooltipCompatHandler$2;->this$0:Landroid/support/v7/widget/TooltipCompatHandler;
 
     invoke-static {v0}, Landroid/support/v7/widget/TooltipCompatHandler;->access$100(Landroid/support/v7/widget/TooltipCompatHandler;)V
 
-    .line 64
     return-void
 .end method

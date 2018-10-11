@@ -27,9 +27,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaBrowser2ImplLegacy;IILandroid/os/Bundle;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaBrowser2ImplLegacy;
 
-    .line 236
     iput-object p1, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$5;->this$0:Landroid/support/v4/media/MediaBrowser2ImplLegacy;
 
     iput p2, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$5;->val$page:I
@@ -47,10 +45,7 @@
 # virtual methods
 .method public onError(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 2
-    .param p1, "query"    # Ljava/lang/String;
-    .param p2, "extrasSent"    # Landroid/os/Bundle;
 
-    .line 253
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$5;->this$0:Landroid/support/v4/media/MediaBrowser2ImplLegacy;
 
     invoke-virtual {v0}, Landroid/support/v4/media/MediaBrowser2ImplLegacy;->getCallbackExecutor()Ljava/util/concurrent/Executor;
@@ -63,14 +58,11 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 260
     return-void
 .end method
 
 .method public onSearchResult(Ljava/lang/String;Landroid/os/Bundle;Ljava/util/List;)V
     .locals 2
-    .param p1, "query"    # Ljava/lang/String;
-    .param p2, "extrasSent"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -82,8 +74,6 @@
         }
     .end annotation
 
-    .line 240
-    .local p3, "items":Ljava/util/List;, "Ljava/util/List<Landroid/support/v4/media/MediaBrowserCompat$MediaItem;>;"
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$5;->this$0:Landroid/support/v4/media/MediaBrowser2ImplLegacy;
 
     invoke-virtual {v0}, Landroid/support/v4/media/MediaBrowser2ImplLegacy;->getCallbackExecutor()Ljava/util/concurrent/Executor;
@@ -96,6 +86,5 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 249
     return-void
 .end method

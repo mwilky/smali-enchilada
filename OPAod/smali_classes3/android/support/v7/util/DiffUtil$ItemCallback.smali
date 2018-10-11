@@ -27,8 +27,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 366
-    .local p0, "this":Landroid/support/v7/util/DiffUtil$ItemCallback;, "Landroid/support/v7/util/DiffUtil$ItemCallback<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -88,10 +86,6 @@
         }
     .end annotation
 
-    .line 427
-    .local p0, "this":Landroid/support/v7/util/DiffUtil$ItemCallback;, "Landroid/support/v7/util/DiffUtil$ItemCallback<TT;>;"
-    .local p1, "oldItem":Ljava/lang/Object;, "TT;"
-    .local p2, "newItem":Ljava/lang/Object;, "TT;"
     const/4 v0, 0x0
 
     return-object v0

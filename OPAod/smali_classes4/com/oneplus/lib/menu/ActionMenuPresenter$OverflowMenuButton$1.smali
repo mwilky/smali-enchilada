@@ -23,10 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowMenuButton;Landroid/view/View;Lcom/oneplus/lib/menu/ActionMenuPresenter;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowMenuButton;
-    .param p2, "src"    # Landroid/view/View;
 
-    .line 644
     iput-object p1, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowMenuButton$1;->this$1:Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowMenuButton;
 
     iput-object p3, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowMenuButton$1;->val$this$0:Lcom/oneplus/lib/menu/ActionMenuPresenter;
@@ -41,7 +38,6 @@
 .method public getPopup()Lcom/oneplus/lib/menu/ShowableListMenu;
     .locals 1
 
-    .line 647
     iget-object v0, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowMenuButton$1;->this$1:Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowMenuButton;
 
     iget-object v0, v0, Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowMenuButton;->this$0:Lcom/oneplus/lib/menu/ActionMenuPresenter;
@@ -50,12 +46,10 @@
 
     if-nez v0, :cond_0
 
-    .line 648
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 651
     :cond_0
     iget-object v0, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowMenuButton$1;->this$1:Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowMenuButton;
 
@@ -73,14 +67,12 @@
 .method public onForwardingStarted()Z
     .locals 1
 
-    .line 656
     iget-object v0, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowMenuButton$1;->this$1:Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowMenuButton;
 
     iget-object v0, v0, Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowMenuButton;->this$0:Lcom/oneplus/lib/menu/ActionMenuPresenter;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/menu/ActionMenuPresenter;->showOverflowMenu()Z
 
-    .line 657
     const/4 v0, 0x1
 
     return v0
@@ -89,7 +81,6 @@
 .method public onForwardingStopped()Z
     .locals 1
 
-    .line 665
     iget-object v0, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowMenuButton$1;->this$1:Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowMenuButton;
 
     iget-object v0, v0, Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowMenuButton;->this$0:Lcom/oneplus/lib/menu/ActionMenuPresenter;
@@ -98,12 +89,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 666
     const/4 v0, 0x0
 
     return v0
 
-    .line 669
     :cond_0
     iget-object v0, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowMenuButton$1;->this$1:Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowMenuButton;
 
@@ -111,7 +100,6 @@
 
     invoke-virtual {v0}, Lcom/oneplus/lib/menu/ActionMenuPresenter;->hideOverflowMenu()Z
 
-    .line 670
     const/4 v0, 0x1
 
     return v0

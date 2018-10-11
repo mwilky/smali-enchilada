@@ -21,7 +21,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 21
     const-class v0, Lcom/oneplus/lib/app/OneplusApplication;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -36,7 +35,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 19
     invoke-direct {p0}, Landroid/app/Application;-><init>()V
 
     return-void
@@ -45,7 +43,6 @@
 .method public static getContext()Landroid/content/Context;
     .locals 1
 
-    .line 26
     sget-object v0, Lcom/oneplus/lib/app/OneplusApplication;->instance:Lcom/oneplus/lib/app/OneplusApplication;
 
     return-object v0
@@ -56,20 +53,16 @@
 .method public onCreate()V
     .locals 2
 
-    .line 31
     invoke-super {p0}, Landroid/app/Application;->onCreate()V
 
-    .line 32
     sput-object p0, Lcom/oneplus/lib/app/OneplusApplication;->instance:Lcom/oneplus/lib/app/OneplusApplication;
 
-    .line 33
     invoke-static {p0}, Lcom/oneplus/lib/util/AppUtils;->versionCodeChanged(Landroid/content/Context;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 34
     invoke-static {p0}, Lcom/oneplus/lib/util/AppUtils;->getPrevVersion(Landroid/content/Context;)I
 
     move-result v0
@@ -80,22 +73,17 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/oneplus/lib/app/OneplusApplication;->onVersionChanged(II)V
 
-    .line 35
     invoke-static {p0}, Lcom/oneplus/lib/util/AppUtils;->setCurrentVersion(Landroid/content/Context;)V
 
-    .line 37
     :cond_0
     return-void
 .end method
 
 .method protected onVersionChanged(II)V
     .locals 3
-    .param p1, "previousCode"    # I
-    .param p2, "currentCode"    # I
     .annotation build Landroid/support/annotation/CallSuper;
     .end annotation
 
-    .line 41
     sget-object v0, Lcom/oneplus/lib/app/OneplusApplication;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -120,7 +108,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 42
     sget-object v0, Lcom/oneplus/lib/app/OneplusApplication;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -145,6 +132,5 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 43
     return-void
 .end method

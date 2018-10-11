@@ -25,22 +25,14 @@
 # direct methods
 .method public constructor <init>(ILandroid/view/View;Lcom/oneplus/lib/widget/SimpleMonthView;)V
     .locals 0
-    .param p1, "position"    # I
-    .param p2, "container"    # Landroid/view/View;
-    .param p3, "calendar"    # Lcom/oneplus/lib/widget/SimpleMonthView;
 
-    .line 314
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 315
     iput p1, p0, Lcom/oneplus/lib/widget/DayPickerPagerAdapter$ViewHolder;->position:I
 
-    .line 316
     iput-object p2, p0, Lcom/oneplus/lib/widget/DayPickerPagerAdapter$ViewHolder;->container:Landroid/view/View;
 
-    .line 317
     iput-object p3, p0, Lcom/oneplus/lib/widget/DayPickerPagerAdapter$ViewHolder;->calendar:Lcom/oneplus/lib/widget/SimpleMonthView;
 
-    .line 318
     return-void
 .end method

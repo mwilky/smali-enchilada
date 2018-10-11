@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/actionbar/Toolbar;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/actionbar/Toolbar;
 
-    .line 130
     iput-object p1, p0, Lcom/oneplus/lib/widget/actionbar/Toolbar$1;->this$0:Lcom/oneplus/lib/widget/actionbar/Toolbar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onMenuItemClick(Landroid/view/MenuItem;)Z
     .locals 1
-    .param p1, "item"    # Landroid/view/MenuItem;
 
-    .line 133
     iget-object v0, p0, Lcom/oneplus/lib/widget/actionbar/Toolbar$1;->this$0:Lcom/oneplus/lib/widget/actionbar/Toolbar;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/actionbar/Toolbar;->access$000(Lcom/oneplus/lib/widget/actionbar/Toolbar;)Landroid/widget/Toolbar$OnMenuItemClickListener;
@@ -49,7 +45,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 134
     iget-object v0, p0, Lcom/oneplus/lib/widget/actionbar/Toolbar$1;->this$0:Lcom/oneplus/lib/widget/actionbar/Toolbar;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/actionbar/Toolbar;->access$000(Lcom/oneplus/lib/widget/actionbar/Toolbar;)Landroid/widget/Toolbar$OnMenuItemClickListener;
@@ -62,7 +57,6 @@
 
     return v0
 
-    .line 136
     :cond_0
     const/4 v0, 0x0
 

@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/doze/DozeService;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/doze/DozeService;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 574
     iput-object p1, p0, Lcom/oneplus/doze/DozeService$4;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,21 +33,15 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;I)V
     .locals 1
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
-    .param p3, "userId"    # I
 
-    .line 577
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v0
 
     if-eq p3, v0, :cond_0
 
-    .line 578
     return-void
 
-    .line 587
     :cond_0
     return-void
 .end method

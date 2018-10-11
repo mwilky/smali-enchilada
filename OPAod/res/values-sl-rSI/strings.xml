@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">Prikaži sporočilo</string>
     <string name="oneplus_aod_mode_always_on">Vedno prikazan</string>
     <string name="oneplus_aod_mode_lift_up">Vklop zaslona ob premiku</string>
-    <string name="oneplus_aod_mode_shake_up">Za prikaz rahlo premaknite telefon</string>
-    <string name="oneplus_aod_mode_single_tap">Tapnite za prikaz</string>
     <string name="oneplus_aod_settings">Ambientalna funkcija zaslona</string>
-    <string name="oneplus_aod_settings_what_to_show">vsebina prikaza</string>
-    <string name="oneplus_aod_settings_when_to_show">čas prikaza</string>
     <string name="oneplus_aod_title">Prikaži uro</string>
     <string name="oneplus_display_time_end">Do</string>
     <string name="oneplus_display_time_from">Od</string>

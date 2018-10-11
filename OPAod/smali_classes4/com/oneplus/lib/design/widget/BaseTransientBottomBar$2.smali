@@ -24,10 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;
 
-    .line 264
-    .local p0, "this":Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$2;, "Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$2;"
     iput-object p1, p0, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$2;->this$0:Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +36,7 @@
 # virtual methods
 .method public onApplyWindowInsets(Landroid/view/View;Landroid/support/v4/view/WindowInsetsCompat;)Landroid/support/v4/view/WindowInsetsCompat;
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "insets"    # Landroid/support/v4/view/WindowInsetsCompat;
 
-    .line 270
-    .local p0, "this":Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$2;, "Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$2;"
     invoke-virtual {p1}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v0
@@ -52,7 +45,6 @@
 
     move-result v1
 
-    .line 271
     invoke-virtual {p1}, Landroid/view/View;->getPaddingRight()I
 
     move-result v2
@@ -61,9 +53,7 @@
 
     move-result v3
 
-    .line 270
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 272
     return-object p2
 .end method

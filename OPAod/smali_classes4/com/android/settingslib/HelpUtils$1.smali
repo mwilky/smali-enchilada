@@ -27,7 +27,6 @@
 .method constructor <init>(Landroid/app/Activity;Landroid/content/Intent;)V
     .locals 0
 
-    .line 120
     iput-object p1, p0, Lcom/android/settingslib/HelpUtils$1;->val$activity:Landroid/app/Activity;
 
     iput-object p2, p0, Lcom/android/settingslib/HelpUtils$1;->val$intent:Landroid/content/Intent;
@@ -41,26 +40,21 @@
 # virtual methods
 .method public onMenuItemClick(Landroid/view/MenuItem;)Z
     .locals 4
-    .param p1, "item"    # Landroid/view/MenuItem;
 
-    .line 123
     iget-object v0, p0, Lcom/android/settingslib/HelpUtils$1;->val$activity:Landroid/app/Activity;
 
     iget-object v1, p0, Lcom/android/settingslib/HelpUtils$1;->val$intent:Landroid/content/Intent;
 
     const-string v2, "EXTRA_CONTEXT"
 
-    .line 125
     invoke-virtual {v1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 123
     const/16 v2, 0x201
 
     invoke-static {v0, v2, v1}, Lcom/android/internal/logging/MetricsLogger;->action(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 127
     :try_start_0
     iget-object v0, p0, Lcom/android/settingslib/HelpUtils$1;->val$activity:Landroid/app/Activity;
 
@@ -72,15 +66,11 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 130
     goto :goto_0
 
-    .line 128
     :catch_0
     move-exception v0
 
-    .line 129
-    .local v0, "exc":Landroid/content/ActivityNotFoundException;
     invoke-static {}, Lcom/android/settingslib/HelpUtils;->access$000()Ljava/lang/String;
 
     move-result-object v1
@@ -103,8 +93,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 131
-    .end local v0    # "exc":Landroid/content/ActivityNotFoundException;
     :goto_0
     const/4 v0, 0x1
 

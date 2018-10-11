@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/doze/ScrimView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/doze/ScrimView;
 
-    .line 51
     iput-object p1, p0, Lcom/oneplus/doze/ScrimView$2;->this$0:Lcom/oneplus/doze/ScrimView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,16 +33,13 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 54
     iget-object v0, p0, Lcom/oneplus/doze/ScrimView$2;->this$0:Lcom/oneplus/doze/ScrimView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/oneplus/doze/ScrimView;->access$002(Lcom/oneplus/doze/ScrimView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 55
     iget-object v0, p0, Lcom/oneplus/doze/ScrimView$2;->this$0:Lcom/oneplus/doze/ScrimView;
 
     invoke-static {v0}, Lcom/oneplus/doze/ScrimView;->access$100(Lcom/oneplus/doze/ScrimView;)Ljava/lang/Runnable;
@@ -53,7 +48,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 56
     iget-object v0, p0, Lcom/oneplus/doze/ScrimView$2;->this$0:Lcom/oneplus/doze/ScrimView;
 
     invoke-static {v0}, Lcom/oneplus/doze/ScrimView;->access$100(Lcom/oneplus/doze/ScrimView;)Ljava/lang/Runnable;
@@ -62,7 +56,6 @@
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 58
     :cond_0
     return-void
 .end method

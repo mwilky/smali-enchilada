@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/widget/RecyclerView;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/widget/RecyclerView;
 
-    .line 539
     iput-object p1, p0, Landroid/support/v7/widget/RecyclerView$2;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,21 +37,18 @@
 .method public run()V
     .locals 2
 
-    .line 542
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$2;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mItemAnimator:Landroid/support/v7/widget/RecyclerView$ItemAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 543
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$2;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mItemAnimator:Landroid/support/v7/widget/RecyclerView$ItemAnimator;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView$ItemAnimator;->runPendingAnimations()V
 
-    .line 545
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$2;->this$0:Landroid/support/v7/widget/RecyclerView;
 
@@ -61,6 +56,5 @@
 
     iput-boolean v1, v0, Landroid/support/v7/widget/RecyclerView;->mPostedAnimatorRunner:Z
 
-    .line 546
     return-void
 .end method

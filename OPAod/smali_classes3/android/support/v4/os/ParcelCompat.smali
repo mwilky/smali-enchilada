@@ -7,7 +7,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -15,9 +14,7 @@
 
 .method public static readBoolean(Landroid/os/Parcel;)Z
     .locals 1
-    .param p0, "in"    # Landroid/os/Parcel;
 
-    .line 30
     invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -37,12 +34,8 @@
 
 .method public static writeBoolean(Landroid/os/Parcel;Z)V
     .locals 0
-    .param p0, "out"    # Landroid/os/Parcel;
-    .param p1, "value"    # Z
 
-    .line 41
     invoke-virtual {p0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 42
     return-void
 .end method

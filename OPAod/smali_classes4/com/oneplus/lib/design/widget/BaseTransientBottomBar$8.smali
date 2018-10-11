@@ -28,17 +28,13 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;
 
-    .line 521
-    .local p0, "this":Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$8;, "Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$8;"
     iput-object p1, p0, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$8;->this$0:Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;
 
     iput p2, p0, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$8;->val$viewHeight:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 522
     iget p2, p0, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$8;->val$viewHeight:I
 
     iput p2, p0, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$8;->mPreviousAnimatedIntValue:I
@@ -50,10 +46,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
-    .param p1, "animator"    # Landroid/animation/ValueAnimator;
 
-    .line 526
-    .local p0, "this":Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$8;, "Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$8;"
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -64,15 +57,12 @@
 
     move-result v0
 
-    .line 527
-    .local v0, "currentAnimatedIntValue":I
     invoke-static {}, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;->access$100()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 528
     iget-object v1, p0, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$8;->this$0:Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;
 
     iget-object v1, v1, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;->mView:Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$SnackbarBaseLayout;
@@ -85,7 +75,6 @@
 
     goto :goto_0
 
-    .line 531
     :cond_0
     iget-object v1, p0, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$8;->this$0:Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;
 
@@ -95,10 +84,8 @@
 
     invoke-virtual {v1, v2}, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$SnackbarBaseLayout;->setTranslationY(F)V
 
-    .line 533
     :goto_0
     iput v0, p0, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$8;->mPreviousAnimatedIntValue:I
 
-    .line 534
     return-void
 .end method

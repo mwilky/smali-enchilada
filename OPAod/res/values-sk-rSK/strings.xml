@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">Zobraziť správu</string>
     <string name="oneplus_aod_mode_always_on">Vždy zapnuté</string>
     <string name="oneplus_aod_mode_lift_up">Nadvihnite displej</string>
-    <string name="oneplus_aod_mode_shake_up">Pohnite trocha telefónom na zobrazenie</string>
-    <string name="oneplus_aod_mode_single_tap">Zobrazte ťuknutím</string>
     <string name="oneplus_aod_settings">Ambient display</string>
-    <string name="oneplus_aod_settings_what_to_show">čo zobraziť</string>
-    <string name="oneplus_aod_settings_when_to_show">kedy zobraziť</string>
     <string name="oneplus_aod_title">Zobraziť hodiny</string>
     <string name="oneplus_display_time_end">Do</string>
     <string name="oneplus_display_time_from">Od</string>

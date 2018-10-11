@@ -30,7 +30,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 376
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,9 +37,7 @@
 
 .method synthetic constructor <init>(Lcom/android/settingslib/users/AppRestrictionsHelper$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/settingslib/users/AppRestrictionsHelper$1;
 
-    .line 376
     invoke-direct {p0}, Lcom/android/settingslib/users/AppRestrictionsHelper$AppLabelComparator;-><init>()V
 
     return-void
@@ -50,26 +47,19 @@
 # virtual methods
 .method public compare(Lcom/android/settingslib/users/AppRestrictionsHelper$SelectableAppInfo;Lcom/android/settingslib/users/AppRestrictionsHelper$SelectableAppInfo;)I
     .locals 4
-    .param p1, "lhs"    # Lcom/android/settingslib/users/AppRestrictionsHelper$SelectableAppInfo;
-    .param p2, "rhs"    # Lcom/android/settingslib/users/AppRestrictionsHelper$SelectableAppInfo;
 
-    .line 380
     iget-object v0, p1, Lcom/android/settingslib/users/AppRestrictionsHelper$SelectableAppInfo;->activityName:Ljava/lang/CharSequence;
 
     invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 381
-    .local v0, "lhsLabel":Ljava/lang/String;
     iget-object v1, p2, Lcom/android/settingslib/users/AppRestrictionsHelper$SelectableAppInfo;->activityName:Ljava/lang/CharSequence;
 
     invoke-interface {v1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 382
-    .local v1, "rhsLabel":Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v2
@@ -88,7 +78,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 376
     check-cast p1, Lcom/android/settingslib/users/AppRestrictionsHelper$SelectableAppInfo;
 
     check-cast p2, Lcom/android/settingslib/users/AppRestrictionsHelper$SelectableAppInfo;

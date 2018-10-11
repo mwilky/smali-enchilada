@@ -23,10 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/Spinner;Landroid/view/View;Lcom/oneplus/lib/widget/Spinner$DropdownPopup;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/Spinner;
-    .param p2, "src"    # Landroid/view/View;
 
-    .line 225
     iput-object p1, p0, Lcom/oneplus/lib/widget/Spinner$1;->this$0:Lcom/oneplus/lib/widget/Spinner;
 
     iput-object p3, p0, Lcom/oneplus/lib/widget/Spinner$1;->val$popup:Lcom/oneplus/lib/widget/Spinner$DropdownPopup;
@@ -41,7 +38,6 @@
 .method public getPopup()Lcom/oneplus/lib/menu/ShowableListMenu;
     .locals 1
 
-    .line 228
     iget-object v0, p0, Lcom/oneplus/lib/widget/Spinner$1;->val$popup:Lcom/oneplus/lib/widget/Spinner$DropdownPopup;
 
     return-object v0
@@ -50,7 +46,6 @@
 .method public onForwardingStarted()Z
     .locals 1
 
-    .line 233
     iget-object v0, p0, Lcom/oneplus/lib/widget/Spinner$1;->this$0:Lcom/oneplus/lib/widget/Spinner;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/Spinner;->access$000(Lcom/oneplus/lib/widget/Spinner;)Lcom/oneplus/lib/widget/Spinner$DropdownPopup;
@@ -63,7 +58,6 @@
 
     if-nez v0, :cond_0
 
-    .line 234
     iget-object v0, p0, Lcom/oneplus/lib/widget/Spinner$1;->this$0:Lcom/oneplus/lib/widget/Spinner;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/Spinner;->access$000(Lcom/oneplus/lib/widget/Spinner;)Lcom/oneplus/lib/widget/Spinner$DropdownPopup;
@@ -72,7 +66,6 @@
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/Spinner$DropdownPopup;->show()V
 
-    .line 236
     :cond_0
     const/4 v0, 0x1
 

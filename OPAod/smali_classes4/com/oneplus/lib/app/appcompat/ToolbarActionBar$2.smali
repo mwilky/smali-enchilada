@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/app/appcompat/ToolbarActionBar;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/app/appcompat/ToolbarActionBar;
 
-    .line 64
     iput-object p1, p0, Lcom/oneplus/lib/app/appcompat/ToolbarActionBar$2;->this$0:Lcom/oneplus/lib/app/appcompat/ToolbarActionBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onMenuItemClick(Landroid/view/MenuItem;)Z
     .locals 2
-    .param p1, "item"    # Landroid/view/MenuItem;
 
-    .line 67
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/ToolbarActionBar$2;->this$0:Lcom/oneplus/lib/app/appcompat/ToolbarActionBar;
 
     iget-object v0, v0, Lcom/oneplus/lib/app/appcompat/ToolbarActionBar;->mWindowCallback:Landroid/view/Window$Callback;

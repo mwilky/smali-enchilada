@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,18 +27,12 @@
 # virtual methods
 .method public onAppWithPermissionsCountsResult(II)V
     .locals 0
-    .param p1, "standardGrantedPermissionAppCount"    # I
-    .param p2, "standardUsedPermissionAppCount"    # I
 
-    .line 72
     return-void
 .end method
 
 .method public onPermissionSummaryResult(IIILjava/util/List;)V
     .locals 0
-    .param p1, "standardGrantedPermissionCount"    # I
-    .param p2, "requestedPermissionCount"    # I
-    .param p3, "additionalGrantedPermissionCount"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(III",
@@ -49,7 +42,5 @@
         }
     .end annotation
 
-    .line 78
-    .local p4, "grantedGroupLabels":Ljava/util/List;, "Ljava/util/List<Ljava/lang/CharSequence;>;"
     return-void
 .end method

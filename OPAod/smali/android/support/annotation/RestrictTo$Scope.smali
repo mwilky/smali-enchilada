@@ -43,7 +43,6 @@
 .method static constructor <clinit>()V
     .locals 7
 
-    .line 63
     new-instance v0, Landroid/support/annotation/RestrictTo$Scope;
 
     const-string v1, "LIBRARY"
@@ -54,7 +53,6 @@
 
     sput-object v0, Landroid/support/annotation/RestrictTo$Scope;->LIBRARY:Landroid/support/annotation/RestrictTo$Scope;
 
-    .line 69
     new-instance v0, Landroid/support/annotation/RestrictTo$Scope;
 
     const-string v1, "LIBRARY_GROUP"
@@ -65,7 +63,6 @@
 
     sput-object v0, Landroid/support/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroid/support/annotation/RestrictTo$Scope;
 
-    .line 77
     new-instance v0, Landroid/support/annotation/RestrictTo$Scope;
 
     const-string v1, "GROUP_ID"
@@ -76,7 +73,6 @@
 
     sput-object v0, Landroid/support/annotation/RestrictTo$Scope;->GROUP_ID:Landroid/support/annotation/RestrictTo$Scope;
 
-    .line 83
     new-instance v0, Landroid/support/annotation/RestrictTo$Scope;
 
     const-string v1, "TESTS"
@@ -87,7 +83,6 @@
 
     sput-object v0, Landroid/support/annotation/RestrictTo$Scope;->TESTS:Landroid/support/annotation/RestrictTo$Scope;
 
-    .line 91
     new-instance v0, Landroid/support/annotation/RestrictTo$Scope;
 
     const-string v1, "SUBCLASSES"
@@ -98,7 +93,6 @@
 
     sput-object v0, Landroid/support/annotation/RestrictTo$Scope;->SUBCLASSES:Landroid/support/annotation/RestrictTo$Scope;
 
-    .line 58
     const/4 v0, 0x5
 
     new-array v0, v0, [Landroid/support/annotation/RestrictTo$Scope;
@@ -136,7 +130,6 @@
         }
     .end annotation
 
-    .line 58
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -144,9 +137,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/support/annotation/RestrictTo$Scope;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 58
     const-class v0, Landroid/support/annotation/RestrictTo$Scope;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -161,7 +152,6 @@
 .method public static values()[Landroid/support/annotation/RestrictTo$Scope;
     .locals 1
 
-    .line 58
     sget-object v0, Landroid/support/annotation/RestrictTo$Scope;->$VALUES:[Landroid/support/annotation/RestrictTo$Scope;
 
     invoke-virtual {v0}, [Landroid/support/annotation/RestrictTo$Scope;->clone()Ljava/lang/Object;

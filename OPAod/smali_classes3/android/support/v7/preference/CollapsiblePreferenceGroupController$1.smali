@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/preference/CollapsiblePreferenceGroupController;Landroid/support/v7/preference/PreferenceGroup;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/preference/CollapsiblePreferenceGroupController;
 
-    .line 138
     iput-object p1, p0, Landroid/support/v7/preference/CollapsiblePreferenceGroupController$1;->this$0:Landroid/support/v7/preference/CollapsiblePreferenceGroupController;
 
     iput-object p2, p0, Landroid/support/v7/preference/CollapsiblePreferenceGroupController$1;->val$group:Landroid/support/v7/preference/PreferenceGroup;
@@ -42,16 +40,13 @@
 # virtual methods
 .method public onPreferenceClick(Landroid/support/v7/preference/Preference;)Z
     .locals 2
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 141
     iget-object v0, p0, Landroid/support/v7/preference/CollapsiblePreferenceGroupController$1;->val$group:Landroid/support/v7/preference/PreferenceGroup;
 
     const v1, 0x7fffffff
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/PreferenceGroup;->setInitialExpandedChildrenCount(I)V
 
-    .line 142
     iget-object v0, p0, Landroid/support/v7/preference/CollapsiblePreferenceGroupController$1;->this$0:Landroid/support/v7/preference/CollapsiblePreferenceGroupController;
 
     invoke-static {v0}, Landroid/support/v7/preference/CollapsiblePreferenceGroupController;->access$000(Landroid/support/v7/preference/CollapsiblePreferenceGroupController;)Landroid/support/v7/preference/PreferenceGroupAdapter;
@@ -60,7 +55,6 @@
 
     invoke-virtual {v0, p1}, Landroid/support/v7/preference/PreferenceGroupAdapter;->onPreferenceHierarchyChange(Landroid/support/v7/preference/Preference;)V
 
-    .line 143
     const/4 v0, 0x1
 
     return v0

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/design/widget/OPTextInputLayout;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/design/widget/OPTextInputLayout;
 
-    .line 747
     iput-object p1, p0, Lcom/oneplus/lib/design/widget/OPTextInputLayout$2;->this$0:Lcom/oneplus/lib/design/widget/OPTextInputLayout;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 750
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/OPTextInputLayout$2;->this$0:Lcom/oneplus/lib/design/widget/OPTextInputLayout;
 
     iget-object v0, v0, Lcom/oneplus/lib/design/widget/OPTextInputLayout;->mErrorView:Landroid/widget/TextView;
@@ -46,6 +42,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 751
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/PopupMenu;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/PopupMenu;
 
-    .line 103
     iput-object p1, p0, Lcom/oneplus/lib/widget/PopupMenu$2;->this$0:Lcom/oneplus/lib/widget/PopupMenu;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public onDismiss()V
     .locals 2
 
-    .line 106
     iget-object v0, p0, Lcom/oneplus/lib/widget/PopupMenu$2;->this$0:Lcom/oneplus/lib/widget/PopupMenu;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/PopupMenu;->access$100(Lcom/oneplus/lib/widget/PopupMenu;)Lcom/oneplus/lib/widget/PopupMenu$OnDismissListener;
@@ -48,7 +45,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 107
     iget-object v0, p0, Lcom/oneplus/lib/widget/PopupMenu$2;->this$0:Lcom/oneplus/lib/widget/PopupMenu;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/PopupMenu;->access$100(Lcom/oneplus/lib/widget/PopupMenu;)Lcom/oneplus/lib/widget/PopupMenu$OnDismissListener;
@@ -59,7 +55,6 @@
 
     invoke-interface {v0, v1}, Lcom/oneplus/lib/widget/PopupMenu$OnDismissListener;->onDismiss(Lcom/oneplus/lib/widget/PopupMenu;)V
 
-    .line 109
     :cond_0
     return-void
 .end method

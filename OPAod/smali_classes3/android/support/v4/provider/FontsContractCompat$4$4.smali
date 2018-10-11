@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/provider/FontsContractCompat$4;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/provider/FontsContractCompat$4;
 
-    .line 573
     iput-object p1, p0, Landroid/support/v4/provider/FontsContractCompat$4$4;->this$0:Landroid/support/v4/provider/FontsContractCompat$4;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 576
     iget-object v0, p0, Landroid/support/v4/provider/FontsContractCompat$4$4;->this$0:Landroid/support/v4/provider/FontsContractCompat$4;
 
     iget-object v0, v0, Landroid/support/v4/provider/FontsContractCompat$4;->val$callback:Landroid/support/v4/provider/FontsContractCompat$FontRequestCallback;
@@ -48,6 +45,5 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/provider/FontsContractCompat$FontRequestCallback;->onTypefaceRequestFailed(I)V
 
-    .line 578
     return-void
 .end method

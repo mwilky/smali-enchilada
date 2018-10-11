@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/AodClockPreviewActivity;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/AodClockPreviewActivity;
 
-    .line 84
     iput-object p1, p0, Lcom/oneplus/settings/AodClockPreviewActivity$1;->this$0:Lcom/oneplus/settings/AodClockPreviewActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,13 +37,11 @@
 .method public run()V
     .locals 2
 
-    .line 87
     iget-object v0, p0, Lcom/oneplus/settings/AodClockPreviewActivity$1;->this$0:Lcom/oneplus/settings/AodClockPreviewActivity;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/oneplus/settings/AodClockPreviewActivity;->access$000(Lcom/oneplus/settings/AodClockPreviewActivity;Z)V
 
-    .line 88
     return-void
 .end method

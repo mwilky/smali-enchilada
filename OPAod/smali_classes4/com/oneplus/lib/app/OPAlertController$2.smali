@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/app/OPAlertController;Landroid/view/View;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/app/OPAlertController;
 
-    .line 529
     iput-object p1, p0, Lcom/oneplus/lib/app/OPAlertController$2;->this$0:Lcom/oneplus/lib/app/OPAlertController;
 
     iput-object p2, p0, Lcom/oneplus/lib/app/OPAlertController$2;->val$parent:Landroid/view/View;
@@ -42,17 +40,13 @@
 # virtual methods
 .method public onApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "insets"    # Landroid/view/WindowInsets;
 
-    .line 532
     invoke-virtual {p2}, Landroid/view/WindowInsets;->isRound()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 534
     iget-object v0, p0, Lcom/oneplus/lib/app/OPAlertController$2;->this$0:Lcom/oneplus/lib/app/OPAlertController;
 
     invoke-static {v0}, Lcom/oneplus/lib/app/OPAlertController;->access$800(Lcom/oneplus/lib/app/OPAlertController;)Landroid/content/Context;
@@ -69,14 +63,10 @@
 
     move-result v0
 
-    .line 536
-    .local v0, "roundOffset":I
     iget-object v1, p0, Lcom/oneplus/lib/app/OPAlertController$2;->val$parent:Landroid/view/View;
 
     invoke-virtual {v1, v0, v0, v0, v0}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 538
-    .end local v0    # "roundOffset":I
     :cond_0
     invoke-virtual {p2}, Landroid/view/WindowInsets;->consumeSystemWindowInsets()Landroid/view/WindowInsets;
 

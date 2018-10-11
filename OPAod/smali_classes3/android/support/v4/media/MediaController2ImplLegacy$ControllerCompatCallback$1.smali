@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 946
     iput-object p1, p0, Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback$1;->this$1:Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback;
 
     invoke-direct {p0, p2}, Landroid/os/ResultReceiver;-><init>(Landroid/os/Handler;)V
@@ -36,10 +33,7 @@
 # virtual methods
 .method protected onReceiveResult(ILandroid/os/Bundle;)V
     .locals 2
-    .param p1, "resultCode"    # I
-    .param p2, "resultData"    # Landroid/os/Bundle;
 
-    .line 949
     iget-object v0, p0, Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback$1;->this$1:Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback;
 
     iget-object v0, v0, Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback;->this$0:Landroid/support/v4/media/MediaController2ImplLegacy;
@@ -54,16 +48,13 @@
 
     if-nez v0, :cond_0
 
-    .line 950
     return-void
 
-    .line 952
     :cond_0
     packed-switch p1, :pswitch_data_0
 
     goto :goto_0
 
-    .line 954
     :pswitch_0
     iget-object v0, p0, Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback$1;->this$1:Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback;
 
@@ -71,10 +62,8 @@
 
     invoke-virtual {v0, p2}, Landroid/support/v4/media/MediaController2ImplLegacy;->onConnectedNotLocked(Landroid/os/Bundle;)V
 
-    .line 955
     goto :goto_0
 
-    .line 957
     :pswitch_1
     iget-object v0, p0, Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback$1;->this$1:Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback;
 
@@ -90,14 +79,12 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 963
     iget-object v0, p0, Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback$1;->this$1:Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback;
 
     iget-object v0, v0, Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback;->this$0:Landroid/support/v4/media/MediaController2ImplLegacy;
 
     invoke-virtual {v0}, Landroid/support/v4/media/MediaController2ImplLegacy;->close()V
 
-    .line 966
     :goto_0
     return-void
 

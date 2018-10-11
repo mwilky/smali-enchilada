@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/preference/ListPreferenceDialogFragmentCompat;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/preference/ListPreferenceDialogFragmentCompat;
 
-    .line 83
     iput-object p1, p0, Landroid/support/v7/preference/ListPreferenceDialogFragmentCompat$1;->this$0:Landroid/support/v7/preference/ListPreferenceDialogFragmentCompat;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,24 +36,18 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 86
     iget-object v0, p0, Landroid/support/v7/preference/ListPreferenceDialogFragmentCompat$1;->this$0:Landroid/support/v7/preference/ListPreferenceDialogFragmentCompat;
 
     invoke-static {v0, p2}, Landroid/support/v7/preference/ListPreferenceDialogFragmentCompat;->access$002(Landroid/support/v7/preference/ListPreferenceDialogFragmentCompat;I)I
 
-    .line 92
     iget-object v0, p0, Landroid/support/v7/preference/ListPreferenceDialogFragmentCompat$1;->this$0:Landroid/support/v7/preference/ListPreferenceDialogFragmentCompat;
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, p1, v1}, Landroid/support/v7/preference/ListPreferenceDialogFragmentCompat;->onClick(Landroid/content/DialogInterface;I)V
 
-    .line 94
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 95
     return-void
 .end method

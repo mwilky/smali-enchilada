@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/subtitle/SubtitleTrack;Landroid/support/v4/media/subtitle/SubtitleTrack;J)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/subtitle/SubtitleTrack;
 
-    .line 337
     iput-object p1, p0, Landroid/support/v4/media/subtitle/SubtitleTrack$1;->this$0:Landroid/support/v4/media/subtitle/SubtitleTrack;
 
     iput-object p2, p0, Landroid/support/v4/media/subtitle/SubtitleTrack$1;->val$track:Landroid/support/v4/media/subtitle/SubtitleTrack;
@@ -47,12 +45,10 @@
 .method public run()V
     .locals 5
 
-    .line 343
     iget-object v0, p0, Landroid/support/v4/media/subtitle/SubtitleTrack$1;->val$track:Landroid/support/v4/media/subtitle/SubtitleTrack;
 
     monitor-enter v0
 
-    .line 344
     :try_start_0
     iget-object v1, p0, Landroid/support/v4/media/subtitle/SubtitleTrack$1;->this$0:Landroid/support/v4/media/subtitle/SubtitleTrack;
 
@@ -60,7 +56,6 @@
 
     invoke-static {v1, v2}, Landroid/support/v4/media/subtitle/SubtitleTrack;->access$102(Landroid/support/v4/media/subtitle/SubtitleTrack;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
-    .line 345
     iget-object v1, p0, Landroid/support/v4/media/subtitle/SubtitleTrack$1;->this$0:Landroid/support/v4/media/subtitle/SubtitleTrack;
 
     const/4 v2, 0x1
@@ -69,7 +64,6 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/support/v4/media/subtitle/SubtitleTrack;->updateActiveCues(ZJ)V
 
-    .line 346
     iget-object v1, p0, Landroid/support/v4/media/subtitle/SubtitleTrack$1;->this$0:Landroid/support/v4/media/subtitle/SubtitleTrack;
 
     iget-object v2, p0, Landroid/support/v4/media/subtitle/SubtitleTrack$1;->this$0:Landroid/support/v4/media/subtitle/SubtitleTrack;
@@ -80,13 +74,10 @@
 
     invoke-virtual {v1, v2}, Landroid/support/v4/media/subtitle/SubtitleTrack;->updateView(Ljava/util/ArrayList;)V
 
-    .line 347
     monitor-exit v0
 
-    .line 348
     return-void
 
-    .line 347
     :catchall_0
     move-exception v1
 

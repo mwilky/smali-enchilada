@@ -44,10 +44,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 517
-    .local p0, "this":Landroid/support/v4/content/ModernAsyncTask$WorkerRunnable;, "Landroid/support/v4/content/ModernAsyncTask$WorkerRunnable<TParams;TResult;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 518
     return-void
 .end method

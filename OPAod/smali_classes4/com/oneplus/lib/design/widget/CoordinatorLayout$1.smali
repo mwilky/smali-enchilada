@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/design/widget/CoordinatorLayout;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/design/widget/CoordinatorLayout;
 
-    .line 2969
     iput-object p1, p0, Lcom/oneplus/lib/design/widget/CoordinatorLayout$1;->this$0:Lcom/oneplus/lib/design/widget/CoordinatorLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onApplyWindowInsets(Landroid/view/View;Landroid/support/v4/view/WindowInsetsCompat;)Landroid/support/v4/view/WindowInsetsCompat;
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "insets"    # Landroid/support/v4/view/WindowInsetsCompat;
 
-    .line 2973
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/CoordinatorLayout$1;->this$0:Lcom/oneplus/lib/design/widget/CoordinatorLayout;
 
     invoke-virtual {v0, p2}, Lcom/oneplus/lib/design/widget/CoordinatorLayout;->setWindowInsets(Landroid/support/v4/view/WindowInsetsCompat;)Landroid/support/v4/view/WindowInsetsCompat;

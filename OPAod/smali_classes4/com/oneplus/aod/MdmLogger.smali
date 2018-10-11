@@ -34,15 +34,12 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 15
     const/4 v0, 0x0
 
     sput-object v0, Lcom/oneplus/aod/MdmLogger;->sInstance:Lcom/oneplus/aod/MdmLogger;
 
-    .line 16
     sput-object v0, Lcom/oneplus/aod/MdmLogger;->mAppTracker:Lnet/oneplus/odm/insight/tracker/AppTracker;
 
-    .line 21
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/oneplus/aod/MdmLogger;->sTouchGear:Z
@@ -52,24 +49,19 @@
 
 .method private constructor <init>(Landroid/content/Context;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 24
     new-instance v0, Lnet/oneplus/odm/insight/tracker/AppTracker;
 
     invoke-direct {v0, p1}, Lnet/oneplus/odm/insight/tracker/AppTracker;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lcom/oneplus/aod/MdmLogger;->mAppTracker:Lnet/oneplus/odm/insight/tracker/AppTracker;
 
-    .line 25
     sget-object v0, Lcom/oneplus/aod/MdmLogger;->sHandlerThread:Landroid/os/HandlerThread;
 
     if-nez v0, :cond_0
 
-    .line 26
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "MdmLogger"
@@ -80,12 +72,10 @@
 
     sput-object v0, Lcom/oneplus/aod/MdmLogger;->sHandlerThread:Landroid/os/HandlerThread;
 
-    .line 27
     sget-object v0, Lcom/oneplus/aod/MdmLogger;->sHandlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 29
     new-instance v0, Landroid/os/Handler;
 
     sget-object v1, Lcom/oneplus/aod/MdmLogger;->sHandlerThread:Landroid/os/HandlerThread;
@@ -98,7 +88,6 @@
 
     sput-object v0, Lcom/oneplus/aod/MdmLogger;->sHandler:Landroid/os/Handler;
 
-    .line 31
     :cond_0
     return-void
 .end method
@@ -106,7 +95,6 @@
 .method static synthetic access$000()Lnet/oneplus/odm/insight/tracker/AppTracker;
     .locals 1
 
-    .line 11
     sget-object v0, Lcom/oneplus/aod/MdmLogger;->mAppTracker:Lnet/oneplus/odm/insight/tracker/AppTracker;
 
     return-object v0
@@ -114,21 +102,17 @@
 
 .method public static init(Landroid/content/Context;)V
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 34
     sget-object v0, Lcom/oneplus/aod/MdmLogger;->sInstance:Lcom/oneplus/aod/MdmLogger;
 
     if-nez v0, :cond_0
 
-    .line 35
     new-instance v0, Lcom/oneplus/aod/MdmLogger;
 
     invoke-direct {v0, p0}, Lcom/oneplus/aod/MdmLogger;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lcom/oneplus/aod/MdmLogger;->sInstance:Lcom/oneplus/aod/MdmLogger;
 
-    .line 38
     :cond_0
     const-string v0, "MdmLogger"
 
@@ -136,17 +120,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 39
     return-void
 .end method
 
 .method public static log(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "label"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/String;
 
-    .line 46
     sget-object v0, Lcom/oneplus/aod/MdmLogger;->sHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/oneplus/aod/MdmLogger$1;
@@ -155,6 +134,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 53
     return-void
 .end method

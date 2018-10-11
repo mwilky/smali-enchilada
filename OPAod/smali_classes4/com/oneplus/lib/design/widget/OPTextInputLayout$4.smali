@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/design/widget/OPTextInputLayout;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/design/widget/OPTextInputLayout;
 
-    .line 1108
     iput-object p1, p0, Lcom/oneplus/lib/design/widget/OPTextInputLayout$4;->this$0:Lcom/oneplus/lib/design/widget/OPTextInputLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,10 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 1111
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/OPTextInputLayout$4;->this$0:Lcom/oneplus/lib/design/widget/OPTextInputLayout;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/design/widget/OPTextInputLayout;->passwordVisibilityToggleRequested()V
 
-    .line 1112
     return-void
 .end method

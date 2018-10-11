@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">Näytön viesti</string>
     <string name="oneplus_aod_mode_always_on">Aina päällä</string>
     <string name="oneplus_aod_mode_lift_up">Nosta näyttö</string>
-    <string name="oneplus_aod_mode_shake_up">Siirrä puhelinta hieman näyttääksesi</string>
-    <string name="oneplus_aod_mode_single_tap">Napauta näyttääksesi</string>
     <string name="oneplus_aod_settings">Tyyni näyttö</string>
-    <string name="oneplus_aod_settings_what_to_show">mitä näytetään</string>
-    <string name="oneplus_aod_settings_when_to_show">koska näytetään</string>
     <string name="oneplus_aod_title">Näytä kello</string>
     <string name="oneplus_display_time_end">Mihin</string>
     <string name="oneplus_display_time_from">Mistä</string>

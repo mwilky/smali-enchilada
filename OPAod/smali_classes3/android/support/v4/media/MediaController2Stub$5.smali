@@ -36,9 +36,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaController2Stub;Landroid/support/v4/media/MediaBrowser2;Ljava/lang/String;IILjava/util/List;Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaController2Stub;
 
-    .line 440
     iput-object p1, p0, Landroid/support/v4/media/MediaController2Stub$5;->this$0:Landroid/support/v4/media/MediaController2Stub;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaController2Stub$5;->val$browser:Landroid/support/v4/media/MediaBrowser2;
@@ -63,7 +61,6 @@
 .method public run()V
     .locals 8
 
-    .line 443
     iget-object v0, p0, Landroid/support/v4/media/MediaController2Stub$5;->val$browser:Landroid/support/v4/media/MediaBrowser2;
 
     invoke-virtual {v0}, Landroid/support/v4/media/MediaBrowser2;->getCallback()Landroid/support/v4/media/MediaBrowser2$BrowserCallback;
@@ -80,16 +77,13 @@
 
     iget-object v0, p0, Landroid/support/v4/media/MediaController2Stub$5;->val$itemBundleList:Ljava/util/List;
 
-    .line 444
     invoke-static {v0}, Landroid/support/v4/media/MediaUtils2;->convertBundleListToMediaItem2List(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v6
 
     iget-object v7, p0, Landroid/support/v4/media/MediaController2Stub$5;->val$extras:Landroid/os/Bundle;
 
-    .line 443
     invoke-virtual/range {v1 .. v7}, Landroid/support/v4/media/MediaBrowser2$BrowserCallback;->onGetSearchResultDone(Landroid/support/v4/media/MediaBrowser2;Ljava/lang/String;IILjava/util/List;Landroid/os/Bundle;)V
 
-    .line 445
     return-void
 .end method

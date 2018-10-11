@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
-    .line 444
     iput-object p1, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9$3;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onFitSystemWindows(Landroid/graphics/Rect;)V
     .locals 2
-    .param p1, "insets"    # Landroid/graphics/Rect;
 
-    .line 447
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9$3;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
     iget v1, p1, Landroid/graphics/Rect;->top:I
@@ -51,6 +47,5 @@
 
     iput v0, p1, Landroid/graphics/Rect;->top:I
 
-    .line 448
     return-void
 .end method

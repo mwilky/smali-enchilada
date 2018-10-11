@@ -31,13 +31,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/app/OPAlertController$AlertParams;Landroid/content/Context;II[Ljava/lang/CharSequence;Lcom/oneplus/lib/app/OPAlertController$RecycleListView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/app/OPAlertController$AlertParams;
-    .param p2, "x0"    # Landroid/content/Context;
-    .param p3, "x1"    # I
-    .param p4, "x2"    # I
-    .param p5, "x3"    # [Ljava/lang/CharSequence;
 
-    .line 1146
     iput-object p1, p0, Lcom/oneplus/lib/app/OPAlertController$AlertParams$1;->this$0:Lcom/oneplus/lib/app/OPAlertController$AlertParams;
 
     iput-object p6, p0, Lcom/oneplus/lib/app/OPAlertController$AlertParams$1;->val$listView:Lcom/oneplus/lib/app/OPAlertController$RecycleListView;
@@ -51,43 +45,31 @@
 # virtual methods
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 4
-    .param p1, "position"    # I
-    .param p2, "convertView"    # Landroid/view/View;
-    .param p3, "parent"    # Landroid/view/ViewGroup;
 
-    .line 1149
     invoke-super {p0, p1, p2, p3}, Landroid/widget/ArrayAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
 
-    .line 1150
-    .local v0, "view":Landroid/view/View;
     iget-object v1, p0, Lcom/oneplus/lib/app/OPAlertController$AlertParams$1;->this$0:Lcom/oneplus/lib/app/OPAlertController$AlertParams;
 
     iget-object v1, v1, Lcom/oneplus/lib/app/OPAlertController$AlertParams;->mCheckedItems:[Z
 
     if-eqz v1, :cond_0
 
-    .line 1151
     iget-object v1, p0, Lcom/oneplus/lib/app/OPAlertController$AlertParams$1;->this$0:Lcom/oneplus/lib/app/OPAlertController$AlertParams;
 
     iget-object v1, v1, Lcom/oneplus/lib/app/OPAlertController$AlertParams;->mCheckedItems:[Z
 
     aget-boolean v1, v1, p1
 
-    .line 1152
-    .local v1, "isItemChecked":Z
     if-eqz v1, :cond_0
 
-    .line 1153
     iget-object v2, p0, Lcom/oneplus/lib/app/OPAlertController$AlertParams$1;->val$listView:Lcom/oneplus/lib/app/OPAlertController$RecycleListView;
 
     const/4 v3, 0x1
 
     invoke-virtual {v2, p1, v3}, Lcom/oneplus/lib/app/OPAlertController$RecycleListView;->setItemChecked(IZ)V
 
-    .line 1156
-    .end local v1    # "isItemChecked":Z
     :cond_0
     return-object v0
 .end method

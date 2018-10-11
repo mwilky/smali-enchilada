@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator;Ljava/util/ArrayList;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator;
 
-    .line 123
     iput-object p1, p0, Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator$1;->this$0:Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator;
 
     iput-object p2, p0, Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator$1;->val$moves:Ljava/util/ArrayList;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 8
 
-    .line 126
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator$1;->val$moves:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -63,8 +60,6 @@
 
     check-cast v1, Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator$MoveInfo;
 
-    .line 127
-    .local v1, "moveInfo":Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator$MoveInfo;
     iget-object v2, p0, Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator$1;->this$0:Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator;
 
     iget-object v3, v1, Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator$MoveInfo;->holder:Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewHolder;
@@ -79,17 +74,13 @@
 
     invoke-static/range {v2 .. v7}, Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator;->access$000(Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator;Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewHolder;IIII)V
 
-    .line 129
-    .end local v1    # "moveInfo":Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator$MoveInfo;
     goto :goto_0
 
-    .line 130
     :cond_0
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator$1;->val$moves:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 131
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator$1;->this$0:Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator;->access$100(Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator;)Ljava/util/ArrayList;
@@ -100,6 +91,5 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 132
     return-void
 .end method

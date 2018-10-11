@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">ಪ್ರದರ್ಶನ ಸಂದೇಶ</string>
     <string name="oneplus_aod_mode_always_on">ಯಾವಾಗಲೂ ಆನ್</string>
     <string name="oneplus_aod_mode_lift_up">ಎತ್ತರಿಸಿದ ಪ್ರದರ್ಶಕ</string>
-    <string name="oneplus_aod_mode_shake_up">ತೋರಿಸಲು ನಿಮ್ಮ ಫೋನನ್ನು ಸ್ವಲ್ಪ ಸರಿಸಿ</string>
-    <string name="oneplus_aod_mode_single_tap">ತೋರಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ</string>
     <string name="oneplus_aod_settings">ಅನುಕೂಲಕರ ಪ್ರದರ್ಶಕ</string>
-    <string name="oneplus_aod_settings_what_to_show">ಏನನ್ನು ತೋರಿಸಬೇಕು</string>
-    <string name="oneplus_aod_settings_when_to_show">ಯಾವಾಗ ತೋರಿಸಬೇಕು</string>
     <string name="oneplus_aod_title">ಗಡಿಯಾರವನ್ನು ತೋರಿಸು</string>
     <string name="oneplus_display_time_end">ಗೆ</string>
     <string name="oneplus_display_time_from">ಇಂದ</string>

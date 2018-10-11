@@ -31,8 +31,7 @@
 # direct methods
 .method public constructor <init>(I[Landroid/support/v4/provider/FontsContractCompat$FontInfo;)V
     .locals 0
-    .param p1, "statusCode"    # I
-    .param p2, "fonts"    # [Landroid/support/v4/provider/FontsContractCompat$FontInfo;
+    .param p2    # [Landroid/support/v4/provider/FontsContractCompat$FontInfo;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
@@ -42,16 +41,12 @@
         }
     .end annotation
 
-    .line 428
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 429
     iput p1, p0, Landroid/support/v4/provider/FontsContractCompat$FontFamilyResult;->mStatusCode:I
 
-    .line 430
     iput-object p2, p0, Landroid/support/v4/provider/FontsContractCompat$FontFamilyResult;->mFonts:[Landroid/support/v4/provider/FontsContractCompat$FontInfo;
 
-    .line 431
     return-void
 .end method
 
@@ -60,7 +55,6 @@
 .method public getFonts()[Landroid/support/v4/provider/FontsContractCompat$FontInfo;
     .locals 1
 
-    .line 438
     iget-object v0, p0, Landroid/support/v4/provider/FontsContractCompat$FontFamilyResult;->mFonts:[Landroid/support/v4/provider/FontsContractCompat$FontInfo;
 
     return-object v0
@@ -69,7 +63,6 @@
 .method public getStatusCode()I
     .locals 1
 
-    .line 434
     iget v0, p0, Landroid/support/v4/provider/FontsContractCompat$FontFamilyResult;->mStatusCode:I
 
     return v0

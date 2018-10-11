@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaSessionLegacyStub;J)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaSessionLegacyStub;
 
-    .line 182
     iput-object p1, p0, Landroid/support/v4/media/MediaSessionLegacyStub$5;->this$0:Landroid/support/v4/media/MediaSessionLegacyStub;
 
     iput-wide p2, p0, Landroid/support/v4/media/MediaSessionLegacyStub$5;->val$pos:J
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 185
     iget-object v0, p0, Landroid/support/v4/media/MediaSessionLegacyStub$5;->this$0:Landroid/support/v4/media/MediaSessionLegacyStub;
 
     iget-object v0, v0, Landroid/support/v4/media/MediaSessionLegacyStub;->mSession:Landroid/support/v4/media/MediaSession2$SupportLibraryImpl;
@@ -54,10 +51,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 186
     return-void
 
-    .line 188
     :cond_0
     iget-object v0, p0, Landroid/support/v4/media/MediaSessionLegacyStub$5;->this$0:Landroid/support/v4/media/MediaSessionLegacyStub;
 
@@ -67,6 +62,5 @@
 
     invoke-interface {v0, v1, v2}, Landroid/support/v4/media/MediaSession2$SupportLibraryImpl;->seekTo(J)V
 
-    .line 189
     return-void
 .end method

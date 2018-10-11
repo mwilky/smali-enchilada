@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/app/DatePickerDialog;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/app/DatePickerDialog;
 
-    .line 131
     iput-object p1, p0, Lcom/oneplus/lib/app/DatePickerDialog$1;->this$0:Lcom/oneplus/lib/app/DatePickerDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 5
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 134
     iget-object v0, p0, Lcom/oneplus/lib/app/DatePickerDialog$1;->this$0:Lcom/oneplus/lib/app/DatePickerDialog;
 
     invoke-static {v0}, Lcom/oneplus/lib/app/DatePickerDialog;->access$000(Lcom/oneplus/lib/app/DatePickerDialog;)Lcom/oneplus/lib/app/DatePickerDialog$OnDateSetListener;
@@ -49,7 +45,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 137
     iget-object v0, p0, Lcom/oneplus/lib/app/DatePickerDialog$1;->this$0:Lcom/oneplus/lib/app/DatePickerDialog;
 
     invoke-static {v0}, Lcom/oneplus/lib/app/DatePickerDialog;->access$100(Lcom/oneplus/lib/app/DatePickerDialog;)Lcom/oneplus/lib/widget/DatePicker;
@@ -66,7 +61,6 @@
 
     iget-object v0, p0, Lcom/oneplus/lib/app/DatePickerDialog$1;->this$0:Lcom/oneplus/lib/app/DatePickerDialog;
 
-    .line 138
     invoke-static {v0}, Lcom/oneplus/lib/app/DatePickerDialog;->access$100(Lcom/oneplus/lib/app/DatePickerDialog;)Lcom/oneplus/lib/widget/DatePicker;
 
     move-result-object v0
@@ -77,7 +71,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 139
     iget-object v0, p0, Lcom/oneplus/lib/app/DatePickerDialog$1;->this$0:Lcom/oneplus/lib/app/DatePickerDialog;
 
     invoke-static {v0}, Lcom/oneplus/lib/app/DatePickerDialog;->access$100(Lcom/oneplus/lib/app/DatePickerDialog;)Lcom/oneplus/lib/widget/DatePicker;
@@ -88,7 +81,6 @@
 
     goto :goto_0
 
-    .line 141
     :cond_0
     iget-object v0, p0, Lcom/oneplus/lib/app/DatePickerDialog$1;->this$0:Lcom/oneplus/lib/app/DatePickerDialog;
 
@@ -98,7 +90,6 @@
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/DatePicker;->clearFocus()V
 
-    .line 142
     iget-object v0, p0, Lcom/oneplus/lib/app/DatePickerDialog$1;->this$0:Lcom/oneplus/lib/app/DatePickerDialog;
 
     invoke-static {v0}, Lcom/oneplus/lib/app/DatePickerDialog;->access$000(Lcom/oneplus/lib/app/DatePickerDialog;)Lcom/oneplus/lib/app/DatePickerDialog$OnDateSetListener;
@@ -123,7 +114,6 @@
 
     iget-object v3, p0, Lcom/oneplus/lib/app/DatePickerDialog$1;->this$0:Lcom/oneplus/lib/app/DatePickerDialog;
 
-    .line 143
     invoke-static {v3}, Lcom/oneplus/lib/app/DatePickerDialog;->access$100(Lcom/oneplus/lib/app/DatePickerDialog;)Lcom/oneplus/lib/widget/DatePicker;
 
     move-result-object v3
@@ -142,15 +132,12 @@
 
     move-result v4
 
-    .line 142
     invoke-interface {v0, v1, v2, v3, v4}, Lcom/oneplus/lib/app/DatePickerDialog$OnDateSetListener;->onDateSet(Lcom/oneplus/lib/widget/DatePicker;III)V
 
-    .line 144
     iget-object v0, p0, Lcom/oneplus/lib/app/DatePickerDialog$1;->this$0:Lcom/oneplus/lib/app/DatePickerDialog;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/app/DatePickerDialog;->dismiss()V
 
-    .line 147
     :cond_1
     :goto_0
     return-void

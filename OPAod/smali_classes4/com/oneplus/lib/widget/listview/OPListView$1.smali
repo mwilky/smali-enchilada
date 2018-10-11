@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/listview/OPListView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/listview/OPListView;
 
-    .line 320
     iput-object p1, p0, Lcom/oneplus/lib/widget/listview/OPListView$1;->this$0:Lcom/oneplus/lib/widget/listview/OPListView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,10 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 323
     iget-object v0, p0, Lcom/oneplus/lib/widget/listview/OPListView$1;->this$0:Lcom/oneplus/lib/widget/listview/OPListView;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/listview/OPListView;->invalidate()V
 
-    .line 324
     return-void
 .end method

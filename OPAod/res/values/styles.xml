@@ -3135,7 +3135,7 @@
         <item name="android:paddingStart">0.0dip</item>
         <item name="android:paddingEnd">0.0dip</item>
     </style>
-    <style name="PreferenceFragmentStyle.SettingsBase" parent="@android:style/PreferenceFragmentList.Material">
+    <style name="PreferenceFragmentStyle.SettingsBase" parent="@android:style/PreferenceFragment.Material">
         <item name="allowDividerAfterLastItem">false</item>
     </style>
     <style name="PreferenceHeaderList" />

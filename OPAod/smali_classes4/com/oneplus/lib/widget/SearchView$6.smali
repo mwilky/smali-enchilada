@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/SearchView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/SearchView;
 
-    .line 391
     iput-object p1, p0, Lcom/oneplus/lib/widget/SearchView$6;->this$0:Lcom/oneplus/lib/widget/SearchView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +37,9 @@
 .method public onGlobalLayout()V
     .locals 1
 
-    .line 394
     iget-object v0, p0, Lcom/oneplus/lib/widget/SearchView$6;->this$0:Lcom/oneplus/lib/widget/SearchView;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/SearchView;->adjustDropDownSizeAndPosition()V
 
-    .line 395
     return-void
 .end method

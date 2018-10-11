@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settingslib/notification/ZenDurationDialog;Lcom/android/settingslib/notification/ZenDurationDialog$ConditionTag;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settingslib/notification/ZenDurationDialog;
 
-    .line 187
     iput-object p1, p0, Lcom/android/settingslib/notification/ZenDurationDialog$2;->this$0:Lcom/android/settingslib/notification/ZenDurationDialog;
 
     iput-object p2, p0, Lcom/android/settingslib/notification/ZenDurationDialog$2;->val$tag:Lcom/android/settingslib/notification/ZenDurationDialog$ConditionTag;
@@ -42,13 +40,9 @@
 # virtual methods
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .locals 2
-    .param p1, "buttonView"    # Landroid/widget/CompoundButton;
-    .param p2, "isChecked"    # Z
 
-    .line 190
     if-eqz p2, :cond_0
 
-    .line 191
     iget-object v0, p0, Lcom/android/settingslib/notification/ZenDurationDialog$2;->val$tag:Lcom/android/settingslib/notification/ZenDurationDialog$ConditionTag;
 
     iget-object v0, v0, Lcom/android/settingslib/notification/ZenDurationDialog$ConditionTag;->rb:Landroid/widget/RadioButton;
@@ -57,7 +51,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 193
     :cond_0
     return-void
 .end method

@@ -25,16 +25,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewHolder;IIFFFFILcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewHolder;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;
-    .param p2, "viewHolder"    # Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewHolder;
-    .param p3, "animationType"    # I
-    .param p4, "actionState"    # I
-    .param p5, "startDx"    # F
-    .param p6, "startDy"    # F
-    .param p7, "targetX"    # F
-    .param p8, "targetY"    # F
 
-    .line 589
     iput-object p1, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$3;->this$0:Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;
 
     iput p9, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$3;->val$swipeDir:I
@@ -50,26 +41,20 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 592
     invoke-super {p0, p1}, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$RecoverAnimation;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 593
     iget-boolean v0, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$3;->mOverridden:Z
 
     if-eqz v0, :cond_0
 
-    .line 594
     return-void
 
-    .line 596
     :cond_0
     iget v0, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$3;->val$swipeDir:I
 
     if-gtz v0, :cond_1
 
-    .line 598
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$3;->this$0:Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;
 
     iget-object v0, v0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;->mCallback:Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$Callback;
@@ -86,7 +71,6 @@
 
     goto :goto_0
 
-    .line 602
     :cond_1
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$3;->this$0:Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;
 
@@ -98,24 +82,20 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 603
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$3;->mIsPendingCleanup:Z
 
-    .line 604
     iget v0, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$3;->val$swipeDir:I
 
     if-lez v0, :cond_2
 
-    .line 607
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$3;->this$0:Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;
 
     iget v1, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$3;->val$swipeDir:I
 
     invoke-static {v0, p0, v1}, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;->access$1500(Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$RecoverAnimation;I)V
 
-    .line 611
     :cond_2
     :goto_0
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$3;->this$0:Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;
@@ -130,7 +110,6 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 612
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$3;->this$0:Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;
 
     iget-object v1, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$3;->val$prevSelected:Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewHolder;
@@ -139,7 +118,6 @@
 
     invoke-static {v0, v1}, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;->access$1700(Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;Landroid/view/View;)V
 
-    .line 614
     :cond_3
     return-void
 .end method

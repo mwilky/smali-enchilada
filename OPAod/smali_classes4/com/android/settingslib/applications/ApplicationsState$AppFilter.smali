@@ -23,11 +23,8 @@
 
 .method public init(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 1506
     invoke-interface {p0}, Lcom/android/settingslib/applications/ApplicationsState$AppFilter;->init()V
 
-    .line 1507
     return-void
 .end method

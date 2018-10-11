@@ -7,17 +7,14 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 11
     return-void
 .end method
 
 .method public static isAtLeastM()Z
     .locals 2
 
-    .line 47
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x17
@@ -38,7 +35,6 @@
 .method public static isAtLeastN()Z
     .locals 2
 
-    .line 19
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
@@ -59,7 +55,6 @@
 .method public static isAtLeastNMR1()Z
     .locals 2
 
-    .line 28
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x19
@@ -80,7 +75,6 @@
 .method public static isAtLeastO()Z
     .locals 2
 
-    .line 37
     const-string v0, "REL"
 
     sget-object v1, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
@@ -95,7 +89,6 @@
 
     sget-object v1, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
 
-    .line 38
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -120,7 +113,6 @@
     :cond_1
     const/4 v0, 0x0
 
-    .line 37
     :goto_0
     return v0
 .end method

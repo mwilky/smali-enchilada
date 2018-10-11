@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback;Ljava/util/List;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback;
 
-    .line 1143
     iput-object p1, p0, Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback$12;->this$1:Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback$12;->val$layout:Ljava/util/List;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 1146
     iget-object v0, p0, Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback$12;->this$1:Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback;
 
     iget-object v0, v0, Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback;->this$0:Landroid/support/v4/media/MediaController2ImplLegacy;
@@ -64,6 +61,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v4/media/MediaController2$ControllerCallback;->onCustomLayoutChanged(Landroid/support/v4/media/MediaController2;Ljava/util/List;)V
 
-    .line 1147
     return-void
 .end method

@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">Hiển thị tin nhắn</string>
     <string name="oneplus_aod_mode_always_on">Luôn bật</string>
     <string name="oneplus_aod_mode_lift_up">Nâng để bật màn hiển thị</string>
-    <string name="oneplus_aod_mode_shake_up">Di chuyển điện thoại của bạn một chút để hiển thị</string>
-    <string name="oneplus_aod_mode_single_tap">Nhấn để hiển thị</string>
     <string name="oneplus_aod_settings">Hiển thị môi trường</string>
-    <string name="oneplus_aod_settings_what_to_show">hiển thị những gì</string>
-    <string name="oneplus_aod_settings_when_to_show">khi nào thì hiển thị</string>
     <string name="oneplus_aod_title">Hiển thị đồng hồ</string>
     <string name="oneplus_display_time_end">Đến</string>
     <string name="oneplus_display_time_from">Từ</string>

@@ -27,9 +27,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/widget/DefaultItemAnimator;Landroid/support/v7/widget/RecyclerView$ViewHolder;Landroid/view/ViewPropertyAnimator;Landroid/view/View;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/widget/DefaultItemAnimator;
 
-    .line 203
     iput-object p1, p0, Landroid/support/v7/widget/DefaultItemAnimator$4;->this$0:Landroid/support/v7/widget/DefaultItemAnimator;
 
     iput-object p2, p0, Landroid/support/v7/widget/DefaultItemAnimator$4;->val$holder:Landroid/support/v7/widget/RecyclerView$ViewHolder;
@@ -47,30 +45,25 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 211
     iget-object v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$4;->val$animation:Landroid/view/ViewPropertyAnimator;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 212
     iget-object v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$4;->val$view:Landroid/view/View;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 213
     iget-object v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$4;->this$0:Landroid/support/v7/widget/DefaultItemAnimator;
 
     iget-object v1, p0, Landroid/support/v7/widget/DefaultItemAnimator$4;->val$holder:Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/DefaultItemAnimator;->dispatchRemoveFinished(Landroid/support/v7/widget/RecyclerView$ViewHolder;)V
 
-    .line 214
     iget-object v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$4;->this$0:Landroid/support/v7/widget/DefaultItemAnimator;
 
     iget-object v0, v0, Landroid/support/v7/widget/DefaultItemAnimator;->mRemoveAnimations:Ljava/util/ArrayList;
@@ -79,26 +72,21 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 215
     iget-object v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$4;->this$0:Landroid/support/v7/widget/DefaultItemAnimator;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/DefaultItemAnimator;->dispatchFinishedWhenDone()V
 
-    .line 216
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 206
     iget-object v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$4;->this$0:Landroid/support/v7/widget/DefaultItemAnimator;
 
     iget-object v1, p0, Landroid/support/v7/widget/DefaultItemAnimator$4;->val$holder:Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/DefaultItemAnimator;->dispatchRemoveStarting(Landroid/support/v7/widget/RecyclerView$ViewHolder;)V
 
-    .line 207
     return-void
 .end method

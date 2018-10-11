@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/aod/battery/BatteryControllerImpl;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/aod/battery/BatteryControllerImpl;
 
-    .line 118
     iput-object p1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl$1;->this$0:Lcom/oneplus/aod/battery/BatteryControllerImpl;
 
     invoke-direct {p0}, Lcom/oneplus/aod/AodUpdateMonitorCallback;-><init>()V
@@ -36,10 +34,8 @@
 .method public onStartDozing()V
     .locals 3
 
-    .line 121
     invoke-super {p0}, Lcom/oneplus/aod/AodUpdateMonitorCallback;->onStartDozing()V
 
-    .line 123
     iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl$1;->this$0:Lcom/oneplus/aod/battery/BatteryControllerImpl;
 
     invoke-static {v0}, Lcom/oneplus/aod/battery/BatteryControllerImpl;->access$000(Lcom/oneplus/aod/battery/BatteryControllerImpl;)Lcom/oneplus/aod/clock/ClockViewCtrl;
@@ -56,7 +52,6 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 124
     iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl$1;->this$0:Lcom/oneplus/aod/battery/BatteryControllerImpl;
 
     invoke-static {v0}, Lcom/oneplus/aod/battery/BatteryControllerImpl;->access$200(Lcom/oneplus/aod/battery/BatteryControllerImpl;)Landroid/widget/LinearLayout;
@@ -91,7 +86,6 @@
 
     goto :goto_1
 
-    .line 126
     :cond_1
     iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl$1;->this$0:Lcom/oneplus/aod/battery/BatteryControllerImpl;
 
@@ -101,7 +95,6 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setHorizontalGravity(I)V
 
-    .line 129
     :goto_1
     iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl$1;->this$0:Lcom/oneplus/aod/battery/BatteryControllerImpl;
 
@@ -119,7 +112,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 130
     iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl$1;->this$0:Lcom/oneplus/aod/battery/BatteryControllerImpl;
 
     invoke-static {v0}, Lcom/oneplus/aod/battery/BatteryControllerImpl;->access$200(Lcom/oneplus/aod/battery/BatteryControllerImpl;)Landroid/widget/LinearLayout;
@@ -130,7 +122,6 @@
 
     goto :goto_2
 
-    .line 132
     :cond_2
     iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl$1;->this$0:Lcom/oneplus/aod/battery/BatteryControllerImpl;
 
@@ -142,23 +133,19 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutDirection(I)V
 
-    .line 135
     :goto_2
     iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl$1;->this$0:Lcom/oneplus/aod/battery/BatteryControllerImpl;
 
     invoke-static {v0}, Lcom/oneplus/aod/battery/BatteryControllerImpl;->access$300(Lcom/oneplus/aod/battery/BatteryControllerImpl;)V
 
-    .line 136
     return-void
 .end method
 
 .method public onStopDozing()V
     .locals 2
 
-    .line 140
     invoke-super {p0}, Lcom/oneplus/aod/AodUpdateMonitorCallback;->onStopDozing()V
 
-    .line 141
     iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl$1;->this$0:Lcom/oneplus/aod/battery/BatteryControllerImpl;
 
     invoke-static {v0}, Lcom/oneplus/aod/battery/BatteryControllerImpl;->access$100(Lcom/oneplus/aod/battery/BatteryControllerImpl;)Landroid/content/Context;
@@ -173,7 +160,6 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 142
     iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl$1;->this$0:Lcom/oneplus/aod/battery/BatteryControllerImpl;
 
     invoke-static {v0}, Lcom/oneplus/aod/battery/BatteryControllerImpl;->access$100(Lcom/oneplus/aod/battery/BatteryControllerImpl;)Landroid/content/Context;
@@ -192,6 +178,5 @@
 
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 143
     return-void
 .end method

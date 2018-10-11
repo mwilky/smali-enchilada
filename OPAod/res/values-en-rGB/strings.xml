@@ -282,11 +282,7 @@ Selection"</string>
     <string name="oneplus_aod_display_text_title">Display message</string>
     <string name="oneplus_aod_mode_always_on">Always on</string>
     <string name="oneplus_aod_mode_lift_up">Lift up display</string>
-    <string name="oneplus_aod_mode_shake_up">Move your phone slightly to show</string>
-    <string name="oneplus_aod_mode_single_tap">Tap to show</string>
     <string name="oneplus_aod_settings">Ambient display</string>
-    <string name="oneplus_aod_settings_what_to_show">what to show</string>
-    <string name="oneplus_aod_settings_when_to_show">when to show</string>
     <string name="oneplus_aod_title">Show clock</string>
     <string name="oneplus_display_time_end">To</string>
     <string name="oneplus_display_time_from">From</string>

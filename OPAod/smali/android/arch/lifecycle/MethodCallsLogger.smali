@@ -28,10 +28,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -45,15 +43,12 @@
 # virtual methods
 .method public approveCall(Ljava/lang/String;I)Z
     .locals 7
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "type"    # I
     .annotation build Landroid/support/annotation/RestrictTo;
         value = {
             .enum Landroid/support/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroid/support/annotation/RestrictTo$Scope;
         }
     .end annotation
 
-    .line 36
     iget-object v0, p0, Landroid/arch/lifecycle/MethodCallsLogger;->mCalledMethods:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -62,8 +57,6 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 37
-    .local v0, "nullableMask":Ljava/lang/Integer;
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
@@ -77,8 +70,6 @@
     :cond_0
     move v2, v1
 
-    .line 38
-    .local v2, "mask":I
     :goto_0
     and-int v3, v2, p2
 
@@ -93,8 +84,6 @@
     :cond_1
     move v3, v1
 
-    .line 39
-    .local v3, "wasCalled":Z
     :goto_1
     iget-object v5, p0, Landroid/arch/lifecycle/MethodCallsLogger;->mCalledMethods:Ljava/util/Map;
 
@@ -106,7 +95,6 @@
 
     invoke-interface {v5, p1, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 40
     if-nez v3, :cond_2
 
     move v1, v4

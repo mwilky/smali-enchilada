@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">Paparkan mesej</string>
     <string name="oneplus_aod_mode_always_on">Sentiasa hidup</string>
     <string name="oneplus_aod_mode_lift_up">Angkat paparan</string>
-    <string name="oneplus_aod_mode_shake_up">Gerakan telefon anda sedikit untuk memaparkan</string>
-    <string name="oneplus_aod_mode_single_tap">Ketik untuk paparkan</string>
     <string name="oneplus_aod_settings">Paparan sekitar</string>
-    <string name="oneplus_aod_settings_what_to_show">apa yang akan dipaparkan</string>
-    <string name="oneplus_aod_settings_when_to_show">bila untuk paparkan</string>
     <string name="oneplus_aod_title">Paparkan jam</string>
     <string name="oneplus_display_time_end">Hingga</string>
     <string name="oneplus_display_time_from">Dari</string>

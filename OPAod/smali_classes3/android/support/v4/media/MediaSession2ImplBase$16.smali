@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaSession2ImplBase;JJF)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaSession2ImplBase;
 
-    .line 1026
     iput-object p1, p0, Landroid/support/v4/media/MediaSession2ImplBase$16;->this$0:Landroid/support/v4/media/MediaSession2ImplBase;
 
     iput-wide p2, p0, Landroid/support/v4/media/MediaSession2ImplBase$16;->val$currentTimeMs:J
@@ -50,14 +48,12 @@
 # virtual methods
 .method public run(Landroid/support/v4/media/MediaSession2$ControllerCb;)V
     .locals 6
-    .param p1, "callback"    # Landroid/support/v4/media/MediaSession2$ControllerCb;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 1029
     iget-wide v1, p0, Landroid/support/v4/media/MediaSession2ImplBase$16;->val$currentTimeMs:J
 
     iget-wide v3, p0, Landroid/support/v4/media/MediaSession2ImplBase$16;->val$positionMs:J
@@ -68,6 +64,5 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/support/v4/media/MediaSession2$ControllerCb;->onPlaybackSpeedChanged(JJF)V
 
-    .line 1030
     return-void
 .end method

@@ -31,14 +31,9 @@
 # direct methods
 .method public constructor <init>(Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/view/View;)V
     .locals 1
-    .param p1, "targetBounds"    # Landroid/graphics/Rect;
-    .param p2, "actualBounds"    # Landroid/graphics/Rect;
-    .param p3, "delegateView"    # Landroid/view/View;
 
-    .line 1779
     invoke-direct {p0, p1, p3}, Landroid/view/TouchDelegate;-><init>(Landroid/graphics/Rect;Landroid/view/View;)V
 
-    .line 1780
     invoke-virtual {p3}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -53,34 +48,28 @@
 
     iput v0, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mSlop:I
 
-    .line 1781
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mTargetBounds:Landroid/graphics/Rect;
 
-    .line 1782
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mSlopBounds:Landroid/graphics/Rect;
 
-    .line 1783
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mActualBounds:Landroid/graphics/Rect;
 
-    .line 1784
     invoke-virtual {p0, p1, p2}, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->setBounds(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
 
-    .line 1785
     iput-object p3, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mDelegateView:Landroid/view/View;
 
-    .line 1786
     return-void
 .end method
 
@@ -88,37 +77,25 @@
 # virtual methods
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 7
-    .param p1, "event"    # Landroid/view/MotionEvent;
 
-    .line 1797
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
     float-to-int v0, v0
 
-    .line 1798
-    .local v0, "x":I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v1
 
     float-to-int v1, v1
 
-    .line 1799
-    .local v1, "y":I
     const/4 v2, 0x0
 
-    .line 1800
-    .local v2, "sendToDelegate":Z
     const/4 v3, 0x1
 
-    .line 1801
-    .local v3, "hit":Z
     const/4 v4, 0x0
 
-    .line 1803
-    .local v4, "handled":Z
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v5
@@ -127,25 +104,20 @@
 
     goto :goto_0
 
-    .line 1820
     :pswitch_0
     iget-boolean v2, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mDelegateTargeted:Z
 
-    .line 1821
     const/4 v5, 0x0
 
     iput-boolean v5, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mDelegateTargeted:Z
 
     goto :goto_0
 
-    .line 1812
     :pswitch_1
     iget-boolean v2, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mDelegateTargeted:Z
 
-    .line 1813
     if-eqz v2, :cond_0
 
-    .line 1814
     iget-object v5, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mSlopBounds:Landroid/graphics/Rect;
 
     invoke-virtual {v5, v0, v1}, Landroid/graphics/Rect;->contains(II)Z
@@ -154,12 +126,10 @@
 
     if-nez v5, :cond_0
 
-    .line 1815
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 1805
     :pswitch_2
     iget-object v5, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mTargetBounds:Landroid/graphics/Rect;
 
@@ -169,20 +139,16 @@
 
     if-eqz v5, :cond_0
 
-    .line 1806
     const/4 v5, 0x1
 
     iput-boolean v5, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mDelegateTargeted:Z
 
-    .line 1807
     const/4 v2, 0x1
 
-    .line 1824
     :cond_0
     :goto_0
     if-eqz v2, :cond_2
 
-    .line 1825
     if-eqz v3, :cond_1
 
     iget-object v5, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mActualBounds:Landroid/graphics/Rect;
@@ -193,7 +159,6 @@
 
     if-nez v5, :cond_1
 
-    .line 1829
     iget-object v5, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mDelegateView:Landroid/view/View;
 
     invoke-virtual {v5}, Landroid/view/View;->getWidth()I
@@ -206,7 +171,6 @@
 
     iget-object v6, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mDelegateView:Landroid/view/View;
 
-    .line 1830
     invoke-virtual {v6}, Landroid/view/View;->getHeight()I
 
     move-result v6
@@ -215,12 +179,10 @@
 
     int-to-float v6, v6
 
-    .line 1829
     invoke-virtual {p1, v5, v6}, Landroid/view/MotionEvent;->setLocation(FF)V
 
     goto :goto_1
 
-    .line 1833
     :cond_1
     iget-object v5, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mActualBounds:Landroid/graphics/Rect;
 
@@ -240,7 +202,6 @@
 
     invoke-virtual {p1, v5, v6}, Landroid/view/MotionEvent;->setLocation(FF)V
 
-    .line 1836
     :goto_1
     iget-object v5, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mDelegateView:Landroid/view/View;
 
@@ -248,7 +209,6 @@
 
     move-result v4
 
-    .line 1838
     :cond_2
     return v4
 
@@ -265,20 +225,15 @@
 
 .method public setBounds(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
     .locals 3
-    .param p1, "desiredBounds"    # Landroid/graphics/Rect;
-    .param p2, "actualBounds"    # Landroid/graphics/Rect;
 
-    .line 1789
     iget-object v0, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mTargetBounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 1790
     iget-object v0, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mSlopBounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 1791
     iget-object v0, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mSlopBounds:Landroid/graphics/Rect;
 
     iget v1, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mSlop:I
@@ -291,11 +246,9 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Rect;->inset(II)V
 
-    .line 1792
     iget-object v0, p0, Lcom/oneplus/lib/widget/SearchView$UpdatableTouchDelegate;->mActualBounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p2}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 1793
     return-void
 .end method

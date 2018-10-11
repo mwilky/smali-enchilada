@@ -275,7 +275,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 602
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -283,12 +282,9 @@
 
 .method public static findPointerIndex(Landroid/view/MotionEvent;I)I
     .locals 1
-    .param p0, "event"    # Landroid/view/MotionEvent;
-    .param p1, "pointerId"    # I
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 488
     invoke-virtual {p0, p1}, Landroid/view/MotionEvent;->findPointerIndex(I)I
 
     move-result v0
@@ -298,11 +294,9 @@
 
 .method public static getActionIndex(Landroid/view/MotionEvent;)I
     .locals 1
-    .param p0, "event"    # Landroid/view/MotionEvent;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 477
     invoke-virtual {p0}, Landroid/view/MotionEvent;->getActionIndex()I
 
     move-result v0
@@ -312,11 +306,9 @@
 
 .method public static getActionMasked(Landroid/view/MotionEvent;)I
     .locals 1
-    .param p0, "event"    # Landroid/view/MotionEvent;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 465
     invoke-virtual {p0}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
@@ -326,12 +318,9 @@
 
 .method public static getAxisValue(Landroid/view/MotionEvent;I)F
     .locals 1
-    .param p0, "event"    # Landroid/view/MotionEvent;
-    .param p1, "axis"    # I
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 570
     invoke-virtual {p0, p1}, Landroid/view/MotionEvent;->getAxisValue(I)F
 
     move-result v0
@@ -341,13 +330,9 @@
 
 .method public static getAxisValue(Landroid/view/MotionEvent;II)F
     .locals 1
-    .param p0, "event"    # Landroid/view/MotionEvent;
-    .param p1, "axis"    # I
-    .param p2, "pointerIndex"    # I
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 590
     invoke-virtual {p0, p1, p2}, Landroid/view/MotionEvent;->getAxisValue(II)F
 
     move-result v0
@@ -357,11 +342,9 @@
 
 .method public static getButtonState(Landroid/view/MotionEvent;)I
     .locals 1
-    .param p0, "event"    # Landroid/view/MotionEvent;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 599
     invoke-virtual {p0}, Landroid/view/MotionEvent;->getButtonState()I
 
     move-result v0
@@ -371,11 +354,9 @@
 
 .method public static getPointerCount(Landroid/view/MotionEvent;)I
     .locals 1
-    .param p0, "event"    # Landroid/view/MotionEvent;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 532
     invoke-virtual {p0}, Landroid/view/MotionEvent;->getPointerCount()I
 
     move-result v0
@@ -385,12 +366,9 @@
 
 .method public static getPointerId(Landroid/view/MotionEvent;I)I
     .locals 1
-    .param p0, "event"    # Landroid/view/MotionEvent;
-    .param p1, "pointerIndex"    # I
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 499
     invoke-virtual {p0, p1}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v0
@@ -400,11 +378,9 @@
 
 .method public static getSource(Landroid/view/MotionEvent;)I
     .locals 1
-    .param p0, "event"    # Landroid/view/MotionEvent;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 544
     invoke-virtual {p0}, Landroid/view/MotionEvent;->getSource()I
 
     move-result v0
@@ -414,12 +390,9 @@
 
 .method public static getX(Landroid/view/MotionEvent;I)F
     .locals 1
-    .param p0, "event"    # Landroid/view/MotionEvent;
-    .param p1, "pointerIndex"    # I
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 510
     invoke-virtual {p0, p1}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v0
@@ -429,12 +402,9 @@
 
 .method public static getY(Landroid/view/MotionEvent;I)F
     .locals 1
-    .param p0, "event"    # Landroid/view/MotionEvent;
-    .param p1, "pointerIndex"    # I
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 521
     invoke-virtual {p0, p1}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v0
@@ -444,10 +414,7 @@
 
 .method public static isFromSource(Landroid/view/MotionEvent;I)Z
     .locals 1
-    .param p0, "event"    # Landroid/view/MotionEvent;
-    .param p1, "source"    # I
 
-    .line 553
     invoke-virtual {p0}, Landroid/view/MotionEvent;->getSource()I
 
     move-result v0

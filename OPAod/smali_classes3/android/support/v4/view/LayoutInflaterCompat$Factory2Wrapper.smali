@@ -24,15 +24,11 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/view/LayoutInflaterFactory;)V
     .locals 0
-    .param p1, "delegateFactory"    # Landroid/support/v4/view/LayoutInflaterFactory;
 
-    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
     iput-object p1, p0, Landroid/support/v4/view/LayoutInflaterCompat$Factory2Wrapper;->mDelegateFactory:Landroid/support/v4/view/LayoutInflaterFactory;
 
-    .line 45
     return-void
 .end method
 
@@ -40,12 +36,7 @@
 # virtual methods
 .method public onCreateView(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
     .locals 1
-    .param p1, "parent"    # Landroid/view/View;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "context"    # Landroid/content/Context;
-    .param p4, "attributeSet"    # Landroid/util/AttributeSet;
 
-    .line 55
     iget-object v0, p0, Landroid/support/v4/view/LayoutInflaterCompat$Factory2Wrapper;->mDelegateFactory:Landroid/support/v4/view/LayoutInflaterFactory;
 
     invoke-interface {v0, p1, p2, p3, p4}, Landroid/support/v4/view/LayoutInflaterFactory;->onCreateView(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
@@ -57,11 +48,7 @@
 
 .method public onCreateView(Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
     .locals 2
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 49
     iget-object v0, p0, Landroid/support/v4/view/LayoutInflaterCompat$Factory2Wrapper;->mDelegateFactory:Landroid/support/v4/view/LayoutInflaterFactory;
 
     const/4 v1, 0x0
@@ -76,7 +63,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 60
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

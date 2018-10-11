@@ -25,7 +25,6 @@
 .method private constructor <init>(Lcom/oneplus/lib/widget/OPProgressBar;)V
     .locals 0
 
-    .line 1240
     iput-object p1, p0, Lcom/oneplus/lib/widget/OPProgressBar$RefreshProgressRunnable;->this$0:Lcom/oneplus/lib/widget/OPProgressBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/oneplus/lib/widget/OPProgressBar;Lcom/oneplus/lib/widget/OPProgressBar$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/oneplus/lib/widget/OPProgressBar;
-    .param p2, "x1"    # Lcom/oneplus/lib/widget/OPProgressBar$1;
 
-    .line 1240
     invoke-direct {p0, p1}, Lcom/oneplus/lib/widget/OPProgressBar$RefreshProgressRunnable;-><init>(Lcom/oneplus/lib/widget/OPProgressBar;)V
 
     return-void
@@ -49,12 +45,10 @@
 .method public run()V
     .locals 10
 
-    .line 1242
     iget-object v0, p0, Lcom/oneplus/lib/widget/OPProgressBar$RefreshProgressRunnable;->this$0:Lcom/oneplus/lib/widget/OPProgressBar;
 
     monitor-enter v0
 
-    .line 1243
     :try_start_0
     iget-object v1, p0, Lcom/oneplus/lib/widget/OPProgressBar$RefreshProgressRunnable;->this$0:Lcom/oneplus/lib/widget/OPProgressBar;
 
@@ -66,17 +60,13 @@
 
     move-result v1
 
-    .line 1244
-    .local v1, "count":I
     const/4 v2, 0x0
 
     move v3, v2
 
-    .local v3, "i":I
     :goto_0
     if-ge v3, v1, :cond_0
 
-    .line 1245
     iget-object v4, p0, Lcom/oneplus/lib/widget/OPProgressBar$RefreshProgressRunnable;->this$0:Lcom/oneplus/lib/widget/OPProgressBar;
 
     invoke-static {v4}, Lcom/oneplus/lib/widget/OPProgressBar;->access$100(Lcom/oneplus/lib/widget/OPProgressBar;)Ljava/util/ArrayList;
@@ -89,8 +79,6 @@
 
     check-cast v4, Lcom/oneplus/lib/widget/OPProgressBar$RefreshData;
 
-    .line 1246
-    .local v4, "rd":Lcom/oneplus/lib/widget/OPProgressBar$RefreshData;
     iget-object v5, p0, Lcom/oneplus/lib/widget/OPProgressBar$RefreshProgressRunnable;->this$0:Lcom/oneplus/lib/widget/OPProgressBar;
 
     iget v6, v4, Lcom/oneplus/lib/widget/OPProgressBar$RefreshData;->id:I
@@ -103,17 +91,12 @@
 
     invoke-static {v5, v6, v7, v8, v9}, Lcom/oneplus/lib/widget/OPProgressBar;->access$200(Lcom/oneplus/lib/widget/OPProgressBar;IIZZ)V
 
-    .line 1247
     invoke-virtual {v4}, Lcom/oneplus/lib/widget/OPProgressBar$RefreshData;->recycle()V
 
-    .line 1244
-    .end local v4    # "rd":Lcom/oneplus/lib/widget/OPProgressBar$RefreshData;
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 1249
-    .end local v3    # "i":I
     :cond_0
     iget-object v3, p0, Lcom/oneplus/lib/widget/OPProgressBar$RefreshProgressRunnable;->this$0:Lcom/oneplus/lib/widget/OPProgressBar;
 
@@ -123,19 +106,14 @@
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    .line 1250
     iget-object v3, p0, Lcom/oneplus/lib/widget/OPProgressBar$RefreshProgressRunnable;->this$0:Lcom/oneplus/lib/widget/OPProgressBar;
 
     invoke-static {v3, v2}, Lcom/oneplus/lib/widget/OPProgressBar;->access$302(Lcom/oneplus/lib/widget/OPProgressBar;Z)Z
 
-    .line 1251
-    .end local v1    # "count":I
     monitor-exit v0
 
-    .line 1252
     return-void
 
-    .line 1251
     :catchall_0
     move-exception v1
 

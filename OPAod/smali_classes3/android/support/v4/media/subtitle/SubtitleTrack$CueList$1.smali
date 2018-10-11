@@ -39,9 +39,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/subtitle/SubtitleTrack$CueList;JJ)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/subtitle/SubtitleTrack$CueList;
 
-    .line 447
     iput-object p1, p0, Landroid/support/v4/media/subtitle/SubtitleTrack$CueList$1;->this$0:Landroid/support/v4/media/subtitle/SubtitleTrack$CueList;
 
     iput-wide p2, p0, Landroid/support/v4/media/subtitle/SubtitleTrack$CueList$1;->val$lastTimeMs:J
@@ -68,7 +66,6 @@
         }
     .end annotation
 
-    .line 450
     iget-object v0, p0, Landroid/support/v4/media/subtitle/SubtitleTrack$CueList$1;->this$0:Landroid/support/v4/media/subtitle/SubtitleTrack$CueList;
 
     iget-boolean v0, v0, Landroid/support/v4/media/subtitle/SubtitleTrack$CueList;->DEBUG:Z
@@ -107,7 +104,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 452
     :cond_0
     :try_start_0
     new-instance v0, Landroid/support/v4/media/subtitle/SubtitleTrack$CueList$EntryIterator;
@@ -116,7 +112,6 @@
 
     iget-object v2, p0, Landroid/support/v4/media/subtitle/SubtitleTrack$CueList$1;->this$0:Landroid/support/v4/media/subtitle/SubtitleTrack$CueList;
 
-    .line 453
     invoke-static {v2}, Landroid/support/v4/media/subtitle/SubtitleTrack$CueList;->access$300(Landroid/support/v4/media/subtitle/SubtitleTrack$CueList;)Ljava/util/SortedMap;
 
     move-result-object v2
@@ -149,12 +144,9 @@
 
     return-object v0
 
-    .line 454
     :catch_0
     move-exception v0
 
-    .line 455
-    .local v0, "e":Ljava/lang/IllegalArgumentException;
     new-instance v1, Landroid/support/v4/media/subtitle/SubtitleTrack$CueList$EntryIterator;
 
     iget-object v2, p0, Landroid/support/v4/media/subtitle/SubtitleTrack$CueList$1;->this$0:Landroid/support/v4/media/subtitle/SubtitleTrack$CueList;

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/TextInputTimePickerView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/TextInputTimePickerView;
 
-    .line 194
     iput-object p1, p0, Lcom/oneplus/lib/widget/TextInputTimePickerView$5;->this$0:Lcom/oneplus/lib/widget/TextInputTimePickerView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,15 +36,11 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 5
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 198
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
 
-    .line 199
-    .local v0, "id":I
     sget v1, Lcom/oneplus/commonctrl/R$id;->am_label2:I
 
     const/4 v2, 0x0
@@ -57,12 +51,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 200
     iget-object v1, p0, Lcom/oneplus/lib/widget/TextInputTimePickerView$5;->this$0:Lcom/oneplus/lib/widget/TextInputTimePickerView;
 
     invoke-static {v1, v4}, Lcom/oneplus/lib/widget/TextInputTimePickerView;->access$700(Lcom/oneplus/lib/widget/TextInputTimePickerView;Z)V
 
-    .line 201
     iget-object v1, p0, Lcom/oneplus/lib/widget/TextInputTimePickerView$5;->this$0:Lcom/oneplus/lib/widget/TextInputTimePickerView;
 
     invoke-static {v1}, Lcom/oneplus/lib/widget/TextInputTimePickerView;->access$800(Lcom/oneplus/lib/widget/TextInputTimePickerView;)Lcom/oneplus/lib/widget/TextInputTimePickerView$OnValueTypedListener;
@@ -73,18 +65,15 @@
 
     goto :goto_0
 
-    .line 202
     :cond_0
     sget v1, Lcom/oneplus/commonctrl/R$id;->pm_label2:I
 
     if-ne v0, v1, :cond_1
 
-    .line 203
     iget-object v1, p0, Lcom/oneplus/lib/widget/TextInputTimePickerView$5;->this$0:Lcom/oneplus/lib/widget/TextInputTimePickerView;
 
     invoke-static {v1, v2}, Lcom/oneplus/lib/widget/TextInputTimePickerView;->access$700(Lcom/oneplus/lib/widget/TextInputTimePickerView;Z)V
 
-    .line 204
     iget-object v1, p0, Lcom/oneplus/lib/widget/TextInputTimePickerView$5;->this$0:Lcom/oneplus/lib/widget/TextInputTimePickerView;
 
     invoke-static {v1}, Lcom/oneplus/lib/widget/TextInputTimePickerView;->access$800(Lcom/oneplus/lib/widget/TextInputTimePickerView;)Lcom/oneplus/lib/widget/TextInputTimePickerView$OnValueTypedListener;
@@ -93,7 +82,6 @@
 
     invoke-interface {v1, v3, v4}, Lcom/oneplus/lib/widget/TextInputTimePickerView$OnValueTypedListener;->onValueChanged(II)V
 
-    .line 206
     :cond_1
     :goto_0
     return-void

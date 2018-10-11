@@ -2129,7 +2129,6 @@
 .method static constructor <clinit>()V
     .locals 14
 
-    .line 12689
     const/16 v0, 0x21
 
     new-array v0, v0, [I
@@ -2138,7 +2137,6 @@
 
     sput-object v0, Lcom/oneplus/aod/R$styleable;->ActionBar:[I
 
-    .line 13191
     const/4 v0, 0x1
 
     new-array v1, v0, [I
@@ -2151,7 +2149,6 @@
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->ActionBarLayout:[I
 
-    .line 13234
     new-array v1, v0, [I
 
     const v4, 0x101013f
@@ -2160,12 +2157,10 @@
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->ActionMenuItemView:[I
 
-    .line 13250
     new-array v1, v3, [I
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->ActionMenuView:[I
 
-    .line 13275
     const/4 v1, 0x7
 
     new-array v4, v1, [I
@@ -2174,7 +2169,6 @@
 
     sput-object v4, Lcom/oneplus/aod/R$styleable;->ActionMode:[I
 
-    .line 13388
     const/4 v4, 0x2
 
     new-array v5, v4, [I
@@ -2183,7 +2177,6 @@
 
     sput-object v5, Lcom/oneplus/aod/R$styleable;->ActivityChooserView:[I
 
-    .line 13444
     const/16 v5, 0x8
 
     new-array v6, v5, [I
@@ -2192,7 +2185,6 @@
 
     sput-object v6, Lcom/oneplus/aod/R$styleable;->AlertDialog:[I
 
-    .line 13554
     new-array v6, v0, [I
 
     const v7, 0x7f0300b6
@@ -2201,7 +2193,6 @@
 
     sput-object v6, Lcom/oneplus/aod/R$styleable;->AnimatedImageView:[I
 
-    .line 13584
     const/4 v6, 0x4
 
     new-array v7, v6, [I
@@ -2210,21 +2201,18 @@
 
     sput-object v7, Lcom/oneplus/aod/R$styleable;->AppCompatImageView:[I
 
-    .line 13672
     new-array v7, v6, [I
 
     fill-array-data v7, :array_5
 
     sput-object v7, Lcom/oneplus/aod/R$styleable;->AppCompatSeekBar:[I
 
-    .line 13762
     new-array v7, v1, [I
 
     fill-array-data v7, :array_6
 
     sput-object v7, Lcom/oneplus/aod/R$styleable;->AppCompatTextHelper:[I
 
-    .line 13901
     const/16 v7, 0xb
 
     new-array v7, v7, [I
@@ -2233,7 +2221,6 @@
 
     sput-object v7, Lcom/oneplus/aod/R$styleable;->AppCompatTextView:[I
 
-    .line 14337
     const/16 v7, 0x7a
 
     new-array v7, v7, [I
@@ -2242,14 +2229,12 @@
 
     sput-object v7, Lcom/oneplus/aod/R$styleable;->AppCompatTheme:[I
 
-    .line 16049
     new-array v7, v4, [I
 
     fill-array-data v7, :array_9
 
     sput-object v7, Lcom/oneplus/aod/R$styleable;->BackgroundStyle:[I
 
-    .line 16088
     new-array v7, v0, [I
 
     const v8, 0x7f0300b3
@@ -2258,7 +2243,6 @@
 
     sput-object v7, Lcom/oneplus/aod/R$styleable;->BatteryMeterView:[I
 
-    .line 16114
     new-array v7, v0, [I
 
     const v8, 0x7f030036
@@ -2267,7 +2251,6 @@
 
     sput-object v7, Lcom/oneplus/aod/R$styleable;->ButtonBarLayout:[I
 
-    .line 16162
     const/16 v7, 0xc
 
     new-array v7, v7, [I
@@ -2276,7 +2259,6 @@
 
     sput-object v7, Lcom/oneplus/aod/R$styleable;->CardView:[I
 
-    .line 16348
     const/4 v7, 0x6
 
     new-array v8, v7, [I
@@ -2285,7 +2267,6 @@
 
     sput-object v8, Lcom/oneplus/aod/R$styleable;->CheckBoxPreference:[I
 
-    .line 16435
     const/4 v8, 0x3
 
     new-array v9, v8, [I
@@ -2294,28 +2275,24 @@
 
     sput-object v9, Lcom/oneplus/aod/R$styleable;->ColorStateListItem:[I
 
-    .line 16484
     new-array v9, v8, [I
 
     fill-array-data v9, :array_d
 
     sput-object v9, Lcom/oneplus/aod/R$styleable;->CompoundButton:[I
 
-    .line 16552
     new-array v9, v4, [I
 
     fill-array-data v9, :array_e
 
     sput-object v9, Lcom/oneplus/aod/R$styleable;->CoordinatorLayout:[I
 
-    .line 16614
     new-array v9, v1, [I
 
     fill-array-data v9, :array_f
 
     sput-object v9, Lcom/oneplus/aod/R$styleable;->CoordinatorLayout_Layout:[I
 
-    .line 16824
     const/16 v9, 0x16
 
     new-array v9, v9, [I
@@ -2324,7 +2301,6 @@
 
     sput-object v9, Lcom/oneplus/aod/R$styleable;->DatePicker:[I
 
-    .line 17163
     const/16 v9, 0xd
 
     new-array v10, v9, [I
@@ -2333,28 +2309,24 @@
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->DialogPreference:[I
 
-    .line 17341
     new-array v5, v5, [I
 
     fill-array-data v5, :array_12
 
     sput-object v5, Lcom/oneplus/aod/R$styleable;->DrawerArrowToggle:[I
 
-    .line 17467
     new-array v5, v8, [I
 
     fill-array-data v5, :array_13
 
     sput-object v5, Lcom/oneplus/aod/R$styleable;->EpicenterTranslateClipReveal:[I
 
-    .line 17527
     new-array v5, v7, [I
 
     fill-array-data v5, :array_14
 
     sput-object v5, Lcom/oneplus/aod/R$styleable;->FontFamily:[I
 
-    .line 17663
     const/16 v5, 0xa
 
     new-array v10, v5, [I
@@ -2363,14 +2335,12 @@
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->FontFamilyFont:[I
 
-    .line 17812
     new-array v10, v4, [I
 
     fill-array-data v10, :array_16
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->KeyguardSecurityViewFlipper_Layout:[I
 
-    .line 17869
     const/16 v10, 0x9
 
     new-array v11, v10, [I
@@ -2379,35 +2349,30 @@
 
     sput-object v11, Lcom/oneplus/aod/R$styleable;->LinearLayoutCompat:[I
 
-    .line 18039
     new-array v11, v6, [I
 
     fill-array-data v11, :array_18
 
     sput-object v11, Lcom/oneplus/aod/R$styleable;->LinearLayoutCompat_Layout:[I
 
-    .line 18139
     new-array v11, v4, [I
 
     fill-array-data v11, :array_19
 
     sput-object v11, Lcom/oneplus/aod/R$styleable;->ListPopupWindow:[I
 
-    .line 18188
     new-array v11, v6, [I
 
     fill-array-data v11, :array_1a
 
     sput-object v11, Lcom/oneplus/aod/R$styleable;->ListPreference:[I
 
-    .line 18265
     new-array v11, v7, [I
 
     fill-array-data v11, :array_1b
 
     sput-object v11, Lcom/oneplus/aod/R$styleable;->MenuGroup:[I
 
-    .line 18412
     const/16 v11, 0x17
 
     new-array v12, v11, [I
@@ -2416,35 +2381,30 @@
 
     sput-object v12, Lcom/oneplus/aod/R$styleable;->MenuItem:[I
 
-    .line 18791
     new-array v12, v5, [I
 
     fill-array-data v12, :array_1d
 
     sput-object v12, Lcom/oneplus/aod/R$styleable;->MenuView:[I
 
-    .line 18945
     new-array v12, v6, [I
 
     fill-array-data v12, :array_1e
 
     sput-object v12, Lcom/oneplus/aod/R$styleable;->MultiSelectListPreference:[I
 
-    .line 19036
     new-array v12, v9, [I
 
     fill-array-data v12, :array_1f
 
     sput-object v12, Lcom/oneplus/aod/R$styleable;->NumberPicker:[I
 
-    .line 19224
     new-array v12, v0, [I
 
     aput v2, v12, v3
 
     sput-object v12, Lcom/oneplus/aod/R$styleable;->OPActionBarLayout:[I
 
-    .line 19275
     const/4 v2, 0x5
 
     new-array v12, v2, [I
@@ -2453,14 +2413,12 @@
 
     sput-object v12, Lcom/oneplus/aod/R$styleable;->OPAlertDialog:[I
 
-    .line 19366
     new-array v12, v10, [I
 
     fill-array-data v12, :array_21
 
     sput-object v12, Lcom/oneplus/aod/R$styleable;->OPAutoCompleteTextView:[I
 
-    .line 19564
     new-array v12, v0, [I
 
     const v13, 0x7f03014c
@@ -2469,63 +2427,54 @@
 
     sput-object v12, Lcom/oneplus/aod/R$styleable;->OPButtonBarLayout:[I
 
-    .line 19602
     new-array v12, v1, [I
 
     fill-array-data v12, :array_22
 
     sput-object v12, Lcom/oneplus/aod/R$styleable;->OPCalendarView:[I
 
-    .line 19703
     new-array v12, v8, [I
 
     fill-array-data v12, :array_23
 
     sput-object v12, Lcom/oneplus/aod/R$styleable;->OPColorStateListItem:[I
 
-    .line 19754
     new-array v12, v2, [I
 
     fill-array-data v12, :array_24
 
     sput-object v12, Lcom/oneplus/aod/R$styleable;->OPCompoundbutton:[I
 
-    .line 19842
     new-array v12, v6, [I
 
     fill-array-data v12, :array_25
 
     sput-object v12, Lcom/oneplus/aod/R$styleable;->OPEditText:[I
 
-    .line 19932
     new-array v10, v10, [I
 
     fill-array-data v10, :array_26
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->OPFloatingActionButton:[I
 
-    .line 20103
     new-array v10, v4, [I
 
     fill-array-data v10, :array_27
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->OPListView:[I
 
-    .line 20157
     new-array v10, v7, [I
 
     fill-array-data v10, :array_28
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->OPMenuGroup:[I
 
-    .line 20304
     new-array v10, v11, [I
 
     fill-array-data v10, :array_29
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->OPMenuItem:[I
 
-    .line 20701
     const/16 v10, 0x1a
 
     new-array v10, v10, [I
@@ -2534,28 +2483,24 @@
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->OPProgressBar:[I
 
-    .line 21088
     new-array v10, v4, [I
 
     fill-array-data v10, :array_2b
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->OPRadioGroup:[I
 
-    .line 21130
     new-array v10, v4, [I
 
     fill-array-data v10, :array_2c
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->OPRectangleFloatingActionButton:[I
 
-    .line 21181
     new-array v10, v1, [I
 
     fill-array-data v10, :array_2d
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->OPSeekBar:[I
 
-    .line 21291
     new-array v10, v0, [I
 
     const v11, 0x10101a8
@@ -2564,14 +2509,12 @@
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->OPSwitch:[I
 
-    .line 21322
     new-array v10, v8, [I
 
     fill-array-data v10, :array_2e
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->OPSwitchFloatingActionButton:[I
 
-    .line 21410
     const/16 v10, 0x11
 
     new-array v11, v10, [I
@@ -2580,14 +2523,12 @@
 
     sput-object v11, Lcom/oneplus/aod/R$styleable;->OPTabLayout:[I
 
-    .line 21657
     new-array v11, v8, [I
 
     fill-array-data v11, :array_30
 
     sput-object v11, Lcom/oneplus/aod/R$styleable;->OPTextAppearance:[I
 
-    .line 21739
     const/16 v11, 0x10
 
     new-array v11, v11, [I
@@ -2596,7 +2537,6 @@
 
     sput-object v11, Lcom/oneplus/aod/R$styleable;->OPTextInputLayout:[I
 
-    .line 21959
     new-array v11, v0, [I
 
     const v12, 0x10100f2
@@ -2605,14 +2545,12 @@
 
     sput-object v11, Lcom/oneplus/aod/R$styleable;->OPToast:[I
 
-    .line 22003
     new-array v11, v5, [I
 
     fill-array-data v11, :array_32
 
     sput-object v11, Lcom/oneplus/aod/R$styleable;->OPViewDrawableStates:[I
 
-    .line 22219
     const/16 v11, 0x33
 
     new-array v11, v11, [I
@@ -2621,56 +2559,48 @@
 
     sput-object v11, Lcom/oneplus/aod/R$styleable;->OneplusTheme:[I
 
-    .line 22937
     new-array v11, v8, [I
 
     fill-array-data v11, :array_34
 
     sput-object v11, Lcom/oneplus/aod/R$styleable;->OpAppBarLayout:[I
 
-    .line 22996
     new-array v11, v4, [I
 
     fill-array-data v11, :array_35
 
     sput-object v11, Lcom/oneplus/aod/R$styleable;->OpAppBarLayoutStates:[I
 
-    .line 23036
     new-array v11, v4, [I
 
     fill-array-data v11, :array_36
 
     sput-object v11, Lcom/oneplus/aod/R$styleable;->OpAppBarLayout_Layout:[I
 
-    .line 23131
     new-array v10, v10, [I
 
     fill-array-data v10, :array_37
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->OpCollapsingToolbarLayout:[I
 
-    .line 23408
     new-array v10, v4, [I
 
     fill-array-data v10, :array_38
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->OpCollapsingToolbarLayout_Layout:[I
 
-    .line 23455
     new-array v10, v4, [I
 
     fill-array-data v10, :array_39
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->OpCoordinatorLayout:[I
 
-    .line 23514
     new-array v10, v1, [I
 
     fill-array-data v10, :array_3a
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->OpCoordinatorLayout_Layout:[I
 
-    .line 23680
     new-array v10, v0, [I
 
     const v11, 0x7f03014f
@@ -2679,7 +2609,6 @@
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->OpFloatingActionButton_Behavior_Layout:[I
 
-    .line 23705
     new-array v10, v0, [I
 
     const v11, 0x7f030150
@@ -2688,21 +2617,18 @@
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->OpScrollingViewBehavior_Layout:[I
 
-    .line 23743
     new-array v10, v7, [I
 
     fill-array-data v10, :array_3b
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->OpTextAppearance:[I
 
-    .line 23828
     new-array v10, v8, [I
 
     fill-array-data v10, :array_3c
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->PopupWindow:[I
 
-    .line 23880
     new-array v10, v0, [I
 
     const v11, 0x7f0301da
@@ -2711,7 +2637,6 @@
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->PopupWindowBackgroundState:[I
 
-    .line 23979
     const/16 v10, 0x24
 
     new-array v10, v10, [I
@@ -2720,49 +2645,42 @@
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->Preference:[I
 
-    .line 24426
     new-array v10, v8, [I
 
     fill-array-data v10, :array_3e
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->PreferenceActivity:[I
 
-    .line 24484
     new-array v10, v6, [I
 
     fill-array-data v10, :array_3f
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->PreferenceFragment:[I
 
-    .line 24558
     new-array v10, v6, [I
 
     fill-array-data v10, :array_40
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->PreferenceFragmentCompat:[I
 
-    .line 24631
     new-array v10, v8, [I
 
     fill-array-data v10, :array_41
 
     sput-object v10, Lcom/oneplus/aod/R$styleable;->PreferenceGroup:[I
 
-    .line 24700
     new-array v1, v1, [I
 
     fill-array-data v1, :array_42
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->PreferenceHeader:[I
 
-    .line 24802
     new-array v1, v6, [I
 
     fill-array-data v1, :array_43
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->PreferenceImageView:[I
 
-    .line 24942
     const/16 v1, 0x26
 
     new-array v1, v1, [I
@@ -2771,14 +2689,12 @@
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->PreferenceTheme:[I
 
-    .line 25462
     new-array v1, v4, [I
 
     fill-array-data v1, :array_45
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->RecycleListView:[I
 
-    .line 25532
     const/16 v1, 0xf
 
     new-array v1, v1, [I
@@ -2787,28 +2703,24 @@
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->RecyclerView:[I
 
-    .line 25740
     new-array v1, v4, [I
 
     fill-array-data v1, :array_47
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->RestrictedPreference:[I
 
-    .line 25780
     new-array v1, v4, [I
 
     fill-array-data v1, :array_48
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->RestrictedSwitchPreference:[I
 
-    .line 25825
     new-array v1, v8, [I
 
     fill-array-data v1, :array_49
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->RingtonePreference:[I
 
-    .line 25938
     const/16 v1, 0x1d
 
     new-array v1, v1, [I
@@ -2817,28 +2729,24 @@
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->SearchView:[I
 
-    .line 26404
     new-array v1, v7, [I
 
     fill-array-data v1, :array_4b
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->SeekBarPreference:[I
 
-    .line 26491
     new-array v1, v8, [I
 
     fill-array-data v1, :array_4c
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->SnackbarLayout:[I
 
-    .line 26559
     new-array v1, v7, [I
 
     fill-array-data v1, :array_4d
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->Spinner:[I
 
-    .line 26691
     const/16 v1, 0xe
 
     new-array v1, v1, [I
@@ -2847,28 +2755,24 @@
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->SwitchCompat:[I
 
-    .line 26931
     new-array v1, v5, [I
 
     fill-array-data v1, :array_4f
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->SwitchPreference:[I
 
-    .line 27079
     new-array v1, v5, [I
 
     fill-array-data v1, :array_50
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->SwitchPreferenceCompat:[I
 
-    .line 27231
     new-array v1, v9, [I
 
     fill-array-data v1, :array_51
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->TextAppearance:[I
 
-    .line 27449
     const/16 v1, 0x10
 
     new-array v1, v1, [I
@@ -2877,7 +2781,6 @@
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->TimePicker:[I
 
-    .line 27772
     const/16 v1, 0x28
 
     new-array v1, v1, [I
@@ -2886,35 +2789,30 @@
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->Toolbar:[I
 
-    .line 28358
     new-array v1, v2, [I
 
     fill-array-data v1, :array_54
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->View:[I
 
-    .line 28457
     new-array v1, v8, [I
 
     fill-array-data v1, :array_55
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->ViewBackgroundHelper:[I
 
-    .line 28527
     new-array v1, v4, [I
 
     fill-array-data v1, :array_56
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->ViewOnePlus:[I
 
-    .line 28569
     new-array v1, v8, [I
 
     fill-array-data v1, :array_57
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->ViewStubCompat:[I
 
-    .line 28623
     new-array v1, v0, [I
 
     const v2, 0x7f0301db
@@ -2923,7 +2821,6 @@
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->WifiEncryptionState:[I
 
-    .line 28647
     new-array v1, v0, [I
 
     const v2, 0x7f0301dc
@@ -2932,7 +2829,6 @@
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->WifiEncryptionStateOwe:[I
 
-    .line 28671
     new-array v1, v0, [I
 
     const v2, 0x7f0301dd
@@ -2941,7 +2837,6 @@
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->WifiEncryptionStateSae:[I
 
-    .line 28695
     new-array v1, v0, [I
 
     const v2, 0x7f0301de
@@ -2950,7 +2845,6 @@
 
     sput-object v1, Lcom/oneplus/aod/R$styleable;->WifiMeteredState:[I
 
-    .line 28719
     new-array v0, v0, [I
 
     const v1, 0x7f0301df
@@ -4228,7 +4122,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 12611
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

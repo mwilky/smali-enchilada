@@ -104,29 +104,21 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 2
-    .param p1, "commandCode"    # I
 
-    .line 339
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 340
     if-eqz p1, :cond_0
 
-    .line 343
     iput p1, p0, Landroid/support/v4/media/SessionCommand2;->mCommandCode:I
 
-    .line 344
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/support/v4/media/SessionCommand2;->mCustomCommand:Ljava/lang/String;
 
-    .line 345
     iput-object v0, p0, Landroid/support/v4/media/SessionCommand2;->mExtras:Landroid/os/Bundle;
 
-    .line 346
     return-void
 
-    .line 341
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -139,36 +131,29 @@
 
 .method public constructor <init>(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 2
-    .param p1, "action"    # Ljava/lang/String;
+    .param p1    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "extras"    # Landroid/os/Bundle;
+    .param p2    # Landroid/os/Bundle;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 354
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 355
     if-eqz p1, :cond_0
 
-    .line 358
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v4/media/SessionCommand2;->mCommandCode:I
 
-    .line 359
     iput-object p1, p0, Landroid/support/v4/media/SessionCommand2;->mCustomCommand:Ljava/lang/String;
 
-    .line 360
     iput-object p2, p0, Landroid/support/v4/media/SessionCommand2;->mExtras:Landroid/os/Bundle;
 
-    .line 361
     return-void
 
-    .line 356
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -181,7 +166,7 @@
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroid/support/v4/media/SessionCommand2;
     .locals 4
-    .param p0, "command"    # Landroid/os/Bundle;
+    .param p0    # Landroid/os/Bundle;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
@@ -191,28 +176,22 @@
         }
     .end annotation
 
-    .line 406
     if-eqz p0, :cond_2
 
-    .line 409
     const-string v0, "android.media.media_session2.command.command_code"
 
     invoke-virtual {p0, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 410
-    .local v0, "code":I
     if-eqz v0, :cond_0
 
-    .line 411
     new-instance v1, Landroid/support/v4/media/SessionCommand2;
 
     invoke-direct {v1, v0}, Landroid/support/v4/media/SessionCommand2;-><init>(I)V
 
     return-object v1
 
-    .line 413
     :cond_0
     const-string v1, "android.media.media_session2.command.custom_command"
 
@@ -220,16 +199,12 @@
 
     move-result-object v1
 
-    .line 414
-    .local v1, "customCommand":Ljava/lang/String;
     if-nez v1, :cond_1
 
-    .line 415
     const/4 v2, 0x0
 
     return-object v2
 
-    .line 417
     :cond_1
     new-instance v2, Landroid/support/v4/media/SessionCommand2;
 
@@ -243,9 +218,6 @@
 
     return-object v2
 
-    .line 407
-    .end local v0    # "code":I
-    .end local v1    # "customCommand":Ljava/lang/String;
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -260,26 +232,20 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 423
     instance-of v0, p1, Landroid/support/v4/media/SessionCommand2;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 424
     return v1
 
-    .line 426
     :cond_0
     move-object v0, p1
 
     check-cast v0, Landroid/support/v4/media/SessionCommand2;
 
-    .line 427
-    .local v0, "other":Landroid/support/v4/media/SessionCommand2;
     iget v2, p0, Landroid/support/v4/media/SessionCommand2;->mCommandCode:I
 
     iget v3, v0, Landroid/support/v4/media/SessionCommand2;->mCommandCode:I
@@ -290,7 +256,6 @@
 
     iget-object v3, v0, Landroid/support/v4/media/SessionCommand2;->mCustomCommand:Ljava/lang/String;
 
-    .line 428
     invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -308,7 +273,6 @@
 .method public getCommandCode()I
     .locals 1
 
-    .line 368
     iget v0, p0, Landroid/support/v4/media/SessionCommand2;->mCommandCode:I
 
     return v0
@@ -319,7 +283,6 @@
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 376
     iget-object v0, p0, Landroid/support/v4/media/SessionCommand2;->mCustomCommand:Ljava/lang/String;
 
     return-object v0
@@ -330,7 +293,6 @@
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 384
     iget-object v0, p0, Landroid/support/v4/media/SessionCommand2;->mExtras:Landroid/os/Bundle;
 
     return-object v0
@@ -339,11 +301,8 @@
 .method public hashCode()I
     .locals 3
 
-    .line 433
     const/16 v0, 0x1f
 
-    .line 434
-    .local v0, "prime":I
     iget-object v1, p0, Landroid/support/v4/media/SessionCommand2;->mCustomCommand:Ljava/lang/String;
 
     if-eqz v1, :cond_0
@@ -377,33 +336,27 @@
         }
     .end annotation
 
-    .line 393
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 394
-    .local v0, "bundle":Landroid/os/Bundle;
     const-string v1, "android.media.media_session2.command.command_code"
 
     iget v2, p0, Landroid/support/v4/media/SessionCommand2;->mCommandCode:I
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 395
     const-string v1, "android.media.media_session2.command.custom_command"
 
     iget-object v2, p0, Landroid/support/v4/media/SessionCommand2;->mCustomCommand:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 396
     const-string v1, "android.media.media_session2.command.extras"
 
     iget-object v2, p0, Landroid/support/v4/media/SessionCommand2;->mExtras:Landroid/os/Bundle;
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 397
     return-object v0
 .end method

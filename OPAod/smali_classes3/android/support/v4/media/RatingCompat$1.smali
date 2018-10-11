@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 129
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,9 +39,7 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/media/RatingCompat;
     .locals 3
-    .param p1, "p"    # Landroid/os/Parcel;
 
-    .line 137
     new-instance v0, Landroid/support/v4/media/RatingCompat;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -61,7 +58,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 129
     invoke-virtual {p0, p1}, Landroid/support/v4/media/RatingCompat$1;->createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/media/RatingCompat;
 
     move-result-object p1
@@ -71,9 +67,7 @@
 
 .method public newArray(I)[Landroid/support/v4/media/RatingCompat;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 142
     new-array v0, p1, [Landroid/support/v4/media/RatingCompat;
 
     return-object v0
@@ -82,7 +76,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 129
     invoke-virtual {p0, p1}, Landroid/support/v4/media/RatingCompat$1;->newArray(I)[Landroid/support/v4/media/RatingCompat;
 
     move-result-object p1

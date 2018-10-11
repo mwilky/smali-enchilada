@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">Mesajı göster</string>
     <string name="oneplus_aod_mode_always_on">Her zaman açık</string>
     <string name="oneplus_aod_mode_lift_up">Ekranı yukarı doğru kaydırma</string>
-    <string name="oneplus_aod_mode_shake_up">Göstermek için telefonunuzu biraz hareket ettirin</string>
-    <string name="oneplus_aod_mode_single_tap">Göstermek için dokunun</string>
     <string name="oneplus_aod_settings">Ortam ekranı</string>
-    <string name="oneplus_aod_settings_what_to_show">gösterilecek öğe</string>
-    <string name="oneplus_aod_settings_when_to_show">gösterme zamanı</string>
     <string name="oneplus_aod_title">Saati göster</string>
     <string name="oneplus_display_time_end">Bitiş</string>
     <string name="oneplus_display_time_from">Başlangıç</string>

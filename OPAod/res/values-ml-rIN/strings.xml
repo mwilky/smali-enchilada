@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">മെസേജ് പ്രദർശിപ്പിക്കുക</string>
     <string name="oneplus_aod_mode_always_on">എല്ലായ്‍പ്പോഴും ഓണ്‍</string>
     <string name="oneplus_aod_mode_lift_up">ലിഫ്റ്റ് അപ്പ് ഡിസ്പ്ലേ</string>
-    <string name="oneplus_aod_mode_shake_up">പ്രദർശിപ്പിക്കാനായി നിങ്ങളുടെ ഫോൺ ചെറുതായി നീക്കുക</string>
-    <string name="oneplus_aod_mode_single_tap">പ്രദർശിപ്പിക്കാനായി ടാപ്പ് ചെയ്യുക</string>
     <string name="oneplus_aod_settings">ആംബിയന്‍റ് ഡിസ്‍പ്ലേ</string>
-    <string name="oneplus_aod_settings_what_to_show">എന്ത് പ്രദർശിപ്പിക്കണം</string>
-    <string name="oneplus_aod_settings_when_to_show">എപ്പോൾ പ്രദർശിപ്പിക്കണം</string>
     <string name="oneplus_aod_title">ക്ലോക്ക് കാണിക്കുക</string>
     <string name="oneplus_display_time_end">വരെ</string>
     <string name="oneplus_display_time_from">ഇതു മുതല്‍</string>

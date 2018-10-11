@@ -37,21 +37,17 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaPlayer2Impl;Landroid/support/v4/media/DataSourceDesc;)V
     .locals 2
-    .param p2, "dsd"    # Landroid/support/v4/media/DataSourceDesc;
 
-    .line 1978
     iput-object p1, p0, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1970
     new-instance v0, Landroid/media/MediaPlayer;
 
     invoke-direct {v0}, Landroid/media/MediaPlayer;-><init>()V
 
     iput-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;->mPlayer:Landroid/media/MediaPlayer;
 
-    .line 1971
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 v1, 0x0
@@ -60,27 +56,20 @@
 
     iput-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;->mBufferedPercentage:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 1972
     iput v1, p0, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;->mSourceState:I
 
-    .line 1973
     const/16 v0, 0x3e9
 
     iput v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;->mMp2State:I
 
-    .line 1974
     iput v1, p0, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;->mBufferingState:I
 
-    .line 1975
     iput v1, p0, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;->mPlayerState:I
 
-    .line 1979
     iput-object p2, p0, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;->mDSD:Landroid/support/v4/media/DataSourceDesc;
 
-    .line 1980
     invoke-static {p1, p0}, Landroid/support/v4/media/MediaPlayer2Impl;->access$2000(Landroid/support/v4/media/MediaPlayer2Impl;Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;)V
 
-    .line 1981
     return-void
 .end method
 
@@ -89,7 +78,6 @@
 .method getDSD()Landroid/support/v4/media/DataSourceDesc;
     .locals 1
 
-    .line 1984
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;->mDSD:Landroid/support/v4/media/DataSourceDesc;
 
     return-object v0

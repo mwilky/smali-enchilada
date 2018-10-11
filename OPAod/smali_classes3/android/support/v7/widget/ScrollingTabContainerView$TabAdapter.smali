@@ -22,12 +22,10 @@
 .method constructor <init>(Landroid/support/v7/widget/ScrollingTabContainerView;)V
     .locals 0
 
-    .line 522
     iput-object p1, p0, Landroid/support/v7/widget/ScrollingTabContainerView$TabAdapter;->this$0:Landroid/support/v7/widget/ScrollingTabContainerView;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 523
     return-void
 .end method
 
@@ -36,7 +34,6 @@
 .method public getCount()I
     .locals 1
 
-    .line 527
     iget-object v0, p0, Landroid/support/v7/widget/ScrollingTabContainerView$TabAdapter;->this$0:Landroid/support/v7/widget/ScrollingTabContainerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/ScrollingTabContainerView;->mTabLayout:Landroid/support/v7/widget/LinearLayoutCompat;
@@ -50,9 +47,7 @@
 
 .method public getItem(I)Ljava/lang/Object;
     .locals 1
-    .param p1, "position"    # I
 
-    .line 532
     iget-object v0, p0, Landroid/support/v7/widget/ScrollingTabContainerView$TabAdapter;->this$0:Landroid/support/v7/widget/ScrollingTabContainerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/ScrollingTabContainerView;->mTabLayout:Landroid/support/v7/widget/LinearLayoutCompat;
@@ -72,9 +67,7 @@
 
 .method public getItemId(I)J
     .locals 2
-    .param p1, "position"    # I
 
-    .line 537
     int-to-long v0, p1
 
     return-wide v0
@@ -82,14 +75,9 @@
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 3
-    .param p1, "position"    # I
-    .param p2, "convertView"    # Landroid/view/View;
-    .param p3, "parent"    # Landroid/view/ViewGroup;
 
-    .line 542
     if-nez p2, :cond_0
 
-    .line 543
     iget-object v0, p0, Landroid/support/v7/widget/ScrollingTabContainerView$TabAdapter;->this$0:Landroid/support/v7/widget/ScrollingTabContainerView;
 
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/ScrollingTabContainerView$TabAdapter;->getItem(I)Ljava/lang/Object;
@@ -106,7 +94,6 @@
 
     goto :goto_0
 
-    .line 545
     :cond_0
     move-object v0, p2
 
@@ -120,7 +107,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/ScrollingTabContainerView$TabView;->bindTab(Landroid/support/v7/app/ActionBar$Tab;)V
 
-    .line 547
     :goto_0
     return-object p2
 .end method

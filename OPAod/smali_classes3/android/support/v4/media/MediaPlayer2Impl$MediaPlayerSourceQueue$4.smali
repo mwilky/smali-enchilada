@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSourceQueue;Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSourceQueue;
 
-    .line 2197
     iput-object p1, p0, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSourceQueue$4;->this$1:Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSourceQueue;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSourceQueue$4;->val$src:Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public notify(Landroid/support/v4/media/MediaPlayer2$EventCallback;)V
     .locals 4
-    .param p1, "callback"    # Landroid/support/v4/media/MediaPlayer2$EventCallback;
 
-    .line 2200
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSourceQueue$4;->this$1:Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSourceQueue;
 
     iget-object v0, v0, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSourceQueue;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
@@ -61,6 +57,5 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/support/v4/media/MediaPlayer2$EventCallback;->onInfo(Landroid/support/v4/media/MediaPlayer2;Landroid/support/v4/media/DataSourceDesc;II)V
 
-    .line 2202
     return-void
 .end method

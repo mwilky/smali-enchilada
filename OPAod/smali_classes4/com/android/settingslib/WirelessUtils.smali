@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -15,9 +14,7 @@
 
 .method public static isAirplaneModeOn(Landroid/content/Context;)Z
     .locals 3
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 33
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -42,10 +39,7 @@
 
 .method public static isRadioAllowed(Landroid/content/Context;Ljava/lang/String;)Z
     .locals 3
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "type"    # Ljava/lang/String;
 
-    .line 24
     invoke-static {p0}, Lcom/android/settingslib/WirelessUtils;->isAirplaneModeOn(Landroid/content/Context;)Z
 
     move-result v0
@@ -54,10 +48,8 @@
 
     if-nez v0, :cond_0
 
-    .line 25
     return v1
 
-    .line 27
     :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -69,8 +61,6 @@
 
     move-result-object v0
 
-    .line 29
-    .local v0, "toggleable":Ljava/lang/String;
     if-eqz v0, :cond_1
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z

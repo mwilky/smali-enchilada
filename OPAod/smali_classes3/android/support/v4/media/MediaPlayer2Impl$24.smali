@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaPlayer2Impl;Landroid/support/v4/media/MediaPlayer2Impl$Mp2EventNotifier;Landroid/util/Pair;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaPlayer2Impl;
 
-    .line 1393
     iput-object p1, p0, Landroid/support/v4/media/MediaPlayer2Impl$24;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaPlayer2Impl$24;->val$notifier:Landroid/support/v4/media/MediaPlayer2Impl$Mp2EventNotifier;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 2
 
-    .line 1396
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$24;->val$notifier:Landroid/support/v4/media/MediaPlayer2Impl$Mp2EventNotifier;
 
     iget-object v1, p0, Landroid/support/v4/media/MediaPlayer2Impl$24;->val$record:Landroid/util/Pair;
@@ -58,6 +55,5 @@
 
     invoke-interface {v0, v1}, Landroid/support/v4/media/MediaPlayer2Impl$Mp2EventNotifier;->notify(Landroid/support/v4/media/MediaPlayer2$EventCallback;)V
 
-    .line 1397
     return-void
 .end method

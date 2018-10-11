@@ -21,14 +21,9 @@
 # direct methods
 .method public constructor <init>(Lcom/oneplus/lib/menu/ActionMenuPresenter;Landroid/content/Context;Lcom/oneplus/lib/menu/SubMenuBuilder;Landroid/view/View;)V
     .locals 6
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "subMenu"    # Lcom/oneplus/lib/menu/SubMenuBuilder;
-    .param p4, "anchorView"    # Landroid/view/View;
 
-    .line 739
     iput-object p1, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$ActionButtonSubmenu;->this$0:Lcom/oneplus/lib/menu/ActionMenuPresenter;
 
-    .line 740
     const/4 v4, 0x0
 
     const v5, 0x1010444
@@ -43,22 +38,18 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/oneplus/lib/menu/MenuPopupHelper;-><init>(Landroid/content/Context;Lcom/oneplus/lib/menu/MenuBuilder;Landroid/view/View;ZI)V
 
-    .line 742
     invoke-virtual {p3}, Lcom/oneplus/lib/menu/SubMenuBuilder;->getItem()Landroid/view/MenuItem;
 
     move-result-object v0
 
     check-cast v0, Lcom/oneplus/lib/menu/MenuItemImpl;
 
-    .line 743
-    .local v0, "item":Lcom/oneplus/lib/menu/MenuItemImpl;
     invoke-virtual {v0}, Lcom/oneplus/lib/menu/MenuItemImpl;->isActionButton()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 745
     iget-object v1, p1, Lcom/oneplus/lib/menu/ActionMenuPresenter;->mOverflowButton:Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowMenuButton;
 
     if-nez v1, :cond_0
@@ -75,13 +66,11 @@
     :goto_0
     invoke-virtual {p0, v1}, Lcom/oneplus/lib/menu/ActionMenuPresenter$ActionButtonSubmenu;->setAnchorView(Landroid/view/View;)V
 
-    .line 748
     :cond_1
     iget-object p1, p1, Lcom/oneplus/lib/menu/ActionMenuPresenter;->mPopupPresenterCallback:Lcom/oneplus/lib/menu/ActionMenuPresenter$PopupPresenterCallback;
 
     invoke-virtual {p0, p1}, Lcom/oneplus/lib/menu/ActionMenuPresenter$ActionButtonSubmenu;->setPresenterCallback(Lcom/oneplus/lib/menu/MenuPresenter$Callback;)V
 
-    .line 749
     return-void
 .end method
 
@@ -90,23 +79,19 @@
 .method protected onDismiss()V
     .locals 2
 
-    .line 753
     iget-object v0, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$ActionButtonSubmenu;->this$0:Lcom/oneplus/lib/menu/ActionMenuPresenter;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Lcom/oneplus/lib/menu/ActionMenuPresenter;->mActionButtonPopup:Lcom/oneplus/lib/menu/ActionMenuPresenter$ActionButtonSubmenu;
 
-    .line 754
     iget-object v0, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$ActionButtonSubmenu;->this$0:Lcom/oneplus/lib/menu/ActionMenuPresenter;
 
     const/4 v1, 0x0
 
     iput v1, v0, Lcom/oneplus/lib/menu/ActionMenuPresenter;->mOpenSubMenuId:I
 
-    .line 756
     invoke-super {p0}, Lcom/oneplus/lib/menu/MenuPopupHelper;->onDismiss()V
 
-    .line 757
     return-void
 .end method

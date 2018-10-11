@@ -28,18 +28,15 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListener;)V
     .locals 0
-    .param p1, "listener"    # Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListener;
+    .param p1    # Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListener;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 201
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 202
     iput-object p1, p0, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListenerWrapper;->mListener:Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListener;
 
-    .line 203
     return-void
 .end method
 
@@ -47,17 +44,13 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 212
     if-ne p0, p1, :cond_0
 
-    .line 213
     const/4 v0, 0x1
 
     return v0
 
-    .line 215
     :cond_0
     if-eqz p1, :cond_2
 
@@ -73,14 +66,11 @@
 
     goto :goto_0
 
-    .line 218
     :cond_1
     move-object v0, p1
 
     check-cast v0, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListenerWrapper;
 
-    .line 220
-    .local v0, "other":Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListenerWrapper;
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListenerWrapper;->mListener:Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListener;
 
     iget-object v2, v0, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListenerWrapper;->mListener:Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListener;
@@ -91,8 +81,6 @@
 
     return v1
 
-    .line 216
-    .end local v0    # "other":Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListenerWrapper;
     :cond_2
     :goto_0
     const/4 v0, 0x0
@@ -103,7 +91,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 207
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListenerWrapper;->mListener:Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListener;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -115,13 +102,10 @@
 
 .method public onTouchExplorationStateChanged(Z)V
     .locals 1
-    .param p1, "enabled"    # Z
 
-    .line 225
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListenerWrapper;->mListener:Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListener;
 
     invoke-interface {v0, p1}, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListener;->onTouchExplorationStateChanged(Z)V
 
-    .line 226
     return-void
 .end method

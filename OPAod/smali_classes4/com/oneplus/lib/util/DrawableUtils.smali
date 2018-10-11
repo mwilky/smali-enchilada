@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -15,10 +14,7 @@
 
 .method public static parseTintMode(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
     .locals 2
-    .param p0, "value"    # I
-    .param p1, "defaultMode"    # Landroid/graphics/PorterDuff$Mode;
 
-    .line 28
     const/4 v0, 0x3
 
     if-eq p0, v0, :cond_3
@@ -33,10 +29,8 @@
 
     packed-switch p0, :pswitch_data_0
 
-    .line 36
     return-object p1
 
-    .line 34
     :pswitch_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -52,41 +46,34 @@
 
     goto :goto_0
 
-    .line 35
     :cond_0
     nop
 
-    .line 34
     move-object v0, p1
 
     :goto_0
     return-object v0
 
-    .line 33
     :pswitch_1
     sget-object v0, Landroid/graphics/PorterDuff$Mode;->SCREEN:Landroid/graphics/PorterDuff$Mode;
 
     return-object v0
 
-    .line 32
     :pswitch_2
     sget-object v0, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
     return-object v0
 
-    .line 31
     :cond_1
     sget-object v0, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
 
     return-object v0
 
-    .line 30
     :cond_2
     sget-object v0, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
 
     return-object v0
 
-    .line 29
     :cond_3
     sget-object v0, Landroid/graphics/PorterDuff$Mode;->SRC_OVER:Landroid/graphics/PorterDuff$Mode;
 

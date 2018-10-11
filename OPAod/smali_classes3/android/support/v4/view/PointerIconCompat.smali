@@ -58,32 +58,23 @@
 # direct methods
 .method private constructor <init>(Ljava/lang/Object;)V
     .locals 0
-    .param p1, "pointerIcon"    # Ljava/lang/Object;
 
-    .line 107
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 108
     iput-object p1, p0, Landroid/support/v4/view/PointerIconCompat;->mPointerIcon:Ljava/lang/Object;
 
-    .line 109
     return-void
 .end method
 
 .method public static create(Landroid/graphics/Bitmap;FF)Landroid/support/v4/view/PointerIconCompat;
     .locals 2
-    .param p0, "bitmap"    # Landroid/graphics/Bitmap;
-    .param p1, "hotSpotX"    # F
-    .param p2, "hotSpotY"    # F
 
-    .line 151
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
 
     if-lt v0, v1, :cond_0
 
-    .line 152
     new-instance v0, Landroid/support/v4/view/PointerIconCompat;
 
     invoke-static {p0, p1, p2}, Landroid/view/PointerIcon;->create(Landroid/graphics/Bitmap;FF)Landroid/view/PointerIcon;
@@ -94,7 +85,6 @@
 
     return-object v0
 
-    .line 154
     :cond_0
     new-instance v0, Landroid/support/v4/view/PointerIconCompat;
 
@@ -107,17 +97,13 @@
 
 .method public static getSystemIcon(Landroid/content/Context;I)Landroid/support/v4/view/PointerIconCompat;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "style"    # I
 
-    .line 130
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
 
     if-lt v0, v1, :cond_0
 
-    .line 131
     new-instance v0, Landroid/support/v4/view/PointerIconCompat;
 
     invoke-static {p0, p1}, Landroid/view/PointerIcon;->getSystemIcon(Landroid/content/Context;I)Landroid/view/PointerIcon;
@@ -128,7 +114,6 @@
 
     return-object v0
 
-    .line 133
     :cond_0
     new-instance v0, Landroid/support/v4/view/PointerIconCompat;
 
@@ -141,17 +126,13 @@
 
 .method public static load(Landroid/content/res/Resources;I)Landroid/support/v4/view/PointerIconCompat;
     .locals 2
-    .param p0, "resources"    # Landroid/content/res/Resources;
-    .param p1, "resourceId"    # I
 
-    .line 180
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
 
     if-lt v0, v1, :cond_0
 
-    .line 181
     new-instance v0, Landroid/support/v4/view/PointerIconCompat;
 
     invoke-static {p0, p1}, Landroid/view/PointerIcon;->load(Landroid/content/res/Resources;I)Landroid/view/PointerIcon;
@@ -162,7 +143,6 @@
 
     return-object v0
 
-    .line 183
     :cond_0
     new-instance v0, Landroid/support/v4/view/PointerIconCompat;
 
@@ -183,7 +163,6 @@
         }
     .end annotation
 
-    .line 116
     iget-object v0, p0, Landroid/support/v4/view/PointerIconCompat;->mPointerIcon:Ljava/lang/Object;
 
     return-object v0

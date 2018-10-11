@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/aod/ViewInvertHelper;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/aod/ViewInvertHelper;
 
-    .line 78
     iput-object p1, p0, Lcom/oneplus/aod/ViewInvertHelper$2;->this$0:Lcom/oneplus/aod/ViewInvertHelper;
 
     iput-boolean p2, p0, Lcom/oneplus/aod/ViewInvertHelper$2;->val$invert:Z
@@ -39,19 +37,15 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 4
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 81
     iget-boolean v0, p0, Lcom/oneplus/aod/ViewInvertHelper$2;->val$invert:Z
 
     if-nez v0, :cond_0
 
-    .line 82
     const/4 v0, 0x0
 
     move v1, v0
 
-    .local v1, "i":I
     :goto_0
     iget-object v2, p0, Lcom/oneplus/aod/ViewInvertHelper$2;->this$0:Lcom/oneplus/aod/ViewInvertHelper;
 
@@ -65,7 +59,6 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 83
     iget-object v2, p0, Lcom/oneplus/aod/ViewInvertHelper$2;->this$0:Lcom/oneplus/aod/ViewInvertHelper;
 
     invoke-static {v2}, Lcom/oneplus/aod/ViewInvertHelper;->access$100(Lcom/oneplus/aod/ViewInvertHelper;)Ljava/util/ArrayList;
@@ -82,13 +75,10 @@
 
     invoke-virtual {v2, v0, v3}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 82
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 86
-    .end local v1    # "i":I
     :cond_0
     return-void
 .end method

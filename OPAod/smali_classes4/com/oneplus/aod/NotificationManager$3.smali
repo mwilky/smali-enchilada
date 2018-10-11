@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/aod/NotificationManager;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/aod/NotificationManager;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 473
     iput-object p1, p0, Lcom/oneplus/aod/NotificationManager$3;->this$0:Lcom/oneplus/aod/NotificationManager;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,12 +33,9 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 3
-    .param p1, "selfChange"    # Z
 
-    .line 476
     iget-object v0, p0, Lcom/oneplus/aod/NotificationManager$3;->this$0:Lcom/oneplus/aod/NotificationManager;
 
-    .line 477
     invoke-static {v0}, Lcom/oneplus/aod/NotificationManager;->access$600(Lcom/oneplus/aod/NotificationManager;)Landroid/content/Context;
 
     move-result-object v0
@@ -52,7 +46,6 @@
 
     const-string v1, "device_provisioned"
 
-    .line 476
     const/4 v2, 0x0
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
@@ -68,8 +61,6 @@
     :cond_0
     move v0, v2
 
-    .line 478
-    .local v0, "provisioned":Z
     iget-object v1, p0, Lcom/oneplus/aod/NotificationManager$3;->this$0:Lcom/oneplus/aod/NotificationManager;
 
     invoke-static {v1}, Lcom/oneplus/aod/NotificationManager;->access$700(Lcom/oneplus/aod/NotificationManager;)Z
@@ -78,19 +69,16 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 479
     iget-object v1, p0, Lcom/oneplus/aod/NotificationManager$3;->this$0:Lcom/oneplus/aod/NotificationManager;
 
     invoke-static {v1, v0}, Lcom/oneplus/aod/NotificationManager;->access$702(Lcom/oneplus/aod/NotificationManager;Z)Z
 
-    .line 480
     iget-object v1, p0, Lcom/oneplus/aod/NotificationManager$3;->this$0:Lcom/oneplus/aod/NotificationManager;
 
     const/4 v2, 0x3
 
     invoke-virtual {v1, v2}, Lcom/oneplus/aod/NotificationManager;->updateNotifications(I)V
 
-    .line 485
     :cond_1
     iget-object v1, p0, Lcom/oneplus/aod/NotificationManager$3;->this$0:Lcom/oneplus/aod/NotificationManager;
 
@@ -100,11 +88,9 @@
 
     invoke-virtual {v1}, Landroid/util/SparseBooleanArray;->clear()V
 
-    .line 486
     iget-object v1, p0, Lcom/oneplus/aod/NotificationManager$3;->this$0:Lcom/oneplus/aod/NotificationManager;
 
     invoke-static {v1}, Lcom/oneplus/aod/NotificationManager;->access$200(Lcom/oneplus/aod/NotificationManager;)V
 
-    .line 487
     return-void
 .end method

@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1555
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,9 +30,7 @@
 # virtual methods
 .method public filterApp(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)Z
     .locals 3
-    .param p1, "entry"    # Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
 
-    .line 1562
     iget-object v0, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
 
     invoke-static {v0}, Lcom/android/settingslib/applications/AppUtils;->isInstant(Landroid/content/pm/ApplicationInfo;)Z
@@ -44,10 +41,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 1563
     return v1
 
-    .line 1564
     :cond_0
     iget-object v0, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
 
@@ -63,10 +58,8 @@
 
     if-eqz v0, :cond_1
 
-    .line 1565
     return v2
 
-    .line 1566
     :cond_1
     iget-object v0, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
 
@@ -78,19 +71,15 @@
 
     if-nez v0, :cond_2
 
-    .line 1567
     return v2
 
-    .line 1568
     :cond_2
     iget-boolean v0, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->hasLauncherEntry:Z
 
     if-eqz v0, :cond_3
 
-    .line 1569
     return v2
 
-    .line 1570
     :cond_3
     iget-object v0, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
 
@@ -106,10 +95,8 @@
 
     if-eqz v0, :cond_4
 
-    .line 1571
     return v2
 
-    .line 1573
     :cond_4
     return v1
 .end method
@@ -117,6 +104,5 @@
 .method public init()V
     .locals 0
 
-    .line 1558
     return-void
 .end method

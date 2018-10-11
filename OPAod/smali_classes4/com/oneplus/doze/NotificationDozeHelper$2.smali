@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/doze/NotificationDozeHelper;ZLandroid/widget/ImageView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/doze/NotificationDozeHelper;
 
-    .line 36
     iput-object p1, p0, Lcom/oneplus/doze/NotificationDozeHelper$2;->this$0:Lcom/oneplus/doze/NotificationDozeHelper;
 
     iput-boolean p2, p0, Lcom/oneplus/doze/NotificationDozeHelper$2;->val$dark:Z
@@ -43,21 +41,17 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 39
     iget-boolean v0, p0, Lcom/oneplus/doze/NotificationDozeHelper$2;->val$dark:Z
 
     if-nez v0, :cond_0
 
-    .line 40
     iget-object v0, p0, Lcom/oneplus/doze/NotificationDozeHelper$2;->val$target:Landroid/widget/ImageView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 42
     :cond_0
     return-void
 .end method

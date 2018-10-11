@@ -25,12 +25,10 @@
 .method constructor <init>(Lcom/oneplus/lib/menu/ActionMenuPresenter;)V
     .locals 0
 
-    .line 761
     iput-object p1, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$PopupPresenterCallback;->this$0:Lcom/oneplus/lib/menu/ActionMenuPresenter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 762
     return-void
 .end method
 
@@ -38,15 +36,11 @@
 # virtual methods
 .method public onCloseMenu(Lcom/oneplus/lib/menu/MenuBuilder;Z)V
     .locals 2
-    .param p1, "menu"    # Lcom/oneplus/lib/menu/MenuBuilder;
-    .param p2, "allMenusAreClosing"    # Z
 
-    .line 775
     instance-of v0, p1, Lcom/oneplus/lib/menu/SubMenuBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 776
     invoke-virtual {p1}, Lcom/oneplus/lib/menu/MenuBuilder;->getRootMenu()Lcom/oneplus/lib/menu/MenuBuilder;
 
     move-result-object v0
@@ -55,7 +49,6 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/lib/menu/MenuBuilder;->close(Z)V
 
-    .line 778
     :cond_0
     iget-object v0, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$PopupPresenterCallback;->this$0:Lcom/oneplus/lib/menu/ActionMenuPresenter;
 
@@ -63,30 +56,23 @@
 
     move-result-object v0
 
-    .line 779
-    .local v0, "cb":Lcom/oneplus/lib/menu/MenuPresenter$Callback;
     if-eqz v0, :cond_1
 
-    .line 780
     invoke-interface {v0, p1, p2}, Lcom/oneplus/lib/menu/MenuPresenter$Callback;->onCloseMenu(Lcom/oneplus/lib/menu/MenuBuilder;Z)V
 
-    .line 782
     :cond_1
     return-void
 .end method
 
 .method public onOpenSubMenu(Lcom/oneplus/lib/menu/MenuBuilder;)Z
     .locals 3
-    .param p1, "subMenu"    # Lcom/oneplus/lib/menu/MenuBuilder;
 
-    .line 766
     const/4 v0, 0x0
 
     if-nez p1, :cond_0
 
     return v0
 
-    .line 768
     :cond_0
     iget-object v1, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$PopupPresenterCallback;->this$0:Lcom/oneplus/lib/menu/ActionMenuPresenter;
 
@@ -104,15 +90,12 @@
 
     iput v2, v1, Lcom/oneplus/lib/menu/ActionMenuPresenter;->mOpenSubMenuId:I
 
-    .line 769
     iget-object v1, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$PopupPresenterCallback;->this$0:Lcom/oneplus/lib/menu/ActionMenuPresenter;
 
     invoke-virtual {v1}, Lcom/oneplus/lib/menu/ActionMenuPresenter;->getCallback()Lcom/oneplus/lib/menu/MenuPresenter$Callback;
 
     move-result-object v1
 
-    .line 770
-    .local v1, "cb":Lcom/oneplus/lib/menu/MenuPresenter$Callback;
     if-eqz v1, :cond_1
 
     invoke-interface {v1, p1}, Lcom/oneplus/lib/menu/MenuPresenter$Callback;->onOpenSubMenu(Lcom/oneplus/lib/menu/MenuBuilder;)Z

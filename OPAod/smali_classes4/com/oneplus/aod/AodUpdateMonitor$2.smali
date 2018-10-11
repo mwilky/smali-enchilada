@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/aod/AodUpdateMonitor;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/oneplus/aod/AodUpdateMonitor;
 
-    .line 192
     iput-object p1, p0, Lcom/oneplus/aod/AodUpdateMonitor$2;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     const/4 v0, 0x0

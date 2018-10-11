@@ -25,34 +25,22 @@
 # direct methods
 .method constructor <init>(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/support/v4/media/IMediaSession2;)V
     .locals 1
-    .param p1, "uid"    # I
-    .param p2, "type"    # I
-    .param p3, "packageName"    # Ljava/lang/String;
-    .param p4, "serviceName"    # Ljava/lang/String;
-    .param p5, "sessionId"    # Ljava/lang/String;
-    .param p6, "iSession2"    # Landroid/support/v4/media/IMediaSession2;
     .annotation build Landroid/support/annotation/RestrictTo;
         value = {
             .enum Landroid/support/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroid/support/annotation/RestrictTo$Scope;
         }
     .end annotation
 
-    .line 122
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 123
     iput p1, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mUid:I
 
-    .line 124
     iput p2, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mType:I
 
-    .line 125
     iput-object p3, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mPackageName:Ljava/lang/String;
 
-    .line 126
     iput-object p4, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mServiceName:Ljava/lang/String;
 
-    .line 127
     iget v0, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mType:I
 
     if-nez v0, :cond_0
@@ -69,88 +57,73 @@
     :goto_0
     iput-object v0, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mComponentName:Landroid/content/ComponentName;
 
-    .line 129
     iput-object p5, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mSessionId:Ljava/lang/String;
 
-    .line 130
     iput-object p6, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mISession2:Landroid/support/v4/media/IMediaSession2;
 
-    .line 131
     return-void
 .end method
 
 .method constructor <init>(Landroid/content/Context;Landroid/content/ComponentName;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
+    .param p1    # Landroid/content/Context;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "serviceComponent"    # Landroid/content/ComponentName;
+    .param p2    # Landroid/content/ComponentName;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 66
     const/4 v0, -0x1
 
     invoke-direct {p0, p1, p2, v0}, Landroid/support/v4/media/SessionToken2ImplBase;-><init>(Landroid/content/Context;Landroid/content/ComponentName;I)V
 
-    .line 67
     return-void
 .end method
 
 .method constructor <init>(Landroid/content/Context;Landroid/content/ComponentName;I)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
+    .param p1    # Landroid/content/Context;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "serviceComponent"    # Landroid/content/ComponentName;
+    .param p2    # Landroid/content/ComponentName;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p3, "uid"    # I
     .annotation build Landroid/support/annotation/RestrictTo;
         value = {
             .enum Landroid/support/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroid/support/annotation/RestrictTo$Scope;
         }
     .end annotation
 
-    .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 81
     if-eqz p2, :cond_3
 
-    .line 84
     iput-object p2, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mComponentName:Landroid/content/ComponentName;
 
-    .line 85
     invoke-virtual {p2}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mPackageName:Ljava/lang/String;
 
-    .line 86
     invoke-virtual {p2}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mServiceName:Ljava/lang/String;
 
-    .line 88
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    .line 89
-    .local v0, "manager":Landroid/content/pm/PackageManager;
     const/4 v1, -0x1
 
     if-ne p3, v1, :cond_0
 
-    .line 91
     :try_start_0
     iget-object v1, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mPackageName:Ljava/lang/String;
 
@@ -166,15 +139,11 @@
 
     move p3, v1
 
-    .line 94
     goto :goto_0
 
-    .line 92
     :catch_0
     move-exception v1
 
-    .line 93
-    .local v1, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -197,34 +166,26 @@
 
     throw v2
 
-    .line 96
-    .end local v1    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :cond_0
     :goto_0
     iput p3, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mUid:I
 
-    .line 99
     const-string v1, "android.media.MediaLibraryService2"
 
     invoke-static {v0, v1, p2}, Landroid/support/v4/media/SessionToken2ImplBase;->getSessionIdFromService(Landroid/content/pm/PackageManager;Ljava/lang/String;Landroid/content/ComponentName;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 101
-    .local v1, "sessionId":Ljava/lang/String;
     if-eqz v1, :cond_1
 
-    .line 102
     iput-object v1, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mSessionId:Ljava/lang/String;
 
-    .line 103
     const/4 v2, 0x2
 
     iput v2, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mType:I
 
     goto :goto_1
 
-    .line 106
     :cond_1
     const-string v2, "android.media.MediaSessionService2"
 
@@ -234,26 +195,21 @@
 
     iput-object v2, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mSessionId:Ljava/lang/String;
 
-    .line 108
     const/4 v2, 0x1
 
     iput v2, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mType:I
 
-    .line 110
     :goto_1
     iget-object v2, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mSessionId:Ljava/lang/String;
 
     if-eqz v2, :cond_2
 
-    .line 114
     const/4 v2, 0x0
 
     iput-object v2, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mISession2:Landroid/support/v4/media/IMediaSession2;
 
-    .line 115
     return-void
 
-    .line 111
     :cond_2
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
@@ -285,9 +241,6 @@
 
     throw v2
 
-    .line 82
-    .end local v0    # "manager":Landroid/content/pm/PackageManager;
-    .end local v1    # "sessionId":Ljava/lang/String;
     :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -300,20 +253,17 @@
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroid/support/v4/media/SessionToken2ImplBase;
     .locals 14
-    .param p0, "bundle"    # Landroid/os/Bundle;
+    .param p0    # Landroid/os/Bundle;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 230
     if-nez p0, :cond_0
 
-    .line 231
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 233
     :cond_0
     const-string v0, "android.media.token.uid"
 
@@ -321,8 +271,6 @@
 
     move-result v0
 
-    .line 234
-    .local v0, "uid":I
     const-string v1, "android.media.token.type"
 
     const/4 v2, -0x1
@@ -331,32 +279,24 @@
 
     move-result v8
 
-    .line 235
-    .local v8, "type":I
     const-string v1, "android.media.token.package_name"
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 236
-    .local v9, "packageName":Ljava/lang/String;
     const-string v1, "android.media.token.service_name"
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v10
 
-    .line 237
-    .local v10, "serviceName":Ljava/lang/String;
     const-string v1, "android.media.token.session_id"
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v11
 
-    .line 238
-    .local v11, "sessionId":Ljava/lang/String;
     const-string v1, "android.media.token.session_binder"
 
     invoke-static {p0, v1}, Landroid/support/v4/app/BundleCompat;->getBinder(Landroid/os/Bundle;Ljava/lang/String;)Landroid/os/IBinder;
@@ -367,11 +307,8 @@
 
     move-result-object v12
 
-    .line 242
-    .local v12, "iSession2":Landroid/support/v4/media/IMediaSession2;
     packed-switch v8, :pswitch_data_0
 
-    .line 256
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "Invalid type"
@@ -380,7 +317,6 @@
 
     throw v1
 
-    .line 251
     :pswitch_0
     invoke-static {v10}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -390,7 +326,6 @@
 
     goto :goto_0
 
-    .line 252
     :cond_1
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -400,11 +335,9 @@
 
     throw v1
 
-    .line 244
     :pswitch_1
     if-eqz v12, :cond_3
 
-    .line 258
     :goto_0
     invoke-static {v9}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -414,7 +347,6 @@
 
     if-eqz v11, :cond_2
 
-    .line 261
     new-instance v13, Landroid/support/v4/media/SessionToken2ImplBase;
 
     move-object v1, v13
@@ -435,7 +367,6 @@
 
     return-object v13
 
-    .line 259
     :cond_2
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -445,7 +376,6 @@
 
     throw v1
 
-    .line 245
     :cond_3
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -479,14 +409,12 @@
 
 .method public static getSessionId(Landroid/content/pm/ResolveInfo;)Ljava/lang/String;
     .locals 3
-    .param p0, "resolveInfo"    # Landroid/content/pm/ResolveInfo;
     .annotation build Landroid/support/annotation/RestrictTo;
         value = {
             .enum Landroid/support/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroid/support/annotation/RestrictTo$Scope;
         }
     .end annotation
 
-    .line 269
     if-eqz p0, :cond_2
 
     iget-object v0, p0, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
@@ -495,7 +423,6 @@
 
     goto :goto_0
 
-    .line 271
     :cond_0
     iget-object v0, p0, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
@@ -503,12 +430,10 @@
 
     if-nez v0, :cond_1
 
-    .line 272
     const-string v0, ""
 
     return-object v0
 
-    .line 274
     :cond_1
     iget-object v0, p0, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
@@ -524,7 +449,6 @@
 
     return-object v0
 
-    .line 270
     :cond_2
     :goto_0
     const/4 v0, 0x0
@@ -534,38 +458,27 @@
 
 .method private static getSessionIdFromService(Landroid/content/pm/PackageManager;Ljava/lang/String;Landroid/content/ComponentName;)Ljava/lang/String;
     .locals 6
-    .param p0, "manager"    # Landroid/content/pm/PackageManager;
-    .param p1, "serviceInterface"    # Ljava/lang/String;
-    .param p2, "serviceComponent"    # Landroid/content/ComponentName;
 
-    .line 281
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0, p1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 285
-    .local v0, "serviceIntent":Landroid/content/Intent;
     invoke-virtual {p2}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 287
     const/16 v1, 0x80
 
     invoke-virtual {p0, v0, v1}, Landroid/content/pm/PackageManager;->queryIntentServices(Landroid/content/Intent;I)Ljava/util/List;
 
     move-result-object v1
 
-    .line 289
-    .local v1, "list":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     if-eqz v1, :cond_2
 
-    .line 290
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -573,59 +486,47 @@
 
     if-ge v2, v3, :cond_2
 
-    .line 291
     invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroid/content/pm/ResolveInfo;
 
-    .line 292
-    .local v3, "resolveInfo":Landroid/content/pm/ResolveInfo;
     if-eqz v3, :cond_1
 
     iget-object v4, v3, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
     if-nez v4, :cond_0
 
-    .line 293
     goto :goto_1
 
-    .line 295
     :cond_0
     iget-object v4, v3, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
     iget-object v4, v4, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
 
-    .line 296
     invoke-virtual {p2}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 295
     invoke-static {v4, v5}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 297
     invoke-static {v3}, Landroid/support/v4/media/SessionToken2ImplBase;->getSessionId(Landroid/content/pm/ResolveInfo;)Ljava/lang/String;
 
     move-result-object v4
 
     return-object v4
 
-    .line 290
-    .end local v3    # "resolveInfo":Landroid/content/pm/ResolveInfo;
     :cond_1
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 301
-    .end local v2    # "i":I
     :cond_2
     const/4 v2, 0x0
 
@@ -634,17 +535,13 @@
 
 .method private sessionBinderEquals(Landroid/support/v4/media/IMediaSession2;Landroid/support/v4/media/IMediaSession2;)Z
     .locals 2
-    .param p1, "a"    # Landroid/support/v4/media/IMediaSession2;
-    .param p2, "b"    # Landroid/support/v4/media/IMediaSession2;
 
-    .line 158
     if-eqz p1, :cond_1
 
     if-nez p2, :cond_0
 
     goto :goto_0
 
-    .line 161
     :cond_0
     invoke-interface {p1}, Landroid/support/v4/media/IMediaSession2;->asBinder()Landroid/os/IBinder;
 
@@ -660,7 +557,6 @@
 
     return v0
 
-    .line 159
     :cond_1
     :goto_0
     if-ne p1, p2, :cond_2
@@ -680,26 +576,20 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 145
     instance-of v0, p1, Landroid/support/v4/media/SessionToken2ImplBase;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 146
     return v1
 
-    .line 148
     :cond_0
     move-object v0, p1
 
     check-cast v0, Landroid/support/v4/media/SessionToken2ImplBase;
 
-    .line 149
-    .local v0, "other":Landroid/support/v4/media/SessionToken2ImplBase;
     iget v2, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mUid:I
 
     iget v3, v0, Landroid/support/v4/media/SessionToken2ImplBase;->mUid:I
@@ -710,7 +600,6 @@
 
     iget-object v3, v0, Landroid/support/v4/media/SessionToken2ImplBase;->mPackageName:Ljava/lang/String;
 
-    .line 150
     invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -721,7 +610,6 @@
 
     iget-object v3, v0, Landroid/support/v4/media/SessionToken2ImplBase;->mServiceName:Ljava/lang/String;
 
-    .line 151
     invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -732,7 +620,6 @@
 
     iget-object v3, v0, Landroid/support/v4/media/SessionToken2ImplBase;->mSessionId:Ljava/lang/String;
 
-    .line 152
     invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -749,7 +636,6 @@
 
     iget-object v3, v0, Landroid/support/v4/media/SessionToken2ImplBase;->mISession2:Landroid/support/v4/media/IMediaSession2;
 
-    .line 154
     invoke-direct {p0, v2, v3}, Landroid/support/v4/media/SessionToken2ImplBase;->sessionBinderEquals(Landroid/support/v4/media/IMediaSession2;Landroid/support/v4/media/IMediaSession2;)Z
 
     move-result v2
@@ -767,7 +653,6 @@
 .method public getBinder()Ljava/lang/Object;
     .locals 1
 
-    .line 221
     iget-object v0, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mISession2:Landroid/support/v4/media/IMediaSession2;
 
     if-nez v0, :cond_0
@@ -795,7 +680,6 @@
         }
     .end annotation
 
-    .line 192
     iget-object v0, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mComponentName:Landroid/content/ComponentName;
 
     return-object v0
@@ -806,7 +690,6 @@
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
-    .line 177
     iget-object v0, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mPackageName:Ljava/lang/String;
 
     return-object v0
@@ -817,7 +700,6 @@
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 182
     iget-object v0, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mServiceName:Ljava/lang/String;
 
     return-object v0
@@ -826,7 +708,6 @@
 .method public getSessionId()Ljava/lang/String;
     .locals 1
 
-    .line 197
     iget-object v0, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mSessionId:Ljava/lang/String;
 
     return-object v0
@@ -835,7 +716,6 @@
 .method public getType()I
     .locals 1
 
-    .line 202
     iget v0, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mType:I
 
     return v0
@@ -844,7 +724,6 @@
 .method public getUid()I
     .locals 1
 
-    .line 172
     iget v0, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mUid:I
 
     return v0
@@ -853,25 +732,20 @@
 .method public hashCode()I
     .locals 7
 
-    .line 135
     const/16 v0, 0x1f
 
-    .line 136
-    .local v0, "prime":I
     iget v1, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mType:I
 
     iget v2, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mUid:I
 
     iget-object v3, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mPackageName:Ljava/lang/String;
 
-    .line 138
     invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
 
     move-result v3
 
     iget-object v4, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mSessionId:Ljava/lang/String;
 
-    .line 139
     invoke-virtual {v4}, Ljava/lang/String;->hashCode()I
 
     move-result v4
@@ -882,7 +756,6 @@
 
     iget-object v5, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mServiceName:Ljava/lang/String;
 
-    .line 140
     invoke-virtual {v5}, Ljava/lang/String;->hashCode()I
 
     move-result v5
@@ -917,53 +790,44 @@
 .method public toBundle()Landroid/os/Bundle;
     .locals 3
 
-    .line 207
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 208
-    .local v0, "bundle":Landroid/os/Bundle;
     const-string v1, "android.media.token.uid"
 
     iget v2, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mUid:I
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 209
     const-string v1, "android.media.token.package_name"
 
     iget-object v2, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mPackageName:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 210
     const-string v1, "android.media.token.service_name"
 
     iget-object v2, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mServiceName:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 211
     const-string v1, "android.media.token.session_id"
 
     iget-object v2, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mSessionId:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 212
     const-string v1, "android.media.token.type"
 
     iget v2, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mType:I
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 213
     iget-object v1, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mISession2:Landroid/support/v4/media/IMediaSession2;
 
     if-eqz v1, :cond_0
 
-    .line 214
     const-string v1, "android.media.token.session_binder"
 
     iget-object v2, p0, Landroid/support/v4/media/SessionToken2ImplBase;->mISession2:Landroid/support/v4/media/IMediaSession2;
@@ -974,7 +838,6 @@
 
     invoke-static {v0, v1, v2}, Landroid/support/v4/app/BundleCompat;->putBinder(Landroid/os/Bundle;Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 216
     :cond_0
     return-object v0
 .end method
@@ -982,7 +845,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 166
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

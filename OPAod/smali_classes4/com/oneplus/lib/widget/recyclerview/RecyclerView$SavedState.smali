@@ -34,7 +34,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 9423
     new-instance v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SavedState$1;
 
     invoke-direct {v0}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SavedState$1;-><init>()V
@@ -46,12 +45,9 @@
 
 .method constructor <init>(Landroid/os/Parcel;)V
     .locals 1
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 9402
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 9403
     const-class v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
@@ -64,27 +60,20 @@
 
     iput-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SavedState;->mLayoutState:Landroid/os/Parcelable;
 
-    .line 9404
     return-void
 .end method
 
 .method constructor <init>(Landroid/os/Parcelable;)V
     .locals 0
-    .param p1, "superState"    # Landroid/os/Parcelable;
 
-    .line 9410
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 9411
     return-void
 .end method
 
 .method static synthetic access$1500(Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SavedState;Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SavedState;)V
     .locals 0
-    .param p0, "x0"    # Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SavedState;
-    .param p1, "x1"    # Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SavedState;
 
-    .line 9394
     invoke-direct {p0, p1}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SavedState;->copyFrom(Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SavedState;)V
 
     return-void
@@ -92,14 +81,11 @@
 
 .method private copyFrom(Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SavedState;)V
     .locals 1
-    .param p1, "other"    # Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SavedState;
 
-    .line 9420
     iget-object v0, p1, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SavedState;->mLayoutState:Landroid/os/Parcelable;
 
     iput-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SavedState;->mLayoutState:Landroid/os/Parcelable;
 
-    .line 9421
     return-void
 .end method
 
@@ -107,19 +93,14 @@
 # virtual methods
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 9415
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 9416
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$SavedState;->mLayoutState:Landroid/os/Parcelable;
 
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 9417
     return-void
 .end method

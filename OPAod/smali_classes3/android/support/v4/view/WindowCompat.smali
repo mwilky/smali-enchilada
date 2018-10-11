@@ -15,7 +15,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -23,11 +22,11 @@
 
 .method public static requireViewById(Landroid/view/Window;I)Landroid/view/View;
     .locals 3
-    .param p0, "window"    # Landroid/view/Window;
+    .param p0    # Landroid/view/Window;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p1, "id"    # I
+    .param p1    # I
         .annotation build Landroid/support/annotation/IdRes;
         .end annotation
     .end param
@@ -44,19 +43,14 @@
         }
     .end annotation
 
-    .line 85
     invoke-virtual {p0, p1}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 86
-    .local v0, "view":Landroid/view/View;, "TT;"
     if-eqz v0, :cond_0
 
-    .line 89
     return-object v0
 
-    .line 87
     :cond_0
     new-instance v1, Ljava/lang/IllegalArgumentException;
 

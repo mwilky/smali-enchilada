@@ -28,10 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/recyclerview/ArrayMap;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/recyclerview/ArrayMap;
 
-    .line 73
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;"
     iput-object p1, p0, Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;->this$0:Lcom/oneplus/lib/widget/recyclerview/ArrayMap;
 
     invoke-direct {p0}, Lcom/oneplus/lib/widget/recyclerview/MapCollections;-><init>()V
@@ -44,23 +41,16 @@
 .method protected colClear()V
     .locals 1
 
-    .line 116
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;->this$0:Lcom/oneplus/lib/widget/recyclerview/ArrayMap;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/recyclerview/ArrayMap;->clear()V
 
-    .line 117
     return-void
 .end method
 
 .method protected colGetEntry(II)Ljava/lang/Object;
     .locals 2
-    .param p1, "index"    # I
-    .param p2, "offset"    # I
 
-    .line 81
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;->this$0:Lcom/oneplus/lib/widget/recyclerview/ArrayMap;
 
     iget-object v0, v0, Lcom/oneplus/lib/widget/recyclerview/ArrayMap;->mArray:[Ljava/lang/Object;
@@ -84,8 +74,6 @@
         }
     .end annotation
 
-    .line 96
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;->this$0:Lcom/oneplus/lib/widget/recyclerview/ArrayMap;
 
     return-object v0
@@ -94,8 +82,6 @@
 .method protected colGetSize()I
     .locals 1
 
-    .line 76
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;->this$0:Lcom/oneplus/lib/widget/recyclerview/ArrayMap;
 
     iget v0, v0, Lcom/oneplus/lib/widget/recyclerview/ArrayMap;->mSize:I
@@ -105,10 +91,7 @@
 
 .method protected colIndexOfKey(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "key"    # Ljava/lang/Object;
 
-    .line 86
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;->this$0:Lcom/oneplus/lib/widget/recyclerview/ArrayMap;
 
     invoke-virtual {v0, p1}, Lcom/oneplus/lib/widget/recyclerview/ArrayMap;->indexOfKey(Ljava/lang/Object;)I
@@ -120,10 +103,7 @@
 
 .method protected colIndexOfValue(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "value"    # Ljava/lang/Object;
 
-    .line 91
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;->this$0:Lcom/oneplus/lib/widget/recyclerview/ArrayMap;
 
     invoke-virtual {v0, p1}, Lcom/oneplus/lib/widget/recyclerview/ArrayMap;->indexOfValue(Ljava/lang/Object;)I
@@ -141,44 +121,31 @@
         }
     .end annotation
 
-    .line 101
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;->this$0:Lcom/oneplus/lib/widget/recyclerview/ArrayMap;
 
     invoke-virtual {v0, p1, p2}, Lcom/oneplus/lib/widget/recyclerview/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 102
     return-void
 .end method
 
 .method protected colRemoveAt(I)V
     .locals 1
-    .param p1, "index"    # I
 
-    .line 111
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;->this$0:Lcom/oneplus/lib/widget/recyclerview/ArrayMap;
 
     invoke-virtual {v0, p1}, Lcom/oneplus/lib/widget/recyclerview/ArrayMap;->removeAt(I)Ljava/lang/Object;
 
-    .line 112
     return-void
 .end method
 
 .method protected colSetValue(ILjava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ITV;)TV;"
         }
     .end annotation
 
-    .line 106
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;->this$0:Lcom/oneplus/lib/widget/recyclerview/ArrayMap;
 
     invoke-virtual {v0, p1, p2}, Lcom/oneplus/lib/widget/recyclerview/ArrayMap;->setValueAt(ILjava/lang/Object;)Ljava/lang/Object;

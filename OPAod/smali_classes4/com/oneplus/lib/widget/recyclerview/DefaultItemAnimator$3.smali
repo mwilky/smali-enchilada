@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator;Ljava/util/ArrayList;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator;
 
-    .line 170
     iput-object p1, p0, Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator$3;->this$0:Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator;
 
     iput-object p2, p0, Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator$3;->val$additions:Ljava/util/ArrayList;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 172
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator$3;->val$additions:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -63,23 +60,17 @@
 
     check-cast v1, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewHolder;
 
-    .line 173
-    .local v1, "holder":Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewHolder;
     iget-object v2, p0, Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator$3;->this$0:Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator;
 
     invoke-static {v2, v1}, Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator;->access$400(Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator;Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewHolder;)V
 
-    .line 174
-    .end local v1    # "holder":Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewHolder;
     goto :goto_0
 
-    .line 175
     :cond_0
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator$3;->val$additions:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 176
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator$3;->this$0:Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator;->access$500(Lcom/oneplus/lib/widget/recyclerview/DefaultItemAnimator;)Ljava/util/ArrayList;
@@ -90,6 +81,5 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 177
     return-void
 .end method

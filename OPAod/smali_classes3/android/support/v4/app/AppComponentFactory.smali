@@ -13,7 +13,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 40
     invoke-direct {p0}, Landroid/app/AppComponentFactory;-><init>()V
 
     return-void
@@ -23,9 +22,6 @@
 # virtual methods
 .method public final instantiateActivity(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Activity;
     .locals 1
-    .param p1, "cl"    # Ljava/lang/ClassLoader;
-    .param p2, "className"    # Ljava/lang/String;
-    .param p3, "intent"    # Landroid/content/Intent;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -34,7 +30,6 @@
         }
     .end annotation
 
-    .line 48
     invoke-virtual {p0, p1, p2, p3}, Landroid/support/v4/app/AppComponentFactory;->instantiateActivityCompat(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Activity;
 
     move-result-object v0
@@ -50,15 +45,15 @@
 
 .method public instantiateActivityCompat(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Activity;
     .locals 3
-    .param p1, "cl"    # Ljava/lang/ClassLoader;
+    .param p1    # Ljava/lang/ClassLoader;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "className"    # Ljava/lang/String;
+    .param p2    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p3, "intent"    # Landroid/content/Intent;
+    .param p3    # Landroid/content/Intent;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
@@ -73,7 +68,6 @@
         }
     .end annotation
 
-    .line 127
     :try_start_0
     invoke-virtual {p1, p2}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
@@ -100,12 +94,9 @@
 
     return-object v0
 
-    .line 128
     :catch_0
     move-exception v0
 
-    .line 129
-    .local v0, "e":Ljava/lang/ReflectiveOperationException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Couldn\'t call constructor"
@@ -117,8 +108,6 @@
 
 .method public final instantiateApplication(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/app/Application;
     .locals 1
-    .param p1, "cl"    # Ljava/lang/ClassLoader;
-    .param p2, "className"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -127,7 +116,6 @@
         }
     .end annotation
 
-    .line 57
     invoke-virtual {p0, p1, p2}, Landroid/support/v4/app/AppComponentFactory;->instantiateApplicationCompat(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/app/Application;
 
     move-result-object v0
@@ -143,11 +131,11 @@
 
 .method public instantiateApplicationCompat(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/app/Application;
     .locals 3
-    .param p1, "cl"    # Ljava/lang/ClassLoader;
+    .param p1    # Ljava/lang/ClassLoader;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "className"    # Ljava/lang/String;
+    .param p2    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
@@ -162,7 +150,6 @@
         }
     .end annotation
 
-    .line 104
     :try_start_0
     invoke-virtual {p1, p2}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
@@ -189,12 +176,9 @@
 
     return-object v0
 
-    .line 105
     :catch_0
     move-exception v0
 
-    .line 106
-    .local v0, "e":Ljava/lang/ReflectiveOperationException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Couldn\'t call constructor"
@@ -206,8 +190,6 @@
 
 .method public final instantiateProvider(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/content/ContentProvider;
     .locals 1
-    .param p1, "cl"    # Ljava/lang/ClassLoader;
-    .param p2, "className"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -216,7 +198,6 @@
         }
     .end annotation
 
-    .line 76
     invoke-virtual {p0, p1, p2}, Landroid/support/v4/app/AppComponentFactory;->instantiateProviderCompat(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/content/ContentProvider;
 
     move-result-object v0
@@ -232,11 +213,11 @@
 
 .method public instantiateProviderCompat(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/content/ContentProvider;
     .locals 3
-    .param p1, "cl"    # Ljava/lang/ClassLoader;
+    .param p1    # Ljava/lang/ClassLoader;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "className"    # Ljava/lang/String;
+    .param p2    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
@@ -251,7 +232,6 @@
         }
     .end annotation
 
-    .line 192
     :try_start_0
     invoke-virtual {p1, p2}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
@@ -278,12 +258,9 @@
 
     return-object v0
 
-    .line 193
     :catch_0
     move-exception v0
 
-    .line 194
-    .local v0, "e":Ljava/lang/ReflectiveOperationException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Couldn\'t call constructor"
@@ -295,9 +272,6 @@
 
 .method public final instantiateReceiver(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/content/BroadcastReceiver;
     .locals 1
-    .param p1, "cl"    # Ljava/lang/ClassLoader;
-    .param p2, "className"    # Ljava/lang/String;
-    .param p3, "intent"    # Landroid/content/Intent;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -306,7 +280,6 @@
         }
     .end annotation
 
-    .line 67
     invoke-virtual {p0, p1, p2, p3}, Landroid/support/v4/app/AppComponentFactory;->instantiateReceiverCompat(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/content/BroadcastReceiver;
 
     move-result-object v0
@@ -322,15 +295,15 @@
 
 .method public instantiateReceiverCompat(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/content/BroadcastReceiver;
     .locals 3
-    .param p1, "cl"    # Ljava/lang/ClassLoader;
+    .param p1    # Ljava/lang/ClassLoader;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "className"    # Ljava/lang/String;
+    .param p2    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p3, "intent"    # Landroid/content/Intent;
+    .param p3    # Landroid/content/Intent;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
@@ -345,7 +318,6 @@
         }
     .end annotation
 
-    .line 146
     :try_start_0
     invoke-virtual {p1, p2}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
@@ -361,7 +333,6 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    .line 147
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -373,12 +344,9 @@
 
     return-object v0
 
-    .line 148
     :catch_0
     move-exception v0
 
-    .line 149
-    .local v0, "e":Ljava/lang/ReflectiveOperationException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Couldn\'t call constructor"
@@ -390,9 +358,6 @@
 
 .method public final instantiateService(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Service;
     .locals 1
-    .param p1, "cl"    # Ljava/lang/ClassLoader;
-    .param p2, "className"    # Ljava/lang/String;
-    .param p3, "intent"    # Landroid/content/Intent;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -401,7 +366,6 @@
         }
     .end annotation
 
-    .line 85
     invoke-virtual {p0, p1, p2, p3}, Landroid/support/v4/app/AppComponentFactory;->instantiateServiceCompat(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Service;
 
     move-result-object v0
@@ -417,15 +381,15 @@
 
 .method public instantiateServiceCompat(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Service;
     .locals 3
-    .param p1, "cl"    # Ljava/lang/ClassLoader;
+    .param p1    # Ljava/lang/ClassLoader;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "className"    # Ljava/lang/String;
+    .param p2    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p3, "intent"    # Landroid/content/Intent;
+    .param p3    # Landroid/content/Intent;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
@@ -440,7 +404,6 @@
         }
     .end annotation
 
-    .line 170
     :try_start_0
     invoke-virtual {p1, p2}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
@@ -467,12 +430,9 @@
 
     return-object v0
 
-    .line 171
     :catch_0
     move-exception v0
 
-    .line 172
-    .local v0, "e":Ljava/lang/ReflectiveOperationException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Couldn\'t call constructor"

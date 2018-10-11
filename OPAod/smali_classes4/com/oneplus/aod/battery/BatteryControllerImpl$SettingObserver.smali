@@ -24,27 +24,22 @@
 .method public constructor <init>(Lcom/oneplus/aod/battery/BatteryControllerImpl;)V
     .locals 0
 
-    .line 360
     iput-object p1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl$SettingObserver;->this$0:Lcom/oneplus/aod/battery/BatteryControllerImpl;
 
-    .line 361
     new-instance p1, Landroid/os/Handler;
 
     invoke-direct {p1}, Landroid/os/Handler;-><init>()V
 
     invoke-direct {p0, p1}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 357
     const-string p1, "status_bar_battery_style"
 
-    .line 358
     invoke-static {p1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl$SettingObserver;->STATUS_BAR_BATTERY_STYLE:Landroid/net/Uri;
 
-    .line 362
     return-void
 .end method
 
@@ -53,7 +48,6 @@
 .method observe()V
     .locals 4
 
-    .line 365
     iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl$SettingObserver;->this$0:Lcom/oneplus/aod/battery/BatteryControllerImpl;
 
     invoke-static {v0}, Lcom/oneplus/aod/battery/BatteryControllerImpl;->access$100(Lcom/oneplus/aod/battery/BatteryControllerImpl;)Landroid/content/Context;
@@ -64,8 +58,6 @@
 
     move-result-object v0
 
-    .line 367
-    .local v0, "resolver":Landroid/content/ContentResolver;
     iget-object v1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl$SettingObserver;->STATUS_BAR_BATTERY_STYLE:Landroid/net/Uri;
 
     const/4 v2, 0x0
@@ -74,32 +66,24 @@
 
     invoke-virtual {v0, v1, v2, p0, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 369
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1}, Lcom/oneplus/aod/battery/BatteryControllerImpl$SettingObserver;->update(Landroid/net/Uri;)V
 
-    .line 370
     return-void
 .end method
 
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 0
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 374
     invoke-virtual {p0, p2}, Lcom/oneplus/aod/battery/BatteryControllerImpl$SettingObserver;->update(Landroid/net/Uri;)V
 
-    .line 375
     return-void
 .end method
 
 .method public update(Landroid/net/Uri;)V
     .locals 5
-    .param p1, "uri"    # Landroid/net/Uri;
 
-    .line 378
     iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl$SettingObserver;->this$0:Lcom/oneplus/aod/battery/BatteryControllerImpl;
 
     invoke-static {v0}, Lcom/oneplus/aod/battery/BatteryControllerImpl;->access$100(Lcom/oneplus/aod/battery/BatteryControllerImpl;)Landroid/content/Context;
@@ -110,8 +94,6 @@
 
     move-result-object v0
 
-    .line 379
-    .local v0, "resolver":Landroid/content/ContentResolver;
     if-eqz p1, :cond_0
 
     iget-object v1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl$SettingObserver;->STATUS_BAR_BATTERY_STYLE:Landroid/net/Uri;
@@ -122,7 +104,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 380
     :cond_0
     iget-object v1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl$SettingObserver;->this$0:Lcom/oneplus/aod/battery/BatteryControllerImpl;
 
@@ -130,19 +111,16 @@
 
     const/4 v3, 0x0
 
-    .line 381
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v4
 
-    .line 380
     invoke-static {v0, v2, v3, v4}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v2
 
     invoke-static {v1, v2}, Lcom/oneplus/aod/battery/BatteryControllerImpl;->access$802(Lcom/oneplus/aod/battery/BatteryControllerImpl;I)I
 
-    .line 383
     :cond_1
     const-string v1, "AodBatteryController"
 
@@ -174,11 +152,9 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 384
     iget-object v1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl$SettingObserver;->this$0:Lcom/oneplus/aod/battery/BatteryControllerImpl;
 
     invoke-static {v1}, Lcom/oneplus/aod/battery/BatteryControllerImpl;->access$900(Lcom/oneplus/aod/battery/BatteryControllerImpl;)V
 
-    .line 385
     return-void
 .end method

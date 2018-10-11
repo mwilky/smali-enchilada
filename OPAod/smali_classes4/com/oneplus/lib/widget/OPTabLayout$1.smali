@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/OPTabLayout;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/OPTabLayout;
 
-    .line 574
     iput-object p1, p0, Lcom/oneplus/lib/widget/OPTabLayout$1;->this$0:Lcom/oneplus/lib/widget/OPTabLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,21 +36,16 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 577
     move-object v0, p1
 
     check-cast v0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;
 
-    .line 578
-    .local v0, "tabView":Lcom/oneplus/lib/widget/OPTabLayout$TabView;
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->getTab()Lcom/oneplus/lib/widget/OPTabLayout$Tab;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lcom/oneplus/lib/widget/OPTabLayout$Tab;->select()V
 
-    .line 579
     return-void
 .end method

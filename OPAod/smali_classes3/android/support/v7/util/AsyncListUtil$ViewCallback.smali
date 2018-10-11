@@ -26,7 +26,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 521
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,19 +35,17 @@
 # virtual methods
 .method public extendRangeInto([I[II)V
     .locals 6
-    .param p1, "range"    # [I
+    .param p1    # [I
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "outRange"    # [I
+    .param p2    # [I
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p3, "scrollHint"    # I
     .annotation build Landroid/support/annotation/UiThread;
     .end annotation
 
-    .line 577
     const/4 v0, 0x1
 
     aget v1, p1, v0
@@ -61,12 +58,8 @@
 
     add-int/2addr v1, v0
 
-    .line 578
-    .local v1, "fullRange":I
     div-int/lit8 v3, v1, 0x2
 
-    .line 579
-    .local v3, "halfRange":I
     aget v4, p1, v2
 
     if-ne p3, v0, :cond_0
@@ -83,7 +76,6 @@
 
     aput v4, p2, v2
 
-    .line 580
     aget v2, p1, v0
 
     const/4 v4, 0x2
@@ -102,7 +94,6 @@
 
     aput v2, p2, v0
 
-    .line 581
     return-void
 .end method
 

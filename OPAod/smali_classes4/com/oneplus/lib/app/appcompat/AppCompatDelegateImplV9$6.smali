@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
-    .line 828
     iput-object p1, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9$6;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +36,13 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 849
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 841
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9$6;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
     iget-object v0, v0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;->mActionModeView:Lcom/oneplus/lib/app/appcompat/ActionBarContextView;
@@ -57,7 +51,6 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/lib/app/appcompat/ActionBarContextView;->setAlpha(F)V
 
-    .line 842
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9$6;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
     iget-object v0, v0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;->mFadeAnim:Landroid/view/ViewPropertyAnimator;
@@ -66,28 +59,22 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 843
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9$6;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
     iput-object v1, v0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;->mFadeAnim:Landroid/view/ViewPropertyAnimator;
 
-    .line 844
     return-void
 .end method
 
 .method public onAnimationRepeat(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 854
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 831
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9$6;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
     iget-object v0, v0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;->mActionModeView:Lcom/oneplus/lib/app/appcompat/ActionBarContextView;
@@ -96,7 +83,6 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/lib/app/appcompat/ActionBarContextView;->setVisibility(I)V
 
-    .line 832
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9$6;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
     iget-object v0, v0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;->mActionModeView:Lcom/oneplus/lib/app/appcompat/ActionBarContextView;
@@ -105,7 +91,6 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/lib/app/appcompat/ActionBarContextView;->sendAccessibilityEvent(I)V
 
-    .line 834
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9$6;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
     iget-object v0, v0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;->mActionModeView:Lcom/oneplus/lib/app/appcompat/ActionBarContextView;
@@ -118,7 +103,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 835
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9$6;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
     iget-object v0, v0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;->mActionModeView:Lcom/oneplus/lib/app/appcompat/ActionBarContextView;
@@ -131,7 +115,6 @@
 
     invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->requestApplyInsets(Landroid/view/View;)V
 
-    .line 837
     :cond_0
     return-void
 .end method

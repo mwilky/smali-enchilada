@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">ਸੁਨੇਹਾ ਦਿਖਾਓ</string>
     <string name="oneplus_aod_mode_always_on">ਹਮੇਸ਼ਾ ਚਾਲੂ</string>
     <string name="oneplus_aod_mode_lift_up">"ਚੁੱਕਣ 'ਤੇ ਡਿਸਪਲੇ"</string>
-    <string name="oneplus_aod_mode_shake_up">ਦਿਖਾਉਣ ਲਈ ਆਪਣੇ ਫ਼ੋਨ ਨੂੰ ਹਲਕਾ ਜਿਹਾ ਖਿਸਕਾਓ</string>
-    <string name="oneplus_aod_mode_single_tap">ਦਿਖਾਉਣ ਲਈ ਟੈਪ ਕਰੋ</string>
     <string name="oneplus_aod_settings">ਐਂਬਿਐਂਟ ਡਿਸਪਲੇ</string>
-    <string name="oneplus_aod_settings_what_to_show">ਕੀ ਦਿਖਾਉਣਾ ਹੈ</string>
-    <string name="oneplus_aod_settings_when_to_show">ਕਦੋਂ ਦਿਖਾਉਣਾ ਹੈ</string>
     <string name="oneplus_aod_title">ਘੜੀ ਦਿਖਾਓ</string>
     <string name="oneplus_display_time_end">ਤੱਕ</string>
     <string name="oneplus_display_time_from">ਤੋਂ</string>

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/button/OPFloatingActionButtonImpl;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/button/OPFloatingActionButtonImpl;
 
-    .line 229
     iput-object p1, p0, Lcom/oneplus/lib/widget/button/OPFloatingActionButtonImpl$2;->this$0:Lcom/oneplus/lib/widget/button/OPFloatingActionButtonImpl;
 
     iput-boolean p2, p0, Lcom/oneplus/lib/widget/button/OPFloatingActionButtonImpl$2;->val$fromUser:Z
@@ -42,33 +40,25 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 244
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 239
     return-void
 .end method
 
 .method public onAnimationRepeat(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 249
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 3
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 233
     iget-object v0, p0, Lcom/oneplus/lib/widget/button/OPFloatingActionButtonImpl$2;->this$0:Lcom/oneplus/lib/widget/button/OPFloatingActionButtonImpl;
 
     iget-object v0, v0, Lcom/oneplus/lib/widget/button/OPFloatingActionButtonImpl;->mView:Lcom/oneplus/lib/widget/button/OPFloatingActionButton;
@@ -79,6 +69,5 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/oneplus/lib/widget/button/OPFloatingActionButton;->internalSetVisibility(IZ)V
 
-    .line 234
     return-void
 .end method

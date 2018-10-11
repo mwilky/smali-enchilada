@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaLibrarySessionImplBase;Landroid/os/Bundle;Landroid/support/v4/media/MediaLibraryService2$LibraryRoot;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaLibrarySessionImplBase;
 
-    .line 157
     iput-object p1, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$4;->this$0:Landroid/support/v4/media/MediaLibrarySessionImplBase;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$4;->val$rootHints:Landroid/os/Bundle;
@@ -46,14 +44,12 @@
 # virtual methods
 .method public run(Landroid/support/v4/media/MediaSession2$ControllerCb;)V
     .locals 4
-    .param p1, "callback"    # Landroid/support/v4/media/MediaSession2$ControllerCb;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 160
     iget-object v0, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$4;->val$rootHints:Landroid/os/Bundle;
 
     iget-object v1, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$4;->val$root:Landroid/support/v4/media/MediaLibraryService2$LibraryRoot;
@@ -62,16 +58,13 @@
 
     if-nez v1, :cond_0
 
-    .line 161
     move-object v1, v2
 
     goto :goto_0
 
-    .line 160
     :cond_0
     iget-object v1, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$4;->val$root:Landroid/support/v4/media/MediaLibraryService2$LibraryRoot;
 
-    .line 161
     invoke-virtual {v1}, Landroid/support/v4/media/MediaLibraryService2$LibraryRoot;->getRootId()Ljava/lang/String;
 
     move-result-object v1
@@ -86,15 +79,12 @@
     :cond_1
     iget-object v2, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$4;->val$root:Landroid/support/v4/media/MediaLibraryService2$LibraryRoot;
 
-    .line 162
     invoke-virtual {v2}, Landroid/support/v4/media/MediaLibraryService2$LibraryRoot;->getExtras()Landroid/os/Bundle;
 
     move-result-object v2
 
-    .line 160
     :goto_1
     invoke-virtual {p1, v0, v1, v2}, Landroid/support/v4/media/MediaSession2$ControllerCb;->onGetLibraryRootDone(Landroid/os/Bundle;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 163
     return-void
 .end method

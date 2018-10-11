@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/DatePickerCalendarDelegate;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/DatePickerCalendarDelegate;
 
-    .line 231
     iput-object p1, p0, Lcom/oneplus/lib/widget/DatePickerCalendarDelegate$3;->this$0:Lcom/oneplus/lib/widget/DatePickerCalendarDelegate;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +36,11 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 234
     iget-object v0, p0, Lcom/oneplus/lib/widget/DatePickerCalendarDelegate$3;->this$0:Lcom/oneplus/lib/widget/DatePickerCalendarDelegate;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/DatePickerCalendarDelegate;->access$300(Lcom/oneplus/lib/widget/DatePickerCalendarDelegate;)V
 
-    .line 236
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
@@ -54,7 +49,6 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 237
     iget-object v0, p0, Lcom/oneplus/lib/widget/DatePickerCalendarDelegate$3;->this$0:Lcom/oneplus/lib/widget/DatePickerCalendarDelegate;
 
     const/4 v1, 0x1
@@ -63,7 +57,6 @@
 
     goto :goto_0
 
-    .line 238
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
@@ -73,14 +66,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 239
     iget-object v0, p0, Lcom/oneplus/lib/widget/DatePickerCalendarDelegate$3;->this$0:Lcom/oneplus/lib/widget/DatePickerCalendarDelegate;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/oneplus/lib/widget/DatePickerCalendarDelegate;->access$100(Lcom/oneplus/lib/widget/DatePickerCalendarDelegate;I)V
 
-    .line 241
     :cond_1
     :goto_0
     return-void

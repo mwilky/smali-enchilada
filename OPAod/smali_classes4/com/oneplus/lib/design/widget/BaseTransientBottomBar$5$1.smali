@@ -24,10 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$5;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$5;
 
-    .line 459
-    .local p0, "this":Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$5$1;, "Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$5$1;"
     iput-object p1, p0, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$5$1;->this$1:Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$5;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,8 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 462
-    .local p0, "this":Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$5$1;, "Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$5$1;"
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$5$1;->this$1:Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$5;
 
     iget-object v0, v0, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$5;->this$0:Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;
@@ -50,6 +45,5 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;->onViewHidden(I)V
 
-    .line 463
     return-void
 .end method

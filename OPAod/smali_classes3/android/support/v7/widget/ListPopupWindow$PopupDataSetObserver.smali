@@ -22,12 +22,10 @@
 .method constructor <init>(Landroid/support/v7/widget/ListPopupWindow;)V
     .locals 0
 
-    .line 1323
     iput-object p1, p0, Landroid/support/v7/widget/ListPopupWindow$PopupDataSetObserver;->this$0:Landroid/support/v7/widget/ListPopupWindow;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
 
-    .line 1324
     return-void
 .end method
 
@@ -36,7 +34,6 @@
 .method public onChanged()V
     .locals 1
 
-    .line 1328
     iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$PopupDataSetObserver;->this$0:Landroid/support/v7/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ListPopupWindow;->isShowing()Z
@@ -45,12 +42,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 1330
     iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$PopupDataSetObserver;->this$0:Landroid/support/v7/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ListPopupWindow;->show()V
 
-    .line 1332
     :cond_0
     return-void
 .end method
@@ -58,11 +53,9 @@
 .method public onInvalidated()V
     .locals 1
 
-    .line 1336
     iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$PopupDataSetObserver;->this$0:Landroid/support/v7/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ListPopupWindow;->dismiss()V
 
-    .line 1337
     return-void
 .end method

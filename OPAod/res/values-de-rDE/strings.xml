@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">Nachricht anzeigen</string>
     <string name="oneplus_aod_mode_always_on">Immer an</string>
     <string name="oneplus_aod_mode_lift_up">Display beim Hochheben aktivieren</string>
-    <string name="oneplus_aod_mode_shake_up">Zum Anzeigen Ihr Telefon leicht bewegen</string>
-    <string name="oneplus_aod_mode_single_tap">Zum Anzeigen tippen</string>
     <string name="oneplus_aod_settings">Inaktivitätsdisplay</string>
-    <string name="oneplus_aod_settings_what_to_show">Anzeigeinhalt</string>
-    <string name="oneplus_aod_settings_when_to_show">Anzeigezeit</string>
     <string name="oneplus_aod_title">Uhr anzeigen</string>
     <string name="oneplus_display_time_end">Bis</string>
     <string name="oneplus_display_time_from">Von</string>

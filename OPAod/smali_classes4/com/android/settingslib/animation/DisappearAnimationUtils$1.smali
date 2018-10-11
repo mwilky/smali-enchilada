@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,10 +30,7 @@
 # virtual methods
 .method public getRowTranslationScale(II)F
     .locals 4
-    .param p1, "row"    # I
-    .param p2, "numRows"    # I
 
-    .line 55
     sub-int v0, p2, p1
 
     int-to-double v0, v0

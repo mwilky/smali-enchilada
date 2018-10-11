@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/aod/IconMerger;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/aod/IconMerger;
 
-    .line 88
     iput-object p1, p0, Lcom/oneplus/aod/IconMerger$1;->this$0:Lcom/oneplus/aod/IconMerger;
 
     iput-boolean p2, p0, Lcom/oneplus/aod/IconMerger$1;->val$moreRequired:Z
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 91
     iget-object v0, p0, Lcom/oneplus/aod/IconMerger$1;->this$0:Lcom/oneplus/aod/IconMerger;
 
     invoke-static {v0}, Lcom/oneplus/aod/IconMerger;->access$000(Lcom/oneplus/aod/IconMerger;)Landroid/view/View;
@@ -64,6 +61,5 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 92
     return-void
 .end method

@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaBrowser2ImplLegacy;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaBrowser2ImplLegacy;
 
-    .line 176
     iput-object p1, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$3;->this$0:Landroid/support/v4/media/MediaBrowser2ImplLegacy;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$3;->val$mediaId:Ljava/lang/String;
@@ -39,9 +37,7 @@
 # virtual methods
 .method public onError(Ljava/lang/String;)V
     .locals 2
-    .param p1, "itemId"    # Ljava/lang/String;
 
-    .line 190
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$3;->this$0:Landroid/support/v4/media/MediaBrowser2ImplLegacy;
 
     invoke-virtual {v0}, Landroid/support/v4/media/MediaBrowser2ImplLegacy;->getCallbackExecutor()Ljava/util/concurrent/Executor;
@@ -54,15 +50,12 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 196
     return-void
 .end method
 
 .method public onItemLoaded(Landroid/support/v4/media/MediaBrowserCompat$MediaItem;)V
     .locals 2
-    .param p1, "item"    # Landroid/support/v4/media/MediaBrowserCompat$MediaItem;
 
-    .line 179
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$3;->this$0:Landroid/support/v4/media/MediaBrowser2ImplLegacy;
 
     invoke-virtual {v0}, Landroid/support/v4/media/MediaBrowser2ImplLegacy;->getCallbackExecutor()Ljava/util/concurrent/Executor;
@@ -75,6 +68,5 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 186
     return-void
 .end method

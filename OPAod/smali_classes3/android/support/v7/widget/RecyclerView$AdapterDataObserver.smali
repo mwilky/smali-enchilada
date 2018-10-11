@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 11406
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,59 +28,41 @@
 .method public onChanged()V
     .locals 0
 
-    .line 11409
     return-void
 .end method
 
 .method public onItemRangeChanged(II)V
     .locals 0
-    .param p1, "positionStart"    # I
-    .param p2, "itemCount"    # I
 
-    .line 11413
     return-void
 .end method
 
 .method public onItemRangeChanged(IILjava/lang/Object;)V
     .locals 0
-    .param p1, "positionStart"    # I
-    .param p2, "itemCount"    # I
-    .param p3, "payload"    # Ljava/lang/Object;
+    .param p3    # Ljava/lang/Object;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 11418
     invoke-virtual {p0, p1, p2}, Landroid/support/v7/widget/RecyclerView$AdapterDataObserver;->onItemRangeChanged(II)V
 
-    .line 11419
     return-void
 .end method
 
 .method public onItemRangeInserted(II)V
     .locals 0
-    .param p1, "positionStart"    # I
-    .param p2, "itemCount"    # I
 
-    .line 11423
     return-void
 .end method
 
 .method public onItemRangeMoved(III)V
     .locals 0
-    .param p1, "fromPosition"    # I
-    .param p2, "toPosition"    # I
-    .param p3, "itemCount"    # I
 
-    .line 11431
     return-void
 .end method
 
 .method public onItemRangeRemoved(II)V
     .locals 0
-    .param p1, "positionStart"    # I
-    .param p2, "itemCount"    # I
 
-    .line 11427
     return-void
 .end method

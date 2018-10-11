@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">Mostrar mensaje</string>
     <string name="oneplus_aod_mode_always_on">Siempre activado</string>
     <string name="oneplus_aod_mode_lift_up">Activar la pantalla</string>
-    <string name="oneplus_aod_mode_shake_up">Mueve el teléfono ligeramente para mostrar</string>
-    <string name="oneplus_aod_mode_single_tap">Toca para mostrar</string>
     <string name="oneplus_aod_settings">Pantalla ambiente</string>
-    <string name="oneplus_aod_settings_what_to_show">qué mostrar</string>
-    <string name="oneplus_aod_settings_when_to_show">cuándo mostrar</string>
     <string name="oneplus_aod_title">Mostrar reloj</string>
     <string name="oneplus_display_time_end">Hasta las</string>
     <string name="oneplus_display_time_from">Desde las</string>

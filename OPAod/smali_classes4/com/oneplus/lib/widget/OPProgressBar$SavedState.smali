@@ -36,7 +36,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1791
     new-instance v0, Lcom/oneplus/lib/widget/OPProgressBar$SavedState$1;
 
     invoke-direct {v0}, Lcom/oneplus/lib/widget/OPProgressBar$SavedState$1;-><init>()V
@@ -48,35 +47,27 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 1779
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 1780
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/oneplus/lib/widget/OPProgressBar$SavedState;->progress:I
 
-    .line 1781
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/oneplus/lib/widget/OPProgressBar$SavedState;->secondaryProgress:I
 
-    .line 1782
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Lcom/oneplus/lib/widget/OPProgressBar$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/os/Parcel;
-    .param p2, "x1"    # Lcom/oneplus/lib/widget/OPProgressBar$1;
 
-    .line 1764
     invoke-direct {p0, p1}, Lcom/oneplus/lib/widget/OPProgressBar$SavedState;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -84,12 +75,9 @@
 
 .method constructor <init>(Landroid/os/Parcelable;)V
     .locals 0
-    .param p1, "superState"    # Landroid/os/Parcelable;
 
-    .line 1772
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 1773
     return-void
 .end method
 
@@ -97,22 +85,16 @@
 # virtual methods
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "out"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 1786
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1787
     iget v0, p0, Lcom/oneplus/lib/widget/OPProgressBar$SavedState;->progress:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1788
     iget v0, p0, Lcom/oneplus/lib/widget/OPProgressBar$SavedState;->secondaryProgress:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1789
     return-void
 .end method

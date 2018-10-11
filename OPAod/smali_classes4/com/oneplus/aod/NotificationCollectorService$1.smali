@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/aod/NotificationCollectorService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/aod/NotificationCollectorService;
 
-    .line 50
     iput-object p1, p0, Lcom/oneplus/aod/NotificationCollectorService$1;->this$0:Lcom/oneplus/aod/NotificationCollectorService;
 
     invoke-direct {p0}, Lcom/oneplus/aod/AodUpdateMonitorCallback;-><init>()V
@@ -35,18 +33,14 @@
 # virtual methods
 .method public onDreamingStateChanged(I)V
     .locals 5
-    .param p1, "state"    # I
 
-    .line 53
     invoke-super {p0, p1}, Lcom/oneplus/aod/AodUpdateMonitorCallback;->onDreamingStateChanged(I)V
 
-    .line 56
     :try_start_0
     sget v0, Lcom/oneplus/aod/AodUpdateMonitor;->STATE_DOZING:I
 
     if-ne p1, v0, :cond_1
 
-    .line 58
     iget-object v0, p0, Lcom/oneplus/aod/NotificationCollectorService$1;->this$0:Lcom/oneplus/aod/NotificationCollectorService;
 
     invoke-static {v0}, Lcom/oneplus/aod/NotificationCollectorService;->access$000(Lcom/oneplus/aod/NotificationCollectorService;)Z
@@ -55,10 +49,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 59
     return-void
 
-    .line 62
     :cond_0
     iget-object v0, p0, Lcom/oneplus/aod/NotificationCollectorService$1;->this$0:Lcom/oneplus/aod/NotificationCollectorService;
 
@@ -76,7 +68,6 @@
 
     iget-object v3, p0, Lcom/oneplus/aod/NotificationCollectorService$1;->this$0:Lcom/oneplus/aod/NotificationCollectorService;
 
-    .line 63
     invoke-static {v3}, Lcom/oneplus/aod/NotificationCollectorService;->access$100(Lcom/oneplus/aod/NotificationCollectorService;)Landroid/content/Context;
 
     move-result-object v3
@@ -103,10 +94,8 @@
 
     const/4 v3, -0x1
 
-    .line 62
     invoke-virtual {v0, v1, v2, v3}, Landroid/service/notification/NotificationListenerService;->registerAsSystemService(Landroid/content/Context;Landroid/content/ComponentName;I)V
 
-    .line 65
     iget-object v0, p0, Lcom/oneplus/aod/NotificationCollectorService$1;->this$0:Lcom/oneplus/aod/NotificationCollectorService;
 
     const/4 v1, 0x1
@@ -115,13 +104,11 @@
 
     goto :goto_0
 
-    .line 66
     :cond_1
     sget v0, Lcom/oneplus/aod/AodUpdateMonitor;->STATE_IDLE:I
 
     if-ne p1, v0, :cond_2
 
-    .line 67
     iget-object v0, p0, Lcom/oneplus/aod/NotificationCollectorService$1;->this$0:Lcom/oneplus/aod/NotificationCollectorService;
 
     invoke-static {v0}, Lcom/oneplus/aod/NotificationCollectorService;->access$200(Lcom/oneplus/aod/NotificationCollectorService;)Landroid/service/notification/NotificationListenerService;
@@ -130,7 +117,6 @@
 
     invoke-virtual {v0}, Landroid/service/notification/NotificationListenerService;->unregisterAsSystemService()V
 
-    .line 68
     iget-object v0, p0, Lcom/oneplus/aod/NotificationCollectorService$1;->this$0:Lcom/oneplus/aod/NotificationCollectorService;
 
     const/4 v1, 0x0
@@ -139,25 +125,19 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 73
     :cond_2
     :goto_0
     goto :goto_1
 
-    .line 70
     :catch_0
     move-exception v0
 
-    .line 71
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "NotificationCollectorService"
 
     const-string v2, "Unable to register notification listener"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 75
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_1
     return-void
 .end method

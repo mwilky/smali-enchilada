@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">メッセージを表示</string>
     <string name="oneplus_aod_mode_always_on">常にオン</string>
     <string name="oneplus_aod_mode_lift_up">ディスプレイの持ち上げ</string>
-    <string name="oneplus_aod_mode_shake_up">携帯電話を少し移動して表示する</string>
-    <string name="oneplus_aod_mode_single_tap">タップして表示する</string>
     <string name="oneplus_aod_settings">アンビエントディスプレイ</string>
-    <string name="oneplus_aod_settings_what_to_show">表示する内容</string>
-    <string name="oneplus_aod_settings_when_to_show">表示するタイミング</string>
     <string name="oneplus_aod_title">時計を表示</string>
     <string name="oneplus_display_time_end">終了時刻</string>
     <string name="oneplus_display_time_from">開始時刻</string>

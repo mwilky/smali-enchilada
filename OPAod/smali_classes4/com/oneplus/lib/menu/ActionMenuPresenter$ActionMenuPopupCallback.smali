@@ -22,12 +22,10 @@
 .method constructor <init>(Lcom/oneplus/lib/menu/ActionMenuPresenter;)V
     .locals 0
 
-    .line 806
     iput-object p1, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$ActionMenuPopupCallback;->this$0:Lcom/oneplus/lib/menu/ActionMenuPresenter;
 
     invoke-direct {p0}, Lcom/oneplus/lib/menu/ActionMenuItemView$PopupCallback;-><init>()V
 
-    .line 807
     return-void
 .end method
 
@@ -36,7 +34,6 @@
 .method public getPopup()Lcom/oneplus/lib/menu/ShowableListMenu;
     .locals 1
 
-    .line 811
     iget-object v0, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$ActionMenuPopupCallback;->this$0:Lcom/oneplus/lib/menu/ActionMenuPresenter;
 
     iget-object v0, v0, Lcom/oneplus/lib/menu/ActionMenuPresenter;->mActionButtonPopup:Lcom/oneplus/lib/menu/ActionMenuPresenter$ActionButtonSubmenu;

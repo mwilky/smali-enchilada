@@ -27,9 +27,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settingslib/animation/AppearAnimationUtils;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settingslib/animation/AppearAnimationUtils;
 
-    .line 243
     iput-object p1, p0, Lcom/android/settingslib/animation/AppearAnimationUtils$AppearAnimationProperties;->this$0:Lcom/android/settingslib/animation/AppearAnimationUtils;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

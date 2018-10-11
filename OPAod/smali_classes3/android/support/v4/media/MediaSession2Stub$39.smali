@@ -32,9 +32,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaSession2Stub;Ljava/lang/String;IILandroid/os/Bundle;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaSession2Stub;
 
-    .line 863
     iput-object p1, p0, Landroid/support/v4/media/MediaSession2Stub$39;->this$0:Landroid/support/v4/media/MediaSession2Stub;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaSession2Stub$39;->val$query:Ljava/lang/String;
@@ -54,14 +52,12 @@
 # virtual methods
 .method public run(Landroid/support/v4/media/MediaSession2$ControllerInfo;)V
     .locals 7
-    .param p1, "controller"    # Landroid/support/v4/media/MediaSession2$ControllerInfo;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 866
     iget-object v0, p0, Landroid/support/v4/media/MediaSession2Stub$39;->val$query:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -70,7 +66,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 867
     const-string v0, "MediaSession2Stub"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -89,10 +84,8 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 869
     return-void
 
-    .line 871
     :cond_0
     iget v0, p0, Landroid/support/v4/media/MediaSession2Stub$39;->val$page:I
 
@@ -106,7 +99,6 @@
 
     goto :goto_0
 
-    .line 876
     :cond_1
     iget-object v0, p0, Landroid/support/v4/media/MediaSession2Stub$39;->this$0:Landroid/support/v4/media/MediaSession2Stub;
 
@@ -126,10 +118,8 @@
 
     invoke-interface/range {v1 .. v6}, Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$SupportLibraryImpl;->onGetSearchResultOnExecutor(Landroid/support/v4/media/MediaSession2$ControllerInfo;Ljava/lang/String;IILandroid/os/Bundle;)V
 
-    .line 878
     return-void
 
-    .line 872
     :cond_2
     :goto_0
     const-string v0, "MediaSession2Stub"
@@ -150,6 +140,5 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 874
     return-void
 .end method

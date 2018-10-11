@@ -33,29 +33,21 @@
 # direct methods
 .method public constructor <init>(Landroid/content/ComponentName;)V
     .locals 0
-    .param p1, "defaultDream"    # Landroid/content/ComponentName;
 
-    .line 356
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 357
     iput-object p1, p0, Lcom/android/settingslib/dream/DreamBackend$DreamInfoComparator;->mDefaultDream:Landroid/content/ComponentName;
 
-    .line 358
     return-void
 .end method
 
 .method private sortKey(Lcom/android/settingslib/dream/DreamBackend$DreamInfo;)Ljava/lang/String;
     .locals 3
-    .param p1, "di"    # Lcom/android/settingslib/dream/DreamBackend$DreamInfo;
 
-    .line 366
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 367
-    .local v0, "sb":Ljava/lang/StringBuilder;
     iget-object v1, p1, Lcom/android/settingslib/dream/DreamBackend$DreamInfo;->componentName:Landroid/content/ComponentName;
 
     iget-object v2, p0, Lcom/android/settingslib/dream/DreamBackend$DreamInfoComparator;->mDefaultDream:Landroid/content/ComponentName;
@@ -76,12 +68,10 @@
     :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 368
     iget-object v1, p1, Lcom/android/settingslib/dream/DreamBackend$DreamInfo;->caption:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 369
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -93,10 +83,7 @@
 # virtual methods
 .method public compare(Lcom/android/settingslib/dream/DreamBackend$DreamInfo;Lcom/android/settingslib/dream/DreamBackend$DreamInfo;)I
     .locals 2
-    .param p1, "lhs"    # Lcom/android/settingslib/dream/DreamBackend$DreamInfo;
-    .param p2, "rhs"    # Lcom/android/settingslib/dream/DreamBackend$DreamInfo;
 
-    .line 362
     invoke-direct {p0, p1}, Lcom/android/settingslib/dream/DreamBackend$DreamInfoComparator;->sortKey(Lcom/android/settingslib/dream/DreamBackend$DreamInfo;)Ljava/lang/String;
 
     move-result-object v0
@@ -115,7 +102,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 353
     check-cast p1, Lcom/android/settingslib/dream/DreamBackend$DreamInfo;
 
     check-cast p2, Lcom/android/settingslib/dream/DreamBackend$DreamInfo;

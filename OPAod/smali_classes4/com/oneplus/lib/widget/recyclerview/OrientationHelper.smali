@@ -20,29 +20,21 @@
 # direct methods
 .method private constructor <init>(Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;)V
     .locals 1
-    .param p1, "layoutManager"    # Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;
 
-    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
     const/high16 v0, -0x80000000
 
     iput v0, p0, Lcom/oneplus/lib/widget/recyclerview/OrientationHelper;->mLastTotalSpace:I
 
-    .line 45
     iput-object p1, p0, Lcom/oneplus/lib/widget/recyclerview/OrientationHelper;->mLayoutManager:Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;
 
-    .line 46
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;Lcom/oneplus/lib/widget/recyclerview/OrientationHelper$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;
-    .param p2, "x1"    # Lcom/oneplus/lib/widget/recyclerview/OrientationHelper$1;
 
-    .line 32
     invoke-direct {p0, p1}, Lcom/oneplus/lib/widget/recyclerview/OrientationHelper;-><init>(Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;)V
 
     return-void
@@ -50,9 +42,7 @@
 
 .method public static createHorizontalHelper(Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;)Lcom/oneplus/lib/widget/recyclerview/OrientationHelper;
     .locals 1
-    .param p0, "layoutManager"    # Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;
 
-    .line 194
     new-instance v0, Lcom/oneplus/lib/widget/recyclerview/OrientationHelper$1;
 
     invoke-direct {v0, p0}, Lcom/oneplus/lib/widget/recyclerview/OrientationHelper$1;-><init>(Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;)V
@@ -62,13 +52,9 @@
 
 .method public static createOrientationHelper(Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;I)Lcom/oneplus/lib/widget/recyclerview/OrientationHelper;
     .locals 2
-    .param p0, "layoutManager"    # Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;
-    .param p1, "orientation"    # I
 
-    .line 177
     packed-switch p1, :pswitch_data_0
 
-    .line 183
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "invalid orientation"
@@ -77,7 +63,6 @@
 
     throw v0
 
-    .line 181
     :pswitch_0
     invoke-static {p0}, Lcom/oneplus/lib/widget/recyclerview/OrientationHelper;->createVerticalHelper(Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;)Lcom/oneplus/lib/widget/recyclerview/OrientationHelper;
 
@@ -85,7 +70,6 @@
 
     return-object v0
 
-    .line 179
     :pswitch_1
     invoke-static {p0}, Lcom/oneplus/lib/widget/recyclerview/OrientationHelper;->createHorizontalHelper(Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;)Lcom/oneplus/lib/widget/recyclerview/OrientationHelper;
 
@@ -104,9 +88,7 @@
 
 .method public static createVerticalHelper(Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;)Lcom/oneplus/lib/widget/recyclerview/OrientationHelper;
     .locals 1
-    .param p0, "layoutManager"    # Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;
 
-    .line 270
     new-instance v0, Lcom/oneplus/lib/widget/recyclerview/OrientationHelper$2;
 
     invoke-direct {v0, p0}, Lcom/oneplus/lib/widget/recyclerview/OrientationHelper$2;-><init>(Lcom/oneplus/lib/widget/recyclerview/RecyclerView$LayoutManager;)V
@@ -146,7 +128,6 @@
 .method public getTotalSpaceChange()I
     .locals 2
 
-    .line 68
     iget v0, p0, Lcom/oneplus/lib/widget/recyclerview/OrientationHelper;->mLastTotalSpace:I
 
     const/high16 v1, -0x80000000
@@ -179,13 +160,11 @@
 .method public onLayoutComplete()V
     .locals 1
 
-    .line 54
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/recyclerview/OrientationHelper;->getTotalSpace()I
 
     move-result v0
 
     iput v0, p0, Lcom/oneplus/lib/widget/recyclerview/OrientationHelper;->mLastTotalSpace:I
 
-    .line 55
     return-void
 .end method

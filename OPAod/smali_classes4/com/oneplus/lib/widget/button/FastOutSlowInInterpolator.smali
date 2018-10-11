@@ -20,7 +20,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 284
     const/16 v0, 0xc9
 
     new-array v0, v0, [F
@@ -240,15 +239,12 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 316
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 317
     sget-object v0, Lcom/oneplus/lib/widget/button/FastOutSlowInInterpolator;->VALUES:[F
 
     iput-object v0, p0, Lcom/oneplus/lib/widget/button/FastOutSlowInInterpolator;->mValues:[F
 
-    .line 318
     iget-object v0, p0, Lcom/oneplus/lib/widget/button/FastOutSlowInInterpolator;->mValues:[F
 
     array-length v0, v0
@@ -263,7 +259,6 @@
 
     iput v1, p0, Lcom/oneplus/lib/widget/button/FastOutSlowInInterpolator;->mStepSize:F
 
-    .line 319
     return-void
 .end method
 
@@ -271,19 +266,15 @@
 # virtual methods
 .method public getInterpolation(F)F
     .locals 7
-    .param p1, "input"    # F
 
-    .line 323
     const/high16 v0, 0x3f800000    # 1.0f
 
     cmpl-float v1, p1, v0
 
     if-ltz v1, :cond_0
 
-    .line 324
     return v0
 
-    .line 326
     :cond_0
     const/4 v0, 0x0
 
@@ -291,10 +282,8 @@
 
     if-gtz v1, :cond_1
 
-    .line 327
     return v0
 
-    .line 332
     :cond_1
     iget-object v0, p0, Lcom/oneplus/lib/widget/button/FastOutSlowInInterpolator;->mValues:[F
 
@@ -318,26 +307,18 @@
 
     move-result v0
 
-    .line 335
-    .local v0, "position":I
     int-to-float v1, v0
 
     iget v2, p0, Lcom/oneplus/lib/widget/button/FastOutSlowInInterpolator;->mStepSize:F
 
     mul-float/2addr v1, v2
 
-    .line 336
-    .local v1, "quantized":F
     sub-float v2, p1, v1
 
-    .line 337
-    .local v2, "diff":F
     iget v3, p0, Lcom/oneplus/lib/widget/button/FastOutSlowInInterpolator;->mStepSize:F
 
     div-float v3, v2, v3
 
-    .line 340
-    .local v3, "weight":F
     iget-object v4, p0, Lcom/oneplus/lib/widget/button/FastOutSlowInInterpolator;->mValues:[F
 
     aget v4, v4, v0

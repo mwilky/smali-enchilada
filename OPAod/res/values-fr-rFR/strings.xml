@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">Afficher un message</string>
     <string name="oneplus_aod_mode_always_on">Toujours activé</string>
     <string name="oneplus_aod_mode_lift_up">Activation soulevée</string>
-    <string name="oneplus_aod_mode_shake_up">Déplacez légèrement votre téléphone pour afficher</string>
-    <string name="oneplus_aod_mode_single_tap">Appuyer pour afficher</string>
     <string name="oneplus_aod_settings">Affichage en mode Veille</string>
-    <string name="oneplus_aod_settings_what_to_show">quoi afficher</string>
-    <string name="oneplus_aod_settings_when_to_show">quand afficher</string>
     <string name="oneplus_aod_title">"Afficher l'horloge"</string>
     <string name="oneplus_display_time_end">À</string>
     <string name="oneplus_display_time_from">De</string>

@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 796
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,10 +30,7 @@
 # virtual methods
 .method public getParentProfileInstance(Landroid/app/admin/DevicePolicyManager;Landroid/content/pm/UserInfo;)Landroid/app/admin/DevicePolicyManager;
     .locals 1
-    .param p1, "dpm"    # Landroid/app/admin/DevicePolicyManager;
-    .param p2, "ui"    # Landroid/content/pm/UserInfo;
 
-    .line 802
     invoke-virtual {p1, p2}, Landroid/app/admin/DevicePolicyManager;->getParentProfileInstance(Landroid/content/pm/UserInfo;)Landroid/app/admin/DevicePolicyManager;
 
     move-result-object v0
@@ -44,10 +40,7 @@
 
 .method public isSeparateProfileChallengeEnabled(Lcom/android/internal/widget/LockPatternUtils;I)Z
     .locals 1
-    .param p1, "utils"    # Lcom/android/internal/widget/LockPatternUtils;
-    .param p2, "userHandle"    # I
 
-    .line 798
     invoke-virtual {p1, p2}, Lcom/android/internal/widget/LockPatternUtils;->isSeparateProfileChallengeEnabled(I)Z
 
     move-result v0

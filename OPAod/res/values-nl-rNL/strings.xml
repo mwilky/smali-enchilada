@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">Displaymelding</string>
     <string name="oneplus_aod_mode_always_on">Altijd aan</string>
     <string name="oneplus_aod_mode_lift_up">Scherm optillen</string>
-    <string name="oneplus_aod_mode_shake_up">Beweeg uw telefoon lichtjes om het scherm in te schakelen</string>
-    <string name="oneplus_aod_mode_single_tap">Tik om het scherm in te schakelen</string>
     <string name="oneplus_aod_settings">Ambient display</string>
-    <string name="oneplus_aod_settings_what_to_show">wat wordt getoond</string>
-    <string name="oneplus_aod_settings_when_to_show">wanneer tonen</string>
     <string name="oneplus_aod_title">Klok tonen</string>
     <string name="oneplus_display_time_end">Tot</string>
     <string name="oneplus_display_time_from">Van</string>

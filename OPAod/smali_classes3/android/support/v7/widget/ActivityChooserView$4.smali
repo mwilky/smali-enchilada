@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/widget/ActivityChooserView;Landroid/view/View;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/widget/ActivityChooserView;
-    .param p2, "src"    # Landroid/view/View;
 
-    .line 257
     iput-object p1, p0, Landroid/support/v7/widget/ActivityChooserView$4;->this$0:Landroid/support/v7/widget/ActivityChooserView;
 
     invoke-direct {p0, p2}, Landroid/support/v7/widget/ForwardingListener;-><init>(Landroid/view/View;)V
@@ -37,7 +34,6 @@
 .method public getPopup()Landroid/support/v7/view/menu/ShowableListMenu;
     .locals 1
 
-    .line 260
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$4;->this$0:Landroid/support/v7/widget/ActivityChooserView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActivityChooserView;->getListPopupWindow()Landroid/support/v7/widget/ListPopupWindow;
@@ -50,12 +46,10 @@
 .method protected onForwardingStarted()Z
     .locals 1
 
-    .line 265
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$4;->this$0:Landroid/support/v7/widget/ActivityChooserView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActivityChooserView;->showPopup()Z
 
-    .line 266
     const/4 v0, 0x1
 
     return v0
@@ -64,12 +58,10 @@
 .method protected onForwardingStopped()Z
     .locals 1
 
-    .line 271
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$4;->this$0:Landroid/support/v7/widget/ActivityChooserView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActivityChooserView;->dismissPopup()Z
 
-    .line 272
     const/4 v0, 0x1
 
     return v0

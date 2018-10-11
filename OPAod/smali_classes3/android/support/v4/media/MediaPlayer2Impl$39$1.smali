@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaPlayer2Impl$39;Landroid/media/SubtitleData;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v4/media/MediaPlayer2Impl$39;
 
-    .line 1686
     iput-object p1, p0, Landroid/support/v4/media/MediaPlayer2Impl$39$1;->this$1:Landroid/support/v4/media/MediaPlayer2Impl$39;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaPlayer2Impl$39$1;->val$data:Landroid/media/SubtitleData;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public notify(Landroid/support/v4/media/MediaPlayer2$EventCallback;)V
     .locals 4
-    .param p1, "cb"    # Landroid/support/v4/media/MediaPlayer2$EventCallback;
 
-    .line 1689
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$39$1;->this$1:Landroid/support/v4/media/MediaPlayer2Impl$39;
 
     iget-object v0, v0, Landroid/support/v4/media/MediaPlayer2Impl$39;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
@@ -53,7 +49,6 @@
 
     iget-object v1, v1, Landroid/support/v4/media/MediaPlayer2Impl$39;->val$src:Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;
 
-    .line 1690
     invoke-virtual {v1}, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;->getDSD()Landroid/support/v4/media/DataSourceDesc;
 
     move-result-object v1
@@ -64,9 +59,7 @@
 
     invoke-direct {v2, v3}, Landroid/support/v4/media/SubtitleData2;-><init>(Landroid/media/SubtitleData;)V
 
-    .line 1689
     invoke-virtual {p1, v0, v1, v2}, Landroid/support/v4/media/MediaPlayer2$EventCallback;->onSubtitleData(Landroid/support/v4/media/MediaPlayer2;Landroid/support/v4/media/DataSourceDesc;Landroid/support/v4/media/SubtitleData2;)V
 
-    .line 1691
     return-void
 .end method

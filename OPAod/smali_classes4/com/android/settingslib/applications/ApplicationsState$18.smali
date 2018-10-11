@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1755
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,12 +30,9 @@
 # virtual methods
 .method public filterApp(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)Z
     .locals 2
-    .param p1, "entry"    # Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
 
-    .line 1763
     monitor-enter p1
 
-    .line 1764
     :try_start_0
     iget-object v0, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
 
@@ -54,15 +50,10 @@
     :goto_0
     move v0, v1
 
-    .line 1765
-    .local v0, "isMusicApp":Z
     monitor-exit p1
 
-    .line 1766
     return v0
 
-    .line 1765
-    .end local v0    # "isMusicApp":Z
     :catchall_0
     move-exception v0
 
@@ -76,6 +67,5 @@
 .method public init()V
     .locals 0
 
-    .line 1758
     return-void
 .end method

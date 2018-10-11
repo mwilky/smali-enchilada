@@ -22,12 +22,10 @@
 .method constructor <init>(Landroid/support/v4/view/ViewPager;)V
     .locals 0
 
-    .line 3092
     iput-object p1, p0, Landroid/support/v4/view/ViewPager$PagerObserver;->this$0:Landroid/support/v4/view/ViewPager;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
 
-    .line 3093
     return-void
 .end method
 
@@ -36,23 +34,19 @@
 .method public onChanged()V
     .locals 1
 
-    .line 3097
     iget-object v0, p0, Landroid/support/v4/view/ViewPager$PagerObserver;->this$0:Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->dataSetChanged()V
 
-    .line 3098
     return-void
 .end method
 
 .method public onInvalidated()V
     .locals 1
 
-    .line 3101
     iget-object v0, p0, Landroid/support/v4/view/ViewPager$PagerObserver;->this$0:Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->dataSetChanged()V
 
-    .line 3102
     return-void
 .end method

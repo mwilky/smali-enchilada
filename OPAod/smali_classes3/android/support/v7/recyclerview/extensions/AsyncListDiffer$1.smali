@@ -30,10 +30,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/recyclerview/extensions/AsyncListDiffer;Ljava/util/List;Ljava/util/List;I)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/recyclerview/extensions/AsyncListDiffer;
 
-    .line 218
-    .local p0, "this":Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1;, "Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1;"
     iput-object p1, p0, Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1;->this$0:Landroid/support/v7/recyclerview/extensions/AsyncListDiffer;
 
     iput-object p2, p0, Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1;->val$oldList:Ljava/util/List;
@@ -52,8 +49,6 @@
 .method public run()V
     .locals 3
 
-    .line 221
-    .local p0, "this":Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1;, "Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1;"
     new-instance v0, Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1$1;
 
     invoke-direct {v0, p0}, Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1$1;-><init>(Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1;)V
@@ -62,8 +57,6 @@
 
     move-result-object v0
 
-    .line 276
-    .local v0, "result":Landroid/support/v7/util/DiffUtil$DiffResult;
     iget-object v1, p0, Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1;->this$0:Landroid/support/v7/recyclerview/extensions/AsyncListDiffer;
 
     invoke-static {v1}, Landroid/support/v7/recyclerview/extensions/AsyncListDiffer;->access$000(Landroid/support/v7/recyclerview/extensions/AsyncListDiffer;)Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig;
@@ -80,6 +73,5 @@
 
     invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 284
     return-void
 .end method

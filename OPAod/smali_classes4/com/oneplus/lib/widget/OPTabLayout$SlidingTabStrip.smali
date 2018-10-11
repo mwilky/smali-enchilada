@@ -33,48 +33,35 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/OPTabLayout;Landroid/content/Context;)V
     .locals 0
-    .param p2, "context"    # Landroid/content/Context;
 
-    .line 1287
     iput-object p1, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->this$0:Lcom/oneplus/lib/widget/OPTabLayout;
 
-    .line 1288
     invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1281
     const/4 p1, -0x1
 
     iput p1, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mSelectedPosition:I
 
-    .line 1284
     iput p1, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mIndicatorLeft:I
 
-    .line 1285
     iput p1, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mIndicatorRight:I
 
-    .line 1289
     const/4 p1, 0x0
 
     invoke-virtual {p0, p1}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->setWillNotDraw(Z)V
 
-    .line 1290
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
 
     iput-object p1, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mSelectedIndicatorPaint:Landroid/graphics/Paint;
 
-    .line 1291
     return-void
 .end method
 
 .method static synthetic access$1700(Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;II)V
     .locals 0
-    .param p0, "x0"    # Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;
-    .param p1, "x1"    # I
-    .param p2, "x2"    # I
 
-    .line 1277
     invoke-direct {p0, p1, p2}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->setIndicatorPosition(II)V
 
     return-void
@@ -82,10 +69,7 @@
 
 .method static synthetic access$1802(Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;I)I
     .locals 0
-    .param p0, "x0"    # Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;
-    .param p1, "x1"    # I
 
-    .line 1277
     iput p1, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mSelectedPosition:I
 
     return p1
@@ -93,10 +77,7 @@
 
 .method static synthetic access$1902(Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;F)F
     .locals 0
-    .param p0, "x0"    # Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;
-    .param p1, "x1"    # F
 
-    .line 1277
     iput p1, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mSelectionOffset:F
 
     return p1
@@ -104,10 +85,7 @@
 
 .method private setIndicatorPosition(II)V
     .locals 1
-    .param p1, "left"    # I
-    .param p2, "right"    # I
 
-    .line 1404
     iget v0, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mIndicatorLeft:I
 
     if-ne p1, v0, :cond_0
@@ -116,17 +94,13 @@
 
     if-eq p2, v0, :cond_1
 
-    .line 1406
     :cond_0
     iput p1, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mIndicatorLeft:I
 
-    .line 1407
     iput p2, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mIndicatorRight:I
 
-    .line 1408
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->postInvalidateOnAnimation()V
 
-    .line 1410
     :cond_1
     return-void
 .end method
@@ -134,15 +108,12 @@
 .method private updateIndicatorPosition()V
     .locals 8
 
-    .line 1381
     iget v0, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mSelectedPosition:I
 
     invoke-virtual {p0, v0}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 1384
-    .local v0, "selectedTitle":Landroid/view/View;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/view/View;->getWidth()I
@@ -151,19 +122,14 @@
 
     if-lez v1, :cond_0
 
-    .line 1385
     invoke-virtual {v0}, Landroid/view/View;->getLeft()I
 
     move-result v1
 
-    .line 1386
-    .local v1, "left":I
     invoke-virtual {v0}, Landroid/view/View;->getRight()I
 
     move-result v2
 
-    .line 1388
-    .local v2, "right":I
     iget v3, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mSelectionOffset:F
 
     const/4 v4, 0x0
@@ -182,7 +148,6 @@
 
     if-ge v3, v4, :cond_1
 
-    .line 1390
     iget v3, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mSelectedPosition:I
 
     add-int/lit8 v3, v3, 0x1
@@ -191,8 +156,6 @@
 
     move-result-object v3
 
-    .line 1391
-    .local v3, "nextTitle":Landroid/view/View;
     iget v4, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mSelectionOffset:F
 
     invoke-virtual {v3}, Landroid/view/View;->getLeft()I
@@ -217,7 +180,6 @@
 
     float-to-int v1, v4
 
-    .line 1393
     iget v4, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mSelectionOffset:F
 
     invoke-virtual {v3}, Landroid/view/View;->getRight()I
@@ -240,26 +202,17 @@
 
     float-to-int v2, v4
 
-    .line 1395
-    .end local v3    # "nextTitle":Landroid/view/View;
     goto :goto_0
 
-    .line 1397
-    .end local v1    # "left":I
-    .end local v2    # "right":I
     :cond_0
     const/4 v1, -0x1
 
     move v2, v1
 
-    .line 1400
-    .restart local v1    # "left":I
-    .restart local v2    # "right":I
     :cond_1
     :goto_0
     invoke-direct {p0, v1, v2}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->setIndicatorPosition(II)V
 
-    .line 1401
     return-void
 .end method
 
@@ -267,14 +220,11 @@
 # virtual methods
 .method animateIndicatorToPosition(II)V
     .locals 17
-    .param p1, "position"    # I
-    .param p2, "duration"    # I
 
     move-object/from16 v6, p0
 
     move/from16 v7, p1
 
-    .line 1413
     invoke-virtual/range {p0 .. p0}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->getLayoutDirection()I
 
     move-result v0
@@ -293,26 +243,18 @@
     :goto_0
     move v8, v0
 
-    .line 1416
-    .local v8, "isRtl":Z
     invoke-virtual/range {p0 .. p1}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->getChildAt(I)Landroid/view/View;
 
     move-result-object v9
 
-    .line 1417
-    .local v9, "targetView":Landroid/view/View;
     invoke-virtual {v9}, Landroid/view/View;->getLeft()I
 
     move-result v10
 
-    .line 1418
-    .local v10, "targetLeft":I
     invoke-virtual {v9}, Landroid/view/View;->getRight()I
 
     move-result v11
 
-    .line 1422
-    .local v11, "targetRight":I
     iget v0, v6, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mSelectedPosition:I
 
     sub-int v0, v7, v0
@@ -323,24 +265,16 @@
 
     if-gt v0, v1, :cond_1
 
-    .line 1424
     iget v0, v6, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mIndicatorLeft:I
 
-    .line 1425
-    .local v0, "startLeft":I
     iget v1, v6, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mIndicatorRight:I
 
-    .line 1441
-    .local v1, "startRight":I
     move v12, v1
 
     move v1, v0
 
     goto :goto_2
 
-    .line 1428
-    .end local v0    # "startLeft":I
-    .end local v1    # "startRight":I
     :cond_1
     iget-object v0, v6, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->this$0:Lcom/oneplus/lib/widget/OPTabLayout;
 
@@ -350,35 +284,21 @@
 
     move-result v0
 
-    .line 1429
-    .local v0, "offset":I
     iget v1, v6, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mSelectedPosition:I
 
     if-ge v7, v1, :cond_3
 
-    .line 1431
     if-eqz v8, :cond_2
 
-    .line 1432
     sub-int v1, v10, v0
 
     move v2, v1
 
-    .line 1441
-    .end local v0    # "offset":I
-    .local v1, "startLeft":I
-    .local v2, "startRight":I
-    .local v12, "startRight":I
     :goto_1
     move v12, v2
 
     goto :goto_2
 
-    .line 1434
-    .end local v1    # "startLeft":I
-    .end local v2    # "startRight":I
-    .end local v12    # "startRight":I
-    .restart local v0    # "offset":I
     :cond_2
     add-int v1, v11, v0
 
@@ -386,42 +306,31 @@
 
     goto :goto_1
 
-    .line 1438
     :cond_3
     if-eqz v8, :cond_4
 
-    .line 1439
     add-int v1, v11, v0
 
     move v2, v1
 
     goto :goto_1
 
-    .line 1441
     :cond_4
     sub-int v1, v10, v0
 
     move v0, v1
 
-    .local v0, "startRight":I
     move v12, v0
 
-    .end local v0    # "startRight":I
-    .restart local v1    # "startLeft":I
-    .restart local v12    # "startRight":I
     :goto_2
     move v13, v1
 
-    .line 1446
-    .end local v1    # "startLeft":I
-    .local v13, "startLeft":I
     if-ne v13, v10, :cond_7
 
     if-eq v12, v11, :cond_5
 
     goto :goto_3
 
-    .line 1475
     :cond_5
     iget-object v0, v6, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->this$0:Lcom/oneplus/lib/widget/OPTabLayout;
 
@@ -431,7 +340,6 @@
 
     if-eqz v0, :cond_6
 
-    .line 1476
     iget-object v0, v6, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->this$0:Lcom/oneplus/lib/widget/OPTabLayout;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/OPTabLayout;->access$1500(Lcom/oneplus/lib/widget/OPTabLayout;)Landroid/animation/ValueAnimator;
@@ -440,26 +348,21 @@
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 1478
     :cond_6
     iput v7, v6, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mSelectedPosition:I
 
-    .line 1479
     const/4 v0, 0x0
 
     iput v0, v6, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mSelectionOffset:F
 
-    .line 1480
     invoke-direct {v6, v10, v11}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->setIndicatorPosition(II)V
 
-    .line 1482
     move/from16 v15, p2
 
     move/from16 v16, v8
 
     goto :goto_4
 
-    .line 1447
     :cond_7
     :goto_3
     iget-object v0, v6, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->this$0:Lcom/oneplus/lib/widget/OPTabLayout;
@@ -472,8 +375,6 @@
 
     move-result-object v14
 
-    .line 1448
-    .local v14, "animator":Landroid/animation/ValueAnimator;
     iget-object v0, v6, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->this$0:Lcom/oneplus/lib/widget/OPTabLayout;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/OPTabLayout;->access$1600(Lcom/oneplus/lib/widget/OPTabLayout;)Landroid/view/animation/Interpolator;
@@ -482,14 +383,12 @@
 
     invoke-virtual {v14, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1449
     move/from16 v15, p2
 
     int-to-long v0, v15
 
     invoke-virtual {v14, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1450
     const/4 v0, 0x2
 
     new-array v0, v0, [F
@@ -498,7 +397,6 @@
 
     invoke-virtual {v14, v0}, Landroid/animation/ValueAnimator;->setFloatValues([F)V
 
-    .line 1451
     new-instance v5, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip$1;
 
     move-object v0, v5
@@ -517,27 +415,20 @@
 
     move v5, v11
 
-    .end local v8    # "isRtl":Z
-    .local v16, "isRtl":Z
     invoke-direct/range {v0 .. v5}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip$1;-><init>(Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;IIII)V
 
     invoke-virtual {v14, v8}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1460
     new-instance v0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip$2;
 
     invoke-direct {v0, v6, v7}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip$2;-><init>(Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;I)V
 
     invoke-virtual {v14, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1473
     invoke-virtual {v14}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 1474
-    .end local v14    # "animator":Landroid/animation/ValueAnimator;
     nop
 
-    .line 1482
     :goto_4
     return-void
 
@@ -551,46 +442,34 @@
 .method childrenNeedLayout()Z
     .locals 4
 
-    .line 1308
     const/4 v0, 0x0
 
-    .local v0, "i":I
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->getChildCount()I
 
     move-result v1
 
-    .local v1, "z":I
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 1309
     invoke-virtual {p0, v0}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 1310
-    .local v2, "child":Landroid/view/View;
     invoke-virtual {v2}, Landroid/view/View;->getWidth()I
 
     move-result v3
 
     if-gtz v3, :cond_0
 
-    .line 1311
     const/4 v3, 0x1
 
     return v3
 
-    .line 1308
-    .end local v2    # "child":Landroid/view/View;
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1314
-    .end local v0    # "i":I
-    .end local v1    # "z":I
     :cond_1
     const/4 v0, 0x0
 
@@ -599,12 +478,9 @@
 
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 7
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
 
-    .line 1486
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1489
     iget v0, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mIndicatorLeft:I
 
     if-ltz v0, :cond_0
@@ -615,7 +491,6 @@
 
     if-le v0, v1, :cond_0
 
-    .line 1490
     iget v0, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mIndicatorLeft:I
 
     int-to-float v2, v0
@@ -634,7 +509,6 @@
 
     int-to-float v4, v0
 
-    .line 1491
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->getHeight()I
 
     move-result v0
@@ -643,43 +517,29 @@
 
     iget-object v6, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mSelectedIndicatorPaint:Landroid/graphics/Paint;
 
-    .line 1490
     move-object v1, p1
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 1493
     :cond_0
     return-void
 .end method
 
 .method protected onLayout(ZIIII)V
     .locals 0
-    .param p1, "changed"    # Z
-    .param p2, "l"    # I
-    .param p3, "t"    # I
-    .param p4, "r"    # I
-    .param p5, "b"    # I
 
-    .line 1375
     invoke-super/range {p0 .. p5}, Landroid/widget/LinearLayout;->onLayout(ZIIII)V
 
-    .line 1377
     invoke-direct {p0}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->updateIndicatorPosition()V
 
-    .line 1378
     return-void
 .end method
 
 .method protected onMeasure(II)V
     .locals 8
-    .param p1, "widthMeasureSpec"    # I
-    .param p2, "heightMeasureSpec"    # I
 
-    .line 1325
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
-    .line 1327
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v0
@@ -688,10 +548,8 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1330
     return-void
 
-    .line 1333
     :cond_0
     iget-object v0, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->this$0:Lcom/oneplus/lib/widget/OPTabLayout;
 
@@ -711,47 +569,33 @@
 
     if-ne v0, v1, :cond_5
 
-    .line 1334
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->getChildCount()I
 
     move-result v0
 
-    .line 1336
-    .local v0, "count":I
     const/4 v1, 0x0
 
     invoke-static {v1, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v2
 
-    .line 1339
-    .local v2, "unspecifiedSpec":I
     const/4 v3, 0x0
 
-    .line 1340
-    .local v3, "largestTabWidth":I
     const/4 v4, 0x0
 
-    .local v4, "i":I
     move v5, v3
 
     move v3, v0
 
-    .local v3, "z":I
-    .local v5, "largestTabWidth":I
     :goto_0
     if-ge v4, v3, :cond_1
 
-    .line 1341
     invoke-virtual {p0, v4}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->getChildAt(I)Landroid/view/View;
 
     move-result-object v6
 
-    .line 1342
-    .local v6, "child":Landroid/view/View;
     invoke-virtual {v6, v2, p2}, Landroid/view/View;->measure(II)V
 
-    .line 1343
     invoke-virtual {v6}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v7
@@ -760,22 +604,15 @@
 
     move-result v5
 
-    .line 1340
-    .end local v6    # "child":Landroid/view/View;
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 1346
-    .end local v3    # "z":I
-    .end local v4    # "i":I
     :cond_1
     if-gtz v5, :cond_2
 
-    .line 1348
     return-void
 
-    .line 1351
     :cond_2
     iget-object v3, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->this$0:Lcom/oneplus/lib/widget/OPTabLayout;
 
@@ -785,8 +622,6 @@
 
     move-result v3
 
-    .line 1352
-    .local v3, "gutter":I
     mul-int v4, v5, v0
 
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->getMeasuredWidth()I
@@ -799,90 +634,62 @@
 
     if-gt v4, v6, :cond_3
 
-    .line 1355
     nop
 
-    .local v1, "i":I
     :goto_1
     if-ge v1, v0, :cond_4
 
-    .line 1356
     invoke-virtual {p0, v1}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 1357
-    .local v4, "child":Landroid/view/View;
     invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v6
 
     check-cast v6, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 1358
-    .local v6, "lp":Landroid/widget/LinearLayout$LayoutParams;
     iput v5, v6, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
-    .line 1359
     const/4 v7, 0x0
 
     iput v7, v6, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
-    .line 1355
-    .end local v4    # "child":Landroid/view/View;
-    .end local v6    # "lp":Landroid/widget/LinearLayout$LayoutParams;
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 1364
-    .end local v1    # "i":I
     :cond_3
     iget-object v4, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->this$0:Lcom/oneplus/lib/widget/OPTabLayout;
 
     invoke-static {v4, v1}, Lcom/oneplus/lib/widget/OPTabLayout;->access$1202(Lcom/oneplus/lib/widget/OPTabLayout;I)I
 
-    .line 1365
     iget-object v1, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->this$0:Lcom/oneplus/lib/widget/OPTabLayout;
 
     invoke-static {v1}, Lcom/oneplus/lib/widget/OPTabLayout;->access$1400(Lcom/oneplus/lib/widget/OPTabLayout;)V
 
-    .line 1369
     :cond_4
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
-    .line 1371
-    .end local v0    # "count":I
-    .end local v2    # "unspecifiedSpec":I
-    .end local v3    # "gutter":I
-    .end local v5    # "largestTabWidth":I
     :cond_5
     return-void
 .end method
 
 .method setIndicatorPositionFromTabPosition(IF)V
     .locals 0
-    .param p1, "position"    # I
-    .param p2, "positionOffset"    # F
 
-    .line 1318
     iput p1, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mSelectedPosition:I
 
-    .line 1319
     iput p2, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mSelectionOffset:F
 
-    .line 1320
     invoke-direct {p0}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->updateIndicatorPosition()V
 
-    .line 1321
     return-void
 .end method
 
 .method setSelectedIndicatorColor(I)V
     .locals 1
-    .param p1, "color"    # I
 
-    .line 1294
     iget-object v0, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mSelectedIndicatorPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0}, Landroid/graphics/Paint;->getColor()I
@@ -891,35 +698,27 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1295
     iget-object v0, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mSelectedIndicatorPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1296
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->postInvalidateOnAnimation()V
 
-    .line 1298
     :cond_0
     return-void
 .end method
 
 .method setSelectedIndicatorHeight(I)V
     .locals 1
-    .param p1, "height"    # I
 
-    .line 1301
     iget v0, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mSelectedIndicatorHeight:I
 
     if-eq v0, p1, :cond_0
 
-    .line 1302
     iput p1, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->mSelectedIndicatorHeight:I
 
-    .line 1303
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->postInvalidateOnAnimation()V
 
-    .line 1305
     :cond_0
     return-void
 .end method

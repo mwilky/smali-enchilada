@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -17,57 +16,42 @@
 # virtual methods
 .method public getBoolean(Ljava/lang/String;Z)Z
     .locals 0
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "defValue"    # Z
 
-    .line 194
     return p2
 .end method
 
 .method public getFloat(Ljava/lang/String;F)F
     .locals 0
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "defValue"    # F
 
-    .line 182
     return p2
 .end method
 
 .method public getInt(Ljava/lang/String;I)I
     .locals 0
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "defValue"    # I
 
-    .line 158
     return p2
 .end method
 
 .method public getLong(Ljava/lang/String;J)J
     .locals 0
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "defValue"    # J
 
-    .line 170
     return-wide p2
 .end method
 
 .method public getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "defValue"    # Ljava/lang/String;
+    .param p2    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 133
     return-object p2
 .end method
 
 .method public getStringSet(Ljava/lang/String;Ljava/util/Set;)Ljava/util/Set;
     .locals 0
-    .param p1, "key"    # Ljava/lang/String;
     .param p2    # Ljava/util/Set;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
@@ -88,17 +72,12 @@
         }
     .end annotation
 
-    .line 146
-    .local p2, "defValues":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     return-object p2
 .end method
 
 .method public putBoolean(Ljava/lang/String;Z)V
     .locals 2
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # Z
 
-    .line 120
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Not implemented on this data store"
@@ -110,10 +89,7 @@
 
 .method public putFloat(Ljava/lang/String;F)V
     .locals 2
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # F
 
-    .line 107
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Not implemented on this data store"
@@ -125,10 +101,7 @@
 
 .method public putInt(Ljava/lang/String;I)V
     .locals 2
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # I
 
-    .line 81
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Not implemented on this data store"
@@ -140,10 +113,7 @@
 
 .method public putLong(Ljava/lang/String;J)V
     .locals 2
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # J
 
-    .line 94
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Not implemented on this data store"
@@ -155,13 +125,11 @@
 
 .method public putString(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/String;
+    .param p2    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 55
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Not implemented on this data store"
@@ -173,7 +141,6 @@
 
 .method public putStringSet(Ljava/lang/String;Ljava/util/Set;)V
     .locals 2
-    .param p1, "key"    # Ljava/lang/String;
     .param p2    # Ljava/util/Set;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
@@ -188,8 +155,6 @@
         }
     .end annotation
 
-    .line 68
-    .local p2, "values":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Not implemented on this data store"

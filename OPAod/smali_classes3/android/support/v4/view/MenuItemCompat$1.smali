@@ -25,7 +25,6 @@
 .method constructor <init>(Landroid/support/v4/view/MenuItemCompat$OnActionExpandListener;)V
     .locals 0
 
-    .line 302
     iput-object p1, p0, Landroid/support/v4/view/MenuItemCompat$1;->val$listener:Landroid/support/v4/view/MenuItemCompat$OnActionExpandListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,9 +36,7 @@
 # virtual methods
 .method public onMenuItemActionCollapse(Landroid/view/MenuItem;)Z
     .locals 1
-    .param p1, "item"    # Landroid/view/MenuItem;
 
-    .line 310
     iget-object v0, p0, Landroid/support/v4/view/MenuItemCompat$1;->val$listener:Landroid/support/v4/view/MenuItemCompat$OnActionExpandListener;
 
     invoke-interface {v0, p1}, Landroid/support/v4/view/MenuItemCompat$OnActionExpandListener;->onMenuItemActionCollapse(Landroid/view/MenuItem;)Z
@@ -51,9 +48,7 @@
 
 .method public onMenuItemActionExpand(Landroid/view/MenuItem;)Z
     .locals 1
-    .param p1, "item"    # Landroid/view/MenuItem;
 
-    .line 305
     iget-object v0, p0, Landroid/support/v4/view/MenuItemCompat$1;->val$listener:Landroid/support/v4/view/MenuItemCompat$OnActionExpandListener;
 
     invoke-interface {v0, p1}, Landroid/support/v4/view/MenuItemCompat$OnActionExpandListener;->onMenuItemActionExpand(Landroid/view/MenuItem;)Z

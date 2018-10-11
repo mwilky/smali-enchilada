@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/AodDisplayPeriodPreferenceFragment;Lcom/oneplus/settings/TextTime;Lcom/oneplus/lib/preference/Preference;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/AodDisplayPeriodPreferenceFragment;
 
-    .line 114
     iput-object p1, p0, Lcom/oneplus/settings/AodDisplayPeriodPreferenceFragment$1;->this$0:Lcom/oneplus/settings/AodDisplayPeriodPreferenceFragment;
 
     iput-object p2, p0, Lcom/oneplus/settings/AodDisplayPeriodPreferenceFragment$1;->val$textTime:Lcom/oneplus/settings/TextTime;
@@ -50,16 +48,11 @@
 # virtual methods
 .method public onTimeSet(Landroid/widget/TimePicker;II)V
     .locals 4
-    .param p1, "view"    # Landroid/widget/TimePicker;
-    .param p2, "hourOfDay"    # I
-    .param p3, "minute"    # I
 
-    .line 117
     iget-object v0, p0, Lcom/oneplus/settings/AodDisplayPeriodPreferenceFragment$1;->val$textTime:Lcom/oneplus/settings/TextTime;
 
     invoke-virtual {v0, p2, p3}, Lcom/oneplus/settings/TextTime;->setTime(II)V
 
-    .line 118
     iget-object v0, p0, Lcom/oneplus/settings/AodDisplayPeriodPreferenceFragment$1;->val$preference:Lcom/oneplus/lib/preference/Preference;
 
     iget-object v1, p0, Lcom/oneplus/settings/AodDisplayPeriodPreferenceFragment$1;->val$textTime:Lcom/oneplus/settings/TextTime;
@@ -70,7 +63,6 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/lib/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 119
     iget-object v0, p0, Lcom/oneplus/settings/AodDisplayPeriodPreferenceFragment$1;->this$0:Lcom/oneplus/settings/AodDisplayPeriodPreferenceFragment;
 
     invoke-static {v0}, Lcom/oneplus/settings/AodDisplayPeriodPreferenceFragment;->access$000(Lcom/oneplus/settings/AodDisplayPeriodPreferenceFragment;)Landroid/app/Activity;
@@ -95,7 +87,6 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$Secure;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
-    .line 120
     invoke-static {}, Lcom/oneplus/settings/AodDisplayPeriodPreferenceFragment;->access$100()Ljava/lang/String;
 
     move-result-object v0
@@ -154,6 +145,5 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 121
     return-void
 .end method

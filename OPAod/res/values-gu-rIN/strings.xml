@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">સંદેશ પ્રદર્શિત કરો</string>
     <string name="oneplus_aod_mode_always_on">હંમેશા ચાલુ</string>
     <string name="oneplus_aod_mode_lift_up">લિફટ અપ ડિસ્પ્લે</string>
-    <string name="oneplus_aod_mode_shake_up">બતાવવા માટે તમારા ફોનને થોડો ફેરવો</string>
-    <string name="oneplus_aod_mode_single_tap">બતાવવા માટે ટૅપ કરો</string>
     <string name="oneplus_aod_settings">એમ્બિયન્ટ પ્રદર્શન</string>
-    <string name="oneplus_aod_settings_what_to_show">શું બતાવવું</string>
-    <string name="oneplus_aod_settings_when_to_show">ક્યારે બતાવવું</string>
     <string name="oneplus_aod_title">ઘડિયાળ બતાવો</string>
     <string name="oneplus_display_time_end">સુધી</string>
     <string name="oneplus_display_time_from">તરફથી</string>

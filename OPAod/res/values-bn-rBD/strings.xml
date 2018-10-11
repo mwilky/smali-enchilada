@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">ডিসপ্লে বার্তা</string>
     <string name="oneplus_aod_mode_always_on">সবসময় চালু</string>
     <string name="oneplus_aod_mode_lift_up">ডিসপ্লে উপরের দিকে ওঠান</string>
-    <string name="oneplus_aod_mode_shake_up">দেখানোর জন্য আপনার ফোন সামান্য সরান</string>
-    <string name="oneplus_aod_mode_single_tap">দেখাতে ট্যাপ করুন</string>
     <string name="oneplus_aod_settings">পারিপার্শ্বিক ডিসপ্লে</string>
-    <string name="oneplus_aod_settings_what_to_show">কী দেখানো হবে</string>
-    <string name="oneplus_aod_settings_when_to_show">কখন দেখানো হবে</string>
     <string name="oneplus_aod_title">ঘড়ি দেখান</string>
     <string name="oneplus_display_time_end">পর্যন্ত</string>
     <string name="oneplus_display_time_from">থেকে</string>

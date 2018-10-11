@@ -37,35 +37,24 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 54
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap<TK;TV;>;"
     invoke-direct {p0}, Lcom/oneplus/lib/widget/recyclerview/SimpleArrayMap;-><init>()V
 
-    .line 55
     return-void
 .end method
 
 .method public constructor <init>(I)V
     .locals 0
-    .param p1, "capacity"    # I
 
-    .line 61
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap<TK;TV;>;"
     invoke-direct {p0, p1}, Lcom/oneplus/lib/widget/recyclerview/SimpleArrayMap;-><init>(I)V
 
-    .line 62
     return-void
 .end method
 
 .method public constructor <init>(Lcom/oneplus/lib/widget/recyclerview/SimpleArrayMap;)V
     .locals 0
-    .param p1, "map"    # Lcom/oneplus/lib/widget/recyclerview/SimpleArrayMap;
 
-    .line 68
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap<TK;TV;>;"
     invoke-direct {p0, p1}, Lcom/oneplus/lib/widget/recyclerview/SimpleArrayMap;-><init>(Lcom/oneplus/lib/widget/recyclerview/SimpleArrayMap;)V
 
-    .line 69
     return-void
 .end method
 
@@ -79,20 +68,16 @@
         }
     .end annotation
 
-    .line 72
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap<TK;TV;>;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/ArrayMap;->mCollections:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     if-nez v0, :cond_0
 
-    .line 73
     new-instance v0, Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;
 
     invoke-direct {v0, p0}, Lcom/oneplus/lib/widget/recyclerview/ArrayMap$1;-><init>(Lcom/oneplus/lib/widget/recyclerview/ArrayMap;)V
 
     iput-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/ArrayMap;->mCollections:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
-    .line 120
     :cond_0
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/ArrayMap;->mCollections:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
@@ -111,9 +96,6 @@
         }
     .end annotation
 
-    .line 130
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap<TK;TV;>;"
-    .local p1, "collection":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     invoke-static {p0, p1}, Lcom/oneplus/lib/widget/recyclerview/MapCollections;->containsAllHelper(Ljava/util/Map;Ljava/util/Collection;)Z
 
     move-result v0
@@ -132,8 +114,6 @@
         }
     .end annotation
 
-    .line 179
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap<TK;TV;>;"
     invoke-direct {p0}, Lcom/oneplus/lib/widget/recyclerview/ArrayMap;->getCollection()Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     move-result-object v0
@@ -155,8 +135,6 @@
         }
     .end annotation
 
-    .line 191
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap<TK;TV;>;"
     invoke-direct {p0}, Lcom/oneplus/lib/widget/recyclerview/ArrayMap;->getCollection()Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     move-result-object v0
@@ -178,9 +156,6 @@
         }
     .end annotation
 
-    .line 139
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap<TK;TV;>;"
-    .local p1, "map":Ljava/util/Map;, "Ljava/util/Map<+TK;+TV;>;"
     iget v0, p0, Lcom/oneplus/lib/widget/recyclerview/ArrayMap;->mSize:I
 
     invoke-interface {p1}, Ljava/util/Map;->size()I
@@ -191,7 +166,6 @@
 
     invoke-virtual {p0, v0}, Lcom/oneplus/lib/widget/recyclerview/ArrayMap;->ensureCapacity(I)V
 
-    .line 140
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -213,8 +187,6 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 141
-    .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<+TK;+TV;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -225,11 +197,8 @@
 
     invoke-virtual {p0, v2, v3}, Lcom/oneplus/lib/widget/recyclerview/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 142
-    .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<+TK;+TV;>;"
     goto :goto_0
 
-    .line 143
     :cond_0
     return-void
 .end method
@@ -244,9 +213,6 @@
         }
     .end annotation
 
-    .line 151
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap<TK;TV;>;"
-    .local p1, "collection":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     invoke-static {p0, p1}, Lcom/oneplus/lib/widget/recyclerview/MapCollections;->removeAllHelper(Ljava/util/Map;Ljava/util/Collection;)Z
 
     move-result v0
@@ -264,9 +230,6 @@
         }
     .end annotation
 
-    .line 161
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap<TK;TV;>;"
-    .local p1, "collection":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     invoke-static {p0, p1}, Lcom/oneplus/lib/widget/recyclerview/MapCollections;->retainAllHelper(Ljava/util/Map;Ljava/util/Collection;)Z
 
     move-result v0
@@ -284,8 +247,6 @@
         }
     .end annotation
 
-    .line 203
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/ArrayMap;, "Lcom/oneplus/lib/widget/recyclerview/ArrayMap<TK;TV;>;"
     invoke-direct {p0}, Lcom/oneplus/lib/widget/recyclerview/ArrayMap;->getCollection()Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     move-result-object v0

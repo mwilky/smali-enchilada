@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">Παρουσίαση μηνύματος</string>
     <string name="oneplus_aod_mode_always_on">Ενεργοποίηση πάντα</string>
     <string name="oneplus_aod_mode_lift_up">Παρουσίαση με το σήκωμα</string>
-    <string name="oneplus_aod_mode_shake_up">Μετακινήστε το τηλέφωνό σας ελαφρά για εμφάνιση</string>
-    <string name="oneplus_aod_mode_single_tap">Χτυπήστε για εμφάνισης</string>
     <string name="oneplus_aod_settings">Οθόνη περιβάλλοντος</string>
-    <string name="oneplus_aod_settings_what_to_show">τι να εμφανίσει</string>
-    <string name="oneplus_aod_settings_when_to_show">πότε να εμφανίσει</string>
     <string name="oneplus_aod_title">Εμφάνιση ρολογιού</string>
     <string name="oneplus_display_time_end">Έως</string>
     <string name="oneplus_display_time_from">Από</string>

@@ -38,7 +38,6 @@
 # direct methods
 .method varargs constructor <init>(Landroid/support/v4/content/ModernAsyncTask;[Ljava/lang/Object;)V
     .locals 0
-    .param p1, "task"    # Landroid/support/v4/content/ModernAsyncTask;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -47,17 +46,11 @@
         }
     .end annotation
 
-    .line 526
-    .local p0, "this":Landroid/support/v4/content/ModernAsyncTask$AsyncTaskResult;, "Landroid/support/v4/content/ModernAsyncTask$AsyncTaskResult<TData;>;"
-    .local p2, "data":[Ljava/lang/Object;, "[TData;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 527
     iput-object p1, p0, Landroid/support/v4/content/ModernAsyncTask$AsyncTaskResult;->mTask:Landroid/support/v4/content/ModernAsyncTask;
 
-    .line 528
     iput-object p2, p0, Landroid/support/v4/content/ModernAsyncTask$AsyncTaskResult;->mData:[Ljava/lang/Object;
 
-    .line 529
     return-void
 .end method

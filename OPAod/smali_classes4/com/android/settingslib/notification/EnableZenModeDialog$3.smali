@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settingslib/notification/EnableZenModeDialog;Lcom/android/settingslib/notification/EnableZenModeDialog$ConditionTag;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settingslib/notification/EnableZenModeDialog;
 
-    .line 354
     iput-object p1, p0, Lcom/android/settingslib/notification/EnableZenModeDialog$3;->this$0:Lcom/android/settingslib/notification/EnableZenModeDialog;
 
     iput-object p2, p0, Lcom/android/settingslib/notification/EnableZenModeDialog$3;->val$tag:Lcom/android/settingslib/notification/EnableZenModeDialog$ConditionTag;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 357
     iget-object v0, p0, Lcom/android/settingslib/notification/EnableZenModeDialog$3;->val$tag:Lcom/android/settingslib/notification/EnableZenModeDialog$ConditionTag;
 
     iget-object v0, v0, Lcom/android/settingslib/notification/EnableZenModeDialog$ConditionTag;->rb:Landroid/widget/RadioButton;
@@ -53,6 +49,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 358
     return-void
 .end method

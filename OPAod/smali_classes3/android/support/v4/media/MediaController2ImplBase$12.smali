@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaController2ImplBase;J)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaController2ImplBase;
 
-    .line 989
     iput-object p1, p0, Landroid/support/v4/media/MediaController2ImplBase$12;->this$0:Landroid/support/v4/media/MediaController2ImplBase;
 
     iput-wide p2, p0, Landroid/support/v4/media/MediaController2ImplBase$12;->val$seekPositionMs:J
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 4
 
-    .line 992
     iget-object v0, p0, Landroid/support/v4/media/MediaController2ImplBase$12;->this$0:Landroid/support/v4/media/MediaController2ImplBase;
 
     invoke-static {v0}, Landroid/support/v4/media/MediaController2ImplBase;->access$000(Landroid/support/v4/media/MediaController2ImplBase;)Landroid/support/v4/media/MediaController2;
@@ -56,10 +53,8 @@
 
     if-nez v0, :cond_0
 
-    .line 993
     return-void
 
-    .line 995
     :cond_0
     iget-object v0, p0, Landroid/support/v4/media/MediaController2ImplBase$12;->this$0:Landroid/support/v4/media/MediaController2ImplBase;
 
@@ -77,6 +72,5 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/support/v4/media/MediaController2$ControllerCallback;->onSeekCompleted(Landroid/support/v4/media/MediaController2;J)V
 
-    .line 996
     return-void
 .end method

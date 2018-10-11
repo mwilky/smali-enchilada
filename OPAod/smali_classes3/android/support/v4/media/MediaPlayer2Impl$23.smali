@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaPlayer2Impl;Landroid/media/PlaybackParams;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaPlayer2Impl;
 
-    .line 1378
     iput-object p1, p0, Landroid/support/v4/media/MediaPlayer2Impl$23;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaPlayer2Impl$23;->val$params:Landroid/media/PlaybackParams;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public notify(Landroid/support/v4/media/BaseMediaPlayer$PlayerEventCallback;)V
     .locals 2
-    .param p1, "cb"    # Landroid/support/v4/media/BaseMediaPlayer$PlayerEventCallback;
 
-    .line 1381
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$23;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     invoke-static {v0}, Landroid/support/v4/media/MediaPlayer2Impl;->access$600(Landroid/support/v4/media/MediaPlayer2Impl;)Landroid/support/v4/media/MediaPlayer2Impl$BaseMediaPlayerImpl;
@@ -59,6 +55,5 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/support/v4/media/BaseMediaPlayer$PlayerEventCallback;->onPlaybackSpeedChanged(Landroid/support/v4/media/BaseMediaPlayer;F)V
 
-    .line 1382
     return-void
 .end method

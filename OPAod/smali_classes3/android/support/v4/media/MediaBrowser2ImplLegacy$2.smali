@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaBrowser2ImplLegacy;Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaBrowser2ImplLegacy;
 
-    .line 87
     iput-object p1, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$2;->this$0:Landroid/support/v4/media/MediaBrowser2ImplLegacy;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$2;->val$extras:Landroid/os/Bundle;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 6
 
-    .line 92
     new-instance v0, Landroid/support/v4/media/MediaBrowserCompat;
 
     iget-object v1, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$2;->this$0:Landroid/support/v4/media/MediaBrowser2ImplLegacy;
@@ -54,7 +51,6 @@
 
     iget-object v2, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$2;->this$0:Landroid/support/v4/media/MediaBrowser2ImplLegacy;
 
-    .line 93
     invoke-virtual {v2}, Landroid/support/v4/media/MediaBrowser2ImplLegacy;->getSessionToken()Landroid/support/v4/media/SessionToken2;
 
     move-result-object v2
@@ -75,15 +71,12 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Landroid/support/v4/media/MediaBrowserCompat;-><init>(Landroid/content/Context;Landroid/content/ComponentName;Landroid/support/v4/media/MediaBrowserCompat$ConnectionCallback;Landroid/os/Bundle;)V
 
-    .line 95
-    .local v0, "newBrowser":Landroid/support/v4/media/MediaBrowserCompat;
     iget-object v1, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$2;->this$0:Landroid/support/v4/media/MediaBrowser2ImplLegacy;
 
     iget-object v1, v1, Landroid/support/v4/media/MediaBrowser2ImplLegacy;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 96
     :try_start_0
     iget-object v2, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$2;->this$0:Landroid/support/v4/media/MediaBrowser2ImplLegacy;
 
@@ -95,18 +88,14 @@
 
     invoke-virtual {v2, v3, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 97
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 98
     invoke-virtual {v0}, Landroid/support/v4/media/MediaBrowserCompat;->connect()V
 
-    .line 99
     return-void
 
-    .line 97
     :catchall_0
     move-exception v2
 

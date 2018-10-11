@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/actionbar/Toolbar;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/actionbar/Toolbar;
 
-    .line 150
     iput-object p1, p0, Lcom/oneplus/lib/widget/actionbar/Toolbar$2;->this$0:Lcom/oneplus/lib/widget/actionbar/Toolbar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +37,9 @@
 .method public run()V
     .locals 1
 
-    .line 152
     iget-object v0, p0, Lcom/oneplus/lib/widget/actionbar/Toolbar$2;->this$0:Lcom/oneplus/lib/widget/actionbar/Toolbar;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/actionbar/Toolbar;->showOverflowMenu()Z
 
-    .line 153
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/app/appcompat/WindowDecorActionBar;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/app/appcompat/WindowDecorActionBar;
 
-    .line 158
     iput-object p1, p0, Lcom/oneplus/lib/app/appcompat/WindowDecorActionBar$3;->this$0:Lcom/oneplus/lib/app/appcompat/WindowDecorActionBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/view/View;)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 161
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/WindowDecorActionBar$3;->this$0:Lcom/oneplus/lib/app/appcompat/WindowDecorActionBar;
 
     iget-object v0, v0, Lcom/oneplus/lib/app/appcompat/WindowDecorActionBar;->mContainerView:Lcom/oneplus/lib/app/appcompat/ActionBarContainer;
@@ -49,14 +45,11 @@
 
     move-result-object v0
 
-    .line 162
-    .local v0, "parent":Landroid/view/ViewParent;
     move-object v1, v0
 
     check-cast v1, Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->invalidate()V
 
-    .line 163
     return-void
 .end method

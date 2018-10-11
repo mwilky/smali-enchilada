@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaPlayer2Impl;Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;Landroid/media/MediaPlayer$OnPreparedListener;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaPlayer2Impl;
 
-    .line 1508
     iput-object p1, p0, Landroid/support/v4/media/MediaPlayer2Impl$29;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaPlayer2Impl$29;->val$src:Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;
@@ -46,9 +44,7 @@
 # virtual methods
 .method public onPrepared(Landroid/media/MediaPlayer;)V
     .locals 4
-    .param p1, "mp"    # Landroid/media/MediaPlayer;
 
-    .line 1511
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$29;->val$src:Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;
 
     invoke-virtual {v0}, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;->getDSD()Landroid/support/v4/media/DataSourceDesc;
@@ -65,7 +61,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1512
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$29;->val$src:Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;
 
     iget-object v0, v0, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;->mPlayer:Landroid/media/MediaPlayer;
@@ -90,13 +85,11 @@
 
     goto :goto_0
 
-    .line 1516
     :cond_0
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$29;->val$preparedListener:Landroid/media/MediaPlayer$OnPreparedListener;
 
     invoke-interface {v0, p1}, Landroid/media/MediaPlayer$OnPreparedListener;->onPrepared(Landroid/media/MediaPlayer;)V
 
-    .line 1518
     :goto_0
     return-void
 .end method

@@ -26,14 +26,11 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/actionbar/ToolbarWidgetWrapper;)V
     .locals 8
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/actionbar/ToolbarWidgetWrapper;
 
-    .line 169
     iput-object p1, p0, Lcom/oneplus/lib/widget/actionbar/ToolbarWidgetWrapper$1;->this$0:Lcom/oneplus/lib/widget/actionbar/ToolbarWidgetWrapper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 170
     new-instance v7, Lcom/oneplus/lib/menu/ActionMenuItem;
 
     iget-object v0, p0, Lcom/oneplus/lib/widget/actionbar/ToolbarWidgetWrapper$1;->this$0:Lcom/oneplus/lib/widget/actionbar/ToolbarWidgetWrapper;
@@ -69,9 +66,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 3
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 174
     iget-object v0, p0, Lcom/oneplus/lib/widget/actionbar/ToolbarWidgetWrapper$1;->this$0:Lcom/oneplus/lib/widget/actionbar/ToolbarWidgetWrapper;
 
     iget-object v0, v0, Lcom/oneplus/lib/widget/actionbar/ToolbarWidgetWrapper;->mWindowCallback:Landroid/view/Window$Callback;
@@ -84,7 +79,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 175
     iget-object v0, p0, Lcom/oneplus/lib/widget/actionbar/ToolbarWidgetWrapper$1;->this$0:Lcom/oneplus/lib/widget/actionbar/ToolbarWidgetWrapper;
 
     iget-object v0, v0, Lcom/oneplus/lib/widget/actionbar/ToolbarWidgetWrapper;->mWindowCallback:Landroid/view/Window$Callback;
@@ -95,7 +89,6 @@
 
     invoke-interface {v0, v1, v2}, Landroid/view/Window$Callback;->onMenuItemSelected(ILandroid/view/MenuItem;)Z
 
-    .line 177
     :cond_0
     return-void
 .end method

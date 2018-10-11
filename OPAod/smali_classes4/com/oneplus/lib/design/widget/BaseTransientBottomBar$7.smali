@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;
 
-    .line 508
-    .local p0, "this":Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$7;, "Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$7;"
     iput-object p1, p0, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$7;->this$0:Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -36,24 +33,17 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 518
-    .local p0, "this":Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$7;, "Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$7;"
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$7;->this$0:Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;->onViewShown()V
 
-    .line 519
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 3
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 511
-    .local p0, "this":Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$7;, "Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$7;"
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$7;->this$0:Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;
 
     invoke-static {v0}, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;->access$000(Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;)Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$ContentViewCallback;
@@ -66,6 +56,5 @@
 
     invoke-interface {v0, v1, v2}, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$ContentViewCallback;->animateContentIn(II)V
 
-    .line 514
     return-void
 .end method

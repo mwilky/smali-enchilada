@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaSession2Stub;Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaSession2Stub;
 
-    .line 577
     iput-object p1, p0, Landroid/support/v4/media/MediaSession2Stub$20;->this$0:Landroid/support/v4/media/MediaSession2Stub;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaSession2Stub$20;->val$mediaId:Ljava/lang/String;
@@ -46,19 +44,16 @@
 # virtual methods
 .method public run(Landroid/support/v4/media/MediaSession2$ControllerInfo;)V
     .locals 4
-    .param p1, "controller"    # Landroid/support/v4/media/MediaSession2$ControllerInfo;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 580
     iget-object v0, p0, Landroid/support/v4/media/MediaSession2Stub$20;->val$mediaId:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
-    .line 581
     const-string v0, "MediaSession2Stub"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -77,16 +72,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 582
     return-void
 
-    .line 584
     :cond_0
     iget-object v0, p0, Landroid/support/v4/media/MediaSession2Stub$20;->val$ratingBundle:Landroid/os/Bundle;
 
     if-nez v0, :cond_1
 
-    .line 585
     const-string v0, "MediaSession2Stub"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -105,10 +97,8 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 587
     return-void
 
-    .line 589
     :cond_1
     iget-object v0, p0, Landroid/support/v4/media/MediaSession2Stub$20;->val$ratingBundle:Landroid/os/Bundle;
 
@@ -116,16 +106,12 @@
 
     move-result-object v0
 
-    .line 590
-    .local v0, "rating":Landroid/support/mediacompat/Rating2;
     if-nez v0, :cond_3
 
-    .line 591
     iget-object v1, p0, Landroid/support/v4/media/MediaSession2Stub$20;->val$ratingBundle:Landroid/os/Bundle;
 
     if-nez v1, :cond_2
 
-    .line 592
     const-string v1, "MediaSession2Stub"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -144,14 +130,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 593
     return-void
 
-    .line 595
     :cond_2
     return-void
 
-    .line 597
     :cond_3
     iget-object v1, p0, Landroid/support/v4/media/MediaSession2Stub$20;->this$0:Landroid/support/v4/media/MediaSession2Stub;
 
@@ -173,6 +156,5 @@
 
     invoke-virtual {v1, v2, p1, v3, v0}, Landroid/support/v4/media/MediaSession2$SessionCallback;->onSetRating(Landroid/support/v4/media/MediaSession2;Landroid/support/v4/media/MediaSession2$ControllerInfo;Ljava/lang/String;Landroid/support/mediacompat/Rating2;)V
 
-    .line 600
     return-void
 .end method

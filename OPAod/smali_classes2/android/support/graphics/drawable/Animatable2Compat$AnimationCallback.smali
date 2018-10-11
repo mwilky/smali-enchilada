@@ -22,7 +22,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,19 +35,16 @@
         value = 0x17
     .end annotation
 
-    .line 77
     iget-object v0, p0, Landroid/support/graphics/drawable/Animatable2Compat$AnimationCallback;->mPlatformCallback:Landroid/graphics/drawable/Animatable2$AnimationCallback;
 
     if-nez v0, :cond_0
 
-    .line 78
     new-instance v0, Landroid/support/graphics/drawable/Animatable2Compat$AnimationCallback$1;
 
     invoke-direct {v0, p0}, Landroid/support/graphics/drawable/Animatable2Compat$AnimationCallback$1;-><init>(Landroid/support/graphics/drawable/Animatable2Compat$AnimationCallback;)V
 
     iput-object v0, p0, Landroid/support/graphics/drawable/Animatable2Compat$AnimationCallback;->mPlatformCallback:Landroid/graphics/drawable/Animatable2$AnimationCallback;
 
-    .line 90
     :cond_0
     iget-object v0, p0, Landroid/support/graphics/drawable/Animatable2Compat$AnimationCallback;->mPlatformCallback:Landroid/graphics/drawable/Animatable2$AnimationCallback;
 
@@ -57,16 +53,12 @@
 
 .method public onAnimationEnd(Landroid/graphics/drawable/Drawable;)V
     .locals 0
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
 
-    .line 69
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/graphics/drawable/Drawable;)V
     .locals 0
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
 
-    .line 63
     return-void
 .end method

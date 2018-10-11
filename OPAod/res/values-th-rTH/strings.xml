@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">แสดงข้อความ</string>
     <string name="oneplus_aod_mode_always_on">เปิดอยู่เสมอ</string>
     <string name="oneplus_aod_mode_lift_up">ปลุกหน้าจอ</string>
-    <string name="oneplus_aod_mode_shake_up">ขยับโทรศัพท์ของคุณเล็กน้อยเพื่อแสดง</string>
-    <string name="oneplus_aod_mode_single_tap">แตะเพื่อแสดง</string>
     <string name="oneplus_aod_settings">การแสดงการแจ้งเตือนโดยไม่ต้องเปิดหน้าจอ</string>
-    <string name="oneplus_aod_settings_what_to_show">สิ่งที่จะแสดง</string>
-    <string name="oneplus_aod_settings_when_to_show">เวลาที่จะแสดง</string>
     <string name="oneplus_aod_title">แสดงนาฬิกา</string>
     <string name="oneplus_display_time_end">ถึง</string>
     <string name="oneplus_display_time_from">ตั้งแต่</string>

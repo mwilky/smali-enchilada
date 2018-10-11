@@ -22,7 +22,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 221
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,9 +29,7 @@
 
 .method synthetic constructor <init>(Lcom/oneplus/doze/DozeLog$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/oneplus/doze/DozeLog$1;
 
-    .line 221
     invoke-direct {p0}, Lcom/oneplus/doze/DozeLog$SummaryStats;-><init>()V
 
     return-void
@@ -43,54 +40,43 @@
 .method public append()V
     .locals 1
 
-    .line 225
     iget v0, p0, Lcom/oneplus/doze/DozeLog$SummaryStats;->mCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/oneplus/doze/DozeLog$SummaryStats;->mCount:I
 
-    .line 226
     return-void
 .end method
 
 .method public dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
     .locals 6
-    .param p1, "pw"    # Ljava/io/PrintWriter;
-    .param p2, "type"    # Ljava/lang/String;
 
-    .line 229
     iget v0, p0, Lcom/oneplus/doze/DozeLog$SummaryStats;->mCount:I
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 230
     :cond_0
     const-string v0, "    "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 231
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 232
     const-string v0, ": n="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 233
     iget v0, p0, Lcom/oneplus/doze/DozeLog$SummaryStats;->mCount:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 234
     const-string v0, " ("
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 235
     iget v0, p0, Lcom/oneplus/doze/DozeLog$SummaryStats;->mCount:I
 
     int-to-double v0, v0
@@ -119,18 +105,13 @@
 
     mul-double/2addr v0, v2
 
-    .line 237
-    .local v0, "perHr":D
     invoke-virtual {p1, v0, v1}, Ljava/io/PrintWriter;->print(D)V
 
-    .line 238
     const-string v2, "/hr)"
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 239
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 240
     return-void
 .end method

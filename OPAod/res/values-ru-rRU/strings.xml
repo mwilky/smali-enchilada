@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">Показывать сообщение</string>
     <string name="oneplus_aod_mode_always_on">Всегда включен</string>
     <string name="oneplus_aod_mode_lift_up">Подсветка при взятии</string>
-    <string name="oneplus_aod_mode_shake_up">Слегка подвиньте телефон для показа</string>
-    <string name="oneplus_aod_mode_single_tap">Коснитесь, чтобы показать</string>
     <string name="oneplus_aod_settings">Активация экрана</string>
-    <string name="oneplus_aod_settings_what_to_show">что показывать</string>
-    <string name="oneplus_aod_settings_when_to_show">когда показывать</string>
     <string name="oneplus_aod_title">Показывать часы</string>
     <string name="oneplus_display_time_end">До</string>
     <string name="oneplus_display_time_from">С</string>

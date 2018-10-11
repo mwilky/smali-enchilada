@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/util/loading/LoadingHelper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/util/loading/LoadingHelper;
 
-    .line 69
     iput-object p1, p0, Lcom/oneplus/lib/util/loading/LoadingHelper$1;->this$0:Lcom/oneplus/lib/util/loading/LoadingHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,14 +37,12 @@
 .method public run()V
     .locals 3
 
-    .line 73
     iget-object v0, p0, Lcom/oneplus/lib/util/loading/LoadingHelper$1;->this$0:Lcom/oneplus/lib/util/loading/LoadingHelper;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/oneplus/lib/util/loading/LoadingHelper;->access$002(Lcom/oneplus/lib/util/loading/LoadingHelper;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
-    .line 74
     iget-object v0, p0, Lcom/oneplus/lib/util/loading/LoadingHelper$1;->this$0:Lcom/oneplus/lib/util/loading/LoadingHelper;
 
     iget-object v1, p0, Lcom/oneplus/lib/util/loading/LoadingHelper$1;->this$0:Lcom/oneplus/lib/util/loading/LoadingHelper;
@@ -57,7 +53,6 @@
 
     invoke-static {v0, v1}, Lcom/oneplus/lib/util/loading/LoadingHelper;->access$102(Lcom/oneplus/lib/util/loading/LoadingHelper;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 75
     iget-object v0, p0, Lcom/oneplus/lib/util/loading/LoadingHelper$1;->this$0:Lcom/oneplus/lib/util/loading/LoadingHelper;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -66,6 +61,5 @@
 
     invoke-static {v0, v1, v2}, Lcom/oneplus/lib/util/loading/LoadingHelper;->access$202(Lcom/oneplus/lib/util/loading/LoadingHelper;J)J
 
-    .line 76
     return-void
 .end method

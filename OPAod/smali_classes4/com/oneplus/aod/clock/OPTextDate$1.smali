@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/aod/clock/OPTextDate;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/aod/clock/OPTextDate;
 
-    .line 176
     iput-object p1, p0, Lcom/oneplus/aod/clock/OPTextDate$1;->this$0:Lcom/oneplus/aod/clock/OPTextDate;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 179
     iget-object v0, p0, Lcom/oneplus/aod/clock/OPTextDate$1;->this$0:Lcom/oneplus/aod/clock/OPTextDate;
 
     invoke-static {v0}, Lcom/oneplus/aod/clock/OPTextDate;->access$200(Lcom/oneplus/aod/clock/OPTextDate;)Ljava/lang/String;
@@ -59,26 +54,20 @@
 
     if-eqz v0, :cond_0
 
-    .line 180
     const-string v0, "time-zone"
 
     invoke-virtual {p2, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 181
-    .local v0, "timeZone":Ljava/lang/String;
     iget-object v1, p0, Lcom/oneplus/aod/clock/OPTextDate$1;->this$0:Lcom/oneplus/aod/clock/OPTextDate;
 
     invoke-static {v1, v0}, Lcom/oneplus/aod/clock/OPTextDate;->access$300(Lcom/oneplus/aod/clock/OPTextDate;Ljava/lang/String;)V
 
-    .line 183
-    .end local v0    # "timeZone":Ljava/lang/String;
     :cond_0
     iget-object v0, p0, Lcom/oneplus/aod/clock/OPTextDate$1;->this$0:Lcom/oneplus/aod/clock/OPTextDate;
 
     invoke-static {v0}, Lcom/oneplus/aod/clock/OPTextDate;->access$100(Lcom/oneplus/aod/clock/OPTextDate;)V
 
-    .line 184
     return-void
 .end method

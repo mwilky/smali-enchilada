@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/doze/ScrimView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/doze/ScrimView;
 
-    .line 44
     iput-object p1, p0, Lcom/oneplus/doze/ScrimView$1;->this$0:Lcom/oneplus/doze/ScrimView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 47
     iget-object v0, p0, Lcom/oneplus/doze/ScrimView$1;->this$0:Lcom/oneplus/doze/ScrimView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -55,11 +51,9 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/doze/ScrimView;->setAlpha(F)V
 
-    .line 48
     iget-object v0, p0, Lcom/oneplus/doze/ScrimView$1;->this$0:Lcom/oneplus/doze/ScrimView;
 
     invoke-virtual {v0}, Lcom/oneplus/doze/ScrimView;->invalidate()V
 
-    .line 49
     return-void
 .end method

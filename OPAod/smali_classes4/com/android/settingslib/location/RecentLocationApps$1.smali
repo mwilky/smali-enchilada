@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settingslib/location/RecentLocationApps;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settingslib/location/RecentLocationApps;
 
-    .line 125
     iput-object p1, p0, Lcom/android/settingslib/location/RecentLocationApps$1;->this$0:Lcom/android/settingslib/location/RecentLocationApps;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +45,7 @@
 # virtual methods
 .method public compare(Lcom/android/settingslib/location/RecentLocationApps$Request;Lcom/android/settingslib/location/RecentLocationApps$Request;)I
     .locals 4
-    .param p1, "request1"    # Lcom/android/settingslib/location/RecentLocationApps$Request;
-    .param p2, "request2"    # Lcom/android/settingslib/location/RecentLocationApps$Request;
 
-    .line 128
     iget-wide v0, p1, Lcom/android/settingslib/location/RecentLocationApps$Request;->requestFinishTime:J
 
     iget-wide v2, p2, Lcom/android/settingslib/location/RecentLocationApps$Request;->requestFinishTime:J
@@ -65,7 +60,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 125
     check-cast p1, Lcom/android/settingslib/location/RecentLocationApps$Request;
 
     check-cast p2, Lcom/android/settingslib/location/RecentLocationApps$Request;

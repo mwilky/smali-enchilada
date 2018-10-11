@@ -24,18 +24,15 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListener;)V
     .locals 0
-    .param p1, "listener"    # Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListener;
+    .param p1    # Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListener;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 79
     iput-object p1, p0, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerWrapper;->mListener:Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListener;
 
-    .line 80
     return-void
 .end method
 
@@ -43,17 +40,13 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 89
     if-ne p0, p1, :cond_0
 
-    .line 90
     const/4 v0, 0x1
 
     return v0
 
-    .line 92
     :cond_0
     if-eqz p1, :cond_2
 
@@ -69,14 +62,11 @@
 
     goto :goto_0
 
-    .line 95
     :cond_1
     move-object v0, p1
 
     check-cast v0, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerWrapper;
 
-    .line 97
-    .local v0, "other":Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerWrapper;
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerWrapper;->mListener:Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListener;
 
     iget-object v2, v0, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerWrapper;->mListener:Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListener;
@@ -87,8 +77,6 @@
 
     return v1
 
-    .line 93
-    .end local v0    # "other":Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerWrapper;
     :cond_2
     :goto_0
     const/4 v0, 0x0
@@ -99,7 +87,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 84
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerWrapper;->mListener:Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListener;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -111,13 +98,10 @@
 
 .method public onAccessibilityStateChanged(Z)V
     .locals 1
-    .param p1, "enabled"    # Z
 
-    .line 102
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerWrapper;->mListener:Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListener;
 
     invoke-interface {v0, p1}, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListener;->onAccessibilityStateChanged(Z)V
 
-    .line 103
     return-void
 .end method

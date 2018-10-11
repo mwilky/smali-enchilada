@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">הצג הודעה</string>
     <string name="oneplus_aod_mode_always_on">תמיד פועל</string>
     <string name="oneplus_aod_mode_lift_up">הרם תצוגה</string>
-    <string name="oneplus_aod_mode_shake_up">לתצוגה הזז מעט את הטלפון שלך</string>
-    <string name="oneplus_aod_mode_single_tap">הקש לתצוגה</string>
     <string name="oneplus_aod_settings">תצוגה סביבתית</string>
-    <string name="oneplus_aod_settings_what_to_show">מה להציג</string>
-    <string name="oneplus_aod_settings_when_to_show">מתי להציג</string>
     <string name="oneplus_aod_title">הצג שעון</string>
     <string name="oneplus_display_time_end">עד</string>
     <string name="oneplus_display_time_from">מאת</string>

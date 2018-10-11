@@ -43,7 +43,7 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;Ljava/lang/Class;Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "_tag"    # Ljava/lang/String;
+    .param p1    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
@@ -51,7 +51,7 @@
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p3, "_args"    # Landroid/os/Bundle;
+    .param p3    # Landroid/os/Bundle;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
@@ -66,19 +66,13 @@
         }
     .end annotation
 
-    .line 71
-    .local p2, "_class":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 72
     iput-object p1, p0, Landroid/support/v4/app/FragmentTabHost$TabInfo;->tag:Ljava/lang/String;
 
-    .line 73
     iput-object p2, p0, Landroid/support/v4/app/FragmentTabHost$TabInfo;->clss:Ljava/lang/Class;
 
-    .line 74
     iput-object p3, p0, Landroid/support/v4/app/FragmentTabHost$TabInfo;->args:Landroid/os/Bundle;
 
-    .line 75
     return-void
 .end method

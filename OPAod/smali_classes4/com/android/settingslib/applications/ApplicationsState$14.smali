@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1643
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,9 +30,7 @@
 # virtual methods
 .method public filterApp(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)Z
     .locals 1
-    .param p1, "entry"    # Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
 
-    .line 1650
     const/4 v0, 0x1
 
     return v0
@@ -42,6 +39,5 @@
 .method public init()V
     .locals 0
 
-    .line 1646
     return-void
 .end method

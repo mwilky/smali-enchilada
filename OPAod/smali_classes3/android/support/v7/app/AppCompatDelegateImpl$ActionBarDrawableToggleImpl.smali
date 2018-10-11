@@ -25,12 +25,10 @@
 .method constructor <init>(Landroid/support/v7/app/AppCompatDelegateImpl;)V
     .locals 0
 
-    .line 2729
     iput-object p1, p0, Landroid/support/v7/app/AppCompatDelegateImpl$ActionBarDrawableToggleImpl;->this$0:Landroid/support/v7/app/AppCompatDelegateImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2730
     return-void
 .end method
 
@@ -39,7 +37,6 @@
 .method public getActionBarThemedContext()Landroid/content/Context;
     .locals 1
 
-    .line 2743
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImpl$ActionBarDrawableToggleImpl;->this$0:Landroid/support/v7/app/AppCompatDelegateImpl;
 
     invoke-virtual {v0}, Landroid/support/v7/app/AppCompatDelegateImpl;->getActionBarThemedContext()Landroid/content/Context;
@@ -52,10 +49,8 @@
 .method public getThemeUpIndicator()Landroid/graphics/drawable/Drawable;
     .locals 4
 
-    .line 2734
     nop
 
-    .line 2735
     invoke-virtual {p0}, Landroid/support/v7/app/AppCompatDelegateImpl$ActionBarDrawableToggleImpl;->getActionBarThemedContext()Landroid/content/Context;
 
     move-result-object v0
@@ -70,39 +65,30 @@
 
     aput v2, v1, v3
 
-    .line 2734
     const/4 v2, 0x0
 
     invoke-static {v0, v2, v1}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[I)Landroid/support/v7/widget/TintTypedArray;
 
     move-result-object v0
 
-    .line 2736
-    .local v0, "a":Landroid/support/v7/widget/TintTypedArray;
     invoke-virtual {v0, v3}, Landroid/support/v7/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    .line 2737
-    .local v1, "result":Landroid/graphics/drawable/Drawable;
     invoke-virtual {v0}, Landroid/support/v7/widget/TintTypedArray;->recycle()V
 
-    .line 2738
     return-object v1
 .end method
 
 .method public isNavigationVisible()Z
     .locals 2
 
-    .line 2748
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImpl$ActionBarDrawableToggleImpl;->this$0:Landroid/support/v7/app/AppCompatDelegateImpl;
 
     invoke-virtual {v0}, Landroid/support/v7/app/AppCompatDelegateImpl;->getSupportActionBar()Landroid/support/v7/app/ActionBar;
 
     move-result-object v0
 
-    .line 2749
-    .local v0, "ab":Landroid/support/v7/app/ActionBar;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/support/v7/app/ActionBar;->getDisplayOptions()I
@@ -126,50 +112,36 @@
 
 .method public setActionBarDescription(I)V
     .locals 1
-    .param p1, "contentDescRes"    # I
 
-    .line 2763
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImpl$ActionBarDrawableToggleImpl;->this$0:Landroid/support/v7/app/AppCompatDelegateImpl;
 
     invoke-virtual {v0}, Landroid/support/v7/app/AppCompatDelegateImpl;->getSupportActionBar()Landroid/support/v7/app/ActionBar;
 
     move-result-object v0
 
-    .line 2764
-    .local v0, "ab":Landroid/support/v7/app/ActionBar;
     if-eqz v0, :cond_0
 
-    .line 2765
     invoke-virtual {v0, p1}, Landroid/support/v7/app/ActionBar;->setHomeActionContentDescription(I)V
 
-    .line 2767
     :cond_0
     return-void
 .end method
 
 .method public setActionBarUpIndicator(Landroid/graphics/drawable/Drawable;I)V
     .locals 1
-    .param p1, "upDrawable"    # Landroid/graphics/drawable/Drawable;
-    .param p2, "contentDescRes"    # I
 
-    .line 2754
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImpl$ActionBarDrawableToggleImpl;->this$0:Landroid/support/v7/app/AppCompatDelegateImpl;
 
     invoke-virtual {v0}, Landroid/support/v7/app/AppCompatDelegateImpl;->getSupportActionBar()Landroid/support/v7/app/ActionBar;
 
     move-result-object v0
 
-    .line 2755
-    .local v0, "ab":Landroid/support/v7/app/ActionBar;
     if-eqz v0, :cond_0
 
-    .line 2756
     invoke-virtual {v0, p1}, Landroid/support/v7/app/ActionBar;->setHomeAsUpIndicator(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2757
     invoke-virtual {v0, p2}, Landroid/support/v7/app/ActionBar;->setHomeActionContentDescription(I)V
 
-    .line 2759
     :cond_0
     return-void
 .end method

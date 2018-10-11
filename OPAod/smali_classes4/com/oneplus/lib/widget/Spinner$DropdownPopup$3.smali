@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/Spinner$DropdownPopup;Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/oneplus/lib/widget/Spinner$DropdownPopup;
 
-    .line 751
     iput-object p1, p0, Lcom/oneplus/lib/widget/Spinner$DropdownPopup$3;->this$1:Lcom/oneplus/lib/widget/Spinner$DropdownPopup;
 
     iput-object p2, p0, Lcom/oneplus/lib/widget/Spinner$DropdownPopup$3;->val$layoutListener:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
@@ -43,7 +41,6 @@
 .method public onDismiss()V
     .locals 2
 
-    .line 754
     iget-object v0, p0, Lcom/oneplus/lib/widget/Spinner$DropdownPopup$3;->this$1:Lcom/oneplus/lib/widget/Spinner$DropdownPopup;
 
     iget-object v0, v0, Lcom/oneplus/lib/widget/Spinner$DropdownPopup;->this$0:Lcom/oneplus/lib/widget/Spinner;
@@ -52,16 +49,12 @@
 
     move-result-object v0
 
-    .line 755
-    .local v0, "vto":Landroid/view/ViewTreeObserver;
     if-eqz v0, :cond_0
 
-    .line 756
     iget-object v1, p0, Lcom/oneplus/lib/widget/Spinner$DropdownPopup$3;->val$layoutListener:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 758
     :cond_0
     return-void
 .end method

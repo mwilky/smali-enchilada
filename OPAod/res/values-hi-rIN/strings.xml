@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">संदेश दिखाएँ</string>
     <string name="oneplus_aod_mode_always_on">स्क्रीन हमेशा चालू रखें</string>
     <string name="oneplus_aod_mode_lift_up">स्क्रीन चालू करने के लिए फ़ोन उठाएँ</string>
-    <string name="oneplus_aod_mode_shake_up">दिखाने के लिए अपने फ़ोन को थोड़ा सा घुमाएँ</string>
-    <string name="oneplus_aod_mode_single_tap">दिकहने के लिए टैप करें</string>
     <string name="oneplus_aod_settings">एम्बीएंट डिस्प्ले</string>
-    <string name="oneplus_aod_settings_what_to_show">क्या दिखाएँ</string>
-    <string name="oneplus_aod_settings_when_to_show">कब दिखाएँ</string>
     <string name="oneplus_aod_title">घड़ी दिखाएं</string>
     <string name="oneplus_display_time_end">तक</string>
     <string name="oneplus_display_time_from">यहाँ से</string>

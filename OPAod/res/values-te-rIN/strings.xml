@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">సందేశాన్నిప్రదర్శించు</string>
     <string name="oneplus_aod_mode_always_on">ఎల్లప్పుడూ ఆన్</string>
     <string name="oneplus_aod_mode_lift_up">డిస్‌ప్లేని పైకి ఎత్తండి</string>
-    <string name="oneplus_aod_mode_shake_up">చూపడానికి మీ ఫోన్‌ను కొద్దిగా కదపండి</string>
-    <string name="oneplus_aod_mode_single_tap">చూపడానికి ట్యాప్ చేయండి</string>
     <string name="oneplus_aod_settings">పరిసర ప్రదర్శన</string>
-    <string name="oneplus_aod_settings_what_to_show">ఏమి చూపాలి</string>
-    <string name="oneplus_aod_settings_when_to_show">ఎప్పుడు చూపాలి</string>
     <string name="oneplus_aod_title">గడియారం చూపు</string>
     <string name="oneplus_display_time_end">వరకు</string>
     <string name="oneplus_display_time_from">నుండి</string>

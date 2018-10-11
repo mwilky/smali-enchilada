@@ -42,24 +42,20 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 43
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
-    .line 49
     new-instance v0, Landroid/support/v4/util/SimpleArrayMap;
 
     invoke-direct {v0}, Landroid/support/v4/util/SimpleArrayMap;-><init>()V
 
     iput-object v0, p0, Landroid/support/v4/app/SupportActivity;->mExtraDataMap:Landroid/support/v4/util/SimpleArrayMap;
 
-    .line 52
     new-instance v0, Landroid/arch/lifecycle/LifecycleRegistry;
 
     invoke-direct {v0, p0}, Landroid/arch/lifecycle/LifecycleRegistry;-><init>(Landroid/arch/lifecycle/LifecycleOwner;)V
 
     iput-object v0, p0, Landroid/support/v4/app/SupportActivity;->mLifecycleRegistry:Landroid/arch/lifecycle/LifecycleRegistry;
 
-    .line 101
     return-void
 .end method
 
@@ -83,8 +79,6 @@
         }
     .end annotation
 
-    .line 90
-    .local p1, "extraDataClass":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     iget-object v0, p0, Landroid/support/v4/app/SupportActivity;->mExtraDataMap:Landroid/support/v4/util/SimpleArrayMap;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/util/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -99,7 +93,6 @@
 .method public getLifecycle()Landroid/arch/lifecycle/Lifecycle;
     .locals 1
 
-    .line 95
     iget-object v0, p0, Landroid/support/v4/app/SupportActivity;->mLifecycleRegistry:Landroid/arch/lifecycle/LifecycleRegistry;
 
     return-object v0
@@ -107,51 +100,42 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
+    .param p1    # Landroid/os/Bundle;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 71
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 72
     invoke-static {p0}, Landroid/arch/lifecycle/ReportFragment;->injectIfNeededIn(Landroid/app/Activity;)V
 
-    .line 73
     return-void
 .end method
 
 .method protected onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1, "outState"    # Landroid/os/Bundle;
     .annotation build Landroid/support/annotation/CallSuper;
     .end annotation
 
-    .line 78
     iget-object v0, p0, Landroid/support/v4/app/SupportActivity;->mLifecycleRegistry:Landroid/arch/lifecycle/LifecycleRegistry;
 
     sget-object v1, Landroid/arch/lifecycle/Lifecycle$State;->CREATED:Landroid/arch/lifecycle/Lifecycle$State;
 
     invoke-virtual {v0, v1}, Landroid/arch/lifecycle/LifecycleRegistry;->markState(Landroid/arch/lifecycle/Lifecycle$State;)V
 
-    .line 79
     invoke-super {p0, p1}, Landroid/app/Activity;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 80
     return-void
 .end method
 
 .method public putExtraData(Landroid/support/v4/app/SupportActivity$ExtraData;)V
     .locals 2
-    .param p1, "extraData"    # Landroid/support/v4/app/SupportActivity$ExtraData;
     .annotation build Landroid/support/annotation/RestrictTo;
         value = {
             .enum Landroid/support/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroid/support/annotation/RestrictTo$Scope;
         }
     .end annotation
 
-    .line 65
     iget-object v0, p0, Landroid/support/v4/app/SupportActivity;->mExtraDataMap:Landroid/support/v4/util/SimpleArrayMap;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -160,6 +144,5 @@
 
     invoke-virtual {v0, v1, p1}, Landroid/support/v4/util/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 66
     return-void
 .end method

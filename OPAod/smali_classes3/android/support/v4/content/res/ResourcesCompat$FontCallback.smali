@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 214
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,8 +27,7 @@
 # virtual methods
 .method public final callbackFailAsync(ILandroid/os/Handler;)V
     .locals 2
-    .param p1, "reason"    # I
-    .param p2, "handler"    # Landroid/os/Handler;
+    .param p2    # Landroid/os/Handler;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
@@ -39,10 +37,8 @@
         }
     .end annotation
 
-    .line 263
     if-nez p2, :cond_0
 
-    .line 264
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -53,7 +49,6 @@
 
     move-object p2, v0
 
-    .line 266
     :cond_0
     new-instance v0, Landroid/support/v4/content/res/ResourcesCompat$FontCallback$2;
 
@@ -61,14 +56,12 @@
 
     invoke-virtual {p2, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 272
     return-void
 .end method
 
 .method public final callbackSuccessAsync(Landroid/graphics/Typeface;Landroid/os/Handler;)V
     .locals 2
-    .param p1, "typeface"    # Landroid/graphics/Typeface;
-    .param p2, "handler"    # Landroid/os/Handler;
+    .param p2    # Landroid/os/Handler;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
@@ -78,10 +71,8 @@
         }
     .end annotation
 
-    .line 244
     if-nez p2, :cond_0
 
-    .line 245
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -92,7 +83,6 @@
 
     move-object p2, v0
 
-    .line 247
     :cond_0
     new-instance v0, Landroid/support/v4/content/res/ResourcesCompat$FontCallback$1;
 
@@ -100,7 +90,6 @@
 
     invoke-virtual {p2, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 253
     return-void
 .end method
 

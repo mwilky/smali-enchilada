@@ -32,10 +32,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/recyclerview/MapCollections;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
-    .line 353
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;, "Lcom/oneplus/lib/widget/recyclerview/MapCollections<TK;TV;>.ValuesCollection;"
     iput-object p1, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;->this$0:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,9 +50,6 @@
         }
     .end annotation
 
-    .line 357
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;, "Lcom/oneplus/lib/widget/recyclerview/MapCollections<TK;TV;>.ValuesCollection;"
-    .local p1, "object":Ljava/lang/Object;, "TV;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -73,9 +67,6 @@
         }
     .end annotation
 
-    .line 362
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;, "Lcom/oneplus/lib/widget/recyclerview/MapCollections<TK;TV;>.ValuesCollection;"
-    .local p1, "collection":Ljava/util/Collection;, "Ljava/util/Collection<+TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -86,22 +77,16 @@
 .method public clear()V
     .locals 1
 
-    .line 367
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;, "Lcom/oneplus/lib/widget/recyclerview/MapCollections<TK;TV;>.ValuesCollection;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;->this$0:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/recyclerview/MapCollections;->colClear()V
 
-    .line 368
     return-void
 .end method
 
 .method public contains(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "object"    # Ljava/lang/Object;
 
-    .line 372
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;, "Lcom/oneplus/lib/widget/recyclerview/MapCollections<TK;TV;>.ValuesCollection;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;->this$0:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     invoke-virtual {v0, p1}, Lcom/oneplus/lib/widget/recyclerview/MapCollections;->colIndexOfValue(Ljava/lang/Object;)I
@@ -131,15 +116,10 @@
         }
     .end annotation
 
-    .line 377
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;, "Lcom/oneplus/lib/widget/recyclerview/MapCollections<TK;TV;>.ValuesCollection;"
-    .local p1, "collection":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 378
-    .local v0, "it":Ljava/util/Iterator;, "Ljava/util/Iterator<*>;"
     :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -147,7 +127,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 379
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
@@ -158,12 +137,10 @@
 
     if-nez v1, :cond_0
 
-    .line 380
     const/4 v1, 0x0
 
     return v1
 
-    .line 383
     :cond_1
     const/4 v1, 0x1
 
@@ -173,8 +150,6 @@
 .method public isEmpty()Z
     .locals 1
 
-    .line 388
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;, "Lcom/oneplus/lib/widget/recyclerview/MapCollections<TK;TV;>.ValuesCollection;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;->this$0:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/recyclerview/MapCollections;->colGetSize()I
@@ -204,8 +179,6 @@
         }
     .end annotation
 
-    .line 393
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;, "Lcom/oneplus/lib/widget/recyclerview/MapCollections<TK;TV;>.ValuesCollection;"
     new-instance v0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;
 
     iget-object v1, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;->this$0:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
@@ -219,31 +192,23 @@
 
 .method public remove(Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "object"    # Ljava/lang/Object;
 
-    .line 398
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;, "Lcom/oneplus/lib/widget/recyclerview/MapCollections<TK;TV;>.ValuesCollection;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;->this$0:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     invoke-virtual {v0, p1}, Lcom/oneplus/lib/widget/recyclerview/MapCollections;->colIndexOfValue(Ljava/lang/Object;)I
 
     move-result v0
 
-    .line 399
-    .local v0, "index":I
     if-ltz v0, :cond_0
 
-    .line 400
     iget-object v1, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;->this$0:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     invoke-virtual {v1, v0}, Lcom/oneplus/lib/widget/recyclerview/MapCollections;->colRemoveAt(I)V
 
-    .line 401
     const/4 v1, 0x1
 
     return v1
 
-    .line 403
     :cond_0
     const/4 v1, 0x0
 
@@ -260,28 +225,19 @@
         }
     .end annotation
 
-    .line 408
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;, "Lcom/oneplus/lib/widget/recyclerview/MapCollections<TK;TV;>.ValuesCollection;"
-    .local p1, "collection":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;->this$0:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/recyclerview/MapCollections;->colGetSize()I
 
     move-result v0
 
-    .line 409
-    .local v0, "N":I
     const/4 v1, 0x0
 
-    .line 410
-    .local v1, "changed":Z
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 411
     iget-object v3, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;->this$0:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     const/4 v4, 0x1
@@ -290,37 +246,27 @@
 
     move-result-object v3
 
-    .line 412
-    .local v3, "cur":Ljava/lang/Object;
     invoke-interface {p1, v3}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
-    .line 413
     iget-object v5, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;->this$0:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     invoke-virtual {v5, v2}, Lcom/oneplus/lib/widget/recyclerview/MapCollections;->colRemoveAt(I)V
 
-    .line 414
     add-int/lit8 v2, v2, -0x1
 
-    .line 415
     add-int/lit8 v0, v0, -0x1
 
-    .line 416
     const/4 v1, 0x1
 
-    .line 410
-    .end local v3    # "cur":Ljava/lang/Object;
     :cond_0
     add-int/2addr v2, v4
 
     goto :goto_0
 
-    .line 419
-    .end local v2    # "i":I
     :cond_1
     return v1
 .end method
@@ -335,28 +281,19 @@
         }
     .end annotation
 
-    .line 424
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;, "Lcom/oneplus/lib/widget/recyclerview/MapCollections<TK;TV;>.ValuesCollection;"
-    .local p1, "collection":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;->this$0:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/recyclerview/MapCollections;->colGetSize()I
 
     move-result v0
 
-    .line 425
-    .local v0, "N":I
     const/4 v1, 0x0
 
-    .line 426
-    .local v1, "changed":Z
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 427
     iget-object v3, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;->this$0:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     const/4 v4, 0x1
@@ -365,37 +302,27 @@
 
     move-result-object v3
 
-    .line 428
-    .local v3, "cur":Ljava/lang/Object;
     invoke-interface {p1, v3}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-nez v5, :cond_0
 
-    .line 429
     iget-object v5, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;->this$0:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     invoke-virtual {v5, v2}, Lcom/oneplus/lib/widget/recyclerview/MapCollections;->colRemoveAt(I)V
 
-    .line 430
     add-int/lit8 v2, v2, -0x1
 
-    .line 431
     add-int/lit8 v0, v0, -0x1
 
-    .line 432
     const/4 v1, 0x1
 
-    .line 426
-    .end local v3    # "cur":Ljava/lang/Object;
     :cond_0
     add-int/2addr v2, v4
 
     goto :goto_0
 
-    .line 435
-    .end local v2    # "i":I
     :cond_1
     return v1
 .end method
@@ -403,8 +330,6 @@
 .method public size()I
     .locals 1
 
-    .line 440
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;, "Lcom/oneplus/lib/widget/recyclerview/MapCollections<TK;TV;>.ValuesCollection;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;->this$0:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/recyclerview/MapCollections;->colGetSize()I
@@ -417,8 +342,6 @@
 .method public toArray()[Ljava/lang/Object;
     .locals 2
 
-    .line 445
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;, "Lcom/oneplus/lib/widget/recyclerview/MapCollections<TK;TV;>.ValuesCollection;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;->this$0:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     const/4 v1, 0x1
@@ -440,9 +363,6 @@
         }
     .end annotation
 
-    .line 450
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;, "Lcom/oneplus/lib/widget/recyclerview/MapCollections<TK;TV;>.ValuesCollection;"
-    .local p1, "array":[Ljava/lang/Object;, "[TT;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ValuesCollection;->this$0:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     const/4 v1, 0x1

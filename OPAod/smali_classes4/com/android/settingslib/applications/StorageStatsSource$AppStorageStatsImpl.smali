@@ -24,15 +24,11 @@
 # direct methods
 .method public constructor <init>(Landroid/app/usage/StorageStats;)V
     .locals 0
-    .param p1, "stats"    # Landroid/app/usage/StorageStats;
 
-    .line 117
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 118
     iput-object p1, p0, Lcom/android/settingslib/applications/StorageStatsSource$AppStorageStatsImpl;->mStats:Landroid/app/usage/StorageStats;
 
-    .line 119
     return-void
 .end method
 
@@ -41,7 +37,6 @@
 .method public getCacheBytes()J
     .locals 2
 
-    .line 130
     iget-object v0, p0, Lcom/android/settingslib/applications/StorageStatsSource$AppStorageStatsImpl;->mStats:Landroid/app/usage/StorageStats;
 
     invoke-virtual {v0}, Landroid/app/usage/StorageStats;->getCacheBytes()J
@@ -54,7 +49,6 @@
 .method public getCodeBytes()J
     .locals 2
 
-    .line 122
     iget-object v0, p0, Lcom/android/settingslib/applications/StorageStatsSource$AppStorageStatsImpl;->mStats:Landroid/app/usage/StorageStats;
 
     invoke-virtual {v0}, Landroid/app/usage/StorageStats;->getCodeBytes()J
@@ -67,7 +61,6 @@
 .method public getDataBytes()J
     .locals 2
 
-    .line 126
     iget-object v0, p0, Lcom/android/settingslib/applications/StorageStatsSource$AppStorageStatsImpl;->mStats:Landroid/app/usage/StorageStats;
 
     invoke-virtual {v0}, Landroid/app/usage/StorageStats;->getDataBytes()J
@@ -80,7 +73,6 @@
 .method public getTotalBytes()J
     .locals 4
 
-    .line 134
     iget-object v0, p0, Lcom/android/settingslib/applications/StorageStatsSource$AppStorageStatsImpl;->mStats:Landroid/app/usage/StorageStats;
 
     invoke-virtual {v0}, Landroid/app/usage/StorageStats;->getAppBytes()J

@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/aod/NotificationCustomViewWrapper;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/aod/NotificationCustomViewWrapper;
 
-    .line 79
     iput-object p1, p0, Lcom/oneplus/aod/NotificationCustomViewWrapper$2;->this$0:Lcom/oneplus/aod/NotificationCustomViewWrapper;
 
     iput-boolean p2, p0, Lcom/oneplus/aod/NotificationCustomViewWrapper$2;->val$dark:Z
@@ -39,14 +37,11 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 82
     iget-boolean v0, p0, Lcom/oneplus/aod/NotificationCustomViewWrapper$2;->val$dark:Z
 
     if-nez v0, :cond_0
 
-    .line 83
     iget-object v0, p0, Lcom/oneplus/aod/NotificationCustomViewWrapper$2;->this$0:Lcom/oneplus/aod/NotificationCustomViewWrapper;
 
     iget-object v0, v0, Lcom/oneplus/aod/NotificationCustomViewWrapper;->mView:Landroid/view/View;
@@ -57,7 +52,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 85
     :cond_0
     return-void
 .end method

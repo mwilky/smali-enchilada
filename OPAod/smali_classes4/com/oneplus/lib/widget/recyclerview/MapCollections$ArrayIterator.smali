@@ -43,31 +43,23 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/recyclerview/MapCollections;I)V
     .locals 1
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/recyclerview/MapCollections;
-    .param p2, "offset"    # I
 
-    .line 41
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;, "Lcom/oneplus/lib/widget/recyclerview/MapCollections<TK;TV;>.ArrayIterator<TT;>;"
     iput-object p1, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;->this$0:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;->mCanRemove:Z
 
-    .line 42
     iput p2, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;->mOffset:I
 
-    .line 43
     invoke-virtual {p1}, Lcom/oneplus/lib/widget/recyclerview/MapCollections;->colGetSize()I
 
     move-result v0
 
     iput v0, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;->mSize:I
 
-    .line 44
     return-void
 .end method
 
@@ -76,8 +68,6 @@
 .method public hasNext()Z
     .locals 2
 
-    .line 48
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;, "Lcom/oneplus/lib/widget/recyclerview/MapCollections<TK;TV;>.ArrayIterator<TT;>;"
     iget v0, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;->mIndex:I
 
     iget v1, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;->mSize:I
@@ -103,8 +93,6 @@
         }
     .end annotation
 
-    .line 53
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;, "Lcom/oneplus/lib/widget/recyclerview/MapCollections<TK;TV;>.ArrayIterator<TT;>;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;->this$0:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     iget v1, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;->mIndex:I
@@ -115,8 +103,6 @@
 
     move-result-object v0
 
-    .line 54
-    .local v0, "res":Ljava/lang/Object;
     iget v1, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;->mIndex:I
 
     const/4 v2, 0x1
@@ -125,52 +111,42 @@
 
     iput v1, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;->mIndex:I
 
-    .line 55
     iput-boolean v2, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;->mCanRemove:Z
 
-    .line 56
     return-object v0
 .end method
 
 .method public remove()V
     .locals 2
 
-    .line 61
-    .local p0, "this":Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;, "Lcom/oneplus/lib/widget/recyclerview/MapCollections<TK;TV;>.ArrayIterator<TT;>;"
     iget-boolean v0, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;->mCanRemove:Z
 
     if-eqz v0, :cond_0
 
-    .line 64
     iget v0, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;->mIndex:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;->mIndex:I
 
-    .line 65
     iget v0, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;->mSize:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;->mSize:I
 
-    .line 66
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;->mCanRemove:Z
 
-    .line 67
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;->this$0:Lcom/oneplus/lib/widget/recyclerview/MapCollections;
 
     iget v1, p0, Lcom/oneplus/lib/widget/recyclerview/MapCollections$ArrayIterator;->mIndex:I
 
     invoke-virtual {v0, v1}, Lcom/oneplus/lib/widget/recyclerview/MapCollections;->colRemoveAt(I)V
 
-    .line 68
     return-void
 
-    .line 62
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 

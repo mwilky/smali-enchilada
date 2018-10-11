@@ -20,30 +20,27 @@
 # direct methods
 .method public constructor <init>(Landroid/net/Uri;Landroid/content/ClipDescription;Landroid/net/Uri;)V
     .locals 2
-    .param p1, "contentUri"    # Landroid/net/Uri;
+    .param p1    # Landroid/net/Uri;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "description"    # Landroid/content/ClipDescription;
+    .param p2    # Landroid/content/ClipDescription;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p3, "linkUri"    # Landroid/net/Uri;
+    .param p3    # Landroid/net/Uri;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 169
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 170
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x19
 
     if-lt v0, v1, :cond_0
 
-    .line 171
     new-instance v0, Landroid/support/v13/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatApi25Impl;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/support/v13/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatApi25Impl;-><init>(Landroid/net/Uri;Landroid/content/ClipDescription;Landroid/net/Uri;)V
@@ -52,7 +49,6 @@
 
     goto :goto_0
 
-    .line 173
     :cond_0
     new-instance v0, Landroid/support/v13/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatBaseImpl;
 
@@ -60,46 +56,39 @@
 
     iput-object v0, p0, Landroid/support/v13/view/inputmethod/InputContentInfoCompat;->mImpl:Landroid/support/v13/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;
 
-    .line 175
     :goto_0
     return-void
 .end method
 
 .method private constructor <init>(Landroid/support/v13/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;)V
     .locals 0
-    .param p1, "impl"    # Landroid/support/v13/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;
+    .param p1    # Landroid/support/v13/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 177
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 178
     iput-object p1, p0, Landroid/support/v13/view/inputmethod/InputContentInfoCompat;->mImpl:Landroid/support/v13/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;
 
-    .line 179
     return-void
 .end method
 
 .method public static wrap(Ljava/lang/Object;)Landroid/support/v13/view/inputmethod/InputContentInfoCompat;
     .locals 3
-    .param p0, "inputContentInfo"    # Ljava/lang/Object;
+    .param p0    # Ljava/lang/Object;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 219
     const/4 v0, 0x0
 
     if-nez p0, :cond_0
 
-    .line 220
     return-object v0
 
-    .line 222
     :cond_0
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -107,10 +96,8 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 223
     return-object v0
 
-    .line 225
     :cond_1
     new-instance v0, Landroid/support/v13/view/inputmethod/InputContentInfoCompat;
 
@@ -130,7 +117,6 @@
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
-    .line 186
     iget-object v0, p0, Landroid/support/v13/view/inputmethod/InputContentInfoCompat;->mImpl:Landroid/support/v13/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;
 
     invoke-interface {v0}, Landroid/support/v13/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;->getContentUri()Landroid/net/Uri;
@@ -145,7 +131,6 @@
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
-    .line 196
     iget-object v0, p0, Landroid/support/v13/view/inputmethod/InputContentInfoCompat;->mImpl:Landroid/support/v13/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;
 
     invoke-interface {v0}, Landroid/support/v13/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;->getDescription()Landroid/content/ClipDescription;
@@ -160,7 +145,6 @@
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 204
     iget-object v0, p0, Landroid/support/v13/view/inputmethod/InputContentInfoCompat;->mImpl:Landroid/support/v13/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;
 
     invoke-interface {v0}, Landroid/support/v13/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;->getLinkUri()Landroid/net/Uri;
@@ -173,24 +157,20 @@
 .method public releasePermission()V
     .locals 1
 
-    .line 256
     iget-object v0, p0, Landroid/support/v13/view/inputmethod/InputContentInfoCompat;->mImpl:Landroid/support/v13/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;
 
     invoke-interface {v0}, Landroid/support/v13/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;->releasePermission()V
 
-    .line 257
     return-void
 .end method
 
 .method public requestPermission()V
     .locals 1
 
-    .line 247
     iget-object v0, p0, Landroid/support/v13/view/inputmethod/InputContentInfoCompat;->mImpl:Landroid/support/v13/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;
 
     invoke-interface {v0}, Landroid/support/v13/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;->requestPermission()V
 
-    .line 248
     return-void
 .end method
 
@@ -199,7 +179,6 @@
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 238
     iget-object v0, p0, Landroid/support/v13/view/inputmethod/InputContentInfoCompat;->mImpl:Landroid/support/v13/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;
 
     invoke-interface {v0}, Landroid/support/v13/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;->getInputContentInfo()Ljava/lang/Object;

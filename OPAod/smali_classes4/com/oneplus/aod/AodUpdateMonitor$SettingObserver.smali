@@ -22,17 +22,14 @@
 .method public constructor <init>(Lcom/oneplus/aod/AodUpdateMonitor;)V
     .locals 0
 
-    .line 771
     iput-object p1, p0, Lcom/oneplus/aod/AodUpdateMonitor$SettingObserver;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    .line 772
     new-instance p1, Landroid/os/Handler;
 
     invoke-direct {p1}, Landroid/os/Handler;-><init>()V
 
     invoke-direct {p0, p1}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 773
     return-void
 .end method
 
@@ -40,13 +37,9 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 4
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 777
     invoke-super {p0, p1, p2}, Landroid/database/ContentObserver;->onChange(ZLandroid/net/Uri;)V
 
-    .line 778
     sget-object v0, Lcom/oneplus/aod/Utils;->KEY_NOTIFICATION_WAKE:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -59,7 +52,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 779
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$SettingObserver;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$200(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/content/Context;
@@ -76,7 +68,6 @@
 
     goto/16 :goto_0
 
-    .line 780
     :cond_0
     sget-object v0, Lcom/oneplus/aod/Utils;->KEY_AOD_DISPLAY_MODE:Ljava/lang/String;
 
@@ -90,7 +81,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 781
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$SettingObserver;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$200(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/content/Context;
@@ -107,7 +97,6 @@
 
     goto :goto_0
 
-    .line 782
     :cond_1
     sget-object v0, Lcom/oneplus/aod/Utils;->KEY_MOTION_AWAKE:Ljava/lang/String;
 
@@ -121,7 +110,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 783
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$SettingObserver;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$200(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/content/Context;
@@ -138,7 +126,6 @@
 
     goto :goto_0
 
-    .line 784
     :cond_2
     const-string v0, "display_time_start"
 
@@ -152,7 +139,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 785
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$SettingObserver;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$4200(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/settings/TextTime;
@@ -185,7 +171,6 @@
 
     goto :goto_0
 
-    .line 786
     :cond_3
     const-string v0, "display_time_end"
 
@@ -199,7 +184,6 @@
 
     if-eqz v0, :cond_4
 
-    .line 787
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$SettingObserver;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$4300(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/settings/TextTime;
@@ -230,7 +214,6 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/settings/TextTime;->setTime(Ljava/lang/String;)V
 
-    .line 789
     :cond_4
     :goto_0
     return-void

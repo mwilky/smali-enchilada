@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/DayPickerView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/DayPickerView;
 
-    .line 435
     iput-object p1, p0, Lcom/oneplus/lib/widget/DayPickerView$3;->this$0:Lcom/oneplus/lib/widget/DayPickerView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 439
     iget-object v0, p0, Lcom/oneplus/lib/widget/DayPickerView$3;->this$0:Lcom/oneplus/lib/widget/DayPickerView;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/DayPickerView;->access$100(Lcom/oneplus/lib/widget/DayPickerView;)Landroid/widget/ImageButton;
@@ -49,15 +45,11 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 440
     const/4 v0, -0x1
 
-    .local v0, "direction":I
     :goto_0
     goto :goto_1
 
-    .line 441
-    .end local v0    # "direction":I
     :cond_0
     iget-object v0, p0, Lcom/oneplus/lib/widget/DayPickerView$3;->this$0:Lcom/oneplus/lib/widget/DayPickerView;
 
@@ -67,17 +59,13 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 442
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 444
-    .restart local v0    # "direction":I
     :goto_1
     nop
 
-    .line 449
     iget-object v1, p0, Lcom/oneplus/lib/widget/DayPickerView$3;->this$0:Lcom/oneplus/lib/widget/DayPickerView;
 
     invoke-static {v1}, Lcom/oneplus/lib/widget/DayPickerView;->access$400(Lcom/oneplus/lib/widget/DayPickerView;)Landroid/view/accessibility/AccessibilityManager;
@@ -90,8 +78,6 @@
 
     xor-int/lit8 v1, v1, 0x1
 
-    .line 453
-    .local v1, "animate":Z
     iget-object v2, p0, Lcom/oneplus/lib/widget/DayPickerView$3;->this$0:Lcom/oneplus/lib/widget/DayPickerView;
 
     invoke-static {v2}, Lcom/oneplus/lib/widget/DayPickerView;->access$500(Lcom/oneplus/lib/widget/DayPickerView;)Lcom/oneplus/lib/widget/ViewPager;
@@ -104,8 +90,6 @@
 
     add-int/2addr v2, v0
 
-    .line 454
-    .local v2, "nextItem":I
     iget-object v3, p0, Lcom/oneplus/lib/widget/DayPickerView$3;->this$0:Lcom/oneplus/lib/widget/DayPickerView;
 
     invoke-static {v3}, Lcom/oneplus/lib/widget/DayPickerView;->access$500(Lcom/oneplus/lib/widget/DayPickerView;)Lcom/oneplus/lib/widget/ViewPager;
@@ -114,13 +98,8 @@
 
     invoke-virtual {v3, v2, v1}, Lcom/oneplus/lib/widget/ViewPager;->setCurrentItem(IZ)V
 
-    .line 455
     return-void
 
-    .line 444
-    .end local v0    # "direction":I
-    .end local v1    # "animate":Z
-    .end local v2    # "nextItem":I
     :cond_1
     return-void
 .end method

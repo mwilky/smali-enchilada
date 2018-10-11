@@ -24,15 +24,11 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 0
-    .param p1, "volumeUuid"    # Ljava/lang/String;
 
-    .line 1714
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1715
     iput-object p1, p0, Lcom/android/settingslib/applications/ApplicationsState$VolumeFilter;->mVolumeUuid:Ljava/lang/String;
 
-    .line 1716
     return-void
 .end method
 
@@ -40,9 +36,7 @@
 # virtual methods
 .method public filterApp(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)Z
     .locals 2
-    .param p1, "info"    # Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
 
-    .line 1724
     iget-object v0, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
 
     iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->volumeUuid:Ljava/lang/String;
@@ -59,6 +53,5 @@
 .method public init()V
     .locals 0
 
-    .line 1720
     return-void
 .end method

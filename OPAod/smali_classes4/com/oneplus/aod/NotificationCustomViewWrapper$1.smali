@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/aod/NotificationCustomViewWrapper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/aod/NotificationCustomViewWrapper;
 
-    .line 72
     iput-object p1, p0, Lcom/oneplus/aod/NotificationCustomViewWrapper$1;->this$0:Lcom/oneplus/aod/NotificationCustomViewWrapper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 75
     iget-object v0, p0, Lcom/oneplus/aod/NotificationCustomViewWrapper$1;->this$0:Lcom/oneplus/aod/NotificationCustomViewWrapper;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -55,7 +51,6 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/aod/NotificationCustomViewWrapper;->updateGrayscaleMatrix(F)V
 
-    .line 76
     iget-object v0, p0, Lcom/oneplus/aod/NotificationCustomViewWrapper$1;->this$0:Lcom/oneplus/aod/NotificationCustomViewWrapper;
 
     invoke-static {v0}, Lcom/oneplus/aod/NotificationCustomViewWrapper;->access$000(Lcom/oneplus/aod/NotificationCustomViewWrapper;)Landroid/graphics/Paint;
@@ -72,7 +67,6 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 77
     iget-object v0, p0, Lcom/oneplus/aod/NotificationCustomViewWrapper$1;->this$0:Lcom/oneplus/aod/NotificationCustomViewWrapper;
 
     iget-object v0, v0, Lcom/oneplus/aod/NotificationCustomViewWrapper;->mView:Landroid/view/View;
@@ -85,6 +79,5 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setLayerPaint(Landroid/graphics/Paint;)V
 
-    .line 78
     return-void
 .end method

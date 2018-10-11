@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$RecoverAnimation;Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$RecoverAnimation;
 
-    .line 2329
     iput-object p1, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$RecoverAnimation$1;->this$1:Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$RecoverAnimation;
 
     iput-object p2, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$RecoverAnimation$1;->val$this$0:Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 2332
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$RecoverAnimation$1;->this$1:Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$RecoverAnimation;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
@@ -53,6 +49,5 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$RecoverAnimation;->setFraction(F)V
 
-    .line 2333
     return-void
 .end method

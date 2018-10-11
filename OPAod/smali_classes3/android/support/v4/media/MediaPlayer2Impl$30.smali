@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaPlayer2Impl;Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaPlayer2Impl;
 
-    .line 1520
     iput-object p1, p0, Landroid/support/v4/media/MediaPlayer2Impl$30;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaPlayer2Impl$30;->val$src:Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;
@@ -42,11 +40,7 @@
 # virtual methods
 .method public onVideoSizeChanged(Landroid/media/MediaPlayer;II)V
     .locals 2
-    .param p1, "mp"    # Landroid/media/MediaPlayer;
-    .param p2, "width"    # I
-    .param p3, "height"    # I
 
-    .line 1523
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$30;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     new-instance v1, Landroid/support/v4/media/MediaPlayer2Impl$30$1;
@@ -55,6 +49,5 @@
 
     invoke-static {v0, v1}, Landroid/support/v4/media/MediaPlayer2Impl;->access$300(Landroid/support/v4/media/MediaPlayer2Impl;Landroid/support/v4/media/MediaPlayer2Impl$Mp2EventNotifier;)V
 
-    .line 1529
     return-void
 .end method

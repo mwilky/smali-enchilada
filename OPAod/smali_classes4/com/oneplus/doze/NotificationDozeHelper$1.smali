@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/doze/NotificationDozeHelper;Landroid/widget/ImageView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/doze/NotificationDozeHelper;
 
-    .line 31
     iput-object p1, p0, Lcom/oneplus/doze/NotificationDozeHelper$1;->this$0:Lcom/oneplus/doze/NotificationDozeHelper;
 
     iput-object p2, p0, Lcom/oneplus/doze/NotificationDozeHelper$1;->val$target:Landroid/widget/ImageView;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 34
     iget-object v0, p0, Lcom/oneplus/doze/NotificationDozeHelper$1;->this$0:Lcom/oneplus/doze/NotificationDozeHelper;
 
     iget-object v1, p0, Lcom/oneplus/doze/NotificationDozeHelper$1;->val$target:Landroid/widget/ImageView;
@@ -61,6 +57,5 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/oneplus/doze/NotificationDozeHelper;->updateGrayscale(Landroid/widget/ImageView;F)V
 
-    .line 35
     return-void
 .end method

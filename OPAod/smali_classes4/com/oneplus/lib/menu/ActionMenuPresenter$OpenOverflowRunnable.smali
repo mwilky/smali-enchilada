@@ -26,17 +26,13 @@
 # direct methods
 .method public constructor <init>(Lcom/oneplus/lib/menu/ActionMenuPresenter;Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowPopup;)V
     .locals 0
-    .param p2, "popup"    # Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowPopup;
 
-    .line 788
     iput-object p1, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$OpenOverflowRunnable;->this$0:Lcom/oneplus/lib/menu/ActionMenuPresenter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 789
     iput-object p2, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$OpenOverflowRunnable;->mPopup:Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowPopup;
 
-    .line 790
     return-void
 .end method
 
@@ -45,21 +41,18 @@
 .method public run()V
     .locals 3
 
-    .line 794
     iget-object v0, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$OpenOverflowRunnable;->this$0:Lcom/oneplus/lib/menu/ActionMenuPresenter;
 
     iget-object v0, v0, Lcom/oneplus/lib/menu/ActionMenuPresenter;->mMenu:Lcom/oneplus/lib/menu/MenuBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 795
     iget-object v0, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$OpenOverflowRunnable;->this$0:Lcom/oneplus/lib/menu/ActionMenuPresenter;
 
     iget-object v0, v0, Lcom/oneplus/lib/menu/ActionMenuPresenter;->mMenu:Lcom/oneplus/lib/menu/MenuBuilder;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/menu/MenuBuilder;->changeMenuMode()V
 
-    .line 797
     :cond_0
     iget-object v0, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$OpenOverflowRunnable;->this$0:Lcom/oneplus/lib/menu/ActionMenuPresenter;
 
@@ -67,8 +60,6 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 798
-    .local v0, "menuView":Landroid/view/View;
     if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
@@ -85,14 +76,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 799
     iget-object v1, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$OpenOverflowRunnable;->this$0:Lcom/oneplus/lib/menu/ActionMenuPresenter;
 
     iget-object v2, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$OpenOverflowRunnable;->mPopup:Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowPopup;
 
     iput-object v2, v1, Lcom/oneplus/lib/menu/ActionMenuPresenter;->mOverflowPopup:Lcom/oneplus/lib/menu/ActionMenuPresenter$OverflowPopup;
 
-    .line 801
     :cond_1
     iget-object v1, p0, Lcom/oneplus/lib/menu/ActionMenuPresenter$OpenOverflowRunnable;->this$0:Lcom/oneplus/lib/menu/ActionMenuPresenter;
 
@@ -100,6 +89,5 @@
 
     iput-object v2, v1, Lcom/oneplus/lib/menu/ActionMenuPresenter;->mPostedOpenRunnable:Lcom/oneplus/lib/menu/ActionMenuPresenter$OpenOverflowRunnable;
 
-    .line 802
     return-void
 .end method

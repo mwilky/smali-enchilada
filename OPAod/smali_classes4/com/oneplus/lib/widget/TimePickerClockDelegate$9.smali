@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/TimePickerClockDelegate;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
-    .line 1025
     iput-object p1, p0, Lcom/oneplus/lib/widget/TimePickerClockDelegate$9;->this$0:Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,33 +36,25 @@
 # virtual methods
 .method public onFocusChange(Landroid/view/View;Z)V
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "focused"    # Z
 
-    .line 1028
     if-eqz p2, :cond_4
 
-    .line 1029
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
 
-    .line 1030
-    .local v0, "id":I
     sget v1, Lcom/oneplus/commonctrl/R$id;->am_label:I
 
     const/4 v2, 0x0
 
     if-ne v0, v1, :cond_0
 
-    .line 1031
     iget-object v1, p0, Lcom/oneplus/lib/widget/TimePickerClockDelegate$9;->this$0:Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
     invoke-static {v1, v2}, Lcom/oneplus/lib/widget/TimePickerClockDelegate;->access$1400(Lcom/oneplus/lib/widget/TimePickerClockDelegate;I)V
 
     goto :goto_0
 
-    .line 1032
     :cond_0
     sget v1, Lcom/oneplus/commonctrl/R$id;->pm_label:I
 
@@ -72,53 +62,42 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1033
     iget-object v1, p0, Lcom/oneplus/lib/widget/TimePickerClockDelegate$9;->this$0:Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
     invoke-static {v1, v3}, Lcom/oneplus/lib/widget/TimePickerClockDelegate;->access$1400(Lcom/oneplus/lib/widget/TimePickerClockDelegate;I)V
 
     goto :goto_0
 
-    .line 1034
     :cond_1
     sget v1, Lcom/oneplus/commonctrl/R$id;->hours:I
 
     if-ne v0, v1, :cond_2
 
-    .line 1035
     iget-object v1, p0, Lcom/oneplus/lib/widget/TimePickerClockDelegate$9;->this$0:Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
     invoke-static {v1, v2, v3, v3}, Lcom/oneplus/lib/widget/TimePickerClockDelegate;->access$1000(Lcom/oneplus/lib/widget/TimePickerClockDelegate;IZZ)V
 
     goto :goto_0
 
-    .line 1036
     :cond_2
     sget v1, Lcom/oneplus/commonctrl/R$id;->minutes:I
 
     if-ne v0, v1, :cond_3
 
-    .line 1037
     iget-object v1, p0, Lcom/oneplus/lib/widget/TimePickerClockDelegate$9;->this$0:Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
     invoke-static {v1, v3, v3, v3}, Lcom/oneplus/lib/widget/TimePickerClockDelegate;->access$1000(Lcom/oneplus/lib/widget/TimePickerClockDelegate;IZZ)V
 
-    .line 1042
     :goto_0
     iget-object v1, p0, Lcom/oneplus/lib/widget/TimePickerClockDelegate$9;->this$0:Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
     invoke-static {v1}, Lcom/oneplus/lib/widget/TimePickerClockDelegate;->access$1900(Lcom/oneplus/lib/widget/TimePickerClockDelegate;)V
 
-    .end local v0    # "id":I
     goto :goto_1
 
-    .line 1039
-    .restart local v0    # "id":I
     :cond_3
     return-void
 
-    .line 1044
-    .end local v0    # "id":I
     :cond_4
     :goto_1
     return-void

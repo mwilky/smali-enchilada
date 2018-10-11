@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">Visa meddelande</string>
     <string name="oneplus_aod_mode_always_on">Alltid på</string>
     <string name="oneplus_aod_mode_lift_up">Lyft upp skärmen</string>
-    <string name="oneplus_aod_mode_shake_up">Flytta telefonen något för att visa</string>
-    <string name="oneplus_aod_mode_single_tap">Tryck för att visa</string>
     <string name="oneplus_aod_settings">Aktiv låsskärm</string>
-    <string name="oneplus_aod_settings_what_to_show">vad som ska visas</string>
-    <string name="oneplus_aod_settings_when_to_show">när den ska visas</string>
     <string name="oneplus_aod_title">Visa klockan</string>
     <string name="oneplus_display_time_end">Till</string>
     <string name="oneplus_display_time_from">Från</string>

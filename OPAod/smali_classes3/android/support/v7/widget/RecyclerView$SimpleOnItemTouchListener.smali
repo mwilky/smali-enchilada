@@ -21,7 +21,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 10539
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,16 +30,15 @@
 # virtual methods
 .method public onInterceptTouchEvent(Landroid/support/v7/widget/RecyclerView;Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "rv"    # Landroid/support/v7/widget/RecyclerView;
+    .param p1    # Landroid/support/v7/widget/RecyclerView;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "e"    # Landroid/view/MotionEvent;
+    .param p2    # Landroid/view/MotionEvent;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 10542
     const/4 v0, 0x0
 
     return v0
@@ -48,23 +46,20 @@
 
 .method public onRequestDisallowInterceptTouchEvent(Z)V
     .locals 0
-    .param p1, "disallowIntercept"    # Z
 
-    .line 10551
     return-void
 .end method
 
 .method public onTouchEvent(Landroid/support/v7/widget/RecyclerView;Landroid/view/MotionEvent;)V
     .locals 0
-    .param p1, "rv"    # Landroid/support/v7/widget/RecyclerView;
+    .param p1    # Landroid/support/v7/widget/RecyclerView;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "e"    # Landroid/view/MotionEvent;
+    .param p2    # Landroid/view/MotionEvent;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 10547
     return-void
 .end method

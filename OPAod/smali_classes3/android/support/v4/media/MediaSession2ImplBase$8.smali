@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaSession2ImplBase;Ljava/util/List;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaSession2ImplBase;
 
-    .line 484
     iput-object p1, p0, Landroid/support/v4/media/MediaSession2ImplBase$8;->this$0:Landroid/support/v4/media/MediaSession2ImplBase;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaSession2ImplBase$8;->val$routes:Ljava/util/List;
@@ -42,18 +40,15 @@
 # virtual methods
 .method public run(Landroid/support/v4/media/MediaSession2$ControllerCb;)V
     .locals 1
-    .param p1, "callback"    # Landroid/support/v4/media/MediaSession2$ControllerCb;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 487
     iget-object v0, p0, Landroid/support/v4/media/MediaSession2ImplBase$8;->val$routes:Ljava/util/List;
 
     invoke-virtual {p1, v0}, Landroid/support/v4/media/MediaSession2$ControllerCb;->onRoutesInfoChanged(Ljava/util/List;)V
 
-    .line 488
     return-void
 .end method

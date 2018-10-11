@@ -13,15 +13,11 @@
 # direct methods
 .method public constructor <init>(Landroid/os/storage/StorageManager;)V
     .locals 0
-    .param p1, "sm"    # Landroid/os/storage/StorageManager;
 
-    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
     iput-object p1, p0, Lcom/android/settingslib/deviceinfo/StorageManagerVolumeProvider;->mStorageManager:Landroid/os/storage/StorageManager;
 
-    .line 35
     return-void
 .end method
 
@@ -29,9 +25,7 @@
 # virtual methods
 .method public findEmulatedForPrivate(Landroid/os/storage/VolumeInfo;)Landroid/os/storage/VolumeInfo;
     .locals 1
-    .param p1, "privateVolume"    # Landroid/os/storage/VolumeInfo;
 
-    .line 49
     iget-object v0, p0, Lcom/android/settingslib/deviceinfo/StorageManagerVolumeProvider;->mStorageManager:Landroid/os/storage/StorageManager;
 
     invoke-virtual {v0, p1}, Landroid/os/storage/StorageManager;->findEmulatedForPrivate(Landroid/os/storage/VolumeInfo;)Landroid/os/storage/VolumeInfo;
@@ -43,15 +37,12 @@
 
 .method public getFreeBytes(Landroid/app/usage/StorageStatsManager;Landroid/os/storage/VolumeInfo;)J
     .locals 2
-    .param p1, "stats"    # Landroid/app/usage/StorageStatsManager;
-    .param p2, "volume"    # Landroid/os/storage/VolumeInfo;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 59
     invoke-virtual {p2}, Landroid/os/storage/VolumeInfo;->getFsUuid()Ljava/lang/String;
 
     move-result-object v0
@@ -66,7 +57,6 @@
 .method public getPrimaryStorageSize()J
     .locals 2
 
-    .line 39
     iget-object v0, p0, Lcom/android/settingslib/deviceinfo/StorageManagerVolumeProvider;->mStorageManager:Landroid/os/storage/StorageManager;
 
     invoke-virtual {v0}, Landroid/os/storage/StorageManager;->getPrimaryStorageSize()J
@@ -78,15 +68,12 @@
 
 .method public getTotalBytes(Landroid/app/usage/StorageStatsManager;Landroid/os/storage/VolumeInfo;)J
     .locals 2
-    .param p1, "stats"    # Landroid/app/usage/StorageStatsManager;
-    .param p2, "volume"    # Landroid/os/storage/VolumeInfo;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 54
     invoke-virtual {p2}, Landroid/os/storage/VolumeInfo;->getFsUuid()Ljava/lang/String;
 
     move-result-object v0
@@ -109,7 +96,6 @@
         }
     .end annotation
 
-    .line 44
     iget-object v0, p0, Lcom/android/settingslib/deviceinfo/StorageManagerVolumeProvider;->mStorageManager:Landroid/os/storage/StorageManager;
 
     invoke-virtual {v0}, Landroid/os/storage/StorageManager;->getVolumes()Ljava/util/List;

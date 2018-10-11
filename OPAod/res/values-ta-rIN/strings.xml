@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">செய்தியைக் காட்டுக</string>
     <string name="oneplus_aod_mode_always_on">எப்பொழுதும் ஆன்</string>
     <string name="oneplus_aod_mode_lift_up">டிஸ்பிளேவை உயர்த்தவும்</string>
-    <string name="oneplus_aod_mode_shake_up">காண்பிக்க உங்கள் ஃபோனை இலேசாக நகர்த்தவும்</string>
-    <string name="oneplus_aod_mode_single_tap">காண்பிக்கத் தட்டவும்</string>
     <string name="oneplus_aod_settings">ஆம்பியன்ட் காட்சி</string>
-    <string name="oneplus_aod_settings_what_to_show">என்ன காண்பிக்க வேண்டும்</string>
-    <string name="oneplus_aod_settings_when_to_show">எப்போது காண்பிக்க வேண்டும்</string>
     <string name="oneplus_aod_title">கடிகாரத்தைக் காண்பி</string>
     <string name="oneplus_display_time_end">இந்த நேரம் வரை</string>
     <string name="oneplus_display_time_from">தொடக்க நேரம்</string>

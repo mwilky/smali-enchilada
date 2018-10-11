@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settingslib/animation/AppearAnimationUtils;Ljava/lang/Runnable;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settingslib/animation/AppearAnimationUtils;
 
-    .line 212
     iput-object p1, p0, Lcom/android/settingslib/animation/AppearAnimationUtils$2;->this$0:Lcom/android/settingslib/animation/AppearAnimationUtils;
 
     iput-object p2, p0, Lcom/android/settingslib/animation/AppearAnimationUtils$2;->val$endRunnable:Ljava/lang/Runnable;
@@ -39,13 +37,10 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 215
     iget-object v0, p0, Lcom/android/settingslib/animation/AppearAnimationUtils$2;->val$endRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 216
     return-void
 .end method

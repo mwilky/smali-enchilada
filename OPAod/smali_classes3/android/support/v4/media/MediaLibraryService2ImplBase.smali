@@ -7,7 +7,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 27
     invoke-direct {p0}, Landroid/support/v4/media/MediaSessionService2ImplBase;-><init>()V
 
     return-void
@@ -18,7 +17,6 @@
 .method public getSession()Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession;
     .locals 1
 
-    .line 41
     invoke-super {p0}, Landroid/support/v4/media/MediaSessionService2ImplBase;->getSession()Landroid/support/v4/media/MediaSession2;
 
     move-result-object v0
@@ -31,7 +29,6 @@
 .method public bridge synthetic getSession()Landroid/support/v4/media/MediaSession2;
     .locals 1
 
-    .line 27
     invoke-virtual {p0}, Landroid/support/v4/media/MediaLibraryService2ImplBase;->getSession()Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession;
 
     move-result-object v0
@@ -42,7 +39,6 @@
 .method public getSessionType()I
     .locals 1
 
-    .line 46
     const/4 v0, 0x2
 
     return v0
@@ -50,9 +46,7 @@
 
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 3
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .line 30
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -104,14 +98,12 @@
     :goto_1
     packed-switch v0, :pswitch_data_0
 
-    .line 36
     invoke-super {p0, p1}, Landroid/support/v4/media/MediaSessionService2ImplBase;->onBind(Landroid/content/Intent;)Landroid/os/IBinder;
 
     move-result-object v0
 
     return-object v0
 
-    .line 34
     :pswitch_0
     invoke-virtual {p0}, Landroid/support/v4/media/MediaLibraryService2ImplBase;->getSession()Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession;
 
@@ -127,7 +119,6 @@
 
     return-object v0
 
-    .line 32
     :pswitch_1
     invoke-virtual {p0}, Landroid/support/v4/media/MediaLibraryService2ImplBase;->getSession()Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession;
 

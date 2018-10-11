@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">Mostra el missatge</string>
     <string name="oneplus_aod_mode_always_on">Sempre activat</string>
     <string name="oneplus_aod_mode_lift_up">Activa la pantalla</string>
-    <string name="oneplus_aod_mode_shake_up">Moveu el telèfon lleugerament per mostrar</string>
-    <string name="oneplus_aod_mode_single_tap">Toqueu per mostrar</string>
     <string name="oneplus_aod_settings">Pantalla ambient</string>
-    <string name="oneplus_aod_settings_what_to_show">què es mostra</string>
-    <string name="oneplus_aod_settings_when_to_show">quan es mostra</string>
     <string name="oneplus_aod_title">Mostra el rellotge</string>
     <string name="oneplus_display_time_end">Fins a les</string>
     <string name="oneplus_display_time_from">Des de les</string>

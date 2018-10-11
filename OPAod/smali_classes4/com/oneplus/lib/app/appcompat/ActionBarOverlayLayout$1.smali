@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/app/appcompat/ActionBarOverlayLayout;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/app/appcompat/ActionBarOverlayLayout;
 
-    .line 76
     iput-object p1, p0, Lcom/oneplus/lib/app/appcompat/ActionBarOverlayLayout$1;->this$0:Lcom/oneplus/lib/app/appcompat/ActionBarOverlayLayout;
 
     invoke-direct {p0}, Landroid/support/v4/view/ViewPropertyAnimatorListenerAdapter;-><init>()V
@@ -35,44 +33,36 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/view/View;)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 85
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/ActionBarOverlayLayout$1;->this$0:Lcom/oneplus/lib/app/appcompat/ActionBarOverlayLayout;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Lcom/oneplus/lib/app/appcompat/ActionBarOverlayLayout;->mCurrentActionBarTopAnimator:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    .line 86
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/ActionBarOverlayLayout$1;->this$0:Lcom/oneplus/lib/app/appcompat/ActionBarOverlayLayout;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lcom/oneplus/lib/app/appcompat/ActionBarOverlayLayout;->mAnimatingForFling:Z
 
-    .line 87
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/view/View;)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 79
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/ActionBarOverlayLayout$1;->this$0:Lcom/oneplus/lib/app/appcompat/ActionBarOverlayLayout;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Lcom/oneplus/lib/app/appcompat/ActionBarOverlayLayout;->mCurrentActionBarTopAnimator:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    .line 80
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/ActionBarOverlayLayout$1;->this$0:Lcom/oneplus/lib/app/appcompat/ActionBarOverlayLayout;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lcom/oneplus/lib/app/appcompat/ActionBarOverlayLayout;->mAnimatingForFling:Z
 
-    .line 81
     return-void
 .end method

@@ -47,11 +47,11 @@
 # direct methods
 .method private constructor <init>(Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Landroid/support/v7/util/DiffUtil$ItemCallback;)V
     .locals 0
-    .param p1, "mainThreadExecutor"    # Ljava/util/concurrent/Executor;
+    .param p1    # Ljava/util/concurrent/Executor;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "backgroundThreadExecutor"    # Ljava/util/concurrent/Executor;
+    .param p2    # Ljava/util/concurrent/Executor;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
@@ -69,33 +69,20 @@
         }
     .end annotation
 
-    .line 48
-    .local p0, "this":Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig;, "Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig<TT;>;"
-    .local p3, "diffCallback":Landroid/support/v7/util/DiffUtil$ItemCallback;, "Landroid/support/v7/util/DiffUtil$ItemCallback<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 49
     iput-object p1, p0, Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig;->mMainThreadExecutor:Ljava/util/concurrent/Executor;
 
-    .line 50
     iput-object p2, p0, Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig;->mBackgroundThreadExecutor:Ljava/util/concurrent/Executor;
 
-    .line 51
     iput-object p3, p0, Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig;->mDiffCallback:Landroid/support/v7/util/DiffUtil$ItemCallback;
 
-    .line 52
     return-void
 .end method
 
 .method synthetic constructor <init>(Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Landroid/support/v7/util/DiffUtil$ItemCallback;Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig$1;)V
     .locals 0
-    .param p1, "x0"    # Ljava/util/concurrent/Executor;
-    .param p2, "x1"    # Ljava/util/concurrent/Executor;
-    .param p3, "x2"    # Landroid/support/v7/util/DiffUtil$ItemCallback;
-    .param p4, "x3"    # Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig$1;
 
-    .line 37
-    .local p0, "this":Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig;, "Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig<TT;>;"
     invoke-direct {p0, p1, p2, p3}, Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig;-><init>(Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Landroid/support/v7/util/DiffUtil$ItemCallback;)V
 
     return-void
@@ -108,8 +95,6 @@
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
-    .line 65
-    .local p0, "this":Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig;, "Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig<TT;>;"
     iget-object v0, p0, Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig;->mBackgroundThreadExecutor:Ljava/util/concurrent/Executor;
 
     return-object v0
@@ -128,8 +113,6 @@
         }
     .end annotation
 
-    .line 71
-    .local p0, "this":Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig;, "Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig<TT;>;"
     iget-object v0, p0, Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig;->mDiffCallback:Landroid/support/v7/util/DiffUtil$ItemCallback;
 
     return-object v0
@@ -146,8 +129,6 @@
         }
     .end annotation
 
-    .line 59
-    .local p0, "this":Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig;, "Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig<TT;>;"
     iget-object v0, p0, Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig;->mMainThreadExecutor:Ljava/util/concurrent/Executor;
 
     return-object v0

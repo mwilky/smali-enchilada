@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/menu/MenuItemImpl;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/menu/MenuItemImpl;
 
-    .line 780
     iput-object p1, p0, Lcom/oneplus/lib/menu/MenuItemImpl$1;->this$0:Lcom/oneplus/lib/menu/MenuItemImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onActionProviderVisibilityChanged(Z)V
     .locals 2
-    .param p1, "isVisible"    # Z
 
-    .line 783
     iget-object v0, p0, Lcom/oneplus/lib/menu/MenuItemImpl$1;->this$0:Lcom/oneplus/lib/menu/MenuItemImpl;
 
     iget-object v0, v0, Lcom/oneplus/lib/menu/MenuItemImpl;->mMenu:Lcom/oneplus/lib/menu/MenuBuilder;
@@ -49,6 +45,5 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/lib/menu/MenuBuilder;->onItemVisibleChanged(Lcom/oneplus/lib/menu/MenuItemImpl;)V
 
-    .line 784
     return-void
 .end method

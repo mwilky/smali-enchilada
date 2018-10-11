@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/doze/DozeScrimController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/doze/DozeScrimController;
 
-    .line 184
     iput-object p1, p0, Lcom/oneplus/doze/DozeScrimController$3;->this$0:Lcom/oneplus/doze/DozeScrimController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 8
 
-    .line 187
     const-string v0, "DozeScrimController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -64,7 +61,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 188
     iget-object v0, p0, Lcom/oneplus/doze/DozeScrimController$3;->this$0:Lcom/oneplus/doze/DozeScrimController;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeScrimController;->access$000(Lcom/oneplus/doze/DozeScrimController;)Z
@@ -91,7 +87,6 @@
 
     goto :goto_0
 
-    .line 189
     :cond_0
     iget-object v1, p0, Lcom/oneplus/doze/DozeScrimController$3;->this$0:Lcom/oneplus/doze/DozeScrimController;
 
@@ -115,18 +110,14 @@
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeScrimController$3;->this$0:Lcom/oneplus/doze/DozeScrimController;
 
-    .line 190
     invoke-static {v0}, Lcom/oneplus/doze/DozeScrimController;->access$700(Lcom/oneplus/doze/DozeScrimController;)Ljava/lang/Runnable;
 
     move-result-object v7
 
-    .line 189
     invoke-static/range {v1 .. v7}, Lcom/oneplus/doze/DozeScrimController;->access$800(Lcom/oneplus/doze/DozeScrimController;ZFJLandroid/view/animation/Interpolator;Ljava/lang/Runnable;)V
 
-    .line 191
     return-void
 
-    .line 188
     :cond_1
     :goto_0
     return-void

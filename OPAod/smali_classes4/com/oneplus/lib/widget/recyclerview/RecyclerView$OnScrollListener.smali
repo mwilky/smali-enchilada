@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 8179
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,19 +27,12 @@
 # virtual methods
 .method public onScrollStateChanged(Lcom/oneplus/lib/widget/recyclerview/RecyclerView;I)V
     .locals 0
-    .param p1, "recyclerView"    # Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
-    .param p2, "newState"    # I
 
-    .line 8187
     return-void
 .end method
 
 .method public onScrolled(Lcom/oneplus/lib/widget/recyclerview/RecyclerView;II)V
     .locals 0
-    .param p1, "recyclerView"    # Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
-    .param p2, "dx"    # I
-    .param p3, "dy"    # I
 
-    .line 8200
     return-void
 .end method

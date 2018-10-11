@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">Повідомлення коло годинника</string>
     <string name="oneplus_aod_mode_always_on">Завжди ввімкнено</string>
     <string name="oneplus_aod_mode_lift_up">Вмикати екран у разі піднімання пристрою</string>
-    <string name="oneplus_aod_mode_shake_up">Злегка перемістіть телефон, щоб показати вміст</string>
-    <string name="oneplus_aod_mode_single_tap">Торкніться, щоб показати вміст</string>
     <string name="oneplus_aod_settings">Активація екрана</string>
-    <string name="oneplus_aod_settings_what_to_show">що показувати</string>
-    <string name="oneplus_aod_settings_when_to_show">коли показувати</string>
     <string name="oneplus_aod_title">Показувати годинник</string>
     <string name="oneplus_display_time_end">До</string>
     <string name="oneplus_display_time_from">З</string>

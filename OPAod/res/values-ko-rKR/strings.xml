@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">메시지 표시</string>
     <string name="oneplus_aod_mode_always_on">항상 켜기</string>
     <string name="oneplus_aod_mode_lift_up">디스플레이 들어올리기</string>
-    <string name="oneplus_aod_mode_shake_up">휴대폰을 약간 움직여서 표시</string>
-    <string name="oneplus_aod_mode_single_tap">탭하여 표시</string>
     <string name="oneplus_aod_settings">앰비언트 디스플레이</string>
-    <string name="oneplus_aod_settings_what_to_show">표시 내용</string>
-    <string name="oneplus_aod_settings_when_to_show">표시 시간</string>
     <string name="oneplus_aod_title">시계 표시</string>
     <string name="oneplus_display_time_end">종료</string>
     <string name="oneplus_display_time_from">시작</string>

@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">Üzenet megjelenítése</string>
     <string name="oneplus_aod_mode_always_on">Mindig bekapcsolva</string>
     <string name="oneplus_aod_mode_lift_up">Felemelési kijelző</string>
-    <string name="oneplus_aod_mode_shake_up">Mozgassa kicsit a telefonját a megjelenítéshez</string>
-    <string name="oneplus_aod_mode_single_tap">Érintés a megjelenítéshez</string>
     <string name="oneplus_aod_settings">Környezeti kijelző</string>
-    <string name="oneplus_aod_settings_what_to_show">mit jelenítsen meg</string>
-    <string name="oneplus_aod_settings_when_to_show">megjelenítés időpontja</string>
     <string name="oneplus_aod_title">Óra megjelenítése</string>
     <string name="oneplus_display_time_end">Vége</string>
     <string name="oneplus_display_time_from">Kezdete</string>

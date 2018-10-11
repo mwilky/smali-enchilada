@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaController2ImplBase;Landroid/support/v4/media/MediaController2$PlaybackInfo;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaController2ImplBase;
 
-    .line 942
     iput-object p1, p0, Landroid/support/v4/media/MediaController2ImplBase$9;->this$0:Landroid/support/v4/media/MediaController2ImplBase;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaController2ImplBase$9;->val$info:Landroid/support/v4/media/MediaController2$PlaybackInfo;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 945
     iget-object v0, p0, Landroid/support/v4/media/MediaController2ImplBase$9;->this$0:Landroid/support/v4/media/MediaController2ImplBase;
 
     invoke-static {v0}, Landroid/support/v4/media/MediaController2ImplBase;->access$000(Landroid/support/v4/media/MediaController2ImplBase;)Landroid/support/v4/media/MediaController2;
@@ -56,10 +53,8 @@
 
     if-nez v0, :cond_0
 
-    .line 946
     return-void
 
-    .line 948
     :cond_0
     iget-object v0, p0, Landroid/support/v4/media/MediaController2ImplBase$9;->this$0:Landroid/support/v4/media/MediaController2ImplBase;
 
@@ -77,6 +72,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v4/media/MediaController2$ControllerCallback;->onPlaybackInfoChanged(Landroid/support/v4/media/MediaController2;Landroid/support/v4/media/MediaController2$PlaybackInfo;)V
 
-    .line 949
     return-void
 .end method

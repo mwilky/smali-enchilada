@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settingslib/applications/ServiceListing;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settingslib/applications/ServiceListing;
 
-    .line 174
     iput-object p1, p0, Lcom/android/settingslib/applications/ServiceListing$2;->this$0:Lcom/android/settingslib/applications/ServiceListing;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,14 +33,10 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 177
     iget-object v0, p0, Lcom/android/settingslib/applications/ServiceListing$2;->this$0:Lcom/android/settingslib/applications/ServiceListing;
 
     invoke-virtual {v0}, Lcom/android/settingslib/applications/ServiceListing;->reload()V
 
-    .line 178
     return-void
 .end method

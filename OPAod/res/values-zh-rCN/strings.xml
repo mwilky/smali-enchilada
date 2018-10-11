@@ -297,8 +297,6 @@
     <string name="oneplus_display_time_from">从</string>
     <string name="oneplus_display_time_start">开始时间</string>
     <string name="oneplus_display_time_to">到</string>
-    <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">已开启,</string>
-    <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">将被关闭</string>
     <string name="op_accessibility_quick_settings_page">第 %1$d 页，共 %2$d 页</string>
     <string name="overlay_display_devices_title">模拟辅助显示设备</string>
     <string name="owner_info_settings_edit_text_hint">例如，小明的 Android 设备。</string>
@@ -412,7 +410,6 @@
     <string name="time_picker_prompt_label">输入时间</string>
     <string name="time_unit_just_now">刚刚</string>
     <string name="title_convert_fbe">正在转换为文件加密</string>
-    <string name="touchscreen_double_tap_to_wake_gesture_title">双击亮屏</string>
     <string name="track_frame_time">GPU 渲染模式分析</string>
     <string name="transition_animation_scale_title">过渡动画缩放</string>
     <string name="tts_default_lang_summary">设置文字转语音功能要使用的语言</string>

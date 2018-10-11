@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">Afișare mesaj</string>
     <string name="oneplus_aod_mode_always_on">Întotdeauna activat</string>
     <string name="oneplus_aod_mode_lift_up">Ridicați afișajul</string>
-    <string name="oneplus_aod_mode_shake_up">Deplasați telefonul ușor pentru a afișa</string>
-    <string name="oneplus_aod_mode_single_tap">Atingeți pentru a afișa</string>
     <string name="oneplus_aod_settings">Afișaj ambiant</string>
-    <string name="oneplus_aod_settings_what_to_show">ce se afișează</string>
-    <string name="oneplus_aod_settings_when_to_show">când se afișează</string>
     <string name="oneplus_aod_title">Afișare ceas</string>
     <string name="oneplus_display_time_end">La</string>
     <string name="oneplus_display_time_from">De la</string>

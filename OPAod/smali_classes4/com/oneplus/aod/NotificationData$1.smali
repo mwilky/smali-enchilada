@@ -37,21 +37,17 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/aod/NotificationData;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/oneplus/aod/NotificationData;
 
-    .line 270
     iput-object p1, p0, Lcom/oneplus/aod/NotificationData$1;->this$0:Lcom/oneplus/aod/NotificationData;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 271
     new-instance v0, Landroid/service/notification/NotificationListenerService$Ranking;
 
     invoke-direct {v0}, Landroid/service/notification/NotificationListenerService$Ranking;-><init>()V
 
     iput-object v0, p0, Lcom/oneplus/aod/NotificationData$1;->mRankingA:Landroid/service/notification/NotificationListenerService$Ranking;
 
-    .line 272
     new-instance v0, Landroid/service/notification/NotificationListenerService$Ranking;
 
     invoke-direct {v0}, Landroid/service/notification/NotificationListenerService$Ranking;-><init>()V
@@ -65,40 +61,25 @@
 # virtual methods
 .method public compare(Lcom/oneplus/aod/NotificationData$Entry;Lcom/oneplus/aod/NotificationData$Entry;)I
     .locals 17
-    .param p1, "a"    # Lcom/oneplus/aod/NotificationData$Entry;
-    .param p2, "b"    # Lcom/oneplus/aod/NotificationData$Entry;
 
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
-    .line 276
     move-object/from16 v2, p2
 
     iget-object v3, v1, Lcom/oneplus/aod/NotificationData$Entry;->notification:Landroid/service/notification/StatusBarNotification;
 
-    .line 277
-    .local v3, "na":Landroid/service/notification/StatusBarNotification;
     iget-object v4, v2, Lcom/oneplus/aod/NotificationData$Entry;->notification:Landroid/service/notification/StatusBarNotification;
 
-    .line 278
-    .local v4, "nb":Landroid/service/notification/StatusBarNotification;
     const/4 v5, 0x3
 
-    .line 279
-    .local v5, "aImportance":I
     const/4 v6, 0x3
 
-    .line 280
-    .local v6, "bImportance":I
     const/4 v7, 0x0
 
-    .line 281
-    .local v7, "aRank":I
     const/4 v8, 0x0
 
-    .line 283
-    .local v8, "bRank":I
     iget-object v9, v0, Lcom/oneplus/aod/NotificationData$1;->this$0:Lcom/oneplus/aod/NotificationData;
 
     invoke-static {v9}, Lcom/oneplus/aod/NotificationData;->access$000(Lcom/oneplus/aod/NotificationData;)Landroid/service/notification/NotificationListenerService$RankingMap;
@@ -107,7 +88,6 @@
 
     if-eqz v9, :cond_0
 
-    .line 285
     iget-object v9, v0, Lcom/oneplus/aod/NotificationData$1;->this$0:Lcom/oneplus/aod/NotificationData;
 
     invoke-static {v9}, Lcom/oneplus/aod/NotificationData;->access$000(Lcom/oneplus/aod/NotificationData;)Landroid/service/notification/NotificationListenerService$RankingMap;
@@ -120,7 +100,6 @@
 
     invoke-virtual {v9, v10, v11}, Landroid/service/notification/NotificationListenerService$RankingMap;->getRanking(Ljava/lang/String;Landroid/service/notification/NotificationListenerService$Ranking;)Z
 
-    .line 286
     iget-object v9, v0, Lcom/oneplus/aod/NotificationData$1;->this$0:Lcom/oneplus/aod/NotificationData;
 
     invoke-static {v9}, Lcom/oneplus/aod/NotificationData;->access$000(Lcom/oneplus/aod/NotificationData;)Landroid/service/notification/NotificationListenerService$RankingMap;
@@ -133,35 +112,30 @@
 
     invoke-virtual {v9, v10, v11}, Landroid/service/notification/NotificationListenerService$RankingMap;->getRanking(Ljava/lang/String;Landroid/service/notification/NotificationListenerService$Ranking;)Z
 
-    .line 287
     iget-object v9, v0, Lcom/oneplus/aod/NotificationData$1;->mRankingA:Landroid/service/notification/NotificationListenerService$Ranking;
 
     invoke-virtual {v9}, Landroid/service/notification/NotificationListenerService$Ranking;->getImportance()I
 
     move-result v5
 
-    .line 288
     iget-object v9, v0, Lcom/oneplus/aod/NotificationData$1;->mRankingB:Landroid/service/notification/NotificationListenerService$Ranking;
 
     invoke-virtual {v9}, Landroid/service/notification/NotificationListenerService$Ranking;->getImportance()I
 
     move-result v6
 
-    .line 289
     iget-object v9, v0, Lcom/oneplus/aod/NotificationData$1;->mRankingA:Landroid/service/notification/NotificationListenerService$Ranking;
 
     invoke-virtual {v9}, Landroid/service/notification/NotificationListenerService$Ranking;->getRank()I
 
     move-result v7
 
-    .line 290
     iget-object v9, v0, Lcom/oneplus/aod/NotificationData$1;->mRankingB:Landroid/service/notification/NotificationListenerService$Ranking;
 
     invoke-virtual {v9}, Landroid/service/notification/NotificationListenerService$Ranking;->getRank()I
 
     move-result v8
 
-    .line 293
     :cond_0
     iget-object v9, v0, Lcom/oneplus/aod/NotificationData$1;->this$0:Lcom/oneplus/aod/NotificationData;
 
@@ -173,8 +147,6 @@
 
     move-result-object v9
 
-    .line 296
-    .local v9, "mediaNotification":Ljava/lang/String;
     iget-object v10, v1, Lcom/oneplus/aod/NotificationData$Entry;->key:Ljava/lang/String;
 
     invoke-virtual {v10, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -196,8 +168,6 @@
     :cond_1
     move v10, v11
 
-    .line 298
-    .local v10, "aMedia":Z
     :goto_0
     iget-object v13, v2, Lcom/oneplus/aod/NotificationData$Entry;->key:Ljava/lang/String;
 
@@ -216,14 +186,11 @@
     :cond_2
     move v13, v11
 
-    .line 301
-    .local v13, "bMedia":Z
     :goto_1
     const/4 v14, 0x5
 
     if-lt v5, v14, :cond_3
 
-    .line 302
     invoke-static {v3}, Lcom/oneplus/aod/NotificationData;->access$200(Landroid/service/notification/StatusBarNotification;)Z
 
     move-result v15
@@ -237,12 +204,9 @@
     :cond_3
     move v15, v11
 
-    .line 303
-    .local v15, "aSystemMax":Z
     :goto_2
     if-lt v6, v14, :cond_4
 
-    .line 304
     invoke-static {v4}, Lcom/oneplus/aod/NotificationData;->access$200(Landroid/service/notification/StatusBarNotification;)Z
 
     move-result v14
@@ -253,14 +217,11 @@
 
     nop
 
-    .line 314
-    .local v11, "bSystemMax":Z
     :cond_4
     const/4 v14, -0x1
 
     if-eq v10, v13, :cond_6
 
-    .line 316
     if-eqz v10, :cond_5
 
     move v12, v14
@@ -270,11 +231,9 @@
     :cond_5
     return v12
 
-    .line 317
     :cond_6
     if-eq v15, v11, :cond_8
 
-    .line 319
     if-eqz v15, :cond_7
 
     move v12, v14
@@ -284,16 +243,13 @@
     :cond_7
     return v12
 
-    .line 320
     :cond_8
     if-eq v7, v8, :cond_9
 
-    .line 321
     sub-int v12, v7, v8
 
     return v12
 
-    .line 323
     :cond_9
     invoke-virtual {v4}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
 
@@ -309,8 +265,6 @@
 
     iget-wide v2, v12, Landroid/app/Notification;->when:J
 
-    .end local v3    # "na":Landroid/service/notification/StatusBarNotification;
-    .local v16, "na":Landroid/service/notification/StatusBarNotification;
     sub-long/2addr v0, v2
 
     long-to-int v0, v0
@@ -321,7 +275,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 270
     check-cast p1, Lcom/oneplus/aod/NotificationData$Entry;
 
     check-cast p2, Lcom/oneplus/aod/NotificationData$Entry;

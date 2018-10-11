@@ -16,18 +16,15 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Application;)V
     .locals 0
-    .param p1, "application"    # Landroid/app/Application;
+    .param p1    # Landroid/app/Application;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 34
     invoke-direct {p0}, Landroid/arch/lifecycle/ViewModel;-><init>()V
 
-    .line 35
     iput-object p1, p0, Landroid/arch/lifecycle/AndroidViewModel;->mApplication:Landroid/app/Application;
 
-    .line 36
     return-void
 .end method
 
@@ -46,7 +43,6 @@
         }
     .end annotation
 
-    .line 45
     iget-object v0, p0, Landroid/arch/lifecycle/AndroidViewModel;->mApplication:Landroid/app/Application;
 
     return-object v0

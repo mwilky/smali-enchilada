@@ -17,11 +17,7 @@
     <string name="oneplus_aod_display_text_title">پیام نمایشی</string>
     <string name="oneplus_aod_mode_always_on">همیشه روشن</string>
     <string name="oneplus_aod_mode_lift_up">بلند کردن صفحه نمایش</string>
-    <string name="oneplus_aod_mode_shake_up">برای نمایش، تلفن خود را کمی جابه‌جا کنید</string>
-    <string name="oneplus_aod_mode_single_tap">برای نمایش، ضربه بزنید</string>
     <string name="oneplus_aod_settings">نمایشگر محیط</string>
-    <string name="oneplus_aod_settings_what_to_show">موضوع نمایش</string>
-    <string name="oneplus_aod_settings_when_to_show">زمان نمایش</string>
     <string name="oneplus_aod_title">نمایش ساعت</string>
     <string name="oneplus_display_time_end">تا</string>
     <string name="oneplus_display_time_from">از</string>

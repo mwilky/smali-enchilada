@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaSession2$Builder;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaSession2$Builder;
 
-    .line 1272
     iput-object p1, p0, Landroid/support/v4/media/MediaSession2$Builder$1;->this$0:Landroid/support/v4/media/MediaSession2$Builder;
 
     invoke-direct {p0}, Landroid/support/v4/media/MediaSession2$SessionCallback;-><init>()V

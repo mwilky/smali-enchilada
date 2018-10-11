@@ -27,8 +27,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 451
-    .local p0, "this":Landroid/support/v7/util/AsyncListUtil$DataCallback;, "Landroid/support/v7/util/AsyncListUtil$DataCallback<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -56,8 +54,6 @@
     .annotation build Landroid/support/annotation/WorkerThread;
     .end annotation
 
-    .line 511
-    .local p0, "this":Landroid/support/v7/util/AsyncListUtil$DataCallback;, "Landroid/support/v7/util/AsyncListUtil$DataCallback<TT;>;"
     const/16 v0, 0xa
 
     return v0
@@ -69,7 +65,6 @@
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "itemCount"    # I
     .annotation build Landroid/support/annotation/WorkerThread;
     .end annotation
 
@@ -79,9 +74,6 @@
         }
     .end annotation
 
-    .line 489
-    .local p0, "this":Landroid/support/v7/util/AsyncListUtil$DataCallback;, "Landroid/support/v7/util/AsyncListUtil$DataCallback<TT;>;"
-    .local p1, "data":[Ljava/lang/Object;, "[TT;"
     return-void
 .end method
 

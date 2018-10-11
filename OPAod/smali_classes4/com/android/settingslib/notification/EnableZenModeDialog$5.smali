@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settingslib/notification/EnableZenModeDialog;Landroid/view/View;Lcom/android/settingslib/notification/EnableZenModeDialog$ConditionTag;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settingslib/notification/EnableZenModeDialog;
 
-    .line 372
     iput-object p1, p0, Lcom/android/settingslib/notification/EnableZenModeDialog$5;->this$0:Lcom/android/settingslib/notification/EnableZenModeDialog;
 
     iput-object p2, p0, Lcom/android/settingslib/notification/EnableZenModeDialog$5;->val$row:Landroid/view/View;
@@ -50,9 +48,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 5
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 375
     iget-object v0, p0, Lcom/android/settingslib/notification/EnableZenModeDialog$5;->this$0:Lcom/android/settingslib/notification/EnableZenModeDialog;
 
     iget-object v1, p0, Lcom/android/settingslib/notification/EnableZenModeDialog$5;->val$row:Landroid/view/View;
@@ -65,6 +61,5 @@
 
     invoke-static {v0, v1, v2, v4, v3}, Lcom/android/settingslib/notification/EnableZenModeDialog;->access$500(Lcom/android/settingslib/notification/EnableZenModeDialog;Landroid/view/View;Lcom/android/settingslib/notification/EnableZenModeDialog$ConditionTag;ZI)V
 
-    .line 376
     return-void
 .end method

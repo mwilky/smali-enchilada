@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaPlayer2Impl$41;I)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v4/media/MediaPlayer2Impl$41;
 
-    .line 1710
     iput-object p1, p0, Landroid/support/v4/media/MediaPlayer2Impl$41$1;->this$1:Landroid/support/v4/media/MediaPlayer2Impl$41;
 
     iput p2, p0, Landroid/support/v4/media/MediaPlayer2Impl$41$1;->val$status:I
@@ -42,16 +40,13 @@
 # virtual methods
 .method public notify(Landroid/support/v4/media/MediaPlayer2$DrmEventCallback;)V
     .locals 3
-    .param p1, "cb"    # Landroid/support/v4/media/MediaPlayer2$DrmEventCallback;
 
-    .line 1713
     invoke-static {}, Landroid/support/v4/media/MediaPlayer2Impl;->access$1900()Landroid/support/v4/util/ArrayMap;
 
     move-result-object v0
 
     iget v1, p0, Landroid/support/v4/media/MediaPlayer2Impl$41$1;->val$status:I
 
-    .line 1714
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -62,7 +57,6 @@
 
     move-result-object v2
 
-    .line 1713
     invoke-virtual {v0, v1, v2}, Landroid/support/v4/util/ArrayMap;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -73,8 +67,6 @@
 
     move-result v0
 
-    .line 1715
-    .local v0, "s":I
     iget-object v1, p0, Landroid/support/v4/media/MediaPlayer2Impl$41$1;->this$1:Landroid/support/v4/media/MediaPlayer2Impl$41;
 
     iget-object v1, v1, Landroid/support/v4/media/MediaPlayer2Impl$41;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
@@ -89,6 +81,5 @@
 
     invoke-virtual {p1, v1, v2, v0}, Landroid/support/v4/media/MediaPlayer2$DrmEventCallback;->onDrmPrepared(Landroid/support/v4/media/MediaPlayer2;Landroid/support/v4/media/DataSourceDesc;I)V
 
-    .line 1716
     return-void
 .end method
