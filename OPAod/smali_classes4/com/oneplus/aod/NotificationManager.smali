@@ -282,7 +282,7 @@
 
     move-result-object v1
 
-    const-string v2, "lock_screen_show_notifications"
+    const-string v2, "aod_show_notifications"
 
     invoke-static {v2}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -721,7 +721,7 @@
 
     move-result-object v0
 
-    const-string v1, "lock_screen_show_notifications"
+    const-string v1, "aod_show_notifications"
 
     iget v2, p0, Lcom/oneplus/aod/NotificationManager;->mCurrentUserId:I
 
@@ -874,11 +874,11 @@
 
     move-result-object v0
 
-    const-string v2, "lock_screen_show_notifications"
+    const-string v2, "aod_show_notifications"
 
     const/4 v3, 0x0
 
-    invoke-static {v0, v2, v3, p1}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+    invoke-static {v0, v2, v1, p1}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v0
 
