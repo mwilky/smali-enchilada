@@ -1097,8 +1097,6 @@
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/policy/Clock;->updateViews(F)V
     
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClockVisibility()V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->setTag()V
 
     return-void
 .end method
@@ -1259,9 +1257,7 @@
 
     goto :goto_1
 
-    :cond_1
-    goto :goto_1
-    
+    :cond_1    
     invoke-static {p2}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->getIconBlacklist(Ljava/lang/String;)Landroid/util/ArraySet;
 
     move-result-object v0
@@ -1277,6 +1273,26 @@
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/policy/Clock;->setClockVisibleByUser(Z)V
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClockVisibility()V
+    
+    const v0, 0x7f0a00c0
+
+    iget v2, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockPosition:I
+	
+	iget-boolean v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockVisibleByUser:Z
+	
+	if-nez v2, :cond_mw
+
+  	goto :goto_mw
+  
+    :cond_mw
+    const/4 v1, 0x0
+
+    :goto_mw
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v0, v1}, Lcom/android/systemui/statusbar/policy/Clock;->setTag(ILjava/lang/Object;)V
     
     :goto_1
     return-void
@@ -1408,31 +1424,5 @@
 	
 	iput v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockPosition:I
 	
-    return-void
-.end method
-
-.method public setTag()V
-	.locals 3
-	
-	const v0, 0x7f0a00c0
-	
-	iget v2, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockPosition:I
-	
-	iget-boolean v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockVisibleByUser:Z
-	
-	if-nez v2, :cond_mw
-
-  	goto :goto_mw
-  
-    :cond_mw
-    const/4 v1, 0x0
-
-    :goto_mw
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/systemui/statusbar/policy/Clock;->setTag(ILjava/lang/Object;)V
-    
     return-void
 .end method
