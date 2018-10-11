@@ -1057,7 +1057,6 @@
     <item type="id" name="zzz_global_action_view">false</item>
     <item type="id" name="zzz_global_action_view_bg">false</item>
     <item type="id" name="clock_right">false</item>
-    <item type="id" name="clock_right_container">false</item>
     <item type="id" name="battery_left">false</item>
     <item type="id" name="battery_left_visible_tag">false</item>
 </resources>

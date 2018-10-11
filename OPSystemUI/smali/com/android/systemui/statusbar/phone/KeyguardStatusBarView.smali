@@ -10,6 +10,8 @@
 
 
 # instance fields
+.field private mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
+
 .field public mCarrierLabelTextColor:I
 
 .field private mBatteryCharging:Z
@@ -946,6 +948,24 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mCarrierLabel:Landroid/widget/TextView;
     
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->setCarrierTextColor()V
+    
+    const-string v0, "clock_right"
+
+    const-string v1, "id"
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+    
+    invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/systemui/statusbar/policy/ClockRight;
+
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->setClockPosition()V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mSystemIconsContainer:Landroid/view/View;
 
@@ -958,6 +978,8 @@
     check-cast v0, Lcom/android/systemui/BatteryMeterView;
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mBatteryView:Lcom/android/systemui/BatteryMeterView;
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->setBatteryPosition()V
 
     const v0, 0x7f0a00e7
 
@@ -1390,5 +1412,49 @@
     invoke-virtual {p0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 	
     :goto_exit
+    return-void
+.end method
+
+.method public setLockscreenStatusbarVisibility()V
+    .locals 2
+    
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideLockscreenStatusbar:Z
+    
+    if-nez v0, :cond_hidden
+
+	goto :goto_exit
+    
+    :cond_hidden
+    const v1, 0x8
+    
+    invoke-virtual {p0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+	
+    :goto_exit
+    return-void
+.end method
+
+.method public setClockPosition()V
+    .locals 2
+    
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
+    
+    if-eqz v0, :cond_exit
+    
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/ClockRight;->updateClockVisibility()V
+    
+    :cond_exit
+    return-void
+.end method
+
+.method public setBatteryPosition()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mBatteryView:Lcom/android/systemui/BatteryMeterView;
+    
+    if-eqz v0, :cond_exit
+    
+    invoke-virtual {v0}, Lcom/android/systemui/BatteryMeterView;->batteryPosition()V
+    
+    :cond_exit
     return-void
 .end method
