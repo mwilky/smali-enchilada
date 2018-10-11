@@ -3,7 +3,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <com.android.systemui.statusbar.phone.StatusIconContainer android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/statusIcons" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:paddingEnd="@dimen/signal_cluster_battery_padding" />
     <com.android.systemui.BatteryMeterView android:id="@id/battery" android:clipChildren="false" android:clipToPadding="false" android:layout_width="wrap_content" android:layout_height="fill_parent" />
-    <LinearLayout android:gravity="start|center" android:id="@id/clock_right_container" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginStart="3.0px">
+    <LinearLayout android:gravity="start|center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginStart="3.0px">
         <com.android.systemui.statusbar.policy.ClockRight android:textAppearance="@style/TextAppearance.StatusBar.Clock" android:gravity="center" android:id="@id/clock_right" android:layout_width="wrap_content" android:layout_height="fill_parent" android:singleLine="true" />
     </LinearLayout>
 </LinearLayout>
