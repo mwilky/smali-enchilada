@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">स्क्रीनची अभिमुखता विस्तृत स्क्रीनशॉट्स मिळविताना बदलता येऊ शकत नाही.</string>
+    <string name="top_activity_changed">अॅपची अदलाबदल करणे विस्तृत स्क्रीनशॉट्स मिळविताना समर्थित नाही.</string>
+    <string name="scrolling">विस्तृत स्क्रीनशॉट्स मिळविताना स्क्रीन आपोआप स्क्रोल होईल.</string>
+    <string name="stop_and_save">स्क्रोलिंग थांबविण्यासाठी स्क्रीनवर टॅप करा आणि विस्तृत स्क्रीनशॉट्स मिळविले जातील.</string>
+    <string name="title">विस्तृत स्क्रीनशॉट</string>
+    <string name="summary">स्क्रीनशॉट घेतल्यावर, खालील स्क्रोल करण्यायोग्य सामग्री पकडण्यासाठी विस्तृत स्क्रीनशॉट टॅप करा.</string>
+    <string name="not_support_longshot">वाढविलेले स्क्रीनशॉट या पृष्ठावर समर्थित नाहीत.</string>
+    <string name="got_it">कळले</string>
+    <string name="longshot_guide_support">वाढविलेला स्क्रीनशॉट पाहण्यासाठी येथे टॅप करा.</string>
+    <string name="longshot_guide_not_support">वाढविलेले स्क्रीनशॉट या पृष्ठावर समर्थित नाहीत.</string>
+    <string name="screenshot_stoped_text">विस्तारित स्क्रीनशॉट थांबलेला आहे</string>
+    <string name="app_name">स्क्रीनशॉट</string>
+    <string name="oneplus_delete">हटवा</string>
+    <string name="oneplus_share">पाठवा</string>
+    <string name="screenshot_saving_ticker">स्क्रीनशॉट जतन करत आहे…</string>
+    <string name="screenshot_saving_title">स्क्रीनशॉट जतन करत आहे…</string>
+    <string name="screenshot_saving_text">स्क्रीनशॉट जतन केला जात आहे.</string>
+    <string name="screenshot_saved_title">स्क्रीनशॉट कॅप्चर केला.</string>
+    <string name="screenshot_saved_text">आपला स्क्रीनशॉट पाहण्यासाठी स्पर्श करा.</string>
+    <string name="screenshot_failed_title">स्क्रीनशॉट कॅप्चर करू शकलो नाही.</string>
+    <string name="screenshot_failed_text">मर्यादित संचयन स्‍थानामुळे किंवा अ‍ॅपद्वारे किंवा आपल्‍या संस्‍थेद्वारे त्याची अनुमती नसल्‍यामुळे स्‍क्रीनशॉट घेऊ शकत नाही.</string>
+    <string name="screenshot_failed_to_save_text">मर्यादित संचय जागेमुळे स्क्रीनशॉट जतन करू शकत नाही.</string>
+    <string name="screenshot_failed_to_capture_text">अ‍ॅप किंवा आपल्या संस्थेद्वारे स्क्रीनशॉट घेण्याची अनुमती नाही</string>
+    <string name="screenshot_failed_to_save_unknown_text">स्क्रीनशॉट जतन करताना समस्या आली.</string>
+    <string name="notification_channel_screenshot">स्क्रीनशॉट</string>
+</resources>

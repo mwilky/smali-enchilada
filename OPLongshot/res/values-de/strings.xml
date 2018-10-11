@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">Der Bildschirm kann nicht gedreht werden, während erweiterte Screenshots gemacht werden.</string>
+    <string name="top_activity_changed">Es kann nicht zwischen Apps gewechselt werden, während erweiterte Screenshots gemacht werden.</string>
+    <string name="scrolling">Der Bildschirm scrollt automatisch, während erweiterte Screenshots gemacht werden.</string>
+    <string name="stop_and_save">Tippen Sie zum Anhalten des Scrollens auf den Bildschirm und der erweiterte Screenshot wird aufgenommen.</string>
+    <string name="title">Erweiterter Screenshot</string>
+    <string name="summary">Tippen Sie nach der Aufnahme eines Screenshots auf den erweiterten Screenshot, um die nachfolgenden scrollbaren Inhalte zu erfassen.</string>
+    <string name="not_support_longshot">Der erweiterte Screenshot wird auf dieser Seite nicht unterstützt.</string>
+    <string name="got_it">Verstanden</string>
+    <string name="longshot_guide_support">Hier tippen, um den erweiterten Screenshot auszuprobieren.</string>
+    <string name="longshot_guide_not_support">Der erweiterte Screenshot wird auf dieser Seite nicht unterstützt.</string>
+    <string name="screenshot_stoped_text">Der erweiterte Screenshot wurde angehalten</string>
+    <string name="app_name">Screenshot</string>
+    <string name="oneplus_delete">Löschen</string>
+    <string name="oneplus_share">Senden</string>
+    <string name="screenshot_saving_ticker">Screenshot wird gespeichert...</string>
+    <string name="screenshot_saving_title">Screenshot wird gespeichert...</string>
+    <string name="screenshot_saving_text">Screenshot wird gespeichert...</string>
+    <string name="screenshot_saved_title">Screenshot aufgenommen</string>
+    <string name="screenshot_saved_text">Zum Ansehen berühren</string>
+    <string name="screenshot_failed_title">Screenshot konnte nicht aufgenommen werden.</string>
+    <string name="screenshot_failed_text">Screenshot nicht möglich. Entweder zu wenig Speicher oder die App/Ihr Unternehmen lässt dies nicht zu.</string>
+    <string name="screenshot_failed_to_save_text">Speichern des Screenshots aufgrund von zu wenig Speicher nicht möglich.</string>
+    <string name="screenshot_failed_to_capture_text">Die App oder deine Organisation lässt das Erstellen von Screenshots nicht zu</string>
+    <string name="screenshot_failed_to_save_unknown_text">Beim Speichern des Screenshots ist ein Problem aufgetreten.</string>
+    <string name="notification_channel_screenshot">Screenshots</string>
+</resources>

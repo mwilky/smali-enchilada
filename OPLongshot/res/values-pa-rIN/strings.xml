@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">ਵਿਸਤਾਰਤ ਸਕ੍ਰੀਨਸ਼ੌਟ ਲੈਣ ਸਮੇਂ ਸਕ੍ਰੀਨ ਦੇ ਦਿਸ਼ਾਮਾਨ ਨੂੰ ਬਦਲਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ।</string>
+    <string name="top_activity_changed">ਵਿਸਤਾਰਤ ਸਕ੍ਰੀਨਸ਼ੌਟ ਲੈਣ ਸਮੇਂ ਐਪਾਂ ਵਿਚਕਾਰ ਬਦਲੀ ਕਰਨਾ ਸਮਰਥਿਤ ਨਹੀਂ ਹੈ।</string>
+    <string name="scrolling">ਵਿਸਤਾਰਤ ਸਕ੍ਰੀਨਸ਼ੌਟ ਲੈਣ ਸਮੇਂ ਸਕ੍ਰੀਨ ਆਪਣੇ-ਆਪ ਸਕ੍ਰੌਲ ਕਰੇਗੀ।</string>
+    <string name="stop_and_save">"ਸਕ੍ਰੌਲਿੰਗ ਨੂੰ ਰੋਕਣ ਲਈ ਸਕ੍ਰੀਨ 'ਤੇ ਟੈਪ ਕਰੋ ਅਤੇ ਵਿਸਤਾਰਤ ਸਕ੍ਰੀਨਸ਼ੌਟ ਕੈਪਚਰ ਹੋ ਜਾਵੇਗਾ।"</string>
+    <string name="title">ਵਿਸਤਾਰਿਤ ਸਕ੍ਰੀਨਸ਼ੌਟ</string>
+    <string name="summary">"ਸਕ੍ਰੀਨਸ਼ੌਟ ਲੈਣ ਤੋਂ ਬਾਅਦ, ਹੇਠਾਂ ਸਕ੍ਰੋਲ ਕਰਨ ਯੋਗ ਸਮੱਗਰੀ ਨੂੰ ਕੈਪਚਰ ਕਰਨ ਲਈ ਵਿਸਤਾਰਿਤ ਸਕ੍ਰੀਨਸ਼ੌਟ 'ਤੇ ਟੈਪ ਕਰੋ।"</string>
+    <string name="not_support_longshot">"ਇਸ ਪੰਨੇ 'ਤੇ ਵਿਸਤਾਰਿਤ ਸਕ੍ਰੀਨਸ਼ੌਟ ਸਮਰਥਿਤ ਨਹੀਂ ਹੈ।"</string>
+    <string name="got_it">ਸਮਝ ਆ ਗਈ</string>
+    <string name="longshot_guide_support">ਵਿਸਤਾਰਿਤ ਸਕ੍ਰੀਨਸ਼ੌਟ ਨੂੰ ਅਜ਼ਮਾਉਣ ਲਈ ਇੱਥੇ ਟੈਪ ਕਰੋ।</string>
+    <string name="longshot_guide_not_support">"ਇਸ ਪੰਨੇ 'ਤੇ ਵਿਸਤਾਰਿਤ ਸਕ੍ਰੀਨਸ਼ੌਟ ਸਮਰਥਿਤ ਨਹੀਂ ਹੈ।"</string>
+    <string name="screenshot_stoped_text">ਵਿਸਤਾਰ ਕੀਤਾ ਸਕ੍ਰੀਨਸ਼ੌਟ ਰੁਕ ਗਿਆ ਹੈ</string>
+    <string name="app_name">ਸਕ੍ਰੀਨਸ਼ੌਟ</string>
+    <string name="oneplus_delete">ਮਿਟਾਓ</string>
+    <string name="oneplus_share">ਭੇਜੋ</string>
+    <string name="screenshot_saving_ticker">ਸਕ੍ਰੀਨਸ਼ੌਟ ਸੁਰੱਖਿਅਤ ਕਰ ਰਿਹਾ ਹੈ…</string>
+    <string name="screenshot_saving_title">ਸਕ੍ਰੀਨਸ਼ੌਟ ਸੁਰੱਖਿਅਤ ਕਰ ਰਿਹਾ ਹੈ…</string>
+    <string name="screenshot_saving_text">ਸਕ੍ਰੀਨਸ਼ੌਟ ਸੁਰੱਖਿਅਤ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ।</string>
+    <string name="screenshot_saved_title">ਸਕ੍ਰੀਨਸ਼ੌਟ ਕੈਪਚਰ ਕੀਤਾ।</string>
+    <string name="screenshot_saved_text">ਆਪਣਾ ਸਕ੍ਰੀਨਸ਼ੌਟ ਦੇਖਣ ਲਈ ਛੋਹਵੋ।</string>
+    <string name="screenshot_failed_title">ਸਕ੍ਰੀਨਸ਼ੌਟ ਕੈਪਚਰ ਨਹੀਂ ਕਰ ਸਕਿਆ।</string>
+    <string name="screenshot_failed_text">ਸੀਮਿਤ ਸਟੋਰੇਜ ਸਪੇਸ ਦੇ ਕਾਰਨ ਸਕ੍ਰੀਨਸ਼ੌਟ ਨਹੀਂ ਲੈ ਸਕਦਾ ਜਾਂ ਐਪ ਜਾਂ ਤੁਹਾਡੀ ਕੰਪਨੀ ਵੱਲੋਂ ਇਸਦੀ ਆਗਿਆ ਨਹੀਂ ਹੈ।</string>
+    <string name="screenshot_failed_to_save_text">ਸੀਮਿਤ ਸਟੋਰੇਜ ਥਾਂ ਦੇ ਕਾਰਨ ਸਕ੍ਰੀਨਸ਼ਾਟ ਰੱਖਿਅਤ ਨਹੀਂ ਕੀਤਾ ਸਕਦਾ।</string>
+    <string name="screenshot_failed_to_capture_text">ਐਪ ਜਾਂ ਤੁਹਾਡੀ ਸੰਸਥਾ ਵੱਲੋਂ ਸਕ੍ਰੀਨਸ਼ਾਟ ਲੈਣ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਦਿੱਤੀ ਗਈ ਹੈ</string>
+    <string name="screenshot_failed_to_save_unknown_text">ਸਕ੍ਰੀਨਸ਼ਾਟ ਰੱਖਿਅਤ ਕਰਨ ਦੌਰਾਨ ਸਮੱਸਿਆ ਆਈ।</string>
+    <string name="notification_channel_screenshot">ਸਕ੍ਰੀਨਸ਼ਾਟ</string>
+</resources>

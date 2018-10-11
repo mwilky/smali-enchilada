@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">A képernyő tájolása nem módosítható kiterjedt képernyőképek rögzítése közben.</string>
+    <string name="top_activity_changed">Kiterjedt képernyőképek rögzítése közben nem támogatott az alkalmazások váltása.</string>
+    <string name="scrolling">Kiterjedt képernyőképek rögzítése közben a képernyő automatikusan gördül.</string>
+    <string name="stop_and_save">A képernyő megérintésével állítsa meg a görgetést, a kiterjedt képernyőkép rögzítődik.</string>
+    <string name="title">Bővített képernyőkép</string>
+    <string name="summary">A képernyőkép rögzítése után koppintson a Bővített képernyőkép lehetőségre, és rögzítse az alábbi görgethető tartalmat.</string>
+    <string name="not_support_longshot">A bővített képernyőkép nem támogatott ezen az oldalon.</string>
+    <string name="got_it">Értem</string>
+    <string name="longshot_guide_support">Koppintson ide, és próbálja ki a bővített képernyőképet.</string>
+    <string name="longshot_guide_not_support">A bővített képernyőkép nem támogatott ezen az oldalon.</string>
+    <string name="screenshot_stoped_text">A bővített képernyőkép leállt</string>
+    <string name="app_name">Képernyőfelvétel</string>
+    <string name="oneplus_delete">Törlés</string>
+    <string name="oneplus_share">Küldés</string>
+    <string name="screenshot_saving_ticker">Képernyőkép mentése...</string>
+    <string name="screenshot_saving_title">Képernyőkép mentése...</string>
+    <string name="screenshot_saving_text">Képernyőkép mentése.</string>
+    <string name="screenshot_saved_title">Képernyőkép rögzítve.</string>
+    <string name="screenshot_saved_text">Megérintésével megtekintheti a képernyőképet.</string>
+    <string name="screenshot_failed_title">Nem sikerült rögzíteni a képernyőképet.</string>
+    <string name="screenshot_failed_text">Nem készíthet képernyőképet, mert kevés a tárhely, vagy az alkalmazás/szervezet nem engedélyezi azt.</string>
+    <string name="screenshot_failed_to_save_text">Nem menthet képernyőképet, mert kevés a tárhely.</string>
+    <string name="screenshot_failed_to_capture_text">Az alkalmazás vagy az Ön szervezete nem engedélyezi képernyőkép készítését</string>
+    <string name="screenshot_failed_to_save_unknown_text">Hiba történt a képernyőkép mentése során.</string>
+    <string name="notification_channel_screenshot">Képernyőképek</string>
+</resources>

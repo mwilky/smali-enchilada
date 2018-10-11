@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">Skjermretningen kan ikke endres mens du tar utvidede skjermbilder.</string>
+    <string name="top_activity_changed">Bytting mellom apper støttes ikke mens du tar utvidede skjermbilder.</string>
+    <string name="scrolling">Skjermen scroller automatisk mens du tar utvidede skjermbilder.</string>
+    <string name="stop_and_save">Trykk på skjermen for å stoppe scrollingen og ta utvidet skjermbilde.</string>
+    <string name="title">Utvidet skjermbilde</string>
+    <string name="summary">Etter du har tatt et skjermbilde trykker du på utvidet skjermbilde for å fange innholdet nedenfor, som du kan rulle gjennom.</string>
+    <string name="not_support_longshot">Utvidet skjermbilde støttes ikke på denne siden.</string>
+    <string name="got_it">Skjønner</string>
+    <string name="longshot_guide_support">Trykk her for å prøve utvidet skjermbilde.</string>
+    <string name="longshot_guide_not_support">Utvidet skjermbilde støttes ikke på denne siden.</string>
+    <string name="screenshot_stoped_text">Utvidet skjermbildet har stoppet</string>
+    <string name="app_name">Skjermbilde</string>
+    <string name="oneplus_delete">Slett</string>
+    <string name="oneplus_share">Send</string>
+    <string name="screenshot_saving_ticker">Lagrer skjermdumpen …</string>
+    <string name="screenshot_saving_title">Lagrer skjermdumpen …</string>
+    <string name="screenshot_saving_text">Skjermdumpen lagres.</string>
+    <string name="screenshot_saved_title">Skjermdumpen er lagret.</string>
+    <string name="screenshot_saved_text">Trykk for å se skjermdumpen.</string>
+    <string name="screenshot_failed_title">Kan ikke lagre skjermdumpen.</string>
+    <string name="screenshot_failed_text">Kan ikke ta skjermdump grunnet plassbegrensning, app- eller organisasjonstillatelser.</string>
+    <string name="screenshot_failed_to_save_text">Kan ikke lagre skjermdumpen på grunn av begrenset lagringsplass.</string>
+    <string name="screenshot_failed_to_capture_text">Appen eller organisasjonen din tillater ikke at du tar skjermdumper</string>
+    <string name="screenshot_failed_to_save_unknown_text">Det oppsto et problem under lagring av skjermdumpen.</string>
+    <string name="notification_channel_screenshot">Skjermdumper</string>
+</resources>

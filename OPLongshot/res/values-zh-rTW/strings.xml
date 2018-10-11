@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">截屏過程中不支持橫豎屏切換</string>
+    <string name="top_activity_changed">截屏過程中不支持頁面切換</string>
+    <string name="scrolling">正在滾動截圖</string>
+    <string name="stop_and_save">觸碰螢幕停止滾動並生成圖片</string>
+    <string name="title">長截圖</string>
+    <string name="summary">截圖時，點擊長截圖功能，可滾動截取下方瀏覽的內容</string>
+    <string name="not_support_longshot">此頁面不支持長截圖。</string>
+    <string name="got_it">知道了</string>
+    <string name="longshot_guide_support">點擊試試長截圖。</string>
+    <string name="longshot_guide_not_support">當前頁面不支持長截圖。</string>
+    <string name="screenshot_stoped_text">長截圖已停止</string>
+    <string name="app_name">截屏</string>
+    <string name="join_error">圖像拼接失敗</string>
+    <string name="maximum_pages">已截取最大長度</string>
+    <string name="oneplus_delete">刪除</string>
+    <string name="oneplus_share">發送</string>
+    <string name="screenshot_saving_ticker">正在儲存螢幕擷取畫面。</string>
+    <string name="screenshot_saving_title">正在儲存螢幕擷取畫面。</string>
+    <string name="screenshot_saving_text">...</string>
+    <string name="screenshot_saved_title">已拍攝螢幕擷取畫面。</string>
+    <string name="screenshot_saved_text">輕觸即可檢視螢幕擷取畫面。</string>
+    <string name="screenshot_failed_title">無法儲存螢幕擷取畫面。</string>
+    <string name="screenshot_failed_text">無法儲存螢幕擷取畫面，儲存空間可能正在使用中。</string>
+    <string name="screenshot_failed_to_save_text">由於儲存空間有限，因此無法儲存螢幕擷取畫面。</string>
+    <string name="screenshot_failed_to_capture_text">這個應用程式或貴機構不允許擷取螢幕畫面</string>
+    <string name="screenshot_failed_to_save_unknown_text">儲存螢幕擷圖時發生問題。</string>
+    <string name="notification_channel_screenshot">螢幕擷取畫面</string>
+</resources>

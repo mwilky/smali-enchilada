@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">প্রসারিত স্ক্রীনশটগুলি ক্যাপচার করার সময় স্ক্রীন ওরিয়েন্টেশন পরিবর্তন করা যাবে না।</string>
+    <string name="top_activity_changed">প্রসারিত স্ক্রীনশটগুলি ক্যাপচার করার সময় অ্যাপ স্যুইচ করা সমর্থিত নয়।</string>
+    <string name="scrolling">প্রসারিত স্ক্রীনশটগুলি ক্যাপচার করার সময় স্ক্রীন স্বয়ংক্রিয়ভাবে স্ক্রোল হবে।</string>
+    <string name="stop_and_save">স্ক্রোলিং থামাতে স্ক্রীন আলতো চাপুন এবং প্রসারিত স্ক্রীনশট ক্যাপচার করা হবে।</string>
+    <string name="title">সম্প্রসারিত স্ক্রীনশট</string>
+    <string name="summary">স্ক্রীনশট নেওয়ার পর, নিচের স্ক্রোল করা যাবে এমন সামগ্রী ক্যাপচর করতে সম্প্রসারিত স্ক্রীনশটে আলতো চাপুন।</string>
+    <string name="not_support_longshot">এই পৃষ্ঠায় বর্ধিত স্ক্রীনশট সমর্থিত নয়।</string>
+    <string name="got_it">বুঝেছি</string>
+    <string name="longshot_guide_support">স্ক্রিনশট প্রসারিত করার চেষ্টা করতে আলতো চাপুন।</string>
+    <string name="longshot_guide_not_support">এই পৃষ্ঠায় সম্প্রসারিত স্ক্রীনশট সমর্থিত নয়।</string>
+    <string name="screenshot_stoped_text">বাড়ানো স্ক্রীনশটি থেমে গেছে</string>
+    <string name="app_name">স্ক্রিনশট</string>
+    <string name="oneplus_delete">মুছুন</string>
+    <string name="oneplus_share">পাঠান</string>
+    <string name="screenshot_saving_ticker">স্ক্রীনশট সংরক্ষণ করা হচ্ছে...</string>
+    <string name="screenshot_saving_title">স্ক্রীনশট সংরক্ষণ করা হচ্ছে...</string>
+    <string name="screenshot_saving_text">স্ক্রীনশট সংরক্ষণ করা হচ্ছে৷</string>
+    <string name="screenshot_saved_title">স্ক্রীনশট নেওয়া হযেছে৷</string>
+    <string name="screenshot_saved_text">আপনার স্ক্রীনশট দেখতে স্পর্শ করুন৷</string>
+    <string name="screenshot_failed_title">স্ক্রীনশট নেওয়া যায়নি৷</string>
+    <string name="screenshot_failed_text">সঞ্চয়স্থান সীমিত হওয়ার ফলে স্ক্রীনশট নেওয়া যাবে না, অথবা এটি অ্যাপ্লিকেশানটি অথবা আপনার প্রতিষ্ঠানের দ্বারা অনুমোদিত নয়৷</string>
+    <string name="screenshot_failed_to_save_text">সঞ্চয়স্থান সীমিত থাকায় স্ক্রীনশটটি সংরক্ষণ করা যাবে না৷</string>
+    <string name="screenshot_failed_to_capture_text">এই অ্যাপ বা আপনার প্রতিষ্ঠান স্ক্রিনশট নেওয়ার অনুমতি দেয়নি</string>
+    <string name="screenshot_failed_to_save_unknown_text">স্ক্রীনশট সংরক্ষণের সময়ে সমস্যা হয়েছে৷</string>
+    <string name="notification_channel_screenshot">স্ক্রীনশটস</string>
+</resources>

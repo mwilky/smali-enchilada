@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">Hướng xoay màn hình không thể được thay đổi khi đang chụp ảnh màn hình mở rộng.</string>
+    <string name="top_activity_changed">Chuyển đổi ứng dụng không được hỗ trợ khi đang chụp ảnh màn hình mở rộng.</string>
+    <string name="scrolling">Màn hình sẽ cuộn tự động khi chụp ảnh màn hình mở rộng.</string>
+    <string name="stop_and_save">Chạm vào màn hình để ngừng cuộn và màn hình mở rộng sẽ được chụp.</string>
+    <string name="title">Ảnh chụp màn hình mở rộng</string>
+    <string name="summary">Sau khi chụp ảnh màn hình, nhấn nút ảnh chụp màn hình mở rộng để chụp lại nội dung cuộn dưới đây.</string>
+    <string name="not_support_longshot">Ảnh chụp màn hình mở rộng không được hỗ trợ trên trang này.</string>
+    <string name="got_it">Đã hiểu</string>
+    <string name="longshot_guide_support">Chạm vào đây để thử Chụp Màn hình Mở rộng.</string>
+    <string name="longshot_guide_not_support">Chụp màn hình mở rộng không được hỗ trợ trên trang này.</string>
+    <string name="screenshot_stoped_text">Ảnh chụp màn hình mở rộng đã dừng lại</string>
+    <string name="app_name">Ảnh chụp màn hình</string>
+    <string name="oneplus_delete">Xóa</string>
+    <string name="oneplus_share">Gửi</string>
+    <string name="screenshot_saving_ticker">Đang lưu ảnh chụp màn hình...</string>
+    <string name="screenshot_saving_title">Đang lưu ảnh chụp màn hình...</string>
+    <string name="screenshot_saving_text">Ảnh chụp màn hình đang được lưu.</string>
+    <string name="screenshot_saved_title">Đã chụp ảnh màn hình.</string>
+    <string name="screenshot_saved_text">Chạm để xem ảnh chụp màn hình của bạn.</string>
+    <string name="screenshot_failed_title">Không thể chụp ảnh màn hình.</string>
+    <string name="screenshot_failed_text">Ko thể chụp ảnh màn hình do dung lượng bộ nhớ hạn chế hoặc ứng dụng hay tổ chức của bạn ko cho phép.</string>
+    <string name="screenshot_failed_to_save_text">Không thể lưu ảnh chụp màn hình do giới hạn dung lượng bộ nhớ.</string>
+    <string name="screenshot_failed_to_capture_text">Ứng dụng hoặc tổ chức của bạn không cho phép chụp ảnh màn hình</string>
+    <string name="screenshot_failed_to_save_unknown_text">Đã gặp phải sự cố khi đang lưu ảnh chụp màn hình.</string>
+    <string name="notification_channel_screenshot">Ảnh chụp màn hình</string>
+</resources>

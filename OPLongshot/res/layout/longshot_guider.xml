@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@id/longshot_guider_host" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="@dimen/longshot_guide_bottom_margin"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/longshot_guide_rounded_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/oneplus_contorl_layout_margin_left2" android:layout_marginRight="@dimen/oneplus_contorl_layout_margin_right2">
+        <TextView android:id="@id/longshot_guide_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/oneplus_contorl_layout_margin_left2" android:layout_marginTop="@dimen/oneplus_contorl_layout_margin_top2" android:layout_marginRight="@dimen/oneplus_contorl_layout_margin_right2" android:text="@string/longshot_guide_support" style="@style/oneplus_contorl_text_style_subheading" />
+        <Button android:layout_gravity="bottom|center|right" android:id="@id/longshot_guide_button" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/oneplus_contorl_layout_margin_bottom2" android:layout_marginRight="@dimen/oneplus_contorl_layout_margin_right1" android:layout_marginBottom="@dimen/oneplus_contorl_layout_margin_bottom2" android:text="@string/got_it" style="@style/oneplus_contorl_text_style_subheading" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:visibility="invisible" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="2.0" />
+        <ImageView android:layout_gravity="center" android:visibility="visible" android:layout_width="0.0dip" android:layout_height="wrap_content" android:src="@drawable/ic_longshot_guide_arrow" android:layout_weight="1.0" />
+        <ImageView android:visibility="invisible" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

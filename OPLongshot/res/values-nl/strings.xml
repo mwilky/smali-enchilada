@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">Schermstand kan niet gewijzigd worden tijdens het vastleggen van verlengde schermafdrukken.</string>
+    <string name="top_activity_changed">App wisselen wordt niet ondersteund tijdens het vastleggen van verlengde schermafdrukken.</string>
+    <string name="scrolling">Het scherm scrolt automatisch tijdens het vastleggen van verlengde schermafdrukken.</string>
+    <string name="stop_and_save">Tap op het scherm om het scrollen te stoppen, en de verlengde schermafdruk wordt vastgelegd.</string>
+    <string name="title">Verlengde Schermafdruk</string>
+    <string name="summary">Tap na het nemen van een schermafdruk op verlengde schermafdruk om de onderstaande scrollbare inhoud vast te leggen.</string>
+    <string name="not_support_longshot">Verlengde schermafdruk wordt niet ondersteund op deze pagina.</string>
+    <string name="got_it">Begrepen</string>
+    <string name="longshot_guide_support">Tap hier om Verlengde Schermafdruk te proberen.</string>
+    <string name="longshot_guide_not_support">Verlengde schermafdruk wordt niet ondersteund op deze pagina.</string>
+    <string name="screenshot_stoped_text">De verlengde schermafdruk is gestopt</string>
+    <string name="app_name">Schermafdruk</string>
+    <string name="oneplus_delete">Verwijderen</string>
+    <string name="oneplus_share">Verzenden</string>
+    <string name="screenshot_saving_ticker">Screenshot opslaan...</string>
+    <string name="screenshot_saving_title">Screenshot opslaan...</string>
+    <string name="screenshot_saving_text">Screenshot wordt opgeslagen.</string>
+    <string name="screenshot_saved_title">Screenshot gemaakt.</string>
+    <string name="screenshot_saved_text">Raak aan om je screenshot te bekijken.</string>
+    <string name="screenshot_failed_title">Screenshot is niet gemaakt.</string>
+    <string name="screenshot_failed_text">Kan geen screenshot maken wegens beperkte opslagruimte of omdat de app of je organisatie dit niet toestaat.</string>
+    <string name="screenshot_failed_to_save_text">Kan screenshot niet opslaan vanwege beperkte opslagruimte.</string>
+    <string name="screenshot_failed_to_capture_text">Het maken van screenshots wordt niet toegestaan door de app of je organisatie</string>
+    <string name="screenshot_failed_to_save_unknown_text">Er is een probleem opgetreden bij het opslaan van het screenshot.</string>
+    <string name="notification_channel_screenshot">Screenshots</string>
+</resources>

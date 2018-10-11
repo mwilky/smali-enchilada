@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">വികസിപ്പിച്ച സ്ക്രീന്‍‌ഷോട്ടുകള്‍ എടുക്കുമ്പോള്‍ സ്ക്രീനിന്‍റെ ക്രമീകരണം മാറ്റാനാവില്ല.</string>
+    <string name="top_activity_changed">വികസിപ്പിച്ച സ്ക്രീന്‍‌ഷോട്ടുകള്‍ എടുക്കുമ്പോള്‍ ആപ്പ് മാറ്റുന്നത് പിന്തുണയ്ക്കില്ല.</string>
+    <string name="scrolling">വികസിപ്പിച്ച സ്ക്രീന്‍‌ഷോട്ടുകള്‍ എടുക്കുമ്പോള്‍ സ്ക്രീന്‍ സ്വയം സ്ക്രോള്‍ ചെയ്യും.</string>
+    <string name="stop_and_save">സ്ക്രോളിങ്ങ് അവസാനിപ്പിക്കുന്നതിന് സ്ക്രീനില്‍ ടാപ് ചെയ്യുകയും വികസിപ്പിച്ച സ്ക്രീന്‍‌ഷോട്ടുകള്‍ എടുക്കുകയും ചെയ്യും.</string>
+    <string name="title">വികസിപ്പിച്ച സ്‌ക്രീന്‍ഷോട്ട്</string>
+    <string name="summary">സ്ക്രീന്‍ഷോട്ട് എടുത്തതിന് ശേഷം, താഴെയുള്ള സ്ക്രോള്‍ ചെയ്യാവുന്ന ഉള്ളടക്കം എടുക്കുന്നതിന് വികസിപ്പിച്ച സ്ക്രീന്‍ഷോട്ടില്‍ ടാപ് ചെയ്യുക.</string>
+    <string name="not_support_longshot">ഈ പേജിനെ വികസിപ്പിച്ച സ്ക്രീന്‍ഷോട്ട് പിന്തുണയ്ക്കുന്നില്ല.</string>
+    <string name="got_it">മനസ്സിലായി</string>
+    <string name="longshot_guide_support">വികസിപ്പിച്ച സ്ക്രീന്‍ഷോട്ട് പരീക്ഷിക്കുന്നതിന് ഇവിടെ ടാപ് ചെയ്യുക.</string>
+    <string name="longshot_guide_not_support">ഈ പേജിനെ വികസിപ്പിച്ച സ്ക്രീന്‍ഷോട്ട് പിന്തുണയ്ക്കുന്നില്ല.</string>
+    <string name="screenshot_stoped_text">വിപുലീകരിച്ച സ്ക്രീൻഷോട്ട് നിർത്തി</string>
+    <string name="screenshot_saving_ticker">സ്‌ക്രീൻഷോട്ട് സംരക്ഷിക്കുന്നു...</string>
+    <string name="screenshot_saving_title">സ്‌ക്രീൻഷോട്ട് സംരക്ഷിക്കുന്നു...</string>
+    <string name="screenshot_saving_text">സ്‌ക്രീൻഷോട്ട് സംരക്ഷിക്കുന്നു.</string>
+    <string name="screenshot_saved_title">സ്‌ക്രീൻഷോട്ട് എടുത്തു.</string>
+    <string name="screenshot_saved_text">നിങ്ങളുടെ സ്‌ക്രീൻഷോട്ട് കാണാനായി സ്‌പർശിക്കുക.</string>
+    <string name="screenshot_failed_title">സ്‌ക്രീൻഷോട്ട് എടുക്കാൻ കഴിഞ്ഞില്ല.</string>
+    <string name="screenshot_failed_text">സംഭരണ ഇടം പരിമിതമായതിനാൽ സ്‌ക്രീൻഷോട്ട് എടുക്കാനാകില്ല, അല്ലെങ്കിൽ ഇത് അപ്ലിക്കേഷനോ നിങ്ങളുടെ ഓർഗനൈസേഷനോ അനുവദിക്കുന്നില്ല.</string>
+    <string name="screenshot_failed_to_save_text">സ്റ്റോറേജ് ഇടം പരിമിതമായതിനാൽ സ്ക്രീൻഷോട്ട് സംരക്ഷിക്കാൻ കഴിയില്ല.</string>
+    <string name="screenshot_failed_to_capture_text">സ്ക്രീൻഷോട്ടുകൾ എടുക്കുന്നത് ആപ്പോ നിങ്ങളുടെ സ്ഥാപനമോ അനുവദിക്കുന്നില്ല</string>
+    <string name="screenshot_failed_to_save_unknown_text">സ്ക്രീൻഷോട്ട് സംരക്ഷിക്കുന്ന സമയത്ത് പ്രശ്നം നേരിട്ടു.</string>
+    <string name="notification_channel_screenshot">സ്‌ക്രീൻഷോട്ടുകൾ</string>
+</resources>

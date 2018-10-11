@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">विस्तृत स्क्रीनशॉट लेते समय स्क्रीन ओरिएंटेशन नहीं बदला जा सकता।</string>
+    <string name="top_activity_changed">विस्तृत स्क्रीनशॉट लेते समय ऐप स्विचिंग को सपोर्ट नहीं है।</string>
+    <string name="scrolling">विस्तृत स्क्रीनशॉट लेते समय स्क्रीन ऑटोमेटिक ढंग से स्क्रॉल करेगी।</string>
+    <string name="stop_and_save">स्क्रॉलिंग को रोकने के लिए स्क्रीन पर टैप करें और विस्तृत स्क्रीनशॉट कैप्चर हो जाएगी।</string>
+    <string name="title">विस्तृत स्क्रीनशॉट</string>
+    <string name="summary">स्क्रीनशॉट लेने के बाद, नीचे स्क्रॉल करने योग्य कंटेंट को कैप्चर करने के लिए फैले हुए स्क्रीनशॉट पर टैप करें।</string>
+    <string name="not_support_longshot">विस्तृत स्क्रीनशॉट इस पेज पर समर्थित नहीं है।</string>
+    <string name="got_it">समझ में आ गया</string>
+    <string name="longshot_guide_support">विस्तृत स्क्रीनशॉट के लिए यहाँ टैप करें।</string>
+    <string name="longshot_guide_not_support">विस्तृत स्क्रीनशॉट इस पेज पर समर्थित नहीं है।</string>
+    <string name="screenshot_stoped_text">विस्तारित स्क्रीनशॉट रुक गया है</string>
+    <string name="app_name">स्क्रीनशॉट</string>
+    <string name="oneplus_delete">हटाएं</string>
+    <string name="oneplus_share">भेजें</string>
+    <string name="screenshot_saving_ticker">स्क्रीनशॉट सहेजा जा रहा है...</string>
+    <string name="screenshot_saving_title">स्क्रीनशॉट सहेजा जा रहा है...</string>
+    <string name="screenshot_saving_text">स्क्रीनशॉट सहेजा जा रहा है.</string>
+    <string name="screenshot_saved_title">स्‍क्रीनशॉट कैप्‍चर किया गया.</string>
+    <string name="screenshot_saved_text">अपना स्‍क्रीनशॉट देखने के लिए स्‍पर्श करें.</string>
+    <string name="screenshot_failed_title">स्क्रीनशॉट को कैप्चर नहीं किया जा सका.</string>
+    <string name="screenshot_failed_text">सीमित मेमोरी स्थान के कारण स्क्रीनशॉट नहीं ले सकते, या ऐप्स या आपके संगठन द्वारा ऐसा अनुमत नहीं है.</string>
+    <string name="screenshot_failed_to_save_text">सीमित मेमोरी स्थान के कारण स्क्रीनशॉट सहेजा नहीं जा सकता.</string>
+    <string name="screenshot_failed_to_capture_text">ऐप्लिकेशन या आपका संगठन स्क्रीनशॉट लेने की अनुमति नहीं देता</string>
+    <string name="screenshot_failed_to_save_unknown_text">स्क्रीनशॉट सहेजने में समस्या आई</string>
+    <string name="notification_channel_screenshot">स्‍क्रीनशॉट</string>
+</resources>

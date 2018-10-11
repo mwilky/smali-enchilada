@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">સ્ક્રીન ઓરિએન્ટેશનને વિસ્તૃત સ્ક્રીનશૉટ્સ લેતા વખતે બદલી શકાય નહીં.</string>
+    <string name="top_activity_changed">વિસ્તૃત સ્ક્રીનશોટ કેપ્ચર કરતી વખતે એપ સ્વિચીંગ આધારભૂત નથી.</string>
+    <string name="scrolling">વિસ્તૃત સ્ક્રીનશોટ કેપ્ચર કરતી વખતે સ્ક્રીન આપોઆપ સ્ક્રોલ કરશે.</string>
+    <string name="stop_and_save">સ્ક્રૉલિંગ રોકવા માટે સ્ક્રીન ટેપ કરો અને વિસ્તૃત સ્ક્રીનશોટ કેપ્ચર કરવામાં આવશે.</string>
+    <string name="title">વિસ્તૃત સ્ક્રીનશૉટ</string>
+    <string name="summary">સ્ક્રીનશૉટ લીધા પછી, નીચે સ્ક્રોલ થઇ શકે તેવા સમાવિષ્ટો મેળવવા સ્ક્રીનશૉટ વિસ્તૃત પર ટેપ કરો.</string>
+    <string name="not_support_longshot">વિસ્તૃત સ્ક્રીનશૉટ આ પૃષ્ઠ પર આધારિત નથી.</string>
+    <string name="got_it">સમજાઈ ગયું</string>
+    <string name="longshot_guide_support">વિસ્તૃત સ્ક્રીનશોટ અજમાવવા માટે અહીં ટેપ કરો.</string>
+    <string name="longshot_guide_not_support">વિસ્તૃત સ્ક્રીનશૉટ આ પૃષ્ઠ પર આધારિત નથી.</string>
+    <string name="screenshot_stoped_text">વિસ્તૃત સ્ક્રીનશૉટ બંધ કર્યો છે</string>
+    <string name="app_name">સ્ક્રીનશોટ</string>
+    <string name="oneplus_delete">કાઢી નાખો</string>
+    <string name="oneplus_share">મોકલો</string>
+    <string name="screenshot_saving_ticker">સ્ક્રીનશોટ સાચવી રહ્યું છે…</string>
+    <string name="screenshot_saving_title">સ્ક્રીનશોટ સાચવી રહ્યું છે…</string>
+    <string name="screenshot_saving_text">સ્ક્રીનશોટ સાચવવામાં આવી રહ્યો છે.</string>
+    <string name="screenshot_saved_title">સ્ક્રીનશોટ કેપ્ચર કર્યો.</string>
+    <string name="screenshot_saved_text">તમારો સ્ક્રીનશોટ જોવા માટે ટચ કરો.</string>
+    <string name="screenshot_failed_title">સ્ક્રીનશોટ કેપ્ચર કરી શકાયો નથી.</string>
+    <string name="screenshot_failed_text">મર્યાદિત સંગ્રહ સ્થાનને કારણે સ્ક્રીનશોટ લઈ શકાતો નથી અથવા એપ્લિકેશન અથવા તમારા સંગઠન દ્વારા તેની મંજૂરી નથી.</string>
+    <string name="screenshot_failed_to_save_text">મર્યાદિત સંગ્રહ સ્થાનને કારણે સ્ક્રીનશોટ સાચવી શકાતો નથી.</string>
+    <string name="screenshot_failed_to_capture_text">ઍપ્લિકેશન કે તમારી સંસ્થા દ્વારા સ્ક્રીનશૉટ લેવાની મંજૂરી નથી</string>
+    <string name="screenshot_failed_to_save_unknown_text">સ્ક્રીનશૉટ સાચવવામાં સમસ્યા આવી.</string>
+    <string name="notification_channel_screenshot">સ્ક્રીનશૉટ</string>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">Під час створення розширених знімків екрану забороняється змінювати орієнтацію екрану.</string>
+    <string name="top_activity_changed">Під час створення розширених знімків екрану забороняється перемикатися між додатками.</string>
+    <string name="scrolling">Під час створення розширених знімків прокрутка екрану здійснюється в автоматичному режимі.</string>
+    <string name="stop_and_save">Торкніться екрану, щоб зупинити прокручування та створити розширений знімок екрану.</string>
+    <string name="title">Розширений знімок екрану</string>
+    <string name="summary">Після виконання знімку екрану натисніть \"Розширений знімок екрану\", щоб зберегти контент внизу з прокруткою.</string>
+    <string name="not_support_longshot">Функція розширеного знімку екрану не підтримується на цій сторінці.</string>
+    <string name="got_it">Гаразд</string>
+    <string name="longshot_guide_support">Торкніться тут, щоб зробити розширений знімок екрану.</string>
+    <string name="longshot_guide_not_support">Функція розширеного знімку екрану не підтримується на цій сторінці.</string>
+    <string name="screenshot_stoped_text">Створення розширеного знімка екрана зупинено</string>
+    <string name="app_name">Знімок екрану</string>
+    <string name="oneplus_delete">Видалити</string>
+    <string name="oneplus_share">Надіслати</string>
+    <string name="screenshot_saving_ticker">Збереження знімка екрана...</string>
+    <string name="screenshot_saving_title">Збереження знімка екрана...</string>
+    <string name="screenshot_saving_text">Зберігається знімок екрана.</string>
+    <string name="screenshot_saved_title">Знімок екрана зроблено.</string>
+    <string name="screenshot_saved_text">Торкніться, щоб переглянути знімок екрана.</string>
+    <string name="screenshot_failed_title">Не вдалося зробити знімок екрана.</string>
+    <string name="screenshot_failed_text">Не вдається зробити знімок екрана через обмежений обсяг пам’яті або заборону додатка чи організації.</string>
+    <string name="screenshot_failed_to_save_text">Не вдалося зберегти знімок екрана через обмежений обсяг пам’яті.</string>
+    <string name="screenshot_failed_to_capture_text">Додаток або адміністратор вашої організації не дозволяють робити знімки екрана</string>
+    <string name="screenshot_failed_to_save_unknown_text">Не вдалося зберегти знімок екрана.</string>
+    <string name="notification_channel_screenshot">Знімки екрана</string>
+</resources>

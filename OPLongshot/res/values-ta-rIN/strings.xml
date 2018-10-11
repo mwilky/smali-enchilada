@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">விரிவாக்கப்பட்ட ஸ்கிரீன்ஷாட்டுகளை கேப்ட்சர் செய்யும்போது, திரை திசையமைவை மாற்றமுடியாது.</string>
+    <string name="top_activity_changed">விரிவாக்கப்பட்ட ஸ்கிரீன்ஷாட்டுகளை கேப்ட்சர் செய்யும்போது, பயன்பாட்டை மாற்றுவது ஆதரிக்கப்பட மாட்டாது.</string>
+    <string name="scrolling">விரிவாக்கப்பட்ட ஸ்கிரீன்ஷாட்டுகளை கேப்ட்சர் செய்யும்போது, திரை தானாக ஸ்க்ரால் செய்யும்.</string>
+    <string name="stop_and_save">ஸ்க்ராலிங்கை நிறுத்துவதற்கு திரையை டேப் செய்யவும், விரிவாக்கப்பட்ட ஸ்கிரீன்ஷாட் கேப்ட்சர் செய்யப்படும்.</string>
+    <string name="title">விரிவாக்கப்பட்ட ஸ்கிரீன்ஷாட்</string>
+    <string name="summary">ஸ்கிரீன்ஷாட் எடுத்த பிறகு, கீழுள்ள ஸ்க்ரால் செய்யத்தக்க உள்ளடக்கங்களை கேப்ட்ச்சர் செய்ய விரிவாக்கப்பட்ட ஸ்கிரீன்ஷாட் என்பதை டேப் செய்யவும்.</string>
+    <string name="not_support_longshot">இந்தப் பக்கத்தில் விரிவாக்கப்பட்ட ஸ்கிரீன்ஷாட் ஆதரிக்கப்பட மாட்டாது.</string>
+    <string name="got_it">புரிந்தது</string>
+    <string name="longshot_guide_support">விரிவாக்கப்பட்ட ஸ்கிரீன்ஷாட்டை முயற்சிக்க, இங்கு டேப் செய்யவும்.</string>
+    <string name="longshot_guide_not_support">இந்தப் பக்கத்தில் விரிவாக்கப்பட்ட ஸ்கிரீன்ஷாட் ஆதரிக்கப்பட மாட்டாது.</string>
+    <string name="screenshot_stoped_text">விரிவாக்கப்பட்ட ஸ்க்ரீன்ஷாட் நிறுத்தப்பட்டது</string>
+    <string name="app_name">ஸ்கிரீன்ஷாட்</string>
+    <string name="oneplus_delete">நீக்கு</string>
+    <string name="oneplus_share">அனுப்பு</string>
+    <string name="screenshot_saving_ticker">ஸ்க்ரீன் ஷாட்டைச் சேமிக்கிறது…</string>
+    <string name="screenshot_saving_title">ஸ்க்ரீன் ஷாட்டைச் சேமிக்கிறது…</string>
+    <string name="screenshot_saving_text">ஸ்க்ரீன் ஷாட் சேமிக்கப்படுகிறது.</string>
+    <string name="screenshot_saved_title">ஸ்கிரீன் ஷாட் எடுக்கப்பட்டது.</string>
+    <string name="screenshot_saved_text">உங்கள் ஸ்க்ரீன் ஷாட்டைப் பார்க்க தொடவும்.</string>
+    <string name="screenshot_failed_title">ஸ்க்ரீன் ஷாட்டை எடுக்க முடியவில்லை.</string>
+    <string name="screenshot_failed_text">குறைந்த சேமிப்பகம் காரணமாக ஸ்கிரீன்ஷாட் எடுக்க முடியவில்லை, அல்லது பயன்பாடு அல்லது உங்கள் நிறுவனத்தால் அனுமதிக்கப்படவில்லை.</string>
+    <string name="screenshot_failed_to_save_text">போதுமான சேமிப்பிடம் இல்லாததால் ஸ்கிரீன்ஷாட்டைச் சேமிக்க முடியவில்லை.</string>
+    <string name="screenshot_failed_to_capture_text">ஸ்கிரீன் ஷாட்டுகளை எடுப்பதை, பயன்பாடு அல்லது உங்கள் நிறுவனம் அனுமதிக்கவில்லை</string>
+    <string name="screenshot_failed_to_save_unknown_text">ஸ்க்ரீன்ஷாட்டைச் சேமிக்கும் போது, பிழை ஏற்பட்டது.</string>
+    <string name="notification_channel_screenshot">ஸ்கிரீன் ஷாட்டுகள்</string>
+</resources>

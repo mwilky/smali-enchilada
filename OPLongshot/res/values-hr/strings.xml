@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">Orijentacije zaslona ne može se mijenjati tijekom snimanja proširenih snimaka zaslona.</string>
+    <string name="top_activity_changed">Nije podržano prebacivanje aplikacija tijekom snimanja proširenih snimki zaslona.</string>
+    <string name="scrolling">Zaslon će se automatski pomaknuti tijekom snimanja proširenih snimki zaslona.</string>
+    <string name="stop_and_save">Dodirnite zaslon kako biste zaustavili pomicanje te će biti snimljena proširena snimka zaslona.</string>
+    <string name="title">Proširena snimka zaslona</string>
+    <string name="summary">Nakon snimanja zaslona, dodirnite proširenu snimku zaslona da biste snimili donji sadržaj koji se može prelaziti.</string>
+    <string name="not_support_longshot">Proširena snimka zaslona nije podržana na ovoj stranici.</string>
+    <string name="got_it">U redu</string>
+    <string name="longshot_guide_support">Dodirnite ovdje i isprobajte proširenu snimku zaslona.</string>
+    <string name="longshot_guide_not_support">Proširena snimka zaslona nije podržana na ovoj stranici.</string>
+    <string name="screenshot_stoped_text">Proširena snimka zaslona je zaustavljena</string>
+    <string name="app_name">Snimka zaslona</string>
+    <string name="oneplus_delete">Izbriši</string>
+    <string name="oneplus_share">Pošalji</string>
+    <string name="screenshot_saving_ticker">Spremanje snimke zaslona...</string>
+    <string name="screenshot_saving_title">Spremanje snimke zaslona...</string>
+    <string name="screenshot_saving_text">Spremanje snimke zaslona.</string>
+    <string name="screenshot_saved_title">Zaslon je snimljen.</string>
+    <string name="screenshot_saved_text">Dodirnite za prikaz snimke zaslona.</string>
+    <string name="screenshot_failed_title">Nije bilo moguće snimiti zaslon.</string>
+    <string name="screenshot_failed_text">Zaslon nije snimljen zbog ograničene pohrane ili zato što to ne dopušta aplikacija ili vaša organizacija.</string>
+    <string name="screenshot_failed_to_save_text">Zaslon nije snimljen zbog ograničenog prostora za pohranu.</string>
+    <string name="screenshot_failed_to_capture_text">Aplikacija ili vaša organizacija ne dopuštaju snimanje zaslona</string>
+    <string name="screenshot_failed_to_save_unknown_text">Prilikom spremanja snimke zaslona pojavio se problem.</string>
+    <string name="notification_channel_screenshot">Snimke zaslona</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">La orientación de la pantalla no se puede cambiar mientras se hacen capturas pantallas ampliadas.</string>
+    <string name="top_activity_changed">No se permite el cambio de aplicaciones mientras se hacen capturas de pantalla ampliadas.</string>
+    <string name="scrolling">La pantalla se desplaza automáticamente mientras se hacen capturas de pantalla ampliadas.</string>
+    <string name="stop_and_save">Toca la pantalla para detener el desplazamiento y la pantalla ampliada se capturará.</string>
+    <string name="title">Captura de pantalla ampliada</string>
+    <string name="summary">Una vez hecha la captura de pantalla, toca la captura de pantalla ampliada para capturar el contenido desplazable de debajo.</string>
+    <string name="not_support_longshot">Esta página no admite la pantalla ampliable.</string>
+    <string name="got_it">De acuerdo</string>
+    <string name="longshot_guide_support">Toca aquí para probar la captura de pantalla ampliada.</string>
+    <string name="longshot_guide_not_support">Esta página no admite la captura de pantalla ampliada.</string>
+    <string name="screenshot_stoped_text">La captura de pantalla ampliada se ha detenido</string>
+</resources>

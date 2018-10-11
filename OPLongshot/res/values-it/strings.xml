@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">"Impossibile modificare l'orientamento dello schermo durante la cattura di screenshot estesi."</string>
+    <string name="top_activity_changed">"Il passaggio da una app all'altra non è supportato durante la cattura di screenshot estesi."</string>
+    <string name="scrolling">Lo schermo scorre automaticamente durante la cattura di screenshot estesi.</string>
+    <string name="stop_and_save">Tocca lo schermo per arrestare lo scorrimento e consentire la cattura dello screenshot esteso.</string>
+    <string name="title">Screenshot esteso</string>
+    <string name="summary">"Dopo l'acquisizione dello screenshot, tocca lo screenshot esteso per catturare i contenuti scorrevoli di seguito."</string>
+    <string name="not_support_longshot">Lo screenshot esteso non è supportato in questa pagina.</string>
+    <string name="got_it">OK</string>
+    <string name="longshot_guide_support">Tocca qui per provare Screenshot esteso.</string>
+    <string name="longshot_guide_not_support">Lo screenshot esteso non è supportato in questa pagina.</string>
+    <string name="screenshot_stoped_text">La funzione di screenshot esteso ha smesso di funzionare</string>
+    <string name="app_name">Screenshot</string>
+    <string name="oneplus_delete">Elimina</string>
+    <string name="oneplus_share">Invia</string>
+    <string name="screenshot_saving_ticker">Salvataggio screenshot...</string>
+    <string name="screenshot_saving_title">Salvataggio screenshot...</string>
+    <string name="screenshot_saving_text">Screenshot in corso di salvataggio.</string>
+    <string name="screenshot_saved_title">Screenshot acquisito.</string>
+    <string name="screenshot_saved_text">Tocca per visualizzare il tuo screenshot.</string>
+    <string name="screenshot_failed_title">Impossibile acquisire lo screenshot.</string>
+    <string name="screenshot_failed_text">Imposs. acquisire screenshot per spazio archiviazione limitato o perché vietato da organizzazione o app.</string>
+    <string name="screenshot_failed_to_save_text">Impossibile salvare lo screenshot a causa dello spazio di archiviazione limitato.</string>
+    <string name="screenshot_failed_to_capture_text">"L'acquisizione di screenshot non è consentita dall'app o dall'organizzazione"</string>
+    <string name="screenshot_failed_to_save_unknown_text">Si è verificato un problema durante il salvataggio dello screenshot.</string>
+    <string name="notification_channel_screenshot">Screenshot</string>
+</resources>

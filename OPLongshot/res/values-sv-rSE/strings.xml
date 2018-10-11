@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">Skärmorientering kan inte ändras när du tar utökade skärmbilder.</string>
+    <string name="top_activity_changed">Du kan inte byta appar när du tar utökade skärmbilder.</string>
+    <string name="scrolling">Skärmen rullar automatiskt när du tar utökade skärmbilder.</string>
+    <string name="stop_and_save">Tryck på skärmen för att sluta rulla så kommer den utökade skärmbilden att tas.</string>
+    <string name="title">Utökad skärmbild</string>
+    <string name="summary">Efter att du tagit skärmbilden trycker du på utökad skärmbild för att fånga rullningsbart innehåll nedan.</string>
+    <string name="not_support_longshot">Utökad skärmbild stöds inte på denna sida.</string>
+    <string name="got_it">Jag fattar</string>
+    <string name="longshot_guide_support">Tryck här för att testa utökad skärmbild.</string>
+    <string name="longshot_guide_not_support">Utökad skärmbild stöds inte på denna sida.</string>
+    <string name="screenshot_stoped_text">Denna utökade skärmdump har stoppats</string>
+</resources>

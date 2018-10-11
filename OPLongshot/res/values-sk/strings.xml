@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">Pri snímaní rozšírenej obrazovky nie je možné zmeniť orientáciu obrazovky.</string>
+    <string name="top_activity_changed">Pri snímaní rozšírenej obrazovky nie je podporované prepínanie aplikácií.</string>
+    <string name="scrolling">Pri snímaní rozšírenej obrazovky sa obrazovka automaticky roluje.</string>
+    <string name="stop_and_save">Ťuknutím na obrazovku ukončite rolovanie, rozšírená obrazovka sa zaznamená.</string>
+    <string name="title">Rozšírená snímka obrazovky</string>
+    <string name="summary">Po zachytení snímky obrazovky ťuknite na položku Rozšírená snímka obrazovky a zachyťte rolovateľný obsah nižšie.</string>
+    <string name="not_support_longshot">Rozšírený snímok obrazovky nie je podporovaný na tejto stránke.</string>
+    <string name="got_it">Chápem</string>
+    <string name="longshot_guide_support">Ťuknutím sem vyskúšajte rozšírený snímok obrazovky.</string>
+    <string name="longshot_guide_not_support">Rozšírený snímok obrazovky nie je podporovaný na tejto stránke.</string>
+    <string name="screenshot_stoped_text">Rozšírená snímka obrazovky sa zastavila</string>
+    <string name="app_name">Snímok obrazovky</string>
+    <string name="oneplus_delete">Odstrániť</string>
+    <string name="oneplus_share">Odoslať</string>
+    <string name="screenshot_saving_ticker">Prebieha ukladanie snímky obrazovky...</string>
+    <string name="screenshot_saving_title">Prebieha ukladanie snímky obrazovky...</string>
+    <string name="screenshot_saving_text">Snímka obrazovky sa ukladá.</string>
+    <string name="screenshot_saved_title">Snímka obrazovky bola zaznamenaná.</string>
+    <string name="screenshot_saved_text">Snímku obrazovky zobrazíte dotykom.</string>
+    <string name="screenshot_failed_title">Snímku obrazovky sa nepodarilo zachytiť.</string>
+    <string name="screenshot_failed_text">Nie je možné vytvoriť viac sním. obraz. pre obmedz. úlož. priestor alebo to nie je povolené apl. či vašou organiz.</string>
+    <string name="screenshot_failed_to_save_text">Snímku obrazovky nie je možné vytvoriť z dôvodu nedostatku miesta v úložisku.</string>
+    <string name="screenshot_failed_to_capture_text">Vytváranie snímok obrazovky je zakázané aplikáciou alebo vašou organizáciou</string>
+    <string name="screenshot_failed_to_save_unknown_text">Pri ukladaní snímky obrazovky sa vyskytol problém.</string>
+    <string name="notification_channel_screenshot">Snímky obrazovky</string>
+</resources>

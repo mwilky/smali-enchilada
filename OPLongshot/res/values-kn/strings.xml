@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">ಸ್ಕ್ರೀನ್ ಓರಿಯಂಟೇಶನ್ ಅನ್ನು ವಿಸ್ತೃತ ಸ್ಕ್ರೀನ್‌ಶಾಟ್‌ಗಳನ್ನು ಕ್ಯಾಪ್ಚರ್ ಮಾಡುವಾಗ ಬದಲಾಯಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ.</string>
+    <string name="top_activity_changed">ಆಪ್ ಸ್ವಿಚಿಂಗ್ ವಿಸ್ತೃತ ಸ್ಕ್ರೀನ್‌ಶಾಟ್‌ಗಳನ್ನು ಕ್ಯಾಪ್ಚರ್ ಮಾಡುವಾಗ ಬೆಂಬಲಿಸಿಲ್ಲ.</string>
+    <string name="scrolling">ವಿಸ್ತೃತ ಸ್ಕ್ರೀನ್‌ಶಾಟ್‌ಗಳನ್ನು ಕ್ಯಾಪ್ಚರ್ ಮಾಡುವಾಗ ಸ್ಕ್ರೀನ್ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಸ್ಕ್ರಾಲ್ ಆಗುತ್ತದೆ.</string>
+    <string name="stop_and_save">ಸ್ಕ್ರಾಲಿಂಗ್ ನಿಲ್ಲಿಸಲು ಸ್ಕ್ರೀನ್ ಟ್ಯಾಪ್ ಮಾಡಿ ಮತ್ತು ವಿಸ್ತೃತ ಸ್ಕ್ರೀನ್‌ಶಾಟ್ ಕ್ಯಾಪ್ಚರ್ ಆಗುತ್ತದೆ.</string>
+    <string name="title">ವಿಸ್ತೃತ ಸ್ಕ್ರೀನ್‌ಶಾಟ್</string>
+    <string name="summary">ಸ್ಕ್ರೀನ್‌ಶಾಟ್ ತೆಗೆದುಕೊಂಡ ನಂತರ, ಈ ಕೆಳಗಿನ ಸ್ಕ್ರಾಲ್ ಮಾಡಬಹುದಾದ ವಿಷಯಗಳನ್ನು ಕ್ಯಾಪ್ಚರ್ ಮಾಡಾಲು ವಿಸ್ತೃತ ಸ್ಕ್ರೀನ್‌ಶಾಟ್ ಟ್ಯಾಪ್ ಮಾಡಿ.</string>
+    <string name="not_support_longshot">ವಿಸ್ತೃತ ಸ್ಕ್ರೀನ್‌ಶಾಟ್ ಈ ಪುಟದಲ್ಲಿ ಬೆಂಬಲಿಸುವುದಿಲ್ಲ.</string>
+    <string name="got_it">ತಿಳಿಯಿತು</string>
+    <string name="longshot_guide_support">ವಿಸ್ತೃತ ಸ್ಕ್ರೀನ್‌ಶಾಟ್ ಪ್ರಯತ್ನಿಸಲು ಇಲ್ಲಿ ಟ್ಯಾಪ್ ಮಾಡಿ.</string>
+    <string name="longshot_guide_not_support">ವಿಸ್ತೃತ ಸ್ಕ್ರೀನ್‌ಶಾಟ್ ಈ ಪುಟದಲ್ಲಿ ಬೆಂಬಲಿಸುವುದಿಲ್ಲ.</string>
+    <string name="screenshot_stoped_text">ವಿಸ್ತೃತ ಸ್ಕ್ರೀನ್‌ಶಾಟ್ ಸ್ಥಗಿತಗೊಂಡಿದೆ</string>
+</resources>

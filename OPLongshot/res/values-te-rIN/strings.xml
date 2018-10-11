@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">విస్తరించబడ్డ స్క్రీన్‌షాట్‌లను తీసుకునేటప్పుడు స్క్రీన్ ఒరియెంటేషన్‌ని మార్చలేం.</string>
+    <string name="top_activity_changed">విస్తరించబడ్డ స్క్రీన్‌షాట్‌లను క్యాప్చర్ చేసేటప్పుడు యాప్ మారడం మద్దతు ఇవ్వదు.</string>
+    <string name="scrolling">విస్తరించబడ్డ స్క్రీన్‌షాట్‌లను క్యాప్చర్ చేసేటప్పుడు స్క్రీన్ ఆటోమేటిక్‌గా స్క్రోల్ అవుతుంది.</string>
+    <string name="stop_and_save">స్క్రోలింగ్ నిలిపివేయడానికి మరియు విస్తరించబడ్డ స్క్రీన్‌షాట్ క్యాప్చర్ చేయడానికి స్క్రీన్ మీద తట్టండి.</string>
+    <string name="title">విస్తరించబడ్డ స్క్రీన్‌‌షాట్</string>
+    <string name="summary">స్క్రీన్‌షాట్ తీసుకున్న తరువాత, దిగువన స్క్రోల్ చేయదగ్గకంటెంట్‌ని క్యాప్చర్ చేయడం కొరకు విస్తరించబడ్డ స్క్రీన్‌షాట్‌ని తట్టండి.</string>
+    <string name="not_support_longshot">ఈ పేజీ విస్తరించబడ్డ స్క్రీన్‌షాట్ మద్దతు ఇవ్వదు.</string>
+    <string name="got_it">అర్థమైంది</string>
+    <string name="longshot_guide_support">విస్తరించబడ్డ స్క్రీన్‌షాట్ ప్రయత్నించడం కొరకు ఇక్కడ తట్టండి.</string>
+    <string name="longshot_guide_not_support">ఈ పేజీ విస్తరించబడ్డ స్క్రీన్‌షాట్ మద్దతు ఇవ్వదు.</string>
+    <string name="screenshot_stoped_text">విస్తరించిన స్క్రీన్‌షాట్ ఆగిపోయింది</string>
+    <string name="app_name">స్క్రీన్‌షాట్</string>
+    <string name="oneplus_delete">తొలగించు</string>
+    <string name="oneplus_share">పంపు</string>
+    <string name="screenshot_saving_ticker">స్క్రీన్‌షాట్‌ను సేవ్ చేస్తోంది…</string>
+    <string name="screenshot_saving_title">స్క్రీన్‌షాట్‌ను సేవ్ చేస్తోంది…</string>
+    <string name="screenshot_saving_text">స్క్రీన్‌షాట్ సేవ్ చేయబడుతోంది.</string>
+    <string name="screenshot_saved_title">స్క్రీన్‌షాట్ క్యాప్చర్ చేయబడింది.</string>
+    <string name="screenshot_saved_text">మీ స్క్రీన్‌షాట్‌ను వీక్షించడానికి తాకండి.</string>
+    <string name="screenshot_failed_title">స్క్రీన్‌షాట్‌ను క్యాప్చర్ చేయడం సాధ్యపడలేదు.</string>
+    <string name="screenshot_failed_text">పరిమిత నిల్వ స్థలం కారణంగా స్క్రీన్‌షాట్‌‌ను తీయడం సాధ్యపడదు లేదా దీన్ని మీ అనువర్తనం లేదా మీ సంస్థ అనుమతించలేదు.</string>
+    <string name="screenshot_failed_to_save_text">పరిమిత నిల్వ స్థలం కారణంగా స్క్రీన్‌షాట్‌ను సేవ్ చేయడం సాధ్యపడదు.</string>
+    <string name="screenshot_failed_to_capture_text">స్క్రీన్‌షాట్‌లు తీయడానికి అనువర్తనం లేదా మీ సంస్థ అనుమతించలేదు</string>
+    <string name="screenshot_failed_to_save_unknown_text">స్క్రీన్‌షాట్‌ని సేవ్ చేస్తున్నప్పుడు సమస్య సంభవించింది.</string>
+    <string name="notification_channel_screenshot">స్క్రీన్‌షాట్‌లు</string>
+</resources>

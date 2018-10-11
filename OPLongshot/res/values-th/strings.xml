@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">ทิศทางหน้าจอไม่สามารถเปลี่ยนแปลงได้เวลาที่กำลังจับภาพหน้าจอแบบขยาย</string>
+    <string name="top_activity_changed">ไม่รองรับการเปลี่ยนแอปเวลาที่กำลังจับภาพหน้าจอแบบขยาย</string>
+    <string name="scrolling">หน้าจอจะเลื่อนอัตโนมัติเวลาที่กำลังจับภาพหน้าจอแบบขยาย</string>
+    <string name="stop_and_save">แตะหน้าจอเพื่อหยุดการเลื่อนแล้วจะจับภาพหน้าจอแบบขยาย</string>
+    <string name="title">ภาพหน้าจอแบบขยาย</string>
+    <string name="summary">หลังจากจับภาพหน้าจอแล้ว ให้แตะภาพหน้าจอแบบขยายเพื่อจับส่วนที่เลื่อนไปมาได้ด้านล่าง</string>
+    <string name="not_support_longshot">ไม่รองรับภาพหน้าจอแบบขยายบนหน้านี้</string>
+    <string name="got_it">รับทราบ</string>
+    <string name="longshot_guide_support">แตะที่นี่เพื่อลองภาพหน้าจอแบบขยาย</string>
+    <string name="longshot_guide_not_support">หน้านี้ไม่รองรับภาพหน้าจอแบบขยาย</string>
+    <string name="screenshot_stoped_text">ภาพหน้าจอที่ขยายได้หยุดลงแล้ว</string>
+    <string name="app_name">ภาพหน้าจอ</string>
+    <string name="oneplus_delete">ลบ</string>
+    <string name="oneplus_share">ส่ง</string>
+    <string name="screenshot_saving_ticker">กำลังบันทึกภาพหน้าจอ...</string>
+    <string name="screenshot_saving_title">กำลังบันทึกภาพหน้าจอ...</string>
+    <string name="screenshot_saving_text">กำลังบันทึกภาพหน้าจอ</string>
+    <string name="screenshot_saved_title">จับภาพหน้าจอแล้ว</string>
+    <string name="screenshot_saved_text">แตะเพื่อดูภาพหน้าจอของคุณ</string>
+    <string name="screenshot_failed_title">ไม่สามารถจับภาพหน้าจอ</string>
+    <string name="screenshot_failed_text">ไม่สามารถจับภาพหน้าจอได้ เนื่องจากพื้นที่ว่างมีจำกัด หรือไม่ได้รับอนุญาตจากแอปหรือองค์กรของคุณ</string>
+    <string name="screenshot_failed_to_save_text">ไม่สามารถบันทึกภาพหน้าจอเนื่องจากพื้นที่เก็บข้อมูลมีจำกัด</string>
+    <string name="screenshot_failed_to_capture_text">แอปหรือองค์กรของคุณไม่อนุญาตให้จับภาพหน้าจอ</string>
+    <string name="screenshot_failed_to_save_unknown_text">พบปัญหาขณะกำลังบันทึกภาพหน้าจอ</string>
+    <string name="notification_channel_screenshot">ภาพหน้าจอ</string>
+</resources>

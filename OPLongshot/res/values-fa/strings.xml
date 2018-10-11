@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">جهت صفحه نمایش موقع گرفتن عکس های گسترده از صفحه نمایش قابل تغییر نیست.</string>
+    <string name="top_activity_changed">تغییر برنامه موقع گرفتن عکس های گسترده از صفحه نمایش قابل تغییر نیست.</string>
+    <string name="scrolling">صفحه نمایش موقع گرفتن عکس های گسترده از صفحه نمایش بصورت خودکار بالا و پایین خواهد رفت.</string>
+    <string name="stop_and_save">برای توقف مرور صفحه نمایش روی صفحه ضربه بزنید سپس عکس گسترده از صفحه نمایش گرفته خواهد شد.</string>
+    <string name="title">عکس صفحه گسترده</string>
+    <string name="summary">پس از گرفتن تصویر صفحه، برای به دست آوردن محتوای قابل پیمایش زیر، روی تصویر صفحه گسترده ضربه بزنید.</string>
+    <string name="not_support_longshot">تصویر گسترش یافته در این صفحه پشتیبانی نمی شود.</string>
+    <string name="got_it">متوجه شدم</string>
+    <string name="longshot_guide_support">برای خروج از عکس صفحه نمایش گسترش یافته اینجا ضربه بزنید.</string>
+    <string name="longshot_guide_not_support">تصویر گسترش یافته در این صفحه پشتیبانی نمی شود.</string>
+    <string name="screenshot_stoped_text">عکس صفحه گسترده متوقف شده است</string>
+    <string name="app_name">عکس صفحه نمایش</string>
+    <string name="oneplus_delete">حذف</string>
+    <string name="oneplus_share">ارسال</string>
+    <string name="screenshot_saving_ticker">در حال ذخیره عکس صفحه‌نمایش...</string>
+    <string name="screenshot_saving_title">در حال ذخیره عکس صفحه‌نمایش...</string>
+    <string name="screenshot_saving_text">عکس صفحه‌نمایش ذخیره شد.</string>
+    <string name="screenshot_saved_title">عکس صفحه‌نمایش گرفته شد.</string>
+    <string name="screenshot_saved_text">برای مشاهده عکس صفحه‌نمایشتان، لمس کنید.</string>
+    <string name="screenshot_failed_title">عکس صفحه‌نمایش گرفته نشد.</string>
+    <string name="screenshot_failed_text">به دلیل فضای ذخیره‌سازی کم یا عدم اجازه برنامه یا سازمانتان، نمی‌توان از صفحه عکس گرفت.</string>
+    <string name="screenshot_failed_to_save_text">به دلیل محدود بودن فضای ذخیره‌سازی نمی‌توانید عکس صفحه‌نمایش را ذخیره کنید.</string>
+    <string name="screenshot_failed_to_capture_text">برنامه یا سازمان شما اجازه نمی‌دهند عکس صفحه‌نمایش بگیرید.</string>
+    <string name="screenshot_failed_to_save_unknown_text">هنگام ذخیره عکس صفحه‌نمایش مشکلی رخ داد.</string>
+    <string name="notification_channel_screenshot">عکس‌های صفحه‌نمایش</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">Screen orientation cannot be changed while capturing expanded screenshots.</string>
+    <string name="top_activity_changed">App switching is not supported while capturing expanded screenshots.</string>
+    <string name="scrolling">The screen will scroll automatically while capturing expanded screenshots.</string>
+    <string name="stop_and_save">Tap the screen to stop scrolling and expanded screenshot will be captured.</string>
+    <string name="title">Expanded Screenshot</string>
+    <string name="summary">After taking screenshot, tap expanded screenshot to capture the scrollable contents below.</string>
+    <string name="not_support_longshot">Expanded screenshot is not supported on this page.</string>
+    <string name="got_it">Got it</string>
+    <string name="longshot_guide_support">Tap here to try out Expanded Screenshot.</string>
+    <string name="longshot_guide_not_support">Expanded screenshot is not supported on this page.</string>
+    <string name="screenshot_stoped_text">The expanded screenshot has stopped</string>
+    <string name="oneplus_contorl_font_family_subheading">Slate-book</string>
+    <string name="oneplus_contorl_font_family_button">Slate-medium</string>
+    <string name="app_name">Screenshot</string>
+    <string name="longshot_mode">long screenshot mode</string>
+    <string name="join_error">Fail to stitch bitmaps.</string>
+    <string name="maximum_pages">"You've reached the maximum length allowed."</string>
+    <string name="oneplus_delete">Delete</string>
+    <string name="oneplus_share">Send</string>
+    <string name="reject_no_prompt" />
+    <string name="screenshot_saving_ticker">Saving screenshot...</string>
+    <string name="screenshot_saving_title">Saving screenshot</string>
+    <string name="screenshot_saving_text">...</string>
+    <string name="screenshot_saved_title">Screenshot captured.</string>
+    <string name="screenshot_saved_text">Touch to view your screenshot.</string>
+    <string name="screenshot_failed_title">"Couldn't save screenshot."</string>
+    <string name="screenshot_failed_text">"Couldn't save screenshot. Storage may be in use."</string>
+    <string name="screenshot_failed_to_save_text">"Can't save screenshot due to limited storage space."</string>
+    <string name="screenshot_failed_to_capture_text">"Taking screenshots isn't allowed by the app or your organization"</string>
+    <string name="screenshot_failed_to_save_unknown_text">Problem encountered while saving screenshot.</string>
+    <string name="notification_channel_screenshot">Screenshots</string>
+</resources>

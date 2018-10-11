@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">Ekran yönü, genişletilmiş ekran görüntülerini çekerken değiştirilemez.</string>
+    <string name="top_activity_changed">Uygulama değiştirme, genişletilmiş ekran görüntüleri çekilirken desteklenmiyor.</string>
+    <string name="scrolling">Ekran, genişletilmiş ekran görüntüleri çekilirken otomatik olarak kayacak.</string>
+    <string name="stop_and_save">Kaydırmayı durdurmak için ekrana dokunun, genişletilmiş ekran görüntüsü çekilecek.</string>
+    <string name="title">Genişletilmiş Ekran Görüntüsü</string>
+    <string name="summary">Ekran görüntüsünü aldıktan sonra kaydırılabilir içerikleri yakalamak için genişletilmiş ekran görüntüsüne dokunun.</string>
+    <string name="not_support_longshot">Genişletilmiş ekran görüntüsü bu sayfada desteklenmiyor.</string>
+    <string name="got_it">Anladım</string>
+    <string name="longshot_guide_support">"Genişletilmiş Ekran Görüntüsü'nü denemek için buraya dokunun."</string>
+    <string name="longshot_guide_not_support">Genişletilmiş ekran görüntüsü bu sayfada desteklenmiyor.</string>
+    <string name="screenshot_stoped_text">Genişletilmiş ekran görüntüsü durduruldu</string>
+</resources>

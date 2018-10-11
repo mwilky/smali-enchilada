@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">Skærmretningen kan ikke ændres, mens der optages udvidede screenshots.</string>
+    <string name="top_activity_changed">Skifte mellem apps understøttes ikke mens der optages udvidede screenshots.</string>
+    <string name="scrolling">Skærmen ruller automatisk mens der optages udvidede screenshots.</string>
+    <string name="stop_and_save">Tryk på skærmen for at stoppe rulning, og udvidet screenshot vil blive optaget.</string>
+    <string name="title">Udvidet screenshot</string>
+    <string name="summary">Efter at der er taget et screenshot, skal du trykke på udvidet screenshot for at medtage det indhold nedenfor, som man kan rulle gennem.</string>
+    <string name="not_support_longshot">Udvidet screenshot understøttes ikke på denne side.</string>
+    <string name="got_it">Forstået</string>
+    <string name="longshot_guide_support">Tryk her for at prøve Udvidet Screenshot.</string>
+    <string name="longshot_guide_not_support">Udvidet screenshot understøttes ikke på denne side.</string>
+    <string name="screenshot_stoped_text">Det udvidede skærmbillede er stoppet</string>
+</resources>

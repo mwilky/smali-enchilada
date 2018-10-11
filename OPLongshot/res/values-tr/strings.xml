@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">Ekran yönü, genişletilmiş ekran görüntülerini çekerken değiştirilemez.</string>
+    <string name="top_activity_changed">Uygulama değiştirme, genişletilmiş ekran görüntüleri çekilirken desteklenmiyor.</string>
+    <string name="scrolling">Ekran, genişletilmiş ekran görüntüleri çekilirken otomatik olarak kayacak.</string>
+    <string name="stop_and_save">Kaydırmayı durdurmak için ekrana dokunun, genişletilmiş ekran görüntüsü çekilecek.</string>
+    <string name="title">Genişletilmiş Ekran Görüntüsü</string>
+    <string name="summary">Ekran görüntüsünü aldıktan sonra kaydırılabilir içerikleri yakalamak için genişletilmiş ekran görüntüsüne dokunun.</string>
+    <string name="not_support_longshot">Genişletilmiş ekran görüntüsü bu sayfada desteklenmiyor.</string>
+    <string name="got_it">Anladım</string>
+    <string name="longshot_guide_support">"Genişletilmiş Ekran Görüntüsü'nü denemek için buraya dokunun."</string>
+    <string name="longshot_guide_not_support">Genişletilmiş ekran görüntüsü bu sayfada desteklenmiyor.</string>
+    <string name="screenshot_stoped_text">Genişletilmiş ekran görüntüsü durduruldu</string>
+    <string name="app_name">Ekran görüntüsü</string>
+    <string name="oneplus_delete">Sil</string>
+    <string name="oneplus_share">Gönder</string>
+    <string name="screenshot_saving_ticker">Ekran görüntüsü kaydediliyor...</string>
+    <string name="screenshot_saving_title">Ekran görüntüsü kaydediliyor...</string>
+    <string name="screenshot_saving_text">Ekran görüntüsü kaydediliyor.</string>
+    <string name="screenshot_saved_title">Ekran görüntüsü alındı.</string>
+    <string name="screenshot_saved_text">Ekran görüntünüzü izlemek için dokunun.</string>
+    <string name="screenshot_failed_title">Ekran görüntüsü alınamadı.</string>
+    <string name="screenshot_failed_text">Depolama alanı sınırlı olduğundan veya uygulamanız ya da kuruluşunuz tarafından izin verilmediğinden ekran görüntüsü alınamıyor.</string>
+    <string name="screenshot_failed_to_save_text">Depolama alanı sınırlı olduğundan ekran görüntüsü kaydedilemiyor.</string>
+    <string name="screenshot_failed_to_capture_text">Uygulama veya kuruluşunuz, ekran görüntüsü alınmasına izin vermiyor.</string>
+    <string name="screenshot_failed_to_save_unknown_text">Ekran görüntüsü kaydedilirken sorun oluştu.</string>
+    <string name="notification_channel_screenshot">Ekran görüntüleri</string>
+</resources>

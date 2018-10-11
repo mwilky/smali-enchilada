@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screenshot_saving_ticker">Enregistrement capture écran…</string>
+    <string name="screenshot_saving_title">Enregistrement capture écran…</string>
+    <string name="screenshot_saving_text">"Enregistrement de la capture d'écran en cours…"</string>
+    <string name="screenshot_saved_title">"Capture d'écran réussie"</string>
+    <string name="screenshot_saved_text">"Appuyez pour afficher votre capture d'écran."</string>
+    <string name="screenshot_failed_title">"Impossible de réaliser une capture d'écran"</string>
+    <string name="screenshot_failed_text">"Imposs. prendre saisie d'écran : espace stock. limité, ou l'appli ou votre organisation l'interdit."</string>
+    <string name="screenshot_failed_to_save_text">"Impossible d'enregistrer la saisie d'écran, car l'espace de stockage est limité."</string>
+    <string name="screenshot_failed_to_capture_text">"L'application ou votre organisation n'autorise pas les saisies d'écran"</string>
+    <string name="screenshot_failed_to_save_unknown_text">"Une erreur s'est produite lors de l'enregistrement de la saisie d'écran."</string>
+    <string name="notification_channel_screenshot">"Saisies d'écran"</string>
+</resources>

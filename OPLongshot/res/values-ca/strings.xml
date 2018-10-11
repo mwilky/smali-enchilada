@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">"No es pot canviar l'orientació de pantalla mentre feu captures de pantalla ampliades."</string>
+    <string name="top_activity_changed">"No es permet el canvi d'aplicació mentre feu captures de pantalla ampliades."</string>
+    <string name="scrolling">La pantalla es desplaçarà automàticament mentre feu captures de pantalla ampliades.</string>
+    <string name="stop_and_save">Toqueu la pantalla per aturar el desplaçament i la pantalla ampliada es capturarà.</string>
+    <string name="title">Captura de pantalla ampliada</string>
+    <string name="summary">Un cop feta la captura de pantalla, toqueu la captura de pantalla ampliada per capturar el contingut desplaçable de sota.</string>
+    <string name="not_support_longshot">Aquesta pàgina no admet la captura de pantalla ampliada.</string>
+    <string name="got_it">"D'acord"</string>
+    <string name="longshot_guide_support">Toqueu aquí per provar la captura de pantalla ampliada.</string>
+    <string name="longshot_guide_not_support">Aquesta pàgina no admet la captura de pantalla ampliada.</string>
+    <string name="screenshot_stoped_text">"S'ha aturat la captura de pantalla expandida"</string>
+    <string name="app_name">Captura de pantalla</string>
+    <string name="oneplus_delete">Suprimeix</string>
+    <string name="oneplus_share">Envia</string>
+    <string name="screenshot_saving_ticker">"S'està desant captura de pantalla..."</string>
+    <string name="screenshot_saving_title">"S'està desant la captura de pantalla..."</string>
+    <string name="screenshot_saving_text">"La captura de pantalla s'ha desat."</string>
+    <string name="screenshot_saved_title">"S'ha fet una captura de pantalla."</string>
+    <string name="screenshot_saved_text">Toca per veure la captura de pantalla.</string>
+    <string name="screenshot_failed_title">"No s'ha pogut fer una captura de pantalla."</string>
+    <string name="screenshot_failed_text">"No es pot fer la captura perquè no hi ha prou espai, o l'organització o l'aplicació no ho permet."</string>
+    <string name="screenshot_failed_to_save_text">"La captura de pantalla no es pot desar perquè no hi ha prou espai d'emmagatzematge."</string>
+    <string name="screenshot_failed_to_capture_text">"L'aplicació o la teva organització no permeten fer captures de pantalla"</string>
+    <string name="screenshot_failed_to_save_unknown_text">"S'ha trobat un problema en desar la captura de pantalla."</string>
+    <string name="notification_channel_screenshot">Captures de pantalla</string>
+</resources>

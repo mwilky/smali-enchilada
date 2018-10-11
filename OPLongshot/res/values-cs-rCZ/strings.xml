@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">Při snímání rozšířené obrazovky nelze změnit orientaci obrazovky.</string>
+    <string name="top_activity_changed">Při snímání rozšířené obrazovky není podporováno přepínání aplikací.</string>
+    <string name="scrolling">Při snímání rozšířené obrazovky se obrazovka automaticky posouvá.</string>
+    <string name="stop_and_save">Posunování ukončíte klepnutím na obrazovku a bude zachycena rozšířená obrazovka.</string>
+    <string name="title">Rozbalený snímek obrazovky</string>
+    <string name="summary">Po pořízení snímku obrazovky klepněte na rozbalený snímek obrazovky pro zachycení rozbaleného obsahu níže.</string>
+    <string name="not_support_longshot">Rozšířený snímek obrazovky není podporován na této stránce.</string>
+    <string name="got_it">Rozumím</string>
+    <string name="longshot_guide_support">Klepnutím sem vyzkoušíte rozšířený snímek obrazovky.</string>
+    <string name="longshot_guide_not_support">Rozšířený snímek obrazovky není na těchto stránkách podporován.</string>
+    <string name="screenshot_stoped_text">Rozšířený snímek obrazovky se zastavil</string>
+</resources>

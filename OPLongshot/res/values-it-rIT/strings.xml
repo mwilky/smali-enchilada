@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">"Impossibile modificare l'orientamento dello schermo durante la cattura di screenshot estesi."</string>
+    <string name="top_activity_changed">"Il passaggio da una app all'altra non è supportato durante la cattura di screenshot estesi."</string>
+    <string name="scrolling">Lo schermo scorre automaticamente durante la cattura di screenshot estesi.</string>
+    <string name="stop_and_save">Tocca lo schermo per arrestare lo scorrimento e consentire la cattura dello screenshot esteso.</string>
+    <string name="title">Screenshot esteso</string>
+    <string name="summary">"Dopo l'acquisizione dello screenshot, tocca lo screenshot esteso per catturare i contenuti scorrevoli di seguito."</string>
+    <string name="not_support_longshot">Lo screenshot esteso non è supportato in questa pagina.</string>
+    <string name="got_it">OK</string>
+    <string name="longshot_guide_support">Tocca qui per provare Screenshot esteso.</string>
+    <string name="longshot_guide_not_support">Lo screenshot esteso non è supportato in questa pagina.</string>
+    <string name="screenshot_stoped_text">La funzione di screenshot esteso ha smesso di funzionare</string>
+</resources>

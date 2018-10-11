@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">확장된 스크린샷을 캡처하는 동안 화면 방향은 변경할 수 없습니다.</string>
+    <string name="top_activity_changed">확장된 스크린샷을 캡처하는 동안 앱 전환은 지원되지 않습니다.</string>
+    <string name="scrolling">확장된 스크린샷을 캡처하는 동안 화면이 자동으로 스크롤됩니다.</string>
+    <string name="stop_and_save">화면을 탭하여 스크롤을 중지하면 확장된 스크린샷이 캡처됩니다.</string>
+    <string name="title">확장된 스크린샷</string>
+    <string name="summary">스크린샷을 찍은 후, 확장된 스크린샷을 탭하여 아래의 스크롤 가능한 콘텐츠를 캡처합니다.</string>
+    <string name="not_support_longshot">이 페이지에서는 확장된 스크린샷이 지원되지 않습니다.</string>
+    <string name="got_it">알겠습니다.</string>
+    <string name="longshot_guide_support">여기를 탭하여 확장된 스크린샷을 사용해 보세요.</string>
+    <string name="longshot_guide_not_support">이 페이지에서는 확장된 스크린샷이 지원되지 않습니다.</string>
+    <string name="screenshot_stoped_text">확장된 스크린샷이 중지되었습니다.</string>
+</resources>

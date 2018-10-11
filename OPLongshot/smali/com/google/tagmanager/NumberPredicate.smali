@@ -1,0 +1,80 @@
+.class abstract Lcom/google/tagmanager/NumberPredicate;
+.super Lcom/google/tagmanager/Predicate;
+.source "NumberPredicate.java"
+
+
+# direct methods
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/google/tagmanager/Predicate;-><init>(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method protected evaluateNoDefaultValues(Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;Ljava/util/Map;)Z
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;",
+            "Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;",
+            ">;)Z"
+        }
+    .end annotation
+
+    invoke-static {p1}, Lcom/google/tagmanager/Types;->valueToNumber(Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;)Lcom/google/tagmanager/TypedNumber;
+
+    move-result-object v0
+
+    invoke-static {p2}, Lcom/google/tagmanager/Types;->valueToNumber(Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;)Lcom/google/tagmanager/TypedNumber;
+
+    move-result-object v1
+
+    invoke-static {}, Lcom/google/tagmanager/Types;->getDefaultNumber()Lcom/google/tagmanager/TypedNumber;
+
+    move-result-object v2
+
+    if-eq v0, v2, :cond_1
+
+    invoke-static {}, Lcom/google/tagmanager/Types;->getDefaultNumber()Lcom/google/tagmanager/TypedNumber;
+
+    move-result-object v2
+
+    if-ne v1, v2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0, v0, v1, p3}, Lcom/google/tagmanager/NumberPredicate;->evaluateNumber(Lcom/google/tagmanager/TypedNumber;Lcom/google/tagmanager/TypedNumber;Ljava/util/Map;)Z
+
+    move-result v2
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 v2, 0x0
+
+    :goto_1
+    return v2
+.end method
+
+.method protected abstract evaluateNumber(Lcom/google/tagmanager/TypedNumber;Lcom/google/tagmanager/TypedNumber;Ljava/util/Map;)Z
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/tagmanager/TypedNumber;",
+            "Lcom/google/tagmanager/TypedNumber;",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;",
+            ">;)Z"
+        }
+    .end annotation
+.end method

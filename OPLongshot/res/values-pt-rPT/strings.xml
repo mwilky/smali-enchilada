@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">Não pode alterar a orientação do ecrã enquanto faz capturas de ecrã expandidas.</string>
+    <string name="top_activity_changed">Não pode alternar entre apps enquanto faz capturas de ecrã expandidas.</string>
+    <string name="scrolling">Ao fazer capturas de ecrã expandidas, o ecrã vai deslocar-se automaticamente.</string>
+    <string name="stop_and_save">Toque no ecrã para parar o deslocamento e será feita a captura de ecrã.</string>
+    <string name="title">Captura de ecrã expandida</string>
+    <string name="summary">Depois de efetuar a captura de ecrã, toque em captura de ecrã expandida para capturar o conteúdo deslocável abaixo.</string>
+    <string name="not_support_longshot">Esta página não permite a captura de ecrã expandida.</string>
+    <string name="got_it">OK</string>
+    <string name="longshot_guide_support">Toque aqui para experimentar a nossa captura de ecrã expandida.</string>
+    <string name="longshot_guide_not_support">Esta página não permite a captura de ecrã expandida.</string>
+    <string name="screenshot_stoped_text">A captura de ecrã expandida parou</string>
+    <string name="screenshot_saving_ticker">A guardar captura de ecrã...</string>
+    <string name="screenshot_saving_title">A guardar captura de ecrã...</string>
+    <string name="screenshot_saving_text">A guardar captura de ecrã.</string>
+    <string name="screenshot_saved_title">Captura de ecrã efetuada</string>
+    <string name="screenshot_saved_text">Toque para ver a captura de ecrã</string>
+    <string name="screenshot_failed_title">Não foi possível obter captura de ecrã.</string>
+    <string name="screenshot_failed_text">Imp. tirar capt. ecrã devido ao espaço de armaz. limit. ou isso não é permitido pela aplic. da sua ent.</string>
+    <string name="screenshot_failed_to_save_text">Não é possível guardar a captura de ecrã devido a espaço de armazenamento limitado.</string>
+    <string name="screenshot_failed_to_capture_text">A aplicação ou a sua entidade não permitem tirar capturas de ecrã</string>
+    <string name="screenshot_failed_to_save_unknown_text">Problema encontrado ao guardar a captura de ecrã.</string>
+    <string name="notification_channel_screenshot">Capturas de ecrã</string>
+</resources>

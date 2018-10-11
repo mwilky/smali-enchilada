@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">Orientarea ecranului nu poate fi schimbată în timp ce se fac capturi de ecran extinse.</string>
+    <string name="top_activity_changed">Comutarea aplicației nu este acceptată în timp ce se fac capturi de ecran extinse.</string>
+    <string name="scrolling">Ecranul va derula automat în timp ce se fac capturi de ecran extinse.</string>
+    <string name="stop_and_save">Atingeți ecranul pentru a opri derularea și ecranul extins va fi capturat.</string>
+    <string name="title">Captură de ecran extinsă</string>
+    <string name="summary">După efectuarea unei capturi de ecran, atingeți captură de ecran extinsă pentru a captura conținutul derulabil mai jos.</string>
+    <string name="not_support_longshot">Captura de ecran extinsă nu este acceptată pe această pagină.</string>
+    <string name="got_it">Am înțeles</string>
+    <string name="longshot_guide_support">Atingeți aici pentru a încerca o Captură de ecran extinsă.</string>
+    <string name="longshot_guide_not_support">Captura de ecran extinsă nu este acceptată pe această pagină.</string>
+    <string name="screenshot_stoped_text">Captura de ecran extinsă s-a oprit</string>
+    <string name="app_name">Captură de ecran</string>
+    <string name="oneplus_delete">Ștergeți</string>
+    <string name="oneplus_share">Trimiteți</string>
+    <string name="screenshot_saving_ticker">Se salv. captura de ecran...</string>
+    <string name="screenshot_saving_title">Se salvează captura de ecran...</string>
+    <string name="screenshot_saving_text">Captura de ecran este salvată.</string>
+    <string name="screenshot_saved_title">Captură de ecran realizată.</string>
+    <string name="screenshot_saved_text">Atingeți pentru a vedea captura de ecran.</string>
+    <string name="screenshot_failed_title">Captura de ecran nu a putut fi realizată.</string>
+    <string name="screenshot_failed_text">Captură de ecran impos. de realizat: spațiu de stoc. limitat sau nu este permisă de apl. sau de organiz.</string>
+    <string name="screenshot_failed_to_save_text">Captura de ecran nu poate fi salvată din cauza spațiului de stocare limitat.</string>
+    <string name="screenshot_failed_to_capture_text">Crearea capturilor de ecran nu este permisă de aplicație sau de organizația dvs.</string>
+    <string name="screenshot_failed_to_save_unknown_text">Problemă întâmpinată la salvarea capturii de ecran.</string>
+    <string name="notification_channel_screenshot">Capturi de ecran</string>
+</resources>

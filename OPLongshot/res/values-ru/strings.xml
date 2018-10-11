@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">Во время создания расширенных скриншотов нельзя изменять ориентацию экрана.</string>
+    <string name="top_activity_changed">Во время создания расширенных скриншотов нельзя переключаться между приложениями.</string>
+    <string name="scrolling">Во время создания расширенных скриншотов экран прокручивается автоматически.</string>
+    <string name="stop_and_save">Коснитесь экрана, чтобы остановить прокрутку и создать расширенный скриншот.</string>
+    <string name="title">Расширенный скриншот</string>
+    <string name="summary">Когда сделаете скриншот, нажмите \"Расширенный скриншот\", чтобы в него попал контент внизу с прокруткой.</string>
+    <string name="not_support_longshot">Расширенный скриншот не работает на этой странице.</string>
+    <string name="got_it">Ясно</string>
+    <string name="longshot_guide_support">Нажмите здесь, чтобы сделать расширенный скриншот.</string>
+    <string name="longshot_guide_not_support">Расширенный скриншот не работает на этой странице.</string>
+    <string name="screenshot_stoped_text">Расширенный снимок экрана остановлен</string>
+    <string name="app_name">Скриншот</string>
+    <string name="oneplus_delete">Удалить</string>
+    <string name="oneplus_share">Отправить</string>
+    <string name="screenshot_saving_ticker">Сохранение...</string>
+    <string name="screenshot_saving_title">Сохранение...</string>
+    <string name="screenshot_saving_text">Сохранение...</string>
+    <string name="screenshot_saved_title">Скриншот сохранен</string>
+    <string name="screenshot_saved_text">Нажмите, чтобы просмотреть</string>
+    <string name="screenshot_failed_title">Не удалось сохранить скриншот.</string>
+    <string name="screenshot_failed_text">Не удается сделать скриншот: не хватает памяти или нет разрешения от приложения или организации.</string>
+    <string name="screenshot_failed_to_save_text">Не удалось сохранить скриншот: недостаточно места.</string>
+    <string name="screenshot_failed_to_capture_text">Не удалось сделать скриншот: нет разрешения от приложения или организации.</string>
+    <string name="screenshot_failed_to_save_unknown_text">Не удалось сохранить скриншот.</string>
+    <string name="notification_channel_screenshot">Скриншоты</string>
+</resources>

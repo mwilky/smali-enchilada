@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">"L'orientation de l'écran ne peut être changée lors d'une capture d'écran élargie."</string>
+    <string name="top_activity_changed">"Le changement d'application n'est pas pris en charge lors de la capture d'écran élargie."</string>
+    <string name="scrolling">"L'affichage défilera automatiquement lors de la capture d'écran élargie."</string>
+    <string name="stop_and_save">"Tapotez sur l'écran pour arrêter le défilement et une capture d'écran élargie sera effectuée."</string>
+    <string name="title">"Capture d'écran élargie"</string>
+    <string name="summary">"Une l'écran capturé, tapotez sur Capture d'écran élargie pour capturer tout le contenu à faire défiler en-dessous."</string>
+    <string name="not_support_longshot">"La capture d'écran élargie n'est pas prise en charge sur cette page."</string>
+    <string name="got_it">Ok</string>
+    <string name="longshot_guide_support">"Tapotez ici pour essayer la Capture d'écran élargie."</string>
+    <string name="longshot_guide_not_support">"La capture d'écran élargie n'est pas prise en charge sur cette page."</string>
+    <string name="screenshot_stoped_text">"La capture d'écran déroulante s'est arrêtée"</string>
+    <string name="app_name">"Capture d'écran"</string>
+    <string name="oneplus_delete">Supprimer</string>
+    <string name="oneplus_share">Envoyer</string>
+    <string name="screenshot_saving_ticker">Enregistrement capture écran…</string>
+    <string name="screenshot_saving_title">"Enregistrement de la capture d'écran…"</string>
+    <string name="screenshot_saving_text">"Enregistrement de la capture d'écran en cours…"</string>
+    <string name="screenshot_saved_title">"Capture d'écran réussie"</string>
+    <string name="screenshot_saved_text">"Appuyez pour afficher votre capture d'écran."</string>
+    <string name="screenshot_failed_title">"Impossible de réaliser une capture d'écran"</string>
+    <string name="screenshot_failed_text">"Capture d'écran imposs., car espace stockage limité, ou appli ou entreprise ne vous y autorise pas."</string>
+    <string name="screenshot_failed_to_save_text">"Impossible d'enregistrer la capture d'écran, car l'espace de stockage est limité."</string>
+    <string name="screenshot_failed_to_capture_text">"Les captures d'écran ne sont pas autorisées par l'application ni par votre organisation"</string>
+    <string name="screenshot_failed_to_save_unknown_text">"Erreur lors de l'enregistrement de la capture d'écran."</string>
+    <string name="notification_channel_screenshot">"Captures d'écran"</string>
+</resources>

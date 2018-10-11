@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">لا يمكن تغيير اتجاه الشاشة أثناء التقاط لقطات شاشة موسعة.</string>
+    <string name="top_activity_changed">تبديل التطبيق غير مدعوم أثناء التقاط لقطات شاشة موسعة.</string>
+    <string name="scrolling">سيتم تمرير الشاشة تلقائيًا أثناء التقاط لقطات شاشة موسعة.</string>
+    <string name="stop_and_save">المس الشاشة لإيقاف التمرير وسيتم التقاط لقطة شاشة موسعة.</string>
+    <string name="title">لقطة شاشة موسعة</string>
+    <string name="summary">بعد التقاط لقطة الشاشة، المس لقطة الشاشة الموسعة لالتقاط المحتويات القابلة للتمرير أدناه.</string>
+    <string name="not_support_longshot">لقطة الساعة الموسعة غير مدعومة في هذه الصفحة.</string>
+    <string name="got_it">فهمت ذلك</string>
+    <string name="longshot_guide_support">المس هنا لتجربة لقطة الشاشة الموسعة.</string>
+    <string name="longshot_guide_not_support">لقطة الشاشة الموسعة غير مدعومة في هذه الصفحة.</string>
+    <string name="screenshot_stoped_text">توقفت لقطة الشاشة الموسعة</string>
+    <string name="app_name">لقطة للشاشة</string>
+    <string name="oneplus_delete">حذف</string>
+    <string name="oneplus_share">إرسال</string>
+    <string name="screenshot_saving_ticker">جارٍ حفظ لقطة الشاشة...</string>
+    <string name="screenshot_saving_title">جارٍ حفظ لقطة الشاشة...</string>
+    <string name="screenshot_saving_text">يتم حفظ لقطة.</string>
+    <string name="screenshot_saved_title">تم التقاط لقطة الشاشة.</string>
+    <string name="screenshot_saved_text">المس لعرض لقطة الشاشة.</string>
+    <string name="screenshot_failed_title">تعذر التقاط لقطة الشاشة.</string>
+    <string name="screenshot_failed_text">يتعذر التقاط لقطة شاشة نظرًا لأن مساحة التخزين المتاحة محدودة، أو نظرًا لعدم سماح التطبيق أو المؤسسة بذلك.</string>
+    <string name="screenshot_failed_to_save_text">يتعذر حفظ لقطة الشاشة نظرًا لأن مساحة التخزين المتاحة محدودة.</string>
+    <string name="screenshot_failed_to_capture_text">يحظر التطبيق أو تحظر مؤسستك التقاط لقطات شاشة</string>
+    <string name="screenshot_failed_to_save_unknown_text">حدثت مشكلة أثناء حفظ لقطة الشاشة.</string>
+    <string name="notification_channel_screenshot">لقطات الشاشة</string>
+</resources>

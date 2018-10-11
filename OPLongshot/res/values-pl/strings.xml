@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">Nie można zmieniać orientacji ekranu podczas tworzenia rozszerzonych zrzutów ekranu.</string>
+    <string name="top_activity_changed">Przełączanie między aplikacjami jest niedostępne podczas tworzenia rozszerzonych zrzutów ekranu.</string>
+    <string name="scrolling">Podczas tworzenia rozszerzonych zrzutów ekran jest przewijany automatycznie.</string>
+    <string name="stop_and_save">Dotknij ekranu, aby przerwać przewijanie i wykonać rozszerzony zrzut ekranu.</string>
+    <string name="title">Rozszerzony zrzut ekranu</string>
+    <string name="summary">Po wykonaniu zrzutu ekranu, dotknij rozszerzonego zrzutu, aby przechwycić przewijane zawartości poniżej.</string>
+    <string name="not_support_longshot">Funkcja rozszerzonego zrzutu ekranu nie jest obsługiwana na tej stronie.</string>
+    <string name="got_it">Rozumiem</string>
+    <string name="longshot_guide_support">Dotknij tutaj, aby spróbować Rozszerzonego zrzutu ekranu.</string>
+    <string name="longshot_guide_not_support">Rozszerzony zrzut ekranu nie jest obsługiwany na tej stronie.</string>
+    <string name="screenshot_stoped_text">Rozszerzony zrzut ekranu został zatrzymany</string>
+    <string name="app_name">Zrzut ekranu</string>
+    <string name="oneplus_delete">Usuń</string>
+    <string name="oneplus_share">Wyślij</string>
+    <string name="screenshot_saving_ticker">Zapisywanie zrzutu ekranu...</string>
+    <string name="screenshot_saving_title">Zapisywanie zrzutu ekranu...</string>
+    <string name="screenshot_saving_text">Zapisywanie zrzutu ekranu.</string>
+    <string name="screenshot_saved_title">Wykonano zrzut ekranu.</string>
+    <string name="screenshot_saved_text">Dotknij, aby wyświetlić zrzut ekranu.</string>
+    <string name="screenshot_failed_title">Nie udało się wykonać zrzutu ekranu.</string>
+    <string name="screenshot_failed_text">Nie można wykonać zrzutu ekranu, bo brak miejsca albo nie zezwala na to aplikacja lub Twoja organizacja.</string>
+    <string name="screenshot_failed_to_save_text">Nie można zapisać zrzutu ekranu, bo brakuje miejsca w pamięci.</string>
+    <string name="screenshot_failed_to_capture_text">Nie możesz wykonać zrzutu ekranu, bo nie zezwala na to aplikacja lub Twoja organizacja.</string>
+    <string name="screenshot_failed_to_save_unknown_text">Podczas zapisywania zrzutu ekranu wystąpił błąd.</string>
+    <string name="notification_channel_screenshot">Zrzuty ekranu</string>
+</resources>

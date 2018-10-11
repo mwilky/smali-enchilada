@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_orientation_changed">Ο προσανατολισμός της οθόνης δεν μπορεί να αλλάξει κατά την καταγραφή διευρυμένου στιγμιότυπου οθόνης.</string>
+    <string name="top_activity_changed">Δε μπορεί να γίνει εναλλαγή εφαρμογής κατά την καταγραφή διευρυμένου στιγμιότυπου οθόνης.</string>
+    <string name="scrolling">Η οθόνη μετακυλίεται αυτόματα κατά την καταγραφή διευρυμένου στιγμιότυπου οθόνης.</string>
+    <string name="stop_and_save">Πατήστε την οθόνη για να διακόψετε την κύλιση και να γίνει καταγραφή διευρυμένου στιγμιότυπου οθόνης.</string>
+    <string name="title">Διευρυμένο στιγμιότυπο οθόνης</string>
+    <string name="summary">Μετά τη λήψη του στιγμιότυπου οθόνης, πατήστε το διευρυμένο στιγμιότυπο οθόνης για να καταγράψετε το κυλιόμενο περιεχόμενο παρακάτω.</string>
+    <string name="not_support_longshot">Το διευρυμένο στιγμιότυπο οθόνης δεν υποστηρίζεται σε αυτήν τη σελίδα.</string>
+    <string name="got_it">Το κατάλαβα</string>
+    <string name="longshot_guide_support">Πατήστε εδώ για να δοκιμάσετε το διευρυμένο στιγμιότυπο οθόνης.</string>
+    <string name="longshot_guide_not_support">Το διευρυμένο στιγμιότυπο οθόνης δεν υποστηρίζεται σε αυτήν τη σελίδα.</string>
+    <string name="screenshot_stoped_text">Το διευρυμένο στιγμιότυπο οθόνης έχει διακοπεί.</string>
+</resources>
