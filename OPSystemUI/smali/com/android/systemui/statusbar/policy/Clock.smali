@@ -651,7 +651,7 @@
     return-void
 .end method
 
-.method private updateShowSeconds()V
+.method public updateShowSeconds()V
     .locals 6
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/Clock;->showSeconds()Z
@@ -1088,7 +1088,7 @@
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClock()V
 
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateShowSeconds()V
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateShowSeconds()V
     
     const/4 v0, 0x0
     
