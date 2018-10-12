@@ -197,6 +197,14 @@
     check-cast v1, Landroid/support/v7/preference/ListPreference;
 
     iput-object v1, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mClockPreference:Landroid/support/v7/preference/ListPreference;
+    
+    invoke-virtual {p0}, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->getPreferenceScreen()Landroid/support/v7/preference/PreferenceScreen;
+
+    move-result-object v4
+
+    iget-object v1, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mClockPreference:Landroid/support/v7/preference/ListPreference;
+
+    invoke-virtual {v4, v1}, Landroid/support/v7/preference/PreferenceScreen;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
     const-string v1, "status_bar_icon_manager"
 
