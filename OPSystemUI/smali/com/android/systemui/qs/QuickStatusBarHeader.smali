@@ -1250,6 +1250,31 @@
     goto :goto_0
 
     :cond_0
+    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
+
+    const/4 v1, 0x0
+
+    if-ne p1, v0, :cond_mw
+
+    const-class v0, Lcom/android/systemui/plugins/ActivityStarter;
+
+    invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/systemui/plugins/ActivityStarter;
+
+    new-instance v2, Landroid/content/Intent;
+
+    const-string v3, "android.intent.action.SHOW_ALARMS"
+
+    invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    invoke-interface {v0, v2, v1}, Lcom/android/systemui/plugins/ActivityStarter;->postStartActivityDismissingKeyguard(Landroid/content/Intent;I)V
+
+    goto :goto_0
+
+    :cond_mw
     iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mBatteryMeterView:Lcom/android/systemui/BatteryMeterView;
 
     if-ne p1, v0, :cond_1
@@ -1271,6 +1296,27 @@
     invoke-interface {v0, v2, v1}, Lcom/android/systemui/plugins/ActivityStarter;->postStartActivityDismissingKeyguard(Landroid/content/Intent;I)V
 
     :cond_1
+    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mLeftBatteryMeterView:Lcom/android/systemui/BatteryMeterViewLeft;
+
+    if-ne p1, v0, :cond_mw2
+
+    const-class v0, Lcom/android/systemui/plugins/ActivityStarter;
+
+    invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/systemui/plugins/ActivityStarter;
+
+    new-instance v2, Landroid/content/Intent;
+
+    const-string v3, "android.intent.action.POWER_USAGE_SUMMARY"
+
+    invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    invoke-interface {v0, v2, v1}, Lcom/android/systemui/plugins/ActivityStarter;->postStartActivityDismissingKeyguard(Landroid/content/Intent;I)V
+
+    :cond_mw2
     :goto_0
     return-void
 .end method
@@ -1543,6 +1589,8 @@
     iget-object v4, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mLeftBatteryMeterView:Lcom/android/systemui/BatteryMeterViewLeft;
     
     if-eqz v4, :cond_mw
+    
+    invoke-virtual {v4, p0}, Lcom/android/systemui/statusbar/policy/Clock;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     const/4 v5, 0x1
 
@@ -1584,6 +1632,8 @@
     check-cast v3, Lcom/android/systemui/statusbar/policy/ClockRight;
 
     iput-object v3, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
+    
+    invoke-virtual {v3, p0}, Lcom/android/systemui/statusbar/policy/Clock;->setOnClickListener(Landroid/view/View$OnClickListener;)V
     
     invoke-virtual {p0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->setIconColors()V
     
