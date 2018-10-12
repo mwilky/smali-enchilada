@@ -568,7 +568,7 @@
 .method private showSeconds()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mShowSeconds:Z
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mClockSeconds:Z
 
     if-eqz v0, :cond_0
 
@@ -651,7 +651,7 @@
     return-void
 .end method
 
-.method private updateShowSeconds()V
+.method public updateShowSeconds()V
     .locals 6
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/Clock;->showSeconds()Z
@@ -1088,7 +1088,7 @@
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClock()V
 
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateShowSeconds()V
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateShowSeconds()V
     
     const/4 v0, 0x0
     
@@ -1253,7 +1253,7 @@
     :goto_0
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mShowSeconds:Z
 
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateShowSeconds()V
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateShowSeconds()V
 
     goto :goto_1
 
