@@ -798,7 +798,6 @@
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
         <item>@string/hardware_keys_action_kill</item>
         <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_screenshot2</item>
         <item>@string/hardware_keys_action_app</item>
         <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
@@ -814,7 +813,6 @@
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
         <item>@string/hardware_keys_action_kill</item>
         <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_screenshot2</item>
         <item>@string/hardware_keys_action_app</item>
         <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
@@ -831,7 +829,6 @@
         <item>@string/oneplus_quickpay</item>
         <item>@string/hardware_keys_action_kill</item>
         <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_screenshot2</item>
         <item>@string/hardware_keys_action_app</item>
         <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
@@ -850,7 +847,6 @@
         <item>@string/oneplus_quickpay</item>
         <item>@string/hardware_keys_action_kill</item>
         <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_screenshot2</item>
         <item>@string/hardware_keys_action_app</item>
         <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
@@ -868,7 +864,6 @@
         <item>10</item>
         <item>14</item>
         <item>15</item>
-        <item>16</item>
         <item>17</item>
         <item>18</item>
     </string-array>
@@ -884,7 +879,6 @@
         <item>10</item>
         <item>14</item>
         <item>15</item>
-        <item>16</item>
         <item>17</item>
         <item>18</item>
     </string-array>
@@ -901,7 +895,6 @@
         <item>11</item>
         <item>14</item>
         <item>15</item>
-        <item>16</item>
         <item>17</item>
         <item>18</item>
     </string-array>
@@ -920,7 +913,6 @@
         <item>11</item>
         <item>14</item>
         <item>15</item>
-        <item>16</item>
         <item>17</item>
         <item>18</item>
     </string-array>
@@ -1020,7 +1012,6 @@
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
         <item>@string/hardware_keys_action_kill</item>
         <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_screenshot2</item>
         <item>@string/hardware_keys_action_app</item>
         <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
@@ -1033,7 +1024,6 @@
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
         <item>@string/hardware_keys_action_kill</item>
         <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_screenshot2</item>
         <item>@string/hardware_keys_action_app</item>
         <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
@@ -1046,7 +1036,6 @@
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
         <item>@string/hardware_keys_action_kill</item>
         <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_screenshot2</item>
         <item>@string/hardware_keys_action_app</item>
         <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
@@ -1061,7 +1050,6 @@
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
         <item>@string/hardware_keys_action_kill</item>
         <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_screenshot2</item>
         <item>@string/hardware_keys_action_app</item>
         <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
@@ -1076,7 +1064,6 @@
         <item>10</item>
         <item>14</item>
         <item>15</item>
-        <item>16</item>
         <item>17</item>
         <item>18</item>
     </string-array>
@@ -1097,7 +1084,6 @@
         <item>10</item>
         <item>14</item>
         <item>15</item>
-        <item>16</item>
         <item>17</item>
         <item>18</item>
     </string-array>
@@ -1112,7 +1098,6 @@
         <item>10</item>
         <item>14</item>
         <item>15</item>
-        <item>16</item>
         <item>17</item>
         <item>18</item>
     </string-array>
@@ -1127,7 +1112,6 @@
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
         <item>@string/hardware_keys_action_kill</item>
         <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_screenshot2</item>
         <item>@string/hardware_keys_action_app</item>
     </string-array>
     <string-array name="navigation_bar_keys_recents_action_values">
@@ -1141,7 +1125,6 @@
         <item>10</item>
         <item>14</item>
         <item>15</item>
-        <item>16</item>
         <item>17</item>
     </string-array>
     <string-array name="oneplus_battery_style_entries">

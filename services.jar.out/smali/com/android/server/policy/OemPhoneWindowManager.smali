@@ -2118,10 +2118,6 @@
 
     goto :goto_3
     
-    :pswitch_screenshotc
-    invoke-virtual {p0}, Lcom/android/server/policy/OemPhoneWindowManager;->takeCroppedScreenshot()V
-
-    goto :goto_3
     
     :pswitch_lastapp
     iget-object v5, p0, Lcom/android/server/policy/OemPhoneWindowManager;->mContext:Landroid/content/Context;
@@ -2344,7 +2340,6 @@
         :pswitch_0
         :pswitch_kill
         :pswitch_screenshot
-        :pswitch_screenshotc
         :pswitch_customapp
         :pswitch_lastapp
     .end packed-switch

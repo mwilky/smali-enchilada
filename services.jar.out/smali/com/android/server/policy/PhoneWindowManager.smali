@@ -31287,17 +31287,7 @@
 
     const/4 v0, 0x1
 
-    invoke-direct {p0, v0}, Lcom/android/server/policy/PhoneWindowManager;->takeScreenshot(I)V
-
-    return-void
-.end method
-
-.method public takeCroppedScreenshot()V
-    .locals 1
-
-    const/4 v0, 0x2
-
-    invoke-direct {p0, v0}, Lcom/android/server/policy/PhoneWindowManager;->takeScreenshot(I)V
+    invoke-virtual {p0, v0, v0}, Lcom/android/server/policy/PhoneWindowManager;->takeOPScreenshot(II)V
 
     return-void
 .end method
