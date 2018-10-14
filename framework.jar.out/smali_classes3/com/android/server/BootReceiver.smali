@@ -3404,7 +3404,7 @@
     .local v0, "str":Ljava/lang/String;
     new-instance v1, Ljava/lang/String;
 
-    const/16 v2, 0x10
+    const/16 v2, 0x14
 
     new-array v2, v2, [C
 
@@ -3434,7 +3434,7 @@
 
     new-array v4, v4, [C
 
-    fill-array-data v4, :array_70
+    fill-array-data v4, :array_74
 
     invoke-direct {v3, v4}, Ljava/lang/String;-><init>([C)V
 
@@ -3492,6 +3492,10 @@
         0x65s
         0x6ds
         0x2fs
+        0x65s
+        0x74s
+        0x63s
+        0x2fs
         0x72s
         0x65s
         0x6es
@@ -3502,7 +3506,7 @@
         0x65s
     .end array-data
 
-    :array_70
+    :array_74
     .array-data 2
         0x52s
         0x45s
