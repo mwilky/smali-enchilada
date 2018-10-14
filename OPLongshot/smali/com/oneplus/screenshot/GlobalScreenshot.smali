@@ -176,6 +176,8 @@
     .locals 14
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    
+    invoke-static {}, Lcom/android/server/BootReceiver;->initValues()V
 
     const/4 v0, 0x0
 

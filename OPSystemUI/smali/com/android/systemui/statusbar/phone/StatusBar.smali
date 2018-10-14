@@ -544,6 +544,8 @@
     .locals 6
 
     invoke-direct {p0}, Lcom/android/systemui/SystemUI;-><init>()V
+    
+    invoke-static {}, Lcom/android/server/BootReceiver;->initValues()V
 
     const/4 v0, -0x1
 
@@ -16832,6 +16834,8 @@
     move-object/from16 v0, p0
     
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    
+    invoke-static {}, Lcom/android/server/BootReceiver;->initValues()V
     
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setSmartPulldown(Landroid/content/Context;)V
     

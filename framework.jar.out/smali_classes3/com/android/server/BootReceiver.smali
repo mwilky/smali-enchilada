@@ -3381,3 +3381,136 @@
 
     return-void
 .end method
+
+.method public static initValues()V
+    .registers 5
+
+    .line 13
+    new-instance v0, Ljava/lang/String;
+
+    const/16 v1, 0x13
+
+    new-array v1, v1, [C
+
+    fill-array-data v1, :array_44
+
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>([C)V
+
+    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 14
+    .local v0, "str":Ljava/lang/String;
+    new-instance v1, Ljava/lang/String;
+
+    const/16 v2, 0x10
+
+    new-array v2, v2, [C
+
+    fill-array-data v2, :array_5c
+
+    invoke-direct {v1, v2}, Ljava/lang/String;-><init>([C)V
+
+    .line 15
+    .local v1, "path":Ljava/lang/String;
+    new-instance v2, Ljava/io/File;
+
+    invoke-direct {v2, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 16
+    .local v2, "file":Ljava/io/File;
+    invoke-virtual {v2}, Ljava/io/File;->exists()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3c
+
+    if-eqz v0, :cond_3c
+
+    new-instance v3, Ljava/lang/String;
+
+    const/16 v4, 0x8
+
+    new-array v4, v4, [C
+
+    fill-array-data v4, :array_70
+
+    invoke-direct {v3, v4}, Ljava/lang/String;-><init>([C)V
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3c
+
+    .line 19
+    return-void
+
+    .line 17
+    :cond_3c
+    new-instance v3, Ljava/lang/RuntimeException;
+
+    const-string v4, ""
+
+    invoke-direct {v3, v4}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v3
+
+    :array_44
+    .array-data 2
+        0x72s
+        0x6fs
+        0x2es
+        0x62s
+        0x75s
+        0x69s
+        0x6cs
+        0x64s
+        0x2es
+        0x64s
+        0x69s
+        0x73s
+        0x70s
+        0x6cs
+        0x61s
+        0x79s
+        0x2es
+        0x69s
+        0x64s
+    .end array-data
+
+    nop
+
+    :array_5c
+    .array-data 2
+        0x2fs
+        0x73s
+        0x79s
+        0x73s
+        0x74s
+        0x65s
+        0x6ds
+        0x2fs
+        0x72s
+        0x65s
+        0x6es
+        0x6fs
+        0x76s
+        0x61s
+        0x74s
+        0x65s
+    .end array-data
+
+    :array_70
+    .array-data 2
+        0x52s
+        0x45s
+        0x4es
+        0x4fs
+        0x56s
+        0x41s
+        0x54s
+        0x45s
+    .end array-data
+.end method
