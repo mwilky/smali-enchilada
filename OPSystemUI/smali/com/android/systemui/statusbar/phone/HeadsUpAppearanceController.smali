@@ -364,7 +364,7 @@
     if-eq v0, p1, :cond_2
 
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mShown:Z
-	
+
     const v0, 0x7f0a00c1
     
     if-ne v7, v8, :cond_mwmw
