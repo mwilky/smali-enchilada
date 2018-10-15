@@ -520,14 +520,7 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/navigationbargestures/OPNavigationBarGesturesSettings;->mCustomization:Landroid/support/v7/preference/Preference;
 
-    if-eq v0, v4, :cond_3
-
-    move v1, v2
-
-    nop
-
-    :cond_3
-    invoke-virtual {v3, v1}, Landroid/support/v7/preference/Preference;->setEnabled(Z)V
+    invoke-virtual {v3, v2}, Landroid/support/v7/preference/Preference;->setEnabled(Z)V
 
     :goto_2
     return-void
