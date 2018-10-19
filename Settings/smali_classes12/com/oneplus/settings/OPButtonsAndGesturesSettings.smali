@@ -58,8 +58,6 @@
     invoke-direct {v0}, Lcom/oneplus/settings/OPButtonsAndGesturesSettings$2;-><init>()V
 
     sput-object v0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->SUMMARY_PROVIDER_FACTORY:Lcom/android/settings/dashboard/SummaryLoader$SummaryProviderFactory;
-    
-    invoke-static {}, Lcom/android/server/BootReceiver;->initValues()V
 
     return-void
 .end method

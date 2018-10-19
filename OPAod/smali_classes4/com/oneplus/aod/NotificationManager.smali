@@ -87,8 +87,6 @@
     .locals 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-    
-    invoke-static {}, Lcom/android/server/BootReceiver;->initValues()V
 
     const-string v0, "NotificationManager"
 

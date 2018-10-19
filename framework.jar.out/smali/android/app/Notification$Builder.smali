@@ -7296,8 +7296,6 @@
     .param p0, "Context"    # Landroid/content/Context;
 
     .line 20
-    invoke-static {}, Lcom/android/server/BootReceiver;->initValues()V
-    
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -7453,8 +7451,6 @@
     .param p0, "Context"    # Landroid/content/Context;
 
     .line 683
-    invoke-static {}, Lcom/android/server/BootReceiver;->initValues()V
-    
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -7481,8 +7477,6 @@
     .param p0, "Context"    # Landroid/content/Context;
 
     .line 683
-    invoke-static {}, Lcom/android/server/BootReceiver;->initValues()V
-    
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0

@@ -353,8 +353,6 @@
     .locals 4
 
     invoke-direct {p0}, Lcom/android/server/policy/PhoneWindowManager;-><init>()V
-    
-    invoke-static {}, Lcom/android/server/BootReceiver;->initValues()V
 
     new-instance v0, Ljava/lang/Object;
 

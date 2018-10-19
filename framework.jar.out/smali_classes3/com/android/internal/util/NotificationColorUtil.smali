@@ -83,8 +83,6 @@
     move-result v0
 
     iput v0, p0, Lcom/android/internal/util/NotificationColorUtil;->mGrayscaleIconMaxSize:I
-    
-    invoke-static {}, Lcom/android/server/BootReceiver;->initValues()V
 
     return-void
 .end method
