@@ -775,18 +775,25 @@
 .end method
 
 .method public onDarkChanged(Landroid/graphics/Rect;FI)V
-    .locals 3
+    .locals 4
     
     float-to-int v2, p2
 
     iput p2, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkIntensity:F
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIcon:Landroid/widget/ImageView;
+    
+    invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusBar;->isCameraNotchIgnoring()Z
+
+    move-result v3
+    
+    if-nez v3, :cond_notch
 
     iget v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkIconColor:I #dark color
 
     if-nez v2, :cond_0 #set to grey if dark intensity is 1
     
+    :cond_notch
     iget v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIconColor:I #custom color
 
     :cond_0
@@ -797,11 +804,14 @@
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiActivity:Landroid/widget/ImageView;
+    
+    if-nez v3, :cond_notch2
 
     iget v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkIconColor:I #dark color
 
     if-nez v2, :cond_01 #set to grey if dark intensity is 1
     
+    :cond_notch2
     iget v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIconColor:I #custom color
 
     :cond_01

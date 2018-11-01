@@ -1195,16 +1195,23 @@
 .end method
 
 .method public onDarkChanged(Landroid/graphics/Rect;FI)V
-    .locals 3
+    .locals 4
 	
 	float-to-int v2, p2
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileType:Landroid/widget/ImageView;
     
+    invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusBar;->isCameraNotchIgnoring()Z
+
+    move-result v3
+    
+    if-nez v3, :cond_notch
+    
     iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
 
     if-nez v2, :cond_0 #set to grey if dark intensity is 1
     
+    :cond_notch
     iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
 
     :cond_0
@@ -1216,10 +1223,13 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileInOut:Landroid/widget/ImageView;
     
+    if-nez v3, :cond_notch2
+    
     iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
 
     if-nez v2, :cond_01 #set to grey if dark intensity is 1
     
+    :cond_notch2
     iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
 
     :cond_01
@@ -1231,10 +1241,13 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mStackedDataStrengthView:Landroid/widget/ImageView;
     
+    if-nez v3, :cond_notch3
+    
     iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
 
     if-nez v2, :cond_02 #set to grey if dark intensity is 1
     
+    :cond_notch3
     iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
 
     :cond_02
@@ -1246,10 +1259,13 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mStackedDataTypeView:Landroid/widget/ImageView;
     
+    if-nez v3, :cond_notch4
+    
     iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
 
     if-nez v2, :cond_03 #set to grey if dark intensity is 1
     
+    :cond_notch4
     iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
 
     :cond_03
@@ -1261,10 +1277,13 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mStackedVoiceStrengthView:Landroid/widget/ImageView;
     
+    if-nez v3, :cond_notch5
+    
     iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
 
     if-nez v2, :cond_04 #set to grey if dark intensity is 1
     
+    :cond_notch5
     iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
 
     :cond_04
@@ -1276,10 +1295,13 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mStackedVoiceTypeView:Landroid/widget/ImageView;
     
+    if-nez v3, :cond_notch6
+    
     iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
 
     if-nez v2, :cond_05 #set to grey if dark intensity is 1
     
+    :cond_notch6
     iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
 
     :cond_05
@@ -1291,10 +1313,13 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobile:Landroid/widget/ImageView;
     
+    if-nez v3, :cond_notch7
+    
     iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
 
     if-nez v2, :cond_06 #set to grey if dark intensity is 1
     
+    :cond_notch7
     iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
 
     :cond_06
