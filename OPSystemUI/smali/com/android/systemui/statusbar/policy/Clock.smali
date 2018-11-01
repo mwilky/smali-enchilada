@@ -1107,11 +1107,18 @@
     .locals 2
     
     float-to-int v0, p2
+    
+    invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusBar;->isCameraNotchIgnoring()Z
+
+    move-result v1
+    
+    if-nez v1, :cond_notch
 
     iget v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDarkIconColor:I #dark color
 
     if-nez v0, :cond_0 #set to grey if dark intensity is 1
     
+    :cond_notch
     iget v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockColor:I #custom color
 
     :cond_0
