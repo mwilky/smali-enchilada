@@ -1349,7 +1349,7 @@
     :cond_2
     iget-object v1, v13, Landroid/support/design/transformation/FabTransformationBehavior$FabTransformationSpec;->timings:Landroid/support/design/animation/MotionSpec;
 
-    const-string v2, "translationXCurveUpwards"
+    const-string/jumbo v2, "translationXCurveUpwards"
 
     invoke-virtual {v1, v2}, Landroid/support/design/animation/MotionSpec;->getTiming(Ljava/lang/String;)Landroid/support/design/animation/MotionTiming;
 
@@ -1357,7 +1357,7 @@
 
     iget-object v2, v13, Landroid/support/design/transformation/FabTransformationBehavior$FabTransformationSpec;->timings:Landroid/support/design/animation/MotionSpec;
 
-    const-string v3, "translationYCurveUpwards"
+    const-string/jumbo v3, "translationYCurveUpwards"
 
     invoke-virtual {v2, v3}, Landroid/support/design/animation/MotionSpec;->getTiming(Ljava/lang/String;)Landroid/support/design/animation/MotionTiming;
 
@@ -1368,7 +1368,7 @@
     :cond_3
     iget-object v1, v13, Landroid/support/design/transformation/FabTransformationBehavior$FabTransformationSpec;->timings:Landroid/support/design/animation/MotionSpec;
 
-    const-string v2, "translationXCurveDownwards"
+    const-string/jumbo v2, "translationXCurveDownwards"
 
     invoke-virtual {v1, v2}, Landroid/support/design/animation/MotionSpec;->getTiming(Ljava/lang/String;)Landroid/support/design/animation/MotionTiming;
 
@@ -1376,7 +1376,7 @@
 
     iget-object v2, v13, Landroid/support/design/transformation/FabTransformationBehavior$FabTransformationSpec;->timings:Landroid/support/design/animation/MotionSpec;
 
-    const-string v3, "translationYCurveDownwards"
+    const-string/jumbo v3, "translationYCurveDownwards"
 
     invoke-virtual {v2, v3}, Landroid/support/design/animation/MotionSpec;->getTiming(Ljava/lang/String;)Landroid/support/design/animation/MotionTiming;
 
@@ -1388,7 +1388,7 @@
     :goto_0
     iget-object v1, v13, Landroid/support/design/transformation/FabTransformationBehavior$FabTransformationSpec;->timings:Landroid/support/design/animation/MotionSpec;
 
-    const-string v2, "translationXLinear"
+    const-string/jumbo v2, "translationXLinear"
 
     invoke-virtual {v1, v2}, Landroid/support/design/animation/MotionSpec;->getTiming(Ljava/lang/String;)Landroid/support/design/animation/MotionTiming;
 
@@ -1396,7 +1396,7 @@
 
     iget-object v2, v13, Landroid/support/design/transformation/FabTransformationBehavior$FabTransformationSpec;->timings:Landroid/support/design/animation/MotionSpec;
 
-    const-string v3, "translationYLinear"
+    const-string/jumbo v3, "translationYLinear"
 
     invoke-virtual {v2, v3}, Landroid/support/design/animation/MotionSpec;->getTiming(Ljava/lang/String;)Landroid/support/design/animation/MotionTiming;
 

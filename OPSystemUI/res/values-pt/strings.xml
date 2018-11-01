@@ -1123,6 +1123,8 @@ Você também está conectado a uma VPN, que pode monitorar sua atividade de red
     <string name="qs_rearrange">Reorganizar \"Configurações rápidas\"</string>
     <string name="qs_status_phone_muted">Smartphone silenciado</string>
     <string name="qs_status_phone_vibrate">Smartphone no modo de vibração</string>
+    <string name="quick_launch_exit">Sair</string>
+    <string name="quick_launch_exit_hint">Retire o dedo do ecrã para sair</string>
     <string name="quick_settings">Configurações rápidas</string>
     <string name="quick_settings_bluetooth_detail_empty_text">Não há dispositivos pareados disponíveis</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1320,10 +1322,13 @@ Você também está conectado a uma VPN, que pode monitorar sua atividade de red
     <string name="sd_card_unmount_action">Desmontar</string>
     <string name="search_menu_title">Pesquisar</string>
     <string name="select_application">Selecionar app</string>
+    <string name="select_day">Selecionar mês e dia</string>
+    <string name="select_hours">Selecionar a hora</string>
     <string name="select_logd_size_dialog_title">Sel. tam. de logger/buffer de log</string>
     <string name="select_logd_size_title">Tamanhos de buffer de logger</string>
     <string name="select_logpersist_dialog_title">Selecionar buffers de registro para armazenar constantemente no dispositivo</string>
     <string name="select_logpersist_title">Armazenar dados de logger constantemente no dispositivo</string>
+    <string name="select_minutes">Selecionar os minutos</string>
     <string name="select_private_dns_configuration_dialog_title">Selecione o modo DNS particular</string>
     <string name="select_private_dns_configuration_title">DNS particular</string>
     <string name="select_usb_configuration_dialog_title">Selecionar configuração USB</string>
@@ -1331,6 +1336,7 @@ Você também está conectado a uma VPN, que pode monitorar sua atividade de red
     <string name="select_webview_provider_dialog_title">Configurar implementação do WebView</string>
     <string name="select_webview_provider_title">Implementação do WebView</string>
     <string name="select_webview_provider_toast_text">Esta opção não é mais válida. Tente novamente.</string>
+    <string name="select_year">Selecionar ano</string>
     <string name="show_all_anrs">Mostrar ANRs em 2º plano</string>
     <string name="show_all_anrs_summary">Exibir a caixa de diálogo \"App não responde\" para apps em segundo plano</string>
     <string name="show_battery_percentage">Mostrar porcentagem de bateria incorporada</string>
@@ -1426,6 +1432,11 @@ O smartphone pode ficar quente demais se você:
 \u0009• usar o smartphone em temperaturas altas."</string>
     <string name="thermal_shutdown_message">O smartphone está sendo executado normalmente agora</string>
     <string name="thermal_shutdown_title">O smartphone foi desligado devido ao aquecimento</string>
+    <string name="time_picker_header_text">Definir data e hora</string>
+    <string name="time_picker_hour_label">hora</string>
+    <string name="time_picker_input_error">Introduzir uma data e hora válidas</string>
+    <string name="time_picker_minute_label">minuto</string>
+    <string name="time_picker_prompt_label">Escreva a data e a hora</string>
     <string name="time_unit_just_now">Agora</string>
     <string name="title_convert_fbe">Convertendo para criptografia baseada em arquivos</string>
     <string name="title_usb_accessory">Acessório USB</string>

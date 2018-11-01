@@ -413,7 +413,7 @@
 
     const-string v0, "BluetoothController"
 
-    const-string v1, "updateConnected+"
+    const-string/jumbo v1, "updateConnected+"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -430,7 +430,7 @@
 
     const-string v0, "BluetoothController"
 
-    const-string v1, "updateConnected-"
+    const-string/jumbo v1, "updateConnected-"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -784,20 +784,6 @@
 
     :goto_0
     return-object v0
-.end method
-
-.method public getMaxConnectionState(Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)I
-    .locals 1
-
-    invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->getCachedState(Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;->access$200(Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;)I
-
-    move-result v0
-
-    return v0
 .end method
 
 .method public isBluetoothConnected()Z

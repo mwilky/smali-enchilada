@@ -429,7 +429,7 @@
 
     move-result-object v4
 
-    const v6, 0x7f0d01a6
+    const v6, 0x7f0d01a7
 
     invoke-virtual {v4, v6}, Landroid/app/AlertDialog$Builder;->setView(I)Landroid/app/AlertDialog$Builder;
 
@@ -463,7 +463,7 @@
 
     iget-object v4, v1, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->mDialog:Landroid/app/AlertDialog;
 
-    const v6, 0x7f0a033b
+    const v6, 0x7f0a033f
 
     invoke-virtual {v4, v6}, Landroid/app/AlertDialog;->findViewById(I)Landroid/view/View;
 
@@ -511,7 +511,7 @@
 
     const-string v4, "MediaProjectionPermissionActivity"
 
-    const-string v5, "unable to look up package name"
+    const-string/jumbo v5, "unable to look up package name"
 
     invoke-static {v4, v5, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 

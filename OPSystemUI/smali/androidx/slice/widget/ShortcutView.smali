@@ -84,7 +84,7 @@
 
     move-result-object v4
 
-    const-string v5, "text"
+    const-string/jumbo v5, "text"
 
     invoke-static {v4, v5, v6, v3}, Landroidx/slice/core/SliceQuery;->find(Landroidx/slice/Slice;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroidx/slice/SliceItem;
 
@@ -114,7 +114,7 @@
 
     const-string v4, "image"
 
-    const-string v5, "title"
+    const-string/jumbo v5, "title"
 
     invoke-static {v1, v4, v5, v3}, Landroidx/slice/core/SliceQuery;->find(Landroidx/slice/Slice;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroidx/slice/SliceItem;
 
@@ -127,9 +127,9 @@
 
     if-nez v4, :cond_3
 
-    const-string v4, "text"
+    const-string/jumbo v4, "text"
 
-    const-string v5, "title"
+    const-string/jumbo v5, "title"
 
     invoke-static {v1, v4, v5, v3}, Landroidx/slice/core/SliceQuery;->find(Landroidx/slice/Slice;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroidx/slice/SliceItem;
 
@@ -159,7 +159,7 @@
 
     if-nez v4, :cond_5
 
-    const-string v4, "text"
+    const-string/jumbo v4, "text"
 
     move-object v5, v3
 

@@ -1123,6 +1123,8 @@ Máte tiež aktívne pripojenie k sieti VPN, ktorá môže sledovať vašu akti
     <string name="qs_rearrange">Zmeniť usporiadanie rýchlych nastavení</string>
     <string name="qs_status_phone_muted">Telefón má vypnutý zvuk</string>
     <string name="qs_status_phone_vibrate">Telefón má zapnuté vibrovanie</string>
+    <string name="quick_launch_exit">Ukončiť</string>
+    <string name="quick_launch_exit_hint">Zdvihnutím prstu z obrazovky ukončíte</string>
     <string name="quick_settings">Rýchle nastavenia</string>
     <string name="quick_settings_bluetooth_detail_empty_text">Nie sú k dispozícii žiadne spárované zariadenia</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1320,10 +1322,13 @@ Máte tiež aktívne pripojenie k sieti VPN, ktorá môže sledovať vašu akti
     <string name="sd_card_unmount_action">Odpojiť</string>
     <string name="search_menu_title">Vyhľadávanie</string>
     <string name="select_application">Výber aplikácie</string>
+    <string name="select_day">Vyberte mesiac a deň</string>
+    <string name="select_hours">Vyberte hodiny</string>
     <string name="select_logd_size_dialog_title">Veľkosť vyrovnávacej pamäte nástroja denníkov</string>
     <string name="select_logd_size_title">Vyrovnávacia pamäť nástroja denníkov</string>
     <string name="select_logpersist_dialog_title">Vybrať vyrovnávacie pamäte denníka na trvalé ukladanie údajov na zariadení</string>
     <string name="select_logpersist_title">Natrvalo ukladať dáta zapisovača do denníka na zariadení</string>
+    <string name="select_minutes">Vyberte minúty</string>
     <string name="select_private_dns_configuration_dialog_title">Výber súkromného režimu DNS</string>
     <string name="select_private_dns_configuration_title">Súkromné DNS</string>
     <string name="select_usb_configuration_dialog_title">Výber konfigurácie USB</string>
@@ -1331,6 +1336,7 @@ Máte tiež aktívne pripojenie k sieti VPN, ktorá môže sledovať vašu akti
     <string name="select_webview_provider_dialog_title">Nastaviť implementáciu WebView</string>
     <string name="select_webview_provider_title">Implementácia WebView</string>
     <string name="select_webview_provider_toast_text">Táto voľba už nie je platná. Skúste to znova.</string>
+    <string name="select_year">Vyberte rok</string>
     <string name="show_all_anrs">Zobrazovať nereagovania aplikácií na pozadí</string>
     <string name="show_all_anrs_summary">Zobrazovať dialógové okno „Aplikácia nereaguje“ pre aplikácie na pozadí</string>
     <string name="show_battery_percentage">Zobraziť percentá vloženej batérie</string>
@@ -1426,6 +1432,11 @@ Telefón sa môže príliš zahriať v týchto prípadoch:
 \u0009• používanie telefónu pri vysokých teplotách."</string>
     <string name="thermal_shutdown_message">Teraz telefón funguje ako obvykle</string>
     <string name="thermal_shutdown_title">Telefón sa vypol z dôvodu prehriatia</string>
+    <string name="time_picker_header_text">Nastavenie času</string>
+    <string name="time_picker_hour_label">hodina</string>
+    <string name="time_picker_input_error">Zadajte platný čas</string>
+    <string name="time_picker_minute_label">minúta</string>
+    <string name="time_picker_prompt_label">Napíšte čas</string>
     <string name="time_unit_just_now">Teraz</string>
     <string name="title_convert_fbe">Konvertovanie na šifrovanie založené na súboroch</string>
     <string name="title_usb_accessory">Periférne zariadenie USB</string>
@@ -1549,6 +1560,7 @@ Ktorýkoľvek používateľ môže aktualizovať aplikácie všetkých ostatnýc
     <string name="wait_for_debugger">Čakať na ladiaci nástroj</string>
     <string name="wait_for_debugger_summary">Aplikácia čaká na pripojenie ladiaceho nástroja</string>
     <string name="wifi_ap_unable_to_handle_new_sta">Prístupový bod je dočasne plný</string>
+    <string name="wifi_auth_password_wrong">Heslo môže byť nesprávne</string>
     <string name="wifi_cant_connect">Nedá sa pripojiť</string>
     <string name="wifi_cant_connect_to_ap">K sieti %1$s sa nedá pripojiť</string>
     <string name="wifi_check_password_try_again">Skontrolujte heslo a skúste to znova</string>

@@ -202,7 +202,7 @@
 
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView$StateMachine;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
-    const v3, 0x7f0a03b1
+    const v3, 0x7f0a03b7
 
     invoke-virtual {v2, v3}, Lcom/android/keyguard/KeyguardSimPukView;->findViewById(I)Landroid/view/View;
 
@@ -449,7 +449,7 @@
 
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSimPukView$StateMachine;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
-    const v5, 0x7f0a01cb
+    const v5, 0x7f0a01ce
 
     invoke-virtual {v4, v5}, Lcom/android/keyguard/KeyguardSimPukView;->findViewById(I)Landroid/view/View;
 

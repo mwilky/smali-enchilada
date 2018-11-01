@@ -92,7 +92,7 @@
     :cond_1
     invoke-virtual {v1, v2}, Lcom/android/systemui/qs/tiles/DataUsageDetailView;->bind(Lcom/android/settingslib/net/DataUsageController$DataUsageInfo;)V
 
-    const v3, 0x7f0a034d
+    const v3, 0x7f0a0353
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/qs/tiles/DataUsageDetailView;->findViewById(I)Landroid/view/View;
 
@@ -148,7 +148,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1104cb
+    const v1, 0x7f1104ce
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

@@ -1098,29 +1098,41 @@
 .end method
 
 .method private onlySummaryAlerts(Lcom/android/systemui/statusbar/NotificationData$Entry;)Z
-    .locals 2
+    .locals 3
 
-    iget-object v0, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Landroid/service/notification/StatusBarNotification;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
+    if-eqz p1, :cond_1
 
-    move-result-object v0
+    iget-object v1, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Landroid/service/notification/StatusBarNotification;
 
-    invoke-virtual {v0}, Landroid/app/Notification;->getGroupAlertBehavior()I
+    invoke-virtual {v1}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
 
-    move-result v0
+    move-result-object v1
 
-    const/4 v1, 0x1
+    invoke-virtual {v1}, Landroid/app/Notification;->getGroupAlertBehavior()I
 
-    if-ne v0, v1, :cond_0
+    move-result v1
 
-    goto :goto_0
+    const/4 v2, 0x1
+
+    if-ne v1, v2, :cond_0
+
+    move v0, v2
+
+    nop
 
     :cond_0
-    const/4 v1, 0x0
+    return v0
 
-    :goto_0
-    return v1
+    :cond_1
+    const-string v1, "NotificationGroupManager"
+
+    const-string v2, "onlySummaryAlerts: Entry is null"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    return v0
 .end method
 
 .method private pendingInflationsWillAddChildren(Lcom/android/systemui/statusbar/phone/NotificationGroupManager$NotificationGroup;)Z

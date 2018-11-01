@@ -1125,6 +1125,7 @@ You're also connected to a VPN, which can monitor your network activity."</strin
     <string name="oneplus_contorl_font_family_title_extended">sans-serif-medium</string>
     <string name="oneplus_device_tag">15801</string>
     <string name="oneplus_laboratory_added_toast">Congratulations! OnePlus laboratory has been added to Settings</string>
+    <string name="oneplus_screen_features_not_available_toast">When turned on, features such as screen calibration will not be available</string>
     <string name="oneplus_screen_zoom_summary_default">Default</string>
     <string name="oneplus_screen_zoom_summary_large">Large</string>
     <string name="oneplus_screen_zoom_summary_minimum">Minimum</string>
@@ -1268,6 +1269,8 @@ You're also connected to a VPN, which can monitor your network activity."</strin
     <string name="qs_rearrange">Rearrange Quick Settings</string>
     <string name="qs_status_phone_muted">Phone muted</string>
     <string name="qs_status_phone_vibrate">Phone on vibrate</string>
+    <string name="quick_launch_exit">Exit</string>
+    <string name="quick_launch_exit_hint">Finger off the screen to exit</string>
     <string name="quick_settings">Quick Settings</string>
     <string name="quick_settings_bluetooth_detail_empty_text">No paired devices available</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1375,9 +1378,9 @@ You're also connected to a VPN, which can monitor your network activity."</strin
     <string name="quick_settings_switch_user_storage_insufficient">Storage is full, cannot switch user</string>
     <string name="quick_settings_tethering_label">Tethering</string>
     <string name="quick_settings_tiles">default</string>
-    <string name="quick_settings_tiles_default">wifi,cell,bt,flashlight,rotation,powersaving,airplane,night,location,dataswitch,dnd,nfc,custom(com.android.phone/com.android.wificalling.OPWifiCallingTitle),game,read,hotspot</string>
+    <string name="quick_settings_tiles_default">wifi,cell,bt,flashlight,rotation,powersaving,airplane,night,location,dataswitch,dnd,custom(com.oneplus.screen_record/com.oneplus.screenrecord.notification.SystemUITileService),nfc,custom(com.android.phone/com.android.wificalling.OPWifiCallingTitle),game,read,hotspot</string>
     <string name="quick_settings_tiles_guest">wifi,bt,flashlight,rotation,powersaving,airplane,night,location,game,nfc,hotspot,saver</string>
-    <string name="quick_settings_tiles_retail_mode">wifi,cell,bt,flashlight,rotation,powersaving,airplane,night,location,dataswitch,dnd,nfc,custom(com.android.phone/com.android.wificalling.OPWifiCallingTitle),game,read,hotspot</string>
+    <string name="quick_settings_tiles_retail_mode">wifi,cell,bt,flashlight,rotation,powersaving,airplane,night,location,dataswitch,dnd,custom(com.oneplus.screen_record/com.oneplus.screenrecord.notification.SystemUITileService),nfc,custom(com.android.phone/com.android.wificalling.OPWifiCallingTitle),game,read,hotspot</string>
     <string name="quick_settings_tiles_stock">wifi,cell,powersaving,bt,rotation,flashlight,airplane,night,location,hotspot,nfc,read,game,otg,dnd,cast,saver,vpn,inversion,work,dataswitch</string>
     <string name="quick_settings_time_label">Time</string>
     <string name="quick_settings_user_label">Me</string>
@@ -1860,5 +1863,5 @@ Credential storage might not enable"</string>
     <item type="string" name="APKTOOL_DUMMY_33a">false</item>
     <item type="string" name="APKTOOL_DUMMY_359">false</item>
     <item type="string" name="APKTOOL_DUMMY_3ab">false</item>
-    <item type="string" name="APKTOOL_DUMMY_5bf">false</item>
+    <item type="string" name="APKTOOL_DUMMY_5c2">false</item>
 </resources>

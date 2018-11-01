@@ -1124,6 +1124,8 @@ Je bent ook verbonden met een VPN, waarmee je netwerkactiviteit kan worden gecon
     <string name="qs_rearrange">Snelle instellingen opnieuw indelen</string>
     <string name="qs_status_phone_muted">Telefoon gedempt</string>
     <string name="qs_status_phone_vibrate">Telefoon op trillen</string>
+    <string name="quick_launch_exit">Verlaten</string>
+    <string name="quick_launch_exit_hint">Vinger van het scherm om af te sluiten</string>
     <string name="quick_settings">Snelle instellingen</string>
     <string name="quick_settings_bluetooth_detail_empty_text">Geen gekoppelde apparaten beschikbaar</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1321,10 +1323,13 @@ Je bent ook verbonden met een VPN, waarmee je netwerkactiviteit kan worden gecon
     <string name="sd_card_unmount_action">Verwijderen</string>
     <string name="search_menu_title">Zoeken</string>
     <string name="select_application">App selecteren</string>
+    <string name="select_day">Maand en dag selecteren</string>
+    <string name="select_hours">Uren selecteren</string>
     <string name="select_logd_size_dialog_title">Kies Logger-grootten per logbuffer</string>
     <string name="select_logd_size_title">Logger-buffergrootten</string>
     <string name="select_logpersist_dialog_title">Logboekbuffers selecteren die persistent op het apparaat worden opgeslagen</string>
     <string name="select_logpersist_title">Logger-gegev. persistent opslaan</string>
+    <string name="select_minutes">Minuten selecteren</string>
     <string name="select_private_dns_configuration_dialog_title">Selecteer de modus Privé-DNS</string>
     <string name="select_private_dns_configuration_title">Privé-DNS</string>
     <string name="select_usb_configuration_dialog_title">USB-configuratie selecteren</string>
@@ -1332,6 +1337,7 @@ Je bent ook verbonden met een VPN, waarmee je netwerkactiviteit kan worden gecon
     <string name="select_webview_provider_dialog_title">WebView-implementatie instellen</string>
     <string name="select_webview_provider_title">WebView-implementatie</string>
     <string name="select_webview_provider_toast_text">Deze keuze is niet meer geldig. Probeer het opnieuw.</string>
+    <string name="select_year">Jaar selecteren</string>
     <string name="show_all_anrs">"ANR's op de achtergrond"</string>
     <string name="show_all_anrs_summary">"Dialoogvenster 'App reageert niet' weergeven voor achtergrond-apps"</string>
     <string name="show_battery_percentage">Percentage ingebouwde batterij weergeven</string>
@@ -1427,6 +1433,11 @@ Je telefoon kan warm worden als je:
 \u0009• je telefoon gebruikt bij hoge temperaturen."</string>
     <string name="thermal_shutdown_message">Je telefoon presteert nu weer zoals gebruikelijk</string>
     <string name="thermal_shutdown_title">Telefoon uitgezet wegens hitte</string>
+    <string name="time_picker_header_text">Tijd instellen</string>
+    <string name="time_picker_hour_label">uur</string>
+    <string name="time_picker_input_error">Voer een geldige tijd in</string>
+    <string name="time_picker_minute_label">minuut</string>
+    <string name="time_picker_prompt_label">Typ de tijd in</string>
     <string name="time_unit_just_now">Zojuist</string>
     <string name="title_convert_fbe">Converteren naar versleuteling op basis van bestanden</string>
     <string name="title_usb_accessory">USB-accessoire</string>
@@ -1550,6 +1561,7 @@ Elke gebruiker kan apps updaten voor alle andere gebruikers."</string>
     <string name="wait_for_debugger">Wachten op debugger</string>
     <string name="wait_for_debugger_summary">Gedebugde app wacht op koppelen van debugger vóór uitvoering</string>
     <string name="wifi_ap_unable_to_handle_new_sta">Toegangspunt tijdelijk vol</string>
+    <string name="wifi_auth_password_wrong">Wachtwoord is mogelijk verkeerd</string>
     <string name="wifi_cant_connect">Kan geen verbinding maken</string>
     <string name="wifi_cant_connect_to_ap">"Kan geen verbinding maken met '%1$s'"</string>
     <string name="wifi_check_password_try_again">Controleer het wachtwoord en probeer het opnieuw</string>

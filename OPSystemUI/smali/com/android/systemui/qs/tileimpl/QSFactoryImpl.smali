@@ -731,7 +731,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120546
+    const v2, 0x7f120547
 
     invoke-direct {v0, v1, v2}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 

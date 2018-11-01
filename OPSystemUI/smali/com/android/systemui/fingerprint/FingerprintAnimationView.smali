@@ -101,7 +101,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07048d
+    const v1, 0x7f070496
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -182,6 +182,45 @@
     return-void
 .end method
 
+.method public setAnimationRes(I)V
+    .locals 3
+
+    invoke-virtual {p0, p1}, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->setBackgroundResource(I)V
+
+    invoke-virtual {p0}, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->getBackground()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/drawable/AnimationDrawable;
+
+    iput-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->mBackground:Landroid/graphics/drawable/AnimationDrawable;
+
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->mBackground:Landroid/graphics/drawable/AnimationDrawable;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->mBackground:Landroid/graphics/drawable/AnimationDrawable;
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/AnimationDrawable;->getNumberOfFrames()I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->mBackground:Landroid/graphics/drawable/AnimationDrawable;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Landroid/graphics/drawable/AnimationDrawable;->getDuration(I)I
+
+    move-result v1
+
+    mul-int/2addr v0, v1
+
+    iput v0, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->mAnimationDuration:I
+
+    :cond_0
+    return-void
+.end method
+
 .method public stopAnimation()V
     .locals 2
 
@@ -197,10 +236,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    const/4 v0, 0x4
-
-    invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->setVisibility(I)V
-
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->mBackground:Landroid/graphics/drawable/AnimationDrawable;
 
     if-eqz v0, :cond_0
@@ -210,6 +245,10 @@
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimationDrawable;->stop()V
 
     :cond_0
+    const/4 v0, 0x4
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->setVisibility(I)V
+
     return-void
 .end method
 

@@ -159,7 +159,7 @@
 
     move-result-object v0
 
-    const-string v1, "telecom"
+    const-string/jumbo v1, "telecom"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -193,12 +193,12 @@
 
     if-eqz v1, :cond_0
 
-    const v2, 0x7f110457
+    const v2, 0x7f110458
 
     goto :goto_0
 
     :cond_0
-    const v2, 0x7f11045e
+    const v2, 0x7f11045f
 
     :goto_0
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogImpl$7;->this$0:Lcom/android/systemui/volume/VolumeDialogImpl;

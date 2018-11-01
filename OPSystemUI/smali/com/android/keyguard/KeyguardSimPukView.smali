@@ -664,7 +664,7 @@
 .method protected getPasswordTextViewId()I
     .locals 1
 
-    const v0, 0x7f0a031f
+    const v0, 0x7f0a0323
 
     return v0
 .end method
@@ -749,7 +749,7 @@
     invoke-virtual {v0, v1}, Lcom/android/keyguard/EmergencyCarrierArea;->setCarrierTextVisible(Z)V
 
     :cond_0
-    const v0, 0x7f0a01d9
+    const v0, 0x7f0a01dc
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardSimPukView;->findViewById(I)Landroid/view/View;
 

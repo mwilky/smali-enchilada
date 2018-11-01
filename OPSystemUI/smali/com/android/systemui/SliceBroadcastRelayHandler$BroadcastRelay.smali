@@ -87,7 +87,7 @@
 
     invoke-virtual {p2, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    const-string v2, "uri"
+    const-string/jumbo v2, "uri"
 
     iget-object v3, p0, Lcom/android/systemui/SliceBroadcastRelayHandler$BroadcastRelay;->mUri:Landroid/net/Uri;
 

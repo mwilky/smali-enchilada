@@ -156,7 +156,7 @@
 
     move-result v3
 
-    const v8, 0x7f11054c
+    const v8, 0x7f11054f
 
     if-eqz v3, :cond_7
 
@@ -241,7 +241,7 @@
 
     move-result v8
 
-    const v9, 0x7f110549
+    const v9, 0x7f11054c
 
     if-eqz v8, :cond_9
 

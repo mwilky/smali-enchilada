@@ -992,6 +992,7 @@
     <string name="oem_unlock_enable">OEM 解锁</string>
     <string name="oem_unlock_enable_summary">允许解锁引导加载程序</string>
     <string name="okay">确定</string>
+    <string name="oneplus_screen_features_not_available_toast">开启后，屏幕颜色模式等功能将无法使用</string>
     <string name="op_accessibility_quick_settings_page">第 %1$d 页，共 %2$d 页</string>
     <string name="op_earphone_connect">配对中...</string>
     <string name="op_earphone_connected_fail">配对失败，你可以检查耳机和手机蓝牙状态。</string>
@@ -1105,6 +1106,8 @@
     <string name="qs_rearrange">重新排列快捷设置</string>
     <string name="qs_status_phone_muted">手机已设为静音</string>
     <string name="qs_status_phone_vibrate">手机已设为振动</string>
+    <string name="quick_launch_exit">退出</string>
+    <string name="quick_launch_exit_hint">松手退出此界面</string>
     <string name="quick_settings">快捷设置</string>
     <string name="quick_settings_bluetooth_detail_empty_text">没有可用的配对设备</string>
     <string name="quick_settings_bluetooth_label">蓝牙</string>
@@ -1518,6 +1521,7 @@
     <string name="wait_for_debugger">等待调试程序</string>
     <string name="wait_for_debugger_summary">调试应用会在执行前等待附加调试器</string>
     <string name="wifi_ap_unable_to_handle_new_sta">接入点暂时满载</string>
+    <string name="wifi_auth_password_wrong">密码不正确。</string>
     <string name="wifi_cant_connect">无法连接</string>
     <string name="wifi_cant_connect_to_ap">无法连接到“%1$s”</string>
     <string name="wifi_check_password_try_again">请检查密码，然后重试</string>

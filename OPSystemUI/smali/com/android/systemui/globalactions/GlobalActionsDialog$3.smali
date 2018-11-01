@@ -36,7 +36,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$3;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
-    invoke-static {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$1200(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/internal/util/EmergencyAffordanceManager;
+    invoke-static {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$1400(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/internal/util/EmergencyAffordanceManager;
 
     move-result-object v0
 

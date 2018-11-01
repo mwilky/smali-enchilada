@@ -87,7 +87,7 @@
 
     check-cast v2, Landroid/content/res/XmlResourceParser;
 
-    const-string v3, "transitionOrdering"
+    const-string/jumbo v3, "transitionOrdering"
 
     invoke-static {v1, v2, v3, v0, v0}, Landroid/support/v4/content/res/TypedArrayUtils;->getNamedInt(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;II)I
 

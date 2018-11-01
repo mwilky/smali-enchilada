@@ -69,7 +69,7 @@
 .method public static createFromBundle(Landroid/os/Bundle;)Landroid/support/v4/graphics/drawable/IconCompat;
     .locals 5
 
-    const-string v0, "type"
+    const-string/jumbo v0, "type"
 
     invoke-virtual {p0, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
@@ -95,7 +95,7 @@
 
     iput v2, v1, Landroid/support/v4/graphics/drawable/IconCompat;->mInt2:I
 
-    const-string v2, "tint_list"
+    const-string/jumbo v2, "tint_list"
 
     invoke-virtual {p0, v2}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
@@ -103,7 +103,7 @@
 
     if-eqz v2, :cond_0
 
-    const-string v2, "tint_list"
+    const-string/jumbo v2, "tint_list"
 
     invoke-virtual {p0, v2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
@@ -114,7 +114,7 @@
     iput-object v2, v1, Landroid/support/v4/graphics/drawable/IconCompat;->mTintList:Landroid/content/res/ColorStateList;
 
     :cond_0
-    const-string v2, "tint_mode"
+    const-string/jumbo v2, "tint_mode"
 
     invoke-virtual {p0, v2}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
@@ -122,7 +122,7 @@
 
     if-eqz v2, :cond_1
 
-    const-string v2, "tint_mode"
+    const-string/jumbo v2, "tint_mode"
 
     invoke-virtual {p0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -199,6 +199,8 @@
 
     :goto_0
     return-object v1
+
+    nop
 
     nop
 
@@ -1505,7 +1507,7 @@
     nop
 
     :goto_0
-    const-string v1, "type"
+    const-string/jumbo v1, "type"
 
     iget v2, p0, Landroid/support/v4/graphics/drawable/IconCompat;->mType:I
 
@@ -1527,7 +1529,7 @@
 
     if-eqz v1, :cond_1
 
-    const-string v1, "tint_list"
+    const-string/jumbo v1, "tint_list"
 
     iget-object v2, p0, Landroid/support/v4/graphics/drawable/IconCompat;->mTintList:Landroid/content/res/ColorStateList;
 
@@ -1540,7 +1542,7 @@
 
     if-eq v1, v2, :cond_2
 
-    const-string v1, "tint_mode"
+    const-string/jumbo v1, "tint_mode"
 
     iget-object v2, p0, Landroid/support/v4/graphics/drawable/IconCompat;->mTintMode:Landroid/graphics/PorterDuff$Mode;
 
@@ -1552,6 +1554,8 @@
 
     :cond_2
     return-object v0
+
+    nop
 
     nop
 

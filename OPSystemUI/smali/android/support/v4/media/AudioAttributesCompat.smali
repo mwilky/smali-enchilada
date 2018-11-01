@@ -370,7 +370,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "unknown usage "
+    const-string/jumbo v2, "unknown usage "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -527,6 +527,8 @@
     invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
     return-object v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

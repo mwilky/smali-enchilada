@@ -687,7 +687,7 @@
     :cond_3
     if-eqz v3, :cond_4
 
-    const-string v1, "true"
+    const-string/jumbo v1, "true"
 
     invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -941,7 +941,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string v1, "testmode"
+    const-string/jumbo v1, "testmode"
 
     invoke-virtual {p2, v1, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 

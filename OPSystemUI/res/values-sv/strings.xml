@@ -1124,6 +1124,8 @@ Du är även ansluten till ett VPN som kan övervaka nätverksaktivitet."</strin
     <string name="qs_rearrange">Ordna snabbinställningarna</string>
     <string name="qs_status_phone_muted">Ljudet är av på mobilen</string>
     <string name="qs_status_phone_vibrate">Mobilen är inställd på vibration</string>
+    <string name="quick_launch_exit">Avsluta</string>
+    <string name="quick_launch_exit_hint">Ta bort fingret från skärmen för att avsluta</string>
     <string name="quick_settings">Snabbinställningar</string>
     <string name="quick_settings_bluetooth_detail_empty_text">Det finns inga kopplade enheter tillgängliga</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1321,10 +1323,13 @@ Du är även ansluten till ett VPN som kan övervaka nätverksaktivitet."</strin
     <string name="sd_card_unmount_action">Demontera</string>
     <string name="search_menu_title">Sök</string>
     <string name="select_application">Välj app</string>
+    <string name="select_day">Välj månad och dag</string>
+    <string name="select_hours">Välj timmar</string>
     <string name="select_logd_size_dialog_title">Välj loggstorlekar per loggbuffert</string>
     <string name="select_logd_size_title">Buffertstorlekar för logg</string>
     <string name="select_logpersist_dialog_title">Välj vilka loggbuffertar som ska sparas permanent på enheten</string>
     <string name="select_logpersist_title">Spara logg permanent på enheten</string>
+    <string name="select_minutes">Välj minuter</string>
     <string name="select_private_dns_configuration_dialog_title">Välj läget Privat DNS</string>
     <string name="select_private_dns_configuration_title">Privat DNS</string>
     <string name="select_usb_configuration_dialog_title">Välj USB-konfiguration</string>
@@ -1332,6 +1337,7 @@ Du är även ansluten till ett VPN som kan övervaka nätverksaktivitet."</strin
     <string name="select_webview_provider_dialog_title">Ange WebView-implementering</string>
     <string name="select_webview_provider_title">WebView-implementering</string>
     <string name="select_webview_provider_toast_text">Det här alternativet är inte längre giltigt. Försök igen.</string>
+    <string name="select_year">Välj år</string>
     <string name="show_all_anrs">Visa ANR-fel i bakgruden</string>
     <string name="show_all_anrs_summary">Visa dialogrutan om att appen inte svarar för bakgrundsappar</string>
     <string name="show_battery_percentage">Visa inbäddad batteriprocent</string>
@@ -1427,6 +1433,11 @@ Mobilen kan bli för varm om du
 \u0009• använder mobilen vid höga temperaturer."</string>
     <string name="thermal_shutdown_message">Mobilen fungerar nu som vanligt</string>
     <string name="thermal_shutdown_title">Mobilen stängdes av pga. värme</string>
+    <string name="time_picker_header_text">Ställ in tid</string>
+    <string name="time_picker_hour_label">timme</string>
+    <string name="time_picker_input_error">Ange en giltig tid</string>
+    <string name="time_picker_minute_label">minut</string>
+    <string name="time_picker_prompt_label">Skriv in tid</string>
     <string name="time_unit_just_now">Nyss</string>
     <string name="title_convert_fbe">Konverterar till filbaserad kryptering</string>
     <string name="title_usb_accessory">USB-tillbehör</string>
@@ -1550,6 +1561,7 @@ Alla användare kan uppdatera appar för samtliga användares räkning."</string
     <string name="wait_for_debugger">Vänta på felsökningen</string>
     <string name="wait_for_debugger_summary">Felsökaren måste ansluta till appen först</string>
     <string name="wifi_ap_unable_to_handle_new_sta">Åtkomstpunkten har inga platser över för tillfället</string>
+    <string name="wifi_auth_password_wrong">Lösenordet kan vara felaktigt</string>
     <string name="wifi_cant_connect">Det gick inte att ansluta</string>
     <string name="wifi_cant_connect_to_ap">Det gick inte att ansluta till %1$s</string>
     <string name="wifi_check_password_try_again">Kontrollera lösenordet och försök igen</string>

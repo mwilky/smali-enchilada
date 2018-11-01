@@ -488,7 +488,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f110470
+    const v1, 0x7f110471
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -496,7 +496,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/pip/tv/PipNotification;->mDefaultTitle:Ljava/lang/String;
 
-    const v1, 0x7f08052e
+    const v1, 0x7f08053d
 
     iput v1, p0, Lcom/android/systemui/pip/tv/PipNotification;->mDefaultIconResId:I
 

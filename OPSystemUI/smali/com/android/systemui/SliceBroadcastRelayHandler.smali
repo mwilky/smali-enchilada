@@ -107,7 +107,7 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "uri"
+    const-string/jumbo v0, "uri"
 
     invoke-virtual {p1, v0}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
@@ -154,7 +154,7 @@
 
     if-eqz v0, :cond_1
 
-    const-string v0, "uri"
+    const-string/jumbo v0, "uri"
 
     invoke-virtual {p1, v0}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 

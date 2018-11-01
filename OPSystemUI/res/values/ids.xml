@@ -135,6 +135,7 @@
     <item type="id" name="calendar_view">false</item>
     <item type="id" name="camera_button">false</item>
     <item type="id" name="cancel_action">false</item>
+    <item type="id" name="cancel_area">false</item>
     <item type="id" name="cancel_button">false</item>
     <item type="id" name="car_facet_button">false</item>
     <item type="id" name="car_nav_button_icon">false</item>
@@ -339,6 +340,7 @@
     <item type="id" name="highlight_hint_notification_text">false</item>
     <item type="id" name="highlight_hint_view_container">false</item>
     <item type="id" name="highlighthintview">false</item>
+    <item type="id" name="hint">false</item>
     <item type="id" name="hint_image">false</item>
     <item type="id" name="home">false</item>
     <item type="id" name="hour">false</item>
@@ -352,6 +354,7 @@
     <item type="id" name="icon_is_grayscale">false</item>
     <item type="id" name="icon_is_pre_L">false</item>
     <item type="id" name="icon_placeholder">false</item>
+    <item type="id" name="icon_scroller">false</item>
     <item type="id" name="image">false</item>
     <item type="id" name="image_icon_tag">false</item>
     <item type="id" name="ime_switcher">false</item>
@@ -475,6 +478,7 @@
     <item type="id" name="logo">false</item>
     <item type="id" name="logout">false</item>
     <item type="id" name="long_press_tooltip">false</item>
+    <item type="id" name="lottie_layer_name">false</item>
     <item type="id" name="lowerIndicator">false</item>
     <item type="id" name="lowerPages">false</item>
     <item type="id" name="lower_indicator_panel">false</item>
@@ -906,6 +910,8 @@
     <item type="id" name="total_time">false</item>
     <item type="id" name="touch_outside">false</item>
     <item type="id" name="traceview">false</item>
+    <item type="id" name="track_view">false</item>
+    <item type="id" name="track_view_background">false</item>
     <item type="id" name="transformation_start_actual_height">false</item>
     <item type="id" name="transformation_start_actual_width">false</item>
     <item type="id" name="transformation_start_scale_x_tag">false</item>
@@ -1019,7 +1025,4 @@
     <item type="id" name="zzz_global_action_panel">false</item>
     <item type="id" name="zzz_global_action_view">false</item>
     <item type="id" name="zzz_global_action_view_bg">false</item>
-    <item type="id" name="clock_right">false</item>
-    <item type="id" name="battery_left">false</item>
-    <item type="id" name="battery_left_visible_tag">false</item>
 </resources>

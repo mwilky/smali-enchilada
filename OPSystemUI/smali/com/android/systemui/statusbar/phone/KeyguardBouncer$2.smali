@@ -100,6 +100,14 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer$2;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBouncer;
 
+    invoke-static {v2}, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->access$200(Lcom/android/systemui/statusbar/phone/KeyguardBouncer;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer$2;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBouncer;
+
     iget-object v2, v2, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->mKeyguardView:Lcom/android/keyguard/KeyguardHostView;
 
     invoke-virtual {v2}, Lcom/android/keyguard/KeyguardHostView;->startAppearAnimation()V
@@ -127,14 +135,19 @@
 
     invoke-virtual {v2}, Lcom/android/keyguard/KeyguardHostView;->requestLayout()V
 
+    :cond_2
     :goto_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer$2;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBouncer;
 
     invoke-static {v2, v1}, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->access$202(Lcom/android/systemui/statusbar/phone/KeyguardBouncer;Z)Z
 
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer$2;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBouncer;
+
+    invoke-static {v2, v1}, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->access$302(Lcom/android/systemui/statusbar/phone/KeyguardBouncer;Z)Z
+
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer$2;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBouncer;
 
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->access$300(Lcom/android/systemui/statusbar/phone/KeyguardBouncer;)F
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->access$400(Lcom/android/systemui/statusbar/phone/KeyguardBouncer;)F
 
     move-result v1
 
@@ -142,7 +155,7 @@
 
     cmpl-float v1, v1, v2
 
-    if-nez v1, :cond_2
+    if-nez v1, :cond_3
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer$2;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBouncer;
 
@@ -150,7 +163,7 @@
 
     invoke-virtual {v1}, Lcom/android/keyguard/KeyguardHostView;->onResume()V
 
-    :cond_2
+    :cond_3
     const/16 v1, 0x3f
 
     const/4 v2, 0x2

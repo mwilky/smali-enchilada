@@ -1065,7 +1065,7 @@
 
     if-nez v5, :cond_3
 
-    const v5, 0x7f0805dc
+    const v5, 0x7f0805eb
 
     aput v5, v0, v3
 
@@ -1107,7 +1107,7 @@
     goto :goto_2
 
     :cond_4
-    const v5, 0x7f0805d8
+    const v5, 0x7f0805e7
 
     aput v5, v0, v3
 
@@ -1153,7 +1153,7 @@
 
     if-lez v5, :cond_7
 
-    const v5, 0x7f080822
+    const v5, 0x7f080831
 
     aput v5, v0, v3
 
@@ -1206,7 +1206,7 @@
 
     if-lez v5, :cond_9
 
-    const v5, 0x7f080826
+    const v5, 0x7f080835
 
     aput v5, v0, v7
 
@@ -1566,7 +1566,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f080582
+    const v4, 0x7f080591
 
     const v5, 0x7f11004a
 
@@ -2078,7 +2078,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "updateConnectivity: mConnectedTransports="
+    const-string/jumbo v2, "updateConnectivity: mConnectedTransports="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2098,7 +2098,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "updateConnectivity: mValidatedTransports="
+    const-string/jumbo v2, "updateConnectivity: mValidatedTransports="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2157,7 +2157,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f080582
+    const v3, 0x7f080591
 
     const v4, 0x7f11004a
 
@@ -2437,7 +2437,7 @@
 
     new-instance v8, Lcom/android/systemui/statusbar/policy/NetworkController$IconState;
 
-    const v9, 0x7f080582
+    const v9, 0x7f080591
 
     const v10, 0x7f11004a
 

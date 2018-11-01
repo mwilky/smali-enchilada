@@ -548,7 +548,7 @@
 
     if-nez v6, :cond_0
 
-    const v6, 0x7f110643
+    const v6, 0x7f110646
 
     new-array v9, v8, [Ljava/lang/Object;
 
@@ -579,7 +579,7 @@
     goto :goto_0
 
     :cond_0
-    const v6, 0x7f11064d
+    const v6, 0x7f110650
 
     new-array v9, v8, [Ljava/lang/Object;
 
@@ -785,7 +785,7 @@
 
     const-string v3, "UsbPermissionActivity"
 
-    const-string v4, "unable to look up package name"
+    const-string/jumbo v4, "unable to look up package name"
 
     invoke-static {v3, v4, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 

@@ -1429,6 +1429,7 @@
     <string name="wait_for_debugger">ডিবাগারের জন্য অপেক্ষা করুন</string>
     <string name="wait_for_debugger_summary">চালানোর আগে সংযুক্ত করতে জন্য ডিবাগ করা অ্যাপ্লিকেশনটি ডিবাগারের জন্য অপেক্ষা করছে</string>
     <string name="wifi_ap_unable_to_handle_new_sta">এই মুহূর্তে অ্যাক্সেস পয়েন্টের কোনও কানেকশন ফাঁকা নেই</string>
+    <string name="wifi_auth_password_wrong">পাসওয়ার্ড ভুল হতে পারে</string>
     <string name="wifi_cant_connect">কানেক্ট স্থাপন করা যাচ্ছে না</string>
     <string name="wifi_cant_connect_to_ap">"'%1$s'এ যোগ করা যায়নি"</string>
     <string name="wifi_check_password_try_again">পাসওয়ার্ড দেখে আবার চেষ্টা করুন</string>

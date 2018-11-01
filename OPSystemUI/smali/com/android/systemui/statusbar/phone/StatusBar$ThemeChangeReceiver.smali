@@ -217,6 +217,22 @@
 
     invoke-virtual {v3}, Lcom/android/systemui/fragments/FragmentHostManager;->onThemeColorUpdate()V
 
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$ThemeChangeReceiver;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3700(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/phone/OPFacelockController;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_1
+
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$ThemeChangeReceiver;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3700(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/phone/OPFacelockController;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->onThemeColorUpdate()V
+
     :cond_1
     return-void
 .end method

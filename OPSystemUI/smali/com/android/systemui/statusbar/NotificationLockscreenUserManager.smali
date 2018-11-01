@@ -396,7 +396,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    const v3, 0x7f0805df
+    const v3, 0x7f0805ee
 
     invoke-virtual {v2, v3, v1, v1, v1}, Landroid/widget/TextView;->setCompoundDrawablesRelativeWithIntrinsicBounds(IIII)V
 
@@ -406,7 +406,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f07030d
+    const v3, 0x7f070316
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

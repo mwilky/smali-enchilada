@@ -25,8 +25,6 @@
 
 
 # instance fields
-.field private final TAG:Ljava/lang/String;
-
 .field private mCanSwitch:Z
 
 .field protected final mController:Lcom/android/systemui/statusbar/policy/NetworkController;
@@ -69,10 +67,6 @@
     .locals 2
 
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;-><init>(Lcom/android/systemui/qs/QSHost;)V
-
-    const-string v0, "DataSwitchTile"
-
-    iput-object v0, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->TAG:Ljava/lang/String;
 
     const/4 v0, 0x0
 
@@ -143,7 +137,15 @@
     return-void
 .end method
 
-.method static synthetic access$002(Lcom/android/systemui/qs/tiles/DataSwitchTile;Z)Z
+.method static synthetic access$000(Lcom/android/systemui/qs/tiles/DataSwitchTile;)Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->TAG:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$102(Lcom/android/systemui/qs/tiles/DataSwitchTile;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->mCanSwitch:Z
@@ -151,7 +153,7 @@
     return p1
 .end method
 
-.method static synthetic access$100(Lcom/android/systemui/qs/tiles/DataSwitchTile;)Landroid/telephony/TelephonyManager;
+.method static synthetic access$200(Lcom/android/systemui/qs/tiles/DataSwitchTile;)Landroid/telephony/TelephonyManager;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->mTelephonyManager:Landroid/telephony/TelephonyManager;
@@ -159,7 +161,15 @@
     return-object v0
 .end method
 
-.method static synthetic access$200(Lcom/android/systemui/qs/tiles/DataSwitchTile;)Z
+.method static synthetic access$300(Lcom/android/systemui/qs/tiles/DataSwitchTile;)Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->TAG:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$400(Lcom/android/systemui/qs/tiles/DataSwitchTile;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->mVirtualSimExist:Z
@@ -167,7 +177,7 @@
     return v0
 .end method
 
-.method static synthetic access$202(Lcom/android/systemui/qs/tiles/DataSwitchTile;Z)Z
+.method static synthetic access$402(Lcom/android/systemui/qs/tiles/DataSwitchTile;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->mVirtualSimExist:Z
@@ -177,8 +187,6 @@
 
 .method public static synthetic lambda$handleClick$0(Lcom/android/systemui/qs/tiles/DataSwitchTile;)V
     .locals 1
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->mSubscriptionManager:Landroid/telephony/SubscriptionManager;
 
@@ -216,7 +224,7 @@
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->mExtTelephony:Lorg/codeaurora/internal/IExtTelephony;
 
     :cond_0
-    const-string v0, "DataSwitchTile"
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -277,11 +285,21 @@
     :catch_0
     move-exception v0
 
-    const-string v1, "DataSwitchTile"
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->TAG:Ljava/lang/String;
 
     const-string v2, "setDefaultDataSimId"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->TAG:Ljava/lang/String;
+
+    const-string v2, "clear ext telephony service ref"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->mExtTelephony:Lorg/codeaurora/internal/IExtTelephony;
 
     :goto_0
     return-void
@@ -296,7 +314,7 @@
 
     move-result-object v0
 
-    const-string v1, "DataSwitchTile"
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -383,14 +401,14 @@
     :catch_0
     move-exception v1
 
-    const-string v2, "DataSwitchTile"
+    iget-object v2, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->TAG:Ljava/lang/String;
 
     const-string v3, "Error to parse sim state"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_2
-    const-string v1, "DataSwitchTile"
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -469,7 +487,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1104d0
+    const v1, 0x7f1104d3
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -485,7 +503,7 @@
 
     if-nez v0, :cond_0
 
-    const-string v0, "DataSwitchTile"
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -516,7 +534,7 @@
 
     if-eqz v0, :cond_1
 
-    const-string v0, "DataSwitchTile"
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->TAG:Ljava/lang/String;
 
     const-string/jumbo v1, "virtual sim exist. ignore click."
 
@@ -531,7 +549,7 @@
 
     if-nez v0, :cond_2
 
-    const-string v0, "DataSwitchTile"
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->TAG:Ljava/lang/String;
 
     const-string v2, "handleClick:no sim card"
 
@@ -541,7 +559,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f1104d1
+    const v3, 0x7f1104d4
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -560,7 +578,7 @@
 
     if-ne v0, v1, :cond_3
 
-    const-string v0, "DataSwitchTile"
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->TAG:Ljava/lang/String;
 
     const-string v2, "handleClick:only one sim card"
 
@@ -570,7 +588,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f1104d2
+    const v3, 0x7f1104d5
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -685,7 +703,7 @@
 
     move-result v1
 
-    const-string v2, "DataSwitchTile"
+    iget-object v2, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -735,7 +753,7 @@
 
     const/4 v3, 0x1
 
-    const v4, 0x7f08033d
+    const v4, 0x7f080349
 
     packed-switch v2, :pswitch_data_0
 
@@ -752,12 +770,12 @@
     :pswitch_0
     if-eqz v1, :cond_2
 
-    const v2, 0x7f08033c
+    const v2, 0x7f080348
 
     goto :goto_2
 
     :cond_2
-    const v2, 0x7f08033e
+    const v2, 0x7f08034a
 
     :goto_2
     invoke-static {v2}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
@@ -776,7 +794,7 @@
     goto :goto_3
 
     :cond_3
-    const v4, 0x7f08033f
+    const v4, 0x7f08034b
 
     :goto_3
     invoke-static {v4}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
@@ -807,7 +825,7 @@
 
     iput v0, p1, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->state:I
 
-    const-string v0, "DataSwitchTile"
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->TAG:Ljava/lang/String;
 
     const-string/jumbo v2, "virtual sim exist, set to unavailable."
 
@@ -856,7 +874,7 @@
     :goto_6
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f1104d0
+    const v2, 0x7f1104d3
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -898,7 +916,7 @@
 
     move-result v0
 
-    const-string v1, "DataSwitchTile"
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
 

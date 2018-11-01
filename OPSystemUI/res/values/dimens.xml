@@ -448,8 +448,14 @@
     <dimen name="fab_margin">16.0dip</dimen>
     <dimen name="fab_press_translation_z">9.0dip</dimen>
     <dimen name="fab_size">56.0dip</dimen>
-    <dimen name="face_unlock_button_size">14.0dip</dimen>
-    <dimen name="face_unlock_notify_size">17.0dip</dimen>
+    <item type="dimen" name="face_unlock_button_paddingBottom">@dimen/fix_oneplus_contorl_layout_margin_top1</item>
+    <item type="dimen" name="face_unlock_button_paddingLeft">@dimen/fix_oneplus_contorl_layout_margin_left3</item>
+    <item type="dimen" name="face_unlock_button_paddingRight">@dimen/fix_oneplus_contorl_layout_margin_left3</item>
+    <item type="dimen" name="face_unlock_button_paddingTop">@dimen/fix_oneplus_contorl_layout_margin_top1</item>
+    <dimen name="face_unlock_button_size">33.0px</dimen>
+    <item type="dimen" name="face_unlock_light_view_notify_margin_top">@dimen/fix_oneplus_contorl_layout_margin_top2</item>
+    <dimen name="face_unlock_lose_button_margin_top">780.0px</dimen>
+    <dimen name="face_unlock_notify_size">44.0px</dimen>
     <dimen name="fake_shadow_inset">1.0dip</dimen>
     <dimen name="fake_shadow_size">8.0dip</dimen>
     <dimen name="fastscroll_default_thickness">8.0dip</dimen>
@@ -460,14 +466,20 @@
     <dimen name="fingerprint_dialog_fp_icon_size">64.0dip</dimen>
     <dimen name="fingerprint_icon_additional_padding">4.0dip</dimen>
     <dimen name="fingerprint_icon_padding">43.57498px</dimen>
+    <dimen name="fix_oneplus_contorl_layout_margin_bottom1">23.0px</dimen>
+    <dimen name="fix_oneplus_contorl_layout_margin_left2">46.0px</dimen>
+    <dimen name="fix_oneplus_contorl_layout_margin_left3">70.0px</dimen>
+    <dimen name="fix_oneplus_contorl_layout_margin_right2">46.0px</dimen>
+    <dimen name="fix_oneplus_contorl_layout_margin_top1">23.0px</dimen>
+    <dimen name="fix_oneplus_contorl_layout_margin_top2">46.0px</dimen>
     <dimen name="floating_window_margin_bottom">32.0dip</dimen>
     <dimen name="floating_window_margin_left">16.0dip</dimen>
     <dimen name="floating_window_margin_right">16.0dip</dimen>
     <dimen name="floating_window_margin_top">8.0dip</dimen>
     <dimen name="floating_window_z">24.0dip</dimen>
     <dimen name="framed_avatar_size">54.0dip</dimen>
-    <dimen name="global_actions_panel_width">120.0dip</dimen>
-    <dimen name="global_actions_top_padding">120.0dip</dimen>
+    <dimen name="global_actions_panel_width">300.0px</dimen>
+    <dimen name="global_actions_top_padding">250.0px</dimen>
     <dimen name="global_screenshot_bg_padding">20.0dip</dimen>
     <dimen name="glowpadview_glow_radius">75.0dip</dimen>
     <dimen name="glowpadview_inner_radius">15.0dip</dimen>
@@ -520,12 +532,9 @@
     <dimen name="keyguard_indication_margin_bottom">46.0dip</dimen>
     <dimen name="keyguard_indication_margin_bottom_ambient">16.0dip</dimen>
     <dimen name="keyguard_min_swipe_amount">110.0dip</dimen>
-    <dimen name="keyguard_num_pad_key_height">210.0px</dimen>
     <dimen name="keyguard_security_height">1050.0px</dimen>
-    <dimen name="keyguard_security_image_height">120.75px</dimen>
-    <dimen name="keyguard_security_image_width">120.75px</dimen>
-    <dimen name="keyguard_security_max_height">2074.1172px</dimen>
-    <dimen name="keyguard_security_sim_pin_top_space">861.0156px</dimen>
+    <dimen name="keyguard_security_max_height">1273.0938px</dimen>
+    <dimen name="keyguard_security_sim_pin_top_space">0.0px</dimen>
     <dimen name="keyguard_security_view_lateral_margin">94.5px</dimen>
     <dimen name="keyguard_security_view_top_margin">21.0px</dimen>
     <dimen name="keyguard_security_width">1102.5px</dimen>
@@ -1218,6 +1227,11 @@
     <dimen name="op_progress_dialog_right_padding">0.0dip</dimen>
     <dimen name="op_qs_page_indicator_height">8.0dip</dimen>
     <dimen name="op_qs_page_indicator_width">16.0dip</dimen>
+    <dimen name="op_quick_launch_hint_size">34.0px</dimen>
+    <dimen name="op_quick_launch_icon_padding">2.0px</dimen>
+    <dimen name="op_quick_launch_icon_size">236.0px</dimen>
+    <dimen name="op_quick_launch_label_size">47.0px</dimen>
+    <dimen name="op_quick_launch_track_view_padding">158.0px</dimen>
     <dimen name="op_reduce_padding_space2">-9.0dip</dimen>
     <dimen name="op_rounded_corner_content_padding">0.0dip</dimen>
     <dimen name="op_rounded_corner_content_padding_custom">0.0dip</dimen>
@@ -1254,7 +1268,7 @@
     <dimen name="op_volume_row_slider_marginStart">3.0px</dimen>
     <dimen name="op_volume_row_slider_width">801.0px</dimen>
     <dimen name="op_widget_big_font_size">210.0px</dimen>
-    <dimen name="op_widget_label_font_size">16.0sp</dimen>
+    <dimen name="op_widget_label_font_size">41.0px</dimen>
     <dimen name="opcardview_margin">8.0dip</dimen>
     <dimen name="opgridview_margin">8.0dip</dimen>
     <dimen name="overflow_dot_radius">2.0dip</dimen>

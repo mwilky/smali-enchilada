@@ -77,7 +77,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$9;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
-    invoke-static {v1}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$1800(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/systemui/globalactions/GlobalActionsDialog$ToggleAction;
+    invoke-static {v1}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$2000(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/systemui/globalactions/GlobalActionsDialog$ToggleAction;
 
     move-result-object v1
 
@@ -91,7 +91,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$9;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
-    invoke-static {v1}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$1900(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/systemui/globalactions/GlobalActionsDialog$MyAdapter;
+    invoke-static {v1}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$2100(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/systemui/globalactions/GlobalActionsDialog$MyAdapter;
 
     move-result-object v1
 

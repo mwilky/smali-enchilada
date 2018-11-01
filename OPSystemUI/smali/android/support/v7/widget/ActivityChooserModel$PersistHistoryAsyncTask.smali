@@ -133,7 +133,7 @@
 
     invoke-interface {v6, v4, v10, v11}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v10, "time"
+    const-string/jumbo v10, "time"
 
     iget-wide v11, v9, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->time:J
 

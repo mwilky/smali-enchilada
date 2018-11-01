@@ -27,6 +27,18 @@
 
     if-eq v1, v2, :cond_0
 
+    packed-switch v1, :pswitch_data_0
+
+    goto :goto_0
+
+    :pswitch_0
+    sget-object v0, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->OPR_RETAIL:Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
+
+    goto :goto_0
+
+    :pswitch_1
+    sget-object v0, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->MCL:Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
+
     goto :goto_0
 
     :cond_0
@@ -36,4 +48,12 @@
 
     :goto_0
     return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x6
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

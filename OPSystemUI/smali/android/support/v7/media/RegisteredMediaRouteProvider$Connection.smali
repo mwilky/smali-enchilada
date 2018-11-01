@@ -643,7 +643,7 @@
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    const-string v1, "unselectReason"
+    const-string/jumbo v1, "unselectReason"
 
     invoke-virtual {v0, v1, p2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 

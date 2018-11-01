@@ -76,14 +76,6 @@
     return v0
 .end method
 
-.method static synthetic access$200(Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;)I
-    .locals 1
-
-    iget v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;->mMaxConnectionState:I
-
-    return v0
-.end method
-
 
 # virtual methods
 .method public run()V

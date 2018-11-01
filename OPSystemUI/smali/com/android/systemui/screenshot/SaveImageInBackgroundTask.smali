@@ -307,7 +307,7 @@
 
     invoke-direct {v4, v8, v5}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    const v5, 0x7f11057b
+    const v5, 0x7f11057e
 
     invoke-virtual {v10, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -317,7 +317,7 @@
 
     move-result-object v4
 
-    const v6, 0x7f08057f
+    const v6, 0x7f08058e
 
     invoke-virtual {v4, v6}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -363,7 +363,7 @@
 
     invoke-direct {v4, v8, v6}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    const v6, 0x7f11057b
+    const v6, 0x7f11057e
 
     invoke-virtual {v10, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -373,7 +373,7 @@
 
     move-result-object v4
 
-    const v6, 0x7f08057f
+    const v6, 0x7f08058e
 
     invoke-virtual {v4, v6}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -569,7 +569,7 @@
 
     invoke-virtual {v8, v10, v11}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v10, "title"
+    const-string/jumbo v10, "title"
 
     iget-object v11, v1, Lcom/android/systemui/screenshot/SaveImageInBackgroundTask;->mImageFileName:Ljava/lang/String;
 
@@ -735,7 +735,7 @@
 
     move-object/from16 v16, v0
 
-    const v0, 0x7f080372
+    const v0, 0x7f08037f
 
     invoke-direct {v15, v0, v14, v13}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
@@ -803,7 +803,7 @@
 
     move-wide/from16 v19, v6
 
-    const v6, 0x7f080371
+    const v6, 0x7f08037e
 
     invoke-direct {v2, v6, v15, v0}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
@@ -849,7 +849,7 @@
 
     move-object/from16 v21, v0
 
-    const v0, 0x7f080370
+    const v0, 0x7f08037d
 
     invoke-direct {v7, v0, v15, v6}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
@@ -888,7 +888,7 @@
 
     const-string v2, "SaveImageInBackgroundTask"
 
-    const-string v6, "unable to save screenshot"
+    const-string/jumbo v6, "unable to save screenshot"
 
     invoke-static {v2, v6, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -898,7 +898,7 @@
 
     iget-object v2, v1, Lcom/android/systemui/screenshot/SaveImageInBackgroundTask;->mParams:Lcom/android/systemui/screenshot/SaveImageInBackgroundData;
 
-    const v6, 0x7f110576
+    const v6, 0x7f110579
 
     iput v6, v2, Lcom/android/systemui/screenshot/SaveImageInBackgroundData;->errorMsgResId:I
 
@@ -1015,7 +1015,7 @@
 
     iget-object v5, p0, Lcom/android/systemui/screenshot/SaveImageInBackgroundTask;->mPublicNotificationBuilder:Landroid/app/Notification$Builder;
 
-    const v6, 0x7f110579
+    const v6, 0x7f11057c
 
     invoke-virtual {v1, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1025,7 +1025,7 @@
 
     move-result-object v5
 
-    const v7, 0x7f110578
+    const v7, 0x7f11057b
 
     invoke-virtual {v1, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

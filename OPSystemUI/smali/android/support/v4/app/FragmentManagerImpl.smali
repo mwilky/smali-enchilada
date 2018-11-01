@@ -7543,7 +7543,7 @@
     :catch_0
     move-exception v0
 
-    const-string v0, "unknown"
+    const-string/jumbo v0, "unknown"
 
     :goto_9
     new-instance v3, Ljava/lang/IllegalArgumentException;
@@ -8193,6 +8193,8 @@
 
     :cond_39
     return-void
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

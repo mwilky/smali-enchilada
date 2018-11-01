@@ -710,7 +710,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f11051d
+    const v1, 0x7f110520
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -726,7 +726,7 @@
 
     if-eqz v2, :cond_0
 
-    const v2, 0x7f11051e
+    const v2, 0x7f110521
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -759,7 +759,7 @@
     :cond_0
     if-nez p2, :cond_1
 
-    const v2, 0x7f11051c
+    const v2, 0x7f11051f
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1033,7 +1033,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f11051f
+    const v1, 0x7f110522
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1100,7 +1100,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_c
+    if-eqz v4, :cond_d
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1116,11 +1116,24 @@
 
     check-cast v5, Lcom/android/systemui/plugins/qs/QSTile;
 
-    if-eqz v5, :cond_8
+    const-string v6, "custom("
+
+    invoke-virtual {v4, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_4
+
+    invoke-virtual {v4}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v4
+
+    :cond_4
+    if-eqz v5, :cond_9
 
     instance-of v6, v5, Lcom/android/systemui/qs/external/CustomTile;
 
-    if-eqz v6, :cond_4
+    if-eqz v6, :cond_5
 
     move-object v6, v5
 
@@ -1130,18 +1143,18 @@
 
     move-result v6
 
-    if-ne v6, v1, :cond_8
+    if-ne v6, v1, :cond_9
 
-    :cond_4
+    :cond_5
     invoke-interface {v5}, Lcom/android/systemui/plugins/qs/QSTile;->isAvailable()Z
 
     move-result v6
 
-    if-eqz v6, :cond_7
+    if-eqz v6, :cond_8
 
     sget-boolean v6, Lcom/android/systemui/qs/QSTileHost;->DEBUG:Z
 
-    if-eqz v6, :cond_5
+    if-eqz v6, :cond_6
 
     const-string v6, "QSTileHost"
 
@@ -1161,33 +1174,33 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_5
+    :cond_6
     invoke-interface {v5}, Lcom/android/systemui/plugins/qs/QSTile;->removeCallbacks()V
 
     instance-of v6, v5, Lcom/android/systemui/qs/external/CustomTile;
 
-    if-nez v6, :cond_6
+    if-nez v6, :cond_7
 
     iget v6, p0, Lcom/android/systemui/qs/QSTileHost;->mCurrentUser:I
 
-    if-eq v6, v1, :cond_6
+    if-eq v6, v1, :cond_7
 
     invoke-interface {v5, v1}, Lcom/android/systemui/plugins/qs/QSTile;->userSwitch(I)V
 
-    :cond_6
+    :cond_7
     invoke-virtual {v2, v4, v5}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_2
 
-    :cond_7
+    :cond_8
     invoke-interface {v5}, Lcom/android/systemui/plugins/qs/QSTile;->destroy()V
 
     goto :goto_2
 
-    :cond_8
+    :cond_9
     sget-boolean v6, Lcom/android/systemui/qs/QSTileHost;->DEBUG:Z
 
-    if-eqz v6, :cond_9
+    if-eqz v6, :cond_a
 
     const-string v6, "QSTileHost"
 
@@ -1207,7 +1220,7 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_9
+    :cond_a
     :try_start_0
     invoke-virtual {p0, v4}, Lcom/android/systemui/qs/QSTileHost;->createTile(Ljava/lang/String;)Lcom/android/systemui/plugins/qs/QSTile;
 
@@ -1215,13 +1228,13 @@
 
     move-object v5, v6
 
-    if-eqz v5, :cond_b
+    if-eqz v5, :cond_c
 
     invoke-interface {v5}, Lcom/android/systemui/plugins/qs/QSTile;->isAvailable()Z
 
     move-result v6
 
-    if-eqz v6, :cond_a
+    if-eqz v6, :cond_b
 
     invoke-interface {v5, v4}, Lcom/android/systemui/plugins/qs/QSTile;->setTileSpec(Ljava/lang/String;)V
 
@@ -1229,12 +1242,12 @@
 
     goto :goto_1
 
-    :cond_a
+    :cond_b
     invoke-interface {v5}, Lcom/android/systemui/plugins/qs/QSTile;->destroy()V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_b
+    :cond_c
     :goto_1
     goto :goto_2
 
@@ -1262,7 +1275,7 @@
     :goto_2
     goto/16 :goto_0
 
-    :cond_c
+    :cond_d
     iput v1, p0, Lcom/android/systemui/qs/QSTileHost;->mCurrentUser:I
 
     iget-object v3, p0, Lcom/android/systemui/qs/QSTileHost;->mTileSpecs:Ljava/util/ArrayList;
@@ -1290,7 +1303,7 @@
 
     move-result v4
 
-    if-ge v3, v4, :cond_d
+    if-ge v3, v4, :cond_e
 
     iget-object v4, p0, Lcom/android/systemui/qs/QSTileHost;->mCallbacks:Ljava/util/List;
 
@@ -1306,7 +1319,7 @@
 
     goto :goto_3
 
-    :cond_d
+    :cond_e
     return-void
 .end method
 

@@ -134,8 +134,8 @@
     <integer name="recents_task_exit_to_app_duration">125</integer>
     <integer name="scaled_password_text_size">24</integer>
     <integer name="show_password_duration">200</integer>
-    <integer name="slideEdgeEnd">0x00800005</integer>
-    <integer name="slideEdgeStart">0x00800003</integer>
+    <integer name="slideEdgeEnd">5</integer>
+    <integer name="slideEdgeStart">3</integer>
     <integer name="speed_bump_fade_duration_ms">167</integer>
     <integer name="speed_bump_lock_out_color_change_ms">500</integer>
     <integer name="speed_bump_lock_out_color_change_start_delay_ms">5433</integer>

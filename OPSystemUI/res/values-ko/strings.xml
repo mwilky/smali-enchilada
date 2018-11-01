@@ -1121,6 +1121,8 @@
     <string name="qs_rearrange">빠른 설정 재정렬</string>
     <string name="qs_status_phone_muted">휴대전화 음소거됨</string>
     <string name="qs_status_phone_vibrate">휴대전화 진동 모드</string>
+    <string name="quick_launch_exit">끝내기</string>
+    <string name="quick_launch_exit_hint">종료하려면 화면에서 손가락 떼기</string>
     <string name="quick_settings">빠른 설정</string>
     <string name="quick_settings_bluetooth_detail_empty_text">페어링된 기기가 없습니다</string>
     <string name="quick_settings_bluetooth_label">블루투스</string>
@@ -1318,10 +1320,13 @@
     <string name="sd_card_unmount_action">분리</string>
     <string name="search_menu_title">검색</string>
     <string name="select_application">애플리케이션 선택</string>
+    <string name="select_day">월과 일 선택</string>
+    <string name="select_hours">시간 선택</string>
     <string name="select_logd_size_dialog_title">로그 버퍼당 로거 크기 선택</string>
     <string name="select_logd_size_title">로거 버퍼 크기</string>
     <string name="select_logpersist_dialog_title">기기에 영구 저장할 로그 버퍼 선택</string>
     <string name="select_logpersist_title">로거 데이터를 기기에 영구 저장</string>
+    <string name="select_minutes">분 선택</string>
     <string name="select_private_dns_configuration_dialog_title">비공개 DNS 모드 선택</string>
     <string name="select_private_dns_configuration_title">비공개 DNS</string>
     <string name="select_usb_configuration_dialog_title">USB 설정 선택</string>
@@ -1329,6 +1334,7 @@
     <string name="select_webview_provider_dialog_title">WebView 구현 설정</string>
     <string name="select_webview_provider_title">WebView 구현</string>
     <string name="select_webview_provider_toast_text">선택이 더 이상 유효하지 않습니다. 다시 시도하세요.</string>
+    <string name="select_year">연도 선택</string>
     <string name="show_all_anrs">백그라운드 ANR 표시</string>
     <string name="show_all_anrs_summary">백그라운드 앱과 관련해 앱 응답 없음 대화상자 표시</string>
     <string name="show_battery_percentage">내장형 배터리 잔량 비율 표시</string>
@@ -1424,6 +1430,11 @@
 \u0009• 온도가 높은 곳에서 휴대폰 사용"</string>
     <string name="thermal_shutdown_message">휴대전화가 정상적으로 실행 중입니다.</string>
     <string name="thermal_shutdown_title">발열로 인해 휴대전화 전원이 종료됨</string>
+    <string name="time_picker_header_text">시간 설정</string>
+    <string name="time_picker_hour_label">시간</string>
+    <string name="time_picker_input_error">유효한 시간을 입력하세요</string>
+    <string name="time_picker_minute_label">분</string>
+    <string name="time_picker_prompt_label">시간을 입력하세요</string>
     <string name="time_unit_just_now">조금 전</string>
     <string name="title_convert_fbe">파일 기반 암호화로 변환</string>
     <string name="title_usb_accessory">USB 액세서리</string>
@@ -1547,6 +1558,7 @@
     <string name="wait_for_debugger">디버거 연결을 위해 대기</string>
     <string name="wait_for_debugger_summary">디버깅된 애플리케이션이 실행되기 전에 디버거 연결을 위해 대기</string>
     <string name="wifi_ap_unable_to_handle_new_sta">액세스 포인트가 일시적으로 가득 참</string>
+    <string name="wifi_auth_password_wrong">암호가 잘못되었을 수 있습니다.</string>
     <string name="wifi_cant_connect">연결할 수 없음</string>
     <string name="wifi_cant_connect_to_ap">"'%1$s'에 연결할 수 없음"</string>
     <string name="wifi_check_password_try_again">비밀번호를 확인하고 다시 시도하세요.</string>

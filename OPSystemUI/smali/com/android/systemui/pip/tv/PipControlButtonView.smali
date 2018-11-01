@@ -79,11 +79,11 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    const v1, 0x7f0d01d9
+    const v1, 0x7f0d01da
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const v1, 0x7f0a0195
+    const v1, 0x7f0a0197
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/pip/tv/PipControlButtonView;->findViewById(I)Landroid/view/View;
 
@@ -103,7 +103,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/pip/tv/PipControlButtonView;->mButtonImageView:Landroid/widget/ImageView;
 
-    const v1, 0x7f0a00f4
+    const v1, 0x7f0a00f5
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/pip/tv/PipControlButtonView;->findViewById(I)Landroid/view/View;
 

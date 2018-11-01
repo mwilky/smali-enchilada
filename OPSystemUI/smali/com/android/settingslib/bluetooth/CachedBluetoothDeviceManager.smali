@@ -1522,7 +1522,7 @@
 
     if-nez v0, :cond_0
 
-    const-string v1, "updateHearingAidsDevices: getHearingAidProfile() is null"
+    const-string/jumbo v1, "updateHearingAidsDevices: getHearingAidProfile() is null"
 
     invoke-direct {p0, v1}, Lcom/android/settingslib/bluetooth/CachedBluetoothDeviceManager;->log(Ljava/lang/String;)V
     :try_end_0

@@ -1123,6 +1123,8 @@ De asemenea, sunteți conectat(ă) la o rețea VPN care vă poate monitoriza act
     <string name="qs_rearrange">Rearanjați Setările rapide</string>
     <string name="qs_status_phone_muted">Sunetul telefonului este dezactivat</string>
     <string name="qs_status_phone_vibrate">Telefonul vibrează</string>
+    <string name="quick_launch_exit">Ieșire</string>
+    <string name="quick_launch_exit_hint">Ridicați degetul de pe ecran pentru a ieși</string>
     <string name="quick_settings">Setări rapide</string>
     <string name="quick_settings_bluetooth_detail_empty_text">Niciun dispozitiv conectat disponibil</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1320,10 +1322,13 @@ De asemenea, sunteți conectat(ă) la o rețea VPN care vă poate monitoriza act
     <string name="sd_card_unmount_action">Demontare</string>
     <string name="search_menu_title">Căutați</string>
     <string name="select_application">Selectați o aplicație</string>
+    <string name="select_day">Selectați luna și ziua</string>
+    <string name="select_hours">Selectați orele</string>
     <string name="select_logd_size_dialog_title">Dimensiuni jurnal / tampon jurnal</string>
     <string name="select_logd_size_title">Dimensiunile tamponului jurnalului</string>
     <string name="select_logpersist_dialog_title">Selectați zonele-tampon ale jurnalului de stocat permanent pe dispozitiv</string>
     <string name="select_logpersist_title">Stocați date jurnal permanent pe dispozitiv</string>
+    <string name="select_minutes">Selectați minutele</string>
     <string name="select_private_dns_configuration_dialog_title">Selectați modul DNS privat</string>
     <string name="select_private_dns_configuration_title">DNS privat</string>
     <string name="select_usb_configuration_dialog_title">Selectați configurația USB</string>
@@ -1331,6 +1336,7 @@ De asemenea, sunteți conectat(ă) la o rețea VPN care vă poate monitoriza act
     <string name="select_webview_provider_dialog_title">Setați implementarea WebView</string>
     <string name="select_webview_provider_title">Implementare WebView</string>
     <string name="select_webview_provider_toast_text">Această opțiune nu mai este validă. Încercați din nou.</string>
+    <string name="select_year">Selectați anul</string>
     <string name="show_all_anrs">Afișați ANR de fundal</string>
     <string name="show_all_anrs_summary">Afișați dialogul Aplicația nu răspunde pentru aplicațiile din fundal</string>
     <string name="show_battery_percentage">Afișați procentajul bateriei încorporat</string>
@@ -1426,6 +1432,11 @@ Telefonul s-ar putea încălzi prea mult dacă:
 \u0009• folosiți telefonul la temperaturi ridicate."</string>
     <string name="thermal_shutdown_message">Acum telefonul funcționează normal</string>
     <string name="thermal_shutdown_title">Telefonul s-a oprit din cauza încălzirii</string>
+    <string name="time_picker_header_text">Setați ora</string>
+    <string name="time_picker_hour_label">oră</string>
+    <string name="time_picker_input_error">Introduceți o oră validă</string>
+    <string name="time_picker_minute_label">minut</string>
+    <string name="time_picker_prompt_label">Introduceți ora</string>
     <string name="time_unit_just_now">Chiar acum</string>
     <string name="title_convert_fbe">Se face conversia la criptarea bazată pe sistemul de fișiere</string>
     <string name="title_usb_accessory">Accesoriu USB</string>
@@ -1549,6 +1560,7 @@ Orice utilizator poate actualiza aplicațiile pentru toți ceilalți utilizatori
     <string name="wait_for_debugger">Așteptați depanatorul</string>
     <string name="wait_for_debugger_summary">Înaintea executării, aplicația așteaptă atașarea depanatorului</string>
     <string name="wifi_ap_unable_to_handle_new_sta">Punctul de acces este temporar plin</string>
+    <string name="wifi_auth_password_wrong">Este posibil ca parola să fie incorectă</string>
     <string name="wifi_cant_connect">Nu se poate conecta</string>
     <string name="wifi_cant_connect_to_ap">Nu se poate conecta la „%1$s”</string>
     <string name="wifi_check_password_try_again">Verificați parola și încercați din nou</string>

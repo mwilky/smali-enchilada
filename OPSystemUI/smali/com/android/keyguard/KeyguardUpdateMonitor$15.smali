@@ -87,7 +87,7 @@
 
     const-string v1, "KeyguardUpdateMonitor"
 
-    const-string v2, "unable to check task stack"
+    const-string/jumbo v2, "unable to check task stack"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 

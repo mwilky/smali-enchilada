@@ -3,12 +3,18 @@
     <plurals name="kg_password_default_pin_message">
         <item quantity="other">SIM の PIN を入力してください。あと %d 回間違うと 携帯電話会社に連絡のうえ、お使いのデバイスのロックを解除していただく必要があります。</item>
     </plurals>
+    <plurals name="kg_password_default_pin_message_multi_sim">
+        <item quantity="other">SIM カード %1$d の PIN を入力してください。残り %2$d 回試行できます。</item>
+    </plurals>
     <plurals name="kg_password_default_puk_message">
         <item quantity="other">SIM が無効化されました。続行するには PUK コードを入力してください。あと %d 回間違うと SIM は永久に使用できなくなります。詳細については携帯電話会社にお問い合わせください。</item>
     </plurals>
     <plurals name="kg_password_wrong_pin_code">
         <item quantity="other">SIM PIN コードが無効です。入力できるのはあと %d 回です。</item>
         <item quantity="one">SIM PIN コードが無効です。入力できるのはあと %d 回です。この回数を超えると、お使いの端末をロック解除するのに携帯通信会社にお問い合わせいただく必要があります。</item>
+    </plurals>
+    <plurals name="kg_password_wrong_pin_code_multi_sim">
+        <item quantity="other">SIM カード %1$d の PIN が正しくありません。残り %2$d 回試行できます。</item>
     </plurals>
     <plurals name="kg_password_wrong_puk_code">
         <item quantity="other">SIM PUK コードが無効です。入力できるのはあと %d 回です。この回数を超えると SIM は完全に使用できなくなります。</item>

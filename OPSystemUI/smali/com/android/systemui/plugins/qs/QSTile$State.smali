@@ -45,9 +45,23 @@
     .end annotation
 .end field
 
+.field public isAnimating:Z
+
 .field public isTransient:Z
 
 .field public label:Ljava/lang/CharSequence;
+
+.field public mLottieActiveAnim:Ljava/lang/CharSequence;
+
+.field public mLottieActiveAnimAndroid:Ljava/lang/CharSequence;
+
+.field public mLottieInactiveAnim:Ljava/lang/CharSequence;
+
+.field public mLottieInactiveAnimAndroid:Ljava/lang/CharSequence;
+
+.field public mLottieUnavailableAnim:Ljava/lang/CharSequence;
+
+.field public mLottieUnavailableAnimAndroid:Ljava/lang/CharSequence;
 
 .field public secondaryLabel:Ljava/lang/CharSequence;
 
@@ -71,6 +85,8 @@
     iput-boolean v0, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->dualTarget:Z
 
     iput-boolean v0, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->isTransient:Z
+
+    iput-boolean v0, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->isAnimating:Z
 
     return-void
 .end method
@@ -258,6 +274,84 @@
 
     move-result v0
 
+    if-eqz v0, :cond_1
+
+    iget-boolean v0, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->isAnimating:Z
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iget-boolean v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->isAnimating:Z
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieActiveAnim:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieActiveAnim:Ljava/lang/CharSequence;
+
+    invoke-static {v0, v1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieInactiveAnim:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieInactiveAnim:Ljava/lang/CharSequence;
+
+    invoke-static {v0, v1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieUnavailableAnim:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieUnavailableAnim:Ljava/lang/CharSequence;
+
+    invoke-static {v0, v1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieActiveAnimAndroid:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieActiveAnimAndroid:Ljava/lang/CharSequence;
+
+    invoke-static {v0, v1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieInactiveAnimAndroid:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieInactiveAnimAndroid:Ljava/lang/CharSequence;
+
+    invoke-static {v0, v1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieUnavailableAnimAndroid:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieUnavailableAnimAndroid:Ljava/lang/CharSequence;
+
+    invoke-static {v0, v1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
     if-nez v0, :cond_0
 
     goto :goto_0
@@ -334,6 +428,34 @@
     :goto_2
     iput-object v1, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->slash:Lcom/android/systemui/plugins/qs/QSTile$SlashState;
 
+    iget-boolean v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->isAnimating:Z
+
+    iput-boolean v1, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->isAnimating:Z
+
+    iget-object v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieActiveAnim:Ljava/lang/CharSequence;
+
+    iput-object v1, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieActiveAnim:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieInactiveAnim:Ljava/lang/CharSequence;
+
+    iput-object v1, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieInactiveAnim:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieUnavailableAnim:Ljava/lang/CharSequence;
+
+    iput-object v1, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieUnavailableAnim:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieActiveAnimAndroid:Ljava/lang/CharSequence;
+
+    iput-object v1, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieActiveAnimAndroid:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieInactiveAnimAndroid:Ljava/lang/CharSequence;
+
+    iput-object v1, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieInactiveAnimAndroid:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieUnavailableAnimAndroid:Ljava/lang/CharSequence;
+
+    iput-object v1, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieUnavailableAnimAndroid:Ljava/lang/CharSequence;
+
     return v0
 
     :cond_3
@@ -349,6 +471,99 @@
     invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v0
+.end method
+
+.method public getLottieAnimFile(Z)Ljava/lang/CharSequence;
+    .locals 2
+
+    const/4 v0, 0x0
+
+    iget v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->state:I
+
+    packed-switch v1, :pswitch_data_0
+
+    goto :goto_0
+
+    :pswitch_0
+    if-eqz p1, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieActiveAnimAndroid:Ljava/lang/CharSequence;
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieActiveAnim:Ljava/lang/CharSequence;
+
+    goto :goto_0
+
+    :pswitch_1
+    if-eqz p1, :cond_1
+
+    iget-object v0, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieInactiveAnimAndroid:Ljava/lang/CharSequence;
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieInactiveAnim:Ljava/lang/CharSequence;
+
+    goto :goto_0
+
+    :pswitch_2
+    if-eqz p1, :cond_2
+
+    iget-object v0, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieUnavailableAnimAndroid:Ljava/lang/CharSequence;
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v0, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieUnavailableAnim:Ljava/lang/CharSequence;
+
+    :goto_0
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public isNeedLottie(Z)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    new-array v1, v0, [I
+
+    const/4 v2, 0x0
+
+    const/16 v3, 0x60
+
+    aput v3, v1, v2
+
+    invoke-static {v1}, Landroid/util/OpFeatures;->isSupport([I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    return v2
+
+    :cond_0
+    invoke-virtual {p0, p1}, Lcom/android/systemui/plugins/qs/QSTile$State;->getLottieAnimFile(Z)Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    return v0
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -485,6 +700,62 @@
     const-string v1, "\""
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ",isAnimating="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->isAnimating:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ",lottieActiveAnim="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieActiveAnim:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
+
+    const-string v1, ",lottieInactiveAnim="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieInactiveAnim:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
+
+    const-string v1, ",lottieUnavailableAnim="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieUnavailableAnim:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
+
+    const-string v1, ",lottieActiveAnimAndroid="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieActiveAnimAndroid:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
+
+    const-string v1, ",lottieInactiveAnimAndroid="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieInactiveAnimAndroid:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
+
+    const-string v1, ",lottieUnavailableAnim="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/android/systemui/plugins/qs/QSTile$State;->mLottieUnavailableAnimAndroid:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x5d
 

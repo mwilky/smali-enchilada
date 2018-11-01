@@ -15,11 +15,7 @@
 
 .field private mBatteryMeterView:Lcom/android/systemui/BatteryMeterView;
 
-.field private mLeftBatteryMeterView:Lcom/android/systemui/BatteryMeterViewLeft;
-
 .field private mClockView:Lcom/android/systemui/statusbar/policy/Clock;
-
-.field private mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
 
 .field private mDateView:Lcom/android/systemui/statusbar/policy/DateView;
 
@@ -27,7 +23,7 @@
 
 .field private final mHandler:Landroid/os/Handler;
 
-.field public mHeaderQsPanel:Lcom/android/systemui/qs/QuickQSPanel;
+.field protected mHeaderQsPanel:Lcom/android/systemui/qs/QuickQSPanel;
 
 .field private mHeaderTextContainerAlphaAnimator:Lcom/android/systemui/qs/TouchAnimator;
 
@@ -672,7 +668,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f07055e
+    const v2, 0x7f07056c
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -725,7 +721,7 @@
     goto :goto_0
 
     :cond_0
-    const v2, 0x7f070584
+    const v2, 0x7f070592
 
     :goto_0
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -802,13 +798,13 @@
 
     iget-object v5, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mRingerModeIcon:Landroid/widget/ImageView;
 
-    const v6, 0x7f08064c
+    const v6, 0x7f08065b
 
     invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setImageResource(I)V
 
     iget-object v5, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mRingerModeTextView:Landroid/widget/TextView;
 
-    const v6, 0x7f1104b1
+    const v6, 0x7f1104b2
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(I)V
 
@@ -823,13 +819,13 @@
 
     iget-object v5, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mRingerModeIcon:Landroid/widget/ImageView;
 
-    const v6, 0x7f08064b
+    const v6, 0x7f08065a
 
     invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setImageResource(I)V
 
     iget-object v5, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mRingerModeTextView:Landroid/widget/TextView;
 
-    const v6, 0x7f1104b0
+    const v6, 0x7f1104b1
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(I)V
 
@@ -1250,31 +1246,6 @@
     goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
-
-    const/4 v1, 0x0
-
-    if-ne p1, v0, :cond_mw
-
-    const-class v0, Lcom/android/systemui/plugins/ActivityStarter;
-
-    invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/systemui/plugins/ActivityStarter;
-
-    new-instance v2, Landroid/content/Intent;
-
-    const-string v3, "android.intent.action.SHOW_ALARMS"
-
-    invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    invoke-interface {v0, v2, v1}, Lcom/android/systemui/plugins/ActivityStarter;->postStartActivityDismissingKeyguard(Landroid/content/Intent;I)V
-
-    goto :goto_0
-
-    :cond_mw
     iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mBatteryMeterView:Lcom/android/systemui/BatteryMeterView;
 
     if-ne p1, v0, :cond_1
@@ -1296,27 +1267,6 @@
     invoke-interface {v0, v2, v1}, Lcom/android/systemui/plugins/ActivityStarter;->postStartActivityDismissingKeyguard(Landroid/content/Intent;I)V
 
     :cond_1
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mLeftBatteryMeterView:Lcom/android/systemui/BatteryMeterViewLeft;
-
-    if-ne p1, v0, :cond_mw2
-
-    const-class v0, Lcom/android/systemui/plugins/ActivityStarter;
-
-    invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/systemui/plugins/ActivityStarter;
-
-    new-instance v2, Landroid/content/Intent;
-
-    const-string v3, "android.intent.action.POWER_USAGE_SUMMARY"
-
-    invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    invoke-interface {v0, v2, v1}, Lcom/android/systemui/plugins/ActivityStarter;->postStartActivityDismissingKeyguard(Landroid/content/Intent;I)V
-
-    :cond_mw2
     :goto_0
     return-void
 .end method
@@ -1372,7 +1322,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f07056f
+    const v3, 0x7f07057d
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1412,7 +1362,7 @@
 
     invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
 
-    const v0, 0x7f0a032d
+    const v0, 0x7f0a0331
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 
@@ -1422,7 +1372,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mHeaderQsPanel:Lcom/android/systemui/qs/QuickQSPanel;
 
-    const v0, 0x7f0a0334
+    const v0, 0x7f0a0338
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 
@@ -1430,7 +1380,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mSystemIconsView:Landroid/view/View;
 
-    const v0, 0x7f0a032e
+    const v0, 0x7f0a0332
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 
@@ -1438,7 +1388,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mQuickQsStatusIcons:Landroid/view/View;
 
-    const v0, 0x7f0a03c6
+    const v0, 0x7f0a03cc
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 
@@ -1464,7 +1414,7 @@
 
     iput-object v3, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mIconManager:Lcom/android/systemui/statusbar/phone/StatusBarIconController$TintedIconManager;
 
-    const v0, 0x7f0a0181
+    const v0, 0x7f0a0182
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 
@@ -1472,7 +1422,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mHeaderTextContainerView:Landroid/view/View;
 
-    const v0, 0x7f0a021f
+    const v0, 0x7f0a0222
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 
@@ -1480,7 +1430,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mLongPressTooltipView:Landroid/view/View;
 
-    const v0, 0x7f0a03ce
+    const v0, 0x7f0a03d4
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 
@@ -1488,7 +1438,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mStatusContainer:Landroid/view/View;
 
-    const v0, 0x7f0a03d0
+    const v0, 0x7f0a03d6
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 
@@ -1496,7 +1446,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mStatusSeparator:Landroid/view/View;
 
-    const v0, 0x7f0a027e
+    const v0, 0x7f0a0282
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 
@@ -1506,7 +1456,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mNextAlarmIcon:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a027f
+    const v0, 0x7f0a0283
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 
@@ -1516,7 +1466,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mNextAlarmTextView:Landroid/widget/TextView;
 
-    const v0, 0x7f0a034a
+    const v0, 0x7f0a0350
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 
@@ -1526,7 +1476,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mRingerModeIcon:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a034b
+    const v0, 0x7f0a0351
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 
@@ -1552,7 +1502,7 @@
 
     move-result v2
 
-    const v3, 0x7f0a00bd
+    const v3, 0x7f0a00be
 
     const/4 v4, 0x0
 
@@ -1569,35 +1519,6 @@
     check-cast v4, Lcom/android/systemui/BatteryMeterView;
 
     iput-object v4, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mBatteryMeterView:Lcom/android/systemui/BatteryMeterView;
-    
-    const-string v0, "battery_left"
-
-    const-string v1, "id"
-
-    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v4
-    
-    invoke-virtual {p0, v4}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/android/systemui/BatteryMeterViewLeft;
-
-    iput-object v4, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mLeftBatteryMeterView:Lcom/android/systemui/BatteryMeterViewLeft;
-    
-    iget-object v4, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mLeftBatteryMeterView:Lcom/android/systemui/BatteryMeterViewLeft;
-    
-    if-eqz v4, :cond_mw
-    
-    invoke-virtual {v4, p0}, Lcom/android/systemui/statusbar/policy/Clock;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    const/4 v5, 0x1
-
-    invoke-virtual {v4, v5}, Lcom/android/systemui/BatteryMeterView;->setForceShowPercent(Z)V
-    
-    :cond_mw
-    invoke-virtual {p0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->setBatteryPosition()V
 
     iget-object v4, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mBatteryMeterView:Lcom/android/systemui/BatteryMeterView;
 
@@ -1616,34 +1537,12 @@
     check-cast v3, Lcom/android/systemui/statusbar/policy/Clock;
 
     iput-object v3, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockView:Lcom/android/systemui/statusbar/policy/Clock;
-    
-    const-string v0, "clock_right"
-
-    const-string v1, "id"
-
-    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v1
-    
-    invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/android/systemui/statusbar/policy/ClockRight;
-
-    iput-object v3, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
-    
-    invoke-virtual {v3, p0}, Lcom/android/systemui/statusbar/policy/Clock;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->setIconColors()V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->setClockPosition()V
 
     iget-object v3, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockView:Lcom/android/systemui/statusbar/policy/Clock;
 
     invoke-virtual {v3, p0}, Lcom/android/systemui/statusbar/policy/Clock;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v3, 0x7f0a00e4
+    const v3, 0x7f0a00e5
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 
@@ -2035,83 +1934,5 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->post(Ljava/lang/Runnable;)Z
 
-    return-void
-.end method
-
-.method public setIconColors()V
-    .locals 2
-
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockView:Lcom/android/systemui/statusbar/policy/Clock;
-    
-    if-eqz v0, :cond_exit
-    
-    sget v1, Lcom/android/mwilky/Renovate;->mClockColorOP:I
-    
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    :cond_exit
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
-    
-    if-eqz v0, :cond_exit4
-    
-    sget v1, Lcom/android/mwilky/Renovate;->mClockColorOP:I
-    
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    :cond_exit4
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mBatteryMeterView:Lcom/android/systemui/BatteryMeterView;
-    
-    if-eqz v0, :cond_exit2
-    
-    invoke-virtual {v0}, Lcom/android/systemui/BatteryMeterView;->setExpandedColors()V
-
-    :cond_exit2
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mLeftBatteryMeterView:Lcom/android/systemui/BatteryMeterViewLeft;
-    
-    if-eqz v0, :cond_exit3
-    
-    invoke-virtual {v0}, Lcom/android/systemui/BatteryMeterView;->setExpandedColors()V
-
-    :cond_exit3
-    return-void
-.end method
-
-.method public setClockPosition()V
-    .locals 2
-
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockView:Lcom/android/systemui/statusbar/policy/Clock;
-    
-    if-eqz v0, :cond_right
-    
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClockVisibility()V
-    
-    :cond_right
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
-    
-    if-eqz v0, :cond_exit
-    
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/ClockRight;->updateClockVisibility()V
-    
-    :cond_exit
-    return-void
-.end method
-
-.method public setBatteryPosition()V
-    .locals 2
-
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mBatteryMeterView:Lcom/android/systemui/BatteryMeterView;
-    
-    if-eqz v0, :cond_left
-    
-    invoke-virtual {v0}, Lcom/android/systemui/BatteryMeterView;->batteryPosition()V
-    
-    :cond_left
-    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mLeftBatteryMeterView:Lcom/android/systemui/BatteryMeterViewLeft;
-    
-    if-eqz v0, :cond_exit
-    
-    invoke-virtual {v0}, Lcom/android/systemui/BatteryMeterViewLeft;->batteryPosition()V
-    
-    :cond_exit
     return-void
 .end method

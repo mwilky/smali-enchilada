@@ -105,7 +105,7 @@
 
     move-result v0
 
-    const v3, 0x7f0a02cb
+    const v3, 0x7f0a02cf
 
     if-ne v0, v3, :cond_0
 
@@ -123,7 +123,7 @@
 
     move-result v0
 
-    const v3, 0x7f0a02ca
+    const v3, 0x7f0a02ce
 
     if-ne v0, v3, :cond_1
 
@@ -138,7 +138,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f070494
+    const v2, 0x7f07049d
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -148,7 +148,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f070495
+    const v3, 0x7f07049e
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -167,11 +167,13 @@
     goto :goto_1
 
     :cond_2
+    if-nez v0, :cond_3
+
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    const v4, 0x7f07048e
+    const v4, 0x7f070497
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -181,12 +183,13 @@
 
     move-result-object v3
 
-    const v4, 0x7f07048f
+    const v4, 0x7f070498
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
+    :cond_3
     :goto_1
     int-to-float v3, v1
 
@@ -265,7 +268,7 @@
 
     div-float v3, v0, v3
 
-    const/high16 v4, 0x42ae0000    # 87.0f
+    const/high16 v4, 0x42be0000    # 95.0f
 
     iget-object v5, p0, Lcom/android/systemui/fingerprint/CircleImageView;->paint:Landroid/graphics/Paint;
 

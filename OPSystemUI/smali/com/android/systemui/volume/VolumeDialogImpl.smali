@@ -252,7 +252,7 @@
 
     new-instance v0, Landroid/view/ContextThemeWrapper;
 
-    const v1, 0x7f120546
+    const v1, 0x7f120547
 
     invoke-direct {v0, p1, v1}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
@@ -683,11 +683,11 @@
 
     move-result-object v0
 
-    const v1, 0x7f080855
+    const v1, 0x7f080864
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorDialogBackground:I
 
-    const v1, 0x7f080859
+    const v1, 0x7f080868
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorDialogRowContainerBackground:I
 
@@ -715,7 +715,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorSeekbarThumb:I
 
-    const v1, 0x7f080857
+    const v1, 0x7f080866
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorSeekbarBackgroundDrawable:I
 
@@ -739,11 +739,11 @@
 
     move-result-object v0
 
-    const v1, 0x7f080854
+    const v1, 0x7f080863
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorDialogBackground:I
 
-    const v1, 0x7f080858
+    const v1, 0x7f080867
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorDialogRowContainerBackground:I
 
@@ -771,7 +771,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorSeekbarThumb:I
 
-    const v1, 0x7f080856
+    const v1, 0x7f080865
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorSeekbarBackgroundDrawable:I
 
@@ -963,11 +963,11 @@
 
     move-result-object v0
 
-    const v1, 0x7f080855
+    const v1, 0x7f080864
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorDialogBackground:I
 
-    const v1, 0x7f080859
+    const v1, 0x7f080868
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorDialogRowContainerBackground:I
 
@@ -995,7 +995,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorSeekbarThumb:I
 
-    const v1, 0x7f080857
+    const v1, 0x7f080866
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorSeekbarBackgroundDrawable:I
 
@@ -1460,7 +1460,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mDialog:Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;
 
-    const v3, 0x7f0a0457
+    const v3, 0x7f0a0460
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;->findViewById(I)Landroid/view/View;
 
@@ -1480,7 +1480,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mDialog:Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;
 
-    const v3, 0x7f0a0458
+    const v3, 0x7f0a0461
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;->findViewById(I)Landroid/view/View;
 
@@ -1538,7 +1538,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mDialog:Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;
 
-    const v3, 0x7f0a0459
+    const v3, 0x7f0a0462
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;->findViewById(I)Landroid/view/View;
 
@@ -1550,7 +1550,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mDialog:Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;
 
-    const v3, 0x7f0a03a3
+    const v3, 0x7f0a03a9
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;->findViewById(I)Landroid/view/View;
 
@@ -1560,7 +1560,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mDialog:Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;
 
-    const v3, 0x7f0a03a0
+    const v3, 0x7f0a03a6
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;->findViewById(I)Landroid/view/View;
 
@@ -1572,7 +1572,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mDialogView:Landroid/view/ViewGroup;
 
-    const v3, 0x7f0a02de
+    const v3, 0x7f0a02e2
 
     invoke-virtual {v1, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1590,7 +1590,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mDialogView:Landroid/view/ViewGroup;
 
-    const v3, 0x7f0a045c
+    const v3, 0x7f0a0465
 
     invoke-virtual {v1, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1618,9 +1618,9 @@
 
     const/16 v4, 0xa
 
-    const v5, 0x7f0803dc
+    const v5, 0x7f0803e9
 
-    const v6, 0x7f0803dc
+    const v6, 0x7f0803e9
 
     const/4 v7, 0x1
 
@@ -1633,9 +1633,9 @@
     :cond_1
     const/4 v10, 0x3
 
-    const v11, 0x7f0803e9
+    const v11, 0x7f0803f6
 
-    const v12, 0x7f0803ec
+    const v12, 0x7f0803f9
 
     const/4 v13, 0x1
 
@@ -1655,9 +1655,9 @@
 
     const/4 v4, 0x2
 
-    const v5, 0x7f0803f0
+    const v5, 0x7f0803fd
 
-    const v6, 0x7f0803f1
+    const v6, 0x7f0803fe
 
     const/4 v7, 0x1
 
@@ -1669,9 +1669,9 @@
 
     const/4 v10, 0x4
 
-    const v11, 0x7f0803dd
+    const v11, 0x7f0803ea
 
-    const v12, 0x7f0803de
+    const v12, 0x7f0803eb
 
     const/4 v13, 0x1
 
@@ -1683,9 +1683,9 @@
 
     const/4 v4, 0x0
 
-    const v5, 0x7f0803f6
+    const v5, 0x7f080403
 
-    const v6, 0x7f0803f6
+    const v6, 0x7f080403
 
     const/4 v7, 0x0
 
@@ -1693,9 +1693,9 @@
 
     const/4 v10, 0x6
 
-    const v11, 0x7f0803df
+    const v11, 0x7f0803ec
 
-    const v12, 0x7f0803df
+    const v12, 0x7f0803ec
 
     const/4 v13, 0x0
 
@@ -1703,9 +1703,9 @@
 
     const/4 v4, 0x1
 
-    const v5, 0x7f0803f4
+    const v5, 0x7f080401
 
-    const v6, 0x7f0803f5
+    const v6, 0x7f080402
 
     invoke-direct/range {v3 .. v8}, Lcom/android/systemui/volume/VolumeDialogImpl;->addRow(IIIZZ)V
 
@@ -1795,7 +1795,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0a045d
+    const v2, 0x7f0a0466
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1848,7 +1848,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a0113
+    const v3, 0x7f0a0114
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1862,7 +1862,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a045f
+    const v3, 0x7f0a0468
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1888,7 +1888,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a045e
+    const v2, 0x7f0a0467
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2840,7 +2840,7 @@
 
     sget-object v0, Lcom/android/systemui/volume/VolumeDialogImpl;->TAG:Ljava/lang/String;
 
-    const-string v1, "trimObsoleteH"
+    const-string/jumbo v1, "trimObsoleteH"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -3024,7 +3024,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0704d5
+    const v7, 0x7f0704e3
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -3044,7 +3044,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0704d4
+    const v8, 0x7f0704e2
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -3069,7 +3069,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0704d3
+    const v9, 0x7f0704e1
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -3089,7 +3089,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0704d6
+    const v10, 0x7f0704e4
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -3116,7 +3116,7 @@
 
     sget-object v0, Lcom/android/systemui/volume/VolumeDialogImpl;->TAG:Ljava/lang/String;
 
-    const-string v1, "updateRowsH"
+    const-string/jumbo v1, "updateRowsH"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -3213,7 +3213,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "updateVolumeRowH s="
+    const-string/jumbo v4, "updateVolumeRowH s="
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3581,7 +3581,7 @@
 
     move/from16 v20, v8
 
-    const-string v8, "updateVolumeRowH s="
+    const-string/jumbo v8, "updateVolumeRowH s="
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3692,7 +3692,7 @@
 
     if-eqz v12, :cond_21
 
-    const v8, 0x7f0803f2
+    const v8, 0x7f0803ff
 
     goto :goto_13
 
@@ -3712,14 +3712,14 @@
 
     if-eqz v8, :cond_23
 
-    const v8, 0x7f0803eb
+    const v8, 0x7f0803f8
 
     goto :goto_13
 
     :cond_23
     nop
 
-    const v8, 0x7f0803ea
+    const v8, 0x7f0803f7
 
     goto :goto_13
 
@@ -3813,13 +3813,13 @@
 
     if-eqz v7, :cond_29
 
-    const v8, 0x7f0803f1
+    const v8, 0x7f0803fe
 
     :goto_15
     goto :goto_16
 
     :cond_29
-    const v8, 0x7f0803f0
+    const v8, 0x7f0803fd
 
     goto :goto_15
 
@@ -3844,7 +3844,7 @@
     :cond_2b
     nop
 
-    const v7, 0x7f0803f2
+    const v7, 0x7f0803ff
 
     if-ne v8, v7, :cond_2c
 
@@ -3853,7 +3853,7 @@
     goto :goto_19
 
     :cond_2c
-    const v7, 0x7f0803eb
+    const v7, 0x7f0803f8
 
     if-eq v8, v7, :cond_30
 
@@ -3866,7 +3866,7 @@
     goto :goto_18
 
     :cond_2d
-    const v7, 0x7f0803ea
+    const v7, 0x7f0803f7
 
     if-eq v8, v7, :cond_2f
 
@@ -3904,7 +3904,7 @@
 
     if-eqz v6, :cond_3a
 
-    const v9, 0x7f110678
+    const v9, 0x7f11067b
 
     if-eqz v5, :cond_35
 
@@ -3932,7 +3932,7 @@
 
     aput-object v6, v8, v16
 
-    const v6, 0x7f110679
+    const v6, 0x7f11067c
 
     invoke-virtual {v7, v6, v8}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -3970,12 +3970,12 @@
 
     if-eqz v8, :cond_32
 
-    const v8, 0x7f11067b
+    const v8, 0x7f11067e
 
     goto :goto_1b
 
     :cond_32
-    const v8, 0x7f11067a
+    const v8, 0x7f11067d
 
     :goto_1b
     move/from16 v25, v10
@@ -4016,7 +4016,7 @@
     goto :goto_1c
 
     :cond_34
-    const v9, 0x7f110677
+    const v9, 0x7f11067a
 
     :goto_1c
     const/4 v8, 0x1
@@ -4089,7 +4089,7 @@
     goto :goto_1d
 
     :cond_38
-    const v9, 0x7f110677
+    const v9, 0x7f11067a
 
     :goto_1d
     const/4 v8, 0x1
@@ -4132,7 +4132,7 @@
 
     aput-object v10, v9, v16
 
-    const v10, 0x7f110679
+    const v10, 0x7f11067c
 
     invoke-virtual {v7, v10, v9}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -4234,7 +4234,7 @@
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v10, "updateVolumeRowSliderH zenMuted:"
+    const-string/jumbo v10, "updateVolumeRowSliderH zenMuted:"
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4476,7 +4476,7 @@
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v15, "updateVolumeRowSliderH newProgress:"
+    const-string/jumbo v15, "updateVolumeRowSliderH newProgress:"
 
     invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4776,7 +4776,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f11066b
+    const v2, 0x7f11066e
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -5126,9 +5126,9 @@
 
     if-nez v3, :cond_2
 
-    const v5, 0x7f0803ee
+    const v5, 0x7f0803fb
 
-    const v6, 0x7f0803ef
+    const v6, 0x7f0803fc
 
     const/4 v7, 0x1
 

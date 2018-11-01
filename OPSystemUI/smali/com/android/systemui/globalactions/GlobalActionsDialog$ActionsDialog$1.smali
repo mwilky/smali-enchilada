@@ -40,7 +40,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog$1;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;
 
-    invoke-static {v1}, Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;->access$2400(Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;)Landroid/content/Context;
+    invoke-static {v1}, Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;->access$2600(Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;)Landroid/content/Context;
 
     move-result-object v1
 

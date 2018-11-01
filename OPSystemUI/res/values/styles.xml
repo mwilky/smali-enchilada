@@ -144,7 +144,10 @@
     <style name="Base.TextAppearance.AppCompat.Tooltip" parent="@style/Base.TextAppearance.AppCompat">
         <item name="android:textSize">14.0sp</item>
     </style>
-    <style name="Base.TextAppearance.AppCompat.Widget.ActionBar.Menu" parent="@android:style/TextAppearance.Material.Widget.ActionBar.Menu" />
+    <style name="Base.TextAppearance.AppCompat.Widget.ActionBar.Menu" parent="@style/TextAppearance.AppCompat.Button">
+        <item name="android:textColor">?actionMenuTextColor</item>
+        <item name="textAllCaps">@bool/abc_config_actionMenuItemAllCaps</item>
+    </style>
     <style name="Base.TextAppearance.AppCompat.Widget.ActionBar.Subtitle" parent="@android:style/TextAppearance.Material.Widget.ActionBar.Subtitle" />
     <style name="Base.TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse" parent="@android:style/TextAppearance.Material.Widget.ActionBar.Subtitle.Inverse" />
     <style name="Base.TextAppearance.AppCompat.Widget.ActionBar.Title" parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title" />
@@ -152,9 +155,15 @@
     <style name="Base.TextAppearance.AppCompat.Widget.ActionMode.Subtitle" parent="@android:style/TextAppearance.Material.Widget.ActionMode.Subtitle" />
     <style name="Base.TextAppearance.AppCompat.Widget.ActionMode.Title" parent="@android:style/TextAppearance.Material.Widget.ActionMode.Title" />
     <style name="Base.TextAppearance.AppCompat.Widget.Button" parent="@android:style/TextAppearance.Material.Widget.Button" />
-    <style name="Base.TextAppearance.AppCompat.Widget.Button.Borderless.Colored" parent="@android:style/TextAppearance.Material.Widget.Button.Borderless.Colored" />
-    <style name="Base.TextAppearance.AppCompat.Widget.Button.Colored" parent="@android:style/TextAppearance.Material.Widget.Button.Colored" />
-    <style name="Base.TextAppearance.AppCompat.Widget.Button.Inverse" parent="@android:style/TextAppearance.Material.Widget.Button.Inverse" />
+    <style name="Base.TextAppearance.AppCompat.Widget.Button.Borderless.Colored" parent="@style/Base.TextAppearance.AppCompat.Widget.Button">
+        <item name="android:textColor">@color/abc_btn_colored_borderless_text_material</item>
+    </style>
+    <style name="Base.TextAppearance.AppCompat.Widget.Button.Colored" parent="@style/Base.TextAppearance.AppCompat.Widget.Button">
+        <item name="android:textColor">@color/abc_btn_colored_text_material</item>
+    </style>
+    <style name="Base.TextAppearance.AppCompat.Widget.Button.Inverse" parent="@style/TextAppearance.AppCompat.Button">
+        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+    </style>
     <style name="Base.TextAppearance.AppCompat.Widget.DropDownItem" parent="@android:style/TextAppearance.Small">
         <item name="android:textColor">?android:textColorPrimaryDisableOnly</item>
     </style>
@@ -173,7 +182,7 @@
     </style>
     <style name="Base.TextAppearance.Widget.AppCompat.Toolbar.Subtitle" parent="@android:style/TextAppearance.Material.Widget.ActionBar.Subtitle" />
     <style name="Base.TextAppearance.Widget.AppCompat.Toolbar.Title" parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title" />
-    <style name="Base.Theme.AppCompat" parent="@style/Base.V28.Theme.AppCompat" />
+    <style name="Base.Theme.AppCompat" parent="@style/Base.V21.Theme.AppCompat" />
     <style name="Base.Theme.AppCompat.CompactMenu" parent="">
         <item name="android:listViewStyle">@style/Widget.AppCompat.ListView.Menu</item>
         <item name="android:windowAnimationStyle">@style/Animation.AppCompat.DropDownUp</item>
@@ -195,7 +204,7 @@
         <item name="android:windowMinWidthMinor">@dimen/abc_dialog_min_width_minor</item>
     </style>
     <style name="Base.Theme.AppCompat.DialogWhenLarge" parent="@style/Theme.AppCompat" />
-    <style name="Base.Theme.AppCompat.Light" parent="@style/Base.V28.Theme.AppCompat.Light" />
+    <style name="Base.Theme.AppCompat.Light" parent="@style/Base.V21.Theme.AppCompat.Light" />
     <style name="Base.Theme.AppCompat.Light.DarkActionBar" parent="@style/Base.Theme.AppCompat.Light">
         <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>
         <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
@@ -623,46 +632,6 @@
     <style name="Base.V21.ThemeOverlay.AppCompat.Dialog" parent="@style/Base.V7.ThemeOverlay.AppCompat.Dialog">
         <item name="android:windowElevation">@dimen/abc_floating_window_z</item>
     </style>
-    <style name="Base.V22.Theme.AppCompat" parent="@style/Base.V21.Theme.AppCompat">
-        <item name="actionModeShareDrawable">?android:actionModeShareDrawable</item>
-        <item name="editTextBackground">?android:editTextBackground</item>
-    </style>
-    <style name="Base.V22.Theme.AppCompat.Light" parent="@style/Base.V21.Theme.AppCompat.Light">
-        <item name="actionModeShareDrawable">?android:actionModeShareDrawable</item>
-        <item name="editTextBackground">?android:editTextBackground</item>
-    </style>
-    <style name="Base.V23.Theme.AppCompat" parent="@style/Base.V22.Theme.AppCompat">
-        <item name="actionBarItemBackground">?android:actionBarItemBackground</item>
-        <item name="actionMenuTextAppearance">?android:actionMenuTextAppearance</item>
-        <item name="actionMenuTextColor">?android:actionMenuTextColor</item>
-        <item name="controlBackground">@drawable/abc_control_background_material</item>
-        <item name="ratingBarStyleIndicator">?android:ratingBarStyleIndicator</item>
-        <item name="ratingBarStyleSmall">?android:ratingBarStyleSmall</item>
-    </style>
-    <style name="Base.V23.Theme.AppCompat.Light" parent="@style/Base.V22.Theme.AppCompat.Light">
-        <item name="actionBarItemBackground">?android:actionBarItemBackground</item>
-        <item name="actionMenuTextAppearance">?android:actionMenuTextAppearance</item>
-        <item name="actionMenuTextColor">?android:actionMenuTextColor</item>
-        <item name="controlBackground">@drawable/abc_control_background_material</item>
-        <item name="ratingBarStyleIndicator">?android:ratingBarStyleIndicator</item>
-        <item name="ratingBarStyleSmall">?android:ratingBarStyleSmall</item>
-    </style>
-    <style name="Base.V26.Theme.AppCompat" parent="@style/Base.V23.Theme.AppCompat">
-        <item name="colorError">?android:colorError</item>
-    </style>
-    <style name="Base.V26.Theme.AppCompat.Light" parent="@style/Base.V23.Theme.AppCompat.Light">
-        <item name="colorError">?android:colorError</item>
-    </style>
-    <style name="Base.V26.Widget.AppCompat.Toolbar" parent="@style/Base.V7.Widget.AppCompat.Toolbar">
-        <item name="android:touchscreenBlocksFocus">true</item>
-        <item name="android:keyboardNavigationCluster">true</item>
-    </style>
-    <style name="Base.V28.Theme.AppCompat" parent="@style/Base.V26.Theme.AppCompat">
-        <item name="dialogCornerRadius">?android:dialogCornerRadius</item>
-    </style>
-    <style name="Base.V28.Theme.AppCompat.Light" parent="@style/Base.V26.Theme.AppCompat.Light">
-        <item name="dialogCornerRadius">?android:dialogCornerRadius</item>
-    </style>
     <style name="Base.V7.Theme.AppCompat" parent="@style/Platform.AppCompat">
         <item name="android:panelBackground">@android:color/transparent</item>
         <item name="android:dropDownListViewStyle">@style/Widget.AppCompat.ListView.DropDown</item>
@@ -1053,12 +1022,17 @@
     </style>
     <style name="Base.Widget.AppCompat.Button" parent="@android:style/Widget.Material.Button" />
     <style name="Base.Widget.AppCompat.Button.Borderless" parent="@android:style/Widget.Material.Button.Borderless" />
-    <style name="Base.Widget.AppCompat.Button.Borderless.Colored" parent="@android:style/Widget.Material.Button.Borderless.Colored" />
+    <style name="Base.Widget.AppCompat.Button.Borderless.Colored" parent="@android:style/Widget.Material.Button.Borderless.Colored">
+        <item name="android:textColor">@color/abc_btn_colored_borderless_text_material</item>
+    </style>
     <style name="Base.Widget.AppCompat.Button.ButtonBar.AlertDialog" parent="@style/Widget.AppCompat.Button.Borderless.Colored">
         <item name="android:minWidth">64.0dip</item>
         <item name="android:minHeight">@dimen/abc_alert_dialog_button_bar_height</item>
     </style>
-    <style name="Base.Widget.AppCompat.Button.Colored" parent="@android:style/Widget.Material.Button.Colored" />
+    <style name="Base.Widget.AppCompat.Button.Colored" parent="@style/Base.Widget.AppCompat.Button">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Widget.Button.Colored</item>
+        <item name="android:background">@drawable/abc_btn_colored_material</item>
+    </style>
     <style name="Base.Widget.AppCompat.Button.Small" parent="@android:style/Widget.Material.Button.Small" />
     <style name="Base.Widget.AppCompat.ButtonBar" parent="@android:style/Widget.Material.ButtonBar" />
     <style name="Base.Widget.AppCompat.ButtonBar.AlertDialog" parent="@style/Base.Widget.AppCompat.ButtonBar" />
@@ -1125,8 +1099,22 @@
     <style name="Base.Widget.AppCompat.ProgressBar" parent="@android:style/Widget.Material.ProgressBar" />
     <style name="Base.Widget.AppCompat.ProgressBar.Horizontal" parent="@android:style/Widget.Material.ProgressBar.Horizontal" />
     <style name="Base.Widget.AppCompat.RatingBar" parent="@android:style/Widget.Material.RatingBar" />
-    <style name="Base.Widget.AppCompat.RatingBar.Indicator" parent="@android:style/Widget.Material.RatingBar.Indicator" />
-    <style name="Base.Widget.AppCompat.RatingBar.Small" parent="@android:style/Widget.Material.RatingBar.Small" />
+    <style name="Base.Widget.AppCompat.RatingBar.Indicator" parent="@android:style/Widget.RatingBar">
+        <item name="android:maxHeight">36.0dip</item>
+        <item name="android:indeterminateDrawable">@drawable/abc_ratingbar_indicator_material</item>
+        <item name="android:progressDrawable">@drawable/abc_ratingbar_indicator_material</item>
+        <item name="android:minHeight">36.0dip</item>
+        <item name="android:thumb">@null</item>
+        <item name="android:isIndicator">true</item>
+    </style>
+    <style name="Base.Widget.AppCompat.RatingBar.Small" parent="@android:style/Widget.RatingBar">
+        <item name="android:maxHeight">16.0dip</item>
+        <item name="android:indeterminateDrawable">@drawable/abc_ratingbar_small_material</item>
+        <item name="android:progressDrawable">@drawable/abc_ratingbar_small_material</item>
+        <item name="android:minHeight">16.0dip</item>
+        <item name="android:thumb">@null</item>
+        <item name="android:isIndicator">true</item>
+    </style>
     <style name="Base.Widget.AppCompat.SearchView" parent="@android:style/Widget">
         <item name="closeIcon">@drawable/abc_ic_clear_material</item>
         <item name="commitIcon">@drawable/abc_ic_commit_search_api_mtrl_alpha</item>
@@ -1150,9 +1138,11 @@
         <item name="tickMark">@drawable/abc_seekbar_tick_mark_material</item>
     </style>
     <style name="Base.Widget.AppCompat.Spinner" parent="@android:style/Widget.Material.Spinner" />
-    <style name="Base.Widget.AppCompat.Spinner.Underlined" parent="@android:style/Widget.Material.Spinner.Underlined" />
+    <style name="Base.Widget.AppCompat.Spinner.Underlined" parent="@style/Base.Widget.AppCompat.Spinner">
+        <item name="android:background">@drawable/abc_spinner_textfield_background_material</item>
+    </style>
     <style name="Base.Widget.AppCompat.TextView.SpinnerItem" parent="@android:style/Widget.Material.TextView.SpinnerItem" />
-    <style name="Base.Widget.AppCompat.Toolbar" parent="@style/Base.V26.Widget.AppCompat.Toolbar" />
+    <style name="Base.Widget.AppCompat.Toolbar" parent="@style/Base.V7.Widget.AppCompat.Toolbar" />
     <style name="Base.Widget.AppCompat.Toolbar.Button.Navigation" parent="@android:style/Widget.Material.Toolbar.Button.Navigation" />
     <style name="Base.Widget.Design.AppBarLayout" parent="@android:style/Widget">
         <item name="android:background">@drawable/op_appbar_background</item>
@@ -1236,7 +1226,12 @@
         <item name="android:layout_marginStart">@dimen/car_padding_4</item>
     </style>
     <style name="CardView" parent="@style/Base.CardView">
-        <item name="cardBackgroundColor">?android:colorBackgroundFloating</item>
+        <item name="cardBackgroundColor">@color/cardview_light_background</item>
+        <item name="cardCornerRadius">@dimen/cardview_default_radius</item>
+        <item name="cardElevation">@dimen/cardview_default_elevation</item>
+        <item name="cardMaxElevation">@dimen/cardview_default_elevation</item>
+        <item name="cardPreventCornerOverlap">true</item>
+        <item name="cardUseCompatPadding">false</item>
     </style>
     <style name="CardView.Dark" parent="@style/CardView">
         <item name="cardBackgroundColor">@color/cardview_dark_background</item>
@@ -2774,7 +2769,6 @@
         <item name="android:backgroundSplit">?onePlusActionbarBackgroundColor</item>
         <item name="android:elevation">@dimen/actionbar_elevation</item>
         <item name="android:contentInsetStart">@dimen/oneplus_contorl_layout_margin_left2</item>
-        <item name="android:contentInsetStartWithNavigation">@dimen/oneplus_contorl_layout_margin_left4</item>
     </style>
     <style name="Oneplus.Widget.Material.ActionBar.TabBar" parent="@android:style/Widget.Material.ActionBar.TabBar">
         <item name="android:showDividers">none</item>
@@ -2881,7 +2875,6 @@
         <item name="android:backgroundSplit">?onePlusActionbarBackgroundColor</item>
         <item name="android:elevation">@dimen/actionbar_elevation</item>
         <item name="android:contentInsetStart">@dimen/oneplus_contorl_layout_margin_left2</item>
-        <item name="android:contentInsetStartWithNavigation">@dimen/oneplus_contorl_layout_margin_left4</item>
     </style>
     <style name="Oneplus.Widget.Material.Light.ActionBar.TabBar" parent="@style/Oneplus.Widget.Material.ActionBar.TabBar" />
     <style name="Oneplus.Widget.Material.Light.ActionBar.TabText" parent="@style/Oneplus.Widget.Material.ActionBar.TabText">
@@ -2973,7 +2966,6 @@
         <item name="android:numbersBackgroundColor">@color/timepicker_numbers_background_color_light</item>
         <item name="android:numbersSelectorColor">?opPickerColorActivated</item>
         <item name="android:amPmTextColor">@color/timepicker_ampmlabel_text_color_light</item>
-        <item name="android:numbersInnerTextColor">@color/op_timepicker_text_inverse_when_activated_material_light</item>
         <item name="headerTextColor">@color/op_primary_text_secondary_when_activated_material_inverse</item>
         <item name="internalLayout">@layout/op_time_picker_material</item>
         <item name="legacyLayout">@layout/op_time_picker_legacy_material</item>
@@ -2994,14 +2986,11 @@
         <item name="android:suggestionRowLayout">@layout/op_search_dropdown_item_icons_2line</item>
         <item name="android:queryBackground">@empty</item>
         <item name="android:submitBackground">@empty</item>
-        <item name="android:searchHintIcon">@empty</item>
     </style>
     <style name="Oneplus.Widget.Material.NumberPicker" parent="@style/Widget.Material.NumberPicker" />
     <style name="Oneplus.Widget.Material.PopupMenu" parent="@android:style/Widget.Material.PopupMenu.Overflow">
         <item name="android:dropDownHorizontalOffset">-12.0dip</item>
         <item name="android:dropDownVerticalOffset">0.0dip</item>
-        <item name="android:popupEnterTransition">@transition/menu_enter</item>
-        <item name="android:popupExitTransition">@transition/menu_exit</item>
     </style>
     <style name="Oneplus.Widget.Material.PopupMenu.Overflow" parent="@style/Oneplus.Widget.Material.PopupMenu">
         <item name="android:popupBackground">@drawable/op_popup_background_material_dark</item>
@@ -3030,7 +3019,6 @@
         <item name="android:searchIcon">@drawable/op_ic_search_api_material</item>
         <item name="android:queryBackground">@empty</item>
         <item name="android:submitBackground">@empty</item>
-        <item name="android:searchHintIcon">@empty</item>
     </style>
     <style name="Oneplus.Widget.Material.SeekBar" parent="@android:style/Widget.Material.SeekBar">
         <item name="android:indeterminateDrawable">@drawable/op_seekbar_track_material_dark</item>
@@ -3053,7 +3041,6 @@
         <item name="android:titleTextAppearance">@style/Oneplus.TextAppearance.Material.Widget.ActionBar.Title</item>
         <item name="android:subtitleTextAppearance">@style/Oneplus.TextAppearance.Material.Widget.ActionBar.Subtitle</item>
         <item name="android:contentInsetStart">@dimen/oneplus_contorl_layout_margin_left2</item>
-        <item name="android:contentInsetStartWithNavigation">@dimen/oneplus_contorl_layout_margin_left4</item>
     </style>
     <style name="Oneplus.Widget.Material.Toolbar.Button.Navigation" parent="@android:style/Widget.Material.Toolbar.Button.Navigation">
         <item name="android:background">@drawable/op_action_bar_item_background_material</item>
@@ -3114,7 +3101,6 @@
         <item name="android:timePickerDialogTheme">@style/Oneplus.Theme.Material.Dialog.Picker</item>
         <item name="android:toolbarStyle">@style/Oneplus.Widget.Material.Toolbar</item>
         <item name="android:datePickerDialogTheme">@style/Oneplus.Theme.Material.Dialog.Picker</item>
-        <item name="android:windowLightNavigationBar">false</item>
         <item name="OPAlertDialogStyle">@style/OnePlusAlertDialog</item>
         <item name="OPEditTextStyle">@style/Oneplus.Widget.Material.EditText</item>
         <item name="OPFloatingActionButtonStyle">@style/OnePlus.Widget.Design.FloatingActionButton</item>
@@ -3235,7 +3221,6 @@
         <item name="android:timePickerDialogTheme">@style/Oneplus.Theme.Material.Light.Dialog.Picker</item>
         <item name="android:toolbarStyle">@style/Oneplus.Widget.Material.Toolbar</item>
         <item name="android:datePickerDialogTheme">@style/Oneplus.Theme.Material.Light.Dialog.Picker</item>
-        <item name="android:windowLightNavigationBar">true</item>
         <item name="OPAlertDialogStyle">@style/OnePlusAlertDialog.Light</item>
         <item name="OPEditTextStyle">@style/Oneplus.Widget.Material.Light.EditText</item>
         <item name="OPFloatingActionButtonStyle">@style/OnePlus.Widget.Design.FloatingActionButton</item>
@@ -3346,8 +3331,8 @@
         <item name="android:backgroundDimEnabled">false</item>
         <item name="android:windowDisablePreview">true</item>
     </style>
-    <style name="Platform.AppCompat" parent="@style/Platform.V25.AppCompat" />
-    <style name="Platform.AppCompat.Light" parent="@style/Platform.V25.AppCompat.Light" />
+    <style name="Platform.AppCompat" parent="@style/Platform.V21.AppCompat" />
+    <style name="Platform.AppCompat.Light" parent="@style/Platform.V21.AppCompat.Light" />
     <style name="Platform.MaterialComponents" parent="@style/Theme.AppCompat" />
     <style name="Platform.MaterialComponents.Dialog" parent="@style/Theme.AppCompat.Dialog" />
     <style name="Platform.MaterialComponents.Light" parent="@style/Theme.AppCompat.Light" />
@@ -3379,8 +3364,6 @@
         <item name="android:buttonBarButtonStyle">?buttonBarButtonStyle</item>
         <item name="android:textColorLinkInverse">?android:colorAccent</item>
     </style>
-    <style name="Platform.V25.AppCompat" parent="@android:style/Theme.Material.NoActionBar" />
-    <style name="Platform.V25.AppCompat.Light" parent="@android:style/Theme.Material.Light.NoActionBar" />
     <style name="Platform.Widget.AppCompat.Spinner" parent="@android:style/Widget.Holo.Spinner" />
     <style name="Preference">
         <item name="android:layout">@layout/preference</item>
@@ -3981,14 +3964,22 @@
     </style>
     <style name="TextAppearance.Compat.Notification" parent="@android:style/TextAppearance.Material.Notification" />
     <style name="TextAppearance.Compat.Notification.Info" parent="@android:style/TextAppearance.Material.Notification.Info" />
-    <style name="TextAppearance.Compat.Notification.Info.Media" parent="@style/TextAppearance.Compat.Notification.Info" />
+    <style name="TextAppearance.Compat.Notification.Info.Media" parent="@style/TextAppearance.Compat.Notification.Info">
+        <item name="android:textColor">@color/secondary_text_default_material_dark</item>
+    </style>
     <style name="TextAppearance.Compat.Notification.Line2" parent="@style/TextAppearance.Compat.Notification.Info" />
     <style name="TextAppearance.Compat.Notification.Line2.Media" parent="@style/TextAppearance.Compat.Notification.Info.Media" />
-    <style name="TextAppearance.Compat.Notification.Media" parent="@style/TextAppearance.Compat.Notification" />
+    <style name="TextAppearance.Compat.Notification.Media" parent="@style/TextAppearance.Compat.Notification">
+        <item name="android:textColor">@color/secondary_text_default_material_dark</item>
+    </style>
     <style name="TextAppearance.Compat.Notification.Time" parent="@android:style/TextAppearance.Material.Notification.Time" />
-    <style name="TextAppearance.Compat.Notification.Time.Media" parent="@style/TextAppearance.Compat.Notification.Time" />
+    <style name="TextAppearance.Compat.Notification.Time.Media" parent="@style/TextAppearance.Compat.Notification.Time">
+        <item name="android:textColor">@color/secondary_text_default_material_dark</item>
+    </style>
     <style name="TextAppearance.Compat.Notification.Title" parent="@android:style/TextAppearance.Material.Notification.Title" />
-    <style name="TextAppearance.Compat.Notification.Title.Media" parent="@style/TextAppearance.Compat.Notification.Title" />
+    <style name="TextAppearance.Compat.Notification.Title.Media" parent="@style/TextAppearance.Compat.Notification.Title">
+        <item name="android:textColor">@color/primary_text_default_material_dark</item>
+    </style>
     <style name="TextAppearance.Design.CollapsingToolbar.Expanded" parent="@style/TextAppearance.AppCompat.Display1">
         <item name="android:textColor">?android:textColorPrimary</item>
     </style>
@@ -4845,7 +4836,6 @@
     </style>
     <style name="Theme.SystemUI" parent="@android:style/Theme.DeviceDefault.QuickSettings">
         <item name="android:colorControlHighlight">@android:color/primary_text_material_dark</item>
-        <item name="android:colorError">@android:color/error_color_material_dark</item>
         <item name="android:isLightTheme">false</item>
         <item name="android:lockPatternStyle">@style/LockPatternStyle</item>
         <item name="darkIconTheme">@style/DualToneDarkTheme</item>
@@ -4871,7 +4861,6 @@
     </style>
     <style name="Theme.SystemUI.Light" parent="@android:style/Theme.DeviceDefault.QuickSettings">
         <item name="android:colorControlHighlight">#40000000</item>
-        <item name="android:colorError">@android:color/error_color_material_light</item>
         <item name="passwordStyle">@style/PasswordTheme.Light</item>
         <item name="wallpaperTextColor">@android:color/primary_text_material_light</item>
         <item name="wallpaperTextColorSecondary">@android:color/secondary_text_material_light</item>
@@ -5135,7 +5124,6 @@
         <item name="android:background">@drawable/op_appbar_background</item>
         <item name="android:stateListAnimator">@anim/op_design_appbar_state_list_animator</item>
         <item name="android:touchscreenBlocksFocus">true</item>
-        <item name="android:keyboardNavigationCluster">true</item>
     </style>
     <style name="Widget.Design.BottomNavigationView" parent="">
         <item name="elevation">@dimen/design_bottom_navigation_elevation</item>
@@ -6045,13 +6033,10 @@
         <item name="android:maxLines">1</item>
         <item name="android:singleLine">true</item>
     </style>
-    <style name="oneplus_contorl_text_style_base">
-        <item name="android:breakStrategy">simple</item>
-    </style>
+    <style name="oneplus_contorl_text_style_base" />
     <style name="oneplus_contorl_text_style_body1" parent="@style/oneplus_contorl_text_style_base">
         <item name="android:textSize">11.0sp</item>
-        <item name="android:fontFamily">Slate-book</item>
-        <item name="android:breakStrategy">simple</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_body1</item>
     </style>
     <style name="oneplus_contorl_text_style_body2" parent="@style/oneplus_contorl_text_style_base">
         <item name="android:textSize">@dimen/oneplus_contorl_text_size_body2</item>
@@ -6105,7 +6090,18 @@
     <style name="oneplus_contorl_text_style_title_extended" parent="@style/Oneplus.TextAppearance.Material.Widget.ActionBar.Title">
         <item name="android:textSize">@dimen/oneplus_contorl_text_size_extended</item>
         <item name="android:fontFamily">@string/oneplus_contorl_font_family_title_extended</item>
-        <item name="android:breakStrategy">simple</item>
+    </style>
+    <style name="oneplus_qs_theme_dark" parent="@style/qs_base">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:panelColorBackground">@android:color/material_grey_800</item>
+        <item name="android:tint">@color/oneplus_contorl_icon_color_accent_active_dark</item>
+        <item name="android:textColorTertiary">@color/oneplus_contorl_text_color_secondary_dark</item>
+        <item name="android:colorControlNormal">?android:textColorPrimary</item>
+        <item name="android:colorPrimary">#ff383838</item>
+        <item name="android:colorPrimaryDark">@android:color/primary_dark_device_default_settings</item>
+        <item name="android:colorAccent">@android:color/accent_device_default_dark</item>
+        <item name="darkIconTheme">@style/QSIconTheme</item>
+        <item name="lightIconTheme">@style/QSIconTheme</item>
     </style>
     <style name="owner_view">
         <item name="android:textSize">13.0dip</item>
@@ -6130,10 +6126,10 @@
     <style name="qs_base" parent="@android:style/Theme.DeviceDefault.QuickSettings" />
     <style name="qs_theme" parent="@style/qs_base">
         <item name="android:windowIsFloating">true</item>
-        <item name="android:textColorTertiary">#8a000000</item>
+        <item name="android:tint">@color/oneplus_contorl_icon_color_accent_active_light</item>
+        <item name="android:textColorTertiary">@color/oneplus_contorl_text_color_secondary_light</item>
         <item name="android:colorControlNormal">#de000000</item>
-        <item name="android:colorPrimary">#fff5f5f5</item>
-        <item name="android:colorBackgroundFloating">#ffffffff</item>
+        <item name="android:colorPrimary">#ffe8e8e8</item>
         <item name="darkIconTheme">@style/QSIconTheme</item>
         <item name="lightIconTheme">@style/QSIconTheme</item>
     </style>

@@ -379,7 +379,7 @@
     goto :goto_2
 
     :cond_2
-    const-string v10, "top"
+    const-string/jumbo v10, "top"
 
     invoke-virtual {v8, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -476,6 +476,8 @@
     sget-object v0, Landroid/support/v7/widget/DrawableUtils;->INSETS_NONE:Landroid/graphics/Rect;
 
     return-object v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

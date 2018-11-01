@@ -1124,6 +1124,8 @@ A més, estàs connectat a una VPN, que també pot supervisar la teva activitat 
     <string name="qs_rearrange">Reorganitza la configuració ràpida</string>
     <string name="qs_status_phone_muted">Telèfon silenciat</string>
     <string name="qs_status_phone_vibrate">Telèfon en mode de vibració</string>
+    <string name="quick_launch_exit">Surt</string>
+    <string name="quick_launch_exit_hint">Arrossega la pantalla cap a fora per sortir</string>
     <string name="quick_settings">Configuració ràpida</string>
     <string name="quick_settings_bluetooth_detail_empty_text">"No hi ha dispositius vinculats  disponibles"</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1321,10 +1323,13 @@ A més, estàs connectat a una VPN, que també pot supervisar la teva activitat 
     <string name="sd_card_unmount_action">Desmunteu-la</string>
     <string name="search_menu_title">Cerca</string>
     <string name="select_application">Selecciona una aplicació</string>
+    <string name="select_day">Seleccioneu el mes i el dia</string>
+    <string name="select_hours">Seleccioneu les hores</string>
     <string name="select_logd_size_dialog_title">Mida Logger per memòria intermèdia</string>
     <string name="select_logd_size_title">Mides memòria intermèdia registrador</string>
     <string name="select_logpersist_dialog_title">Selecciona memòries interm. de registre per emmag. de manera persistent al disp.</string>
     <string name="select_logpersist_title">Desa dades reg. de manera permanent</string>
+    <string name="select_minutes">Seleccioneu els minuts</string>
     <string name="select_private_dns_configuration_dialog_title">Selecciona el mode de DNS privat</string>
     <string name="select_private_dns_configuration_title">DNS privat</string>
     <string name="select_usb_configuration_dialog_title">"Selecciona configuració d'USB"</string>
@@ -1332,6 +1337,7 @@ A més, estàs connectat a una VPN, que també pot supervisar la teva activitat 
     <string name="select_webview_provider_dialog_title">Estableix implementació de WebView</string>
     <string name="select_webview_provider_title">Implementació de WebView</string>
     <string name="select_webview_provider_toast_text">Aquesta opció ja no és vàlida. Torna-ho a provar.</string>
+    <string name="select_year">"Seleccioneu l'any"</string>
     <string name="show_all_anrs">Mostra ANR en segon pla</string>
     <string name="show_all_anrs_summary">Informa que una aplicació en segon pla no respon</string>
     <string name="show_battery_percentage">Mostra el percentatge de la bateria inserit</string>
@@ -1427,6 +1433,11 @@ Es pot sobreescalfar si:
 \u0009• l'utilitzes amb temperatures altes."</string>
     <string name="thermal_shutdown_message">Ara el telèfon funciona de manera normal</string>
     <string name="thermal_shutdown_title">Telèfon apagat per la calor</string>
+    <string name="time_picker_header_text">"Configureu l'hora"</string>
+    <string name="time_picker_hour_label">hora</string>
+    <string name="time_picker_input_error">Introduïu una hora vàlida</string>
+    <string name="time_picker_minute_label">minut</string>
+    <string name="time_picker_prompt_label">"Escriviu l'hora"</string>
     <string name="time_unit_just_now">Ara mateix</string>
     <string name="title_convert_fbe">"S'està convertint en l'encriptació basada en fitxers"</string>
     <string name="title_usb_accessory">Accessori USB</string>
@@ -1550,6 +1561,7 @@ Qualsevol usuari pot actualitzar les aplicacions de la resta d'usuaris."</string
     <string name="wait_for_debugger">Espera el depurador</string>
     <string name="wait_for_debugger_summary">"Abans d'executar-se, l'aplicació de depuració espera que es connecti el depurador"</string>
     <string name="wifi_ap_unable_to_handle_new_sta">"El punt d'accés està temporalment ple"</string>
+    <string name="wifi_auth_password_wrong">La contrasenya pot ser incorrecta</string>
     <string name="wifi_cant_connect">No es pot connectar</string>
     <string name="wifi_cant_connect_to_ap">No es pot connectar a %1$s</string>
     <string name="wifi_check_password_try_again">Comprova la contrasenya i torna-ho a provar</string>

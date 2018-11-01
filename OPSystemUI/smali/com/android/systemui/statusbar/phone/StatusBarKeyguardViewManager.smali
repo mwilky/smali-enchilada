@@ -2223,7 +2223,7 @@
 
     new-instance v7, Ljava/lang/StringBuilder;
 
-    const-string v8, "updateStates, vis:"
+    const-string/jumbo v8, "updateStates, vis:"
 
     invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 

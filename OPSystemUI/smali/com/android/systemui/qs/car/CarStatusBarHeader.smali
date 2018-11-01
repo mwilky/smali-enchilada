@@ -72,7 +72,7 @@
 
     invoke-direct {p0, v3, v2, v1, v0}, Lcom/android/systemui/qs/car/CarStatusBarHeader;->applyDarkness(ILandroid/graphics/Rect;FI)V
 
-    const v4, 0x7f0a00bd
+    const v4, 0x7f0a00be
 
     invoke-direct {p0, v4, v2, v1, v0}, Lcom/android/systemui/qs/car/CarStatusBarHeader;->applyDarkness(ILandroid/graphics/Rect;FI)V
 

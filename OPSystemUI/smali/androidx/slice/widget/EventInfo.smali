@@ -57,7 +57,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "unknown action: "
+    const-string/jumbo v1, "unknown action: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -94,6 +94,8 @@
 
     return-object v0
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_4
@@ -113,7 +115,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "unknown position: "
+    const-string/jumbo v1, "unknown position: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -140,6 +142,8 @@
 
     return-object v0
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_2
@@ -157,7 +161,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "unknown row type: "
+    const-string/jumbo v1, "unknown row type: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -203,6 +207,8 @@
     const-string v0, "SHORTCUT"
 
     return-object v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch -0x1

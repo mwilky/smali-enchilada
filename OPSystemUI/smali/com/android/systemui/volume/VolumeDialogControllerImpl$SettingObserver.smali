@@ -50,7 +50,7 @@
 
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$SettingObserver;->ZEN_MODE_CONFIG_URI:Landroid/net/Uri;
 
-    const-string p1, "three_Key_mode"
+    const-string/jumbo p1, "three_Key_mode"
 
     invoke-static {p1}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 

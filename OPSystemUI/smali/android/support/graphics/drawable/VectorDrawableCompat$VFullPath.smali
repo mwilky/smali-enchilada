@@ -397,7 +397,7 @@
 
     iput v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VFullPath;->mStrokeWidth:F
 
-    const-string v5, "trimPathEnd"
+    const-string/jumbo v5, "trimPathEnd"
 
     const/4 v6, 0x6
 
@@ -409,7 +409,7 @@
 
     iput v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VFullPath;->mTrimPathEnd:F
 
-    const-string v5, "trimPathOffset"
+    const-string/jumbo v5, "trimPathOffset"
 
     const/4 v6, 0x7
 
@@ -421,7 +421,7 @@
 
     iput v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VFullPath;->mTrimPathOffset:F
 
-    const-string v5, "trimPathStart"
+    const-string/jumbo v5, "trimPathStart"
 
     const/4 v6, 0x5
 

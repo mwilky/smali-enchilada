@@ -78,9 +78,11 @@
     return-object v0
 
     :cond_1
-    const-string v0, "up"
+    const-string/jumbo v0, "up"
 
     return-object v0
+
+    nop
 
     nop
 

@@ -10,6 +10,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/systemui/globalactions/GlobalActionsDialog$BootloaderAction;,
+        Lcom/android/systemui/globalactions/GlobalActionsDialog$RecoveryAction;,
         Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;,
         Lcom/android/systemui/globalactions/GlobalActionsDialog$SilentModeTriStateAction;,
         Lcom/android/systemui/globalactions/GlobalActionsDialog$SilentModeToggleAction;,
@@ -147,7 +149,7 @@
 
     new-instance v1, Landroid/view/ContextThemeWrapper;
 
-    const v2, 0x7f120546
+    const v2, 0x7f120547
 
     invoke-direct {v1, p1, v2}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
@@ -347,14 +349,6 @@
     return v0
 .end method
 
-.method static synthetic access$1000(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/os/Handler;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mHandler:Landroid/os/Handler;
-
-    return-object v0
-.end method
-
 .method static synthetic access$102(Lcom/android/systemui/globalactions/GlobalActionsDialog;Z)Z
     .locals 0
 
@@ -363,7 +357,23 @@
     return p1
 .end method
 
-.method static synthetic access$1100(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/content/pm/UserInfo;
+.method static synthetic access$1100(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/systemui/plugins/GlobalActions$GlobalActionsManager;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mWindowManagerFuncs:Lcom/android/systemui/plugins/GlobalActions$GlobalActionsManager;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1200(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/os/Handler;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mHandler:Landroid/os/Handler;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1300(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/content/pm/UserInfo;
     .locals 1
 
     invoke-direct {p0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->getCurrentUser()Landroid/content/pm/UserInfo;
@@ -373,7 +383,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1200(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/internal/util/EmergencyAffordanceManager;
+.method static synthetic access$1400(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/internal/util/EmergencyAffordanceManager;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mEmergencyAffordanceManager:Lcom/android/internal/util/EmergencyAffordanceManager;
@@ -381,7 +391,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1300(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
+.method static synthetic access$1500(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->lockProfiles()V
@@ -389,7 +399,7 @@
     return-void
 .end method
 
-.method static synthetic access$1400(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Ljava/util/ArrayList;
+.method static synthetic access$1600(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Ljava/util/ArrayList;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mItems:Ljava/util/ArrayList;
@@ -397,7 +407,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1500(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Z
+.method static synthetic access$1700(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mKeyguardShowing:Z
@@ -405,7 +415,7 @@
     return v0
 .end method
 
-.method static synthetic access$1600(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Z
+.method static synthetic access$1800(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mDeviceProvisioned:Z
@@ -413,26 +423,10 @@
     return v0
 .end method
 
-.method static synthetic access$1700(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/media/AudioManager;
+.method static synthetic access$1900(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/media/AudioManager;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mAudioManager:Landroid/media/AudioManager;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1800(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/systemui/globalactions/GlobalActionsDialog$ToggleAction;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mAirplaneModeOn:Lcom/android/systemui/globalactions/GlobalActionsDialog$ToggleAction;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1900(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/systemui/globalactions/GlobalActionsDialog$MyAdapter;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mAdapter:Lcom/android/systemui/globalactions/GlobalActionsDialog$MyAdapter;
 
     return-object v0
 .end method
@@ -445,7 +439,23 @@
     return-object v0
 .end method
 
-.method static synthetic access$2000(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
+.method static synthetic access$2000(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/systemui/globalactions/GlobalActionsDialog$ToggleAction;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mAirplaneModeOn:Lcom/android/systemui/globalactions/GlobalActionsDialog$ToggleAction;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2100(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/systemui/globalactions/GlobalActionsDialog$MyAdapter;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mAdapter:Lcom/android/systemui/globalactions/GlobalActionsDialog$MyAdapter;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2200(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->onAirplaneModeChanged()V
@@ -453,7 +463,7 @@
     return-void
 .end method
 
-.method static synthetic access$2100(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;
+.method static synthetic access$2300(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mDialog:Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;
@@ -461,7 +471,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2102(Lcom/android/systemui/globalactions/GlobalActionsDialog;Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;)Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;
+.method static synthetic access$2302(Lcom/android/systemui/globalactions/GlobalActionsDialog;Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;)Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;
     .locals 0
 
     iput-object p1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mDialog:Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;
@@ -469,7 +479,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$2200(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
+.method static synthetic access$2400(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->refreshSilentMode()V
@@ -477,7 +487,7 @@
     return-void
 .end method
 
-.method static synthetic access$2300(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
+.method static synthetic access$2500(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->handleShow()V
@@ -507,14 +517,6 @@
     iput-object p1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mAirplaneState:Lcom/android/systemui/globalactions/GlobalActionsDialog$ToggleAction$State;
 
     return-object p1
-.end method
-
-.method static synthetic access$900(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/systemui/plugins/GlobalActions$GlobalActionsManager;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mWindowManagerFuncs:Lcom/android/systemui/plugins/GlobalActions$GlobalActionsManager;
-
-    return-object v0
 .end method
 
 .method private addUsersToMenu(Ljava/util/ArrayList;)V
@@ -855,7 +857,7 @@
 
     const/4 v5, 0x0
 
-    if-ge v3, v4, :cond_f
+    if-ge v3, v4, :cond_11
 
     aget-object v4, v0, v3
 
@@ -924,13 +926,13 @@
 
     move-result v5
 
-    if-eqz v5, :cond_e
+    if-eqz v5, :cond_10
 
     invoke-direct {p0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->isCurrentUserOwner()Z
 
     move-result v5
 
-    if-eqz v5, :cond_e
+    if-eqz v5, :cond_10
 
     iget-object v5, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mItems:Ljava/util/ArrayList;
 
@@ -953,7 +955,7 @@
 
     iget-boolean v5, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mShowSilentToggle:Z
 
-    if-eqz v5, :cond_e
+    if-eqz v5, :cond_10
 
     iget-object v5, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mItems:Ljava/util/ArrayList;
 
@@ -978,7 +980,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_e
+    if-eqz v5, :cond_10
 
     iget-object v5, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mItems:Ljava/util/ArrayList;
 
@@ -1034,13 +1036,13 @@
 
     move-result v5
 
-    if-eqz v5, :cond_e
+    if-eqz v5, :cond_10
 
     invoke-direct {p0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->shouldDisplayLockdown()Z
 
     move-result v5
 
-    if-eqz v5, :cond_e
+    if-eqz v5, :cond_10
 
     iget-object v5, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mItems:Ljava/util/ArrayList;
 
@@ -1090,7 +1092,7 @@
 
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_2
+    goto/16 :goto_2
 
     :cond_a
     const-string v6, "restart"
@@ -1109,7 +1111,7 @@
 
     invoke-virtual {v6, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_2
+    goto/16 :goto_2
 
     :cond_b
     const-string v6, "screenshot"
@@ -1145,7 +1147,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_e
+    if-eqz v6, :cond_10
 
     invoke-direct {p0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->getCurrentUser()Landroid/content/pm/UserInfo;
 
@@ -1153,7 +1155,7 @@
 
     iget v6, v6, Landroid/content/pm/UserInfo;->id:I
 
-    if-eqz v6, :cond_e
+    if-eqz v6, :cond_10
 
     iget-object v6, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mItems:Ljava/util/ArrayList;
 
@@ -1168,6 +1170,56 @@
     goto :goto_2
 
     :cond_d
+    const-string v6, "recovery"
+
+    invoke-virtual {v6, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_e
+
+    invoke-direct {p0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->isAdvancedRebootEnabled()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_10
+
+    iget-object v6, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mItems:Ljava/util/ArrayList;
+
+    new-instance v7, Lcom/android/systemui/globalactions/GlobalActionsDialog$RecoveryAction;
+
+    invoke-direct {v7, p0, v5}, Lcom/android/systemui/globalactions/GlobalActionsDialog$RecoveryAction;-><init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;Lcom/android/systemui/globalactions/GlobalActionsDialog$1;)V
+
+    invoke-virtual {v6, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_2
+
+    :cond_e
+    const-string v6, "bootloader"
+
+    invoke-virtual {v6, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_f
+
+    invoke-direct {p0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->isAdvancedRebootEnabled()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_10
+
+    iget-object v6, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mItems:Ljava/util/ArrayList;
+
+    new-instance v7, Lcom/android/systemui/globalactions/GlobalActionsDialog$BootloaderAction;
+
+    invoke-direct {v7, p0, v5}, Lcom/android/systemui/globalactions/GlobalActionsDialog$BootloaderAction;-><init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;Lcom/android/systemui/globalactions/GlobalActionsDialog$1;)V
+
+    invoke-virtual {v6, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_2
+
+    :cond_f
     const-string v5, "GlobalActionsDialog"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1186,7 +1238,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_e
+    :cond_10
     :goto_2
     invoke-virtual {v1, v4}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
@@ -1195,14 +1247,14 @@
 
     goto/16 :goto_1
 
-    :cond_f
+    :cond_11
     iget-object v3, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mEmergencyAffordanceManager:Lcom/android/internal/util/EmergencyAffordanceManager;
 
     invoke-virtual {v3}, Lcom/android/internal/util/EmergencyAffordanceManager;->needsEmergencyAffordance()Z
 
     move-result v3
 
-    if-eqz v3, :cond_10
+    if-eqz v3, :cond_12
 
     iget-object v3, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mItems:Ljava/util/ArrayList;
 
@@ -1212,7 +1264,7 @@
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_10
+    :cond_12
     new-instance v3, Lcom/android/systemui/globalactions/GlobalActionsDialog$MyAdapter;
 
     invoke-direct {v3, p0, v5}, Lcom/android/systemui/globalactions/GlobalActionsDialog$MyAdapter;-><init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;Lcom/android/systemui/globalactions/GlobalActionsDialog$1;)V
@@ -1430,6 +1482,33 @@
     return-void
 .end method
 
+.method private isAdvancedRebootEnabled()Z
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "advanced_reboot"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v2, 0x1
+
+    nop
+
+    :cond_0
+    return v2
+.end method
+
 .method private isCurrentUserOwner()Z
     .locals 2
 
@@ -1508,7 +1587,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mContext:Landroid/content/Context;
 
-    const-string v2, "trust"
+    const-string/jumbo v2, "trust"
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -1808,35 +1887,61 @@
 .end method
 
 .method public showDialog(ZZ)V
-    .locals 2
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Landroid/content/res/ThemeController;->getInstance(Landroid/content/Context;)Landroid/content/res/ThemeController;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/ThemeController;->getThemeState()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    const v0, 0x7f120541
+
+    goto :goto_0
+
+    :cond_0
+    const v0, 0x7f120547
+
+    :goto_0
+    iget-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1, v0}, Landroid/content/Context;->setTheme(I)V
 
     iput-boolean p1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mKeyguardShowing:Z
 
     iput-boolean p2, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mDeviceProvisioned:Z
 
-    iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mDialog:Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;
+    iget-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mDialog:Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_1
 
-    iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mDialog:Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;
+    iget-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mDialog:Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;
 
-    invoke-virtual {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;->dismiss()V
+    invoke-virtual {v1}, Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;->dismiss()V
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    iput-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mDialog:Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;
+    iput-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mDialog:Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;
 
-    iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mHandler:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mHandler:Landroid/os/Handler;
 
-    const/4 v1, 0x2
+    const/4 v2, 0x2
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_0
+    :cond_1
     invoke-direct {p0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->handleShow()V
 
-    :goto_0
+    :goto_1
     return-void
 .end method

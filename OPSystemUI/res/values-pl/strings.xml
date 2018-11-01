@@ -1124,6 +1124,8 @@ Aby dowiedzieć się więcej, skontaktuj się z administratorem.
     <string name="qs_rearrange">Uporządkuj Szybkie ustawienia</string>
     <string name="qs_status_phone_muted">Telefon jest wyciszony</string>
     <string name="qs_status_phone_vibrate">Włączone wibracje</string>
+    <string name="quick_launch_exit">Zakończ</string>
+    <string name="quick_launch_exit_hint">Zabierz palec z ekranu, aby zakończyć</string>
     <string name="quick_settings">Szybkie ustawienia</string>
     <string name="quick_settings_bluetooth_detail_empty_text">Brak dostępnych sparowanych urządzeń</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1321,10 +1323,13 @@ Aby dowiedzieć się więcej, skontaktuj się z administratorem.
     <string name="sd_card_unmount_action">Odmontuj</string>
     <string name="search_menu_title">Szukaj</string>
     <string name="select_application">Wybierz aplikację</string>
+    <string name="select_day">Wybierz miesiąc i dzień</string>
+    <string name="select_hours">Wybierz godzinę</string>
     <string name="select_logd_size_dialog_title">Wybierz rozmiary Rejestratora/bufor dziennika</string>
     <string name="select_logd_size_title">Rozmiary bufora Rejestratora</string>
     <string name="select_logpersist_dialog_title">Wybierz bufory dziennika, które mają być trwale przechowywane na urządzeniu</string>
     <string name="select_logpersist_title">Zapisuj trwale dane dzienników</string>
+    <string name="select_minutes">Wybierz minuty</string>
     <string name="select_private_dns_configuration_dialog_title">Wybierz tryb prywatnego DNS</string>
     <string name="select_private_dns_configuration_title">Prywatny DNS</string>
     <string name="select_usb_configuration_dialog_title">Wybierz konfigurację USB</string>
@@ -1332,6 +1337,7 @@ Aby dowiedzieć się więcej, skontaktuj się z administratorem.
     <string name="select_webview_provider_dialog_title">Ustaw implementację WebView</string>
     <string name="select_webview_provider_title">Implementacja WebView</string>
     <string name="select_webview_provider_toast_text">Ta opcja nie jest już obsługiwana. Spróbuj ponownie.</string>
+    <string name="select_year">Wybierz rok</string>
     <string name="show_all_anrs">Pokaż wszystkie ANR w tle</string>
     <string name="show_all_anrs_summary">Pokaż okno Aplikacja nie odpowiada dla aplikacji w tle</string>
     <string name="show_battery_percentage">Pokaż procent naładowania baterii</string>
@@ -1427,6 +1433,11 @@ Telefon może się przegrzać, gdy:
 \u0009• Używasz telefonu w wysokiej temperaturze"</string>
     <string name="thermal_shutdown_message">Telefon działa teraz normalnie</string>
     <string name="thermal_shutdown_title">Telefon wyłączony: przegrzanie</string>
+    <string name="time_picker_header_text">Ustaw czas</string>
+    <string name="time_picker_hour_label">godzina</string>
+    <string name="time_picker_input_error">Wprowadź aktualny czas</string>
+    <string name="time_picker_minute_label">minuta</string>
+    <string name="time_picker_prompt_label">Wpisz aktualny czas</string>
     <string name="time_unit_just_now">Przed chwilą</string>
     <string name="title_convert_fbe">Przekształcanie na szyfrowanie plików</string>
     <string name="title_usb_accessory">Akcesorium USB</string>
@@ -1550,6 +1561,7 @@ Każdy użytkownik może aktualizować aplikacje wszystkich innych użytkownikó
     <string name="wait_for_debugger">Poczekaj na debugera</string>
     <string name="wait_for_debugger_summary">Aplikacja do debugowania czeka na przyłączenie debugera</string>
     <string name="wifi_ap_unable_to_handle_new_sta">Punkt dostępu jest tymczasowo zajęty</string>
+    <string name="wifi_auth_password_wrong">Hasło może być nieprawidłowe</string>
     <string name="wifi_cant_connect">Nie można się połączyć</string>
     <string name="wifi_cant_connect_to_ap">Nie można się połączyć z siecią „%1$s”</string>
     <string name="wifi_check_password_try_again">Sprawdź hasło i spróbuj ponownie</string>

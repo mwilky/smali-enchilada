@@ -1124,6 +1124,8 @@
     <string name="qs_rearrange">శీఘ్ర సెట్టింగ్‌ల ఏర్పాటు క్రమం మార్చు</string>
     <string name="qs_status_phone_muted">ఫోన్ మ్యూట్ చేయబడింది</string>
     <string name="qs_status_phone_vibrate">ఫోన్ వైబ్రేట్‌ మోడ్‌లో ఉంది</string>
+    <string name="quick_launch_exit">నిష్క్రమించు</string>
+    <string name="quick_launch_exit_hint">నిష్క్రమించడానికి స్క్రీన్‌పై నుండి వేలి తీసివేయండి</string>
     <string name="quick_settings">శీఘ్ర సెట్టింగ్‌లు</string>
     <string name="quick_settings_bluetooth_detail_empty_text">జత చేసిన పరికరాలు ఏవీ అందుబాటులో లేవు</string>
     <string name="quick_settings_bluetooth_label">బ్లూటూత్</string>
@@ -1321,10 +1323,13 @@
     <string name="sd_card_unmount_action">అన్‌మౌంట్</string>
     <string name="search_menu_title">వెతుకు</string>
     <string name="select_application">అనువర్తనాన్ని ఎంచుకోండి</string>
+    <string name="select_day">నెల మరియు రోజును ఎంచుకోండి</string>
+    <string name="select_hours">గంటలు ఎంచుకోండి</string>
     <string name="select_logd_size_dialog_title">లాగ్ బఫర్‌కి లాగర్ పరిమా. ఎంచుకోండి</string>
     <string name="select_logd_size_title">లాగర్ బఫర్ పరిమాణాలు</string>
     <string name="select_logpersist_dialog_title">పరికరంలో నిరంతరం నిల్వ చేయాల్సిన లాగ్ బఫర్‌లను ఎంచుకోండి</string>
     <string name="select_logpersist_title">పరికరంలో లాగర్ డేటా నిరంతరం నిల్వ చేయి</string>
+    <string name="select_minutes">నిమిషాలను ఎంచుకోండి</string>
     <string name="select_private_dns_configuration_dialog_title">ప్రైవేట్ DNS మోడ్‌ను ఎంచుకోండి</string>
     <string name="select_private_dns_configuration_title">ప్రైవేట్ DNS</string>
     <string name="select_usb_configuration_dialog_title">USB కాన్ఫిగరేషన్‌ని ఎంచుకోండి</string>
@@ -1332,6 +1337,7 @@
     <string name="select_webview_provider_dialog_title">వెబ్ వీక్షణ అమలుని సెట్ చేయండి</string>
     <string name="select_webview_provider_title">వెబ్ వీక్షణ అమలు</string>
     <string name="select_webview_provider_toast_text">ఈ ఎంపిక ఇప్పుడు లేదు. మళ్లీ ప్రయత్నించండి.</string>
+    <string name="select_year">సంవత్సరాన్ని ఎంచుకోండి</string>
     <string name="show_all_anrs">నేపథ్య ANRలను చూపు</string>
     <string name="show_all_anrs_summary">నేపథ్య యాప్‌ల కోసం యాప్ ప్రతిస్పందించడం లేదు అనే డైలాగ్‌ను చూపు</string>
     <string name="show_battery_percentage">పొందుపరిచిన బ్యాటరీ శాతం చూపు</string>
@@ -1427,6 +1433,11 @@
 \u0009• అధిక ఉష్ణోగ్రతలలో మీ ఫోన్‌ని ఉపయోగించడం"</string>
     <string name="thermal_shutdown_message">మీ ఫోన్ ఇప్పుడు సాధారణంగా పని చేస్తుంది</string>
     <string name="thermal_shutdown_title">వేడెక్కినందుకు ఫోన్ ఆఫ్ చేయబడింది</string>
+    <string name="time_picker_header_text">సమయాన్ని సెట్ చేయండి</string>
+    <string name="time_picker_hour_label">గంట</string>
+    <string name="time_picker_input_error">చెల్లే సమయాన్ని నమోదు చేయండి</string>
+    <string name="time_picker_minute_label">నిమిషం</string>
+    <string name="time_picker_prompt_label">సమయాన్ని పేర్కొనండి</string>
     <string name="time_unit_just_now">ఇప్పుడే</string>
     <string name="title_convert_fbe">ఫైల్ ఆధారిత గుప్తీకరణకు మార్చడం</string>
     <string name="title_usb_accessory">USB ఉపకరణం</string>
@@ -1550,6 +1561,7 @@
     <string name="wait_for_debugger">డీబగ్గర్ కోసం వేచి ఉండండి</string>
     <string name="wait_for_debugger_summary">డీబగ్ చేయబడిన యాప్ అమలు కావడానికి ముందు జోడించాల్సిన డీబగ్గర్ కోసం వేచి ఉంటుంది</string>
     <string name="wifi_ap_unable_to_handle_new_sta">యాక్సెస్ పాయింట్ తాత్కాలికంగా నిండుకుంది</string>
+    <string name="wifi_auth_password_wrong">పాస్‌వర్డ్ తప్పు కావొచ్చు</string>
     <string name="wifi_cant_connect">కనెక్ట్ చేయడం సాధ్యపడదు</string>
     <string name="wifi_cant_connect_to_ap">"'%1$s'కు కనెక్ట్ చేయడం సాధ్యపడదు"</string>
     <string name="wifi_check_password_try_again">పాస్‌వర్డ్‌ను తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి</string>

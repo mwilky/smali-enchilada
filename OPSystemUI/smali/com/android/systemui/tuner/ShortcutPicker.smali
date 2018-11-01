@@ -209,7 +209,7 @@
 
     invoke-direct {v3, v0}, Landroid/support/v7/preference/PreferenceCategory;-><init>(Landroid/content/Context;)V
 
-    const v4, 0x7f110638
+    const v4, 0x7f11063b
 
     invoke-virtual {v3, v4}, Landroid/support/v7/preference/PreferenceCategory;->setTitle(I)V
 
@@ -233,7 +233,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/tuner/ShortcutPicker;->mNonePreference:Lcom/android/systemui/tuner/SelectablePreference;
 
-    const v5, 0x7f08036e
+    const v5, 0x7f08037b
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/tuner/SelectablePreference;->setIcon(I)V
 

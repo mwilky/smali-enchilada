@@ -69,7 +69,11 @@
 
     :cond_1
     :goto_1
-    const-string v1, "DataSwitchTile"
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile$DataSwitchSignalCallback;->this$0:Lcom/android/systemui/qs/tiles/DataSwitchTile;
+
+    invoke-static {v1}, Lcom/android/systemui/qs/tiles/DataSwitchTile;->access$300(Lcom/android/systemui/qs/tiles/DataSwitchTile;)Ljava/lang/String;
+
+    move-result-object v1
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -81,7 +85,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile$DataSwitchSignalCallback;->this$0:Lcom/android/systemui/qs/tiles/DataSwitchTile;
 
-    invoke-static {v3}, Lcom/android/systemui/qs/tiles/DataSwitchTile;->access$200(Lcom/android/systemui/qs/tiles/DataSwitchTile;)Z
+    invoke-static {v3}, Lcom/android/systemui/qs/tiles/DataSwitchTile;->access$400(Lcom/android/systemui/qs/tiles/DataSwitchTile;)Z
 
     move-result v3
 
@@ -101,7 +105,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile$DataSwitchSignalCallback;->this$0:Lcom/android/systemui/qs/tiles/DataSwitchTile;
 
-    invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/DataSwitchTile;->access$202(Lcom/android/systemui/qs/tiles/DataSwitchTile;Z)Z
+    invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/DataSwitchTile;->access$402(Lcom/android/systemui/qs/tiles/DataSwitchTile;Z)Z
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile$DataSwitchSignalCallback;->this$0:Lcom/android/systemui/qs/tiles/DataSwitchTile;
 

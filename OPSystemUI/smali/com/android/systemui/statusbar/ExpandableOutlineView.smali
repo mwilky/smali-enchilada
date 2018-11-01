@@ -57,17 +57,17 @@
 .method static constructor <clinit>()V
     .locals 7
 
-    const-string v0, "topRoundness"
+    const-string/jumbo v0, "topRoundness"
 
     sget-object v1, Lcom/android/systemui/statusbar/-$$Lambda$ExpandableOutlineView$-E-rMo_VNnRS1oxWSSK8iT4OIlo;->INSTANCE:Lcom/android/systemui/statusbar/-$$Lambda$ExpandableOutlineView$-E-rMo_VNnRS1oxWSSK8iT4OIlo;
 
     sget-object v2, Lcom/android/systemui/statusbar/-$$Lambda$5MBgGbVXpg7XHgCv0UsDp2v7mps;->INSTANCE:Lcom/android/systemui/statusbar/-$$Lambda$5MBgGbVXpg7XHgCv0UsDp2v7mps;
 
-    const v3, 0x7f0a0414
+    const v3, 0x7f0a041b
 
-    const v4, 0x7f0a0412
+    const v4, 0x7f0a0419
 
-    const v5, 0x7f0a0413
+    const v5, 0x7f0a041a
 
     invoke-static/range {v0 .. v5}, Lcom/android/systemui/statusbar/notification/AnimatableProperty;->from(Ljava/lang/String;Ljava/util/function/BiConsumer;Ljava/util/function/Function;III)Lcom/android/systemui/statusbar/notification/AnimatableProperty;
 
@@ -417,7 +417,7 @@
 
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/ExpandableOutlineView;->mShouldTranslateContents:Z
 
-    const v1, 0x7f0703b1
+    const v1, 0x7f0703ba
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 

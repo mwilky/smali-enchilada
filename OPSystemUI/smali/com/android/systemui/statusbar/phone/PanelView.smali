@@ -1186,10 +1186,6 @@
 
 .method private runPeekAnimation(JFZ)V
     .locals 5
-    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mStatusbarPeek:Z
-    
-    if-eqz v0, :cond_mw
 
     iput p3, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mPeekHeight:F
 
@@ -1197,7 +1193,6 @@
 
     if-eqz v0, :cond_0
 
-    :cond_mw
     return-void
 
     :cond_0
@@ -1279,7 +1274,7 @@
 .end method
 
 .method private shouldHightHintIntercept(FF)Z
-    .locals 11
+    .locals 13
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -1331,70 +1326,60 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_8
 
-    iget v4, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mOrientation:I
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PanelView;->isLayoutRtl()Z
 
-    if-ne v4, v3, :cond_1
+    move-result v4
 
-    move v4, v3
+    iget v5, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mOrientation:I
+
+    if-ne v5, v3, :cond_1
+
+    move v5, v3
 
     goto :goto_1
 
     :cond_1
-    move v4, v2
+    move v5, v2
 
     :goto_1
-    iget v5, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mHighlightHintVisualWidth:I
+    iget v6, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mHighlightHintVisualWidth:I
 
-    int-to-float v5, v5
+    int-to-float v6, v6
 
-    const/high16 v6, 0x40000000    # 2.0f
+    const/high16 v7, 0x40000000    # 2.0f
 
-    div-float/2addr v5, v6
+    div-float/2addr v6, v7
 
-    float-to-int v5, v5
+    float-to-int v6, v6
 
-    iget v7, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mHighlightHintVisualX:I
-
-    sub-int/2addr v7, v5
-
-    int-to-float v7, v7
-
-    invoke-virtual {v0}, Landroid/view/View;->getX()F
-
-    move-result v8
-
-    cmpg-float v8, v7, v8
-
-    if-gez v8, :cond_2
-
-    invoke-virtual {v0}, Landroid/view/View;->getX()F
-
-    move-result v7
-
-    :cond_2
     iget v8, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mHighlightHintVisualX:I
 
-    iget v9, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mHighlightHintVisualWidth:I
+    sub-int/2addr v8, v6
 
-    add-int/2addr v8, v9
-
-    add-int/2addr v8, v5
-
-    if-eqz v4, :cond_3
+    int-to-float v8, v8
 
     invoke-virtual {v0}, Landroid/view/View;->getX()F
 
     move-result v9
 
-    goto :goto_2
+    cmpg-float v9, v8, v9
 
-    :cond_3
-    move v9, v7
+    if-gez v9, :cond_2
 
-    :goto_2
-    if-eqz v4, :cond_4
+    invoke-virtual {v0}, Landroid/view/View;->getX()F
+
+    move-result v8
+
+    :cond_2
+    iget v9, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mHighlightHintVisualX:I
+
+    iget v10, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mHighlightHintVisualWidth:I
+
+    add-int/2addr v9, v10
+
+    add-int/2addr v9, v6
 
     invoke-virtual {v0}, Landroid/view/View;->getRight()I
 
@@ -1402,44 +1387,76 @@
 
     int-to-float v10, v10
 
-    div-float/2addr v10, v6
+    div-float v7, v10, v7
+
+    if-eqz v5, :cond_4
+
+    if-eqz v4, :cond_3
+
+    move v10, v7
+
+    goto :goto_2
+
+    :cond_3
+    invoke-virtual {v0}, Landroid/view/View;->getX()F
+
+    move-result v10
+
+    goto :goto_2
+
+    :cond_4
+    move v10, v8
+
+    :goto_2
+    if-eqz v5, :cond_6
+
+    if-eqz v4, :cond_5
+
+    invoke-virtual {v0}, Landroid/view/View;->getRight()I
+
+    move-result v11
+
+    int-to-float v11, v11
 
     goto :goto_3
 
-    :cond_4
-    int-to-float v10, v8
+    :cond_5
+    move v11, v7
+
+    goto :goto_3
+
+    :cond_6
+    int-to-float v11, v9
 
     :goto_3
-    move v6, v10
+    cmpl-float v12, p1, v10
 
-    cmpl-float v10, p1, v9
+    if-ltz v12, :cond_7
 
-    if-ltz v10, :cond_5
+    cmpg-float v12, p1, v11
 
-    cmpg-float v10, p1, v6
+    if-gtz v12, :cond_7
 
-    if-gtz v10, :cond_5
-
-    move v10, v3
+    move v12, v3
 
     goto :goto_4
 
-    :cond_5
-    move v10, v2
+    :cond_7
+    move v12, v2
 
     :goto_4
-    move v4, v10
+    move v4, v12
 
     goto :goto_5
 
-    :cond_6
+    :cond_8
     invoke-virtual {v0}, Landroid/view/View;->getX()F
 
     move-result v4
 
     cmpl-float v4, p1, v4
 
-    if-ltz v4, :cond_7
+    if-ltz v4, :cond_9
 
     invoke-virtual {v0}, Landroid/view/View;->getRight()I
 
@@ -1449,25 +1466,25 @@
 
     cmpg-float v4, p1, v4
 
-    if-gtz v4, :cond_7
+    if-gtz v4, :cond_9
 
     move v4, v3
 
     goto :goto_5
 
-    :cond_7
+    :cond_9
     move v4, v2
 
     :goto_5
-    if-eqz v4, :cond_8
+    if-eqz v4, :cond_a
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_a
 
     move v2, v3
 
     nop
 
-    :cond_8
+    :cond_a
     return v2
 .end method
 
@@ -2931,7 +2948,7 @@
 
     iput v2, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mTouchSlop:I
 
-    const v2, 0x7f0701f3
+    const v2, 0x7f0701ff
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -2939,7 +2956,7 @@
 
     iput v2, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mHintDistance:F
 
-    const v2, 0x7f070671
+    const v2, 0x7f07067f
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2961,13 +2978,13 @@
 
     if-eqz v2, :cond_0
 
-    const v2, 0x7f0701ea
+    const v2, 0x7f0701f6
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
-    const v3, 0x7f0701ec
+    const v3, 0x7f0701f8
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

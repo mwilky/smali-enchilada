@@ -83,38 +83,38 @@
 
     :array_0
     .array-data 4
-        0x7f08033b
-        0x7f11062c
+        0x7f080347
+        0x7f11062f
     .end array-data
 
     :array_1
     .array-data 4
-        0x7f080204
-        0x7f11063a
+        0x7f08020c
+        0x7f11063d
     .end array-data
 
     :array_2
     .array-data 4
-        0x7f08036d
-        0x7f110637
+        0x7f08037a
+        0x7f11063a
     .end array-data
 
     :array_3
     .array-data 4
-        0x7f080277
-        0x7f110634
+        0x7f080282
+        0x7f110637
     .end array-data
 
     :array_4
     .array-data 4
-        0x7f08036f
-        0x7f11063b
+        0x7f08037c
+        0x7f11063e
     .end array-data
 
     :array_5
     .array-data 4
-        0x7f080288
-        0x7f110636
+        0x7f080293
+        0x7f110639
     .end array-data
 .end method
 
@@ -159,7 +159,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "type_"
+    const-string/jumbo v1, "type_"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

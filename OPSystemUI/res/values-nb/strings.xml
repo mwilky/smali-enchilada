@@ -274,7 +274,7 @@
     <string name="alarm_template_far">%1$s</string>
     <string name="allow_mock_location">Tillat simulert posisjon</string>
     <string name="allow_mock_location_summary">Tillat bruk av simulerte GPS-koordinater</string>
-    <string name="allow_notification">Tillatt varsler</string>
+    <string name="allow_notification">Tillatt varsel</string>
     <string name="always_use_accessory">Åpne alltid %1$s når %2$s er koblet til</string>
     <string name="always_use_device">Åpne alltid %1$s når %2$s er koblet til</string>
     <string name="animator_duration_scale_title">Varighetsskala for animasjon</string>
@@ -538,7 +538,7 @@ Hvis du fortsetter, kan avgifter for databruk påløpe."</string>
     <string name="drag_to_add_tiles">Dra for å legge til fliser</string>
     <string name="drag_to_remove_disabled">Du trenger minst seks ruter</string>
     <string name="drag_to_remove_tiles">Dra hit for å fjerne</string>
-    <string name="edit_mode_hint">Dra titlene for å endre rekkefølge. Berør for å vise eller skjule.</string>
+    <string name="edit_mode_hint">Dra flisene for å endre rekkefølge. Berør for å vise eller skjule.</string>
     <string name="empty_shade_text">Ingen varsler</string>
     <string name="enable_adb">USB-feilsøking</string>
     <string name="enable_adb_summary">Feilsøkingsmodus når USB kobles til</string>
@@ -576,7 +576,7 @@ Hvis du fortsetter, kan avgifter for databruk påløpe."</string>
     <string name="face_unlock_timeout">For mange mislykkede forsøk. Prøv igjen senere.</string>
     <string name="failed_to_open_app_settings_toast">Kunne ikke åpne innstillingene for %1$s</string>
     <string name="fingerprint_dialog_touch_sensor">Trykk på fingeravtrykkssensoren</string>
-    <string name="fingerprint_not_found">Forsøk igjen</string>
+    <string name="fingerprint_not_found">Prøv på nytt</string>
     <string name="fingerprint_not_recognized">Ikke gjenkjent</string>
     <string name="force_allow_on_external">Tving frem tillatelse for ekstern lagring av apper</string>
     <string name="force_allow_on_external_summary">Dette gjør at alle apper kan lagres på eksterne lagringsmedier – uavhengig av manifestverdier</string>
@@ -622,7 +622,7 @@ Telefonen kommer til å kjøre som normalt, når den har kjølt seg ned."</strin
     <string name="high_temp_notif_message">Enkelte funksjoner er begrenset mens telefonen kjøles ned</string>
     <string name="high_temp_title">Telefonen begynner å bli varm</string>
     <string name="home">Innstillinger for startsiden</string>
-    <string name="hotspot_apm_message">Kan ikke koble til mobilnettverk mens flymodus er aktivert. Deaktiver flymodus, og forsøk igjen.</string>
+    <string name="hotspot_apm_message">Kan ikke koble til mobilnettverk mens flymodus er aktivert. Deaktiver flymodus, og prøv igjen.</string>
     <string name="ime_security_warning">Denne inndatametoden har tilgang til all tekst du skriver, blant annet personlige opplysninger som for eksempel passord og kredittkortnumre. Den kommer fra appen %1$s. Vil du bruke denne inndatametoden?</string>
     <string name="immediately_destroy_activities">Ikke behold aktiviteter</string>
     <string name="immediately_destroy_activities_summary">Fjern hver aktivitet så fort brukeren forlater den</string>
@@ -872,8 +872,8 @@ Prøv på nytt om %2$d sekunder."</string>
     <string name="manage_notifications_text">Administrer varsler</string>
     <string name="managed_profile_foreground_toast">Du bruker jobbprofilen din</string>
     <string name="managed_user_title">Alle jobbapper</string>
-    <string name="maxxaudio_disable">Deaktivere</string>
-    <string name="maxxaudio_enable">Aktivere</string>
+    <string name="maxxaudio_disable">Deaktiver</string>
+    <string name="maxxaudio_enable">Aktiver</string>
     <string name="media_category">Medier</string>
     <string name="media_projection_action_text">Start nå</string>
     <string name="media_projection_dialog_text">%s tar opp alt som vies på skjermen din.</string>
@@ -970,7 +970,7 @@ Du er også tilkoblet en VPN som kan overvåke nettverksaktiviteten din."</strin
     <string name="nav_bar">Navigasjonsrad</string>
     <string name="nav_bar_default">(standard)</string>
     <string name="nav_bar_guide_positive">SKJØNNER</string>
-    <string name="nav_bar_guide_title">Sveip opp fra bunnen av for å se navigasjonslinjen. Hvis du ikke ønsker at den skal vøre skjult, så trykk</string>
+    <string name="nav_bar_guide_title">Sveip opp fra bunnen av for å se navigasjonslinjen. Hvis du ikke ønsker at den skal være skjult, så trykk</string>
     <string name="nav_bar_layout">Oppsett</string>
     <string name="no_application">Ingen</string>
     <string name="no_auto_saver_action">Nei takk</string>
@@ -991,7 +991,7 @@ Du er også tilkoblet en VPN som kan overvåke nettverksaktiviteten din."</strin
     <string name="notification_channel_storage">Lagring</string>
     <string name="notification_channel_switch_accessibility">Tillat varsler fra denne kanalen</string>
     <string name="notification_channel_tv_pip">Bilde-i-bilde</string>
-    <string name="notification_content_disable_button">Trykk for å slå av</string>
+    <string name="notification_content_disable_button">Berør for å slå av</string>
     <string name="notification_content_disable_button_in_nav">Navigasjonslinjen er deaktivert når HW-knappene er låst</string>
     <string name="notification_done">Ferdig</string>
     <string name="notification_group_overflow_indicator">+ %s</string>
@@ -1104,7 +1104,7 @@ Du er også tilkoblet en VPN som kan overvåke nettverksaktiviteten din."</strin
     <string name="prevent_view_title">Lommemodus er på</string>
     <string name="prevent_view_title_cancel">For å aktivere telefonen:</string>
     <string name="prevent_view_top_tag_cancel">Ikke dekk over det blå området på telefonen, og fjern skitt eller støv fra det blå området.</string>
-    <string name="prevent_view_top_tag_cancel2">Følg sirklene på skjermen og trykk på dem for å tvinge avslutning av lommemodus.</string>
+    <string name="prevent_view_top_tag_cancel2">Følg sirklene på skjermen, og trykk på dem for å tvinge avslutning av lommemodus.</string>
     <string name="prevent_view_top_tag_numbuer1">"1. "</string>
     <string name="prevent_view_top_tag_numbuer2">"2. "</string>
     <string name="private_dns_mode_off">Av</string>
@@ -1124,6 +1124,8 @@ Du er også tilkoblet en VPN som kan overvåke nettverksaktiviteten din."</strin
     <string name="qs_rearrange">Omorganiser hurtiginnstillingene</string>
     <string name="qs_status_phone_muted">Lyden på telefonen er slått av</string>
     <string name="qs_status_phone_vibrate">Telefonen er satt til vibrering</string>
+    <string name="quick_launch_exit">Avslutt</string>
+    <string name="quick_launch_exit_hint">Ta fingeren av skjermen for å avslutte</string>
     <string name="quick_settings">Hurtiginnstillinger</string>
     <string name="quick_settings_bluetooth_detail_empty_text">Ingen sammenkoblede enheter er tilgjengelige</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1321,10 +1323,13 @@ Du er også tilkoblet en VPN som kan overvåke nettverksaktiviteten din."</strin
     <string name="sd_card_unmount_action">Demonter</string>
     <string name="search_menu_title">Søk</string>
     <string name="select_application">Velg app</string>
+    <string name="select_day">Velg måned og dag</string>
+    <string name="select_hours">Velg timer</string>
     <string name="select_logd_size_dialog_title">Velg loggstørrelse per loggbuffer</string>
     <string name="select_logd_size_title">Bufferstørrelser for logg</string>
     <string name="select_logpersist_dialog_title">Velg loggbufferne som skal lagres varig på enheten</string>
     <string name="select_logpersist_title">Lagre loggdata varig på enheten</string>
+    <string name="select_minutes">Velg minutter</string>
     <string name="select_private_dns_configuration_dialog_title">Velg Privat DNS-modus</string>
     <string name="select_private_dns_configuration_title">Privat DNS</string>
     <string name="select_usb_configuration_dialog_title">Velg USB-konfigurasjon</string>
@@ -1332,6 +1337,7 @@ Du er også tilkoblet en VPN som kan overvåke nettverksaktiviteten din."</strin
     <string name="select_webview_provider_dialog_title">Angi WebView-implementering</string>
     <string name="select_webview_provider_title">WebView-implementering</string>
     <string name="select_webview_provider_toast_text">Dette valget er ikke gyldig lenger. Prøv på nytt.</string>
+    <string name="select_year">Velg år</string>
     <string name="show_all_anrs">Vis ANR-feil i bakgrunnen</string>
     <string name="show_all_anrs_summary">Vis Appen svarer ikke-dialog for bakgrunnsapper</string>
     <string name="show_battery_percentage">Vis prosent for det innebygde batteriet</string>
@@ -1427,6 +1433,11 @@ Telefonen kan blir for varm hvis du:
 \u0009• bruker telefonen ved høy temperatur"</string>
     <string name="thermal_shutdown_message">Telefonen din kjører nå som normalt</string>
     <string name="thermal_shutdown_title">Telefon ble slått av pga varme</string>
+    <string name="time_picker_header_text">Still inn tid</string>
+    <string name="time_picker_hour_label">time</string>
+    <string name="time_picker_input_error">Angi gyldig tidspunkt</string>
+    <string name="time_picker_minute_label">minutt</string>
+    <string name="time_picker_prompt_label">Skriv inn tid</string>
     <string name="time_unit_just_now">Nå nettopp</string>
     <string name="title_convert_fbe">Konvertér til filbasert kryptering</string>
     <string name="title_usb_accessory">USB-enhet</string>
@@ -1498,7 +1509,7 @@ Telefonen kan blir for varm hvis du:
     <string name="usb_preference_title">Altern. for USB-filoverføring</string>
     <string name="usb_storage_badremoval_notification_message" />
     <string name="usb_storage_badremoval_notification_title">USB-lagring fjernet</string>
-    <string name="usb_storage_checking_notification_title">Klargjør USB-lagring</string>
+    <string name="usb_storage_checking_notification_title">Klargjører USB-lagring</string>
     <string name="use_mtp_button_title">Sett inn som mediespiller (MTP)</string>
     <string name="use_ptp_button_title">Sett inn som kamera (PTP)</string>
     <string name="use_system_language_to_select_input_method_subtypes">Bruk systemspråk</string>
@@ -1543,13 +1554,14 @@ Alle brukere kan oppdatere apper for alle andre brukere."</string>
     <string name="volume_stream_content_description_vibrate">%1$s. Trykk for å angi vibrasjon. Lyden kan bli slått av for tilgjengelighetstjenestene.</string>
     <string name="volume_stream_content_description_vibrate_a11y">%1$s. Trykk for å angi vibrasjon.</string>
     <string name="volume_up_silent">Lukk «Ikke forstyrr» med volum opp-knappen</string>
-    <string name="volume_vibrate">Vibrere</string>
+    <string name="volume_vibrate">Vibrer</string>
     <string name="volume_zen_end_now">Slå av nå</string>
     <string name="vpn_footer">Nettverket kan være overvåket</string>
     <string name="vpn_settings_not_available">Innstillingene for VPN er ikke tilgjengelig for denne brukeren</string>
     <string name="wait_for_debugger">Vent på feilsøkingsverktøyet</string>
     <string name="wait_for_debugger_summary">Feilsøkt app venter til feilsøkingsverktøyet er lagt til før den kjører</string>
     <string name="wifi_ap_unable_to_handle_new_sta">Tilgangspunktet er midlertidig fullt</string>
+    <string name="wifi_auth_password_wrong">Passordet kan være feil</string>
     <string name="wifi_cant_connect">Kan ikke koble til</string>
     <string name="wifi_cant_connect_to_ap">Kan ikke koble til «%1$s»</string>
     <string name="wifi_check_password_try_again">Sjekk passordet og prøv igjen</string>

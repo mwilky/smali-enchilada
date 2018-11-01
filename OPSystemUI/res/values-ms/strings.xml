@@ -1429,6 +1429,7 @@ Mana-mana pengguna boleh mengemas kini apl untuk semua pengguna lain."</string>
     <string name="wait_for_debugger">Nantikan penyahpepijat</string>
     <string name="wait_for_debugger_summary">Menanti penyahpepijat sebelum aplikasi melaksana</string>
     <string name="wifi_ap_unable_to_handle_new_sta">Titik akses penuh buat sementara waktu</string>
+    <string name="wifi_auth_password_wrong">Kata laluan mungkin tidak betul</string>
     <string name="wifi_cant_connect">Tidak dapat bersambung</string>
     <string name="wifi_cant_connect_to_ap">"Tidak dapat bersambung ke '%1$s'"</string>
     <string name="wifi_check_password_try_again">Semak kata laluan, kemudian cuba lagi</string>

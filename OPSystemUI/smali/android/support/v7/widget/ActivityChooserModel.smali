@@ -490,7 +490,7 @@
 
     move-result-object v7
 
-    const-string v8, "time"
+    const-string/jumbo v8, "time"
 
     invoke-interface {v2, v0, v8}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 

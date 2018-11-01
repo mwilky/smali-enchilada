@@ -136,7 +136,7 @@
 
     const-class v1, Ljava/lang/Float;
 
-    const-string v2, "translation_x"
+    const-string/jumbo v2, "translation_x"
 
     invoke-direct {v0, v1, v2}, Landroid/support/v17/leanback/widget/PagingIndicator$3;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 

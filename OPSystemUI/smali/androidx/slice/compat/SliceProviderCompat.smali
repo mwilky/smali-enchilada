@@ -1320,7 +1320,7 @@
 
     move-result-object v2
 
-    const-string v3, "unpin_slice"
+    const-string/jumbo v3, "unpin_slice"
 
     const-string v4, "supports_versioned_parcelable"
 
@@ -1606,7 +1606,7 @@
     return-object v1
 
     :cond_b
-    const-string v0, "unpin_slice"
+    const-string/jumbo v0, "unpin_slice"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1736,7 +1736,7 @@
 
     move-result v2
 
-    const-string v3, "uid"
+    const-string/jumbo v3, "uid"
 
     invoke-virtual {p3, v3}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 

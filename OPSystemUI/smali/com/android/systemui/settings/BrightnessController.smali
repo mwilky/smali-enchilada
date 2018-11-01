@@ -810,12 +810,12 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f080332
+    const v0, 0x7f08033e
 
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f080330
+    const v0, 0x7f08033c
 
     :goto_0
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setImageResource(I)V
@@ -825,11 +825,11 @@
 
     iget-boolean v0, p0, Lcom/android/systemui/settings/BrightnessController;->mIsVrModeEnabled:Z
 
-    const v1, 0x7f080336
+    const v1, 0x7f080342
 
-    const v2, 0x7f080334
+    const v2, 0x7f080340
 
-    const v3, 0x7f080335
+    const v3, 0x7f080341
 
     if-eqz v0, :cond_4
 
@@ -1261,7 +1261,7 @@
     :cond_0
     const-string v0, "StatusBar.BrightnessController"
 
-    const-string v1, "unregisterCallbacks"
+    const-string/jumbo v1, "unregisterCallbacks"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 

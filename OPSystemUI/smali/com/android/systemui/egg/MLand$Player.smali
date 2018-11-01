@@ -93,7 +93,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/egg/MLand$Player;->corners:[F
 
-    const v0, 0x7f0800e5
+    const v0, 0x7f0800e7
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/egg/MLand$Player;->setBackgroundResource(I)V
 

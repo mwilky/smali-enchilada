@@ -249,7 +249,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f11052b
+    const v1, 0x7f11052e
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -268,8 +268,6 @@
 
 .method public static synthetic lambda$handleClick$0(Lcom/android/systemui/qs/tiles/WifiTile;)V
     .locals 1
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     iget-boolean v0, p0, Lcom/android/systemui/qs/tiles/WifiTile;->mExpectDisabled:Z
 
@@ -417,7 +415,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f110526
+    const v1, 0x7f110529
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -842,11 +840,11 @@
     invoke-static {v13, v14}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_f
-    const v13, 0x7f110526
+    const v13, 0x7f110529
 
     if-eqz v10, :cond_10
 
-    const v14, 0x7f08037d
+    const v14, 0x7f08038a
 
     invoke-static {v14}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -873,7 +871,7 @@
 
     iput v6, v1, Lcom/android/systemui/plugins/qs/QSTile$SignalState;->state:I
 
-    const v14, 0x7f080365
+    const v14, 0x7f080371
 
     invoke-static {v14}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -913,7 +911,7 @@
     :cond_12
     if-eqz v8, :cond_13
 
-    const v14, 0x7f080366
+    const v14, 0x7f080372
 
     invoke-static {v14}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -930,7 +928,7 @@
     goto :goto_a
 
     :cond_13
-    const v14, 0x7f08036c
+    const v14, 0x7f080378
 
     invoke-static {v14}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 

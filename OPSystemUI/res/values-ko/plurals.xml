@@ -4,7 +4,7 @@
         <item quantity="other">SIM PIN을 입력하십시오. %d번 시도할 수 있습니다. 이후에는 통신사에 문의하여 장치를 잠금 해제해야 합니다.</item>
     </plurals>
     <plurals name="kg_password_default_pin_message_multi_sim">
-        <item quantity="other">SIM%1$d PIN을 입력하십시오. %2$d번 시도한 후에는 통신사에 연락하여 장치를 잠금 해제해야 합니다. SIM%3$d PIN을 입력하십시오. %4$d번 시도할 수 있습니다.</item>
+        <item quantity="other">SIM%1$d PIN을 입력하십시오. %2$d번 시도한 후에는 통신사에 연락하여 장치를 잠금 해제해야 합니다.</item>
     </plurals>
     <plurals name="kg_password_default_puk_message">
         <item quantity="other">SIM이 이제 비활성화되었습니다. PUK 코드를 입력하여 계속 진행하십시오. %d번 시도할 수 있습니다. 이후에는 SIM이 영구적으로 사용 가능하지 않게 됩니다. 자세한 내용은 통신사에 문의하십시오.</item>
@@ -14,7 +14,7 @@
         <item quantity="one">잘못된 SIM PIN 코드입니다. 입력에 %d번 더 실패할 경우 이동통신사에 문의하여 기기를 잠금 해제해야 합니다.</item>
     </plurals>
     <plurals name="kg_password_wrong_pin_code_multi_sim">
-        <item quantity="other">SIM%1$d PIN 코드가 잘못되었습니다. %2$d번 더 시도한 후에는 통신사에 연락하여 장치를 잠금 해제해야 합니다. SIM%3$d PIN 코드가 잘못되었습니다. %4$d번 더 시도할 수 있습니다.</item>
+        <item quantity="other">SIM%1$d PIN 코드가 잘못되었습니다. %2$d번 더 시도한 후에는 통신사에 연락하여 장치를 잠금 해제해야 합니다.</item>
     </plurals>
     <plurals name="kg_password_wrong_puk_code">
         <item quantity="other">잘못된 SIM PUK 코드입니다. 입력에 %d번 더 실패할 경우 SIM이 영구적으로 사용 중지됩니다.</item>

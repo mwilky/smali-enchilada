@@ -264,7 +264,7 @@
 
     new-instance v0, Lcom/android/systemui/statusbar/ExpandableNotificationRow$2;
 
-    const-string v1, "translate"
+    const-string/jumbo v1, "translate"
 
     invoke-direct {v0, v1}, Lcom/android/systemui/statusbar/ExpandableNotificationRow$2;-><init>(Ljava/lang/String;)V
 
@@ -887,7 +887,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0703a7
+    const v1, 0x7f0703b0
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/notification/NotificationUtils;->getFontScaledHeight(Landroid/content/Context;I)I
 
@@ -897,7 +897,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0703a5
+    const v1, 0x7f0703ae
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/notification/NotificationUtils;->getFontScaledHeight(Landroid/content/Context;I)I
 
@@ -907,7 +907,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0703a4
+    const v1, 0x7f0703ad
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/notification/NotificationUtils;->getFontScaledHeight(Landroid/content/Context;I)I
 
@@ -917,7 +917,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0703a6
+    const v1, 0x7f0703af
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/notification/NotificationUtils;->getFontScaledHeight(Landroid/content/Context;I)I
 
@@ -927,7 +927,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f07039f
+    const v1, 0x7f0703a8
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/notification/NotificationUtils;->getFontScaledHeight(Landroid/content/Context;I)I
 
@@ -937,7 +937,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f070385
+    const v1, 0x7f07038e
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/notification/NotificationUtils;->getFontScaledHeight(Landroid/content/Context;I)I
 
@@ -947,7 +947,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f07039e
+    const v1, 0x7f0703a7
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/notification/NotificationUtils;->getFontScaledHeight(Landroid/content/Context;I)I
 
@@ -957,7 +957,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f07039c
+    const v1, 0x7f0703a5
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/notification/NotificationUtils;->getFontScaledHeight(Landroid/content/Context;I)I
 
@@ -967,7 +967,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f07039b
+    const v1, 0x7f0703a4
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/notification/NotificationUtils;->getFontScaledHeight(Landroid/content/Context;I)I
 
@@ -977,7 +977,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f07039d
+    const v1, 0x7f0703a6
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/notification/NotificationUtils;->getFontScaledHeight(Landroid/content/Context;I)I
 
@@ -989,7 +989,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07038e
+    const v1, 0x7f070397
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -997,7 +997,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mIncreasedPaddingBetweenElements:I
 
-    const v1, 0x7f070397
+    const v1, 0x7f0703a0
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -4919,15 +4919,8 @@
 .end method
 
 .method public isUserExpanded()Z
-    .locals 2
-    
-    sget-boolean v1, Lcom/android/mwilky/Renovate;->mExpandedNotifications:Z
-    
-    if-eqz v1, :cond_stock
-    
-    return v1
-    
-    :cond_stock
+    .locals 1
+
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mUserExpanded:Z
 
     return v0
@@ -5323,7 +5316,7 @@
 
     invoke-super {p0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->onFinishInflate()V
 
-    const v0, 0x7f0a013c
+    const v0, 0x7f0a013d
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->findViewById(I)Landroid/view/View;
 
@@ -5333,7 +5326,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mPublicLayout:Lcom/android/systemui/statusbar/NotificationContentView;
 
-    const v0, 0x7f0a013b
+    const v0, 0x7f0a013c
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->findViewById(I)Landroid/view/View;
 
@@ -5383,7 +5376,7 @@
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f0a028f
+    const v0, 0x7f0a0293
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->findViewById(I)Landroid/view/View;
 
@@ -5401,7 +5394,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewStub;->setOnInflateListener(Landroid/view/ViewStub$OnInflateListener;)V
 
-    const v0, 0x7f0a00b8
+    const v0, 0x7f0a00b9
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->findViewById(I)Landroid/view/View;
 
@@ -7522,23 +7515,22 @@
 
     const/4 v10, 0x0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
-    if-nez p1, :cond_2
+    if-nez p1, :cond_1
 
-    :cond_1
     invoke-virtual {v6}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isLock()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
-    :cond_2
+    :cond_1
     move v0, v9
 
     goto :goto_0
 
-    :cond_3
+    :cond_2
     move v0, v10
 
     :goto_0
@@ -7546,27 +7538,27 @@
 
     iget-boolean v0, v6, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mShowingPublicInitialized:Z
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     iget-boolean v0, v6, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mShowingPublic:Z
 
-    if-ne v0, v8, :cond_4
+    if-ne v0, v8, :cond_3
 
     return-void
 
-    :cond_4
+    :cond_3
     iget-object v0, v6, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mPublicLayout:Lcom/android/systemui/statusbar/NotificationContentView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/NotificationContentView;->getChildCount()I
 
     move-result v0
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_4
 
     return-void
 
-    :cond_5
-    if-nez v7, :cond_8
+    :cond_4
+    if-nez v7, :cond_7
 
     iget-object v0, v6, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mPublicLayout:Lcom/android/systemui/statusbar/NotificationContentView;
 
@@ -7588,7 +7580,7 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
     iget-object v0, v6, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mChildrenContainer:Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer;
 
@@ -7602,7 +7594,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer;->setAlpha(F)V
 
-    :cond_6
+    :cond_5
     iget-object v0, v6, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mPublicLayout:Lcom/android/systemui/statusbar/NotificationContentView;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/NotificationContentView;->setAlpha(F)V
@@ -7615,13 +7607,13 @@
 
     iget-boolean v1, v6, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mShowingPublic:Z
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_6
 
     move v1, v10
 
     goto :goto_1
 
-    :cond_7
+    :cond_6
     const/4 v1, 0x4
 
     :goto_1
@@ -7631,7 +7623,7 @@
 
     goto :goto_2
 
-    :cond_8
+    :cond_7
     iget-boolean v5, v6, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mShowingPublic:Z
 
     move-object v0, v6
@@ -9039,7 +9031,7 @@
 
     sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    const v2, 0x7f0a019a
+    const v2, 0x7f0a019c
 
     invoke-virtual {v0, v2}, Lcom/android/systemui/statusbar/StatusBarIconView;->getTag(I)Ljava/lang/Object;
 

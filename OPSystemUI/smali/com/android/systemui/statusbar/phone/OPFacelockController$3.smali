@@ -39,11 +39,19 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$3;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$1600(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/statusbar/phone/StatusBar;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$1600(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
     move-result-object v0
 
     const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->showBouncer(Z)V
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$3;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
+
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$1700(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    move-result-object v0
 
     const/4 v2, 0x1
 

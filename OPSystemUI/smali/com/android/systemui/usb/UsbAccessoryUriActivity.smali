@@ -104,7 +104,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/usb/UsbAccessoryUriActivity;->mAccessory:Landroid/hardware/usb/UsbAccessory;
 
-    const-string v1, "uri"
+    const-string/jumbo v1, "uri"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
@@ -221,7 +221,7 @@
     if-nez v4, :cond_4
 
     :cond_3
-    const v4, 0x7f11060a
+    const v4, 0x7f11060d
 
     invoke-virtual {p0, v4}, Lcom/android/systemui/usb/UsbAccessoryUriActivity;->getString(I)Ljava/lang/String;
 
@@ -230,7 +230,7 @@
     iput-object v4, v3, Lcom/android/internal/app/AlertController$AlertParams;->mTitle:Ljava/lang/CharSequence;
 
     :cond_4
-    const v4, 0x7f110644
+    const v4, 0x7f110647
 
     const/4 v5, 0x1
 

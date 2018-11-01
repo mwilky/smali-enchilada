@@ -1124,6 +1124,8 @@
     <string name="qs_rearrange">จัดเรียงการตั้งค่าด่วนใหม่</string>
     <string name="qs_status_phone_muted">โทรศัพท์ปิดเสียงอยู่</string>
     <string name="qs_status_phone_vibrate">โทรศัพท์เปิดระบบสั่นอยู่</string>
+    <string name="quick_launch_exit">ออก</string>
+    <string name="quick_launch_exit_hint">ยกนิ้วมือออกจากหน้าจอเพื่อออก</string>
     <string name="quick_settings">การตั้งค่าด่วน</string>
     <string name="quick_settings_bluetooth_detail_empty_text">ไม่มีอุปกรณ์ที่จับคู่ที่สามารถใช้ได้</string>
     <string name="quick_settings_bluetooth_label">บลูทูธ</string>
@@ -1321,10 +1323,13 @@
     <string name="sd_card_unmount_action">อันเม้าต์</string>
     <string name="search_menu_title">ค้นหา</string>
     <string name="select_application">เลือกแอปพลิเคชัน</string>
+    <string name="select_day">เลือกเดือนและวัน</string>
+    <string name="select_hours">เลือกชั่วโมง</string>
     <string name="select_logd_size_dialog_title">เลือกขนาด Logger ต่อบัฟเฟอร์ไฟล์บันทึก</string>
     <string name="select_logd_size_title">ขนาดบัฟเฟอร์ของตัวบันทึก</string>
     <string name="select_logpersist_dialog_title">เลือกบัฟเฟอร์บันทึกที่จะจัดเก็บอย่างถาวรบนอุปกรณ์</string>
     <string name="select_logpersist_title">เก็บข้อมูลตัวบันทึกอย่างถาวรบนอุปกรณ์</string>
+    <string name="select_minutes">เลือกนาที</string>
     <string name="select_private_dns_configuration_dialog_title">เลือกโหมด DNS ส่วนตัว</string>
     <string name="select_private_dns_configuration_title">DNS ส่วนตัว</string>
     <string name="select_usb_configuration_dialog_title">เลือกการกำหนดค่า USB</string>
@@ -1332,6 +1337,7 @@
     <string name="select_webview_provider_dialog_title">ตั้งค่าการใช้งาน WebView</string>
     <string name="select_webview_provider_title">การใช้งาน WebView</string>
     <string name="select_webview_provider_toast_text">ตัวเลือกนี้ใช้ไม่ได้อีกต่อไป โปรดลองอีกครั้ง</string>
+    <string name="select_year">เลือกปี</string>
     <string name="show_all_anrs">แสดง ANR พื้นหลัง</string>
     <string name="show_all_anrs_summary">แสดงกล่องโต้ตอบ \"แอปไม่ตอบสนอง\" สำหรับแอปพื้นหลัง</string>
     <string name="show_battery_percentage">แสดงเปอร์เซ็นต์ของแบตเตอรี่ในตัว</string>
@@ -1427,6 +1433,11 @@
 \u0009• ใช้โทรศัพท์ในอุณหภูมิที่สูง"</string>
     <string name="thermal_shutdown_message">ขณะนี้โทรศัพท์ทำงานเป็นปกติ</string>
     <string name="thermal_shutdown_title">โทรศัพท์ปิดไปเพราะร้อนมาก</string>
+    <string name="time_picker_header_text">ตั้งเวลา</string>
+    <string name="time_picker_hour_label">ชั่วโมง</string>
+    <string name="time_picker_input_error">ป้อนเวลาที่ถูกต้อง</string>
+    <string name="time_picker_minute_label">นาที</string>
+    <string name="time_picker_prompt_label">พิมพ์ภายในเวลาที่กำหนด</string>
     <string name="time_unit_just_now">เมื่อสักครู่</string>
     <string name="title_convert_fbe">การแปลงเป็นการเข้ารหัสตามไฟล์</string>
     <string name="title_usb_accessory">อุปกรณ์เสริม USB</string>
@@ -1550,6 +1561,7 @@
     <string name="wait_for_debugger">รอโปรแกรมแก้ไขข้อบกพร่อง</string>
     <string name="wait_for_debugger_summary">แอปพลิเคชันที่มีการแก้ปัญหาจะรอให้โปรแกรมแก้ไขข้อบกพร่องแนบข้อมูลก่อนปฏิบัติการ</string>
     <string name="wifi_ap_unable_to_handle_new_sta">จุดเข้าใช้งานเต็มชั่วคราว</string>
+    <string name="wifi_auth_password_wrong">รหัสผ่านอาจไม่ถูกต้อง</string>
     <string name="wifi_cant_connect">ไม่สามารถเชื่อมต่อ</string>
     <string name="wifi_cant_connect_to_ap">ไม่สามารถเชื่อมต่อกับ \"%1$s\"</string>
     <string name="wifi_check_password_try_again">ตรวจสอบรหัสผ่านและลองอีกครั้ง</string>

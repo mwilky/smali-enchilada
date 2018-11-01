@@ -879,7 +879,7 @@
     :goto_0
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPatternView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    const v0, 0x7f0a0216
+    const v0, 0x7f0a0219
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPatternView;->findViewById(I)Landroid/view/View;
 
@@ -925,7 +925,7 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPatternView;->mSecurityMessageDisplay:Lcom/android/keyguard/KeyguardMessageArea;
 
-    const v0, 0x7f0a01d8
+    const v0, 0x7f0a01db
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPatternView;->findViewById(I)Landroid/view/View;
 
@@ -933,7 +933,7 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPatternView;->mEcaView:Landroid/view/View;
 
-    const v0, 0x7f0a00cb
+    const v0, 0x7f0a00cc
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPatternView;->findViewById(I)Landroid/view/View;
 
@@ -943,7 +943,7 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPatternView;->mContainer:Landroid/view/ViewGroup;
 
-    const v0, 0x7f0a014d
+    const v0, 0x7f0a014e
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPatternView;->findViewById(I)Landroid/view/View;
 
@@ -951,7 +951,7 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPatternView;->mFingerprintIcon:Landroid/view/View;
 
-    const v0, 0x7f0a0124
+    const v0, 0x7f0a0125
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPatternView;->findViewById(I)Landroid/view/View;
 
@@ -964,7 +964,7 @@
     invoke-virtual {v0, p0}, Lcom/android/keyguard/EmergencyButton;->setCallback(Lcom/android/keyguard/EmergencyButton$EmergencyButtonCallback;)V
 
     :cond_1
-    const v1, 0x7f0a00a7
+    const v1, 0x7f0a00a8
 
     invoke-virtual {p0, v1}, Lcom/android/keyguard/KeyguardPatternView;->findViewById(I)Landroid/view/View;
 
@@ -1037,6 +1037,8 @@
     iput-object v1, p0, Lcom/android/keyguard/KeyguardPatternView;->mPendingLockCheck:Landroid/os/AsyncTask;
 
     :cond_1
+    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardPatternView;->reset()V
+
     return-void
 .end method
 

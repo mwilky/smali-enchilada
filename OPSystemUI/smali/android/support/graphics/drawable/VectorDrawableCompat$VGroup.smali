@@ -441,7 +441,7 @@
 
     iput v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleY:F
 
-    const-string v0, "translateX"
+    const-string/jumbo v0, "translateX"
 
     iget v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateX:F
 
@@ -453,7 +453,7 @@
 
     iput v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateX:F
 
-    const-string v0, "translateY"
+    const-string/jumbo v0, "translateY"
 
     iget v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateY:F
 

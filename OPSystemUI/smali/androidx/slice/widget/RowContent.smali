@@ -124,7 +124,7 @@
 .method private determineStartAndPrimaryAction(Landroidx/slice/SliceItem;)V
     .locals 7
 
-    const-string v0, "title"
+    const-string/jumbo v0, "title"
 
     const/4 v1, 0x0
 
@@ -209,7 +209,7 @@
     :cond_2
     const-string v2, "shortcut"
 
-    const-string v4, "title"
+    const-string/jumbo v4, "title"
 
     filled-new-array {v2, v4}, [Ljava/lang/String;
 
@@ -499,7 +499,7 @@
 
     const-string v0, "keywords"
 
-    const-string v1, "ttl"
+    const-string/jumbo v1, "ttl"
 
     const-string v2, "last_updated"
 
@@ -544,7 +544,7 @@
 
     if-nez v2, :cond_2
 
-    const-string v2, "text"
+    const-string/jumbo v2, "text"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -647,7 +647,7 @@
     :cond_0
     invoke-direct {p0, p1}, Landroidx/slice/widget/RowContent;->determineStartAndPrimaryAction(Landroidx/slice/SliceItem;)V
 
-    const-string v0, "text"
+    const-string/jumbo v0, "text"
 
     const-string v2, "content_description"
 
@@ -714,7 +714,7 @@
 
     const-string v4, "shortcut"
 
-    const-string v5, "title"
+    const-string/jumbo v5, "title"
 
     filled-new-array {v4, v5}, [Ljava/lang/String;
 
@@ -851,7 +851,7 @@
 
     check-cast v5, Landroidx/slice/SliceItem;
 
-    const-string v6, "text"
+    const-string/jumbo v6, "text"
 
     invoke-virtual {v5}, Landroidx/slice/SliceItem;->getFormat()Ljava/lang/String;
 
@@ -869,7 +869,7 @@
 
     iget-object v6, p0, Landroidx/slice/widget/RowContent;->mTitleItem:Landroidx/slice/SliceItem;
 
-    const-string v7, "title"
+    const-string/jumbo v7, "title"
 
     invoke-virtual {v6, v7}, Landroidx/slice/SliceItem;->hasHint(Ljava/lang/String;)Z
 
@@ -878,7 +878,7 @@
     if-nez v6, :cond_9
 
     :cond_8
-    const-string v6, "title"
+    const-string/jumbo v6, "title"
 
     invoke-virtual {v5, v6}, Landroidx/slice/SliceItem;->hasHint(Ljava/lang/String;)Z
 

@@ -74,6 +74,8 @@
     <string name="prevent_view_top_tag_numbuer1">"1. "</string>
     <string name="prevent_view_top_tag_numbuer2">"2. "</string>
     <string name="qs_edit">संपादित करा</string>
+    <string name="quick_launch_exit">निर्गमन करा</string>
+    <string name="quick_launch_exit_hint">निर्गमन करण्यासाठी स्क्रीनवरून बोट दूर करा</string>
     <string name="quick_settings_buttons_label">लॉक बटणे</string>
     <string name="quick_settings_data_switch_label">डेटा कार्ड अदलाबदली करा</string>
     <string name="quick_settings_data_switch_toast_0">सध्या कोणतेही सिम कार्ड घातलेले नाही</string>
@@ -115,6 +117,15 @@
     <string name="remove_oneplus_laboratory_from_settings_prompt">सेटिंग्स मधून OnePlus प्रयोगशाळा हटवायची आणि त्याची सर्व वैशिष्ठ्ये वापरणे बंद करायचे?\"</string>
     <string name="screenshot_delete_confirmation">स्क्रीनशॉट हटविला</string>
     <string name="sd_card_unmount_action">अनमाऊंट करा</string>
+    <string name="select_day">महिना आणि दिवस निवडा</string>
+    <string name="select_hours">तास निवडा</string>
+    <string name="select_minutes">मिनिटे निवडा</string>
+    <string name="select_year">वर्ष निवडा</string>
+    <string name="time_picker_header_text">वेळ सेट करा</string>
+    <string name="time_picker_hour_label">तास</string>
+    <string name="time_picker_input_error">योग्य वेळ प्रविष्ट करा</string>
+    <string name="time_picker_minute_label">मिनिट</string>
+    <string name="time_picker_prompt_label">वेळ टाका</string>
     <string name="usb_storage_badremoval_notification_message" />
     <string name="usb_storage_badremoval_notification_title">यूएसबी साठवण काढून टाकली</string>
     <string name="usb_storage_checking_notification_title">यूएसबी साठवण तयार करीत आहे</string>

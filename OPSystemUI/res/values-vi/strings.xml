@@ -1124,6 +1124,8 @@ Bạn cũng được kết nối với VPN. Dịch vụ này có thể giám sá
     <string name="qs_rearrange">Sắp xếp lại Cài đặt nhanh</string>
     <string name="qs_status_phone_muted">Điện thoại đang ở chế độ yên lặng</string>
     <string name="qs_status_phone_vibrate">Điện thoại đang ở chế độ rung</string>
+    <string name="quick_launch_exit">Thoát</string>
+    <string name="quick_launch_exit_hint">Di chuyển ngón tay ra khỏi màn hình để thoát</string>
     <string name="quick_settings">Cài đặt nhanh</string>
     <string name="quick_settings_bluetooth_detail_empty_text">Không có thiết bị nào được ghép nối</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1248,7 +1250,7 @@ Bạn cũng được kết nối với VPN. Dịch vụ này có thể giám sá
     <string name="recents_app_info_button_label">Thông tin ứng dụng</string>
     <string name="recents_caption_resize">Chọn bố cục tác vụ mới</string>
     <string name="recents_deep_clean_button_text">Dọn dẹp sâu</string>
-    <string name="recents_deep_clean_description">Xóa tất cả quá trình chạy dưới nền, điều này có thể dẫn đến kết quả không mong muốn. Một số ứng dụng có thể ngừng hoạt động và bạn có thể sẽ không nhận được thông báo cho đến khi khởi động lại chúng.</string>
+    <string name="recents_deep_clean_description">Xóa tất cả quá trình chạy dưới nền, điều này có thể dẫn đến kết quả không mong muốn. Một số ứng dụng có thể ngừng hoạt động và có thể bạn sẽ không nhận được thông báo cho đến khi khởi động lại chúng.</string>
     <string name="recents_deep_clean_dialog_checkbox_text">Không hiển thị lại</string>
     <string name="recents_deep_clean_dialog_message">Dọn dẹp sâu sẽ xóa tất cả quy trình chạy dưới nền và có thể dẫn đến kết quả không mong muốn. Một số ứng dụng có thể ngừng hoạt động và không nhận được thông báo cho đến khi bạn khởi động lại chúng. Hãy xác nhận.</string>
     <string name="recents_deep_clean_dialog_title">Chú ý</string>
@@ -1265,7 +1267,7 @@ Bạn cũng được kết nối với VPN. Dịch vụ này có thể giám sá
     <string name="recents_multistack_add_stack_dialog_split_custom">Tùy chỉnh phân tách</string>
     <string name="recents_multistack_add_stack_dialog_split_horizontal">Phân tách ngang</string>
     <string name="recents_multistack_add_stack_dialog_split_vertical">Phân tách dọc</string>
-    <string name="recents_normal_clean_description">Xóa danh sách tác vụ và bộ nhớ đệm mà không xóa các tiến trình chạy dưới nền.</string>
+    <string name="recents_normal_clean_description">Xóa danh sách tác vụ và bộ nhớ đệm mà không xóa các quy trình chạy dưới nền.</string>
     <string name="recents_normal_clean_option">Dọn dẹp thường</string>
     <string name="recents_option_note">Bạn có thể thay đổi điều này trong Thiết lập -> Cao cấp.</string>
     <string name="recents_option_title">Bạn chọn kiểu nào</string>
@@ -1321,10 +1323,13 @@ Bạn cũng được kết nối với VPN. Dịch vụ này có thể giám sá
     <string name="sd_card_unmount_action">Ngắt</string>
     <string name="search_menu_title">Tìm kiếm</string>
     <string name="select_application">Chọn ứng dụng</string>
+    <string name="select_day">Chọn tháng và ngày</string>
+    <string name="select_hours">Chọn giờ</string>
     <string name="select_logd_size_dialog_title">Chọn kích thước Trình ghi nhật ký trên mỗi bộ đệm nhật ký</string>
     <string name="select_logd_size_title">Kích thước bộ đệm của trình ghi nhật ký</string>
     <string name="select_logpersist_dialog_title">Chọn lần tải nhật ký để lưu trữ ổn định trên thiết bị</string>
     <string name="select_logpersist_title">Liên tục lưu dữ liệu của trình ghi nhật ký trên thiết bị</string>
+    <string name="select_minutes">Chọn phút</string>
     <string name="select_private_dns_configuration_dialog_title">Chọn chế độ DNS riêng</string>
     <string name="select_private_dns_configuration_title">DNS riêng</string>
     <string name="select_usb_configuration_dialog_title">Chọn cấu hình USB</string>
@@ -1332,6 +1337,7 @@ Bạn cũng được kết nối với VPN. Dịch vụ này có thể giám sá
     <string name="select_webview_provider_dialog_title">Đặt triển khai WebView</string>
     <string name="select_webview_provider_title">Triển khai WebView</string>
     <string name="select_webview_provider_toast_text">Lựa chọn này không còn hợp lệ nữa. Hãy thử lại.</string>
+    <string name="select_year">Chọn năm</string>
     <string name="show_all_anrs">Hiển thị ANR nền</string>
     <string name="show_all_anrs_summary">Hiện hộp thoại Ứng dụng không phản hồi cho các ứng dụng nền</string>
     <string name="show_battery_percentage">Hiển thị tỷ lệ phần trăm pin được nhúng</string>
@@ -1427,6 +1433,11 @@ Bạn cũng được kết nối với VPN. Dịch vụ này có thể giám sá
 \u0009• Dùng điện thoại ở nhiệt độ cao"</string>
     <string name="thermal_shutdown_message">Điện thoại của bạn hiện đang chạy bình thường</string>
     <string name="thermal_shutdown_title">Điện thoại đã tắt do nhiệt</string>
+    <string name="time_picker_header_text">Cài đặt thời gian</string>
+    <string name="time_picker_hour_label">giờ</string>
+    <string name="time_picker_input_error">Nhập thời gian hợp lệ</string>
+    <string name="time_picker_minute_label">phút</string>
+    <string name="time_picker_prompt_label">Nhập thời gian</string>
     <string name="time_unit_just_now">Vừa xong</string>
     <string name="title_convert_fbe">Chuyển đổi sang chế độ mã hóa dựa trên tệp</string>
     <string name="title_usb_accessory">Phụ kiện USB</string>
@@ -1550,6 +1561,7 @@ Mọi người dùng đều có thể cập nhật ứng dụng cho tất cả n
     <string name="wait_for_debugger">Đợi trình gỡ lỗi</string>
     <string name="wait_for_debugger_summary">Ứng dụng được gỡ lỗi chờ trình gỡ lỗi đính kèm trước khi thực hiện</string>
     <string name="wifi_ap_unable_to_handle_new_sta">Điểm truy cập tạm thời đã đạt đến giới hạn số lượng thiết bị truy cập.</string>
+    <string name="wifi_auth_password_wrong">Mật khẩu có thể không chính xác</string>
     <string name="wifi_cant_connect">Không thể kết nối</string>
     <string name="wifi_cant_connect_to_ap">"Không thể kết nối với '%1$s'"</string>
     <string name="wifi_check_password_try_again">Kiểm tra mật khẩu và thử lại</string>

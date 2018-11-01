@@ -151,7 +151,7 @@
 
     if-ne p2, v0, :cond_1
 
-    const v0, 0x7f080441
+    const v0, 0x7f080450
 
     return v0
 
@@ -162,7 +162,7 @@
 
     if-ne p2, v0, :cond_2
 
-    const v0, 0x7f08084f
+    const v0, 0x7f08085e
 
     return v0
 
@@ -171,7 +171,7 @@
 
     if-ne p2, v3, :cond_3
 
-    const v0, 0x7f0801e8
+    const v0, 0x7f0801ea
 
     return v0
 
@@ -180,7 +180,7 @@
 
     if-ne p2, v2, :cond_4
 
-    const v0, 0x7f08043f
+    const v0, 0x7f08044e
 
     return v0
 
@@ -197,7 +197,7 @@
 
     if-nez v0, :cond_5
 
-    const v0, 0x7f08043b
+    const v0, 0x7f08044a
 
     return v0
 
@@ -218,7 +218,7 @@
     if-eqz p4, :cond_8
 
     :cond_7
-    const v0, 0x7f08043d
+    const v0, 0x7f08044c
 
     return v0
 
@@ -242,7 +242,7 @@
     throw v0
 
     :pswitch_0
-    const v0, 0x7f080239
+    const v0, 0x7f080244
 
     goto :goto_1
 
@@ -251,18 +251,18 @@
 
     if-eqz p3, :cond_0
 
-    const v0, 0x7f080238
+    const v0, 0x7f080243
 
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f08043d
+    const v0, 0x7f08044c
 
     :goto_0
     goto :goto_1
 
     :pswitch_2
-    const v0, 0x7f080237
+    const v0, 0x7f080242
 
     goto :goto_1
 
@@ -292,12 +292,12 @@
     return-object v0
 
     :cond_1
-    const v0, 0x7f08027a
+    const v0, 0x7f080285
 
     goto :goto_1
 
     :pswitch_4
-    const v0, 0x7f080279
+    const v0, 0x7f080284
 
     nop
 
@@ -315,7 +315,7 @@
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/LockIcon;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0801ed
+    const v1, 0x7f0801ef
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1060,7 +1060,7 @@
     move v1, v9
 
     :goto_6
-    const v2, 0x7f08043b
+    const v2, 0x7f08044a
 
     if-ne v0, v2, :cond_8
 
@@ -1076,7 +1076,7 @@
     goto :goto_8
 
     :cond_8
-    const v3, 0x7f08084f
+    const v3, 0x7f08085e
 
     if-ne v0, v3, :cond_9
 
@@ -1089,7 +1089,7 @@
     goto :goto_7
 
     :cond_9
-    const v3, 0x7f0801e8
+    const v3, 0x7f0801ea
 
     if-ne v0, v3, :cond_a
 
@@ -1141,7 +1141,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0701fc
+    const v6, 0x7f070208
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1151,7 +1151,7 @@
 
     move-result-object v6
 
-    const v8, 0x7f0701fd
+    const v8, 0x7f070209
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1183,7 +1183,7 @@
 
     move-result-object v8
 
-    const v2, 0x7f0701cb
+    const v2, 0x7f0701d1
 
     invoke-virtual {v8, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1243,7 +1243,7 @@
     invoke-virtual {v4}, Landroid/graphics/drawable/AnimatedVectorDrawable;->start()V
 
     :cond_12
-    const v2, 0x7f08043b
+    const v2, 0x7f08044a
 
     if-ne v0, v2, :cond_13
 
@@ -1279,7 +1279,7 @@
 
     iget-object v2, v7, Lcom/android/systemui/statusbar/phone/LockIcon;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f0801ee
+    const v8, 0x7f0801f0
 
     invoke-virtual {v2, v8}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

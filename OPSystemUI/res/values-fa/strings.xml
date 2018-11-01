@@ -1124,6 +1124,8 @@
     <string name="qs_rearrange">ترتیب مجدد در تنظیمات سریع</string>
     <string name="qs_status_phone_muted">تلفن بی‌صدا است</string>
     <string name="qs_status_phone_vibrate">تلفن در حالت لرزش است</string>
+    <string name="quick_launch_exit">خروج</string>
+    <string name="quick_launch_exit_hint">ضربه زدن روی صفحه نمایش برای خروج</string>
     <string name="quick_settings">تنظیمات سریع</string>
     <string name="quick_settings_bluetooth_detail_empty_text">هیچ دستگاه مرتبط شده‌ای موجود نیست</string>
     <string name="quick_settings_bluetooth_label">بلوتوث</string>
@@ -1321,10 +1323,13 @@
     <string name="sd_card_unmount_action">جدا کردن</string>
     <string name="search_menu_title">جستجو</string>
     <string name="select_application">انتخاب برنامه</string>
+    <string name="select_day">ماه و روز را انتخاب کنید</string>
+    <string name="select_hours">ساعت‌ها را انتخاب کنید</string>
     <string name="select_logd_size_dialog_title">انتخاب اندازه‌ ثبت‌کننده در حافظه موقت ثبت</string>
     <string name="select_logd_size_title">اندازه‌های حافظه موقت ثبت‌کننده</string>
     <string name="select_logpersist_dialog_title">انتخاب بافر‌های گزارش برای ذخیره دائم در دستگاه</string>
     <string name="select_logpersist_title">ذخیره دائم داده‌ ثبت‌کننده در دستگاه</string>
+    <string name="select_minutes">دقیقه‌ها را انتخاب کنید</string>
     <string name="select_private_dns_configuration_dialog_title">‏حالت DNS خصوصی را انتخاب کنید</string>
     <string name="select_private_dns_configuration_title">‏DNS خصوصی</string>
     <string name="select_usb_configuration_dialog_title">‏انتخاب پیکربندی USB</string>
@@ -1332,6 +1337,7 @@
     <string name="select_webview_provider_dialog_title">تنظیم اجرای وب‌نما</string>
     <string name="select_webview_provider_title">اجرای وب‌نما</string>
     <string name="select_webview_provider_toast_text">این انتخاب دیگر معتبر نیست. دوباره امتحان کنید.</string>
+    <string name="select_year">سال را انتخاب کنید</string>
     <string name="show_all_anrs">‏نمایش موارد ANR پس‌زمینه</string>
     <string name="show_all_anrs_summary">نمایش گفتگوی \"برنامه پاسخ نمی‌دهد\" برای برنامه‌های پس‌زمینه</string>
     <string name="show_battery_percentage">نمایش درصد شارژ باتری جاسازی شده</string>
@@ -1427,6 +1433,11 @@
 \u0009• در دماهای بالا از تلفنتان استفاده کنید"</string>
     <string name="thermal_shutdown_message">اکنون تلفنتان عملکرد معمولش را دارد</string>
     <string name="thermal_shutdown_title">تلفن به علت گرم شدن خاموش شد</string>
+    <string name="time_picker_header_text">زمان را تنظیم کنید</string>
+    <string name="time_picker_hour_label">ساعت</string>
+    <string name="time_picker_input_error">یک زمان معتبر وارد کنید</string>
+    <string name="time_picker_minute_label">دقیقه</string>
+    <string name="time_picker_prompt_label">زمان را تایپ کنید</string>
     <string name="time_unit_just_now">هم‌اکنون</string>
     <string name="title_convert_fbe">تبدیل به رمزگذاری مبتنی بر فایل</string>
     <string name="title_usb_accessory">‏لوازم جانبی USB</string>
@@ -1550,6 +1561,7 @@
     <string name="wait_for_debugger">انتظار برای اشکال‌زدا</string>
     <string name="wait_for_debugger_summary">برنامه اشکال‌زدایی شده منتظر پیوست شدن اشکال‌زدا قبل از اجرا است</string>
     <string name="wifi_ap_unable_to_handle_new_sta">ظرفیت نقطه دسترسی موقتاً تکمیل شده است</string>
+    <string name="wifi_auth_password_wrong">رمز عبور ممکن است اشتباه باشد</string>
     <string name="wifi_cant_connect">برقراری اتصال ممکن نیست</string>
     <string name="wifi_cant_connect_to_ap">برقراری اتصال به «%1$s» ممکن نیست</string>
     <string name="wifi_check_password_try_again">گذرواژه را بررسی و دوباره امتحان کنید</string>

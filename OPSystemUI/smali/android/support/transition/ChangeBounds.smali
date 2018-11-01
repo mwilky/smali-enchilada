@@ -125,7 +125,7 @@
 
     const-class v1, Landroid/graphics/PointF;
 
-    const-string v2, "topLeft"
+    const-string/jumbo v2, "topLeft"
 
     invoke-direct {v0, v1, v2}, Landroid/support/transition/ChangeBounds$2;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
@@ -155,7 +155,7 @@
 
     const-class v1, Landroid/graphics/PointF;
 
-    const-string v2, "topLeft"
+    const-string/jumbo v2, "topLeft"
 
     invoke-direct {v0, v1, v2}, Landroid/support/transition/ChangeBounds$5;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 

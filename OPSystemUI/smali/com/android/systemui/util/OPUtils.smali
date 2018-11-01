@@ -14,6 +14,8 @@
 # static fields
 .field public static final DEBUG_ONEPLUS:Z
 
+.field private static mIsCTS:Z
+
 .field private static mIsHomeApp:Z
 
 .field private static mIsScreenCompat:Z
@@ -36,6 +38,8 @@
     sput-boolean v0, Lcom/android/systemui/util/OPUtils;->mIsSystemUI:Z
 
     sput-boolean v0, Lcom/android/systemui/util/OPUtils;->mIsScreenCompat:Z
+
+    sput-boolean v0, Lcom/android/systemui/util/OPUtils;->mIsCTS:Z
 
     return-void
 .end method
@@ -270,6 +274,14 @@
     return v0
 .end method
 
+.method public static isCTS()Z
+    .locals 1
+
+    sget-boolean v0, Lcom/android/systemui/util/OPUtils;->mIsCTS:Z
+
+    return v0
+.end method
+
 .method public static isCurrentGuest(Landroid/content/Context;)Z
     .locals 3
 
@@ -319,6 +331,26 @@
     invoke-static {v0}, Landroid/util/OpFeatures;->isSupport([I)Z
 
     move-result v0
+
+    return v0
+.end method
+
+.method public static isDelayShowForBootAnimation()Z
+    .locals 3
+
+    const/4 v0, 0x1
+
+    new-array v1, v0, [I
+
+    const/4 v2, 0x0
+
+    aput v0, v1, v2
+
+    invoke-static {v1}, Landroid/util/OpFeatures;->isSupport([I)Z
+
+    move-result v1
+
+    xor-int/2addr v0, v1
 
     return v0
 .end method
@@ -606,6 +638,26 @@
     return v0
 .end method
 
+.method public static isSupportQuickLaunch()Z
+    .locals 3
+
+    const/4 v0, 0x1
+
+    new-array v0, v0, [I
+
+    const/4 v1, 0x0
+
+    const/16 v2, 0x61
+
+    aput v2, v0, v1
+
+    invoke-static {v0}, Landroid/util/OpFeatures;->isSupport([I)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public static isSupportSOCThreekey()Z
     .locals 1
 
@@ -863,6 +915,22 @@
     sput-boolean v5, Lcom/android/systemui/util/OPUtils;->mIsSystemUI:Z
 
     :goto_3
+    if-eqz v0, :cond_5
+
+    const-string v6, "android.systemui.cts"
+
+    invoke-virtual {v0, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    sput-boolean v6, Lcom/android/systemui/util/OPUtils;->mIsCTS:Z
+
+    goto :goto_4
+
+    :cond_5
+    sput-boolean v5, Lcom/android/systemui/util/OPUtils;->mIsCTS:Z
+
+    :goto_4
     const-string v6, "appops"
 
     invoke-virtual {p0, v6}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -871,7 +939,7 @@
 
     check-cast v6, Landroid/app/AppOpsManager;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -890,38 +958,38 @@
 
     move-result v8
 
-    if-nez v8, :cond_5
-
-    goto :goto_4
-
-    :cond_5
-    move v4, v5
-
-    :goto_4
-    sput-boolean v4, Lcom/android/systemui/util/OPUtils;->mIsScreenCompat:Z
+    if-nez v8, :cond_6
 
     goto :goto_5
+
+    :cond_6
+    move v4, v5
+
+    :goto_5
+    sput-boolean v4, Lcom/android/systemui/util/OPUtils;->mIsScreenCompat:Z
+
+    goto :goto_6
 
     :catch_0
     move-exception v4
 
-    goto :goto_6
+    goto :goto_7
 
-    :cond_6
+    :cond_7
     sput-boolean v5, Lcom/android/systemui/util/OPUtils;->mIsScreenCompat:Z
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :goto_5
-    goto :goto_7
-
     :goto_6
+    goto :goto_8
+
+    :goto_7
     nop
 
     invoke-virtual {v4}, Landroid/content/pm/PackageManager$NameNotFoundException;->printStackTrace()V
 
     sput-boolean v5, Lcom/android/systemui/util/OPUtils;->mIsScreenCompat:Z
 
-    :goto_7
+    :goto_8
     return-void
 .end method

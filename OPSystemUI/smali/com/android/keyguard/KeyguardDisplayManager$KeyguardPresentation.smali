@@ -148,7 +148,7 @@
 
     invoke-virtual {p0, v1}, Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;->setContentView(I)V
 
-    const v1, 0x7f0a00bd
+    const v1, 0x7f0a00be
 
     invoke-virtual {p0, v1}, Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;->findViewById(I)Landroid/view/View;
 

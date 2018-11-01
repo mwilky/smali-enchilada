@@ -281,7 +281,7 @@
 
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/phone/NetworkSpeedControllerImpl;->mShow:Z
 
-    const v4, 0x7f0d01c8
+    const v4, 0x7f0d01c9
 
     invoke-interface {v1, v2, v4, v3}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->setText(Ljava/lang/String;IZ)V
 
@@ -1357,7 +1357,7 @@
 
     sget-object v0, Lcom/android/systemui/statusbar/phone/NetworkSpeedControllerImpl;->TAG:Ljava/lang/String;
 
-    const-string v1, "updateSpeed"
+    const-string/jumbo v1, "updateSpeed"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -1665,7 +1665,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "updateConnectivity connectedTransports:"
+    const-string/jumbo v2, "updateConnectivity connectedTransports:"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1706,7 +1706,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "updateState traceState:"
+    const-string/jumbo v3, "updateState traceState:"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -1121,6 +1121,8 @@ Povezani ste tudi z omrežjem VPN, ki lahko nadzira vašo omrežno dejavnost."</
     <string name="qs_rearrange">Preuredi hitre nastavitve</string>
     <string name="qs_status_phone_muted">Zvok telefona je izklopljen</string>
     <string name="qs_status_phone_vibrate">Vibriranje telefona je vklopljeno</string>
+    <string name="quick_launch_exit">Izhod</string>
+    <string name="quick_launch_exit_hint">Odmaknite prst z zaslona za izhod</string>
     <string name="quick_settings">Hitre nastavitve</string>
     <string name="quick_settings_bluetooth_detail_empty_text">Na voljo ni nobene seznanjene naprave</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1318,10 +1320,13 @@ Povezani ste tudi z omrežjem VPN, ki lahko nadzira vašo omrežno dejavnost."</
     <string name="sd_card_unmount_action">Izmet</string>
     <string name="search_menu_title">Iskanje</string>
     <string name="select_application">Izberite aplikacijo</string>
+    <string name="select_day">Izberite mesec in dan</string>
+    <string name="select_hours">Izberite ure</string>
     <string name="select_logd_size_dialog_title">Izberite velikost medpomnilnika dnevnika</string>
     <string name="select_logd_size_title">Velikosti medpomn. zapisov. dnevnika</string>
     <string name="select_logpersist_dialog_title">Izberite, katere medpomnilnike dnevnika želite trajno shraniti v napravi</string>
     <string name="select_logpersist_title">Trajno shranjevanje podatkov dnevniškega orodja v napravi</string>
+    <string name="select_minutes">Izberite minute</string>
     <string name="select_private_dns_configuration_dialog_title">Izbira načina zasebnega strežnika DNS</string>
     <string name="select_private_dns_configuration_title">Zasebni strežnik DNS</string>
     <string name="select_usb_configuration_dialog_title">Izbira konfiguracije USB</string>
@@ -1329,6 +1334,7 @@ Povezani ste tudi z omrežjem VPN, ki lahko nadzira vašo omrežno dejavnost."</
     <string name="select_webview_provider_dialog_title">Nastavitev izvedbe spletnega pogleda</string>
     <string name="select_webview_provider_title">Izvedba spletnega pogleda</string>
     <string name="select_webview_provider_toast_text">Ta izbira ni več veljavna. Poskusite znova.</string>
+    <string name="select_year">Izberite leto</string>
     <string name="show_all_anrs">Pokaži ANR-je v ozadju</string>
     <string name="show_all_anrs_summary">Prikaz pogovornega okna za neodzivanje aplikacij v ozadju</string>
     <string name="show_battery_percentage">Prikaži odstotek napolnjenosti vgraj. akumulatorja</string>
@@ -1424,6 +1430,11 @@ Telefon lahko postane prevroč ob:
 \u0009• uporabi telefona pri visokih temp."</string>
     <string name="thermal_shutdown_message">Zdaj telefon normalno deluje</string>
     <string name="thermal_shutdown_title">Tel. izklopljen zaradi vročine</string>
+    <string name="time_picker_header_text">Nastavite čas</string>
+    <string name="time_picker_hour_label">ura</string>
+    <string name="time_picker_input_error">Vnesite veljaven čas</string>
+    <string name="time_picker_minute_label">minuta</string>
+    <string name="time_picker_prompt_label">Vnesite čas</string>
     <string name="time_unit_just_now">Pravkar</string>
     <string name="title_convert_fbe">Preklop na šifriranje na ravni datotek</string>
     <string name="title_usb_accessory">Dodatek USB</string>
@@ -1547,6 +1558,7 @@ Vsak uporabnik lahko posodobi aplikacije za vse druge uporabnike."</string>
     <string name="wait_for_debugger">Počakajte na iskalnik napak</string>
     <string name="wait_for_debugger_summary">Aplikacija, v kateri iščete napako, pred izvajanjem čaka na povezavo z iskalnikom napak</string>
     <string name="wifi_ap_unable_to_handle_new_sta">Dostopna točka je trenutno zasedena</string>
+    <string name="wifi_auth_password_wrong">Geslo je morda nepravilno</string>
     <string name="wifi_cant_connect">Povezava ni mogoča</string>
     <string name="wifi_cant_connect_to_ap">Povezava z aplikacijo »%1$s« ni mogoča</string>
     <string name="wifi_check_password_try_again">Preverite geslo in poskusite znova</string>

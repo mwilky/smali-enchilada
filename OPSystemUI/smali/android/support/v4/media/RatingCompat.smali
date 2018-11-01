@@ -86,7 +86,7 @@
 
     if-gez v1, :cond_0
 
-    const-string v1, "unrated"
+    const-string/jumbo v1, "unrated"
 
     goto :goto_0
 

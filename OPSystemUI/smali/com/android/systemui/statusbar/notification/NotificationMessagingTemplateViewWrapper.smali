@@ -23,7 +23,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/notification/NotificationMessagingTemplateViewWrapper;->mMessagingLayout:Lcom/android/internal/widget/MessagingLayout;
 
-    const v0, 0x7f0703a3
+    const v0, 0x7f0703ac
 
     invoke-static {p1, v0}, Lcom/android/systemui/statusbar/notification/NotificationUtils;->getFontScaledHeight(Landroid/content/Context;I)I
 

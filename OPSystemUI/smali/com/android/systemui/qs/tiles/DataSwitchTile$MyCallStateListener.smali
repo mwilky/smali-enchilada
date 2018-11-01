@@ -38,7 +38,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile$MyCallStateListener;->this$0:Lcom/android/systemui/qs/tiles/DataSwitchTile;
 
-    invoke-static {v1}, Lcom/android/systemui/qs/tiles/DataSwitchTile;->access$100(Lcom/android/systemui/qs/tiles/DataSwitchTile;)Landroid/telephony/TelephonyManager;
+    invoke-static {v1}, Lcom/android/systemui/qs/tiles/DataSwitchTile;->access$200(Lcom/android/systemui/qs/tiles/DataSwitchTile;)Landroid/telephony/TelephonyManager;
 
     move-result-object v1
 
@@ -56,7 +56,7 @@
     const/4 v1, 0x0
 
     :goto_0
-    invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/DataSwitchTile;->access$002(Lcom/android/systemui/qs/tiles/DataSwitchTile;Z)Z
+    invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/DataSwitchTile;->access$102(Lcom/android/systemui/qs/tiles/DataSwitchTile;Z)Z
 
     return-void
 .end method

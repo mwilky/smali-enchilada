@@ -1429,6 +1429,7 @@ Qualquer utilizador pode atualizar aplicações para todos os outros utilizadore
     <string name="wait_for_debugger">Aguarde pelo depurador</string>
     <string name="wait_for_debugger_summary">A aplicação depurada aguarda a anexação do depurador antes da execução</string>
     <string name="wifi_ap_unable_to_handle_new_sta">Ponto de acesso temporariamente cheio</string>
+    <string name="wifi_auth_password_wrong">A senha pode estar incorreta</string>
     <string name="wifi_cant_connect">Não é possível ligar</string>
     <string name="wifi_cant_connect_to_ap">Não é possível ligar a \"%1$s\"</string>
     <string name="wifi_check_password_try_again">Verifique a palavra-passe e tente novamente</string>

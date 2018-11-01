@@ -86,8 +86,6 @@
 
 .method protected handleClick()V
     .locals 2
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/BatterySaverTile;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
 
@@ -146,7 +144,7 @@
     :goto_0
     iput v0, p1, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->state:I
 
-    const v0, 0x7f08032a
+    const v0, 0x7f080336
 
     invoke-static {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 

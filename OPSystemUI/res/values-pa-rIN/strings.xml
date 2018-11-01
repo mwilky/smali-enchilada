@@ -74,6 +74,8 @@
     <string name="prevent_view_top_tag_numbuer1">"1. "</string>
     <string name="prevent_view_top_tag_numbuer2">"2. "</string>
     <string name="qs_edit">ਸੰਪਾਦਿਤ ਕਰੋ</string>
+    <string name="quick_launch_exit">ਬਾਹਰ ਜਾਓ</string>
+    <string name="quick_launch_exit_hint">ਬਾਹਰ ਜਾਣ ਲਈ ਸਕ੍ਰੀਨ ਤੋਂ ਉਂਗਲੀ ਉਠਾਓ</string>
     <string name="quick_settings_buttons_label">ਲੌਕ ਬਟਨ</string>
     <string name="quick_settings_data_switch_label">ਡੇਟਾ ਕਾਰਡ ਬਦਲੋ</string>
     <string name="quick_settings_data_switch_toast_0">ਇਸ ਸਮੇਂ ਕੋਈ ਵੀ SIM ਕਾਰਡ ਦਾਖਲ ਨਹੀਂ ਕੀਤਾ ਗਿਆ ਹੈ</string>
@@ -115,6 +117,15 @@
     <string name="remove_oneplus_laboratory_from_settings_prompt">ਕੀ OnePlus ਲੈਬੋਰੇਟਰੀ ਨੂੰ ਸੈਟਿੰਗਾਂ ਤੋਂ ਹਟਾਉਣਾ ਅਤੇ ਇਸ ਦੀਆਂ ਸਾਰੀਆਂ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਦੀ ਵਰਤੋਂ ਬੰਦ ਕਰਨੀ ਹੈ?\"</string>
     <string name="screenshot_delete_confirmation">ਸਕ੍ਰੀਨਸ਼ੌਟ ਮਿਟਾਇਆ ਗਿਆ</string>
     <string name="sd_card_unmount_action">ਅਨਮਾਊਂਟ ਕਰੋ</string>
+    <string name="select_day">ਮਹੀਨਾ ਅਤੇ ਦਿਨ ਚੁਣੋ</string>
+    <string name="select_hours">ਘੰਟੇ ਚੁਣੋ</string>
+    <string name="select_minutes">ਮਿੰਟ ਚੁਣੋ</string>
+    <string name="select_year">ਸਾਲ ਚੁਣੋ</string>
+    <string name="time_picker_header_text">ਸਮਾਂ ਸੈੱਟ ਕਰੋ</string>
+    <string name="time_picker_hour_label">ਘੰਟਾ</string>
+    <string name="time_picker_input_error">ਵੈਧ ਸਮਾਂ ਦਰਜ ਕਰੋ</string>
+    <string name="time_picker_minute_label">ਮਿੰਟ</string>
+    <string name="time_picker_prompt_label">ਸਮਾਂ ਲਿਖੋ</string>
     <string name="usb_storage_badremoval_notification_message" />
     <string name="usb_storage_badremoval_notification_title">USB ਸਟੋਰੇਜ ਹਟਾਈ ਗਈ</string>
     <string name="usb_storage_checking_notification_title">USB ਸਟੋਰੇਜ ਤਿਆਰ ਕਰ ਰਿਹਾ</string>

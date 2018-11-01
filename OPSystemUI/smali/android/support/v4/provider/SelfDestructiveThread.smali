@@ -455,7 +455,7 @@
     :try_start_4
     new-instance v3, Ljava/lang/InterruptedException;
 
-    const-string v4, "timeout"
+    const-string/jumbo v4, "timeout"
 
     invoke-direct {v3, v4}, Ljava/lang/InterruptedException;-><init>(Ljava/lang/String;)V
 

@@ -104,7 +104,7 @@
 
     iput-object p3, p0, Lcom/android/systemui/ScreenDecorations$DisplayCutoutView;->mVisibilityChangedListener:Ljava/lang/Runnable;
 
-    const v0, 0x7f0a0111
+    const v0, 0x7f0a0112
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/ScreenDecorations$DisplayCutoutView;->setId(I)V
 
@@ -1107,6 +1107,16 @@
     move-result v1
 
     invoke-virtual {p0, v0, v1}, Lcom/android/systemui/ScreenDecorations$DisplayCutoutView;->setMeasuredDimension(II)V
+
+    return-void
+.end method
+
+.method public setColor(I)V
+    .locals 0
+
+    iput p1, p0, Lcom/android/systemui/ScreenDecorations$DisplayCutoutView;->mColor:I
+
+    invoke-virtual {p0}, Lcom/android/systemui/ScreenDecorations$DisplayCutoutView;->invalidate()V
 
     return-void
 .end method

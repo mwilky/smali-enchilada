@@ -1124,6 +1124,8 @@ You're also connected to a VPN, which can monitor your network activity."</strin
     <string name="qs_rearrange">Rearrange Quick Settings</string>
     <string name="qs_status_phone_muted">Phone muted</string>
     <string name="qs_status_phone_vibrate">Phone on vibrate</string>
+    <string name="quick_launch_exit">Exit</string>
+    <string name="quick_launch_exit_hint">Lift finger off the screen to exit</string>
     <string name="quick_settings">Quick Settings</string>
     <string name="quick_settings_bluetooth_detail_empty_text">No paired devices available</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1321,10 +1323,13 @@ You're also connected to a VPN, which can monitor your network activity."</strin
     <string name="sd_card_unmount_action">Unmount</string>
     <string name="search_menu_title">Search</string>
     <string name="select_application">Select application</string>
+    <string name="select_day">Select month and day</string>
+    <string name="select_hours">Select hours</string>
     <string name="select_logd_size_dialog_title">Select Logger sizes per log buffer</string>
     <string name="select_logd_size_title">Logger buffer sizes</string>
     <string name="select_logpersist_dialog_title">Select log buffers to store persistently on device</string>
     <string name="select_logpersist_title">Store logger data persistently on device</string>
+    <string name="select_minutes">Select minutes</string>
     <string name="select_private_dns_configuration_dialog_title">Select private DNS mode</string>
     <string name="select_private_dns_configuration_title">Private DNS</string>
     <string name="select_usb_configuration_dialog_title">Select USB Configuration</string>
@@ -1332,6 +1337,7 @@ You're also connected to a VPN, which can monitor your network activity."</strin
     <string name="select_webview_provider_dialog_title">Set WebView implementation</string>
     <string name="select_webview_provider_title">WebView implementation</string>
     <string name="select_webview_provider_toast_text">This choice is no longer valid. Try again.</string>
+    <string name="select_year">Select year</string>
     <string name="show_all_anrs">Show background ANRs</string>
     <string name="show_all_anrs_summary">Display App Not Responding dialogue for background apps</string>
     <string name="show_battery_percentage">Show embedded battery percentage</string>
@@ -1427,6 +1433,11 @@ Your phone may get too hot if you:
 \u0009• Use your phone in high temperatures"</string>
     <string name="thermal_shutdown_message">Your phone is now running normally</string>
     <string name="thermal_shutdown_title">Phone turned off due to heat</string>
+    <string name="time_picker_header_text">Set time</string>
+    <string name="time_picker_hour_label">hour</string>
+    <string name="time_picker_input_error">Enter a valid time</string>
+    <string name="time_picker_minute_label">minute</string>
+    <string name="time_picker_prompt_label">Enter time</string>
     <string name="time_unit_just_now">Just now</string>
     <string name="title_convert_fbe">Converting to file-based encryption</string>
     <string name="title_usb_accessory">USB accessory</string>
@@ -1550,6 +1561,7 @@ Any user can update apps for all other users."</string>
     <string name="wait_for_debugger">Wait for debugger</string>
     <string name="wait_for_debugger_summary">Debugged application waits for debugger to attach before executing</string>
     <string name="wifi_ap_unable_to_handle_new_sta">Access point temporarily full</string>
+    <string name="wifi_auth_password_wrong">Password may be incorrect</string>
     <string name="wifi_cant_connect">"Can't connect"</string>
     <string name="wifi_cant_connect_to_ap">"Can't connect to '%1$s'"</string>
     <string name="wifi_check_password_try_again">Check password and try again</string>

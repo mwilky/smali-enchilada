@@ -45,7 +45,7 @@
 
     const-string v0, "PhoneStatusBarPolicy"
 
-    const-string v1, "updateCast: hiding icon NOW"
+    const-string/jumbo v1, "updateCast: hiding icon NOW"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 

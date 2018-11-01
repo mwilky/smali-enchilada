@@ -291,7 +291,7 @@
     :cond_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "this should only be called when the cursor is valid"
+    const-string/jumbo v1, "this should only be called when the cursor is valid"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

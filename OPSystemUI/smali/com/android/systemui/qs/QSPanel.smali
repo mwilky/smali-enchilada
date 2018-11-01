@@ -145,7 +145,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0d0189
+    const v2, 0x7f0d018a
 
     invoke-virtual {v0, v2, p0, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -171,7 +171,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0d0187
+    const v2, 0x7f0d0188
 
     invoke-virtual {v0, v2, p0, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -211,7 +211,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0d0190
+    const v2, 0x7f0d0191
 
     invoke-virtual {v0, v2, p0, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -239,7 +239,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mBrightnessView:Landroid/view/View;
 
-    const v1, 0x7f0a03b0
+    const v1, 0x7f0a03b6
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -937,7 +937,7 @@
     return-object v0
 .end method
 
-.method public getTileLayout()Lcom/android/systemui/qs/QSPanel$QSTileLayout;
+.method getTileLayout()Lcom/android/systemui/qs/QSPanel$QSTileLayout;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mTileLayout:Lcom/android/systemui/qs/QSPanel$QSTileLayout;
@@ -2029,7 +2029,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel;->mBrightnessMirror:Landroid/view/View;
 
-    const v3, 0x7f0a03b0
+    const v3, 0x7f0a03b6
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2052,7 +2052,7 @@
 
     sget-object v0, Lcom/android/systemui/qs/QSPanel;->TAG:Ljava/lang/String;
 
-    const-string v1, "updateResources"
+    const-string/jumbo v1, "updateResources"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -2062,13 +2062,13 @@
 
     move-result-object v0
 
-    const v1, 0x7f070568
+    const v1, 0x7f070576
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v1
 
-    const v2, 0x7f070567
+    const v2, 0x7f070575
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2141,7 +2141,7 @@
 
     iget-object v5, p0, Lcom/android/systemui/qs/QSPanel;->mBrightnessView:Landroid/view/View;
 
-    const v6, 0x7f0a03b0
+    const v6, 0x7f0a03b6
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

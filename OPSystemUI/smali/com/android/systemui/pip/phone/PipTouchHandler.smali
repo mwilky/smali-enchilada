@@ -281,7 +281,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070507
+    const v1, 0x7f070515
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -289,7 +289,7 @@
 
     iput v1, p0, Lcom/android/systemui/pip/phone/PipTouchHandler;->mExpandedShortestEdgeSize:I
 
-    const v1, 0x7f070508
+    const v1, 0x7f070516
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

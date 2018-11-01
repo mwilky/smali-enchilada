@@ -211,7 +211,7 @@
 
     invoke-direct {v0, v1}, Landroidx/slice/Slice$Builder;-><init>(Landroidx/slice/Slice$Builder;)V
 
-    const-string v1, "title"
+    const-string/jumbo v1, "title"
 
     const-string v2, "shortcut"
 
@@ -268,9 +268,9 @@
 
     new-instance v0, Landroidx/slice/SliceItem;
 
-    const-string v1, "text"
+    const-string/jumbo v1, "text"
 
-    const-string v2, "title"
+    const-string/jumbo v2, "title"
 
     filled-new-array {v2}, [Ljava/lang/String;
 

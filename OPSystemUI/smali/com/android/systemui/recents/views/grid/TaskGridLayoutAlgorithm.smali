@@ -594,7 +594,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07058b
+    const v1, 0x7f070599
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -602,7 +602,7 @@
 
     iput v1, p0, Lcom/android/systemui/recents/views/grid/TaskGridLayoutAlgorithm;->mPaddingTaskView:I
 
-    const v1, 0x7f07058e
+    const v1, 0x7f07059c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -616,7 +616,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/recents/views/grid/TaskGridLayoutAlgorithm;->mTaskGridRect:Landroid/graphics/Rect;
 
-    const v1, 0x7f070590
+    const v1, 0x7f07059e
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

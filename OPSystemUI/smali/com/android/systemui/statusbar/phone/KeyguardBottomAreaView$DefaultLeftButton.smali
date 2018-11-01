@@ -122,7 +122,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f080290
+    const v3, 0x7f08029b
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -198,7 +198,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f080323
+    const v3, 0x7f08032f
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

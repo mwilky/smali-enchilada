@@ -94,7 +94,7 @@
 
     new-instance v0, Lcom/android/systemui/Dependency$DependencyKey;
 
-    const-string v1, "time_tick_handler"
+    const-string/jumbo v1, "time_tick_handler"
 
     invoke-direct {v0, v1}, Lcom/android/systemui/Dependency$DependencyKey;-><init>(Ljava/lang/String;)V
 

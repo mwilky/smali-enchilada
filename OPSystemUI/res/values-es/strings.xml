@@ -1123,6 +1123,8 @@ También estás conectado a una red VPN, que puede supervisar tu actividad de re
     <string name="qs_rearrange">Reorganizar ajustes rápidos</string>
     <string name="qs_status_phone_muted">Teléfono silenciado</string>
     <string name="qs_status_phone_vibrate">Teléfono en vibración</string>
+    <string name="quick_launch_exit">Salir</string>
+    <string name="quick_launch_exit_hint">Retirar el dedo de la pantalla para salir</string>
     <string name="quick_settings">Ajustes rápidos</string>
     <string name="quick_settings_bluetooth_detail_empty_text">No hay dispositivos vinculados disponibles</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1320,10 +1322,13 @@ También estás conectado a una red VPN, que puede supervisar tu actividad de re
     <string name="sd_card_unmount_action">Desmontar</string>
     <string name="search_menu_title">Buscar</string>
     <string name="select_application">Selecciona una aplicación</string>
+    <string name="select_day">Seleccionar mes y día</string>
+    <string name="select_hours">Seleccionar hora</string>
     <string name="select_logd_size_dialog_title">Elige el tamaño del Logger por búfer</string>
     <string name="select_logd_size_title">Tamaños de búfer de registrador</string>
     <string name="select_logpersist_dialog_title">Seleccionar búferes de registro para guardarlos de forma continua en dispositivo</string>
     <string name="select_logpersist_title">Guardar datos de forma continua</string>
+    <string name="select_minutes">Seleccionar minutos</string>
     <string name="select_private_dns_configuration_dialog_title">Selecciona el modo de DNS privado</string>
     <string name="select_private_dns_configuration_title">DNS privado</string>
     <string name="select_usb_configuration_dialog_title">Seleccionar configuración de USB</string>
@@ -1331,6 +1336,7 @@ También estás conectado a una red VPN, que puede supervisar tu actividad de re
     <string name="select_webview_provider_dialog_title">Establecer implementación de WebView</string>
     <string name="select_webview_provider_title">Implementación de WebView</string>
     <string name="select_webview_provider_toast_text">Esta opción ya no está disponible. Vuelve a intentarlo.</string>
+    <string name="select_year">Seleccionar año</string>
     <string name="show_all_anrs">Mostrar ANR en segundo plano</string>
     <string name="show_all_anrs_summary">Informar de que una aplicación en segundo plano no responde</string>
     <string name="show_battery_percentage">Mostrar porcentaje de batería insertado</string>
@@ -1426,6 +1432,11 @@ Puede calentarse demasiado si:
 \u0009• Lo usas a altas temperaturas"</string>
     <string name="thermal_shutdown_message">El teléfono ahora funciona con normalidad</string>
     <string name="thermal_shutdown_title">Teléfono apagado por calor</string>
+    <string name="time_picker_header_text">Establecer hora</string>
+    <string name="time_picker_hour_label">hora</string>
+    <string name="time_picker_input_error">Introduce una hora válida</string>
+    <string name="time_picker_minute_label">minuto</string>
+    <string name="time_picker_prompt_label">Escribe la hora</string>
     <string name="time_unit_just_now">Justo ahora</string>
     <string name="title_convert_fbe">Convirtiendo a un cifrado basado en archivos</string>
     <string name="title_usb_accessory">Accesorio USB</string>
@@ -1549,6 +1560,7 @@ Cualquier usuario puede actualizar las aplicaciones del resto de usuarios."</str
     <string name="wait_for_debugger">Esperar al depurador</string>
     <string name="wait_for_debugger_summary">La aplicación depurada espera a que se active el depurador para ejecutarse</string>
     <string name="wifi_ap_unable_to_handle_new_sta">Punto de acceso temporalmente lleno</string>
+    <string name="wifi_auth_password_wrong">La contraseña puede ser incorrecta</string>
     <string name="wifi_cant_connect">No se puede establecer conexión</string>
     <string name="wifi_cant_connect_to_ap">No se puede establecer conexión con \"%1$s\"</string>
     <string name="wifi_check_password_try_again">Comprueba la contraseña y vuelve a intentarlo</string>

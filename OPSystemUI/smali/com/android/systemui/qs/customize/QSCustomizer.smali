@@ -102,11 +102,11 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d017d
+    const v1, 0x7f0d017e
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const v0, 0x7f0a00e1
+    const v0, 0x7f0a00e2
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -162,7 +162,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f080344
+    const v5, 0x7f080350
 
     invoke-virtual {v3, v5, v4}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
@@ -190,7 +190,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f080345
+    const v5, 0x7f080351
 
     invoke-virtual {v3, v5, v4}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
@@ -204,7 +204,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/qs/customize/QSCustomizer;->mToolbar:Landroid/widget/Toolbar;
 
-    const v3, 0x7f1104ad
+    const v3, 0x7f1104ae
 
     invoke-virtual {v1, v3}, Landroid/widget/Toolbar;->setTitle(I)V
 
@@ -218,7 +218,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/qs/customize/QSCustomizer;->mLightBarController:Lcom/android/systemui/statusbar/phone/LightBarController;
 
-    const v1, 0x7f0a043e
+    const v1, 0x7f0a0447
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -228,7 +228,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/qs/customize/QSCustomizer;->mUpperPages:Lcom/android/systemui/qs/customize/QSEditViewPager;
 
-    const v1, 0x7f0a0221
+    const v1, 0x7f0a0225
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -240,7 +240,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/qs/customize/QSCustomizer;->mUpperPages:Lcom/android/systemui/qs/customize/QSEditViewPager;
 
-    const v3, 0x7f0a043d
+    const v3, 0x7f0a0446
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -252,7 +252,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/qs/customize/QSCustomizer;->mLowerPages:Lcom/android/systemui/qs/customize/QSEditViewPager;
 
-    const v3, 0x7f0a0220
+    const v3, 0x7f0a0224
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -262,7 +262,7 @@
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/qs/customize/QSEditViewPager;->setPageIndicator(Lcom/android/systemui/qs/PageIndicator;)V
 
-    const v1, 0x7f0a0119
+    const v1, 0x7f0a011a
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -338,7 +338,7 @@
 
     invoke-direct {p0, v1}, Lcom/android/systemui/qs/customize/QSCustomizer;->updateNavBackdrop(Z)V
 
-    const v1, 0x7f0a0112
+    const v1, 0x7f0a0113
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -492,7 +492,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/qs/customize/QSCustomizer;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f11051d
+    const v2, 0x7f110520
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -629,7 +629,7 @@
 .method private updateNavBackdrop(Z)V
     .locals 2
 
-    const v0, 0x7f0a0270
+    const v0, 0x7f0a0274
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -1274,7 +1274,7 @@
 
     invoke-virtual {v9, v2}, Lcom/android/systemui/qs/customize/QSEditViewPager;->setBackgroundColor(I)V
 
-    const v9, 0x7f0a040b
+    const v9, 0x7f0a0412
 
     invoke-virtual {p0, v9}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -1282,7 +1282,7 @@
 
     invoke-virtual {v9, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    const v9, 0x7f0a043f
+    const v9, 0x7f0a0448
 
     invoke-virtual {p0, v9}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -1290,7 +1290,7 @@
 
     invoke-virtual {v9, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    const v9, 0x7f0a0222
+    const v9, 0x7f0a0226
 
     invoke-virtual {p0, v9}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -1304,7 +1304,7 @@
 
     invoke-virtual {v0, v9}, Landroid/widget/ImageButton;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
-    const v9, 0x7f080568
+    const v9, 0x7f080577
 
     invoke-virtual {v0, v9}, Landroid/widget/ImageButton;->setBackgroundResource(I)V
 

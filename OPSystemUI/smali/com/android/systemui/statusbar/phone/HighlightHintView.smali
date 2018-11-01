@@ -85,7 +85,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0701e7
+    const v1, 0x7f0701f3
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -225,7 +225,7 @@
 
     move-result-object v1
 
-    const v8, 0x7f0701ef
+    const v8, 0x7f0701fb
 
     invoke-virtual {v1, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -375,7 +375,7 @@
 
     move-result-object v4
 
-    const v8, 0x7f070600
+    const v8, 0x7f07060e
 
     invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -606,7 +606,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0701ee
+    const v2, 0x7f0701fa
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -620,7 +620,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0701e6
+    const v2, 0x7f0701f2
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -645,7 +645,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0701eb
+    const v3, 0x7f0701f7
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -759,7 +759,7 @@
 
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    const v0, 0x7f0a0189
+    const v0, 0x7f0a018a
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/HighlightHintView;->findViewById(I)Landroid/view/View;
 
@@ -769,7 +769,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/HighlightHintView;->mIconView:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a018a
+    const v0, 0x7f0a018b
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/HighlightHintView;->findViewById(I)Landroid/view/View;
 
@@ -779,7 +779,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/HighlightHintView;->mHint:Landroid/widget/TextView;
 
-    const v0, 0x7f0a018b
+    const v0, 0x7f0a018c
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/HighlightHintView;->findViewById(I)Landroid/view/View;
 
@@ -789,7 +789,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/HighlightHintView;->mChronometerContainer:Landroid/widget/FrameLayout;
 
-    const v0, 0x7f0a0187
+    const v0, 0x7f0a0188
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/HighlightHintView;->findViewById(I)Landroid/view/View;
 

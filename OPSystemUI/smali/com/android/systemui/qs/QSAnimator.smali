@@ -507,7 +507,7 @@
 
     add-int/2addr v14, v15
 
-    const-string v15, "translationY"
+    const-string/jumbo v15, "translationY"
 
     move/from16 v16, v5
 
@@ -568,7 +568,7 @@
 
     move/from16 v22, v12
 
-    const-string v12, "tileView is null "
+    const-string/jumbo v12, "tileView is null "
 
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -675,7 +675,7 @@
 
     move/from16 v26, v15
 
-    const-string v15, "translationX"
+    const-string/jumbo v15, "translationX"
 
     move-object/from16 v28, v1
 
@@ -695,7 +695,7 @@
 
     invoke-virtual {v2, v12, v15, v1}, Lcom/android/systemui/qs/TouchAnimator$Builder;->addFloat(Ljava/lang/Object;Ljava/lang/String;[F)Lcom/android/systemui/qs/TouchAnimator$Builder;
 
-    const-string v1, "translationY"
+    const-string/jumbo v1, "translationY"
 
     const/4 v11, 0x2
 
@@ -709,7 +709,7 @@
 
     invoke-virtual {v3, v12, v1, v15}, Lcom/android/systemui/qs/TouchAnimator$Builder;->addFloat(Ljava/lang/Object;Ljava/lang/String;[F)Lcom/android/systemui/qs/TouchAnimator$Builder;
 
-    const-string v1, "translationX"
+    const-string/jumbo v1, "translationX"
 
     const/4 v11, 0x2
 
@@ -725,7 +725,7 @@
 
     invoke-virtual {v2, v13, v1, v15}, Lcom/android/systemui/qs/TouchAnimator$Builder;->addFloat(Ljava/lang/Object;Ljava/lang/String;[F)Lcom/android/systemui/qs/TouchAnimator$Builder;
 
-    const-string v1, "translationY"
+    const-string/jumbo v1, "translationY"
 
     const/4 v11, 0x2
 
@@ -815,7 +815,7 @@
 
     sub-int/2addr v6, v11
 
-    const-string v11, "translationY"
+    const-string/jumbo v11, "translationY"
 
     move-object/from16 v29, v7
 
@@ -835,7 +835,7 @@
 
     invoke-virtual {v12, v13, v11, v7}, Lcom/android/systemui/qs/TouchAnimator$Builder;->addFloat(Ljava/lang/Object;Ljava/lang/String;[F)Lcom/android/systemui/qs/TouchAnimator$Builder;
 
-    const-string v7, "translationX"
+    const-string/jumbo v7, "translationX"
 
     const/4 v11, 0x2
 
@@ -855,7 +855,7 @@
 
     invoke-virtual {v2, v13, v7, v1}, Lcom/android/systemui/qs/TouchAnimator$Builder;->addFloat(Ljava/lang/Object;Ljava/lang/String;[F)Lcom/android/systemui/qs/TouchAnimator$Builder;
 
-    const-string v1, "translationY"
+    const-string/jumbo v1, "translationY"
 
     const/4 v7, 0x2
 
@@ -873,7 +873,7 @@
 
     invoke-virtual {v3, v13, v1, v11}, Lcom/android/systemui/qs/TouchAnimator$Builder;->addFloat(Ljava/lang/Object;Ljava/lang/String;[F)Lcom/android/systemui/qs/TouchAnimator$Builder;
 
-    const-string v1, "translationY"
+    const-string/jumbo v1, "translationY"
 
     const/4 v11, 0x2
 
@@ -912,7 +912,7 @@
 
     invoke-virtual {v12, v13, v1, v6}, Lcom/android/systemui/qs/TouchAnimator$Builder;->addFloat(Ljava/lang/Object;Ljava/lang/String;[F)Lcom/android/systemui/qs/TouchAnimator$Builder;
 
-    const-string v1, "translationY"
+    const-string/jumbo v1, "translationY"
 
     new-array v6, v4, [F
 
@@ -1292,6 +1292,8 @@
     iput-object v1, v0, Lcom/android/systemui/qs/QSAnimator;->mNonfirstPageDelayedAnimator:Lcom/android/systemui/qs/TouchAnimator;
 
     return-void
+
+    nop
 
     :array_0
     .array-data 4

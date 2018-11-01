@@ -130,7 +130,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string v1, "time-zone"
+    const-string/jumbo v1, "time-zone"
 
     invoke-virtual {p2, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 

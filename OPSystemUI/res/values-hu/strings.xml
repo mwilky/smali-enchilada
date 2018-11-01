@@ -1124,6 +1124,8 @@ VPN-hez is kapcsolódik, amely szintén figyelheti hálózati tevékenységét."
     <string name="qs_rearrange">Gyorsbeállítások átrendezése</string>
     <string name="qs_status_phone_muted">A telefon le van némítva</string>
     <string name="qs_status_phone_vibrate">A telefon rezgő módra van állítva</string>
+    <string name="quick_launch_exit">Kilépés</string>
+    <string name="quick_launch_exit_hint">Vegye le az ujját a képernyőről való kilépéshez</string>
     <string name="quick_settings">Gyorsbeállítások</string>
     <string name="quick_settings_bluetooth_detail_empty_text">Nem áll rendelkezésre párosított eszköz</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1321,10 +1323,13 @@ VPN-hez is kapcsolódik, amely szintén figyelheti hálózati tevékenységét."
     <string name="sd_card_unmount_action">Leválasztás</string>
     <string name="search_menu_title">Keresés</string>
     <string name="select_application">Alkalmazás kiválasztása</string>
+    <string name="select_day">Hónap és nap kiválasztása</string>
+    <string name="select_hours">Óra kiválasztása</string>
     <string name="select_logd_size_dialog_title">Naplózási pufferméret kiválasztása</string>
     <string name="select_logd_size_title">Naplózási puffer mérete</string>
     <string name="select_logpersist_dialog_title">Válassza ki az állandó tárolásra szánt naplópuffereket</string>
     <string name="select_logpersist_title">Naplózott adatok állandó tárolása</string>
+    <string name="select_minutes">Perc kiválasztása</string>
     <string name="select_private_dns_configuration_dialog_title">„Privát DNS” mód kiválasztása</string>
     <string name="select_private_dns_configuration_title">Privát DNS</string>
     <string name="select_usb_configuration_dialog_title">USB-beállítás kiválasztása</string>
@@ -1332,6 +1337,7 @@ VPN-hez is kapcsolódik, amely szintén figyelheti hálózati tevékenységét."
     <string name="select_webview_provider_dialog_title">WebView-megvalósítás beállítása</string>
     <string name="select_webview_provider_title">WebView-megvalósítás</string>
     <string name="select_webview_provider_toast_text">Ez a választás már nem érvényes. Próbálkozzon újra.</string>
+    <string name="select_year">Év kiválasztása</string>
     <string name="show_all_anrs">Háttérben lévő ANR-ek</string>
     <string name="show_all_anrs_summary">Az Alkalmazás nem válaszol ablak megjelenítése a háttérben futó alkalmazásoknál</string>
     <string name="show_battery_percentage">A beépített akkumulátor töltöttségi szintjének megjelenítése</string>
@@ -1427,6 +1433,11 @@ A telefon akkor melegedhet túl, ha Ön:
 \u0009• Melegben használja a telefonját"</string>
     <string name="thermal_shutdown_message">A telefon most már megfelelően működik</string>
     <string name="thermal_shutdown_title">A meleg miatt kikapcsolt</string>
+    <string name="time_picker_header_text">Idő beállítása</string>
+    <string name="time_picker_hour_label">óra</string>
+    <string name="time_picker_input_error">Adjon meg egy érvényes időt</string>
+    <string name="time_picker_minute_label">perc</string>
+    <string name="time_picker_prompt_label">Írja be az időbe</string>
     <string name="time_unit_just_now">Az imént</string>
     <string name="title_convert_fbe">Konvertálás fájlalapú titkosításra</string>
     <string name="title_usb_accessory">USB-kellék</string>
@@ -1550,6 +1561,7 @@ Bármely felhasználó frissítheti az alkalmazásokat valamennyi felhasználó 
     <string name="wait_for_debugger">Várjon a hibakeresőre.</string>
     <string name="wait_for_debugger_summary">A javított alkalmazás a hibakeresőre vár.</string>
     <string name="wifi_ap_unable_to_handle_new_sta">A hozzáférési pont átmenetileg megtelt</string>
+    <string name="wifi_auth_password_wrong">Lehet, hogy hibás a jelszó</string>
     <string name="wifi_cant_connect">Nem lehet csatlakozni</string>
     <string name="wifi_cant_connect_to_ap">Nem lehet csatlakozni a(z) „%1$s” hálózathoz</string>
     <string name="wifi_check_password_try_again">Ellenőrizze a jelszót, majd próbálkozzon újra</string>

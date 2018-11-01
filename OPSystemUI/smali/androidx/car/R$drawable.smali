@@ -15,20 +15,20 @@
 
 
 # static fields
-.field public static final car_button_ripple_background:I = 0x7f080179
+.field public static final car_button_ripple_background:I = 0x7f08017b
 
-.field public static final car_button_ripple_background_day:I = 0x7f08017a
+.field public static final car_button_ripple_background_day:I = 0x7f08017c
 
-.field public static final car_button_ripple_background_inverse:I = 0x7f08017b
+.field public static final car_button_ripple_background_inverse:I = 0x7f08017d
 
-.field public static final car_button_ripple_background_night:I = 0x7f08017c
+.field public static final car_button_ripple_background_night:I = 0x7f08017e
 
-.field public static final car_card_background:I = 0x7f08017e
+.field public static final car_card_background:I = 0x7f080180
 
-.field public static final car_card_rounded_background:I = 0x7f080183
+.field public static final car_card_rounded_background:I = 0x7f080185
 
-.field public static final car_card_rounded_bottom_background:I = 0x7f080184
+.field public static final car_card_rounded_bottom_background:I = 0x7f080186
 
-.field public static final car_card_rounded_top_background:I = 0x7f080185
+.field public static final car_card_rounded_top_background:I = 0x7f080187
 
-.field public static final ic_overflow:I = 0x7f080320
+.field public static final ic_overflow:I = 0x7f08032c

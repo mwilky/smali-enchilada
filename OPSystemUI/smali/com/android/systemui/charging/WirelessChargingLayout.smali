@@ -35,13 +35,13 @@
 
     move/from16 v1, p3
 
-    const v2, 0x7f0d01e2
+    const v2, 0x7f0d01e3
 
     move-object/from16 v3, p1
 
     invoke-static {v3, v2, v0}, Lcom/android/systemui/charging/WirelessChargingLayout;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const v2, 0x7f0a0474
+    const v2, 0x7f0a047e
 
     invoke-virtual {v0, v2}, Lcom/android/systemui/charging/WirelessChargingLayout;->findViewById(I)Landroid/view/View;
 
@@ -49,7 +49,7 @@
 
     check-cast v2, Lcom/android/systemui/charging/WirelessChargingView;
 
-    const v4, 0x7f0a0472
+    const v4, 0x7f0a047c
 
     invoke-virtual {v0, v4}, Lcom/android/systemui/charging/WirelessChargingLayout;->findViewById(I)Landroid/view/View;
 
@@ -121,7 +121,7 @@
 
     move-result-object v5
 
-    const v12, 0x7f0706b1
+    const v12, 0x7f0706bf
 
     invoke-virtual {v5, v12}, Landroid/content/res/Resources;->getFloat(I)F
 
@@ -131,13 +131,13 @@
 
     move-result-object v12
 
-    const v13, 0x7f0706b0
+    const v13, 0x7f0706be
 
     invoke-virtual {v12, v13}, Landroid/content/res/Resources;->getFloat(I)F
 
     move-result v12
 
-    const-string v13, "textSize"
+    const-string/jumbo v13, "textSize"
 
     const/4 v14, 0x2
 
@@ -290,6 +290,8 @@
     invoke-virtual {v13}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
+
+    nop
 
     :array_0
     .array-data 4

@@ -1124,6 +1124,8 @@
     <string name="qs_rearrange">ತ್ವರಿತ ಸೆಟ್ಟಿಂಗ್‌‌ಗಳನ್ನು ಮರುಹೊಂದಿಸಿ</string>
     <string name="qs_status_phone_muted">ಫೋನ್ ಅನ್ನು ಮ್ಯೂಟ್ ಮಾಡಲಾಗಿದೆ</string>
     <string name="qs_status_phone_vibrate">ಫೋನ್ ವೈಬ್ರೇಟ್‌ನಲ್ಲಿದೆ</string>
+    <string name="quick_launch_exit">ನಿರ್ಗಮಿಸಿ</string>
+    <string name="quick_launch_exit_hint">ನಿರ್ಗಮಿಸಲು ಪರದೆಯ ಮೇಲಿಂದ ಬೆರಳನ್ನು ಮೇಲೆತ್ತಿ</string>
     <string name="quick_settings">ತ್ವರಿತ ಸೆಟ್ಟಿಂಗ್‍ಗಳು</string>
     <string name="quick_settings_bluetooth_detail_empty_text">ಯಾವುದೇ ಜೋಡಿಸಲಾದ ಸಾಧನಗಳು ಲಭ್ಯವಿಲ್ಲ</string>
     <string name="quick_settings_bluetooth_label">ಬ್ಲೂಟೂತ್‌</string>
@@ -1321,10 +1323,13 @@
     <string name="sd_card_unmount_action">ಅನ್‍ಮೌಂಟ್</string>
     <string name="search_menu_title">ಹುಡುಕಿ</string>
     <string name="select_application">ಅಪ್ಲಿಕೇಶನ್ ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="select_day">ತಿಂಗಳು ಮತ್ತು ದಿನವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ</string>
+    <string name="select_hours">ಗಂಟೆಗಳನ್ನು ಆರಿಸಿ</string>
     <string name="select_logd_size_dialog_title">ಪ್ರತಿ ಲಾಗ್ ಬಫರ್‌ಗೆ ಲಾಗರ್ ಗಾತ್ರಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
     <string name="select_logd_size_title">ಲಾಗರ್ ಬಫರ್ ಗಾತ್ರಗಳು</string>
     <string name="select_logpersist_dialog_title">ಸಾಧನದಲ್ಲಿ ನಿರಂತರವಾಗಿ ಸಂಗ್ರಹಿಸಲು ಲಾಗ್ ಬಫರ್‌ಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
     <string name="select_logpersist_title">ಲಾಗರ್ ಡೇಟಾವನ್ನು ಸಾಧನದಲ್ಲಿ ನಿರಂತರವಾಗಿ ಸಂಗ್ರಹಿಸಿ</string>
+    <string name="select_minutes">ನಿಮಿಷಗಳನ್ನು ಆರಿಸಿ</string>
     <string name="select_private_dns_configuration_dialog_title">ಖಾಸಗಿ DNS ಮೋಡ್ ಆಯ್ಕೆಮಾಡಿ</string>
     <string name="select_private_dns_configuration_title">ಖಾಸಗಿ DNS</string>
     <string name="select_usb_configuration_dialog_title">USB ಕಾನ್ಫಿಗರೇಶನ್ ಆಯ್ಕೆಮಾಡಿ</string>
@@ -1332,6 +1337,7 @@
     <string name="select_webview_provider_dialog_title">WebView ಅನುಷ್ಠಾನಗೊಳಿಸುವಿಕೆಯನ್ನು ಹೊಂದಿಸಿ</string>
     <string name="select_webview_provider_title">WebView ಹೊಂದಿಸಿ</string>
     <string name="select_webview_provider_toast_text">ಈ ಆಯ್ಕೆಯು ಇನ್ನು ಮುಂದೆ ಮಾನ್ಯವಾಗಿರುವುದಿಲ್ಲ. ಮತ್ತೊಮ್ಮೆ ಪ್ರಯತ್ನಿಸಿ.</string>
+    <string name="select_year">ವರ್ಷವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ</string>
     <string name="show_all_anrs">ಹಿನ್ನೆಲೆ ANR ಗಳನ್ನು ತೋರಿಸಿ</string>
     <string name="show_all_anrs_summary">ಹಿನ್ನೆಲೆ ಅಪ್ಲಿಕೇಶನ್‌ಗಳಿಗಾಗಿ ಅಪ್ಲಿಕೇಶನ್ ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತಿಲ್ಲ ಎಂಬ ಸಂಭಾಷಣೆ ತೋರಿಸಿ</string>
     <string name="show_battery_percentage">ಎಂಬೆಡ್ ಮಾಡಲಾದ ಬ್ಯಾಟರಿ ಶೇಕಡಾ ತೋರಿಸಿ</string>
@@ -1427,6 +1433,11 @@
 \u0009• ಅಧಿಕ ಉಷ್ಣಾಂಶದಲ್ಲಿ ಫೋನಿನ ಬಳಕೆ"</string>
     <string name="thermal_shutdown_message">ಈಗ ನಿಮ್ಮ ಫೋನ್ ಎಂದಿನಂತೆ ಕೆಲಸ ಮಾಡುತ್ತಿದೆ</string>
     <string name="thermal_shutdown_title">ಫೋನ್ ಬಿಸಿಯಾಗಿದ್ದರಿಂದ ಆಫ್ ಆಗಿದೆ</string>
+    <string name="time_picker_header_text">ಸಮಯ ನಿಗದಿಪಡಿಸಿ</string>
+    <string name="time_picker_hour_label">ಗಂಟೆ</string>
+    <string name="time_picker_input_error">ಒಂದು ಮಾನ್ಯವಾದ ಸಮಯವನ್ನು ನಮೂದಿಸಿ</string>
+    <string name="time_picker_minute_label">ನಿಮಿಷ</string>
+    <string name="time_picker_prompt_label">ಸಮಯವನ್ನು ನಮೂದಿಸಿ</string>
     <string name="time_unit_just_now">ಇದೀಗ</string>
     <string name="title_convert_fbe">ಫೈಲ್ ಆಧಾರಿತ ಎನ್‌ಕ್ರಿಪ್ಶನ್‌ಗೆ ಪರಿವರ್ತಿಸಲಾಗುತ್ತಿದೆ</string>
     <string name="title_usb_accessory">USB ಪರಿಕರ</string>
@@ -1550,6 +1561,7 @@
     <string name="wait_for_debugger">ಡೀಬಗರ್‌‌ಗಾಗಿ ನಿರೀಕ್ಷಿಸಿ</string>
     <string name="wait_for_debugger_summary">ಲಗತ್ತನ್ನು ಕಾರ್ಯಗತಗೊಳಿಸುವ ಮೊದಲು ಡೀಬಗರ್‌‌ಗಾಗಿ ಡೀಬಗ್‌‌‌ ಮಾಡಿದ ಅಪ್ಲಿಕೇಶನ್‌‌ ಕಾಯುತ್ತದೆ</string>
     <string name="wifi_ap_unable_to_handle_new_sta">ಪ್ರವೇಶ ಕೇಂದ್ರ ತಾತ್ಕಾಲಿಕವಾಗಿ ಭರ್ತಿಯಾಗಿದೆ</string>
+    <string name="wifi_auth_password_wrong">ಪಾಸ್‌ವರ್ಡ್ ಸರಿಯಿಲ್ಲದಿರಬಹುದು</string>
     <string name="wifi_cant_connect">ಸಂಪರ್ಕಿಸಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ</string>
     <string name="wifi_cant_connect_to_ap">"'%1$s' ಗೆ ಸಂಪರ್ಕಿಸಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ"</string>
     <string name="wifi_check_password_try_again">ಪಾಸ್‌ವರ್ಡ್ ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಪುನಃ ಪ್ರಯತ್ನಿಸಿ</string>

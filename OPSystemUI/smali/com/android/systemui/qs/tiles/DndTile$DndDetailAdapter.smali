@@ -95,7 +95,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f1104a8
+    const v6, 0x7f1104a9
 
     const/4 v7, 0x1
 
@@ -242,7 +242,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f1104a9
+    const v7, 0x7f1104aa
 
     new-array v5, v5, [Ljava/lang/Object;
 
@@ -263,7 +263,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f1104aa
+    const v6, 0x7f1104ab
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -319,7 +319,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d01e6
+    const v1, 0x7f0d01e7
 
     const/4 v2, 0x0
 
@@ -360,7 +360,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->mZenPanel:Lcom/android/systemui/volume/ZenModePanel;
 
-    const v1, 0x7f080340
+    const v1, 0x7f08034c
 
     const v2, 0x7f110244
 
@@ -401,7 +401,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1104e4
+    const v1, 0x7f1104e7
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

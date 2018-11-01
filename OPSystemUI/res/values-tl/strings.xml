@@ -1124,6 +1124,8 @@ Nakakonekta ka rin sa isang VPN, na may kakayahang subaybayan ang iyong aktibida
     <string name="qs_rearrange">Ayusing Muli ang Mga Mabilisang Setting</string>
     <string name="qs_status_phone_muted">Naka-mute ang telepono</string>
     <string name="qs_status_phone_vibrate">Naka-vibrate ang telepono</string>
+    <string name="quick_launch_exit">Lumabas</string>
+    <string name="quick_launch_exit_hint">Alisin ang daliri sa screen upang lumabas</string>
     <string name="quick_settings">Mga Maikling Setting</string>
     <string name="quick_settings_bluetooth_detail_empty_text">Walang available na mga magkapares na device</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1321,10 +1323,13 @@ Nakakonekta ka rin sa isang VPN, na may kakayahang subaybayan ang iyong aktibida
     <string name="sd_card_unmount_action">I-unmount</string>
     <string name="search_menu_title">Maghanap</string>
     <string name="select_application">Pumili ng application</string>
+    <string name="select_day">Pumili ng buwan at araw</string>
+    <string name="select_hours">Pumili ng mga oras</string>
     <string name="select_logd_size_dialog_title">Pumili ng mga laki ng Logger bawat log buffer</string>
     <string name="select_logd_size_title">Mga laki ng buffer ng Logger</string>
     <string name="select_logpersist_dialog_title">Pumili ng mga buffer ng log upang tuluy-tuloy na iimbak sa device</string>
     <string name="select_logpersist_title">Tuloy-tuloy na i-store ang data ng logger sa device</string>
+    <string name="select_minutes">Pumili ng mga minuto</string>
     <string name="select_private_dns_configuration_dialog_title">Pumili ng Pribadong DNS Mode</string>
     <string name="select_private_dns_configuration_title">Pribadong DNS</string>
     <string name="select_usb_configuration_dialog_title">Pumili ng USB Configuration</string>
@@ -1332,6 +1337,7 @@ Nakakonekta ka rin sa isang VPN, na may kakayahang subaybayan ang iyong aktibida
     <string name="select_webview_provider_dialog_title">Itakda ang pagpapatupad sa WebView</string>
     <string name="select_webview_provider_title">Pagpapatupad sa WebView</string>
     <string name="select_webview_provider_toast_text">Wala nang bisa ang napiling ito. Subukang muli.</string>
+    <string name="select_year">Pumili ng taon</string>
     <string name="show_all_anrs">Ipakita ang mga ANR sa background</string>
     <string name="show_all_anrs_summary">Ipakita ang dialog na Hindi Tumutugon ang App para sa mga app sa background</string>
     <string name="show_battery_percentage">Ipakita ang naka-embed na porsyento ng baterya</string>
@@ -1427,6 +1433,11 @@ Maaaring lubos na uminit ang telepono kapag:
  • Ginamit mo ito sa mainit na lugar"</string>
     <string name="thermal_shutdown_message">Maayos na ngayong gumagana ang iyong telepono</string>
     <string name="thermal_shutdown_title">Na-off ang telepono dahil sa init</string>
+    <string name="time_picker_header_text">Magtakda ng oras</string>
+    <string name="time_picker_hour_label">oras</string>
+    <string name="time_picker_input_error">Maglagay ng valid na oras</string>
+    <string name="time_picker_minute_label">minuto</string>
+    <string name="time_picker_prompt_label">I-type ang oras</string>
     <string name="time_unit_just_now">Ngayon lang</string>
     <string name="title_convert_fbe">Kino-convert sa pag-encrypt na batay sa file</string>
     <string name="title_usb_accessory">USB accessory</string>
@@ -1550,6 +1561,7 @@ Ang sinumang user ay maaaring mag-update ng mga app para sa lahat ng iba pang us
     <string name="wait_for_debugger">Maghintay ng debugger</string>
     <string name="wait_for_debugger_summary">Hinihintay ng na-debug na application na ma-attach ang debugger bago magsagawa</string>
     <string name="wifi_ap_unable_to_handle_new_sta">Pansamantalang puno ang access point</string>
+    <string name="wifi_auth_password_wrong">Maaaring mali ang password</string>
     <string name="wifi_cant_connect">Hindi makakonekta</string>
     <string name="wifi_cant_connect_to_ap">"Hindi makakonekta sa '%1$s'"</string>
     <string name="wifi_check_password_try_again">Suriin ang password at subukang muli</string>

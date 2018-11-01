@@ -74,6 +74,8 @@
     <string name="prevent_view_top_tag_numbuer1">"1. "</string>
     <string name="prevent_view_top_tag_numbuer2">"2. "</string>
     <string name="qs_edit">সম্পাদনা করুন</string>
+    <string name="quick_launch_exit">প্রস্থান করুন</string>
+    <string name="quick_launch_exit_hint">প্রস্থান করতে স্ক্রীনে আঙুল দিয়ে বন্ধ করুন</string>
     <string name="quick_settings_buttons_label">লক বোতাম</string>
     <string name="quick_settings_data_switch_label">ডেটা কার্ডে পরিবর্তন করুন</string>
     <string name="quick_settings_data_switch_toast_0">বর্তমানে কোনো SIM কার্ড প্রবেশ করানো নেই</string>
@@ -115,6 +117,15 @@
     <string name="remove_oneplus_laboratory_from_settings_prompt">সেটিংস থেকে OnePlus ল্যাবরেটরি অপসারণ করে এর সমস্ত বৈশিষ্ট্য ব্যবহার করা বন্ধ করবেন?\"</string>
     <string name="screenshot_delete_confirmation">স্ক্রিনশট মুছে ফেলা হয়েছে</string>
     <string name="sd_card_unmount_action">আনমাউন্ট করুন</string>
+    <string name="select_day">মাস এবং দিন বেছে নিন</string>
+    <string name="select_hours">ঘণ্টা বেছে নিন</string>
+    <string name="select_minutes">মিনিট বেছে নিন</string>
+    <string name="select_year">বছর বেছে নিন</string>
+    <string name="time_picker_header_text">সময় সেট করুন</string>
+    <string name="time_picker_hour_label">ঘণ্টা</string>
+    <string name="time_picker_input_error">সঠিক সময় লিখুন</string>
+    <string name="time_picker_minute_label">মিনিট</string>
+    <string name="time_picker_prompt_label">সময় উল্লেখ করুন</string>
     <string name="usb_storage_badremoval_notification_message" />
     <string name="usb_storage_badremoval_notification_title">USB সঞ্চয়স্থান অপসারণ করা হয়েছে</string>
     <string name="usb_storage_checking_notification_title">USB সঞ্চয়স্থান প্রস্তুত হচ্ছে</string>

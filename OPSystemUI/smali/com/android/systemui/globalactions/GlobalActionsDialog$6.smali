@@ -29,20 +29,10 @@
     return-void
 .end method
 
-.method public static synthetic lambda$onPress$0(Lcom/android/systemui/globalactions/GlobalActionsDialog$6;)V
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$6;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
-
-    invoke-static {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$1300(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
-
-    return-void
-.end method
-
 
 # virtual methods
 .method public onPress()V
-    .locals 3
+    .locals 4
 
     new-instance v0, Lcom/android/internal/widget/LockPatternUtils;
 
@@ -60,47 +50,20 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/widget/LockPatternUtils;->requireStrongAuth(II)V
 
-    :try_start_0
-    invoke-static {}, Landroid/view/WindowManagerGlobal;->getWindowManagerService()Landroid/view/IWindowManager;
+    iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$6;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
+
+    invoke-static {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$1200(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/os/Handler;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    new-instance v1, Lcom/android/systemui/globalactions/GlobalActionsDialog$6$1;
 
-    invoke-interface {v0, v1}, Landroid/view/IWindowManager;->lockNow(Landroid/os/Bundle;)V
+    invoke-direct {v1, p0}, Lcom/android/systemui/globalactions/GlobalActionsDialog$6$1;-><init>(Lcom/android/systemui/globalactions/GlobalActionsDialog$6;)V
 
-    new-instance v0, Landroid/os/Handler;
+    const-wide/16 v2, 0x12c
 
-    sget-object v1, Lcom/android/systemui/Dependency;->BG_LOOPER:Lcom/android/systemui/Dependency$DependencyKey;
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    invoke-static {v1}, Lcom/android/systemui/Dependency;->get(Lcom/android/systemui/Dependency$DependencyKey;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/os/Looper;
-
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    new-instance v1, Lcom/android/systemui/globalactions/-$$Lambda$GlobalActionsDialog$6$WgIPOZvSRFzb_yD8-G_WZbXNLMU;
-
-    invoke-direct {v1, p0}, Lcom/android/systemui/globalactions/-$$Lambda$GlobalActionsDialog$6$WgIPOZvSRFzb_yD8-G_WZbXNLMU;-><init>(Lcom/android/systemui/globalactions/GlobalActionsDialog$6;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    const-string v1, "GlobalActionsDialog"
-
-    const-string v2, "Error while trying to lock device."
-
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    :goto_0
     return-void
 .end method
 

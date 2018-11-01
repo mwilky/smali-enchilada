@@ -115,11 +115,11 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/Recents;->mUserToSystemServiceConnection:Landroid/content/ServiceConnection;
 
-    const-string v0, "tasklockstate"
+    const-string/jumbo v0, "tasklockstate"
 
     iput-object v0, p0, Lcom/android/systemui/recents/Recents;->TASK_LOCK_STATE:Ljava/lang/String;
 
-    const-string v0, "task_lock_list_with_userid"
+    const-string/jumbo v0, "task_lock_list_with_userid"
 
     iput-object v0, p0, Lcom/android/systemui/recents/Recents;->TASK_LOCK_LIST_KEY_WITH_USERID:Ljava/lang/String;
 
@@ -369,7 +369,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "toggleRecentAppsWithGesture, "
+    const-string/jumbo v2, "toggleRecentAppsWithGesture, "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -469,7 +469,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/Recents;->mContext:Landroid/content/Context;
 
-    const-string v1, "tasklockstate"
+    const-string/jumbo v1, "tasklockstate"
 
     const/4 v2, 0x0
 
@@ -481,7 +481,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/Recents;->mSp:Landroid/content/SharedPreferences;
 
-    const-string v1, "task_lock_list_with_userid"
+    const-string/jumbo v1, "task_lock_list_with_userid"
 
     new-instance v2, Ljava/util/HashSet;
 
@@ -534,7 +534,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "tasklock list: "
+    const-string/jumbo v4, "tasklock list: "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1690,24 +1690,6 @@
     invoke-interface {v1, v2}, Lcom/android/systemui/shared/recents/IOverviewProxy;->onPreMotionEvent(I)V
 
     :cond_1
-    const-string v1, "Recents"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "onGestureMotionEvent: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     iget-object v1, p0, Lcom/android/systemui/recents/Recents;->mOverviewProxyService:Lcom/android/systemui/OverviewProxyService;
 
     invoke-virtual {v1}, Lcom/android/systemui/OverviewProxyService;->getProxy()Lcom/android/systemui/shared/recents/IOverviewProxy;
@@ -2399,7 +2381,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/recents/Recents;->mContext:Landroid/content/Context;
 
-    const-string v5, "trust"
+    const-string/jumbo v5, "trust"
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

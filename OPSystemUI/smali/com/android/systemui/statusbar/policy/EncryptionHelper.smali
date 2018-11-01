@@ -37,7 +37,7 @@
 
     if-nez v1, :cond_1
 
-    const-string v1, "trigger_restart_min_framework"
+    const-string/jumbo v1, "trigger_restart_min_framework"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

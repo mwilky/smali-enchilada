@@ -137,7 +137,7 @@
 .method public constructor <init>(Landroid/content/Context;Lcom/android/systemui/volume/MediaRouterWrapper;)V
     .locals 4
 
-    const v0, 0x7f120546
+    const v0, 0x7f120547
 
     invoke-direct {p0, p1, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
@@ -223,7 +223,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mWifiManager:Landroid/net/wifi/WifiManager;
 
-    const-string v2, "telecom"
+    const-string/jumbo v2, "telecom"
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -451,9 +451,7 @@
 
     invoke-interface {v2}, Ljava/util/List;->clear()V
 
-    iget-object v2, v0, Lcom/android/systemui/volume/OutputChooserDialog;->mBluetoothController:Lcom/android/systemui/statusbar/policy/BluetoothController;
-
-    invoke-interface {v2}, Lcom/android/systemui/statusbar/policy/BluetoothController;->getDevices()Ljava/util/Collection;
+    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/volume/OutputChooserDialog;->getDevices()Ljava/util/Collection;
 
     move-result-object v2
 
@@ -516,7 +514,7 @@
 
     invoke-direct {v9}, Lcom/android/systemui/volume/OutputChooserLayout$Item;-><init>()V
 
-    const v10, 0x7f08032e
+    const v10, 0x7f08033a
 
     iput v10, v9, Lcom/android/systemui/volume/OutputChooserLayout$Item;->iconResId:I
 
@@ -532,9 +530,7 @@
 
     iput v10, v9, Lcom/android/systemui/volume/OutputChooserLayout$Item;->deviceType:I
 
-    iget-object v10, v0, Lcom/android/systemui/volume/OutputChooserDialog;->mBluetoothController:Lcom/android/systemui/statusbar/policy/BluetoothController;
-
-    invoke-interface {v10, v6}, Lcom/android/systemui/statusbar/policy/BluetoothController;->getMaxConnectionState(Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)I
+    invoke-virtual {v6}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->getMaxConnectionState()I
 
     move-result v10
 
@@ -544,7 +540,7 @@
 
     if-ne v10, v11, :cond_4
 
-    const v13, 0x7f08032b
+    const v13, 0x7f080337
 
     iput v13, v9, Lcom/android/systemui/volume/OutputChooserLayout$Item;->iconResId:I
 
@@ -574,7 +570,7 @@
 
     iget-object v15, v0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f1104ce
+    const v8, 0x7f1104d1
 
     new-array v11, v12, [Ljava/lang/Object;
 
@@ -597,7 +593,7 @@
     :cond_2
     iget-object v8, v0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v11, 0x7f1104cd
+    const v11, 0x7f1104d0
 
     invoke-virtual {v8, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -668,13 +664,13 @@
     :cond_4
     if-ne v10, v12, :cond_5
 
-    const v8, 0x7f08032c
+    const v8, 0x7f080338
 
     iput v8, v9, Lcom/android/systemui/volume/OutputChooserLayout$Item;->iconResId:I
 
     iget-object v8, v0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v11, 0x7f1104cf
+    const v11, 0x7f1104d2
 
     invoke-virtual {v8, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -733,7 +729,7 @@
 
     iput-object v1, v0, Lcom/android/systemui/volume/OutputChooserLayout$Item;->line1:Ljava/lang/CharSequence;
 
-    const v1, 0x7f08031e
+    const v1, 0x7f08032a
 
     iput v1, v0, Lcom/android/systemui/volume/OutputChooserLayout$Item;->iconResId:I
 
@@ -748,7 +744,7 @@
 
     iput-object v1, v0, Lcom/android/systemui/volume/OutputChooserLayout$Item;->line1:Ljava/lang/CharSequence;
 
-    const v1, 0x7f08031f
+    const v1, 0x7f08032b
 
     iput v1, v0, Lcom/android/systemui/volume/OutputChooserLayout$Item;->iconResId:I
 
@@ -785,7 +781,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0704bf
+    const v1, 0x7f0704c8
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -835,7 +831,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f11045c
+    const v3, 0x7f11045d
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -848,7 +844,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f11045d
+    const v3, 0x7f11045e
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -859,7 +855,7 @@
     :cond_1
     iget-object v2, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f11045b
+    const v3, 0x7f11045c
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -870,7 +866,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f11045a
+    const v2, 0x7f11045b
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1238,7 +1234,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f110459
+    const v4, 0x7f11045a
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1287,7 +1283,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mView:Lcom/android/systemui/volume/OutputChooserLayout;
 
-    const v1, 0x7f110457
+    const v1, 0x7f110458
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/OutputChooserLayout;->setTitle(I)V
 
@@ -1296,7 +1292,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mView:Lcom/android/systemui/volume/OutputChooserLayout;
 
-    const v1, 0x7f11045e
+    const v1, 0x7f11045f
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/OutputChooserLayout;->setTitle(I)V
 
@@ -1496,6 +1492,40 @@
     return-object v0
 .end method
 
+.method public getDevices()Ljava/util/Collection;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Collection<",
+            "Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mLocalBluetoothManager:Lcom/android/settingslib/bluetooth/LocalBluetoothManager;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mLocalBluetoothManager:Lcom/android/settingslib/bluetooth/LocalBluetoothManager;
+
+    invoke-virtual {v0}, Lcom/android/settingslib/bluetooth/LocalBluetoothManager;->getCachedDeviceManager()Lcom/android/settingslib/bluetooth/CachedBluetoothDeviceManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/settingslib/bluetooth/CachedBluetoothDeviceManager;->getCachedDevicesCopy()Ljava/util/Collection;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+.end method
+
 .method public getIconColor()I
     .locals 1
 
@@ -1601,7 +1631,7 @@
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    const v1, 0x7f0a02de
+    const v1, 0x7f0a02e2
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->findViewById(I)Landroid/view/View;
 
@@ -1619,7 +1649,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f080219
+    const v2, 0x7f080224
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1629,7 +1659,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0803d4
+    const v2, 0x7f0803e1
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1639,7 +1669,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f080387
+    const v2, 0x7f080394
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1649,7 +1679,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f080388
+    const v2, 0x7f080395
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1663,7 +1693,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1104e9
+    const v2, 0x7f1104ec
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1677,7 +1707,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1104eb
+    const v2, 0x7f1104ee
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1920,9 +1950,7 @@
 
     check-cast v0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
-    iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBluetoothController:Lcom/android/systemui/statusbar/policy/BluetoothController;
-
-    invoke-interface {v1, v0}, Lcom/android/systemui/statusbar/policy/BluetoothController;->getMaxConnectionState(Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)I
+    invoke-virtual {v0}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->getMaxConnectionState()I
 
     move-result v1
 
@@ -2164,7 +2192,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mSecondaryTextColor:I
 
-    const v1, 0x7f080855
+    const v1, 0x7f080864
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBgDrawable:I
 
@@ -2203,7 +2231,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mSecondaryTextColor:I
 
-    const v1, 0x7f080854
+    const v1, 0x7f080863
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBgDrawable:I
 

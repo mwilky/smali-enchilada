@@ -1124,6 +1124,8 @@ Povezani ste i s VPN-om koji može nadzirati vašu mrežnu aktivnost."</string>
     <string name="qs_rearrange">Promijeni raspored Brzih postavki</string>
     <string name="qs_status_phone_muted">Na telefonu je isključen zvuk</string>
     <string name="qs_status_phone_vibrate">Telefon je postavljen na vibriranje</string>
+    <string name="quick_launch_exit">Izađi</string>
+    <string name="quick_launch_exit_hint">Za izlazak povucite prstom na zaslonu prema van</string>
     <string name="quick_settings">Brze postavke</string>
     <string name="quick_settings_bluetooth_detail_empty_text">Upareni uređaji nisu dostupni</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1321,10 +1323,13 @@ Povezani ste i s VPN-om koji može nadzirati vašu mrežnu aktivnost."</string>
     <string name="sd_card_unmount_action">Izvadi</string>
     <string name="search_menu_title">Pretraživanje</string>
     <string name="select_application">Odaberite aplikaciju</string>
+    <string name="select_day">Odaberite mjesec i dan</string>
+    <string name="select_hours">Odaberite sate</string>
     <string name="select_logd_size_dialog_title">Odaberite veličinu međuspremnika zapisnika</string>
     <string name="select_logd_size_title">Veličine međuspremnika zapisnika</string>
     <string name="select_logpersist_dialog_title">Odaberite međuspremnike zapisnika koji će se trajno pohraniti na uređaju</string>
     <string name="select_logpersist_title">Pohrani podatke zapisivača na uređaju</string>
+    <string name="select_minutes">Odabir minute</string>
     <string name="select_private_dns_configuration_dialog_title">Odaberite način privatnog DNS-a</string>
     <string name="select_private_dns_configuration_title">Privatni DNS</string>
     <string name="select_usb_configuration_dialog_title">Odabir USB konfiguracije</string>
@@ -1332,6 +1337,7 @@ Povezani ste i s VPN-om koji može nadzirati vašu mrežnu aktivnost."</string>
     <string name="select_webview_provider_dialog_title">Postavi implementaciju WebViewa</string>
     <string name="select_webview_provider_title">Implementacija WebViewa</string>
     <string name="select_webview_provider_toast_text">Taj izbor više nije važeći. Pokušajte ponovo.</string>
+    <string name="select_year">Odaberite godinu</string>
     <string name="show_all_anrs">Pokaži pozadinske ANR-ove</string>
     <string name="show_all_anrs_summary">Dijalog o pozadinskim aplikacijama koje ne reagiraju</string>
     <string name="show_battery_percentage">Prikaži ugrađeni postotak baterije</string>
@@ -1427,6 +1433,11 @@ Telefon se može pregrijati ako:
 \u0009• upotrebljavate telefon na visokim temperaturama."</string>
     <string name="thermal_shutdown_message">Telefon sada radi normalno</string>
     <string name="thermal_shutdown_title">Telefon se isključio zbog vrućine</string>
+    <string name="time_picker_header_text">Postavite vrijeme</string>
+    <string name="time_picker_hour_label">h</string>
+    <string name="time_picker_input_error">Unesite valjano vrijeme</string>
+    <string name="time_picker_minute_label">min</string>
+    <string name="time_picker_prompt_label">Upišite vrijeme</string>
     <string name="time_unit_just_now">Upravo sad</string>
     <string name="title_convert_fbe">Pretvaranje u enkripciju datoteka</string>
     <string name="title_usb_accessory">USB pribor</string>
@@ -1550,6 +1561,7 @@ Bilo koji korisnik može ažurirati aplikacije za sve ostale korisnike."</string
     <string name="wait_for_debugger">Čeka se program za otklanjanje pogrešaka</string>
     <string name="wait_for_debugger_summary">Aplikacija čeka priključivanje programa za otklanjanje pogrešaka</string>
     <string name="wifi_ap_unable_to_handle_new_sta">Pristupna je točka privremeno puna</string>
+    <string name="wifi_auth_password_wrong">Lozinka je možda netočna</string>
     <string name="wifi_cant_connect">Povezivanje nije uspjelo</string>
     <string name="wifi_cant_connect_to_ap">Povezivanje s aplikacijom \"%1$s\" nije uspjelo</string>
     <string name="wifi_check_password_try_again">Provjerite zaporku i pokušajte ponovo</string>

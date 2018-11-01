@@ -300,7 +300,7 @@
 
     const-string v3, "keywords"
 
-    const-string v4, "ttl"
+    const-string/jumbo v4, "ttl"
 
     const-string v5, "last_updated"
 
@@ -709,7 +709,7 @@
 
     if-nez v0, :cond_1
 
-    const-string v0, "text"
+    const-string/jumbo v0, "text"
 
     const/4 v2, 0x0
 
@@ -850,7 +850,7 @@
 
     const-string v7, "keywords"
 
-    const-string v8, "ttl"
+    const-string/jumbo v8, "ttl"
 
     const-string v9, "last_updated"
 

@@ -34,7 +34,7 @@
 
     const-string v5, "sync"
 
-    const-string v6, "tty"
+    const-string/jumbo v6, "tty"
 
     const-string v7, "eri"
 
@@ -245,7 +245,7 @@
 
     const-string v4, "fully"
 
-    const-string v5, "true"
+    const-string/jumbo v5, "true"
 
     invoke-virtual {v0, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
@@ -471,7 +471,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/tuner/DemoModeFragment;->mOnSwitch:Landroid/support/v14/preference/SwitchPreference;
 
-    const v2, 0x7f110598
+    const v2, 0x7f11059b
 
     invoke-virtual {v1, v2}, Landroid/support/v14/preference/SwitchPreference;->setTitle(I)V
 

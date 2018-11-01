@@ -20,12 +20,16 @@
 # instance fields
 .field private mController:Lcom/android/internal/app/ColorDisplayController;
 
+.field private mDaltonizerSetting:Lcom/android/systemui/qs/SecureSetting;
+
+.field private mInversionSetting:Lcom/android/systemui/qs/SecureSetting;
+
 .field private mIsListening:Z
 
 
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/qs/QSHost;)V
-    .locals 3
+    .locals 4
 
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;-><init>(Lcom/android/systemui/qs/QSHost;)V
 
@@ -40,6 +44,30 @@
     invoke-direct {v0, v1, v2}, Lcom/android/internal/app/ColorDisplayController;-><init>(Landroid/content/Context;I)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mController:Lcom/android/internal/app/ColorDisplayController;
+
+    new-instance v0, Lcom/android/systemui/qs/tiles/NightDisplayTile$1;
+
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mContext:Landroid/content/Context;
+
+    iget-object v2, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
+
+    const-string v3, "accessibility_display_inversion_enabled"
+
+    invoke-direct {v0, p0, v1, v2, v3}, Lcom/android/systemui/qs/tiles/NightDisplayTile$1;-><init>(Lcom/android/systemui/qs/tiles/NightDisplayTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
+
+    iput-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mInversionSetting:Lcom/android/systemui/qs/SecureSetting;
+
+    new-instance v0, Lcom/android/systemui/qs/tiles/NightDisplayTile$2;
+
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mContext:Landroid/content/Context;
+
+    iget-object v2, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
+
+    const-string v3, "accessibility_display_daltonizer_enabled"
+
+    invoke-direct {v0, p0, v1, v2, v3}, Lcom/android/systemui/qs/tiles/NightDisplayTile$2;-><init>(Lcom/android/systemui/qs/tiles/NightDisplayTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
+
+    iput-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mDaltonizerSetting:Lcom/android/systemui/qs/SecureSetting;
 
     return-void
 .end method
@@ -64,7 +92,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f110508
+    const v1, 0x7f11050b
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -75,7 +103,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f110507
+    const v1, 0x7f11050a
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -93,7 +121,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f110518
+    const v1, 0x7f11051b
 
     goto :goto_1
 
@@ -104,7 +132,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f110506
+    const v1, 0x7f110509
 
     :goto_1
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mContext:Landroid/content/Context;
@@ -152,6 +180,57 @@
     .end packed-switch
 .end method
 
+.method private isColorCalibrationAvailable()Z
+    .locals 4
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mInversionSetting:Lcom/android/systemui/qs/SecureSetting;
+
+    invoke-virtual {v0}, Lcom/android/systemui/qs/SecureSetting;->getValue()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_0
+
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_0
+    move v0, v1
+
+    :goto_0
+    iget-object v3, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mDaltonizerSetting:Lcom/android/systemui/qs/SecureSetting;
+
+    invoke-virtual {v3}, Lcom/android/systemui/qs/SecureSetting;->getValue()I
+
+    move-result v3
+
+    if-ne v3, v2, :cond_1
+
+    move v3, v2
+
+    goto :goto_1
+
+    :cond_1
+    move v3, v1
+
+    :goto_1
+    if-nez v0, :cond_2
+
+    if-nez v3, :cond_2
+
+    move v1, v2
+
+    nop
+
+    :cond_2
+    return v1
+.end method
+
 
 # virtual methods
 .method public getLongClickIntent()Landroid/content/Intent;
@@ -179,7 +258,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f110451
+    const v1, 0x7f110452
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -190,9 +269,16 @@
 
 .method protected handleClick()V
     .locals 3
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
+    invoke-direct {p0}, Lcom/android/systemui/qs/tiles/NightDisplayTile;->isColorCalibrationAvailable()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
     const-string v0, "1"
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mContext:Landroid/content/Context;
@@ -213,7 +299,7 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mController:Lcom/android/internal/app/ColorDisplayController;
 
@@ -223,7 +309,7 @@
 
     const/4 v2, -0x1
 
-    if-ne v0, v2, :cond_0
+    if-ne v0, v2, :cond_1
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mController:Lcom/android/internal/app/ColorDisplayController;
 
@@ -235,7 +321,7 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_0
+    :cond_1
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mState:Lcom/android/systemui/plugins/qs/QSTile$State;
 
     check-cast v0, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;
@@ -251,10 +337,35 @@
     return-void
 .end method
 
+.method protected handleLongClick()V
+    .locals 1
+
+    invoke-direct {p0}, Lcom/android/systemui/qs/tiles/NightDisplayTile;->isColorCalibrationAvailable()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-super {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->handleLongClick()V
+
+    return-void
+.end method
+
 .method protected handleSetListening(Z)V
     .locals 2
 
     iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mIsListening:Z
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mInversionSetting:Lcom/android/systemui/qs/SecureSetting;
+
+    invoke-virtual {v0, p1}, Lcom/android/systemui/qs/SecureSetting;->setListening(Z)V
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mDaltonizerSetting:Lcom/android/systemui/qs/SecureSetting;
+
+    invoke-virtual {v0, p1}, Lcom/android/systemui/qs/SecureSetting;->setListening(Z)V
 
     if-eqz p1, :cond_0
 
@@ -315,7 +426,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f110451
+    const v1, 0x7f110452
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -325,7 +436,7 @@
 
     iput-object v0, p1, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->label:Ljava/lang/CharSequence;
 
-    const v0, 0x7f08031a
+    const v0, 0x7f080325
 
     invoke-static {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -341,17 +452,31 @@
 
     iput-object v0, p1, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->expandedAccessibilityClassName:Ljava/lang/String;
 
+    invoke-direct {p0}, Lcom/android/systemui/qs/tiles/NightDisplayTile;->isColorCalibrationAvailable()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    const/4 v0, 0x0
+
+    iput v0, p1, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->state:I
+
+    goto :goto_0
+
+    :cond_1
     iget-boolean v0, p1, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->value:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     const/4 v2, 0x2
 
     nop
 
-    :cond_1
+    :cond_2
     iput v2, p1, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->state:I
 
+    :goto_0
     iget-boolean v0, p1, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->value:Z
 
     invoke-direct {p0, v0}, Lcom/android/systemui/qs/tiles/NightDisplayTile;->getSecondaryLabel(Z)Ljava/lang/String;
@@ -404,6 +529,14 @@
     invoke-virtual {v0, p0}, Lcom/android/internal/app/ColorDisplayController;->setListener(Lcom/android/internal/app/ColorDisplayController$Callback;)V
 
     :cond_1
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mInversionSetting:Lcom/android/systemui/qs/SecureSetting;
+
+    invoke-virtual {v0, p1}, Lcom/android/systemui/qs/SecureSetting;->setUserId(I)V
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mDaltonizerSetting:Lcom/android/systemui/qs/SecureSetting;
+
+    invoke-virtual {v0, p1}, Lcom/android/systemui/qs/SecureSetting;->setUserId(I)V
+
     invoke-super {p0, p1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->handleUserSwitch(I)V
 
     return-void

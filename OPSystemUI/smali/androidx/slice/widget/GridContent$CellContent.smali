@@ -84,7 +84,7 @@
 
     const-string v1, "keywords"
 
-    const-string v4, "ttl"
+    const-string/jumbo v4, "ttl"
 
     const-string v5, "last_updated"
 
@@ -112,7 +112,7 @@
     :goto_1
     if-nez v1, :cond_3
 
-    const-string v4, "text"
+    const-string/jumbo v4, "text"
 
     invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -470,7 +470,7 @@
 
     if-ge v8, v9, :cond_7
 
-    const-string v8, "text"
+    const-string/jumbo v8, "text"
 
     invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -503,7 +503,7 @@
 
     iget-object v8, p0, Landroidx/slice/widget/GridContent$CellContent;->mTitleItem:Landroidx/slice/SliceItem;
 
-    const-string v9, "title"
+    const-string/jumbo v9, "title"
 
     invoke-virtual {v8, v9}, Landroidx/slice/SliceItem;->hasHint(Ljava/lang/String;)Z
 
@@ -511,7 +511,7 @@
 
     if-nez v8, :cond_a
 
-    const-string v8, "title"
+    const-string/jumbo v8, "title"
 
     invoke-virtual {v6, v8}, Landroidx/slice/SliceItem;->hasHint(Ljava/lang/String;)Z
 

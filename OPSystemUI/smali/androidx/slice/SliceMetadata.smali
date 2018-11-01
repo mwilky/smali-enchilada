@@ -43,7 +43,7 @@
 
     const-string v0, "long"
 
-    const-string v1, "ttl"
+    const-string/jumbo v1, "ttl"
 
     const/4 v2, 0x0
 

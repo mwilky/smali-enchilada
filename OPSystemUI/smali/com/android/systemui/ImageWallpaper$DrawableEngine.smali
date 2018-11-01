@@ -1546,7 +1546,7 @@
 
     const-string v0, "ImageWallpaper"
 
-    const-string v1, "trimMemory"
+    const-string/jumbo v1, "trimMemory"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 

@@ -1124,6 +1124,8 @@
     <string name="qs_rearrange">त्वरित सेटिंग को पुन: व्यवस्थित करें</string>
     <string name="qs_status_phone_muted">फ़ोन म्यूट किया गया है</string>
     <string name="qs_status_phone_vibrate">फ़ोन के वाइब्रेट होने की सेटिंग चालू है</string>
+    <string name="quick_launch_exit">बाहर निकलें</string>
+    <string name="quick_launch_exit_hint">बाहर निकलने के लिए अंगुलि उठाएँ</string>
     <string name="quick_settings">तेज़ सेटिंग</string>
     <string name="quick_settings_bluetooth_detail_empty_text">कोई भी युग्मित डिवाइस उपलब्ध नहीं</string>
     <string name="quick_settings_bluetooth_label">ब्लूटूथ</string>
@@ -1321,10 +1323,13 @@
     <string name="sd_card_unmount_action">अनमाउंट करें</string>
     <string name="search_menu_title">सर्च</string>
     <string name="select_application">"ऐप्स  को चुनें"</string>
+    <string name="select_day">महीना व दिन चुनें</string>
+    <string name="select_hours">घंटे चुनें</string>
     <string name="select_logd_size_dialog_title">प्रति लॉग बफ़र लॉगर आकार चुनें</string>
     <string name="select_logd_size_title">लॉगर बफ़र आकार</string>
     <string name="select_logpersist_dialog_title">डिवाइस पर सतत रूप से संग्रहित करने के लिए लॉग बफ़र चुनें</string>
     <string name="select_logpersist_title">डिवाइस पर लॉगर डेटा लगातार इकट्ठा करें</string>
+    <string name="select_minutes">मिनट चुनें</string>
     <string name="select_private_dns_configuration_dialog_title">निजी डीएनएस मोड चुनें</string>
     <string name="select_private_dns_configuration_title">निजी डीएनएस</string>
     <string name="select_usb_configuration_dialog_title">USB कॉन्फ़िगरेशन चुनें</string>
@@ -1332,6 +1337,7 @@
     <string name="select_webview_provider_dialog_title">वेबव्यू सेट करें</string>
     <string name="select_webview_provider_title">वेबव्यू लागू करें</string>
     <string name="select_webview_provider_toast_text">यह चयन अब मान्य नहीं है. पुनः प्रयास करें.</string>
+    <string name="select_year">साल चुनें</string>
     <string name="show_all_anrs">बैकग्राउंड के एएनआर दिखाएं</string>
     <string name="show_all_anrs_summary">बैकग्राउंड में चलने वाले ऐप्लिकेशन के लिए, यह ऐप्लिकेशन नहीं चल रहा मैसेज दिखाएं</string>
     <string name="show_battery_percentage">एम्बेड किया गया बैटरी प्रतिशत दिखाएं</string>
@@ -1427,6 +1433,11 @@
 \u0009• उच्च तापमान में फ़ोन का उपयोग करते हैं"</string>
     <string name="thermal_shutdown_message">आपका फ़ोन अब सामान्य रूप से चल रहा है</string>
     <string name="thermal_shutdown_title">गर्म होने के कारण फ़ोन बंद हुआ</string>
+    <string name="time_picker_header_text">समय सेट करें</string>
+    <string name="time_picker_hour_label">घंटा</string>
+    <string name="time_picker_input_error">कोई मान्य समय दर्ज करें</string>
+    <string name="time_picker_minute_label">मिनट</string>
+    <string name="time_picker_prompt_label">टाइम टाइप करें</string>
     <string name="time_unit_just_now">अभी-अभी</string>
     <string name="title_convert_fbe">"फ़ाइल के आधार पर सुरक्षित करने के तरीके में बदल  कर रहा है"</string>
     <string name="title_usb_accessory">USB सहायक साधन</string>
@@ -1550,6 +1561,7 @@
     <string name="wait_for_debugger">डीबगर का इंतज़ार करें</string>
     <string name="wait_for_debugger_summary">डीबग किया गया ऐप्लिकेशन प्रोसेस के पहले डीबगर के अटैच होने का इंतज़ार करता है</string>
     <string name="wifi_ap_unable_to_handle_new_sta">एक्सेस प्वाइंट फ़िलहाल भरा हुआ है</string>
+    <string name="wifi_auth_password_wrong">पासवर्ड शायद ग़लत है</string>
     <string name="wifi_cant_connect">कनेक्ट नहीं हो पा रहा है</string>
     <string name="wifi_cant_connect_to_ap">"'%1$s' से कनेक्ट नहीं हो पा रहा है"</string>
     <string name="wifi_check_password_try_again">पासवर्ड जाँचें और दोबारा कोशिश करें</string>

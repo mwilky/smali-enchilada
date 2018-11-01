@@ -335,12 +335,12 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f080587
+    const v0, 0x7f080596
 
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f08082a
+    const v0, 0x7f080839
 
     :goto_0
     return v0
@@ -875,7 +875,7 @@
 
     invoke-direct {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;-><init>(Ljava/lang/String;)V
 
-    const v1, 0x7f080822
+    const v1, 0x7f080831
 
     iput v1, v0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;->resId:I
 
@@ -889,7 +889,7 @@
 
     invoke-direct {v2, v3}, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;-><init>(Ljava/lang/String;)V
 
-    const v3, 0x7f080826
+    const v3, 0x7f080835
 
     iput v3, v2, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;->resId:I
 

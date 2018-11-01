@@ -167,7 +167,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105d6
+    const v2, 0x7f1105d9
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -183,7 +183,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105d7
+    const v2, 0x7f1105da
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -199,7 +199,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105d8
+    const v2, 0x7f1105db
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -215,7 +215,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105d9
+    const v2, 0x7f1105dc
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -231,7 +231,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105d5
+    const v2, 0x7f1105d8
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -247,7 +247,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105da
+    const v2, 0x7f1105dd
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -263,7 +263,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105db
+    const v2, 0x7f1105de
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -279,7 +279,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105dc
+    const v2, 0x7f1105df
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -295,7 +295,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105dd
+    const v2, 0x7f1105e0
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -311,7 +311,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105de
+    const v2, 0x7f1105e1
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -327,7 +327,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105df
+    const v2, 0x7f1105e2
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1665,7 +1665,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "updateActiveStreamW "
+    const-string/jumbo v2, "updateActiveStreamW "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2040,7 +2040,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "updateStreamRoutedToBluetoothW stream="
+    const-string/jumbo v3, "updateStreamRoutedToBluetoothW stream="
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

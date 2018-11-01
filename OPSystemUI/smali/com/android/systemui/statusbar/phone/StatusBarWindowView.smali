@@ -436,7 +436,7 @@
 .end method
 
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-    .locals 6
+    .locals 8
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mService:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -446,60 +446,43 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_0
-
-    return v1
-
-    :cond_0
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-
-    move-result v0
-
     if-eqz v0, :cond_1
 
+    sget-boolean v2, Lcom/android/systemui/util/OPUtils;->DEBUG_ONEPLUS:Z
+
+    if-eqz v2, :cond_0
+
+    const-string v2, "StatusBarWindowView"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "intercept MediaKey:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
     return v1
 
     :cond_1
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
-    move-result v0
+    move-result v2
 
-    const/4 v2, 0x0
+    if-eqz v2, :cond_3
 
-    if-nez v0, :cond_2
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_2
-    move v0, v2
-
-    :goto_0
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
-
-    move-result v3
-
-    const/4 v4, 0x4
-
-    if-eq v3, v4, :cond_7
-
-    const/16 v4, 0x3e
-
-    if-eq v3, v4, :cond_5
-
-    const/16 v4, 0x52
-
-    if-eq v3, v4, :cond_4
-
-    packed-switch v3, :pswitch_data_0
-
-    goto :goto_1
-
-    :pswitch_0
     sget-boolean v3, Lcom/android/systemui/util/OPUtils;->DEBUG_ONEPLUS:Z
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_2
 
     const-string v3, "StatusBarWindowView"
 
@@ -507,27 +490,11 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, " dispatchKeyEvent getKeyCode:"
+    const-string v5, "intercept KeyEvent:"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
-
-    move-result v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v5, " isDozing:"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mService:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-virtual {v5}, Lcom/android/systemui/statusbar/phone/StatusBar;->isDozing()Z
-
-    move-result v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -535,29 +502,108 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_3
-    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mService:Lcom/android/systemui/statusbar/phone/StatusBar;
+    :cond_2
+    return v1
 
-    invoke-virtual {v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->isDozing()Z
+    :cond_3
+    invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v3
 
-    if-eqz v3, :cond_6
+    const/4 v4, 0x0
 
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mContext:Landroid/content/Context;
+    if-nez v3, :cond_4
 
-    invoke-static {v2}, Landroid/media/session/MediaSessionLegacyHelper;->getHelper(Landroid/content/Context;)Landroid/media/session/MediaSessionLegacyHelper;
+    move v3, v1
 
-    move-result-object v2
+    goto :goto_0
 
-    const/high16 v3, -0x80000000
+    :cond_4
+    move v3, v4
 
-    invoke-virtual {v2, p1, v3, v1}, Landroid/media/session/MediaSessionLegacyHelper;->sendVolumeKeyEvent(Landroid/view/KeyEvent;IZ)V
+    :goto_0
+    invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
+
+    move-result v5
+
+    const/4 v6, 0x4
+
+    if-eq v5, v6, :cond_9
+
+    const/16 v6, 0x3e
+
+    if-eq v5, v6, :cond_7
+
+    const/16 v6, 0x52
+
+    if-eq v5, v6, :cond_6
+
+    packed-switch v5, :pswitch_data_0
+
+    goto :goto_1
+
+    :pswitch_0
+    sget-boolean v5, Lcom/android/systemui/util/OPUtils;->DEBUG_ONEPLUS:Z
+
+    if-eqz v5, :cond_5
+
+    const-string v5, "StatusBarWindowView"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, " dispatchKeyEvent getKeyCode:"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
+
+    move-result v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v7, " isDozing:"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mService:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-virtual {v7}, Lcom/android/systemui/statusbar/phone/StatusBar;->isDozing()Z
+
+    move-result v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_5
+    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mService:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-virtual {v5}, Lcom/android/systemui/statusbar/phone/StatusBar;->isDozing()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_8
+
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mContext:Landroid/content/Context;
+
+    invoke-static {v4}, Landroid/media/session/MediaSessionLegacyHelper;->getHelper(Landroid/content/Context;)Landroid/media/session/MediaSessionLegacyHelper;
+
+    move-result-object v4
+
+    const/high16 v5, -0x80000000
+
+    invoke-virtual {v4, p1, v5, v1}, Landroid/media/session/MediaSessionLegacyHelper;->sendVolumeKeyEvent(Landroid/view/KeyEvent;IZ)V
 
     return v1
 
-    :cond_4
-    if-nez v0, :cond_5
+    :cond_6
+    if-nez v3, :cond_7
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mService:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -567,8 +613,8 @@
 
     return v1
 
-    :cond_5
-    if-nez v0, :cond_6
+    :cond_7
+    if-nez v3, :cond_8
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mService:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -578,18 +624,18 @@
 
     return v1
 
-    :cond_6
-    :goto_1
-    return v2
-
-    :cond_7
-    if-nez v0, :cond_8
-
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mService:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->onBackPressed()Z
-
     :cond_8
+    :goto_1
+    return v4
+
+    :cond_9
+    if-nez v3, :cond_a
+
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mService:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-virtual {v4}, Lcom/android/systemui/statusbar/phone/StatusBar;->onBackPressed()Z
+
+    :cond_a
     return v1
 
     nop
@@ -1240,7 +1286,7 @@
 
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    const v0, 0x7f0a029d
+    const v0, 0x7f0a02a1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -1250,7 +1296,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mStackScrollLayout:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
-    const v0, 0x7f0a0297
+    const v0, 0x7f0a029b
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 

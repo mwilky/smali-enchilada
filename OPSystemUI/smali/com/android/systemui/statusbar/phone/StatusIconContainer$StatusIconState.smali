@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public applyToView(Landroid/view/View;)V
-    .locals 5
+    .locals 4
 
     instance-of v0, p1, Lcom/android/systemui/statusbar/StatusIconDisplayable;
 
@@ -69,26 +69,8 @@
 
     const/4 v2, 0x1
 
-    goto :goto_0
-
     :cond_1
-    invoke-interface {v0}, Lcom/android/systemui/statusbar/StatusIconDisplayable;->getVisibleState()I
-
-    move-result v3
-
-    iget v4, p0, Lcom/android/systemui/statusbar/phone/StatusIconContainer$StatusIconState;->visibleState:I
-
-    if-eq v3, v4, :cond_2
-
-    invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusIconContainer;->access$100()Lcom/android/systemui/statusbar/stack/AnimationProperties;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    :cond_2
-    :goto_0
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_2
 
     invoke-virtual {p0, p1, v1}, Lcom/android/systemui/statusbar/phone/StatusIconContainer$StatusIconState;->animateTo(Landroid/view/View;Lcom/android/systemui/statusbar/stack/AnimationProperties;)V
 
@@ -96,16 +78,16 @@
 
     invoke-interface {v0, v3}, Lcom/android/systemui/statusbar/StatusIconDisplayable;->setVisibleState(I)V
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_3
+    :cond_2
     iget v3, p0, Lcom/android/systemui/statusbar/phone/StatusIconContainer$StatusIconState;->visibleState:I
 
     invoke-interface {v0, v3}, Lcom/android/systemui/statusbar/StatusIconDisplayable;->setVisibleState(I)V
 
     invoke-super {p0, p1}, Lcom/android/systemui/statusbar/stack/ViewState;->applyToView(Landroid/view/View;)V
 
-    :goto_1
+    :goto_0
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/android/systemui/statusbar/phone/StatusIconContainer$StatusIconState;->justAdded:Z

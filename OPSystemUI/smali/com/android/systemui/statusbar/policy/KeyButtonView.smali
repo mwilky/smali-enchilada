@@ -308,11 +308,11 @@
 
     if-eq v0, v1, :cond_2
 
-    const v1, 0x7f0a018e
+    const v1, 0x7f0a0190
 
     if-eq v0, v1, :cond_1
 
-    const v1, 0x7f0a0338
+    const v1, 0x7f0a033c
 
     if-eq v0, v1, :cond_0
 

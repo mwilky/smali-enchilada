@@ -985,7 +985,7 @@
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "the total transformation distance is 0\n StartType: "
+    const-string/jumbo v7, "the total transformation distance is 0\n StartType: "
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3790,7 +3790,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070318
+    const v1, 0x7f070321
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

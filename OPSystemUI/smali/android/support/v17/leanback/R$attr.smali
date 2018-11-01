@@ -21,6 +21,6 @@
 
 .field public static final imageCardViewStyle:I = 0x7f0401f6
 
-.field public static final rowHeaderStyle:I = 0x7f04037e
+.field public static final rowHeaderStyle:I = 0x7f04038b
 
-.field public static final searchOrbViewStyle:I = 0x7f040393
+.field public static final searchOrbViewStyle:I = 0x7f0403a0

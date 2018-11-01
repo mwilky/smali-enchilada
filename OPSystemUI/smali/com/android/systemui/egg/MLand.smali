@@ -265,36 +265,36 @@
 
     :array_5
     .array-data 4
-        0x7f080454
-        0x7f080455
+        0x7f080463
+        0x7f080464
     .end array-data
 
     :array_6
     .array-data 4
-        0x7f080456
-        0x7f080457
+        0x7f080465
+        0x7f080466
     .end array-data
 
     :array_7
     .array-data 4
-        0x7f080459
-        0x7f08045a
-        0x7f08045b
-        0x7f08045c
+        0x7f080468
+        0x7f080469
+        0x7f08046a
+        0x7f08046b
     .end array-data
 
     :array_8
     .array-data 4
-        0x7f080170
-        0x7f080171
         0x7f080172
+        0x7f080173
+        0x7f080174
     .end array-data
 
     :array_9
     .array-data 4
-        0x7f08045e
-        0x7f08045f
-        0x7f080460
+        0x7f08046d
+        0x7f08046e
+        0x7f08046f
     .end array-data
 .end method
 
@@ -2008,7 +2008,7 @@
 .method private unpoke(I)V
     .locals 4
 
-    const-string v0, "unboost(%d)"
+    const-string/jumbo v0, "unboost(%d)"
 
     const/4 v1, 0x1
 
@@ -2617,7 +2617,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 7
 
-    const-string v0, "touch: %s"
+    const-string/jumbo v0, "touch: %s"
 
     const/4 v1, 0x1
 
@@ -2691,6 +2691,8 @@
 
     return v1
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_2
@@ -2706,7 +2708,7 @@
 .method public onTrackballEvent(Landroid/view/MotionEvent;)Z
     .locals 4
 
-    const-string v0, "trackball: %s"
+    const-string/jumbo v0, "trackball: %s"
 
     const/4 v1, 0x1
 
@@ -2735,6 +2737,8 @@
     invoke-direct {p0, v3}, Lcom/android/systemui/egg/MLand;->poke(I)V
 
     return v1
+
+    nop
 
     nop
 
@@ -2923,7 +2927,7 @@
     move v4, v2
 
     :goto_3
-    const v11, 0x7f07061b
+    const v11, 0x7f070629
 
     if-eqz v4, :cond_7
 
@@ -2935,7 +2939,7 @@
 
     invoke-direct {v12, v0, v13}, Lcom/android/systemui/egg/MLand$Star;-><init>(Lcom/android/systemui/egg/MLand;Landroid/content/Context;)V
 
-    const v13, 0x7f08083d
+    const v13, 0x7f08084c
 
     invoke-virtual {v12, v13}, Lcom/android/systemui/egg/MLand$Star;->setBackgroundResource(I)V
 
@@ -3082,7 +3086,7 @@
 
     invoke-direct {v5, v0, v14}, Lcom/android/systemui/egg/MLand$Star;-><init>(Lcom/android/systemui/egg/MLand;Landroid/content/Context;)V
 
-    const v14, 0x7f08045d
+    const v14, 0x7f08046c
 
     invoke-virtual {v5, v14}, Lcom/android/systemui/egg/MLand$Star;->setBackgroundResource(I)V
 
@@ -3663,7 +3667,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v4, 0x7f0a02fa
+    const v4, 0x7f0a02fe
 
     invoke-virtual {v0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3673,7 +3677,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v3, 0x7f0a02fb
+    const v3, 0x7f0a02ff
 
     invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3683,7 +3687,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v2, 0x7f0a02f9
+    const v2, 0x7f0a02fd
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3714,7 +3718,7 @@
 
     if-eqz p1, :cond_0
 
-    const-string v3, "true"
+    const-string/jumbo v3, "true"
 
     goto :goto_0
 
@@ -3738,7 +3742,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v2, 0x7f0a02f9
+    const v2, 0x7f0a02fd
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3748,7 +3752,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v2, 0x7f0a02fa
+    const v2, 0x7f0a02fe
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3756,7 +3760,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v3, 0x7f0a02fb
+    const v3, 0x7f0a02ff
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

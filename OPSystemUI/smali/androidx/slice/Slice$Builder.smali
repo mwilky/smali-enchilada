@@ -537,7 +537,7 @@
 
     new-instance v1, Landroidx/slice/SliceItem;
 
-    const-string v2, "text"
+    const-string/jumbo v2, "text"
 
     invoke-direct {v1, p1, v2, p2, p3}, Landroidx/slice/SliceItem;-><init>(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
 

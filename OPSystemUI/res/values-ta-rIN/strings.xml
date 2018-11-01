@@ -74,6 +74,8 @@
     <string name="prevent_view_top_tag_numbuer1">"1. "</string>
     <string name="prevent_view_top_tag_numbuer2">"2. "</string>
     <string name="qs_edit">திருத்துக</string>
+    <string name="quick_launch_exit">வெளியேறுக</string>
+    <string name="quick_launch_exit_hint">வெளியேறுவதற்கு திரையிலிருந்து விரலை எடுத்துவிடவும்</string>
     <string name="quick_settings_buttons_label">பூட்டு பொத்தான்கள்</string>
     <string name="quick_settings_data_switch_label">தரவு அட்டையை மாற்றுக</string>
     <string name="quick_settings_data_switch_toast_0">தற்சமயம் SIM அட்டை ஏதும் செருகப்படவில்லை</string>
@@ -115,6 +117,15 @@
     <string name="remove_oneplus_laboratory_from_settings_prompt">அமைப்புகளிலிருந்து OnePlus ஆய்வகத்தை அகற்றி, அதன் அம்சங்கள் அனைத்தையும் உபயோகிப்பதை நிறுத்தவா?\"</string>
     <string name="screenshot_delete_confirmation">ஸ்கிரீன்ஷாட் நீக்கப்பட்டது</string>
     <string name="sd_card_unmount_action">அன்மவுண்ட் செய்க</string>
+    <string name="select_day">மாதம் மற்றும் நாளைத் தேர்வுசெய்யவும்</string>
+    <string name="select_hours">மணிநேரத்தை தேர்வுசெய்யவும்</string>
+    <string name="select_minutes">நிமிடத்தைத் தேர்வுசெய்யவும்</string>
+    <string name="select_year">வருடத்தைத் தேர்வுசெய்யவும்</string>
+    <string name="time_picker_header_text">நேரத்தை அமை</string>
+    <string name="time_picker_hour_label">மணிநேரம்</string>
+    <string name="time_picker_input_error">சரியான நேரத்தை உள்ளிடவும்</string>
+    <string name="time_picker_minute_label">நிமிடம்</string>
+    <string name="time_picker_prompt_label">நேரத்திற்குள் தட்டச்சு செய்யவும்</string>
     <string name="usb_storage_badremoval_notification_message" />
     <string name="usb_storage_badremoval_notification_title">USB சேமிப்பகம் அகற்றப்பட்டது</string>
     <string name="usb_storage_checking_notification_title">USB சேமிப்பகத்தைத் தயார்செய்கிறது</string>

@@ -584,7 +584,7 @@
 
     nop
 
-    const v0, 0x7f0a01d6
+    const v0, 0x7f0a01d9
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardHostView;->findViewById(I)Landroid/view/View;
 
@@ -618,7 +618,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardSecurityContainer;->showPrimarySecurityScreen(Z)V
 
-    const v0, 0x7f0a01d7
+    const v0, 0x7f0a01da
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardHostView;->findViewById(I)Landroid/view/View;
 

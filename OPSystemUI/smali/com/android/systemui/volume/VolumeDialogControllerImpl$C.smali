@@ -593,6 +593,7 @@
 .method public onStateChanged(Lcom/android/systemui/plugins/VolumeDialogController$State;)V
     .locals 7
 
+    :try_start_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -640,7 +641,17 @@
 
     :cond_0
     invoke-static {v0, v1, v2}, Lcom/android/systemui/volume/Events;->writeState(JLcom/android/systemui/plugins/VolumeDialogController$State;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    goto :goto_1
+
+    :catch_0
+    move-exception v0
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    :goto_1
     return-void
 .end method
 

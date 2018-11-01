@@ -303,17 +303,11 @@
 
     iput-object v0, v6, Lcom/android/systemui/statusbar/policy/MobileSignalController;->mMccmnc:Ljava/lang/String;
 
-    new-instance v0, Lcom/android/systemui/statusbar/policy/MobileSignalController$2;
-
-    invoke-direct {v0, v6}, Lcom/android/systemui/statusbar/policy/MobileSignalController$2;-><init>(Lcom/android/systemui/statusbar/policy/MobileSignalController;)V
-
-    iput-object v0, v6, Lcom/android/systemui/statusbar/policy/MobileSignalController;->mOPMoblileReceiver:Landroid/content/BroadcastReceiver;
-
     new-instance v0, Lcom/android/systemui/statusbar/policy/MobileSignalController$3;
 
     invoke-direct {v0, v6}, Lcom/android/systemui/statusbar/policy/MobileSignalController$3;-><init>(Lcom/android/systemui/statusbar/policy/MobileSignalController;)V
 
-    iput-object v0, v6, Lcom/android/systemui/statusbar/policy/MobileSignalController;->mHandler:Landroid/os/Handler;
+    iput-object v0, v6, Lcom/android/systemui/statusbar/policy/MobileSignalController;->mOPMoblileReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v0, Landroid/util/SparseArray;
 
@@ -347,7 +341,7 @@
 
     iput-object v4, v6, Lcom/android/systemui/statusbar/policy/MobileSignalController;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
 
-    const v4, 0x7f1105c3
+    const v4, 0x7f1105c6
 
     invoke-virtual {v6, v4}, Lcom/android/systemui/statusbar/policy/MobileSignalController;->getStringIfExists(I)Ljava/lang/String;
 
@@ -398,6 +392,12 @@
     move-result v4
 
     iput-boolean v4, v6, Lcom/android/systemui/statusbar/policy/MobileSignalController;->mHideNoInternetState:Z
+
+    new-instance v4, Lcom/android/systemui/statusbar/policy/MobileSignalController$1;
+
+    invoke-direct {v4, v6, v8}, Lcom/android/systemui/statusbar/policy/MobileSignalController$1;-><init>(Lcom/android/systemui/statusbar/policy/MobileSignalController;Landroid/os/Looper;)V
+
+    iput-object v4, v6, Lcom/android/systemui/statusbar/policy/MobileSignalController;->mHandler:Landroid/os/Handler;
 
     invoke-direct {v6}, Lcom/android/systemui/statusbar/policy/MobileSignalController;->customizeIconsMap()V
 
@@ -473,13 +473,13 @@
 
     invoke-direct {v6}, Lcom/android/systemui/statusbar/policy/MobileSignalController;->updateDataSim()V
 
-    new-instance v5, Lcom/android/systemui/statusbar/policy/MobileSignalController$1;
+    new-instance v5, Lcom/android/systemui/statusbar/policy/MobileSignalController$2;
 
     new-instance v9, Landroid/os/Handler;
 
     invoke-direct {v9, v8}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    invoke-direct {v5, v6, v9}, Lcom/android/systemui/statusbar/policy/MobileSignalController$1;-><init>(Lcom/android/systemui/statusbar/policy/MobileSignalController;Landroid/os/Handler;)V
+    invoke-direct {v5, v6, v9}, Lcom/android/systemui/statusbar/policy/MobileSignalController$2;-><init>(Lcom/android/systemui/statusbar/policy/MobileSignalController;Landroid/os/Handler;)V
 
     iput-object v5, v6, Lcom/android/systemui/statusbar/policy/MobileSignalController;->mObserver:Landroid/database/ContentObserver;
 
@@ -489,7 +489,7 @@
 .method static synthetic access$000(Lcom/android/systemui/statusbar/policy/MobileSignalController;)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/MobileSignalController;->updateTelephony()V
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/MobileSignalController;->recoverDataNetTypeStable()V
 
     return-void
 .end method
@@ -497,7 +497,7 @@
 .method static synthetic access$100(Lcom/android/systemui/statusbar/policy/MobileSignalController;)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/MobileSignalController;->customizeIconsMap()V
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/MobileSignalController;->updateTelephony()V
 
     return-void
 .end method
@@ -526,28 +526,28 @@
     return p1
 .end method
 
-.method static synthetic access$200(Lcom/android/systemui/statusbar/policy/MobileSignalController;Ljava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/policy/MobileSignalController;->onPhoneStateChange(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method static synthetic access$300(Lcom/android/systemui/statusbar/policy/MobileSignalController;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/MobileSignalController;->recoverDataNetTypeStable()V
-
-    return-void
-.end method
-
-.method static synthetic access$402(Lcom/android/systemui/statusbar/policy/MobileSignalController;J)J
+.method static synthetic access$202(Lcom/android/systemui/statusbar/policy/MobileSignalController;J)J
     .locals 0
 
     iput-wide p1, p0, Lcom/android/systemui/statusbar/policy/MobileSignalController;->mLastUpdateTime:J
 
     return-wide p1
+.end method
+
+.method static synthetic access$300(Lcom/android/systemui/statusbar/policy/MobileSignalController;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/MobileSignalController;->customizeIconsMap()V
+
+    return-void
+.end method
+
+.method static synthetic access$400(Lcom/android/systemui/statusbar/policy/MobileSignalController;Ljava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/policy/MobileSignalController;->onPhoneStateChange(Ljava/lang/String;)V
+
+    return-void
 .end method
 
 .method static synthetic access$500(Lcom/android/systemui/statusbar/policy/MobileSignalController;)[Z
@@ -2180,7 +2180,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/MobileSignalController;->mTag:Ljava/lang/String;
 
-    const-string v4, "updateTelephony: during fp authenticating, update later"
+    const-string/jumbo v4, "updateTelephony: during fp authenticating, update later"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -2201,7 +2201,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "updateTelephony: hasService="
+    const-string/jumbo v4, "updateTelephony: hasService="
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2337,7 +2337,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "updateTelephony CS:"
+    const-string/jumbo v5, "updateTelephony CS:"
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3160,7 +3160,7 @@
 
     if-eqz v0, :cond_6
 
-    const v0, 0x7f08080c
+    const v0, 0x7f08081b
 
     return v0
 
@@ -3913,7 +3913,7 @@
 .end method
 
 .method public registerListener()V
-    .locals 4
+    .locals 5
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MobileSignalController;->mPhone:Landroid/telephony/TelephonyManager;
 
@@ -3947,7 +3947,11 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MobileSignalController;->mOPMoblileReceiver:Landroid/content/BroadcastReceiver;
 
-    invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    const/4 v3, 0x0
+
+    iget-object v4, p0, Lcom/android/systemui/statusbar/policy/MobileSignalController;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {v1, v2, v0, v3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MobileSignalController;->mContext:Landroid/content/Context;
@@ -4263,7 +4267,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MobileSignalController;->mTag:Ljava/lang/String;
 
-    const-string v1, "unregisterListener mNetworkController is null"
+    const-string/jumbo v1, "unregisterListener mNetworkController is null"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -4387,7 +4391,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "updateNetworkName showSpn="
+    const-string/jumbo v2, "updateNetworkName showSpn="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

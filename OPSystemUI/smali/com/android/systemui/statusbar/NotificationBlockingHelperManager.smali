@@ -51,6 +51,22 @@
 
     invoke-static {v0, v1}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
 
+    iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationBlockingHelperManager;->mNonBlockablePkgs:Ljava/util/Set;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationBlockingHelperManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x502000f
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
+
     return-void
 .end method
 

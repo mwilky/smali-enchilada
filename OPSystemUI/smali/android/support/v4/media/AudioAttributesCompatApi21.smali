@@ -34,7 +34,7 @@
 
     const-class v1, Landroid/media/AudioAttributes;
 
-    const-string v4, "toLegacyStreamType"
+    const-string/jumbo v4, "toLegacyStreamType"
 
     new-array v5, v3, [Ljava/lang/Class;
 

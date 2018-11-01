@@ -301,8 +301,30 @@
     goto :goto_0
 
     :cond_0
+    sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
+
+    if-eqz v0, :cond_1
+
+    const-string v0, "BluetoothController"
+
+    const-string v1, "fireUpdateConntected+"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$H;->fireUpdateConntected()V
 
+    sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
+
+    if-eqz v0, :cond_2
+
+    const-string v0, "BluetoothController"
+
+    const-string v1, "fireUpdateConntected-"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_2
     :goto_0
     return-void
 

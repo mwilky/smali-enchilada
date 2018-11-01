@@ -1122,7 +1122,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a01c2
+    const v3, 0x7f0a01c5
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1136,7 +1136,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/KeyboardShortcuts;->mDialogCloseListener:Landroid/content/DialogInterface$OnClickListener;
 
-    const v4, 0x7f1104e7
+    const v4, 0x7f1104ea
 
     invoke-virtual {v0, v4, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -2275,7 +2275,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyboardShortcuts;->mSpecialCharacterDrawables:Landroid/util/SparseArray;
 
-    const v1, 0x7f08026f
+    const v1, 0x7f08027a
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2285,7 +2285,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyboardShortcuts;->mSpecialCharacterDrawables:Landroid/util/SparseArray;
 
-    const v1, 0x7f080271
+    const v1, 0x7f08027c
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2295,7 +2295,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyboardShortcuts;->mSpecialCharacterDrawables:Landroid/util/SparseArray;
 
-    const v1, 0x7f080275
+    const v1, 0x7f080280
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2305,7 +2305,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyboardShortcuts;->mSpecialCharacterDrawables:Landroid/util/SparseArray;
 
-    const v1, 0x7f080274
+    const v1, 0x7f08027f
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2315,7 +2315,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyboardShortcuts;->mSpecialCharacterDrawables:Landroid/util/SparseArray;
 
-    const v1, 0x7f080270
+    const v1, 0x7f08027b
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2325,7 +2325,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyboardShortcuts;->mSpecialCharacterDrawables:Landroid/util/SparseArray;
 
-    const v1, 0x7f080272
+    const v1, 0x7f08027d
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2335,7 +2335,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyboardShortcuts;->mModifierDrawables:Landroid/util/SparseArray;
 
-    const v1, 0x7f080273
+    const v1, 0x7f08027e
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2541,7 +2541,7 @@
 
     if-eqz v10, :cond_2
 
-    const v10, 0x7f0a01c3
+    const v10, 0x7f0a01c6
 
     invoke-virtual {v6, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2567,7 +2567,7 @@
     move-object/from16 v17, v11
 
     :goto_3
-    const v10, 0x7f0a01c5
+    const v10, 0x7f0a01c8
 
     invoke-virtual {v6, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2609,7 +2609,7 @@
     move-object/from16 v18, v4
 
     :goto_4
-    const v4, 0x7f0a01c4
+    const v4, 0x7f0a01c7
 
     invoke-virtual {v6, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

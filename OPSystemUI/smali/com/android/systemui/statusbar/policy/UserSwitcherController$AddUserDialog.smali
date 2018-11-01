@@ -29,11 +29,11 @@
 
     invoke-direct {p0, p2}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;-><init>(Landroid/content/Context;)V
 
-    const p1, 0x7f110659
+    const p1, 0x7f11065c
 
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/policy/UserSwitcherController$AddUserDialog;->setTitle(I)V
 
-    const p1, 0x7f110657
+    const p1, 0x7f11065a
 
     invoke-virtual {p2, p1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

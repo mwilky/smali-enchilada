@@ -20,6 +20,12 @@
 
 
 # virtual methods
+.method public onAuthenticateChanged(ZIII)V
+    .locals 0
+
+    return-void
+.end method
+
 .method public onBootCompleted()V
     .locals 0
 
@@ -235,6 +241,12 @@
     .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
+
+    return-void
+.end method
+
+.method public onScreenTurningOn()V
+    .locals 0
 
     return-void
 .end method

@@ -509,7 +509,7 @@
 
     const-string v6, "DumpTruck"
 
-    const-string v7, "unable to zip up heapdumps"
+    const-string/jumbo v7, "unable to zip up heapdumps"
 
     invoke-static {v6, v7, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 

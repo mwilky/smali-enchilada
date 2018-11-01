@@ -334,6 +334,14 @@
     return-object v0
 .end method
 
+.method protected getActiveSensorListImplByHandle(I)Ljava/lang/String;
+    .locals 1
+
+    const-string v0, ""
+
+    return-object v0
+.end method
+
 .method protected getFullDynamicSensorList()Ljava/util/List;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;

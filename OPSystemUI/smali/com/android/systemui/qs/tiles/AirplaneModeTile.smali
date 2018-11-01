@@ -31,7 +31,7 @@
 
     nop
 
-    const v0, 0x7f080379
+    const v0, 0x7f080386
 
     invoke-static {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -157,8 +157,6 @@
 
 .method public handleClick()V
     .locals 4
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mState:Lcom/android/systemui/plugins/qs/QSTile$State;
 
@@ -379,11 +377,27 @@
 .end method
 
 .method public newTileState()Lcom/android/systemui/plugins/qs/QSTile$BooleanState;
-    .locals 1
+    .locals 2
 
     new-instance v0, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;
 
     invoke-direct {v0}, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;-><init>()V
+
+    const-string v1, "qs_airplane_tile_active.json"
+
+    iput-object v1, v0, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->mLottieActiveAnim:Ljava/lang/CharSequence;
+
+    const-string v1, "qs_airplane_tile_inactive.json"
+
+    iput-object v1, v0, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->mLottieInactiveAnim:Ljava/lang/CharSequence;
+
+    const-string v1, "qs_airplane_tile_active_android.json"
+
+    iput-object v1, v0, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->mLottieActiveAnimAndroid:Ljava/lang/CharSequence;
+
+    const-string v1, "qs_airplane_tile_inactive_android.json"
+
+    iput-object v1, v0, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->mLottieInactiveAnimAndroid:Ljava/lang/CharSequence;
 
     return-object v0
 .end method

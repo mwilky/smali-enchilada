@@ -640,7 +640,7 @@
 
     iget-object v1, v0, Landroid/support/graphics/drawable/VectorDrawableCompat$VectorDrawableCompatState;->mVPathRenderer:Landroid/support/graphics/drawable/VectorDrawableCompat$VPathRenderer;
 
-    const-string v2, "tintMode"
+    const-string/jumbo v2, "tintMode"
 
     const/4 v3, 0x6
 

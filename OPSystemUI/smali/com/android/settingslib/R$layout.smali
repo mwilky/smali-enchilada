@@ -21,18 +21,18 @@
 
 .field public static final preference_two_target:I = 0x7f0d0170
 
-.field public static final restricted_icon:I = 0x7f0d01a8
+.field public static final restricted_icon:I = 0x7f0d01a9
 
-.field public static final restricted_switch_preference:I = 0x7f0d01a9
+.field public static final restricted_switch_preference:I = 0x7f0d01aa
 
-.field public static final restricted_switch_widget:I = 0x7f0d01aa
+.field public static final restricted_switch_widget:I = 0x7f0d01ab
 
-.field public static final settings_with_drawer:I = 0x7f0d01bd
+.field public static final settings_with_drawer:I = 0x7f0d01be
 
-.field public static final zen_mode_condition:I = 0x7f0d01e4
+.field public static final zen_mode_condition:I = 0x7f0d01e5
 
-.field public static final zen_mode_duration_dialog:I = 0x7f0d01e5
+.field public static final zen_mode_duration_dialog:I = 0x7f0d01e6
 
-.field public static final zen_mode_radio_button:I = 0x7f0d01e7
+.field public static final zen_mode_radio_button:I = 0x7f0d01e8
 
-.field public static final zen_mode_turn_on_dialog_container:I = 0x7f0d01e8
+.field public static final zen_mode_turn_on_dialog_container:I = 0x7f0d01e9

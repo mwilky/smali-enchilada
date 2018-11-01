@@ -170,7 +170,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d0199
+    const v3, 0x7f0d019a
 
     invoke-virtual {v2, v3, p0, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -201,12 +201,12 @@
 
     if-eqz v3, :cond_1
 
-    const v3, 0x7f0d019c
+    const v3, 0x7f0d019d
 
     goto :goto_0
 
     :cond_1
-    const v3, 0x7f0d019f
+    const v3, 0x7f0d01a0
 
     :goto_0
     invoke-virtual {v2, v3, p0, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
@@ -753,7 +753,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/recents/views/RecentsView;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f110540
+    const v3, 0x7f110543
 
     new-array v1, v1, [Ljava/lang/Object;
 
@@ -1969,7 +1969,7 @@
 .method public final onBusEvent(Lcom/android/systemui/recents/events/activity/ShowEmptyViewEvent;)V
     .locals 1
 
-    const v0, 0x7f11053b
+    const v0, 0x7f11053e
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/RecentsView;->showEmptyView(I)V
 
@@ -3060,7 +3060,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f040456
+    const v1, 0x7f040463
 
     invoke-static {v0, v1}, Lcom/android/settingslib/Utils;->getColorAttr(Landroid/content/Context;I)I
 
@@ -3313,7 +3313,7 @@
     goto :goto_0
 
     :cond_1
-    const v0, 0x7f11053b
+    const v0, 0x7f11053e
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/RecentsView;->showEmptyView(I)V
 

@@ -165,7 +165,7 @@
 
     if-nez v2, :cond_0
 
-    const v2, 0x7f0805dc
+    const v2, 0x7f0805eb
 
     aput v2, v0, v3
 
@@ -199,7 +199,7 @@
     goto :goto_0
 
     :cond_1
-    const v2, 0x7f0805d8
+    const v2, 0x7f0805e7
 
     aput v2, v0, v3
 
@@ -237,7 +237,7 @@
 
     if-lez v2, :cond_4
 
-    const v2, 0x7f080822
+    const v2, 0x7f080831
 
     aput v2, v0, v3
 
@@ -276,7 +276,7 @@
 
     if-lez v3, :cond_6
 
-    const v3, 0x7f080826
+    const v3, 0x7f080835
 
     aput v3, v0, v2
 
@@ -733,7 +733,7 @@
 
     if-eqz v3, :cond_2
 
-    const v3, 0x7f08064c
+    const v3, 0x7f08065b
 
     goto :goto_0
 
@@ -762,7 +762,7 @@
 
     if-eqz v4, :cond_4
 
-    const v4, 0x7f080839
+    const v4, 0x7f080848
 
     goto :goto_1
 
@@ -775,7 +775,7 @@
 
     if-eqz v4, :cond_5
 
-    const v4, 0x7f08083a
+    const v4, 0x7f080849
 
     goto :goto_1
 
@@ -804,7 +804,7 @@
 
     if-eqz v5, :cond_7
 
-    const v5, 0x7f080596
+    const v5, 0x7f0805a5
 
     goto :goto_2
 
@@ -817,7 +817,7 @@
 
     if-eqz v5, :cond_8
 
-    const v5, 0x7f080597
+    const v5, 0x7f0805a6
 
     goto :goto_2
 
@@ -846,7 +846,7 @@
 
     if-eqz v6, :cond_a
 
-    const v6, 0x7f0805de
+    const v6, 0x7f0805ed
 
     goto :goto_3
 
@@ -875,7 +875,7 @@
 
     if-eqz v7, :cond_c
 
-    const v7, 0x7f080583
+    const v7, 0x7f080592
 
     goto :goto_4
 
@@ -888,7 +888,7 @@
     invoke-direct {p0, v8, v1, v7}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
 
     :cond_d
-    const-string v7, "tty"
+    const-string/jumbo v7, "tty"
 
     invoke-virtual {p2, v7}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -904,7 +904,7 @@
 
     if-eqz v8, :cond_e
 
-    const v8, 0x7f080821
+    const v8, 0x7f080830
 
     goto :goto_5
 
@@ -912,7 +912,7 @@
     move v8, v2
 
     :goto_5
-    const-string v9, "tty"
+    const-string/jumbo v9, "tty"
 
     invoke-direct {p0, v9, v1, v8}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
 
@@ -991,7 +991,7 @@
 
     if-eqz v11, :cond_14
 
-    const v11, 0x7f080595
+    const v11, 0x7f0805a4
 
     goto :goto_8
 
@@ -1020,7 +1020,7 @@
 
     if-eqz v12, :cond_16
 
-    const v2, 0x7f0805dd
+    const v2, 0x7f0805ec
 
     nop
 
@@ -1247,7 +1247,7 @@
 
     const-string v0, "DemoStatusIcons"
 
-    const-string v1, "updateMobileState: "
+    const-string/jumbo v1, "updateMobileState: "
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -1300,7 +1300,7 @@
 
     const-string v0, "DemoStatusIcons"
 
-    const-string v1, "updateWifiState: "
+    const-string/jumbo v1, "updateWifiState: "
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -1319,10 +1319,4 @@
 
     :goto_0
     return-void
-.end method
-
-.method public updateViews(F)V
-	.locals 0
-	
-	return-void
 .end method

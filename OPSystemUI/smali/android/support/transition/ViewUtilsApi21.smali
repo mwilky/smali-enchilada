@@ -90,7 +90,7 @@
     :try_start_0
     const-class v1, Landroid/view/View;
 
-    const-string v2, "transformMatrixToGlobal"
+    const-string/jumbo v2, "transformMatrixToGlobal"
 
     new-array v3, v0, [Ljava/lang/Class;
 
@@ -142,7 +142,7 @@
     :try_start_0
     const-class v1, Landroid/view/View;
 
-    const-string v2, "transformMatrixToLocal"
+    const-string/jumbo v2, "transformMatrixToLocal"
 
     new-array v3, v0, [Ljava/lang/Class;
 

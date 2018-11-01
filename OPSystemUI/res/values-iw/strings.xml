@@ -1124,6 +1124,8 @@
     <string name="qs_rearrange">סידור מחדש של הגדרות מהירות</string>
     <string name="qs_status_phone_muted">הטלפון מושתק</string>
     <string name="qs_status_phone_vibrate">הטלפון במצב רטט</string>
+    <string name="quick_launch_exit">יציאה</string>
+    <string name="quick_launch_exit_hint">ליציאה, הורד את האצבע מהמסך</string>
     <string name="quick_settings">הגדרות מהירות</string>
     <string name="quick_settings_bluetooth_detail_empty_text">אין מכשירים מותאמים זמינים</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1321,10 +1323,13 @@
     <string name="sd_card_unmount_action">בטל עגינה</string>
     <string name="search_menu_title">חיפוש</string>
     <string name="select_application">בחר אפליקציה</string>
+    <string name="select_day">בחר חודש ויום</string>
+    <string name="select_hours">בחר שעות</string>
     <string name="select_logd_size_dialog_title">בחר גדלים של יוצר יומן לכל מאגר יומן</string>
     <string name="select_logd_size_title">גדלי מאגר של יומן רישום</string>
     <string name="select_logpersist_dialog_title">בחר מאגר נתונים זמני ליומן לשם אחסון מתמיד במכשיר</string>
     <string name="select_logpersist_title">אחסון מתמיד של נתוני תיעוד במכשיר</string>
+    <string name="select_minutes">בחר דקות</string>
     <string name="select_private_dns_configuration_dialog_title">‏צריך לבחור במצב DNS פרטי</string>
     <string name="select_private_dns_configuration_title">‏DNS פרטי</string>
     <string name="select_usb_configuration_dialog_title">‏בחר תצורת USB</string>
@@ -1332,6 +1337,7 @@
     <string name="select_webview_provider_dialog_title">‏הגדרת יישום WebView</string>
     <string name="select_webview_provider_title">‏יישום WebView</string>
     <string name="select_webview_provider_toast_text">אפשרות זו כבר אינה תקפה. נסה שוב.</string>
+    <string name="select_year">בחר שנה</string>
     <string name="show_all_anrs">‏הצגת מקרי ANR ברקע</string>
     <string name="show_all_anrs_summary">"הצגת תיבת דו-שיח של 'אפליקציה לא מגיבה' עבור אפליקציות שפועלות ברקע"</string>
     <string name="show_battery_percentage">הצג בשורת הסטטוס את אחוז עוצמת הסוללה</string>
@@ -1427,6 +1433,11 @@
 \u0009• תשתמש בטלפון בטמפרטורות גבוהות"</string>
     <string name="thermal_shutdown_message">הטלפון פועל כרגיל עכשיו</string>
     <string name="thermal_shutdown_title">הטלפון כבה עקב התחממות</string>
+    <string name="time_picker_header_text">הגדר זמן</string>
+    <string name="time_picker_hour_label">שעה</string>
+    <string name="time_picker_input_error">הזן שעה חוקית</string>
+    <string name="time_picker_minute_label">דקה</string>
+    <string name="time_picker_prompt_label">הקלד שעה</string>
     <string name="time_unit_just_now">הרגע</string>
     <string name="title_convert_fbe">המרה להצפנה מבוססת קבצים</string>
     <string name="title_usb_accessory">‏אביזר USB</string>
@@ -1550,6 +1561,7 @@
     <string name="wait_for_debugger">המתן למנקה באגים</string>
     <string name="wait_for_debugger_summary">אפליקציה שנוקו בה הבאגים ממתינה למנקה הבאגים לצירוף לפני ביצוע</string>
     <string name="wifi_ap_unable_to_handle_new_sta">נקודת הגישה מלאה באופן זמני</string>
+    <string name="wifi_auth_password_wrong">הסיסמה עשויה להיות שגויה</string>
     <string name="wifi_cant_connect">לא ניתן להתחבר</string>
     <string name="wifi_cant_connect_to_ap">לא ניתן להתחבר אל %1$s</string>
     <string name="wifi_check_password_try_again">בדוק את הסיסמה ונסה שוב</string>

@@ -75,15 +75,15 @@
 
     iput-object v0, p0, Lcom/android/systemui/shared/recents/LockStateController;->TAG:Ljava/lang/String;
 
-    const-string v0, "tasklockstate"
+    const-string/jumbo v0, "tasklockstate"
 
     iput-object v0, p0, Lcom/android/systemui/shared/recents/LockStateController;->TASK_LOCK_STATE:Ljava/lang/String;
 
-    const-string v0, "task_lock_list"
+    const-string/jumbo v0, "task_lock_list"
 
     iput-object v0, p0, Lcom/android/systemui/shared/recents/LockStateController;->TASK_LOCK_LIST_KEY:Ljava/lang/String;
 
-    const-string v0, "task_lock_list_with_userid"
+    const-string/jumbo v0, "task_lock_list_with_userid"
 
     iput-object v0, p0, Lcom/android/systemui/shared/recents/LockStateController;->TASK_LOCK_LIST_KEY_WITH_USERID:Ljava/lang/String;
 
@@ -388,7 +388,7 @@
 
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->clear()Landroid/content/SharedPreferences$Editor;
 
-    const-string v4, "task_lock_list_with_userid"
+    const-string/jumbo v4, "task_lock_list_with_userid"
 
     iget-object v5, p0, Lcom/android/systemui/shared/recents/LockStateController;->mLockedListWithUserId:Ljava/util/Set;
 
@@ -534,7 +534,7 @@
     :cond_2
     iget-object v1, p0, Lcom/android/systemui/shared/recents/LockStateController;->mContext:Landroid/content/Context;
 
-    const-string v2, "tasklockstate"
+    const-string/jumbo v2, "tasklockstate"
 
     const/4 v3, 0x0
 
@@ -546,7 +546,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/shared/recents/LockStateController;->mSp:Landroid/content/SharedPreferences;
 
-    const-string v2, "task_lock_list_with_userid"
+    const-string/jumbo v2, "task_lock_list_with_userid"
 
     new-instance v3, Ljava/util/HashSet;
 

@@ -411,6 +411,10 @@
 
     iget-object v0, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mProfileManager:Lcom/android/settingslib/bluetooth/LocalBluetoothProfileManager;
 
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mProfileManager:Lcom/android/settingslib/bluetooth/LocalBluetoothProfileManager;
+
     invoke-virtual {v0}, Lcom/android/settingslib/bluetooth/LocalBluetoothProfileManager;->getA2dpProfile()Lcom/android/settingslib/bluetooth/A2dpProfile;
 
     move-result-object v0
@@ -1025,21 +1029,6 @@
 .method public compareTo(Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)I
     .locals 6
 
-    iget-object v0, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mContext:Landroid/content/Context;
-
-    iget-object v1, p1, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mDevice:Landroid/bluetooth/BluetoothDevice;
-
-    invoke-static {v0, v1}, Lcom/android/settingslib/bluetooth/OpBluetoothHeadsetReflectUtil;->isOpBluetoothHeadset(Landroid/content/Context;Landroid/bluetooth/BluetoothDevice;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/16 v0, 0x7fff
-
-    return v0
-
-    :cond_0
     invoke-virtual {p1}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->isConnected()Z
 
     move-result v0
@@ -1050,11 +1039,11 @@
 
     sub-int/2addr v0, v1
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     return v0
 
-    :cond_1
+    :cond_0
     invoke-virtual {p1}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->getBondState()I
 
     move-result v1
@@ -1065,13 +1054,13 @@
 
     const/16 v4, 0xc
 
-    if-ne v1, v4, :cond_2
+    if-ne v1, v4, :cond_1
 
     move v1, v3
 
     goto :goto_0
 
-    :cond_2
+    :cond_1
     nop
 
     move v1, v2
@@ -1081,42 +1070,42 @@
 
     move-result v5
 
-    if-ne v5, v4, :cond_3
+    if-ne v5, v4, :cond_2
 
     move v2, v3
 
     nop
 
-    :cond_3
+    :cond_2
     sub-int/2addr v1, v2
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_3
 
     return v1
 
-    :cond_4
+    :cond_3
     iget-boolean v0, p1, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mJustDiscovered:Z
 
     iget-boolean v2, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mJustDiscovered:Z
 
     sub-int/2addr v0, v2
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     return v0
 
-    :cond_5
+    :cond_4
     iget-short v1, p1, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mRssi:S
 
     iget-short v2, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mRssi:S
 
     sub-int/2addr v1, v2
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_5
 
     return v1
 
-    :cond_6
+    :cond_5
     iget-object v0, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mName:Ljava/lang/String;
 
     iget-object v2, p1, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mName:Ljava/lang/String;
@@ -1940,9 +1929,12 @@
     return-void
 .end method
 
-.method onProfileStateChanged(Lcom/android/settingslib/bluetooth/LocalBluetoothProfile;I)V
+.method declared-synchronized onProfileStateChanged(Lcom/android/settingslib/bluetooth/LocalBluetoothProfile;I)V
     .locals 3
 
+    monitor-enter p0
+
+    :try_start_0
     const-string v0, "CachedBluetoothDevice"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1982,10 +1974,15 @@
     const-string v1, " BT Turninig Off...Profile conn state change ignored..."
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
 
     return-void
 
     :cond_0
+    :try_start_1
     iget-object v0, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mProfileConnectionState:Ljava/util/HashMap;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2020,6 +2017,12 @@
     iget-object v0, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mRemovedProfiles:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+
+    const-string v0, "CachedBluetoothDevice"
+
+    const-string v2, "Add profile"
+
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v0, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mProfiles:Ljava/util/List;
 
@@ -2102,8 +2105,19 @@
     :cond_4
     :goto_0
     invoke-direct {p0}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->fetchActiveDevices()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
 
     return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
 .end method
 
 .method onUuidChanged()V

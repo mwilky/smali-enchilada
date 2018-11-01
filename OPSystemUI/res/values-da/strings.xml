@@ -1124,6 +1124,8 @@ Du har også forbindelse til et VPN, som kan overvåge din netværksaktivitet."<
     <string name="qs_rearrange">Omarranger Hurtige indstillinger</string>
     <string name="qs_status_phone_muted">Telefonen er på lydløs</string>
     <string name="qs_status_phone_vibrate">Telefonen er i vibrationstilstand</string>
+    <string name="quick_launch_exit">Afslut</string>
+    <string name="quick_launch_exit_hint">Løft fingeren fra skærmen for at afslutte</string>
     <string name="quick_settings">Hurtige indstillinger</string>
     <string name="quick_settings_bluetooth_detail_empty_text">Der er ingen tilgængelige parrede enheder</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1321,10 +1323,13 @@ Du har også forbindelse til et VPN, som kan overvåge din netværksaktivitet."<
     <string name="sd_card_unmount_action">Afmontér</string>
     <string name="search_menu_title">Søg</string>
     <string name="select_application">Vælg applikation</string>
+    <string name="select_day">Vælg måned og dag</string>
+    <string name="select_hours">Vælg time</string>
     <string name="select_logd_size_dialog_title">Vælg Logger-størrelser pr. logbuffer</string>
     <string name="select_logd_size_title">Størrelser for Logger-buffer</string>
     <string name="select_logpersist_dialog_title">Vælg logbuffere, der skal gemmes permanent på enheden</string>
     <string name="select_logpersist_title">Gem logdata permanent på enheden</string>
+    <string name="select_minutes">Vælg minutter</string>
     <string name="select_private_dns_configuration_dialog_title">Vælg privat DNS-tilstand</string>
     <string name="select_private_dns_configuration_title">Privat DNS</string>
     <string name="select_usb_configuration_dialog_title">Vælg USB-konfiguration</string>
@@ -1332,6 +1337,7 @@ Du har også forbindelse til et VPN, som kan overvåge din netværksaktivitet."<
     <string name="select_webview_provider_dialog_title">Konfigurer WebView-implementering</string>
     <string name="select_webview_provider_title">WebView-implementering</string>
     <string name="select_webview_provider_toast_text">Dette valg er ikke længere gyldigt. Prøv igen.</string>
+    <string name="select_year">Vælg år</string>
     <string name="show_all_anrs">Vis ANR-fejl i baggrunden</string>
     <string name="show_all_anrs_summary">Vis dialogboksen \"Appen svarer ikke\" for baggrundsapps</string>
     <string name="show_battery_percentage">Vis procent for det indbyggede batteri</string>
@@ -1427,6 +1433,11 @@ Din telefon kan blive for varm, hvis du:
 \u0009• Bruger din telefon i varme omgivelser"</string>
     <string name="thermal_shutdown_message">Din telefon kører nu normalt</string>
     <string name="thermal_shutdown_title">Telefonen slukkede pga. varme</string>
+    <string name="time_picker_header_text">Indstil tid</string>
+    <string name="time_picker_hour_label">time</string>
+    <string name="time_picker_input_error">Indtast en gyldig tid</string>
+    <string name="time_picker_minute_label">minut</string>
+    <string name="time_picker_prompt_label">Indtast tid</string>
     <string name="time_unit_just_now">Lige nu</string>
     <string name="title_convert_fbe">Konverterer til filbaseret kryptering</string>
     <string name="title_usb_accessory">USB-ekstraudstyr</string>
@@ -1550,6 +1561,7 @@ Enhver bruger kan opdatere apps for alle andre brugere."</string>
     <string name="wait_for_debugger">Vent på fejlfinder</string>
     <string name="wait_for_debugger_summary">Fejlrettet app venter på tilknytning af fejlfinder før udførelse</string>
     <string name="wifi_ap_unable_to_handle_new_sta">Adgangspunktet er midlertidigt fuldt</string>
+    <string name="wifi_auth_password_wrong">Adgangskoden kan være forkert</string>
     <string name="wifi_cant_connect">Kan ikke forbinde</string>
     <string name="wifi_cant_connect_to_ap">Der kan ikke oprettes forbindelse til \"%1$s\"</string>
     <string name="wifi_check_password_try_again">Tjek adgangskoden, og prøv igen</string>

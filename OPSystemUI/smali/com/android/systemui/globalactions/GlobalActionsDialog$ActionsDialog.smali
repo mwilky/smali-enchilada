@@ -163,7 +163,7 @@
     return-void
 .end method
 
-.method static synthetic access$2400(Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;)Landroid/content/Context;
+.method static synthetic access$2600(Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;)Landroid/content/Context;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;->mContext:Landroid/content/Context;
@@ -182,7 +182,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0701d3
+    const v1, 0x7f0701df
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 

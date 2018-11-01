@@ -567,7 +567,7 @@ Jos jatkat käyttöä, datan käytöstä saatetaan periä maksuja."</string>
     <string name="external_source_untrusted">Ei sallittu</string>
     <string name="face_unlock_camera_error">Avaaminen kasvojentunnistuksella epäonnistui, kamera on muiden sovellusten käytössä.</string>
     <string name="face_unlock_fail">Epäonnistui, yritä uudelleen napauttamalla tätä.</string>
-    <string name="face_unlock_light_view_notify">Näyttö valaistuu auttaakseen kasvojen tunnituksessa.</string>
+    <string name="face_unlock_light_view_notify">Näyttö valaistuu auttaakseen kasvojen tunnistuksessa.</string>
     <string name="face_unlock_no_face">Kasvoja ei havaittu. Yritä uudelleen napauttamalla tätä.</string>
     <string name="face_unlock_no_permission">Lukituksen avaus kasvojentunnistuksella ei saa kameran käyttöoikeutta, kokeile toista avaustapaa.</string>
     <string name="face_unlock_notify_password">Vapauta kasvojen lukitus tai anna salasanasi.</string>
@@ -1124,6 +1124,8 @@ Olet myös yhteydessä VPN:ään, joka voi valvoa toimintaasi verkossa."</string
     <string name="qs_rearrange">Järjestä pika-asetukset uudelleen</string>
     <string name="qs_status_phone_muted">Puhelin mykistetty</string>
     <string name="qs_status_phone_vibrate">Puhelin värinätilassa</string>
+    <string name="quick_launch_exit">Poistu</string>
+    <string name="quick_launch_exit_hint">Poistu nostamalla sormi näytöltä</string>
     <string name="quick_settings">Pika-asetukset</string>
     <string name="quick_settings_bluetooth_detail_empty_text">Laitepareja ei ole käytettävissä</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1321,10 +1323,13 @@ Olet myös yhteydessä VPN:ään, joka voi valvoa toimintaasi verkossa."</string
     <string name="sd_card_unmount_action">Irrota</string>
     <string name="search_menu_title">Haku</string>
     <string name="select_application">Valitse sovellus</string>
+    <string name="select_day">Valitse kuukausi ja päivä</string>
+    <string name="select_hours">Valitse tunnit</string>
     <string name="select_logd_size_dialog_title">Valitse puskurikohtaiset lokikoot</string>
     <string name="select_logd_size_title">Lokipuskurien koot</string>
     <string name="select_logpersist_dialog_title">Valitse lokipuskurit, joita säilytetään pysyvästi laitteella</string>
     <string name="select_logpersist_title">Säilytä lokityökalun tietoja laitteella</string>
+    <string name="select_minutes">Valitse minuutit</string>
     <string name="select_private_dns_configuration_dialog_title">Valitse yksityinen DNS-tila</string>
     <string name="select_private_dns_configuration_title">Yksityinen DNS</string>
     <string name="select_usb_configuration_dialog_title">Valitse USB-määritykset</string>
@@ -1332,6 +1337,7 @@ Olet myös yhteydessä VPN:ään, joka voi valvoa toimintaasi verkossa."</string
     <string name="select_webview_provider_dialog_title">Määritä WebView-käyttöönotto</string>
     <string name="select_webview_provider_title">WebView-käyttöönotto</string>
     <string name="select_webview_provider_toast_text">Tämä valinta ei ole enää saatavilla. Yritä uudestaan.</string>
+    <string name="select_year">Valitse vuosi</string>
     <string name="show_all_anrs">Näytä tausta-ANR:t</string>
     <string name="show_all_anrs_summary">Näytä taustalla olevien sovellusten Sovellus ei vastaa ‑valintaikkunat.</string>
     <string name="show_battery_percentage">Näytä akun varaus kuvakkeessa</string>
@@ -1427,6 +1433,11 @@ Puhelimesi voi kuumentua liikaa, jos
 \u0009• käytät puhelintasi korkeissa lämpötiloissa."</string>
     <string name="thermal_shutdown_message">Puhelimesi toimii nyt normaalisti.</string>
     <string name="thermal_shutdown_title">Puhelin sammui kuumuuden takia</string>
+    <string name="time_picker_header_text">Aseta aika</string>
+    <string name="time_picker_hour_label">tunti</string>
+    <string name="time_picker_input_error">Anna pätevä aika</string>
+    <string name="time_picker_minute_label">minuutti</string>
+    <string name="time_picker_prompt_label">Kirjoita aika</string>
     <string name="time_unit_just_now">Äsken</string>
     <string name="title_convert_fbe">Muunnetaan tiedostopohjaiseksi salaukseksi</string>
     <string name="title_usb_accessory">USB-lisälaite</string>
@@ -1550,6 +1561,7 @@ Kaikki käyttäjät voivat päivittää sovelluksia muille käyttäjille."</stri
     <string name="wait_for_debugger">Odota vianetsintää</string>
     <string name="wait_for_debugger_summary">Sovellus odottaa vianetsinnän lisäämistä, ja käynnistyy sen jälkeen.</string>
     <string name="wifi_ap_unable_to_handle_new_sta">Yhteyspiste tilapäisesti täynnä</string>
+    <string name="wifi_auth_password_wrong">Salasana saattaa olla väärä</string>
     <string name="wifi_cant_connect">Yhdistäminen ei onnistu.</string>
     <string name="wifi_cant_connect_to_ap">Yhdistäminen verkkoon %1$s ei onnistu.</string>
     <string name="wifi_check_password_try_again">Tarkista salasana ja yritä uudelleen.</string>

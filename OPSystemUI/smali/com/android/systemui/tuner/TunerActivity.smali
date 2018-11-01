@@ -64,7 +64,7 @@
 
     move-result-object v0
 
-    const-string v1, "tuner"
+    const-string/jumbo v1, "tuner"
 
     invoke-virtual {v0, v1}, Landroid/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroid/app/Fragment;
 
@@ -120,9 +120,9 @@
 
     move-result-object v3
 
-    const v4, 0x7f0a00d2
+    const v4, 0x7f0a00d3
 
-    const-string v5, "tuner"
+    const-string/jumbo v5, "tuner"
 
     invoke-virtual {v3, v4, v2, v5}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;Ljava/lang/String;)Landroid/app/FragmentTransaction;
 
@@ -223,7 +223,7 @@
 
     invoke-virtual {p0, v5}, Lcom/android/systemui/tuner/TunerActivity;->setTitle(Ljava/lang/CharSequence;)V
 
-    const v5, 0x7f0a00d2
+    const v5, 0x7f0a00d3
 
     invoke-virtual {v4, v5, v1}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
@@ -288,7 +288,7 @@
 
     invoke-virtual {v1, p1, v4}, Lcom/android/systemui/tuner/TunerActivity$SubSettingsFragment;->setTargetFragment(Landroid/app/Fragment;I)V
 
-    const v4, 0x7f0a00d2
+    const v4, 0x7f0a00d3
 
     invoke-virtual {v0, v4, v1}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 

@@ -63,7 +63,7 @@
 
 .field private final mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
-.field private mButtonCloseLightView:Landroid/widget/Button;
+.field private mButtonCloseLightView:Landroid/view/View;
 
 .field private mCameraLaunching:Z
 
@@ -113,6 +113,8 @@
 
 .field private final mOffAuthenticateRunnable:Ljava/lang/Runnable;
 
+.field private mPendingFacelockWhenBouncer:Z
+
 .field private mPendingLaunchCameraSource:Ljava/lang/String;
 
 .field private mPendingStopFacelock:Z
@@ -132,6 +134,8 @@
 .field private mSettingConnection:Landroid/content/ServiceConnection;
 
 .field private mSettingService:Lcom/oneplus/faceunlock/internal/IOPFaceSettingService;
+
+.field mSleepTime:J
 
 .field private mStartFacelockWhenScreenOn:Z
 
@@ -222,6 +226,12 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mLightingModeEnabled:Z
 
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mPendingFacelockWhenBouncer:Z
+
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mSleepTime:J
+
     new-instance v0, Lcom/android/systemui/statusbar/phone/OPFacelockController$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController$1;-><init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
@@ -278,33 +288,33 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mResetScreenOnRunnable:Ljava/lang/Runnable;
 
-    new-instance v1, Lcom/android/systemui/statusbar/phone/OPFacelockController$7;
+    new-instance v1, Lcom/android/systemui/statusbar/phone/OPFacelockController$8;
 
-    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController$7;-><init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
+    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController$8;-><init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mOffAuthenticateRunnable:Ljava/lang/Runnable;
-
-    new-instance v1, Lcom/android/systemui/statusbar/phone/OPFacelockController$9;
-
-    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController$9;-><init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
-
-    iput-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mConnection:Landroid/content/ServiceConnection;
-
-    new-instance v1, Lcom/android/systemui/statusbar/phone/OPFacelockController$10;
-
-    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController$10;-><init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
-
-    iput-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mSettingConnection:Landroid/content/ServiceConnection;
 
     new-instance v1, Lcom/android/systemui/statusbar/phone/OPFacelockController$11;
 
     invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController$11;-><init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
 
-    iput-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mOPFacelockCallback:Lcom/oneplus/faceunlock/internal/IOPFacelockCallback;
+    iput-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mConnection:Landroid/content/ServiceConnection;
 
     new-instance v1, Lcom/android/systemui/statusbar/phone/OPFacelockController$12;
 
     invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController$12;-><init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
+
+    iput-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mSettingConnection:Landroid/content/ServiceConnection;
+
+    new-instance v1, Lcom/android/systemui/statusbar/phone/OPFacelockController$13;
+
+    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController$13;-><init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
+
+    iput-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mOPFacelockCallback:Lcom/oneplus/faceunlock/internal/IOPFacelockCallback;
+
+    new-instance v1, Lcom/android/systemui/statusbar/phone/OPFacelockController$14;
+
+    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController$14;-><init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mLightSensorListener:Landroid/hardware/SensorEventListener;
 
@@ -384,7 +394,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a0143
+    const v2, 0x7f0a0144
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -402,19 +412,17 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a0145
+    const v2, 0x7f0a0146
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    check-cast v1, Landroid/widget/Button;
+    iput-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mButtonCloseLightView:Landroid/view/View;
 
-    iput-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mButtonCloseLightView:Landroid/widget/Button;
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mButtonCloseLightView:Landroid/view/View;
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mButtonCloseLightView:Landroid/widget/Button;
-
-    invoke-virtual {v1, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v1, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mLightView:Lcom/android/systemui/statusbar/phone/OPFacelockLightView;
 
@@ -607,7 +615,15 @@
     return-void
 .end method
 
-.method static synthetic access$1600(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/statusbar/phone/StatusBar;
+.method static synthetic access$1600(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1700(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/statusbar/phone/StatusBar;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mPhoneStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -615,28 +631,20 @@
     return-object v0
 .end method
 
-.method static synthetic access$1700(Lcom/android/systemui/statusbar/phone/OPFacelockController;Ljava/lang/String;)V
+.method static synthetic access$1802(Lcom/android/systemui/statusbar/phone/OPFacelockController;Z)Z
     .locals 0
 
-    invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->launchCamera(Ljava/lang/String;)V
+    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mPendingFacelockWhenBouncer:Z
+
+    return p1
+.end method
+
+.method static synthetic access$1900(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->stopFacelock()V
 
     return-void
-.end method
-
-.method static synthetic access$1800(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1900(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/keyguard/KeyguardViewMediator;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
-
-    return-object v0
 .end method
 
 .method static synthetic access$200(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Z
@@ -647,12 +655,12 @@
     return v0
 .end method
 
-.method static synthetic access$2000(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
-    .locals 1
+.method static synthetic access$2000(Lcom/android/systemui/statusbar/phone/OPFacelockController;Ljava/lang/String;)V
+    .locals 0
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+    invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->launchCamera(Ljava/lang/String;)V
 
-    return-object v0
+    return-void
 .end method
 
 .method static synthetic access$202(Lcom/android/systemui/statusbar/phone/OPFacelockController;Z)Z
@@ -663,71 +671,23 @@
     return p1
 .end method
 
-.method static synthetic access$2100(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Z
+.method static synthetic access$2100(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
     .locals 1
 
-    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsGoingToSleep:Z
-
-    return v0
-.end method
-
-.method static synthetic access$2200(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/statusbar/KeyguardIndicationController;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIndicator:Lcom/android/systemui/statusbar/KeyguardIndicationController;
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
     return-object v0
 .end method
 
-.method static synthetic access$2300(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Landroid/content/Context;
+.method static synthetic access$2200(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/keyguard/KeyguardViewMediator;
     .locals 1
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     return-object v0
 .end method
 
-.method static synthetic access$2402(Lcom/android/systemui/statusbar/phone/OPFacelockController;Lcom/oneplus/faceunlock/internal/IOPFacelockService;)Lcom/oneplus/faceunlock/internal/IOPFacelockService;
-    .locals 0
-
-    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mService:Lcom/oneplus/faceunlock/internal/IOPFacelockService;
-
-    return-object p1
-.end method
-
-.method static synthetic access$2502(Lcom/android/systemui/statusbar/phone/OPFacelockController;Z)Z
-    .locals 0
-
-    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mBinding:Z
-
-    return p1
-.end method
-
-.method static synthetic access$2600(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/oneplus/faceunlock/internal/IOPFaceSettingService;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mSettingService:Lcom/oneplus/faceunlock/internal/IOPFaceSettingService;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2602(Lcom/android/systemui/statusbar/phone/OPFacelockController;Lcom/oneplus/faceunlock/internal/IOPFaceSettingService;)Lcom/oneplus/faceunlock/internal/IOPFaceSettingService;
-    .locals 0
-
-    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mSettingService:Lcom/oneplus/faceunlock/internal/IOPFaceSettingService;
-
-    return-object p1
-.end method
-
-.method static synthetic access$2702(Lcom/android/systemui/statusbar/phone/OPFacelockController;Z)Z
-    .locals 0
-
-    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mBindingSetting:Z
-
-    return p1
-.end method
-
-.method static synthetic access$2800(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/keyguard/KeyguardUpdateMonitor;
+.method static synthetic access$2300(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/keyguard/KeyguardUpdateMonitor;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -735,12 +695,52 @@
     return-object v0
 .end method
 
-.method static synthetic access$2900(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Ljava/lang/Runnable;
+.method static synthetic access$2400(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/statusbar/phone/OPFacelockLightView;
     .locals 1
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mResetScreenOnRunnable:Ljava/lang/Runnable;
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mLightView:Lcom/android/systemui/statusbar/phone/OPFacelockLightView;
 
     return-object v0
+.end method
+
+.method static synthetic access$2500(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsGoingToSleep:Z
+
+    return v0
+.end method
+
+.method static synthetic access$2600(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/statusbar/KeyguardIndicationController;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIndicator:Lcom/android/systemui/statusbar/KeyguardIndicationController;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2700(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Landroid/content/Context;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2802(Lcom/android/systemui/statusbar/phone/OPFacelockController;Lcom/oneplus/faceunlock/internal/IOPFacelockService;)Lcom/oneplus/faceunlock/internal/IOPFacelockService;
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mService:Lcom/oneplus/faceunlock/internal/IOPFacelockService;
+
+    return-object p1
+.end method
+
+.method static synthetic access$2902(Lcom/android/systemui/statusbar/phone/OPFacelockController;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mBinding:Z
+
+    return p1
 .end method
 
 .method static synthetic access$300(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Z
@@ -751,7 +751,39 @@
     return v0
 .end method
 
-.method static synthetic access$3000(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Landroid/os/Handler;
+.method static synthetic access$3000(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/oneplus/faceunlock/internal/IOPFaceSettingService;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mSettingService:Lcom/oneplus/faceunlock/internal/IOPFaceSettingService;
+
+    return-object v0
+.end method
+
+.method static synthetic access$3002(Lcom/android/systemui/statusbar/phone/OPFacelockController;Lcom/oneplus/faceunlock/internal/IOPFaceSettingService;)Lcom/oneplus/faceunlock/internal/IOPFaceSettingService;
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mSettingService:Lcom/oneplus/faceunlock/internal/IOPFaceSettingService;
+
+    return-object p1
+.end method
+
+.method static synthetic access$3102(Lcom/android/systemui/statusbar/phone/OPFacelockController;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mBindingSetting:Z
+
+    return p1
+.end method
+
+.method static synthetic access$3200(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Ljava/lang/Runnable;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mResetScreenOnRunnable:Ljava/lang/Runnable;
+
+    return-object v0
+.end method
+
+.method static synthetic access$3300(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Landroid/os/Handler;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mUIHandler:Landroid/os/Handler;
@@ -759,7 +791,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3100(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Ljava/lang/Runnable;
+.method static synthetic access$3400(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Ljava/lang/Runnable;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mOffAuthenticateRunnable:Ljava/lang/Runnable;
@@ -767,7 +799,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3202(Lcom/android/systemui/statusbar/phone/OPFacelockController;Z)Z
+.method static synthetic access$3502(Lcom/android/systemui/statusbar/phone/OPFacelockController;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mNeedToPendingStopFacelock:Z
@@ -775,7 +807,7 @@
     return p1
 .end method
 
-.method static synthetic access$3300(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Z
+.method static synthetic access$3600(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsKeyguardShowing:Z
@@ -783,7 +815,7 @@
     return v0
 .end method
 
-.method static synthetic access$3400(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Z
+.method static synthetic access$3700(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mBouncer:Z
@@ -791,7 +823,7 @@
     return v0
 .end method
 
-.method static synthetic access$3500(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Z
+.method static synthetic access$3800(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsSleep:Z
@@ -799,7 +831,7 @@
     return v0
 .end method
 
-.method static synthetic access$3600(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Z
+.method static synthetic access$3900(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mLightingModeEnabled:Z
@@ -807,36 +839,12 @@
     return v0
 .end method
 
-.method static synthetic access$3602(Lcom/android/systemui/statusbar/phone/OPFacelockController;Z)Z
+.method static synthetic access$3902(Lcom/android/systemui/statusbar/phone/OPFacelockController;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mLightingModeEnabled:Z
 
     return p1
-.end method
-
-.method static synthetic access$3700(Lcom/android/systemui/statusbar/phone/OPFacelockController;)I
-    .locals 1
-
-    iget v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mFailAttempts:I
-
-    return v0
-.end method
-
-.method static synthetic access$3800(Lcom/android/systemui/statusbar/phone/OPFacelockController;)I
-    .locals 1
-
-    iget v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->LIGHTING_MODE_SENSOR_THRESHOLD:I
-
-    return v0
-.end method
-
-.method static synthetic access$3900(Lcom/android/systemui/statusbar/phone/OPFacelockController;Z)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->updateFacelockLightMode(Z)V
-
-    return-void
 .end method
 
 .method static synthetic access$400(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
@@ -847,20 +855,36 @@
     return-void
 .end method
 
-.method static synthetic access$4000(Lcom/android/systemui/statusbar/phone/OPFacelockController;Z)V
+.method static synthetic access$4000(Lcom/android/systemui/statusbar/phone/OPFacelockController;)I
+    .locals 1
+
+    iget v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mFailAttempts:I
+
+    return v0
+.end method
+
+.method static synthetic access$4100(Lcom/android/systemui/statusbar/phone/OPFacelockController;)I
+    .locals 1
+
+    iget v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->LIGHTING_MODE_SENSOR_THRESHOLD:I
+
+    return v0
+.end method
+
+.method static synthetic access$4200(Lcom/android/systemui/statusbar/phone/OPFacelockController;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->updateFacelockLightMode(Z)V
+
+    return-void
+.end method
+
+.method static synthetic access$4300(Lcom/android/systemui/statusbar/phone/OPFacelockController;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->registerLightSensor(Z)V
 
     return-void
-.end method
-
-.method static synthetic access$4100(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/statusbar/phone/OPFacelockLightView;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mLightView:Lcom/android/systemui/statusbar/phone/OPFacelockLightView;
-
-    return-object v0
 .end method
 
 .method static synthetic access$500(Lcom/android/systemui/statusbar/phone/OPFacelockController;II)V
@@ -1327,6 +1351,14 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
+    const-string v3, ", pending:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v3, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mPendingFacelockWhenBouncer:Z
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -1357,6 +1389,19 @@
     return-void
 
     :cond_1
+    iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mPendingFacelockWhenBouncer:Z
+
+    if-eqz v1, :cond_2
+
+    const-string v1, "OPFacelockController"
+
+    const-string v2, "pending in bouncer"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_2
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mFaceLockActive:Z
 
     const/4 v2, -0x1
@@ -1365,7 +1410,7 @@
 
     const/4 v4, 0x0
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     iput-boolean v4, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mPendingStopFacelock:Z
 
@@ -1373,12 +1418,12 @@
 
     return-void
 
-    :cond_2
+    :cond_3
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsScreenTurnedOn:Z
 
     const/4 v5, 0x1
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_4
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -1386,7 +1431,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
     iput-boolean v5, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mStartFacelockWhenScreenOn:Z
 
@@ -1398,7 +1443,7 @@
 
     return-void
 
-    :cond_3
+    :cond_4
     iput-boolean v4, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mStartFacelockWhenScreenOn:Z
 
     invoke-direct {p0, v3, v2}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->updateRecognizedState(II)V
@@ -1409,7 +1454,7 @@
 
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsScreenTurnedOn:Z
 
-    if-nez v1, :cond_4
+    if-nez v1, :cond_5
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -1417,11 +1462,19 @@
 
     move-result v1
 
-    if-nez v1, :cond_4
+    if-nez v1, :cond_5
 
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsKeyguardShowing:Z
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_5
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    invoke-virtual {v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isAutoFacelockEnabled()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_5
 
     iput-boolean v5, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsScreenOffUnlock:Z
 
@@ -1441,7 +1494,7 @@
 
     invoke-virtual {v1, v2, v6, v7}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    :cond_4
+    :cond_5
     monitor-enter p0
 
     const/4 v1, 0x4
@@ -1755,9 +1808,9 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mUIHandler:Landroid/os/Handler;
 
-    new-instance v2, Lcom/android/systemui/statusbar/phone/OPFacelockController$5;
+    new-instance v2, Lcom/android/systemui/statusbar/phone/OPFacelockController$6;
 
-    invoke-direct {v2, p0, v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController$5;-><init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;Ljava/lang/String;)V
+    invoke-direct {v2, p0, v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController$6;-><init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;Ljava/lang/String;)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -1891,17 +1944,6 @@
 .method private unlockKeyguard()V
     .locals 7
 
-    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mFaceLockActive:Z
-
-    if-eqz v0, :cond_5
-
-    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mBoundToService:Z
-
-    if-nez v0, :cond_0
-
-    goto/16 :goto_1
-
-    :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->isShowingLiveWallpaper()Z
@@ -1926,7 +1968,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "unlockKeyguard, bouncer:"
+    const-string/jumbo v5, "unlockKeyguard, bouncer:"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1964,6 +2006,10 @@
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
+    invoke-virtual {v4}, Lcom/android/keyguard/KeyguardUpdateMonitor;->hideFODDim()V
+
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+
     const/4 v5, 0x1
 
     invoke-virtual {v4, v5}, Lcom/android/keyguard/KeyguardUpdateMonitor;->onFacelockUnlocking(Z)V
@@ -1974,95 +2020,34 @@
 
     invoke-virtual {v4, v5}, Lcom/android/keyguard/KeyguardUpdateMonitor;->notifyFacelockStateChanged(I)V
 
-    const/4 v4, 0x5
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mUIHandler:Landroid/os/Handler;
 
-    iget-boolean v5, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsScreenOffUnlock:Z
+    new-instance v5, Lcom/android/systemui/statusbar/phone/OPFacelockController$9;
 
-    if-eqz v5, :cond_1
+    invoke-direct {v5, p0, v0, v1}, Lcom/android/systemui/statusbar/phone/OPFacelockController$9;-><init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;ZZ)V
 
-    if-nez v0, :cond_1
+    invoke-virtual {v4, v5}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    const/4 v4, 0x1
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
 
-    goto :goto_0
+    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mOffAuthenticateRunnable:Ljava/lang/Runnable;
 
-    :cond_1
-    if-eqz v1, :cond_2
+    invoke-virtual {v4, v5}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    const/4 v4, 0x6
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
-    goto :goto_0
+    sget v5, Lcom/android/systemui/keyguard/KeyguardViewMediator;->AUTHENTICATE_FACEUNLOCK:I
 
-    :cond_2
-    if-nez v0, :cond_3
+    const/4 v6, 0x2
 
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+    invoke-virtual {v4, v3, v5, v6}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->notifyScreenOffAuthenticate(ZII)V
 
-    invoke-virtual {v5}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isDeviceInteractive()Z
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    move-result v5
-
-    if-eqz v5, :cond_3
-
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
-
-    invoke-virtual {v5, v3}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->onWakeAndUnlocking(Z)V
-
-    const/4 v4, 0x0
-
-    goto :goto_0
-
-    :cond_3
-    const/4 v4, 0x5
-
-    :goto_0
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
-
-    invoke-virtual {v5}, Lcom/android/keyguard/KeyguardUpdateMonitor;->resetFPTimeout()V
-
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mFPC:Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;
-
-    invoke-virtual {v5, v4}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->startWakeAndUnlockForFace(I)V
-
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
-
-    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mOffAuthenticateRunnable:Ljava/lang/Runnable;
-
-    invoke-virtual {v5, v6}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
-
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
-
-    sget v6, Lcom/android/systemui/keyguard/KeyguardViewMediator;->AUTHENTICATE_FACEUNLOCK:I
-
-    invoke-virtual {v5, v3, v6}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->notifyScreenOffAuthenticate(ZI)V
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->isLighModeEnabled()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_4
-
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mLightView:Lcom/android/systemui/statusbar/phone/OPFacelockLightView;
-
-    if-eqz v5, :cond_4
-
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mLightView:Lcom/android/systemui/statusbar/phone/OPFacelockLightView;
-
-    const/4 v6, 0x0
-
-    invoke-virtual {v5, v6}, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->setAlpha(F)V
-
-    :cond_4
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
-
-    invoke-virtual {v5, v3}, Lcom/android/keyguard/KeyguardUpdateMonitor;->notifyFacelockStateChanged(I)V
+    invoke-virtual {v4, v3}, Lcom/android/keyguard/KeyguardUpdateMonitor;->notifyFacelockStateChanged(I)V
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->stopFacelock()V
 
-    return-void
-
-    :cond_5
-    :goto_1
     return-void
 .end method
 
@@ -2113,7 +2098,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "updateFacelockLightMode, overrideScreenBrightness:"
+    const-string/jumbo v3, "updateFacelockLightMode, overrideScreenBrightness:"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2132,9 +2117,9 @@
     :goto_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mUIHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/android/systemui/statusbar/phone/OPFacelockController$13;
+    new-instance v1, Lcom/android/systemui/statusbar/phone/OPFacelockController$15;
 
-    invoke-direct {v1, p0, p1}, Lcom/android/systemui/statusbar/phone/OPFacelockController$13;-><init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;Z)V
+    invoke-direct {v1, p0, p1}, Lcom/android/systemui/statusbar/phone/OPFacelockController$15;-><init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;Z)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -2185,7 +2170,7 @@
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "updateIsFaceAdded fail: "
+    const-string/jumbo v6, "updateIsFaceAdded fail: "
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2307,7 +2292,7 @@
 .end method
 
 .method private updateKeyguardAlpha(IZ)V
-    .locals 5
+    .locals 6
 
     const-string v0, "OPFacelockController"
 
@@ -2315,7 +2300,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "update alpha:"
+    const-string/jumbo v2, "update alpha:"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2363,18 +2348,18 @@
 
     sget v2, Lcom/android/systemui/keyguard/KeyguardViewMediator;->AUTHENTICATE_FACEUNLOCK:I
 
-    invoke-virtual {v1, v0, v2}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->notifyScreenOffAuthenticate(ZI)V
+    invoke-virtual {v1, v0, v2, v0}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->notifyScreenOffAuthenticate(ZII)V
 
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mUIHandler:Landroid/os/Handler;
 
-    new-instance v2, Lcom/android/systemui/statusbar/phone/OPFacelockController$6;
+    new-instance v2, Lcom/android/systemui/statusbar/phone/OPFacelockController$7;
 
-    invoke-direct {v2, p0, p1}, Lcom/android/systemui/statusbar/phone/OPFacelockController$6;-><init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;I)V
+    invoke-direct {v2, p0, p1}, Lcom/android/systemui/statusbar/phone/OPFacelockController$7;-><init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;I)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    if-ne p1, v0, :cond_2
+    if-ne p1, v0, :cond_3
 
     const/4 v0, 0x0
 
@@ -2392,33 +2377,53 @@
 
     move-result v1
 
-    if-eqz p2, :cond_2
+    if-eqz p2, :cond_3
 
     invoke-static {}, Lcom/android/systemui/util/OPUtils;->isCustomFingerprint()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
-    if-nez v1, :cond_1
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
+    move-result-wide v2
 
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mOffAuthenticateRunnable:Ljava/lang/Runnable;
+    iget-wide v4, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mSleepTime:J
 
-    invoke-virtual {v0, v2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+    sub-long/2addr v2, v4
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
+    const-wide/16 v4, 0x1388
 
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mOffAuthenticateRunnable:Ljava/lang/Runnable;
+    cmp-long v0, v2, v4
 
-    const-wide/16 v3, 0x64
+    if-lez v0, :cond_1
 
-    invoke-virtual {v0, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    const/16 v0, 0xa
 
     goto :goto_0
 
     :cond_1
+    const/16 v0, 0x64
+
+    :goto_0
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
+
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mOffAuthenticateRunnable:Ljava/lang/Runnable;
+
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
+
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mOffAuthenticateRunnable:Ljava/lang/Runnable;
+
+    int-to-long v4, v0
+
+    invoke-virtual {v2, v3, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    goto :goto_1
+
+    :cond_2
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mOffAuthenticateRunnable:Ljava/lang/Runnable;
@@ -2431,8 +2436,8 @@
 
     invoke-virtual {v2, v0, v3}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->notifyScreenOffAuthenticate(ZI)V
 
-    :cond_2
-    :goto_0
+    :cond_3
+    :goto_1
     return-void
 .end method
 
@@ -2447,9 +2452,9 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mUIHandler:Landroid/os/Handler;
 
-    new-instance v2, Lcom/android/systemui/statusbar/phone/OPFacelockController$8;
+    new-instance v2, Lcom/android/systemui/statusbar/phone/OPFacelockController$10;
 
-    invoke-direct {v2, p0, p1, p2, v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController$8;-><init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;III)V
+    invoke-direct {v2, p0, p1, p2, v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController$10;-><init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;III)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -2532,7 +2537,7 @@
 
     const-string v0, "OPFacelockController"
 
-    const-string v2, "timeout, not allow to facelock"
+    const-string/jumbo v2, "timeout, not allow to facelock"
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -2834,6 +2839,14 @@
     return v0
 .end method
 
+.method public isScreenOffUnlock()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsScreenOffUnlock:Z
+
+    return v0
+.end method
+
 .method public notifyCameraLaunching(ZLjava/lang/String;)Z
     .locals 4
 
@@ -3116,6 +3129,30 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
+    const-string v2, ", skip:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    invoke-virtual {v2}, Lcom/android/keyguard/KeyguardUpdateMonitor;->canSkipBouncerByFacelock()Z
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v2, ", unlocking:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    invoke-virtual {v2}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isFacelockUnlocking()Z
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -3133,7 +3170,60 @@
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->tryToStartFaceLock()Z
 
+    return-void
+
     :cond_1
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsKeyguardShowing:Z
+
+    if-eqz v0, :cond_3
+
+    if-eqz p1, :cond_3
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->canSkipBouncerByFacelock()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    const/4 v0, 0x6
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mFPC:Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;
+
+    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->startWakeAndUnlockForFace(I)V
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isFacelockUnlocking()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->isShowingLiveWallpaper()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    const-string v0, "OPFacelockController"
+
+    const-string v1, "just keyguardDone"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
+
+    invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->keyguardDone()V
+
+    :cond_3
+    :goto_0
     return-void
 .end method
 
@@ -3218,7 +3308,7 @@
 .end method
 
 .method public onKeyguardVisibilityChanged(Z)V
-    .locals 3
+    .locals 4
 
     sget-boolean v0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->DEBUG:Z
 
@@ -3279,25 +3369,27 @@
 
     const/4 v1, 0x1
 
+    const/4 v2, 0x0
+
     if-eqz p1, :cond_3
 
-    iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsKeyguardShowing:Z
+    iget-boolean v3, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsKeyguardShowing:Z
 
-    if-nez v2, :cond_4
+    if-nez v3, :cond_4
 
-    iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mBoundToService:Z
+    iget-boolean v3, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mBoundToService:Z
 
-    if-eqz v2, :cond_4
+    if-eqz v3, :cond_4
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->canLaunchFacelock()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_4
+    if-eqz v3, :cond_4
 
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {v2, v0}, Landroid/os/Handler;->removeMessages(I)V
+    invoke-virtual {v3, v0}, Landroid/os/Handler;->removeMessages(I)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
 
@@ -3310,17 +3402,15 @@
     goto :goto_0
 
     :cond_3
-    const/4 v2, 0x0
-
     iput-boolean v2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mStartFacelockWhenScreenOn:Z
 
     iput-boolean v2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mCameraLaunching:Z
 
     iput-boolean v2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mNeedToPendingStopFacelock:Z
 
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {v2, v1}, Landroid/os/Handler;->removeMessages(I)V
+    invoke-virtual {v3, v1}, Landroid/os/Handler;->removeMessages(I)V
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
 
@@ -3330,6 +3420,11 @@
     :goto_0
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsKeyguardShowing:Z
 
+    if-nez p1, :cond_5
+
+    iput-boolean v2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mPendingFacelockWhenBouncer:Z
+
+    :cond_5
     return-void
 .end method
 
@@ -3539,7 +3634,7 @@
 .end method
 
 .method public onStartedGoingToSleep(I)V
-    .locals 3
+    .locals 4
 
     sget-boolean v0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->DEBUG:Z
 
@@ -3584,19 +3679,27 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsSleep:Z
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
 
-    const/4 v2, 0x2
+    const/4 v3, 0x2
 
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->removeMessages(I)V
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {v1, v0}, Landroid/os/Handler;->removeMessages(I)V
+    invoke-virtual {v2, v0}, Landroid/os/Handler;->removeMessages(I)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {v0, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+    invoke-virtual {v0, v3}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    iput-boolean v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mPendingFacelockWhenBouncer:Z
+
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mSleepTime:J
 
     return-void
 .end method
@@ -3672,6 +3775,50 @@
     return-void
 .end method
 
+.method public onStrongAuthStateChanged(I)V
+    .locals 2
+
+    invoke-static {}, Lcom/android/systemui/util/OPUtils;->isCustomFingerprint()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->canLaunchFacelock()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isFacelockAvailable()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isFacelockRecognizing()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const-string v0, "OPFacelockController"
+
+    const-string v1, "onStrongAuthStateChanged to stop"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->stopFacelock()V
+
+    :cond_1
+    return-void
+.end method
+
 .method public onSystemReady()V
     .locals 2
 
@@ -3689,6 +3836,32 @@
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->bindFacelock()V
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->bindFacelockSetting()V
+
+    return-void
+.end method
+
+.method public onThemeColorUpdate()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mButtonCloseLightView:Landroid/view/View;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f0602f4
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v1
+
+    invoke-static {v1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundTintList(Landroid/content/res/ColorStateList;)V
 
     return-void
 .end method
@@ -3745,7 +3918,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "tryToStartFaceLock, bound:"
+    const-string/jumbo v2, "tryToStartFaceLock, bound:"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3795,7 +3968,7 @@
 .end method
 
 .method public tryToStartFaceLockAfterScreenOn()V
-    .locals 2
+    .locals 4
 
     sget-boolean v0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->DEBUG:Z
 
@@ -3803,14 +3976,59 @@
 
     const-string v0, "OPFacelockController"
 
-    const-string v1, "tryToStartFaceLockAfterScreenOn"
+    const-string/jumbo v1, "tryToStartFaceLockAfterScreenOn"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    const/4 v0, 0x1
+    invoke-static {}, Lcom/android/systemui/util/OPUtils;->isCustomFingerprint()Z
 
-    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mStartFacelockWhenScreenOn:Z
+    move-result v0
 
+    const/4 v1, 0x1
+
+    if-nez v0, :cond_1
+
+    iput-boolean v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mStartFacelockWhenScreenOn:Z
+
+    goto :goto_0
+
+    :cond_1
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mBoundToService:Z
+
+    if-eqz v0, :cond_3
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->canLaunchFacelock()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    iput-boolean v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mPendingFacelockWhenBouncer:Z
+
+    const/4 v0, 0x3
+
+    const/4 v1, -0x1
+
+    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->updateRecognizedState(II)V
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
+
+    new-instance v1, Lcom/android/systemui/statusbar/phone/OPFacelockController$5;
+
+    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController$5;-><init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
+
+    const-wide/16 v2, 0x12c
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    :goto_0
+    return-void
+
+    :cond_3
+    :goto_1
     return-void
 .end method

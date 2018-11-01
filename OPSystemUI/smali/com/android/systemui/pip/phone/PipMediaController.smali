@@ -163,7 +163,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/pip/phone/PipMediaController;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f110471
+    const v1, 0x7f110472
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -173,7 +173,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/pip/phone/PipMediaController;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f080321
+    const v3, 0x7f08032d
 
     invoke-static {v2, v3}, Landroid/graphics/drawable/Icon;->createWithResource(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;
 
@@ -201,7 +201,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/pip/phone/PipMediaController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f110477
+    const v2, 0x7f110478
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -211,7 +211,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/pip/phone/PipMediaController;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f080324
+    const v4, 0x7f080330
 
     invoke-static {v3, v4}, Landroid/graphics/drawable/Icon;->createWithResource(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;
 
@@ -235,7 +235,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/pip/phone/PipMediaController;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f110479
+    const v3, 0x7f11047a
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -245,7 +245,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/pip/phone/PipMediaController;->mContext:Landroid/content/Context;
 
-    const v7, 0x7f080383
+    const v7, 0x7f080390
 
     invoke-static {v4, v7}, Landroid/graphics/drawable/Icon;->createWithResource(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;
 
@@ -269,7 +269,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/pip/phone/PipMediaController;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f11047a
+    const v4, 0x7f11047b
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -279,7 +279,7 @@
 
     iget-object v7, p0, Lcom/android/systemui/pip/phone/PipMediaController;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f080384
+    const v8, 0x7f080391
 
     invoke-static {v7, v8}, Landroid/graphics/drawable/Icon;->createWithResource(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;
 

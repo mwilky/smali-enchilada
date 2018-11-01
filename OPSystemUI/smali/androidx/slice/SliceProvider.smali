@@ -132,7 +132,7 @@
 
     invoke-direct {v1, v0}, Landroidx/slice/Slice$Builder;-><init>(Landroidx/slice/Slice$Builder;)V
 
-    const-string v2, "title"
+    const-string/jumbo v2, "title"
 
     const-string v3, "shortcut"
 

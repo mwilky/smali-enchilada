@@ -1124,6 +1124,8 @@
     <string name="qs_rearrange">إعادة ترتيب الإعدادات السريعة</string>
     <string name="qs_status_phone_muted">تم كتم الهاتف.</string>
     <string name="qs_status_phone_vibrate">الهاتف في وضع الاهتزاز</string>
+    <string name="quick_launch_exit">خروج</string>
+    <string name="quick_launch_exit_hint">أبعد/ي إصبعك/ي عن الشاشة للخروج</string>
     <string name="quick_settings">الإعدادات السريعة</string>
     <string name="quick_settings_bluetooth_detail_empty_text">لا يتوفر أي أجهزة مقترنة</string>
     <string name="quick_settings_bluetooth_label">بلوتوث</string>
@@ -1321,10 +1323,13 @@
     <string name="sd_card_unmount_action">إلغاء التحميل</string>
     <string name="search_menu_title">البحث</string>
     <string name="select_application">تحديد تطبيق</string>
+    <string name="select_day">حدد الشهر واليوم</string>
+    <string name="select_hours">حدد ساعات</string>
     <string name="select_logd_size_dialog_title">حدد أحجامًا أكبر لكل ذاكرة تخزين مؤقت للتسجيل</string>
     <string name="select_logd_size_title">أحجام ذاكرة التخزين المؤقت للتسجيل</string>
     <string name="select_logpersist_dialog_title">تحديد مخازن السجلات المؤقتة المراد تخزينها باستمرار على الجهاز</string>
     <string name="select_logpersist_title">تخزين بيانات المسجِّل باستمرار على الجهاز</string>
+    <string name="select_minutes">حدد دقائق</string>
     <string name="select_private_dns_configuration_dialog_title">اختر وضع نظام أسماء النطاقات الخاص</string>
     <string name="select_private_dns_configuration_title">نظام أسماء النطاقات الخاص</string>
     <string name="select_usb_configuration_dialog_title">‏حدد تهيئة USB</string>
@@ -1332,6 +1337,7 @@
     <string name="select_webview_provider_dialog_title">‏تعيين تطبيق WebView</string>
     <string name="select_webview_provider_title">‏تطبيق WebView</string>
     <string name="select_webview_provider_toast_text">لم يعد هذا الاختيار صالحًا. أعد المحاولة.</string>
+    <string name="select_year">حدد السنة</string>
     <string name="show_all_anrs">‏عرض أخطاء ANR في الخلفية</string>
     <string name="show_all_anrs_summary">عرض مربع الحوار \"التطبيق لا يستجيب\" مع تطبيقات الخلفية</string>
     <string name="show_battery_percentage">عرض نسبة البطارية المدمجة</string>
@@ -1427,6 +1433,11 @@
 \u0009• استخدمت هاتفك وسط أجواء مرتفعة الحرارة"</string>
     <string name="thermal_shutdown_message">يعمل هاتفك الآن بشكل طبيعي</string>
     <string name="thermal_shutdown_title">تم إيقاف تشغيل الهاتف بسبب الحرارة</string>
+    <string name="time_picker_header_text">تعيين الوقت</string>
+    <string name="time_picker_hour_label">ساعة</string>
+    <string name="time_picker_input_error">أدخل وقتًا صالحًا</string>
+    <string name="time_picker_minute_label">دقيقة</string>
+    <string name="time_picker_prompt_label">كتابة وقت</string>
     <string name="time_unit_just_now">للتو</string>
     <string name="title_convert_fbe">التحويل إلى تشفير على الملف</string>
     <string name="title_usb_accessory">‏ملحق USB</string>
@@ -1550,6 +1561,7 @@
     <string name="wait_for_debugger">انتظار برنامج التصحيح</string>
     <string name="wait_for_debugger_summary">ينتظر التطبيق قيد التصحيح انضمام برنامج التصحيح قبل التنفيذ</string>
     <string name="wifi_ap_unable_to_handle_new_sta">نقطة الدخول ممتلئة مؤقتًا</string>
+    <string name="wifi_auth_password_wrong">قد تكون كلمة المرور غير صحيحة</string>
     <string name="wifi_cant_connect">تعذَّر الاتصال</string>
     <string name="wifi_cant_connect_to_ap">"تعذَّر الاتصال بـ '%1$s'"</string>
     <string name="wifi_check_password_try_again">يُرجى التحقق من كلمة المرور وإعادة المحاولة</string>

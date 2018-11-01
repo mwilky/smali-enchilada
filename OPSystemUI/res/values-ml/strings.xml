@@ -1124,6 +1124,8 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="qs_rearrange">ദ്രുത ക്രമീകരണം പുനഃസജ്ജീകരിക്കുക</string>
     <string name="qs_status_phone_muted">ഫോൺ മ്യൂട്ട് ചെയ്‌തു</string>
     <string name="qs_status_phone_vibrate">ഫോൺ വൈബ്രേഷൻ മോഡിലാണ്</string>
+    <string name="quick_launch_exit">പുറത്ത് കടക്കുക</string>
+    <string name="quick_launch_exit_hint">പുറത്തുകടക്കാൻ സ്ക്രീനിലെ ഫിംഗർ ഓഫ് ചെയ്യുക</string>
     <string name="quick_settings">ദ്രുത ക്രമീകരണം</string>
     <string name="quick_settings_bluetooth_detail_empty_text">ജോടിയാക്കിയ ഉപകരണങ്ങളൊന്നും ലഭ്യമല്ല</string>
     <string name="quick_settings_bluetooth_label">ബ്ലൂടൂത്ത്</string>
@@ -1321,10 +1323,13 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="sd_card_unmount_action">നീക്കം ചെയ്യുക</string>
     <string name="search_menu_title">തിരയുക</string>
     <string name="select_application">ആപ്പ് തിരഞ്ഞെടുക്കൂ</string>
+    <string name="select_day">മാസവും ദിവസവും തിരഞ്ഞെടുക്കുക</string>
+    <string name="select_hours">മണിക്കൂർ തിരഞ്ഞെടുക്കുക</string>
     <string name="select_logd_size_dialog_title">ഓരോ ലോഗ് ബഫറിനും വലുപ്പം തിരഞ്ഞെടുക്കൂ</string>
     <string name="select_logd_size_title">ലോഗർ ബഫർ വലുപ്പം</string>
     <string name="select_logpersist_dialog_title">ഉപകരണത്തിൽ സ്ഥിരമായി സംഭരിക്കുന്നതിനുള്ള ലോഗ് ബഫറുകൾ തിരഞ്ഞെടുക്കുക</string>
     <string name="select_logpersist_title">ഉപകരണത്തിൽ സ്ഥിരമായി ലോഗർ വിവരങ്ങൾ സംഭരിക്കുക</string>
+    <string name="select_minutes">മിനിറ്റ് തിരഞ്ഞെടുക്കുക</string>
     <string name="select_private_dns_configuration_dialog_title">സ്വകാര്യ DNS മോഡ് തിരഞ്ഞെടുക്കുക</string>
     <string name="select_private_dns_configuration_title">സ്വകാര്യ DNS</string>
     <string name="select_usb_configuration_dialog_title">USB കോൺഫിഗറേഷൻ തിരഞ്ഞെടുക്കൂ</string>
@@ -1332,6 +1337,7 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="select_webview_provider_dialog_title">WebView നടപ്പാക്കൽ സജ്ജമാക്കുക</string>
     <string name="select_webview_provider_title">WebView നടപ്പാക്കൽ</string>
     <string name="select_webview_provider_toast_text">ഈ തിരഞ്ഞെടുപ്പിന് തുടർന്നങ്ങോട്ട് സാധുതയില്ല. വീണ്ടും ശ്രമിക്കുക.</string>
+    <string name="select_year">വർഷം തിരഞ്ഞെടുക്കുക</string>
     <string name="show_all_anrs">പശ്ചാത്തല ANR-കൾ കാണിക്കുക</string>
     <string name="show_all_anrs_summary">"പ‌ശ്ചാത്തല ആപ്പുകൾക്കായി 'ആപ്പ് പ്രതികരിക്കുന്നില്ല' ഡയലോഗ് പ്രദര്‍ശിപ്പിക്കുക"</string>
     <string name="show_battery_percentage">എംബഡ് ചെയ്‌ത ബാറ്ററി ശതമാനം കാണിക്കുക</string>
@@ -1427,6 +1433,11 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
 \u0009• ഉയർന്ന താപനിലയിൽ ഫോൺ ഉപയോഗിക്കുന്നത്"</string>
     <string name="thermal_shutdown_message">ഫോൺ ഇപ്പോൾ സാധാരണഗതിയിൽ പ്രവർത്തിക്കുന്നു</string>
     <string name="thermal_shutdown_title">ചൂട് കൂടിയതിനാൽ ഫോൺ ഓഫാക്കി</string>
+    <string name="time_picker_header_text">സമയം ക്രമീകരിക്കുക</string>
+    <string name="time_picker_hour_label">മണിക്കൂര്‍</string>
+    <string name="time_picker_input_error">സാധുവായ സമയം നൽകുക</string>
+    <string name="time_picker_minute_label">മിനിറ്റ്</string>
+    <string name="time_picker_prompt_label">ആവശ്യമായ സമയത്ത് ടൈപ്പുചെയ്യുക</string>
     <string name="time_unit_just_now">ഇപ്പോൾ</string>
     <string name="title_convert_fbe">ഫയൽ അധിഷ്ഠിത എൻക്രിപ്ഷനിലേക്ക് പരിവർത്തിപ്പിക്കുന്നു</string>
     <string name="title_usb_accessory">USB ആക്‌സസ്സറി</string>

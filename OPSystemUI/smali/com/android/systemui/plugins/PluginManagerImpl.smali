@@ -992,7 +992,7 @@
 
     move-result-object v5
 
-    const-string v6, "tuner"
+    const-string/jumbo v6, "tuner"
 
     const-string v7, "drawable"
 

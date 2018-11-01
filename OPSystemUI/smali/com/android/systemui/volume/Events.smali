@@ -53,7 +53,7 @@
 
     const-string v9, "settings_click"
 
-    const-string v10, "touch_level_changed"
+    const-string/jumbo v10, "touch_level_changed"
 
     const-string v11, "level_changed"
 
@@ -67,7 +67,7 @@
 
     const-string v16, "mute_changed"
 
-    const-string v17, "touch_level_done"
+    const-string/jumbo v17, "touch_level_done"
 
     const-string/jumbo v18, "zen_mode_config_changed"
 
@@ -81,13 +81,13 @@
 
     sput-object v0, Lcom/android/systemui/volume/Events;->EVENT_TAGS:[Ljava/lang/String;
 
-    const-string v1, "unknown"
+    const-string/jumbo v1, "unknown"
 
-    const-string v2, "touch_outside"
+    const-string/jumbo v2, "touch_outside"
 
     const-string/jumbo v3, "volume_controller"
 
-    const-string v4, "timeout"
+    const-string/jumbo v4, "timeout"
 
     const-string v5, "screen_off"
 
@@ -107,7 +107,7 @@
 
     sput-object v0, Lcom/android/systemui/volume/Events;->DISMISS_REASONS:[Ljava/lang/String;
 
-    const-string v0, "unknown"
+    const-string/jumbo v0, "unknown"
 
     const-string/jumbo v1, "volume_changed"
 
@@ -139,7 +139,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "unknown_state_"
+    const-string/jumbo v1, "unknown_state_"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -162,7 +162,7 @@
     return-object v0
 
     :pswitch_2
-    const-string v0, "unmute"
+    const-string/jumbo v0, "unmute"
 
     return-object v0
 
@@ -181,7 +181,7 @@
 
     packed-switch p0, :pswitch_data_0
 
-    const-string v0, "unknown"
+    const-string/jumbo v0, "unknown"
 
     return-object v0
 
@@ -199,8 +199,6 @@
     const-string v0, "silent"
 
     return-object v0
-
-    nop
 
     nop
 
@@ -648,7 +646,7 @@
 
     packed-switch p0, :pswitch_data_0
 
-    const-string v0, "unknown"
+    const-string/jumbo v0, "unknown"
 
     return-object v0
 
@@ -671,6 +669,8 @@
     const-string v0, "off"
 
     return-object v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

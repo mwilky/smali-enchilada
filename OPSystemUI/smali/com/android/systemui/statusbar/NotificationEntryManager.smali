@@ -757,11 +757,40 @@
 
     move-result-object v2
 
-    if-nez v0, :cond_b
+    iget-object v3, v2, Landroid/app/Notification;->fullScreenIntent:Landroid/app/PendingIntent;
+
+    if-eqz v3, :cond_3
+
+    const-string v3, "NotificationEntryMgr"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "Notification sent with fullscreen intent: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v5, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Landroid/service/notification/StatusBarNotification;
+
+    invoke-virtual {v5}, Landroid/service/notification/StatusBarNotification;->getKey()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_3
+    if-nez v0, :cond_c
 
     iget-object v3, v2, Landroid/app/Notification;->fullScreenIntent:Landroid/app/PendingIntent;
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_c
 
     iget-object v3, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Landroid/service/notification/StatusBarNotification;
 
@@ -773,11 +802,11 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_5
 
     sget-boolean v1, Lcom/android/systemui/statusbar/NotificationEntryManager;->OP_DEBUG:Z
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_c
 
     const-string v1, "NotificationEntryMgr"
 
@@ -795,13 +824,13 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz p3, :cond_3
+    if-eqz p3, :cond_4
 
-    const-string v5, "update"
+    const-string/jumbo v5, "update"
 
     goto :goto_1
 
-    :cond_3
+    :cond_4
     const-string v5, "add"
 
     :goto_1
@@ -815,7 +844,7 @@
 
     goto/16 :goto_5
 
-    :cond_4
+    :cond_5
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationEntryManager;->mNotificationData:Lcom/android/systemui/statusbar/NotificationData;
 
     invoke-virtual {v4, v3}, Lcom/android/systemui/statusbar/NotificationData;->getImportance(Ljava/lang/String;)I
@@ -824,11 +853,11 @@
 
     const/4 v5, 0x4
 
-    if-ge v4, v5, :cond_6
+    if-ge v4, v5, :cond_7
 
     sget-boolean v1, Lcom/android/systemui/statusbar/NotificationEntryManager;->OP_DEBUG:Z
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_c
 
     const-string v1, "NotificationEntryMgr"
 
@@ -846,13 +875,13 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_6
 
-    const-string v5, "update"
+    const-string/jumbo v5, "update"
 
     goto :goto_2
 
-    :cond_5
+    :cond_6
     const-string v5, "add"
 
     :goto_2
@@ -866,12 +895,12 @@
 
     goto :goto_5
 
-    :cond_6
-    if-ne p2, v1, :cond_8
+    :cond_7
+    if-ne p2, v1, :cond_9
 
     sget-boolean v1, Lcom/android/systemui/statusbar/NotificationEntryManager;->OP_DEBUG:Z
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_c
 
     const-string v1, "NotificationEntryMgr"
 
@@ -889,13 +918,13 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz p3, :cond_7
+    if-eqz p3, :cond_8
 
-    const-string v5, "update"
+    const-string/jumbo v5, "update"
 
     goto :goto_3
 
-    :cond_7
+    :cond_8
     const-string v5, "add"
 
     :goto_3
@@ -909,7 +938,7 @@
 
     goto :goto_5
 
-    :cond_8
+    :cond_9
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationEntryManager;->mContext:Landroid/content/Context;
 
     invoke-static {v4}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->getInstance(Landroid/content/Context;)Lcom/android/systemui/recents/misc/SystemServicesProxy;
@@ -920,7 +949,7 @@
 
     sget-boolean v4, Lcom/android/systemui/statusbar/NotificationEntryManager;->OP_DEBUG:Z
 
-    if-eqz v4, :cond_a
+    if-eqz v4, :cond_b
 
     const-string v4, "NotificationEntryMgr"
 
@@ -932,13 +961,13 @@
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz p3, :cond_9
+    if-eqz p3, :cond_a
 
-    const-string v6, "update"
+    const-string/jumbo v6, "update"
 
     goto :goto_4
 
-    :cond_9
+    :cond_a
     const-string v6, "add"
 
     :goto_4
@@ -950,7 +979,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_a
+    :cond_b
     const v4, 0x8ca2
 
     :try_start_0
@@ -975,7 +1004,7 @@
     :catch_0
     move-exception v1
 
-    :cond_b
+    :cond_c
     :goto_5
     return-void
 .end method
@@ -2816,7 +2845,7 @@
 
     move-result-object v0
 
-    const-string v1, "ticker_gets_heads_up"
+    const-string/jumbo v1, "ticker_gets_heads_up"
 
     invoke-static {v1}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -3289,7 +3318,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/util/ArraySet;->size()I
 
@@ -3298,8 +3327,49 @@
     const/4 v2, 0x0
 
     :goto_0
-    if-ge v2, v1, :cond_0
+    if-ge v2, v1, :cond_1
 
+    invoke-virtual {v0, v2}, Landroid/util/ArraySet;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    if-nez v3, :cond_0
+
+    const-string v3, "NotificationEntryMgr"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "appOp is null: package: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v5, " key: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->getKey()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_0
     invoke-virtual {v0, v2}, Landroid/util/ArraySet;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -3326,7 +3396,7 @@
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     return-void
 .end method
 
@@ -3607,7 +3677,7 @@
     :goto_3
     invoke-virtual {p4, v5}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->setLegacy(Z)V
 
-    const v5, 0x7f0a019a
+    const v5, 0x7f0a019c
 
     iget v6, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->targetSdk:I
 

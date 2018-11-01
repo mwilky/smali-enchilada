@@ -135,9 +135,9 @@
 
     move-result-object v3
 
-    const-string v4, "text"
+    const-string/jumbo v4, "text"
 
-    const-string v5, "title"
+    const-string/jumbo v5, "title"
 
     const/4 v6, 0x0
 
@@ -158,7 +158,7 @@
 
     move-result-object v4
 
-    const-string v5, "text"
+    const-string/jumbo v5, "text"
 
     const-string v6, "content_description"
 
@@ -175,7 +175,7 @@
     iput-object v5, p0, Landroidx/slice/core/SliceActionImpl;->mContentDescription:Ljava/lang/CharSequence;
 
     :cond_5
-    const-string v5, "toggle"
+    const-string/jumbo v5, "toggle"
 
     invoke-virtual {v1}, Landroidx/slice/SliceItem;->getSubType()Ljava/lang/String;
 
@@ -270,7 +270,7 @@
 
     iget-object v1, p0, Landroidx/slice/core/SliceActionImpl;->mTitle:Ljava/lang/CharSequence;
 
-    const-string v4, "title"
+    const-string/jumbo v4, "title"
 
     filled-new-array {v4}, [Ljava/lang/String;
 
@@ -328,7 +328,7 @@
 
     if-eqz v1, :cond_6
 
-    const-string v2, "toggle"
+    const-string/jumbo v2, "toggle"
 
     nop
 

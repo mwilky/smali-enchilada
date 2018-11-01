@@ -29,6 +29,9 @@
 .method public abstract onGlobalActionsShown()V
 .end method
 
+.method public abstract op_reboot(ZLjava/lang/String;Z)V
+.end method
+
 .method public abstract reboot(Z)V
 .end method
 

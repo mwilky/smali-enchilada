@@ -845,13 +845,13 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mBgColor:I
 
-    const v3, 0x7f0703a4
+    const v3, 0x7f0703ad
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v3
 
-    const v4, 0x7f07039f
+    const v4, 0x7f0703a8
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -919,7 +919,7 @@
 
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mFadeNotificationsOnDismiss:Z
 
-    const v1, 0x7f0706a9
+    const v1, 0x7f0706b7
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -927,7 +927,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mSeparatorWidth:I
 
-    const v1, 0x7f0706a8
+    const v1, 0x7f0706b6
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -935,7 +935,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mSeparatorThickness:I
 
-    const v1, 0x7f0706a1
+    const v1, 0x7f0706af
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -4567,7 +4567,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0703a4
+    const v2, 0x7f0703ad
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -4585,7 +4585,7 @@
 
     nop
 
-    const v2, 0x7f07038d
+    const v2, 0x7f070396
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -4601,7 +4601,7 @@
 
     nop
 
-    const v2, 0x7f07038e
+    const v2, 0x7f070397
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -4609,7 +4609,7 @@
 
     iput v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mIncreasedPaddingBetweenElements:I
 
-    const v2, 0x7f070319
+    const v2, 0x7f070322
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -4619,7 +4619,7 @@
 
     iput v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mMinTopOverScrollToEscape:F
 
-    const v2, 0x7f070608
+    const v2, 0x7f070616
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -4627,7 +4627,7 @@
 
     iput v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mStatusBarHeight:I
 
-    const v2, 0x7f0703a9
+    const v2, 0x7f0703b2
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -4635,7 +4635,7 @@
 
     iput v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mBottomMargin:I
 
-    const v2, 0x7f0703b3
+    const v2, 0x7f0703bc
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -4643,7 +4643,7 @@
 
     iput v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mSidePaddings:I
 
-    const v2, 0x7f0703a8
+    const v2, 0x7f0703b1
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -4667,7 +4667,7 @@
 
     iget v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mStatusBarHeight:I
 
-    const v3, 0x7f0701e1
+    const v3, 0x7f0701ed
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -8064,7 +8064,7 @@
 .end method
 
 .method private updateBackgroundDimming()V
-    .locals 7
+    .locals 6
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mShouldDrawNotificationBackground:Z
 
@@ -8098,19 +8098,9 @@
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/ScrimController;->getBackgroundColor()I
 
     move-result v1
-    
-    sget-boolean v6, Lcom/android/mwilky/Renovate;->mExtendedTheming:Z
-    
-    if-eqz v6, :cond_stock
-    
-    sget v2, Lcom/android/mwilky/Renovate;->mOPNotificationShadeBackgroundColor:I
-    
-    goto :goto_custom
 
-    :cond_stock
     iget v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mBgColor:I
 
-    :goto_custom
     invoke-static {v1, v2, v0}, Landroid/support/v4/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v2
@@ -9912,7 +9902,7 @@
 
     if-eqz v1, :cond_1
 
-    const-string v4, "transient"
+    const-string/jumbo v4, "transient"
 
     goto :goto_0
 
@@ -12397,7 +12387,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070608
+    const v1, 0x7f070616
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -15357,7 +15347,7 @@
     :goto_0
     invoke-direct {v0, v1, v2}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
-    const v1, 0x7f040456
+    const v1, 0x7f040463
 
     invoke-static {v0, v1}, Lcom/android/settingslib/Utils;->getColorAttr(Landroid/content/Context;I)I
 

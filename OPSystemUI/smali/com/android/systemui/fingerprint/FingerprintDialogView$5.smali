@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/systemui/fingerprint/FingerprintDialogView;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/systemui/fingerprint/FingerprintDialogView;->setOwnerString(Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -39,9 +39,9 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$5;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    const/4 v1, 0x6
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->updateFpDaemonStatus(I)V
+    invoke-virtual {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->updateIconVisibility(Z)V
 
     return-void
 .end method

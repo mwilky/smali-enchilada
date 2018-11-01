@@ -15,6 +15,6 @@
 
 
 # static fields
-.field public static final design_bottom_navigation_item_background:I = 0x7f0801c9
+.field public static final design_bottom_navigation_item_background:I = 0x7f0801cb
 
-.field public static final navigation_empty_icon:I = 0x7f080477
+.field public static final navigation_empty_icon:I = 0x7f080486

@@ -78,7 +78,7 @@
 
     const-class v1, Landroid/graphics/PointF;
 
-    const-string v2, "translations"
+    const-string/jumbo v2, "translations"
 
     invoke-direct {v0, v1, v2}, Landroid/support/transition/ChangeTransform$2;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 

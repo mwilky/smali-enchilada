@@ -266,7 +266,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070396
+    const v1, 0x7f07039f
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -274,7 +274,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/NotificationShelf;->mIconAppearTopPadding:I
 
-    const v1, 0x7f070608
+    const v1, 0x7f070616
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -282,7 +282,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/NotificationShelf;->mStatusBarHeight:I
 
-    const v1, 0x7f070613
+    const v1, 0x7f070621
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -290,7 +290,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/NotificationShelf;->mStatusBarPaddingStart:I
 
-    const v1, 0x7f07038d
+    const v1, 0x7f070396
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -298,7 +298,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/NotificationShelf;->mPaddingBetweenElements:I
 
-    const v1, 0x7f0705dd
+    const v1, 0x7f0705eb
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -310,7 +310,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0703b2
+    const v2, 0x7f0703bb
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -320,7 +320,7 @@
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/NotificationShelf;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    const v2, 0x7f0705de
+    const v2, 0x7f0705ec
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -332,7 +332,7 @@
 
     invoke-virtual {v3, v2, v4, v2, v4}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer;->setPadding(IIII)V
 
-    const v3, 0x7f0705cf
+    const v3, 0x7f0705dd
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -972,7 +972,7 @@
     move v1, v2
 
     :goto_0
-    const v4, 0x7f0a00d7
+    const v4, 0x7f0a00d8
 
     invoke-virtual {v0, v4}, Lcom/android/systemui/statusbar/StatusBarIconView;->getTag(I)Ljava/lang/Object;
 
@@ -2264,7 +2264,7 @@
 
     invoke-super {p0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->onFinishInflate()V
 
-    const v0, 0x7f0a00ce
+    const v0, 0x7f0a00cf
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/NotificationShelf;->findViewById(I)Landroid/view/View;
 
@@ -3458,9 +3458,9 @@
 
     const/4 v4, 0x0
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_8
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_8
 
     invoke-virtual/range {p2 .. p2}, Lcom/android/systemui/statusbar/stack/AmbientState;->getInnerHeight()I
 
@@ -3697,12 +3697,15 @@
     iput v13, v11, Lcom/android/systemui/statusbar/NotificationShelf$ShelfState;->notGoneIndex:I
 
     :cond_4
+    if-eqz v6, :cond_5
+
     iget-object v11, v0, Lcom/android/systemui/statusbar/NotificationShelf;->mShelfState:Lcom/android/systemui/statusbar/NotificationShelf$ShelfState;
 
     iget-boolean v13, v6, Lcom/android/systemui/statusbar/stack/ExpandableViewState;->inShelf:Z
 
     invoke-static {v11, v13}, Lcom/android/systemui/statusbar/NotificationShelf$ShelfState;->access$202(Lcom/android/systemui/statusbar/NotificationShelf$ShelfState;Z)Z
 
+    :cond_5
     iget-object v11, v0, Lcom/android/systemui/statusbar/NotificationShelf;->mShelfState:Lcom/android/systemui/statusbar/NotificationShelf$ShelfState;
 
     iget-object v13, v0, Lcom/android/systemui/statusbar/NotificationShelf;->mAmbientState:Lcom/android/systemui/statusbar/stack/AmbientState;
@@ -3711,7 +3714,7 @@
 
     move-result v13
 
-    if-eqz v13, :cond_6
+    if-eqz v13, :cond_7
 
     iget-object v13, v0, Lcom/android/systemui/statusbar/NotificationShelf;->mAmbientState:Lcom/android/systemui/statusbar/stack/AmbientState;
 
@@ -3719,16 +3722,16 @@
 
     move-result v13
 
-    if-eqz v13, :cond_5
+    if-eqz v13, :cond_6
 
     goto :goto_4
 
-    :cond_5
+    :cond_6
     move v3, v4
 
     nop
 
-    :cond_6
+    :cond_7
     :goto_4
     iput-boolean v3, v11, Lcom/android/systemui/statusbar/NotificationShelf$ShelfState;->hidden:Z
 
@@ -3738,7 +3741,7 @@
 
     goto :goto_5
 
-    :cond_7
+    :cond_8
     move-object/from16 v5, p1
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/NotificationShelf;->mShelfState:Lcom/android/systemui/statusbar/NotificationShelf$ShelfState;

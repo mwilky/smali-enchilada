@@ -123,7 +123,7 @@
 
     const-string v1, "KeyguardViewBase"
 
-    const-string v2, "update security icon when occluded"
+    const-string/jumbo v2, "update security icon when occluded"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 

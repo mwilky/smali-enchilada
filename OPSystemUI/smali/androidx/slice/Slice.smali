@@ -111,7 +111,7 @@
     goto :goto_0
 
     :cond_1
-    const-string v0, "uri"
+    const-string/jumbo v0, "uri"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
@@ -123,7 +123,7 @@
 
     iput-object v0, p0, Landroidx/slice/Slice;->mUri:Ljava/lang/String;
 
-    const-string v0, "type"
+    const-string/jumbo v0, "type"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
@@ -133,7 +133,7 @@
 
     new-instance v0, Landroidx/slice/SliceSpec;
 
-    const-string v2, "type"
+    const-string/jumbo v2, "type"
 
     invoke-virtual {p1, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -457,7 +457,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putParcelableArray(Ljava/lang/String;[Landroid/os/Parcelable;)V
 
-    const-string v2, "uri"
+    const-string/jumbo v2, "uri"
 
     iget-object v3, p0, Landroidx/slice/Slice;->mUri:Ljava/lang/String;
 
@@ -471,7 +471,7 @@
 
     if-eqz v2, :cond_1
 
-    const-string v2, "type"
+    const-string/jumbo v2, "type"
 
     iget-object v3, p0, Landroidx/slice/Slice;->mSpec:Landroidx/slice/SliceSpec;
 

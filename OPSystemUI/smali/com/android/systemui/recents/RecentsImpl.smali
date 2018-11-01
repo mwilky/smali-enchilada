@@ -196,7 +196,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsImpl;->mContext:Landroid/content/Context;
 
-    const-string v1, "trust"
+    const-string/jumbo v1, "trust"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -862,19 +862,19 @@
 
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsImpl;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0705b1
+    const v2, 0x7f0705bf
 
-    const v3, 0x7f0705b1
+    const v3, 0x7f0705bf
 
-    const v4, 0x7f0705b1
+    const v4, 0x7f0705bf
 
-    const v5, 0x7f0705b2
+    const v5, 0x7f0705c0
 
-    const v6, 0x7f0705b1
+    const v6, 0x7f0705bf
 
-    const v7, 0x7f0705b2
+    const v7, 0x7f0705c0
 
-    const v8, 0x7f070590
+    const v8, 0x7f07059e
 
     invoke-static/range {v1 .. v8}, Lcom/android/systemui/recents/views/TaskStackLayoutAlgorithm;->getDimensionForDevice(Landroid/content/Context;IIIIIII)I
 
@@ -888,7 +888,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d01a1
+    const v2, 0x7f0d01a2
 
     const/4 v3, 0x0
 

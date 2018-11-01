@@ -122,6 +122,53 @@
 .method private bindGuts(Lcom/android/systemui/statusbar/ExpandableNotificationRow;Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;)V
     .locals 3
 
+    if-nez p2, :cond_1
+
+    const-string v0, "NotificationGutsManager"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "MenuItem("
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v2, ") key: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getEntry()Lcom/android/systemui/statusbar/NotificationData$Entry;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-nez v1, :cond_0
+
+    const-string v1, "entry is null"
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getEntry()Lcom/android/systemui/statusbar/NotificationData$Entry;
+
+    move-result-object v1
+
+    iget-object v1, v1, Lcom/android/systemui/statusbar/NotificationData$Entry;->key:Ljava/lang/String;
+
+    :goto_0
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_1
     invoke-virtual {p1}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getStatusBarNotification()Landroid/service/notification/StatusBarNotification;
 
     move-result-object v0
@@ -152,7 +199,7 @@
 
     instance-of v2, v1, Lcom/android/systemui/statusbar/NotificationSnooze;
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_2
 
     move-object v2, v1
 
@@ -160,12 +207,12 @@
 
     invoke-direct {p0, p1, v2}, Lcom/android/systemui/statusbar/NotificationGutsManager;->initializeSnoozeView(Lcom/android/systemui/statusbar/ExpandableNotificationRow;Lcom/android/systemui/statusbar/NotificationSnooze;)V
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_0
+    :cond_2
     instance-of v2, v1, Lcom/android/systemui/statusbar/AppOpsInfo;
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_3
 
     move-object v2, v1
 
@@ -173,12 +220,12 @@
 
     invoke-direct {p0, p1, v2}, Lcom/android/systemui/statusbar/NotificationGutsManager;->initializeAppOpsInfo(Lcom/android/systemui/statusbar/ExpandableNotificationRow;Lcom/android/systemui/statusbar/AppOpsInfo;)V
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_1
+    :cond_3
     instance-of v2, v1, Lcom/android/systemui/statusbar/NotificationInfo;
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_4
 
     move-object v2, v1
 
@@ -186,8 +233,8 @@
 
     invoke-virtual {p0, p1, v2}, Lcom/android/systemui/statusbar/NotificationGutsManager;->initializeNotificationInfo(Lcom/android/systemui/statusbar/ExpandableNotificationRow;Lcom/android/systemui/statusbar/NotificationInfo;)V
 
-    :cond_2
-    :goto_0
+    :cond_4
+    :goto_1
     return-void
 .end method
 

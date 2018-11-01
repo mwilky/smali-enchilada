@@ -242,7 +242,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/charging/WirelessChargingView;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f040456
+    const v2, 0x7f040463
 
     invoke-static {v1, v2}, Lcom/android/settingslib/Utils;->getColorAttr(Landroid/content/Context;I)I
 
@@ -386,7 +386,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0706b5
+    const v1, 0x7f0706c3
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -398,7 +398,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0706b4
+    const v1, 0x7f0706c2
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -410,7 +410,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0706b3
+    const v1, 0x7f0706c1
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -422,7 +422,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0706b2
+    const v1, 0x7f0706c0
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

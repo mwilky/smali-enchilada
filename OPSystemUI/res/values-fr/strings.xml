@@ -1123,6 +1123,8 @@ Vous êtes également connecté à un VPN qui peut contrôler votre activité su
     <string name="qs_rearrange">Réorganiser la fenêtre de configuration rapide</string>
     <string name="qs_status_phone_muted">Sons du téléphone désactivés</string>
     <string name="qs_status_phone_vibrate">Mode Vibreur activé</string>
+    <string name="quick_launch_exit">Quitter</string>
+    <string name="quick_launch_exit_hint">"Retirer le doigt de l'écran pour quitter"</string>
     <string name="quick_settings">Configuration rapide</string>
     <string name="quick_settings_bluetooth_detail_empty_text">Aucun appareil associé disponible.</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1320,10 +1322,13 @@ Vous êtes également connecté à un VPN qui peut contrôler votre activité su
     <string name="sd_card_unmount_action">Démonter</string>
     <string name="search_menu_title">Rechercher</string>
     <string name="select_application">Sélectionner une appli</string>
+    <string name="select_day">Sélectionner le mois et le jour</string>
+    <string name="select_hours">Sélectionner les heures</string>
     <string name="select_logd_size_dialog_title">Tailles enreg. par tampon journal</string>
     <string name="select_logd_size_title">Tailles mémoires tampons enregistr.</string>
     <string name="select_logpersist_dialog_title">"Sélectionner les mémoires tampon journal à stocker en permanence sur l'appareil"</string>
     <string name="select_logpersist_title">Stocker données enregistreur en permanence sur appareil</string>
+    <string name="select_minutes">Sélectionner les minutes</string>
     <string name="select_private_dns_configuration_dialog_title">Sélectionner le mode DNS privé</string>
     <string name="select_private_dns_configuration_title">DNS privé</string>
     <string name="select_usb_configuration_dialog_title">Sélectionner une configuration USB</string>
@@ -1331,6 +1336,7 @@ Vous êtes également connecté à un VPN qui peut contrôler votre activité su
     <string name="select_webview_provider_dialog_title">Définir la mise en œuvre WebView</string>
     <string name="select_webview_provider_title">Mise en œuvre WebView</string>
     <string name="select_webview_provider_toast_text">"Ce choix n'est plus valide. Réessayez."</string>
+    <string name="select_year">"Sélectionner l'année"</string>
     <string name="show_all_anrs">"Voir ANR d'arrière-plan"</string>
     <string name="show_all_anrs_summary">"Afficher la boîte de dialogue \"L'application ne répond plus\" pour les applications en arrière-plan"</string>
     <string name="show_battery_percentage">Afficher le pourcentage intégré de la batterie</string>
@@ -1426,6 +1432,11 @@ Il peut surchauffer si vous :
 \u0009• utilisez téléphone à des températures élevées."</string>
     <string name="thermal_shutdown_message">À présent, votre téléphone fonctionne normalement</string>
     <string name="thermal_shutdown_title">Tél. éteint car il surchauffait</string>
+    <string name="time_picker_header_text">Définir une durée</string>
+    <string name="time_picker_hour_label">heure</string>
+    <string name="time_picker_input_error">Saisir une durée valide</string>
+    <string name="time_picker_minute_label">minute</string>
+    <string name="time_picker_prompt_label">Saisir dans la durée</string>
     <string name="time_unit_just_now">"À l'instant"</string>
     <string name="title_convert_fbe">Conversion en chiffrement basé sur un fichier en cours</string>
     <string name="title_usb_accessory">Accessoire USB</string>
@@ -1549,6 +1560,7 @@ N'importe quel utilisateur peut mettre à jour les applications pour tous les au
     <string name="wait_for_debugger">"Attendre l'intervention du débogueur"</string>
     <string name="wait_for_debugger_summary">"L'application déboguée attend d'être liée au débogueur pour s'exécuter."</string>
     <string name="wifi_ap_unable_to_handle_new_sta">"Point d'accès temporairement plein"</string>
+    <string name="wifi_auth_password_wrong">Le mot de passe peut être incorrect</string>
     <string name="wifi_cant_connect">Connexion impossible</string>
     <string name="wifi_cant_connect_to_ap">Impossible de se connecter au réseau \"%1$s\"</string>
     <string name="wifi_check_password_try_again">Vérifiez le mot de passe et réessayez</string>

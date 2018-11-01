@@ -6,7 +6,7 @@
 # instance fields
 .field private final TAG:Ljava/lang/String;
 
-.field private mButton:Landroid/widget/Button;
+.field private mButton:Landroid/widget/TextView;
 
 .field private mClockView:Lcom/android/keyguard/clock/OPTextClock;
 
@@ -161,7 +161,7 @@
 .method public init()V
     .locals 3
 
-    const v0, 0x7f0a0142
+    const v0, 0x7f0a0143
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->findViewById(I)Landroid/view/View;
 
@@ -171,7 +171,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mInnerView:Landroid/widget/LinearLayout;
 
-    const v0, 0x7f0a0146
+    const v0, 0x7f0a0147
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->findViewById(I)Landroid/view/View;
 
@@ -197,7 +197,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mConfig:Landroid/content/res/Configuration;
 
-    const v1, 0x7f0a0140
+    const v1, 0x7f0a0141
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->findViewById(I)Landroid/view/View;
 
@@ -207,7 +207,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mClockView:Lcom/android/keyguard/clock/OPTextClock;
 
-    const v1, 0x7f0a0141
+    const v1, 0x7f0a0142
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->findViewById(I)Landroid/view/View;
 
@@ -225,17 +225,17 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mNotifyView:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0145
+    const v0, 0x7f0a0146
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/Button;
+    check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mButton:Landroid/widget/Button;
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mButton:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0144
+    const v0, 0x7f0a0145
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->findViewById(I)Landroid/view/View;
 
@@ -259,7 +259,7 @@
 .end method
 
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
-    .locals 5
+    .locals 2
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mNotify:Landroid/widget/TextView;
 
@@ -267,107 +267,17 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mButton:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mButton:Landroid/widget/TextView;
 
     const v1, 0x7f110069
 
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
     new-instance v0, Landroid/content/res/Configuration;
 
     invoke-direct {v0, p1}, Landroid/content/res/Configuration;-><init>(Landroid/content/res/Configuration;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mConfig:Landroid/content/res/Configuration;
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mClockView:Lcom/android/keyguard/clock/OPTextClock;
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f0704e7
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v2, v1}, Lcom/android/keyguard/clock/OPTextClock;->setTextSize(IF)V
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mClockView:Lcom/android/keyguard/clock/OPTextClock;
-
-    invoke-virtual {v0}, Lcom/android/keyguard/clock/OPTextClock;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v3, 0x7f070090
-
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v1
-
-    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mClockView:Lcom/android/keyguard/clock/OPTextClock;
-
-    invoke-virtual {v1, v0}, Lcom/android/keyguard/clock/OPTextClock;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mDateView:Lcom/android/keyguard/clock/OPTextClock;
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    const v4, 0x7f0704e8
-
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    invoke-virtual {v1, v2, v3}, Lcom/android/keyguard/clock/OPTextClock;->setTextSize(IF)V
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mNotifyView:Landroid/widget/TextView;
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    const v4, 0x7f0701c2
-
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    invoke-virtual {v1, v2, v3}, Landroid/widget/TextView;->setTextSize(IF)V
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mButton:Landroid/widget/Button;
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    const v4, 0x7f0701c1
-
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    invoke-virtual {v1, v2, v3}, Landroid/widget/Button;->setTextSize(IF)V
 
     return-void
 .end method

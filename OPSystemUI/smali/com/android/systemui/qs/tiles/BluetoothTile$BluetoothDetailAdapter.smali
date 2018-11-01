@@ -63,13 +63,13 @@
 
     move-result v0
 
-    const v1, 0x7f08032d
+    const v1, 0x7f080339
 
     if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
 
-    const v2, 0x7f1104b3
+    const v2, 0x7f1104b6
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/qs/QSDetailItems;->setEmptyState(II)V
 
@@ -141,7 +141,7 @@
 
     invoke-direct {v6}, Lcom/android/systemui/qs/QSDetailItems$Item;-><init>()V
 
-    const v7, 0x7f08032e
+    const v7, 0x7f08033a
 
     iput v7, v6, Lcom/android/systemui/qs/QSDetailItems$Item;->iconResId:I
 
@@ -153,13 +153,7 @@
 
     iput-object v5, v6, Lcom/android/systemui/qs/QSDetailItems$Item;->tag:Ljava/lang/Object;
 
-    iget-object v7, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
-
-    invoke-static {v7}, Lcom/android/systemui/qs/tiles/BluetoothTile;->access$600(Lcom/android/systemui/qs/tiles/BluetoothTile;)Lcom/android/systemui/statusbar/policy/BluetoothController;
-
-    move-result-object v7
-
-    invoke-interface {v7, v5}, Lcom/android/systemui/statusbar/policy/BluetoothController;->getMaxConnectionState(Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)I
+    invoke-virtual {v5}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->getMaxConnectionState()I
 
     move-result v7
 
@@ -169,7 +163,7 @@
 
     if-ne v7, v8, :cond_4
 
-    const v8, 0x7f08032b
+    const v8, 0x7f080337
 
     iput v8, v6, Lcom/android/systemui/qs/QSDetailItems$Item;->iconResId:I
 
@@ -197,7 +191,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f1104ce
+    const v11, 0x7f1104d1
 
     new-array v12, v9, [Ljava/lang/Object;
 
@@ -224,7 +218,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f1104cd
+    const v11, 0x7f1104d0
 
     invoke-virtual {v10, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -244,7 +238,7 @@
     :cond_4
     if-ne v7, v9, :cond_5
 
-    const v8, 0x7f08032c
+    const v8, 0x7f080338
 
     iput v8, v6, Lcom/android/systemui/qs/QSDetailItems$Item;->iconResId:I
 
@@ -254,7 +248,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f1104cf
+    const v9, 0x7f1104d2
 
     invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -369,7 +363,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1104b4
+    const v1, 0x7f1104b7
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -462,13 +456,7 @@
 
     if-eqz v0, :cond_1
 
-    iget-object v1, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
-
-    invoke-static {v1}, Lcom/android/systemui/qs/tiles/BluetoothTile;->access$600(Lcom/android/systemui/qs/tiles/BluetoothTile;)Lcom/android/systemui/statusbar/policy/BluetoothController;
-
-    move-result-object v1
-
-    invoke-interface {v1, v0}, Lcom/android/systemui/statusbar/policy/BluetoothController;->getMaxConnectionState(Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)I
+    invoke-virtual {v0}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->getMaxConnectionState()I
 
     move-result v1
 

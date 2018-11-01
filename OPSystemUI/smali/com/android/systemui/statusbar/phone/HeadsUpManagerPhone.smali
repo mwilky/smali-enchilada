@@ -266,7 +266,7 @@
 
     iget v1, p0, Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone;->mStatusBarHeight:I
 
-    const v2, 0x7f0701e1
+    const v2, 0x7f0701ed
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -307,7 +307,7 @@
 
     check-cast v5, Landroidx/slice/SliceItem;
 
-    const-string v9, "text"
+    const-string/jumbo v9, "text"
 
     invoke-virtual {v5}, Landroidx/slice/SliceItem;->getFormat()Ljava/lang/String;
 
@@ -342,7 +342,7 @@
 
     check-cast v5, Landroidx/slice/SliceItem;
 
-    const-string v9, "title"
+    const-string/jumbo v9, "title"
 
     const-string v15, "large"
 
@@ -403,7 +403,7 @@
 
     if-ge v5, v11, :cond_9
 
-    const-string v0, "text"
+    const-string/jumbo v0, "text"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -665,7 +665,7 @@
 
     const/4 v1, 0x0
 
-    const-string v2, "text"
+    const-string/jumbo v2, "text"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -815,7 +815,7 @@
     :goto_4
     const-string v2, "large"
 
-    const-string v5, "title"
+    const-string/jumbo v5, "title"
 
     filled-new-array {v2, v5}, [Ljava/lang/String;
 
@@ -1180,7 +1180,7 @@
     return v0
 
     :cond_1
-    const-string v1, "text"
+    const-string/jumbo v1, "text"
 
     invoke-virtual {p1}, Landroidx/slice/SliceItem;->getFormat()Ljava/lang/String;
 

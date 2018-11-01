@@ -40,6 +40,8 @@
 
 .field protected final mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
+.field private mNoAnim:Z
+
 .field private final mRemoveViewRunnable:Ljava/lang/Runnable;
 
 .field private final mResetRunnable:Ljava/lang/Runnable;
@@ -83,13 +85,15 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->mExpansion:F
 
-    new-instance v0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer$2;
-
-    invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/KeyguardBouncer$2;-><init>(Lcom/android/systemui/statusbar/phone/KeyguardBouncer;)V
-
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->mShowRunnable:Ljava/lang/Runnable;
-
     const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->mNoAnim:Z
+
+    new-instance v1, Lcom/android/systemui/statusbar/phone/KeyguardBouncer$2;
+
+    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/KeyguardBouncer$2;-><init>(Lcom/android/systemui/statusbar/phone/KeyguardBouncer;)V
+
+    iput-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->mShowRunnable:Ljava/lang/Runnable;
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->mHideNavBar:Z
 
@@ -150,7 +154,23 @@
     return v0
 .end method
 
+.method static synthetic access$200(Lcom/android/systemui/statusbar/phone/KeyguardBouncer;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->mNoAnim:Z
+
+    return v0
+.end method
+
 .method static synthetic access$202(Lcom/android/systemui/statusbar/phone/KeyguardBouncer;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->mNoAnim:Z
+
+    return p1
+.end method
+
+.method static synthetic access$302(Lcom/android/systemui/statusbar/phone/KeyguardBouncer;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->mShowingSoon:Z
@@ -158,7 +178,7 @@
     return p1
 .end method
 
-.method static synthetic access$300(Lcom/android/systemui/statusbar/phone/KeyguardBouncer;)F
+.method static synthetic access$400(Lcom/android/systemui/statusbar/phone/KeyguardBouncer;)F
     .locals 1
 
     iget v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->mExpansion:F
@@ -176,6 +196,8 @@
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->mShowingSoon:Z
+
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->mNoAnim:Z
 
     return-void
 .end method
@@ -466,7 +488,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->mKeyguardView:Lcom/android/keyguard/KeyguardHostView;
 
-    const v2, 0x7f0a01d1
+    const v2, 0x7f0a01d4
 
     invoke-virtual {v1, v2}, Lcom/android/keyguard/KeyguardHostView;->findViewById(I)Landroid/view/View;
 
@@ -584,7 +606,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->mRoot:Landroid/view/ViewGroup;
 
-    const v1, 0x7f0a01cd
+    const v1, 0x7f0a01d0
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -632,7 +654,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070608
+    const v1, 0x7f070616
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -1308,7 +1330,32 @@
     return-void
 
     :cond_8
-    if-nez v3, :cond_9
+    invoke-static {}, Lcom/android/systemui/plugin/LSState;->getInstance()Lcom/android/systemui/plugin/LSState;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lcom/android/systemui/plugin/LSState;->getFingerprintUnlockControl()Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->isBouncerAnimNeeded()Z
+
+    move-result v6
+
+    iput-boolean v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->mNoAnim:Z
+
+    iget-boolean v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->mNoAnim:Z
+
+    if-eqz v6, :cond_9
+
+    const-string v6, "KeyguardBouncer"
+
+    const-string v7, "not show bouncer anim"
+
+    invoke-static {v6, v7}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_9
+    if-nez v3, :cond_a
 
     const-string v6, "KeyguardBouncer"
 
@@ -1334,7 +1381,7 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_9
+    :cond_a
     iput-boolean v4, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->mShowingSoon:Z
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->mResetRunnable:Ljava/lang/Runnable;

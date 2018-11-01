@@ -217,7 +217,13 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->setClipToPadding(Z)V
 
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->updateNormalColor()V
+    const v0, 0x7f0602e3
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getColor(I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mNormalColor:I
 
     const v0, 0x7f0602e8
 
@@ -1902,13 +1908,13 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mBackgroundNormal:Lcom/android/systemui/statusbar/NotificationBackgroundView;
 
-    const v1, 0x7f080483
+    const v1, 0x7f080492
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/NotificationBackgroundView;->setCustomBackground(I)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mBackgroundDimmed:Lcom/android/systemui/statusbar/NotificationBackgroundView;
 
-    const v1, 0x7f080484
+    const v1, 0x7f080493
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/NotificationBackgroundView;->setCustomBackground(I)V
 
@@ -2044,7 +2050,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mBackgroundNormal:Lcom/android/systemui/statusbar/NotificationBackgroundView;
 
-    const v0, 0x7f0a0148
+    const v0, 0x7f0a0149
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->findViewById(I)Landroid/view/View;
 
@@ -2411,8 +2417,12 @@
 
 .method protected setBackgroundTintColor(I)V
     .locals 1
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->updateNormalColor()V
+
+    iget v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mCurrentBackgroundTint:I
+
+    if-eq p1, v0, :cond_1
+
+    iput p1, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mCurrentBackgroundTint:I
 
     iget v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mNormalColor:I
 
@@ -2430,8 +2440,6 @@
     invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/NotificationBackgroundView;->setTint(I)V
 
     :cond_1
-    iput p1, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mCurrentBackgroundTint:I
-    
     return-void
 .end method
 
@@ -2994,51 +3002,5 @@
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->updateBackgroundTint(Z)V
 
-    return-void
-.end method
-
-.method public onWindowFocusChanged(Z)V
-    .locals 1
-
-    invoke-super {p0, p1}, Lcom/android/systemui/statusbar/ExpandableOutlineView;->onWindowFocusChanged(Z)V
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->getVisibility()I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->updateNormalColor()V
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->initBackground()V
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->updateBackgroundTint()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public updateNormalColor()V
-    .locals 3
-    
-    sget-boolean v1, Lcom/android/mwilky/Renovate;->mExtendedTheming:Z
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mContext:Landroid/content/Context;
-    
-    const v2, 0x7f0602e3
-
-    invoke-virtual {v0, v2}, Landroid/content/Context;->getColor(I)I
-
-    move-result v0
-    
-    if-eqz v1, :cond_stock
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mOPNotificationBackgroundColor:I
-
-    :cond_stock
-    iput v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mNormalColor:I
-	
     return-void
 .end method

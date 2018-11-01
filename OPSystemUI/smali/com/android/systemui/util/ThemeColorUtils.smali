@@ -240,7 +240,7 @@
 
     sget v0, Lcom/android/systemui/util/ThemeColorUtils;->sCurrentTheme:I
 
-    const v1, 0x7f080564
+    const v1, 0x7f080573
 
     packed-switch v0, :pswitch_data_0
 
@@ -253,7 +253,7 @@
     return v1
 
     :pswitch_2
-    const v0, 0x7f080565
+    const v0, 0x7f080574
 
     return v0
 

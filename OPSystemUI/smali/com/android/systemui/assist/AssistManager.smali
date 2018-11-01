@@ -98,11 +98,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/assist/AssistManager;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    invoke-static {}, Landroid/app/ActivityManager;->isLowRamDeviceStatic()Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
+    const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/assist/AssistManager;->mShouldEnableOrb:Z
 
@@ -720,11 +716,7 @@
 .end method
 
 .method public showDisclosure()V
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/assist/AssistManager;->mAssistDisclosure:Lcom/android/systemui/assist/AssistDisclosure;
-
-    invoke-virtual {v0}, Lcom/android/systemui/assist/AssistDisclosure;->postShow()V
+    .locals 0
 
     return-void
 .end method

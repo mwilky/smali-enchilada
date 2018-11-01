@@ -33,9 +33,9 @@
 
 
 # instance fields
-.field public mVibrator:Landroid/os/Vibrator;
+.field private final MDM_TAG:Ljava/lang/String;
 
-.field protected final TAG:Ljava/lang/String;
+.field protected TAG:Ljava/lang/String;
 
 .field private mAnnounceNextStateChange:Z
 
@@ -121,7 +121,7 @@
 .end method
 
 .method protected constructor <init>(Lcom/android/systemui/qs/QSHost;)V
-    .locals 2
+    .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -146,6 +146,10 @@
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
+
+    iput-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->MDM_TAG:Ljava/lang/String;
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->MDM_TAG:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->TAG:Ljava/lang/String;
 
@@ -213,6 +217,59 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mTmpState:Lcom/android/systemui/plugins/qs/QSTile$State;
 
+    :try_start_0
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "@"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v2, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->TAG:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, "("
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/4 v2, 0x1
+
+    aget-object v2, v0, v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, ")"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->TAG:Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    :goto_0
+    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->TAG:Ljava/lang/String;
+
+    const-string v1, "init constructor"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     iput-object p1, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHost:Lcom/android/systemui/qs/QSHost;
 
     invoke-interface {p1}, Lcom/android/systemui/qs/QSHost;->getContext()Landroid/content/Context;
@@ -220,18 +277,6 @@
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mContext:Landroid/content/Context;
-    
-    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mContext:Landroid/content/Context;
-    
-    const-string v1, "vibrator"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/os/Vibrator;
-    
-    iput-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mVibrator:Landroid/os/Vibrator;
 
     return-void
 .end method
@@ -260,7 +305,15 @@
     return-void
 .end method
 
-.method static synthetic access$300(Lcom/android/systemui/qs/tileimpl/QSTileImpl;)Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;
+.method static synthetic access$300(Lcom/android/systemui/qs/tileimpl/QSTileImpl;)Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->MDM_TAG:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$400(Lcom/android/systemui/qs/tileimpl/QSTileImpl;)Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mEnforcedAdmin:Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;
@@ -268,7 +321,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$400(Lcom/android/systemui/qs/tileimpl/QSTileImpl;Z)V
+.method static synthetic access$500(Lcom/android/systemui/qs/tileimpl/QSTileImpl;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->handleShowDetail(Z)V
@@ -276,7 +329,7 @@
     return-void
 .end method
 
-.method static synthetic access$500(Lcom/android/systemui/qs/tileimpl/QSTileImpl;Z)V
+.method static synthetic access$600(Lcom/android/systemui/qs/tileimpl/QSTileImpl;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->handleToggleStateChanged(Z)V
@@ -284,7 +337,7 @@
     return-void
 .end method
 
-.method static synthetic access$600(Lcom/android/systemui/qs/tileimpl/QSTileImpl;Z)V
+.method static synthetic access$700(Lcom/android/systemui/qs/tileimpl/QSTileImpl;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->handleScanStateChanged(Z)V
@@ -292,7 +345,7 @@
     return-void
 .end method
 
-.method static synthetic access$700(Lcom/android/systemui/qs/tileimpl/QSTileImpl;Ljava/lang/Object;Z)V
+.method static synthetic access$800(Lcom/android/systemui/qs/tileimpl/QSTileImpl;Ljava/lang/Object;Z)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->handleSetListeningInternal(Ljava/lang/Object;Z)V
@@ -1503,22 +1556,5 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    return-void
-.end method
-
-.method public setVibrateTweak()V
-	.locals 3
-	
-	sget-boolean v0, Lcom/android/mwilky/Renovate;->mQsVibration:Z
-	
-	if-eqz v0, :cond_stock
-
-	iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mVibrator:Landroid/os/Vibrator;
-	
-    const-wide/16 v1, 0x64
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/Vibrator;->vibrate(J)V
-    
-    :cond_stock
     return-void
 .end method

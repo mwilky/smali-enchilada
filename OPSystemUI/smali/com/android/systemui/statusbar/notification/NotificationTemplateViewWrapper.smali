@@ -460,7 +460,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/notification/NotificationTemplateViewWrapper;->mPicture:Landroid/widget/ImageView;
 
-    const v1, 0x7f0a019e
+    const v1, 0x7f0a01a1
 
     invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
 
@@ -756,7 +756,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0705b7
+    const v2, 0x7f0705c5
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -1123,6 +1123,8 @@ Jste také připojeni k síti VPN, která může sledovat vaši aktivitu v sí
     <string name="qs_rearrange">Změnit uspořádání Rychlého nastavení</string>
     <string name="qs_status_phone_muted">Telefon je ztlumen</string>
     <string name="qs_status_phone_vibrate">Telefon je nastaven na vibrace</string>
+    <string name="quick_launch_exit">Ukončit</string>
+    <string name="quick_launch_exit_hint">Sundáním prstu z obrazovky ukončíte</string>
     <string name="quick_settings">Rychlé nastavení</string>
     <string name="quick_settings_bluetooth_detail_empty_text">Nejsou dostupná žádná spárovaná zařízení</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1320,10 +1322,13 @@ Jste také připojeni k síti VPN, která může sledovat vaši aktivitu v sí
     <string name="sd_card_unmount_action">Odpojit</string>
     <string name="search_menu_title">Hledat</string>
     <string name="select_application">Výběr aplikace</string>
+    <string name="select_day">Vyberte měsíc a den</string>
+    <string name="select_hours">Vyberte hodiny</string>
     <string name="select_logd_size_dialog_title">Velikost vyrovnávací paměti protokol. nástroje</string>
     <string name="select_logd_size_title">Vyrovnávací paměť protokol. nástroje</string>
     <string name="select_logpersist_dialog_title">Vyberte, které vyrovnávací paměti protokolů chcete trvale ukládat do zařízení</string>
     <string name="select_logpersist_title">Ukládat data protokolovacích nástrojů trvale do zařízení</string>
+    <string name="select_minutes">Vyberte minuty</string>
     <string name="select_private_dns_configuration_dialog_title">Vyberte soukromý režim DNS</string>
     <string name="select_private_dns_configuration_title">Soukromé DNS</string>
     <string name="select_usb_configuration_dialog_title">Výběr konfigurace USB</string>
@@ -1331,6 +1336,7 @@ Jste také připojeni k síti VPN, která může sledovat vaši aktivitu v sí
     <string name="select_webview_provider_dialog_title">Nastavte implementaci WebView</string>
     <string name="select_webview_provider_title">Implementace WebView</string>
     <string name="select_webview_provider_toast_text">Tato volba již není platná. Zkuste to znovu.</string>
+    <string name="select_year">Vyberte rok</string>
     <string name="show_all_anrs">Zobrazovat ANR na pozadí</string>
     <string name="show_all_anrs_summary">Zobrazovat dialog „Aplikace neodpovídá“ pro aplikace na pozadí</string>
     <string name="show_battery_percentage">Zobrazovat vložené procento nabití baterie</string>
@@ -1426,6 +1432,11 @@ Telefon se může příliš zahřát v těchto případech:
 \u0009• používání telefonu při vysokých teplotách."</string>
     <string name="thermal_shutdown_message">Nyní telefon funguje jako obvykle.</string>
     <string name="thermal_shutdown_title">Telefon se vypnul z důvodu zahřátí</string>
+    <string name="time_picker_header_text">Nastavit čas</string>
+    <string name="time_picker_hour_label">hodina</string>
+    <string name="time_picker_input_error">Zadejte platný čas</string>
+    <string name="time_picker_minute_label">minuta</string>
+    <string name="time_picker_prompt_label">Napište čas</string>
     <string name="time_unit_just_now">Právě teď</string>
     <string name="title_convert_fbe">Převod na šifrování založené na souborech</string>
     <string name="title_usb_accessory">Periferní zařízení USB</string>
@@ -1549,6 +1560,7 @@ Jakýkoli uživatel může aktualizovat aplikace všech ostatních uživatelů."
     <string name="wait_for_debugger">Počkat na ladicí program</string>
     <string name="wait_for_debugger_summary">Aplikace čeká na připojení ladicího programu</string>
     <string name="wifi_ap_unable_to_handle_new_sta">Přístupový bod je dočasně zaplněn</string>
+    <string name="wifi_auth_password_wrong">Heslo může být nesprávná</string>
     <string name="wifi_cant_connect">Nelze se připojit</string>
     <string name="wifi_cant_connect_to_ap">K síti %1$s se nelze připojit</string>
     <string name="wifi_check_password_try_again">Zkontrolujte heslo a zkuste to znovu</string>

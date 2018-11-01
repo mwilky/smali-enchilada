@@ -66,9 +66,6 @@
     .end annotation
 .end method
 
-.method public abstract getMaxConnectionState(Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)I
-.end method
-
 .method public abstract isBluetoothConnected()Z
 .end method
 

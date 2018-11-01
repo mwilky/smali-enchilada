@@ -34,7 +34,11 @@
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
 
-    const-string v0, "DataSwitchTile"
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile$1;->this$0:Lcom/android/systemui/qs/tiles/DataSwitchTile;
+
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/DataSwitchTile;->access$000(Lcom/android/systemui/qs/tiles/DataSwitchTile;)Ljava/lang/String;
+
+    move-result-object v0
 
     const-string v1, "mSimReceiver:onReceive"
 
