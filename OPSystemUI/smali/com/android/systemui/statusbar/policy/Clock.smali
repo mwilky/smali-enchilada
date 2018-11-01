@@ -1107,11 +1107,18 @@
     .locals 2
     
     float-to-int v0, p2
+    
+    invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusBar;->isCameraNotchIgnoring()Z
+
+    move-result v1
+    
+    if-nez v1, :cond_notch
 
     iget v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDarkIconColor:I #dark color
 
     if-nez v0, :cond_0 #set to grey if dark intensity is 1
     
+    :cond_notch
     iget v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockColor:I #custom color
 
     :cond_0
@@ -1337,15 +1344,21 @@
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mUseWallpaperTextColor:Z
 
     if-eqz v0, :cond_1
-	
-    iget v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockColor:I
-	
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mContext:Landroid/content/Context;
+
+    const v1, 0x7f040463
+
+    invoke-static {v0, v1}, Lcom/android/settingslib/Utils;->getColorAttr(Landroid/content/Context;I)I
+
+    move-result v0
+
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/policy/Clock;->setTextColor(I)V
 
     goto :goto_0
 
     :cond_1
-    iget v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockColor:I
+    iget v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mNonAdaptedColor:I
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/policy/Clock;->setTextColor(I)V
 
