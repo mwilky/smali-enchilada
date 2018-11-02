@@ -1344,21 +1344,15 @@
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mUseWallpaperTextColor:Z
 
     if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mContext:Landroid/content/Context;
-
-    const v1, 0x7f040463
-
-    invoke-static {v0, v1}, Lcom/android/settingslib/Utils;->getColorAttr(Landroid/content/Context;I)I
-
-    move-result v0
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockColor:I
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/policy/Clock;->setTextColor(I)V
 
     goto :goto_0
 
     :cond_1
-    iget v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mNonAdaptedColor:I
+    iget v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockColor:I
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/policy/Clock;->setTextColor(I)V
 
