@@ -6,5 +6,6 @@
     <com.android.settingslib.RestrictedPreference android:icon="@drawable/ic_menu_add" android:title="@string/user_add_user_or_profile_menu" android:key="user_add" android:order="20" />
     <PreferenceCategory android:title="@string/user_lockscreen_settings" android:key="lock_screen_settings">
         <com.android.settingslib.RestrictedSwitchPreference android:title="@string/user_add_on_lockscreen_menu" android:key="user_settings_add_users_when_locked" android:order="105" />
+        <Preference android:title="@string/emergency_info_title" android:key="emergency_info" android:summary="@string/summary_placeholder" android:order="106" />
     </PreferenceCategory>
 </PreferenceScreen>

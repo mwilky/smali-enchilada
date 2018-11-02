@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:androidprv="http://schemas.android.com/apk/prv/res/android" android:compileSdkVersion="28" android:compileSdkVersionCodename="9" android:sharedUserId="android.uid.system" coreApp="true" package="com.android.settings" platformBuildVersionCode="28" platformBuildVersionName="0.0.1.180912234954.dcfa98d">
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:androidprv="http://schemas.android.com/apk/prv/res/android" android:compileSdkVersion="28" android:compileSdkVersionCodename="9" android:sharedUserId="android.uid.system" coreApp="true" package="com.android.settings" platformBuildVersionCode="28" platformBuildVersionName="0.0.1.181024221608.555cb6c">
     <original-package android:name="com.android.settings"/>
     <protected-broadcast android:name="com.android.settings.POWER_OP_ON"/>
     <protected-broadcast android:name="com.android.settings.action.REQUEST_POWER_OFF"/>
@@ -98,7 +98,7 @@
     <application android:allowBackup="false" android:appComponentFactory="android.support.v4.app.CoreComponentFactory" android:defaultToDeviceProtectedStorage="true" android:directBootAware="true" android:hardwareAccelerated="true" android:icon="@mipmap/op_ic_launcher_settings" android:label="@string/settings_label" android:name="com.oneplus.settings.SettingsBaseApplication" android:requiredForAllUsers="true" android:screenOrientation="portrait" android:supportsRtl="true" android:taskAffinity="" android:theme="@style/Theme.Settings" android:usesCleartextTraffic="true">
         <uses-library android:name="org.apache.http.legacy"/>
         <meta-data android:name="use_common_accent_color" android:value="true"/>
-        <meta-data android:name="oneplus_lab_feature" android:value="oneplus_nfc_security_module_title,oneplus_nfc_security_module_description,oneplus_nfc_security_module_key,3,oneplus_nfc_security_module_inner_nfc,oneplus_nfc_security_module_sim1_nfc,oneplus_nfc_security_module_sim2_nfc"/>
+        <meta-data android:name="oneplus_lab_feature" android:value="oneplus_nfc_security_module_title,oneplus_nfc_security_module_description,oneplus_nfc_security_module_key,3,oneplus_nfc_security_module_inner_nfc,oneplus_nfc_security_module_sim1_nfc,oneplus_nfc_security_module_sim2_nfc;oneplus_settings_lab_feature_boost_title,oneplus_settings_lab_feature_boost_summary,oneplus_settings_lab_feature_boost_key"/>
         <activity android:label="@string/settings_label_launcher" android:launchMode="singleTask" android:name="com.android.settings.Settings" android:screenOrientation="portrait" android:taskAffinity="com.android.settings.root">
             <intent-filter android:priority="1">
                 <action android:name="android.settings.SETTINGS"/>
@@ -623,25 +623,7 @@
             <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED" android:value="true"/>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.android.settings.display.NightDisplaySettings"/>
         </activity>
-        <activity android:enabled="false" android:icon="@drawable/ic_settings_about" android:label="@string/device_info_settings" android:name="com.android.settings.Settings$DeviceInfoSettingsActivity" android:parentActivityName="com.android.settings.Settings" android:screenOrientation="portrait" android:taskAffinity="com.android.settings">
-            <intent-filter android:priority="1">
-                <action android:name="android.settings.DEVICE_INFO_SETTINGS"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.VOICE_LAUNCH"/>
-            </intent-filter>
-            <intent-filter android:priority="10">
-                <action android:name="com.android.settings.action.SETTINGS"/>
-            </intent-filter>
-            <meta-data android:name="com.android.settings.category" android:value="com.android.settings.category.ia.system"/>
-            <meta-data android:name="com.android.settings.title" android:resource="@string/about_settings"/>
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.android.settings.deviceinfo.DeviceInfoSettings"/>
-            <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED" android:value="true"/>
-        </activity>
-        <activity android:icon="@drawable/op_ic_homepage_about_device" android:label="@string/about_settings" android:name="com.android.settings.Settings$MyDeviceInfoActivity" android:parentActivityName="com.android.settings.Settings" android:screenOrientation="portrait" android:taskAffinity="com.android.settings">
+        <activity android:icon="@drawable/op_ic_homepage_about_device" android:label="@string/about_settings" android:name="com.android.settings.Settings$OPAboutPhoneActivity" android:parentActivityName="com.android.settings.Settings" android:screenOrientation="portrait" android:taskAffinity="com.android.settings">
             <intent-filter android:priority="1">
                 <action android:name="android.settings.DEVICE_INFO_SETTINGS"/>
                 <action android:name="android.settings.DEVICE_NAME"/>
@@ -657,7 +639,7 @@
             </intent-filter>
             <meta-data android:name="com.android.settings.category" android:value="com.android.settings.category.ia.homepage"/>
             <meta-data android:name="com.android.settings.title" android:resource="@string/about_settings"/>
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.android.settings.deviceinfo.aboutphone.MyDeviceInfoFragment"/>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.oneplus.settings.aboutphone.OPAboutPhone"/>
             <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED" android:value="true"/>
         </activity>
         <activity android:configChanges="orientation|screenSize" android:label="@string/settings_license_activity_title" android:name="com.android.settings.SettingsLicenseActivity" android:parentActivityName="com.android.settings.Settings" android:screenOrientation="portrait" android:taskAffinity="com.android.settings">
@@ -1038,6 +1020,7 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+        <activity android:exported="true" android:name="com.android.settings.fingerprint.OPFingerprintEnrollIntroduction" android:screenOrientation="portrait" android:theme="@style/OnePlusPasswordTheme"/>
         <activity android:exported="false" android:name="com.android.settings.fingerprint.SetupFingerprintEnrollFindSensor" android:screenOrientation="portrait"/>
         <activity android:exported="false" android:name="com.android.settings.fingerprint.SetupFingerprintEnrollEnrolling" android:screenOrientation="portrait"/>
         <activity android:exported="false" android:name="com.android.settings.fingerprint.SetupFingerprintEnrollFinish" android:screenOrientation="portrait"/>
@@ -1047,7 +1030,12 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:exported="false" android:name="com.android.settings.fingerprint.SetupFaceUnlockEnrollIntroduction" android:screenOrientation="portrait" android:theme="@style/GlifTheme.Light"/>
+        <activity android:exported="false" android:name="com.android.settings.fingerprint.SetupFaceUnlockEnrollIntroduction" android:screenOrientation="portrait" android:theme="@style/GlifTheme.Light">
+            <intent-filter>
+                <action android:name="com.oneplus.settings.FACEUNLOCK_SETUP"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
         <activity android:exported="true" android:icon="@drawable/ic_suggestion_fingerprint" android:name="com.android.settings.fingerprint.FingerprintSuggestionActivity" android:permission="android.permission.MANAGE_FINGERPRINT" android:screenOrientation="portrait" android:theme="@style/GlifTheme.Light">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -1671,6 +1659,13 @@
             </intent-filter>
             <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED" android:value="true"/>
         </activity>
+        <activity android:enabled="true" android:label="@string/regulatory_labels" android:name="com.oneplus.settings.OPVerificationActivity" android:parentActivityName="com.android.settings.Settings" android:screenOrientation="portrait" android:taskAffinity="com.android.settings">
+            <intent-filter>
+                <action android:name="com.oneplus.intent.Verification"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED" android:value="true"/>
+        </activity>
         <activity android:name="com.android.settings.notification.NotificationAccessConfirmationActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.Alert"/>
         <receiver android:enabled="@bool/has_powercontrol_widget" android:exported="false" android:label="@string/gadget_title" android:name="com.android.settings.widget.SettingsAppWidgetProvider" android:screenOrientation="portrait">
             <intent-filter>
@@ -2083,11 +2078,8 @@
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.oneplus.settings.notification.OPRingPattern"/>
         </activity>
-        <receiver android:name="com.android.settings.slices.SliceBroadcastReceiver">
-            <intent-filter>
-                <action android:name="com.android.settings.slice.action.WIFI_CHANGED"/>
-            </intent-filter>
-        </receiver>
+        <receiver android:exported="false" android:name="com.android.settings.slices.SliceBroadcastReceiver"/>
+        <receiver android:exported="true" android:name="com.android.settings.slices.SliceRelayReceiver" android:permission="android.permission.MANAGE_SLICE_PERMISSIONS"/>
         <receiver android:exported="false" android:name="com.android.settings.fuelgauge.batterytip.AnomalyDetectionReceiver"/>
         <receiver android:name="com.android.settings.fuelgauge.batterytip.AnomalyConfigReceiver">
             <intent-filter>
@@ -2123,6 +2115,13 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
+        <activity android:exported="false" android:icon="@mipmap/op_ic_launcher_settings" android:label="@string/oneplus_fingerprint_animation_effect_title" android:name="com.android.settings.Settings$OPCustomFingerprintAnimSettingsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Settings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.oneplus.settings.OPCustomFingerprintAnimSettings"/>
+        </activity>
         <activity android:icon="@mipmap/op_ic_launcher_settings" android:label="@string/oneplus_quickpay" android:name="com.android.settings.Settings$OPQuickPaySettingsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Settings">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -2130,6 +2129,29 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.oneplus.settings.quickpay.QuickPaySettings"/>
+        </activity>
+        <activity android:icon="@mipmap/op_ic_launcher_settings" android:label="@string/oneplus_shortcuts_settings" android:name="com.android.settings.Settings$OPQuickLaunchListSettingsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Settings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="com.oneplus.action.QUICKPAY_LAUNCH_LIST_SETTINGS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.oneplus.settings.quicklaunch.OPQuickLaunchListSettings"/>
+        </activity>
+        <activity android:icon="@mipmap/op_ic_launcher_settings" android:label="@string/oneplus_quick_launch_title" android:name="com.android.settings.Settings$OPQuickLaunchSettingsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Settings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="com.oneplus.action.QUICKPAY_LAUNCH_SETTINGS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.oneplus.settings.quicklaunch.OPQuickLaunchSettings"/>
+        </activity>
+        <activity android:icon="@mipmap/op_ic_launcher_settings" android:label="@string/oneplus_shortcuts_add" android:name="com.oneplus.settings.quicklaunch.OPQuickLaunchCategorySettings" android:screenOrientation="portrait" android:theme="@style/OnePlusTabPageTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="com.oneplus.action.QUICKPAY_LAUNCH_CATEGORY_SETTINGS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
         </activity>
         <activity android:icon="@mipmap/op_ic_launcher_settings" android:label="@string/oneplus_pre_application" android:name="com.android.settings.Settings$OPPreInstalledAppListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Settings">
             <intent-filter>
@@ -2199,6 +2221,18 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.oneplus.settings.better.OPGamingMode"/>
             <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED" android:value="true"/>
         </activity>
+        <activity android:label="@string/default_assist_title" android:name="com.android.settings.Settings$DefaultAssistPickerActivity" android:screenOrientation="portrait" android:taskAffinity="">
+            <intent-filter android:priority="1">
+                <action android:name="com.oneplus.intent.DefaultAssistPicker"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.android.settings.applications.assist.DefaultAssistPicker"/>
+            <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED" android:value="true"/>
+        </activity>
         <activity android:label="@string/oneplus_multi_app" android:name="com.oneplus.settings.multiapp.OPMultiAppListSettings" android:screenOrientation="portrait" android:theme="@style/Oneplus.BaseActivity.Theme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -2227,9 +2261,31 @@
         </activity>
         <activity android:exported="false" android:label="@string/oneplus_mobile_device_name_title" android:name="com.android.settings.Settings$OPDeviceNameActivity" android:screenOrientation="portrait" android:taskAffinity="">
             <intent-filter android:priority="1">
+                <action android:name="com.oneplus.intent.OPDeviceNameActivity"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.oneplus.settings.OPDeviceName"/>
+        </activity>
+        <activity android:exported="false" android:label="@string/legal_information" android:name="com.android.settings.Settings$LegalSettingsActivity" android:screenOrientation="portrait" android:taskAffinity="">
+            <intent-filter android:priority="1">
+                <action android:name="com.oneplus.intent.LegalSettingsActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.android.settings.LegalSettings"/>
+        </activity>
+        <activity android:enabled="true" android:exported="false" android:label="@string/oneplus_forum_award_title" android:launchMode="singleTop" android:name="com.oneplus.settings.aboutphone.OPForumContributors" android:parentActivityName="com.android.settings.Settings" android:screenOrientation="portrait" android:taskAffinity="com.android.settings" android:theme="@style/OPForumContributorsStyle">
+            <intent-filter>
+                <action android:name="com.oneplus.intent.OPForumContributorsActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED" android:value="true"/>
+        </activity>
+        <activity android:exported="false" android:label="@string/legal_information" android:name="com.android.settings.Settings$MyDeviceInfoFragmentActivity" android:screenOrientation="portrait" android:taskAffinity="">
+            <intent-filter android:priority="1">
+                <action android:name="com.oneplus.intent.MyDeviceInfoFragmentActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.android.settings.deviceinfo.aboutphone.MyDeviceInfoFragment"/>
         </activity>
         <activity android:excludeFromRecents="true" android:name="com.oneplus.settings.OPAuthenticationInformationSettings" android:screenOrientation="portrait">
             <intent-filter>
@@ -2303,6 +2359,20 @@
         <activity android:exported="false" android:label="@string/oneplus_screen_color_mode_title" android:name="com.oneplus.settings.OPScreenColorModeForSetupWizard" android:screenOrientation="portrait" android:taskAffinity="com.oneplus.setupwizard" android:theme="@style/ForSetupWizardTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:icon="@drawable/op_ic_laboratory" android:label="@string/oneplus_laboratory" android:name="com.oneplus.settings.laboratory.OPLabFeatureActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Settings">
+            <intent-filter>
+                <action android:name="oneplus.intent.action.ONEPLUS_LAB_FEATURE"/>
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.oneplus.settings.laboratory.OPLabFeatureDetailActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Settings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="oneplus.intent.action.ONEPLUS_LAB_FEATURE_DETAILS"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>

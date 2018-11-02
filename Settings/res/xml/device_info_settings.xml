@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen android:title="@string/about_settings" android:key="device_info_pref_screen"
+<PreferenceScreen android:key="device_info_pref_screen"
   xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
     <Preference android:title="@string/status_number" android:key="phone_number" android:summary="@string/summary_placeholder" android:order="0" />
     <Preference android:title="@string/sim_status_title" android:key="sim_status" android:summary="@string/summary_placeholder" android:order="10" settings:keywords="@string/keywords_sim_status" />

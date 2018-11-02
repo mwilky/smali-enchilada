@@ -3851,6 +3851,7 @@ Mana-mana pengguna boleh mengemas kini apl untuk semua pengguna lain."</string>
     <string name="wifi_ap_unable_to_handle_new_sta">Titik akses penuh buat sementara waktu</string>
     <string name="wifi_ask_disable">%s mahu mematikan Wi-Fi</string>
     <string name="wifi_ask_enable">%s mahu menghidupkan Wi-Fi</string>
+    <string name="wifi_auth_password_wrong">Kata laluan mungkin tidak betul</string>
     <string name="wifi_avoid_poor_network_detection_summary">Gunakan rangkaian dengan sambungan Internet yang stabil shj</string>
     <string name="wifi_band_24ghz">2.4 GHz</string>
     <string name="wifi_band_5ghz">5 GHz</string>

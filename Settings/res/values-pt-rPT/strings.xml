@@ -3851,6 +3851,7 @@ Qualquer utilizador pode atualizar aplicações para todos os outros utilizadore
     <string name="wifi_ap_unable_to_handle_new_sta">Ponto de acesso temporariamente cheio</string>
     <string name="wifi_ask_disable">%s pretende desativar o Wi-Fi</string>
     <string name="wifi_ask_enable">%s pretende ativar o Wi-Fi</string>
+    <string name="wifi_auth_password_wrong">A senha pode estar incorreta</string>
     <string name="wifi_avoid_poor_network_detection_summary">Utilizar apenas redes com uma boa ligação à Internet</string>
     <string name="wifi_band_24ghz">2,4 GHz</string>
     <string name="wifi_band_5ghz">5 GHz</string>

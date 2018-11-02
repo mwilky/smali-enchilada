@@ -23,19 +23,21 @@
 
 .field public static final misc_files_menu:I = 0x7f0e0003
 
-.field public static final print_service_settings:I = 0x7f0e0004
+.field public static final op_search_settings:I = 0x7f0e0004
 
-.field public static final storage_volume:I = 0x7f0e0005
+.field public static final print_service_settings:I = 0x7f0e0005
 
-.field public static final time_zone_base_search_menu:I = 0x7f0e0006
+.field public static final storage_volume:I = 0x7f0e0006
 
-.field public static final vpn:I = 0x7f0e0007
+.field public static final time_zone_base_search_menu:I = 0x7f0e0007
 
-.field public static final wifi_p2p_settings:I = 0x7f0e0008
+.field public static final vpn:I = 0x7f0e0008
 
-.field public static final wifi_setup:I = 0x7f0e0009
+.field public static final wifi_p2p_settings:I = 0x7f0e0009
 
-.field public static final zen_mode_rule:I = 0x7f0e000a
+.field public static final wifi_setup:I = 0x7f0e000a
+
+.field public static final zen_mode_rule:I = 0x7f0e000b
 
 
 # direct methods

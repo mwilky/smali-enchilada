@@ -3849,6 +3849,7 @@ UT ਇੰਟਰਫੇਸ: %5$s"</string>
     <string name="wifi_ap_unable_to_handle_new_sta">"ਐਕਸੈੱਸ ਪੁਆਇੰਟ ਅਸਥਾਈ ਤੌਰ 'ਤੇ ਸੰਪੂਰਨ ਰੁਝੇਂਵੇਂ ਵਿੱਚ ਹੈ"</string>
     <string name="wifi_ask_disable">%s ਵਾਈ-ਫਾਈ ਨੂੰ ਬੰਦ ਕਰਨਾ ਚਾਹੁੰਦੀ ਹੈ</string>
     <string name="wifi_ask_enable">%s ਵਾਈ-ਫਾਈ ਨੂੰ ਚਾਲੂ ਕਰਨਾ ਚਾਹੁੰਦੀ ਹੈ</string>
+    <string name="wifi_auth_password_wrong">ਪਾਸਵਰਡ ਗਲਤ ਹੋ ਸਕਦਾ ਹੈ</string>
     <string name="wifi_avoid_poor_network_detection_summary">ਸਿਰਫ਼ ਉਹ ਨੈੱਟਵਰਕ ਵਰਤੋ ਜਿਨ੍ਹਾਂ ਕੋਲ ਇੱਕ ਚੰਗਾ ਇੰਟਰਨੈੱਟ ਕਨੈਕਸ਼ਨ ਹੈ</string>
     <string name="wifi_band_24ghz">2.4 GHz</string>
     <string name="wifi_band_5ghz">5 GHz</string>

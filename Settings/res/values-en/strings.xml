@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="oneplus_fullscreen_previous_app_guide_summary">Swipe up from the bottom center edge of screen to the right, then release your finger</string>
+    <string name="oneplus_fullscreen_previous_app_guide_title">Switch to the previous app</string>
+</resources>

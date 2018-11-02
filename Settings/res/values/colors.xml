@@ -658,6 +658,8 @@
     <color name="oneplus_font_list_setting_title">@color/font_list_settings_title</color>
     <color name="oneplus_font_list_subtitle">@color/oneplus_contorl_text_color_primary_default</color>
     <color name="oneplus_font_list_text">@color/oneplus_contorl_text_color_secondary_default</color>
+    <color name="oneplus_forum_name_dark_color">#4db2b2b2</color>
+    <color name="oneplus_forum_name_light_color">#4d121212</color>
     <color name="oneplus_laboratory_black_color">#ff000000</color>
     <color name="oneplus_laboratory_grey_color">#ffb5b5b5</color>
     <color name="oneplus_laboratory_red_color">#ffeb0029</color>

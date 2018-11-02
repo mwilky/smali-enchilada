@@ -5,7 +5,6 @@
     <com.oneplus.settings.ui.OPPreferenceHeaderMargin android:key="preference_divider_line" />
     <SwitchPreference android:title="@string/oneplus_quickpay_lock_swtch_title" android:key="key_switch_lockscreen" android:summary="@string/oneplus_quickpay_lock_swtch_summary" />
     <SwitchPreference android:title="@string/oneplus_quickpay_unlock_swtch_title" android:key="key_switch_unlockscreen" android:summary="@string/oneplus_quickpay_unlock_swtch_summary" />
-    <com.oneplus.settings.ui.OPPreferenceDivider android:key="preference_divider_line1" />
     <PreferenceCategory android:title="@string/oneplus_quickpay_select_default_way" android:key="key_quickpay_select_default_way_category">
         <com.android.settings.location.RadioButtonPreference android:title="@string/oneplus_quickpay_way_wecaht_qrcode" android:key="key_quickpay_way_wecaht_qrcode" />
         <com.android.settings.location.RadioButtonPreference android:title="@string/oneplus_quickpay_way_wecaht_scanning" android:key="key_quickpay_way_wecaht_scanning" />

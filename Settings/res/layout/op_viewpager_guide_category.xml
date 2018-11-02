@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textAppearance="@style/TextAppearance.Material.Body2" android:textColor="?onePlusPrimaryColor" android:gravity="center_vertical" android:id="@id/op_viewpager_guide_title" android:paddingLeft="@dimen/oneplus_contorl_layout_margin_left4" android:paddingTop="@dimen/oneplus_contorl_margin_text_top2" android:paddingRight="@dimen/oneplus_settings_layout_margin_left2" android:clickable="false" android:layout_width="wrap_content" android:layout_height="@dimen/oneplus_contorl_list_item_height_one_line1" android:text="@string/oneplus_instrucitons" android:textAllCaps="true" style="@style/oneplus_contorl_text_style_subtitle" />
+    <LinearLayout android:orientation="vertical" android:id="@id/op_viewpager_guide_container" android:paddingTop="@dimen/oneplus_contorl_layout_margin_top1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/op_viewpager_guide_title">
+        <android.support.v4.view.ViewPager android:layout_gravity="center" android:id="@id/op_viewpager_guide_viewpager" android:layout_width="fill_parent" android:layout_height="450.0dip">
+            <android.support.v4.view.PagerTitleStrip android:textColor="#ffffffff" android:layout_gravity="bottom" android:id="@id/pagertitle" android:background="#00000000" android:layout_width="wrap_content" android:layout_height="8.0dip" />
+        </android.support.v4.view.ViewPager>
+        <LinearLayout android:orientation="horizontal" android:id="@id/op_viewpager_guide_dot_container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="10.0dip" android:layout_below="@id/op_viewpager_guide_viewpager" android:layout_centerHorizontal="true">
+            <LinearLayout android:gravity="center_horizontal" android:layout_gravity="bottom" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="@dimen/oneplus_contorl_layout_margin_top2">
+                <ImageView android:id="@id/page0" android:layout_width="8.0dip" android:layout_height="8.0dip" android:src="@drawable/op_page_now" android:scaleType="fitXY" />
+                <ImageView android:id="@id/page1" android:layout_width="8.0dip" android:layout_height="8.0dip" android:layout_marginLeft="8.0dip" android:src="@drawable/op_page" android:scaleType="fitXY" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

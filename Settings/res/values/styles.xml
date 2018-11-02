@@ -1155,8 +1155,12 @@
     <style name="LockPatternStyle.Dark.Work" parent="@style/LockPatternStyle.Dark">
         <item name="android:regularColor">@android:color/white</item>
     </style>
-    <style name="LockPatternStyle.Setup" parent="@style/LockPatternStyle">
+    <style name="LockPatternStyle.Setttings" parent="@style/LockPatternStyle">
         <item name="android:regularColor">@color/oneplus_settings_white</item>
+        <item name="android:successColor">@color/lock_pattern_view_success_color</item>
+    </style>
+    <style name="LockPatternStyle.Setup" parent="@style/LockPatternStyle">
+        <item name="android:regularColor">#dd000000</item>
         <item name="android:successColor">@color/lock_pattern_view_success_color</item>
     </style>
     <style name="LockPatternStyle.Unlock" parent="@style/LockPatternStyle">
@@ -1173,6 +1177,11 @@
     <style name="OPAnimation.AppCompat.DropDownUp" parent="@android:style/Animation">
         <item name="android:windowEnterAnimation">@anim/op_abc_grow_fade_in_from_bottom</item>
         <item name="android:windowExitAnimation">@anim/op_abc_shrink_fade_out_from_bottom</item>
+    </style>
+    <style name="OPForumContributorsStyle" parent="@style/Theme.Settings">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     </style>
     <style name="OPPreference" />
     <style name="OPPreference.Category.SettingsBase" parent="@style/Preference.Category.Material">
@@ -1616,6 +1625,12 @@
         <item name="wifi_signal_color">@color/setup_wizard_wifi_color_light</item>
         <item name="windowActionBar">true</item>
         <item name="windowNoTitle">false</item>
+    </style>
+    <style name="OnePlusTabPageTheme" parent="@style/Theme.Settings">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:actionBarSize">@dimen/oneplus_contorl_appbar_size_landscape</item>
+        <item name="android:windowExitTransition">@android:transition/no_transition</item>
     </style>
     <style name="OnePlusToast">
         <item name="android:layout">@layout/op_transient_notification</item>
@@ -5033,7 +5048,7 @@
         <item name="android:actionBarStyle">@style/Theme.ActionBar</item>
         <item name="android:dialogTheme">@style/Theme.Dialog</item>
         <item name="android:alertDialogTheme">@style/Theme.AlertDialog</item>
-        <item name="android:lockPatternStyle">@style/LockPatternStyle.Setup</item>
+        <item name="android:lockPatternStyle">@style/LockPatternStyle.Setttings</item>
         <item name="android:preferenceFragmentListStyle">@style/PreferenceFragmentListSinglePane</item>
         <item name="android:preferenceFragmentPaddingSide">@dimen/settings_side_margin</item>
         <item name="android:preferenceHeaderPanelStyle">@style/PreferenceHeaderPanelSinglePane</item>

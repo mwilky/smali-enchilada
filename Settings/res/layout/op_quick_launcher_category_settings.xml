@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:oneplus="http://schemas.android.com/apk/res-auto">
+    <com.oneplus.lib.widget.actionbar.Toolbar android:id="@id/toolbar" android:background="?onePlusActionbarBackgroundColor" android:layout_width="fill_parent" android:layout_height="?android:actionBarSize" />
+    <com.oneplus.lib.widget.OPTabLayout android:id="@id/tabs" android:background="?onePlusActionbarBackground" android:layout_width="fill_parent" android:layout_height="wrap_content" oneplus:op_tabMaxWidth="256.0dip" />
+    <android.support.v4.view.ViewPager android:id="@id/op_quick_launch_category_viewpager" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+</LinearLayout>

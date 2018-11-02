@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/group_divider_area" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/oneplus_contorl_divider_height_standard" />
+    <TextView android:textAppearance="@style/TextAppearance.Material.Body2" android:textColor="@color/settings_accent_color" android:gravity="center_vertical" android:id="@id/tv" android:paddingLeft="@dimen/oneplus_contorl_layout_margin_left4" android:paddingTop="@dimen/oneplus_contorl_margin_text_top2" android:paddingRight="@dimen/oneplus_settings_layout_margin_left2" android:layout_width="wrap_content" android:layout_height="@dimen/oneplus_contorl_list_item_height_one_line1" android:textAllCaps="true" style="@style/oneplus_contorl_text_style_subtitle" />
+    <RelativeLayout android:id="@id/parent" android:layout_width="fill_parent" android:layout_height="@dimen/oneplus_dashboard_two_line_minimum_height">
+        <RelativeLayout android:id="@id/icon_container" android:layout_width="@dimen/oneplus_contorl_avatar_mini" android:layout_height="@dimen/oneplus_contorl_avatar_mini" android:layout_centerVertical="true" android:layout_marginStart="@dimen/oneplus_contorl_margin_avatar_left2" android:layout_alignParentStart="true">
+            <ImageView android:gravity="center_vertical" android:id="@id/big_icon" android:layout_width="@dimen/oneplus_contorl_avatar_mini" android:layout_height="@dimen/oneplus_contorl_avatar_mini" android:scaleType="fitXY" android:layout_centerVertical="true" android:layout_alignParentStart="true" />
+            <ImageView android:id="@id/small_icon" android:layout_width="14.0dip" android:layout_height="14.0dip" android:scaleType="centerCrop" android:layout_alignParentBottom="true" android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingStart="13.0dip" android:layout_toEndOf="@id/icon_container">
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="2.0" android:layout_marginEnd="@dimen/oneplus_contorl_margin_avatar_left2">
+                <TextView android:textSize="@dimen/oneplus_settings_dashboard_tite_title_text_size" android:textColor="@color/oneplus_font_list_subtitle" android:gravity="center_vertical" android:id="@id/name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                <TextView android:textSize="@dimen/oneplus_settings_text_size" android:textColor="@color/oneplus_font_list_text" android:gravity="center_vertical" android:id="@id/summary" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:maxLines="2" android:singleLine="false" />
+            </LinearLayout>
+            <CheckBox android:layout_gravity="center" android:id="@id/check_box" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/oneplus_settings_padding_right" />
+        </LinearLayout>
+        <View android:id="@id/bottom_line" android:layout_width="fill_parent" android:layout_height="@dimen/oneplus_contorl_divider_height_standard" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</LinearLayout>

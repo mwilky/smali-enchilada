@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.android.settings.localepicker.LocaleDragCell android:background="?android:colorBackground" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeight" android:textDirection="locale" android:layoutDirection="locale"
+<com.android.settings.localepicker.LocaleDragCell android:background="@color/oneplus_contorl_bg_color_default" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeight" android:textDirection="locale" android:layoutDirection="locale"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <CheckBox android:id="@id/checkbox" android:paddingStart="16.0dip" android:layout_toStartOf="@id/dragHandle" style="@style/LanguageCheckboxAndLabel" />
     <TextView android:id="@id/label" android:paddingStart="48.0dip" android:layout_toStartOf="@id/dragHandle" style="@style/LanguageCheckboxAndLabel" />

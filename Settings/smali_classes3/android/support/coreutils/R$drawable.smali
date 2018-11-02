@@ -1391,931 +1391,985 @@
 
 .field public static final numberpicker_up_selected:I = 0x7f0802d2
 
-.field public static final oneplus_divider_color:I = 0x7f0802d3
+.field public static final oneplus_5:I = 0x7f0802d3
 
-.field public static final oneplus_fingerprint_enrolling_title_bg:I = 0x7f0802d4
+.field public static final oneplus_5t:I = 0x7f0802d4
 
-.field public static final oneplus_fingerprint_enrolling_title_bg_shadow:I = 0x7f0802d5
+.field public static final oneplus_6:I = 0x7f0802d5
 
-.field public static final oneplus_lab_head_bg:I = 0x7f0802d6
+.field public static final oneplus_divider_color:I = 0x7f0802d6
 
-.field public static final oneplus_starting_window_blank_background:I = 0x7f0802d7
+.field public static final oneplus_fingerprint_enrolling_title_bg:I = 0x7f0802d7
 
-.field public static final op_action_bar_item_background_material:I = 0x7f0802d8
+.field public static final oneplus_fingerprint_enrolling_title_bg_shadow:I = 0x7f0802d8
 
-.field public static final op_actionbar_background:I = 0x7f0802d9
+.field public static final oneplus_lab_head_bg:I = 0x7f0802d9
 
-.field public static final op_actionbar_background_nodivider:I = 0x7f0802da
+.field public static final oneplus_other:I = 0x7f0802da
 
-.field public static final op_actionbar_background_with_tab:I = 0x7f0802db
+.field public static final oneplus_starting_window_blank_background:I = 0x7f0802db
 
-.field public static final op_alert_slider_01:I = 0x7f0802dc
+.field public static final op_action_bar_item_background_material:I = 0x7f0802dc
 
-.field public static final op_alert_slider_02:I = 0x7f0802dd
+.field public static final op_actionbar_background:I = 0x7f0802dd
 
-.field public static final op_alert_slider_03:I = 0x7f0802de
+.field public static final op_actionbar_background_nodivider:I = 0x7f0802de
 
-.field public static final op_alert_slider_04:I = 0x7f0802df
+.field public static final op_actionbar_background_with_tab:I = 0x7f0802df
 
-.field public static final op_alert_slider_05:I = 0x7f0802e0
+.field public static final op_alert_slider_01:I = 0x7f0802e0
 
-.field public static final op_alert_slider_06:I = 0x7f0802e1
+.field public static final op_alert_slider_02:I = 0x7f0802e1
 
-.field public static final op_alert_slider_07:I = 0x7f0802e2
+.field public static final op_alert_slider_03:I = 0x7f0802e2
 
-.field public static final op_alert_slider_08:I = 0x7f0802e3
+.field public static final op_alert_slider_04:I = 0x7f0802e3
 
-.field public static final op_alert_slider_09:I = 0x7f0802e4
+.field public static final op_alert_slider_05:I = 0x7f0802e4
 
-.field public static final op_alert_slider_10:I = 0x7f0802e5
+.field public static final op_alert_slider_06:I = 0x7f0802e5
 
-.field public static final op_alert_slider_11:I = 0x7f0802e6
+.field public static final op_alert_slider_07:I = 0x7f0802e6
 
-.field public static final op_alert_slider_12:I = 0x7f0802e7
+.field public static final op_alert_slider_08:I = 0x7f0802e7
 
-.field public static final op_alert_slider_13:I = 0x7f0802e8
+.field public static final op_alert_slider_09:I = 0x7f0802e8
 
-.field public static final op_alert_slider_14:I = 0x7f0802e9
+.field public static final op_alert_slider_10:I = 0x7f0802e9
 
-.field public static final op_alert_slider_15:I = 0x7f0802ea
+.field public static final op_alert_slider_11:I = 0x7f0802ea
 
-.field public static final op_alert_slider_16:I = 0x7f0802eb
+.field public static final op_alert_slider_12:I = 0x7f0802eb
 
-.field public static final op_alert_slider_17:I = 0x7f0802ec
+.field public static final op_alert_slider_13:I = 0x7f0802ec
 
-.field public static final op_alert_slider_18:I = 0x7f0802ed
+.field public static final op_alert_slider_14:I = 0x7f0802ed
 
-.field public static final op_alert_slider_19:I = 0x7f0802ee
+.field public static final op_alert_slider_15:I = 0x7f0802ee
 
-.field public static final op_alert_slider_20:I = 0x7f0802ef
+.field public static final op_alert_slider_16:I = 0x7f0802ef
 
-.field public static final op_alert_slider_21:I = 0x7f0802f0
+.field public static final op_alert_slider_17:I = 0x7f0802f0
 
-.field public static final op_alert_slider_22:I = 0x7f0802f1
+.field public static final op_alert_slider_18:I = 0x7f0802f1
 
-.field public static final op_alert_slider_23:I = 0x7f0802f2
+.field public static final op_alert_slider_19:I = 0x7f0802f2
 
-.field public static final op_alert_slider_24:I = 0x7f0802f3
+.field public static final op_alert_slider_20:I = 0x7f0802f3
 
-.field public static final op_alert_slider_25:I = 0x7f0802f4
+.field public static final op_alert_slider_21:I = 0x7f0802f4
 
-.field public static final op_alert_slider_26:I = 0x7f0802f5
+.field public static final op_alert_slider_22:I = 0x7f0802f5
 
-.field public static final op_alert_slider_27:I = 0x7f0802f6
+.field public static final op_alert_slider_23:I = 0x7f0802f6
 
-.field public static final op_alert_slider_28:I = 0x7f0802f7
+.field public static final op_alert_slider_24:I = 0x7f0802f7
 
-.field public static final op_alert_slider_29:I = 0x7f0802f8
+.field public static final op_alert_slider_25:I = 0x7f0802f8
 
-.field public static final op_alert_slider_30:I = 0x7f0802f9
+.field public static final op_alert_slider_26:I = 0x7f0802f9
 
-.field public static final op_alert_slider_31:I = 0x7f0802fa
+.field public static final op_alert_slider_27:I = 0x7f0802fa
 
-.field public static final op_alert_slider_32:I = 0x7f0802fb
+.field public static final op_alert_slider_28:I = 0x7f0802fb
 
-.field public static final op_alert_slider_33:I = 0x7f0802fc
+.field public static final op_alert_slider_29:I = 0x7f0802fc
 
-.field public static final op_alert_slider_34:I = 0x7f0802fd
+.field public static final op_alert_slider_30:I = 0x7f0802fd
 
-.field public static final op_alert_slider_35:I = 0x7f0802fe
+.field public static final op_alert_slider_31:I = 0x7f0802fe
 
-.field public static final op_alert_slider_36:I = 0x7f0802ff
+.field public static final op_alert_slider_32:I = 0x7f0802ff
 
-.field public static final op_alert_slider_37:I = 0x7f080300
+.field public static final op_alert_slider_33:I = 0x7f080300
 
-.field public static final op_alert_slider_38:I = 0x7f080301
+.field public static final op_alert_slider_34:I = 0x7f080301
 
-.field public static final op_appbar_background:I = 0x7f080302
+.field public static final op_alert_slider_35:I = 0x7f080302
 
-.field public static final op_authentication_information_image:I = 0x7f080303
+.field public static final op_alert_slider_36:I = 0x7f080303
 
-.field public static final op_authentication_information_image_17819:I = 0x7f080304
+.field public static final op_alert_slider_37:I = 0x7f080304
 
-.field public static final op_avd_hide_password:I = 0x7f080305
+.field public static final op_alert_slider_38:I = 0x7f080305
 
-.field public static final op_avd_show_password:I = 0x7f080306
+.field public static final op_alipay_qrcode:I = 0x7f080306
 
-.field public static final op_back_fingerprint_sensor_location:I = 0x7f080307
+.field public static final op_alipay_scanning:I = 0x7f080307
 
-.field public static final op_btn_borderless_material_dark:I = 0x7f080308
+.field public static final op_android_version:I = 0x7f080308
 
-.field public static final op_btn_borderless_material_light:I = 0x7f080309
+.field public static final op_appbar_background:I = 0x7f080309
 
-.field public static final op_btn_borderless_mini_material_dark:I = 0x7f08030a
+.field public static final op_authentication_information:I = 0x7f08030a
 
-.field public static final op_btn_borderless_mini_material_light:I = 0x7f08030b
+.field public static final op_authentication_information_image:I = 0x7f08030b
 
-.field public static final op_btn_check_material_anim:I = 0x7f08030c
+.field public static final op_authentication_information_image_17819:I = 0x7f08030c
 
-.field public static final op_btn_checkbox_circle_material_anim:I = 0x7f08030d
+.field public static final op_avd_hide_password:I = 0x7f08030d
 
-.field public static final op_btn_checkbox_circle_special_material_anim:I = 0x7f08030e
+.field public static final op_avd_show_password:I = 0x7f08030e
 
-.field public static final op_btn_checkbox_material_anim:I = 0x7f08030f
+.field public static final op_award_icon:I = 0x7f08030f
 
-.field public static final op_btn_checkbox_material_anim_light:I = 0x7f080310
+.field public static final op_back_fingerprint_sensor_location:I = 0x7f080310
 
-.field public static final op_btn_checkbox_special_material_anim:I = 0x7f080311
+.field public static final op_btn_borderless_material_dark:I = 0x7f080311
 
-.field public static final op_btn_clock_material:I = 0x7f080312
+.field public static final op_btn_borderless_material_light:I = 0x7f080312
 
-.field public static final op_btn_default_material_dark:I = 0x7f080313
+.field public static final op_btn_borderless_mini_material_dark:I = 0x7f080313
 
-.field public static final op_btn_default_material_light:I = 0x7f080314
+.field public static final op_btn_borderless_mini_material_light:I = 0x7f080314
 
-.field public static final op_btn_default_mtrl_shape:I = 0x7f080315
+.field public static final op_btn_check_material_anim:I = 0x7f080315
 
-.field public static final op_btn_image_checkbox_material_anim:I = 0x7f080316
+.field public static final op_btn_checkbox_circle_material_anim:I = 0x7f080316
 
-.field public static final op_btn_image_checkbox_material_light_anim:I = 0x7f080317
+.field public static final op_btn_checkbox_circle_special_material_anim:I = 0x7f080317
 
-.field public static final op_btn_image_single_choice:I = 0x7f080318
+.field public static final op_btn_checkbox_material_anim:I = 0x7f080318
 
-.field public static final op_btn_image_single_choice_light:I = 0x7f080319
+.field public static final op_btn_checkbox_material_anim_light:I = 0x7f080319
 
-.field public static final op_btn_image_single_choice_selector:I = 0x7f08031a
+.field public static final op_btn_checkbox_special_material_anim:I = 0x7f08031a
 
-.field public static final op_btn_image_single_choice_selector_light:I = 0x7f08031b
+.field public static final op_btn_clock_material:I = 0x7f08031b
 
-.field public static final op_btn_image_single_choice_uncheck:I = 0x7f08031c
+.field public static final op_btn_default_material_dark:I = 0x7f08031c
 
-.field public static final op_btn_keyboard_key_material:I = 0x7f08031d
+.field public static final op_btn_default_material_light:I = 0x7f08031d
 
-.field public static final op_btn_mini_material_dark:I = 0x7f08031e
+.field public static final op_btn_default_mtrl_shape:I = 0x7f08031e
 
-.field public static final op_btn_mini_material_light:I = 0x7f08031f
+.field public static final op_btn_image_checkbox_material_anim:I = 0x7f08031f
 
-.field public static final op_btn_mini_mtrl_shape:I = 0x7f080320
+.field public static final op_btn_image_checkbox_material_light_anim:I = 0x7f080320
 
-.field public static final op_btn_radio_material_anim:I = 0x7f080321
+.field public static final op_btn_image_single_choice:I = 0x7f080321
 
-.field public static final op_btn_radio_material_anim_light:I = 0x7f080322
+.field public static final op_btn_image_single_choice_light:I = 0x7f080322
 
-.field public static final op_card_bg:I = 0x7f080323
+.field public static final op_btn_image_single_choice_selector:I = 0x7f080323
 
-.field public static final op_compatibility_mode_guide_dark:I = 0x7f080324
+.field public static final op_btn_image_single_choice_selector_light:I = 0x7f080324
 
-.field public static final op_compatibility_mode_guide_light:I = 0x7f080325
+.field public static final op_btn_image_single_choice_uncheck:I = 0x7f080325
 
-.field public static final op_control_background_40dp_material:I = 0x7f080326
+.field public static final op_btn_keyboard_key_material:I = 0x7f080326
 
-.field public static final op_custom_color_default_bg:I = 0x7f080327
+.field public static final op_btn_mini_material_dark:I = 0x7f080327
 
-.field public static final op_default_launcher:I = 0x7f080328
+.field public static final op_btn_mini_material_light:I = 0x7f080328
 
-.field public static final op_design_fab_background:I = 0x7f080329
+.field public static final op_btn_mini_mtrl_shape:I = 0x7f080329
 
-.field public static final op_design_ic_visibility:I = 0x7f08032a
+.field public static final op_btn_radio_material_anim:I = 0x7f08032a
 
-.field public static final op_design_ic_visibility_off:I = 0x7f08032b
+.field public static final op_btn_radio_material_anim_light:I = 0x7f08032b
 
-.field public static final op_design_password_eye:I = 0x7f08032c
+.field public static final op_card_bg:I = 0x7f08032c
 
-.field public static final op_design_snackbar_background:I = 0x7f08032d
+.field public static final op_compatibility_mode_guide_dark:I = 0x7f08032d
 
-.field public static final op_do_no_disturb:I = 0x7f08032e
+.field public static final op_compatibility_mode_guide_light:I = 0x7f08032e
 
-.field public static final op_drop_down_item_background:I = 0x7f08032f
+.field public static final op_control_background_40dp_material:I = 0x7f08032f
 
-.field public static final op_drop_down_item_background_bottom:I = 0x7f080330
+.field public static final op_custom_color_default_bg:I = 0x7f080330
 
-.field public static final op_drop_down_item_background_top:I = 0x7f080331
+.field public static final op_custom_fingerprint_anim_bg:I = 0x7f080331
 
-.field public static final op_edit_text_error_material_dark:I = 0x7f080332
+.field public static final op_default_launcher:I = 0x7f080332
 
-.field public static final op_edit_text_error_material_light:I = 0x7f080333
+.field public static final op_design_fab_background:I = 0x7f080333
 
-.field public static final op_edit_text_material_dark:I = 0x7f080334
+.field public static final op_design_ic_visibility:I = 0x7f080334
 
-.field public static final op_edit_text_material_light:I = 0x7f080335
+.field public static final op_design_ic_visibility_off:I = 0x7f080335
 
-.field public static final op_empty_list_tips_icon:I = 0x7f080336
+.field public static final op_design_password_eye:I = 0x7f080336
 
-.field public static final op_faceunlock_guide_image:I = 0x7f080337
+.field public static final op_design_snackbar_background:I = 0x7f080337
 
-.field public static final op_fingerprint_sensor_location:I = 0x7f080338
+.field public static final op_device_name:I = 0x7f080338
 
-.field public static final op_font_style:I = 0x7f080339
+.field public static final op_do_no_disturb:I = 0x7f080339
 
-.field public static final op_fullscreen_mode_guide_dark:I = 0x7f08033a
+.field public static final op_drop_down_item_background:I = 0x7f08033a
 
-.field public static final op_fullscreen_mode_guide_light:I = 0x7f08033b
+.field public static final op_drop_down_item_background_bottom:I = 0x7f08033b
 
-.field public static final op_ic_ab_back_material:I = 0x7f08033c
+.field public static final op_drop_down_item_background_top:I = 0x7f08033c
 
-.field public static final op_ic_advanced:I = 0x7f08033d
+.field public static final op_edit_text_error_material_dark:I = 0x7f08033d
 
-.field public static final op_ic_advanced_settings:I = 0x7f08033e
+.field public static final op_edit_text_error_material_light:I = 0x7f08033e
 
-.field public static final op_ic_arrow_drop_down:I = 0x7f08033f
+.field public static final op_edit_text_material_dark:I = 0x7f08033f
 
-.field public static final op_ic_arrow_drop_up:I = 0x7f080340
+.field public static final op_edit_text_material_light:I = 0x7f080340
 
-.field public static final op_ic_audio_alarm:I = 0x7f080341
+.field public static final op_empty_list_tips_icon:I = 0x7f080341
 
-.field public static final op_ic_audio_alarm_mute:I = 0x7f080342
+.field public static final op_faceunlock_guide_image:I = 0x7f080342
 
-.field public static final op_ic_audio_media:I = 0x7f080343
+.field public static final op_fingerprint_sensor_location:I = 0x7f080343
 
-.field public static final op_ic_audio_media_mute:I = 0x7f080344
+.field public static final op_font_style:I = 0x7f080344
 
-.field public static final op_ic_audio_ring_notif:I = 0x7f080345
+.field public static final op_forum_h2_dark:I = 0x7f080345
 
-.field public static final op_ic_audio_ring_notif_mute:I = 0x7f080346
+.field public static final op_forum_h2_light:I = 0x7f080346
 
-.field public static final op_ic_audio_ring_notif_vibrate:I = 0x7f080347
+.field public static final op_forum_o2_dark:I = 0x7f080347
 
-.field public static final op_ic_auto_sync_account_data:I = 0x7f080348
+.field public static final op_forum_o2_light:I = 0x7f080348
 
-.field public static final op_ic_brightness_auto_black_24px:I = 0x7f080349
+.field public static final op_fullscreen_mode_guide_dark:I = 0x7f080349
 
-.field public static final op_ic_brightness_medium_black_24px:I = 0x7f08034a
+.field public static final op_fullscreen_mode_guide_light:I = 0x7f08034a
 
-.field public static final op_ic_brightness_thumb:I = 0x7f08034b
+.field public static final op_h2_version:I = 0x7f08034b
 
-.field public static final op_ic_buttons_and_gestures:I = 0x7f08034c
+.field public static final op_ic_ab_back_material:I = 0x7f08034c
 
-.field public static final op_ic_check_black_24px:I = 0x7f08034d
+.field public static final op_ic_advanced:I = 0x7f08034d
 
-.field public static final op_ic_checkbox_checked:I = 0x7f08034e
+.field public static final op_ic_advanced_settings:I = 0x7f08034e
 
-.field public static final op_ic_checkbox_checked_to_unchecked_animation:I = 0x7f08034f
+.field public static final op_ic_arrow_drop_down:I = 0x7f08034f
 
-.field public static final op_ic_checkbox_unchecked:I = 0x7f080350
+.field public static final op_ic_arrow_drop_up:I = 0x7f080350
 
-.field public static final op_ic_checkbox_unchecked_to_checked_animation:I = 0x7f080351
+.field public static final op_ic_audio_alarm:I = 0x7f080351
 
-.field public static final op_ic_chevron_end:I = 0x7f080352
+.field public static final op_ic_audio_alarm_mute:I = 0x7f080352
 
-.field public static final op_ic_chevron_start:I = 0x7f080353
+.field public static final op_ic_audio_media:I = 0x7f080353
 
-.field public static final op_ic_clear_material:I = 0x7f080354
+.field public static final op_ic_audio_media_mute:I = 0x7f080354
 
-.field public static final op_ic_clear_material_disabled:I = 0x7f080355
+.field public static final op_ic_audio_ring_notif:I = 0x7f080355
 
-.field public static final op_ic_cloud_black:I = 0x7f080356
+.field public static final op_ic_audio_ring_notif_mute:I = 0x7f080356
 
-.field public static final op_ic_color_edit_icon:I = 0x7f080357
+.field public static final op_ic_audio_ring_notif_vibrate:I = 0x7f080357
 
-.field public static final op_ic_condition_tile_background:I = 0x7f080358
+.field public static final op_ic_auto_sync_account_data:I = 0x7f080358
 
-.field public static final op_ic_custom_color_icon:I = 0x7f080359
+.field public static final op_ic_brightness_auto_black_24px:I = 0x7f080359
 
-.field public static final op_ic_custom_finger_logo_bg:I = 0x7f08035a
+.field public static final op_ic_brightness_medium_black_24px:I = 0x7f08035a
 
-.field public static final op_ic_custom_finger_logo_png_bg:I = 0x7f08035b
+.field public static final op_ic_brightness_thumb:I = 0x7f08035b
 
-.field public static final op_ic_data_usage:I = 0x7f08035c
+.field public static final op_ic_buttons_and_gestures:I = 0x7f08035c
 
-.field public static final op_ic_delete:I = 0x7f08035d
+.field public static final op_ic_check_black_24px:I = 0x7f08035d
 
-.field public static final op_ic_do_not_disturb:I = 0x7f08035e
+.field public static final op_ic_checkbox_checked:I = 0x7f08035e
 
-.field public static final op_ic_face_unlock_setup:I = 0x7f08035f
+.field public static final op_ic_checkbox_checked_to_unchecked_animation:I = 0x7f08035f
 
-.field public static final op_ic_homepage_about_device:I = 0x7f080360
+.field public static final op_ic_checkbox_unchecked:I = 0x7f080360
 
-.field public static final op_ic_homepage_accounts:I = 0x7f080361
+.field public static final op_ic_checkbox_unchecked_to_checked_animation:I = 0x7f080361
 
-.field public static final op_ic_homepage_apps:I = 0x7f080362
+.field public static final op_ic_chevron_end:I = 0x7f080362
 
-.field public static final op_ic_homepage_battery:I = 0x7f080363
+.field public static final op_ic_chevron_start:I = 0x7f080363
 
-.field public static final op_ic_homepage_connected_device:I = 0x7f080364
+.field public static final op_ic_clear_material:I = 0x7f080364
 
-.field public static final op_ic_homepage_dashborad_icon_bg:I = 0x7f080365
+.field public static final op_ic_clear_material_disabled:I = 0x7f080365
 
-.field public static final op_ic_homepage_display:I = 0x7f080366
+.field public static final op_ic_cloud_black:I = 0x7f080366
 
-.field public static final op_ic_homepage_google:I = 0x7f080367
+.field public static final op_ic_color_edit_icon:I = 0x7f080367
 
-.field public static final op_ic_homepage_network:I = 0x7f080368
+.field public static final op_ic_condition_tile_background:I = 0x7f080368
 
-.field public static final op_ic_homepage_security:I = 0x7f080369
+.field public static final op_ic_custom_color_icon:I = 0x7f080369
 
-.field public static final op_ic_homepage_sound:I = 0x7f08036a
+.field public static final op_ic_custom_finger_logo_bg:I = 0x7f08036a
 
-.field public static final op_ic_homepage_storage:I = 0x7f08036b
+.field public static final op_ic_custom_finger_logo_png_bg:I = 0x7f08036b
 
-.field public static final op_ic_homepage_system_dashboard:I = 0x7f08036c
+.field public static final op_ic_data_usage:I = 0x7f08036c
 
-.field public static final op_ic_laboratory:I = 0x7f08036d
+.field public static final op_ic_delete:I = 0x7f08036d
 
-.field public static final op_ic_menu:I = 0x7f08036e
+.field public static final op_ic_do_not_disturb:I = 0x7f08036e
 
-.field public static final op_ic_menu_moreoverflow_material:I = 0x7f08036f
+.field public static final op_ic_drag_handle:I = 0x7f08036f
 
-.field public static final op_ic_more:I = 0x7f080370
+.field public static final op_ic_face_unlock_setup:I = 0x7f080370
 
-.field public static final op_ic_new_system_update:I = 0x7f080371
+.field public static final op_ic_homepage_about_device:I = 0x7f080371
 
-.field public static final op_ic_oneplus_account:I = 0x7f080372
+.field public static final op_ic_homepage_accounts:I = 0x7f080372
 
-.field public static final op_ic_oneplus_account_icon:I = 0x7f080373
+.field public static final op_ic_homepage_apps:I = 0x7f080373
 
-.field public static final op_ic_oneplus_lab_feature_dislike:I = 0x7f080374
+.field public static final op_ic_homepage_battery:I = 0x7f080374
 
-.field public static final op_ic_oneplus_lab_feature_like:I = 0x7f080375
+.field public static final op_ic_homepage_connected_device:I = 0x7f080375
 
-.field public static final op_ic_otg:I = 0x7f080376
+.field public static final op_ic_homepage_dashborad_icon_bg:I = 0x7f080376
 
-.field public static final op_ic_play:I = 0x7f080377
+.field public static final op_ic_homepage_display:I = 0x7f080377
 
-.field public static final op_ic_repair:I = 0x7f080378
+.field public static final op_ic_homepage_google:I = 0x7f080378
 
-.field public static final op_ic_roaming:I = 0x7f080379
+.field public static final op_ic_homepage_network:I = 0x7f080379
 
-.field public static final op_ic_screen_provision:I = 0x7f08037a
+.field public static final op_ic_homepage_security:I = 0x7f08037a
 
-.field public static final op_ic_screen_setupwizard:I = 0x7f08037b
+.field public static final op_ic_homepage_sound:I = 0x7f08037b
 
-.field public static final op_ic_search:I = 0x7f08037c
+.field public static final op_ic_homepage_storage:I = 0x7f08037c
 
-.field public static final op_ic_search_api_material:I = 0x7f08037d
+.field public static final op_ic_homepage_system_dashboard:I = 0x7f08037d
 
-.field public static final op_ic_search_history:I = 0x7f08037e
+.field public static final op_ic_laboratory:I = 0x7f08037e
 
-.field public static final op_ic_settings_adaptive_brightness:I = 0x7f08037f
+.field public static final op_ic_menu:I = 0x7f08037f
 
-.field public static final op_ic_settings_advanced_optimization:I = 0x7f080380
+.field public static final op_ic_menu_moreoverflow_material:I = 0x7f080380
 
-.field public static final op_ic_settings_ambient_display:I = 0x7f080381
+.field public static final op_ic_more:I = 0x7f080381
 
-.field public static final op_ic_settings_anti_misoperation_of_the_screen_touch:I = 0x7f080382
+.field public static final op_ic_new_system_update:I = 0x7f080382
 
-.field public static final op_ic_settings_app_display_in_fullscreen:I = 0x7f080383
+.field public static final op_ic_oneplus_account:I = 0x7f080383
 
-.field public static final op_ic_settings_app_locker:I = 0x7f080384
+.field public static final op_ic_oneplus_account_icon:I = 0x7f080384
 
-.field public static final op_ic_settings_brightness_end:I = 0x7f080385
+.field public static final op_ic_oneplus_lab_feature_dislike:I = 0x7f080385
 
-.field public static final op_ic_settings_brightness_header:I = 0x7f080386
+.field public static final op_ic_oneplus_lab_feature_like:I = 0x7f080386
 
-.field public static final op_ic_settings_buttons_and_fullscreen_gestures:I = 0x7f080387
+.field public static final op_ic_otg:I = 0x7f080387
 
-.field public static final op_ic_settings_configure_notification:I = 0x7f080388
+.field public static final op_ic_play:I = 0x7f080388
 
-.field public static final op_ic_settings_connection_preferences:I = 0x7f080389
+.field public static final op_ic_repair:I = 0x7f080389
 
-.field public static final op_ic_settings_default_payment_app:I = 0x7f08038a
+.field public static final op_ic_roaming:I = 0x7f08038a
 
-.field public static final op_ic_settings_discoverable_device:I = 0x7f08038b
+.field public static final op_ic_screen_provision:I = 0x7f08038b
 
-.field public static final op_ic_settings_experience_improvement_programs:I = 0x7f08038c
+.field public static final op_ic_screen_setupwizard:I = 0x7f08038c
 
-.field public static final op_ic_settings_gaming_mode:I = 0x7f08038d
+.field public static final op_ic_search:I = 0x7f08038d
 
-.field public static final op_ic_settings_long_press_to_take_photo:I = 0x7f08038e
+.field public static final op_ic_search_api_material:I = 0x7f08038e
 
-.field public static final op_ic_settings_manage_mobile_plan:I = 0x7f08038f
+.field public static final op_ic_search_history:I = 0x7f08038f
 
-.field public static final op_ic_settings_multi_app:I = 0x7f080390
+.field public static final op_ic_settings_adaptive_brightness:I = 0x7f080390
 
-.field public static final op_ic_settings_multitasking_clean_way:I = 0x7f080391
+.field public static final op_ic_settings_advanced_optimization:I = 0x7f080391
 
-.field public static final op_ic_settings_night_mode:I = 0x7f080392
+.field public static final op_ic_settings_ambient_display:I = 0x7f080392
 
-.field public static final op_ic_settings_notch_display_guide:I = 0x7f080393
+.field public static final op_ic_settings_anti_misoperation_of_the_screen_touch:I = 0x7f080393
 
-.field public static final op_ic_settings_oneplus_notifications:I = 0x7f080394
+.field public static final op_ic_settings_app_display_in_fullscreen:I = 0x7f080394
 
-.field public static final op_ic_settings_otg:I = 0x7f080395
+.field public static final op_ic_settings_app_locker:I = 0x7f080395
 
-.field public static final op_ic_settings_quick_activate_the_assistant_app:I = 0x7f080396
+.field public static final op_ic_settings_brightness_end:I = 0x7f080396
 
-.field public static final op_ic_settings_quick_gestures:I = 0x7f080397
+.field public static final op_ic_settings_brightness_header:I = 0x7f080397
 
-.field public static final op_ic_settings_quick_pay:I = 0x7f080398
+.field public static final op_ic_settings_buttons_and_fullscreen_gestures:I = 0x7f080398
 
-.field public static final op_ic_settings_quick_turn_on_camera:I = 0x7f080399
+.field public static final op_ic_settings_configure_notification:I = 0x7f080399
 
-.field public static final op_ic_settings_reading_mode:I = 0x7f08039a
+.field public static final op_ic_settings_connection_preferences:I = 0x7f08039a
 
-.field public static final op_ic_settings_screen_color_mode:I = 0x7f08039b
+.field public static final op_ic_settings_default_payment_app:I = 0x7f08039b
 
-.field public static final op_ic_settings_sim:I = 0x7f08039c
+.field public static final op_ic_settings_discoverable_device:I = 0x7f08039c
 
-.field public static final op_ic_settings_sleep:I = 0x7f08039d
+.field public static final op_ic_settings_experience_improvement_programs:I = 0x7f08039d
 
-.field public static final op_ic_settings_sleep_standby_optimization:I = 0x7f08039e
+.field public static final op_ic_settings_gaming_mode:I = 0x7f08039e
 
-.field public static final op_ic_settings_switch:I = 0x7f08039f
+.field public static final op_ic_settings_long_press_to_take_photo:I = 0x7f08039f
 
-.field public static final op_ic_settings_system_stabiliy_program:I = 0x7f0803a0
+.field public static final op_ic_settings_manage_mobile_plan:I = 0x7f0803a0
 
-.field public static final op_ic_settings_user_experience_program:I = 0x7f0803a1
+.field public static final op_ic_settings_multi_app:I = 0x7f0803a1
 
-.field public static final op_ic_settings_user_manual:I = 0x7f0803a2
+.field public static final op_ic_settings_multitasking_clean_way:I = 0x7f0803a2
 
-.field public static final op_ic_settings_vpn:I = 0x7f0803a3
+.field public static final op_ic_settings_night_mode:I = 0x7f0803a3
 
-.field public static final op_ic_sim_card:I = 0x7f0803a4
+.field public static final op_ic_settings_notch_display_guide:I = 0x7f0803a4
 
-.field public static final op_ic_sound:I = 0x7f0803a5
+.field public static final op_ic_settings_oneplus_notifications:I = 0x7f0803a5
 
-.field public static final op_ic_sound_settings:I = 0x7f0803a6
+.field public static final op_ic_settings_otg:I = 0x7f0803a6
 
-.field public static final op_ic_spinner_caret:I = 0x7f0803a7
+.field public static final op_ic_settings_quick_activate_the_assistant_app:I = 0x7f0803a7
 
-.field public static final op_ic_status_bar:I = 0x7f0803a8
+.field public static final op_ic_settings_quick_gestures:I = 0x7f0803a8
 
-.field public static final op_ic_sync_anim_holo:I = 0x7f0803a9
+.field public static final op_ic_settings_quick_launch:I = 0x7f0803a9
 
-.field public static final op_ic_sync_grey_holo:I = 0x7f0803aa
+.field public static final op_ic_settings_quick_pay:I = 0x7f0803aa
 
-.field public static final op_ic_sync_red_holo:I = 0x7f0803ab
+.field public static final op_ic_settings_quick_turn_on_camera:I = 0x7f0803ab
 
-.field public static final op_ic_system_accessibility:I = 0x7f0803ac
+.field public static final op_ic_settings_reading_mode:I = 0x7f0803ac
 
-.field public static final op_ic_timer_shutdown_startup_settings:I = 0x7f0803ad
+.field public static final op_ic_settings_screen_color_mode:I = 0x7f0803ad
 
-.field public static final op_ic_tint_sync_error:I = 0x7f0803ae
+.field public static final op_ic_settings_sim:I = 0x7f0803ae
 
-.field public static final op_ic_tools_settings:I = 0x7f0803af
+.field public static final op_ic_settings_sleep:I = 0x7f0803af
 
-.field public static final op_ic_user_manual:I = 0x7f0803b0
+.field public static final op_ic_settings_sleep_standby_optimization:I = 0x7f0803b0
 
-.field public static final op_ic_volume_footer_no_disturb:I = 0x7f0803b1
+.field public static final op_ic_settings_switch:I = 0x7f0803b1
 
-.field public static final op_ic_volume_footer_slient:I = 0x7f0803b2
+.field public static final op_ic_settings_system_stabiliy_program:I = 0x7f0803b2
 
-.field public static final op_ic_wifi_calling:I = 0x7f0803b3
+.field public static final op_ic_settings_user_experience_program:I = 0x7f0803b3
 
-.field public static final op_item_background_material:I = 0x7f0803b4
+.field public static final op_ic_settings_user_manual:I = 0x7f0803b4
 
-.field public static final op_list_divider_margin_end_2:I = 0x7f0803b5
+.field public static final op_ic_settings_vpn:I = 0x7f0803b5
 
-.field public static final op_list_divider_margin_end_4:I = 0x7f0803b6
+.field public static final op_ic_sim_card:I = 0x7f0803b6
 
-.field public static final op_list_divider_margin_start_2:I = 0x7f0803b7
+.field public static final op_ic_sound:I = 0x7f0803b7
 
-.field public static final op_list_divider_margin_start_4:I = 0x7f0803b8
+.field public static final op_ic_sound_settings:I = 0x7f0803b8
 
-.field public static final op_major_a_b:I = 0x7f0803b9
+.field public static final op_ic_spinner_caret:I = 0x7f0803b9
 
-.field public static final op_major_a_b_animation:I = 0x7f0803ba
+.field public static final op_ic_status_bar:I = 0x7f0803ba
 
-.field public static final op_major_b_a:I = 0x7f0803bb
+.field public static final op_ic_sync_anim_holo:I = 0x7f0803bb
 
-.field public static final op_major_b_a_animation:I = 0x7f0803bc
+.field public static final op_ic_sync_grey_holo:I = 0x7f0803bc
 
-.field public static final op_major_b_c:I = 0x7f0803bd
+.field public static final op_ic_sync_red_holo:I = 0x7f0803bd
 
-.field public static final op_major_b_c_animation:I = 0x7f0803be
+.field public static final op_ic_system_accessibility:I = 0x7f0803be
 
-.field public static final op_major_c_b:I = 0x7f0803bf
+.field public static final op_ic_timer_shutdown_startup_settings:I = 0x7f0803bf
 
-.field public static final op_major_c_b_animation:I = 0x7f0803c0
+.field public static final op_ic_tint_sync_error:I = 0x7f0803c0
 
-.field public static final op_minor_a_b:I = 0x7f0803c1
+.field public static final op_ic_tools_settings:I = 0x7f0803c1
 
-.field public static final op_minor_a_b_animation:I = 0x7f0803c2
+.field public static final op_ic_user_manual:I = 0x7f0803c2
 
-.field public static final op_minor_b_a:I = 0x7f0803c3
+.field public static final op_ic_volume_footer_no_disturb:I = 0x7f0803c3
 
-.field public static final op_minor_b_a_animation:I = 0x7f0803c4
+.field public static final op_ic_volume_footer_slient:I = 0x7f0803c4
 
-.field public static final op_minor_b_c:I = 0x7f0803c5
+.field public static final op_ic_wifi_calling:I = 0x7f0803c5
 
-.field public static final op_minor_b_c_animation:I = 0x7f0803c6
+.field public static final op_item_background_material:I = 0x7f0803c6
 
-.field public static final op_minor_c_b:I = 0x7f0803c7
+.field public static final op_legal_settings:I = 0x7f0803c7
 
-.field public static final op_minor_c_b_animation:I = 0x7f0803c8
+.field public static final op_list_divider_margin_end_2:I = 0x7f0803c8
 
-.field public static final op_number_picker_divider_material:I = 0x7f0803c9
+.field public static final op_list_divider_margin_end_4:I = 0x7f0803c9
 
-.field public static final op_number_picker_divider_material_light:I = 0x7f0803ca
+.field public static final op_list_divider_margin_start_2:I = 0x7f0803ca
 
-.field public static final op_number_picker_up_btn:I = 0x7f0803cb
+.field public static final op_list_divider_margin_start_4:I = 0x7f0803cb
 
-.field public static final op_numberpicker_down_btn:I = 0x7f0803cc
+.field public static final op_major_a_b:I = 0x7f0803cc
 
-.field public static final op_numberpicker_input:I = 0x7f0803cd
+.field public static final op_major_a_b_animation:I = 0x7f0803cd
 
-.field public static final op_page:I = 0x7f0803ce
+.field public static final op_major_b_a:I = 0x7f0803ce
 
-.field public static final op_page_now:I = 0x7f0803cf
+.field public static final op_major_b_a_animation:I = 0x7f0803cf
 
-.field public static final op_parallel_apps:I = 0x7f0803d0
+.field public static final op_major_b_c:I = 0x7f0803d0
 
-.field public static final op_picker_am_pm_padding:I = 0x7f0803d1
+.field public static final op_major_b_c_animation:I = 0x7f0803d1
 
-.field public static final op_popup_background_material:I = 0x7f0803d2
+.field public static final op_major_c_b:I = 0x7f0803d2
 
-.field public static final op_popup_background_material_dark:I = 0x7f0803d3
+.field public static final op_major_c_b_animation:I = 0x7f0803d3
 
-.field public static final op_popup_background_material_light:I = 0x7f0803d4
+.field public static final op_minor_a_b:I = 0x7f0803d4
 
-.field public static final op_preference_list_divider:I = 0x7f0803d5
+.field public static final op_minor_a_b_animation:I = 0x7f0803d5
 
-.field public static final op_preference_list_item_divider:I = 0x7f0803d6
+.field public static final op_minor_b_a:I = 0x7f0803d6
 
-.field public static final op_preference_list_item_divider_dark:I = 0x7f0803d7
+.field public static final op_minor_b_a_animation:I = 0x7f0803d7
 
-.field public static final op_preference_list_item_divider_light:I = 0x7f0803d8
+.field public static final op_minor_b_c:I = 0x7f0803d8
 
-.field public static final op_progress_horizontal_material:I = 0x7f0803d9
+.field public static final op_minor_b_c_animation:I = 0x7f0803d9
 
-.field public static final op_progress_horizontal_material_light:I = 0x7f0803da
+.field public static final op_minor_c_b:I = 0x7f0803da
 
-.field public static final op_progress_indeterminate_horizontal_material:I = 0x7f0803db
+.field public static final op_minor_c_b_animation:I = 0x7f0803db
 
-.field public static final op_progress_indeterminate_horizontal_material_light:I = 0x7f0803dc
+.field public static final op_model:I = 0x7f0803dc
 
-.field public static final op_progress_large_material:I = 0x7f0803dd
+.field public static final op_number_picker_divider_material:I = 0x7f0803dd
 
-.field public static final op_progress_large_material_light:I = 0x7f0803de
+.field public static final op_number_picker_divider_material_light:I = 0x7f0803de
 
-.field public static final op_progress_medium_material:I = 0x7f0803df
+.field public static final op_number_picker_up_btn:I = 0x7f0803df
 
-.field public static final op_progress_medium_material_light:I = 0x7f0803e0
+.field public static final op_numberpicker_down_btn:I = 0x7f0803e0
 
-.field public static final op_progress_progressdialog_horizontal_material:I = 0x7f0803e1
+.field public static final op_numberpicker_input:I = 0x7f0803e1
 
-.field public static final op_progress_progressdialog_material:I = 0x7f0803e2
+.field public static final op_o2_version:I = 0x7f0803e2
 
-.field public static final op_progress_small_material:I = 0x7f0803e3
+.field public static final op_page:I = 0x7f0803e3
 
-.field public static final op_progress_small_material_light:I = 0x7f0803e4
+.field public static final op_page_now:I = 0x7f0803e4
 
-.field public static final op_rectangle_floating_action_button:I = 0x7f0803e5
+.field public static final op_parallel_apps:I = 0x7f0803e5
 
-.field public static final op_regulatory_info:I = 0x7f0803e6
+.field public static final op_picker_am_pm_padding:I = 0x7f0803e6
 
-.field public static final op_regulatory_info_16859:I = 0x7f0803e7
+.field public static final op_popup_background_material:I = 0x7f0803e7
 
-.field public static final op_regulatory_info_17801:I = 0x7f0803e8
+.field public static final op_popup_background_material_dark:I = 0x7f0803e8
 
-.field public static final op_regulatory_info_17819_00:I = 0x7f0803e9
+.field public static final op_popup_background_material_light:I = 0x7f0803e9
 
-.field public static final op_regulatory_info_17819_03:I = 0x7f0803ea
+.field public static final op_preference_list_divider:I = 0x7f0803ea
 
-.field public static final op_regulatory_info_for_00:I = 0x7f0803eb
+.field public static final op_preference_list_item_divider:I = 0x7f0803eb
 
-.field public static final op_regulatory_info_for_03:I = 0x7f0803ec
+.field public static final op_preference_list_item_divider_dark:I = 0x7f0803ec
 
-.field public static final op_regulatory_info_other:I = 0x7f0803ed
+.field public static final op_preference_list_item_divider_light:I = 0x7f0803ed
 
-.field public static final op_screen_show_1:I = 0x7f0803ee
+.field public static final op_product_info:I = 0x7f0803ee
 
-.field public static final op_screen_show_2:I = 0x7f0803ef
+.field public static final op_progress_horizontal_material:I = 0x7f0803ef
 
-.field public static final op_screen_show_3:I = 0x7f0803f0
+.field public static final op_progress_horizontal_material_light:I = 0x7f0803f0
 
-.field public static final op_search_bar_bg:I = 0x7f0803f1
+.field public static final op_progress_indeterminate_horizontal_material:I = 0x7f0803f1
 
-.field public static final op_search_cicle_bg:I = 0x7f0803f2
+.field public static final op_progress_indeterminate_horizontal_material_light:I = 0x7f0803f2
 
-.field public static final op_seekbar_thumb_material_anim_dark:I = 0x7f0803f3
+.field public static final op_progress_large_material:I = 0x7f0803f3
 
-.field public static final op_seekbar_thumb_material_anim_light:I = 0x7f0803f4
+.field public static final op_progress_large_material_light:I = 0x7f0803f4
 
-.field public static final op_seekbar_thumb_pressed_to_unpressed_animation_dark:I = 0x7f0803f5
+.field public static final op_progress_medium_material:I = 0x7f0803f5
 
-.field public static final op_seekbar_thumb_pressed_to_unpressed_animation_light:I = 0x7f0803f6
+.field public static final op_progress_medium_material_light:I = 0x7f0803f6
 
-.field public static final op_seekbar_thumb_pressed_to_unpressed_dark:I = 0x7f0803f7
+.field public static final op_progress_progressdialog_horizontal_material:I = 0x7f0803f7
 
-.field public static final op_seekbar_thumb_pressed_to_unpressed_light:I = 0x7f0803f8
+.field public static final op_progress_progressdialog_material:I = 0x7f0803f8
 
-.field public static final op_seekbar_thumb_unpressed_to_pressed_animation_dark:I = 0x7f0803f9
+.field public static final op_progress_small_material:I = 0x7f0803f9
 
-.field public static final op_seekbar_thumb_unpressed_to_pressed_animation_light:I = 0x7f0803fa
+.field public static final op_progress_small_material_light:I = 0x7f0803fa
 
-.field public static final op_seekbar_thumb_unpressed_to_pressed_dark:I = 0x7f0803fb
+.field public static final op_rectangle_floating_action_button:I = 0x7f0803fb
 
-.field public static final op_seekbar_thumb_unpressed_to_pressed_light:I = 0x7f0803fc
+.field public static final op_regulatory_info:I = 0x7f0803fc
 
-.field public static final op_seekbar_track_material_dark:I = 0x7f0803fd
+.field public static final op_regulatory_info_16859:I = 0x7f0803fd
 
-.field public static final op_seekbar_track_material_light:I = 0x7f0803fe
+.field public static final op_regulatory_info_17801:I = 0x7f0803fe
 
-.field public static final op_setup_fingerprint_guide:I = 0x7f0803ff
+.field public static final op_regulatory_info_17819_00:I = 0x7f0803ff
 
-.field public static final op_shielding_notification_dark:I = 0x7f080400
+.field public static final op_regulatory_info_17819_03:I = 0x7f080400
 
-.field public static final op_shielding_notification_light:I = 0x7f080401
+.field public static final op_regulatory_info_18801_10:I = 0x7f080401
 
-.field public static final op_sound_no_file:I = 0x7f080402
+.field public static final op_regulatory_info_for_00:I = 0x7f080402
 
-.field public static final op_spinner_background_material:I = 0x7f080403
+.field public static final op_regulatory_info_for_03:I = 0x7f080403
 
-.field public static final op_spinner_mtrl_am_alpha:I = 0x7f080404
+.field public static final op_regulatory_info_other:I = 0x7f080404
 
-.field public static final op_starting_window_background:I = 0x7f080405
+.field public static final op_screen_show_1:I = 0x7f080405
 
-.field public static final op_switch_floating_action_button:I = 0x7f080406
+.field public static final op_screen_show_2:I = 0x7f080406
 
-.field public static final op_switch_thumb_material_anim:I = 0x7f080407
+.field public static final op_screen_show_3:I = 0x7f080407
 
-.field public static final op_switch_thumb_material_light_anim:I = 0x7f080408
+.field public static final op_search_bar_bg:I = 0x7f080408
 
-.field public static final op_switch_track_material:I = 0x7f080409
+.field public static final op_search_cicle_bg:I = 0x7f080409
 
-.field public static final op_switchbar_background:I = 0x7f08040a
+.field public static final op_seekbar_thumb_material_anim_dark:I = 0x7f08040a
 
-.field public static final op_switchbar_bg_dark:I = 0x7f08040b
+.field public static final op_seekbar_thumb_material_anim_light:I = 0x7f08040b
 
-.field public static final op_switchbar_bg_light:I = 0x7f08040c
+.field public static final op_seekbar_thumb_pressed_to_unpressed_animation_dark:I = 0x7f08040c
 
-.field public static final op_tab_indicator_material:I = 0x7f08040d
+.field public static final op_seekbar_thumb_pressed_to_unpressed_animation_light:I = 0x7f08040d
 
-.field public static final op_text_cursor_material:I = 0x7f08040e
+.field public static final op_seekbar_thumb_pressed_to_unpressed_dark:I = 0x7f08040e
 
-.field public static final op_text_cursor_material_dark:I = 0x7f08040f
+.field public static final op_seekbar_thumb_pressed_to_unpressed_light:I = 0x7f08040f
 
-.field public static final op_text_cursor_material_light:I = 0x7f080410
+.field public static final op_seekbar_thumb_unpressed_to_pressed_animation_dark:I = 0x7f080410
 
-.field public static final op_text_select_handle_left_material_dark:I = 0x7f080411
+.field public static final op_seekbar_thumb_unpressed_to_pressed_animation_light:I = 0x7f080411
 
-.field public static final op_text_select_handle_left_material_light:I = 0x7f080412
+.field public static final op_seekbar_thumb_unpressed_to_pressed_dark:I = 0x7f080412
 
-.field public static final op_text_select_handle_middle_material_dark:I = 0x7f080413
+.field public static final op_seekbar_thumb_unpressed_to_pressed_light:I = 0x7f080413
 
-.field public static final op_text_select_handle_middle_material_light:I = 0x7f080414
+.field public static final op_seekbar_track_material_dark:I = 0x7f080414
 
-.field public static final op_text_select_handle_right_material_dark:I = 0x7f080415
+.field public static final op_seekbar_track_material_light:I = 0x7f080415
 
-.field public static final op_text_select_handle_right_material_light:I = 0x7f080416
+.field public static final op_setup_fingerprint_guide:I = 0x7f080416
 
-.field public static final op_textfield_activated_mtrl_alpha:I = 0x7f080417
+.field public static final op_shielding_notification_dark:I = 0x7f080417
 
-.field public static final op_textfield_default_mtrl_alpha:I = 0x7f080418
+.field public static final op_shielding_notification_light:I = 0x7f080418
 
-.field public static final op_time_picker_editable_background:I = 0x7f080419
+.field public static final op_soft_version:I = 0x7f080419
 
-.field public static final op_time_separator:I = 0x7f08041a
+.field public static final op_sound_no_file:I = 0x7f08041a
 
-.field public static final op_vector_drawable_progress_bar_large:I = 0x7f08041b
+.field public static final op_spinner_background_material:I = 0x7f08041b
 
-.field public static final op_vector_drawable_progress_bar_large_light:I = 0x7f08041c
+.field public static final op_spinner_mtrl_am_alpha:I = 0x7f08041c
 
-.field public static final op_vector_drawable_progress_bar_medium:I = 0x7f08041d
+.field public static final op_starting_window_background:I = 0x7f08041d
 
-.field public static final op_vector_drawable_progress_bar_medium_light:I = 0x7f08041e
+.field public static final op_status_settings:I = 0x7f08041e
 
-.field public static final op_vector_drawable_progress_bar_progressdialog:I = 0x7f08041f
+.field public static final op_switch_floating_action_button:I = 0x7f08041f
 
-.field public static final op_vector_drawable_progress_bar_small:I = 0x7f080420
+.field public static final op_switch_thumb_material_anim:I = 0x7f080420
 
-.field public static final op_vector_drawable_progress_bar_small_light:I = 0x7f080421
+.field public static final op_switch_thumb_material_light_anim:I = 0x7f080421
 
-.field public static final op_vector_drawable_progress_indeterminate_horizontal:I = 0x7f080422
+.field public static final op_switch_track_material:I = 0x7f080422
 
-.field public static final op_vector_drawable_progress_indeterminate_horizontal_light:I = 0x7f080423
+.field public static final op_switchbar_background:I = 0x7f080423
 
-.field public static final opfinger_anim_bg:I = 0x7f080424
+.field public static final op_switchbar_bg_dark:I = 0x7f080424
 
-.field public static final opfinger_anim_bg_02:I = 0x7f080425
+.field public static final op_switchbar_bg_light:I = 0x7f080425
 
-.field public static final opfinger_anim_color_bg:I = 0x7f080426
+.field public static final op_tab_indicator_material:I = 0x7f080426
 
-.field public static final opfinger_anim_color_bg_2:I = 0x7f080427
+.field public static final op_text_cursor_material:I = 0x7f080427
 
-.field public static final opfinger_logo_bg:I = 0x7f080428
+.field public static final op_text_cursor_material_dark:I = 0x7f080428
 
-.field public static final pizza:I = 0x7f080429
+.field public static final op_text_cursor_material_light:I = 0x7f080429
 
-.field public static final preference_background:I = 0x7f08042a
+.field public static final op_text_select_handle_left_material_dark:I = 0x7f08042a
 
-.field public static final preference_highlight:I = 0x7f08042b
+.field public static final op_text_select_handle_left_material_light:I = 0x7f08042b
 
-.field public static final preference_list_divider_material:I = 0x7f08042c
+.field public static final op_text_select_handle_middle_material_dark:I = 0x7f08042c
 
-.field public static final preview:I = 0x7f08042d
+.field public static final op_text_select_handle_middle_material_light:I = 0x7f08042d
 
-.field public static final preview_seek_bar_outline:I = 0x7f08042e
+.field public static final op_text_select_handle_right_material_dark:I = 0x7f08042e
 
-.field public static final product_16859_01:I = 0x7f08042f
+.field public static final op_text_select_handle_right_material_light:I = 0x7f08042f
 
-.field public static final product_16859_02:I = 0x7f080430
+.field public static final op_textfield_activated_mtrl_alpha:I = 0x7f080430
 
-.field public static final product_16859_03:I = 0x7f080431
+.field public static final op_textfield_default_mtrl_alpha:I = 0x7f080431
 
-.field public static final product_16859_04:I = 0x7f080432
+.field public static final op_time_picker_editable_background:I = 0x7f080432
 
-.field public static final product_16859_05:I = 0x7f080433
+.field public static final op_time_separator:I = 0x7f080433
 
-.field public static final product_16859_06:I = 0x7f080434
+.field public static final op_vector_drawable_progress_bar_large:I = 0x7f080434
 
-.field public static final product_16859_07:I = 0x7f080435
+.field public static final op_vector_drawable_progress_bar_large_light:I = 0x7f080435
 
-.field public static final product_16859_08:I = 0x7f080436
+.field public static final op_vector_drawable_progress_bar_medium:I = 0x7f080436
 
-.field public static final product_16859_09:I = 0x7f080437
+.field public static final op_vector_drawable_progress_bar_medium_light:I = 0x7f080437
 
-.field public static final product_16859_10:I = 0x7f080438
+.field public static final op_vector_drawable_progress_bar_progressdialog:I = 0x7f080438
 
-.field public static final product_16859_11:I = 0x7f080439
+.field public static final op_vector_drawable_progress_bar_small:I = 0x7f080439
 
-.field public static final product_16859_12:I = 0x7f08043a
+.field public static final op_vector_drawable_progress_bar_small_light:I = 0x7f08043a
 
-.field public static final product_16859_13:I = 0x7f08043b
+.field public static final op_vector_drawable_progress_indeterminate_horizontal:I = 0x7f08043b
 
-.field public static final product_16859_14:I = 0x7f08043c
+.field public static final op_vector_drawable_progress_indeterminate_horizontal_light:I = 0x7f08043c
 
-.field public static final product_16859_15:I = 0x7f08043d
+.field public static final op_wechat_qrcode:I = 0x7f08043d
 
-.field public static final product_16859_16:I = 0x7f08043e
+.field public static final op_wechat_scanning:I = 0x7f08043e
 
-.field public static final product_16859_17:I = 0x7f08043f
+.field public static final opfinger_anim_bg:I = 0x7f08043f
 
-.field public static final product_16859_18:I = 0x7f080440
+.field public static final opfinger_anim_bg_02:I = 0x7f080440
 
-.field public static final product_17801_01:I = 0x7f080441
+.field public static final opfinger_anim_color_bg:I = 0x7f080441
 
-.field public static final product_17801_02:I = 0x7f080442
+.field public static final opfinger_anim_color_bg_2:I = 0x7f080442
 
-.field public static final product_17801_03:I = 0x7f080443
+.field public static final opfinger_logo_bg:I = 0x7f080443
 
-.field public static final product_17801_04:I = 0x7f080444
+.field public static final pizza:I = 0x7f080444
 
-.field public static final product_17801_05:I = 0x7f080445
+.field public static final preference_background:I = 0x7f080445
 
-.field public static final product_17801_06:I = 0x7f080446
+.field public static final preference_highlight:I = 0x7f080446
 
-.field public static final product_17801_07:I = 0x7f080447
+.field public static final preference_list_divider_material:I = 0x7f080447
 
-.field public static final product_17801_08:I = 0x7f080448
+.field public static final preview:I = 0x7f080448
 
-.field public static final product_17801_09:I = 0x7f080449
+.field public static final preview_seek_bar_outline:I = 0x7f080449
 
-.field public static final product_17801_10:I = 0x7f08044a
+.field public static final product_16859_01:I = 0x7f08044a
 
-.field public static final product_17801_11:I = 0x7f08044b
+.field public static final product_16859_02:I = 0x7f08044b
 
-.field public static final product_17801_12:I = 0x7f08044c
+.field public static final product_16859_03:I = 0x7f08044c
 
-.field public static final product_17801_13:I = 0x7f08044d
+.field public static final product_16859_04:I = 0x7f08044d
 
-.field public static final product_17801_14:I = 0x7f08044e
+.field public static final product_16859_05:I = 0x7f08044e
 
-.field public static final product_17801_15:I = 0x7f08044f
+.field public static final product_16859_06:I = 0x7f08044f
 
-.field public static final product_17801_16:I = 0x7f080450
+.field public static final product_16859_07:I = 0x7f080450
 
-.field public static final product_17801_17:I = 0x7f080451
+.field public static final product_16859_08:I = 0x7f080451
 
-.field public static final product_17801_18:I = 0x7f080452
+.field public static final product_16859_09:I = 0x7f080452
 
-.field public static final product_info_01:I = 0x7f080453
+.field public static final product_16859_10:I = 0x7f080453
 
-.field public static final product_info_02:I = 0x7f080454
+.field public static final product_16859_11:I = 0x7f080454
 
-.field public static final product_info_03:I = 0x7f080455
+.field public static final product_16859_12:I = 0x7f080455
 
-.field public static final product_info_04:I = 0x7f080456
+.field public static final product_16859_13:I = 0x7f080456
 
-.field public static final product_info_05:I = 0x7f080457
+.field public static final product_16859_14:I = 0x7f080457
 
-.field public static final product_info_06:I = 0x7f080458
+.field public static final product_16859_15:I = 0x7f080458
 
-.field public static final product_info_07:I = 0x7f080459
+.field public static final product_16859_16:I = 0x7f080459
 
-.field public static final product_info_08:I = 0x7f08045a
+.field public static final product_16859_17:I = 0x7f08045a
 
-.field public static final product_info_09:I = 0x7f08045b
+.field public static final product_16859_18:I = 0x7f08045b
 
-.field public static final product_info_10:I = 0x7f08045c
+.field public static final product_17801_01:I = 0x7f08045c
 
-.field public static final product_info_11:I = 0x7f08045d
+.field public static final product_17801_02:I = 0x7f08045d
 
-.field public static final product_info_12:I = 0x7f08045e
+.field public static final product_17801_03:I = 0x7f08045e
 
-.field public static final product_info_13:I = 0x7f08045f
+.field public static final product_17801_04:I = 0x7f08045f
 
-.field public static final product_info_14:I = 0x7f080460
+.field public static final product_17801_05:I = 0x7f080460
 
-.field public static final product_info_15:I = 0x7f080461
+.field public static final product_17801_06:I = 0x7f080461
 
-.field public static final product_info_16:I = 0x7f080462
+.field public static final product_17801_07:I = 0x7f080462
 
-.field public static final product_info_17:I = 0x7f080463
+.field public static final product_17801_08:I = 0x7f080463
 
-.field public static final product_info_18:I = 0x7f080464
+.field public static final product_17801_09:I = 0x7f080464
 
-.field public static final product_info_19:I = 0x7f080465
+.field public static final product_17801_10:I = 0x7f080465
 
-.field public static final product_info_20:I = 0x7f080466
+.field public static final product_17801_11:I = 0x7f080466
 
-.field public static final product_info_21:I = 0x7f080467
+.field public static final product_17801_12:I = 0x7f080467
 
-.field public static final progress_indeterminate_horizontal_material_trimmed:I = 0x7f080468
+.field public static final product_17801_13:I = 0x7f080468
 
-.field public static final regulatory_info:I = 0x7f080469
+.field public static final product_17801_14:I = 0x7f080469
 
-.field public static final ring_progress:I = 0x7f08046a
+.field public static final product_17801_15:I = 0x7f08046a
 
-.field public static final ripple_drawable:I = 0x7f08046b
+.field public static final product_17801_16:I = 0x7f08046b
 
-.field public static final screen_background_selector_light:I = 0x7f08046c
+.field public static final product_17801_17:I = 0x7f08046c
 
-.field public static final selectable_card:I = 0x7f08046d
+.field public static final product_17801_18:I = 0x7f08046d
 
-.field public static final shortcut_base:I = 0x7f08046e
+.field public static final product_info_01:I = 0x7f08046e
 
-.field public static final signal:I = 0x7f08046f
+.field public static final product_info_02:I = 0x7f08046f
 
-.field public static final spinner_default_holo_dark_am_no_underline:I = 0x7f080470
+.field public static final product_info_03:I = 0x7f080470
 
-.field public static final suw_card_bg:I = 0x7f080471
+.field public static final product_info_04:I = 0x7f080471
 
-.field public static final suw_card_bg_dark:I = 0x7f080472
+.field public static final product_info_05:I = 0x7f080472
 
-.field public static final suw_card_bg_light:I = 0x7f080473
+.field public static final product_info_06:I = 0x7f080473
 
-.field public static final suw_edit_text_bg_shape:I = 0x7f080474
+.field public static final product_info_07:I = 0x7f080474
 
-.field public static final suw_edittext_bg:I = 0x7f080475
+.field public static final product_info_08:I = 0x7f080475
 
-.field public static final suw_fourcolor_progress_bar:I = 0x7f080476
+.field public static final product_info_09:I = 0x7f080476
 
-.field public static final suw_ic_expand:I = 0x7f080477
+.field public static final product_info_10:I = 0x7f080477
 
-.field public static final suw_ic_expand_less:I = 0x7f080478
+.field public static final product_info_11:I = 0x7f080478
 
-.field public static final suw_ic_expand_more:I = 0x7f080479
+.field public static final product_info_12:I = 0x7f080479
 
-.field public static final suw_layout_background:I = 0x7f08047a
+.field public static final product_info_13:I = 0x7f08047a
 
-.field public static final suw_navbar_btn_bg:I = 0x7f08047b
+.field public static final product_info_14:I = 0x7f08047b
 
-.field public static final suw_navbar_btn_bg_dark:I = 0x7f08047c
+.field public static final product_info_15:I = 0x7f08047c
 
-.field public static final suw_navbar_btn_bg_light:I = 0x7f08047d
+.field public static final product_info_16:I = 0x7f08047d
 
-.field public static final suw_navbar_ic_back:I = 0x7f08047e
+.field public static final product_info_17:I = 0x7f08047e
 
-.field public static final suw_navbar_ic_down_arrow:I = 0x7f08047f
+.field public static final product_info_18:I = 0x7f08047f
 
-.field public static final suw_navbar_ic_left_arrow:I = 0x7f080480
+.field public static final product_info_19:I = 0x7f080480
 
-.field public static final suw_navbar_ic_more:I = 0x7f080481
+.field public static final product_info_20:I = 0x7f080481
 
-.field public static final suw_navbar_ic_next:I = 0x7f080482
+.field public static final product_info_21:I = 0x7f080482
 
-.field public static final suw_navbar_ic_right_arrow:I = 0x7f080483
+.field public static final progress_indeterminate_horizontal_material_trimmed:I = 0x7f080483
 
-.field public static final switch_thumb_material_anim:I = 0x7f080484
+.field public static final regulatory_info:I = 0x7f080484
 
-.field public static final switch_track_material:I = 0x7f080485
+.field public static final ring_progress:I = 0x7f080485
 
-.field public static final switchbar_background:I = 0x7f080486
+.field public static final ripple_drawable:I = 0x7f080486
 
-.field public static final tapandpay_emptystate:I = 0x7f080487
+.field public static final screen_background_selector_light:I = 0x7f080487
 
-.field public static final text_select_handle_left_mtrl_alpha:I = 0x7f080488
+.field public static final selectable_card:I = 0x7f080488
 
-.field public static final text_select_handle_middle_mtrl_alpha:I = 0x7f080489
+.field public static final shortcut_base:I = 0x7f080489
 
-.field public static final text_select_handle_right_mtrl_alpha:I = 0x7f08048a
+.field public static final signal:I = 0x7f08048a
 
-.field public static final textfield_search_activated_mtrl_alpha:I = 0x7f08048b
+.field public static final spinner_default_holo_dark_am_no_underline:I = 0x7f08048b
 
-.field public static final textfield_search_default_mtrl_alpha:I = 0x7f08048c
+.field public static final suw_card_bg:I = 0x7f08048c
 
-.field public static final thumb:I = 0x7f08048d
+.field public static final suw_card_bg_dark:I = 0x7f08048d
 
-.field public static final thumb_drawable:I = 0x7f08048e
+.field public static final suw_card_bg_light:I = 0x7f08048e
 
-.field public static final tile_icon_animation_speed:I = 0x7f08048f
+.field public static final suw_edit_text_bg_shape:I = 0x7f08048f
 
-.field public static final tile_icon_force_rtl:I = 0x7f080490
+.field public static final suw_edittext_bg:I = 0x7f080490
 
-.field public static final tile_icon_graphics:I = 0x7f080491
+.field public static final suw_fourcolor_progress_bar:I = 0x7f080491
 
-.field public static final tile_icon_show_layout:I = 0x7f080492
+.field public static final suw_ic_expand:I = 0x7f080492
 
-.field public static final tile_icon_winscope_trace:I = 0x7f080493
+.field public static final suw_ic_expand_less:I = 0x7f080493
 
-.field public static final title_bar:I = 0x7f080494
+.field public static final suw_ic_expand_more:I = 0x7f080494
 
-.field public static final toast_frame_dark:I = 0x7f080495
+.field public static final suw_layout_background:I = 0x7f080495
 
-.field public static final toast_frame_light:I = 0x7f080496
+.field public static final suw_navbar_btn_bg:I = 0x7f080496
 
-.field public static final tooltip_frame_dark:I = 0x7f080497
+.field public static final suw_navbar_btn_bg_dark:I = 0x7f080497
 
-.field public static final tooltip_frame_light:I = 0x7f080498
+.field public static final suw_navbar_btn_bg_light:I = 0x7f080498
 
-.field public static final transparency:I = 0x7f080499
+.field public static final suw_navbar_ic_back:I = 0x7f080499
 
-.field public static final transparency_tileable:I = 0x7f08049a
+.field public static final suw_navbar_ic_down_arrow:I = 0x7f08049a
 
-.field public static final vector_drawable_progress_indeterminate_horizontal_trimmed:I = 0x7f08049b
+.field public static final suw_navbar_ic_left_arrow:I = 0x7f08049b
 
-.field public static final wifi_friction:I = 0x7f08049c
+.field public static final suw_navbar_ic_more:I = 0x7f08049c
 
-.field public static final wifi_signal:I = 0x7f08049d
+.field public static final suw_navbar_ic_next:I = 0x7f08049d
 
-.field public static final wifi_signal_dark:I = 0x7f08049e
+.field public static final suw_navbar_ic_right_arrow:I = 0x7f08049e
 
-.field public static final wifi_signal_lock_dark:I = 0x7f08049f
+.field public static final switch_thumb_material_anim:I = 0x7f08049f
 
-.field public static final wifi_signal_open_dark:I = 0x7f0804a0
+.field public static final switch_track_material:I = 0x7f0804a0
 
-.field public static final work_challenge_background:I = 0x7f0804a1
+.field public static final switchbar_background:I = 0x7f0804a1
+
+.field public static final tapandpay_emptystate:I = 0x7f0804a2
+
+.field public static final text_select_handle_left_mtrl_alpha:I = 0x7f0804a3
+
+.field public static final text_select_handle_middle_mtrl_alpha:I = 0x7f0804a4
+
+.field public static final text_select_handle_right_mtrl_alpha:I = 0x7f0804a5
+
+.field public static final textfield_search_activated_mtrl_alpha:I = 0x7f0804a6
+
+.field public static final textfield_search_default_mtrl_alpha:I = 0x7f0804a7
+
+.field public static final thumb:I = 0x7f0804a8
+
+.field public static final thumb_drawable:I = 0x7f0804a9
+
+.field public static final tile_icon_animation_speed:I = 0x7f0804aa
+
+.field public static final tile_icon_force_rtl:I = 0x7f0804ab
+
+.field public static final tile_icon_graphics:I = 0x7f0804ac
+
+.field public static final tile_icon_show_layout:I = 0x7f0804ad
+
+.field public static final tile_icon_winscope_trace:I = 0x7f0804ae
+
+.field public static final title_bar:I = 0x7f0804af
+
+.field public static final toast_frame_dark:I = 0x7f0804b0
+
+.field public static final toast_frame_light:I = 0x7f0804b1
+
+.field public static final tooltip_frame_dark:I = 0x7f0804b2
+
+.field public static final tooltip_frame_light:I = 0x7f0804b3
+
+.field public static final transparency:I = 0x7f0804b4
+
+.field public static final transparency_tileable:I = 0x7f0804b5
+
+.field public static final vector_drawable_progress_indeterminate_horizontal_trimmed:I = 0x7f0804b6
+
+.field public static final wifi_friction:I = 0x7f0804b7
+
+.field public static final wifi_signal:I = 0x7f0804b8
+
+.field public static final wifi_signal_dark:I = 0x7f0804b9
+
+.field public static final wifi_signal_lock_dark:I = 0x7f0804ba
+
+.field public static final wifi_signal_open_dark:I = 0x7f0804bb
+
+.field public static final work_challenge_background:I = 0x7f0804bc
 
 
 # direct methods

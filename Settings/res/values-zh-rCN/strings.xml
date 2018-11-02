@@ -2493,6 +2493,8 @@
     <string name="one_cacrt">1 个 CA 证书</string>
     <string name="one_usercrt">一个用户证书</string>
     <string name="one_userkey">一个用户密钥</string>
+    <string name="oneplus_3_camera_info">前置：8 MP 后置：16 MP</string>
+    <string name="oneplus_3t_camera_info">前置：16 MP 后置：16 MP</string>
     <string name="oneplus_adaptive_model">自适应模式</string>
     <string name="oneplus_add_fingerprint_list">添加指纹</string>
     <string name="oneplus_adjust_effect">色温</string>
@@ -2534,6 +2536,7 @@
     <string name="oneplus_applock_pattern_header">绘制您的图案</string>
     <string name="oneplus_applock_wrong_pattern_header">图案错误，请重试</string>
     <string name="oneplus_apps_notifications">应用和通知</string>
+    <string name="oneplus_apps_title">应用</string>
     <string name="oneplus_aptx_hd_support">aptX / aptX HD 支持</string>
     <string name="oneplus_authentication_information">认证信息</string>
     <string name="oneplus_auto_activate">自动开启</string>
@@ -2574,9 +2577,11 @@
     <string name="oneplus_buttons_settings_summary">全屏手势</string>
     <string name="oneplus_call_information_broadcast">来电信息播报</string>
     <string name="oneplus_call_information_broadcast_summary">在耳机中播放来电号码信息</string>
+    <string name="oneplus_camera">相机信息</string>
     <string name="oneplus_camera_double_tap_power_gesture_desc">快速打开相机无需解锁屏幕</string>
     <string name="oneplus_camera_double_tap_power_gesture_title">按下电源按钮两次启动相机</string>
     <string name="oneplus_cancel_finger_input">正在取消指纹</string>
+    <string name="oneplus_cannot_enroll_fingerprint_in_splitting_screen">分屏时无法录入指纹</string>
     <string name="oneplus_choose_navigation_bar">选择类型</string>
     <string name="oneplus_clean_storage">清理</string>
     <string name="oneplus_clear_intenal_storage_data_summary">清除所有储存数据，包括音乐、照片、视频等</string>
@@ -2589,6 +2594,7 @@
     <string name="oneplus_connected_device_management_title">连入设备管理</string>
     <string name="oneplus_connected_devices_dashboard_summary">NFC、投射、打印</string>
     <string name="oneplus_connected_devices_dashboard_title">蓝牙和设备连接</string>
+    <string name="oneplus_cpu">处理器</string>
     <string name="oneplus_custom_time">自定义时间开启</string>
     <string name="oneplus_customization">虚拟按键自定义设置</string>
     <string name="oneplus_customization_summary">长按、双击、一键隐藏</string>
@@ -2614,6 +2620,7 @@
     <string name="oneplus_disable_aosp_face_lock_message">使用一加人脸解锁需要禁用Smart Lock中的人脸解锁功能，要禁用么？</string>
     <string name="oneplus_disconnected">断开</string>
     <string name="oneplus_display_dashboard_summary">状态栏、主动显示、壁纸、主题</string>
+    <string name="oneplus_display_dashboard_summary_801">状态栏、息屏显示、壁纸、主题</string>
     <string name="oneplus_display_size_adaption">全屏应用设置</string>
     <string name="oneplus_display_size_adaption_full_screen">全屏模式</string>
     <string name="oneplus_display_size_adaption_original_size">兼容模式(16:9)</string>
@@ -2643,6 +2650,7 @@
     <string name="oneplus_earphone_mode">耳机模式</string>
     <string name="oneplus_emergency_rescue_settings">紧急救援</string>
     <string name="oneplus_emergency_rescue_settings_summary">连续按多次电源键快速进行呼救</string>
+    <string name="oneplus_enroll_fingerprint_tips_title">指纹录入提示</string>
     <string name="oneplus_enter_your_fingerprint">· 录入您的指纹</string>
     <string name="oneplus_experience_improvement_programs">体验改进计划</string>
     <string name="oneplus_face_auto_unlock_while_screen_on_sumary">亮屏幕后无需向上滑动，立刻使用人脸解锁</string>
@@ -2666,11 +2674,13 @@
     <string name="oneplus_finger_input_error_tips">指纹录入错误，请返回重试</string>
     <string name="oneplus_finger_input_fail_tips">录入失败，请调整姿势重新录入</string>
     <string name="oneplus_fingerprint">指纹</string>
+    <string name="oneplus_fingerprint_animation_effect_title">指纹动画效果</string>
     <string name="oneplus_fingerprint_bind_save_list">指纹绑定记录保存</string>
     <string name="oneplus_fingerprint_check_oneplus_account">指纹验证一加账号</string>
     <string name="oneplus_fingerprint_delete_confirm_message">确认要删除该指纹吗？</string>
     <string name="oneplus_fingerprint_detail">指纹详情</string>
     <string name="oneplus_fingerprint_enrol_completed">指纹录入完成</string>
+    <string name="oneplus_fingerprint_functional_declaration">指纹功能使用说明</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">在相机取景界面长按指纹传感器进行拍照</string>
     <string name="oneplus_fingerprint_gesture_camera_title">长按指纹拍照</string>
     <string name="oneplus_fingerprint_gesture_settings_title">指纹手势</string>
@@ -2691,6 +2701,8 @@
     <string name="oneplus_font_style">字体</string>
     <string name="oneplus_font_switch">字体切换</string>
     <string name="oneplus_force_factory_reset_summary">由于开机密码功能开启，此选项必须勾选</string>
+    <string name="oneplus_forum_award_summary">5 年前，我们一起从社区出发。正是你们，提供了改进产品的宝贵建言，才使得 OnePlus 越来越好。谢谢你，加油。而继续努力，则是我们表达谢意的最好方式。</string>
+    <string name="oneplus_forum_award_title">功勋墙</string>
     <string name="oneplus_fullscreen_back_guide_summary">从屏幕底部边缘的左侧或右侧，向上划动</string>
     <string name="oneplus_fullscreen_back_guide_title">返回上一级</string>
     <string name="oneplus_fullscreen_disable_this_feature">由于开启了全屏手势功能，此功能无法使用。</string>
@@ -2709,6 +2721,8 @@
     <string name="oneplus_fullscreen_landscape_guide_title">横屏使用时</string>
     <string name="oneplus_fullscreen_mode_summary">允许全屏应用使用凹形区域</string>
     <string name="oneplus_fullscreen_mode_title">全屏模式</string>
+    <string name="oneplus_fullscreen_previous_app_guide_summary">从屏幕底部边缘的中间向上再向右划动，然后松开手指</string>
+    <string name="oneplus_fullscreen_previous_app_guide_title">切换上一个应用</string>
     <string name="oneplus_fullscreen_recent_guide_summary">从屏幕底部边缘的中间向上划动，然后手指停留一会儿</string>
     <string name="oneplus_fullscreen_recent_guide_title">进入多任务</string>
     <string name="oneplus_functional_terms">功能条款说明</string>
@@ -2743,15 +2757,18 @@
     <string name="oneplus_getlog_title">抓取日志</string>
     <string name="oneplus_google_tts">Google TTS 语音数据</string>
     <string name="oneplus_gps_using">正在使用GPS定位</string>
+    <string name="oneplus_h2_contributors">氢OS贡献者名单</string>
     <string name="oneplus_hand_up_proximity_summary">拿起手机时唤醒屏幕</string>
     <string name="oneplus_hand_up_proximity_title">抬手亮屏</string>
+    <string name="oneplus_hand_up_to_show">拿起手机显示</string>
     <string name="oneplus_hardware_keys_action_split_screen">开启/关闭 分屏</string>
     <string name="oneplus_hearing_aid">助听器兼容模式</string>
     <string name="oneplus_hide_navkeys">一键隐藏</string>
     <string name="oneplus_hide_navkeys_summary">在虚拟按键左侧增加按钮，用来隐藏虚拟按键</string>
     <string name="oneplus_hide_notch_display_summary">所有应用都不能使用凹形区域</string>
     <string name="oneplus_hide_notch_display_title">隐藏凹形区域</string>
-    <string name="oneplus_hydrogen_version">H₂OS版本</string>
+    <string name="oneplus_how_to_use_fingerprint_summary_no_note">在指纹图案出现在屏幕下方时，只需将手指稍微用力按压在指纹识别区域，即可使用指纹相关功能：解锁您的手机、对购买交易进行授权或登录应用。</string>
+    <string name="oneplus_hydrogen_version">Hydrogen OS 版本</string>
     <string name="oneplus_incoming_call_vibrate_intensity">来电振动</string>
     <string name="oneplus_incoming_call_vibrate_mode">来电振动节奏</string>
     <string name="oneplus_init_finger_input">正在初始化指纹</string>
@@ -2768,6 +2785,7 @@
     <string name="oneplus_led_support">允许呼吸灯</string>
     <string name="oneplus_led_support_summary">勿扰开启时，允许呼吸灯显示</string>
     <string name="oneplus_legal_notices">法律声明</string>
+    <string name="oneplus_legal_summary">隐私政策、许可等</string>
     <string name="oneplus_levels">优先级</string>
     <string name="oneplus_lift_up_display">熄屏显示、抬手亮屏，及新通知亮屏</string>
     <string name="oneplus_light">轻度</string>
@@ -2786,6 +2804,7 @@
     <string name="oneplus_lockpattern_need_to_unlock">确认之前所设的图案</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">请重试</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">错误的尝试次数过多！</string>
+    <string name="oneplus_max_shortcuts_tips">最多只能添加6个快捷方式</string>
     <string name="oneplus_media_ring">媒体音量归零</string>
     <string name="oneplus_media_ring_summary">切换到静音模式时，将媒体音量暂时设为0</string>
     <string name="oneplus_mobile_device_name_title">手机名称</string>
@@ -2869,6 +2888,7 @@
     <string name="oneplus_notifications_3rd_calls_summary">将社交应用的语音或视频通话显示为悬浮提醒</string>
     <string name="oneplus_notifications_free">随意</string>
     <string name="oneplus_notifications_meet">遇见</string>
+    <string name="oneplus_o2_contributors">氧OS贡献者名单</string>
     <string name="oneplus_open_light_device_summary">熄屏时在屏幕画V即可打开手电筒</string>
     <string name="oneplus_open_light_device_title">画 V 打开手电筒</string>
     <string name="oneplus_opfinger_input_completed_comfirm">完成</string>
@@ -2893,7 +2913,7 @@
     <string name="oneplus_otg_ota_shutdown_summary">此功能10分钟未使用后会自动关闭。</string>
     <string name="oneplus_otg_title">因为超过10分钟没有使用，OTG数据交换功能被自动关闭。</string>
     <string name="oneplus_other_applications">其他应用</string>
-    <string name="oneplus_oxygen_version">OxygenOS版本</string>
+    <string name="oneplus_oxygen_version">OxygenOS 版本</string>
     <string name="oneplus_password_cancel">取消</string>
     <string name="oneplus_password_delete">删除</string>
     <string name="oneplus_permission_agreement">权限许可</string>
@@ -2913,6 +2933,7 @@
     <string name="oneplus_privacy_policy">隐私政策</string>
     <string name="oneplus_product_info">操作说明</string>
     <string name="oneplus_product_info_introduce">产品重要信息与保修卡</string>
+    <string name="oneplus_product_info_summary">保修卡、预装清单</string>
     <string name="oneplus_proximity_summary">从口袋拿出手机或扫过传感器时点亮屏幕</string>
     <string name="oneplus_proximity_summary_disable">需要开启主动显示才能生效</string>
     <string name="oneplus_proximity_title">快览模式</string>
@@ -2920,10 +2941,17 @@
     <string name="oneplus_quick_clipboard_summary">增强复制后能力，可根据复制内容推荐下一步动作</string>
     <string name="oneplus_quick_gestures">快捷手势</string>
     <string name="oneplus_quick_gestures_title">快捷手势</string>
+    <string name="oneplus_quick_launch_how_to_exit_summary">手指下滑进入底部退出区域，松手即可退出快捷启动界面</string>
+    <string name="oneplus_quick_launch_how_to_exit_title">退出快捷启动</string>
+    <string name="oneplus_quick_launch_how_to_use_summary">"1.使用指纹解锁后继续长按，进入快捷启动界面
+2.左右滑动可选择快捷方式，松手可将其打开"</string>
+    <string name="oneplus_quick_launch_how_to_use_title">使用快捷启动</string>
+    <string name="oneplus_quick_launch_title">快捷启动</string>
+    <string name="oneplus_quick_launch_toggle_title">开启快捷启动</string>
     <string name="oneplus_quick_startup">快速启动</string>
+    <string name="oneplus_quick_turn_on_assistant_app">快速开启助手应用</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">长按电源键0.5秒开启助手应用，长按3秒关机</string>
     <string name="oneplus_quick_turn_on_camera">快速开启相机</string>
-    <string name="oneplus_quick_turn_on_voice_assistant">快速开启语音助手</string>
-    <string name="oneplus_quick_turn_on_voice_assistant_summary">长按电源按钮0.5秒即可打开语音助手</string>
     <string name="oneplus_quickpay">快捷支付</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">将长按Home键由 “%1$s” 改为 “快捷支付”，确定改变此操作吗？</string>
     <string name="oneplus_quickpay_entry_summary">@string/oneplus_quickpay_unlock_swtch_summary</string>
@@ -2951,6 +2979,7 @@
     <string name="oneplus_receive_notifications_agree">接收一加推送消息</string>
     <string name="oneplus_receive_notifications_summary">允许一加推送新闻、用户问卷、互动资讯与产品销售资讯</string>
     <string name="oneplus_recommended_opening">推荐开启</string>
+    <string name="oneplus_regulatory_information">监管信息</string>
     <string name="oneplus_rename_fingerprint_list">重命名指纹</string>
     <string name="oneplus_require_password_to_poweron_description">此功能开启后，将会影响关机闹钟、定时开关机等功能的使用，请谨慎开启</string>
     <string name="oneplus_require_password_to_poweron_summary">开机过程中需要输入锁屏密码以进入系统</string>
@@ -2964,6 +2993,7 @@
     <string name="oneplus_rotation_silent_enable_summary">来电后，翻转手机，手机静音</string>
     <string name="oneplus_rotation_silent_enable_title">翻转静音</string>
     <string name="oneplus_schedule">开启设置</string>
+    <string name="oneplus_screen">屏幕信息</string>
     <string name="oneplus_screen_better_cold">较冷</string>
     <string name="oneplus_screen_better_nature">自然</string>
     <string name="oneplus_screen_better_reset">重置</string>
@@ -2976,10 +3006,12 @@
     <string name="oneplus_screen_color_mode_soft">柔和</string>
     <string name="oneplus_screen_color_mode_title">屏幕颜色模式</string>
     <string name="oneplus_screen_color_mode_title_summary">请关闭夜间模式后再进行调节</string>
+    <string name="oneplus_screen_features_not_available_toast">开启后，屏幕颜色模式等功能将无法使用</string>
     <string name="oneplus_screen_lock">屏幕锁定</string>
     <string name="oneplus_screen_timeout">屏幕已关闭</string>
     <string name="oneplus_screen_turnoff">优先通知亮屏</string>
     <string name="oneplus_screen_turnoff_summary">收到优先通知时自动亮屏</string>
+    <string name="oneplus_search_keyword_about_settings">设备名称,Android 版本,安卓版本,版本号,型号,处理器,CPU,存储信息,RAM,ROM,相机信息,像素,屏幕信息</string>
     <string name="oneplus_search_keyword_accent_color">颜色</string>
     <string name="oneplus_search_keyword_app_lock">锁, 密码</string>
     <string name="oneplus_search_keyword_connected_device_manager">连入设备管理, 设备</string>
@@ -3033,14 +3065,23 @@
     <string name="oneplus_security_lock_settings_title">安全和隐私</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">录入失败</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">此指纹已经存在，请尝试使用其它手指录入。</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\"双击亮屏\"已开启，\"轻触屏幕显示\"将被关闭</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">\"轻触屏幕显示\"已开启，\"双击亮屏\"将被关闭</string>
+    <string name="oneplus_select_fingerprint_animation_effect_title">选择指纹动画效果</string>
     <string name="oneplus_set_none_password">正在清除密码，请稍候...</string>
     <string name="oneplus_set_time">指定时间开启</string>
     <string name="oneplus_setting_ringtone">设置铃声</string>
     <string name="oneplus_setting_sim_ringtone_switch">独立设置各卡铃声</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">通过学习你的使用习惯，Smart Boost 可以更好的发挥一加手机大容量内存的性能优势，提升游戏和应用的启动加载等数据读取性能，让你快人一等。</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Smart Boost 载入加速</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· 设置备用的屏幕解锁方式</string>
     <string name="oneplus_share_wifi_title">WLAN分享</string>
     <string name="oneplus_shielding_notification">完全屏蔽</string>
     <string name="oneplus_shielding_notification_summary">通知将被完全屏蔽（来电、闹钟除外）</string>
+    <string name="oneplus_shortcuts_add">添加快捷方式</string>
+    <string name="oneplus_shortcuts_preview">快捷方式预览</string>
+    <string name="oneplus_shortcuts_settings">快捷方式设置</string>
+    <string name="oneplus_shortcuts_title">快捷方式</string>
     <string name="oneplus_show_notch_display_summary">让全屏应用可以铺满使用凹形区域</string>
     <string name="oneplus_show_notch_display_title">显示凹形区域</string>
     <string name="oneplus_show_pattern_and_password">显示密码或图案</string>
@@ -3060,7 +3101,9 @@
     <string name="oneplus_sound_and_vibrate">声音和振动</string>
     <string name="oneplus_sound_settings_summary">勿扰，耳机模式</string>
     <string name="oneplus_start_tips">开启后的提醒样式</string>
+    <string name="oneplus_status_summary">电话号码、信号等</string>
     <string name="oneplus_stop_run">停止运行</string>
+    <string name="oneplus_storage">存储信息</string>
     <string name="oneplus_storage_settings_title">储存</string>
     <string name="oneplus_sunrise_sunset">根据日落日出开启</string>
     <string name="oneplus_suspend_notification">允许悬浮通知</string>
@@ -3087,7 +3130,8 @@
     <string name="oneplus_timer_shutdown_title">关机提醒</string>
     <string name="oneplus_timer_shuttingdown">正在关机</string>
     <string name="oneplus_to_select_assistant_app_dialog">请选择您想要激活的助手应用</string>
-    <string name="oneplus_tools_summary">游戏模式、快捷支付、应用锁、应用双开</string>
+    <string name="oneplus_tools_quicklaunch_summary">游戏模式、快捷启动、应用锁、应用双开</string>
+    <string name="oneplus_tools_summary">游戏模式、应用锁、应用双开</string>
     <string name="oneplus_tools_summary_U30">游戏模式、口袋模式、定时开关机</string>
     <string name="oneplus_tools_title">工具箱</string>
     <string name="oneplus_top_notification">置顶通知</string>
@@ -3100,6 +3144,10 @@
     <string name="oneplus_unlock_disable_frp_warning_content_pattern">删除您的解锁图案后，设备保护功能（如VPN）将无法使用，相关设置会被清除。</string>
     <string name="oneplus_unlock_set_unlock_mode_password">复杂密码</string>
     <string name="oneplus_unlock_set_unlock_mode_pin">数字密码</string>
+    <string name="oneplus_use_faceunlock_and_fingerprint_settings_summary">"使用人脸解锁配合指纹解锁，能够获得更快速、更便捷的解锁体验。你只需要在点亮屏幕后，正面看向手机，即可解锁并使用手机。
+
+请注意：人脸解锁的安全性可能不及安全系数更高的指纹或密码。"</string>
+    <string name="oneplus_use_faceunlock_and_fingerprint_settings_title">推荐使用人脸配合指纹解锁</string>
     <string name="oneplus_use_fingerprint_to_unlock">使用指纹解锁</string>
     <string name="oneplus_used_storage">已用存储</string>
     <string name="oneplus_user_agreement">最终用户许可协议</string>
@@ -4140,7 +4188,7 @@ PIN 码可能不正确。"</string>
     <string name="storage_volume_summary">已使用 %1$s（共 %2$s）</string>
     <string name="storage_volume_total">已用空间（总共 %1$s）</string>
     <string name="storage_volume_used">（共 %1$s）</string>
-    <string name="storage_volume_used_total">共使用 %1$s</string>
+    <string name="storage_volume_used_total">存储空间共计：%1$s</string>
     <string name="storage_wizard_format_confirm_body">"^1必须进行格式化，以确保安全。
 
 格式化之后，此^1将只能在这台设备上使用。
@@ -4829,6 +4877,7 @@ PIN 码可能不正确。"</string>
     <string name="wifi_ap_unable_to_handle_new_sta">接入点暂时满载</string>
     <string name="wifi_ask_disable">%s请求关闭 WLAN</string>
     <string name="wifi_ask_enable">%s请求开启 WLAN</string>
+    <string name="wifi_auth_password_wrong">密码不正确。</string>
     <string name="wifi_avoid_poor_network_detection_summary">仅使用互联网连接状况良好的网络</string>
     <string name="wifi_band_24ghz">2.4 GHz</string>
     <string name="wifi_band_5ghz">5 GHz</string>

@@ -3847,6 +3847,7 @@ UT इंटरफेस: %5$s"</string>
     <string name="wifi_ap_unable_to_handle_new_sta">अॅक्सेस पॉइंट तात्पुरते भरलेले</string>
     <string name="wifi_ask_disable">%s वाय-फाय बंद करू इच्छित आहे</string>
     <string name="wifi_ask_enable">%s वाय-फाय चालू करू इच्छित आहे</string>
+    <string name="wifi_auth_password_wrong">पासवर्ड चुकीचा असू शकतो</string>
     <string name="wifi_avoid_poor_network_detection_summary">केवळ चांगले इंटरनेट कनेक्शन असलेली नेटवर्क वापरा</string>
     <string name="wifi_band_24ghz">2.4 GHz</string>
     <string name="wifi_band_5ghz">5 GHz</string>

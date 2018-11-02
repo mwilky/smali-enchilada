@@ -3849,6 +3849,7 @@ UT ઇન્ટરફેસ: %5$s"</string>
     <string name="wifi_ap_unable_to_handle_new_sta">ઍક્સેસ પૉઇન્ટ અસ્થાયીરૂપે ભરાયેલ છે</string>
     <string name="wifi_ask_disable">%s, વાઇ-ફાઇ બંધ કરવા માગે છે</string>
     <string name="wifi_ask_enable">%s, વાઇ-ફાઇ ચાલુ કરવા માગે છે</string>
+    <string name="wifi_auth_password_wrong">પાસવર્ડ ખોટો હોઈ શકે છે</string>
     <string name="wifi_avoid_poor_network_detection_summary">ફક્ત સારું ઇન્ટરનેટ કનેક્શન ધરાવતા નેટવર્કનો જ ઉપયોગ કરો</string>
     <string name="wifi_band_24ghz">2.4 GHz</string>
     <string name="wifi_band_5ghz">5 GHz</string>

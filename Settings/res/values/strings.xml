@@ -258,7 +258,7 @@ Your admin has the ability to monitor and manage settings, access, apps, and dat
     <string name="alarm_template_far">on %1$s</string>
     <string name="alarm_volume_option_title">Alarm volume</string>
     <string name="alarm_volume_title">Alarm</string>
-    <string name="alarms_summary">Enabling the mode will mute calls and alerts and turn off vibration, except for alarms and your selected exceptions.</string>
+    <string name="alarms_summary">Enabling the mode will mute calls and notifications and turn off vibration, except for alarms and your selected exceptions.</string>
     <string name="alert_dialog_cancel">Cancel</string>
     <string name="alert_slider_settings_title">Priority settings</string>
     <string name="alert_slider_silent_title">Silent settings</string>
@@ -2736,6 +2736,8 @@ This will also give the app the ability to turn Do Not Disturb on or off and cha
     <string name="one_cacrt">one CA certificate</string>
     <string name="one_usercrt">one user certificate</string>
     <string name="one_userkey">one user key</string>
+    <string name="oneplus_3_camera_info">Front: 8MP Rear: 16MP</string>
+    <string name="oneplus_3t_camera_info">Front: 16MP Rear: 16MP</string>
     <string name="oneplus_adaptive_model">Adaptive mode</string>
     <string name="oneplus_add_fingerprint_list">Add fingerprint</string>
     <string name="oneplus_adjust_effect">Effect Strength</string>
@@ -2777,6 +2779,7 @@ This will also give the app the ability to turn Do Not Disturb on or off and cha
     <string name="oneplus_applock_pattern_header">Draw your pattern</string>
     <string name="oneplus_applock_wrong_pattern_header">Wrong Pattern</string>
     <string name="oneplus_apps_notifications">Apps &amp; notifications</string>
+    <string name="oneplus_apps_title">Apps</string>
     <string name="oneplus_aptx_hd_support">aptX / aptX HD support</string>
     <string name="oneplus_authentication_information">Authentication information</string>
     <string name="oneplus_authentication_information_china">China中国</string>
@@ -2823,11 +2826,13 @@ Battery saver turns off automatically when your device is charging."</string>
     <string name="oneplus_buttons_settings_summary">Navigation gesture</string>
     <string name="oneplus_call_information_broadcast">Speak Caller ID</string>
     <string name="oneplus_call_information_broadcast_summary">Speak the incoming caller ID via earphones</string>
+    <string name="oneplus_camera">CAMERA</string>
     <string name="oneplus_camera_double_tap_power_gesture_desc">Quickly open camera without unlocking your screen</string>
     <string name="oneplus_camera_double_tap_power_gesture_title">Press power button twice for camera</string>
     <string name="oneplus_cancel_finger_input">Canceling...</string>
     <string name="oneplus_cannot_disable_package_1" />
     <string name="oneplus_cannot_disable_package_2" />
+    <string name="oneplus_cannot_enroll_fingerprint_in_splitting_screen">Fingerprint cannot be entered when splitting screen</string>
     <string name="oneplus_choose_navigation_bar">Choose navigation bar</string>
     <string name="oneplus_clean_storage">Clean</string>
     <string name="oneplus_clear_intenal_storage_data_summary">Including music, photos, videos and other personal data</string>
@@ -2856,6 +2861,7 @@ Battery saver turns off automatically when your device is charging."</string>
     <string name="oneplus_contorl_font_family_subtitle">sans-serif-medium</string>
     <string name="oneplus_contorl_font_family_title">sans-serif-medium</string>
     <string name="oneplus_contorl_font_family_title_extended">sans-serif-medium</string>
+    <string name="oneplus_cpu">CPU</string>
     <string name="oneplus_custom_time">Custom time range</string>
     <string name="oneplus_customization">Navigation bar customization</string>
     <string name="oneplus_customization_summary">Long press, double tap, hide the navigation bar</string>
@@ -2881,6 +2887,7 @@ Battery saver turns off automatically when your device is charging."</string>
     <string name="oneplus_disable_aosp_face_lock_message">Enabling OnePlus Face Unlock will disable trusted face of Smart Lock. Do you want to continue?</string>
     <string name="oneplus_disconnected">Disconnect</string>
     <string name="oneplus_display_dashboard_summary">Status bar, ambient display, wallpapers, theme</string>
+    <string name="oneplus_display_dashboard_summary_801">Status bar, ambient display, wallpapers, theme</string>
     <string name="oneplus_display_size_adaption">Fullscreen apps</string>
     <string name="oneplus_display_size_adaption_full_screen">Fullscreen mode</string>
     <string name="oneplus_display_size_adaption_original_size">Compatibility mode (16:9)</string>
@@ -2911,6 +2918,8 @@ Battery saver turns off automatically when your device is charging."</string>
     <string name="oneplus_earphone_mode">Earphone mode</string>
     <string name="oneplus_emergency_rescue_settings">Emergency rescue</string>
     <string name="oneplus_emergency_rescue_settings_summary">Automatically call for help by quickly pressing the power button</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary" />
+    <string name="oneplus_enroll_fingerprint_tips_title">Fingerprint setup prompt</string>
     <string name="oneplus_enter_your_fingerprint">· Enroll your fingerprint</string>
     <string name="oneplus_experience_improvement_programs">Experience improvement programs</string>
     <string name="oneplus_face_auto_unlock_while_screen_on_sumary">Unlock your phone with your face as soon as the screen turns on without swiping first.</string>
@@ -2938,6 +2947,7 @@ Risk tip: Face Unlock is less secure than fingerprint and password"</string>
     <string name="oneplus_fingerprint_acquired_partial" />
     <string name="oneplus_fingerprint_acquired_too_fast" />
     <string name="oneplus_fingerprint_acquired_too_similar" />
+    <string name="oneplus_fingerprint_animation_effect_title">Fingerprint animation effect</string>
     <string name="oneplus_fingerprint_bind_save_list">Fingerprint bind list</string>
     <string name="oneplus_fingerprint_check_oneplus_account">Check oneplus account</string>
     <string name="oneplus_fingerprint_delete_confirm_message">Do you want to delete it?</string>
@@ -2946,6 +2956,7 @@ Risk tip: Face Unlock is less secure than fingerprint and password"</string>
     <string name="oneplus_fingerprint_enroll_summary" />
     <string name="oneplus_fingerprint_findsendor_summary" />
     <string name="oneplus_fingerprint_findsendor_tilte" />
+    <string name="oneplus_fingerprint_functional_declaration">Fingerprint function declaration</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">From the viewfinder screen, long press the fingerprint sensor to take a photo</string>
     <string name="oneplus_fingerprint_gesture_camera_title">Long press to take a photo</string>
     <string name="oneplus_fingerprint_gesture_settings_title">Fingerprint gesture</string>
@@ -2966,6 +2977,9 @@ Risk tip: Face Unlock is less secure than fingerprint and password"</string>
     <string name="oneplus_font_style">Font</string>
     <string name="oneplus_font_switch">Font Switch</string>
     <string name="oneplus_force_factory_reset_summary">Password on startup is enabled, internal storage will be erased</string>
+    <string name="oneplus_forum_award_summary">This community is yours. Only you can define our course. Together, we define and refine. Breaking builds and writing codes. This is for you. Thank you for dreaming with us!</string>
+    <string name="oneplus_forum_award_title">Award</string>
+    <string name="oneplus_forum_title">CREATED TOGETHER WITH OUR COMMUNITY</string>
     <string name="oneplus_fullscreen_back_guide_summary">Swipe up from the left or right side of the bottom of the screen</string>
     <string name="oneplus_fullscreen_back_guide_title">Back</string>
     <string name="oneplus_fullscreen_disable_this_feature">This feature cannot be used when navigation gestures are enabled.</string>
@@ -2984,6 +2998,8 @@ To go to the home screen at any time, swipe up from the bottom center edge of th
     <string name="oneplus_fullscreen_landscape_guide_title">Landscape</string>
     <string name="oneplus_fullscreen_mode_summary">Allow fullscreen apps to use the notch area</string>
     <string name="oneplus_fullscreen_mode_title">Fullscreen mode</string>
+    <string name="oneplus_fullscreen_previous_app_guide_summary">Swipe up from the bottom center edge of screen to the right, then release your finger</string>
+    <string name="oneplus_fullscreen_previous_app_guide_title">Switch to the previous app</string>
     <string name="oneplus_fullscreen_recent_guide_summary">Swipe up from the bottom center edge of the screen and pause</string>
     <string name="oneplus_fullscreen_recent_guide_title">Recent apps</string>
     <string name="oneplus_functional_terms">TERMS AND CONDITIONS</string>
@@ -3018,8 +3034,10 @@ To go to the home screen at any time, swipe up from the bottom center edge of th
     <string name="oneplus_getlog_title">Get logs</string>
     <string name="oneplus_google_tts">Google TTS voice data</string>
     <string name="oneplus_gps_using">is using GPS</string>
+    <string name="oneplus_h2_contributors">HydrogenOS Contributors</string>
     <string name="oneplus_hand_up_proximity_summary">Wake screen when you pick up the phone</string>
     <string name="oneplus_hand_up_proximity_title">Lift up display</string>
+    <string name="oneplus_hand_up_to_show">Pick up your phone to show</string>
     <string name="oneplus_hardware_keys_action_split_screen">Open/Close split screen</string>
     <string name="oneplus_hearing_aid">Hearing Aid Compatibility</string>
     <string name="oneplus_hide_navigation_bar">Hide navigation bar</string>
@@ -3027,9 +3045,12 @@ To go to the home screen at any time, swipe up from the bottom center edge of th
     <string name="oneplus_hide_navkeys_summary">Add a button to hide or show the navigation bar</string>
     <string name="oneplus_hide_notch_display_summary">All apps cannot use the notch area</string>
     <string name="oneplus_hide_notch_display_title">Hide the notch area</string>
-    <string name="oneplus_hydrogen_version">H2OS version</string>
+    <string name="oneplus_how_to_use_fingerprint_summary" />
+    <string name="oneplus_how_to_use_fingerprint_summary_no_note">When the fingerprint pattern appears at the bottom of the screen, simply press with your finger on the fingerprint identification area to use the fingerprint function: wake and unlock your phone, authorize purchases, or sign in to apps.</string>
+    <string name="oneplus_hydrogen_version">Hydrogen OS version</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Incoming call</string>
     <string name="oneplus_incoming_call_vibrate_mode">Incoming call vibration pattern</string>
+    <string name="oneplus_india_sar_title">India SAR</string>
     <string name="oneplus_init_finger_input">Initializing Fingerprint</string>
     <string name="oneplus_instrucitons">Introduction</string>
     <string name="oneplus_intensely">Strong</string>
@@ -3044,6 +3065,7 @@ To go to the home screen at any time, swipe up from the bottom center edge of th
     <string name="oneplus_led_support">Allow pulse notification light</string>
     <string name="oneplus_led_support_summary">@string/oneplus_led_support</string>
     <string name="oneplus_legal_notices">Legal Notices</string>
+    <string name="oneplus_legal_summary">Privacy policy, agreements, etc</string>
     <string name="oneplus_levels">Levels</string>
     <string name="oneplus_lift_up_display">Always On Display or lift up display</string>
     <string name="oneplus_light">Light</string>
@@ -3063,6 +3085,7 @@ To go to the home screen at any time, swipe up from the bottom center edge of th
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Try again</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong_tips">%1$s, %2$s</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">Too many incorrect attempts!</string>
+    <string name="oneplus_max_shortcuts_tips">You can add up to 6 shortcuts</string>
     <string name="oneplus_media_ring">@string/zen_mode_media_sound</string>
     <string name="oneplus_media_ring_summary">Mute media volume</string>
     <string name="oneplus_mobile_device_name_title">Phone name</string>
@@ -3152,6 +3175,7 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
     <string name="oneplus_notifications_3rd_calls_summary">The voice or video calls from social apps will show as notifications</string>
     <string name="oneplus_notifications_free">Free</string>
     <string name="oneplus_notifications_meet">Meet</string>
+    <string name="oneplus_o2_contributors">OxygenOS Contributors</string>
     <string name="oneplus_open_light_device_summary">@string/touchscreen_flashlight_gesture_summary</string>
     <string name="oneplus_open_light_device_title">@string/touchscreen_flashlight_gesture_title</string>
     <string name="oneplus_opfinger_input_completed_comfirm">Confirm</string>
@@ -3198,6 +3222,7 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
     <string name="oneplus_privacy_policy">Privacy Policy</string>
     <string name="oneplus_product_info">User guide</string>
     <string name="oneplus_product_info_introduce">"Device's information &amp; Warranty card"</string>
+    <string name="oneplus_product_info_summary">Warranty card, preinstalled list</string>
     <string name="oneplus_proximity_summary">@string/prox_wake_summary</string>
     <string name="oneplus_proximity_summary_disable">Unavailable because ambient display is off</string>
     <string name="oneplus_proximity_title">@string/prox_wake_title</string>
@@ -3205,10 +3230,19 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
     <string name="oneplus_quick_clipboard_summary">Enhance the ability to copy and then recommend the next action according to the copy</string>
     <string name="oneplus_quick_gestures">Gestures</string>
     <string name="oneplus_quick_gestures_title">Quick gestures</string>
+    <string name="oneplus_quick_launch_how_to_exit_summary">Swipe down to exit the quick launch panel</string>
+    <string name="oneplus_quick_launch_how_to_exit_title">Exit quick launch</string>
+    <string name="oneplus_quick_launch_how_to_use_summary">"1.Continue to hold your finger after unlocking to open the quick launch panel
+2.Swipe to select the shortcut and release your finger to launch it"</string>
+    <string name="oneplus_quick_launch_how_to_use_title">Use quick launch</string>
+    <string name="oneplus_quick_launch_summary" />
+    <string name="oneplus_quick_launch_title">Quick launch</string>
+    <string name="oneplus_quick_launch_toggle_summary" />
+    <string name="oneplus_quick_launch_toggle_title">Turn on Quick launch</string>
     <string name="oneplus_quick_startup">Quick startup</string>
+    <string name="oneplus_quick_turn_on_assistant_app">Quick activate the assistant app</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">Hold the power button for 0.5s to activate the assistant app, and 3s for power off</string>
     <string name="oneplus_quick_turn_on_camera">Quick turn on camera</string>
-    <string name="oneplus_quick_turn_on_voice_assistant">Quick turn on voice assistant</string>
-    <string name="oneplus_quick_turn_on_voice_assistant_summary">Press power button for 2 sec to open voice assistant</string>
     <string name="oneplus_quickpay">Quick pay</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Are you sure you want to change the long press action of the Home button from \"%1$s\" to \"Quick Pay\"?</string>
     <string name="oneplus_quickpay_entry_summary">Long press Home button to launch quick pay</string>
@@ -3236,6 +3270,7 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
     <string name="oneplus_receive_notifications_agree">Receive news from OnePlus</string>
     <string name="oneplus_receive_notifications_summary">Accept to receive the OnePlus official news, product information, questionnaire interaction and purchase recommendation/coupon information</string>
     <string name="oneplus_recommended_opening">Recommended</string>
+    <string name="oneplus_regulatory_information">Verification</string>
     <string name="oneplus_rename_fingerprint_list">Rename fingerprint</string>
     <string name="oneplus_require_password_to_poweron">The boot process needs to confirm the lock screen password</string>
     <string name="oneplus_require_password_to_poweron_description">When this feature is turned on, it will affect the power-off alarm clock, scheduled power on/off and other functions.</string>
@@ -3249,13 +3284,14 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
     <string name="oneplus_rhythm_4">da-da-dzzz</string>
     <string name="oneplus_rhythm_5">da-dzzz-da</string>
     <string name="oneplus_ring_pattern">Ring</string>
-    <string name="oneplus_ring_pattern_soc_tri_state_summary">Allow sound and vibration</string>
-    <string name="oneplus_ring_pattern_summary">Calls and alerts will ring</string>
+    <string name="oneplus_ring_pattern_soc_tri_state_summary">Calls and notifications will ring</string>
+    <string name="oneplus_ring_pattern_summary">Calls and notifications will ring</string>
     <string name="oneplus_ringtones_oneplus_tune">OnePlus tune</string>
     <string name="oneplus_rotation_silent_enable_summary">Flip the device on incoming call to mute it</string>
     <string name="oneplus_rotation_silent_enable_title">Flip to mute</string>
     <string name="oneplus_rtt_feature">RTT</string>
     <string name="oneplus_schedule">Schedule</string>
+    <string name="oneplus_screen">SCREEN</string>
     <string name="oneplus_screen_better_cold">Cold</string>
     <string name="oneplus_screen_better_nature">Nature</string>
     <string name="oneplus_screen_better_reset">@string/op_reset</string>
@@ -3269,6 +3305,7 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
     <string name="oneplus_screen_color_mode_soft">Soft</string>
     <string name="oneplus_screen_color_mode_title">Screen calibration</string>
     <string name="oneplus_screen_color_mode_title_summary">Unavailable because night mode is on</string>
+    <string name="oneplus_screen_features_not_available_toast">When turned on, features such as screen calibration will not be available</string>
     <string name="oneplus_screen_lock">@string/lock_settings_title</string>
     <string name="oneplus_screen_timeout">Screen turns off</string>
     <string name="oneplus_screen_turnoff">Priority Display</string>
@@ -3278,6 +3315,7 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
     <string name="oneplus_screen_zoom_summary_minimum">Minimum</string>
     <string name="oneplus_screen_zoom_summary_small">Small</string>
     <string name="oneplus_screen_zoom_summary_very_large">Larger</string>
+    <string name="oneplus_search_keyword_about_settings">device name, android version, build number, model, CPU, storage, RAM, ROM, camera, pixel, screen</string>
     <string name="oneplus_search_keyword_accent_color">color</string>
     <string name="oneplus_search_keyword_app_lock">lock,PIN,passwords</string>
     <string name="oneplus_search_keyword_connected_device_manager">connected device manager, device</string>
@@ -3317,7 +3355,7 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
     <string name="oneplus_search_keyword_soc_tri_state">alert slider,silent,vibrate,ring</string>
     <string name="oneplus_search_keyword_sounds_and_notifications_interruptions">dont don’t disturb, interrupt, interruption, break, mode</string>
     <string name="oneplus_search_keyword_swap_navkeys">swap buttons</string>
-    <string name="oneplus_search_keyword_switch">transmission,data migration</string>
+    <string name="oneplus_search_keyword_switch">transfer,data migration</string>
     <string name="oneplus_search_keyword_theme_mode">@string/oneplus_search_keyword_screen_color_mode</string>
     <string name="oneplus_search_keyword_three_screenshots">screenshot</string>
     <string name="oneplus_search_keyword_timer_boot" />
@@ -3335,16 +3373,29 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
     <string name="oneplus_security_settings_fingerprint_toggle_category_title" />
     <string name="oneplus_security_settings_fingerprint_toggle_one_title" />
     <string name="oneplus_security_settings_fingerprint_toggle_two_title" />
+    <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\"Double tap to wake\" is enabled and \"Tap the screen to show\" will be disabled</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">\"Tap the screen to show\" is enabled and \"Double tap to wake\" will be disabled</string>
     <string name="oneplus_security_settings_summary_other">%1$s, %2$s, %3$s</string>
     <string name="oneplus_security_settings_summary_zh">%1$s、%2$s、%3$s</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1" />
+    <string name="oneplus_select_fingerprint_animation_effect_2" />
+    <string name="oneplus_select_fingerprint_animation_effect_3" />
+    <string name="oneplus_select_fingerprint_animation_effect_title">Select fingerprint animation effect</string>
     <string name="oneplus_set_none_password">Password Clearing, please wait...</string>
     <string name="oneplus_set_time">Scheduled Night Mode</string>
     <string name="oneplus_setting_ringtone">Set ring</string>
     <string name="oneplus_setting_sim_ringtone_switch">Set ringtone for each SIM card</string>
+    <string name="oneplus_settings_lab_feature_boost_key" />
+    <string name="oneplus_settings_lab_feature_boost_summary" />
+    <string name="oneplus_settings_lab_feature_boost_title" />
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Set up an alternate way to unlock screen</string>
     <string name="oneplus_share_wifi_title">Wi-Fi Sharing</string>
     <string name="oneplus_shielding_notification">Block</string>
     <string name="oneplus_shielding_notification_summary">Notifications will be blocked (except for calls and alarms)</string>
+    <string name="oneplus_shortcuts_add">Add shortcuts</string>
+    <string name="oneplus_shortcuts_preview">Shortcuts preview</string>
+    <string name="oneplus_shortcuts_settings">Shortcuts settings</string>
+    <string name="oneplus_shortcuts_title">Shortcuts</string>
     <string name="oneplus_show_notch_display_summary">Allow apps to use the notch area</string>
     <string name="oneplus_show_notch_display_title">Show the notch area</string>
     <string name="oneplus_show_pattern_and_password">Show password or pattern</string>
@@ -3352,8 +3403,8 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
     <string name="oneplus_shutdown_message_second">shut down second</string>
     <string name="oneplus_silent_mode">Silent</string>
     <string name="oneplus_silent_mode_on">Silent mode is on</string>
-    <string name="oneplus_silent_mode_soc_tri_state_summary">Calls and notifications will be silenced with no vibration, except for alarms</string>
-    <string name="oneplus_silent_mode_summary">Calls and alerts will be silenced except for the alarms</string>
+    <string name="oneplus_silent_mode_soc_tri_state_summary">Calls and notifications will be silenced, except for alarms</string>
+    <string name="oneplus_silent_mode_summary">Calls and notifications will be silenced, except for alarms</string>
     <string name="oneplus_sim1_ringtone_switch">SIM card 1</string>
     <string name="oneplus_sim2_ringtone_switch">SIM card 2</string>
     <string name="oneplus_simcard_title">SIM</string>
@@ -3364,7 +3415,9 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
     <string name="oneplus_sound_and_vibrate">Sound &amp; vibration</string>
     <string name="oneplus_sound_settings_summary">Do Not Disturb, earphone mode</string>
     <string name="oneplus_start_tips">The tips style after opened</string>
+    <string name="oneplus_status_summary">Phone number, signal, etc</string>
     <string name="oneplus_stop_run">Force stop</string>
+    <string name="oneplus_storage">STORAGE</string>
     <string name="oneplus_storage_settings_title">@string/op_storage</string>
     <string name="oneplus_sunrise_sunset">Automatically enable from sunset to sunrise</string>
     <string name="oneplus_suspend_notification">Allowed suspension notice</string>
@@ -3391,6 +3444,7 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
     <string name="oneplus_timer_shutdown_title">@string/timepower_power_off</string>
     <string name="oneplus_timer_shuttingdown">Shutting down</string>
     <string name="oneplus_to_select_assistant_app_dialog">Please select the assistant app you want to activate</string>
+    <string name="oneplus_tools_quicklaunch_summary">Gaming mode, quick launch, app locker, parallel apps</string>
     <string name="oneplus_tools_summary">Gaming mode, app locker, parallel apps</string>
     <string name="oneplus_tools_summary_U30">Gaming mode, pocket mode, scheduled power on/off</string>
     <string name="oneplus_tools_title">Utilities</string>
@@ -3404,6 +3458,10 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
     <string name="oneplus_unlock_disable_frp_warning_content_pattern">Device protection features(e.g. VPN) will not work without your pattern.</string>
     <string name="oneplus_unlock_set_unlock_mode_password">@string/unlock_set_unlock_mode_password</string>
     <string name="oneplus_unlock_set_unlock_mode_pin">@string/unlock_set_unlock_mode_pin</string>
+    <string name="oneplus_use_faceunlock_and_fingerprint_settings_summary">"Use Face Unlock along with fingerprint for a faster and smoother unlocking experience. All you need is to wake up your phone and look at it, then you'll be able to use it.
+
+Note: Face Unlock may be less secure than fingerprint, PIN or other screen lock options."</string>
+    <string name="oneplus_use_faceunlock_and_fingerprint_settings_title">Use your face &amp; fingerprint to unlock</string>
     <string name="oneplus_use_fingerprint_to_unlock">Use your fingerprint to unlock</string>
     <string name="oneplus_used_storage">Used</string>
     <string name="oneplus_user_agreement">End User License Agreement</string>
@@ -3412,7 +3470,7 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
     <string name="oneplus_vibrate_intensity">Vibration intensity</string>
     <string name="oneplus_vibrate_on_touch_intensity">Vibrate on tap</string>
     <string name="oneplus_vibration_settings_soc_tri_state">Vibration</string>
-    <string name="oneplus_vibration_settings_soc_tri_state_summary">Calls and notifications will be silenced, except for alarms</string>
+    <string name="oneplus_vibration_settings_soc_tri_state_summary">Calls and notifications will be silenced and set to vibrate only, except for alarms</string>
     <string name="oneplus_vibration_summary">The alarm will always ring</string>
     <string name="oneplus_video_enhancer">Video enhancer</string>
     <string name="oneplus_video_enhancer_summary">Enhance the color while playing videos</string>
@@ -3503,7 +3561,7 @@ Just bring the devices together (typically back to back) and then touch your scr
     <string name="op_china_mobile">CMCC</string>
     <string name="op_china_telecom">CTCC</string>
     <string name="op_china_unicom">CUCC</string>
-    <string name="op_cloud_service_summary">Sync your contacts, notes, photos etc.</string>
+    <string name="op_cloud_service_summary">Sync your contacts, notes, photos and etc.</string>
     <string name="op_cloud_service_title">Cloud Sync</string>
     <string name="op_confirm_enable_oem_unlock_text">WARNING: Device protection and verification features, e.g., fingerprint payment and advanced DRM key may not work while OEM unlocked.</string>
     <string name="op_custom_color_value">Color value</string>
@@ -3530,7 +3588,7 @@ Just bring the devices together (typically back to back) and then touch your scr
     <string name="op_nfc_how_it_works_title">How to use tap &amp; pay:</string>
     <string name="op_nfc_payment_how_it_works">How it works</string>
     <string name="op_not_disturb">Do Not Disturb preferences</string>
-    <string name="op_not_disturb_summary">Mute calls and alerts and turn off vibration, except for the alarms</string>
+    <string name="op_not_disturb_summary">Mute calls and notifications and turn off vibration, except for alarms</string>
     <string name="op_oneplus_roaming_summary">Provide global internet access services</string>
     <string name="op_oneplus_roaming_title">OnePlus Roaming</string>
     <string name="op_password_toggle_content_description">Toggle password visibility</string>
@@ -3611,6 +3669,7 @@ Just bring the devices together (typically back to back) and then touch your scr
     <string name="otg_enabled">Enable OTG</string>
     <string name="otg_read_enable">@string/enable_otg_storage_title</string>
     <string name="otg_read_summary">@string/enable_otg_storage_summary</string>
+    <string name="other_display_info" />
     <string name="other_sound_category_preference_title">Other sounds and vibrations</string>
     <string name="other_sound_settings">Other sounds</string>
     <string name="others_customization_settings">Other custom settings</string>
@@ -5480,7 +5539,7 @@ Allow this for all apps that want to scan?"</string>
     <string name="wifi_scan_notify_text">To improve location accuracy, apps and services can still scan for Wi‑Fi networks at any time, even when Wi‑Fi is off. This can be used, for example, to improve location-based features and services. You can change this in LINK_BEGINscanning settingsLINK_END.</string>
     <string name="wifi_scan_notify_text_scanning_off">To improve location accuracy, turn on Wi-Fi scanning in LINK_BEGINscanning settingsLINK_END.</string>
     <string name="wifi_security">Security</string>
-    <string name="wifi_security_dialog">With open security, any device can connect to your Mobile HotSpot and use your mobile data.</string>
+    <string name="wifi_security_dialog">With open security, any device can connect to your Mobile HotSpot and use your mobile data connection.</string>
     <string name="wifi_security_dpp">DPP</string>
     <string name="wifi_security_eap">802.1x EAP</string>
     <string name="wifi_security_none">None</string>
@@ -5888,29 +5947,25 @@ Update settings to:
     <string name="zone_time_type_dst">Daylight savings time</string>
     <string name="zone_time_type_standard">Standard time</string>
     <item type="string" name="APKTOOL_DUMMY_653">false</item>
-    <item type="string" name="APKTOOL_DUMMY_a3b">false</item>
-    <item type="string" name="APKTOOL_DUMMY_a3c">false</item>
     <item type="string" name="APKTOOL_DUMMY_a3d">false</item>
     <item type="string" name="APKTOOL_DUMMY_a3e">false</item>
-    <item type="string" name="APKTOOL_DUMMY_a61">false</item>
-    <item type="string" name="APKTOOL_DUMMY_a62">false</item>
-    <item type="string" name="APKTOOL_DUMMY_ac0">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b79">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b7a">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b7b">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b99">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b9a">false</item>
-    <item type="string" name="APKTOOL_DUMMY_bdb">false</item>
-    <item type="string" name="APKTOOL_DUMMY_bdc">false</item>
-    <item type="string" name="APKTOOL_DUMMY_c11">false</item>
-    <item type="string" name="APKTOOL_DUMMY_c12">false</item>
-    <item type="string" name="APKTOOL_DUMMY_cc6">false</item>
-    <item type="string" name="APKTOOL_DUMMY_cc7">false</item>
-    <item type="string" name="APKTOOL_DUMMY_1212">false</item>
-    <string name="hardware_keys_action_kill">Kill foreground app</string>
-    <string name="hardware_keys_action_screenshot">Screenshot</string>
-    <string name="hardware_keys_action_app">Launch custom app (select app in RiCE)</string>
-    <string name="hardware_keys_action_previous_app">Switch to previous app</string>
-    <string name="hardware_keys_action_default_double_recents">Nothing (Switch to previous app)</string>
-    <string name="oneplus_search_keyword_fingerprint_key">fingerprint</string>
+    <item type="string" name="APKTOOL_DUMMY_a3f">false</item>
+    <item type="string" name="APKTOOL_DUMMY_a40">false</item>
+    <item type="string" name="APKTOOL_DUMMY_a63">false</item>
+    <item type="string" name="APKTOOL_DUMMY_a64">false</item>
+    <item type="string" name="APKTOOL_DUMMY_a96">false</item>
+    <item type="string" name="APKTOOL_DUMMY_ac7">false</item>
+    <item type="string" name="APKTOOL_DUMMY_b90">false</item>
+    <item type="string" name="APKTOOL_DUMMY_b91">false</item>
+    <item type="string" name="APKTOOL_DUMMY_b92">false</item>
+    <item type="string" name="APKTOOL_DUMMY_b93">false</item>
+    <item type="string" name="APKTOOL_DUMMY_b94">false</item>
+    <item type="string" name="APKTOOL_DUMMY_b95">false</item>
+    <item type="string" name="APKTOOL_DUMMY_bb4">false</item>
+    <item type="string" name="APKTOOL_DUMMY_bb5">false</item>
+    <item type="string" name="APKTOOL_DUMMY_bf6">false</item>
+    <item type="string" name="APKTOOL_DUMMY_bf7">false</item>
+    <item type="string" name="APKTOOL_DUMMY_cfc">false</item>
+    <item type="string" name="APKTOOL_DUMMY_cfd">false</item>
+    <item type="string" name="APKTOOL_DUMMY_124c">false</item>
 </resources>

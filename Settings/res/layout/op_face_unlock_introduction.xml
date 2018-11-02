@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.android.setupwizardlib.GlifLayout android:icon="@drawable/op_ic_face_unlock_setup" android:id="@id/setup_wizard_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+<com.android.setupwizardlib.GlifLayout android:icon="@drawable/op_ic_face_unlock_setup" android:id="@id/setup_wizard_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" app:suwFooter="@layout/fingerprint_enroll_introduction_footer"
   xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout android:orientation="vertical" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingStart="@dimen/oneplus_contorl_layout_margin_left2" android:paddingEnd="@dimen/oneplus_contorl_layout_margin_right2">
         <com.android.setupwizardlib.view.RichTextView android:textColor="@color/oneplus_contorl_text_color_primary_light" android:id="@id/description_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/oneplus_contorl_layout_margin_top2" android:text="@string/oneplus_face_setup_unlock_settings_summary" style="@style/oneplus_contorl_text_style_body1" />
         <TextView android:textColor="@color/settings_accent_color" android:id="@id/functional_terms" android:paddingTop="@dimen/oneplus_contorl_layout_margin_top2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/oneplus_functional_terms" />
-        <View android:layout_width="fill_parent" android:layout_height="@dimen/oneplus_contorl_layout_margin_top2" />
-        <ImageView android:background="@drawable/op_faceunlock_guide_image" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-        <View android:layout_width="fill_parent" android:layout_height="24.0dip" android:layout_weight="1.0" />
-        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/oneplus_contorl_layout_margin_bottom1">
-            <Button android:id="@id/fingerprint_cancel_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/security_settings_fingerprint_enroll_introduction_cancel" style="@style/SetupWizardButton.Negative" />
-            <Space android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_weight="1.0" />
-            <Button android:id="@id/fingerprint_next_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/suw_next_button_label" style="@style/SetupWizardButton.Positive" />
-        </LinearLayout>
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/op_faceunlock_guide_image" android:contentDescription="@null" />
+        </FrameLayout>
     </LinearLayout>
 </com.android.setupwizardlib.GlifLayout>

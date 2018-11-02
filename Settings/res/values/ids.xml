@@ -47,6 +47,7 @@
     <item type="id" name="activity_chooser_view_content">false</item>
     <item type="id" name="add_another_button">false</item>
     <item type="id" name="add_language">false</item>
+    <item type="id" name="add_more">false</item>
     <item type="id" name="add_msg">false</item>
     <item type="id" name="add_msg_expander">false</item>
     <item type="id" name="add_new_service">false</item>
@@ -81,6 +82,8 @@
     <item type="id" name="ampm_layout">false</item>
     <item type="id" name="android_beam_explained">false</item>
     <item type="id" name="android_beam_image">false</item>
+    <item type="id" name="anim_bg">false</item>
+    <item type="id" name="anim_choose_title">false</item>
     <item type="id" name="anim_quickpay_instructions">false</item>
     <item type="id" name="animation_view">false</item>
     <item type="id" name="animator">false</item>
@@ -136,10 +139,12 @@
     <item type="id" name="battery_percent">false</item>
     <item type="id" name="battery_usage">false</item>
     <item type="id" name="bg_optimize_preferences">false</item>
+    <item type="id" name="big_icon">false</item>
     <item type="id" name="bluetooth_fragment_settings">false</item>
     <item type="id" name="body">false</item>
     <item type="id" name="bottom_buttons">false</item>
     <item type="id" name="bottom_divider">false</item>
+    <item type="id" name="bottom_icon_image">false</item>
     <item type="id" name="bottom_label_group">false</item>
     <item type="id" name="bottom_label_space">false</item>
     <item type="id" name="bottom_line">false</item>
@@ -191,6 +196,8 @@
     <item type="id" name="calendar_view">false</item>
     <item type="id" name="call">false</item>
     <item type="id" name="camera_group">false</item>
+    <item type="id" name="camera_message">false</item>
+    <item type="id" name="camera_title">false</item>
     <item type="id" name="cancel">false</item>
     <item type="id" name="cancelButton">false</item>
     <item type="id" name="cancel_action">false</item>
@@ -290,6 +297,8 @@
     <item type="id" name="controls_dock">false</item>
     <item type="id" name="conversation_icon">false</item>
     <item type="id" name="cpu_group">false</item>
+    <item type="id" name="cpu_message">false</item>
+    <item type="id" name="cpu_title">false</item>
     <item type="id" name="credential_container">false</item>
     <item type="id" name="credential_list">false</item>
     <item type="id" name="current_backup_pw">false</item>
@@ -297,6 +306,16 @@
     <item type="id" name="current_time">false</item>
     <item type="id" name="custom">false</item>
     <item type="id" name="customPanel">false</item>
+    <item type="id" name="custom_fingerprint_anim_style_1">false</item>
+    <item type="id" name="custom_fingerprint_anim_style_1_button">false</item>
+    <item type="id" name="custom_fingerprint_anim_style_1_title">false</item>
+    <item type="id" name="custom_fingerprint_anim_style_2">false</item>
+    <item type="id" name="custom_fingerprint_anim_style_2_button">false</item>
+    <item type="id" name="custom_fingerprint_anim_style_2_title">false</item>
+    <item type="id" name="custom_fingerprint_anim_style_3">false</item>
+    <item type="id" name="custom_fingerprint_anim_style_3_button">false</item>
+    <item type="id" name="custom_fingerprint_anim_style_3_title">false</item>
+    <item type="id" name="custom_fingerprint_anim_style_container">false</item>
     <item type="id" name="cycle_day">false</item>
     <item type="id" name="cycle_left_time">false</item>
     <item type="id" name="cycles_spinner">false</item>
@@ -366,7 +385,9 @@
     <item type="id" name="dialog_container">false</item>
     <item type="id" name="dialog_list_container">false</item>
     <item type="id" name="dialog_scrollview">false</item>
+    <item type="id" name="divide_view">false</item>
     <item type="id" name="divider">false</item>
+    <item type="id" name="divider_between">false</item>
     <item type="id" name="divider_delete">false</item>
     <item type="id" name="divider_manage">false</item>
     <item type="id" name="dl_kbps">false</item>
@@ -439,6 +460,7 @@
     <item type="id" name="fingerprint_animation">false</item>
     <item type="id" name="fingerprint_background">false</item>
     <item type="id" name="fingerprint_cancel_button">false</item>
+    <item type="id" name="fingerprint_enroll_enrolling_anim">false</item>
     <item type="id" name="fingerprint_header_description">false</item>
     <item type="id" name="fingerprint_in_app_indicator">false</item>
     <item type="id" name="fingerprint_next_button">false</item>
@@ -458,6 +480,10 @@
     <item type="id" name="footerText">false</item>
     <item type="id" name="foreground_container">false</item>
     <item type="id" name="forget_button">false</item>
+    <item type="id" name="forum_contributors">false</item>
+    <item type="id" name="forum_imageview">false</item>
+    <item type="id" name="forum_summary">false</item>
+    <item type="id" name="forum_title">false</item>
     <item type="id" name="four">false</item>
     <item type="id" name="fragment_screen_color_mode">false</item>
     <item type="id" name="frame">false</item>
@@ -488,6 +514,10 @@
     <item type="id" name="guidance_description">false</item>
     <item type="id" name="guidance_icon">false</item>
     <item type="id" name="guidance_title">false</item>
+    <item type="id" name="guide_anim">false</item>
+    <item type="id" name="guide_summary">false</item>
+    <item type="id" name="guide_summary_container">false</item>
+    <item type="id" name="guide_title">false</item>
     <item type="id" name="guidedactions_activator_item">false</item>
     <item type="id" name="guidedactions_content">false</item>
     <item type="id" name="guidedactions_content2">false</item>
@@ -686,8 +716,12 @@
     <item type="id" name="leftSpacer">false</item>
     <item type="id" name="left_button">false</item>
     <item type="id" name="left_ico">false</item>
+    <item type="id" name="left_image">false</item>
     <item type="id" name="left_label">false</item>
+    <item type="id" name="left_summary">false</item>
+    <item type="id" name="left_title">false</item>
     <item type="id" name="left_value">false</item>
+    <item type="id" name="left_view">false</item>
     <item type="id" name="leftsummary">false</item>
     <item type="id" name="lefttitle">false</item>
     <item type="id" name="line1">false</item>
@@ -822,6 +856,7 @@
     <item type="id" name="op_finger_enroll_view">false</item>
     <item type="id" name="op_finger_recognition_continue_view">false</item>
     <item type="id" name="op_finger_recognition_view">false</item>
+    <item type="id" name="op_fingerprint_enroll_tips_view">false</item>
     <item type="id" name="op_fingerprint_name">false</item>
     <item type="id" name="op_fullscreen_app_guide">false</item>
     <item type="id" name="op_fullscreen_mode_title_summary">false</item>
@@ -835,6 +870,7 @@
     <item type="id" name="op_hide_notch_image">false</item>
     <item type="id" name="op_hide_notch_mode">false</item>
     <item type="id" name="op_hide_notch_mode_title">false</item>
+    <item type="id" name="op_how_to_use_fingerprint_tips_view">false</item>
     <item type="id" name="op_icon">false</item>
     <item type="id" name="op_lab_feature_communiry_dislike">false</item>
     <item type="id" name="op_lab_feature_communiry_like">false</item>
@@ -850,6 +886,7 @@
     <item type="id" name="op_lab_feature_toggle">false</item>
     <item type="id" name="op_list_tips_view">false</item>
     <item type="id" name="op_name">false</item>
+    <item type="id" name="op_quick_launch_category_viewpager">false</item>
     <item type="id" name="op_right_icon">false</item>
     <item type="id" name="op_show_notch_btn">false</item>
     <item type="id" name="op_show_notch_image">false</item>
@@ -862,6 +899,10 @@
     <item type="id" name="op_textinput_counter">false</item>
     <item type="id" name="op_textinput_error">false</item>
     <item type="id" name="op_time">false</item>
+    <item type="id" name="op_viewpager_guide_container">false</item>
+    <item type="id" name="op_viewpager_guide_dot_container">false</item>
+    <item type="id" name="op_viewpager_guide_title">false</item>
+    <item type="id" name="op_viewpager_guide_viewpager">false</item>
     <item type="id" name="operator">false</item>
     <item type="id" name="operator_name_label">false</item>
     <item type="id" name="operator_name_value">false</item>
@@ -884,6 +925,7 @@
     <item type="id" name="page1">false</item>
     <item type="id" name="page2">false</item>
     <item type="id" name="page3">false</item>
+    <item type="id" name="page4">false</item>
     <item type="id" name="page_container">false</item>
     <item type="id" name="page_indicator">false</item>
     <item type="id" name="pagertitle">false</item>
@@ -903,6 +945,9 @@
     <item type="id" name="paused">false</item>
     <item type="id" name="permissions_section">false</item>
     <item type="id" name="phase2">false</item>
+    <item type="id" name="phone_hardware_info">false</item>
+    <item type="id" name="phone_image">false</item>
+    <item type="id" name="phone_software_info">false</item>
     <item type="id" name="phonebook_sharing_message_confirm_pin">false</item>
     <item type="id" name="phonebook_sharing_message_entry_pin">false</item>
     <item type="id" name="phy_chan_config">false</item>
@@ -979,6 +1024,7 @@
     <item type="id" name="proxy_settings_title">false</item>
     <item type="id" name="proxy_warning_limited_support">false</item>
     <item type="id" name="purpose">false</item>
+    <item type="id" name="quick_launch_app_icon">false</item>
     <item type="id" name="radial_picker">false</item>
     <item type="id" name="radio">false</item>
     <item type="id" name="radioGroup">false</item>
@@ -1015,9 +1061,13 @@
     <item type="id" name="rightSpacer">false</item>
     <item type="id" name="right_button">false</item>
     <item type="id" name="right_icon">false</item>
+    <item type="id" name="right_image">false</item>
     <item type="id" name="right_label">false</item>
     <item type="id" name="right_side">false</item>
+    <item type="id" name="right_summary">false</item>
+    <item type="id" name="right_title">false</item>
     <item type="id" name="right_value">false</item>
+    <item type="id" name="right_view">false</item>
     <item type="id" name="roaming">false</item>
     <item type="id" name="roaming_state_label">false</item>
     <item type="id" name="roaming_state_value">false</item>
@@ -1041,8 +1091,10 @@
     <item type="id" name="scanning_progress_bar">false</item>
     <item type="id" name="screen_color_mode_seekbar">false</item>
     <item type="id" name="screen_lock_options">false</item>
+    <item type="id" name="screen_message">false</item>
     <item type="id" name="screen_on_group">false</item>
     <item type="id" name="screen_pinning_description">false</item>
+    <item type="id" name="screen_title">false</item>
     <item type="id" name="scrollIndicatorDown">false</item>
     <item type="id" name="scrollIndicatorUp">false</item>
     <item type="id" name="scrollView">false</item>
@@ -1067,6 +1119,7 @@
     <item type="id" name="secondary_icon">false</item>
     <item type="id" name="security">false</item>
     <item type="id" name="security_fields">false</item>
+    <item type="id" name="security_patch">false</item>
     <item type="id" name="security_patch_level_label">false</item>
     <item type="id" name="security_patch_level_value">false</item>
     <item type="id" name="security_settings_billing_desc">false</item>
@@ -1125,6 +1178,7 @@
     <item type="id" name="slate_font_textview">false</item>
     <item type="id" name="sliding_tab_selected_indicator">false</item>
     <item type="id" name="sliding_tabs">false</item>
+    <item type="id" name="small_icon">false</item>
     <item type="id" name="smaller">false</item>
     <item type="id" name="smsc">false</item>
     <item type="id" name="smsc_label">false</item>
@@ -1154,10 +1208,12 @@
     <item type="id" name="storage_back_button">false</item>
     <item type="id" name="storage_format">false</item>
     <item type="id" name="storage_free">false</item>
+    <item type="id" name="storage_message">false</item>
     <item type="id" name="storage_migrate">false</item>
     <item type="id" name="storage_mount">false</item>
     <item type="id" name="storage_next_button">false</item>
     <item type="id" name="storage_rename">false</item>
+    <item type="id" name="storage_title">false</item>
     <item type="id" name="storage_unmount">false</item>
     <item type="id" name="storage_wizard_aux">false</item>
     <item type="id" name="storage_wizard_body">false</item>
@@ -1233,6 +1289,7 @@
     <item type="id" name="system_stability_checkbox">false</item>
     <item type="id" name="system_stability_layout">false</item>
     <item type="id" name="system_tab">false</item>
+    <item type="id" name="tabs">false</item>
     <item type="id" name="tabs_container">false</item>
     <item type="id" name="tag_transition_group">false</item>
     <item type="id" name="tag_unhandled_key_event_manager">false</item>
@@ -1268,6 +1325,7 @@
     <item type="id" name="title_template">false</item>
     <item type="id" name="title_text">false</item>
     <item type="id" name="toggle_mode">false</item>
+    <item type="id" name="toolbar">false</item>
     <item type="id" name="topLayout">false</item>
     <item type="id" name="topPanel">false</item>
     <item type="id" name="top_divider">false</item>
@@ -1330,6 +1388,8 @@
     <item type="id" name="video">false</item>
     <item type="id" name="video_background">false</item>
     <item type="id" name="video_container">false</item>
+    <item type="id" name="video_container_group">false</item>
+    <item type="id" name="video_container_scrollview">false</item>
     <item type="id" name="video_play_button">false</item>
     <item type="id" name="video_preview_image">false</item>
     <item type="id" name="video_surface">false</item>

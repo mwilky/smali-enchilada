@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:tint="@color/oneplus_contorl_icon_color_active_default" android:height="24.0dip" android:width="24.0dip" android:viewportWidth="24.0" android:viewportHeight="24.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">> <group android:translateX="4.0" android:translateY="2.0">
+        <path android:fillColor="#ff000000" android:pathData="M1.9764 6.3861l6.088 -4.734c0.22 -0.171 0.528 -0.171 0.748 0l6.088 4.734c0.147 0.114 0.147 0.336 0 0.45l-6.088 4.734c-0.22 0.171 -0.528 0.171 -0.748 0l-6.088 -4.734c-0.147 -0.114 -0.147 -0.336 0 -0.45m5.57 -6.08l-7.202 5.6c-0.459 0.358 -0.459 1.052 0 1.41l7.202 5.6c0.525 0.408 1.26 0.408 1.784 0l7.202 -5.6c0.459 -0.358 0.459 -1.052 0 -1.41l-7.202 -5.6c-0.524 -0.408 -1.259 -0.408 -1.784 0" />
+        <group android:translateY="12.2839">
+            <path android:fillColor="#ff000000" android:pathData="M16.2891 0.4952l0.243 0.189c0.46 0.358 0.46 1.052 0 1.41l-7.201 5.6c-0.525 0.408 -1.26 0.408 -1.785 0l-7.201 -5.6c-0.46 -0.358 -0.46 -1.052 0 -1.41l0.264 -0.205 1.367 1.135 6.089 4.734c0.219 0.171 0.527 0.171 0.747 0l6.088 -4.734 1.389 -1.119z" />
+        </group>
+        <group android:translateY="8.2839">
+            <path android:fillColor="#ff000000" android:pathData="M16.2891 0.9489l0.243 0.189c0.46 0.358 0.46 1.052 0 1.41l-7.201 5.6c-0.525 0.408 -1.26 0.408 -1.785 0l-7.201 -5.6c-0.46 -0.358 -0.46 -1.052 0 -1.41l0.264 -0.205 1.367 1.135 6.089 4.734c0.219 0.171 0.527 0.171 0.747 0l6.088 -4.734 1.389 -1.119z" />
+        </group>
+    </group>
+</vector>

@@ -3849,6 +3849,7 @@ UT இடைமுகம்: %5$s"</string>
     <string name="wifi_ap_unable_to_handle_new_sta">தற்காலிகமாக அணுகல் புள்ளி நிரம்பியுள்ளது</string>
     <string name="wifi_ask_disable">வைஃபையை முடக்க %s விரும்புகிறது</string>
     <string name="wifi_ask_enable">வைஃபையை இயக்க %s விரும்புகிறது</string>
+    <string name="wifi_auth_password_wrong">கடவுச்சொல் தவறாக இருக்கலாம்</string>
     <string name="wifi_avoid_poor_network_detection_summary">நல்ல இணைப்பு உள்ள நெட்வொர்க்குகளை மட்டும் பயன்படுத்து</string>
     <string name="wifi_band_24ghz">2.4 GHz</string>
     <string name="wifi_band_5ghz">5 GHz</string>
