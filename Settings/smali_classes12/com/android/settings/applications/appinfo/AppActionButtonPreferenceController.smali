@@ -536,6 +536,8 @@
     invoke-static {v1, v4, p2}, Lcom/android/settings/Utils;->isSystemPackage(Landroid/content/res/Resources;Landroid/content/pm/PackageManager;Landroid/content/pm/PackageInfo;)Z
 
     move-result v1
+    
+    const/4 v1, 0x0
 
     if-eqz v1, :cond_0
 
