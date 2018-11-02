@@ -7,6 +7,9 @@ framework.jar.out/build
 framework.jar.out/dist
 framework.jar.out/original
 framework.jar.out
+frameworkstock.jar.out
+OPSystemUIstock
+services_old.jar.out
 *.yml
 *.jar
 *.apk
