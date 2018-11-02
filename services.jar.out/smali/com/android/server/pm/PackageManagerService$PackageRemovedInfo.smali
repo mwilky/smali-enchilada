@@ -179,6 +179,12 @@
 
     if-eqz v1, :cond_5
 
+    const-string v1, "OP_PKG_NAME"
+
+    iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$PackageRemovedInfo;->removedPackage:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$PackageRemovedInfo;->packageSender:Lcom/android/server/pm/PackageSender;
 
     const-string v3, "android.intent.action.PACKAGE_REMOVED"

@@ -99,7 +99,7 @@
 
     move-result-object v0
 
-    const-string v1, "hidden_api_blacklist_exemptions"
+    const-string/jumbo v1, "hidden_api_blacklist_exemptions"
 
     invoke-static {v0, v1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
@@ -196,7 +196,7 @@
 
     move-result-object v1
 
-    const-string v2, "hidden_api_access_log_sampling_rate"
+    const-string/jumbo v2, "hidden_api_access_log_sampling_rate"
 
     const/4 v3, -0x1
 
@@ -229,7 +229,7 @@
     invoke-virtual {v2, v3}, Landroid/os/ZygoteProcess;->setHiddenApiAccessLogSampleRate(I)V
 
     :cond_5
-    const-string v2, "hidden_api_policy_pre_p_apps"
+    const-string/jumbo v2, "hidden_api_policy_pre_p_apps"
 
     invoke-direct {p0, v2}, Lcom/android/server/am/ActivityManagerService$HiddenApiSettings;->getValidEnforcementPolicy(Ljava/lang/String;)I
 
@@ -237,7 +237,7 @@
 
     iput v2, p0, Lcom/android/server/am/ActivityManagerService$HiddenApiSettings;->mPolicyPreP:I
 
-    const-string v2, "hidden_api_policy_p_apps"
+    const-string/jumbo v2, "hidden_api_policy_p_apps"
 
     invoke-direct {p0, v2}, Lcom/android/server/am/ActivityManagerService$HiddenApiSettings;->getValidEnforcementPolicy(Ljava/lang/String;)I
 
@@ -291,7 +291,7 @@
 
     move-result-object v0
 
-    const-string v1, "hidden_api_blacklist_exemptions"
+    const-string/jumbo v1, "hidden_api_blacklist_exemptions"
 
     invoke-static {v1}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -307,7 +307,7 @@
 
     move-result-object v0
 
-    const-string v1, "hidden_api_access_log_sampling_rate"
+    const-string/jumbo v1, "hidden_api_access_log_sampling_rate"
 
     invoke-static {v1}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -321,7 +321,7 @@
 
     move-result-object v0
 
-    const-string v1, "hidden_api_policy_pre_p_apps"
+    const-string/jumbo v1, "hidden_api_policy_pre_p_apps"
 
     invoke-static {v1}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -335,7 +335,7 @@
 
     move-result-object v0
 
-    const-string v1, "hidden_api_policy_p_apps"
+    const-string/jumbo v1, "hidden_api_policy_p_apps"
 
     invoke-static {v1}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 

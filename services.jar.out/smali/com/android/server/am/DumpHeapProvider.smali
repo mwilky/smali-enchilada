@@ -100,7 +100,7 @@
 
     new-instance v3, Ljava/io/File;
 
-    const-string v4, "heapdump"
+    const-string/jumbo v4, "heapdump"
 
     invoke-direct {v3, v2, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 

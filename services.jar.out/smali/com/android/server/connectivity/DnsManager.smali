@@ -239,7 +239,7 @@
     const/4 v1, 0x0
 
     :goto_0
-    const-string v2, "hostname"
+    const-string/jumbo v2, "hostname"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

@@ -1,11 +1,11 @@
 .class Lcom/android/server/ConnectivityService$3;
-.super Lcom/android/server/net/BaseNetworkObserver;
+.super Lcom/android/server/connectivity/tethering/TetheringDependencies;
 .source "ConnectivityService.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/server/ConnectivityService;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/server/ConnectivityService;->makeTethering()Lcom/android/server/connectivity/Tethering;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,23 +24,21 @@
 
     iput-object p1, p0, Lcom/android/server/ConnectivityService$3;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-direct {p0}, Lcom/android/server/net/BaseNetworkObserver;-><init>()V
+    invoke-direct {p0}, Lcom/android/server/connectivity/tethering/TetheringDependencies;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public interfaceClassDataActivityChanged(Ljava/lang/String;ZJ)V
-    .locals 2
+.method public isTetheringSupported()Z
+    .locals 1
 
-    invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    iget-object v0, p0, Lcom/android/server/ConnectivityService$3;->this$0:Lcom/android/server/ConnectivityService;
+
+    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$700(Lcom/android/server/ConnectivityService;)Z
 
     move-result v0
 
-    iget-object v1, p0, Lcom/android/server/ConnectivityService$3;->this$0:Lcom/android/server/ConnectivityService;
-
-    invoke-static {v1, v0, p2, p3, p4}, Lcom/android/server/ConnectivityService;->access$500(Lcom/android/server/ConnectivityService;IZJ)V
-
-    return-void
+    return v0
 .end method

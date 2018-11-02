@@ -482,7 +482,7 @@
 
     sget-object v0, Lcom/android/server/connectivity/NetworkNotificationManager;->TAG:Ljava/lang/String;
 
-    const-string v11, "ignoring notification %s for network %s with existing notification %s"
+    const-string/jumbo v11, "ignoring notification %s for network %s with existing notification %s"
 
     new-array v12, v12, [Ljava/lang/Object;
 
@@ -970,6 +970,8 @@
     invoke-static {v0, v1}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
+
+    nop
 
     nop
 

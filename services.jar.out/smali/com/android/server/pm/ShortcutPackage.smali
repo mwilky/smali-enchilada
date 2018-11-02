@@ -1175,7 +1175,7 @@
 
     const/4 v4, 0x0
 
-    const-string v5, "id"
+    const-string/jumbo v5, "id"
 
     invoke-static {v0, v5}, Lcom/android/server/pm/ShortcutService;->parseStringAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Ljava/lang/String;
 
@@ -1275,7 +1275,7 @@
 
     long-to-int v7, v7
 
-    const-string v8, "icon-res"
+    const-string/jumbo v8, "icon-res"
 
     invoke-static {v0, v8}, Lcom/android/server/pm/ShortcutService;->parseLongAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)J
 
@@ -1283,7 +1283,7 @@
 
     long-to-int v13, v8
 
-    const-string v8, "icon-resname"
+    const-string/jumbo v8, "icon-resname"
 
     invoke-static {v0, v8}, Lcom/android/server/pm/ShortcutService;->parseStringAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Ljava/lang/String;
 
@@ -1669,6 +1669,8 @@
     invoke-direct/range {v6 .. v31}, Landroid/content/pm/ShortcutInfo;-><init>(ILjava/lang/String;Ljava/lang/String;Landroid/content/ComponentName;Landroid/graphics/drawable/Icon;Ljava/lang/CharSequence;ILjava/lang/String;Ljava/lang/CharSequence;ILjava/lang/String;Ljava/lang/CharSequence;ILjava/lang/String;Ljava/util/Set;[Landroid/content/Intent;ILandroid/os/PersistableBundle;JIILjava/lang/String;Ljava/lang/String;I)V
 
     return-object v50
+
+    nop
 
     nop
 
@@ -2154,7 +2156,7 @@
 
     invoke-interface {p1, v4, v3}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v3, "id"
+    const-string/jumbo v3, "id"
 
     invoke-virtual {p2}, Landroid/content/pm/ShortcutInfo;->getId()Ljava/lang/String;
 
@@ -2325,7 +2327,7 @@
 
     invoke-static {p1, v3, v5, v6}, Lcom/android/server/pm/ShortcutService;->writeAttr(Lorg/xmlpull/v1/XmlSerializer;Ljava/lang/String;J)V
 
-    const-string v3, "icon-res"
+    const-string/jumbo v3, "icon-res"
 
     invoke-virtual {p2}, Landroid/content/pm/ShortcutInfo;->getIconResourceId()I
 
@@ -2335,7 +2337,7 @@
 
     invoke-static {p1, v3, v5, v6}, Lcom/android/server/pm/ShortcutService;->writeAttr(Lorg/xmlpull/v1/XmlSerializer;Ljava/lang/String;J)V
 
-    const-string v3, "icon-resname"
+    const-string/jumbo v3, "icon-resname"
 
     invoke-virtual {p2}, Landroid/content/pm/ShortcutInfo;->getIconResName()Ljava/lang/String;
 

@@ -250,7 +250,7 @@
     return-wide v0
 
     :cond_0
-    const-string v0, "id"
+    const-string/jumbo v0, "id"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

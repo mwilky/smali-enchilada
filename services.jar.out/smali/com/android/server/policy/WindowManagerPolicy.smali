@@ -637,6 +637,9 @@
 .method public abstract isGestureButtonEnabled()Z
 .end method
 
+.method public abstract isGestureButtonForLauncher()Z
+.end method
+
 .method public abstract isGestureButtonRegion(II)Z
 .end method
 

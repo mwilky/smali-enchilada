@@ -1732,7 +1732,7 @@
 
     new-instance v3, Ljava/lang/Throwable;
 
-    const-string v4, "here"
+    const-string/jumbo v4, "here"
 
     invoke-direct {v3, v4}, Ljava/lang/Throwable;-><init>(Ljava/lang/String;)V
 
@@ -2659,7 +2659,7 @@
 
     new-instance v5, Ljava/lang/Throwable;
 
-    const-string v6, "here"
+    const-string/jumbo v6, "here"
 
     invoke-direct {v5, v6}, Ljava/lang/Throwable;-><init>(Ljava/lang/String;)V
 

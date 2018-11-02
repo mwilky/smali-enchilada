@@ -68,6 +68,8 @@
 
 .field numProcs:I
 
+.field packageName:Ljava/lang/String;
+
 .field pendingChange:Lcom/android/server/am/UidRecord$ChangeItem;
 
 .field setIdle:Z
@@ -300,7 +302,7 @@
     :cond_6
     const/4 v1, 0x1
 
-    const-string v2, "idle"
+    const-string/jumbo v2, "idle"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

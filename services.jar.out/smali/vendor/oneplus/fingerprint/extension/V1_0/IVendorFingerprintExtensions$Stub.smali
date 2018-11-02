@@ -104,38 +104,38 @@
 
     :array_0
     .array-data 1
-        -0x40t
-        0x46t
-        0x41t
-        -0x71t
-        -0xet
-        0x5t
-        -0x5dt
-        -0x46t
-        0x2at
-        0x44t
-        -0x53t
-        0x3t
-        -0x4at
-        -0x39t
-        -0x68t
-        -0x33t
-        -0x32t
-        0x7at
-        0x54t
-        -0x7ct
-        0x59t
-        -0x71t
-        0x2ft
-        -0x80t
-        0x7dt
-        0x79t
-        -0x7bt
+        0x6ct
+        0x3ft
+        -0x62t
         0x8t
-        0x57t
-        -0x1et
-        -0x57t
-        0x4bt
+        -0x6dt
+        -0x28t
+        -0x11t
+        -0x48t
+        -0x56t
+        -0x65t
+        -0x54t
+        0x4dt
+        -0x10t
+        -0x2bt
+        0x1et
+        0x64t
+        -0x4dt
+        0x23t
+        0x4et
+        -0x1t
+        0x29t
+        0x78t
+        -0x3et
+        0xet
+        -0x33t
+        -0x1t
+        0x36t
+        0xat
+        -0x4dt
+        -0x5et
+        0x59t
+        0x60t
     .end array-data
 
     :array_1
@@ -247,7 +247,7 @@
 
     sparse-switch p1, :sswitch_data_0
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :sswitch_0
     and-int/lit8 v3, p4, 0x1
@@ -259,13 +259,13 @@
     nop
 
     :cond_0
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_23
 
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :sswitch_1
     and-int/lit8 v3, p4, 0x1
@@ -283,7 +283,7 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :cond_2
     const-string v0, "android.hidl.base@1.0::IBase"
@@ -292,7 +292,7 @@
 
     invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->notifySyspropsChanged()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :sswitch_2
     and-int/lit8 v3, p4, 0x1
@@ -311,7 +311,7 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :cond_4
     const-string v0, "android.hidl.base@1.0::IBase"
@@ -328,7 +328,7 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :sswitch_3
     and-int/lit8 v3, p4, 0x1
@@ -347,7 +347,7 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :cond_6
     const-string v0, "android.hidl.base@1.0::IBase"
@@ -360,7 +360,7 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :sswitch_4
     and-int/lit8 v3, p4, 0x1
@@ -372,13 +372,13 @@
     nop
 
     :cond_7
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_23
 
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :sswitch_5
     and-int/lit8 v3, p4, 0x1
@@ -396,7 +396,7 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :cond_9
     const-string v0, "android.hidl.base@1.0::IBase"
@@ -405,7 +405,7 @@
 
     invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->setHALInstrumentation()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :sswitch_6
     and-int/lit8 v3, p4, 0x1
@@ -424,7 +424,7 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :cond_b
     const-string v0, "android.hidl.base@1.0::IBase"
@@ -493,7 +493,7 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :sswitch_7
     and-int/lit8 v3, p4, 0x1
@@ -512,7 +512,7 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :cond_e
     const-string v0, "android.hidl.base@1.0::IBase"
@@ -529,7 +529,7 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :sswitch_8
     and-int/lit8 v3, p4, 0x1
@@ -548,7 +548,7 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :cond_10
     const-string v0, "android.hidl.base@1.0::IBase"
@@ -559,7 +559,7 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :sswitch_9
     and-int/lit8 v3, p4, 0x1
@@ -578,7 +578,7 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :cond_12
     const-string v0, "android.hidl.base@1.0::IBase"
@@ -595,7 +595,7 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :pswitch_0
     and-int/lit8 v3, p4, 0x1
@@ -614,24 +614,28 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :cond_14
     const-string/jumbo v0, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->stopAllEngTest()I
+    invoke-virtual {p2}, Landroid/os/HwParcel;->readInt32()I
 
     move-result v0
 
+    invoke-virtual {p0, v0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->setParam(I)I
+
+    move-result v3
+
     invoke-virtual {p3, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeInt32(I)V
+    invoke-virtual {p3, v3}, Landroid/os/HwParcel;->writeInt32(I)V
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :pswitch_1
     and-int/lit8 v3, p4, 0x1
@@ -650,28 +654,24 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :cond_16
     const-string/jumbo v0, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual {p2}, Landroid/os/HwParcel;->readInt32()I
+    invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->stopAllEngTest()I
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->stopEngTest(I)I
-
-    move-result v3
-
     invoke-virtual {p3, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    invoke-virtual {p3, v3}, Landroid/os/HwParcel;->writeInt32(I)V
+    invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeInt32(I)V
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :pswitch_2
     and-int/lit8 v3, p4, 0x1
@@ -690,7 +690,7 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :cond_18
     const-string/jumbo v0, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
@@ -701,7 +701,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->startEngTest(I)I
+    invoke-virtual {p0, v0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->stopEngTest(I)I
 
     move-result v3
 
@@ -711,7 +711,7 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :pswitch_3
     and-int/lit8 v3, p4, 0x1
@@ -730,9 +730,49 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :cond_1a
+    const-string/jumbo v0, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
+
+    invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/HwParcel;->readInt32()I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->startEngTest(I)I
+
+    move-result v3
+
+    invoke-virtual {p3, v1}, Landroid/os/HwParcel;->writeStatus(I)V
+
+    invoke-virtual {p3, v3}, Landroid/os/HwParcel;->writeInt32(I)V
+
+    invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
+
+    goto/16 :goto_f
+
+    :pswitch_4
+    and-int/lit8 v3, p4, 0x1
+
+    if-eqz v3, :cond_1b
+
+    goto :goto_b
+
+    :cond_1b
+    move v2, v1
+
+    :goto_b
+    if-eqz v2, :cond_1c
+
+    invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
+
+    invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
+
+    goto/16 :goto_f
+
+    :cond_1c
     const-string/jumbo v0, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
@@ -755,43 +795,7 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto/16 :goto_e
-
-    :pswitch_4
-    and-int/lit8 v3, p4, 0x1
-
-    if-eqz v3, :cond_1b
-
-    goto :goto_b
-
-    :cond_1b
-    move v2, v1
-
-    :goto_b
-    if-eqz v2, :cond_1c
-
-    invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
-
-    invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
-
-    goto :goto_e
-
-    :cond_1c
-    const-string/jumbo v0, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
-
-    invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->getEngTest()Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    invoke-virtual {p3, v1}, Landroid/os/HwParcel;->writeStatus(I)V
-
-    invoke-static {p3, v0}, Lvendor/oneplus/fingerprint/extension/V1_0/FpTest;->writeVectorToParcel(Landroid/os/HwParcel;Ljava/util/ArrayList;)V
-
-    invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
-
-    goto :goto_e
+    goto/16 :goto_f
 
     :pswitch_5
     and-int/lit8 v3, p4, 0x1
@@ -810,24 +814,24 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto :goto_e
+    goto :goto_f
 
     :cond_1e
     const-string/jumbo v0, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->getStatus()I
+    invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->getEngTest()Ljava/util/ArrayList;
 
-    move-result v0
+    move-result-object v0
 
     invoke-virtual {p3, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeInt32(I)V
+    invoke-static {p3, v0}, Lvendor/oneplus/fingerprint/extension/V1_0/FpTest;->writeVectorToParcel(Landroid/os/HwParcel;Ljava/util/ArrayList;)V
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto :goto_e
+    goto :goto_f
 
     :pswitch_6
     and-int/lit8 v3, p4, 0x1
@@ -846,9 +850,45 @@
 
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    goto :goto_e
+    goto :goto_f
 
     :cond_20
+    const-string/jumbo v0, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
+
+    invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->getStatus()I
+
+    move-result v0
+
+    invoke-virtual {p3, v1}, Landroid/os/HwParcel;->writeStatus(I)V
+
+    invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeInt32(I)V
+
+    invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
+
+    goto :goto_f
+
+    :pswitch_7
+    and-int/lit8 v3, p4, 0x1
+
+    if-eqz v3, :cond_21
+
+    goto :goto_e
+
+    :cond_21
+    move v2, v1
+
+    :goto_e
+    if-eqz v2, :cond_22
+
+    invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
+
+    invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
+
+    goto :goto_f
+
+    :cond_22
     const-string/jumbo v0, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
@@ -869,14 +909,13 @@
 
     nop
 
-    :cond_21
-    :goto_e
+    :cond_23
+    :goto_f
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1
+        :pswitch_7
         :pswitch_6
         :pswitch_5
         :pswitch_4

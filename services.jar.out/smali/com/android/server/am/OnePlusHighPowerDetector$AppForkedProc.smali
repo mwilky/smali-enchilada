@@ -72,7 +72,7 @@
 
     iput-wide v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->curCpuTimeBgMonitor:J
 
-    invoke-static {}, Lcom/android/server/am/OnePlusHighPowerDetector;->access$1100()Landroid/content/Context;
+    invoke-static {}, Lcom/android/server/am/OnePlusHighPowerDetector;->access$1400()Landroid/content/Context;
 
     move-result-object v1
 
@@ -95,7 +95,7 @@
     iput-object v2, p0, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->pkgName:Ljava/lang/String;
 
     :try_start_0
-    invoke-static {}, Lcom/android/server/am/OnePlusHighPowerDetector;->access$1100()Landroid/content/Context;
+    invoke-static {}, Lcom/android/server/am/OnePlusHighPowerDetector;->access$1400()Landroid/content/Context;
 
     move-result-object v2
 

@@ -3574,7 +3574,7 @@
 .method private parseWallpaperAttributes(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;Z)V
     .locals 10
 
-    const-string v0, "id"
+    const-string/jumbo v0, "id"
 
     const/4 v1, 0x0
 
@@ -3621,7 +3621,7 @@
 
     iput v2, p2, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;->width:I
 
-    const-string v2, "height"
+    const-string/jumbo v2, "height"
 
     invoke-interface {p1, v1, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -4192,7 +4192,7 @@
 
     invoke-interface {p1, v0, p2}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v1, "id"
+    const-string/jumbo v1, "id"
 
     iget v2, p3, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;->wallpaperId:I
 
@@ -4212,7 +4212,7 @@
 
     invoke-interface {p1, v0, v1, v2}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v1, "height"
+    const-string/jumbo v1, "height"
 
     iget v2, p3, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;->height:I
 
@@ -6275,7 +6275,7 @@
 
     invoke-virtual {v4, v0, v12}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    const-string v0, "height"
+    const-string/jumbo v0, "height"
 
     iget v12, v10, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;->height:I
 

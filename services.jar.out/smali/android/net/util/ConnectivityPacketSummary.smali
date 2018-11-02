@@ -1401,7 +1401,7 @@
 
     if-ne v1, v4, :cond_1
 
-    const-string v4, "icmp6"
+    const-string/jumbo v4, "icmp6"
 
     invoke-virtual {p1, v4}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 

@@ -4440,7 +4440,7 @@
     return v1
 
     :cond_0
-    const-string v0, "ignore_settings"
+    const-string/jumbo v0, "ignore_settings"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4451,7 +4451,7 @@
     return v1
 
     :cond_1
-    const-string v0, "ignore_backoff"
+    const-string/jumbo v0, "ignore_backoff"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -5298,7 +5298,7 @@
     :cond_0
     iget-object v1, p2, Lcom/android/server/content/SyncOperation;->extras:Landroid/os/Bundle;
 
-    const-string v2, "ignore_backoff"
+    const-string/jumbo v2, "ignore_backoff"
 
     const/4 v3, 0x0
 
@@ -5310,7 +5310,7 @@
 
     iget-object v1, p2, Lcom/android/server/content/SyncOperation;->extras:Landroid/os/Bundle;
 
-    const-string v2, "ignore_backoff"
+    const-string/jumbo v2, "ignore_backoff"
 
     invoke-virtual {v1, v2}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
 
@@ -6307,13 +6307,13 @@
 
     if-eqz v32, :cond_8
 
-    const-string v0, "ignore_backoff"
+    const-string/jumbo v0, "ignore_backoff"
 
     const/4 v2, 0x1
 
     invoke-virtual {v6, v0, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    const-string v0, "ignore_settings"
+    const-string/jumbo v0, "ignore_settings"
 
     invoke-virtual {v6, v0, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
@@ -6323,7 +6323,7 @@
     const/4 v2, 0x1
 
     :goto_5
-    const-string v0, "ignore_settings"
+    const-string/jumbo v0, "ignore_settings"
 
     const/4 v1, 0x0
 

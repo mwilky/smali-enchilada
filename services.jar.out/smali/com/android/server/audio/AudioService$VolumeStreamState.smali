@@ -1233,7 +1233,7 @@
 .end method
 
 .method public readSettings()V
-    .locals 12
+    .locals 13
 
     iget-object v0, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->this$0:Lcom/android/server/audio/AudioService;
 
@@ -1286,7 +1286,7 @@
 
     const/4 v5, 0x1
 
-    if-eq v2, v5, :cond_7
+    if-eq v2, v5, :cond_9
 
     iget v2, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mStreamType:I
 
@@ -1294,7 +1294,7 @@
 
     if-ne v2, v6, :cond_1
 
-    goto :goto_4
+    goto/16 :goto_4
 
     :cond_1
     monitor-exit v1
@@ -1314,90 +1314,162 @@
 
     const/4 v2, 0x0
 
+    move v6, v0
+
+    move v0, v2
+
     :goto_0
-    if-eqz v0, :cond_6
+    if-eqz v6, :cond_6
 
-    shl-int v6, v5, v2
+    shl-int v7, v5, v0
 
-    and-int v7, v6, v0
+    and-int v8, v7, v6
 
-    if-nez v7, :cond_2
+    if-nez v8, :cond_2
 
     goto :goto_3
 
     :cond_2
-    not-int v7, v6
+    not-int v8, v7
 
-    and-int/2addr v0, v7
+    and-int/2addr v6, v8
 
-    const/4 v7, -0x1
+    const/4 v8, -0x1
 
-    if-ne v6, v3, :cond_3
+    if-ne v7, v3, :cond_3
 
     :try_start_5
-    sget-object v8, Landroid/media/AudioSystem;->DEFAULT_STREAM_VOLUME:[I
+    sget-object v9, Landroid/media/AudioSystem;->DEFAULT_STREAM_VOLUME:[I
 
-    iget v9, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mStreamType:I
+    iget v10, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mStreamType:I
 
-    aget v8, v8, v9
+    aget v9, v9, v10
 
     goto :goto_1
 
     :cond_3
-    move v8, v7
+    move v9, v8
 
     :goto_1
     invoke-direct {p0}, Lcom/android/server/audio/AudioService$VolumeStreamState;->hasValidSettingsName()Z
 
-    move-result v9
+    move-result v10
 
-    if-nez v9, :cond_4
+    if-nez v10, :cond_4
 
-    move v9, v8
+    move v10, v9
 
     goto :goto_2
 
     :cond_4
-    invoke-virtual {p0, v6}, Lcom/android/server/audio/AudioService$VolumeStreamState;->getSettingNameForDevice(I)Ljava/lang/String;
-
-    move-result-object v9
-
-    iget-object v10, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->this$0:Lcom/android/server/audio/AudioService;
-
-    invoke-static {v10}, Lcom/android/server/audio/AudioService;->access$3400(Lcom/android/server/audio/AudioService;)Landroid/content/ContentResolver;
+    invoke-virtual {p0, v7}, Lcom/android/server/audio/AudioService$VolumeStreamState;->getSettingNameForDevice(I)Ljava/lang/String;
 
     move-result-object v10
 
-    const/4 v11, -0x2
+    iget-object v11, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->this$0:Lcom/android/server/audio/AudioService;
 
-    invoke-static {v10, v9, v8, v11}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+    invoke-static {v11}, Lcom/android/server/audio/AudioService;->access$3400(Lcom/android/server/audio/AudioService;)Landroid/content/ContentResolver;
 
-    move-result v10
+    move-result-object v11
 
-    move v9, v10
+    const/4 v12, -0x2
+
+    invoke-static {v11, v10, v9, v12}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v11
+
+    move v10, v11
 
     :goto_2
-    if-ne v9, v7, :cond_5
+    if-ne v10, v8, :cond_5
 
     goto :goto_3
 
     :cond_5
-    iget-object v7, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mIndexMap:Landroid/util/SparseIntArray;
+    iget-object v8, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mIndexMap:Landroid/util/SparseIntArray;
 
-    mul-int v10, v4, v9
+    mul-int v11, v4, v10
 
-    invoke-direct {p0, v10}, Lcom/android/server/audio/AudioService$VolumeStreamState;->getValidIndex(I)I
+    invoke-direct {p0, v11}, Lcom/android/server/audio/AudioService$VolumeStreamState;->getValidIndex(I)I
 
-    move-result v10
+    move-result v11
 
-    invoke-virtual {v7, v6, v10}, Landroid/util/SparseIntArray;->put(II)V
+    invoke-virtual {v8, v7, v11}, Landroid/util/SparseIntArray;->put(II)V
 
     :goto_3
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_6
+    iget v0, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mStreamType:I
+
+    const/4 v7, 0x2
+
+    if-eq v0, v7, :cond_7
+
+    iget v0, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mStreamType:I
+
+    const/4 v8, 0x5
+
+    if-ne v0, v8, :cond_8
+
+    :cond_7
+    iget-object v0, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mIndexMap:Landroid/util/SparseIntArray;
+
+    invoke-virtual {v0}, Landroid/util/SparseIntArray;->size()I
+
+    move-result v0
+
+    if-ne v0, v5, :cond_8
+
+    iget-object v0, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mIndexMap:Landroid/util/SparseIntArray;
+
+    invoke-virtual {v0, v2}, Landroid/util/SparseIntArray;->keyAt(I)I
+
+    move-result v0
+
+    if-ne v0, v3, :cond_8
+
+    sget-object v0, Landroid/media/AudioSystem;->DEFAULT_STREAM_VOLUME:[I
+
+    iget v2, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mStreamType:I
+
+    aget v0, v0, v2
+
+    mul-int/2addr v4, v0
+
+    iget-object v0, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mIndexMap:Landroid/util/SparseIntArray;
+
+    invoke-virtual {v0, v7, v4}, Landroid/util/SparseIntArray;->put(II)V
+
+    const-string v0, "AudioService"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "add SPEAKER to device list stream: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v3, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mStreamType:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v3, ",index:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_8
     monitor-exit v1
 
     return-void
@@ -1411,7 +1483,7 @@
 
     throw v0
 
-    :cond_7
+    :cond_9
     :goto_4
     :try_start_6
     sget-object v2, Landroid/media/AudioSystem;->DEFAULT_STREAM_VOLUME:[I
@@ -1428,13 +1500,13 @@
 
     move-result v2
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_a
 
     iget v2, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mIndexMax:I
 
     move v4, v2
 
-    :cond_8
+    :cond_a
     iget-object v2, p0, Lcom/android/server/audio/AudioService$VolumeStreamState;->mIndexMap:Landroid/util/SparseIntArray;
 
     invoke-virtual {v2, v3, v4}, Landroid/util/SparseIntArray;->put(II)V

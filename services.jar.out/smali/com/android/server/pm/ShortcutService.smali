@@ -1085,7 +1085,7 @@
 
     invoke-virtual {v2, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
-    const-string v3, "iconSize"
+    const-string/jumbo v3, "iconSize"
 
     iget v4, p0, Lcom/android/server/pm/ShortcutService;->mMaxIconDimension:I
 
@@ -10438,7 +10438,7 @@
 
     iput v3, p0, Lcom/android/server/pm/ShortcutService;->mMaxIconDimension:I
 
-    const-string v3, "icon_format"
+    const-string/jumbo v3, "icon_format"
 
     sget-object v4, Lcom/android/server/pm/ShortcutService;->DEFAULT_ICON_PERSIST_FORMAT:Ljava/lang/String;
 
@@ -10452,7 +10452,7 @@
 
     iput-object v3, p0, Lcom/android/server/pm/ShortcutService;->mIconPersistFormat:Landroid/graphics/Bitmap$CompressFormat;
 
-    const-string v3, "icon_quality"
+    const-string/jumbo v3, "icon_quality"
 
     const-wide/16 v4, 0x64
 

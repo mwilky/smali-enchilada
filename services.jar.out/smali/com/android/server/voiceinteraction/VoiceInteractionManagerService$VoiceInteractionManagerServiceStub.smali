@@ -1800,7 +1800,7 @@
 
     const-string v0, "VoiceInteractionManagerService"
 
-    const-string v1, "hideSessionFromSession without running voice interaction service"
+    const-string/jumbo v1, "hideSessionFromSession without running voice interaction service"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 

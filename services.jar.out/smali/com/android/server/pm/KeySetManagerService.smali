@@ -2115,7 +2115,7 @@
 
     if-eqz v5, :cond_3
 
-    const-string v5, "identifier"
+    const-string/jumbo v5, "identifier"
 
     invoke-interface {p1, v6, v5}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -2154,7 +2154,7 @@
 
     if-eqz v5, :cond_4
 
-    const-string v5, "identifier"
+    const-string/jumbo v5, "identifier"
 
     invoke-interface {p1, v6, v5}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -2467,7 +2467,7 @@
         }
     .end annotation
 
-    const-string v0, "identifier"
+    const-string/jumbo v0, "identifier"
 
     const/4 v1, 0x0
 
@@ -2815,7 +2815,7 @@
 
     invoke-interface {p1, v1, v5}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v5, "identifier"
+    const-string/jumbo v5, "identifier"
 
     invoke-static {v2, v3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
@@ -2848,7 +2848,7 @@
 
     invoke-interface {p1, v1, v8}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v8, "identifier"
+    const-string/jumbo v8, "identifier"
 
     invoke-static {v6, v7}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
@@ -2930,7 +2930,7 @@
 
     invoke-interface {p1, v1, v6}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v6, "identifier"
+    const-string/jumbo v6, "identifier"
 
     invoke-static {v2, v3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 

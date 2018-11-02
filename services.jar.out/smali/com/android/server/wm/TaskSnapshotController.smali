@@ -754,6 +754,10 @@
 
     sget-boolean v5, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_SCREENSHOT:Z
 
+    sget-boolean v6, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_ONEPLUS:Z
+
+    or-int/2addr v5, v6
+
     if-eqz v5, :cond_5
 
     const-string v5, "WindowManager"
@@ -789,6 +793,10 @@
     if-nez v5, :cond_8
 
     sget-boolean v6, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_SCREENSHOT:Z
+
+    sget-boolean v7, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_ONEPLUS:Z
+
+    or-int/2addr v6, v7
 
     if-eqz v6, :cond_7
 
@@ -1083,6 +1091,10 @@
 
     :goto_4
     sget-boolean v6, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_SCREENSHOT:Z
+
+    sget-boolean v8, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_ONEPLUS:Z
+
+    or-int/2addr v6, v8
 
     if-eqz v6, :cond_12
 

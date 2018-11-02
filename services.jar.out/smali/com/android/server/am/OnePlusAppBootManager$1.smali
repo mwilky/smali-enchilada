@@ -78,7 +78,7 @@
 
     const/4 v5, 0x1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_10
 
     const-string v1, "code"
 
@@ -262,7 +262,7 @@
 
     invoke-static {v2}, Lcom/android/server/am/OnePlusAppBootManager;->access$600(Lcom/android/server/am/OnePlusAppBootManager;)V
 
-    goto :goto_1
+    goto/16 :goto_1
 
     :cond_a
     const-string v2, "dump_widget"
@@ -346,7 +346,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_f
 
     const-string v2, "@huge@dump"
 
@@ -387,11 +387,38 @@
 
     invoke-static {v3, v2, v5, v4}, Lcom/android/server/am/OnePlusAppBootManager;->access$900(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;ZI)V
 
+    goto :goto_1
+
     :cond_e
+    const-string v2, "@huge@start@"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_f
+
+    const-string v2, "@huge@start@"
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
+
+    const/4 v5, 0x4
+
+    invoke-static {v3, v2, v4, v5}, Lcom/android/server/am/OnePlusAppBootManager;->access$900(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;ZI)V
+
+    :cond_f
     :goto_1
     goto :goto_2
 
-    :cond_f
+    :cond_10
     const-string v1, "android.intent.action.SCREEN_OFF"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -400,7 +427,7 @@
 
     const/16 v6, 0x1f
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_12
 
     invoke-static {v4}, Lcom/android/server/am/OnePlusAppBootManager;->access$1002(Z)Z
 
@@ -424,7 +451,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_10
+    if-eqz v6, :cond_11
 
     new-array v5, v5, [I
 
@@ -436,7 +463,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_10
+    if-eqz v4, :cond_11
 
     iget-object v4, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
@@ -446,21 +473,21 @@
 
     invoke-virtual {v4, v5}, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->sendEmptyMessage(I)Z
 
-    :cond_10
+    :cond_11
     iget-object v4, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     invoke-static {v4, v2, v3}, Lcom/android/server/am/OnePlusAppBootManager;->access$300(Lcom/android/server/am/OnePlusAppBootManager;J)V
 
     goto :goto_2
 
-    :cond_11
+    :cond_12
     const-string v1, "android.intent.action.SCREEN_ON"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_13
 
     invoke-static {v5}, Lcom/android/server/am/OnePlusAppBootManager;->access$1002(Z)Z
 
@@ -482,20 +509,20 @@
 
     goto :goto_2
 
-    :cond_12
+    :cond_13
     const-string v1, "android.intent.action.SIM_STATE_CHANGED"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_14
 
     iget-object v1, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     invoke-static {v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$1200(Lcom/android/server/am/OnePlusAppBootManager;)Z
 
-    :cond_13
+    :cond_14
     :goto_2
     return-void
 .end method

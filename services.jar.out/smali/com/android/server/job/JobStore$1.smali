@@ -406,7 +406,7 @@
 
     if-eqz v0, :cond_1
 
-    const-string v0, "idle"
+    const-string/jumbo v0, "idle"
 
     invoke-static {v2}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
 
@@ -754,7 +754,7 @@
 
     invoke-interface {v8, v11, v10}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    const-string v10, "http://xmlpull.org/v1/doc/features.html#indent-output"
+    const-string/jumbo v10, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     invoke-interface {v8, v10, v9}, Lorg/xmlpull/v1/XmlSerializer;->setFeature(Ljava/lang/String;Z)V
 

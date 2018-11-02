@@ -41,6 +41,8 @@
 
 .field private static final MSG_REGISTER_GLOBAL_ALERT:I = 0x3
 
+.field private static final MSG_SET_UID_FOREGROUND:I = 0x1
+
 .field private static final MSG_UPDATE_IFACES:I = 0x2
 
 .field private static final POLL_RATE_LIMIT_MS:J = 0x3a98L
@@ -162,6 +164,8 @@
 .field private mPollReceiver:Landroid/content/BroadcastReceiver;
 
 .field private mRemovedReceiver:Landroid/content/BroadcastReceiver;
+
+.field private mSetUidForegroundHandler:Landroid/os/Handler;
 
 .field private final mSettings:Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings;
 
@@ -312,35 +316,41 @@
 
     invoke-direct {v0, p0}, Lcom/android/server/net/NetworkStatsService$2;-><init>(Lcom/android/server/net/NetworkStatsService;)V
 
-    iput-object v0, p0, Lcom/android/server/net/NetworkStatsService;->mTetherReceiver:Landroid/content/BroadcastReceiver;
+    iput-object v0, p0, Lcom/android/server/net/NetworkStatsService;->mSetUidForegroundHandler:Landroid/os/Handler;
 
     new-instance v0, Lcom/android/server/net/NetworkStatsService$3;
 
     invoke-direct {v0, p0}, Lcom/android/server/net/NetworkStatsService$3;-><init>(Lcom/android/server/net/NetworkStatsService;)V
 
-    iput-object v0, p0, Lcom/android/server/net/NetworkStatsService;->mPollReceiver:Landroid/content/BroadcastReceiver;
+    iput-object v0, p0, Lcom/android/server/net/NetworkStatsService;->mTetherReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v0, Lcom/android/server/net/NetworkStatsService$4;
 
     invoke-direct {v0, p0}, Lcom/android/server/net/NetworkStatsService$4;-><init>(Lcom/android/server/net/NetworkStatsService;)V
 
-    iput-object v0, p0, Lcom/android/server/net/NetworkStatsService;->mRemovedReceiver:Landroid/content/BroadcastReceiver;
+    iput-object v0, p0, Lcom/android/server/net/NetworkStatsService;->mPollReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v0, Lcom/android/server/net/NetworkStatsService$5;
 
     invoke-direct {v0, p0}, Lcom/android/server/net/NetworkStatsService$5;-><init>(Lcom/android/server/net/NetworkStatsService;)V
 
-    iput-object v0, p0, Lcom/android/server/net/NetworkStatsService;->mUserReceiver:Landroid/content/BroadcastReceiver;
+    iput-object v0, p0, Lcom/android/server/net/NetworkStatsService;->mRemovedReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v0, Lcom/android/server/net/NetworkStatsService$6;
 
     invoke-direct {v0, p0}, Lcom/android/server/net/NetworkStatsService$6;-><init>(Lcom/android/server/net/NetworkStatsService;)V
 
-    iput-object v0, p0, Lcom/android/server/net/NetworkStatsService;->mShutdownReceiver:Landroid/content/BroadcastReceiver;
+    iput-object v0, p0, Lcom/android/server/net/NetworkStatsService;->mUserReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v0, Lcom/android/server/net/NetworkStatsService$7;
 
     invoke-direct {v0, p0}, Lcom/android/server/net/NetworkStatsService$7;-><init>(Lcom/android/server/net/NetworkStatsService;)V
+
+    iput-object v0, p0, Lcom/android/server/net/NetworkStatsService;->mShutdownReceiver:Landroid/content/BroadcastReceiver;
+
+    new-instance v0, Lcom/android/server/net/NetworkStatsService$8;
+
+    invoke-direct {v0, p0}, Lcom/android/server/net/NetworkStatsService$8;-><init>(Lcom/android/server/net/NetworkStatsService;)V
 
     iput-object v0, p0, Lcom/android/server/net/NetworkStatsService;->mAlertObserver:Landroid/net/INetworkManagementEventObserver;
 
@@ -467,7 +477,15 @@
     return-void
 .end method
 
-.method static synthetic access$1000(Lcom/android/server/net/NetworkStatsService;)Landroid/os/PowerManager$WakeLock;
+.method static synthetic access$1000(Lcom/android/server/net/NetworkStatsService;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/server/net/NetworkStatsService;->registerGlobalAlert()V
+
+    return-void
+.end method
+
+.method static synthetic access$1100(Lcom/android/server/net/NetworkStatsService;)Landroid/os/PowerManager$WakeLock;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -475,7 +493,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1100(Lcom/android/server/net/NetworkStatsService;[I)V
+.method static synthetic access$1200(Lcom/android/server/net/NetworkStatsService;[I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/net/NetworkStatsService;->removeUidsLocked([I)V
@@ -483,7 +501,7 @@
     return-void
 .end method
 
-.method static synthetic access$1200(Lcom/android/server/net/NetworkStatsService;I)V
+.method static synthetic access$1300(Lcom/android/server/net/NetworkStatsService;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/net/NetworkStatsService;->removeUserLocked(I)V
@@ -491,7 +509,7 @@
     return-void
 .end method
 
-.method static synthetic access$1300(Lcom/android/server/net/NetworkStatsService;)V
+.method static synthetic access$1400(Lcom/android/server/net/NetworkStatsService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/net/NetworkStatsService;->shutdownLocked()V
@@ -499,7 +517,7 @@
     return-void
 .end method
 
-.method static synthetic access$1400(Lcom/android/server/net/NetworkStatsService;)Landroid/content/Context;
+.method static synthetic access$1500(Lcom/android/server/net/NetworkStatsService;)Landroid/content/Context;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService;->mContext:Landroid/content/Context;
@@ -507,7 +525,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1500(Lcom/android/server/net/NetworkStatsService;)Landroid/os/Handler;
+.method static synthetic access$1600(Lcom/android/server/net/NetworkStatsService;)Landroid/os/Handler;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService;->mHandler:Landroid/os/Handler;
@@ -515,7 +533,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1600(Lcom/android/server/net/NetworkStatsService;Landroid/net/NetworkTemplate;JJ)J
+.method static synthetic access$1700(Lcom/android/server/net/NetworkStatsService;Landroid/net/NetworkTemplate;JJ)J
     .locals 2
 
     invoke-direct/range {p0 .. p5}, Lcom/android/server/net/NetworkStatsService;->getNetworkTotalBytes(Landroid/net/NetworkTemplate;JJ)J
@@ -525,7 +543,7 @@
     return-wide v0
 .end method
 
-.method static synthetic access$1700(Lcom/android/server/net/NetworkStatsService;Landroid/net/NetworkTemplate;JJ)Landroid/net/NetworkStats;
+.method static synthetic access$1800(Lcom/android/server/net/NetworkStatsService;Landroid/net/NetworkTemplate;JJ)Landroid/net/NetworkStats;
     .locals 1
 
     invoke-direct/range {p0 .. p5}, Lcom/android/server/net/NetworkStatsService;->getNetworkUidBytes(Landroid/net/NetworkTemplate;JJ)Landroid/net/NetworkStats;
@@ -535,18 +553,10 @@
     return-object v0
 .end method
 
-.method static synthetic access$1800(Lcom/android/server/net/NetworkStatsService;J)V
+.method static synthetic access$1900(Lcom/android/server/net/NetworkStatsService;J)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/android/server/net/NetworkStatsService;->advisePersistThreshold(J)V
-
-    return-void
-.end method
-
-.method static synthetic access$1900(Lcom/android/server/net/NetworkStatsService;[Landroid/net/Network;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcom/android/server/net/NetworkStatsService;->updateIfaces([Landroid/net/Network;)V
 
     return-void
 .end method
@@ -559,6 +569,14 @@
     move-result v0
 
     return v0
+.end method
+
+.method static synthetic access$2000(Lcom/android/server/net/NetworkStatsService;[Landroid/net/Network;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/android/server/net/NetworkStatsService;->updateIfaces([Landroid/net/Network;)V
+
+    return-void
 .end method
 
 .method static synthetic access$300(Lcom/android/server/net/NetworkStatsService;)Ljava/lang/Object;
@@ -605,18 +623,18 @@
     return-object v0
 .end method
 
-.method static synthetic access$800(Lcom/android/server/net/NetworkStatsService;I)V
+.method static synthetic access$800(Lcom/android/server/net/NetworkStatsService;)Landroid/util/SparseIntArray;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/net/NetworkStatsService;->mActiveUidCounterSet:Landroid/util/SparseIntArray;
+
+    return-object v0
+.end method
+
+.method static synthetic access$900(Lcom/android/server/net/NetworkStatsService;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/net/NetworkStatsService;->performPoll(I)V
-
-    return-void
-.end method
-
-.method static synthetic access$900(Lcom/android/server/net/NetworkStatsService;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/android/server/net/NetworkStatsService;->registerGlobalAlert()V
 
     return-void
 .end method
@@ -3734,7 +3752,7 @@
     if-ge v0, v2, :cond_10
 
     :try_start_6
-    const-string v2, "iface"
+    const-string/jumbo v2, "iface"
 
     iget-object v3, v1, Lcom/android/server/net/NetworkStatsService;->mActiveIfaces:Landroid/util/ArrayMap;
 
@@ -3744,7 +3762,7 @@
 
     invoke-virtual {v9, v2, v3}, Lcom/android/internal/util/IndentingPrintWriter;->printPair(Ljava/lang/String;Ljava/lang/Object;)Lcom/android/internal/util/IndentingPrintWriter;
 
-    const-string v2, "ident"
+    const-string/jumbo v2, "ident"
 
     iget-object v3, v1, Lcom/android/server/net/NetworkStatsService;->mActiveIfaces:Landroid/util/ArrayMap;
 
@@ -3791,7 +3809,7 @@
     if-ge v0, v2, :cond_11
 
     :try_start_8
-    const-string v2, "iface"
+    const-string/jumbo v2, "iface"
 
     iget-object v3, v1, Lcom/android/server/net/NetworkStatsService;->mActiveUidIfaces:Landroid/util/ArrayMap;
 
@@ -3801,7 +3819,7 @@
 
     invoke-virtual {v9, v2, v3}, Lcom/android/internal/util/IndentingPrintWriter;->printPair(Ljava/lang/String;Ljava/lang/Object;)Lcom/android/internal/util/IndentingPrintWriter;
 
-    const-string v2, "ident"
+    const-string/jumbo v2, "ident"
 
     iget-object v3, v1, Lcom/android/server/net/NetworkStatsService;->mActiveUidIfaces:Landroid/util/ArrayMap;
 
@@ -4605,42 +4623,23 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    iget-object v0, p0, Lcom/android/server/net/NetworkStatsService;->mStatsLock:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/android/server/net/NetworkStatsService;->mSetUidForegroundHandler:Landroid/os/Handler;
 
-    monitor-enter v0
+    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move v1, p2
+    move-result-object v1
 
-    :try_start_0
-    iget-object v2, p0, Lcom/android/server/net/NetworkStatsService;->mActiveUidCounterSet:Landroid/util/SparseIntArray;
+    const/4 v2, 0x1
 
     const/4 v3, 0x0
 
-    invoke-virtual {v2, p1, v3}, Landroid/util/SparseIntArray;->get(II)I
+    invoke-virtual {v0, v2, p1, v3, v1}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
-    move-result v2
+    move-result-object v0
 
-    if-eq v2, v1, :cond_0
-
-    iget-object v3, p0, Lcom/android/server/net/NetworkStatsService;->mActiveUidCounterSet:Landroid/util/SparseIntArray;
-
-    invoke-virtual {v3, p1, v1}, Landroid/util/SparseIntArray;->put(II)V
-
-    invoke-static {p1, v1}, Lcom/android/server/NetworkManagementSocketTagger;->setKernelCounterSet(II)V
-
-    :cond_0
-    monitor-exit v0
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
     return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
 .end method
 
 .method public systemReady()V

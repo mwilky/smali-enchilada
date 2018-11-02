@@ -4,13 +4,21 @@
 
 
 # static fields
-.field public static final ACTION_PRODUCTLINE:Ljava/lang/String; = "com.oem.engineermode.StartOEMLogMain"
-
 .field public static final CARD_CONFIG_PATH:Ljava/lang/String; = "/etc/nfc_card_config.conf"
 
 .field public static final CARD_CONFIG_PRODUCT_PROPERTY:Ljava/lang/String; = "vendor.oem.nfc.rf.card.productline"
 
 .field public static final CARD_CONFIG_PROPERTY:Ljava/lang/String; = "persist.vendor.oem.nfc.rf.card"
+
+.field public static final DIAL_911_FLAG:I = 0x47
+
+.field private static final ENG_RESULT_FILE_PATH:Ljava/lang/String; = "/mnt/vendor/persist/engineermode/ENG_RESULT"
+
+.field public static final ENG_RESULT_LENGTH:I = 0x80
+
+.field private static final ENG_RESULT_ROOT_FILE_PATH:Ljava/io/File;
+
+.field private static final ENG_RESULT_ROOT_PATH:Ljava/lang/String; = "/mnt/vendor/persist/engineermode/"
 
 .field private static TAG:Ljava/lang/String;
 
@@ -29,18 +37,24 @@
 
 .field private mContext:Landroid/content/Context;
 
-.field private final mProductlineReceiver:Landroid/content/BroadcastReceiver;
-
 .field private final mReceiver:Landroid/content/BroadcastReceiver;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
     const-string v0, "OnePlusNfcService"
 
     sput-object v0, Lcom/android/server/OnePlusNfcService;->TAG:Ljava/lang/String;
+
+    new-instance v0, Ljava/io/File;
+
+    const-string v1, "/mnt/vendor/persist/engineermode/"
+
+    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lcom/android/server/OnePlusNfcService;->ENG_RESULT_ROOT_FILE_PATH:Ljava/io/File;
 
     return-void
 .end method
@@ -61,12 +75,6 @@
     invoke-direct {v0, p0}, Lcom/android/server/OnePlusNfcService$1;-><init>(Lcom/android/server/OnePlusNfcService;)V
 
     iput-object v0, p0, Lcom/android/server/OnePlusNfcService;->mReceiver:Landroid/content/BroadcastReceiver;
-
-    new-instance v0, Lcom/android/server/OnePlusNfcService$2;
-
-    invoke-direct {v0, p0}, Lcom/android/server/OnePlusNfcService$2;-><init>(Lcom/android/server/OnePlusNfcService;)V
-
-    iput-object v0, p0, Lcom/android/server/OnePlusNfcService;->mProductlineReceiver:Landroid/content/BroadcastReceiver;
 
     iput-object p1, p0, Lcom/android/server/OnePlusNfcService;->mContext:Landroid/content/Context;
 
@@ -109,6 +117,309 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public static getProductLineTestFlag()[B
+    .locals 7
+
+    const/16 v0, 0x80
+
+    new-array v0, v0, [B
+
+    sget-object v1, Lcom/android/server/OnePlusNfcService;->ENG_RESULT_ROOT_FILE_PATH:Ljava/io/File;
+
+    invoke-virtual {v1}, Ljava/io/File;->exists()Z
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_2
+
+    sget-object v1, Lcom/android/server/OnePlusNfcService;->ENG_RESULT_ROOT_FILE_PATH:Ljava/io/File;
+
+    invoke-virtual {v1}, Ljava/io/File;->isDirectory()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    goto/16 :goto_7
+
+    :cond_0
+    move-object v1, v2
+
+    :try_start_0
+    new-instance v2, Ljava/io/RandomAccessFile;
+
+    const-string v3, "/mnt/vendor/persist/engineermode/ENG_RESULT"
+
+    const-string/jumbo v4, "r"
+
+    invoke-direct {v2, v3, v4}, Ljava/io/RandomAccessFile;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-object v1, v2
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v2
+
+    sget-object v3, Lcom/android/server/OnePlusNfcService;->TAG:Ljava/lang/String;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "getProductLineTestFlag IllegalArgumentException"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v1, 0x0
+
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :catch_1
+    move-exception v2
+
+    sget-object v3, Lcom/android/server/OnePlusNfcService;->TAG:Ljava/lang/String;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "getProductLineTestFlag FileNotFoundException"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/io/FileNotFoundException;->getMessage()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v1, 0x0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    nop
+
+    :goto_1
+    if-eqz v1, :cond_1
+
+    :try_start_1
+    invoke-virtual {v1, v0}, Ljava/io/RandomAccessFile;->read([B)I
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_3
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :try_start_2
+    invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
+
+    goto :goto_2
+
+    :catch_2
+    move-exception v2
+
+    sget-object v3, Lcom/android/server/OnePlusNfcService;->TAG:Ljava/lang/String;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    goto :goto_3
+
+    :catchall_0
+    move-exception v2
+
+    goto :goto_4
+
+    :catch_3
+    move-exception v2
+
+    :try_start_3
+    sget-object v3, Lcom/android/server/OnePlusNfcService;->TAG:Ljava/lang/String;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "getProductLineTestFlag IOException"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    const/4 v0, 0x0
+
+    :try_start_4
+    invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_4
+
+    :goto_2
+    goto :goto_6
+
+    :catch_4
+    move-exception v2
+
+    sget-object v3, Lcom/android/server/OnePlusNfcService;->TAG:Ljava/lang/String;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    :goto_3
+    const-string v5, "getProductLineTestFlag IOException while close : "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_6
+
+    :goto_4
+    nop
+
+    :try_start_5
+    invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
+    :try_end_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_5
+
+    goto :goto_5
+
+    :catch_5
+    move-exception v3
+
+    sget-object v4, Lcom/android/server/OnePlusNfcService;->TAG:Ljava/lang/String;
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "getProductLineTestFlag IOException while close : "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_5
+    throw v2
+
+    :cond_1
+    :goto_6
+    return-object v0
+
+    :cond_2
+    :goto_7
+    sget-object v1, Lcom/android/server/OnePlusNfcService;->TAG:Ljava/lang/String;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v4, Lcom/android/server/OnePlusNfcService;->ENG_RESULT_ROOT_FILE_PATH:Ljava/io/File;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string/jumbo v4, "is invalid!"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v1, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-object v2
+.end method
+
+.method public static hasDial911()Z
+    .locals 3
+
+    invoke-static {}, Lcom/android/server/OnePlusNfcService;->getProductLineTestFlag()[B
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    array-length v1, v0
+
+    const/16 v2, 0x47
+
+    if-le v1, v2, :cond_0
+
+    aget-byte v1, v0, v2
+
+    const/4 v2, 0x1
+
+    if-ne v1, v2, :cond_0
+
+    return v2
+
+    :cond_0
+    const/4 v1, 0x0
+
+    return v1
 .end method
 
 .method private loadConfigMap()V
@@ -599,7 +910,7 @@
 .end method
 
 .method public systemRunning()V
-    .locals 7
+    .locals 2
 
     sget-object v0, Lcom/android/server/OnePlusNfcService;->TAG:Ljava/lang/String;
 
@@ -609,27 +920,16 @@
 
     invoke-direct {p0}, Lcom/android/server/OnePlusNfcService;->loadConfigMap()V
 
-    new-instance v0, Landroid/content/IntentFilter;
+    invoke-static {}, Lcom/android/server/OnePlusNfcService;->hasDial911()Z
 
-    invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
+    move-result v0
 
-    const-string v1, "com.oem.engineermode.StartOEMLogMain"
+    if-nez v0, :cond_0
 
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    const-string/jumbo v0, "productline"
 
-    iget-object v1, p0, Lcom/android/server/OnePlusNfcService;->mContext:Landroid/content/Context;
+    invoke-virtual {p0, v0}, Lcom/android/server/OnePlusNfcService;->setNfcConfig(Ljava/lang/String;)V
 
-    iget-object v2, p0, Lcom/android/server/OnePlusNfcService;->mProductlineReceiver:Landroid/content/BroadcastReceiver;
-
-    sget-object v3, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    move-object v4, v0
-
-    invoke-virtual/range {v1 .. v6}, Landroid/content/Context;->registerReceiverAsUser(Landroid/content/BroadcastReceiver;Landroid/os/UserHandle;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
-
+    :cond_0
     return-void
 .end method

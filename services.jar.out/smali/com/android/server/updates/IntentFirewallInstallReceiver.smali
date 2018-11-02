@@ -15,7 +15,7 @@
 
     move-result-object v0
 
-    const-string v1, "ifw.xml"
+    const-string/jumbo v1, "ifw.xml"
 
     const-string/jumbo v2, "metadata/"
 

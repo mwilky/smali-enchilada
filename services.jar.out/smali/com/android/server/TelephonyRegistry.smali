@@ -874,7 +874,7 @@
 
     if-eqz v2, :cond_2
 
-    const-string v3, "iface"
+    const-string/jumbo v3, "iface"
 
     invoke-virtual {v0, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 

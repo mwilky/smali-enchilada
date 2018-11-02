@@ -1267,7 +1267,7 @@
     monitor-enter p0
 
     :try_start_0
-    const-string v0, "iface:"
+    const-string/jumbo v0, "iface:"
 
     const-string v2, ""
 

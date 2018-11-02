@@ -3861,7 +3861,7 @@
 
     new-instance v2, Ljava/lang/RuntimeException;
 
-    const-string v3, "here"
+    const-string/jumbo v3, "here"
 
     invoke-direct {v2, v3}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -11639,7 +11639,7 @@
 
     new-instance v2, Ljava/lang/RuntimeException;
 
-    const-string v3, "here"
+    const-string/jumbo v3, "here"
 
     invoke-direct {v2, v3}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 

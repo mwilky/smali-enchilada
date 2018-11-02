@@ -404,7 +404,7 @@
     if-eqz v13, :cond_5
 
     :try_start_4
-    const-string v13, "id"
+    const-string/jumbo v13, "id"
 
     invoke-interface {v0, v4, v13}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -469,7 +469,7 @@
     goto/16 :goto_2
 
     :cond_6
-    const-string v13, "icon"
+    const-string/jumbo v13, "icon"
 
     invoke-interface {v0, v4, v13}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -489,7 +489,7 @@
 
     move-result v14
 
-    const-string v15, "imeSubtypeLocale"
+    const-string/jumbo v15, "imeSubtypeLocale"
 
     invoke-interface {v0, v4, v15}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -501,13 +501,13 @@
 
     move-result-object v7
 
-    const-string v8, "imeSubtypeMode"
+    const-string/jumbo v8, "imeSubtypeMode"
 
     invoke-interface {v0, v4, v8}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v8
 
-    const-string v4, "imeSubtypeExtraValue"
+    const-string/jumbo v4, "imeSubtypeExtraValue"
 
     const/4 v1, 0x0
 
@@ -855,7 +855,7 @@
 
     invoke-interface {v5, v3, v6}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    const-string v6, "http://xmlpull.org/v1/doc/features.html#indent-output"
+    const-string/jumbo v6, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     invoke-interface {v5, v6, v1}, Lorg/xmlpull/v1/XmlSerializer;->setFeature(Ljava/lang/String;Z)V
 
@@ -917,7 +917,7 @@
 
     invoke-interface {v5, v3, v7}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v7, "id"
+    const-string/jumbo v7, "id"
 
     invoke-interface {v5, v3, v7, v6}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -965,7 +965,7 @@
     invoke-interface {v5, v3, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
     :cond_2
-    const-string v11, "icon"
+    const-string/jumbo v11, "icon"
 
     invoke-virtual {v10}, Landroid/view/inputmethod/InputMethodSubtype;->getIconResId()I
 
@@ -989,7 +989,7 @@
 
     invoke-interface {v5, v3, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v11, "imeSubtypeLocale"
+    const-string/jumbo v11, "imeSubtypeLocale"
 
     invoke-virtual {v10}, Landroid/view/inputmethod/InputMethodSubtype;->getLocale()Ljava/lang/String;
 
@@ -1005,7 +1005,7 @@
 
     invoke-interface {v5, v3, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v11, "imeSubtypeMode"
+    const-string/jumbo v11, "imeSubtypeMode"
 
     invoke-virtual {v10}, Landroid/view/inputmethod/InputMethodSubtype;->getMode()Ljava/lang/String;
 
@@ -1013,7 +1013,7 @@
 
     invoke-interface {v5, v3, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v11, "imeSubtypeExtraValue"
+    const-string/jumbo v11, "imeSubtypeExtraValue"
 
     invoke-virtual {v10}, Landroid/view/inputmethod/InputMethodSubtype;->getExtraValue()Ljava/lang/String;
 

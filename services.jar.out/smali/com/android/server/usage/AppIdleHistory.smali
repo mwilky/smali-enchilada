@@ -2193,7 +2193,7 @@
 
     invoke-virtual {v3, v6, v5}, Lcom/android/internal/util/FastXmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    const-string v5, "http://xmlpull.org/v1/doc/features.html#indent-output"
+    const-string/jumbo v5, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     invoke-virtual {v3, v5, v4}, Lcom/android/internal/util/FastXmlSerializer;->setFeature(Ljava/lang/String;Z)V
 

@@ -11303,7 +11303,7 @@
     goto/16 :goto_1
 
     :sswitch_1a
-    const-string v2, "hide"
+    const-string/jumbo v2, "hide"
 
     invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -12214,6 +12214,8 @@
     invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     return v1
+
+    nop
 
     nop
 

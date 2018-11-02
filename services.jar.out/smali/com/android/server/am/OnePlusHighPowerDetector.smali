@@ -37,6 +37,8 @@
 
 .field private static BACKGROUND_DETECTION_CONFIG_NAME:Ljava/lang/String; = null
 
+.field static BGC_APP_LAST_FOREGROUND_TIME_THRESHOLD:I = 0x0
+
 .field static BG_DETECTION_CPU_USAGE_THRESHOLD_MAX:[I = null
 
 .field static BG_DETECTION_CPU_USAGE_THRESHOLD_MIN:[I = null
@@ -64,6 +66,8 @@
 .field static CPU_MIN_CHECK_DURATION:I = 0x0
 
 .field public static DEBUG:Z = false
+
+.field static DEBUG_BGC:Z = false
 
 .field static DEBUG_BG_USAGE_QUICK:Z = false
 
@@ -134,6 +138,10 @@
 .field static POWER_DRAIN_TEMP_THOLD:I = 0x0
 
 .field static POWER_DRAIN_USG_THOLD:I = 0x0
+
+.field private static final PROP_BGC_DEBUG_ON:Ljava/lang/String; = "persist.sys.ohpd.bgc_debug"
+
+.field private static final PROP_BGC_FEATURE:Ljava/lang/String; = "persist.sys.bgc"
 
 .field private static final PROP_DEBUG:Ljava/lang/String; = "persist.sys.ohpd.debug"
 
@@ -284,6 +292,26 @@
 
 .field private mAudioManager:Landroid/media/AudioManager;
 
+.field mBGCUidArray:Landroid/util/SparseArray;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/util/SparseArray<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field mBGCUsingTrafficUidSet:Ljava/util/HashSet;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashSet<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private mBackgroundDetectionConfigObserver:Lcom/oneplus/config/ConfigObserver;
 
 .field mBatteryDropCriteria:I
@@ -319,6 +347,8 @@
         }
     .end annotation
 .end field
+
+.field private mEverLightIdleBGCCheck:Z
 
 .field private mEverLightIdleCameraCheck:Z
 
@@ -373,6 +403,8 @@
         }
     .end annotation
 .end field
+
+.field private mIsBGCFeatureEnabled:Z
 
 .field mIsNativeMonitorStart:Z
 
@@ -469,6 +501,8 @@
 
 .field private mOSTracker:Lnet/oneplus/odm/insight/tracker/OSTracker;
 
+.field private mOnePlusBGController:Lcom/android/server/am/OnePlusBGController;
+
 .field mPendingNativeRemoveList:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -542,6 +576,16 @@
     .end annotation
 .end field
 
+.field private whiteBGCAppListSet:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -564,6 +608,14 @@
     move-result v1
 
     sput-boolean v1, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG_LIGHTIDLE:Z
+
+    const-string/jumbo v1, "persist.sys.ohpd.bgc_debug"
+
+    invoke-static {v1, v2}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    sput-boolean v1, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG_BGC:Z
 
     const-string/jumbo v1, "persist.sys.ohpd.debug.bg"
 
@@ -631,6 +683,22 @@
 
     sput v1, Lcom/android/server/am/OnePlusHighPowerDetector;->APP_LAST_FOREGROUND_TIME_THRESHOLD:I
 
+    sget-boolean v1, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG_BG_USAGE_QUICK:Z
+
+    if-eqz v1, :cond_2
+
+    const/16 v1, 0xa
+
+    goto :goto_2
+
+    :cond_2
+    move v1, v3
+
+    :goto_2
+    mul-int/lit16 v1, v1, 0x3e8
+
+    sput v1, Lcom/android/server/am/OnePlusHighPowerDetector;->BGC_APP_LAST_FOREGROUND_TIME_THRESHOLD:I
+
     const v1, 0x1b7740
 
     sput v1, Lcom/android/server/am/OnePlusHighPowerDetector;->SCREEN_ON_PD_LAST_FG_TIME_THOLD:I
@@ -641,16 +709,16 @@
 
     sget-boolean v1, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG_BG_USAGE_QUICK:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     move v1, v3
 
-    goto :goto_2
+    goto :goto_3
 
-    :cond_2
+    :cond_3
     move v1, v4
 
-    :goto_2
+    :goto_3
     mul-int/lit16 v1, v1, 0x3e8
 
     sput v1, Lcom/android/server/am/OnePlusHighPowerDetector;->APP_LAST_CONTACT_PROVIDER_TIME_THRESHOLD:I
@@ -659,23 +727,23 @@
 
     const/4 v5, 0x2
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
     move v1, v5
 
-    goto :goto_3
+    goto :goto_4
 
-    :cond_3
+    :cond_4
     const/16 v1, 0x14
 
-    :goto_3
+    :goto_4
     mul-int/2addr v1, v3
 
     mul-int/lit16 v1, v1, 0x3e8
 
     sput v1, Lcom/android/server/am/OnePlusHighPowerDetector;->APP_CONT_BUSY_TIME_THOLD:I
 
-    sput-boolean v0, Lcom/android/server/am/OnePlusHighPowerDetector;->RNK_ON:Z
+    sput-boolean v2, Lcom/android/server/am/OnePlusHighPowerDetector;->RNK_ON:Z
 
     const/4 v1, 0x4
 
@@ -683,30 +751,30 @@
 
     sget-boolean v7, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG_BG_USAGE_QUICK:Z
 
-    if-eqz v7, :cond_4
+    if-eqz v7, :cond_5
 
     move v7, v3
 
-    goto :goto_4
+    goto :goto_5
 
-    :cond_4
+    :cond_5
     move v7, v4
 
-    :goto_4
+    :goto_5
     mul-int/lit16 v7, v7, 0x3e8
 
     aput v7, v6, v2
 
     sget-boolean v7, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG_BG_USAGE_QUICK:Z
 
-    if-eqz v7, :cond_5
+    if-eqz v7, :cond_6
 
-    goto :goto_5
+    goto :goto_6
 
-    :cond_5
+    :cond_6
     move v3, v4
 
-    :goto_5
+    :goto_6
     mul-int/lit16 v3, v3, 0x3e8
 
     aput v3, v6, v0
@@ -715,16 +783,16 @@
 
     const/16 v4, 0x78
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_7
 
     move v3, v4
 
-    goto :goto_6
+    goto :goto_7
 
-    :cond_6
+    :cond_7
     const/16 v3, 0x258
 
-    :goto_6
+    :goto_7
     mul-int/lit16 v3, v3, 0x3e8
 
     aput v3, v6, v5
@@ -733,14 +801,14 @@
 
     sget-boolean v7, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG_BG_USAGE_QUICK:Z
 
-    if-eqz v7, :cond_7
+    if-eqz v7, :cond_8
 
-    goto :goto_7
+    goto :goto_8
 
-    :cond_7
+    :cond_8
     const/16 v4, 0x4b0
 
-    :goto_7
+    :goto_8
     mul-int/lit16 v4, v4, 0x3e8
 
     aput v4, v6, v3
@@ -837,6 +905,8 @@
 
     return-void
 
+    nop
+
     :array_0
     .array-data 4
         0xd6d8
@@ -863,11 +933,25 @@
 .end method
 
 .method private constructor <init>(Lcom/android/server/am/ActivityManagerService;Landroid/content/Context;Lcom/android/server/am/BatteryStatsService;Lcom/android/server/am/RestartProcessManager;)V
-    .locals 4
+    .locals 11
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    new-instance v0, Landroid/util/SparseArray;
+
+    invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
+
+    iput-object v0, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUidArray:Landroid/util/SparseArray;
+
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    iput-object v0, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUsingTrafficUidSet:Ljava/util/HashSet;
+
     const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mEverLightIdleBGCCheck:Z
 
     iput-boolean v0, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mEverLightIdleCheck:Z
 
@@ -890,6 +974,22 @@
     iput-wide v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mLastBatteryDropTime:J
 
     iput-boolean v0, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mIsPowerDrain:Z
+
+    const-string/jumbo v3, "persist.sys.bgc"
+
+    const/4 v4, 0x1
+
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v3
+
+    iput-boolean v3, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mIsBGCFeatureEnabled:Z
+
+    new-instance v3, Ljava/util/ArrayList;
+
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v3, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
 
     iput-wide v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mLastGmsProcUsage:J
 
@@ -1083,20 +1183,21 @@
 
     move-result v1
 
-    const/4 v2, 0x1
+    if-ne v1, v4, :cond_0
 
-    if-ne v1, v2, :cond_0
+    move v1, v4
 
-    move v0, v2
-
-    nop
+    goto :goto_0
 
     :cond_0
-    sput-boolean v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mIsBetaRom:Z
+    move v1, v0
 
-    sget-boolean v0, Lcom/android/server/am/OnePlusHighPowerDetector;->ENABLE:Z
+    :goto_0
+    sput-boolean v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mIsBetaRom:Z
 
-    if-nez v0, :cond_1
+    sget-boolean v1, Lcom/android/server/am/OnePlusHighPowerDetector;->ENABLE:Z
+
+    if-nez v1, :cond_1
 
     const-string v0, "OHPD"
 
@@ -1107,50 +1208,100 @@
     return-void
 
     :cond_1
-    const-string v0, "OnePlusHighPowerDetector--constructor"
+    const-string v1, "OnePlusHighPowerDetector--constructor"
 
-    invoke-static {v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->myLog(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/android/server/am/OnePlusHighPowerDetector;->myLog(Ljava/lang/String;)V
 
     sput-object p1, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
 
     sput-object p2, Lcom/android/server/am/OnePlusHighPowerDetector;->mContext:Landroid/content/Context;
 
-    new-instance v0, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
+    new-instance v1, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
 
-    iget-object v1, p1, Lcom/android/server/am/ActivityManagerService;->mHandlerThread:Lcom/android/server/ServiceThread;
+    iget-object v2, p1, Lcom/android/server/am/ActivityManagerService;->mHandlerThread:Lcom/android/server/ServiceThread;
 
-    invoke-virtual {v1}, Lcom/android/server/ServiceThread;->getLooper()Landroid/os/Looper;
+    invoke-virtual {v2}, Lcom/android/server/ServiceThread;->getLooper()Landroid/os/Looper;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-direct {v0, p0, v1}, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;-><init>(Lcom/android/server/am/OnePlusHighPowerDetector;Landroid/os/Looper;)V
+    invoke-direct {v1, p0, v2}, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;-><init>(Lcom/android/server/am/OnePlusHighPowerDetector;Landroid/os/Looper;)V
 
-    sput-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mHandler:Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
+    sput-object v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mHandler:Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
 
     sput-object p3, Lcom/android/server/am/OnePlusHighPowerDetector;->mBatteryStatsService:Lcom/android/server/am/BatteryStatsService;
 
     iput-object p4, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mRestartProcessManager:Lcom/android/server/am/RestartProcessManager;
 
-    new-instance v0, Lcom/android/server/SystemEventCollector;
+    new-instance v1, Lcom/android/server/SystemEventCollector;
 
-    sget-object v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mContext:Landroid/content/Context;
+    sget-object v2, Lcom/android/server/am/OnePlusHighPowerDetector;->mContext:Landroid/content/Context;
 
-    const-string v2, "HighPowerDetector"
+    const-string v3, "HighPowerDetector"
 
-    invoke-direct {v0, v1, v2}, Lcom/android/server/SystemEventCollector;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-direct {v1, v2, v3}, Lcom/android/server/SystemEventCollector;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    iput-object v0, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mHighPowerEventCollector:Lcom/android/server/SystemEventCollector;
+    iput-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mHighPowerEventCollector:Lcom/android/server/SystemEventCollector;
 
-    new-instance v0, Lnet/oneplus/odm/insight/tracker/OSTracker;
+    new-instance v1, Lnet/oneplus/odm/insight/tracker/OSTracker;
 
-    sget-object v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mContext:Landroid/content/Context;
+    sget-object v2, Lcom/android/server/am/OnePlusHighPowerDetector;->mContext:Landroid/content/Context;
 
-    const-string v2, "NYNCG4I0TI"
+    const-string v3, "NYNCG4I0TI"
 
-    invoke-direct {v0, v1, v2}, Lnet/oneplus/odm/insight/tracker/OSTracker;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-direct {v1, v2, v3}, Lnet/oneplus/odm/insight/tracker/OSTracker;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    iput-object v0, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mOSTracker:Lnet/oneplus/odm/insight/tracker/OSTracker;
+    iput-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mOSTracker:Lnet/oneplus/odm/insight/tracker/OSTracker;
 
+    new-instance v1, Lcom/android/server/am/OnePlusBGController;
+
+    sget-object v6, Lcom/android/server/am/OnePlusHighPowerDetector;->mContext:Landroid/content/Context;
+
+    sget-object v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mHandler:Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
+
+    sget-object v8, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
+
+    sget-object v9, Lcom/android/server/am/OnePlusHighPowerDetector;->mBatteryStatsService:Lcom/android/server/am/BatteryStatsService;
+
+    iget-object v10, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mRestartProcessManager:Lcom/android/server/am/RestartProcessManager;
+
+    move-object v5, v1
+
+    invoke-direct/range {v5 .. v10}, Lcom/android/server/am/OnePlusBGController;-><init>(Landroid/content/Context;Landroid/os/Handler;Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/BatteryStatsService;Lcom/android/server/am/RestartProcessManager;)V
+
+    iput-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mOnePlusBGController:Lcom/android/server/am/OnePlusBGController;
+
+    new-array v1, v4, [I
+
+    const/16 v2, 0x5b
+
+    aput v2, v1, v0
+
+    invoke-static {v1}, Landroid/util/OpFeatures;->isSupport([I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const-string v1, "OP_FEATURE_BGC enabled, disable RNK_ON"
+
+    invoke-static {v1}, Lcom/android/server/am/OnePlusHighPowerDetector;->myLog(Ljava/lang/String;)V
+
+    sput-boolean v0, Lcom/android/server/am/OnePlusHighPowerDetector;->RNK_ON:Z
+
+    iput-boolean v4, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mIsBGCFeatureEnabled:Z
+
+    goto :goto_1
+
+    :cond_2
+    const-string v1, "OP_FEATURE_BGC disabled, enable RNK_ON"
+
+    invoke-static {v1}, Lcom/android/server/am/OnePlusHighPowerDetector;->myLog(Ljava/lang/String;)V
+
+    sput-boolean v4, Lcom/android/server/am/OnePlusHighPowerDetector;->RNK_ON:Z
+
+    iput-boolean v0, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mIsBGCFeatureEnabled:Z
+
+    :goto_1
     invoke-direct {p0}, Lcom/android/server/am/OnePlusHighPowerDetector;->init()V
 
     return-void
@@ -1172,7 +1323,33 @@
     return-object v0
 .end method
 
-.method static synthetic access$1000(Lcom/android/server/am/OnePlusHighPowerDetector;Lorg/json/JSONArray;)V
+.method static synthetic access$1000(Lcom/android/server/am/OnePlusHighPowerDetector;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/server/am/OnePlusHighPowerDetector;->dumpOther()V
+
+    return-void
+.end method
+
+.method static synthetic access$1100(Lcom/android/server/am/OnePlusHighPowerDetector;)Z
+    .locals 1
+
+    invoke-direct {p0}, Lcom/android/server/am/OnePlusHighPowerDetector;->responseSIMStateChanged()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic access$1200(Lcom/android/server/am/OnePlusHighPowerDetector;Ljava/lang/String;II)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3}, Lcom/android/server/am/OnePlusHighPowerDetector;->scheduleForceStopPkg(Ljava/lang/String;II)V
+
+    return-void
+.end method
+
+.method static synthetic access$1300(Lcom/android/server/am/OnePlusHighPowerDetector;Lorg/json/JSONArray;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusHighPowerDetector;->resolveBackgroundDetectionConfigFromJSON(Lorg/json/JSONArray;)V
@@ -1180,7 +1357,7 @@
     return-void
 .end method
 
-.method static synthetic access$1100()Landroid/content/Context;
+.method static synthetic access$1400()Landroid/content/Context;
     .locals 1
 
     sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mContext:Landroid/content/Context;
@@ -1231,12 +1408,20 @@
 .method static synthetic access$602(Lcom/android/server/am/OnePlusHighPowerDetector;Z)Z
     .locals 0
 
+    iput-boolean p1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mEverLightIdleBGCCheck:Z
+
+    return p1
+.end method
+
+.method static synthetic access$702(Lcom/android/server/am/OnePlusHighPowerDetector;Z)Z
+    .locals 0
+
     iput-boolean p1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mEverLightIdleCameraCheck:Z
 
     return p1
 .end method
 
-.method static synthetic access$700(Lcom/android/server/am/OnePlusHighPowerDetector;Ljava/lang/String;IILjava/lang/String;I)V
+.method static synthetic access$800(Lcom/android/server/am/OnePlusHighPowerDetector;Ljava/lang/String;IILjava/lang/String;I)V
     .locals 0
 
     invoke-direct/range {p0 .. p5}, Lcom/android/server/am/OnePlusHighPowerDetector;->notifyBgDetectIfNecessary(Ljava/lang/String;IILjava/lang/String;I)V
@@ -1244,26 +1429,2481 @@
     return-void
 .end method
 
-.method static synthetic access$800(Lcom/android/server/am/OnePlusHighPowerDetector;)Z
-    .locals 1
-
-    invoke-direct {p0}, Lcom/android/server/am/OnePlusHighPowerDetector;->responseSIMStateChanged()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method static synthetic access$900(Lcom/android/server/am/OnePlusHighPowerDetector;Ljava/lang/String;II)V
+.method static synthetic access$900(Lcom/android/server/am/OnePlusHighPowerDetector;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lcom/android/server/am/OnePlusHighPowerDetector;->scheduleForceStopPkg(Ljava/lang/String;II)V
+    invoke-direct {p0}, Lcom/android/server/am/OnePlusHighPowerDetector;->dumpLruProcess()V
 
     return-void
 .end method
 
+.method private checkAbnBgKillLocked()V
+    .locals 37
+
+    move-object/from16 v7, p0
+
+    const-string v0, "OHPD"
+
+    const-string v1, "[BGC] checkAbnBgKillLocked"
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v8
+
+    iget-object v0, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUidArray:Landroid/util/SparseArray;
+
+    if-eqz v0, :cond_2b
+
+    iget-object v0, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUidArray:Landroid/util/SparseArray;
+
+    invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    move-wide/from16 v19, v8
+
+    goto/16 :goto_1c
+
+    :cond_0
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v10
+
+    sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
+
+    iget-object v0, v0, Lcom/android/server/wm/WindowManagerService;->mOpWms:Lcom/android/server/wm/OnePlusWmUtil$OnePlusWindowManagerService;
+
+    invoke-virtual {v0}, Lcom/android/server/wm/OnePlusWmUtil$OnePlusWindowManagerService;->getSysAlertWindowUidsForScreenOff()Ljava/util/List;
+
+    move-result-object v12
+
+    const-string v0, "OHPD"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "[BGC] alertWindowUidsSoff :"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
+
+    iget-object v0, v0, Lcom/android/server/wm/WindowManagerService;->mOpWms:Lcom/android/server/wm/OnePlusWmUtil$OnePlusWindowManagerService;
+
+    invoke-virtual {v0}, Lcom/android/server/wm/OnePlusWmUtil$OnePlusWindowManagerService;->getVisibleWindowUids()Ljava/util/List;
+
+    move-result-object v13
+
+    const-string v0, "OHPD"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "[BGC] visibleUids :"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/am/OnePlusHighPowerDetector;->getActiveAudioUids()[Ljava/lang/String;
+
+    move-result-object v14
+
+    const/4 v0, 0x0
+
+    if-eqz v14, :cond_1
+
+    invoke-static {v14}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    :cond_1
+    move-object v15, v0
+
+    const-string v0, "OHPD"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "[BGC] active audio :"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v0, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mOnePlusBGController:Lcom/android/server/am/OnePlusBGController;
+
+    invoke-virtual {v0}, Lcom/android/server/am/OnePlusBGController;->getStepCounterActiveUids()Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v0, "OHPD"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "[BGC] active step counter uids :"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "com_oneplus_systemui_recent_task_lockd_list"
+
+    const/4 v2, -0x2
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {v7, v5}, Lcom/android/server/am/OnePlusHighPowerDetector;->parseLockedStr(Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v3
+
+    const-string v0, "OHPD"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "[BGC] locked :"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    move-object v4, v0
+
+    iget-object v0, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUidArray:Landroid/util/SparseArray;
+
+    const/16 v16, 0x0
+
+    if-eqz v0, :cond_4
+
+    iget-object v1, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUidArray:Landroid/util/SparseArray;
+
+    monitor-enter v1
+
+    :try_start_0
+    new-instance v0, Ljava/lang/StringBuffer;
+
+    invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
+
+    move/from16 v2, v16
+
+    :goto_0
+    move-object/from16 v17, v5
+
+    :try_start_1
+    iget-object v5, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUidArray:Landroid/util/SparseArray;
+
+    invoke-virtual {v5}, Landroid/util/SparseArray;->size()I
+
+    move-result v5
+
+    if-ge v2, v5, :cond_3
+
+    iget-object v5, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUidArray:Landroid/util/SparseArray;
+
+    invoke-virtual {v5, v2}, Landroid/util/SparseArray;->keyAt(I)I
+
+    move-result v5
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    move-object/from16 v18, v14
+
+    :try_start_2
+    iget-object v14, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUidArray:Landroid/util/SparseArray;
+
+    invoke-virtual {v14, v5}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v14
+
+    check-cast v14, Ljava/lang/Boolean;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    move-wide/from16 v19, v8
+
+    :try_start_3
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "["
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v9, ", "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v14}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v9
+
+    if-eqz v9, :cond_2
+
+    const-string v9, "F"
+
+    goto :goto_1
+
+    :cond_2
+    const-string v9, "K"
+
+    :goto_1
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v9, "], "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v0, v8}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    invoke-virtual {v4, v8}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v2, v2, 0x1
+
+    move-object/from16 v5, v17
+
+    move-object/from16 v14, v18
+
+    move-wide/from16 v8, v19
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    move-wide/from16 v19, v8
+
+    goto :goto_2
+
+    :cond_3
+    move-wide/from16 v19, v8
+
+    move-object/from16 v18, v14
+
+    const-string v2, "OHPD"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "[BGC] mBGCUidArray :"
+
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v2, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    monitor-exit v1
+
+    goto :goto_3
+
+    :catchall_1
+    move-exception v0
+
+    move-wide/from16 v19, v8
+
+    move-object/from16 v18, v14
+
+    goto :goto_2
+
+    :catchall_2
+    move-exception v0
+
+    move-object/from16 v17, v5
+
+    move-wide/from16 v19, v8
+
+    move-object/from16 v18, v14
+
+    :goto_2
+    monitor-exit v1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_3
+
+    throw v0
+
+    :catchall_3
+    move-exception v0
+
+    goto :goto_2
+
+    :cond_4
+    move-object/from16 v17, v5
+
+    move-wide/from16 v19, v8
+
+    move-object/from16 v18, v14
+
+    :goto_3
+    iget-object v0, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUsingTrafficUidSet:Ljava/util/HashSet;
+
+    if-eqz v0, :cond_6
+
+    iget-object v1, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUsingTrafficUidSet:Ljava/util/HashSet;
+
+    monitor-enter v1
+
+    :try_start_4
+    new-instance v0, Ljava/lang/StringBuffer;
+
+    invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
+
+    iget-object v2, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUsingTrafficUidSet:Ljava/util/HashSet;
+
+    invoke-virtual {v2}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_4
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_5
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/Integer;
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v5}, Ljava/lang/Integer;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v9, ", "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v0, v8}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    goto :goto_4
+
+    :cond_5
+    const-string v2, "OHPD"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "[BGC] mBGCUsingTrafficUidSet :"
+
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v2, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    monitor-exit v1
+
+    goto :goto_5
+
+    :catchall_4
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_4
+
+    throw v0
+
+    :cond_6
+    :goto_5
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/am/OnePlusHighPowerDetector;->getCurrentInputMethod()Ljava/lang/String;
+
+    move-result-object v8
+
+    const-string v0, "OHPD"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "[BGC] currentIME :"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    move-object v9, v0
+
+    sget-object v14, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
+
+    monitor-enter v14
+
+    :try_start_5
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
+
+    new-instance v0, Landroid/util/ArrayMap;
+
+    invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
+
+    move-object v5, v0
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    move-object v2, v0
+
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    move-object v1, v0
+
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    move-object/from16 v21, v0
+
+    sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mLruProcesses:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    :goto_6
+    move/from16 v22, v0
+
+    if-lez v22, :cond_18
+
+    add-int/lit8 v0, v22, -0x1
+
+    move-object/from16 v23, v1
+
+    sget-object v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mLruProcesses:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/server/am/ProcessRecord;
+
+    sget-boolean v22, Lcom/android/server/am/OnePlusBGController;->DEBUG_BGC:Z
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_a
+
+    if-eqz v22, :cond_7
+
+    :try_start_6
+    sget-boolean v22, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG_BGC:Z
+
+    if-eqz v22, :cond_7
+
+    move-object/from16 v24, v2
+
+    const-string v2, "OHPD"
+    :try_end_6
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_2
+    .catchall {:try_start_6 .. :try_end_6} :catchall_7
+
+    move-object/from16 v25, v9
+
+    :try_start_7
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    :try_end_7
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_1
+    .catchall {:try_start_7 .. :try_end_7} :catchall_6
+
+    move-wide/from16 v26, v10
+
+    :try_start_8
+    const-string v10, "[BGC] i="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v10, ", pid="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v10, v1, Lcom/android/server/am/ProcessRecord;->pid:I
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v10, ", uid="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v10, v1, Lcom/android/server/am/ProcessRecord;->uid:I
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v10, ", iso="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v10, v1, Lcom/android/server/am/ProcessRecord;->isolated:Z
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v10, ", userId="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v10, v1, Lcom/android/server/am/ProcessRecord;->userId:I
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v10, ", pers="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v10, v1, Lcom/android/server/am/ProcessRecord;->persistent:Z
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v10, ", pkg="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v10, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v10, v10, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v10, ", app.info.uid="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v10, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v10, v10, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v10, ", f=0x"
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v10, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v10, v10, Landroid/content/pm/ApplicationInfo;->flags:I
+
+    const/16 v11, 0x10
+
+    invoke-static {v10, v11}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v10, ", isSys="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v10, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v10, v10, Landroid/content/pm/ApplicationInfo;->flags:I
+
+    invoke-virtual {v7, v10}, Lcom/android/server/am/OnePlusHighPowerDetector;->hasSystemFlag(I)Z
+
+    move-result v10
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v10, ", isMulti="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v10, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v10, v10, Landroid/content/pm/ApplicationInfo;->flags:I
+
+    invoke-virtual {v7, v10}, Lcom/android/server/am/OnePlusHighPowerDetector;->isMultiArch(I)Z
+
+    move-result v10
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v10, ", sN="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Lcom/android/server/am/ProcessRecord;->toShortString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v2, v9}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_8
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_0
+    .catchall {:try_start_8 .. :try_end_8} :catchall_5
+
+    goto/16 :goto_7
+
+    :catchall_5
+    move-exception v0
+
+    move-object/from16 v23, v3
+
+    move-object v9, v4
+
+    move-object/from16 v24, v6
+
+    move-object/from16 v29, v8
+
+    move-object/from16 v32, v12
+
+    goto/16 :goto_1b
+
+    :catch_0
+    move-exception v0
+
+    move-object/from16 v23, v3
+
+    move-object v9, v4
+
+    move-object/from16 v24, v6
+
+    move-object/from16 v29, v8
+
+    move-object/from16 v32, v12
+
+    goto/16 :goto_19
+
+    :catchall_6
+    move-exception v0
+
+    move-wide/from16 v26, v10
+
+    move-object/from16 v23, v3
+
+    move-object v9, v4
+
+    move-object/from16 v24, v6
+
+    move-object/from16 v29, v8
+
+    move-object/from16 v32, v12
+
+    goto/16 :goto_1b
+
+    :catch_1
+    move-exception v0
+
+    move-wide/from16 v26, v10
+
+    move-object/from16 v23, v3
+
+    move-object v9, v4
+
+    move-object/from16 v24, v6
+
+    move-object/from16 v29, v8
+
+    move-object/from16 v32, v12
+
+    goto/16 :goto_19
+
+    :catchall_7
+    move-exception v0
+
+    move-object/from16 v25, v9
+
+    move-wide/from16 v26, v10
+
+    move-object/from16 v23, v3
+
+    move-object v9, v4
+
+    move-object/from16 v24, v6
+
+    move-object/from16 v29, v8
+
+    move-object/from16 v32, v12
+
+    goto/16 :goto_1b
+
+    :catch_2
+    move-exception v0
+
+    move-object/from16 v25, v9
+
+    move-wide/from16 v26, v10
+
+    move-object/from16 v23, v3
+
+    move-object v9, v4
+
+    move-object/from16 v24, v6
+
+    move-object/from16 v29, v8
+
+    move-object/from16 v32, v12
+
+    goto/16 :goto_19
+
+    :cond_7
+    move-object/from16 v24, v2
+
+    move-object/from16 v25, v9
+
+    move-wide/from16 v26, v10
+
+    :goto_7
+    :try_start_9
+    iget-object v2, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUidArray:Landroid/util/SparseArray;
+
+    iget-object v9, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v9, v9, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-virtual {v2, v9}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    if-nez v2, :cond_8
+
+    nop
+
+    :goto_8
+    move/from16 v28, v0
+
+    :goto_9
+    move-object v9, v4
+
+    move-object/from16 v29, v8
+
+    move-object/from16 v32, v12
+
+    move-object/from16 v11, v23
+
+    move-object/from16 v8, v24
+
+    move-object/from16 v23, v3
+
+    move-object v12, v5
+
+    move-object/from16 v24, v6
+
+    goto/16 :goto_f
+
+    :cond_8
+    iget-object v2, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v2, v2, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v4, v2}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
+
+    iget v2, v1, Lcom/android/server/am/ProcessRecord;->uid:I
+
+    invoke-static {v2}, Landroid/os/UserHandle;->isIsolated(I)Z
+
+    move-result v2
+    :try_end_9
+    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_3
+    .catchall {:try_start_9 .. :try_end_9} :catchall_8
+
+    if-nez v2, :cond_9
+
+    :try_start_a
+    iget-object v2, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v2, v2, Landroid/content/pm/ApplicationInfo;->flags:I
+
+    invoke-virtual {v7, v2}, Lcom/android/server/am/OnePlusHighPowerDetector;->hasSystemFlag(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_9
+
+    invoke-virtual {v7, v1}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkSmallAdjKillList(Lcom/android/server/am/ProcessRecord;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_9
+
+    iget-object v2, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v2, v2, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    invoke-virtual {v7, v2}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkGmsList(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_9
+
+    iget-object v2, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v2, v2, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v10, "proc "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v10, v1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v10, "(pid : "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v10, v1, Lcom/android/server/am/ProcessRecord;->pid:I
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v10, ") sys pkg"
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v7, v5, v2, v9}, Lcom/android/server/am/OnePlusHighPowerDetector;->updateSkipMap(Landroid/util/ArrayMap;ILjava/lang/String;)V
+    :try_end_a
+    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_0
+    .catchall {:try_start_a .. :try_end_a} :catchall_5
+
+    goto :goto_8
+
+    :cond_9
+    :try_start_b
+    iget-object v2, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v2, v2, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-static {v2}, Landroid/os/UserHandle;->getUserId(I)I
+
+    move-result v2
+
+    move v9, v2
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v10, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v10, v10, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v3, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+    :try_end_b
+    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_b} :catch_3
+    .catchall {:try_start_b .. :try_end_b} :catchall_8
+
+    if-eqz v2, :cond_a
+
+    :try_start_c
+    iget-object v2, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v2, v2, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v11, "proc "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v11, v1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v11, "(pid : "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v11, v1, Lcom/android/server/am/ProcessRecord;->pid:I
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v11, ") locked"
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual {v7, v5, v2, v10}, Lcom/android/server/am/OnePlusHighPowerDetector;->updateSkipMap(Landroid/util/ArrayMap;ILjava/lang/String;)V
+
+    goto/16 :goto_8
+
+    :cond_a
+    if-eqz v15, :cond_b
+
+    invoke-interface {v15}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-lez v2, :cond_b
+
+    iget-object v2, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v2, v2, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v15, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_b
+
+    iget-object v2, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v2, v2, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v11, "proc "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v11, v1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v11, "(pid : "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v11, v1, Lcom/android/server/am/ProcessRecord;->pid:I
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v11, ") active audio"
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual {v7, v5, v2, v10}, Lcom/android/server/am/OnePlusHighPowerDetector;->updateSkipMap(Landroid/util/ArrayMap;ILjava/lang/String;)V
+
+    goto/16 :goto_8
+
+    :cond_b
+    if-eqz v6, :cond_c
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, ":"
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v10, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v10, v10, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v6, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_c
+
+    iget v2, v1, Lcom/android/server/am/ProcessRecord;->setProcState:I
+
+    const/16 v10, 0xb
+
+    if-gt v2, v10, :cond_c
+
+    iget-object v2, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v2, v2, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v11, "proc "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v11, v1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v11, "(pid : "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v11, v1, Lcom/android/server/am/ProcessRecord;->pid:I
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v11, ") active pedometer sensor. Procstat "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v11, v1, Lcom/android/server/am/ProcessRecord;->setProcState:I
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual {v7, v5, v2, v10}, Lcom/android/server/am/OnePlusHighPowerDetector;->updateSkipMap(Landroid/util/ArrayMap;ILjava/lang/String;)V
+
+    goto/16 :goto_8
+
+    :cond_c
+    if-eqz v12, :cond_e
+
+    invoke-interface {v12}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-lez v2, :cond_e
+
+    invoke-interface {v12}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_a
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v10
+
+    if-eqz v10, :cond_e
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Ljava/lang/Integer;
+
+    invoke-virtual {v10}, Ljava/lang/Integer;->intValue()I
+
+    move-result v11
+
+    move/from16 v28, v0
+
+    iget-object v0, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v0, v0, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    if-ne v11, v0, :cond_d
+
+    invoke-virtual {v10}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    const-string v11, "has alert window"
+
+    invoke-virtual {v7, v5, v0, v11}, Lcom/android/server/am/OnePlusHighPowerDetector;->updateSkipMap(Landroid/util/ArrayMap;ILjava/lang/String;)V
+    :try_end_c
+    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_c} :catch_0
+    .catchall {:try_start_c .. :try_end_c} :catchall_5
+
+    goto :goto_b
+
+    :cond_d
+    nop
+
+    :goto_b
+    move/from16 v0, v28
+
+    goto :goto_a
+
+    :cond_e
+    move/from16 v28, v0
+
+    :try_start_d
+    invoke-interface {v13}, Ljava/util/List;->size()I
+
+    move-result v0
+    :try_end_d
+    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_d} :catch_3
+    .catchall {:try_start_d .. :try_end_d} :catchall_8
+
+    if-lez v0, :cond_10
+
+    :try_start_e
+    invoke-interface {v13}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_c
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_10
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Integer;
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v10
+
+    iget-object v11, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v11, v11, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    if-ne v10, v11, :cond_f
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v10
+
+    const-string v11, "has visible window"
+
+    invoke-virtual {v7, v5, v10, v11}, Lcom/android/server/am/OnePlusHighPowerDetector;->updateSkipMap(Landroid/util/ArrayMap;ILjava/lang/String;)V
+
+    goto :goto_c
+
+    :cond_f
+    goto :goto_c
+
+    :cond_10
+    if-eqz v8, :cond_11
+
+    iget-object v0, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    invoke-virtual {v8, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_11
+
+    iget-object v0, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v0, v0, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v10, "proc "
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v10, v1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v10, "(pid : "
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v10, v1, Lcom/android/server/am/ProcessRecord;->pid:I
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v10, ") current IME"
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v7, v5, v0, v2}, Lcom/android/server/am/OnePlusHighPowerDetector;->updateSkipMap(Landroid/util/ArrayMap;ILjava/lang/String;)V
+    :try_end_e
+    .catch Ljava/lang/Exception; {:try_start_e .. :try_end_e} :catch_0
+    .catchall {:try_start_e .. :try_end_e} :catchall_5
+
+    goto/16 :goto_9
+
+    :cond_11
+    :try_start_f
+    iget-object v0, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUsingTrafficUidSet:Ljava/util/HashSet;
+    :try_end_f
+    .catch Ljava/lang/Exception; {:try_start_f .. :try_end_f} :catch_3
+    .catchall {:try_start_f .. :try_end_f} :catchall_8
+
+    if-eqz v0, :cond_12
+
+    :try_start_10
+    iget-object v0, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUsingTrafficUidSet:Ljava/util/HashSet;
+
+    invoke-virtual {v0}, Ljava/util/HashSet;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_12
+
+    iget-object v0, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUsingTrafficUidSet:Ljava/util/HashSet;
+
+    iget-object v2, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v2, v2, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_12
+
+    iget-object v0, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v0, v0, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v10, "proc "
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v10, v1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v10, "(pid : "
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v10, v1, Lcom/android/server/am/ProcessRecord;->pid:I
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v10, ") current using network"
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v7, v5, v0, v2}, Lcom/android/server/am/OnePlusHighPowerDetector;->updateSkipMap(Landroid/util/ArrayMap;ILjava/lang/String;)V
+    :try_end_10
+    .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_10} :catch_0
+    .catchall {:try_start_10 .. :try_end_10} :catchall_5
+
+    goto/16 :goto_9
+
+    :cond_12
+    :try_start_11
+    new-instance v0, Ljava/lang/StringBuffer;
+
+    invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
+
+    iget-object v2, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mOnePlusBGController:Lcom/android/server/am/OnePlusBGController;
+
+    iget-object v10, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v10, v10, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    iget v11, v1, Lcom/android/server/am/ProcessRecord;->setProcState:I
+
+    invoke-virtual {v2, v10, v11}, Lcom/android/server/am/OnePlusBGController;->needCheckProc(II)Z
+
+    move-result v2
+    :try_end_11
+    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_11} :catch_3
+    .catchall {:try_start_11 .. :try_end_11} :catchall_8
+
+    if-nez v2, :cond_15
+
+    :try_start_12
+    invoke-virtual {v7, v1}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkBlackList(Lcom/android/server/am/ProcessRecord;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_15
+
+    invoke-virtual {v7, v1}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkSmallAdjKillList(Lcom/android/server/am/ProcessRecord;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_15
+
+    invoke-virtual {v7, v1}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkBlackExList(Lcom/android/server/am/ProcessRecord;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_13
+
+    goto :goto_d
+
+    :cond_13
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v10, "proc "
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v10, v1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v10, "(pid : "
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v10, v1, Lcom/android/server/am/ProcessRecord;->pid:I
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v10, ") stat "
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v10, v1, Lcom/android/server/am/ProcessRecord;->setProcState:I
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    iget-object v2, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v2, v2, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual {v7, v5, v2, v10}, Lcom/android/server/am/OnePlusHighPowerDetector;->updateSkipMap(Landroid/util/ArrayMap;ILjava/lang/String;)V
+
+    sget-boolean v2, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG:Z
+
+    if-eqz v2, :cond_14
+
+    const-string v2, "OHPD"
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v11, "[BGC] 2. Skip due to "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v2, v10}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_12
+    .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_12} :catch_0
+    .catchall {:try_start_12 .. :try_end_12} :catchall_5
+
+    :cond_14
+    move-object v9, v4
+
+    move-object/from16 v29, v8
+
+    move-object/from16 v32, v12
+
+    move-object/from16 v11, v23
+
+    move-object/from16 v8, v24
+
+    move-object/from16 v23, v3
+
+    move-object v12, v5
+
+    move-object/from16 v24, v6
+
+    goto :goto_e
+
+    :cond_15
+    :goto_d
+    :try_start_13
+    sget v10, Lcom/android/server/am/OnePlusHighPowerDetector;->BGC_APP_LAST_FOREGROUND_TIME_THRESHOLD:I
+    :try_end_13
+    .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_13} :catch_3
+    .catchall {:try_start_13 .. :try_end_13} :catchall_8
+
+    move-object v2, v1
+
+    move-object/from16 v11, v23
+
+    move-object v1, v7
+
+    move-object/from16 v30, v2
+
+    move-object/from16 v29, v8
+
+    move-object/from16 v8, v24
+
+    move-object/from16 v23, v3
+
+    move/from16 v31, v9
+
+    move-object v9, v4
+
+    move-wide/from16 v3, v26
+
+    move-object/from16 v32, v12
+
+    move-object v12, v5
+
+    move-object v5, v0
+
+    move-object/from16 v24, v6
+
+    move v6, v10
+
+    :try_start_14
+    invoke-direct/range {v1 .. v6}, Lcom/android/server/am/OnePlusHighPowerDetector;->skipCheckForBGCAbn(Lcom/android/server/am/ProcessRecord;JLjava/lang/StringBuffer;I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_17
+
+    sget-boolean v1, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG:Z
+
+    if-eqz v1, :cond_16
+
+    const-string v1, "OHPD"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "[BGC] 1. Skip due to "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_16
+    move-object/from16 v1, v30
+
+    iget-object v2, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v2, v2, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v7, v12, v2, v3}, Lcom/android/server/am/OnePlusHighPowerDetector;->updateSkipMap(Landroid/util/ArrayMap;ILjava/lang/String;)V
+
+    goto :goto_f
+
+    :cond_17
+    move-object/from16 v1, v30
+
+    invoke-interface {v8, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :goto_e
+    nop
+
+    :goto_f
+    move-object v2, v8
+
+    move-object v4, v9
+
+    move-object v1, v11
+
+    move-object v5, v12
+
+    move-object/from16 v3, v23
+
+    move-object/from16 v6, v24
+
+    move-object/from16 v9, v25
+
+    move-wide/from16 v10, v26
+
+    move/from16 v0, v28
+
+    move-object/from16 v8, v29
+
+    move-object/from16 v12, v32
+
+    goto/16 :goto_6
+
+    :catchall_8
+    move-exception v0
+
+    move-object/from16 v23, v3
+
+    move-object v9, v4
+
+    move-object/from16 v24, v6
+
+    move-object/from16 v29, v8
+
+    move-object/from16 v32, v12
+
+    goto/16 :goto_1b
+
+    :catch_3
+    move-exception v0
+
+    move-object/from16 v23, v3
+
+    move-object v9, v4
+
+    move-object/from16 v24, v6
+
+    move-object/from16 v29, v8
+
+    move-object/from16 v32, v12
+
+    goto/16 :goto_19
+
+    :cond_18
+    move-object/from16 v23, v3
+
+    move-object/from16 v24, v6
+
+    move-object/from16 v29, v8
+
+    move-object/from16 v25, v9
+
+    move-wide/from16 v26, v10
+
+    move-object/from16 v32, v12
+
+    move-object v11, v1
+
+    move-object v8, v2
+
+    move-object v9, v4
+
+    move-object v12, v5
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    move-object v1, v0
+
+    iget-object v0, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mAppForkedProcMap:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_1d
+
+    iget-object v2, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mAppForkedProcMap:Ljava/util/HashMap;
+
+    monitor-enter v2
+    :try_end_14
+    .catch Ljava/lang/Exception; {:try_start_14 .. :try_end_14} :catch_4
+    .catchall {:try_start_14 .. :try_end_14} :catchall_b
+
+    :try_start_15
+    iget-object v0, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mAppForkedProcMap:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_10
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1c
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;
+
+    iget-object v4, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUidArray:Landroid/util/SparseArray;
+
+    iget v5, v3, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->uid:I
+
+    invoke-virtual {v4, v5}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    if-nez v4, :cond_19
+
+    goto :goto_10
+
+    :cond_19
+    iget v4, v3, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->uid:I
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-virtual {v9, v4}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
+
+    iget v4, v3, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->flags:I
+
+    invoke-virtual {v7, v4}, Lcom/android/server/am/OnePlusHighPowerDetector;->hasSystemFlag(I)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1a
+
+    goto :goto_10
+
+    :cond_1a
+    invoke-virtual {v7, v3}, Lcom/android/server/am/OnePlusHighPowerDetector;->isForkedProcInBGCWhiteList(Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1b
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "[BGC] skip forked fproc "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v6, v3, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->name:Ljava/lang/String;
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v6, "(uid "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v6, v3, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->uid:I
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v6, "), reason= white list"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v5}, Lcom/android/server/am/OnePlusHighPowerDetector;->myLog(Ljava/lang/String;)V
+
+    goto :goto_10
+
+    :cond_1b
+    invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_10
+
+    :cond_1c
+    monitor-exit v2
+
+    goto :goto_11
+
+    :catchall_9
+    move-exception v0
+
+    monitor-exit v2
+    :try_end_15
+    .catchall {:try_start_15 .. :try_end_15} :catchall_9
+
+    :try_start_16
+    throw v0
+
+    :cond_1d
+    :goto_11
+    sget-boolean v0, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG:Z
+
+    if-eqz v0, :cond_1e
+
+    move/from16 v0, v16
+
+    :goto_12
+    invoke-virtual {v12}, Landroid/util/ArrayMap;->size()I
+
+    move-result v2
+
+    if-ge v0, v2, :cond_1e
+
+    invoke-virtual {v12, v0}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Integer;
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    invoke-virtual {v12, v0}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    const-string v4, "OHPD"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "[BGC] uid:"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v6, ", skipped reason="
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_12
+
+    :cond_1e
+    sget-boolean v0, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG:Z
+
+    if-eqz v0, :cond_1f
+
+    invoke-virtual {v9}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_13
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1f
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Integer;
+
+    const-string v3, "OHPD"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "[BGC] uid:"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v5, ", skipped reason=no running proc"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_13
+
+    :cond_1f
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    move/from16 v2, v16
+
+    :goto_14
+    invoke-interface {v8}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    if-ge v2, v3, :cond_23
+
+    invoke-interface {v8, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/android/server/am/ProcessRecord;
+
+    iget-object v4, v3, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v4, v4, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-virtual {v12, v4}, Landroid/util/ArrayMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_21
+
+    iget-object v4, v3, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v4, v4, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-virtual {v11, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    iget-object v4, v3, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v4, v4, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    move-object/from16 v5, v21
+
+    invoke-virtual {v5, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    iget-object v4, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUidArray:Landroid/util/SparseArray;
+
+    iget-object v6, v3, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v6, v6, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-virtual {v4, v6}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_22
+
+    iget-object v4, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUidArray:Landroid/util/SparseArray;
+
+    iget-object v6, v3, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v6, v6, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-virtual {v4, v6}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/Boolean;
+
+    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_20
+
+    iget-object v6, v3, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v6, v6, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v0, v6}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_22
+
+    iget-object v6, v3, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v6, v6, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-static {v6}, Landroid/os/UserHandle;->getUserId(I)I
+
+    move-result v6
+
+    iget-object v10, v3, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v10, v10, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    invoke-direct {v7, v10, v6}, Lcom/android/server/am/OnePlusHighPowerDetector;->forceStopPackage(Ljava/lang/String;I)V
+
+    const-string v10, "OHPD"
+
+    move/from16 v33, v4
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    move/from16 v34, v6
+
+    const-string v6, "[BGC]force stop "
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v6, v3, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v6, v6, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v6, " (uid "
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v6, v3, Lcom/android/server/am/ProcessRecord;->uid:I
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v6, ")"
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v10, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v4, v3, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v4, v4, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    goto :goto_15
+
+    :cond_20
+    move/from16 v33, v4
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "[BGC] kill "
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v6, v3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v6, " (uid "
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v6, v3, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v6, v6, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v6, ")"
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    const/4 v6, 0x1
+
+    invoke-virtual {v3, v4, v6}, Lcom/android/server/am/ProcessRecord;->kill(Ljava/lang/String;Z)V
+
+    goto :goto_15
+
+    :cond_21
+    move-object/from16 v5, v21
+
+    :cond_22
+    :goto_15
+    add-int/lit8 v2, v2, 0x1
+
+    move-object/from16 v21, v5
+
+    goto/16 :goto_14
+
+    :cond_23
+    move-object/from16 v5, v21
+
+    :goto_16
+    move/from16 v2, v16
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    if-ge v2, v3, :cond_26
+
+    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;
+
+    iget v4, v3, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->uid:I
+
+    invoke-static {v4}, Landroid/os/UserHandle;->getUserId(I)I
+
+    move-result v4
+
+    iget v6, v3, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->uid:I
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v12, v6}, Landroid/util/ArrayMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_25
+
+    iget v6, v3, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->uid:I
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v11, v6}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    iget-object v6, v3, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->pkgName:Ljava/lang/String;
+
+    if-eqz v6, :cond_24
+
+    iget-object v6, v3, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->pkgName:Ljava/lang/String;
+
+    invoke-virtual {v5, v6}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    :cond_24
+    sget-object v6, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
+
+    iget v10, v3, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->uid:I
+
+    invoke-static {v10}, Landroid/os/UserHandle;->getAppId(I)I
+
+    move-result v10
+
+    move-object/from16 v35, v0
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    move-object/from16 v36, v1
+
+    const-string v1, "[BGC] kill forked "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, v3, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->pkgName:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, " (uid "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, v3, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->uid:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ")"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v6, v10, v4, v0}, Lcom/android/server/am/ActivityManagerService;->killUid(IILjava/lang/String;)V
+
+    goto :goto_17
+
+    :cond_25
+    move-object/from16 v35, v0
+
+    move-object/from16 v36, v1
+
+    :goto_17
+    add-int/lit8 v16, v2, 0x1
+
+    move-object/from16 v0, v35
+
+    move-object/from16 v1, v36
+
+    goto :goto_16
+
+    :cond_26
+    move-object/from16 v35, v0
+
+    move-object/from16 v36, v1
+
+    invoke-virtual {v11}, Ljava/util/HashSet;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_29
+
+    sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->IN_USING:Z
+
+    if-eqz v0, :cond_28
+
+    invoke-virtual {v5}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_18
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_28
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    sget-boolean v2, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG:Z
+
+    if-eqz v2, :cond_27
+
+    const-string v2, "OHPD"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "[BGC] notify killed pkg :"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_27
+    const/4 v2, 0x0
+
+    invoke-static {v2}, Lcom/android/server/am/OnePlusAppBootManager;->getInstance(Lcom/android/server/pm/PackageManagerService;)Lcom/android/server/am/OnePlusAppBootManager;
+
+    move-result-object v2
+
+    const v3, 0x8000
+
+    invoke-virtual {v2, v1, v3}, Lcom/android/server/am/OnePlusAppBootManager;->updatePowerFlag(Ljava/lang/String;I)V
+
+    goto :goto_18
+
+    :cond_28
+    iget-object v0, v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mOnePlusBGController:Lcom/android/server/am/OnePlusBGController;
+
+    invoke-virtual {v0, v11}, Lcom/android/server/am/OnePlusBGController;->resetKillUidBudgets(Ljava/util/HashSet;)V
+    :try_end_16
+    .catch Ljava/lang/Exception; {:try_start_16 .. :try_end_16} :catch_4
+    .catchall {:try_start_16 .. :try_end_16} :catchall_b
+
+    :cond_29
+    goto :goto_1a
+
+    :catch_4
+    move-exception v0
+
+    goto :goto_19
+
+    :catchall_a
+    move-exception v0
+
+    move-object/from16 v23, v3
+
+    move-object/from16 v24, v6
+
+    move-object/from16 v29, v8
+
+    move-object/from16 v25, v9
+
+    move-wide/from16 v26, v10
+
+    move-object/from16 v32, v12
+
+    move-object v9, v4
+
+    goto :goto_1b
+
+    :catch_5
+    move-exception v0
+
+    move-object/from16 v23, v3
+
+    move-object/from16 v24, v6
+
+    move-object/from16 v29, v8
+
+    move-object/from16 v25, v9
+
+    move-wide/from16 v26, v10
+
+    move-object/from16 v32, v12
+
+    move-object v9, v4
+
+    :goto_19
+    :try_start_17
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    const-string v1, "OHPD"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "[BGC] got exception "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_1a
+    monitor-exit v14
+    :try_end_17
+    .catchall {:try_start_17 .. :try_end_17} :catchall_b
+
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
+
+    sget-boolean v0, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG:Z
+
+    if-eqz v0, :cond_2a
+
+    const-string v0, "OHPD"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "[BGC] checkAbnBgKillLocked in "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v2
+
+    sub-long v2, v2, v19
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v2, " ms"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_2a
+    return-void
+
+    :catchall_b
+    move-exception v0
+
+    :goto_1b
+    :try_start_18
+    monitor-exit v14
+    :try_end_18
+    .catchall {:try_start_18 .. :try_end_18} :catchall_b
+
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
+
+    throw v0
+
+    :cond_2b
+    move-wide/from16 v19, v8
+
+    :goto_1c
+    return-void
+.end method
+
 .method private checkExcessiveCpuUsageLocked(II)I
-    .locals 154
+    .locals 155
 
     move-object/from16 v15, p0
 
@@ -1363,7 +4003,7 @@
 
     aget-wide v18, v0, v14
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_83
+    .catchall {:try_start_0 .. :try_end_0} :catchall_81
 
     move/from16 v26, v9
 
@@ -1394,7 +4034,7 @@
 
     if-nez v0, :cond_2
 
-    goto :goto_0
+    goto :goto_1
 
     :catchall_0
     move-exception v0
@@ -1405,22 +4045,23 @@
 
     move-object/from16 v37, v4
 
-    move-object v3, v8
-
-    move-object/from16 v23, v11
+    move-object v9, v8
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v22, v27
 
-    goto/16 :goto_ac
+    :goto_0
+    move-object/from16 v27, v11
+
+    goto/16 :goto_b3
 
     :cond_1
-    :goto_0
+    :goto_1
     const/4 v1, 0x0
 
     :cond_2
@@ -1437,7 +4078,7 @@
 
     aget-wide v0, v0, v14
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_82
+    .catchall {:try_start_2 .. :try_end_2} :catchall_80
 
     move-object/from16 v32, v8
 
@@ -1448,14 +4089,14 @@
 
     move-result-wide v0
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_81
+    .catchall {:try_start_3 .. :try_end_3} :catchall_7f
 
     move/from16 v35, v10
 
     :try_start_4
     iget-wide v9, v15, Lcom/android/server/am/OnePlusHighPowerDetector;->mLastBgDetectCleanUpTime:J
     :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_80
+    .catchall {:try_start_4 .. :try_end_4} :catchall_7e
 
     const-wide/16 v18, 0x0
 
@@ -1468,7 +4109,7 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    goto :goto_2
+    goto :goto_3
 
     :catchall_1
     move-exception v0
@@ -1479,28 +4120,26 @@
 
     move-object/from16 v37, v4
 
-    :goto_1
-    move-object/from16 v23, v11
-
+    :goto_2
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move/from16 v1, v35
 
-    goto/16 :goto_ac
+    goto :goto_0
 
     :cond_3
     :try_start_6
     iget-wide v9, v15, Lcom/android/server/am/OnePlusHighPowerDetector;->mLastBgDetectCleanUpTime:J
     :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_80
+    .catchall {:try_start_6 .. :try_end_6} :catchall_7e
 
     sub-long v9, v0, v9
 
@@ -1516,7 +4155,7 @@
     .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
     :cond_4
-    :goto_2
+    :goto_3
     int-to-long v9, v13
 
     cmp-long v9, v7, v9
@@ -1605,7 +4244,7 @@
 
     move/from16 v47, v2
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_5
     const-wide/16 v3, 0x3e8
@@ -1613,7 +4252,7 @@
     :try_start_9
     monitor-exit v6
     :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_7f
+    .catchall {:try_start_9 .. :try_end_9} :catchall_7d
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
@@ -1733,7 +4372,7 @@
 
     move-result-object v1
 
-    :goto_3
+    :goto_4
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
@@ -1768,7 +4407,7 @@
 
     move-object/from16 v0, v46
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_6
     move-object/from16 v46, v0
@@ -1777,7 +4416,7 @@
 
     move-object/from16 v3, v46
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_7
     move-object/from16 v45, v0
@@ -1788,7 +4427,7 @@
 
     move-object/from16 v3, v45
 
-    :goto_4
+    :goto_5
     if-nez v14, :cond_d
 
     sget-object v1, Lcom/android/server/am/OnePlusHighPowerDetector;->sBattUpdteLock:Ljava/lang/Object;
@@ -1830,7 +4469,7 @@
 
     const/4 v2, 0x1
 
-    goto :goto_6
+    goto :goto_7
 
     :catchall_3
     move-exception v0
@@ -1839,10 +4478,10 @@
 
     move/from16 v3, v36
 
-    :goto_5
+    :goto_6
     move/from16 v2, v47
 
-    goto/16 :goto_c
+    goto/16 :goto_d
 
     :catchall_4
     move-exception v0
@@ -1853,7 +4492,7 @@
 
     move/from16 v3, v36
 
-    goto/16 :goto_c
+    goto/16 :goto_d
 
     :cond_8
     move/from16 v47, v2
@@ -1861,7 +4500,7 @@
     :cond_9
     move/from16 v2, v36
 
-    :goto_6
+    :goto_7
     :try_start_d
     iput v0, v15, Lcom/android/server/am/OnePlusHighPowerDetector;->mLastDevTemp:I
 
@@ -1884,7 +4523,7 @@
 
     const/4 v2, 0x1
 
-    goto :goto_7
+    goto :goto_8
 
     :catchall_5
     move-exception v0
@@ -1893,10 +4532,10 @@
 
     move v3, v2
 
-    goto :goto_5
+    goto :goto_6
 
     :cond_a
-    :goto_7
+    :goto_8
     :try_start_f
     iget-boolean v4, v15, Lcom/android/server/am/OnePlusHighPowerDetector;->mIsPowerDrain:Z
     :try_end_f
@@ -1911,7 +4550,7 @@
 
     if-lt v0, v4, :cond_b
 
-    goto :goto_8
+    goto :goto_9
 
     :cond_b
     move/from16 v48, v2
@@ -1920,10 +4559,10 @@
 
     move/from16 v2, v47
 
-    goto :goto_9
+    goto :goto_a
 
     :cond_c
-    :goto_8
+    :goto_9
     :try_start_11
     const-string v4, "OHPD"
     :try_end_11
@@ -1959,7 +4598,7 @@
 
     move v2, v0
 
-    :goto_9
+    :goto_a
     :try_start_14
     monitor-exit v1
     :try_end_14
@@ -1967,22 +4606,22 @@
 
     move v3, v2
 
-    goto :goto_d
+    goto :goto_e
 
     :catchall_6
     move-exception v0
 
-    :goto_a
+    :goto_b
     move/from16 v3, v48
 
-    goto :goto_c
+    goto :goto_d
 
     :catchall_7
     move-exception v0
 
     move/from16 v2, v47
 
-    goto :goto_a
+    goto :goto_b
 
     :catchall_8
     move-exception v0
@@ -1993,7 +4632,7 @@
 
     move/from16 v3, v48
 
-    goto :goto_b
+    goto :goto_c
 
     :catchall_9
     move-exception v0
@@ -2006,7 +4645,7 @@
 
     move/from16 v3, v48
 
-    goto :goto_c
+    goto :goto_d
 
     :catchall_a
     move-exception v0
@@ -2017,8 +4656,8 @@
 
     move/from16 v2, v47
 
-    :goto_b
-    goto :goto_c
+    :goto_c
+    goto :goto_d
 
     :catchall_b
     move-exception v0
@@ -2029,7 +4668,7 @@
 
     move/from16 v3, v36
 
-    :goto_c
+    :goto_d
     :try_start_15
     monitor-exit v1
     :try_end_15
@@ -2040,7 +4679,7 @@
     :catchall_c
     move-exception v0
 
-    goto :goto_c
+    goto :goto_d
 
     :cond_d
     move/from16 v47, v2
@@ -2051,7 +4690,7 @@
 
     move/from16 v3, v47
 
-    :goto_d
+    :goto_e
     sget-object v33, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v33
@@ -2079,7 +4718,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :try_end_16
-    .catchall {:try_start_16 .. :try_end_16} :catchall_7d
+    .catchall {:try_start_16 .. :try_end_16} :catchall_7b
 
     move/from16 v4, v35
 
@@ -2144,7 +4783,7 @@
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
     :try_end_17
-    .catchall {:try_start_17 .. :try_end_17} :catchall_7c
+    .catchall {:try_start_17 .. :try_end_17} :catchall_7a
 
     move-object/from16 v54, v0
 
@@ -2170,7 +4809,7 @@
 
     monitor-exit v2
 
-    goto :goto_e
+    goto :goto_10
 
     :catchall_d
     move-exception v0
@@ -2197,34 +4836,31 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move-object v12, v13
-
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
-
     move-object v14, v5
 
-    goto/16 :goto_ab
+    :goto_f
+    move-object/from16 v27, v11
+
+    move-object/from16 v11, v49
+
+    goto/16 :goto_b2
 
     :cond_e
     move-object/from16 v55, v2
 
-    :goto_e
+    :goto_10
     const/4 v2, 0x1
 
     if-ne v14, v2, :cond_f
@@ -2246,7 +4882,7 @@
 
     monitor-exit v2
 
-    goto :goto_f
+    goto :goto_11
 
     :catchall_f
     move-exception v0
@@ -2259,7 +4895,7 @@
     throw v0
 
     :cond_f
-    :goto_f
+    :goto_11
     const/4 v2, 0x2
 
     if-ne v14, v2, :cond_10
@@ -2281,7 +4917,7 @@
 
     monitor-exit v2
 
-    goto :goto_10
+    goto :goto_12
 
     :catchall_10
     move-exception v0
@@ -2296,7 +4932,7 @@
     .catchall {:try_start_1e .. :try_end_1e} :catchall_e
 
     :cond_10
-    :goto_10
+    :goto_12
     :try_start_1f
     sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
 
@@ -2306,10 +4942,10 @@
 
     move-result v0
     :try_end_1f
-    .catch Ljava/lang/Exception; {:try_start_1f .. :try_end_1f} :catch_88
-    .catchall {:try_start_1f .. :try_end_1f} :catchall_7c
+    .catch Ljava/lang/Exception; {:try_start_1f .. :try_end_1f} :catch_87
+    .catchall {:try_start_1f .. :try_end_1f} :catchall_7a
 
-    :goto_11
+    :goto_13
     move/from16 v18, v0
 
     const-wide/16 v19, 0x64
@@ -2452,7 +5088,7 @@
     .catch Ljava/lang/Exception; {:try_start_25 .. :try_end_25} :catch_0
     .catchall {:try_start_25 .. :try_end_25} :catchall_11
 
-    goto/16 :goto_12
+    goto/16 :goto_14
 
     :catch_0
     move-exception v0
@@ -2461,7 +5097,7 @@
 
     move/from16 v39, v4
 
-    move-object/from16 v37, v5
+    move-object/from16 v36, v5
 
     move-object/from16 v41, v6
 
@@ -2471,41 +5107,35 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v10, v52
 
-    move-object/from16 v147, v52
-
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
     move-object/from16 v32, v54
 
     move-object/from16 v20, v55
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v14, v59
 
     move-object v15, v1
 
-    goto/16 :goto_a4
+    goto/16 :goto_17
 
     :catchall_11
     move-exception v0
@@ -2522,29 +5152,23 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
-
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v14, v59
 
-    goto/16 :goto_ab
+    goto/16 :goto_f
 
     :catch_1
     move-exception v0
@@ -2561,48 +5185,46 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
+    move-object/from16 v36, v50
 
-    move-object/from16 v37, v50
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v10, v52
 
-    move-object/from16 v147, v52
-
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
     move-object/from16 v32, v54
 
     move-object/from16 v20, v55
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v14, v59
 
     move-object v15, v1
 
-    goto/16 :goto_a4
+    move-object/from16 v27, v11
+
+    move-object/from16 v11, v49
+
+    goto/16 :goto_aa
 
     :cond_11
     move-object/from16 v5, v50
 
-    :goto_12
+    :goto_14
     if-nez v14, :cond_14
 
     :try_start_26
@@ -2710,12 +5332,12 @@
 
     invoke-static {v2, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_13
+    goto/16 :goto_15
 
     :cond_12
     move-wide/from16 v63, v7
 
-    goto/16 :goto_13
+    goto/16 :goto_15
 
     :catchall_12
     move-exception v0
@@ -2730,31 +5352,29 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
-
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v14, v59
 
     move-object/from16 v41, v61
 
-    goto/16 :goto_ab
+    move-object/from16 v27, v11
+
+    move-object/from16 v11, v49
+
+    goto/16 :goto_b2
 
     :catch_2
     move-exception v0
@@ -2769,35 +5389,29 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v10, v52
 
-    move-object/from16 v147, v52
-
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
     move-object/from16 v32, v54
 
     move-object/from16 v20, v55
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v14, v59
 
@@ -2805,9 +5419,13 @@
 
     move-object/from16 v41, v61
 
-    move-object/from16 v37, v62
+    move-object/from16 v36, v62
 
-    goto/16 :goto_a4
+    move-object/from16 v27, v11
+
+    move-object/from16 v11, v49
+
+    goto/16 :goto_aa
 
     :catch_3
     move-exception v0
@@ -2816,7 +5434,7 @@
 
     move/from16 v39, v4
 
-    move-object/from16 v37, v5
+    move-object/from16 v36, v5
 
     move-object/from16 v41, v6
 
@@ -2826,41 +5444,39 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v10, v52
 
-    move-object/from16 v147, v52
-
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
     move-object/from16 v32, v54
 
     move-object/from16 v20, v55
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v14, v59
 
     move-object/from16 v15, v60
 
-    goto/16 :goto_a4
+    move-object/from16 v27, v11
+
+    move-object/from16 v11, v49
+
+    goto/16 :goto_aa
 
     :cond_13
     move-object/from16 v60, v1
@@ -2871,10 +5487,10 @@
 
     move-wide/from16 v63, v7
 
-    :goto_13
+    :goto_15
     invoke-virtual {v15, v13, v14}, Lcom/android/server/am/OnePlusHighPowerDetector;->updateProcUsg(Lcom/android/server/am/ProcessRecord;I)V
 
-    goto/16 :goto_14
+    goto/16 :goto_16
 
     :catch_4
     move-exception v0
@@ -2883,7 +5499,7 @@
 
     move/from16 v39, v4
 
-    move-object/from16 v37, v5
+    move-object/from16 v36, v5
 
     move-object/from16 v41, v6
 
@@ -2893,41 +5509,39 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v10, v52
 
-    move-object/from16 v147, v52
-
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
     move-object/from16 v32, v54
 
     move-object/from16 v20, v55
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v14, v59
 
     move-object v15, v1
 
-    goto/16 :goto_a4
+    move-object/from16 v27, v11
+
+    move-object/from16 v11, v49
+
+    goto/16 :goto_aa
 
     :cond_14
     move/from16 v40, v3
@@ -2972,7 +5586,7 @@
 
     move-object v10, v1
 
-    goto/16 :goto_33
+    goto/16 :goto_35
 
     :catchall_13
     move-exception v0
@@ -2989,29 +5603,27 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
-
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v14, v59
 
-    goto/16 :goto_ab
+    move-object/from16 v27, v11
+
+    move-object/from16 v11, v49
+
+    goto/16 :goto_b2
 
     :catch_5
     move-exception v0
@@ -3028,43 +5640,41 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
+    move-object/from16 v36, v50
 
-    move-object/from16 v37, v50
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v10, v52
 
-    move-object/from16 v147, v52
-
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
     move-object/from16 v32, v54
 
     move-object/from16 v20, v55
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v14, v59
 
     move-object v15, v1
 
-    goto/16 :goto_a4
+    move-object/from16 v27, v11
+
+    move-object/from16 v11, v49
+
+    goto/16 :goto_aa
 
     :catchall_14
     move-exception v0
@@ -3081,29 +5691,27 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
-
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object v14, v5
 
-    goto/16 :goto_ab
+    move-object/from16 v27, v11
+
+    move-object/from16 v11, v49
+
+    goto/16 :goto_b2
 
     :catch_6
     move-exception v0
@@ -3120,43 +5728,41 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
+    move-object/from16 v36, v50
 
-    move-object/from16 v37, v50
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v10, v52
 
-    move-object/from16 v147, v52
-
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
     move-object/from16 v32, v54
 
     move-object/from16 v20, v55
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object v15, v1
 
     move-object v14, v5
 
-    goto/16 :goto_a4
+    move-object/from16 v27, v11
+
+    move-object/from16 v11, v49
+
+    goto/16 :goto_aa
 
     :cond_15
     move-object/from16 v60, v1
@@ -3180,7 +5786,7 @@
 
     nop
 
-    :goto_14
+    :goto_16
     move/from16 v40, v3
 
     move/from16 v39, v4
@@ -3223,7 +5829,7 @@
 
     move-wide/from16 v75, v63
 
-    goto/16 :goto_33
+    goto/16 :goto_35
 
     :catchall_15
     move-exception v0
@@ -3236,25 +5842,19 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
-
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v14, v59
 
@@ -3262,7 +5862,7 @@
 
     move-wide/from16 v42, v63
 
-    goto/16 :goto_ab
+    goto/16 :goto_f
 
     :catch_7
     move-exception v0
@@ -3275,35 +5875,29 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v10, v52
 
-    move-object/from16 v147, v52
-
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
     move-object/from16 v32, v54
 
     move-object/from16 v20, v55
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v14, v59
 
@@ -3311,11 +5905,16 @@
 
     move-object/from16 v41, v61
 
-    move-object/from16 v37, v62
+    move-object/from16 v36, v62
 
     move-wide/from16 v42, v63
 
-    goto/16 :goto_a4
+    :goto_17
+    move-object/from16 v27, v11
+
+    move-object/from16 v11, v49
+
+    goto/16 :goto_aa
 
     :cond_16
     :try_start_2a
@@ -3354,7 +5953,7 @@
     .catch Ljava/lang/Exception; {:try_start_2c .. :try_end_2c} :catch_8
     .catchall {:try_start_2c .. :try_end_2c} :catchall_15
 
-    goto/16 :goto_15
+    goto/16 :goto_18
 
     :catch_8
     move-exception v0
@@ -3367,33 +5966,27 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v10, v52
 
-    move-object/from16 v147, v52
-
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
     move-object/from16 v20, v55
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v14, v59
 
@@ -3401,13 +5994,13 @@
 
     move-object/from16 v41, v61
 
-    move-object/from16 v37, v62
+    move-object/from16 v36, v62
 
     move-wide/from16 v42, v63
 
     move-object/from16 v32, v8
 
-    goto/16 :goto_a4
+    goto :goto_17
 
     :catch_9
     move-exception v0
@@ -3420,35 +6013,29 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v10, v52
 
-    move-object/from16 v147, v52
-
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
     move-object/from16 v32, v54
 
     move-object/from16 v20, v55
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v14, v59
 
@@ -3456,16 +6043,20 @@
 
     move-object/from16 v41, v61
 
-    move-object/from16 v37, v62
+    move-object/from16 v36, v62
 
     move-wide/from16 v42, v63
 
-    goto/16 :goto_a4
+    move-object/from16 v27, v11
+
+    move-object/from16 v11, v49
+
+    goto/16 :goto_aa
 
     :cond_17
     move-object/from16 v8, v54
 
-    :goto_15
+    :goto_18
     :try_start_2d
     iget-wide v0, v13, Lcom/android/server/am/ProcessRecord;->curCpuTimeBgMonitor:J
 
@@ -3613,28 +6204,52 @@
     .catch Ljava/lang/Exception; {:try_start_32 .. :try_end_32} :catch_a
     .catchall {:try_start_32 .. :try_end_32} :catchall_16
 
-    goto/16 :goto_16
+    goto/16 :goto_19
 
     :catch_a
     move-exception v0
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-wide/from16 v42, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v13, v51
+    move-object/from16 v37, v51
 
-    move-object/from16 v147, v52
+    move-object/from16 v23, v53
 
-    goto/16 :goto_1a
+    move-object/from16 v13, v57
+
+    move-object/from16 v27, v65
+
+    move-object/from16 v11, v66
+
+    move-object/from16 v14, v67
+
+    move-object/from16 v34, v68
+
+    move-object/from16 v35, v69
+
+    move-object/from16 v24, v70
+
+    move-object/from16 v20, v71
+
+    move-object/from16 v38, v72
+
+    move-object/from16 v9, v73
+
+    move-object/from16 v32, v74
+
+    move-object v15, v10
+
+    move-object/from16 v10, v52
+
+    goto/16 :goto_aa
 
     :catch_b
     move-exception v0
@@ -3653,39 +6268,37 @@
 
     move/from16 v39, v4
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
+    move-object/from16 v11, v49
 
-    move-object/from16 v13, v51
+    move-object/from16 v37, v51
 
-    move-object/from16 v147, v52
+    move-object/from16 v10, v52
 
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
     move-object/from16 v20, v55
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v14, v59
 
     move-object/from16 v15, v60
 
-    move-object/from16 v37, v62
+    move-object/from16 v36, v62
 
     move-wide/from16 v42, v63
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
     move-object/from16 v34, v68
 
@@ -3695,7 +6308,7 @@
 
     move-object/from16 v32, v8
 
-    goto/16 :goto_a4
+    goto/16 :goto_aa
 
     :cond_19
     move/from16 v40, v3
@@ -3733,7 +6346,7 @@
     move-wide/from16 v11, v63
 
     :cond_1a
-    :goto_16
+    :goto_19
     :try_start_33
     new-instance v1, Ljava/lang/StringBuffer;
 
@@ -3827,7 +6440,7 @@
 
     invoke-virtual {v8, v4, v3}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_17
+    goto :goto_1a
 
     :cond_1b
     iget v3, v13, Lcom/android/server/am/ProcessRecord;->uid:I
@@ -3844,12 +6457,12 @@
 
     invoke-virtual {v8, v3, v4}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_17
+    goto :goto_1a
 
     :cond_1c
     move-object/from16 v8, v52
 
-    :goto_17
+    :goto_1a
     if-nez v14, :cond_1d
 
     const-wide/16 v1, 0x0
@@ -3874,29 +6487,27 @@
 
     move-object/from16 v78, v70
 
-    :goto_18
+    :goto_1b
     move-object/from16 v6, v71
 
-    goto/16 :goto_33
+    goto/16 :goto_35
 
     :catchall_16
     move-exception v0
 
     move-wide/from16 v42, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -3906,39 +6517,35 @@
 
     move-object/from16 v24, v70
 
-    :goto_19
+    :goto_1c
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_c
     move-exception v0
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-wide/from16 v42, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v13, v51
+    move-object/from16 v37, v51
 
-    move-object/from16 v147, v52
+    move-object/from16 v23, v53
 
-    move-object/from16 v36, v53
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -3952,13 +6559,15 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object/from16 v10, v52
+
+    goto/16 :goto_aa
 
     :catchall_17
     move-exception v0
@@ -3977,31 +6586,29 @@
 
     move-object/from16 v35, v10
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
+    move-object/from16 v11, v49
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v14, v59
 
     move-wide/from16 v42, v63
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
     move-object/from16 v24, v70
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_d
     move-exception v0
@@ -4022,39 +6629,37 @@
 
     move/from16 v39, v4
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
+    move-object/from16 v11, v49
 
-    move-object/from16 v13, v51
+    move-object/from16 v37, v51
 
-    move-object/from16 v147, v52
+    move-object/from16 v10, v52
 
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
     move-object/from16 v20, v55
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v14, v59
 
     move-object/from16 v15, v60
 
-    move-object/from16 v37, v62
+    move-object/from16 v36, v62
 
     move-wide/from16 v42, v63
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
     move-object/from16 v34, v68
 
@@ -4064,7 +6669,7 @@
 
     move-object/from16 v32, v74
 
-    goto/16 :goto_a4
+    goto/16 :goto_aa
 
     :cond_1e
     move/from16 v40, v3
@@ -4135,35 +6740,30 @@
     .catch Ljava/lang/Exception; {:try_start_36 .. :try_end_36} :catch_e
     .catchall {:try_start_36 .. :try_end_36} :catchall_16
 
-    goto :goto_1c
+    goto :goto_1e
 
     :catch_e
     move-exception v0
 
-    move-object/from16 v147, v8
-
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-wide/from16 v42, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v13, v51
+    move-object/from16 v37, v51
 
-    :goto_1a
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -4173,19 +6773,23 @@
 
     move-object/from16 v24, v70
 
-    :goto_1b
+    :goto_1d
     move-object/from16 v20, v71
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
-    goto/16 :goto_37
+    move-object v15, v10
+
+    move-object v10, v8
+
+    goto/16 :goto_aa
 
     :cond_1f
-    :goto_1c
+    :goto_1e
     :try_start_37
     invoke-virtual {v15, v13}, Lcom/android/server/am/OnePlusHighPowerDetector;->isProcInBlackExList(Lcom/android/server/am/ProcessRecord;)Z
 
@@ -4214,7 +6818,7 @@
     .catch Ljava/lang/Exception; {:try_start_39 .. :try_end_39} :catch_f
     .catchall {:try_start_39 .. :try_end_39} :catchall_18
 
-    goto/16 :goto_1f
+    goto/16 :goto_21
 
     :catchall_18
     move-exception v0
@@ -4223,20 +6827,18 @@
 
     move-wide/from16 v42, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    :goto_1d
-    move-object/from16 v12, v57
+    :goto_1f
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -4244,37 +6846,33 @@
 
     move-object/from16 v35, v69
 
-    goto/16 :goto_19
+    goto/16 :goto_1c
 
     :catch_f
     move-exception v0
 
     move-object/from16 v24, v7
 
-    move-object/from16 v147, v8
-
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-wide/from16 v42, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    :goto_1e
-    move-object/from16 v13, v51
+    :goto_20
+    move-object/from16 v37, v51
 
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -4282,26 +6880,24 @@
 
     move-object/from16 v35, v69
 
-    goto :goto_1b
+    goto :goto_1d
 
     :catchall_19
     move-exception v0
 
     move-wide/from16 v42, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -4313,36 +6909,32 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_10
     move-exception v0
 
-    move-object/from16 v147, v8
-
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-wide/from16 v42, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v13, v51
+    move-object/from16 v37, v51
 
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -4356,18 +6948,20 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v8
+
+    goto/16 :goto_aa
 
     :cond_20
     move-object/from16 v7, v70
 
-    :goto_1f
+    :goto_21
     mul-long v19, v19, v35
 
     :try_start_3a
@@ -4464,7 +7058,7 @@
 
     move-object/from16 v3, v27
 
-    goto/16 :goto_22
+    goto/16 :goto_24
 
     :cond_22
     if-nez v14, :cond_23
@@ -4487,12 +7081,12 @@
     :try_start_3e
     invoke-interface {v3, v13}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_20
+    goto :goto_22
 
     :cond_23
     move-object/from16 v3, v27
 
-    :goto_20
+    :goto_22
     iget v0, v13, Lcom/android/server/am/ProcessRecord;->uid:I
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4614,7 +7208,7 @@
 
     invoke-virtual {v8, v1, v0}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_21
+    goto :goto_23
 
     :cond_25
     iget v0, v13, Lcom/android/server/am/ProcessRecord;->uid:I
@@ -4631,7 +7225,7 @@
 
     invoke-virtual {v8, v0, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_21
+    :goto_23
     if-nez v14, :cond_26
 
     const-wide/16 v0, 0x0
@@ -4660,7 +7254,7 @@
 
     move-object/from16 v6, v71
 
-    goto/16 :goto_32
+    goto/16 :goto_34
 
     :catchall_1a
     move-exception v0
@@ -4671,13 +7265,11 @@
 
     move-wide/from16 v42, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
-    goto/16 :goto_1d
+    goto/16 :goto_1f
 
     :catch_11
     move-exception v0
@@ -4686,19 +7278,15 @@
 
     move-object/from16 v24, v7
 
-    move-object/from16 v147, v8
-
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-wide/from16 v42, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
-    goto/16 :goto_1e
+    goto/16 :goto_20
 
     :catchall_1b
     move-exception v0
@@ -4707,19 +7295,17 @@
 
     move-wide/from16 v42, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -4729,38 +7315,34 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_12
     move-exception v0
 
     move-object/from16 v24, v7
 
-    move-object/from16 v147, v8
-
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-wide/from16 v42, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v13, v51
+    move-object/from16 v37, v51
 
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -4772,18 +7354,20 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v8
+
+    goto/16 :goto_aa
 
     :cond_27
     move-object/from16 v3, v27
 
-    :goto_22
+    :goto_24
     :try_start_3f
     new-instance v0, Ljava/lang/StringBuffer;
 
@@ -4846,22 +7430,20 @@
     .catch Ljava/lang/Exception; {:try_start_41 .. :try_end_41} :catch_13
     .catchall {:try_start_41 .. :try_end_41} :catchall_1c
 
-    goto/16 :goto_24
+    goto/16 :goto_27
 
     :catchall_1c
     move-exception v0
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -4871,37 +7453,35 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
     move-object/from16 v22, v77
 
-    :goto_23
+    :goto_25
     move-object/from16 v24, v78
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_13
     move-exception v0
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v23, v53
 
-    move-object/from16 v36, v53
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -4913,7 +7493,7 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -4923,9 +7503,12 @@
 
     move-object/from16 v24, v78
 
-    move-object/from16 v147, v79
+    :goto_26
+    move-object v15, v10
 
-    goto/16 :goto_37
+    move-object/from16 v10, v79
+
+    goto/16 :goto_aa
 
     :catchall_1d
     move-exception v0
@@ -4936,17 +7519,15 @@
 
     move-wide/from16 v42, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -4956,9 +7537,9 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_14
     move-exception v0
@@ -4967,27 +7548,23 @@
 
     move-object/from16 v24, v7
 
-    move-object/from16 v147, v8
-
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-wide/from16 v42, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v23, v53
 
-    move-object/from16 v36, v53
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -4999,13 +7576,15 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v8
+
+    goto/16 :goto_aa
 
     :cond_28
     move-object/from16 v77, v3
@@ -5019,7 +7598,7 @@
     move-wide v11, v5
 
     :cond_29
-    :goto_24
+    :goto_27
     :try_start_42
     new-instance v1, Ljava/lang/StringBuffer;
 
@@ -5141,28 +7720,26 @@
     :try_start_46
     invoke-interface {v8, v13}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_25
+    goto :goto_28
 
     :catch_15
     move-exception v0
 
     move-object/from16 v22, v8
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v23, v53
 
-    move-object/from16 v36, v53
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -5174,7 +7751,7 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -5182,14 +7759,14 @@
 
     move-object/from16 v24, v78
 
-    move-object/from16 v147, v79
+    move-object/from16 v36, v80
 
-    goto/16 :goto_29
+    goto/16 :goto_26
 
     :cond_2a
     move-object/from16 v8, v77
 
-    :goto_25
+    :goto_28
     if-nez v14, :cond_2c
 
     iget-wide v0, v13, Lcom/android/server/am/ProcessRecord;->lastSkipTime:J
@@ -5241,26 +7818,24 @@
     .catch Ljava/lang/Exception; {:try_start_46 .. :try_end_46} :catch_15
     .catchall {:try_start_46 .. :try_end_46} :catchall_1e
 
-    goto :goto_26
+    goto :goto_29
 
     :catch_16
     move-exception v0
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v23, v53
 
-    move-object/from16 v36, v53
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -5272,7 +7847,7 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -5282,19 +7857,19 @@
 
     move-object/from16 v24, v78
 
-    move-object/from16 v147, v79
-
-    move-object/from16 v37, v80
+    move-object/from16 v36, v80
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object/from16 v10, v79
+
+    goto/16 :goto_aa
 
     :cond_2b
     move-object/from16 v8, v77
 
     :cond_2c
-    :goto_26
+    :goto_29
     :try_start_47
     iget v0, v13, Lcom/android/server/am/ProcessRecord;->uid:I
 
@@ -5348,7 +7923,7 @@
 
     invoke-virtual {v7, v1, v0}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_27
+    goto :goto_2a
 
     :cond_2d
     iget v0, v13, Lcom/android/server/am/ProcessRecord;->uid:I
@@ -5367,33 +7942,31 @@
 
     nop
 
-    :goto_27
+    :goto_2a
     move-object/from16 v5, v51
 
     move-object/from16 v4, v53
 
-    goto/16 :goto_18
+    goto/16 :goto_1b
 
     :catch_17
     move-exception v0
 
     move-object/from16 v22, v8
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v23, v53
 
-    move-object/from16 v36, v53
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -5405,7 +7978,7 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -5413,32 +7986,30 @@
 
     move-object/from16 v24, v78
 
-    move-object/from16 v147, v79
-
-    move-object/from16 v37, v80
+    move-object/from16 v36, v80
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object/from16 v10, v79
+
+    goto/16 :goto_aa
 
     :catch_18
     move-exception v0
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v23, v53
 
-    move-object/from16 v36, v53
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -5450,7 +8021,7 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -5460,13 +8031,13 @@
 
     move-object/from16 v24, v78
 
-    move-object/from16 v147, v79
-
-    move-object/from16 v37, v80
+    move-object/from16 v36, v80
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object/from16 v10, v79
+
+    goto/16 :goto_aa
 
     :cond_2e
     move-object/from16 v8, v77
@@ -5482,24 +8053,22 @@
     .catch Ljava/lang/Exception; {:try_start_48 .. :try_end_48} :catch_19
     .catchall {:try_start_48 .. :try_end_48} :catchall_1e
 
-    goto :goto_2a
+    goto :goto_2c
 
     :catchall_1e
     move-exception v0
 
     move-object/from16 v22, v8
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -5509,34 +8078,30 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
-    goto/16 :goto_23
+    goto/16 :goto_25
 
     :catch_19
     move-exception v0
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v23, v53
 
-    move-object/from16 v36, v53
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -5546,10 +8111,10 @@
 
     move-object/from16 v20, v71
 
-    :goto_28
+    :goto_2b
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -5557,13 +8122,12 @@
 
     move-object/from16 v24, v78
 
-    :goto_29
-    move-object/from16 v37, v80
+    move-object/from16 v36, v80
 
-    goto/16 :goto_37
+    goto/16 :goto_39
 
     :cond_2f
-    :goto_2a
+    :goto_2c
     :try_start_49
     sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->BG_DETECTION_CPU_USAGE_THRESHOLD_MIN:[I
 
@@ -5670,7 +8234,7 @@
 
     monitor-exit v25
 
-    goto :goto_2b
+    goto :goto_2d
 
     :catchall_1f
     move-exception v0
@@ -5686,7 +8250,7 @@
     .catchall {:try_start_4d .. :try_end_4d} :catchall_1e
 
     :cond_31
-    :goto_2b
+    :goto_2d
     :try_start_4e
     iget-object v0, v13, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
 
@@ -5760,13 +8324,13 @@
 
     invoke-virtual {v6, v0, v13}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_2c
+    goto :goto_2e
 
     :cond_32
     move-object/from16 v6, v71
 
     :cond_33
-    :goto_2c
+    :goto_2e
     if-nez v14, :cond_34
 
     if-eqz v13, :cond_34
@@ -5784,57 +8348,49 @@
     .catch Ljava/lang/Exception; {:try_start_4f .. :try_end_4f} :catch_1a
     .catchall {:try_start_4f .. :try_end_4f} :catchall_1e
 
-    goto :goto_2d
+    goto :goto_2f
 
     :catch_1a
     move-exception v0
 
     move-object/from16 v20, v6
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
-
-    goto/16 :goto_2e
+    goto/16 :goto_30
 
     :cond_34
-    :goto_2d
+    :goto_2f
     move-object/from16 v5, v51
 
     move-object/from16 v4, v53
 
-    goto/16 :goto_31
+    goto/16 :goto_33
 
     :catch_1b
     move-exception v0
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v23, v53
 
-    move-object/from16 v36, v53
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -5846,7 +8402,7 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -5854,11 +8410,13 @@
 
     move-object/from16 v24, v78
 
-    move-object/from16 v37, v80
+    move-object/from16 v36, v80
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v7
+
+    goto/16 :goto_aa
 
     :cond_35
     move-object/from16 v6, v71
@@ -5923,34 +8481,30 @@
     .catch Ljava/lang/Exception; {:try_start_52 .. :try_end_52} :catch_1c
     .catchall {:try_start_52 .. :try_end_52} :catchall_1e
 
-    goto :goto_30
+    goto :goto_32
 
     :catch_1c
     move-exception v0
 
-    move-object v13, v5
+    move-object/from16 v37, v5
 
     move-object/from16 v20, v6
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    :goto_30
+    move-object/from16 v23, v53
 
-    :goto_2e
-    move-object/from16 v36, v53
+    :goto_31
+    move-object/from16 v13, v57
 
-    :goto_2f
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -5958,7 +8512,7 @@
 
     move-object/from16 v35, v69
 
-    goto/16 :goto_28
+    goto/16 :goto_2b
 
     :cond_36
     :try_start_53
@@ -5976,7 +8530,7 @@
 
     invoke-virtual {v5, v0, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_30
+    :goto_32
     iget v0, v13, Lcom/android/server/am/ProcessRecord;->uid:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -6042,10 +8596,10 @@
     invoke-static {v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->myLog(Ljava/lang/String;)V
 
     :cond_37
-    :goto_31
+    :goto_33
     nop
 
-    :goto_32
+    :goto_34
     invoke-virtual {v15, v13, v14}, Lcom/android/server/am/OnePlusHighPowerDetector;->updateProcUsg(Lcom/android/server/am/ProcessRecord;I)V
     :try_end_54
     .catch Ljava/lang/Exception; {:try_start_54 .. :try_end_54} :catch_1d
@@ -6053,7 +8607,7 @@
 
     nop
 
-    :goto_33
+    :goto_35
     move-object/from16 v53, v4
 
     move-object/from16 v51, v5
@@ -6098,53 +8652,45 @@
 
     move-object/from16 v50, v80
 
-    goto/16 :goto_11
+    goto/16 :goto_13
 
     :catch_1d
     move-exception v0
 
-    move-object/from16 v36, v4
+    move-object/from16 v23, v4
 
-    move-object v13, v5
+    move-object/from16 v37, v5
 
     move-object/from16 v20, v6
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
-    goto/16 :goto_2f
+    goto/16 :goto_31
 
     :catch_1e
     move-exception v0
 
-    move-object v13, v5
+    move-object/from16 v37, v5
 
     move-object/from16 v20, v6
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v23, v53
 
-    move-object/from16 v36, v53
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -6154,7 +8700,7 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -6162,36 +8708,34 @@
 
     move-object/from16 v24, v78
 
-    move-object/from16 v37, v80
+    move-object/from16 v36, v80
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v7
+
+    goto/16 :goto_aa
 
     :catch_1f
     move-exception v0
 
     move-object/from16 v20, v6
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v23, v53
 
-    move-object/from16 v36, v53
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -6201,7 +8745,7 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -6209,34 +8753,32 @@
 
     move-object/from16 v24, v78
 
-    move-object/from16 v37, v80
+    move-object/from16 v36, v80
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v7
+
+    goto/16 :goto_aa
 
     :catch_20
     move-exception v0
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v23, v53
 
-    move-object/from16 v36, v53
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -6248,7 +8790,7 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -6256,30 +8798,30 @@
 
     move-object/from16 v24, v78
 
-    move-object/from16 v37, v80
+    move-object/from16 v36, v80
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v7
+
+    goto/16 :goto_aa
 
     :catch_21
     move-exception v0
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v23, v53
 
-    move-object/from16 v36, v53
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -6291,7 +8833,7 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -6301,28 +8843,26 @@
 
     move-object/from16 v24, v78
 
-    move-object/from16 v147, v79
-
-    move-object/from16 v37, v80
+    move-object/from16 v36, v80
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object/from16 v10, v79
+
+    goto/16 :goto_aa
 
     :catchall_20
     move-exception v0
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -6332,7 +8872,7 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
@@ -6340,28 +8880,26 @@
 
     move-object/from16 v24, v78
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_22
     move-exception v0
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v23, v53
 
-    move-object/from16 v36, v53
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -6373,7 +8911,7 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -6383,11 +8921,11 @@
 
     move-object/from16 v24, v78
 
-    move-object/from16 v147, v79
-
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object/from16 v10, v79
+
+    goto/16 :goto_aa
 
     :catchall_21
     move-exception v0
@@ -6398,17 +8936,15 @@
 
     move-wide/from16 v42, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -6418,9 +8954,9 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_23
     move-exception v0
@@ -6429,27 +8965,23 @@
 
     move-object/from16 v22, v3
 
-    move-object/from16 v147, v8
-
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-wide/from16 v42, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v23, v53
 
-    move-object/from16 v36, v53
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -6461,7 +8993,7 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -6469,7 +9001,9 @@
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v8
+
+    goto/16 :goto_aa
 
     :catchall_22
     move-exception v0
@@ -6478,19 +9012,17 @@
 
     move-wide/from16 v42, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -6500,38 +9032,34 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_24
     move-exception v0
 
     move-object/from16 v78, v7
 
-    move-object/from16 v147, v8
-
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-wide/from16 v42, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v13, v51
+    move-object/from16 v37, v51
 
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -6543,7 +9071,7 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -6551,26 +9079,26 @@
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v8
+
+    goto/16 :goto_aa
 
     :catchall_23
     move-exception v0
 
     move-wide/from16 v42, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -6582,36 +9110,32 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_25
     move-exception v0
 
-    move-object/from16 v147, v8
-
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-wide/from16 v42, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v13, v51
+    move-object/from16 v37, v51
 
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -6625,13 +9149,15 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v8
+
+    goto/16 :goto_aa
 
     :catch_26
     move-exception v0
@@ -6648,39 +9174,33 @@
 
     move-object/from16 v34, v9
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v10, v52
 
-    move-object/from16 v147, v52
-
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
     move-object/from16 v20, v55
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v14, v59
 
     move-object/from16 v15, v60
 
-    move-object/from16 v37, v62
+    move-object/from16 v36, v62
 
     move-wide/from16 v42, v63
 
@@ -6688,7 +9208,11 @@
 
     move-object/from16 v32, v74
 
-    goto/16 :goto_a4
+    move-object/from16 v27, v11
+
+    move-object/from16 v11, v49
+
+    goto/16 :goto_aa
 
     :catchall_24
     move-exception v0
@@ -6703,31 +9227,29 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
-
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v14, v59
 
     move-wide/from16 v42, v63
 
-    goto/16 :goto_ab
+    move-object/from16 v27, v11
+
+    move-object/from16 v11, v49
+
+    goto/16 :goto_b2
 
     :catch_27
     move-exception v0
@@ -6742,47 +9264,45 @@
 
     move-object/from16 v34, v9
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v10, v52
 
-    move-object/from16 v147, v52
-
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
     move-object/from16 v32, v54
 
     move-object/from16 v20, v55
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v14, v59
 
     move-object/from16 v15, v60
 
-    move-object/from16 v37, v62
+    move-object/from16 v36, v62
 
     move-wide/from16 v42, v63
 
     move-object/from16 v35, v69
 
-    goto/16 :goto_a4
+    move-object/from16 v27, v11
+
+    move-object/from16 v11, v49
+
+    goto/16 :goto_aa
 
     :catchall_25
     move-exception v0
@@ -6799,31 +9319,29 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
-
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-wide/from16 v42, v75
 
     move-object v14, v5
 
-    goto/16 :goto_ab
+    move-object/from16 v27, v11
+
+    move-object/from16 v11, v49
+
+    goto/16 :goto_b2
 
     :catch_28
     move-exception v0
@@ -6842,37 +9360,31 @@
 
     move-object/from16 v34, v9
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
+    move-object/from16 v36, v50
 
-    move-object/from16 v37, v50
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v10, v52
 
-    move-object/from16 v147, v52
-
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
     move-object/from16 v32, v54
 
     move-object/from16 v20, v55
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v14, v67
 
@@ -6882,7 +9394,11 @@
 
     move-object v15, v1
 
-    goto/16 :goto_a4
+    move-object/from16 v27, v11
+
+    move-object/from16 v11, v49
+
+    goto/16 :goto_aa
 
     :catchall_26
     move-exception v0
@@ -6899,31 +9415,27 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move-object v12, v13
-
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
-
-    move-object/from16 v45, v49
 
     move-wide/from16 v42, v75
 
     move-object v14, v5
 
-    goto/16 :goto_ab
+    move-object/from16 v27, v11
+
+    move-object/from16 v11, v49
+
+    goto/16 :goto_b2
 
     :catch_29
     move-exception v0
@@ -6942,33 +9454,25 @@
 
     move-object/from16 v34, v9
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move-object v12, v13
-
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
+    move-object/from16 v36, v50
 
-    move-object/from16 v37, v50
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v10, v52
 
-    move-object/from16 v147, v52
-
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
     move-object/from16 v32, v54
 
@@ -6982,7 +9486,11 @@
 
     move-object v15, v1
 
-    goto/16 :goto_a4
+    move-object/from16 v27, v11
+
+    move-object/from16 v11, v49
+
+    goto/16 :goto_aa
 
     :cond_38
     move/from16 v40, v3
@@ -7036,8 +9544,8 @@
 
     move-result v0
     :try_end_55
-    .catch Ljava/lang/Exception; {:try_start_55 .. :try_end_55} :catch_85
-    .catchall {:try_start_55 .. :try_end_55} :catchall_78
+    .catch Ljava/lang/Exception; {:try_start_55 .. :try_end_55} :catch_84
+    .catchall {:try_start_55 .. :try_end_55} :catchall_76
 
     if-lez v0, :cond_3a
 
@@ -7046,7 +9554,7 @@
 
     move-result-object v0
 
-    :goto_34
+    :goto_36
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
@@ -7095,28 +9603,26 @@
     :try_start_58
     invoke-virtual {v15, v9, v2, v3}, Lcom/android/server/am/OnePlusHighPowerDetector;->updateSkipMap(Landroid/util/ArrayMap;ILjava/lang/String;)V
 
-    goto :goto_35
+    goto :goto_37
 
     :cond_39
     move-object/from16 v9, v80
 
-    :goto_35
+    :goto_37
     move-object/from16 v80, v9
 
     move-object/from16 v78, v12
 
-    goto :goto_34
+    goto :goto_36
 
     :catch_2a
     move-exception v0
 
-    move-object/from16 v36, v4
+    move-object/from16 v23, v4
 
-    move-object v13, v5
+    move-object/from16 v37, v5
 
     move-object/from16 v20, v6
-
-    move-object/from16 v147, v7
 
     move-object/from16 v22, v8
 
@@ -7124,17 +9630,15 @@
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -7142,17 +9646,19 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
     move-wide/from16 v42, v75
 
-    move-object/from16 v37, v80
+    move-object/from16 v36, v80
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v7
+
+    goto/16 :goto_aa
 
     :catchall_27
     move-exception v0
@@ -7161,17 +9667,15 @@
 
     move-object/from16 v35, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -7179,40 +9683,36 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
     move-object/from16 v24, v78
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_2b
     move-exception v0
 
-    move-object/from16 v36, v4
+    move-object/from16 v23, v4
 
-    move-object v13, v5
+    move-object/from16 v37, v5
 
     move-object/from16 v20, v6
-
-    move-object/from16 v147, v7
 
     move-object/from16 v22, v8
 
     move-object/from16 v35, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -7220,7 +9720,7 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -7228,11 +9728,13 @@
 
     move-object/from16 v24, v78
 
-    move-object/from16 v37, v80
+    move-object/from16 v36, v80
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v7
+
+    goto/16 :goto_aa
 
     :cond_3a
     move-object/from16 v12, v78
@@ -7247,7 +9749,7 @@
 
     move-result-object v0
 
-    :goto_36
+    :goto_38
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
@@ -7279,7 +9781,7 @@
     invoke-virtual {v15, v9, v2, v3}, Lcom/android/server/am/OnePlusHighPowerDetector;->updateSkipMap(Landroid/util/ArrayMap;ILjava/lang/String;)V
 
     :cond_3b
-    goto :goto_36
+    goto :goto_38
 
     :cond_3c
     iget-object v0, v15, Lcom/android/server/am/OnePlusHighPowerDetector;->mLastActiveAudioList:Ljava/util/List;
@@ -7289,7 +9791,7 @@
     .catch Ljava/lang/Exception; {:try_start_58 .. :try_end_58} :catch_2c
     .catchall {:try_start_58 .. :try_end_58} :catchall_28
 
-    goto :goto_38
+    goto :goto_3a
 
     :catchall_28
     move-exception v0
@@ -7300,17 +9802,15 @@
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -7318,42 +9818,38 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_2c
     move-exception v0
 
-    move-object/from16 v36, v4
+    move-object/from16 v23, v4
 
-    move-object v13, v5
+    move-object/from16 v37, v5
 
     move-object/from16 v20, v6
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-object/from16 v35, v11
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -7361,26 +9857,28 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
     move-wide/from16 v42, v75
 
-    :goto_37
+    :goto_39
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v7
+
+    goto/16 :goto_aa
 
     :cond_3d
-    :goto_38
+    :goto_3a
     :try_start_59
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
     :try_end_59
-    .catch Ljava/lang/Exception; {:try_start_59 .. :try_end_59} :catch_84
-    .catchall {:try_start_59 .. :try_end_59} :catchall_77
+    .catch Ljava/lang/Exception; {:try_start_59 .. :try_end_59} :catch_83
+    .catchall {:try_start_59 .. :try_end_59} :catchall_75
 
     move-object v13, v0
 
@@ -7393,7 +9891,7 @@
 
     const/4 v1, 0x0
 
-    :goto_39
+    :goto_3b
     if-ge v1, v0, :cond_45
 
     aget-object v2, v3, v1
@@ -7414,7 +9912,7 @@
 
     move-object/from16 v84, v4
 
-    goto/16 :goto_3b
+    goto/16 :goto_3d
 
     :cond_3e
     invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -7462,44 +9960,40 @@
     .catch Ljava/lang/Exception; {:try_start_5c .. :try_end_5c} :catch_2d
     .catchall {:try_start_5c .. :try_end_5c} :catchall_29
 
-    goto :goto_3a
+    goto :goto_3c
 
     :catch_2d
     move-exception v0
 
-    move-object/from16 v36, v4
+    move-object/from16 v23, v4
 
-    move-object v13, v5
+    move-object/from16 v37, v5
 
     move-object/from16 v20, v6
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-object/from16 v35, v11
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -7507,10 +10001,10 @@
 
     move-object/from16 v34, v83
 
-    goto :goto_37
+    goto :goto_39
 
     :cond_3f
-    :goto_3a
+    :goto_3c
     if-nez v14, :cond_40
 
     :try_start_5d
@@ -7528,12 +10022,12 @@
 
     invoke-interface {v3, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_3b
+    goto/16 :goto_3d
 
     :cond_40
     move-object/from16 v84, v4
 
-    goto/16 :goto_3b
+    goto/16 :goto_3d
 
     :cond_41
     move-object/from16 v84, v4
@@ -7568,42 +10062,38 @@
     .catch Ljava/lang/Exception; {:try_start_5e .. :try_end_5e} :catch_2e
     .catchall {:try_start_5e .. :try_end_5e} :catchall_29
 
-    goto/16 :goto_3b
+    goto/16 :goto_3d
 
     :catch_2e
     move-exception v0
 
-    move-object v13, v5
+    move-object/from16 v37, v5
 
     move-object/from16 v20, v6
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-object/from16 v35, v11
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -7611,9 +10101,9 @@
 
     move-object/from16 v34, v83
 
-    move-object/from16 v36, v84
+    move-object/from16 v23, v84
 
-    goto/16 :goto_37
+    goto/16 :goto_39
 
     :catchall_29
     move-exception v0
@@ -7624,66 +10114,60 @@
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
     move-object/from16 v34, v83
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_2f
     move-exception v0
 
-    move-object/from16 v36, v4
+    move-object/from16 v23, v4
 
-    move-object v13, v5
+    move-object/from16 v37, v5
 
     move-object/from16 v20, v6
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-object/from16 v35, v11
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -7693,7 +10177,9 @@
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v7
+
+    goto/16 :goto_aa
 
     :cond_43
     move/from16 v82, v0
@@ -7703,7 +10189,7 @@
     move-object/from16 v84, v4
 
     :cond_44
-    :goto_3b
+    :goto_3d
     add-int/lit8 v1, v1, 0x1
 
     move/from16 v0, v82
@@ -7712,14 +10198,14 @@
 
     move-object/from16 v4, v84
 
-    goto/16 :goto_39
+    goto/16 :goto_3b
 
     :cond_45
     move-object/from16 v83, v3
 
     move-object/from16 v84, v4
 
-    goto :goto_3c
+    goto :goto_3e
 
     :catchall_2a
     move-exception v0
@@ -7732,66 +10218,60 @@
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_30
     move-exception v0
 
     move-object/from16 v34, v3
 
-    move-object/from16 v36, v4
+    move-object/from16 v23, v4
 
-    move-object v13, v5
+    move-object/from16 v37, v5
 
     move-object/from16 v20, v6
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-object/from16 v35, v11
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -7799,14 +10279,16 @@
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v7
+
+    goto/16 :goto_aa
 
     :cond_46
     move-object/from16 v84, v4
 
     move-object/from16 v83, v68
 
-    :goto_3c
+    :goto_3e
     if-nez v14, :cond_51
 
     :try_start_5f
@@ -7911,7 +10393,7 @@
 
     if-ltz v3, :cond_47
 
-    goto/16 :goto_3d
+    goto/16 :goto_3f
 
     :cond_47
     move-object/from16 v32, v2
@@ -7938,54 +10420,52 @@
 
     const/4 v13, 0x0
 
-    goto/16 :goto_40
+    goto/16 :goto_42
 
     :catch_31
     move-exception v0
 
     move-object/from16 v32, v2
 
-    move-object v13, v5
+    move-object/from16 v37, v5
 
     move-object/from16 v20, v6
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-object/from16 v35, v11
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
     move-object/from16 v34, v83
 
-    move-object/from16 v36, v84
+    move-object/from16 v23, v84
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v7
+
+    goto/16 :goto_aa
 
     :cond_48
     move-object/from16 v32, v2
@@ -8012,12 +10492,12 @@
 
     move-object v11, v5
 
-    goto/16 :goto_40
+    goto/16 :goto_42
 
     :cond_49
     move-object/from16 v85, v5
 
-    :goto_3d
+    :goto_3f
     :try_start_63
     iget-object v3, v0, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
 
@@ -8036,12 +10516,12 @@
 
     const/4 v3, 0x1
 
-    goto :goto_3e
+    goto :goto_40
 
     :cond_4a
     const/4 v3, 0x0
 
-    :goto_3e
+    :goto_40
     move/from16 v21, v3
 
     if-eqz v21, :cond_4b
@@ -8052,7 +10532,7 @@
     .catch Ljava/lang/Exception; {:try_start_64 .. :try_end_64} :catch_32
     .catchall {:try_start_64 .. :try_end_64} :catchall_29
 
-    goto :goto_3f
+    goto :goto_41
 
     :catch_32
     move-exception v0
@@ -8061,49 +10541,45 @@
 
     move-object/from16 v20, v6
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-object/from16 v35, v11
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
     move-object/from16 v34, v83
 
-    move-object/from16 v36, v84
+    move-object/from16 v23, v84
 
-    move-object/from16 v13, v85
+    move-object/from16 v37, v85
 
-    goto/16 :goto_37
+    goto/16 :goto_39
 
     :cond_4b
     :try_start_65
     iget-object v3, v15, Lcom/android/server/am/OnePlusHighPowerDetector;->mHugePowerPkgMap:Ljava/util/HashMap;
 
-    :goto_3f
+    :goto_41
     iget-object v5, v0, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
 
     iget-object v5, v5, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
@@ -8205,62 +10681,58 @@
     .catch Ljava/lang/Exception; {:try_start_67 .. :try_end_67} :catch_33
     .catchall {:try_start_67 .. :try_end_67} :catchall_2b
 
-    :goto_40
+    :goto_42
     nop
 
     move-object/from16 v93, v72
 
-    goto/16 :goto_46
+    goto/16 :goto_48
 
     :catchall_2b
     move-exception v0
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
     move-object/from16 v38, v72
 
-    goto/16 :goto_41
+    goto/16 :goto_43
 
     :catch_33
     move-exception v0
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
-    move-object v13, v11
+    move-object/from16 v37, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
     move-object/from16 v38, v72
 
-    goto/16 :goto_42
+    goto/16 :goto_44
 
     :catch_34
     move-exception v0
@@ -8269,39 +10741,35 @@
 
     move-object/from16 v89, v11
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
     move-object/from16 v34, v83
 
-    move-object/from16 v36, v84
+    move-object/from16 v23, v84
 
-    move-object/from16 v13, v85
+    move-object/from16 v37, v85
 
     move-object/from16 v20, v86
 
@@ -8309,7 +10777,9 @@
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v7
+
+    goto/16 :goto_aa
 
     :catch_35
     move-exception v0
@@ -8320,45 +10790,43 @@
 
     move-object/from16 v20, v6
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
     move-object/from16 v34, v83
 
-    move-object/from16 v36, v84
+    move-object/from16 v23, v84
 
-    move-object/from16 v13, v85
+    move-object/from16 v37, v85
 
     move-object/from16 v35, v89
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v7
+
+    goto/16 :goto_aa
 
     :catch_36
     move-exception v0
@@ -8367,47 +10835,45 @@
 
     move-object/from16 v89, v11
 
-    move-object v13, v5
+    move-object/from16 v37, v5
 
     move-object/from16 v20, v6
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
     move-object/from16 v34, v83
 
-    move-object/from16 v36, v84
+    move-object/from16 v23, v84
 
     move-object/from16 v35, v89
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v7
+
+    goto/16 :goto_aa
 
     :catchall_2c
     move-exception v0
@@ -8418,29 +10884,27 @@
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
     move-object/from16 v34, v83
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_37
     move-exception v0
@@ -8449,47 +10913,45 @@
 
     move-object/from16 v32, v74
 
-    move-object v13, v5
+    move-object/from16 v37, v5
 
     move-object/from16 v20, v6
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
     move-object/from16 v34, v83
 
-    move-object/from16 v36, v84
+    move-object/from16 v23, v84
 
     move-object/from16 v35, v89
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v7
+
+    goto/16 :goto_aa
 
     :cond_4c
     move-object/from16 v91, v6
@@ -8578,31 +11040,29 @@
 
     move-object/from16 v93, v8
 
-    goto/16 :goto_46
+    goto/16 :goto_48
 
     :catchall_2d
     move-exception v0
 
     move-object/from16 v38, v8
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    :goto_41
-    move-object/from16 v3, v73
+    :goto_43
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
@@ -8610,35 +11070,33 @@
 
     move-object/from16 v35, v89
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_38
     move-exception v0
 
     move-object/from16 v38, v8
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
-    move-object v13, v11
+    move-object/from16 v37, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    :goto_42
-    move-object/from16 v3, v73
+    :goto_44
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
@@ -8646,13 +11104,11 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v36, v90
+    move-object/from16 v23, v90
 
     move-object/from16 v20, v91
 
-    move-object/from16 v147, v92
-
-    goto/16 :goto_37
+    goto/16 :goto_49
 
     :cond_4d
     :try_start_6a
@@ -8671,12 +11127,12 @@
 
     const/4 v1, 0x1
 
-    goto :goto_43
+    goto :goto_45
 
     :cond_4e
     move v1, v13
 
-    :goto_43
+    :goto_45
     move/from16 v21, v1
 
     if-eqz v21, :cond_4f
@@ -8687,13 +11143,13 @@
     .catch Ljava/lang/Exception; {:try_start_6b .. :try_end_6b} :catch_38
     .catchall {:try_start_6b .. :try_end_6b} :catchall_2d
 
-    goto :goto_44
+    goto :goto_46
 
     :cond_4f
     :try_start_6c
     iget-object v1, v15, Lcom/android/server/am/OnePlusHighPowerDetector;->mHugePowerPkgMap:Ljava/util/HashMap;
 
-    :goto_44
+    :goto_46
     move-object v2, v1
 
     iget-object v1, v0, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
@@ -8751,30 +11207,28 @@
     .catch Ljava/lang/Exception; {:try_start_6d .. :try_end_6d} :catch_3b
     .catchall {:try_start_6d .. :try_end_6d} :catchall_36
 
-    goto/16 :goto_46
+    goto/16 :goto_48
 
     :catchall_2e
     move-exception v0
 
     move-object/from16 v38, v8
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
@@ -8782,34 +11236,32 @@
 
     move-object/from16 v35, v89
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_39
     move-exception v0
 
     move-object/from16 v38, v8
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
-    move-object v13, v11
+    move-object/from16 v37, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
@@ -8817,15 +11269,15 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v36, v90
+    move-object/from16 v23, v90
 
     move-object/from16 v20, v91
 
-    move-object/from16 v147, v92
-
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object/from16 v10, v92
+
+    goto/16 :goto_aa
 
     :cond_50
     move-object/from16 v91, v6
@@ -8852,7 +11304,7 @@
 
     move v13, v3
 
-    goto/16 :goto_45
+    goto/16 :goto_47
 
     :catchall_2f
     move-exception v0
@@ -8863,29 +11315,27 @@
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
     move-object/from16 v34, v83
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_3a
     move-exception v0
@@ -8894,47 +11344,45 @@
 
     move-object/from16 v32, v74
 
-    move-object v13, v5
+    move-object/from16 v37, v5
 
     move-object/from16 v20, v6
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
+    move-object/from16 v27, v65
 
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
     move-object/from16 v34, v83
 
-    move-object/from16 v36, v84
+    move-object/from16 v23, v84
 
     move-object/from16 v35, v89
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v7
+
+    goto/16 :goto_aa
 
     :cond_51
     move-object/from16 v91, v6
@@ -8961,10 +11409,10 @@
 
     const/4 v13, 0x0
 
-    :goto_45
+    :goto_47
     move-object v11, v5
 
-    :goto_46
+    :goto_48
     if-nez v14, :cond_69
 
     const/4 v0, 0x0
@@ -9088,32 +11536,30 @@
     .catch Ljava/lang/Exception; {:try_start_6f .. :try_end_6f} :catch_3b
     .catchall {:try_start_6f .. :try_end_6f} :catchall_36
 
-    goto :goto_47
+    goto :goto_4a
 
     :catch_3b
     move-exception v0
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
-    move-object v13, v11
+    move-object/from16 v37, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
@@ -9121,18 +11567,21 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v36, v90
+    move-object/from16 v23, v90
 
     move-object/from16 v20, v91
 
-    move-object/from16 v147, v92
-
     move-object/from16 v38, v93
 
-    goto/16 :goto_37
+    :goto_49
+    move-object v15, v10
+
+    move-object/from16 v10, v92
+
+    goto/16 :goto_aa
 
     :cond_55
-    :goto_47
+    :goto_4a
     move v1, v0
 
     :try_start_70
@@ -9168,7 +11617,7 @@
 
     move-result-object v5
 
-    :goto_48
+    :goto_4b
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
@@ -9206,17 +11655,17 @@
     :try_end_72
     .catchall {:try_start_72 .. :try_end_72} :catchall_30
 
-    goto :goto_49
+    goto :goto_4c
 
     :catchall_30
     move-exception v0
 
     move-object/from16 v99, v9
 
-    goto/16 :goto_4f
+    goto/16 :goto_52
 
     :cond_56
-    :goto_49
+    :goto_4c
     :try_start_73
     iget-object v8, v7, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->lastCpuTimeBgMonitor:[J
 
@@ -9338,7 +11787,7 @@
 
     move/from16 v96, v0
 
-    goto :goto_4a
+    goto :goto_4d
 
     :cond_58
     iget-boolean v0, v15, Lcom/android/server/am/OnePlusHighPowerDetector;->mIsNativeMonitorStart:Z
@@ -9385,7 +11834,7 @@
 
     invoke-static {v0, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_4a
+    goto :goto_4d
 
     :cond_59
     move/from16 v97, v4
@@ -9412,7 +11861,7 @@
     move/from16 v98, v100
 
     :cond_5b
-    :goto_4a
+    :goto_4d
     if-eqz v96, :cond_5c
 
     iget v0, v15, Lcom/android/server/am/OnePlusHighPowerDetector;->mNativeMonitorCount:I
@@ -9622,7 +12071,7 @@
 
     move/from16 v97, v101
 
-    goto/16 :goto_4b
+    goto/16 :goto_4e
 
     :cond_5d
     move-object/from16 v102, v6
@@ -9669,7 +12118,7 @@
 
     invoke-static {v0, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_4b
+    goto :goto_4e
 
     :cond_5e
     move-object/from16 v102, v6
@@ -9736,13 +12185,13 @@
 
     invoke-static {v0, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_4b
+    goto :goto_4e
 
     :cond_5f
     move-object/from16 v102, v6
 
     :cond_60
-    :goto_4b
+    :goto_4e
     if-nez v1, :cond_61
 
     if-eqz v97, :cond_64
@@ -9819,12 +12268,12 @@
 
     const/4 v4, 0x1
 
-    goto :goto_4c
+    goto :goto_4f
 
     :cond_63
     const/4 v4, 0x0
 
-    :goto_4c
+    :goto_4f
     iput v4, v3, Landroid/os/Message;->arg2:I
 
     sget-object v4, Lcom/android/server/am/OnePlusHighPowerDetector;->mHandler:Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
@@ -9838,7 +12287,7 @@
 
     move/from16 v3, v98
 
-    goto :goto_4e
+    goto :goto_51
 
     :cond_65
     move-object/from16 v102, v6
@@ -9849,14 +12298,14 @@
 
     move/from16 v3, v98
 
-    goto :goto_4e
+    goto :goto_51
 
     :catchall_31
     move-exception v0
 
     move-object/from16 v99, v9
 
-    goto :goto_4d
+    goto :goto_50
 
     :catchall_32
     move-exception v0
@@ -9865,10 +12314,10 @@
 
     move/from16 v14, p1
 
-    :goto_4d
+    :goto_50
     const/4 v13, 0x0
 
-    goto :goto_4f
+    goto :goto_52
 
     :cond_66
     move/from16 v96, v0
@@ -9881,7 +12330,7 @@
 
     move-object/from16 v99, v9
 
-    :goto_4e
+    :goto_51
     iget-object v6, v7, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->lastCpuTimeBgMonitor:[J
 
     iget-wide v8, v7, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->curCpuTimeBgMonitor:J
@@ -9896,7 +12345,7 @@
 
     const/4 v13, 0x0
 
-    goto/16 :goto_48
+    goto/16 :goto_4b
 
     :cond_67
     move-object/from16 v99, v9
@@ -9931,26 +12380,26 @@
     .catch Ljava/lang/Exception; {:try_start_77 .. :try_end_77} :catch_3c
     .catchall {:try_start_77 .. :try_end_77} :catchall_36
 
-    goto/16 :goto_51
+    goto/16 :goto_54
 
     :cond_68
     const/4 v13, 0x0
 
-    goto/16 :goto_51
+    goto/16 :goto_54
 
     :catchall_33
     move-exception v0
 
     const/4 v13, 0x0
 
-    goto :goto_4f
+    goto :goto_52
 
     :catchall_34
     move-exception v0
 
     move-object/from16 v99, v9
 
-    :goto_4f
+    :goto_52
     :try_start_78
     monitor-exit v2
     :try_end_78
@@ -9965,25 +12414,23 @@
     :catch_3c
     move-exception v0
 
-    move-object v13, v11
+    move-object/from16 v37, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
@@ -9991,79 +12438,73 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v36, v90
+    move-object/from16 v23, v90
 
     move-object/from16 v20, v91
 
-    move-object/from16 v147, v92
-
     move-object/from16 v38, v93
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
-    goto/16 :goto_37
+    goto/16 :goto_49
 
     :catchall_35
     move-exception v0
 
-    goto :goto_4f
+    goto :goto_52
 
     :catchall_36
     move-exception v0
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
-    :goto_50
+    :goto_53
     move-object/from16 v24, v88
 
     move-object/from16 v35, v89
 
     move-object/from16 v38, v93
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_3d
     move-exception v0
 
-    move-object/from16 v37, v9
+    move-object/from16 v36, v9
 
-    move-object v13, v11
+    move-object/from16 v37, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
@@ -10071,22 +12512,22 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v36, v90
+    move-object/from16 v23, v90
 
     move-object/from16 v20, v91
-
-    move-object/from16 v147, v92
 
     move-object/from16 v38, v93
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object/from16 v10, v92
+
+    goto/16 :goto_aa
 
     :cond_69
     move-object/from16 v99, v9
 
-    :goto_51
+    :goto_54
     :try_start_7a
     new-instance v0, Landroid/util/SparseArray;
 
@@ -10100,8 +12541,8 @@
 
     move-result v0
     :try_end_7a
-    .catch Ljava/lang/Exception; {:try_start_7a .. :try_end_7a} :catch_83
-    .catchall {:try_start_7a .. :try_end_7a} :catchall_76
+    .catch Ljava/lang/Exception; {:try_start_7a .. :try_end_7a} :catch_82
+    .catchall {:try_start_7a .. :try_end_7a} :catchall_74
 
     if-lez v0, :cond_75
 
@@ -10124,7 +12565,7 @@
 
     move-result-object v0
 
-    :goto_52
+    :goto_55
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
@@ -10145,7 +12586,7 @@
 
     if-eqz v3, :cond_6a
 
-    goto :goto_52
+    goto :goto_55
 
     :cond_6a
     iget-wide v4, v2, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->curCpuTimeBgMonitor:J
@@ -10198,7 +12639,7 @@
 
     move-object/from16 v9, v92
 
-    goto/16 :goto_59
+    goto/16 :goto_5c
 
     :cond_6b
     iget-object v6, v2, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->lastCpuTimeBgMonitor:[J
@@ -10307,7 +12748,7 @@
 
     move-object/from16 v11, v90
 
-    goto/16 :goto_56
+    goto/16 :goto_59
 
     :catchall_37
     move-exception v0
@@ -10318,13 +12759,13 @@
 
     move-wide/from16 v12, v75
 
-    :goto_53
+    :goto_56
     move-object/from16 v11, v90
 
-    :goto_54
+    :goto_57
     move-object/from16 v9, v92
 
-    goto/16 :goto_5a
+    goto/16 :goto_5d
 
     :cond_6d
     :try_start_7e
@@ -10434,14 +12875,14 @@
     :try_end_80
     .catchall {:try_start_80 .. :try_end_80} :catchall_38
 
-    goto :goto_55
+    goto :goto_58
 
     :catchall_38
     move-exception v0
 
     move-object/from16 v106, v11
 
-    goto :goto_53
+    goto :goto_56
 
     :cond_6e
     move-object/from16 v104, v0
@@ -10461,7 +12902,7 @@
 
     invoke-virtual {v11, v0, v8}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_55
+    :goto_58
     iget v0, v2, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->uid:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -10535,15 +12976,15 @@
     :try_end_84
     .catchall {:try_start_84 .. :try_end_84} :catchall_39
 
-    goto :goto_56
+    goto :goto_59
 
     :catchall_39
     move-exception v0
 
-    goto/16 :goto_54
+    goto/16 :goto_57
 
     :cond_6f
-    :goto_56
+    :goto_59
     :try_start_85
     iget v0, v2, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->uid:I
 
@@ -10596,14 +13037,14 @@
 
     invoke-virtual {v9, v3, v0}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_57
+    goto :goto_5a
 
     :catchall_3a
     move-exception v0
 
     move-object/from16 v9, v92
 
-    goto/16 :goto_5a
+    goto/16 :goto_5d
 
     :catchall_3b
     move-exception v0
@@ -10612,7 +13053,7 @@
 
     move-object/from16 v9, v92
 
-    goto/16 :goto_5a
+    goto/16 :goto_5d
 
     :catchall_3c
     move-exception v0
@@ -10623,7 +13064,7 @@
 
     move-object/from16 v9, v92
 
-    goto/16 :goto_5a
+    goto/16 :goto_5d
 
     :cond_70
     move-object/from16 v104, v0
@@ -10641,7 +13082,7 @@
     move-object/from16 v9, v92
 
     :cond_71
-    :goto_57
+    :goto_5a
     iget-object v0, v2, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->lastCpuTimeBgMonitor:[J
 
     iget-wide v6, v2, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->curCpuTimeBgMonitor:J
@@ -10651,7 +13092,7 @@
     nop
 
     :cond_72
-    :goto_58
+    :goto_5b
     move-object/from16 v92, v9
 
     move-object/from16 v90, v11
@@ -10666,7 +13107,7 @@
 
     const/4 v13, 0x0
 
-    goto/16 :goto_52
+    goto/16 :goto_55
 
     :cond_73
     move-object/from16 v104, v0
@@ -10683,7 +13124,7 @@
 
     move-object/from16 v9, v92
 
-    :goto_59
+    :goto_5c
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10784,7 +13225,7 @@
 
     invoke-virtual {v9, v3, v0}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto/16 :goto_58
+    goto/16 :goto_5b
 
     :cond_74
     move-object/from16 v106, v11
@@ -10799,7 +13240,7 @@
 
     monitor-exit v1
 
-    goto/16 :goto_5c
+    goto/16 :goto_60
 
     :catchall_3d
     move-exception v0
@@ -10814,7 +13255,7 @@
 
     move-object/from16 v9, v92
 
-    :goto_5a
+    :goto_5d
     monitor-exit v1
     :try_end_86
     .catchall {:try_start_86 .. :try_end_86} :catchall_3f
@@ -10830,52 +13271,44 @@
 
     move-wide/from16 v42, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
-    goto/16 :goto_50
+    goto/16 :goto_53
 
     :catch_3e
     move-exception v0
 
-    move-object/from16 v147, v9
-
-    move-object/from16 v36, v11
+    move-object/from16 v23, v11
 
     move-wide/from16 v42, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
-
-    move-object/from16 v3, v73
 
     move-object/from16 v24, v88
 
@@ -10883,40 +13316,45 @@
 
     move-object/from16 v20, v91
 
-    :goto_5b
+    :goto_5e
     move-object/from16 v38, v93
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
-    move-object/from16 v13, v106
+    move-object/from16 v37, v106
 
-    goto/16 :goto_37
+    :goto_5f
+    move-object v15, v10
+
+    move-object v10, v9
+
+    move-object/from16 v9, v73
+
+    goto/16 :goto_aa
 
     :catchall_3f
     move-exception v0
 
-    goto :goto_5a
+    goto :goto_5d
 
     :catchall_40
     move-exception v0
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
@@ -10926,30 +13364,28 @@
 
     move-object/from16 v38, v93
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_3f
     move-exception v0
 
     move-object/from16 v106, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
@@ -10957,21 +13393,21 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v36, v90
+    move-object/from16 v23, v90
 
     move-object/from16 v20, v91
 
-    move-object/from16 v147, v92
-
     move-object/from16 v38, v93
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
-    move-object/from16 v13, v106
+    move-object/from16 v37, v106
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object/from16 v10, v92
+
+    goto/16 :goto_aa
 
     :cond_75
     move-object/from16 v106, v11
@@ -10984,7 +13420,7 @@
 
     move-object/from16 v9, v92
 
-    :goto_5c
+    :goto_60
     move-object/from16 v8, v91
 
     :try_start_88
@@ -10992,8 +13428,8 @@
 
     move-result v0
     :try_end_88
-    .catch Ljava/lang/Exception; {:try_start_88 .. :try_end_88} :catch_82
-    .catchall {:try_start_88 .. :try_end_88} :catchall_75
+    .catch Ljava/lang/Exception; {:try_start_88 .. :try_end_88} :catch_81
+    .catchall {:try_start_88 .. :try_end_88} :catchall_73
 
     if-lez v0, :cond_8d
 
@@ -11006,7 +13442,7 @@
 
     move-result-object v7
 
-    :goto_5d
+    :goto_61
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
@@ -11077,7 +13513,7 @@
 
     move v3, v0
 
-    :goto_5e
+    :goto_62
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
@@ -11112,7 +13548,7 @@
 
     const/4 v0, 0x0
 
-    :goto_5f
+    :goto_63
     iget-object v4, v1, Lcom/android/server/am/ServiceRecord;->connections:Landroid/util/ArrayMap;
 
     invoke-virtual {v4}, Landroid/util/ArrayMap;->size()I
@@ -11131,7 +13567,7 @@
 
     const/4 v5, 0x0
 
-    :goto_60
+    :goto_64
     move-object/from16 v107, v1
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -11174,15 +13610,15 @@
 
     if-ne v1, v3, :cond_76
 
-    goto :goto_61
+    goto :goto_65
 
     :cond_76
     move-object/from16 v112, v4
 
-    goto :goto_62
+    goto :goto_66
 
     :cond_77
-    :goto_61
+    :goto_65
     const/4 v1, 0x1
 
     const-string v3, "OHPD"
@@ -11239,14 +13675,14 @@
 
     move/from16 v3, v111
 
-    goto :goto_63
+    goto :goto_67
 
     :cond_78
     move/from16 v110, v3
 
     move-object/from16 v112, v4
 
-    goto :goto_62
+    goto :goto_66
 
     :cond_79
     move-object/from16 v108, v2
@@ -11255,7 +13691,7 @@
 
     move-object/from16 v112, v4
 
-    :goto_62
+    :goto_66
     add-int/lit8 v5, v5, 0x1
 
     move-object/from16 v1, v107
@@ -11266,21 +13702,21 @@
 
     move-object/from16 v4, v112
 
-    goto/16 :goto_60
+    goto/16 :goto_64
 
     :cond_7a
     move-object/from16 v108, v2
 
     move/from16 v110, v3
 
-    :goto_63
+    :goto_67
     add-int/lit8 v0, v0, 0x1
 
     move-object/from16 v1, v107
 
     move-object/from16 v2, v108
 
-    goto/16 :goto_5f
+    goto/16 :goto_63
 
     :cond_7b
     move-object/from16 v107, v1
@@ -11289,7 +13725,7 @@
 
     move/from16 v110, v3
 
-    goto/16 :goto_5e
+    goto/16 :goto_62
 
     :cond_7c
     move-object/from16 v107, v1
@@ -11300,7 +13736,7 @@
 
     move-object/from16 v2, v108
 
-    goto/16 :goto_5e
+    goto/16 :goto_62
 
     :catch_40
     move-exception v0
@@ -11340,7 +13776,7 @@
     invoke-virtual {v6, v1, v2}, Lcom/android/server/am/ProcessRecord;->kill(Ljava/lang/String;Z)V
 
     :cond_7f
-    goto :goto_64
+    goto :goto_68
 
     :cond_80
     const-string v0, "OHPD"
@@ -11392,45 +13828,39 @@
     .catch Ljava/lang/Exception; {:try_start_8c .. :try_end_8c} :catch_41
     .catchall {:try_start_8c .. :try_end_8c} :catchall_3e
 
-    :goto_64
+    :goto_68
     add-int/lit8 v26, v26, 0x1
 
-    goto/16 :goto_5d
+    goto/16 :goto_61
 
     :catch_41
     move-exception v0
 
     move-object/from16 v20, v8
 
-    move-object/from16 v147, v9
-
-    move-object/from16 v36, v11
+    move-object/from16 v23, v11
 
     move-wide/from16 v42, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
-
-    move-object/from16 v3, v73
 
     move-object/from16 v24, v88
 
     move-object/from16 v35, v89
 
-    goto/16 :goto_5b
+    goto/16 :goto_5e
 
     :cond_81
     :try_start_8d
@@ -11467,36 +13897,32 @@
     .catch Ljava/lang/Exception; {:try_start_8f .. :try_end_8f} :catch_42
     .catchall {:try_start_8f .. :try_end_8f} :catchall_3e
 
-    goto :goto_66
+    goto :goto_69
 
     :catch_42
     move-exception v0
 
+    move-object/from16 v37, v5
+
     move-object/from16 v20, v8
 
-    move-object/from16 v147, v9
-
-    move-object/from16 v36, v11
+    move-object/from16 v23, v11
 
     move-wide/from16 v42, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
-
-    move-object/from16 v3, v73
 
     move-object/from16 v24, v88
 
@@ -11504,15 +13930,12 @@
 
     move-object/from16 v38, v93
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
-    :goto_65
-    move-object v13, v5
-
-    goto/16 :goto_37
+    goto/16 :goto_5f
 
     :cond_82
-    :goto_66
+    :goto_69
     :try_start_90
     iget-object v0, v6, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
 
@@ -11528,12 +13951,12 @@
 
     const/4 v0, 0x1
 
-    goto :goto_67
+    goto :goto_6a
 
     :cond_83
     const/4 v0, 0x0
 
-    :goto_67
+    :goto_6a
     iget-object v1, v6, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
 
     iget v1, v1, Landroid/content/pm/ApplicationInfo;->uid:I
@@ -11631,30 +14054,28 @@
     .catch Ljava/lang/Exception; {:try_start_95 .. :try_end_95} :catch_43
     .catchall {:try_start_95 .. :try_end_95} :catchall_41
 
-    goto :goto_68
+    goto :goto_6b
 
     :catchall_41
     move-exception v0
 
     move-wide/from16 v42, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v24, v88
 
@@ -11662,52 +14083,48 @@
 
     move-object/from16 v38, v113
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_43
     move-exception v0
 
+    move-object/from16 v37, v5
+
     move-object/from16 v20, v8
 
-    move-object/from16 v147, v9
-
-    move-object/from16 v36, v11
+    move-object/from16 v23, v11
 
     move-wide/from16 v42, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
-
-    move-object/from16 v3, v73
 
     move-object/from16 v24, v88
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-object/from16 v38, v113
 
-    goto/16 :goto_65
+    goto/16 :goto_5f
 
     :cond_84
     :try_start_96
     iget-object v1, v15, Lcom/android/server/am/OnePlusHighPowerDetector;->mHugePowerPkgMap:Ljava/util/HashMap;
 
-    :goto_68
+    :goto_6b
     move-object v2, v1
 
     iget-object v1, v6, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
@@ -11785,30 +14202,28 @@
     .catch Ljava/lang/Exception; {:try_start_97 .. :try_end_97} :catch_46
     .catchall {:try_start_97 .. :try_end_97} :catchall_44
 
-    goto/16 :goto_69
+    goto/16 :goto_6c
 
     :catchall_42
     move-exception v0
 
     move-wide/from16 v42, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v24, v88
 
@@ -11816,50 +14231,48 @@
 
     move-object/from16 v38, v113
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_44
     move-exception v0
 
+    move-object/from16 v37, v5
+
     move-object/from16 v20, v8
 
-    move-object/from16 v147, v9
-
-    move-object/from16 v36, v11
+    move-object/from16 v23, v11
 
     move-wide/from16 v42, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
-
-    move-object/from16 v3, v73
 
     move-object/from16 v24, v88
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-object/from16 v38, v113
 
-    move-object v13, v5
-
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v9
+
+    move-object/from16 v9, v73
+
+    goto/16 :goto_aa
 
     :catchall_43
     move-exception v0
@@ -11868,72 +14281,68 @@
 
     move-wide/from16 v42, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v24, v88
 
     move-object/from16 v35, v89
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_45
     move-exception v0
 
     move-object/from16 v38, v3
 
+    move-object/from16 v37, v5
+
     move-object/from16 v20, v8
 
-    move-object/from16 v147, v9
-
-    move-object/from16 v36, v11
+    move-object/from16 v23, v11
 
     move-wide/from16 v42, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
-
-    move-object/from16 v3, v73
 
     move-object/from16 v24, v88
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
-
-    move-object v13, v5
+    move-object/from16 v36, v99
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v9
+
+    move-object/from16 v9, v73
+
+    goto/16 :goto_aa
 
     :cond_85
     move-object/from16 v117, v5
@@ -11992,64 +14401,66 @@
     .catch Ljava/lang/Exception; {:try_start_99 .. :try_end_99} :catch_46
     .catchall {:try_start_99 .. :try_end_99} :catchall_44
 
-    :goto_69
+    :goto_6c
     move-object/from16 v7, v73
 
-    goto/16 :goto_6a
+    goto/16 :goto_6d
 
     :catchall_44
     move-exception v0
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
-    goto/16 :goto_77
+    goto/16 :goto_70
 
     :catch_46
     move-exception v0
 
-    move-object/from16 v147, v9
-
-    move-object/from16 v36, v11
+    move-object/from16 v23, v11
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v3, v73
+    move-object/from16 v24, v88
 
-    goto/16 :goto_6c
+    move-object/from16 v35, v89
+
+    move-object/from16 v36, v99
+
+    move-wide/from16 v42, v115
+
+    move-object/from16 v37, v117
+
+    goto/16 :goto_5f
 
     :cond_86
     :try_start_9a
@@ -12107,40 +14518,38 @@
     :try_start_9b
     invoke-virtual {v7, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :goto_6a
+    :goto_6d
     add-int/lit8 v26, v26, 0x1
 
     move-object/from16 v119, v7
 
     move-object/from16 v120, v9
 
-    :goto_6b
+    :goto_6e
     const/4 v8, 0x3
 
-    goto/16 :goto_6f
+    goto/16 :goto_73
 
     :catchall_45
     move-exception v0
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v24, v88
 
@@ -12148,48 +14557,46 @@
 
     move-wide/from16 v42, v115
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_47
     move-exception v0
 
-    move-object/from16 v147, v9
-
-    move-object/from16 v36, v11
+    move-object/from16 v23, v11
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
-
-    move-object/from16 v3, v73
 
     move-object/from16 v24, v88
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v13, v117
+    move-object/from16 v37, v117
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v9
+
+    move-object/from16 v9, v73
+
+    goto/16 :goto_aa
 
     :catchall_46
     move-exception v0
@@ -12198,95 +14605,89 @@
 
     move-wide/from16 v42, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v24, v88
 
     move-object/from16 v35, v89
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_48
     move-exception v0
 
     move-object/from16 v38, v3
 
+    move-object/from16 v37, v5
+
     move-object/from16 v20, v8
 
-    move-object/from16 v147, v9
-
-    move-object/from16 v36, v11
+    move-object/from16 v23, v11
 
     move-wide/from16 v42, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
-
-    move-object/from16 v3, v73
 
     move-object/from16 v24, v88
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
-
-    move-object v13, v5
+    move-object/from16 v36, v99
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v9
+
+    move-object/from16 v9, v73
+
+    goto/16 :goto_aa
 
     :catchall_47
     move-exception v0
 
     move-wide/from16 v42, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v24, v88
 
@@ -12294,36 +14695,32 @@
 
     move-object/from16 v38, v93
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_49
     move-exception v0
 
+    move-object/from16 v37, v5
+
     move-object/from16 v20, v8
 
-    move-object/from16 v147, v9
-
-    move-object/from16 v36, v11
+    move-object/from16 v23, v11
 
     move-wide/from16 v42, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
-
-    move-object/from16 v3, v73
 
     move-object/from16 v24, v88
 
@@ -12331,13 +14728,15 @@
 
     move-object/from16 v38, v93
 
-    move-object/from16 v37, v99
-
-    move-object v13, v5
+    move-object/from16 v36, v99
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v9
+
+    move-object/from16 v9, v73
+
+    goto/16 :goto_aa
 
     :cond_87
     move-object/from16 v117, v5
@@ -12367,68 +14766,83 @@
     .catch Ljava/lang/Exception; {:try_start_9b .. :try_end_9b} :catch_4a
     .catchall {:try_start_9b .. :try_end_9b} :catchall_48
 
-    goto :goto_6d
+    goto :goto_71
 
     :catchall_48
     move-exception v0
 
-    move-object v3, v7
+    move-object v9, v7
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
-    goto/16 :goto_76
-
-    :catch_4a
-    move-exception v0
-
-    move-object v3, v7
-
-    move-object/from16 v147, v9
-
-    move-object/from16 v36, v11
-
-    move-object/from16 v38, v13
-
-    move v11, v14
-
-    move-object v2, v15
-
-    move/from16 v9, v26
-
+    :goto_6f
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    :goto_6c
+    :goto_70
     move-object/from16 v24, v88
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-wide/from16 v42, v115
+
+    goto/16 :goto_b2
+
+    :catch_4a
+    move-exception v0
+
+    move-object/from16 v23, v11
+
+    move-object/from16 v38, v13
+
+    move v12, v14
+
+    move-object v2, v15
+
+    move-object/from16 v34, v35
+
+    move-object/from16 v13, v57
+
+    move-object/from16 v27, v65
+
+    move-object/from16 v11, v66
+
+    move-object/from16 v14, v67
+
+    move-object/from16 v24, v88
+
+    move-object/from16 v35, v89
+
+    move-object/from16 v36, v99
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v13, v117
+    move-object/from16 v37, v117
 
-    goto/16 :goto_37
+    move-object v15, v10
+
+    move-object v10, v9
+
+    move-object v9, v7
+
+    goto/16 :goto_aa
 
     :cond_88
     :try_start_9c
     iget-object v1, v15, Lcom/android/server/am/OnePlusHighPowerDetector;->mHighPowerPkgMap:Ljava/util/HashMap;
 
-    :goto_6d
+    :goto_71
     move-object v2, v1
 
     iget-object v1, v8, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
@@ -12485,28 +14899,26 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/android/server/am/OnePlusHighPowerDetector;->notifyBgDetectIfNecessary(Ljava/lang/String;IILjava/lang/String;I)V
 
-    goto/16 :goto_6b
+    goto/16 :goto_6e
 
     :catchall_49
     move-exception v0
 
-    move-object v3, v7
+    move-object v9, v7
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -12516,32 +14928,26 @@
 
     move-wide/from16 v42, v115
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_4b
     move-exception v0
 
-    move-object v3, v7
-
-    move-object/from16 v147, v9
-
-    move-object/from16 v36, v11
+    move-object/from16 v23, v11
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -12549,15 +14955,19 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v13, v117
+    move-object/from16 v37, v117
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v9
+
+    move-object v9, v7
+
+    goto/16 :goto_aa
 
     :cond_89
     move-object/from16 v119, v7
@@ -12574,41 +14984,31 @@
 
     iget-object v1, v15, Lcom/android/server/am/OnePlusHighPowerDetector;->mMediumPowerPkgForDualMap:Ljava/util/HashMap;
 
-    goto :goto_6e
+    goto :goto_72
 
     :catchall_4a
     move-exception v0
 
-    move-object/from16 v38, v13
-
-    move v11, v14
-
-    move-object v2, v15
-
-    move/from16 v9, v26
-
-    goto/16 :goto_71
+    goto/16 :goto_75
 
     :catch_4c
     move-exception v0
 
-    move-object/from16 v36, v11
+    move-object/from16 v23, v11
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -12616,22 +15016,18 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v13, v117
+    move-object/from16 v37, v117
 
-    move-object/from16 v3, v119
-
-    move-object/from16 v147, v120
-
-    goto/16 :goto_37
+    goto/16 :goto_76
 
     :cond_8a
     iget-object v1, v15, Lcom/android/server/am/OnePlusHighPowerDetector;->mMediumPowerPkgMap:Ljava/util/HashMap;
 
-    :goto_6e
+    :goto_72
     move-object v2, v1
 
     iget-object v1, v9, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
@@ -12654,7 +15050,7 @@
 
     invoke-virtual/range {v1 .. v8}, Lcom/android/server/am/OnePlusHighPowerDetector;->addToMap(Ljava/util/HashMap;Ljava/lang/String;IZZII)V
 
-    goto/16 :goto_6b
+    goto/16 :goto_6e
 
     :cond_8b
     const/4 v8, 0x3
@@ -12735,7 +15131,7 @@
     .catchall {:try_start_9d .. :try_end_9d} :catchall_4a
 
     :cond_8c
-    :goto_6f
+    :goto_73
     nop
 
     move-object/from16 v93, v13
@@ -12752,36 +15148,32 @@
 
     move-object/from16 v9, v120
 
-    goto/16 :goto_5d
+    goto/16 :goto_61
 
     :catch_4d
     move-exception v0
 
+    move-object/from16 v37, v5
+
     move-object/from16 v20, v8
 
-    move-object/from16 v147, v9
-
-    move-object/from16 v36, v11
+    move-object/from16 v23, v11
 
     move-wide/from16 v42, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
-
-    move-object/from16 v3, v73
 
     move-object/from16 v24, v88
 
@@ -12789,36 +15181,36 @@
 
     move-object/from16 v38, v93
 
-    move-object/from16 v37, v99
-
-    move-object v13, v5
+    move-object/from16 v36, v99
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v9
+
+    move-object/from16 v9, v73
+
+    goto/16 :goto_aa
 
     :catchall_4b
     move-exception v0
 
     move-wide/from16 v42, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v24, v88
 
@@ -12826,36 +15218,30 @@
 
     move-object/from16 v38, v93
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_4e
     move-exception v0
 
     move-object/from16 v20, v8
 
-    move-object/from16 v147, v9
-
-    move-object/from16 v36, v11
+    move-object/from16 v23, v11
 
     move-wide/from16 v42, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v26
-
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
-
-    move-object/from16 v3, v73
 
     move-object/from16 v24, v88
 
@@ -12863,13 +15249,17 @@
 
     move-object/from16 v38, v93
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
-    move-object/from16 v13, v106
+    move-object/from16 v37, v106
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object v10, v9
+
+    move-object/from16 v9, v73
+
+    goto/16 :goto_aa
 
     :cond_8d
     move-object/from16 v20, v8
@@ -12895,14 +15285,14 @@
 
     move-result v0
     :try_end_9e
-    .catch Ljava/lang/Exception; {:try_start_9e .. :try_end_9e} :catch_81
-    .catchall {:try_start_9e .. :try_end_9e} :catchall_74
+    .catch Ljava/lang/Exception; {:try_start_9e .. :try_end_9e} :catch_80
+    .catchall {:try_start_9e .. :try_end_9e} :catchall_72
 
     if-lez v0, :cond_9a
 
     const/4 v0, 0x0
 
-    :goto_70
+    :goto_74
     :try_start_9f
     invoke-virtual {v12}, Landroid/util/SparseArray;->size()I
 
@@ -12955,25 +15345,27 @@
     .catch Ljava/lang/Exception; {:try_start_a1 .. :try_end_a1} :catch_4f
     .catchall {:try_start_a1 .. :try_end_a1} :catchall_4c
 
-    goto :goto_72
+    goto :goto_77
 
     :catchall_4c
     move-exception v0
 
+    move/from16 v26, v9
+
+    :goto_75
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    :goto_71
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -12983,28 +15375,32 @@
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v3, v119
+    move-object/from16 v9, v119
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_4f
     move-exception v0
 
-    move-object/from16 v36, v11
+    move-object/from16 v37, v6
+
+    move/from16 v26, v9
+
+    move-object/from16 v23, v11
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -13012,20 +15408,17 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v3, v119
+    :goto_76
+    move-object/from16 v9, v119
 
-    move-object/from16 v147, v120
-
-    move-object v13, v6
-
-    goto/16 :goto_37
+    goto/16 :goto_7f
 
     :cond_8e
-    :goto_72
+    :goto_77
     :try_start_a2
     iget v1, v7, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->uid:I
 
@@ -13039,12 +15432,12 @@
 
     const/4 v1, 0x1
 
-    goto :goto_73
+    goto :goto_78
 
     :cond_8f
     const/4 v1, 0x0
 
-    :goto_73
+    :goto_78
     move/from16 v18, v1
 
     iget v1, v7, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->uid:I
@@ -13124,13 +15517,13 @@
     .catch Ljava/lang/Exception; {:try_start_a5 .. :try_end_a5} :catch_4f
     .catchall {:try_start_a5 .. :try_end_a5} :catchall_4c
 
-    goto :goto_74
+    goto :goto_79
 
     :cond_90
     :try_start_a6
     iget-object v1, v15, Lcom/android/server/am/OnePlusHighPowerDetector;->mHugePowerPkgMap:Ljava/util/HashMap;
 
-    :goto_74
+    :goto_79
     move-object v2, v1
 
     iget-object v3, v7, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->pkgName:Ljava/lang/String;
@@ -13192,26 +15585,30 @@
 
     move/from16 v7, v121
 
-    goto/16 :goto_75
+    goto/16 :goto_7a
 
     :catch_50
     move-exception v0
 
-    move-object/from16 v36, v11
+    move-object/from16 v37, v6
+
+    move/from16 v26, v9
+
+    move-object/from16 v23, v11
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -13219,19 +15616,17 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v3, v119
-
-    move-object/from16 v147, v120
-
-    move-object v13, v6
+    move-object/from16 v9, v119
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object/from16 v10, v120
+
+    goto/16 :goto_aa
 
     :cond_91
     move/from16 v121, v5
@@ -13302,26 +15697,28 @@
 
     move-object/from16 v6, v119
 
-    goto :goto_75
+    goto :goto_7a
 
     :catch_51
     move-exception v0
 
-    move-object/from16 v36, v11
+    move/from16 v26, v9
+
+    move-object/from16 v23, v11
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -13329,13 +15726,15 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v3, v119
+    move-object/from16 v9, v119
 
-    goto/16 :goto_78
+    move-object/from16 v37, v122
+
+    goto/16 :goto_7f
 
     :cond_92
     move/from16 v7, v121
@@ -13389,7 +15788,7 @@
     :try_start_ab
     invoke-virtual {v6, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :goto_75
+    :goto_7a
     add-int/lit8 v9, v9, 0x1
 
     move/from16 v126, v9
@@ -13402,26 +15801,28 @@
 
     move-object v9, v8
 
-    goto/16 :goto_7b
+    goto/16 :goto_7d
 
     :catch_52
     move-exception v0
 
-    move-object/from16 v36, v11
+    move/from16 v26, v9
+
+    move-object/from16 v23, v11
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -13429,36 +15830,38 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v3, v119
+    move-object/from16 v9, v119
 
-    move-object/from16 v147, v120
-
-    move-object/from16 v13, v122
+    move-object/from16 v37, v122
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object/from16 v10, v120
+
+    goto/16 :goto_aa
 
     :catchall_4d
     move-exception v0
 
+    move/from16 v26, v9
+
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -13468,28 +15871,32 @@
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v3, v119
+    move-object/from16 v9, v119
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_53
     move-exception v0
 
-    move-object/from16 v36, v11
+    move-object/from16 v37, v6
+
+    move/from16 v26, v9
+
+    move-object/from16 v23, v11
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -13497,19 +15904,17 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v3, v119
-
-    move-object/from16 v147, v120
-
-    move-object v13, v6
+    move-object/from16 v9, v119
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object/from16 v10, v120
+
+    goto/16 :goto_aa
 
     :cond_93
     move-object/from16 v122, v6
@@ -13533,59 +15938,59 @@
     .catch Ljava/lang/Exception; {:try_start_ab .. :try_end_ab} :catch_54
     .catchall {:try_start_ab .. :try_end_ab} :catchall_4e
 
-    goto :goto_79
+    goto :goto_7b
 
     :catchall_4e
     move-exception v0
 
-    move-object v3, v6
+    move/from16 v26, v9
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    :goto_76
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    :goto_77
     move-object/from16 v24, v88
 
     move-object/from16 v35, v89
 
     move-wide/from16 v42, v115
 
-    goto/16 :goto_ab
+    move-object v9, v6
+
+    goto/16 :goto_b2
 
     :catch_54
     move-exception v0
 
-    move-object v3, v6
+    move/from16 v26, v9
 
-    move-object/from16 v36, v11
+    move-object/from16 v23, v11
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -13593,22 +15998,21 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-wide/from16 v42, v115
 
-    :goto_78
-    move-object/from16 v147, v120
+    move-object/from16 v37, v122
 
-    move-object/from16 v13, v122
+    move-object v9, v6
 
-    goto/16 :goto_37
+    goto/16 :goto_7f
 
     :cond_94
     :try_start_ac
     iget-object v1, v15, Lcom/android/server/am/OnePlusHighPowerDetector;->mHighPowerPkgMap:Ljava/util/HashMap;
 
-    :goto_79
+    :goto_7b
     move-object v2, v1
 
     iget-object v3, v8, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->pkgName:Ljava/lang/String;
@@ -13673,7 +16077,7 @@
 
     const/16 v24, 0x2
 
-    goto/16 :goto_7b
+    goto/16 :goto_7d
 
     :catchall_4f
     move-exception v0
@@ -13682,17 +16086,17 @@
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -13702,30 +16106,32 @@
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v3, v124
+    move-object/from16 v9, v124
 
-    goto/16 :goto_ab
+    move/from16 v26, v126
+
+    goto/16 :goto_b2
 
     :catch_55
     move-exception v0
 
     move/from16 v126, v9
 
-    move-object/from16 v36, v11
+    move-object/from16 v23, v11
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -13733,40 +16139,42 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v147, v120
+    move-object/from16 v37, v122
 
-    move-object/from16 v13, v122
+    move-object/from16 v9, v124
 
-    move-object/from16 v3, v124
+    move/from16 v26, v126
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object/from16 v10, v120
+
+    goto/16 :goto_aa
 
     :catchall_50
     move-exception v0
 
     move/from16 v126, v9
 
-    move-object v3, v6
+    move-object v9, v6
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -13776,30 +16184,32 @@
 
     move-wide/from16 v42, v115
 
-    goto/16 :goto_ab
+    move/from16 v26, v126
+
+    goto/16 :goto_b2
 
     :catch_56
     move-exception v0
 
     move/from16 v126, v9
 
-    move-object v3, v6
+    move-object v9, v6
 
-    move-object/from16 v36, v11
+    move-object/from16 v23, v11
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -13807,17 +16217,19 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v147, v120
+    move-object/from16 v37, v122
 
-    move-object/from16 v13, v122
+    move/from16 v26, v126
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object/from16 v10, v120
+
+    goto/16 :goto_aa
 
     :cond_95
     move/from16 v21, v7
@@ -13838,12 +16250,12 @@
 
     iget-object v1, v15, Lcom/android/server/am/OnePlusHighPowerDetector;->mMediumPowerPkgForDualMap:Ljava/util/HashMap;
 
-    goto :goto_7a
+    goto :goto_7c
 
     :cond_96
     iget-object v1, v15, Lcom/android/server/am/OnePlusHighPowerDetector;->mMediumPowerPkgMap:Ljava/util/HashMap;
 
-    :goto_7a
+    :goto_7c
     move-object v2, v1
 
     iget-object v3, v9, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->pkgName:Ljava/lang/String;
@@ -13868,36 +16280,38 @@
 
     invoke-virtual/range {v1 .. v8}, Lcom/android/server/am/OnePlusHighPowerDetector;->addToMap(Ljava/util/HashMap;Ljava/lang/String;IZZII)V
 
-    goto :goto_7b
+    goto :goto_7d
 
     :cond_97
     move/from16 v24, v8
 
-    :goto_7b
+    :goto_7d
     move/from16 v9, v126
 
-    goto/16 :goto_7c
+    goto/16 :goto_7e
 
     :catch_57
     move-exception v0
 
     move/from16 v126, v9
 
-    move-object/from16 v36, v11
+    move-object/from16 v37, v6
+
+    move-object/from16 v23, v11
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -13905,19 +16319,19 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v3, v119
+    move-object/from16 v9, v119
 
-    move-object/from16 v147, v120
-
-    move-object v13, v6
+    move/from16 v26, v126
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object/from16 v10, v120
+
+    goto/16 :goto_aa
 
     :cond_98
     move/from16 v19, v8
@@ -13973,9 +16387,9 @@
     .catch Ljava/lang/Exception; {:try_start_ae .. :try_end_ae} :catch_58
     .catchall {:try_start_ae .. :try_end_ae} :catchall_51
 
-    goto :goto_7b
+    goto :goto_7d
 
-    :goto_7c
+    :goto_7e
     add-int/lit8 v0, v0, 0x1
 
     move-object/from16 v119, v12
@@ -13986,26 +16400,26 @@
 
     move-object/from16 v12, v125
 
-    goto/16 :goto_70
+    goto/16 :goto_74
 
     :catchall_51
     move-exception v0
 
-    move-object v3, v12
+    move-object v9, v12
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -14015,30 +16429,30 @@
 
     move-wide/from16 v42, v115
 
-    move/from16 v9, v126
+    move/from16 v26, v126
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_58
     move-exception v0
 
-    move-object/from16 v36, v11
+    move-object/from16 v23, v11
 
-    move-object v3, v12
+    move-object v9, v12
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -14046,17 +16460,21 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v147, v120
+    move-object/from16 v37, v122
 
-    move-object/from16 v13, v122
+    move/from16 v26, v126
 
-    move/from16 v9, v126
+    :goto_7f
+    move-object v15, v10
 
-    goto/16 :goto_37
+    :goto_80
+    move-object/from16 v10, v120
+
+    goto/16 :goto_aa
 
     :cond_99
     move/from16 v19, v8
@@ -14073,7 +16491,7 @@
 
     move/from16 v18, v0
 
-    goto :goto_7d
+    goto :goto_81
 
     :catchall_52
     move-exception v0
@@ -14082,17 +16500,17 @@
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -14102,30 +16520,32 @@
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v3, v119
+    move-object/from16 v9, v119
 
-    goto/16 :goto_ab
+    move/from16 v26, v126
+
+    goto/16 :goto_b2
 
     :catch_59
     move-exception v0
 
     move/from16 v126, v9
 
-    move-object/from16 v36, v11
+    move-object/from16 v23, v11
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -14133,19 +16553,21 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v13, v117
+    move-object/from16 v37, v117
 
-    move-object/from16 v3, v119
+    move-object/from16 v9, v119
 
-    move-object/from16 v147, v120
+    move/from16 v26, v126
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object/from16 v10, v120
+
+    goto/16 :goto_aa
 
     :cond_9a
     move/from16 v19, v8
@@ -14158,7 +16580,7 @@
 
     const/16 v24, 0x2
 
-    :goto_7d
+    :goto_81
     move-object/from16 v8, v122
 
     :try_start_af
@@ -14170,19 +16592,19 @@
 
     move-result-object v0
     :try_end_af
-    .catch Ljava/lang/Exception; {:try_start_af .. :try_end_af} :catch_80
-    .catchall {:try_start_af .. :try_end_af} :catchall_73
+    .catch Ljava/lang/Exception; {:try_start_af .. :try_end_af} :catch_7f
+    .catchall {:try_start_af .. :try_end_af} :catchall_71
 
     move/from16 v21, v9
 
-    :goto_7e
+    :goto_82
     :try_start_b0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
     :try_end_b0
-    .catch Ljava/lang/Exception; {:try_start_b0 .. :try_end_b0} :catch_7f
-    .catchall {:try_start_b0 .. :try_end_b0} :catchall_72
+    .catch Ljava/lang/Exception; {:try_start_b0 .. :try_end_b0} :catch_7e
+    .catchall {:try_start_b0 .. :try_end_b0} :catchall_70
 
     if-eqz v1, :cond_b0
 
@@ -14243,12 +16665,12 @@
 
     const/4 v1, 0x1
 
-    goto :goto_7f
+    goto :goto_83
 
     :cond_9b
     const/4 v1, 0x0
 
-    :goto_7f
+    :goto_83
     move/from16 v23, v1
 
     invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
@@ -14302,45 +16724,47 @@
     .catch Ljava/lang/Exception; {:try_start_b2 .. :try_end_b2} :catch_5a
     .catchall {:try_start_b2 .. :try_end_b2} :catchall_53
 
-    goto :goto_80
+    goto :goto_84
 
     :catchall_53
     move-exception v0
 
-    move-object v3, v12
+    move-object v9, v12
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    goto/16 :goto_76
+    goto/16 :goto_6f
 
     :catch_5a
     move-exception v0
 
-    move-object/from16 v36, v11
+    move-object/from16 v37, v8
 
-    move-object v3, v12
+    move-object/from16 v23, v11
+
+    move-object v9, v12
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -14348,18 +16772,14 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v147, v120
-
-    move-object v13, v8
-
-    goto/16 :goto_37
+    goto/16 :goto_7f
 
     :cond_9c
-    :goto_80
+    :goto_84
     :try_start_b3
     invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
 
@@ -14440,7 +16860,7 @@
 
     move-object/from16 v0, v127
 
-    goto/16 :goto_7e
+    goto/16 :goto_82
 
     :cond_9d
     move-object/from16 v127, v0
@@ -14501,13 +16921,13 @@
     .catch Ljava/lang/Exception; {:try_start_b7 .. :try_end_b7} :catch_5a
     .catchall {:try_start_b7 .. :try_end_b7} :catchall_53
 
-    goto :goto_81
+    goto :goto_85
 
     :cond_9e
     :try_start_b8
     iget-object v0, v15, Lcom/android/server/am/OnePlusHighPowerDetector;->mHugePowerPkgMap:Ljava/util/HashMap;
 
-    :goto_81
+    :goto_85
     const/16 v26, 0x1
 
     const/16 v27, 0x0
@@ -14572,7 +16992,7 @@
 
     move-object/from16 v6, v128
 
-    goto/16 :goto_82
+    goto/16 :goto_86
 
     :cond_9f
     move v0, v2
@@ -14643,7 +17063,7 @@
 
     invoke-virtual {v1, v2, v0, v3}, Lcom/android/server/am/ActivityManagerService;->killUid(IILjava/lang/String;)V
 
-    goto :goto_82
+    goto :goto_86
 
     :cond_a0
     const-string v1, "OHPD"
@@ -14689,7 +17109,7 @@
     .catch Ljava/lang/Exception; {:try_start_b9 .. :try_end_b9} :catch_5b
     .catchall {:try_start_b9 .. :try_end_b9} :catchall_54
 
-    :goto_82
+    :goto_86
     add-int/lit8 v21, v21, 0x1
 
     move-object/from16 v138, v6
@@ -14734,26 +17154,26 @@
 
     move-object/from16 v134, v130
 
-    goto/16 :goto_89
+    goto/16 :goto_8d
 
     :catchall_54
     move-exception v0
 
-    move-object v3, v12
+    move-object v9, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -14765,28 +17185,26 @@
 
     move-object/from16 v38, v129
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_5b
     move-exception v0
 
-    move-object v3, v12
+    move-object v9, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v21
-
-    move-object/from16 v13, v26
+    move-object/from16 v37, v26
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -14794,38 +17212,40 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v147, v120
-
     move-object/from16 v38, v129
 
-    move-object/from16 v36, v130
+    move-object/from16 v23, v130
 
-    goto/16 :goto_37
+    move-object v15, v10
+
+    move/from16 v26, v21
+
+    goto/16 :goto_80
 
     :catchall_55
     move-exception v0
 
-    move-object v3, v12
+    move-object v9, v12
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -14835,30 +17255,32 @@
 
     move-wide/from16 v42, v115
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_5c
     move-exception v0
 
-    move-object/from16 v36, v11
+    move-object/from16 v37, v8
 
-    move-object v3, v12
+    move-object/from16 v23, v11
+
+    move-object v9, v12
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -14866,17 +17288,15 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v147, v120
-
-    move-object v13, v8
-
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object/from16 v10, v120
+
+    goto/16 :goto_aa
 
     :cond_a1
     move v0, v2
@@ -14947,13 +17367,13 @@
     .catch Ljava/lang/Exception; {:try_start_bb .. :try_end_bb} :catch_5b
     .catchall {:try_start_bb .. :try_end_bb} :catchall_54
 
-    goto :goto_83
+    goto :goto_87
 
     :cond_a2
     :try_start_bc
     iget-object v2, v15, Lcom/android/server/am/OnePlusHighPowerDetector;->mHighPowerPkgMap:Ljava/util/HashMap;
 
-    :goto_83
+    :goto_87
     const/4 v3, 0x1
 
     const/4 v4, 0x0
@@ -15079,73 +17499,77 @@
 
     const/4 v1, 0x2
 
-    goto/16 :goto_89
+    goto/16 :goto_8d
 
     :catchall_56
     move-exception v0
 
     move-object/from16 v2, p0
 
-    goto/16 :goto_84
+    goto/16 :goto_88
 
     :catch_5d
     move-exception v0
 
     move-object/from16 v2, p0
 
-    goto/16 :goto_85
+    goto/16 :goto_89
 
     :catchall_57
     move-exception v0
 
     move-object/from16 v2, p0
 
+    move-object v9, v3
+
     move-object/from16 v38, v4
 
-    move v11, v5
+    move v12, v5
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v23, v132
+    move-object/from16 v27, v132
 
-    move-object/from16 v12, v136
+    move-object/from16 v13, v136
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_5e
     move-exception v0
 
-    move-object/from16 v37, v1
+    move-object/from16 v36, v1
 
     move-object v15, v2
 
+    move-object v9, v3
+
     move-object/from16 v38, v4
 
-    move v11, v5
+    move v12, v5
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v147, v131
+    move-object/from16 v10, v131
 
-    move-object/from16 v23, v132
+    move-object/from16 v27, v132
 
-    move-object/from16 v13, v133
+    move-object/from16 v37, v133
 
-    move-object/from16 v36, v134
+    move-object/from16 v23, v134
 
-    move-object/from16 v12, v136
+    move-object/from16 v13, v136
 
     move-object/from16 v2, p0
 
-    goto/16 :goto_a4
+    goto/16 :goto_aa
 
     :catchall_58
     move-exception v0
@@ -15162,23 +17586,23 @@
 
     move-object/from16 v2, p0
 
-    move-object v3, v13
+    move-object v9, v13
 
-    move v11, v14
+    move v12, v14
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
     move-object/from16 v38, v129
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_5f
     move-exception v0
@@ -15197,29 +17621,31 @@
 
     move-object v15, v10
 
-    move-object v3, v12
+    move-object v9, v12
 
-    move/from16 v9, v21
+    move-object/from16 v37, v26
 
-    move-object/from16 v13, v26
+    move-object/from16 v13, v57
 
-    move-object/from16 v12, v57
-
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v27, v65
 
     move-object/from16 v14, v67
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
-    move-object/from16 v147, v120
+    move-object/from16 v10, v120
 
     move-object/from16 v38, v129
 
-    move-object/from16 v36, v130
+    move-object/from16 v23, v130
 
-    goto/16 :goto_a4
+    move v12, v11
+
+    move/from16 v26, v21
+
+    move-object/from16 v11, v66
+
+    goto/16 :goto_aa
 
     :cond_a3
     move-object/from16 v28, v9
@@ -15320,61 +17746,65 @@
     .catch Ljava/lang/Exception; {:try_start_c0 .. :try_end_c0} :catch_60
     .catchall {:try_start_c0 .. :try_end_c0} :catchall_59
 
-    goto :goto_86
+    goto :goto_8a
 
     :catchall_59
     move-exception v0
 
     move-object v2, v6
 
-    :goto_84
+    :goto_88
     move-object/from16 v38, v12
 
-    move-object v3, v13
+    move-object v9, v13
 
-    move/from16 v9, v21
-
-    move-object/from16 v45, v66
+    move/from16 v26, v21
 
     move-object/from16 v14, v67
 
-    move-object/from16 v23, v132
+    move-object/from16 v27, v132
 
-    move-object/from16 v12, v136
+    move-object/from16 v13, v136
 
-    goto/16 :goto_ab
+    move v12, v11
+
+    move-object/from16 v11, v66
+
+    goto/16 :goto_b2
 
     :catch_60
     move-exception v0
 
     move-object v2, v6
 
-    :goto_85
+    :goto_89
     move-object/from16 v38, v12
 
-    move-object v3, v13
+    move-object v9, v13
 
-    move-object/from16 v37, v15
+    move-object/from16 v36, v15
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v45, v66
+    move-object/from16 v10, v131
 
-    move-object/from16 v147, v131
+    move-object/from16 v27, v132
 
-    move-object/from16 v23, v132
+    move-object/from16 v37, v133
 
-    move-object/from16 v13, v133
+    move-object/from16 v23, v134
 
-    move-object/from16 v36, v134
+    move-object/from16 v13, v136
 
-    move-object/from16 v12, v136
+    move v12, v11
 
     move-object v15, v14
 
+    move-object/from16 v11, v66
+
     move-object/from16 v14, v67
 
-    goto/16 :goto_a4
+    goto/16 :goto_aa
 
     :cond_a4
     move-object/from16 v6, p0
@@ -15382,7 +17812,7 @@
     :try_start_c1
     iget-object v2, v6, Lcom/android/server/am/OnePlusHighPowerDetector;->mMediumPowerPkgMap:Ljava/util/HashMap;
 
-    :goto_86
+    :goto_8a
     move-object v9, v2
 
     const/4 v2, 0x0
@@ -15428,7 +17858,7 @@
     .catch Ljava/lang/Exception; {:try_start_c2 .. :try_end_c2} :catch_61
     .catchall {:try_start_c2 .. :try_end_c2} :catchall_5a
 
-    goto/16 :goto_89
+    goto/16 :goto_8d
 
     :catchall_5a
     move-exception v0
@@ -15437,122 +17867,126 @@
 
     move-object v2, v6
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v23, v132
+    move-object/from16 v27, v132
 
-    move-object/from16 v12, v136
+    move-object/from16 v13, v136
 
-    move-object/from16 v3, v140
+    move-object/from16 v9, v140
 
-    move/from16 v11, p1
+    move/from16 v12, p1
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_61
     move-exception v0
 
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v147, v131
+    move-object/from16 v10, v131
 
-    move-object/from16 v23, v132
+    move-object/from16 v27, v132
 
-    move-object/from16 v13, v133
+    move-object/from16 v37, v133
 
-    move-object/from16 v36, v134
+    move-object/from16 v23, v134
 
-    move-object/from16 v12, v136
+    move-object/from16 v13, v136
 
     move-object/from16 v15, v139
 
-    move-object/from16 v3, v140
+    move-object/from16 v9, v140
 
-    move/from16 v11, p1
+    move/from16 v12, p1
 
-    goto/16 :goto_a4
+    goto/16 :goto_aa
 
     :catchall_5b
     move-exception v0
 
     move-object v2, v6
 
-    goto :goto_87
+    goto :goto_8b
 
     :catch_62
     move-exception v0
 
     move-object v2, v6
 
-    goto :goto_88
+    goto :goto_8c
 
     :catchall_5c
     move-exception v0
 
     move-object/from16 v2, p0
 
-    :goto_87
+    :goto_8b
     move-object/from16 v38, v12
 
-    move-object v3, v13
+    move-object v9, v13
 
-    move/from16 v9, v21
-
-    move-object/from16 v45, v66
+    move/from16 v26, v21
 
     move-object/from16 v14, v67
 
-    move-object/from16 v23, v132
+    move-object/from16 v27, v132
 
-    move-object/from16 v12, v136
+    move-object/from16 v13, v136
 
-    goto/16 :goto_ab
+    move v12, v11
+
+    move-object/from16 v11, v66
+
+    goto/16 :goto_b2
 
     :catch_63
     move-exception v0
 
     move-object/from16 v2, p0
 
-    :goto_88
+    :goto_8c
     move-object/from16 v38, v12
 
-    move-object v3, v13
+    move-object v9, v13
 
-    move-object/from16 v37, v15
+    move-object/from16 v36, v15
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v45, v66
+    move-object/from16 v10, v131
 
-    move-object/from16 v147, v131
+    move-object/from16 v27, v132
 
-    move-object/from16 v23, v132
+    move-object/from16 v37, v133
 
-    move-object/from16 v13, v133
+    move-object/from16 v23, v134
 
-    move-object/from16 v36, v134
+    move-object/from16 v13, v136
 
-    move-object/from16 v12, v136
+    move v12, v11
 
     move-object v15, v14
 
+    move-object/from16 v11, v66
+
     move-object/from16 v14, v67
 
-    goto/16 :goto_a4
+    goto/16 :goto_aa
 
     :cond_a5
     move-object/from16 v6, p0
@@ -15571,7 +18005,7 @@
 
     move-object/from16 v4, v137
 
-    goto/16 :goto_89
+    goto/16 :goto_8d
 
     :catchall_5d
     move-exception v0
@@ -15584,25 +18018,25 @@
 
     move-wide/from16 v42, v115
 
-    move-object v3, v12
+    move-object v9, v12
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_64
     move-exception v0
@@ -15615,35 +18049,35 @@
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v36, v11
+    move-object/from16 v37, v8
 
-    move-object v3, v12
+    move-object/from16 v23, v11
+
+    move-object v9, v12
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v37, v99
-
-    move-object/from16 v147, v120
-
-    move-object v13, v8
+    move-object/from16 v36, v99
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object/from16 v10, v120
+
+    goto/16 :goto_aa
 
     :cond_a6
     move-object/from16 v127, v0
@@ -15692,15 +18126,15 @@
 
     move-object/from16 v26, v125
 
-    :goto_89
-    const/4 v9, 0x1
+    :goto_8d
+    const/4 v10, 0x1
 
     :try_start_c3
-    new-array v8, v9, [I
+    new-array v8, v10, [I
 
-    const/4 v10, 0x0
+    const/4 v11, 0x0
 
-    aput v38, v8, v10
+    aput v38, v8, v11
 
     invoke-static {v8}, Landroid/util/OpFeatures;->isSupport([I)Z
 
@@ -15713,24 +18147,28 @@
 
     const/4 v8, 0x3
 
-    move/from16 v11, p1
+    move/from16 v12, p1
 
-    if-ne v11, v8, :cond_ae
+    if-ne v12, v8, :cond_ae
 
     :try_start_c4
-    sget-boolean v12, Lcom/android/server/am/OnePlusHighPowerDetector;->RNK_ON:Z
+    sget-boolean v9, Lcom/android/server/am/OnePlusHighPowerDetector;->RNK_ON:Z
+
+    if-eqz v9, :cond_ae
+
+    iget-boolean v9, v6, Lcom/android/server/am/OnePlusHighPowerDetector;->mIsBGCFeatureEnabled:Z
     :try_end_c4
     .catch Ljava/lang/Exception; {:try_start_c4 .. :try_end_c4} :catch_6e
     .catchall {:try_start_c4 .. :try_end_c4} :catchall_65
 
-    if-eqz v12, :cond_ae
+    if-nez v9, :cond_ae
 
-    move-object/from16 v12, v136
+    move-object/from16 v13, v136
 
-    move-object/from16 v13, v138
+    move-object/from16 v9, v138
 
     :try_start_c5
-    invoke-virtual {v12, v13}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v13, v9}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
     move-result v14
     :try_end_c5
@@ -15742,7 +18180,7 @@
     move-object/from16 v14, v67
 
     :try_start_c6
-    invoke-virtual {v14, v13}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v14, v9}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
     move-result v15
 
@@ -15759,16 +18197,16 @@
 
     if-lt v15, v1, :cond_a7
 
-    goto :goto_8c
+    goto :goto_90
 
     :cond_a7
-    move-object/from16 v9, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v143, v132
 
     move-object/from16 v15, v139
 
-    goto/16 :goto_90
+    goto/16 :goto_94
 
     :catchall_5e
     move-exception v0
@@ -15777,49 +18215,49 @@
 
     move-object v2, v6
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
-    move-object/from16 v23, v132
+    move-object/from16 v27, v132
 
-    :goto_8a
-    move-object/from16 v3, v140
+    :goto_8e
+    move-object/from16 v9, v140
 
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_65
     move-exception v0
 
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
-    move-object/from16 v147, v131
+    move-object/from16 v10, v131
 
-    move-object/from16 v23, v132
+    move-object/from16 v27, v132
 
-    move-object/from16 v13, v133
+    move-object/from16 v37, v133
 
-    move-object/from16 v36, v134
+    move-object/from16 v23, v134
 
     move-object/from16 v15, v139
 
-    :goto_8b
-    move-object/from16 v3, v140
+    :goto_8f
+    move-object/from16 v9, v140
 
-    goto/16 :goto_a4
+    goto/16 :goto_aa
 
     :cond_a8
     move-object/from16 v14, v67
 
-    :goto_8c
+    :goto_90
     move-object/from16 v15, v139
 
     :try_start_c7
@@ -15841,7 +18279,7 @@
 
     invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v8, "(uid "
 
@@ -15872,35 +18310,35 @@
 
     nop
 
-    move-object/from16 v9, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v143, v132
 
-    goto/16 :goto_90
+    goto/16 :goto_94
 
     :catch_66
     move-exception v0
 
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
-    move-object/from16 v147, v131
+    move-object/from16 v10, v131
 
-    move-object/from16 v23, v132
+    move-object/from16 v27, v132
 
-    :goto_8d
-    move-object/from16 v13, v133
+    :goto_91
+    move-object/from16 v37, v133
 
-    move-object/from16 v36, v134
+    move-object/from16 v23, v134
 
-    goto :goto_8b
+    goto :goto_8f
 
     :cond_a9
     move-object/from16 v8, v132
@@ -15920,21 +18358,21 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "[BgDetect][RNK] skip pkg "
+    const-string v11, "[BgDetect][RNK] skip pkg "
+
+    invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v11, "(uid "
 
-    const-string v9, "(uid "
-
-    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v9, "), reason= small adj"
+    const-string v11, "), reason= small adj"
 
-    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -15949,9 +18387,9 @@
 
     move-object/from16 v143, v8
 
-    move-object/from16 v9, v66
+    move-object/from16 v11, v66
 
-    goto/16 :goto_90
+    goto/16 :goto_94
 
     :catchall_5f
     move-exception v0
@@ -15960,39 +18398,39 @@
 
     move-object v2, v6
 
-    move-object/from16 v23, v8
+    move-object/from16 v27, v8
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
-    goto/16 :goto_8a
+    goto/16 :goto_8e
 
     :catch_67
     move-exception v0
 
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move-object/from16 v23, v8
+    move-object/from16 v27, v8
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
-    :goto_8e
-    move-object/from16 v147, v131
+    :goto_92
+    move-object/from16 v10, v131
 
-    goto :goto_8d
+    goto :goto_91
 
     :cond_aa
-    move-object/from16 v9, v66
+    move-object/from16 v11, v66
 
     :try_start_cb
-    invoke-interface {v9, v5}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v11, v5}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v1
     :try_end_cb
@@ -16010,7 +18448,7 @@
 
     invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v10, "(uid "
 
@@ -16033,10 +18471,10 @@
 
     nop
 
-    :goto_8f
+    :goto_93
     move-object/from16 v143, v8
 
-    goto/16 :goto_90
+    goto/16 :goto_94
 
     :catchall_60
     move-exception v0
@@ -16045,34 +18483,30 @@
 
     move-object v2, v6
 
-    move-object/from16 v23, v8
+    move-object/from16 v27, v8
 
-    move-object/from16 v45, v9
+    move/from16 v26, v21
 
-    move/from16 v9, v21
-
-    goto/16 :goto_8a
+    goto/16 :goto_8e
 
     :catch_68
     move-exception v0
 
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move-object/from16 v23, v8
+    move-object/from16 v27, v8
 
-    move-object/from16 v45, v9
+    move/from16 v26, v21
 
-    move/from16 v9, v21
-
-    goto :goto_8e
+    goto :goto_92
 
     :cond_ab
     :try_start_cd
-    invoke-direct {v6, v13}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkWidgetPackage(Ljava/lang/String;)Z
+    invoke-direct {v6, v9}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkWidgetPackage(Ljava/lang/String;)Z
 
     move-result v1
     :try_end_cd
@@ -16090,7 +18524,7 @@
 
     invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v10, "(uid "
 
@@ -16111,7 +18545,7 @@
     .catch Ljava/lang/Exception; {:try_start_ce .. :try_end_ce} :catch_68
     .catchall {:try_start_ce .. :try_end_ce} :catchall_60
 
-    goto :goto_8f
+    goto :goto_93
 
     :cond_ac
     :try_start_cf
@@ -16119,7 +18553,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
 
@@ -16177,7 +18611,7 @@
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v8, " (uid "
 
@@ -16200,29 +18634,27 @@
     .catch Ljava/lang/Exception; {:try_start_d0 .. :try_end_d0} :catch_69
     .catchall {:try_start_d0 .. :try_end_d0} :catchall_69
 
-    goto/16 :goto_90
+    goto/16 :goto_94
 
     :catch_69
     move-exception v0
 
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move-object/from16 v45, v9
+    move/from16 v26, v21
 
-    move/from16 v9, v21
+    move-object/from16 v10, v131
 
-    move-object/from16 v147, v131
-
-    goto/16 :goto_94
+    goto/16 :goto_99
 
     :cond_ad
     move-object/from16 v143, v8
 
-    goto/16 :goto_90
+    goto/16 :goto_94
 
     :catchall_61
     move-exception v0
@@ -16231,227 +18663,225 @@
 
     move-object v2, v6
 
-    move-object/from16 v23, v8
+    move-object/from16 v27, v8
 
-    move-object/from16 v45, v9
+    move/from16 v26, v21
 
-    move/from16 v9, v21
+    move-object/from16 v9, v140
 
-    move-object/from16 v3, v140
-
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_6a
     move-exception v0
 
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move-object/from16 v23, v8
+    move-object/from16 v27, v8
 
-    move-object/from16 v45, v9
+    move/from16 v26, v21
 
-    move/from16 v9, v21
+    move-object/from16 v10, v131
 
-    move-object/from16 v147, v131
+    move-object/from16 v37, v133
 
-    move-object/from16 v13, v133
+    move-object/from16 v23, v134
 
-    move-object/from16 v36, v134
+    move-object/from16 v9, v140
 
-    move-object/from16 v3, v140
-
-    goto/16 :goto_a4
+    goto/16 :goto_aa
 
     :catchall_62
     move-exception v0
 
+    move-object/from16 v11, v66
+
     move-object/from16 v38, v2
 
     move-object v2, v6
 
-    move-object/from16 v23, v8
+    move-object/from16 v27, v8
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v45, v66
+    move-object/from16 v9, v140
 
-    move-object/from16 v3, v140
-
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_6b
     move-exception v0
 
+    move-object/from16 v11, v66
+
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move-object/from16 v23, v8
+    move-object/from16 v27, v8
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v45, v66
+    move-object/from16 v10, v131
 
-    move-object/from16 v147, v131
+    move-object/from16 v37, v133
 
-    move-object/from16 v13, v133
+    move-object/from16 v23, v134
 
-    move-object/from16 v36, v134
+    move-object/from16 v9, v140
 
-    move-object/from16 v3, v140
-
-    goto/16 :goto_a4
+    goto/16 :goto_aa
 
     :catchall_63
     move-exception v0
 
+    move-object/from16 v11, v66
+
     move-object/from16 v38, v2
 
     move-object v2, v6
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v45, v66
+    move-object/from16 v27, v132
 
-    move-object/from16 v23, v132
+    move-object/from16 v9, v140
 
-    move-object/from16 v3, v140
-
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_6c
     move-exception v0
 
+    move-object/from16 v11, v66
+
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v45, v66
+    move-object/from16 v10, v131
 
-    move-object/from16 v147, v131
+    move-object/from16 v27, v132
 
-    move-object/from16 v23, v132
+    move-object/from16 v37, v133
 
-    move-object/from16 v13, v133
+    move-object/from16 v23, v134
 
-    move-object/from16 v36, v134
+    move-object/from16 v9, v140
 
-    move-object/from16 v3, v140
-
-    goto/16 :goto_a4
+    goto/16 :goto_aa
 
     :catchall_64
     move-exception v0
 
+    move-object/from16 v11, v66
+
     move-object/from16 v14, v67
 
     move-object/from16 v38, v2
 
     move-object v2, v6
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v45, v66
+    move-object/from16 v27, v132
 
-    move-object/from16 v23, v132
+    move-object/from16 v9, v140
 
-    move-object/from16 v3, v140
-
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_6d
     move-exception v0
 
+    move-object/from16 v11, v66
+
     move-object/from16 v14, v67
 
     move-object/from16 v15, v139
 
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v45, v66
+    move-object/from16 v10, v131
 
-    move-object/from16 v147, v131
+    move-object/from16 v27, v132
 
-    move-object/from16 v23, v132
+    move-object/from16 v37, v133
 
-    move-object/from16 v13, v133
+    move-object/from16 v23, v134
 
-    move-object/from16 v36, v134
+    move-object/from16 v9, v140
 
-    move-object/from16 v3, v140
-
-    goto/16 :goto_a4
+    goto/16 :goto_aa
 
     :catchall_65
     move-exception v0
 
+    move-object/from16 v11, v66
+
     move-object/from16 v14, v67
 
-    move-object/from16 v12, v136
+    move-object/from16 v13, v136
 
-    goto/16 :goto_91
+    goto/16 :goto_95
 
     :catch_6e
     move-exception v0
 
+    move-object/from16 v11, v66
+
     move-object/from16 v14, v67
 
-    move-object/from16 v12, v136
+    move-object/from16 v13, v136
 
     move-object/from16 v15, v139
 
-    goto/16 :goto_92
+    goto/16 :goto_96
 
     :cond_ae
-    move-object/from16 v9, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
     move-object/from16 v143, v132
 
-    move-object/from16 v12, v136
+    move-object/from16 v13, v136
 
     move-object/from16 v15, v139
 
-    goto :goto_90
+    goto :goto_94
 
     :cond_af
-    move-object/from16 v9, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
     move-object/from16 v143, v132
 
-    move-object/from16 v12, v136
+    move-object/from16 v13, v136
 
     move-object/from16 v15, v139
 
-    move/from16 v11, p1
+    move/from16 v12, p1
 
-    :goto_90
-    move-object v13, v2
-
+    :goto_94
     move-object/from16 v99, v3
 
-    move-object/from16 v66, v9
+    move-object/from16 v66, v11
 
-    move-object/from16 v57, v12
+    move-object/from16 v57, v13
 
     move-object/from16 v67, v14
 
@@ -16473,7 +18903,7 @@
 
     move-object/from16 v8, v133
 
-    move-object/from16 v12, v140
+    move-object/from16 v11, v134
 
     move-object/from16 v65, v143
 
@@ -16481,84 +18911,90 @@
 
     const/16 v24, 0x2
 
+    move-object v13, v2
+
     move-object v15, v6
 
-    move v14, v11
+    move v14, v12
 
     move-object/from16 v35, v34
 
-    move-object/from16 v11, v134
+    move-object/from16 v12, v140
 
-    goto/16 :goto_7e
+    goto/16 :goto_82
 
     :catchall_66
     move-exception v0
 
+    move-object/from16 v11, v66
+
     move-object/from16 v14, v67
 
-    move-object/from16 v12, v136
+    move-object/from16 v13, v136
 
-    move/from16 v11, p1
+    move/from16 v12, p1
 
-    :goto_91
+    :goto_95
     move-object/from16 v38, v2
 
     move-object v2, v6
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v45, v66
+    move-object/from16 v27, v132
 
-    move-object/from16 v23, v132
+    move-object/from16 v9, v140
 
-    move-object/from16 v3, v140
-
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_6f
     move-exception v0
 
+    move-object/from16 v11, v66
+
     move-object/from16 v14, v67
 
-    move-object/from16 v12, v136
+    move-object/from16 v13, v136
 
     move-object/from16 v15, v139
 
-    move/from16 v11, p1
+    move/from16 v12, p1
 
-    :goto_92
+    :goto_96
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v45, v66
+    move-object/from16 v10, v131
 
-    move-object/from16 v147, v131
+    move-object/from16 v27, v132
 
-    move-object/from16 v23, v132
+    move-object/from16 v37, v133
 
-    move-object/from16 v13, v133
+    move-object/from16 v23, v134
 
-    move-object/from16 v36, v134
+    move-object/from16 v9, v140
 
-    move-object/from16 v3, v140
-
-    goto/16 :goto_a4
+    goto/16 :goto_aa
 
     :catchall_67
     move-exception v0
 
     move-object/from16 v140, v12
 
-    move v11, v14
+    move-object v2, v13
+
+    move v12, v14
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
+
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -16568,19 +19004,17 @@
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v38, v13
+    move-object/from16 v38, v2
 
     move-object v2, v15
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v9, v140
 
-    move-object/from16 v3, v140
-
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_70
     move-exception v0
@@ -16589,13 +19023,17 @@
 
     move-object/from16 v140, v12
 
-    move v11, v14
+    move-object v2, v13
+
+    move v12, v14
 
     move-object v6, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
+
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -16607,27 +19045,25 @@
 
     move-object v15, v10
 
+    move-object/from16 v38, v2
+
     move-object v2, v6
 
-    move-object/from16 v38, v13
+    move-object/from16 v37, v8
 
-    move/from16 v9, v21
+    move/from16 v26, v21
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v36, v99
 
-    move-object/from16 v37, v99
+    move-object/from16 v10, v120
 
-    move-object/from16 v147, v120
+    move-object/from16 v23, v134
 
-    move-object/from16 v36, v134
+    move-object/from16 v9, v140
 
-    move-object/from16 v3, v140
-
-    move-object v13, v8
-
-    goto/16 :goto_a4
+    goto/16 :goto_aa
 
     :cond_b0
     move-object/from16 v133, v8
@@ -16638,17 +19074,17 @@
 
     move-object v2, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v6, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
     move-object/from16 v143, v65
 
-    move-object/from16 v9, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -16668,7 +19104,7 @@
 
     move-object v15, v10
 
-    if-eqz v40, :cond_bc
+    if-eqz v40, :cond_bb
 
     const/4 v0, 0x1
 
@@ -16683,13 +19119,13 @@
 
     move-result-object v1
 
-    :goto_93
+    :goto_97
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
     :try_end_d1
-    .catch Ljava/lang/Exception; {:try_start_d1 .. :try_end_d1} :catch_7e
-    .catchall {:try_start_d1 .. :try_end_d1} :catchall_71
+    .catch Ljava/lang/Exception; {:try_start_d1 .. :try_end_d1} :catch_7d
+    .catchall {:try_start_d1 .. :try_end_d1} :catchall_6f
 
     if-eqz v4, :cond_b2
 
@@ -16716,54 +19152,50 @@
 
     move-result v8
 
-    sget-object v13, Lcom/android/server/am/OnePlusHighPowerDetector;->BG_DETECTION_CPU_USAGE_THRESHOLD_MIN:[I
+    sget-object v9, Lcom/android/server/am/OnePlusHighPowerDetector;->BG_DETECTION_CPU_USAGE_THRESHOLD_MIN:[I
 
-    aget v13, v13, v11
+    aget v9, v9, v12
     :try_end_d2
     .catch Ljava/lang/Exception; {:try_start_d2 .. :try_end_d2} :catch_72
     .catchall {:try_start_d2 .. :try_end_d2} :catchall_69
 
-    if-lt v8, v13, :cond_b1
+    if-lt v8, v9, :cond_b1
 
-    add-int/lit8 v1, v21, 0x1
+    add-int/lit8 v9, v21, 0x1
 
     const/4 v0, 0x0
 
     :try_start_d3
-    const-string v8, "OHPD"
+    const-string v1, "OHPD"
 
-    new-instance v13, Ljava/lang/StringBuilder;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
     move/from16 v144, v0
 
     const-string v0, "[BgDetect][PD] found PD is caused by skipped uid "
 
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v13, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v0, " usg "
 
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v13, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v8, v0}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_d3
     .catch Ljava/lang/Exception; {:try_start_d3 .. :try_end_d3} :catch_71
     .catchall {:try_start_d3 .. :try_end_d3} :catchall_68
 
-    nop
-
-    move/from16 v21, v1
-
-    goto :goto_95
+    goto :goto_9a
 
     :catchall_68
     move-exception v0
@@ -16772,43 +19204,25 @@
 
     move-object v2, v6
 
-    move-object/from16 v45, v9
+    move/from16 v26, v9
 
-    move-object/from16 v3, v140
-
-    move-object/from16 v23, v143
-
-    move v9, v1
-
-    goto/16 :goto_ab
+    goto :goto_98
 
     :catch_71
     move-exception v0
 
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move-object/from16 v45, v9
+    move/from16 v26, v9
 
-    move-object/from16 v147, v10
-
-    move-object/from16 v13, v133
-
-    move-object/from16 v36, v134
-
-    move-object/from16 v3, v140
-
-    move-object/from16 v23, v143
-
-    move v9, v1
-
-    goto/16 :goto_a4
+    goto :goto_99
 
     :cond_b1
-    goto :goto_93
+    goto :goto_97
 
     :catchall_69
     move-exception v0
@@ -16817,47 +19231,44 @@
 
     move-object v2, v6
 
-    move-object/from16 v45, v9
+    move/from16 v26, v21
 
-    move/from16 v9, v21
+    :goto_98
+    move-object/from16 v9, v140
 
-    move-object/from16 v3, v140
+    move-object/from16 v27, v143
 
-    move-object/from16 v23, v143
-
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_72
     move-exception v0
 
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move-object/from16 v45, v9
+    move/from16 v26, v21
 
-    move-object/from16 v147, v10
+    :goto_99
+    move-object/from16 v37, v133
 
-    move/from16 v9, v21
+    move-object/from16 v23, v134
 
-    :goto_94
-    move-object/from16 v13, v133
+    move-object/from16 v9, v140
 
-    move-object/from16 v36, v134
+    move-object/from16 v27, v143
 
-    move-object/from16 v3, v140
-
-    move-object/from16 v23, v143
-
-    goto/16 :goto_a4
+    goto/16 :goto_aa
 
     :cond_b2
     move/from16 v144, v0
 
-    :goto_95
-    if-nez v21, :cond_ba
+    move/from16 v9, v21
+
+    :goto_9a
+    if-nez v9, :cond_ba
 
     :try_start_d4
     new-instance v0, Ljava/lang/StringBuilder;
@@ -16878,13 +19289,13 @@
 
     invoke-static {v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->myLog(Ljava/lang/String;)V
     :try_end_d4
-    .catch Ljava/lang/Exception; {:try_start_d4 .. :try_end_d4} :catch_7e
-    .catchall {:try_start_d4 .. :try_end_d4} :catchall_71
+    .catch Ljava/lang/Exception; {:try_start_d4 .. :try_end_d4} :catch_7c
+    .catchall {:try_start_d4 .. :try_end_d4} :catchall_6e
 
-    move-object/from16 v13, v133
+    move-object/from16 v8, v133
 
     :try_start_d5
-    invoke-virtual {v13}, Landroid/util/ArrayMap;->entrySet()Ljava/util/Set;
+    invoke-virtual {v8}, Landroid/util/ArrayMap;->entrySet()Ljava/util/Set;
 
     move-result-object v0
 
@@ -16892,7 +19303,7 @@
 
     move-result-object v0
 
-    :goto_96
+    :goto_9b
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
@@ -16905,172 +19316,191 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    move-object v8, v1
+    move-object v5, v1
 
-    invoke-interface {v8}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v5}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/Integer;
 
-    move-object v5, v1
+    move-object v4, v1
 
-    invoke-interface {v8}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v5}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/Integer;
     :try_end_d5
-    .catch Ljava/lang/Exception; {:try_start_d5 .. :try_end_d5} :catch_7c
-    .catchall {:try_start_d5 .. :try_end_d5} :catchall_71
+    .catch Ljava/lang/Exception; {:try_start_d5 .. :try_end_d5} :catch_7b
+    .catchall {:try_start_d5 .. :try_end_d5} :catchall_6e
 
-    move-object v4, v1
-
-    move-object/from16 v1, v134
+    move-object/from16 v7, v134
 
     :try_start_d6
-    invoke-virtual {v1, v5}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v7, v4}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
-
-    check-cast v7, Lcom/android/server/am/OnePlusHighPowerDetector$AppInfo;
-
-    iget-object v7, v7, Lcom/android/server/am/OnePlusHighPowerDetector$AppInfo;->pkgName:Ljava/lang/String;
-
-    invoke-virtual {v1, v5}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v23
+    move-result-object v21
 
     move-object/from16 v145, v0
 
-    move-object/from16 v0, v23
+    move-object/from16 v0, v21
 
     check-cast v0, Lcom/android/server/am/OnePlusHighPowerDetector$AppInfo;
 
-    iget v0, v0, Lcom/android/server/am/OnePlusHighPowerDetector$AppInfo;->pid:I
+    iget-object v0, v0, Lcom/android/server/am/OnePlusHighPowerDetector$AppInfo;->pkgName:Ljava/lang/String;
+
+    invoke-virtual {v7, v4}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v21
+
+    move-object/from16 v146, v5
+
+    move-object/from16 v5, v21
+
+    check-cast v5, Lcom/android/server/am/OnePlusHighPowerDetector$AppInfo;
+
+    iget v5, v5, Lcom/android/server/am/OnePlusHighPowerDetector$AppInfo;->pid:I
     :try_end_d6
-    .catch Ljava/lang/Exception; {:try_start_d6 .. :try_end_d6} :catch_7b
-    .catchall {:try_start_d6 .. :try_end_d6} :catchall_71
+    .catch Ljava/lang/Exception; {:try_start_d6 .. :try_end_d6} :catch_7a
+    .catchall {:try_start_d6 .. :try_end_d6} :catchall_6e
 
-    move-object/from16 v146, v9
+    move-object/from16 v23, v7
 
-    move-object v9, v7
-
-    move v7, v0
+    move v7, v5
 
     :try_start_d7
-    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
-    move-result v0
+    move-result v5
 
-    invoke-static {v0}, Landroid/os/UserHandle;->getUserId(I)I
+    invoke-static {v5}, Landroid/os/UserHandle;->getUserId(I)I
 
-    move-result v0
+    move-result v5
     :try_end_d7
-    .catch Ljava/lang/Exception; {:try_start_d7 .. :try_end_d7} :catch_7a
-    .catchall {:try_start_d7 .. :try_end_d7} :catchall_6f
+    .catch Ljava/lang/Exception; {:try_start_d7 .. :try_end_d7} :catch_79
+    .catchall {:try_start_d7 .. :try_end_d7} :catchall_6e
 
-    move-object/from16 v147, v10
+    move/from16 v147, v9
 
-    const/16 v10, 0x3e7
+    const/16 v9, 0x3e7
 
-    if-ne v0, v10, :cond_b3
+    if-ne v5, v9, :cond_b3
 
-    const/4 v0, 0x1
+    const/4 v5, 0x1
 
-    goto :goto_97
+    goto :goto_9c
 
     :cond_b3
-    const/4 v0, 0x0
+    const/4 v5, 0x0
 
-    :goto_97
+    :goto_9c
+    move/from16 v21, v5
+
     :try_start_d8
-    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
-    move-result v10
+    move-result v5
 
-    invoke-static {v10}, Landroid/os/UserHandle;->getUserId(I)I
+    invoke-static {v5}, Landroid/os/UserHandle;->getUserId(I)I
 
-    move-result v10
-    :try_end_d8
-    .catch Ljava/lang/Exception; {:try_start_d8 .. :try_end_d8} :catch_79
-    .catchall {:try_start_d8 .. :try_end_d8} :catchall_6f
+    move-result v5
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v9
 
     move-object/from16 v148, v1
 
-    :try_start_d9
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+    sget v1, Lcom/android/server/am/OnePlusHighPowerDetector;->POWER_DRAIN_USG_THOLD:I
+
+    if-lt v9, v1, :cond_b8
+
+    invoke-virtual {v3, v4}, Landroid/util/ArrayMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v1
-
-    move-object/from16 v149, v4
-
-    sget v4, Lcom/android/server/am/OnePlusHighPowerDetector;->POWER_DRAIN_USG_THOLD:I
-
-    if-lt v1, v4, :cond_b8
-
-    invoke-virtual {v3, v5}, Landroid/util/ArrayMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v1
-    :try_end_d9
-    .catch Ljava/lang/Exception; {:try_start_d9 .. :try_end_d9} :catch_78
-    .catchall {:try_start_d9 .. :try_end_d9} :catchall_6f
+    :try_end_d8
+    .catch Ljava/lang/Exception; {:try_start_d8 .. :try_end_d8} :catch_78
+    .catchall {:try_start_d8 .. :try_end_d8} :catchall_6d
 
     if-eqz v1, :cond_b4
 
-    :try_start_da
+    :try_start_d9
     const-string v1, "OHPD"
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    :try_end_d9
+    .catch Ljava/lang/Exception; {:try_start_d9 .. :try_end_d9} :catch_74
+    .catchall {:try_start_d9 .. :try_end_d9} :catchall_6a
 
-    move-object/from16 v150, v8
+    move-object/from16 v149, v8
 
+    :try_start_da
     const-string v8, "[BgDetect][PD] skip pkg "
 
-    invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v8, "(uid "
 
-    invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v8, "), reason= "
 
-    invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v5}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v4}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Ljava/lang/String;
 
-    invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v8
 
-    invoke-static {v1, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v8}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_da
     .catch Ljava/lang/Exception; {:try_start_da .. :try_end_da} :catch_73
     .catchall {:try_start_da .. :try_end_da} :catchall_6a
 
     nop
 
+    move-object/from16 v134, v23
+
     move-object/from16 v0, v145
 
-    move-object/from16 v9, v146
+    move/from16 v9, v147
 
-    move-object/from16 v10, v147
+    move-object/from16 v8, v149
 
-    move-object/from16 v134, v148
+    goto/16 :goto_9b
 
-    goto/16 :goto_96
+    :catch_73
+    move-exception v0
+
+    move-object/from16 v38, v2
+
+    move-object/from16 v36, v3
+
+    move-object v2, v6
+
+    move-object/from16 v9, v140
+
+    move-object/from16 v27, v143
+
+    move/from16 v26, v147
+
+    move-object/from16 v37, v149
+
+    goto/16 :goto_aa
 
     :catchall_6a
     move-exception v0
@@ -17079,46 +19509,42 @@
 
     move-object v2, v6
 
-    move/from16 v9, v21
+    move-object/from16 v9, v140
 
-    move-object/from16 v3, v140
+    move-object/from16 v27, v143
 
-    move-object/from16 v23, v143
+    goto/16 :goto_a8
 
-    goto/16 :goto_9e
-
-    :catch_73
+    :catch_74
     move-exception v0
 
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move/from16 v9, v21
+    move-object/from16 v37, v8
 
-    move-object/from16 v3, v140
+    move-object/from16 v9, v140
 
-    move-object/from16 v23, v143
+    move-object/from16 v27, v143
 
-    move-object/from16 v45, v146
+    move/from16 v26, v147
 
-    move-object/from16 v36, v148
-
-    goto/16 :goto_a4
+    goto/16 :goto_aa
 
     :cond_b4
-    move-object/from16 v150, v8
+    move-object/from16 v149, v8
 
     :try_start_db
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -17128,40 +19554,40 @@
 
     move-result v1
     :try_end_db
-    .catch Ljava/lang/Exception; {:try_start_db .. :try_end_db} :catch_78
-    .catchall {:try_start_db .. :try_end_db} :catchall_6f
+    .catch Ljava/lang/Exception; {:try_start_db .. :try_end_db} :catch_77
+    .catchall {:try_start_db .. :try_end_db} :catchall_6d
 
     if-eqz v1, :cond_b6
 
     :try_start_dc
     const-string v1, "OHPD"
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "[BgDetect][PD] notify level-0 pkg:"
+    const-string v9, "[BgDetect][PD] notify level-0 pkg:"
 
-    invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v8, " uid "
+    const-string v9, " uid "
 
-    invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v8
 
-    invoke-static {v1, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v8}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_dc
-    .catch Ljava/lang/Exception; {:try_start_dc .. :try_end_dc} :catch_75
+    .catch Ljava/lang/Exception; {:try_start_dc .. :try_end_dc} :catch_76
     .catchall {:try_start_dc .. :try_end_dc} :catchall_6c
 
-    if-eqz v0, :cond_b5
+    if-eqz v21, :cond_b5
 
     :try_start_dd
     iget-object v1, v6, Lcom/android/server/am/OnePlusHighPowerDetector;->mHighPowerPkgForDualMap:Ljava/util/HashMap;
@@ -17169,63 +19595,63 @@
     .catch Ljava/lang/Exception; {:try_start_dd .. :try_end_dd} :catch_73
     .catchall {:try_start_dd .. :try_end_dd} :catchall_6a
 
-    goto :goto_98
+    goto :goto_9d
 
     :cond_b5
     :try_start_de
     iget-object v1, v6, Lcom/android/server/am/OnePlusHighPowerDetector;->mHighPowerPkgMap:Ljava/util/HashMap;
 
-    :goto_98
-    move-object v4, v1
+    :goto_9d
+    move-object v8, v1
 
-    const/4 v8, 0x1
-
-    const/16 v23, 0x0
+    const/4 v9, 0x1
 
     const/16 v27, 0x0
 
-    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+    const/16 v28, 0x0
 
-    move-result v28
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+
+    move-result v29
     :try_end_de
-    .catch Ljava/lang/Exception; {:try_start_de .. :try_end_de} :catch_75
+    .catch Ljava/lang/Exception; {:try_start_de .. :try_end_de} :catch_76
     .catchall {:try_start_de .. :try_end_de} :catchall_6c
 
-    move-object/from16 v36, v148
+    move-object/from16 v150, v148
 
     move-object v1, v6
 
     move-object/from16 v38, v2
 
-    move-object v2, v4
+    move-object v2, v8
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
-    move-object/from16 v4, v140
+    move-object/from16 v8, v140
 
-    move-object v3, v9
+    move-object v3, v0
 
     move-object/from16 v151, v4
 
-    move-object/from16 v152, v149
+    move v4, v9
 
-    move v4, v8
+    move/from16 v152, v5
 
-    move-object v8, v5
+    move-object/from16 v9, v146
 
-    move/from16 v5, v23
+    move/from16 v5, v27
 
-    move/from16 v6, v27
+    move/from16 v6, v28
 
-    move/from16 v153, v0
+    move-object/from16 v153, v9
 
-    move-object v0, v8
+    move-object/from16 v27, v143
 
-    move-object/from16 v23, v143
+    move-object/from16 v37, v149
 
-    move-object/from16 v27, v150
+    move-object v9, v8
 
-    move/from16 v8, v28
+    move/from16 v8, v29
 
     :try_start_df
     invoke-virtual/range {v1 .. v8}, Lcom/android/server/am/OnePlusHighPowerDetector;->addToMap(Ljava/util/HashMap;Ljava/lang/String;IZZII)V
@@ -17236,118 +19662,159 @@
 
     move-object/from16 v1, p0
 
-    move-object v2, v9
+    move-object v2, v0
 
     move v3, v7
 
-    move v4, v10
+    move/from16 v4, v152
 
     invoke-direct/range {v1 .. v6}, Lcom/android/server/am/OnePlusHighPowerDetector;->notifyBgDetectIfNecessary(Ljava/lang/String;IILjava/lang/String;I)V
     :try_end_df
-    .catch Ljava/lang/Exception; {:try_start_df .. :try_end_df} :catch_74
+    .catch Ljava/lang/Exception; {:try_start_df .. :try_end_df} :catch_75
     .catchall {:try_start_df .. :try_end_df} :catchall_6b
 
     move-object/from16 v2, p0
 
+    move-object/from16 v6, v150
+
     move-object/from16 v3, v151
 
-    move-object/from16 v5, v152
+    move/from16 v8, v152
 
-    goto/16 :goto_9b
+    goto/16 :goto_9e
 
     :catchall_6b
     move-exception v0
 
     move-object/from16 v2, p0
 
-    goto/16 :goto_99
+    goto/16 :goto_a8
 
-    :catch_74
+    :catch_75
     move-exception v0
 
     move-object/from16 v2, p0
 
-    goto/16 :goto_9a
+    goto/16 :goto_a9
 
     :catchall_6c
     move-exception v0
 
     move-object/from16 v38, v2
 
-    move-object/from16 v23, v143
+    move-object/from16 v9, v140
+
+    move-object/from16 v27, v143
 
     move-object/from16 v2, p0
 
-    move/from16 v9, v21
+    goto/16 :goto_a1
 
-    move-object/from16 v3, v140
-
-    move-object/from16 v45, v146
-
-    goto/16 :goto_ab
-
-    :catch_75
+    :catch_76
     move-exception v0
 
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
-    move-object/from16 v23, v143
+    move-object/from16 v9, v140
 
-    move-object/from16 v36, v148
+    move-object/from16 v27, v143
+
+    move-object/from16 v37, v149
 
     move-object/from16 v2, p0
 
-    move/from16 v9, v21
-
-    move-object/from16 v3, v140
-
-    move-object/from16 v45, v146
-
-    goto/16 :goto_a4
+    goto/16 :goto_9f
 
     :cond_b6
-    move/from16 v153, v0
-
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
-    move-object v0, v5
+    move-object/from16 v151, v4
 
-    move-object/from16 v151, v140
+    move/from16 v152, v5
 
-    move-object/from16 v23, v143
+    move-object/from16 v9, v140
 
-    move-object/from16 v36, v148
+    move-object/from16 v27, v143
 
-    move-object/from16 v152, v149
+    move-object/from16 v153, v146
 
-    move-object/from16 v27, v150
+    move-object/from16 v150, v148
+
+    move-object/from16 v37, v149
 
     move-object/from16 v2, p0
 
     :try_start_e0
-    invoke-virtual {v2, v9}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkLevel0KillList(Ljava/lang/String;)Z
+    invoke-virtual {v2, v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkLevel0KillList(Ljava/lang/String;)Z
 
     move-result v1
-    :try_end_e0
-    .catch Ljava/lang/Exception; {:try_start_e0 .. :try_end_e0} :catch_77
-    .catchall {:try_start_e0 .. :try_end_e0} :catchall_6e
 
     if-eqz v1, :cond_b7
 
-    :try_start_e1
     sget-object v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    move-object/from16 v3, v151
 
-    move-result v3
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
-    invoke-static {v3}, Landroid/os/UserHandle;->getAppId(I)I
+    move-result v4
 
-    move-result v3
+    invoke-static {v4}, Landroid/os/UserHandle;->getAppId(I)I
+
+    move-result v4
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "[BgDetect][PD] total usage "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object/from16 v6, v150
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v8, " over thold, kill "
+
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v8, " (uid "
+
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v8, ") level "
+
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    move/from16 v8, v152
+
+    invoke-virtual {v1, v4, v8, v5}, Lcom/android/server/am/ActivityManagerService;->killUid(IILjava/lang/String;)V
+
+    goto :goto_9e
+
+    :cond_b7
+    move-object/from16 v6, v150
+
+    move-object/from16 v3, v151
+
+    move/from16 v8, v152
+
+    const-string v1, "OHPD"
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -17357,352 +19824,283 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v5, v152
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v5, " over thold, force stop "
 
-    const-string v6, " over thold, kill "
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v5, " (uid "
 
-    const-string v6, " (uid "
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v5, ") level "
 
-    const-string v6, ") level "
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v1, v3, v10, v4}, Lcom/android/server/am/ActivityManagerService;->killUid(IILjava/lang/String;)V
-    :try_end_e1
-    .catch Ljava/lang/Exception; {:try_start_e1 .. :try_end_e1} :catch_76
-    .catchall {:try_start_e1 .. :try_end_e1} :catchall_6d
+    invoke-static {v1, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-object/from16 v3, v151
+    invoke-direct {v2, v0, v8}, Lcom/android/server/am/OnePlusHighPowerDetector;->forceStopPackage(Ljava/lang/String;I)V
 
-    goto :goto_9b
+    invoke-virtual {v9, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :catchall_6d
-    move-exception v0
-
-    :goto_99
-    move/from16 v9, v21
-
-    move-object/from16 v45, v146
-
-    move-object/from16 v3, v151
-
-    goto/16 :goto_ab
-
-    :catch_76
-    move-exception v0
-
-    :goto_9a
-    move/from16 v9, v21
-
-    move-object/from16 v45, v146
-
-    move-object/from16 v3, v151
-
-    goto/16 :goto_a4
-
-    :cond_b7
-    move-object/from16 v5, v152
-
-    :try_start_e2
-    const-string v1, "OHPD"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "[BgDetect][PD] total usage "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v4, " over thold, force stop "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v4, " (uid "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v4, ") level "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-direct {v2, v9, v10}, Lcom/android/server/am/OnePlusHighPowerDetector;->forceStopPackage(Ljava/lang/String;I)V
-    :try_end_e2
-    .catch Ljava/lang/Exception; {:try_start_e2 .. :try_end_e2} :catch_77
-    .catchall {:try_start_e2 .. :try_end_e2} :catchall_6e
-
-    move-object/from16 v3, v151
-
-    :try_start_e3
-    invoke-virtual {v3, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :goto_9b
+    :goto_9e
     const/4 v0, 0x0
 
     move/from16 v144, v0
 
-    goto :goto_9c
-
-    :catchall_6e
-    move-exception v0
-
-    move-object/from16 v3, v151
-
-    move/from16 v9, v21
-
-    move-object/from16 v45, v146
-
-    goto/16 :goto_ab
+    goto :goto_a0
 
     :catch_77
     move-exception v0
 
-    move-object/from16 v3, v151
+    move-object/from16 v38, v2
 
-    move/from16 v9, v21
+    move-object/from16 v36, v3
 
-    move-object/from16 v45, v146
+    move-object v2, v6
 
-    goto/16 :goto_a4
+    move-object/from16 v9, v140
+
+    move-object/from16 v27, v143
+
+    move-object/from16 v37, v149
+
+    :goto_9f
+    move/from16 v26, v147
+
+    goto/16 :goto_aa
 
     :cond_b8
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move-object/from16 v3, v140
+    move-object/from16 v37, v8
 
-    move-object/from16 v23, v143
+    move-object/from16 v9, v140
 
-    move-object/from16 v36, v148
+    move-object/from16 v27, v143
 
-    :goto_9c
+    :goto_a0
     move-object v6, v2
 
-    move-object/from16 v140, v3
+    move-object/from16 v140, v9
 
-    move-object/from16 v143, v23
+    move-object/from16 v134, v23
 
-    move-object/from16 v134, v36
+    move-object/from16 v143, v27
 
-    move-object/from16 v3, v37
+    move-object/from16 v3, v36
+
+    move-object/from16 v8, v37
 
     move-object/from16 v2, v38
 
     move-object/from16 v0, v145
 
-    move-object/from16 v9, v146
+    move/from16 v9, v147
 
-    move-object/from16 v10, v147
+    goto/16 :goto_9b
 
-    goto/16 :goto_96
+    :catchall_6d
+    move-exception v0
+
+    move-object/from16 v38, v2
+
+    move-object v2, v6
+
+    move-object/from16 v9, v140
+
+    move-object/from16 v27, v143
+
+    :goto_a1
+    move/from16 v26, v147
+
+    goto/16 :goto_a3
 
     :catch_78
     move-exception v0
 
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move-object/from16 v3, v140
+    move-object/from16 v37, v8
 
-    move-object/from16 v23, v143
+    move-object/from16 v9, v140
 
-    move-object/from16 v36, v148
+    move-object/from16 v27, v143
 
-    move/from16 v9, v21
+    move/from16 v26, v147
 
-    move-object/from16 v45, v146
-
-    goto/16 :goto_a4
+    goto/16 :goto_aa
 
     :catch_79
     move-exception v0
 
-    move-object/from16 v36, v1
-
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move-object/from16 v3, v140
+    move-object/from16 v37, v8
 
-    move-object/from16 v23, v143
+    move/from16 v147, v9
 
-    move/from16 v9, v21
+    move-object/from16 v9, v140
 
-    move-object/from16 v45, v146
+    move-object/from16 v27, v143
 
-    goto/16 :goto_a4
+    move/from16 v26, v147
 
-    :catchall_6f
-    move-exception v0
-
-    move-object/from16 v38, v2
-
-    move-object v2, v6
-
-    move-object/from16 v3, v140
-
-    move-object/from16 v23, v143
-
-    move/from16 v9, v21
-
-    move-object/from16 v45, v146
-
-    goto/16 :goto_ab
+    goto/16 :goto_aa
 
     :catch_7a
     move-exception v0
 
-    move-object/from16 v36, v1
-
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move-object/from16 v147, v10
+    move-object/from16 v23, v7
 
-    move-object/from16 v3, v140
+    move-object/from16 v37, v8
 
-    move-object/from16 v23, v143
+    move/from16 v147, v9
 
-    move/from16 v9, v21
+    move-object/from16 v9, v140
 
-    move-object/from16 v45, v146
+    move-object/from16 v27, v143
 
-    goto/16 :goto_a4
+    move/from16 v26, v147
 
-    :catch_7b
-    move-exception v0
-
-    move-object/from16 v36, v1
-
-    move-object/from16 v38, v2
-
-    move-object/from16 v37, v3
-
-    move-object v2, v6
-
-    move-object/from16 v147, v10
-
-    move-object/from16 v3, v140
-
-    move-object/from16 v23, v143
-
-    move-object/from16 v45, v9
-
-    move/from16 v9, v21
-
-    goto/16 :goto_a4
+    goto/16 :goto_aa
 
     :cond_b9
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move-object/from16 v146, v9
+    move-object/from16 v37, v8
 
-    move-object/from16 v147, v10
+    move/from16 v147, v9
 
-    move-object/from16 v36, v134
+    move-object/from16 v23, v134
 
-    move-object/from16 v3, v140
+    move-object/from16 v9, v140
 
-    move-object/from16 v23, v143
+    move-object/from16 v27, v143
 
-    goto :goto_9d
+    goto :goto_a2
+
+    :catch_7b
+    move-exception v0
+
+    move-object/from16 v38, v2
+
+    move-object/from16 v36, v3
+
+    move-object v2, v6
+
+    move-object/from16 v37, v8
+
+    move/from16 v147, v9
+
+    move-object/from16 v23, v134
+
+    move-object/from16 v9, v140
+
+    move-object/from16 v27, v143
+
+    move/from16 v26, v147
+
+    goto/16 :goto_aa
+
+    :catchall_6e
+    move-exception v0
+
+    move-object/from16 v38, v2
+
+    move-object v2, v6
+
+    move/from16 v147, v9
+
+    move-object/from16 v9, v140
+
+    move-object/from16 v27, v143
+
+    move/from16 v26, v147
+
+    goto/16 :goto_b2
 
     :catch_7c
     move-exception v0
 
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move-object/from16 v147, v10
+    move/from16 v147, v9
 
-    move-object/from16 v36, v134
+    move-object/from16 v37, v133
 
-    move-object/from16 v3, v140
+    move-object/from16 v23, v134
 
-    move-object/from16 v23, v143
+    move-object/from16 v9, v140
 
-    move-object/from16 v45, v9
+    move-object/from16 v27, v143
 
-    move/from16 v9, v21
+    move/from16 v26, v147
 
-    goto/16 :goto_a4
+    goto/16 :goto_aa
 
     :cond_ba
     move-object/from16 v38, v2
 
-    move-object/from16 v37, v3
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move-object/from16 v146, v9
+    move/from16 v147, v9
 
-    move-object/from16 v147, v10
+    move-object/from16 v37, v133
 
-    move-object/from16 v13, v133
+    move-object/from16 v23, v134
 
-    move-object/from16 v36, v134
+    move-object/from16 v9, v140
 
-    move-object/from16 v3, v140
-
-    move-object/from16 v23, v143
+    move-object/from16 v27, v143
 
     const/16 v144, 0x0
 
-    :goto_9d
-    if-eqz v144, :cond_bb
+    :goto_a2
+    if-eqz v144, :cond_bc
 
     sget-boolean v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mIsBetaRom:Z
 
-    if-eqz v0, :cond_bb
+    if-eqz v0, :cond_bc
 
     const-string v0, "OHPD"
 
@@ -17720,124 +20118,167 @@
 
     sget-object v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mHandler:Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
 
-    const-wide/16 v4, 0x3e8
+    const-wide/16 v3, 0x3e8
 
-    invoke-virtual {v1, v0, v4, v5}, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
-    :try_end_e3
-    .catch Ljava/lang/Exception; {:try_start_e3 .. :try_end_e3} :catch_7d
-    .catchall {:try_start_e3 .. :try_end_e3} :catchall_70
+    invoke-virtual {v1, v0, v3, v4}, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    :try_end_e0
+    .catch Ljava/lang/Exception; {:try_start_e0 .. :try_end_e0} :catch_85
+    .catchall {:try_start_e0 .. :try_end_e0} :catchall_78
 
-    goto :goto_9f
+    goto :goto_a4
 
-    :catchall_70
+    :catchall_6f
     move-exception v0
 
-    move/from16 v9, v21
+    move-object/from16 v38, v2
 
-    :goto_9e
-    move-object/from16 v45, v146
+    move-object v2, v6
 
-    goto/16 :goto_ab
+    move-object/from16 v9, v140
+
+    move-object/from16 v27, v143
+
+    move/from16 v26, v21
+
+    :goto_a3
+    goto/16 :goto_b2
 
     :catch_7d
     move-exception v0
 
-    move/from16 v9, v21
-
-    move-object/from16 v45, v146
-
-    goto/16 :goto_a4
-
-    :cond_bb
-    :goto_9f
-    move/from16 v9, v21
-
-    goto :goto_a0
-
-    :catchall_71
-    move-exception v0
-
     move-object/from16 v38, v2
+
+    move-object/from16 v36, v3
 
     move-object v2, v6
 
-    move-object/from16 v3, v140
+    move-object/from16 v37, v133
 
-    move-object/from16 v23, v143
+    move-object/from16 v23, v134
 
-    move-object/from16 v45, v9
+    move-object/from16 v9, v140
 
-    move/from16 v9, v21
+    move-object/from16 v27, v143
 
-    goto/16 :goto_ab
+    move/from16 v26, v21
+
+    goto/16 :goto_aa
+
+    :cond_bb
+    move-object/from16 v38, v2
+
+    move-object/from16 v36, v3
+
+    move-object v2, v6
+
+    move-object/from16 v10, v131
+
+    move-object/from16 v37, v133
+
+    move-object/from16 v23, v134
+
+    move-object/from16 v9, v140
+
+    move-object/from16 v27, v143
+
+    move/from16 v147, v21
+
+    :cond_bc
+    :goto_a4
+    goto/16 :goto_a7
+
+    :catchall_70
+    move-exception v0
+
+    move-object v9, v12
+
+    move-object/from16 v38, v13
+
+    move v12, v14
+
+    move-object v2, v15
+
+    move-object/from16 v34, v35
+
+    move-object/from16 v13, v57
+
+    move-object/from16 v27, v65
+
+    move-object/from16 v11, v66
+
+    move-object/from16 v14, v67
+
+    move-object/from16 v24, v88
+
+    move-object/from16 v35, v89
+
+    move-wide/from16 v42, v115
+
+    move/from16 v26, v21
+
+    goto/16 :goto_b2
 
     :catch_7e
     move-exception v0
 
-    move-object/from16 v38, v2
+    move-object/from16 v37, v8
 
-    move-object/from16 v37, v3
+    move-object/from16 v23, v11
 
-    move-object v2, v6
-
-    move-object/from16 v147, v10
-
-    move-object/from16 v13, v133
-
-    move-object/from16 v36, v134
-
-    move-object/from16 v3, v140
-
-    move-object/from16 v23, v143
-
-    move-object/from16 v45, v9
-
-    move/from16 v9, v21
-
-    goto/16 :goto_a4
-
-    :cond_bc
-    move-object/from16 v38, v2
-
-    move-object/from16 v37, v3
-
-    move-object v2, v6
-
-    move-object/from16 v146, v9
-
-    move-object/from16 v147, v131
-
-    move-object/from16 v13, v133
-
-    move-object/from16 v36, v134
-
-    move-object/from16 v3, v140
-
-    move-object/from16 v23, v143
-
-    move/from16 v9, v21
-
-    :goto_a0
-    move-object/from16 v45, v146
-
-    goto/16 :goto_a3
-
-    :catchall_72
-    move-exception v0
-
-    move-object v3, v12
+    move-object v9, v12
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
+
+    move-object/from16 v11, v66
+
+    move-object/from16 v14, v67
+
+    move-object/from16 v24, v88
+
+    move-object/from16 v35, v89
+
+    move-object/from16 v36, v99
+
+    move-wide/from16 v42, v115
+
+    move-object v15, v10
+
+    move-object/from16 v10, v120
+
+    move/from16 v26, v21
+
+    goto/16 :goto_aa
+
+    :catchall_71
+    move-exception v0
+
+    move/from16 v126, v9
+
+    move-object v9, v12
+
+    move-object/from16 v38, v13
+
+    move v12, v14
+
+    move-object v2, v15
+
+    move-object/from16 v34, v35
+
+    move-object/from16 v13, v57
+
+    move-object/from16 v27, v65
+
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -17847,30 +20288,34 @@
 
     move-wide/from16 v42, v115
 
-    move/from16 v9, v21
+    move/from16 v26, v126
 
-    move-object/from16 v45, v66
-
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_7f
     move-exception v0
 
-    move-object/from16 v36, v11
+    move-object/from16 v37, v8
 
-    move-object v3, v12
+    move/from16 v126, v9
+
+    move-object/from16 v23, v11
+
+    move-object v9, v12
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
+
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -17878,40 +20323,36 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-wide/from16 v42, v115
-
-    move-object/from16 v147, v120
-
-    move-object v13, v8
 
     move-object v15, v10
 
-    move/from16 v9, v21
+    move-object/from16 v10, v120
 
-    move-object/from16 v45, v66
+    move/from16 v26, v126
 
-    goto/16 :goto_a4
+    goto/16 :goto_aa
 
-    :catchall_73
+    :catchall_72
     move-exception v0
 
-    move-object v3, v12
+    move/from16 v26, v9
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -17921,28 +20362,30 @@
 
     move-wide/from16 v42, v115
 
-    goto/16 :goto_ab
+    move-object/from16 v9, v119
+
+    goto/16 :goto_b2
 
     :catch_80
     move-exception v0
 
-    move-object/from16 v36, v11
+    move/from16 v26, v9
 
-    move-object v3, v12
+    move-object/from16 v23, v11
 
     move-object/from16 v38, v13
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -17950,106 +20393,71 @@
 
     move-object/from16 v35, v89
 
-    move-object/from16 v37, v99
+    move-object/from16 v36, v99
 
     move-wide/from16 v42, v115
 
-    move-object/from16 v147, v120
+    move-object/from16 v37, v117
 
-    move-object v13, v8
+    move-object/from16 v9, v119
 
     move-object v15, v10
 
-    goto/16 :goto_a4
+    move-object/from16 v10, v120
 
-    :catchall_74
+    goto/16 :goto_aa
+
+    :catchall_73
     move-exception v0
 
-    move-object/from16 v38, v13
+    move-wide/from16 v42, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
+
+    move-object/from16 v9, v73
 
     move-object/from16 v24, v88
 
     move-object/from16 v35, v89
 
-    move-wide/from16 v42, v115
+    move-object/from16 v38, v93
 
-    move-object/from16 v3, v119
-
-    goto/16 :goto_ab
+    goto/16 :goto_b2
 
     :catch_81
     move-exception v0
 
-    move-object/from16 v36, v11
+    move-object/from16 v20, v8
 
-    move-object/from16 v38, v13
-
-    move v11, v14
-
-    move-object v2, v15
-
-    move-object/from16 v34, v35
-
-    move-object/from16 v12, v57
-
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
-
-    move-object/from16 v14, v67
-
-    move-object/from16 v24, v88
-
-    move-object/from16 v35, v89
-
-    move-object/from16 v37, v99
-
-    move-wide/from16 v42, v115
-
-    move-object/from16 v13, v117
-
-    move-object/from16 v3, v119
-
-    move-object/from16 v147, v120
-
-    move-object v15, v10
-
-    goto/16 :goto_a4
-
-    :catchall_75
-    move-exception v0
+    move-object/from16 v23, v11
 
     move-wide/from16 v42, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
-
-    move-object/from16 v3, v73
 
     move-object/from16 v24, v88
 
@@ -18057,71 +20465,67 @@
 
     move-object/from16 v38, v93
 
-    move/from16 v9, v26
+    move-object/from16 v36, v99
 
-    goto/16 :goto_ab
+    move-object/from16 v37, v106
+
+    move-object v15, v10
+
+    move-object v10, v9
+
+    move-object/from16 v9, v73
+
+    goto/16 :goto_aa
+
+    :catchall_74
+    move-exception v0
+
+    move v12, v14
+
+    move-object v2, v15
+
+    move-object/from16 v34, v35
+
+    move-object/from16 v13, v57
+
+    move-object/from16 v27, v65
+
+    move-object/from16 v11, v66
+
+    move-object/from16 v14, v67
+
+    move-object/from16 v9, v73
+
+    move-wide/from16 v42, v75
+
+    move-object/from16 v24, v88
+
+    move-object/from16 v35, v89
+
+    move-object/from16 v38, v93
+
+    goto/16 :goto_b2
 
     :catch_82
     move-exception v0
 
-    move-object/from16 v20, v8
+    move-object/from16 v37, v11
 
-    move-object/from16 v147, v9
-
-    move-object/from16 v36, v11
-
-    move-wide/from16 v42, v12
-
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v34, v35
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
-
-    move-object/from16 v14, v67
-
-    move-object/from16 v3, v73
-
-    move-object/from16 v24, v88
-
-    move-object/from16 v35, v89
-
-    move-object/from16 v38, v93
-
-    move-object/from16 v37, v99
-
-    move-object/from16 v13, v106
-
-    move-object v15, v10
-
-    move/from16 v9, v26
-
-    goto/16 :goto_a4
-
-    :catchall_76
-    move-exception v0
-
-    move v11, v14
-
-    move-object v2, v15
-
-    move-object/from16 v34, v35
-
-    move-object/from16 v12, v57
-
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-wide/from16 v42, v75
 
@@ -18129,73 +20533,77 @@
 
     move-object/from16 v35, v89
 
+    move-object/from16 v23, v90
+
+    move-object/from16 v20, v91
+
     move-object/from16 v38, v93
 
-    move/from16 v9, v26
+    move-object/from16 v36, v99
 
-    goto/16 :goto_ab
+    move-object v15, v10
+
+    move-object/from16 v10, v92
+
+    goto/16 :goto_aa
+
+    :catchall_75
+    move-exception v0
+
+    move-object/from16 v22, v8
+
+    move-object/from16 v35, v11
+
+    move-object/from16 v24, v12
+
+    move v12, v14
+
+    move-object v2, v15
+
+    move-object/from16 v13, v57
+
+    move-object/from16 v27, v65
+
+    move-object/from16 v11, v66
+
+    move-object/from16 v14, v67
+
+    move-object/from16 v34, v68
+
+    move-object/from16 v38, v72
+
+    move-object/from16 v9, v73
+
+    move-wide/from16 v42, v75
+
+    goto/16 :goto_b2
 
     :catch_83
     move-exception v0
 
-    move-object v13, v11
+    move-object/from16 v23, v4
 
-    move v11, v14
+    move-object/from16 v37, v5
 
-    move-object v2, v15
-
-    move-object/from16 v34, v35
-
-    move-object/from16 v12, v57
-
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
-
-    move-object/from16 v14, v67
-
-    move-object/from16 v3, v73
-
-    move-wide/from16 v42, v75
-
-    move-object/from16 v24, v88
-
-    move-object/from16 v35, v89
-
-    move-object/from16 v36, v90
-
-    move-object/from16 v20, v91
-
-    move-object/from16 v147, v92
-
-    move-object/from16 v38, v93
-
-    move-object/from16 v37, v99
-
-    move-object v15, v10
-
-    move/from16 v9, v26
-
-    goto/16 :goto_a4
-
-    :catchall_77
-    move-exception v0
+    move-object/from16 v20, v6
 
     move-object/from16 v22, v8
+
+    move-object/from16 v36, v9
 
     move-object/from16 v35, v11
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -18203,118 +20611,71 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
+
+    move-object/from16 v32, v74
 
     move-wide/from16 v42, v75
 
-    move/from16 v9, v26
+    move-object v15, v10
 
-    goto/16 :goto_ab
+    move-object v10, v7
+
+    goto/16 :goto_aa
+
+    :catchall_76
+    move-exception v0
+
+    move-object/from16 v22, v8
+
+    move-object/from16 v35, v11
+
+    move v12, v14
+
+    move-object v2, v15
+
+    move-object/from16 v13, v57
+
+    move-object/from16 v27, v65
+
+    move-object/from16 v11, v66
+
+    move-object/from16 v14, v67
+
+    move-object/from16 v34, v68
+
+    move-object/from16 v38, v72
+
+    move-object/from16 v9, v73
+
+    move-wide/from16 v42, v75
+
+    move-object/from16 v24, v78
+
+    goto/16 :goto_b2
 
     :catch_84
     move-exception v0
 
-    move-object/from16 v36, v4
+    move-object/from16 v23, v4
 
-    move-object v13, v5
-
-    move-object/from16 v20, v6
-
-    move-object/from16 v147, v7
-
-    move-object/from16 v22, v8
-
-    move-object/from16 v37, v9
-
-    move-object/from16 v35, v11
-
-    move-object/from16 v24, v12
-
-    move v11, v14
-
-    move-object v2, v15
-
-    move-object/from16 v12, v57
-
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
-
-    move-object/from16 v14, v67
-
-    move-object/from16 v34, v68
-
-    move-object/from16 v38, v72
-
-    move-object/from16 v3, v73
-
-    move-object/from16 v32, v74
-
-    move-wide/from16 v42, v75
-
-    move-object v15, v10
-
-    move/from16 v9, v26
-
-    goto/16 :goto_a4
-
-    :catchall_78
-    move-exception v0
-
-    move-object/from16 v22, v8
-
-    move-object/from16 v35, v11
-
-    move v11, v14
-
-    move-object v2, v15
-
-    move-object/from16 v12, v57
-
-    move-object/from16 v23, v65
-
-    move-object/from16 v45, v66
-
-    move-object/from16 v14, v67
-
-    move-object/from16 v34, v68
-
-    move-object/from16 v38, v72
-
-    move-object/from16 v3, v73
-
-    move-wide/from16 v42, v75
-
-    move-object/from16 v24, v78
-
-    move/from16 v9, v26
-
-    goto/16 :goto_ab
-
-    :catch_85
-    move-exception v0
-
-    move-object/from16 v36, v4
-
-    move-object v13, v5
+    move-object/from16 v37, v5
 
     move-object/from16 v20, v6
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
     move-object/from16 v35, v11
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -18322,7 +20683,7 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -18330,34 +20691,32 @@
 
     move-object/from16 v24, v78
 
-    move-object/from16 v37, v80
+    move-object/from16 v36, v80
 
     move-object v15, v10
 
-    move/from16 v9, v26
+    move-object v10, v7
 
-    goto/16 :goto_a4
+    goto/16 :goto_aa
 
     :cond_bd
-    move-object/from16 v36, v4
+    move-object/from16 v23, v4
 
-    move-object v13, v5
+    move-object/from16 v37, v5
 
     move-object/from16 v20, v6
 
-    move-object/from16 v147, v7
-
     move-object/from16 v22, v8
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    move-object/from16 v12, v57
+    move-object/from16 v13, v57
 
-    move-object/from16 v23, v65
+    move-object/from16 v27, v65
 
-    move-object/from16 v45, v66
+    move-object/from16 v11, v66
 
     move-object/from16 v14, v67
 
@@ -18367,7 +20726,7 @@
 
     move-object/from16 v38, v72
 
-    move-object/from16 v3, v73
+    move-object/from16 v9, v73
 
     move-object/from16 v32, v74
 
@@ -18375,11 +20734,13 @@
 
     move-object/from16 v24, v78
 
-    move-object/from16 v37, v80
+    move-object/from16 v36, v80
 
     move-object v15, v10
 
-    :try_start_e4
+    move-object v10, v7
+
+    :try_start_e1
     iget-object v0, v2, Lcom/android/server/am/OnePlusHighPowerDetector;->mAppForkedProcMap:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->size()I
@@ -18391,11 +20752,11 @@
     iget-object v1, v2, Lcom/android/server/am/OnePlusHighPowerDetector;->mAppForkedProcMap:Ljava/util/HashMap;
 
     monitor-enter v1
-    :try_end_e4
-    .catch Ljava/lang/Exception; {:try_start_e4 .. :try_end_e4} :catch_87
-    .catchall {:try_start_e4 .. :try_end_e4} :catchall_7a
+    :try_end_e1
+    .catch Ljava/lang/Exception; {:try_start_e1 .. :try_end_e1} :catch_86
+    .catchall {:try_start_e1 .. :try_end_e1} :catchall_7c
 
-    :try_start_e5
+    :try_start_e2
     iget-object v0, v2, Lcom/android/server/am/OnePlusHighPowerDetector;->mAppForkedProcMap:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -18406,87 +20767,89 @@
 
     move-result-object v0
 
-    :goto_a1
+    :goto_a5
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_bf
+    if-eqz v3, :cond_bf
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v3
 
-    check-cast v4, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;
+    check-cast v3, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;
 
-    iget-wide v5, v4, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->curCpuTimeBgMonitor:J
+    iget-wide v4, v3, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->curCpuTimeBgMonitor:J
 
-    const-wide/16 v7, 0x0
+    const-wide/16 v6, 0x0
 
-    cmp-long v5, v5, v7
+    cmp-long v4, v4, v6
 
-    if-lez v5, :cond_be
+    if-lez v4, :cond_be
 
-    iget-object v5, v4, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->lastCpuTimeBgMonitor:[J
+    iget-object v4, v3, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->lastCpuTimeBgMonitor:[J
 
-    iget-wide v9, v4, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->curCpuTimeBgMonitor:J
+    iget-wide v6, v3, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->curCpuTimeBgMonitor:J
 
-    aput-wide v9, v5, v11
+    aput-wide v6, v4, v12
 
     :cond_be
-    goto :goto_a1
+    goto :goto_a5
 
     :cond_bf
     monitor-exit v1
 
-    goto :goto_a2
+    goto :goto_a6
 
-    :catchall_79
+    :catchall_77
     move-exception v0
 
     monitor-exit v1
-    :try_end_e5
-    .catchall {:try_start_e5 .. :try_end_e5} :catchall_79
+    :try_end_e2
+    .catchall {:try_start_e2 .. :try_end_e2} :catchall_77
 
-    :try_start_e6
+    :try_start_e3
     throw v0
-    :try_end_e6
-    .catch Ljava/lang/Exception; {:try_start_e6 .. :try_end_e6} :catch_87
-    .catchall {:try_start_e6 .. :try_end_e6} :catchall_7a
+    :try_end_e3
+    .catch Ljava/lang/Exception; {:try_start_e3 .. :try_end_e3} :catch_86
+    .catchall {:try_start_e3 .. :try_end_e3} :catchall_7c
 
     :cond_c0
-    :goto_a2
-    move/from16 v9, v26
+    :goto_a6
+    move/from16 v147, v26
 
-    :goto_a3
-    :try_start_e7
+    :goto_a7
+    :try_start_e4
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/OnePlusHighPowerDetector;->cancelBgDetectNotificationIfNeeded()V
-    :try_end_e7
-    .catch Ljava/lang/Exception; {:try_start_e7 .. :try_end_e7} :catch_86
-    .catchall {:try_start_e7 .. :try_end_e7} :catchall_7e
+    :try_end_e4
+    .catch Ljava/lang/Exception; {:try_start_e4 .. :try_end_e4} :catch_85
+    .catchall {:try_start_e4 .. :try_end_e4} :catchall_78
 
-    goto :goto_a5
+    goto :goto_ab
+
+    :catchall_78
+    move-exception v0
+
+    :goto_a8
+    move/from16 v26, v147
+
+    goto/16 :goto_b2
+
+    :catch_85
+    move-exception v0
+
+    :goto_a9
+    move/from16 v26, v147
+
+    goto :goto_aa
 
     :catch_86
     move-exception v0
 
-    goto :goto_a4
-
-    :catchall_7a
-    move-exception v0
-
-    move/from16 v9, v26
-
-    goto/16 :goto_ab
+    goto :goto_aa
 
     :catch_87
-    move-exception v0
-
-    move/from16 v9, v26
-
-    goto :goto_a4
-
-    :catch_88
     move-exception v0
 
     move/from16 v40, v3
@@ -18501,31 +20864,25 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move-object v12, v13
-
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
+    move-object/from16 v36, v50
 
-    move-object/from16 v37, v50
+    move-object/from16 v37, v51
 
-    move-object/from16 v13, v51
+    move-object/from16 v10, v52
 
-    move-object/from16 v147, v52
-
-    move-object/from16 v36, v53
+    move-object/from16 v23, v53
 
     move-object/from16 v32, v54
 
@@ -18535,43 +20892,91 @@
 
     move-object v14, v5
 
-    move/from16 v9, v26
+    move-object/from16 v27, v11
 
-    :goto_a4
-    :try_start_e8
+    move-object/from16 v11, v49
+
+    :goto_aa
+    :try_start_e5
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     const-string v1, "OHPD"
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "[BgDetect] got exception "
+    const-string v4, "[BgDetect] got exception "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-static {v1, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_e5
+    .catchall {:try_start_e5 .. :try_end_e5} :catchall_7c
 
-    :goto_a5
+    move/from16 v147, v26
+
+    :goto_ab
+    :try_start_e6
     monitor-exit v33
-    :try_end_e8
-    .catchall {:try_start_e8 .. :try_end_e8} :catchall_7e
+    :try_end_e6
+    .catchall {:try_start_e6 .. :try_end_e6} :catchall_78
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    :try_start_e9
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+    const/4 v1, 0x1
+
+    new-array v0, v1, [I
+
+    const/16 v1, 0x5b
+
+    const/4 v3, 0x0
+
+    aput v1, v0, v3
+
+    invoke-static {v0}, Landroid/util/OpFeatures;->isSupport([I)Z
 
     move-result v0
 
-    if-lez v0, :cond_c3
+    if-eqz v0, :cond_c2
+
+    if-nez v12, :cond_c1
+
+    if-nez v39, :cond_c1
+
+    iget-object v0, v2, Lcom/android/server/am/OnePlusHighPowerDetector;->mOnePlusBGController:Lcom/android/server/am/OnePlusBGController;
+
+    sget-object v1, Lcom/android/server/am/OnePlusBGController$SNAPSHOT_TYPE;->INIT_OBSERVE:Lcom/android/server/am/OnePlusBGController$SNAPSHOT_TYPE;
+
+    invoke-virtual {v0, v1}, Lcom/android/server/am/OnePlusBGController;->snapShot(Lcom/android/server/am/OnePlusBGController$SNAPSHOT_TYPE;)V
+
+    goto :goto_ac
+
+    :cond_c1
+    if-nez v12, :cond_c2
+
+    if-eqz v39, :cond_c2
+
+    iget-object v0, v2, Lcom/android/server/am/OnePlusHighPowerDetector;->mOnePlusBGController:Lcom/android/server/am/OnePlusBGController;
+
+    sget-object v1, Lcom/android/server/am/OnePlusBGController$SNAPSHOT_TYPE;->ONESHOT:Lcom/android/server/am/OnePlusBGController$SNAPSHOT_TYPE;
+
+    invoke-virtual {v0, v1}, Lcom/android/server/am/OnePlusBGController;->snapShot(Lcom/android/server/am/OnePlusBGController$SNAPSHOT_TYPE;)V
+
+    :cond_c2
+    :goto_ac
+    :try_start_e7
+    invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_c5
 
     const-string v0, ""
 
@@ -18579,135 +20984,135 @@
 
     const/4 v0, 0x0
 
-    :goto_a6
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+    :goto_ad
+    invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
 
-    move-result v4
+    move-result v3
 
-    if-ge v0, v4, :cond_c2
+    if-ge v0, v3, :cond_c4
 
-    if-nez v0, :cond_c1
+    if-nez v0, :cond_c3
 
-    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v9, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    move-object v1, v3
+
+    goto :goto_ae
+
+    :cond_c3
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v4, ","
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Ljava/lang/String;
 
-    move-object v1, v4
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_a7
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    :cond_c1
-    new-instance v4, Ljava/lang/StringBuilder;
+    move-result-object v3
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    move-object v1, v3
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v5, ","
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    move-object v1, v4
-
-    :goto_a7
+    :goto_ae
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_a6
+    goto :goto_ad
 
-    :cond_c2
+    :cond_c4
     new-instance v0, Lcom/android/server/SystemEvent;
 
-    const-string v4, "ForceStopApplication"
+    const-string v3, "ForceStopApplication"
 
-    invoke-direct {v0, v4}, Lcom/android/server/SystemEvent;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v3}, Lcom/android/server/SystemEvent;-><init>(Ljava/lang/String;)V
 
-    const-string/jumbo v4, "name"
+    const-string/jumbo v3, "name"
 
-    invoke-virtual {v0, v4, v1}, Lcom/android/server/SystemEvent;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v3, v1}, Lcom/android/server/SystemEvent;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v4, v2, Lcom/android/server/am/OnePlusHighPowerDetector;->mHighPowerEventCollector:Lcom/android/server/SystemEventCollector;
+    iget-object v3, v2, Lcom/android/server/am/OnePlusHighPowerDetector;->mHighPowerEventCollector:Lcom/android/server/SystemEventCollector;
 
-    invoke-virtual {v4, v0}, Lcom/android/server/SystemEventCollector;->submit(Lcom/android/server/SystemEvent;)V
-    :try_end_e9
-    .catch Ljava/lang/Exception; {:try_start_e9 .. :try_end_e9} :catch_89
+    invoke-virtual {v3, v0}, Lcom/android/server/SystemEventCollector;->submit(Lcom/android/server/SystemEvent;)V
+    :try_end_e7
+    .catch Ljava/lang/Exception; {:try_start_e7 .. :try_end_e7} :catch_88
 
-    goto :goto_a8
+    goto :goto_af
 
-    :catch_89
+    :catch_88
     move-exception v0
 
     const-string v1, "OHPD"
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "[MDM_Collect] Exception:"
+    const-string v4, "[MDM_Collect] Exception:"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
     move-result-object v4
 
-    invoke-static {v1, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_a9
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    :cond_c3
-    :goto_a8
+    move-result-object v3
+
+    invoke-static {v1, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_b0
+
+    :cond_c5
+    :goto_af
     nop
 
-    :goto_a9
-    if-eqz v40, :cond_c4
+    :goto_b0
+    if-eqz v40, :cond_c6
 
     sget-object v1, Lcom/android/server/am/OnePlusHighPowerDetector;->sBattUpdteLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    :try_start_ea
-    iput-boolean v4, v2, Lcom/android/server/am/OnePlusHighPowerDetector;->mIsPowerDrain:Z
+    :try_start_e8
+    iput-boolean v3, v2, Lcom/android/server/am/OnePlusHighPowerDetector;->mIsPowerDrain:Z
 
     monitor-exit v1
 
-    goto :goto_aa
+    goto :goto_b1
 
-    :catchall_7b
+    :catchall_79
     move-exception v0
 
     monitor-exit v1
-    :try_end_ea
-    .catchall {:try_start_ea .. :try_end_ea} :catchall_7b
+    :try_end_e8
+    .catchall {:try_start_e8 .. :try_end_e8} :catchall_79
 
     throw v0
 
-    :cond_c4
-    :goto_aa
+    :cond_c6
+    :goto_b1
     sget-boolean v0, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG:Z
 
-    if-eqz v0, :cond_c5
+    if-eqz v0, :cond_c7
 
     const-string v0, "OHPD"
 
@@ -18715,27 +21120,27 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "[BgDetect] checkExcessiveCpuUsageLocked -# level "
+    const-string v3, "[BgDetect] checkExcessiveCpuUsageLocked -# level "
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v4, " in "
+    const-string v3, " in "
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v4
+    move-result-wide v3
 
-    sub-long v4, v4, v16
+    sub-long v3, v3, v16
 
-    invoke-virtual {v1, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v4, "ms"
+    const-string/jumbo v3, "ms"
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -18743,12 +21148,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_c5
+    :cond_c7
     const/4 v1, 0x0
 
     return v1
 
-    :catchall_7c
+    :catchall_7a
     move-exception v0
 
     move/from16 v40, v3
@@ -18763,31 +21168,27 @@
 
     move-object/from16 v35, v10
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move-object v12, v13
-
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
-
     move-object v14, v5
 
-    move/from16 v9, v26
+    move-object/from16 v27, v11
 
-    goto :goto_ab
+    move-object/from16 v11, v49
 
-    :catchall_7d
+    goto :goto_b2
+
+    :catchall_7b
     move-exception v0
 
     move/from16 v40, v3
@@ -18798,69 +21199,119 @@
 
     move-object/from16 v34, v9
 
-    move-object/from16 v23, v11
-
     move-object/from16 v24, v12
 
-    move-object v12, v13
-
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
     move/from16 v39, v35
 
     move-object/from16 v38, v44
 
-    move-object/from16 v45, v49
-
     move-object v14, v5
 
     move-object/from16 v35, v10
 
-    move/from16 v9, v26
+    move-object/from16 v27, v11
 
-    :goto_ab
-    :try_start_eb
+    move-object/from16 v11, v49
+
+    :goto_b2
+    :try_start_e9
     monitor-exit v33
-    :try_end_eb
-    .catchall {:try_start_eb .. :try_end_eb} :catchall_7e
+    :try_end_e9
+    .catchall {:try_start_e9 .. :try_end_e9} :catchall_7c
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
     throw v0
 
+    :catchall_7c
+    move-exception v0
+
+    goto :goto_b2
+
+    :catchall_7d
+    move-exception v0
+
+    move/from16 v47, v2
+
+    move-object/from16 v24, v12
+
+    move v12, v14
+
+    move-object v2, v15
+
+    move-object/from16 v22, v27
+
+    move-object/from16 v9, v32
+
+    move/from16 v39, v35
+
+    move-object/from16 v27, v11
+
+    move/from16 v1, v39
+
+    goto/16 :goto_b3
+
     :catchall_7e
     move-exception v0
 
-    goto :goto_ab
+    move/from16 v47, v2
+
+    move/from16 v36, v3
+
+    move-object/from16 v37, v4
+
+    move-object/from16 v24, v12
+
+    move v12, v14
+
+    move-object v2, v15
+
+    move-object/from16 v22, v27
+
+    move-object/from16 v9, v32
+
+    move/from16 v39, v35
+
+    move-object/from16 v27, v11
+
+    move/from16 v1, v39
+
+    goto :goto_b3
 
     :catchall_7f
     move-exception v0
 
     move/from16 v47, v2
 
-    move-object/from16 v23, v11
+    move/from16 v36, v3
+
+    move-object/from16 v37, v4
+
+    move/from16 v39, v10
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
+    move-object/from16 v9, v32
 
-    move/from16 v39, v35
+    move-object/from16 v27, v11
 
     move/from16 v1, v39
 
-    goto/16 :goto_ac
+    goto :goto_b3
 
     :catchall_80
     move-exception v0
@@ -18871,23 +21322,23 @@
 
     move-object/from16 v37, v4
 
-    move-object/from16 v23, v11
+    move-object v9, v8
+
+    move/from16 v39, v10
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
     move-object/from16 v22, v27
 
-    move-object/from16 v3, v32
-
-    move/from16 v39, v35
+    move-object/from16 v27, v11
 
     move/from16 v1, v39
 
-    goto :goto_ac
+    goto :goto_b3
 
     :catchall_81
     move-exception v0
@@ -18898,88 +21349,34 @@
 
     move-object/from16 v37, v4
 
-    move/from16 v39, v10
-
-    move-object/from16 v23, v11
-
-    move-object/from16 v24, v12
-
-    move v11, v14
-
-    move-object v2, v15
-
-    move-object/from16 v22, v27
-
-    move-object/from16 v3, v32
-
-    move/from16 v1, v39
-
-    goto :goto_ac
-
-    :catchall_82
-    move-exception v0
-
-    move/from16 v47, v2
-
-    move/from16 v36, v3
-
-    move-object/from16 v37, v4
-
-    move-object v3, v8
-
-    move/from16 v39, v10
-
-    move-object/from16 v23, v11
-
-    move-object/from16 v24, v12
-
-    move v11, v14
-
-    move-object v2, v15
-
-    move-object/from16 v22, v27
-
-    move/from16 v1, v39
-
-    goto :goto_ac
-
-    :catchall_83
-    move-exception v0
-
-    move/from16 v47, v2
-
-    move/from16 v36, v3
-
-    move-object/from16 v37, v4
-
-    move-object v3, v8
-
     move/from16 v26, v9
 
     move-object/from16 v22, v10
 
-    move-object/from16 v23, v11
+    move-object/from16 v27, v11
 
     move-object/from16 v24, v12
 
-    move v11, v14
+    move v12, v14
 
     move-object v2, v15
 
-    :goto_ac
-    :try_start_ec
+    move-object v9, v8
+
+    :goto_b3
+    :try_start_ea
     monitor-exit v6
-    :try_end_ec
-    .catchall {:try_start_ec .. :try_end_ec} :catchall_84
+    :try_end_ea
+    .catchall {:try_start_ea .. :try_end_ea} :catchall_82
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
     throw v0
 
-    :catchall_84
+    :catchall_82
     move-exception v0
 
-    goto :goto_ac
+    goto :goto_b3
 .end method
 
 .method private checkIfNotificationExisted(I)Z
@@ -22542,6 +24939,610 @@
     return-object v4
 .end method
 
+.method private dumpLruProcess()V
+    .locals 7
+
+    sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
+
+    sget-object v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mLruProcesses:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    :goto_0
+    if-lez v1, :cond_0
+
+    add-int/lit8 v1, v1, -0x1
+
+    sget-object v2, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v2, v2, Lcom/android/server/am/ActivityManagerService;->mLruProcesses:Ljava/util/ArrayList;
+
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/android/server/am/ProcessRecord;
+
+    const-string v3, "OHPD"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "[BGC] i="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v5, ", pid="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v5, v2, Lcom/android/server/am/ProcessRecord;->pid:I
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v5, ", uid="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v5, v2, Lcom/android/server/am/ProcessRecord;->uid:I
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v5, ", iso="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v5, v2, Lcom/android/server/am/ProcessRecord;->isolated:Z
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v5, ", userId="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v5, v2, Lcom/android/server/am/ProcessRecord;->userId:I
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v5, ", pers="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v5, v2, Lcom/android/server/am/ProcessRecord;->persistent:Z
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v5, ", pkg="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v5, v2, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v5, v5, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v5, ", app.info.uid="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v5, v2, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v5, v5, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v5, ", f=0x"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v5, v2, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v5, v5, Landroid/content/pm/ApplicationInfo;->flags:I
+
+    const/16 v6, 0x10
+
+    invoke-static {v5, v6}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v5, ", isSys="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v5, v2, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v5, v5, Landroid/content/pm/ApplicationInfo;->flags:I
+
+    invoke-virtual {p0, v5}, Lcom/android/server/am/OnePlusHighPowerDetector;->hasSystemFlag(I)Z
+
+    move-result v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v5, ", isMulti="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v5, v2, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v5, v5, Landroid/content/pm/ApplicationInfo;->flags:I
+
+    invoke-virtual {p0, v5}, Lcom/android/server/am/OnePlusHighPowerDetector;->isMultiArch(I)Z
+
+    move-result v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v5, ", sN="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Lcom/android/server/am/ProcessRecord;->toShortString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_0
+
+    :cond_0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
+
+    throw v1
+.end method
+
+.method private dumpOther()V
+    .locals 15
+
+    sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
+
+    iget-object v0, v0, Lcom/android/server/wm/WindowManagerService;->mOpWms:Lcom/android/server/wm/OnePlusWmUtil$OnePlusWindowManagerService;
+
+    invoke-virtual {v0}, Lcom/android/server/wm/OnePlusWmUtil$OnePlusWindowManagerService;->getSysAlertWindowUidsForScreenOff()Ljava/util/List;
+
+    move-result-object v0
+
+    const-string v1, "OHPD"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "[BGC] alertWindowUidsSoff :"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    sget-object v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
+
+    iget-object v1, v1, Lcom/android/server/wm/WindowManagerService;->mOpWms:Lcom/android/server/wm/OnePlusWmUtil$OnePlusWindowManagerService;
+
+    invoke-virtual {v1}, Lcom/android/server/wm/OnePlusWmUtil$OnePlusWindowManagerService;->getSysAlertWindowUids()Ljava/util/List;
+
+    move-result-object v1
+
+    const-string v2, "OHPD"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "[BGC] alertWindowUid :"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    sget-object v2, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v2, v2, Lcom/android/server/am/ActivityManagerService;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
+
+    iget-object v2, v2, Lcom/android/server/wm/WindowManagerService;->mOpWms:Lcom/android/server/wm/OnePlusWmUtil$OnePlusWindowManagerService;
+
+    invoke-virtual {v2}, Lcom/android/server/wm/OnePlusWmUtil$OnePlusWindowManagerService;->getVisibleWindowUids()Ljava/util/List;
+
+    move-result-object v2
+
+    const-string v3, "OHPD"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "[BGC] visibleUids :"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-direct {p0}, Lcom/android/server/am/OnePlusHighPowerDetector;->getActiveAudioUids()[Ljava/lang/String;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    if-eqz v3, :cond_0
+
+    invoke-static {v3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v4
+
+    :cond_0
+    const-string v5, "OHPD"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "[BGC] active audio :"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v5, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mOnePlusBGController:Lcom/android/server/am/OnePlusBGController;
+
+    invoke-virtual {v5}, Lcom/android/server/am/OnePlusBGController;->getStepCounterActiveUids()Ljava/lang/String;
+
+    move-result-object v5
+
+    const-string v6, "OHPD"
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "[BGC] active step counter uids :"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    sget-object v6, Lcom/android/server/am/OnePlusHighPowerDetector;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v6}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v6
+
+    const-string v7, "com_oneplus_systemui_recent_task_lockd_list"
+
+    const/4 v8, -0x2
+
+    invoke-static {v6, v7, v8}, Landroid/provider/Settings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-direct {p0, v6}, Lcom/android/server/am/OnePlusHighPowerDetector;->parseLockedStr(Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v7
+
+    const-string v8, "OHPD"
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "[BGC] locked :"
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v8, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUidArray:Landroid/util/SparseArray;
+
+    if-eqz v8, :cond_3
+
+    iget-object v8, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUidArray:Landroid/util/SparseArray;
+
+    monitor-enter v8
+
+    :try_start_0
+    new-instance v9, Ljava/lang/StringBuffer;
+
+    invoke-direct {v9}, Ljava/lang/StringBuffer;-><init>()V
+
+    const/4 v10, 0x0
+
+    :goto_0
+    iget-object v11, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUidArray:Landroid/util/SparseArray;
+
+    invoke-virtual {v11}, Landroid/util/SparseArray;->size()I
+
+    move-result v11
+
+    if-ge v10, v11, :cond_2
+
+    iget-object v11, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUidArray:Landroid/util/SparseArray;
+
+    invoke-virtual {v11, v10}, Landroid/util/SparseArray;->keyAt(I)I
+
+    move-result v11
+
+    iget-object v12, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUidArray:Landroid/util/SparseArray;
+
+    invoke-virtual {v12, v11}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Ljava/lang/Boolean;
+
+    new-instance v13, Ljava/lang/StringBuilder;
+
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v14, "["
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v13, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v14, ", "
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v12}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v14
+
+    if-eqz v14, :cond_1
+
+    const-string v14, "F"
+
+    goto :goto_1
+
+    :cond_1
+    const-string v14, "K"
+
+    :goto_1
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v14, "], "
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-virtual {v9, v13}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    add-int/lit8 v10, v10, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    const-string v10, "OHPD"
+
+    new-instance v11, Ljava/lang/StringBuilder;
+
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v12, "[BGC] mBGCUidArray :"
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v10, v11}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    monitor-exit v8
+
+    goto :goto_2
+
+    :catchall_0
+    move-exception v9
+
+    monitor-exit v8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v9
+
+    :cond_3
+    :goto_2
+    iget-object v8, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUsingTrafficUidSet:Ljava/util/HashSet;
+
+    if-eqz v8, :cond_5
+
+    iget-object v8, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUsingTrafficUidSet:Ljava/util/HashSet;
+
+    monitor-enter v8
+
+    :try_start_1
+    new-instance v9, Ljava/lang/StringBuffer;
+
+    invoke-direct {v9}, Ljava/lang/StringBuffer;-><init>()V
+
+    iget-object v10, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUsingTrafficUidSet:Ljava/util/HashSet;
+
+    invoke-virtual {v10}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v10
+
+    :goto_3
+    invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v11
+
+    if-eqz v11, :cond_4
+
+    invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Ljava/lang/Integer;
+
+    new-instance v12, Ljava/lang/StringBuilder;
+
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v11}, Ljava/lang/Integer;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v13, ", "
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-virtual {v9, v12}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    goto :goto_3
+
+    :cond_4
+    const-string v10, "OHPD"
+
+    new-instance v11, Ljava/lang/StringBuilder;
+
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v12, "[BGC] mBGCUsingTrafficUidSet :"
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v10, v11}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    monitor-exit v8
+
+    goto :goto_4
+
+    :catchall_1
+    move-exception v9
+
+    monitor-exit v8
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    throw v9
+
+    :cond_5
+    :goto_4
+    invoke-direct {p0}, Lcom/android/server/am/OnePlusHighPowerDetector;->getCurrentInputMethod()Ljava/lang/String;
+
+    move-result-object v8
+
+    const-string v9, "OHPD"
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v11, "[BGC] currentIME :"
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v9, v10}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
 .method private forceStopPackage(Ljava/lang/String;I)V
     .locals 2
 
@@ -22618,6 +25619,85 @@
     invoke-direct {p0, v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->parseActiveAudioUidsStr(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
+
+    return-object v1
+.end method
+
+.method private getCurrentInputMethod()Ljava/lang/String;
+    .locals 6
+
+    sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mContext:Landroid/content/Context;
+
+    const-string/jumbo v1, "input_method"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/inputmethod/InputMethodManager;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Landroid/view/inputmethod/InputMethodManager;->getInputMethodList()Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-lez v2, :cond_1
+
+    sget-object v2, Lcom/android/server/am/OnePlusHighPowerDetector;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    const-string v3, "default_input_method"
+
+    invoke-static {v2, v3}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/view/inputmethod/InputMethodInfo;
+
+    invoke-virtual {v4}, Landroid/view/inputmethod/InputMethodInfo;->getId()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    invoke-virtual {v4}, Landroid/view/inputmethod/InputMethodInfo;->getPackageName()Ljava/lang/String;
+
+    move-result-object v3
+
+    return-object v3
+
+    :cond_0
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x0
 
     return-object v1
 .end method
@@ -23034,6 +26114,8 @@
 
     invoke-direct {p0}, Lcom/android/server/am/OnePlusHighPowerDetector;->registerNotificationCancelReceiver()V
 
+    invoke-virtual {p0}, Lcom/android/server/am/OnePlusHighPowerDetector;->initBGCWhiteList()V
+
     invoke-virtual {p0}, Lcom/android/server/am/OnePlusHighPowerDetector;->initOnlineConfig()V
 
     sget-boolean v0, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG:Z
@@ -23136,6 +26218,109 @@
     return v0
 
     :cond_0
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method private isBGCImportantProc(Lcom/android/server/am/ProcessRecord;)Z
+    .locals 2
+
+    iget-object v0, p1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkGmsList(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    iget-object v0, p1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+
+    const-string v1, "com.android"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+
+    const-string v1, "com.android.chrome:sandboxed_process"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    iget-object v0, p1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    const-string v1, "com.google.android.gms"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    const-string v1, "com.google.android.gsf"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    const-string v1, "com.google.android.packageinstaller"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    const-string v1, "com.google.android.webview"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+
+    const-string v1, "android.process"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    :cond_1
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_2
     const/4 v0, 0x0
 
     return v0
@@ -23381,9 +26566,15 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_3
 
-    return-object v0
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    goto :goto_2
 
     :cond_0
     :try_start_0
@@ -23502,6 +26693,10 @@
     invoke-static {v2, v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :goto_1
+    return-object v0
+
+    :cond_3
+    :goto_2
     return-object v0
 .end method
 
@@ -23662,7 +26857,7 @@
 
     move-result v3
 
-    if-ge v2, v3, :cond_26
+    if-ge v2, v3, :cond_2a
 
     invoke-virtual {p1, v2}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
@@ -23692,7 +26887,7 @@
 
     monitor-enter v5
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_7
+    .catchall {:try_start_1 .. :try_end_1} :catchall_8
 
     :try_start_2
     iget-object v6, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteAppListSet:Ljava/util/ArrayList;
@@ -23761,7 +26956,7 @@
 
     monitor-enter v5
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_7
+    .catchall {:try_start_3 .. :try_end_3} :catchall_8
 
     :try_start_4
     iget-object v6, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->blackAppListSet:Ljava/util/ArrayList;
@@ -23830,7 +27025,7 @@
 
     monitor-enter v5
     :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_7
+    .catchall {:try_start_5 .. :try_end_5} :catchall_8
 
     :try_start_6
     iget-object v6, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->blackExAppListSet:Ljava/util/ArrayList;
@@ -23899,7 +27094,7 @@
 
     monitor-enter v5
     :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_8
 
     :try_start_8
     iget-object v6, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->killProcList:Ljava/util/ArrayList;
@@ -23968,7 +27163,7 @@
 
     monitor-enter v5
     :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_7
+    .catchall {:try_start_9 .. :try_end_9} :catchall_8
 
     :try_start_a
     iget-object v6, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->level0KillList:Ljava/util/ArrayList;
@@ -24037,7 +27232,7 @@
 
     monitor-enter v5
     :try_end_b
-    .catchall {:try_start_b .. :try_end_b} :catchall_7
+    .catchall {:try_start_b .. :try_end_b} :catchall_8
 
     :try_start_c
     iget-object v6, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->gmsMonitorList:Ljava/util/ArrayList;
@@ -25019,7 +28214,7 @@
 
     monitor-enter v5
     :try_end_d
-    .catchall {:try_start_d .. :try_end_d} :catchall_7
+    .catchall {:try_start_d .. :try_end_d} :catchall_8
 
     :try_start_e
     iget-object v6, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->sepicalNativeProcessMap:Ljava/util/HashMap;
@@ -25448,40 +28643,198 @@
     invoke-static {v5, v6}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_25
+    const-string/jumbo v4, "name"
+
+    invoke-virtual {v3, v4}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v5, "bgc_whitelist"
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_27
+
+    const-string/jumbo v4, "value"
+
+    invoke-virtual {v3, v4}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    monitor-enter v5
+    :try_end_f
+    .catchall {:try_start_f .. :try_end_f} :catchall_8
+
+    :try_start_10
+    iget-object v6, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    invoke-virtual {v6}, Ljava/util/ArrayList;->clear()V
+
+    move v6, v1
+
+    :goto_12
+    invoke-virtual {v4}, Lorg/json/JSONArray;->length()I
+
+    move-result v7
+
+    if-ge v6, v7, :cond_26
+
+    iget-object v7, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    invoke-virtual {v4, v6}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v6, v6, 0x1
+
+    goto :goto_12
+
+    :cond_26
+    monitor-exit v5
+
+    goto :goto_13
+
+    :catchall_7
+    move-exception v1
+
+    monitor-exit v5
+    :try_end_10
+    .catchall {:try_start_10 .. :try_end_10} :catchall_7
+
+    :try_start_11
+    throw v1
+
+    :cond_27
+    :goto_13
+    const-string/jumbo v4, "name"
+
+    invoke-virtual {v3, v4}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v5, "bgc_feature"
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_29
+
+    const-string/jumbo v4, "value"
+
+    invoke-virtual {v3, v4}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v1}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Ljava/lang/String;)Ljava/lang/Boolean;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v5
+
+    iput-boolean v5, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mIsBGCFeatureEnabled:Z
+
+    const-string v5, "OHPD"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "[OnlineConfig]BGC_FEATURE: "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v7, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mIsBGCFeatureEnabled:Z
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-boolean v5, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mIsBGCFeatureEnabled:Z
+
+    if-eqz v5, :cond_28
+
+    sput-boolean v1, Lcom/android/server/am/OnePlusHighPowerDetector;->RNK_ON:Z
+
+    goto :goto_14
+
+    :cond_28
+    const/4 v5, 0x1
+
+    sput-boolean v5, Lcom/android/server/am/OnePlusHighPowerDetector;->RNK_ON:Z
+
+    :goto_14
+    const-string v5, "OHPD"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "[OnlineConfig]RNK_ON: "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget-boolean v7, Lcom/android/server/am/OnePlusHighPowerDetector;->RNK_ON:Z
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_29
     add-int/lit8 v2, v2, 0x1
 
     goto/16 :goto_0
 
-    :cond_26
+    :cond_2a
     monitor-exit v0
-    :try_end_f
-    .catchall {:try_start_f .. :try_end_f} :catchall_7
+    :try_end_11
+    .catchall {:try_start_11 .. :try_end_11} :catchall_8
 
-    :try_start_10
+    :try_start_12
     const-string v0, "OHPD"
 
     const-string v1, "[OnlineConfig] BackgroundDetection updated complete"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_10
-    .catch Lorg/json/JSONException; {:try_start_10 .. :try_end_10} :catch_1
-    .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_10} :catch_0
-
-    goto :goto_12
-
-    :catchall_7
-    move-exception v1
-
-    :try_start_11
-    monitor-exit v0
-    :try_end_11
-    .catchall {:try_start_11 .. :try_end_11} :catchall_7
-
-    :try_start_12
-    throw v1
     :try_end_12
     .catch Lorg/json/JSONException; {:try_start_12 .. :try_end_12} :catch_1
     .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_12} :catch_0
+
+    goto :goto_15
+
+    :catchall_8
+    move-exception v1
+
+    :try_start_13
+    monitor-exit v0
+    :try_end_13
+    .catchall {:try_start_13 .. :try_end_13} :catchall_8
+
+    :try_start_14
+    throw v1
+    :try_end_14
+    .catch Lorg/json/JSONException; {:try_start_14 .. :try_end_14} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_14 .. :try_end_14} :catch_0
 
     :catch_0
     move-exception v0
@@ -25508,7 +28861,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_13
+    goto :goto_16
 
     :catch_1
     move-exception v0
@@ -25535,10 +28888,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_12
+    :goto_15
     nop
 
-    :goto_13
+    :goto_16
     return-void
 .end method
 
@@ -26045,6 +29398,198 @@
     return v0
 .end method
 
+.method private skipCheckForBGCAbn(Lcom/android/server/am/ProcessRecord;JLjava/lang/StringBuffer;I)Z
+    .locals 8
+
+    invoke-virtual {p0, p1}, Lcom/android/server/am/OnePlusHighPowerDetector;->isProcInWhiteList(Lcom/android/server/am/ProcessRecord;)Z
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-nez v0, :cond_4
+
+    invoke-virtual {p0, p1}, Lcom/android/server/am/OnePlusHighPowerDetector;->isProcInBGCWhiteList(Lcom/android/server/am/ProcessRecord;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto/16 :goto_0
+
+    :cond_0
+    invoke-virtual {p0, p1}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkSmallAdjKillList(Lcom/android/server/am/ProcessRecord;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusHighPowerDetector;->isBGCImportantProc(Lcom/android/server/am/ProcessRecord;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const-string/jumbo v0, "important proc"
+
+    invoke-virtual {p4, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    return v1
+
+    :cond_1
+    iget-wide v2, p1, Lcom/android/server/am/ProcessRecord;->lastFgTime:J
+
+    const-wide/16 v4, 0x0
+
+    cmp-long v0, v2, v4
+
+    if-eqz v0, :cond_2
+
+    iget-wide v2, p1, Lcom/android/server/am/ProcessRecord;->lastFgTime:J
+
+    sub-long v2, p2, v2
+
+    int-to-long v6, p5
+
+    cmp-long v0, v2, v6
+
+    if-gez v0, :cond_2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "app "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, "("
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v2, p1, Lcom/android/server/am/ProcessRecord;->pid:I
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, ") due to just switch to bg "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v2, p1, Lcom/android/server/am/ProcessRecord;->lastFgTime:J
+
+    sub-long v2, p2, v2
+
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v2, " ms ago , thold "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p4, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    return v1
+
+    :cond_2
+    iget-wide v2, p1, Lcom/android/server/am/ProcessRecord;->lastContactProviderTime:J
+
+    cmp-long v0, v2, v4
+
+    if-eqz v0, :cond_3
+
+    iget-wide v2, p1, Lcom/android/server/am/ProcessRecord;->lastContactProviderTime:J
+
+    sub-long v2, p2, v2
+
+    sget v0, Lcom/android/server/am/OnePlusHighPowerDetector;->APP_LAST_CONTACT_PROVIDER_TIME_THRESHOLD:I
+
+    int-to-long v4, v0
+
+    cmp-long v0, v2, v4
+
+    if-gez v0, :cond_3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "app "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, "("
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v2, p1, Lcom/android/server/am/ProcessRecord;->pid:I
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, ") due to just access contacts provider "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v2, p1, Lcom/android/server/am/ProcessRecord;->lastContactProviderTime:J
+
+    sub-long v2, p2, v2
+
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v2, " ms ago"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p4, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    return v1
+
+    :cond_3
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_4
+    :goto_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "white list pkg "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v2, v2, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p4, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    return v1
+.end method
+
 .method private skipCheckInner(Lcom/android/server/am/ProcessRecord;JILjava/lang/StringBuffer;ZILjava/util/List;Z)Z
     .locals 17
     .annotation system Ldalvik/annotation/Signature;
@@ -26129,7 +29674,7 @@
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "highUsed list pkg "
+    const-string/jumbo v7, "highUsed list pkg "
 
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -26690,6 +30235,220 @@
 
     :cond_0
     :goto_0
+    return-void
+.end method
+
+.method private updateBGCUidArray(Lcom/android/server/am/OnePlusBGController$BGCAbnInfo;)V
+    .locals 5
+
+    iget-object v0, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUidArray:Landroid/util/SparseArray;
+
+    invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
+
+    if-eqz p1, :cond_2
+
+    invoke-virtual {p1}, Lcom/android/server/am/OnePlusBGController$BGCAbnInfo;->getRecordList()Ljava/util/List;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "[BGC] list.size()="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/android/server/am/OnePlusHighPowerDetector;->myLog(Ljava/lang/String;)V
+
+    monitor-enter v0
+
+    const/4 v1, 0x0
+
+    :goto_0
+    :try_start_0
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_0
+
+    iget-object v2, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUidArray:Landroid/util/SparseArray;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/android/server/am/OnePlusBGController$UidmAh;
+
+    iget v3, v3, Lcom/android/server/am/OnePlusBGController$UidmAh;->mUid:I
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/android/server/am/OnePlusBGController$UidmAh;
+
+    iget-boolean v4, v4, Lcom/android/server/am/OnePlusBGController$UidmAh;->miSForceStop:Z
+
+    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v3, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "[BGC] "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/android/server/am/OnePlusBGController$UidmAh;
+
+    invoke-virtual {v3}, Lcom/android/server/am/OnePlusBGController$UidmAh;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/android/server/am/OnePlusHighPowerDetector;->myLog(Ljava/lang/String;)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit v0
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+
+    :cond_1
+    const-string v1, "[BGC] list == null"
+
+    invoke-static {v1}, Lcom/android/server/am/OnePlusHighPowerDetector;->myLog(Ljava/lang/String;)V
+
+    :goto_1
+    goto :goto_2
+
+    :cond_2
+    const-string v0, "[BGC] info == null"
+
+    invoke-static {v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->myLog(Ljava/lang/String;)V
+
+    :goto_2
+    return-void
+.end method
+
+.method private updateBGCUsingTrafficUidArray(Ljava/util/HashSet;)V
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/HashSet<",
+            "Ljava/lang/Integer;",
+            ">;)V"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUsingTrafficUidSet:Ljava/util/HashSet;
+
+    invoke-virtual {v0}, Ljava/util/HashSet;->clear()V
+
+    if-eqz p1, :cond_1
+
+    monitor-enter p1
+
+    :try_start_0
+    invoke-virtual {p1}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "[BGC] mark uid :"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v3, " is under using network"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/android/server/am/OnePlusHighPowerDetector;->myLog(Ljava/lang/String;)V
+
+    iget-object v2, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->mBGCUsingTrafficUidSet:Ljava/util/HashSet;
+
+    invoke-virtual {v2, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit p1
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_1
+    :goto_1
     return-void
 .end method
 
@@ -28781,7 +32540,7 @@
     move/from16 v18, v4
 
     :try_start_c
-    const-string v4, "huge dead pid:"
+    const-string/jumbo v4, "huge dead pid:"
 
     invoke-virtual {v15, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -28931,7 +32690,7 @@
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v15, "high dead pid:"
+    const-string/jumbo v15, "high dead pid:"
 
     invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -29213,7 +32972,7 @@
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v15, "huge dead pid:"
+    const-string/jumbo v15, "huge dead pid:"
 
     invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -29351,7 +33110,7 @@
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v15, "high dead pid:"
+    const-string/jumbo v15, "high dead pid:"
 
     invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -29810,18 +33569,208 @@
 
     iget v0, v2, Landroid/os/Message;->what:I
 
-    const/4 v3, 0x0
+    const v3, 0x101d7
+
+    if-eq v0, v3, :cond_24
+
+    const v3, 0x101d5
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x1
+    const/4 v5, 0x0
+
+    const/4 v6, 0x1
 
     packed-switch v0, :pswitch_data_0
 
-    goto/16 :goto_10
+    packed-switch v0, :pswitch_data_1
+
+    goto/16 :goto_11
 
     :pswitch_0
+    const-string v0, "======MSG_EXECUTION_BGPOWER======"
+
+    invoke-static {v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->myLog(Ljava/lang/String;)V
+
     :try_start_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "[BGC] mIsBGCFeatureEnabled="
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v3, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mIsBGCFeatureEnabled:Z
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->myLog(Ljava/lang/String;)V
+
+    iget-boolean v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mIsBGCFeatureEnabled:Z
+
+    if-eqz v0, :cond_0
+
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkAbnBgKillLocked()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_0
+    goto/16 :goto_11
+
+    :catch_0
+    move-exception v0
+
+    const-string v3, "OHPD"
+
+    const-string v4, "[BGC] Error handling MSG_EXECUTION_BGPOWER"
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    goto/16 :goto_11
+
+    :pswitch_1
+    const-string v0, "======MSG_INFO_BGPOWER======"
+
+    invoke-static {v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->myLog(Ljava/lang/String;)V
+
+    :try_start_1
+    iget-object v0, v2, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v0, Lcom/android/server/am/OnePlusBGController$BGCAbnInfo;
+
+    move-object v4, v0
+
+    invoke-direct {v1, v4}, Lcom/android/server/am/OnePlusHighPowerDetector;->updateBGCUidArray(Lcom/android/server/am/OnePlusBGController$BGCAbnInfo;)V
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "[BGC] mEverLightIdleBGCCheck="
+
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v7, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mEverLightIdleBGCCheck:Z
+
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v7, ", mIsScreenOn="
+
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget-boolean v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mIsScreenOn:Z
+
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->myLog(Ljava/lang/String;)V
+
+    iget-boolean v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mEverLightIdleBGCCheck:Z
+
+    if-eqz v0, :cond_2
+
+    sget-boolean v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mIsScreenOn:Z
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
+
+    if-nez v0, :cond_2
+
+    move v7, v5
+
+    :try_start_2
+    sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v8, "doze_mode_policy"
+
+    invoke-static {v0, v8, v5}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+    :try_end_2
+    .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
+
+    move v7, v0
+
+    goto :goto_0
+
+    :catch_1
+    move-exception v0
+
+    :try_start_3
+    invoke-virtual {v0}, Landroid/provider/Settings$SettingNotFoundException;->printStackTrace()V
+
+    :goto_0
+    sget-boolean v0, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG:Z
+
+    if-eqz v0, :cond_1
+
+    const-string v0, "OHPD"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "[BGC] Policy :"
+
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v0, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    if-ne v7, v6, :cond_2
+
+    iget-object v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mOnePlusBGController:Lcom/android/server/am/OnePlusBGController;
+
+    invoke-virtual {v0}, Lcom/android/server/am/OnePlusBGController;->updateUidTraffic()Ljava/util/HashSet;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->updateBGCUsingTrafficUidArray(Ljava/util/HashSet;)V
+
+    sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mHandler:Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
+
+    invoke-virtual {v0, v3}, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;->sendEmptyMessage(I)Z
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
+
+    :cond_2
+    goto/16 :goto_11
+
+    :catch_2
+    move-exception v0
+
+    const-string v3, "OHPD"
+
+    const-string v4, "[BGC] Error handling MSG_INFO_BGPOWER"
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    goto/16 :goto_11
+
+    :pswitch_2
+    :try_start_4
     iget-object v0, v2, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/String;
@@ -29859,12 +33808,12 @@
     const-string/jumbo v7, "native_proc_busy"
 
     invoke-virtual {v6, v7, v5}, Lnet/oneplus/odm/insight/tracker/OSTracker;->onEvent(Ljava/lang/String;Ljava/util/Map;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_3
 
-    goto/16 :goto_10
+    goto/16 :goto_11
 
-    :catch_0
+    :catch_3
     move-exception v0
 
     const-string v3, "OHPD"
@@ -29875,15 +33824,15 @@
 
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    goto/16 :goto_10
+    goto/16 :goto_11
 
-    :pswitch_1
-    invoke-virtual {v1, v4}, Lcom/android/server/am/OnePlusHighPowerDetector;->monitorCameraStart(I)V
+    :pswitch_3
+    invoke-virtual {v1, v5}, Lcom/android/server/am/OnePlusHighPowerDetector;->monitorCameraStart(I)V
 
-    goto/16 :goto_10
+    goto/16 :goto_11
 
-    :pswitch_2
-    :try_start_1
+    :pswitch_4
+    :try_start_5
     iget-object v0, v2, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/String;
@@ -29921,12 +33870,12 @@
     const-string v7, "camera_proc_busy"
 
     invoke-virtual {v6, v7, v5}, Lnet/oneplus/odm/insight/tracker/OSTracker;->onEvent(Ljava/lang/String;Ljava/util/Map;)V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_4
 
-    goto/16 :goto_10
+    goto/16 :goto_11
 
-    :catch_1
+    :catch_4
     move-exception v0
 
     const-string v3, "OHPD"
@@ -29937,57 +33886,57 @@
 
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    goto/16 :goto_10
+    goto/16 :goto_11
 
-    :pswitch_3
+    :pswitch_5
     iget-object v0, v2, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    move-object v4, v0
+    move-object v3, v0
 
-    check-cast v4, Ljava/lang/String;
+    check-cast v3, Ljava/lang/String;
 
-    iget v6, v2, Landroid/os/Message;->arg1:I
+    iget v5, v2, Landroid/os/Message;->arg1:I
 
     iget v0, v2, Landroid/os/Message;->arg2:I
 
     move v7, v0
 
-    :try_start_2
-    invoke-direct {v1, v6}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkIfNotificationExisted(I)Z
+    :try_start_6
+    invoke-direct {v1, v5}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkIfNotificationExisted(I)Z
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_4
 
-    if-nez v6, :cond_0
+    if-nez v5, :cond_3
 
     iget-object v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyHighPkgKeySet:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->clear()V
 
-    iput-object v3, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyHighPkgKey:Ljava/lang/String;
+    iput-object v4, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyHighPkgKey:Ljava/lang/String;
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_0
-    if-ne v6, v5, :cond_1
+    :cond_3
+    if-ne v5, v6, :cond_4
 
     iget-object v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyPkgKeySet:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->clear()V
 
-    iput-object v3, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyPkgKey:Ljava/lang/String;
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
+    iput-object v4, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyPkgKey:Ljava/lang/String;
+    :try_end_6
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_5
 
-    :cond_1
-    :goto_0
-    goto :goto_1
+    :cond_4
+    :goto_1
+    goto :goto_2
 
-    :catch_2
+    :catch_5
     move-exception v0
 
-    const-string v3, "OHPD"
+    const-string v4, "OHPD"
 
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -29997,127 +33946,127 @@
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v8
 
-    invoke-static {v3, v8}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v8}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    :goto_1
+    :goto_2
     iget-object v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyPkgKey:Ljava/lang/String;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_5
 
     iget-object v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyPkgKey:Ljava/lang/String;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_6
 
-    :cond_2
+    :cond_5
     iget-object v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyHighPkgKey:Ljava/lang/String;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_7
 
     iget-object v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyHighPkgKey:Ljava/lang/String;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_7
 
-    :cond_3
+    :cond_6
     const-string v0, "OHPD"
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "pkg "
+    const-string/jumbo v6, "pkg "
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v5, " userId "
+    const-string v6, " userId "
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v5, " already pop notification , skip"
+    const-string v6, " already pop notification , skip"
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-static {v0, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 
-    :cond_4
+    :cond_7
     sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mHandler:Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
 
-    if-ne v6, v5, :cond_5
+    if-ne v5, v6, :cond_8
 
-    const v3, 0xd6db
+    const v4, 0xd6db
 
-    goto :goto_2
+    goto :goto_3
 
-    :cond_5
-    const v3, 0xd6e1
+    :cond_8
+    const v4, 0xd6e1
 
-    :goto_2
-    invoke-virtual {v0, v3}, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;->obtainMessage(I)Landroid/os/Message;
+    :goto_3
+    invoke-virtual {v0, v4}, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
-    iput-object v4, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iput-object v3, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     iput v7, v0, Landroid/os/Message;->arg2:I
 
-    sget-object v3, Lcom/android/server/am/OnePlusHighPowerDetector;->mHandler:Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
+    sget-object v4, Lcom/android/server/am/OnePlusHighPowerDetector;->mHandler:Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
 
     const-wide/16 v8, 0x3e8
 
-    invoke-virtual {v3, v0, v8, v9}, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v4, v0, v8, v9}, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    goto/16 :goto_10
+    goto/16 :goto_11
 
-    :pswitch_4
+    :pswitch_6
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v3, Lcom/android/server/am/OnePlusHighPowerDetector$4;
@@ -30128,149 +34077,182 @@
 
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    goto/16 :goto_10
+    goto/16 :goto_11
 
-    :pswitch_5
+    :pswitch_7
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/OnePlusHighPowerDetector;->updateProcRxTx()V
 
-    goto/16 :goto_10
+    goto/16 :goto_11
 
-    :pswitch_6
-    move v3, v4
+    :pswitch_8
+    move v4, v5
 
-    :try_start_3
+    :try_start_7
     sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string v6, "doze_mode_policy"
+    const-string v7, "doze_mode_policy"
 
-    invoke-static {v0, v6, v4}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v0, v7, v5}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v0
-    :try_end_3
-    .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_3 .. :try_end_3} :catch_3
+    :try_end_7
+    .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_7 .. :try_end_7} :catch_6
 
-    move v3, v0
+    move v4, v0
 
-    goto :goto_3
+    goto :goto_4
 
-    :catch_3
+    :catch_6
     move-exception v0
 
     invoke-virtual {v0}, Landroid/provider/Settings$SettingNotFoundException;->printStackTrace()V
 
-    :goto_3
+    :goto_4
     sget-boolean v0, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG_LIGHTIDLE:Z
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_9
 
     const-string v0, "OHPD"
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "[LightIdle] Policy :"
+    const-string v8, "[LightIdle] Policy :"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-static {v0, v6}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v7}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_6
-    new-array v0, v5, [I
+    :cond_9
+    new-array v0, v6, [I
 
-    const/16 v6, 0x5d
+    const/16 v7, 0x5d
 
-    aput v6, v0, v4
+    aput v7, v0, v5
 
     invoke-static {v0}, Landroid/util/OpFeatures;->isSupport([I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_a
 
-    if-ne v3, v5, :cond_7
+    if-ne v4, v6, :cond_a
 
     iget-boolean v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mEverLightIdleCheck:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_a
 
     invoke-direct/range {p0 .. p0}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkLightIdleProcessKillLocked()V
 
-    iput-boolean v5, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mEverLightIdleCheck:Z
+    iput-boolean v6, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mEverLightIdleCheck:Z
 
-    :cond_7
+    :cond_a
+    new-array v0, v6, [I
+
+    const/16 v7, 0x5b
+
+    aput v7, v0, v5
+
+    invoke-static {v0}, Landroid/util/OpFeatures;->isSupport([I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_b
+
+    if-ne v4, v6, :cond_b
+
+    iget-boolean v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mEverLightIdleBGCCheck:Z
+
+    if-nez v0, :cond_b
+
+    iput-boolean v6, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mEverLightIdleBGCCheck:Z
+
+    iget-object v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mOnePlusBGController:Lcom/android/server/am/OnePlusBGController;
+
+    invoke-virtual {v0}, Lcom/android/server/am/OnePlusBGController;->updateUidTraffic()Ljava/util/HashSet;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->updateBGCUsingTrafficUidArray(Ljava/util/HashSet;)V
+
+    sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mHandler:Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
+
+    invoke-virtual {v0, v3}, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;->sendEmptyMessage(I)Z
+
+    :cond_b
     sget-boolean v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mEnableMonitorCameraProc:Z
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_d
 
     iget-boolean v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mEverLightIdleCameraCheck:Z
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_c
 
     iget-boolean v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mFakeTestEnabled:Z
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_d
 
-    :cond_8
-    invoke-virtual {v1, v4}, Lcom/android/server/am/OnePlusHighPowerDetector;->monitorCameraEnd(I)V
+    :cond_c
+    invoke-virtual {v1, v5}, Lcom/android/server/am/OnePlusHighPowerDetector;->monitorCameraEnd(I)V
 
     invoke-direct/range {p0 .. p0}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkLightIdleCameraProcessKillLocked()V
 
-    iput-boolean v5, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mEverLightIdleCameraCheck:Z
+    iput-boolean v6, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mEverLightIdleCameraCheck:Z
 
-    :cond_9
-    goto/16 :goto_10
+    :cond_d
+    goto/16 :goto_11
 
-    :pswitch_7
-    :try_start_4
+    :pswitch_9
+    :try_start_8
     iget-object v0, v2, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/String;
 
     iget v3, v2, Landroid/os/Message;->arg2:I
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_e
 
     return-void
 
-    :cond_a
+    :cond_e
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v6
+    move-result-wide v7
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v4
 
     iget-object v9, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mNotifyPkgMap:Ljava/util/HashMap;
 
-    invoke-virtual {v9, v8}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v4}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v9
 
-    if-eqz v9, :cond_c
+    if-eqz v9, :cond_10
 
     iget-object v9, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mNotifyPkgMap:Ljava/util/HashMap;
 
-    invoke-virtual {v9, v8}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v9, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v9
 
@@ -30280,66 +34262,66 @@
 
     move-result-wide v9
 
-    sub-long v11, v6, v9
+    sub-long v11, v7, v9
 
     sget-wide v13, Lcom/android/server/am/OnePlusHighPowerDetector;->NOTIFY_INTERVAL:J
 
     cmp-long v11, v11, v13
 
-    if-gez v11, :cond_c
+    if-gez v11, :cond_10
 
-    sget-boolean v4, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG:Z
+    sget-boolean v5, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG:Z
 
-    if-eqz v4, :cond_b
+    if-eqz v5, :cond_f
 
-    const-string v4, "OHPD"
+    const-string v5, "OHPD"
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v11, "Notification # too short time to notify: "
 
-    invoke-virtual {v5, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sub-long v11, v6, v9
+    sub-long v11, v7, v9
 
-    invoke-virtual {v5, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const-string v11, ", "
 
-    invoke-virtual {v5, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_b
+    :cond_f
     return-void
 
-    :cond_c
+    :cond_10
     iget-object v9, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mNotifyPkgMap:Ljava/util/HashMap;
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v10
 
-    invoke-virtual {v9, v8, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v9, v4, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {v1, v0, v3, v4}, Lcom/android/server/am/OnePlusHighPowerDetector;->createNotification(Ljava/lang/String;II)Landroid/app/Notification;
+    invoke-direct {v1, v0, v3, v5}, Lcom/android/server/am/OnePlusHighPowerDetector;->createNotification(Ljava/lang/String;II)Landroid/app/Notification;
 
-    move-result-object v4
+    move-result-object v5
 
-    if-nez v4, :cond_d
+    if-nez v5, :cond_11
 
     return-void
 
-    :cond_d
-    new-array v5, v5, [I
+    :cond_11
+    new-array v6, v6, [I
 
     invoke-static {}, Landroid/app/NotificationManager;->getService()Landroid/app/INotificationManager;
 
@@ -30357,15 +34339,15 @@
 
     move-result v15
 
-    move-object v14, v4
+    move-object v14, v5
 
     invoke-interface/range {v9 .. v15}, Landroid/app/INotificationManager;->enqueueNotificationWithTag(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILandroid/app/Notification;I)V
 
     iget-object v10, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyHighPkgKeySet:Ljava/util/HashSet;
 
-    invoke-virtual {v10, v8}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v10, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    iput-object v8, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyHighPkgKey:Ljava/lang/String;
+    iput-object v4, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyHighPkgKey:Ljava/lang/String;
 
     const-string v10, "OHPD"
 
@@ -30390,12 +34372,12 @@
     move-result-object v11
 
     invoke-static {v10, v11}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_4
+    :try_end_8
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_7
 
-    goto/16 :goto_10
+    goto/16 :goto_11
 
-    :catch_4
+    :catch_7
     move-exception v0
 
     const-string v3, "OHPD"
@@ -30406,37 +34388,37 @@
 
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    goto/16 :goto_10
+    goto/16 :goto_11
 
-    :pswitch_8
+    :pswitch_a
     iget v0, v2, Landroid/os/Message;->arg2:I
 
-    move v4, v0
+    move v3, v0
 
-    :try_start_5
+    :try_start_9
     invoke-static {}, Landroid/app/NotificationManager;->getService()Landroid/app/INotificationManager;
 
     move-result-object v0
 
-    const-string v6, "android"
+    const-string v5, "android"
 
-    if-ne v4, v5, :cond_e
+    if-ne v3, v6, :cond_12
 
     const v7, 0x33954b8
 
-    goto :goto_4
+    goto :goto_5
 
-    :cond_e
+    :cond_12
     const v7, 0x33954b9
 
-    :goto_4
+    :goto_5
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v8
 
-    invoke-interface {v0, v6, v3, v7, v8}, Landroid/app/INotificationManager;->cancelNotificationWithTag(Ljava/lang/String;Ljava/lang/String;II)V
+    invoke-interface {v0, v5, v4, v7, v8}, Landroid/app/INotificationManager;->cancelNotificationWithTag(Ljava/lang/String;Ljava/lang/String;II)V
 
-    const-string v6, "OHPD"
+    const-string v5, "OHPD"
 
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -30446,70 +34428,70 @@
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v7
 
-    invoke-static {v6, v7}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v7}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-nez v4, :cond_f
+    if-nez v3, :cond_13
 
-    iput-object v3, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyHighPkgKey:Ljava/lang/String;
+    iput-object v4, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyHighPkgKey:Ljava/lang/String;
 
-    goto :goto_5
-
-    :cond_f
-    if-ne v4, v5, :cond_10
-
-    iput-object v3, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyPkgKey:Ljava/lang/String;
-    :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_5
-
-    :cond_10
-    :goto_5
     goto :goto_6
 
-    :catch_5
+    :cond_13
+    if-ne v3, v6, :cond_14
+
+    iput-object v4, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyPkgKey:Ljava/lang/String;
+    :try_end_9
+    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_8
+
+    :cond_14
+    :goto_6
+    goto :goto_7
+
+    :catch_8
     move-exception v0
 
-    const-string v3, "OHPD"
+    const-string v4, "OHPD"
 
     const-string v5, "[BgDetect] Error when cancel notification"
 
-    invoke-static {v3, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_6
-    :try_start_6
+    :goto_7
+    :try_start_a
     iget-object v0, v2, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/String;
 
-    iget v3, v2, Landroid/os/Message;->arg1:I
+    iget v4, v2, Landroid/os/Message;->arg1:I
 
-    invoke-direct {v1, v0, v3}, Lcom/android/server/am/OnePlusHighPowerDetector;->forceStopPackage(Ljava/lang/String;I)V
-    :try_end_6
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_6
+    invoke-direct {v1, v0, v4}, Lcom/android/server/am/OnePlusHighPowerDetector;->forceStopPackage(Ljava/lang/String;I)V
+    :try_end_a
+    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_9
 
-    goto :goto_7
+    goto :goto_8
 
-    :catch_6
+    :catch_9
     move-exception v0
 
-    const-string v3, "OHPD"
+    const-string v4, "OHPD"
 
     const-string v5, "[BgDetect] Error when force stop pkg"
 
-    invoke-static {v3, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    :goto_7
-    goto/16 :goto_10
+    :goto_8
+    goto/16 :goto_11
 
-    :pswitch_9
-    :try_start_7
+    :pswitch_b
+    :try_start_b
     new-instance v9, Landroid/content/Intent;
 
     const-string v0, "android.oem.bugreport.power_event"
@@ -30543,12 +34525,12 @@
     const/16 v19, -0x2
 
     invoke-virtual/range {v6 .. v19}, Lcom/android/server/am/ActivityManagerService;->broadcastIntentInPackage(Ljava/lang/String;ILandroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Landroid/os/Bundle;ZZI)I
-    :try_end_7
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_7
+    :try_end_b
+    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_b} :catch_a
 
-    goto/16 :goto_10
+    goto/16 :goto_11
 
-    :catch_7
+    :catch_a
     move-exception v0
 
     const-string v3, "OHPD"
@@ -30559,9 +34541,9 @@
 
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    goto/16 :goto_10
+    goto/16 :goto_11
 
-    :pswitch_a
+    :pswitch_c
     sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->CPU_CHECK_DELAY:[I
 
     const/4 v3, 0x3
@@ -30572,13 +34554,13 @@
 
     move-result v4
 
-    if-nez v4, :cond_11
+    if-nez v4, :cond_15
 
     sget-object v5, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v5
 
-    :try_start_8
+    :try_start_c
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
     sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mHandler:Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
@@ -30604,42 +34586,42 @@
     invoke-virtual {v6, v0, v7, v8}, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     monitor-exit v5
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_0
+    :try_end_c
+    .catchall {:try_start_c .. :try_end_c} :catchall_0
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    goto :goto_8
+    goto :goto_9
 
     :catchall_0
     move-exception v0
 
-    :try_start_9
+    :try_start_d
     monitor-exit v5
-    :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_0
+    :try_end_d
+    .catchall {:try_start_d .. :try_end_d} :catchall_0
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
     throw v0
 
-    :cond_11
-    :goto_8
-    goto/16 :goto_10
+    :cond_15
+    :goto_9
+    goto/16 :goto_11
 
-    :pswitch_b
-    :try_start_a
+    :pswitch_d
+    :try_start_e
     iget-object v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyPkgKey:Ljava/lang/String;
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_16
 
     iget-object v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyHighPkgKey:Ljava/lang/String;
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_16
 
     return-void
 
-    :cond_12
+    :cond_16
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
@@ -30650,15 +34632,15 @@
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    move-object v6, v0
+    move-object v4, v0
 
     sget-object v7, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v7
-    :try_end_a
-    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_8
+    :try_end_e
+    .catch Ljava/lang/Exception; {:try_start_e .. :try_end_e} :catch_b
 
-    :try_start_b
+    :try_start_f
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
     sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
@@ -30669,12 +34651,12 @@
 
     move-result-object v0
 
-    :goto_9
+    :goto_a
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
-    if-eqz v8, :cond_13
+    if-eqz v8, :cond_17
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -30694,16 +34676,16 @@
 
     move-result-object v9
 
-    invoke-virtual {v6, v9}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v9}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    goto :goto_9
+    goto :goto_a
 
-    :cond_13
+    :cond_17
     monitor-exit v7
-    :try_end_b
-    .catchall {:try_start_b .. :try_end_b} :catchall_2
+    :try_end_f
+    .catchall {:try_start_f .. :try_end_f} :catchall_2
 
-    :try_start_c
+    :try_start_10
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
     iget-object v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mAppForkedProcMap:Ljava/util/HashMap;
@@ -30712,15 +34694,15 @@
 
     move-result v0
 
-    if-lez v0, :cond_16
+    if-lez v0, :cond_1a
 
     iget-object v7, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mAppForkedProcMap:Ljava/util/HashMap;
 
     monitor-enter v7
-    :try_end_c
-    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_c} :catch_8
+    :try_end_10
+    .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_10} :catch_b
 
-    :try_start_d
+    :try_start_11
     iget-object v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mAppForkedProcMap:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -30731,12 +34713,12 @@
 
     move-result-object v0
 
-    :goto_a
+    :goto_b
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
-    if-eqz v8, :cond_15
+    if-eqz v8, :cond_19
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -30756,7 +34738,7 @@
 
     cmp-long v11, v9, v11
 
-    if-lez v11, :cond_14
+    if-lez v11, :cond_18
 
     iget-object v11, v8, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->pkgName:Ljava/lang/String;
 
@@ -30768,11 +34750,11 @@
 
     move-result-object v11
 
-    invoke-virtual {v6, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    goto :goto_b
+    goto :goto_c
 
-    :cond_14
+    :cond_18
     new-instance v11, Ljava/lang/StringBuilder;
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
@@ -30803,64 +34785,64 @@
 
     invoke-static {v11}, Lcom/android/server/am/OnePlusHighPowerDetector;->myLog(Ljava/lang/String;)V
 
-    :goto_b
-    goto :goto_a
+    :goto_c
+    goto :goto_b
 
-    :cond_15
+    :cond_19
     monitor-exit v7
 
-    goto :goto_c
+    goto :goto_d
 
     :catchall_1
     move-exception v0
 
     monitor-exit v7
-    :try_end_d
-    .catchall {:try_start_d .. :try_end_d} :catchall_1
+    :try_end_11
+    .catchall {:try_start_11 .. :try_end_11} :catchall_1
 
-    :try_start_e
+    :try_start_12
     throw v0
 
-    :cond_16
-    :goto_c
+    :cond_1a
+    :goto_d
     iget-object v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyHighPkgKey:Ljava/lang/String;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1b
 
     iget-object v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyHighPkgKey:Ljava/lang/String;
 
-    invoke-direct {v1, v0, v3, v6, v4}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkNotification(Ljava/lang/String;Ljava/util/HashSet;Ljava/util/HashSet;I)V
+    invoke-direct {v1, v0, v3, v4, v5}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkNotification(Ljava/lang/String;Ljava/util/HashSet;Ljava/util/HashSet;I)V
 
-    :cond_17
+    :cond_1b
     iget-object v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyPkgKey:Ljava/lang/String;
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1c
 
     iget-object v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyPkgKey:Ljava/lang/String;
 
-    invoke-direct {v1, v0, v3, v6, v5}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkNotification(Ljava/lang/String;Ljava/util/HashSet;Ljava/util/HashSet;I)V
-    :try_end_e
-    .catch Ljava/lang/Exception; {:try_start_e .. :try_end_e} :catch_8
+    invoke-direct {v1, v0, v3, v4, v6}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkNotification(Ljava/lang/String;Ljava/util/HashSet;Ljava/util/HashSet;I)V
+    :try_end_12
+    .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_12} :catch_b
 
-    :cond_18
-    goto/16 :goto_10
+    :cond_1c
+    goto/16 :goto_11
 
     :catchall_2
     move-exception v0
 
-    :try_start_f
+    :try_start_13
     monitor-exit v7
-    :try_end_f
-    .catchall {:try_start_f .. :try_end_f} :catchall_2
+    :try_end_13
+    .catchall {:try_start_13 .. :try_end_13} :catchall_2
 
-    :try_start_10
+    :try_start_14
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
     throw v0
-    :try_end_10
-    .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_10} :catch_8
+    :try_end_14
+    .catch Ljava/lang/Exception; {:try_start_14 .. :try_end_14} :catch_b
 
-    :catch_8
+    :catch_b
     move-exception v0
 
     const-string v3, "OHPD"
@@ -30883,10 +34865,10 @@
 
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    goto/16 :goto_10
+    goto/16 :goto_11
 
-    :pswitch_c
-    :try_start_11
+    :pswitch_e
+    :try_start_15
     iget-object v0, v2, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/String;
@@ -30894,12 +34876,12 @@
     iget v3, v2, Landroid/os/Message;->arg1:I
 
     invoke-virtual {v1, v0, v3}, Lcom/android/server/am/OnePlusHighPowerDetector;->postProcessOfForceStop(Ljava/lang/String;I)V
-    :try_end_11
-    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_11} :catch_9
+    :try_end_15
+    .catch Ljava/lang/Exception; {:try_start_15 .. :try_end_15} :catch_c
 
-    goto/16 :goto_10
+    goto/16 :goto_11
 
-    :catch_9
+    :catch_c
     move-exception v0
 
     const-string v3, "OHPD"
@@ -30910,48 +34892,48 @@
 
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    goto/16 :goto_10
+    goto/16 :goto_11
 
-    :pswitch_d
-    :try_start_12
+    :pswitch_f
+    :try_start_16
     iget-object v0, v2, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/String;
 
     iget v3, v2, Landroid/os/Message;->arg2:I
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_1d
 
     return-void
 
-    :cond_19
+    :cond_1d
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v6
+    move-result-wide v4
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v7
 
     iget-object v8, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mNotifyPkgMap:Ljava/util/HashMap;
 
-    invoke-virtual {v8, v4}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v7}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_1b
+    if-eqz v8, :cond_1f
 
     iget-object v8, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mNotifyPkgMap:Ljava/util/HashMap;
 
-    invoke-virtual {v8, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v8, v7}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v8
 
@@ -30961,19 +34943,19 @@
 
     move-result-wide v8
 
-    sub-long v10, v6, v8
+    sub-long v10, v4, v8
 
     sget-wide v12, Lcom/android/server/am/OnePlusHighPowerDetector;->NOTIFY_INTERVAL:J
 
     cmp-long v10, v10, v12
 
-    if-gez v10, :cond_1b
+    if-gez v10, :cond_1f
 
-    sget-boolean v5, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG:Z
+    sget-boolean v6, Lcom/android/server/am/OnePlusHighPowerDetector;->DEBUG:Z
 
-    if-eqz v5, :cond_1a
+    if-eqz v6, :cond_1e
 
-    const-string v5, "OHPD"
+    const-string v6, "OHPD"
 
     new-instance v10, Ljava/lang/StringBuilder;
 
@@ -30983,7 +34965,7 @@
 
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sub-long v11, v6, v8
+    sub-long v11, v4, v8
 
     invoke-virtual {v10, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -30991,36 +34973,36 @@
 
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v10
 
-    invoke-static {v5, v10}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v6, v10}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_1a
+    :cond_1e
     return-void
 
-    :cond_1b
+    :cond_1f
     iget-object v8, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mNotifyPkgMap:Ljava/util/HashMap;
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v9
 
-    invoke-virtual {v8, v4, v9}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v8, v7, v9}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {v1, v0, v3, v5}, Lcom/android/server/am/OnePlusHighPowerDetector;->createNotification(Ljava/lang/String;II)Landroid/app/Notification;
+    invoke-direct {v1, v0, v3, v6}, Lcom/android/server/am/OnePlusHighPowerDetector;->createNotification(Ljava/lang/String;II)Landroid/app/Notification;
 
     move-result-object v8
 
-    if-nez v8, :cond_1c
+    if-nez v8, :cond_20
 
     return-void
 
-    :cond_1c
-    new-array v5, v5, [I
+    :cond_20
+    new-array v6, v6, [I
 
     invoke-static {}, Landroid/app/NotificationManager;->getService()Landroid/app/INotificationManager;
 
@@ -31044,9 +35026,9 @@
 
     iget-object v10, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyPkgKeySet:Ljava/util/HashSet;
 
-    invoke-virtual {v10, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v10, v7}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    iput-object v4, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyPkgKey:Ljava/lang/String;
+    iput-object v7, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mCurNotifyPkgKey:Ljava/lang/String;
 
     const-string v10, "OHPD"
 
@@ -31071,12 +35053,12 @@
     move-result-object v11
 
     invoke-static {v10, v11}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_12
-    .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_12} :catch_a
+    :try_end_16
+    .catch Ljava/lang/Exception; {:try_start_16 .. :try_end_16} :catch_d
 
-    goto/16 :goto_10
+    goto/16 :goto_11
 
-    :catch_a
+    :catch_d
     move-exception v0
 
     const-string v3, "OHPD"
@@ -31087,9 +35069,9 @@
 
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    goto/16 :goto_10
+    goto/16 :goto_11
 
-    :pswitch_e
+    :pswitch_10
     sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->CPU_CHECK_DELAY:[I
 
     const/4 v3, 0x2
@@ -31100,13 +35082,13 @@
 
     move-result v4
 
-    if-nez v4, :cond_1d
+    if-nez v4, :cond_21
 
     sget-object v5, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v5
 
-    :try_start_13
+    :try_start_17
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
     sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mHandler:Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
@@ -31132,50 +35114,112 @@
     invoke-virtual {v6, v0, v7, v8}, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     monitor-exit v5
-    :try_end_13
-    .catchall {:try_start_13 .. :try_end_13} :catchall_3
+    :try_end_17
+    .catchall {:try_start_17 .. :try_end_17} :catchall_3
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    goto :goto_d
+    goto :goto_e
 
     :catchall_3
     move-exception v0
 
-    :try_start_14
+    :try_start_18
     monitor-exit v5
-    :try_end_14
-    .catchall {:try_start_14 .. :try_end_14} :catchall_3
+    :try_end_18
+    .catchall {:try_start_18 .. :try_end_18} :catchall_3
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
     throw v0
 
-    :cond_1d
-    :goto_d
-    goto :goto_10
+    :cond_21
+    :goto_e
+    goto :goto_11
 
-    :pswitch_f
+    :pswitch_11
     sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->CPU_CHECK_DELAY:[I
 
-    aget v0, v0, v5
+    aget v0, v0, v6
 
-    invoke-direct {v1, v5, v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkExcessiveCpuUsageLocked(II)I
+    invoke-direct {v1, v6, v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkExcessiveCpuUsageLocked(II)I
 
     move-result v3
 
-    if-nez v3, :cond_1e
+    if-nez v3, :cond_22
 
     sget-object v4, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v4
 
-    :try_start_15
+    :try_start_19
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
     sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mHandler:Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
 
-    const v6, 0xd6d9
+    const v5, 0xd6d9
+
+    invoke-virtual {v0, v5}, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;->removeMessages(I)V
+
+    sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mHandler:Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
+
+    invoke-virtual {v0, v5}, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v0
+
+    sget-object v5, Lcom/android/server/am/OnePlusHighPowerDetector;->mHandler:Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
+
+    sget-object v7, Lcom/android/server/am/OnePlusHighPowerDetector;->CPU_CHECK_DELAY:[I
+
+    aget v6, v7, v6
+
+    int-to-long v6, v6
+
+    invoke-virtual {v5, v0, v6, v7}, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+
+    monitor-exit v4
+    :try_end_19
+    .catchall {:try_start_19 .. :try_end_19} :catchall_4
+
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
+
+    goto :goto_f
+
+    :catchall_4
+    move-exception v0
+
+    :try_start_1a
+    monitor-exit v4
+    :try_end_1a
+    .catchall {:try_start_1a .. :try_end_1a} :catchall_4
+
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
+
+    throw v0
+
+    :cond_22
+    :goto_f
+    goto :goto_11
+
+    :pswitch_12
+    sget v0, Lcom/android/server/am/OnePlusHighPowerDetector;->CPU_MIN_CHECK_DURATION:I
+
+    invoke-direct {v1, v5, v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkExcessiveCpuUsageLocked(II)I
+
+    move-result v3
+
+    if-nez v3, :cond_23
+
+    sget-object v4, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
+
+    monitor-enter v4
+
+    :try_start_1b
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
+
+    sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mHandler:Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
+
+    const v6, 0xd6d8
 
     invoke-virtual {v0, v6}, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;->removeMessages(I)V
 
@@ -31196,92 +35240,41 @@
     invoke-virtual {v6, v0, v7, v8}, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     monitor-exit v4
-    :try_end_15
-    .catchall {:try_start_15 .. :try_end_15} :catchall_4
+    :try_end_1b
+    .catchall {:try_start_1b .. :try_end_1b} :catchall_5
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    goto :goto_e
-
-    :catchall_4
-    move-exception v0
-
-    :try_start_16
-    monitor-exit v4
-    :try_end_16
-    .catchall {:try_start_16 .. :try_end_16} :catchall_4
-
-    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
-
-    throw v0
-
-    :cond_1e
-    :goto_e
     goto :goto_10
-
-    :pswitch_10
-    sget v0, Lcom/android/server/am/OnePlusHighPowerDetector;->CPU_MIN_CHECK_DURATION:I
-
-    invoke-direct {v1, v4, v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->checkExcessiveCpuUsageLocked(II)I
-
-    move-result v3
-
-    if-nez v3, :cond_1f
-
-    sget-object v5, Lcom/android/server/am/OnePlusHighPowerDetector;->mAms:Lcom/android/server/am/ActivityManagerService;
-
-    monitor-enter v5
-
-    :try_start_17
-    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
-
-    sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mHandler:Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
-
-    const v6, 0xd6d8
-
-    invoke-virtual {v0, v6}, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;->removeMessages(I)V
-
-    sget-object v0, Lcom/android/server/am/OnePlusHighPowerDetector;->mHandler:Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
-
-    invoke-virtual {v0, v6}, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v0
-
-    sget-object v6, Lcom/android/server/am/OnePlusHighPowerDetector;->mHandler:Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;
-
-    sget-object v7, Lcom/android/server/am/OnePlusHighPowerDetector;->CPU_CHECK_DELAY:[I
-
-    aget v4, v7, v4
-
-    int-to-long v7, v4
-
-    invoke-virtual {v6, v0, v7, v8}, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
-
-    monitor-exit v5
-    :try_end_17
-    .catchall {:try_start_17 .. :try_end_17} :catchall_5
-
-    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
-
-    goto :goto_f
 
     :catchall_5
     move-exception v0
 
-    :try_start_18
-    monitor-exit v5
-    :try_end_18
-    .catchall {:try_start_18 .. :try_end_18} :catchall_5
+    :try_start_1c
+    monitor-exit v4
+    :try_end_1c
+    .catchall {:try_start_1c .. :try_end_1c} :catchall_5
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
     throw v0
 
-    :cond_1f
-    :goto_f
+    :cond_23
+    :goto_10
+    goto :goto_11
+
+    :cond_24
+    const-string v0, "======MSG_UPDATE_TRAFFIC_WHEN_SOFF======"
+
+    invoke-static {v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->myLog(Ljava/lang/String;)V
+
+    iget-object v0, v1, Lcom/android/server/am/OnePlusHighPowerDetector;->mOnePlusBGController:Lcom/android/server/am/OnePlusBGController;
+
+    invoke-virtual {v0}, Lcom/android/server/am/OnePlusBGController;->updateUidTraffic()Ljava/util/HashSet;
+
     nop
 
-    :goto_10
+    :goto_11
     return-void
 
     nop
@@ -31290,6 +35283,8 @@
 
     :pswitch_data_0
     .packed-switch 0xd6d8
+        :pswitch_12
+        :pswitch_11
         :pswitch_10
         :pswitch_f
         :pswitch_e
@@ -31305,6 +35300,10 @@
         :pswitch_4
         :pswitch_3
         :pswitch_2
+    .end packed-switch
+
+    :pswitch_data_1
+    .packed-switch 0x101d4
         :pswitch_1
         :pswitch_0
     .end packed-switch
@@ -31425,6 +35424,140 @@
     return-void
 .end method
 
+.method initBGCWhiteList()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    const-string v2, "com.baidu.BaiduMap"
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    const-string v2, "com.tencent.map"
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    const-string v2, "cld.navi.mainframe"
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    const-string v2, "com.mapbar.android.mapbarmap"
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    const-string v2, "com.autonavi.minimap"
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    const-string v2, "com.sogou.map.android.maps"
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    const-string v2, "com.oppo.market"
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    const-string v2, "com.google.android.apps.maps"
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    const-string v2, "com.mapswithme.maps.pro"
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    const-string v2, "com.here.app.maps"
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    const-string v2, "com.magnetic.openmaps"
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    const-string v2, "com.navigation.offlinemaps.gps"
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    const-string v2, "com.tripbucket.route66"
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    const-string v2, "com.papago.M11_Int"
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    const-string v2, "com.kingwaytek.naviking3d.google.std"
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    const-string v2, "com.sygic.incar"
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    const-string v2, "com.mmi.maps"
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    const-string v2, "com.waze"
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
 .method public initOnlineConfig()V
     .locals 5
 
@@ -31449,6 +35582,59 @@
     invoke-virtual {v0}, Lcom/oneplus/config/ConfigObserver;->register()V
 
     return-void
+.end method
+
+.method isForkedProcInBGCWhiteList(Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;)Z
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget-object v1, p1, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->pkgName:Ljava/lang/String;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    iget-object v2, p1, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->pkgName:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    monitor-exit v0
+
+    return v1
+
+    :cond_0
+    monitor-exit v0
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method
 
 .method isForkedProcInWhiteList(Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;)Z
@@ -31478,6 +35664,87 @@
     iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteAppListSet:Ljava/util/ArrayList;
 
     iget-object v2, p1, Lcom/android/server/am/OnePlusHighPowerDetector$AppForkedProc;->pkgName:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    monitor-exit v0
+
+    return v1
+
+    :cond_0
+    monitor-exit v0
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method isMultiArch(I)Z
+    .locals 1
+
+    const/high16 v0, -0x80000000
+
+    and-int/2addr v0, p1
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
+.method isProcInBGCWhiteList(Lcom/android/server/am/ProcessRecord;)Z
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget-object v1, p1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v1, v1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusHighPowerDetector;->whiteBGCAppListSet:Ljava/util/ArrayList;
+
+    iget-object v2, p1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v2, v2, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 

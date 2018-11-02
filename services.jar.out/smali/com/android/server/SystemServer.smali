@@ -433,11 +433,13 @@
 
     move-object/from16 v2, p4
 
+    move-object/from16 v3, p16
+
     const-string v0, "SystemServer"
 
-    const-string v3, "Making services ready"
+    const-string v4, "Making services ready"
 
-    invoke-static {v0, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     const-string v0, "StartActivityManagerReadyPhase"
 
@@ -445,9 +447,9 @@
 
     iget-object v0, v1, Lcom/android/server/SystemServer;->mSystemServiceManager:Lcom/android/server/SystemServiceManager;
 
-    const/16 v3, 0x226
+    const/16 v4, 0x226
 
-    invoke-virtual {v0, v3}, Lcom/android/server/SystemServiceManager;->startBootPhase(I)V
+    invoke-virtual {v0, v4}, Lcom/android/server/SystemServiceManager;->startBootPhase(I)V
 
     invoke-static {}, Lcom/android/server/SystemServer;->traceEnd()V
 
@@ -467,47 +469,47 @@
     :catch_0
     move-exception v0
 
-    const-string/jumbo v3, "observing native crashes"
+    const-string/jumbo v4, "observing native crashes"
 
-    invoke-direct {v1, v3, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v4, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :goto_0
     invoke-static {}, Lcom/android/server/SystemServer;->traceEnd()V
 
-    const-string v3, "WebViewFactoryPreparation"
+    const-string v4, "WebViewFactoryPreparation"
 
     const/4 v0, 0x0
 
-    iget-boolean v4, v1, Lcom/android/server/SystemServer;->mOnlyCore:Z
+    iget-boolean v5, v1, Lcom/android/server/SystemServer;->mOnlyCore:Z
 
-    if-nez v4, :cond_0
+    if-nez v5, :cond_0
 
-    iget-object v4, v1, Lcom/android/server/SystemServer;->mWebViewUpdateService:Lcom/android/server/webkit/WebViewUpdateService;
+    iget-object v5, v1, Lcom/android/server/SystemServer;->mWebViewUpdateService:Lcom/android/server/webkit/WebViewUpdateService;
 
-    if-eqz v4, :cond_0
+    if-eqz v5, :cond_0
 
     invoke-static {}, Lcom/android/server/SystemServerInitThreadPool;->get()Lcom/android/server/SystemServerInitThreadPool;
 
-    move-result-object v4
+    move-result-object v5
 
-    new-instance v5, Lcom/android/server/-$$Lambda$SystemServer$Y1gEdKr_Hb7K7cbTDAo_WOJ-SYI;
+    new-instance v6, Lcom/android/server/-$$Lambda$SystemServer$Y1gEdKr_Hb7K7cbTDAo_WOJ-SYI;
 
-    invoke-direct {v5, v1}, Lcom/android/server/-$$Lambda$SystemServer$Y1gEdKr_Hb7K7cbTDAo_WOJ-SYI;-><init>(Lcom/android/server/SystemServer;)V
+    invoke-direct {v6, v1}, Lcom/android/server/-$$Lambda$SystemServer$Y1gEdKr_Hb7K7cbTDAo_WOJ-SYI;-><init>(Lcom/android/server/SystemServer;)V
 
-    const-string v6, "WebViewFactoryPreparation"
+    const-string v7, "WebViewFactoryPreparation"
 
-    invoke-virtual {v4, v5, v6}, Lcom/android/server/SystemServerInitThreadPool;->submit(Ljava/lang/Runnable;Ljava/lang/String;)Ljava/util/concurrent/Future;
+    invoke-virtual {v5, v6, v7}, Lcom/android/server/SystemServerInitThreadPool;->submit(Ljava/lang/Runnable;Ljava/lang/String;)Ljava/util/concurrent/Future;
 
     move-result-object v0
 
     :cond_0
-    move-object v4, v0
+    move-object v5, v0
 
     iget-object v0, v1, Lcom/android/server/SystemServer;->mPackageManager:Landroid/content/pm/PackageManager;
 
-    const-string v5, "android.hardware.type.automotive"
+    const-string v6, "android.hardware.type.automotive"
 
-    invoke-virtual {v0, v5}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+    invoke-virtual {v0, v6}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -519,9 +521,9 @@
 
     iget-object v0, v1, Lcom/android/server/SystemServer;->mSystemServiceManager:Lcom/android/server/SystemServiceManager;
 
-    const-string v5, "com.android.internal.car.CarServiceHelperService"
+    const-string v6, "com.android.internal.car.CarServiceHelperService"
 
-    invoke-virtual {v0, v5}, Lcom/android/server/SystemServiceManager;->startService(Ljava/lang/String;)Lcom/android/server/SystemService;
+    invoke-virtual {v0, v6}, Lcom/android/server/SystemServiceManager;->startService(Ljava/lang/String;)Lcom/android/server/SystemService;
 
     invoke-static {}, Lcom/android/server/SystemServer;->traceEnd()V
 
@@ -540,11 +542,11 @@
     :catch_1
     move-exception v0
 
-    move-object v5, v0
+    move-object v6, v0
 
-    const-string/jumbo v5, "starting System UI"
+    const-string/jumbo v6, "starting System UI"
 
-    invoke-direct {v1, v5, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v6, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :goto_1
     invoke-static {}, Lcom/android/server/SystemServer;->traceEnd()V
@@ -565,11 +567,11 @@
     :catch_2
     move-exception v0
 
-    move-object v6, v0
+    move-object v7, v0
 
-    const-string/jumbo v6, "making Network Managment Service ready"
+    const-string/jumbo v7, "making Network Managment Service ready"
 
-    invoke-direct {v1, v6, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v7, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_3
 
@@ -589,7 +591,7 @@
     move-result-object v0
 
     :cond_3
-    move-object v6, v0
+    move-object v7, v0
 
     invoke-static {}, Lcom/android/server/SystemServer;->traceEnd()V
 
@@ -609,11 +611,11 @@
     :catch_3
     move-exception v0
 
-    move-object v7, v0
+    move-object v8, v0
 
-    const-string/jumbo v7, "making IpSec Service ready"
+    const-string/jumbo v8, "making IpSec Service ready"
 
-    invoke-direct {v1, v7, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v8, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_5
 
@@ -640,11 +642,11 @@
     :catch_4
     move-exception v0
 
-    move-object v8, v0
+    move-object v9, v0
 
-    const-string/jumbo v8, "making Network Stats Service ready"
+    const-string/jumbo v9, "making Network Stats Service ready"
 
-    invoke-direct {v1, v8, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v9, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_7
 
@@ -671,11 +673,11 @@
     :catch_5
     move-exception v0
 
-    move-object v9, v0
+    move-object v10, v0
 
-    const-string/jumbo v9, "making Connectivity Service ready"
+    const-string/jumbo v10, "making Connectivity Service ready"
 
-    invoke-direct {v1, v9, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v10, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_9
 
@@ -693,7 +695,7 @@
     if-eqz v2, :cond_7
 
     :try_start_6
-    invoke-virtual {v2, v6}, Lcom/android/server/net/NetworkPolicyManagerService;->systemReady(Ljava/util/concurrent/CountDownLatch;)V
+    invoke-virtual {v2, v7}, Lcom/android/server/net/NetworkPolicyManagerService;->systemReady(Ljava/util/concurrent/CountDownLatch;)V
     :try_end_6
     .catch Ljava/lang/Throwable; {:try_start_6 .. :try_end_6} :catch_6
 
@@ -702,11 +704,11 @@
     :catch_6
     move-exception v0
 
-    move-object v9, v0
+    move-object v10, v0
 
-    const-string/jumbo v9, "making Network Policy Service ready"
+    const-string/jumbo v10, "making Network Policy Service ready"
 
-    invoke-direct {v1, v9, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v10, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_b
 
@@ -737,18 +739,18 @@
 
     invoke-static {v0}, Lcom/android/server/SystemServer;->traceBeginAndSlog(Ljava/lang/String;)V
 
-    if-eqz v4, :cond_8
+    if-eqz v5, :cond_8
 
     const-string v0, "WebViewFactoryPreparation"
 
-    invoke-static {v4, v0}, Lcom/android/internal/util/ConcurrentUtils;->waitForFutureNoInterrupt(Ljava/util/concurrent/Future;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v5, v0}, Lcom/android/internal/util/ConcurrentUtils;->waitForFutureNoInterrupt(Ljava/util/concurrent/Future;Ljava/lang/String;)Ljava/lang/Object;
 
     :cond_8
     iget-object v0, v1, Lcom/android/server/SystemServer;->mSystemServiceManager:Lcom/android/server/SystemServiceManager;
 
-    const/16 v9, 0x258
+    const/16 v10, 0x258
 
-    invoke-virtual {v0, v9}, Lcom/android/server/SystemServiceManager;->startBootPhase(I)V
+    invoke-virtual {v0, v10}, Lcom/android/server/SystemServiceManager;->startBootPhase(I)V
 
     invoke-static {}, Lcom/android/server/SystemServer;->traceEnd()V
 
@@ -768,11 +770,11 @@
     :catch_7
     move-exception v0
 
-    move-object v10, v0
+    move-object v11, v0
 
-    const-string v10, "Notifying Location Service running"
+    const-string v11, "Notifying Location Service running"
 
-    invoke-direct {v1, v10, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v11, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_d
 
@@ -799,11 +801,11 @@
     :catch_8
     move-exception v0
 
-    move-object v11, v0
+    move-object v12, v0
 
-    const-string v11, "Notifying CountryDetectorService running"
+    const-string v12, "Notifying CountryDetectorService running"
 
-    invoke-direct {v1, v11, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v12, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_f
 
@@ -830,11 +832,11 @@
     :catch_9
     move-exception v0
 
-    move-object v12, v0
+    move-object v13, v0
 
-    const-string v12, "Notifying NetworkTimeService running"
+    const-string v13, "Notifying NetworkTimeService running"
 
-    invoke-direct {v1, v12, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v13, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_11
 
@@ -861,11 +863,11 @@
     :catch_a
     move-exception v0
 
-    move-object v13, v0
+    move-object v14, v0
 
-    const-string v13, "Notifying CommonTimeManagementService running"
+    const-string v14, "Notifying CommonTimeManagementService running"
 
-    invoke-direct {v1, v13, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v14, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_13
 
@@ -892,11 +894,11 @@
     :catch_b
     move-exception v0
 
-    move-object v14, v0
+    move-object v15, v0
 
-    const-string v14, "Notifying InputManagerService running"
+    const-string v2, "Notifying InputManagerService running"
 
-    invoke-direct {v1, v14, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v2, v0}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_15
 
@@ -1042,10 +1044,12 @@
 
     invoke-static {v0}, Lcom/android/server/SystemServer;->traceBeginAndSlog(Ljava/lang/String;)V
 
-    if-eqz p16, :cond_12
+    if-eqz v3, :cond_12
 
     :try_start_10
-    invoke-virtual/range {p16 .. p16}, Lcom/android/server/OemExService;->systemRunning()V
+    iget-boolean v0, v1, Lcom/android/server/SystemServer;->mFirstBoot:Z
+
+    invoke-virtual {v3, v0}, Lcom/android/server/OemExService;->systemRunning(Z)V
     :try_end_10
     .catch Ljava/lang/Throwable; {:try_start_10 .. :try_end_10} :catch_10
 
@@ -1053,8 +1057,6 @@
 
     :catch_10
     move-exception v0
-
-    move-object v15, v0
 
     const-string v2, "Notifying OemExService running"
 

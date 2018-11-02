@@ -192,7 +192,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "id_timeout : "
+    const-string/jumbo v2, "id_timeout : "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -482,7 +482,7 @@
     goto :goto_1
 
     :cond_6
-    const-string v6, "id_timeout"
+    const-string/jumbo v6, "id_timeout"
 
     invoke-virtual {v6, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

@@ -184,7 +184,7 @@
 
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    const-string v1, "icmp"
+    const-string/jumbo v1, "icmp"
 
     const/16 v14, 0xc
 
@@ -194,7 +194,7 @@
 
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    const-string v1, "icmpv6"
+    const-string/jumbo v1, "icmpv6"
 
     const/16 v15, 0xd
 

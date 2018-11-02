@@ -159,7 +159,7 @@
     :cond_1
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v1, "hwRandomDevice"
+    const-string/jumbo v1, "hwRandomDevice"
 
     invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

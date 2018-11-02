@@ -53,7 +53,7 @@
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$HandlerCallback;->mService:Lcom/android/server/net/NetworkStatsService;
 
-    invoke-static {v0}, Lcom/android/server/net/NetworkStatsService;->access$900(Lcom/android/server/net/NetworkStatsService;)V
+    invoke-static {v0}, Lcom/android/server/net/NetworkStatsService;->access$1000(Lcom/android/server/net/NetworkStatsService;)V
 
     return v1
 
@@ -62,7 +62,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static {v0, v2}, Lcom/android/server/net/NetworkStatsService;->access$1900(Lcom/android/server/net/NetworkStatsService;[Landroid/net/Network;)V
+    invoke-static {v0, v2}, Lcom/android/server/net/NetworkStatsService;->access$2000(Lcom/android/server/net/NetworkStatsService;[Landroid/net/Network;)V
 
     return v1
 
@@ -71,7 +71,7 @@
 
     iget-object v2, p0, Lcom/android/server/net/NetworkStatsService$HandlerCallback;->mService:Lcom/android/server/net/NetworkStatsService;
 
-    invoke-static {v2, v0}, Lcom/android/server/net/NetworkStatsService;->access$800(Lcom/android/server/net/NetworkStatsService;I)V
+    invoke-static {v2, v0}, Lcom/android/server/net/NetworkStatsService;->access$900(Lcom/android/server/net/NetworkStatsService;I)V
 
     return v1
 

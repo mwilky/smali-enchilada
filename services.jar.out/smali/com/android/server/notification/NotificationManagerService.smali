@@ -10459,7 +10459,7 @@
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "hint["
+    const-string/jumbo v7, "hint["
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -13235,7 +13235,7 @@
 .end method
 
 .method protected isBlocked(Lcom/android/server/notification/NotificationRecord;Lcom/android/server/notification/NotificationUsageStats;)Z
-    .locals 6
+    .locals 10
 
     iget-object v0, p1, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
@@ -13280,50 +13280,96 @@
 
     move-result v3
 
-    if-nez v3, :cond_2
+    iget-object v4, p0, Lcom/android/server/notification/NotificationManagerService;->mRankingHelper:Lcom/android/server/notification/RankingHelper;
 
-    iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService;->mRankingHelper:Lcom/android/server/notification/RankingHelper;
+    invoke-virtual {v4, v0, v1}, Lcom/android/server/notification/RankingHelper;->getImportance(Ljava/lang/String;I)I
 
-    invoke-virtual {v3, v0, v1}, Lcom/android/server/notification/RankingHelper;->getImportance(Ljava/lang/String;I)I
+    move-result v4
 
-    move-result v3
+    const/4 v5, 0x0
 
-    if-eqz v3, :cond_2
+    const/4 v6, 0x1
 
-    invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getChannel()Landroid/app/NotificationChannel;
+    if-nez v4, :cond_1
 
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/app/NotificationChannel;->getImportance()I
-
-    move-result v3
-
-    if-nez v3, :cond_1
+    move v4, v6
 
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v4, v5
+
+    :goto_0
+    invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getChannel()Landroid/app/NotificationChannel;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Landroid/app/NotificationChannel;->getImportance()I
+
+    move-result v7
+
+    if-nez v7, :cond_2
+
+    move v7, v6
 
     goto :goto_1
 
     :cond_2
-    :goto_0
-    const/4 v3, 0x1
+    move v7, v5
 
     :goto_1
-    if-eqz v3, :cond_3
+    if-nez v3, :cond_4
 
-    const-string v4, "NotificationService"
+    if-nez v4, :cond_4
 
-    const-string v5, "Suppressing notification from package by user request."
+    if-eqz v7, :cond_3
 
-    invoke-static {v4, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    goto :goto_2
+
+    :cond_3
+    goto :goto_3
+
+    :cond_4
+    :goto_2
+    move v5, v6
+
+    :goto_3
+    if-eqz v5, :cond_5
+
+    const-string v6, "NotificationService"
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "Suppressing notification from package by user request. isGroupBlocked: "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v9, " isRankingImportanceNone: "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v9, " isRecordImportanceNone: "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v6, v8}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-virtual {p2, p1}, Lcom/android/server/notification/NotificationUsageStats;->registerBlocked(Lcom/android/server/notification/NotificationRecord;)V
 
-    :cond_3
-    return v3
+    :cond_5
+    return v5
 .end method
 
 .method protected isCallerSystemOrPhone()Z

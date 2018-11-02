@@ -725,7 +725,7 @@
     goto :goto_4
 
     :cond_8
-    const-string v10, "host"
+    const-string/jumbo v10, "host"
 
     invoke-virtual {v11, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1348,7 +1348,7 @@
 
     :cond_1d
     :try_start_15
-    const-string v8, "host"
+    const-string/jumbo v8, "host"
 
     invoke-virtual {v5, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2013,7 +2013,7 @@
 
     iget-object v6, v1, Lcom/android/server/usb/UsbService;->mHostManager:Lcom/android/server/usb/UsbHostManager;
 
-    const-string v8, "host_manager"
+    const-string/jumbo v8, "host_manager"
 
     const-wide v12, 0x10b00000002L
 
@@ -2078,8 +2078,6 @@
     invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     throw v0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

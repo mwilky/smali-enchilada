@@ -40,7 +40,7 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "OnePlusRamBoostManager"
+    const-string v0, "OnePlusSmartBoostManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -65,16 +65,26 @@
 
     packed-switch v0, :pswitch_data_0
 
-    goto/16 :goto_0
-
     :pswitch_0
-    iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->this$0:Lcom/android/server/am/OnePlusRamBoostManager;
-
-    invoke-static {v0}, Lcom/android/server/am/OnePlusRamBoostManager;->access$200(Lcom/android/server/am/OnePlusRamBoostManager;)I
-
     goto/16 :goto_0
 
     :pswitch_1
+    iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->this$0:Lcom/android/server/am/OnePlusRamBoostManager;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/android/server/am/OnePlusRamBoostManager;->access$900(Lcom/android/server/am/OnePlusRamBoostManager;Z)V
+
+    goto/16 :goto_0
+
+    :pswitch_2
+    iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->this$0:Lcom/android/server/am/OnePlusRamBoostManager;
+
+    invoke-static {v0}, Lcom/android/server/am/OnePlusRamBoostManager;->access$300(Lcom/android/server/am/OnePlusRamBoostManager;)I
+
+    goto/16 :goto_0
+
+    :pswitch_3
     invoke-virtual {p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
     move-result-object v0
@@ -87,11 +97,11 @@
 
     iget-object v2, p0, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->this$0:Lcom/android/server/am/OnePlusRamBoostManager;
 
-    invoke-static {v2, v1}, Lcom/android/server/am/OnePlusRamBoostManager;->access$1000(Lcom/android/server/am/OnePlusRamBoostManager;Ljava/lang/String;)I
+    invoke-static {v2, v1}, Lcom/android/server/am/OnePlusRamBoostManager;->access$1100(Lcom/android/server/am/OnePlusRamBoostManager;Ljava/lang/String;)I
 
     goto/16 :goto_0
 
-    :pswitch_2
+    :pswitch_4
     invoke-virtual {p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
     move-result-object v0
@@ -116,36 +126,38 @@
 
     iget-object v4, p0, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->this$0:Lcom/android/server/am/OnePlusRamBoostManager;
 
-    invoke-static {v4, v1, v2, v3}, Lcom/android/server/am/OnePlusRamBoostManager;->access$900(Lcom/android/server/am/OnePlusRamBoostManager;ILjava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-
-    :pswitch_3
-    iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->this$0:Lcom/android/server/am/OnePlusRamBoostManager;
-
-    invoke-static {v0}, Lcom/android/server/am/OnePlusRamBoostManager;->access$700(Lcom/android/server/am/OnePlusRamBoostManager;)I
-
-    iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->this$0:Lcom/android/server/am/OnePlusRamBoostManager;
-
-    invoke-static {v0}, Lcom/android/server/am/OnePlusRamBoostManager;->access$800(Lcom/android/server/am/OnePlusRamBoostManager;)V
-
-    goto :goto_0
-
-    :pswitch_4
-    iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->this$0:Lcom/android/server/am/OnePlusRamBoostManager;
-
-    invoke-static {v0}, Lcom/android/server/am/OnePlusRamBoostManager;->access$600(Lcom/android/server/am/OnePlusRamBoostManager;)V
+    invoke-static {v4, v1, v2, v3}, Lcom/android/server/am/OnePlusRamBoostManager;->access$1000(Lcom/android/server/am/OnePlusRamBoostManager;ILjava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
     :pswitch_5
     iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->this$0:Lcom/android/server/am/OnePlusRamBoostManager;
 
-    invoke-static {v0, v1, v2}, Lcom/android/server/am/OnePlusRamBoostManager;->access$300(Lcom/android/server/am/OnePlusRamBoostManager;J)V
+    invoke-static {v0}, Lcom/android/server/am/OnePlusRamBoostManager;->access$800(Lcom/android/server/am/OnePlusRamBoostManager;)I
+
+    iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->this$0:Lcom/android/server/am/OnePlusRamBoostManager;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lcom/android/server/am/OnePlusRamBoostManager;->access$900(Lcom/android/server/am/OnePlusRamBoostManager;Z)V
 
     goto :goto_0
 
     :pswitch_6
+    iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->this$0:Lcom/android/server/am/OnePlusRamBoostManager;
+
+    invoke-static {v0}, Lcom/android/server/am/OnePlusRamBoostManager;->access$700(Lcom/android/server/am/OnePlusRamBoostManager;)V
+
+    goto :goto_0
+
+    :pswitch_7
+    iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->this$0:Lcom/android/server/am/OnePlusRamBoostManager;
+
+    invoke-static {v0, v1, v2}, Lcom/android/server/am/OnePlusRamBoostManager;->access$400(Lcom/android/server/am/OnePlusRamBoostManager;J)V
+
+    goto :goto_0
+
+    :pswitch_8
     invoke-virtual {p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
     move-result-object v0
@@ -158,11 +170,11 @@
 
     iget-object v2, p0, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->this$0:Lcom/android/server/am/OnePlusRamBoostManager;
 
-    invoke-static {v2, v1}, Lcom/android/server/am/OnePlusRamBoostManager;->access$500(Lcom/android/server/am/OnePlusRamBoostManager;I)Z
+    invoke-static {v2, v1}, Lcom/android/server/am/OnePlusRamBoostManager;->access$600(Lcom/android/server/am/OnePlusRamBoostManager;I)Z
 
     goto :goto_0
 
-    :pswitch_7
+    :pswitch_9
     invoke-virtual {p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
     move-result-object v0
@@ -179,7 +191,7 @@
 
     move-result-object v2
 
-    const-string v3, "hotCount"
+    const-string/jumbo v3, "hotCount"
 
     invoke-virtual {v0, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -187,37 +199,43 @@
 
     iget-object v4, p0, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->this$0:Lcom/android/server/am/OnePlusRamBoostManager;
 
-    invoke-static {v4, v2, v3, v1}, Lcom/android/server/am/OnePlusRamBoostManager;->access$400(Lcom/android/server/am/OnePlusRamBoostManager;Ljava/lang/String;Ljava/lang/String;I)Z
+    invoke-static {v4, v2, v3, v1}, Lcom/android/server/am/OnePlusRamBoostManager;->access$500(Lcom/android/server/am/OnePlusRamBoostManager;Ljava/lang/String;Ljava/lang/String;I)Z
 
     goto :goto_0
 
-    :pswitch_8
+    :pswitch_a
     iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->this$0:Lcom/android/server/am/OnePlusRamBoostManager;
 
-    invoke-static {v0}, Lcom/android/server/am/OnePlusRamBoostManager;->access$100(Lcom/android/server/am/OnePlusRamBoostManager;)V
-
-    iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->this$0:Lcom/android/server/am/OnePlusRamBoostManager;
-
-    invoke-static {v0}, Lcom/android/server/am/OnePlusRamBoostManager;->access$200(Lcom/android/server/am/OnePlusRamBoostManager;)I
+    invoke-static {v0}, Lcom/android/server/am/OnePlusRamBoostManager;->access$200(Lcom/android/server/am/OnePlusRamBoostManager;)V
 
     iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->this$0:Lcom/android/server/am/OnePlusRamBoostManager;
 
-    invoke-static {v0, v1, v2}, Lcom/android/server/am/OnePlusRamBoostManager;->access$300(Lcom/android/server/am/OnePlusRamBoostManager;J)V
+    invoke-static {v0}, Lcom/android/server/am/OnePlusRamBoostManager;->access$300(Lcom/android/server/am/OnePlusRamBoostManager;)I
+
+    iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->this$0:Lcom/android/server/am/OnePlusRamBoostManager;
+
+    invoke-static {v0, v1, v2}, Lcom/android/server/am/OnePlusRamBoostManager;->access$400(Lcom/android/server/am/OnePlusRamBoostManager;J)V
 
     goto :goto_0
 
-    :pswitch_9
+    :pswitch_b
     iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->this$0:Lcom/android/server/am/OnePlusRamBoostManager;
 
-    invoke-static {v0}, Lcom/android/server/am/OnePlusRamBoostManager;->access$100(Lcom/android/server/am/OnePlusRamBoostManager;)V
+    invoke-static {v0}, Lcom/android/server/am/OnePlusRamBoostManager;->access$200(Lcom/android/server/am/OnePlusRamBoostManager;)V
 
     nop
 
     :goto_0
     return-void
 
+    nop
+
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
+        :pswitch_b
+        :pswitch_a
         :pswitch_9
         :pswitch_8
         :pswitch_7
@@ -226,7 +244,7 @@
         :pswitch_4
         :pswitch_3
         :pswitch_2
-        :pswitch_1
         :pswitch_0
+        :pswitch_1
     .end packed-switch
 .end method

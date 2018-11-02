@@ -57,20 +57,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/server/policy/DeviceKeyHandler$EventHandler;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
-    invoke-static {v0}, Lcom/android/server/policy/DeviceKeyHandler;->access$800(Lcom/android/server/policy/DeviceKeyHandler;)Landroid/app/ActivityManager;
-
-    invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    return-void
-
-    :cond_1
-    iget-object v0, p0, Lcom/android/server/policy/DeviceKeyHandler$EventHandler;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
-
-    invoke-static {v0}, Lcom/android/server/policy/DeviceKeyHandler;->access$900(Lcom/android/server/policy/DeviceKeyHandler;)V
+    invoke-static {v0}, Lcom/android/server/policy/DeviceKeyHandler;->access$700(Lcom/android/server/policy/DeviceKeyHandler;)V
 
     nop
 

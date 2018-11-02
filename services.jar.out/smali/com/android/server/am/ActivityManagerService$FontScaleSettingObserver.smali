@@ -40,7 +40,7 @@
 
     iput-object v0, p0, Lcom/android/server/am/ActivityManagerService$FontScaleSettingObserver;->mFontScaleUri:Landroid/net/Uri;
 
-    const-string v0, "hide_error_dialogs"
+    const-string/jumbo v0, "hide_error_dialogs"
 
     invoke-static {v0}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 

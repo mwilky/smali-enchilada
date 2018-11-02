@@ -34,7 +34,7 @@
 .method public onTorchModeChanged(Ljava/lang/String;Z)V
     .locals 3
 
-    invoke-static {}, Lcom/android/server/policy/DeviceKeyHandler;->access$500()Z
+    invoke-static {}, Lcom/android/server/policy/DeviceKeyHandler;->access$400()Z
 
     move-result v0
 
@@ -61,7 +61,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/server/policy/DeviceKeyHandler$4;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
-    invoke-static {v0}, Lcom/android/server/policy/DeviceKeyHandler;->access$1000(Lcom/android/server/policy/DeviceKeyHandler;)Z
+    invoke-static {v0}, Lcom/android/server/policy/DeviceKeyHandler;->access$800(Lcom/android/server/policy/DeviceKeyHandler;)Z
 
     move-result v0
 
@@ -69,7 +69,7 @@
 
     iget-object v0, p0, Lcom/android/server/policy/DeviceKeyHandler$4;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
-    invoke-static {v0, p2}, Lcom/android/server/policy/DeviceKeyHandler;->access$1002(Lcom/android/server/policy/DeviceKeyHandler;Z)Z
+    invoke-static {v0, p2}, Lcom/android/server/policy/DeviceKeyHandler;->access$802(Lcom/android/server/policy/DeviceKeyHandler;Z)Z
 
     :cond_1
     return-void
@@ -82,7 +82,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/server/policy/DeviceKeyHandler;->access$1002(Lcom/android/server/policy/DeviceKeyHandler;Z)Z
+    invoke-static {v0, v1}, Lcom/android/server/policy/DeviceKeyHandler;->access$802(Lcom/android/server/policy/DeviceKeyHandler;Z)Z
 
     return-void
 .end method

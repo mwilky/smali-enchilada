@@ -299,7 +299,7 @@
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_0
-    const/4 v3, 0x2
+    const/4 v3, 0x3
 
     if-ne v1, v3, :cond_0
 

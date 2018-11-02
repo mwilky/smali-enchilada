@@ -112,7 +112,7 @@
 .method private getDefaultScheme()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "https"
+    const-string/jumbo v0, "https"
 
     return-object v0
 .end method

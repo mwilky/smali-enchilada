@@ -1291,7 +1291,7 @@
 
     const/4 v1, 0x1
 
-    const-string v2, "host crashed when trying to stop"
+    const-string/jumbo v2, "host crashed when trying to stop"
 
     invoke-direct {p0, v1, v2}, Lcom/android/server/job/JobServiceContext;->closeAndCleanupJobLocked(ZLjava/lang/String;)V
 

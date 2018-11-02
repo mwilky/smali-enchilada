@@ -2251,7 +2251,7 @@
 
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "hiddenRequested="
+    const-string/jumbo v1, "hiddenRequested="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5739,6 +5739,19 @@
     goto :goto_6
 
     :cond_e
+    iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->mService:Lcom/android/server/wm/WindowManagerService;
+
+    sget-boolean v5, Lcom/android/server/wm/WindowManagerService;->mSkipAppAnimation:Z
+
+    if-eqz v5, :cond_f
+
+    iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->mService:Lcom/android/server/wm/WindowManagerService;
+
+    iget-object v5, v5, Lcom/android/server/wm/WindowManagerService;->mTaskSnapshotController:Lcom/android/server/wm/TaskSnapshotController;
+
+    invoke-virtual {v5, v0, v1}, Lcom/android/server/wm/TaskSnapshotController;->notifyAppVisibilityChanged(Lcom/android/server/wm/AppWindowToken;Z)V
+
+    :cond_f
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/AppWindowToken;->onAnimationFinished()V
 
     :goto_6
@@ -5753,9 +5766,9 @@
     sub-int/2addr v5, v8
 
     :goto_7
-    if-ltz v5, :cond_10
+    if-ltz v5, :cond_11
 
-    if-nez v4, :cond_10
+    if-nez v4, :cond_11
 
     iget-object v8, v0, Lcom/android/server/wm/AppWindowToken;->mChildren:Lcom/android/server/wm/WindowList;
 
@@ -5769,21 +5782,21 @@
 
     move-result v8
 
-    if-eqz v8, :cond_f
+    if-eqz v8, :cond_10
 
     const/4 v4, 0x1
 
-    :cond_f
+    :cond_10
     add-int/lit8 v5, v5, -0x1
 
     goto :goto_7
 
-    :cond_10
-    if-eqz v6, :cond_16
+    :cond_11
+    if-eqz v6, :cond_17
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_12
 
-    if-nez v4, :cond_11
+    if-nez v4, :cond_12
 
     const/4 v5, 0x1
 
@@ -5797,21 +5810,21 @@
 
     invoke-virtual {v5, v8}, Lcom/android/server/wm/WindowManagerInternal$AppTransitionListener;->onAppTransitionFinishedLocked(Landroid/os/IBinder;)V
 
-    :cond_11
-    if-nez v1, :cond_12
+    :cond_12
+    if-nez v1, :cond_13
 
     invoke-direct/range {p0 .. p0}, Lcom/android/server/wm/AppWindowToken;->isReallyAnimating()Z
 
     move-result v5
 
-    if-nez v5, :cond_13
+    if-nez v5, :cond_14
 
-    :cond_12
+    :cond_13
     xor-int/lit8 v5, v1, 0x1
 
     invoke-virtual {v0, v5}, Lcom/android/server/wm/AppWindowToken;->setClientHidden(Z)V
 
-    :cond_13
+    :cond_14
     iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->mService:Lcom/android/server/wm/WindowManagerService;
 
     iget-object v5, v5, Lcom/android/server/wm/WindowManagerService;->mClosingApps:Landroid/util/ArraySet;
@@ -5820,7 +5833,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_14
+    if-nez v5, :cond_15
 
     iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -5830,7 +5843,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_14
+    if-nez v5, :cond_15
 
     iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -5850,14 +5863,14 @@
 
     invoke-virtual {v5, v0, v1}, Lcom/android/server/wm/TaskSnapshotController;->notifyAppVisibilityChanged(Lcom/android/server/wm/AppWindowToken;Z)V
 
-    :cond_14
+    :cond_15
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/AppWindowToken;->isHidden()Z
 
     move-result v5
 
-    if-eqz v5, :cond_16
+    if-eqz v5, :cond_17
 
-    if-nez v4, :cond_16
+    if-nez v4, :cond_17
 
     iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -5867,7 +5880,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_16
+    if-nez v5, :cond_17
 
     invoke-static {}, Landroid/view/SurfaceControl;->openTransaction()V
 
@@ -5882,7 +5895,7 @@
     sub-int/2addr v5, v8
 
     :goto_8
-    if-ltz v5, :cond_15
+    if-ltz v5, :cond_16
 
     iget-object v8, v0, Lcom/android/server/wm/AppWindowToken;->mChildren:Lcom/android/server/wm/WindowList;
 
@@ -5902,10 +5915,10 @@
 
     goto :goto_8
 
-    :cond_15
+    :cond_16
     invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
 
-    :cond_16
+    :cond_17
     return v4
 .end method
 

@@ -516,7 +516,7 @@
 
     invoke-virtual {v0}, Lcom/android/internal/util/IndentingPrintWriter;->println()V
 
-    const-string v0, "heavy_use_factor"
+    const-string/jumbo v0, "heavy_use_factor"
 
     iget v1, p0, Lcom/android/server/job/JobSchedulerService$Constants;->HEAVY_USE_FACTOR:F
 
@@ -853,7 +853,7 @@
 
     iget-object v0, p0, Lcom/android/server/job/JobSchedulerService$Constants;->mParser:Landroid/util/KeyValueListParser;
 
-    const-string v1, "heavy_use_factor"
+    const-string/jumbo v1, "heavy_use_factor"
 
     const v3, 0x3f666666    # 0.9f
 

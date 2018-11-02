@@ -5704,7 +5704,7 @@
     if-eqz v12, :cond_b
 
     :cond_9
-    const-string v12, "id"
+    const-string/jumbo v12, "id"
 
     const/4 v13, 0x0
 
@@ -5816,7 +5816,7 @@
 
     invoke-direct {v0, v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;-><init>(Lcom/android/server/appwidget/AppWidgetServiceImpl$1;)V
 
-    const-string v10, "id"
+    const-string/jumbo v10, "id"
 
     invoke-interface {v5, v3, v10}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -5966,7 +5966,7 @@
     move-object/from16 v23, v2
 
     :goto_a
-    const-string v2, "host_category"
+    const-string/jumbo v2, "host_category"
 
     const/4 v14, 0x0
 
@@ -6841,7 +6841,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "host "
+    const-string/jumbo v5, "host "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7547,7 +7547,7 @@
 
     invoke-interface {p0, v1, v0}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v0, "id"
+    const-string/jumbo v0, "id"
 
     iget v2, p1, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->appWidgetId:I
 
@@ -7703,7 +7703,7 @@
 
     invoke-interface {p0, v1, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v5, "host_category"
+    const-string/jumbo v5, "host_category"
 
     iget-object v6, p1, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->options:Landroid/os/Bundle;
 
@@ -7749,7 +7749,7 @@
 
     invoke-interface {p0, v1, v0, v2}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v0, "id"
+    const-string/jumbo v0, "id"
 
     iget-object v2, p1, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;->id:Lcom/android/server/appwidget/AppWidgetServiceImpl$HostId;
 

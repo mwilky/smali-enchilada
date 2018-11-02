@@ -2426,7 +2426,7 @@
 
     move-result-object v15
 
-    const-string v13, "id"
+    const-string/jumbo v13, "id"
 
     invoke-virtual {v13, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -10233,7 +10233,7 @@
         }
     .end annotation
 
-    const-string v0, "id"
+    const-string/jumbo v0, "id"
 
     iget-wide v1, p0, Lcom/android/server/am/ActivityRecord;->createTime:J
 

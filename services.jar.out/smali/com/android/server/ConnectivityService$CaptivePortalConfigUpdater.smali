@@ -39,7 +39,7 @@
 
     iget-object v0, p0, Lcom/android/server/ConnectivityService$CaptivePortalConfigUpdater;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v0, p1}, Lcom/android/server/ConnectivityService;->access$5900(Lcom/android/server/ConnectivityService;Lorg/json/JSONArray;)V
+    invoke-static {v0, p1}, Lcom/android/server/ConnectivityService;->access$600(Lcom/android/server/ConnectivityService;Lorg/json/JSONArray;)V
 
     return-void
 .end method

@@ -395,7 +395,7 @@
 
     move-result-object v1
 
-    const v3, 0x5020013
+    const v3, 0x5020014
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -427,7 +427,7 @@
 
     move-result-object v3
 
-    const v4, 0x5020014
+    const v4, 0x5020015
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -1331,34 +1331,35 @@
     :cond_0
     const/16 v1, 0xd
 
-    const/4 v2, 0x1
+    const/16 v2, 0xa
 
-    const/16 v3, 0xa
+    const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
     const/16 v5, 0xf
 
     if-eq p2, v5, :cond_8
 
-    if-ne p2, v3, :cond_1
+    if-ne p2, v2, :cond_1
 
-    goto :goto_3
+    goto/16 :goto_2
 
     :cond_1
-    const/16 v3, 0xc
+    const/16 v2, 0xc
 
-    if-ne p2, v3, :cond_4
+    if-ne p2, v2, :cond_4
 
-    if-ne p2, v3, :cond_2
+    iput-boolean v4, p0, Lcom/android/server/BluetoothManagerService;->mEnable:Z
 
-    goto :goto_0
+    if-ne p2, v2, :cond_2
+
+    move v3, v4
+
+    nop
 
     :cond_2
-    move v2, v4
-
-    :goto_0
-    move v1, v2
+    move v1, v3
 
     invoke-direct {p0, v1}, Lcom/android/server/BluetoothManagerService;->sendBluetoothStateCallback(Z)V
 
@@ -1414,7 +1415,7 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     :cond_3
-    goto :goto_1
+    goto :goto_0
 
     :catch_0
     move-exception v3
@@ -1425,8 +1426,8 @@
 
     invoke-static {v4, v6, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :goto_1
-    goto/16 :goto_8
+    :goto_0
+    goto/16 :goto_7
 
     :cond_4
     const/16 v2, 0xe
@@ -1437,7 +1438,7 @@
 
     if-ne p2, v2, :cond_5
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_5
     const/16 v2, 0xb
@@ -1449,31 +1450,31 @@
     :cond_6
     invoke-direct {p0, p1, p2}, Lcom/android/server/BluetoothManagerService;->sendBleStateChanged(II)V
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     :cond_7
-    :goto_2
+    :goto_1
     invoke-direct {p0, p1, p2}, Lcom/android/server/BluetoothManagerService;->sendBleStateChanged(II)V
 
     const/4 v0, 0x0
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     :cond_8
-    :goto_3
+    :goto_2
     if-ne p1, v1, :cond_9
 
     if-ne p2, v5, :cond_9
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_9
-    move v2, v4
+    move v4, v3
 
-    :goto_4
-    move v1, v2
+    :goto_3
+    move v1, v4
 
-    if-ne p2, v3, :cond_a
+    if-ne p2, v2, :cond_a
 
     const-string v2, "BluetoothManagerService"
 
@@ -1489,7 +1490,7 @@
 
     const/4 v0, 0x0
 
-    goto :goto_7
+    goto :goto_6
 
     :cond_a
     if-nez v1, :cond_d
@@ -1518,7 +1519,7 @@
 
     if-nez v2, :cond_b
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_b
     const-string v2, "BluetoothManagerService"
@@ -1545,42 +1546,42 @@
 
     invoke-virtual {p0, v2, v3, v4, v6}, Lcom/android/server/BluetoothManagerService;->doBind(Landroid/content/Intent;Landroid/content/ServiceConnection;ILandroid/os/UserHandle;)Z
 
-    goto :goto_6
+    goto :goto_5
 
     :cond_c
-    :goto_5
+    :goto_4
     invoke-direct {p0}, Lcom/android/server/BluetoothManagerService;->continueFromBleOnState()V
 
-    :goto_6
+    :goto_5
     invoke-direct {p0, p1, p2}, Lcom/android/server/BluetoothManagerService;->sendBleStateChanged(II)V
 
     const/4 v0, 0x0
 
-    goto :goto_7
+    goto :goto_6
 
     :cond_d
     if-eqz v1, :cond_e
 
     const-string v2, "BluetoothManagerService"
 
-    const-string v3, "Intermediate off, back to LE only mode"
+    const-string v4, "Intermediate off, back to LE only mode"
 
-    invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-direct {p0, p1, p2}, Lcom/android/server/BluetoothManagerService;->sendBleStateChanged(II)V
 
-    invoke-direct {p0, v4}, Lcom/android/server/BluetoothManagerService;->sendBluetoothStateCallback(Z)V
+    invoke-direct {p0, v3}, Lcom/android/server/BluetoothManagerService;->sendBluetoothStateCallback(Z)V
 
     const/16 p2, 0xa
 
     invoke-direct {p0}, Lcom/android/server/BluetoothManagerService;->sendBrEdrDownCallback()V
 
     :cond_e
-    :goto_7
+    :goto_6
     nop
 
     :cond_f
-    :goto_8
+    :goto_7
     if-eqz v0, :cond_11
 
     if-ne p1, v5, :cond_10
@@ -6026,8 +6027,29 @@
 
     const/16 v1, 0x403
 
-    if-ne v0, v1, :cond_1
+    if-eq v0, v1, :cond_2
 
+    const-string v1, "com.google.android.gms"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v1, Ljava/lang/SecurityException;
+
+    const-string/jumbo v2, "no permission to enable Bluetooth quietly"
+
+    invoke-direct {v1, v2}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_2
+    :goto_0
     iget-object v1, p0, Lcom/android/server/BluetoothManagerService;->mReceiver:Landroid/content/BroadcastReceiver;
 
     monitor-enter v1
@@ -6053,15 +6075,6 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v2
-
-    :cond_1
-    new-instance v1, Ljava/lang/SecurityException;
-
-    const-string/jumbo v2, "no permission to enable Bluetooth quietly"
-
-    invoke-direct {v1, v2}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
-
-    throw v1
 .end method
 
 .method public factoryReset()Z
@@ -7234,7 +7247,7 @@
 .end method
 
 .method public unbindBluetoothProfileService(ILandroid/bluetooth/IBluetoothProfileServiceConnection;)V
-    .locals 3
+    .locals 6
 
     iget-object v0, p0, Lcom/android/server/BluetoothManagerService;->mProfileServices:Ljava/util/Map;
 
@@ -7256,10 +7269,47 @@
     if-nez v1, :cond_0
 
     monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
     :cond_0
+    :try_start_1
+    iget-object v2, p0, Lcom/android/server/BluetoothManagerService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2, v1}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
+    :try_end_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v2
+
+    :try_start_2
+    const-string v3, "BluetoothManagerService"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "Unable to unbind service with intent: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v5, v1, Lcom/android/server/BluetoothManagerService$ProfileServiceConnections;->mIntent:Landroid/content/Intent;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    :goto_0
     invoke-static {v1, p2}, Lcom/android/server/BluetoothManagerService$ProfileServiceConnections;->access$2300(Lcom/android/server/BluetoothManagerService$ProfileServiceConnections;Landroid/bluetooth/IBluetoothProfileServiceConnection;)V
 
     monitor-exit v0
@@ -7270,8 +7320,8 @@
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw v1
 .end method

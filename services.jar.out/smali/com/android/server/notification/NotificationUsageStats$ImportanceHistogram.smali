@@ -42,7 +42,7 @@
 
     const-string v3, "default"
 
-    const-string v4, "high"
+    const-string/jumbo v4, "high"
 
     const-string/jumbo v5, "max"
 

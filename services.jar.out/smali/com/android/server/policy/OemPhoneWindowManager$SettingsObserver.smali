@@ -292,7 +292,7 @@
 
     iget-object v1, p0, Lcom/android/server/policy/OemPhoneWindowManager$SettingsObserver;->mResolver:Landroid/content/ContentResolver;
 
-    const-string/jumbo v4, "op_gesture_button_guide"
+    const-string/jumbo v4, "op_gesture_button_launcher"
 
     invoke-static {v4}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -888,13 +888,13 @@
 
     sget-boolean v3, Lcom/android/server/policy/OemGestureButton;->IS_GESTURE_BUTTON_ENABLED:Z
 
-    if-eqz v3, :cond_14
+    if-eqz v3, :cond_15
 
     iget-object v3, p0, Lcom/android/server/policy/OemPhoneWindowManager$SettingsObserver;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     iget-boolean v3, v3, Lcom/android/server/policy/OemPhoneWindowManager;->mSystemReady:Z
 
-    if-eqz v3, :cond_14
+    if-eqz v3, :cond_15
 
     iget-object v3, p0, Lcom/android/server/policy/OemPhoneWindowManager$SettingsObserver;->mResolver:Landroid/content/ContentResolver;
 
@@ -918,7 +918,7 @@
     :goto_9
     iget-object v5, p0, Lcom/android/server/policy/OemPhoneWindowManager$SettingsObserver;->mResolver:Landroid/content/ContentResolver;
 
-    const-string/jumbo v6, "op_gesture_button_guide"
+    const-string/jumbo v6, "op_gesture_button_launcher"
 
     invoke-static {v5, v6, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
@@ -938,16 +938,49 @@
 
     iget-object v6, v6, Lcom/android/server/policy/OemPhoneWindowManager;->mOemGestureButton:Lcom/android/server/policy/OemGestureButton;
 
-    if-eqz v6, :cond_12
+    if-eqz v6, :cond_13
 
     iget-object v6, p0, Lcom/android/server/policy/OemPhoneWindowManager$SettingsObserver;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     iget-object v6, v6, Lcom/android/server/policy/OemPhoneWindowManager;->mOemGestureButton:Lcom/android/server/policy/OemGestureButton;
 
-    invoke-virtual {v6, v3, v5}, Lcom/android/server/policy/OemGestureButton;->updateSettings(ZZ)V
+    sget-boolean v6, Lcom/android/server/policy/OemGestureButton;->mLauncherGesture:Z
+
+    if-eq v6, v5, :cond_12
+
+    const-string v6, "OemPhoneWindowManager"
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "GestureButton: update launcher gesture: "
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v6, p0, Lcom/android/server/policy/OemPhoneWindowManager$SettingsObserver;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
+
+    iget-object v6, v6, Lcom/android/server/policy/OemPhoneWindowManager;->mOemGestureButton:Lcom/android/server/policy/OemGestureButton;
+
+    sput-boolean v5, Lcom/android/server/policy/OemGestureButton;->mLauncherGesture:Z
 
     :cond_12
-    if-eqz v3, :cond_13
+    iget-object v6, p0, Lcom/android/server/policy/OemPhoneWindowManager$SettingsObserver;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
+
+    iget-object v6, v6, Lcom/android/server/policy/OemPhoneWindowManager;->mOemGestureButton:Lcom/android/server/policy/OemGestureButton;
+
+    invoke-virtual {v6, v3, v4}, Lcom/android/server/policy/OemGestureButton;->updateSettings(ZZ)V
+
+    :cond_13
+    if-eqz v3, :cond_14
 
     iget-object v6, p0, Lcom/android/server/policy/OemPhoneWindowManager$SettingsObserver;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
@@ -955,7 +988,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_13
+    if-nez v6, :cond_14
 
     iget-object v6, p0, Lcom/android/server/policy/OemPhoneWindowManager$SettingsObserver;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
@@ -971,8 +1004,8 @@
 
     invoke-static {v6, v1}, Lcom/android/server/policy/OemPhoneWindowManager;->access$1402(Lcom/android/server/policy/OemPhoneWindowManager;Z)Z
 
-    :cond_13
-    if-nez v3, :cond_14
+    :cond_14
+    if-nez v3, :cond_15
 
     iget-object v6, p0, Lcom/android/server/policy/OemPhoneWindowManager$SettingsObserver;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
@@ -980,7 +1013,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_14
+    if-eqz v6, :cond_15
 
     iget-object v6, p0, Lcom/android/server/policy/OemPhoneWindowManager$SettingsObserver;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
@@ -996,10 +1029,10 @@
 
     invoke-static {v6, v4}, Lcom/android/server/policy/OemPhoneWindowManager;->access$1402(Lcom/android/server/policy/OemPhoneWindowManager;Z)Z
 
-    :cond_14
+    :cond_15
     sget-boolean v3, Lcom/android/server/policy/SystemGesturesPointerEventListener;->IS_SUPPORT_CAMERA_NOTCH:Z
 
-    if-eqz v3, :cond_17
+    if-eqz v3, :cond_18
 
     new-array v3, v1, [I
 
@@ -1011,7 +1044,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_17
+    if-eqz v3, :cond_18
 
     iget-object v3, p0, Lcom/android/server/policy/OemPhoneWindowManager$SettingsObserver;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
@@ -1023,11 +1056,11 @@
 
     move-result v5
 
-    if-eqz v5, :cond_15
+    if-eqz v5, :cond_16
 
     goto :goto_b
 
-    :cond_15
+    :cond_16
     move v1, v4
 
     :goto_b
@@ -1037,7 +1070,7 @@
 
     iget-object v1, v1, Lcom/android/server/policy/OemPhoneWindowManager;->mOemGestureButton:Lcom/android/server/policy/OemGestureButton;
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_17
 
     iget-object v1, p0, Lcom/android/server/policy/OemPhoneWindowManager$SettingsObserver;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
@@ -1049,12 +1082,12 @@
 
     invoke-virtual {v1, v3}, Lcom/android/server/policy/OemGestureButton;->updateNotchSettings(Z)V
 
-    :cond_16
+    :cond_17
     iget-object v1, p0, Lcom/android/server/policy/OemPhoneWindowManager$SettingsObserver;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     invoke-virtual {v1}, Lcom/android/server/policy/OemPhoneWindowManager;->expandScreenDecor()V
 
-    :cond_17
+    :cond_18
     monitor-exit v0
 
     return-void

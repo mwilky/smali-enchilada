@@ -274,6 +274,10 @@
 
 .field private mKMeans:Lcom/android/server/OnePlusPowerController$KMeans;
 
+.field private mLastEnterOpsmTime:Ljava/time/LocalDateTime;
+
+.field private mLastExitOpsmTime:Ljava/time/LocalDateTime;
+
 .field private mLightsManager:Lcom/android/server/lights/LightsManager;
 
 .field private mLocalIdleController:Lcom/android/server/DeviceIdleController$LocalService;
@@ -1755,14 +1759,6 @@
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    const-string v0, "  usersleep opsm [enable|disable]"
-
-    invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    const-string v0, "    Enable or disable OPSM"
-
-    invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
     const-string v0, "  usersleep start [Date]"
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
@@ -1792,6 +1788,22 @@
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     const-string v0, "    Set the threshold to leave OPSM before user awake"
+
+    invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    const-string v0, "  usersleep sensor [on|off]"
+
+    invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    const-string v0, "    Activate the restriction for some sensors"
+
+    invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    const-string v0, "  usersleep opsm [on|off]"
+
+    invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    const-string v0, "    Enable or disable OPSM"
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
@@ -2231,6 +2243,8 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
+
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mScreenOffStart:Ljava/time/LocalDateTime;
 
     if-nez v0, :cond_2
@@ -2267,6 +2281,64 @@
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :goto_0
+    iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mLastEnterOpsmTime:Ljava/time/LocalDateTime;
+
+    if-eqz v0, :cond_3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v1, "last OPSM enter = "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/android/server/OnePlusPowerController;->mLastEnterOpsmTime:Ljava/time/LocalDateTime;
+
+    iget-object v2, p0, Lcom/android/server/OnePlusPowerController;->SIMPLE_DATE_FORMAT:Ljava/time/format/DateTimeFormatter;
+
+    invoke-virtual {v1, v2}, Ljava/time/LocalDateTime;->format(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    :cond_3
+    iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mLastExitOpsmTime:Ljava/time/LocalDateTime;
+
+    if-eqz v0, :cond_4
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v1, "last OPSM exit = "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/android/server/OnePlusPowerController;->mLastExitOpsmTime:Ljava/time/LocalDateTime;
+
+    iget-object v2, p0, Lcom/android/server/OnePlusPowerController;->SIMPLE_DATE_FORMAT:Ljava/time/format/DateTimeFormatter;
+
+    invoke-virtual {v1, v2}, Ljava/time/LocalDateTime;->format(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    :cond_4
     invoke-static {}, Ljava/time/LocalDateTime;->now()Ljava/time/LocalDateTime;
 
     move-result-object v0
@@ -2351,7 +2423,7 @@
 
     iget-object v1, p0, Lcom/android/server/OnePlusPowerController;->mIdleStats:Lcom/android/server/OnePlusPowerController$IdleStats;
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_a
 
     iget-object v1, p0, Lcom/android/server/OnePlusPowerController;->mIdleStats:Lcom/android/server/OnePlusPowerController$IdleStats;
 
@@ -2413,15 +2485,15 @@
 
     move-result-object v5
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_6
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_6
 
-    if-nez v5, :cond_3
+    if-nez v5, :cond_5
 
     goto :goto_1
 
-    :cond_3
+    :cond_5
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -2474,7 +2546,7 @@
 
     goto :goto_2
 
-    :cond_4
+    :cond_6
     :goto_1
     const-string v6, "Last update time: 0"
 
@@ -2493,7 +2565,7 @@
 
     iget-object v6, p0, Lcom/android/server/OnePlusPowerController;->mSleepStartOverridden:Ljava/time/LocalDateTime;
 
-    if-eqz v6, :cond_5
+    if-eqz v6, :cond_7
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -2519,8 +2591,8 @@
 
     goto :goto_3
 
-    :cond_5
-    if-eqz v3, :cond_6
+    :cond_7
+    if-eqz v3, :cond_8
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -2544,11 +2616,11 @@
 
     invoke-virtual {p1, v6}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    :cond_6
+    :cond_8
     :goto_3
     iget-object v6, p0, Lcom/android/server/OnePlusPowerController;->mSleepEndOverridden:Ljava/time/LocalDateTime;
 
-    if-eqz v6, :cond_7
+    if-eqz v6, :cond_9
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -2574,8 +2646,8 @@
 
     goto :goto_4
 
-    :cond_7
-    if-eqz v4, :cond_8
+    :cond_9
+    if-eqz v4, :cond_a
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -2599,7 +2671,7 @@
 
     invoke-virtual {p1, v6}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    :cond_8
+    :cond_a
     :goto_4
     return-void
 .end method
@@ -3091,7 +3163,7 @@
 .end method
 
 .method private parseUserSleep(Lorg/json/JSONObject;)V
-    .locals 7
+    .locals 9
 
     const-string v0, "enabled"
 
@@ -3111,302 +3183,324 @@
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/android/server/OnePlusPowerController;->mSensorRestrict:Z
+    const-string/jumbo v3, "sensor_restrict_v2"
 
-    iget-boolean v0, p0, Lcom/android/server/OnePlusPowerController;->mSensorRestrict:Z
+    invoke-virtual {p1, v3, v2}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z
 
-    if-nez v0, :cond_0
+    move-result v3
 
-    iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mSensorManager:Landroid/hardware/SensorManager;
+    if-nez v0, :cond_1
 
-    if-eqz v0, :cond_0
+    if-eqz v3, :cond_0
 
-    iget-boolean v0, p0, Lcom/android/server/OnePlusPowerController;->mSensorEnabled:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mSensorManager:Landroid/hardware/SensorManager;
-
-    invoke-virtual {v0}, Landroid/hardware/SensorManager;->leaveOPSM()V
+    goto :goto_0
 
     :cond_0
-    const-string/jumbo v0, "seed"
+    move v4, v2
 
-    const/16 v3, 0x64
+    goto :goto_1
 
-    invoke-virtual {p1, v0, v3}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
+    :cond_1
+    :goto_0
+    move v4, v1
 
-    move-result v0
+    :goto_1
+    iput-boolean v4, p0, Lcom/android/server/OnePlusPowerController;->mSensorRestrict:Z
 
-    sput v0, Lcom/android/server/OnePlusPowerController;->mRandomSeed:I
+    iget-boolean v4, p0, Lcom/android/server/OnePlusPowerController;->mSensorRestrict:Z
 
-    const-string v0, "cluster"
+    if-nez v4, :cond_2
 
-    const/4 v3, 0x2
+    iget-object v4, p0, Lcom/android/server/OnePlusPowerController;->mSensorManager:Landroid/hardware/SensorManager;
 
-    invoke-virtual {p1, v0, v3}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
+    if-eqz v4, :cond_2
 
-    move-result v0
+    iget-boolean v4, p0, Lcom/android/server/OnePlusPowerController;->mSensorEnabled:Z
 
-    sput v0, Lcom/android/server/OnePlusPowerController;->mNumCluster:I
+    if-nez v4, :cond_2
 
-    const-string/jumbo v0, "min_rec"
+    iget-object v4, p0, Lcom/android/server/OnePlusPowerController;->mSensorManager:Landroid/hardware/SensorManager;
 
-    const v4, 0x36ee80
+    invoke-virtual {v4}, Landroid/hardware/SensorManager;->leaveOPSM()V
 
-    invoke-virtual {p1, v0, v4}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
+    :cond_2
+    const-string/jumbo v4, "seed"
 
-    move-result v0
+    const/16 v5, 0x64
 
-    sput v0, Lcom/android/server/OnePlusPowerController;->mMinRecordTime:I
+    invoke-virtual {p1, v4, v5}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
 
-    const-string/jumbo v0, "min_idle"
+    move-result v4
 
-    invoke-virtual {p1, v0, v3}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
+    sput v4, Lcom/android/server/OnePlusPowerController;->mRandomSeed:I
 
-    move-result v0
+    const-string v4, "cluster"
 
-    sput v0, Lcom/android/server/OnePlusPowerController;->mMinIdleItems:I
+    const/4 v5, 0x2
 
-    const-string/jumbo v0, "max_idle"
+    invoke-virtual {p1, v4, v5}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
 
-    const/16 v3, 0x3c
+    move-result v4
 
-    invoke-virtual {p1, v0, v3}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
+    sput v4, Lcom/android/server/OnePlusPowerController;->mNumCluster:I
 
-    move-result v0
+    const-string/jumbo v4, "min_rec"
 
-    sput v0, Lcom/android/server/OnePlusPowerController;->mMaxIdleItems:I
+    const v6, 0x36ee80
 
-    const-string/jumbo v0, "min_len"
+    invoke-virtual {p1, v4, v6}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
 
-    const v3, 0x112a880
+    move-result v4
 
-    invoke-virtual {p1, v0, v3}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
+    sput v4, Lcom/android/server/OnePlusPowerController;->mMinRecordTime:I
 
-    move-result v0
+    const-string/jumbo v4, "min_idle"
 
-    sput v0, Lcom/android/server/OnePlusPowerController;->mMinIdleLength:I
+    invoke-virtual {p1, v4, v5}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
 
-    const-string/jumbo v0, "max_len"
+    move-result v4
 
-    const v3, 0x337f980
+    sput v4, Lcom/android/server/OnePlusPowerController;->mMinIdleItems:I
 
-    invoke-virtual {p1, v0, v3}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
+    const-string/jumbo v4, "max_idle"
 
-    move-result v0
+    const/16 v5, 0x3c
 
-    sput v0, Lcom/android/server/OnePlusPowerController;->mMaxIdleLength:I
+    invoke-virtual {p1, v4, v5}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
 
-    const-string v0, "coef_var"
+    move-result v4
 
-    const-wide v3, 0x3fd999999999999aL    # 0.4
+    sput v4, Lcom/android/server/OnePlusPowerController;->mMaxIdleItems:I
 
-    invoke-virtual {p1, v0, v3, v4}, Lorg/json/JSONObject;->optDouble(Ljava/lang/String;D)D
+    const-string/jumbo v4, "min_len"
 
-    move-result-wide v3
+    const v5, 0x112a880
 
-    sput-wide v3, Lcom/android/server/OnePlusPowerController;->mCoefVar:D
+    invoke-virtual {p1, v4, v5}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
 
-    sget-boolean v0, Lcom/android/server/OnePlusPowerController;->DEBUG_IDLE_STATS:Z
+    move-result v4
 
-    if-eqz v0, :cond_1
+    sput v4, Lcom/android/server/OnePlusPowerController;->mMinIdleLength:I
 
-    const-string v0, "OnePlusPowerController"
+    const-string/jumbo v4, "max_len"
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    const v5, 0x337f980
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {p1, v4, v5}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
 
-    const-string v4, "[OnlineConfig] USER_SLEEP = "
+    move-result v4
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sput v4, Lcom/android/server/OnePlusPowerController;->mMaxIdleLength:I
 
-    iget-boolean v4, p0, Lcom/android/server/OnePlusPowerController;->mUserSleep:Z
+    const-string v4, "coef_var"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    const-wide v5, 0x3fd999999999999aL    # 0.4
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1, v4, v5, v6}, Lorg/json/JSONObject;->optDouble(Ljava/lang/String;D)D
 
-    move-result-object v3
+    move-result-wide v4
 
-    invoke-static {v0, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    sput-wide v4, Lcom/android/server/OnePlusPowerController;->mCoefVar:D
 
-    const-string v0, "OnePlusPowerController"
+    sget-boolean v4, Lcom/android/server/OnePlusPowerController;->DEBUG_IDLE_STATS:Z
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    if-eqz v4, :cond_3
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v4, "OnePlusPowerController"
 
-    const-string v4, "[OnlineConfig] RANDOM_SEED = "
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget v4, Lcom/android/server/OnePlusPowerController;->mRandomSeed:I
+    const-string v6, "[OnlineConfig] USER_SLEEP = "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-boolean v6, p0, Lcom/android/server/OnePlusPowerController;->mUserSleep:Z
 
-    move-result-object v3
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v0, "OnePlusPowerController"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "[OnlineConfig] NUM_CLUSTER = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v4, Lcom/android/server/OnePlusPowerController;->mNumCluster:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v0, "OnePlusPowerController"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "[OnlineConfig] MIN_RECORD_TIME = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v4, Lcom/android/server/OnePlusPowerController;->mMinRecordTime:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v0, "OnePlusPowerController"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "[OnlineConfig] MIN_IDLE_ITEMS = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v4, Lcom/android/server/OnePlusPowerController;->mMinIdleItems:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v0, "OnePlusPowerController"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "[OnlineConfig] MAX_IDLE_ITEMS = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v4, Lcom/android/server/OnePlusPowerController;->mMaxIdleItems:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v0, "OnePlusPowerController"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "[OnlineConfig] MIN_IDLE_LENGTH = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v4, Lcom/android/server/OnePlusPowerController;->mMinIdleLength:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v0, "OnePlusPowerController"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "[OnlineConfig] MAX_IDLE_LENGTH = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v4, Lcom/android/server/OnePlusPowerController;->mMaxIdleLength:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v0, "OnePlusPowerController"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "[OnlineConfig] COEFFICIENT_OF_VARIATION = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v4, "%.3f"
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    sget-wide v5, Lcom/android/server/OnePlusPowerController;->mCoefVar:D
-
-    invoke-static {v5, v6}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
 
-    aput-object v5, v1, v2
+    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {v4, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const-string v4, "OnePlusPowerController"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "[OnlineConfig] RANDOM_SEED = "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget v6, Lcom/android/server/OnePlusPowerController;->mRandomSeed:I
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v4, "OnePlusPowerController"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "[OnlineConfig] NUM_CLUSTER = "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget v6, Lcom/android/server/OnePlusPowerController;->mNumCluster:I
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v4, "OnePlusPowerController"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "[OnlineConfig] MIN_RECORD_TIME = "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget v6, Lcom/android/server/OnePlusPowerController;->mMinRecordTime:I
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v4, "OnePlusPowerController"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "[OnlineConfig] MIN_IDLE_ITEMS = "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget v6, Lcom/android/server/OnePlusPowerController;->mMinIdleItems:I
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v4, "OnePlusPowerController"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "[OnlineConfig] MAX_IDLE_ITEMS = "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget v6, Lcom/android/server/OnePlusPowerController;->mMaxIdleItems:I
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v4, "OnePlusPowerController"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "[OnlineConfig] MIN_IDLE_LENGTH = "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget v6, Lcom/android/server/OnePlusPowerController;->mMinIdleLength:I
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v4, "OnePlusPowerController"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "[OnlineConfig] MAX_IDLE_LENGTH = "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget v6, Lcom/android/server/OnePlusPowerController;->mMaxIdleLength:I
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v4, "OnePlusPowerController"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "[OnlineConfig] COEFFICIENT_OF_VARIATION = "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v6, "%.3f"
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    sget-wide v7, Lcom/android/server/OnePlusPowerController;->mCoefVar:D
+
+    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v7
+
+    aput-object v7, v1, v2
+
+    invoke-static {v6, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_1
+    :cond_3
     return-void
 .end method
 
@@ -4390,6 +4484,8 @@
 
     invoke-static {v3, v4}, Lcom/android/server/OPLogger$Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    iput-object v1, p0, Lcom/android/server/OnePlusPowerController;->mLastEnterOpsmTime:Ljava/time/LocalDateTime;
+
     const-wide/16 v3, 0x0
 
     iget-object v5, p0, Lcom/android/server/OnePlusPowerController;->mSleepEndOverridden:Ljava/time/LocalDateTime;
@@ -4777,105 +4873,184 @@
 .end method
 
 .method getSleepState(Ljava/time/LocalDateTime;)I
-    .locals 8
+    .locals 12
 
     const/16 v0, 0x1e6c
 
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_5
 
     invoke-static {}, Ljava/time/LocalDate;->now()Ljava/time/LocalDate;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/server/OnePlusPowerController;->mIdleStats:Lcom/android/server/OnePlusPowerController$IdleStats;
+    const-wide/16 v2, 0x1
 
-    invoke-virtual {v2}, Lcom/android/server/OnePlusPowerController$IdleStats;->getDeepSleepStart()Ljava/time/LocalTime;
+    invoke-virtual {v1, v2, v3}, Ljava/time/LocalDate;->minusDays(J)Ljava/time/LocalDate;
 
     move-result-object v2
 
-    if-eqz v2, :cond_0
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mIdleStats:Lcom/android/server/OnePlusPowerController$IdleStats;
 
-    invoke-static {v1, v2}, Ljava/time/LocalDateTime;->of(Ljava/time/LocalDate;Ljava/time/LocalTime;)Ljava/time/LocalDateTime;
+    invoke-virtual {v3}, Lcom/android/server/OnePlusPowerController$IdleStats;->getDeepSleepStart()Ljava/time/LocalTime;
 
     move-result-object v3
 
-    iget-object v4, p0, Lcom/android/server/OnePlusPowerController;->mIdleStats:Lcom/android/server/OnePlusPowerController$IdleStats;
+    const/4 v4, 0x0
 
-    invoke-virtual {v4}, Lcom/android/server/OnePlusPowerController$IdleStats;->getDeepSleepDuration()Ljava/time/Duration;
+    if-eqz v3, :cond_5
 
-    move-result-object v4
-
-    sget v5, Lcom/android/server/OnePlusPowerController;->mTimeOutBeforeUserAwake:I
-
-    div-int/lit16 v5, v5, 0x3e8
-
-    int-to-long v5, v5
-
-    invoke-virtual {v4, v5, v6}, Ljava/time/Duration;->minusSeconds(J)Ljava/time/Duration;
-
-    move-result-object v4
-
-    const-string v5, "OnePlusPowerController"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "getSleepState: sleepStart="
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v7, p0, Lcom/android/server/OnePlusPowerController;->SIMPLE_DATE_FORMAT:Ljava/time/format/DateTimeFormatter;
-
-    invoke-virtual {v3, v7}, Ljava/time/LocalDateTime;->format(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v7, ", sleepDuration="
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v7, ", now="
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v7, p0, Lcom/android/server/OnePlusPowerController;->SIMPLE_DATE_FORMAT:Ljava/time/format/DateTimeFormatter;
-
-    invoke-virtual {p1, v7}, Ljava/time/LocalDateTime;->format(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Lcom/android/server/OPLogger$Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-virtual {p1, v3}, Ljava/time/LocalDateTime;->isAfter(Ljava/time/chrono/ChronoLocalDateTime;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_0
-
-    invoke-static {v3, p1}, Ljava/time/Duration;->between(Ljava/time/temporal/Temporal;Ljava/time/temporal/Temporal;)Ljava/time/Duration;
+    invoke-static {v1, v3}, Ljava/time/LocalDateTime;->of(Ljava/time/LocalDate;Ljava/time/LocalTime;)Ljava/time/LocalDateTime;
 
     move-result-object v5
 
-    invoke-virtual {v5, v4}, Ljava/time/Duration;->compareTo(Ljava/time/Duration;)I
+    invoke-static {v2, v3}, Ljava/time/LocalDateTime;->of(Ljava/time/LocalDate;Ljava/time/LocalTime;)Ljava/time/LocalDateTime;
 
-    move-result v5
+    move-result-object v6
 
-    if-gez v5, :cond_0
+    iget-object v7, p0, Lcom/android/server/OnePlusPowerController;->mIdleStats:Lcom/android/server/OnePlusPowerController$IdleStats;
+
+    invoke-virtual {v7}, Lcom/android/server/OnePlusPowerController$IdleStats;->getDeepSleepDuration()Ljava/time/Duration;
+
+    move-result-object v7
+
+    sget v8, Lcom/android/server/OnePlusPowerController;->mTimeOutBeforeUserAwake:I
+
+    div-int/lit16 v8, v8, 0x3e8
+
+    int-to-long v8, v8
+
+    invoke-virtual {v7, v8, v9}, Ljava/time/Duration;->minusSeconds(J)Ljava/time/Duration;
+
+    move-result-object v7
+
+    iget-object v8, p0, Lcom/android/server/OnePlusPowerController;->mSleepStartOverridden:Ljava/time/LocalDateTime;
+
+    if-eqz v8, :cond_0
+
+    iget-object v5, p0, Lcom/android/server/OnePlusPowerController;->mSleepStartOverridden:Ljava/time/LocalDateTime;
+
+    :cond_0
+    iget-object v8, p0, Lcom/android/server/OnePlusPowerController;->mSleepEndOverridden:Ljava/time/LocalDateTime;
+
+    if-eqz v8, :cond_1
+
+    iget-object v8, p0, Lcom/android/server/OnePlusPowerController;->mSleepStartOverridden:Ljava/time/LocalDateTime;
+
+    iget-object v9, p0, Lcom/android/server/OnePlusPowerController;->mSleepEndOverridden:Ljava/time/LocalDateTime;
+
+    sget v10, Lcom/android/server/OnePlusPowerController;->mTimeOutBeforeUserAwake:I
+
+    div-int/lit16 v10, v10, 0x3e8
+
+    int-to-long v10, v10
+
+    invoke-virtual {v9, v10, v11}, Ljava/time/LocalDateTime;->minusSeconds(J)Ljava/time/LocalDateTime;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Ljava/time/Duration;->between(Ljava/time/temporal/Temporal;Ljava/time/temporal/Temporal;)Ljava/time/Duration;
+
+    move-result-object v7
+
+    :cond_1
+    invoke-virtual {p1, v6}, Ljava/time/LocalDateTime;->isAfter(Ljava/time/chrono/ChronoLocalDateTime;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_2
+
+    invoke-static {v6, p1}, Ljava/time/Duration;->between(Ljava/time/temporal/Temporal;Ljava/time/temporal/Temporal;)Ljava/time/Duration;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v7}, Ljava/time/Duration;->compareTo(Ljava/time/Duration;)I
+
+    move-result v8
+
+    if-gez v8, :cond_2
 
     const/16 v0, 0x15be
 
-    :cond_0
+    const/4 v4, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {p1, v5}, Ljava/time/LocalDateTime;->isAfter(Ljava/time/chrono/ChronoLocalDateTime;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_3
+
+    invoke-static {v5, p1}, Ljava/time/Duration;->between(Ljava/time/temporal/Temporal;Ljava/time/temporal/Temporal;)Ljava/time/Duration;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v7}, Ljava/time/Duration;->compareTo(Ljava/time/Duration;)I
+
+    move-result v8
+
+    if-gez v8, :cond_3
+
+    const/16 v0, 0x15be
+
+    :cond_3
+    :goto_0
+    const-string v8, "OnePlusPowerController"
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "getSleepState: sleepStart="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-eqz v4, :cond_4
+
+    iget-object v10, p0, Lcom/android/server/OnePlusPowerController;->SIMPLE_DATE_FORMAT:Ljava/time/format/DateTimeFormatter;
+
+    invoke-virtual {v6, v10}, Ljava/time/LocalDateTime;->format(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;
+
+    move-result-object v10
+
+    goto :goto_1
+
+    :cond_4
+    iget-object v10, p0, Lcom/android/server/OnePlusPowerController;->SIMPLE_DATE_FORMAT:Ljava/time/format/DateTimeFormatter;
+
+    invoke-virtual {v5, v10}, Ljava/time/LocalDateTime;->format(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;
+
+    move-result-object v10
+
+    :goto_1
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v10, ", sleepDuration="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v10, ", now="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v10, p0, Lcom/android/server/OnePlusPowerController;->SIMPLE_DATE_FORMAT:Ljava/time/format/DateTimeFormatter;
+
+    invoke-virtual {p1, v10}, Ljava/time/LocalDateTime;->format(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Lcom/android/server/OPLogger$Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_5
     return v0
 .end method
 
@@ -4974,6 +5149,18 @@
     return-void
 
     :cond_0
+    const-string v0, "OnePlusPowerController"
+
+    const-string v1, "Leaving OPSM mode"
+
+    invoke-static {v0, v1}, Lcom/android/server/OPLogger$Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {}, Ljava/time/LocalDateTime;->now()Ljava/time/LocalDateTime;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/server/OnePlusPowerController;->mLastExitOpsmTime:Ljava/time/LocalDateTime;
+
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
     move-result-object v0
@@ -5956,749 +6143,720 @@
 .end method
 
 .method onShellCommand(Lcom/android/server/OnePlusPowerController$Shell;Ljava/lang/String;)I
-    .locals 16
+    .locals 13
 
-    move-object/from16 v1, p0
-
-    move-object/from16 v2, p2
-
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getOutPrintWriter()Ljava/io/PrintWriter;
-
-    move-result-object v3
-
-    const-string v0, "OnePlusPowerController"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v5, "onShellCommand: "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v0, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v0, "aggressive"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x1
-
-    const/4 v6, 0x0
-
-    if-eqz v0, :cond_3
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/server/OnePlusPowerController;->getContext()Landroid/content/Context;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v0
 
-    const-string v7, "android.permission.DEVICE_POWER"
+    const-string v1, "OnePlusPowerController"
 
-    invoke-virtual {v0, v7, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "onShellCommand: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v1, "aggressive"
+
+    invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    const/4 v4, 0x0
+
+    if-eqz v1, :cond_3
+
+    invoke-virtual {p0}, Lcom/android/server/OnePlusPowerController;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    const-string v5, "android.permission.DEVICE_POWER"
+
+    invoke-virtual {v1, v5, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
     monitor-enter p0
 
     :try_start_0
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
-    move-result-wide v7
+    move-result-wide v1
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v5
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    move-object v4, v0
-
-    if-eqz v4, :cond_2
+    if-eqz v5, :cond_2
 
     :try_start_1
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v6
 
-    const-string/jumbo v9, "on"
+    const-string/jumbo v7, "on"
 
-    invoke-virtual {v9, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v9
+    move-result v7
 
-    if-eqz v9, :cond_0
+    if-eqz v7, :cond_0
 
-    iget-object v9, v1, Lcom/android/server/OnePlusPowerController;->mResolver:Landroid/content/ContentResolver;
+    iget-object v7, p0, Lcom/android/server/OnePlusPowerController;->mResolver:Landroid/content/ContentResolver;
 
-    const-string v10, "doze_mode_policy"
+    const-string v8, "doze_mode_policy"
 
-    invoke-static {v9, v10, v5}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v7, v8, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    const-string v5, "Aggressive doze mode is on"
+    const-string v3, "Aggressive doze mode is on"
 
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_0
-    const-string/jumbo v5, "off"
+    const-string/jumbo v3, "off"
 
-    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v3
 
-    if-eqz v5, :cond_1
+    if-eqz v3, :cond_1
 
-    iget-object v5, v1, Lcom/android/server/OnePlusPowerController;->mResolver:Landroid/content/ContentResolver;
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mResolver:Landroid/content/ContentResolver;
 
-    const-string v9, "doze_mode_policy"
+    const-string v7, "doze_mode_policy"
 
-    invoke-static {v5, v9, v6}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v3, v7, v4}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    const-string v5, "Aggressive doze mode is off"
+    const-string v3, "Aggressive doze mode is off"
 
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :cond_1
     :goto_0
     goto :goto_1
 
     :catchall_0
-    move-exception v0
+    move-exception v3
 
     goto :goto_2
 
     :cond_2
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "mAggressive="
+    const-string/jumbo v6, "mAggressive="
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-boolean v5, Lcom/android/server/OnePlusPowerController;->mAggressive:Z
+    sget-boolean v6, Lcom/android/server/OnePlusPowerController;->mAggressive:Z
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v3
 
-    invoke-virtual {v3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :goto_1
     :try_start_2
-    invoke-static {v7, v8}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     nop
 
     monitor-exit p0
 
-    goto/16 :goto_2d
+    goto/16 :goto_2c
 
     :goto_2
-    invoke-static {v7, v8}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    throw v0
+    throw v3
 
     :catchall_1
-    move-exception v0
+    move-exception v1
 
     monitor-exit p0
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    throw v0
+    throw v1
 
     :cond_3
-    const-string/jumbo v0, "log"
+    const-string/jumbo v1, "log"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_7
+    if-eqz v1, :cond_7
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/server/OnePlusPowerController;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lcom/android/server/OnePlusPowerController;->getContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v7, "android.permission.DEVICE_POWER"
+    const-string v5, "android.permission.DEVICE_POWER"
 
-    invoke-virtual {v0, v7, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1, v5, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
     monitor-enter p0
 
     :try_start_3
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
-    move-result-wide v7
+    move-result-wide v1
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v5
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
-    move-object v4, v0
-
-    if-eqz v4, :cond_6
+    if-eqz v5, :cond_6
 
     :try_start_4
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v6
 
-    const-string/jumbo v9, "on"
+    const-string/jumbo v7, "on"
 
-    invoke-virtual {v9, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v9
+    move-result v7
 
-    if-eqz v9, :cond_4
+    if-eqz v7, :cond_4
 
-    sput-boolean v5, Lcom/android/server/OnePlusPowerController;->DEBUG_ONEPLUS:Z
+    sput-boolean v3, Lcom/android/server/OnePlusPowerController;->DEBUG_ONEPLUS:Z
 
-    sput-boolean v5, Lcom/android/server/OPLogger$Slog;->isLoggable:Z
+    sput-boolean v3, Lcom/android/server/OPLogger$Slog;->isLoggable:Z
 
-    const-string/jumbo v5, "log is on"
+    const-string/jumbo v3, "log is on"
 
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     goto :goto_3
 
     :cond_4
-    const-string/jumbo v5, "off"
+    const-string/jumbo v3, "off"
 
-    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v3
 
-    if-eqz v5, :cond_5
+    if-eqz v3, :cond_5
 
-    sput-boolean v6, Lcom/android/server/OnePlusPowerController;->DEBUG_ONEPLUS:Z
+    sput-boolean v4, Lcom/android/server/OnePlusPowerController;->DEBUG_ONEPLUS:Z
 
-    sput-boolean v6, Lcom/android/server/OPLogger$Slog;->isLoggable:Z
+    sput-boolean v4, Lcom/android/server/OPLogger$Slog;->isLoggable:Z
 
-    const-string/jumbo v5, "log is off"
+    const-string/jumbo v3, "log is off"
 
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :cond_5
     :goto_3
     goto :goto_4
 
     :catchall_2
-    move-exception v0
+    move-exception v3
 
     goto :goto_5
 
     :cond_6
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "log state: "
+    const-string/jumbo v6, "log state: "
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-boolean v5, Lcom/android/server/OnePlusPowerController;->DEBUG_ONEPLUS:Z
+    sget-boolean v6, Lcom/android/server/OnePlusPowerController;->DEBUG_ONEPLUS:Z
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v3
 
-    invoke-virtual {v3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     :goto_4
     :try_start_5
-    invoke-static {v7, v8}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     nop
 
     monitor-exit p0
 
-    goto/16 :goto_2d
+    goto/16 :goto_2c
 
     :goto_5
-    invoke-static {v7, v8}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    throw v0
+    throw v3
 
     :catchall_3
-    move-exception v0
+    move-exception v1
 
     monitor-exit p0
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_3
 
-    throw v0
+    throw v1
 
     :cond_7
-    const-string/jumbo v0, "onlineconfig"
+    const-string/jumbo v1, "onlineconfig"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_b
+    if-eqz v1, :cond_b
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/server/OnePlusPowerController;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lcom/android/server/OnePlusPowerController;->getContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v7, "android.permission.DEVICE_POWER"
+    const-string v5, "android.permission.DEVICE_POWER"
 
-    invoke-virtual {v0, v7, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1, v5, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
     monitor-enter p0
 
     :try_start_6
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
-    move-result-wide v7
+    move-result-wide v1
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v5
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_5
 
-    move-object v4, v0
-
-    if-eqz v4, :cond_a
+    if-eqz v5, :cond_a
 
     :try_start_7
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v6
 
-    const-string/jumbo v9, "on"
+    const-string/jumbo v7, "on"
 
-    invoke-virtual {v9, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v9
+    move-result v7
 
-    if-eqz v9, :cond_8
+    if-eqz v7, :cond_8
 
-    sput-boolean v5, Lcom/android/server/OnePlusPowerController;->mOnlineConfigEnabled:Z
+    sput-boolean v3, Lcom/android/server/OnePlusPowerController;->mOnlineConfigEnabled:Z
 
-    const-string v5, "OnlineConfig is turned on"
+    const-string v3, "OnlineConfig is turned on"
 
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     goto :goto_6
 
     :cond_8
-    const-string/jumbo v5, "off"
+    const-string/jumbo v3, "off"
 
-    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v3
 
-    if-eqz v5, :cond_9
+    if-eqz v3, :cond_9
 
-    sput-boolean v6, Lcom/android/server/OnePlusPowerController;->mOnlineConfigEnabled:Z
+    sput-boolean v4, Lcom/android/server/OnePlusPowerController;->mOnlineConfigEnabled:Z
 
-    const-string v5, "OnlineConfig is turned off"
+    const-string v3, "OnlineConfig is turned off"
 
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :cond_9
     :goto_6
     goto :goto_7
 
     :catchall_4
-    move-exception v0
+    move-exception v3
 
     goto :goto_8
 
     :cond_a
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "OnlineConfigEnabled: "
+    const-string v6, "OnlineConfigEnabled: "
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-boolean v5, Lcom/android/server/OnePlusPowerController;->mOnlineConfigEnabled:Z
+    sget-boolean v6, Lcom/android/server/OnePlusPowerController;->mOnlineConfigEnabled:Z
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v3
 
-    invoke-virtual {v3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_4
 
     :goto_7
     :try_start_8
-    invoke-static {v7, v8}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     nop
 
     monitor-exit p0
 
-    goto/16 :goto_2d
+    goto/16 :goto_2c
 
     :goto_8
-    invoke-static {v7, v8}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    throw v0
+    throw v3
 
     :catchall_5
-    move-exception v0
+    move-exception v1
 
     monitor-exit p0
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_5
 
-    throw v0
+    throw v1
 
     :cond_b
-    const-string/jumbo v0, "wakelocks"
+    const-string/jumbo v1, "wakelocks"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_e
+    if-eqz v1, :cond_e
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/server/OnePlusPowerController;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lcom/android/server/OnePlusPowerController;->getContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v5, "android.permission.DEVICE_POWER"
+    const-string v3, "android.permission.DEVICE_POWER"
 
-    invoke-virtual {v0, v5, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1, v3, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
     monitor-enter p0
 
     :try_start_9
-    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mLocalPowerManager:Landroid/os/PowerManagerInternal;
+    iget-object v1, p0, Lcom/android/server/OnePlusPowerController;->mLocalPowerManager:Landroid/os/PowerManagerInternal;
 
-    invoke-virtual {v0}, Landroid/os/PowerManagerInternal;->getExclusiveWakeLock()Ljava/util/HashMap;
+    invoke-virtual {v1}, Landroid/os/PowerManagerInternal;->getExclusiveWakeLock()Ljava/util/HashMap;
 
-    move-result-object v0
+    move-result-object v1
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
+    invoke-virtual {v1}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-interface {v5}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v3}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v5
+    move-result-object v3
 
     :goto_9
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v7
+    move-result v5
 
-    if-eqz v7, :cond_d
+    if-eqz v5, :cond_d
 
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/util/Map$Entry;
+
+    invoke-interface {v5}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/String;
+
+    invoke-interface {v5}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v7
 
-    check-cast v7, Ljava/util/Map$Entry;
+    check-cast v7, Ljava/util/HashSet;
 
-    invoke-interface {v7}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v9, "packageName: "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v9, 0xa
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v8
 
-    check-cast v8, Ljava/lang/String;
+    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface {v7}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    const-string/jumbo v8, "tags: "
 
-    move-result-object v9
+    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    check-cast v9, Ljava/util/HashSet;
+    invoke-virtual {v7}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v11, "packageName: "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/16 v11, 0xa
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-virtual {v4, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string/jumbo v10, "tags: "
-
-    invoke-virtual {v4, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
-
-    move-result-object v10
+    move-result-object v8
 
     :goto_a
-    invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v12
+    move-result v10
 
-    if-eqz v12, :cond_c
+    if-eqz v10, :cond_c
 
-    invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v12
+    move-result-object v10
 
-    check-cast v12, Ljava/lang/String;
+    check-cast v10, Ljava/lang/String;
 
-    new-instance v13, Ljava/lang/StringBuilder;
+    new-instance v11, Ljava/lang/StringBuilder;
 
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v13, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v14, ", "
+    const-string v12, ", "
 
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v11
 
-    invoke-virtual {v4, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_a
 
     :cond_c
-    invoke-virtual {v4, v11}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_9
 
     :cond_d
-    invoke-virtual {v3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
+    invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
     monitor-exit p0
 
-    goto/16 :goto_2d
+    goto/16 :goto_2c
 
     :catchall_6
-    move-exception v0
+    move-exception v1
 
     monitor-exit p0
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_6
 
-    throw v0
+    throw v1
 
     :cond_e
-    new-array v0, v5, [I
+    new-array v1, v3, [I
 
-    const/16 v7, 0x50
+    const/16 v5, 0x50
 
-    aput v7, v0, v6
+    aput v5, v1, v4
 
-    invoke-static {v0}, Landroid/util/OpFeatures;->isSupport([I)Z
+    invoke-static {v1}, Landroid/util/OpFeatures;->isSupport([I)Z
 
-    move-result v0
+    move-result v1
 
-    const/4 v8, 0x2
+    if-eqz v1, :cond_2b
 
-    if-eqz v0, :cond_2d
+    const-string/jumbo v1, "usersleep"
 
-    const-string/jumbo v0, "usersleep"
+    invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v1
 
-    move-result v0
+    if-eqz v1, :cond_2b
 
-    if-eqz v0, :cond_2d
+    invoke-virtual {p0}, Lcom/android/server/OnePlusPowerController;->getContext()Landroid/content/Context;
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/server/OnePlusPowerController;->getContext()Landroid/content/Context;
+    move-result-object v1
 
-    move-result-object v0
+    const-string v5, "android.permission.DEVICE_POWER"
 
-    const-string v7, "android.permission.DEVICE_POWER"
-
-    invoke-virtual {v0, v7, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1, v5, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
     monitor-enter p0
 
     :try_start_a
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    move-result-object v0
-
-    move-object v7, v0
+    move-result-object v1
 
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
-    move-result-wide v9
+    move-result-wide v5
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_8
 
-    if-eqz v7, :cond_2b
+    if-eqz v1, :cond_29
 
     :try_start_b
-    const-string/jumbo v0, "log"
+    const-string/jumbo v7, "log"
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v7
 
-    if-eqz v0, :cond_10
+    if-eqz v7, :cond_10
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    const-string/jumbo v4, "on"
+    const-string/jumbo v7, "on"
 
-    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v7
 
-    if-eqz v4, :cond_f
+    if-eqz v7, :cond_f
 
-    sput-boolean v5, Lcom/android/server/OnePlusPowerController;->DEBUG_KMEANS:Z
+    sput-boolean v3, Lcom/android/server/OnePlusPowerController;->DEBUG_KMEANS:Z
 
-    sput-boolean v5, Lcom/android/server/OnePlusPowerController;->DEBUG_IDLE_STATS:Z
+    sput-boolean v3, Lcom/android/server/OnePlusPowerController;->DEBUG_IDLE_STATS:Z
 
-    sput-boolean v5, Lcom/android/server/OnePlusPowerController;->DEBUG_SLEEP_STATE:Z
+    sput-boolean v3, Lcom/android/server/OnePlusPowerController;->DEBUG_SLEEP_STATE:Z
 
-    const-string v4, "DEBUG_KMEANS, DEBUG_IDLE_STATS, DEBUG_SLEEP_STATE are turned on"
+    const-string v3, "DEBUG_KMEANS, DEBUG_IDLE_STATS, DEBUG_SLEEP_STATE are turned on"
 
-    invoke-virtual {v3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    const-string v4, "OnePlusPowerController"
+    const-string v3, "OnePlusPowerController"
 
-    const-string v5, "DEBUG_KMEANS, DEBUG_IDLE_STATS, DEBUG_SLEEP_STATE are turned on"
+    const-string v7, "DEBUG_KMEANS, DEBUG_IDLE_STATS, DEBUG_SLEEP_STATE are turned on"
 
-    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v7}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_b
 
     :cond_f
-    sput-boolean v6, Lcom/android/server/OnePlusPowerController;->DEBUG_KMEANS:Z
+    sput-boolean v4, Lcom/android/server/OnePlusPowerController;->DEBUG_KMEANS:Z
 
-    sput-boolean v6, Lcom/android/server/OnePlusPowerController;->DEBUG_IDLE_STATS:Z
+    sput-boolean v4, Lcom/android/server/OnePlusPowerController;->DEBUG_IDLE_STATS:Z
 
-    sput-boolean v6, Lcom/android/server/OnePlusPowerController;->DEBUG_SLEEP_STATE:Z
+    sput-boolean v4, Lcom/android/server/OnePlusPowerController;->DEBUG_SLEEP_STATE:Z
 
-    const-string v4, "DEBUG_KMEANS, DEBUG_IDLE_STATS, DEBUG_SLEEP_STATE are turned off"
+    const-string v3, "DEBUG_KMEANS, DEBUG_IDLE_STATS, DEBUG_SLEEP_STATE are turned off"
 
-    invoke-virtual {v3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    const-string v4, "OnePlusPowerController"
+    const-string v3, "OnePlusPowerController"
 
-    const-string v5, "DEBUG_KMEANS, DEBUG_IDLE_STATS, DEBUG_SLEEP_STATE are turned off"
+    const-string v7, "DEBUG_KMEANS, DEBUG_IDLE_STATS, DEBUG_SLEEP_STATE are turned off"
 
-    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v7}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_b
     goto/16 :goto_18
 
     :cond_10
-    const-string/jumbo v0, "start"
+    const-string/jumbo v7, "start"
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v7
 
-    const/16 v11, 0x15be
+    if-eqz v7, :cond_11
 
-    const/16 v12, 0x1e6c
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    if-eqz v0, :cond_12
+    move-result-object v2
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v3
 
-    move-object v4, v0
+    const-string v7, " "
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {v2, v7}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v7
 
-    move-object v5, v0
+    invoke-virtual {v7, v3}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v0, " "
-
-    invoke-virtual {v4, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v5}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
+    move-result-object v7
     :try_end_b
     .catchall {:try_start_b .. :try_end_b} :catchall_7
 
-    move-object v8, v0
-
     :try_start_c
-    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->SIMPLE_DATE_FORMAT:Ljava/time/format/DateTimeFormatter;
+    iget-object v8, p0, Lcom/android/server/OnePlusPowerController;->SIMPLE_DATE_FORMAT:Ljava/time/format/DateTimeFormatter;
 
-    invoke-static {v8, v0}, Ljava/time/LocalDateTime;->parse(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/LocalDateTime;
+    invoke-static {v7, v8}, Ljava/time/LocalDateTime;->parse(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/LocalDateTime;
 
-    move-result-object v0
+    move-result-object v8
 
-    iput-object v0, v1, Lcom/android/server/OnePlusPowerController;->mSleepStartOverridden:Ljava/time/LocalDateTime;
+    iput-object v8, p0, Lcom/android/server/OnePlusPowerController;->mSleepStartOverridden:Ljava/time/LocalDateTime;
 
-    const-string v13, "OnePlusPowerController"
+    const-string v9, "OnePlusPowerController"
 
-    new-instance v14, Ljava/lang/StringBuilder;
+    new-instance v10, Ljava/lang/StringBuilder;
 
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v15, "mSleepStartOverridden: "
+    const-string/jumbo v11, "mSleepStartOverridden: "
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v10
 
-    invoke-static {v13, v14}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v9, v10}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v13, Lcom/android/server/OnePlusPowerController;->mSleepState:I
+    invoke-virtual {p0}, Lcom/android/server/OnePlusPowerController;->scheduleNextAlarmIfNeededLocked()V
 
-    if-ne v13, v12, :cond_11
+    const-string v9, "User sleep time is overrided!"
 
-    invoke-virtual {v1, v0, v11}, Lcom/android/server/OnePlusPowerController;->scheduleNextAlarmIfNeededLocked(Ljava/time/LocalDateTime;I)V
-
-    :cond_11
-    const-string v11, "User sleep time is overrided!"
-
-    invoke-virtual {v3, v11}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
     :try_end_c
     .catch Ljava/time/format/DateTimeParseException; {:try_start_c .. :try_end_c} :catch_0
     .catchall {:try_start_c .. :try_end_c} :catchall_7
@@ -6706,88 +6864,77 @@
     goto :goto_c
 
     :catch_0
-    move-exception v0
+    move-exception v8
 
     :try_start_d
-    const-string v11, "Invalid date format!!!"
+    const-string v9, "Invalid date format!!!"
 
-    invoke-virtual {v3, v11}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :goto_c
     goto/16 :goto_18
 
-    :cond_12
-    const-string v0, "end"
+    :cond_11
+    const-string v7, "end"
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v7
 
-    if-eqz v0, :cond_14
+    if-eqz v7, :cond_12
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    move-object v4, v0
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v0
+    const-string v7, " "
 
-    move-object v5, v0
+    invoke-virtual {v2, v7}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v0, " "
+    move-result-object v7
 
-    invoke-virtual {v4, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v7, v3}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
-
-    invoke-virtual {v0, v5}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
+    move-result-object v7
     :try_end_d
     .catchall {:try_start_d .. :try_end_d} :catchall_7
 
-    move-object v8, v0
-
     :try_start_e
-    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->SIMPLE_DATE_FORMAT:Ljava/time/format/DateTimeFormatter;
+    iget-object v8, p0, Lcom/android/server/OnePlusPowerController;->SIMPLE_DATE_FORMAT:Ljava/time/format/DateTimeFormatter;
 
-    invoke-static {v8, v0}, Ljava/time/LocalDateTime;->parse(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/LocalDateTime;
+    invoke-static {v7, v8}, Ljava/time/LocalDateTime;->parse(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/LocalDateTime;
 
-    move-result-object v0
+    move-result-object v8
 
-    iput-object v0, v1, Lcom/android/server/OnePlusPowerController;->mSleepEndOverridden:Ljava/time/LocalDateTime;
+    iput-object v8, p0, Lcom/android/server/OnePlusPowerController;->mSleepEndOverridden:Ljava/time/LocalDateTime;
 
-    const-string v12, "OnePlusPowerController"
+    const-string v9, "OnePlusPowerController"
 
-    new-instance v13, Ljava/lang/StringBuilder;
+    new-instance v10, Ljava/lang/StringBuilder;
 
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v14, "mSleepEndOverridden: "
+    const-string/jumbo v11, "mSleepEndOverridden: "
 
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v10
 
-    invoke-static {v12, v13}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v9, v10}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget v12, Lcom/android/server/OnePlusPowerController;->mSleepState:I
+    invoke-virtual {p0}, Lcom/android/server/OnePlusPowerController;->scheduleNextAlarmIfNeededLocked()V
 
-    if-ne v12, v11, :cond_13
+    const-string v9, "User awake time is overrided!"
 
-    invoke-virtual {v1, v0, v11}, Lcom/android/server/OnePlusPowerController;->scheduleNextAlarmIfNeededLocked(Ljava/time/LocalDateTime;I)V
-
-    :cond_13
-    const-string v11, "User awake time is overrided!"
-
-    invoke-virtual {v3, v11}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
     :try_end_e
     .catch Ljava/time/format/DateTimeParseException; {:try_start_e .. :try_end_e} :catch_1
     .catchall {:try_start_e .. :try_end_e} :catchall_7
@@ -6795,1726 +6942,1711 @@
     goto :goto_d
 
     :catch_1
-    move-exception v0
+    move-exception v8
 
     :try_start_f
-    const-string v11, "Invalid date format!!!"
+    const-string v9, "Invalid date format!!!"
 
-    invoke-virtual {v3, v11}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :goto_d
     goto/16 :goto_18
 
-    :cond_14
-    const-string/jumbo v0, "reset"
+    :cond_12
+    const-string/jumbo v7, "reset"
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v7
 
-    if-eqz v0, :cond_15
+    if-eqz v7, :cond_13
 
-    sput v12, Lcom/android/server/OnePlusPowerController;->mSleepState:I
+    const/16 v3, 0x1e6c
 
-    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mHandler:Lcom/android/server/OnePlusPowerController$MyHandler;
+    sput v3, Lcom/android/server/OnePlusPowerController;->mSleepState:I
 
-    invoke-virtual {v0, v12}, Lcom/android/server/OnePlusPowerController$MyHandler;->obtainMessage(I)Landroid/os/Message;
+    iget-object v7, p0, Lcom/android/server/OnePlusPowerController;->mHandler:Lcom/android/server/OnePlusPowerController$MyHandler;
 
-    move-result-object v0
+    invoke-virtual {v7, v3}, Lcom/android/server/OnePlusPowerController$MyHandler;->obtainMessage(I)Landroid/os/Message;
 
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+    move-result-object v3
 
-    iput-object v4, v1, Lcom/android/server/OnePlusPowerController;->mSleepStartOverridden:Ljava/time/LocalDateTime;
+    invoke-virtual {v3}, Landroid/os/Message;->sendToTarget()V
 
-    iput-object v4, v1, Lcom/android/server/OnePlusPowerController;->mSleepEndOverridden:Ljava/time/LocalDateTime;
+    iput-object v2, p0, Lcom/android/server/OnePlusPowerController;->mSleepStartOverridden:Ljava/time/LocalDateTime;
 
-    const v0, 0x44aa20
+    iput-object v2, p0, Lcom/android/server/OnePlusPowerController;->mSleepEndOverridden:Ljava/time/LocalDateTime;
 
-    sput v0, Lcom/android/server/OnePlusPowerController;->mTimeOutAfterScreenOff:I
+    const v2, 0x44aa20
 
-    const v0, 0x1b7740
+    sput v2, Lcom/android/server/OnePlusPowerController;->mTimeOutAfterScreenOff:I
 
-    sput v0, Lcom/android/server/OnePlusPowerController;->mTimeOutBeforeUserAwake:I
+    const v2, 0x1b7740
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/server/OnePlusPowerController;->scheduleNextAlarmIfNeededLocked()V
+    sput v2, Lcom/android/server/OnePlusPowerController;->mTimeOutBeforeUserAwake:I
+
+    invoke-virtual {p0}, Lcom/android/server/OnePlusPowerController;->scheduleNextAlarmIfNeededLocked()V
 
     goto/16 :goto_18
 
-    :cond_15
-    const-string/jumbo v0, "timeoutAfterScreenOff"
+    :cond_13
+    const-string/jumbo v2, "timeoutAfterScreenOff"
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_18
+    if-eqz v2, :cond_16
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    if-eqz v0, :cond_17
+    if-eqz v2, :cond_15
 
-    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v4
+    move-result v3
 
-    if-ltz v4, :cond_16
+    if-ltz v3, :cond_14
 
-    sput v4, Lcom/android/server/OnePlusPowerController;->mTimeOutAfterScreenOff:I
+    sput v3, Lcom/android/server/OnePlusPowerController;->mTimeOutAfterScreenOff:I
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string/jumbo v8, "mTimeOutAfterScreenOff="
 
-    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     sget v8, Lcom/android/server/OnePlusPowerController;->mTimeOutAfterScreenOff:I
 
-    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v7}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     goto :goto_e
 
-    :cond_16
-    new-instance v5, Ljava/lang/StringBuilder;
+    :cond_14
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v8, "Invalid value: "
 
-    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v7}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :goto_e
     goto :goto_f
 
-    :cond_17
-    const-string v4, "Option cannot be null!"
+    :cond_15
+    const-string v3, "Option cannot be null!"
 
-    invoke-virtual {v3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :goto_f
     goto/16 :goto_18
 
-    :cond_18
-    const-string/jumbo v0, "timeoutBeforeUserAwake"
+    :cond_16
+    const-string/jumbo v2, "timeoutBeforeUserAwake"
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_1b
+    if-eqz v2, :cond_19
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    if-eqz v0, :cond_1a
+    if-eqz v2, :cond_18
 
-    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v4
+    move-result v3
 
-    if-ltz v4, :cond_19
+    if-ltz v3, :cond_17
 
-    sput v4, Lcom/android/server/OnePlusPowerController;->mTimeOutBeforeUserAwake:I
+    sput v3, Lcom/android/server/OnePlusPowerController;->mTimeOutBeforeUserAwake:I
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string/jumbo v8, "mTimeOutBeforeUserAwake="
 
-    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     sget v8, Lcom/android/server/OnePlusPowerController;->mTimeOutBeforeUserAwake:I
 
-    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v7}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     goto :goto_10
 
-    :cond_19
-    new-instance v5, Ljava/lang/StringBuilder;
+    :cond_17
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v8, "Invalid value: "
 
-    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v7}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :goto_10
     goto :goto_11
 
-    :cond_1a
-    const-string v4, "Option cannot be null!"
+    :cond_18
+    const-string v3, "Option cannot be null!"
 
-    invoke-virtual {v3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :goto_11
     goto/16 :goto_18
 
+    :cond_19
+    const-string/jumbo v2, "opsm"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1c
+
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string/jumbo v7, "on"
+
+    invoke-virtual {v7, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_1a
+
+    invoke-virtual {p0, v3}, Lcom/android/server/OnePlusPowerController;->enterOPSMIfAppropriated(Z)V
+
+    goto :goto_12
+
+    :cond_1a
+    const-string/jumbo v3, "off"
+
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1b
+
+    invoke-virtual {p0}, Lcom/android/server/OnePlusPowerController;->leaveOPSM()V
+
+    goto :goto_12
+
     :cond_1b
-    const-string/jumbo v0, "opsm"
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result v0
+    const-string v7, "Unknown option: "
 
-    if-eqz v0, :cond_1e
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string v4, "enable"
+    move-result-object v3
 
-    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1c
-
-    iget-object v4, v1, Lcom/android/server/OnePlusPowerController;->mResolver:Landroid/content/ContentResolver;
-
-    const-string/jumbo v5, "optimal_power_save_mode_enabled"
-
-    invoke-static {v4, v5, v8}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
-
-    goto :goto_12
-
-    :cond_1c
-    const-string v4, "disable"
-
-    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1d
-
-    iget-object v4, v1, Lcom/android/server/OnePlusPowerController;->mResolver:Landroid/content/ContentResolver;
-
-    const-string/jumbo v5, "optimal_power_save_mode_enabled"
-
-    const/4 v8, -0x1
-
-    invoke-static {v4, v5, v8}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
-
-    goto :goto_12
-
-    :cond_1d
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Unknown option: "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :goto_12
     goto/16 :goto_18
 
-    :cond_1e
-    const-string/jumbo v0, "sensor"
+    :cond_1c
+    const-string/jumbo v2, "sensor"
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_22
+    if-eqz v2, :cond_20
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    const-string/jumbo v4, "on"
+    const-string/jumbo v3, "on"
 
-    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_1f
+    if-eqz v3, :cond_1d
 
-    iget-object v4, v1, Lcom/android/server/OnePlusPowerController;->mSensorManager:Landroid/hardware/SensorManager;
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mSensorManager:Landroid/hardware/SensorManager;
 
-    if-eqz v4, :cond_21
+    if-eqz v3, :cond_1f
 
-    iget-object v4, v1, Lcom/android/server/OnePlusPowerController;->mSensorManager:Landroid/hardware/SensorManager;
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mSensorManager:Landroid/hardware/SensorManager;
 
-    invoke-virtual {v4}, Landroid/hardware/SensorManager;->leaveOPSM()V
+    invoke-virtual {v3}, Landroid/hardware/SensorManager;->leaveOPSM()V
 
     goto :goto_13
+
+    :cond_1d
+    const-string/jumbo v3, "off"
+
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1e
+
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mSensorManager:Landroid/hardware/SensorManager;
+
+    if-eqz v3, :cond_1f
+
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mSensorManager:Landroid/hardware/SensorManager;
+
+    invoke-virtual {v3}, Landroid/hardware/SensorManager;->enterOPSM()V
+
+    goto :goto_13
+
+    :cond_1e
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "Unknown option: "
+
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    const-string v3, "Please use on/off"
+
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :cond_1f
-    const-string/jumbo v4, "off"
-
-    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_20
-
-    iget-object v4, v1, Lcom/android/server/OnePlusPowerController;->mSensorManager:Landroid/hardware/SensorManager;
-
-    if-eqz v4, :cond_21
-
-    iget-object v4, v1, Lcom/android/server/OnePlusPowerController;->mSensorManager:Landroid/hardware/SensorManager;
-
-    invoke-virtual {v4}, Landroid/hardware/SensorManager;->enterOPSM()V
-
-    goto :goto_13
-
-    :cond_20
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Unknown option: "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    const-string v4, "Please use on/off"
-
-    invoke-virtual {v3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    :cond_21
     :goto_13
     goto/16 :goto_18
 
+    :cond_20
+    const-string/jumbo v2, "sensor_restrict"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_23
+
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v7, "enable"
+
+    invoke-virtual {v7, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_21
+
+    iput-boolean v3, p0, Lcom/android/server/OnePlusPowerController;->mSensorRestrict:Z
+
+    goto :goto_14
+
+    :cond_21
+    const-string v3, "disable"
+
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_22
+
+    iput-boolean v4, p0, Lcom/android/server/OnePlusPowerController;->mSensorRestrict:Z
+
+    goto :goto_14
+
     :cond_22
-    const-string/jumbo v0, "sensor_restrict"
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result v0
+    const-string v7, "SensorRestrict = "
 
-    if-eqz v0, :cond_25
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    iget-boolean v7, p0, Lcom/android/server/OnePlusPowerController;->mSensorRestrict:Z
 
-    move-result-object v0
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v4, "enable"
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v3
 
-    move-result v4
-
-    if-eqz v4, :cond_23
-
-    iput-boolean v5, v1, Lcom/android/server/OnePlusPowerController;->mSensorRestrict:Z
-
-    goto :goto_14
-
-    :cond_23
-    const-string v4, "disable"
-
-    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_24
-
-    iput-boolean v6, v1, Lcom/android/server/OnePlusPowerController;->mSensorRestrict:Z
-
-    goto :goto_14
-
-    :cond_24
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "SensorRestrict = "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v5, v1, Lcom/android/server/OnePlusPowerController;->mSensorRestrict:Z
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :goto_14
     goto/16 :goto_18
 
-    :cond_25
-    const-string v0, "bluetooth"
+    :cond_23
+    const-string v2, "bluetooth"
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_2c
+    if-eqz v2, :cond_2a
 
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
-    move-result-object v0
+    move-result-object v2
 
-    if-nez v0, :cond_26
+    if-nez v2, :cond_24
 
-    const-string v4, "No bluetooth service"
+    const-string v7, "No bluetooth service"
 
-    invoke-virtual {v3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v7}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    :cond_26
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    :cond_24
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v7
 
     const-string v8, "enable"
 
-    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_27
+    if-eqz v8, :cond_25
 
-    iget-object v8, v1, Lcom/android/server/OnePlusPowerController;->mResolver:Landroid/content/ContentResolver;
+    iget-object v8, p0, Lcom/android/server/OnePlusPowerController;->mResolver:Landroid/content/ContentResolver;
 
-    const-string v11, "ble_scan_always_enabled"
+    const-string v9, "ble_scan_always_enabled"
 
-    invoke-static {v8, v11, v5}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v8, v9, v3}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    invoke-virtual {v0}, Landroid/bluetooth/BluetoothAdapter;->enable()Z
+    invoke-virtual {v2}, Landroid/bluetooth/BluetoothAdapter;->enable()Z
 
     goto :goto_17
 
-    :cond_27
+    :cond_25
     const-string v8, "disable"
 
-    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_28
+    if-eqz v8, :cond_26
 
-    iget-object v5, v1, Lcom/android/server/OnePlusPowerController;->mResolver:Landroid/content/ContentResolver;
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mResolver:Landroid/content/ContentResolver;
 
     const-string v8, "ble_scan_always_enabled"
 
-    invoke-static {v5, v8, v6}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v3, v8, v4}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    invoke-virtual {v0, v6}, Landroid/bluetooth/BluetoothAdapter;->disable(Z)Z
+    invoke-virtual {v2, v4}, Landroid/bluetooth/BluetoothAdapter;->disable(Z)Z
 
     goto :goto_17
 
-    :cond_28
+    :cond_26
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v11, "Bluetooth = "
+    const-string v9, "Bluetooth = "
 
-    invoke-virtual {v8, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Landroid/bluetooth/BluetoothAdapter;->isEnabled()Z
+    invoke-virtual {v2}, Landroid/bluetooth/BluetoothAdapter;->isEnabled()Z
 
-    move-result v11
+    move-result v9
 
-    if-eqz v11, :cond_29
+    if-eqz v9, :cond_27
 
-    const-string/jumbo v11, "on"
+    const-string/jumbo v9, "on"
 
     goto :goto_15
 
-    :cond_29
-    const-string/jumbo v11, "off"
+    :cond_27
+    const-string/jumbo v9, "off"
 
     :goto_15
-    invoke-virtual {v8, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v8
 
-    invoke-virtual {v3, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    iget-object v8, v1, Lcom/android/server/OnePlusPowerController;->mResolver:Landroid/content/ContentResolver;
+    iget-object v8, p0, Lcom/android/server/OnePlusPowerController;->mResolver:Landroid/content/ContentResolver;
 
-    const-string v11, "ble_scan_always_enabled"
+    const-string v9, "ble_scan_always_enabled"
 
-    invoke-static {v8, v11, v6}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v8, v9, v4}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v8
 
-    new-instance v11, Ljava/lang/StringBuilder;
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v12, "BluetoothBle = "
+    const-string v10, "BluetoothBle = "
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-ne v8, v5, :cond_2a
+    if-ne v8, v3, :cond_28
 
-    const-string/jumbo v5, "on"
+    const-string/jumbo v3, "on"
 
     goto :goto_16
 
-    :cond_2a
-    const-string/jumbo v5, "off"
+    :cond_28
+    const-string/jumbo v3, "off"
 
     :goto_16
-    invoke-virtual {v11, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :goto_17
     goto :goto_18
 
     :catchall_7
-    move-exception v0
+    move-exception v2
 
     goto :goto_19
 
-    :cond_2b
-    invoke-direct {v1, v3}, Lcom/android/server/OnePlusPowerController;->dumpUseSleep(Ljava/io/PrintWriter;)V
+    :cond_29
+    invoke-direct {p0, v0}, Lcom/android/server/OnePlusPowerController;->dumpUseSleep(Ljava/io/PrintWriter;)V
     :try_end_f
     .catchall {:try_start_f .. :try_end_f} :catchall_7
 
-    :cond_2c
+    :cond_2a
     :goto_18
     :try_start_10
-    invoke-static {v9, v10}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    invoke-static {v5, v6}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     nop
 
     monitor-exit p0
 
-    goto/16 :goto_2d
+    goto/16 :goto_2c
 
     :goto_19
-    invoke-static {v9, v10}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    invoke-static {v5, v6}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    throw v0
+    throw v2
 
     :catchall_8
-    move-exception v0
+    move-exception v1
 
     monitor-exit p0
     :try_end_10
     .catchall {:try_start_10 .. :try_end_10} :catchall_8
 
-    throw v0
+    throw v1
 
-    :cond_2d
-    const-string/jumbo v0, "overheat"
+    :cond_2b
+    const-string/jumbo v1, "overheat"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_3b
+    if-eqz v1, :cond_39
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/server/OnePlusPowerController;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lcom/android/server/OnePlusPowerController;->getContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v7, "android.permission.DEVICE_POWER"
+    const-string v5, "android.permission.DEVICE_POWER"
 
-    invoke-virtual {v0, v7, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1, v5, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
     monitor-enter p0
 
     :try_start_11
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    move-object v4, v0
-
-    if-eqz v4, :cond_3a
+    if-eqz v1, :cond_38
 
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
-    move-result-wide v7
+    move-result-wide v5
     :try_end_11
     .catchall {:try_start_11 .. :try_end_11} :catchall_a
 
     :try_start_12
-    const-string v0, "enable"
+    const-string v2, "enable"
 
-    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_2e
+    if-eqz v2, :cond_2c
 
-    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
+    iget-object v2, p0, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
 
-    invoke-virtual {v0, v5}, Lcom/android/server/OverHeatingDiagnosis;->setMonitorEnabled(Z)V
+    invoke-virtual {v2, v3}, Lcom/android/server/OverHeatingDiagnosis;->setMonitorEnabled(Z)V
+
+    goto/16 :goto_1c
+
+    :cond_2c
+    const-string v2, "disable"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2d
+
+    iget-object v2, p0, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
+
+    invoke-virtual {v2, v4}, Lcom/android/server/OverHeatingDiagnosis;->setMonitorEnabled(Z)V
+
+    goto/16 :goto_1c
+
+    :cond_2d
+    const-string/jumbo v2, "number"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2e
+
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
+
+    invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v7
+
+    invoke-virtual {v3, v7}, Lcom/android/server/OverHeatingDiagnosis;->setMonitorNum(I)V
 
     goto/16 :goto_1c
 
     :cond_2e
-    const-string v0, "disable"
+    const-string/jumbo v2, "temper"
 
-    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_2f
+    if-eqz v2, :cond_2f
 
-    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    invoke-virtual {v0, v6}, Lcom/android/server/OverHeatingDiagnosis;->setMonitorEnabled(Z)V
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
+
+    invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v7
+
+    invoke-virtual {v3, v7}, Lcom/android/server/OverHeatingDiagnosis;->setMonitorTemp(I)V
 
     goto/16 :goto_1c
 
     :cond_2f
-    const-string/jumbo v0, "number"
+    const-string/jumbo v2, "period"
 
-    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_30
+    if-eqz v2, :cond_30
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    iget-object v5, v1, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
 
-    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v2}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
-    move-result v9
+    move-result-wide v7
 
-    invoke-virtual {v5, v9}, Lcom/android/server/OverHeatingDiagnosis;->setMonitorNum(I)V
+    invoke-virtual {v3, v7, v8}, Lcom/android/server/OverHeatingDiagnosis;->setMonitorPeriod(J)V
 
     goto/16 :goto_1c
 
     :cond_30
-    const-string/jumbo v0, "temper"
+    const-string v2, "force-monitor"
 
-    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_31
+    if-eqz v2, :cond_33
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    iget-object v5, v1, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
+    const-string v7, "enable"
 
-    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-virtual {v7, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v9
+    move-result v7
 
-    invoke-virtual {v5, v9}, Lcom/android/server/OverHeatingDiagnosis;->setMonitorTemp(I)V
+    if-eqz v7, :cond_31
 
-    goto/16 :goto_1c
+    iget-object v7, p0, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
+
+    invoke-virtual {v7, v3}, Lcom/android/server/OverHeatingDiagnosis;->setMonitorForced(Z)V
+
+    goto :goto_1a
 
     :cond_31
-    const-string/jumbo v0, "period"
+    const-string v3, "disable"
 
-    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v3
 
-    if-eqz v0, :cond_32
+    if-eqz v3, :cond_32
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
 
-    move-result-object v0
+    invoke-virtual {v3, v4}, Lcom/android/server/OverHeatingDiagnosis;->setMonitorForced(Z)V
 
-    iget-object v5, v1, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
-
-    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v9
-
-    invoke-virtual {v5, v9, v10}, Lcom/android/server/OverHeatingDiagnosis;->setMonitorPeriod(J)V
-
-    goto/16 :goto_1c
+    goto :goto_1a
 
     :cond_32
-    const-string v0, "force-monitor"
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result v0
+    const-string v7, "Unknown option: overheat force-monitor "
 
-    if-eqz v0, :cond_35
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string v9, "enable"
+    move-result-object v3
 
-    invoke-virtual {v9, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    move-result v9
+    const-string v3, "Please enter overheat force-monitor [enable|disable]"
 
-    if-eqz v9, :cond_33
-
-    iget-object v9, v1, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
-
-    invoke-virtual {v9, v5}, Lcom/android/server/OverHeatingDiagnosis;->setMonitorForced(Z)V
-
-    goto :goto_1a
-
-    :cond_33
-    const-string v5, "disable"
-
-    invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_34
-
-    iget-object v5, v1, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
-
-    invoke-virtual {v5, v6}, Lcom/android/server/OverHeatingDiagnosis;->setMonitorForced(Z)V
-
-    goto :goto_1a
-
-    :cond_34
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "Unknown option: overheat force-monitor "
-
-    invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    const-string v5, "Please enter overheat force-monitor [enable|disable]"
-
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :goto_1a
     goto :goto_1c
 
+    :cond_33
+    const-string/jumbo v2, "monitor"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_37
+
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "start"
+
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_34
+
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
+
+    invoke-virtual {v3}, Lcom/android/server/OverHeatingDiagnosis;->startMonitor()V
+
+    goto :goto_1b
+
+    :cond_34
+    const-string/jumbo v3, "update"
+
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_35
+
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
+
+    invoke-virtual {v3}, Lcom/android/server/OverHeatingDiagnosis;->updateMonitor()V
+
+    goto :goto_1b
+
     :cond_35
-    const-string/jumbo v0, "monitor"
+    const-string v3, "end"
 
-    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v3
 
-    if-eqz v0, :cond_39
+    if-eqz v3, :cond_36
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
 
-    move-result-object v0
-
-    const-string/jumbo v5, "start"
-
-    invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_36
-
-    iget-object v5, v1, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
-
-    invoke-virtual {v5}, Lcom/android/server/OverHeatingDiagnosis;->startMonitor()V
+    invoke-virtual {v3}, Lcom/android/server/OverHeatingDiagnosis;->endMonitor()V
 
     goto :goto_1b
 
     :cond_36
-    const-string/jumbo v5, "update"
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result v5
+    const-string v7, "Unknown option: overheat monitor "
 
-    if-eqz v5, :cond_37
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v5, v1, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5}, Lcom/android/server/OverHeatingDiagnosis;->updateMonitor()V
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    goto :goto_1b
+    move-result-object v3
 
-    :cond_37
-    const-string v5, "end"
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string v3, "Please enter overheat monitor [start|update|end]"
 
-    move-result v5
-
-    if-eqz v5, :cond_38
-
-    iget-object v5, v1, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
-
-    invoke-virtual {v5}, Lcom/android/server/OverHeatingDiagnosis;->endMonitor()V
-
-    goto :goto_1b
-
-    :cond_38
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "Unknown option: overheat monitor "
-
-    invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    const-string v5, "Please enter overheat monitor [start|update|end]"
-
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :goto_1b
     goto :goto_1c
 
-    :cond_39
-    new-instance v0, Ljava/lang/StringBuilder;
+    :cond_37
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "Unknown option: overheat "
+    const-string v3, "Unknown option: overheat "
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {v3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
     :try_end_12
     .catchall {:try_start_12 .. :try_end_12} :catchall_9
 
     :goto_1c
     :try_start_13
-    invoke-static {v7, v8}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    invoke-static {v5, v6}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     nop
 
     goto :goto_1d
 
     :catchall_9
-    move-exception v0
+    move-exception v2
 
-    invoke-static {v7, v8}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    invoke-static {v5, v6}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    throw v0
+    throw v2
 
-    :cond_3a
-    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
+    :cond_38
+    iget-object v2, p0, Lcom/android/server/OnePlusPowerController;->mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
 
-    invoke-virtual {v0, v3}, Lcom/android/server/OverHeatingDiagnosis;->dump(Ljava/io/PrintWriter;)V
+    invoke-virtual {v2, v0}, Lcom/android/server/OverHeatingDiagnosis;->dump(Ljava/io/PrintWriter;)V
 
-    const-string v0, "**** OverHeat Diagnosis Records ****"
+    const-string v2, "**** OverHeat Diagnosis Records ****"
 
-    invoke-virtual {v3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    const-string v0, "/data/system/power/diagnosis_heating.txt"
+    const-string v2, "/data/system/power/diagnosis_heating.txt"
 
-    invoke-direct {v1, v3, v0}, Lcom/android/server/OnePlusPowerController;->dumpDiagnosisRecords(Ljava/io/PrintWriter;Ljava/lang/String;)V
+    invoke-direct {p0, v0, v2}, Lcom/android/server/OnePlusPowerController;->dumpDiagnosisRecords(Ljava/io/PrintWriter;Ljava/lang/String;)V
 
     :goto_1d
     monitor-exit p0
 
-    goto/16 :goto_2d
+    goto/16 :goto_2c
 
     :catchall_a
-    move-exception v0
+    move-exception v1
 
     monitor-exit p0
     :try_end_13
     .catchall {:try_start_13 .. :try_end_13} :catchall_a
 
-    throw v0
+    throw v1
 
-    :cond_3b
-    const-string/jumbo v0, "standby"
+    :cond_39
+    const-string/jumbo v1, "standby"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_3c
+    if-eqz v1, :cond_3a
 
-    const-string v0, "**** Standby Diagnosis Records ****"
+    const-string v1, "**** Standby Diagnosis Records ****"
 
-    invoke-virtual {v3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    const-string v0, "/data/system/power/diagnosis_standby.txt"
+    const-string v1, "/data/system/power/diagnosis_standby.txt"
 
-    invoke-direct {v1, v3, v0}, Lcom/android/server/OnePlusPowerController;->dumpDiagnosisRecords(Ljava/io/PrintWriter;Ljava/lang/String;)V
+    invoke-direct {p0, v0, v1}, Lcom/android/server/OnePlusPowerController;->dumpDiagnosisRecords(Ljava/io/PrintWriter;Ljava/lang/String;)V
 
-    goto/16 :goto_2d
+    goto/16 :goto_2c
 
-    :cond_3c
-    const-string v0, "deepsleepwhitelist"
+    :cond_3a
+    const-string v1, "deepsleepwhitelist"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_41
+    if-eqz v1, :cond_3f
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    if-eqz v0, :cond_40
+    if-eqz v1, :cond_3e
 
-    const-string/jumbo v5, "update"
+    const-string/jumbo v3, "update"
 
-    invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v3
 
-    if-eqz v5, :cond_3e
+    if-eqz v3, :cond_3c
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_3e
+
+    const-string v3, "OnePlusPowerController"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "deepsleepwhitelist update to "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
 
-    if-eqz v5, :cond_40
+    invoke-static {v3, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string v0, "OnePlusPowerController"
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v5, "deepsleepwhitelist update to "
 
-    const-string v8, "deepsleepwhitelist update to "
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v7
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    invoke-static {v0, v7}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v3, ","
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v3
 
-    const-string v7, "deepsleepwhitelist update to "
-
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    const-string v0, ","
-
-    invoke-virtual {v5, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v7
-
-    move v0, v6
+    move v5, v4
 
     :goto_1e
-    move v8, v0
+    array-length v6, v3
 
-    array-length v0, v7
-
-    if-ge v8, v0, :cond_3d
+    if-ge v5, v6, :cond_3b
 
     :try_start_14
-    aget-object v0, v7, v8
+    aget-object v6, v3, v5
 
-    invoke-virtual {v1, v0}, Lcom/android/server/OnePlusPowerController;->addPackageToWhitelist(Ljava/lang/String;)V
+    invoke-virtual {p0, v6}, Lcom/android/server/OnePlusPowerController;->addPackageToWhitelist(Ljava/lang/String;)V
     :try_end_14
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_14 .. :try_end_14} :catch_2
 
     goto :goto_1f
 
     :catch_2
-    move-exception v0
+    move-exception v6
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v10, "pkg: "
+    const-string/jumbo v8, "pkg: "
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aget-object v10, v7, v8
+    aget-object v8, v3, v5
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v10, " is not found"
+    const-string v8, " is not found"
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v3, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    :goto_1f
-    add-int/lit8 v0, v8, 0x1
-
-    goto :goto_1e
-
-    :cond_3d
-    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mDeepSleepWhitelistApps:Landroid/util/ArrayMap;
-
-    iget-object v8, v1, Lcom/android/server/OnePlusPowerController;->mDeepSleepWhitelistAppIds:Landroid/util/SparseBooleanArray;
-
-    invoke-static {v4, v0, v8}, Lcom/android/server/OnePlusPowerController;->buildAppIdArray(Landroid/util/ArrayMap;Landroid/util/ArrayMap;Landroid/util/SparseBooleanArray;)[I
-
-    move-result-object v0
-
-    iput-object v0, v1, Lcom/android/server/OnePlusPowerController;->mDeepSleepWhitelistAppIdArray:[I
-
-    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mAlarmManagerInternal:Lcom/android/server/AlarmManagerInternal;
-
-    iget-object v4, v1, Lcom/android/server/OnePlusPowerController;->mDeepSleepWhitelistAppIdArray:[I
-
-    invoke-interface {v0, v4}, Lcom/android/server/AlarmManagerInternal;->setDeepSleepWhitelist([I)V
-
-    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mLocalPowerManager:Landroid/os/PowerManagerInternal;
-
-    iget-object v4, v1, Lcom/android/server/OnePlusPowerController;->mDeepSleepWhitelistAppIdArray:[I
-
-    invoke-virtual {v0, v4}, Landroid/os/PowerManagerInternal;->setDeepSleepWhitelist([I)V
-
-    goto :goto_20
-
-    :cond_3e
-    const-string v4, "get"
-
-    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_3f
-
-    const-string v4, "OnePlusPowerController"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v7, "mDeepSleepWhitelistAppIds:"
-
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v7, v1, Lcom/android/server/OnePlusPowerController;->mDeepSleepWhitelistAppIdArray:[I
-
-    invoke-static {v7}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v7
 
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v7}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :goto_1f
+    add-int/lit8 v5, v5, 0x1
 
-    move-result-object v5
+    goto :goto_1e
 
-    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :cond_3b
+    iget-object v5, p0, Lcom/android/server/OnePlusPowerController;->mDeepSleepWhitelistApps:Landroid/util/ArrayMap;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    iget-object v6, p0, Lcom/android/server/OnePlusPowerController;->mDeepSleepWhitelistAppIds:Landroid/util/SparseBooleanArray;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {v2, v5, v6}, Lcom/android/server/OnePlusPowerController;->buildAppIdArray(Landroid/util/ArrayMap;Landroid/util/ArrayMap;Landroid/util/SparseBooleanArray;)[I
 
-    const-string v5, "WhitelistAppIdArray: "
+    move-result-object v2
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput-object v2, p0, Lcom/android/server/OnePlusPowerController;->mDeepSleepWhitelistAppIdArray:[I
 
-    iget-object v5, v1, Lcom/android/server/OnePlusPowerController;->mDeepSleepWhitelistAppIdArray:[I
+    iget-object v2, p0, Lcom/android/server/OnePlusPowerController;->mAlarmManagerInternal:Lcom/android/server/AlarmManagerInternal;
+
+    iget-object v5, p0, Lcom/android/server/OnePlusPowerController;->mDeepSleepWhitelistAppIdArray:[I
+
+    invoke-interface {v2, v5}, Lcom/android/server/AlarmManagerInternal;->setDeepSleepWhitelist([I)V
+
+    iget-object v2, p0, Lcom/android/server/OnePlusPowerController;->mLocalPowerManager:Landroid/os/PowerManagerInternal;
+
+    iget-object v5, p0, Lcom/android/server/OnePlusPowerController;->mDeepSleepWhitelistAppIdArray:[I
+
+    invoke-virtual {v2, v5}, Landroid/os/PowerManagerInternal;->setDeepSleepWhitelist([I)V
+
+    goto :goto_20
+
+    :cond_3c
+    const-string v2, "get"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3d
+
+    const-string v2, "OnePlusPowerController"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "mDeepSleepWhitelistAppIds:"
+
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v5, p0, Lcom/android/server/OnePlusPowerController;->mDeepSleepWhitelistAppIdArray:[I
 
     invoke-static {v5}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "WhitelistAppIdArray: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mDeepSleepWhitelistAppIdArray:[I
+
+    invoke-static {v3}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     goto :goto_20
 
-    :cond_3f
-    const-string v4, "clean"
+    :cond_3d
+    const-string v2, "clean"
 
-    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v2
 
-    if-eqz v4, :cond_40
+    if-eqz v2, :cond_3e
 
-    const-string v4, "OnePlusPowerController"
+    const-string v2, "OnePlusPowerController"
 
-    const-string v5, "deepsleepwhitelist clean up to empty"
+    const-string v3, "deepsleepwhitelist clean up to empty"
 
-    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v4, v1, Lcom/android/server/OnePlusPowerController;->mAlarmManagerInternal:Lcom/android/server/AlarmManagerInternal;
+    iget-object v2, p0, Lcom/android/server/OnePlusPowerController;->mAlarmManagerInternal:Lcom/android/server/AlarmManagerInternal;
 
-    new-array v5, v6, [I
+    new-array v3, v4, [I
 
-    invoke-interface {v4, v5}, Lcom/android/server/AlarmManagerInternal;->setDeepSleepWhitelist([I)V
+    invoke-interface {v2, v3}, Lcom/android/server/AlarmManagerInternal;->setDeepSleepWhitelist([I)V
 
-    iget-object v4, v1, Lcom/android/server/OnePlusPowerController;->mLocalPowerManager:Landroid/os/PowerManagerInternal;
+    iget-object v2, p0, Lcom/android/server/OnePlusPowerController;->mLocalPowerManager:Landroid/os/PowerManagerInternal;
 
-    new-array v5, v6, [I
+    new-array v3, v4, [I
 
-    invoke-virtual {v4, v5}, Landroid/os/PowerManagerInternal;->setDeepSleepWhitelist([I)V
+    invoke-virtual {v2, v3}, Landroid/os/PowerManagerInternal;->setDeepSleepWhitelist([I)V
 
-    :cond_40
+    :cond_3e
     :goto_20
-    goto/16 :goto_2d
+    goto/16 :goto_2c
 
-    :cond_41
-    const-string/jumbo v0, "wifi"
+    :cond_3f
+    const-string/jumbo v1, "wifi"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_48
+    if-eqz v1, :cond_46
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    if-eqz v4, :cond_47
+    if-eqz v1, :cond_45
 
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
-    const-string v5, "enable"
+    const-string v3, "enable"
 
-    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v3
 
-    if-eqz v5, :cond_42
+    if-eqz v3, :cond_40
 
-    const/4 v0, 0x1
-
-    :goto_21
-    move v5, v0
-
-    goto :goto_22
-
-    :cond_42
-    const-string v5, "disable"
-
-    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_44
-
-    const/4 v0, 0x0
+    const/4 v2, 0x1
 
     goto :goto_21
 
-    :goto_22
+    :cond_40
+    const-string v3, "disable"
+
+    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_42
+
+    const/4 v2, 0x0
+
+    :goto_21
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
-    move-result-wide v7
+    move-result-wide v5
 
     :try_start_15
-    const-string v0, "OnePlusPowerController"
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v10, "setWifiEnabled to "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v0, v9}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "WiFi is "
-
-    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    if-eqz v5, :cond_43
-
-    const-string v9, "enabled"
-
-    goto :goto_23
-
-    :cond_43
-    const-string v9, "disabled"
-
-    :goto_23
-    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mWifiManager:Landroid/net/wifi/WifiManager;
-
-    invoke-virtual {v0, v5}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
-    :try_end_15
-    .catchall {:try_start_15 .. :try_end_15} :catchall_b
-
-    invoke-static {v7, v8}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    nop
-
-    goto :goto_24
-
-    :catchall_b
-    move-exception v0
-
-    invoke-static {v7, v8}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    throw v0
-
-    :cond_44
-    const-string/jumbo v5, "query"
-
-    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_46
-
-    iget-object v5, v1, Lcom/android/server/OnePlusPowerController;->mWifiManager:Landroid/net/wifi/WifiManager;
-
-    if-eqz v5, :cond_45
-
-    iget-object v5, v1, Lcom/android/server/OnePlusPowerController;->mWifiManager:Landroid/net/wifi/WifiManager;
-
-    invoke-virtual {v5}, Landroid/net/wifi/WifiManager;->isWifiEnabled()Z
-
-    move-result v5
-
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Z)V
-
-    const-string v5, "OnePlusPowerController"
+    const-string v3, "OnePlusPowerController"
 
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v8, "mWifiManager.isWifiEnabled()="
+    const-string/jumbo v8, "setWifiEnabled to "
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v8, v1, Lcom/android/server/OnePlusPowerController;->mWifiManager:Landroid/net/wifi/WifiManager;
-
-    invoke-virtual {v8}, Landroid/net/wifi/WifiManager;->isWifiEnabled()Z
-
-    move-result v8
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v7
 
-    invoke-static {v5, v7}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v7}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "WiFi is "
+
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-eqz v2, :cond_41
+
+    const-string v7, "enabled"
+
+    goto :goto_22
+
+    :cond_41
+    const-string v7, "disabled"
+
+    :goto_22
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mWifiManager:Landroid/net/wifi/WifiManager;
+
+    invoke-virtual {v3, v2}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
+    :try_end_15
+    .catchall {:try_start_15 .. :try_end_15} :catchall_b
+
+    invoke-static {v5, v6}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    nop
+
+    goto :goto_23
+
+    :catchall_b
+    move-exception v3
+
+    invoke-static {v5, v6}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    throw v3
+
+    :cond_42
+    const-string/jumbo v3, "query"
+
+    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_44
+
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mWifiManager:Landroid/net/wifi/WifiManager;
+
+    if-eqz v3, :cond_43
+
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mWifiManager:Landroid/net/wifi/WifiManager;
+
+    invoke-virtual {v3}, Landroid/net/wifi/WifiManager;->isWifiEnabled()Z
+
+    move-result v3
+
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Z)V
+
+    const-string v3, "OnePlusPowerController"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v6, "mWifiManager.isWifiEnabled()="
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v6, p0, Lcom/android/server/OnePlusPowerController;->mWifiManager:Landroid/net/wifi/WifiManager;
+
+    invoke-virtual {v6}, Landroid/net/wifi/WifiManager;->isWifiEnabled()Z
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v3, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_43
+    return v4
+
+    :cond_44
+    const-string v3, "Unknown option"
+
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    return v4
 
     :cond_45
-    return v6
+    const-string v2, "Please enter wifi option. [enable|disable|query]"
+
+    invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    :goto_23
+    goto/16 :goto_2c
 
     :cond_46
-    const-string v5, "Unknown option"
+    const-string/jumbo v1, "tether"
 
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    return v6
+    move-result v1
+
+    if-eqz v1, :cond_4e
+
+    iget-object v1, p0, Lcom/android/server/OnePlusPowerController;->mConnectivityManager:Landroid/net/ConnectivityManager;
+
+    invoke-virtual {v1}, Landroid/net/ConnectivityManager;->isTetheringSupported()Z
+
+    move-result v1
+
+    if-nez v1, :cond_47
+
+    const-string v1, "Tethering is not supported"
+
+    invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    return v4
 
     :cond_47
-    const-string v0, "Please enter wifi option. [enable|disable|query]"
+    iget-object v1, p0, Lcom/android/server/OnePlusPowerController;->mConnectivityManager:Landroid/net/ConnectivityManager;
 
-    invoke-virtual {v3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v1}, Landroid/net/ConnectivityManager;->getTetheredIfaces()[Ljava/lang/String;
 
-    :goto_24
-    goto/16 :goto_2d
+    move-result-object v1
+
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_4d
+
+    const/4 v5, 0x0
+
+    const-string v6, "enable"
+
+    invoke-virtual {v6, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_48
+
+    const/4 v5, 0x1
+
+    goto :goto_24
 
     :cond_48
-    const-string/jumbo v0, "tether"
+    const-string v6, "disable"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v6
 
-    if-eqz v0, :cond_50
+    if-eqz v6, :cond_4b
 
-    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mConnectivityManager:Landroid/net/ConnectivityManager;
+    const/4 v5, 0x0
 
-    invoke-virtual {v0}, Landroid/net/ConnectivityManager;->isTetheringSupported()Z
+    :goto_24
+    if-ne v5, v3, :cond_49
 
-    move-result v0
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mConnectivityManager:Landroid/net/ConnectivityManager;
 
-    if-nez v0, :cond_49
+    iget-object v6, p0, Lcom/android/server/OnePlusPowerController;->mStartTetheringCallback:Lcom/android/server/OnePlusPowerController$OnStartTetheringCallback;
 
-    const-string v0, "Tethering is not supported"
+    invoke-virtual {v3, v4, v4, v6}, Landroid/net/ConnectivityManager;->startTethering(IZLandroid/net/ConnectivityManager$OnStartTetheringCallback;)V
 
-    invoke-virtual {v3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mConnectivityManager:Landroid/net/ConnectivityManager;
 
-    return v6
+    const/4 v6, 0x2
+
+    iget-object v7, p0, Lcom/android/server/OnePlusPowerController;->mStartTetheringCallback:Lcom/android/server/OnePlusPowerController$OnStartTetheringCallback;
+
+    invoke-virtual {v3, v6, v4, v7}, Landroid/net/ConnectivityManager;->startTethering(IZLandroid/net/ConnectivityManager$OnStartTetheringCallback;)V
+
+    goto :goto_26
 
     :cond_49
-    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mConnectivityManager:Landroid/net/ConnectivityManager;
+    array-length v3, v1
 
-    invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getTetheredIfaces()[Ljava/lang/String;
+    move v6, v4
 
-    move-result-object v0
+    :goto_25
+    if-ge v6, v3, :cond_4a
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    aget-object v7, v1, v6
 
-    move-result-object v4
+    invoke-direct {p0, v7}, Lcom/android/server/OnePlusPowerController;->ifaceNameToType(Ljava/lang/String;)I
 
-    if-eqz v4, :cond_4f
+    move-result v8
 
-    const/4 v7, 0x0
+    const-string v9, "OnePlusPowerController"
 
-    const-string v9, "enable"
+    new-instance v10, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v9, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result v9
+    const-string v11, "Tether interface = "
 
-    if-eqz v9, :cond_4a
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v7, 0x1
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v11, ", type = "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v9, v10}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v9, p0, Lcom/android/server/OnePlusPowerController;->mConnectivityManager:Landroid/net/ConnectivityManager;
+
+    invoke-direct {p0, v7}, Lcom/android/server/OnePlusPowerController;->ifaceNameToType(Ljava/lang/String;)I
+
+    move-result v10
+
+    invoke-virtual {v9, v10}, Landroid/net/ConnectivityManager;->stopTethering(I)V
+
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_25
 
     :cond_4a
-    const-string v9, "disable"
-
-    invoke-virtual {v9, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_4d
-
-    const/4 v7, 0x0
-
-    :goto_25
-    if-ne v7, v5, :cond_4b
-
-    iget-object v5, v1, Lcom/android/server/OnePlusPowerController;->mConnectivityManager:Landroid/net/ConnectivityManager;
-
-    iget-object v9, v1, Lcom/android/server/OnePlusPowerController;->mStartTetheringCallback:Lcom/android/server/OnePlusPowerController$OnStartTetheringCallback;
-
-    invoke-virtual {v5, v6, v6, v9}, Landroid/net/ConnectivityManager;->startTethering(IZLandroid/net/ConnectivityManager$OnStartTetheringCallback;)V
-
-    iget-object v5, v1, Lcom/android/server/OnePlusPowerController;->mConnectivityManager:Landroid/net/ConnectivityManager;
-
-    iget-object v9, v1, Lcom/android/server/OnePlusPowerController;->mStartTetheringCallback:Lcom/android/server/OnePlusPowerController$OnStartTetheringCallback;
-
-    invoke-virtual {v5, v8, v6, v9}, Landroid/net/ConnectivityManager;->startTethering(IZLandroid/net/ConnectivityManager$OnStartTetheringCallback;)V
-
+    :goto_26
     goto :goto_27
 
     :cond_4b
-    array-length v5, v0
+    const-string/jumbo v3, "query"
 
-    move v8, v6
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    :goto_26
-    if-ge v8, v5, :cond_4c
+    move-result v3
 
-    aget-object v9, v0, v8
+    if-eqz v3, :cond_4c
 
-    invoke-direct {v1, v9}, Lcom/android/server/OnePlusPowerController;->ifaceNameToType(Ljava/lang/String;)I
+    invoke-static {v1}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result v10
+    move-result-object v3
 
-    const-string v11, "OnePlusPowerController"
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v13, "Tether interface = "
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v12, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v13, ", type = "
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v12, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-static {v11, v12}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget-object v11, v1, Lcom/android/server/OnePlusPowerController;->mConnectivityManager:Landroid/net/ConnectivityManager;
-
-    invoke-direct {v1, v9}, Lcom/android/server/OnePlusPowerController;->ifaceNameToType(Ljava/lang/String;)I
-
-    move-result v12
-
-    invoke-virtual {v11, v12}, Landroid/net/ConnectivityManager;->stopTethering(I)V
-
-    add-int/lit8 v8, v8, 0x1
-
-    goto :goto_26
+    return v4
 
     :cond_4c
-    :goto_27
-    goto :goto_28
+    const-string v3, "Unknown option"
+
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    return v4
 
     :cond_4d
-    const-string/jumbo v5, "query"
+    const-string v3, "Please enter tether option. [enable|disable|query]"
 
-    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    move-result v5
-
-    if-eqz v5, :cond_4e
-
-    invoke-static {v0}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    return v6
+    :goto_27
+    goto/16 :goto_2c
 
     :cond_4e
-    const-string v5, "Unknown option"
+    const-string v1, "data"
 
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    return v6
+    move-result v1
+
+    if-eqz v1, :cond_54
+
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_53
+
+    const/4 v2, 0x0
+
+    const-string v3, "enable"
+
+    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_4f
+
+    const/4 v2, 0x1
+
+    goto :goto_28
 
     :cond_4f
-    const-string v5, "Please enter tether option. [enable|disable|query]"
+    const-string v3, "disable"
 
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_51
+
+    const/4 v2, 0x0
 
     :goto_28
-    goto/16 :goto_2d
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    :cond_50
-    const-string v0, "data"
+    invoke-virtual {v3}, Landroid/telephony/TelephonyManager;->getDataEnabled()Z
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_56
-
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_55
-
-    const/4 v4, 0x0
-
-    const-string v5, "enable"
-
-    invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_51
-
-    const/4 v4, 0x1
-
-    goto :goto_29
-
-    :cond_51
-    const-string v5, "disable"
-
-    invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_53
-
-    const/4 v4, 0x0
-
-    :goto_29
-    iget-object v5, v1, Lcom/android/server/OnePlusPowerController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
-
-    invoke-virtual {v5}, Landroid/telephony/TelephonyManager;->getDataEnabled()Z
-
-    move-result v5
-
-    const-string v7, "OnePlusPowerController"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v9, "isDataEnabled="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v9, ", setDataEnabled to "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "Data is "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    if-eqz v4, :cond_52
-
-    const-string v8, "enabled"
-
-    goto :goto_2a
-
-    :cond_52
-    const-string v8, "disabled"
-
-    :goto_2a
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v3, v7}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    iget-object v7, v1, Lcom/android/server/OnePlusPowerController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
-
-    invoke-virtual {v7, v4}, Landroid/telephony/TelephonyManager;->setDataEnabled(Z)V
-
-    goto :goto_2b
-
-    :cond_53
-    const-string/jumbo v5, "query"
-
-    invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_54
-
-    iget-object v5, v1, Lcom/android/server/OnePlusPowerController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
-
-    invoke-virtual {v5}, Landroid/telephony/TelephonyManager;->getDataEnabled()Z
-
-    move-result v5
-
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Z)V
+    move-result v3
 
     const-string v5, "OnePlusPowerController"
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "TelephonyManager.getDataEnabled()="
+    const-string/jumbo v7, "isDataEnabled="
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v8, v1, Lcom/android/server/OnePlusPowerController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8}, Landroid/telephony/TelephonyManager;->getDataEnabled()Z
+    const-string v7, ", setDataEnabled to "
 
-    move-result v8
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-static {v5, v7}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    return v6
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    :cond_54
-    const-string v5, "Unknown option"
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v3, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    const-string v6, "Data is "
 
-    return v6
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_55
-    const-string v4, "Please enter data option. [enable|disable|query]"
+    if-eqz v2, :cond_50
 
-    invoke-virtual {v3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    const-string v6, "enabled"
 
-    :goto_2b
-    goto :goto_2d
+    goto :goto_29
 
-    :cond_56
-    new-array v0, v5, [I
+    :cond_50
+    const-string v6, "disabled"
 
-    aput v7, v0, v6
+    :goto_29
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0}, Landroid/util/OpFeatures;->isSupport([I)Z
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result v0
+    move-result-object v5
 
-    if-eqz v0, :cond_5a
+    invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    const-string/jumbo v0, "test"
+    iget-object v5, p0, Lcom/android/server/OnePlusPowerController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v2}, Landroid/telephony/TelephonyManager;->setDataEnabled(Z)V
 
-    move-result v0
+    goto :goto_2a
 
-    if-eqz v0, :cond_5a
+    :cond_51
+    const-string/jumbo v3, "query"
 
-    sget-boolean v0, Lcom/android/server/OnePlusPowerController;->DEBUG_ONEPLUS:Z
+    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-eqz v0, :cond_59
+    move-result v3
 
-    invoke-virtual/range {p1 .. p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+    if-eqz v3, :cond_52
 
-    move-result-object v0
+    iget-object v3, p0, Lcom/android/server/OnePlusPowerController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    if-eqz v0, :cond_58
+    invoke-virtual {v3}, Landroid/telephony/TelephonyManager;->getDataEnabled()Z
 
-    const-string/jumbo v4, "notification"
+    move-result v3
 
-    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Z)V
 
-    move-result v4
+    const-string v3, "OnePlusPowerController"
 
-    if-eqz v4, :cond_57
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    iget-object v4, v1, Lcom/android/server/OnePlusPowerController;->mHandler:Lcom/android/server/OnePlusPowerController$MyHandler;
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/16 v5, 0x9
+    const-string v6, "TelephonyManager.getDataEnabled()="
 
-    invoke-virtual {v4, v5}, Lcom/android/server/OnePlusPowerController$MyHandler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    iget-object v6, p0, Lcom/android/server/OnePlusPowerController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    invoke-virtual {v4}, Landroid/os/Message;->sendToTarget()V
+    invoke-virtual {v6}, Landroid/telephony/TelephonyManager;->getDataEnabled()Z
 
+    move-result v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v3, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return v4
+
+    :cond_52
+    const-string v3, "Unknown option"
+
+    invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    return v4
+
+    :cond_53
+    const-string v2, "Please enter data option. [enable|disable|query]"
+
+    invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    :goto_2a
     goto :goto_2c
 
-    :cond_57
-    const-string v4, "Unknown option"
+    :cond_54
+    new-array v1, v3, [I
 
-    invoke-virtual {v3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    aput v5, v1, v4
 
-    return v6
+    invoke-static {v1}, Landroid/util/OpFeatures;->isSupport([I)Z
 
-    :cond_58
-    const-string v4, "Please enter data option. [enable|disable|query]"
+    move-result v1
 
-    invoke-virtual {v3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    if-eqz v1, :cond_58
 
-    :goto_2c
+    const-string/jumbo v1, "test"
+
+    invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_58
+
+    sget-boolean v1, Lcom/android/server/OnePlusPowerController;->DEBUG_ONEPLUS:Z
+
+    if-eqz v1, :cond_57
+
+    invoke-virtual {p1}, Lcom/android/server/OnePlusPowerController$Shell;->getNextArg()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_56
+
+    const-string/jumbo v2, "notification"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_55
+
+    iget-object v2, p0, Lcom/android/server/OnePlusPowerController;->mHandler:Lcom/android/server/OnePlusPowerController$MyHandler;
+
+    const/16 v3, 0x9
+
+    invoke-virtual {v2, v3}, Lcom/android/server/OnePlusPowerController$MyHandler;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
+
+    goto :goto_2b
+
+    :cond_55
+    const-string v2, "Unknown option"
+
+    invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    return v4
+
+    :cond_56
+    const-string v2, "Please enter data option. [enable|disable|query]"
+
+    invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    :goto_2b
     nop
 
-    :cond_59
-    :goto_2d
-    return v6
+    :cond_57
+    :goto_2c
+    return v4
 
-    :cond_5a
-    invoke-virtual/range {p1 .. p2}, Lcom/android/server/OnePlusPowerController$Shell;->handleDefaultCommands(Ljava/lang/String;)I
+    :cond_58
+    invoke-virtual {p1, p2}, Lcom/android/server/OnePlusPowerController$Shell;->handleDefaultCommands(Ljava/lang/String;)I
 
-    move-result v0
+    move-result v1
 
-    return v0
+    return v1
 .end method
 
 .method public onStart()V
@@ -8899,7 +9031,7 @@
 .end method
 
 .method scheduleNextAlarmIfNeededLocked()V
-    .locals 4
+    .locals 3
 
     iget-boolean v0, p0, Lcom/android/server/OnePlusPowerController;->mUserSleep:Z
 
@@ -8908,13 +9040,21 @@
     return-void
 
     :cond_0
+    invoke-static {}, Ljava/time/LocalDateTime;->now()Ljava/time/LocalDateTime;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/android/server/OnePlusPowerController;->getSleepState(Ljava/time/LocalDateTime;)I
+
+    move-result v0
+
+    sput v0, Lcom/android/server/OnePlusPowerController;->mSleepState:I
+
     sget v0, Lcom/android/server/OnePlusPowerController;->mSleepState:I
 
-    const/16 v1, 0x1e6c
+    const/16 v1, 0x15be
 
-    const/16 v2, 0x15be
-
-    if-ne v0, v2, :cond_3
+    if-ne v0, v1, :cond_3
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mSleepEndOverridden:Ljava/time/LocalDateTime;
 
@@ -8922,17 +9062,17 @@
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mSleepEndOverridden:Ljava/time/LocalDateTime;
 
-    sget v2, Lcom/android/server/OnePlusPowerController;->mTimeOutBeforeUserAwake:I
+    sget v1, Lcom/android/server/OnePlusPowerController;->mTimeOutBeforeUserAwake:I
 
-    div-int/lit16 v2, v2, 0x3e8
+    div-int/lit16 v1, v1, 0x3e8
 
-    int-to-long v2, v2
+    int-to-long v1, v1
 
-    invoke-virtual {v0, v2, v3}, Ljava/time/LocalDateTime;->minusSeconds(J)Ljava/time/LocalDateTime;
+    invoke-virtual {v0, v1, v2}, Ljava/time/LocalDateTime;->minusSeconds(J)Ljava/time/LocalDateTime;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0, v1}, Lcom/android/server/OnePlusPowerController;->scheduleNextAlarmIfNeededLocked(Ljava/time/LocalDateTime;I)V
+    invoke-virtual {p0, v0}, Lcom/android/server/OnePlusPowerController;->scheduleNextAlarmIfNeededLocked(Ljava/time/LocalDateTime;)V
 
     goto :goto_1
 
@@ -8945,17 +9085,17 @@
 
     if-eqz v0, :cond_2
 
-    sget v2, Lcom/android/server/OnePlusPowerController;->mTimeOutBeforeUserAwake:I
+    sget v1, Lcom/android/server/OnePlusPowerController;->mTimeOutBeforeUserAwake:I
 
-    div-int/lit16 v2, v2, 0x3e8
+    div-int/lit16 v1, v1, 0x3e8
 
-    int-to-long v2, v2
+    int-to-long v1, v1
 
-    invoke-virtual {v0, v2, v3}, Ljava/time/LocalDateTime;->minusSeconds(J)Ljava/time/LocalDateTime;
+    invoke-virtual {v0, v1, v2}, Ljava/time/LocalDateTime;->minusSeconds(J)Ljava/time/LocalDateTime;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {p0, v2, v1}, Lcom/android/server/OnePlusPowerController;->scheduleNextAlarmIfNeededLocked(Ljava/time/LocalDateTime;I)V
+    invoke-virtual {p0, v1}, Lcom/android/server/OnePlusPowerController;->scheduleNextAlarmIfNeededLocked(Ljava/time/LocalDateTime;)V
 
     goto :goto_0
 
@@ -8972,6 +9112,8 @@
     :cond_3
     sget v0, Lcom/android/server/OnePlusPowerController;->mSleepState:I
 
+    const/16 v1, 0x1e6c
+
     if-ne v0, v1, :cond_6
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mSleepStartOverridden:Ljava/time/LocalDateTime;
@@ -8980,7 +9122,7 @@
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mSleepStartOverridden:Ljava/time/LocalDateTime;
 
-    invoke-virtual {p0, v0, v2}, Lcom/android/server/OnePlusPowerController;->scheduleNextAlarmIfNeededLocked(Ljava/time/LocalDateTime;I)V
+    invoke-virtual {p0, v0}, Lcom/android/server/OnePlusPowerController;->scheduleNextAlarmIfNeededLocked(Ljava/time/LocalDateTime;)V
 
     goto :goto_1
 
@@ -8993,7 +9135,7 @@
 
     if-eqz v0, :cond_5
 
-    invoke-virtual {p0, v0, v2}, Lcom/android/server/OnePlusPowerController;->scheduleNextAlarmIfNeededLocked(Ljava/time/LocalDateTime;I)V
+    invoke-virtual {p0, v0}, Lcom/android/server/OnePlusPowerController;->scheduleNextAlarmIfNeededLocked(Ljava/time/LocalDateTime;)V
 
     goto :goto_1
 
@@ -9009,7 +9151,7 @@
     return-void
 .end method
 
-.method scheduleNextAlarmIfNeededLocked(Ljava/time/LocalDateTime;I)V
+.method scheduleNextAlarmIfNeededLocked(Ljava/time/LocalDateTime;)V
     .locals 6
 
     new-instance v0, Landroid/content/Intent;
@@ -9020,7 +9162,9 @@
 
     const-string/jumbo v1, "state"
 
-    invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    sget v2, Lcom/android/server/OnePlusPowerController;->mSleepState:I
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/android/server/OnePlusPowerController;->mContext:Landroid/content/Context;
 

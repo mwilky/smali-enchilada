@@ -5703,7 +5703,7 @@
 
     invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v8, "high_unaccounted"
+    const-string/jumbo v8, "high_unaccounted"
 
     move-object/from16 v7, v17
 

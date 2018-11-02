@@ -278,6 +278,17 @@
 .method private ensureShortcutPermission(Ljava/lang/String;)V
     .locals 4
 
+    const-string v0, "com.android.systemui"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    :cond_0
     invoke-virtual {p0, p1}, Lcom/android/server/pm/LauncherAppsService$LauncherAppsImpl;->verifyCallingPackage(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/server/pm/LauncherAppsService$LauncherAppsImpl;->mShortcutServiceInternal:Landroid/content/pm/ShortcutServiceInternal;
@@ -298,11 +309,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     return-void
 
-    :cond_0
+    :cond_1
     new-instance v0, Ljava/lang/SecurityException;
 
     const-string v1, "Caller can\'t access shortcut information"

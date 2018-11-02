@@ -1545,6 +1545,10 @@
 
     iget-object v0, p0, Lcom/android/server/backup/BackupManagerService;->mFullBackupQueue:Ljava/util/ArrayList;
 
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/server/backup/BackupManagerService;->mFullBackupQueue:Ljava/util/ArrayList;
+
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0

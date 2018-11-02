@@ -43,7 +43,7 @@
 .method public onSensorChanged(Landroid/hardware/SensorEvent;)V
     .locals 5
 
-    invoke-static {}, Lcom/android/server/policy/DeviceKeyHandler;->access$500()Z
+    invoke-static {}, Lcom/android/server/policy/DeviceKeyHandler;->access$400()Z
 
     move-result v0
 
@@ -76,7 +76,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/server/policy/DeviceKeyHandler$2;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
-    invoke-static {v0}, Lcom/android/server/policy/DeviceKeyHandler;->access$600(Lcom/android/server/policy/DeviceKeyHandler;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/android/server/policy/DeviceKeyHandler;->access$500(Lcom/android/server/policy/DeviceKeyHandler;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -100,9 +100,9 @@
     nop
 
     :cond_1
-    invoke-static {v3, v1}, Lcom/android/server/policy/DeviceKeyHandler;->access$702(Lcom/android/server/policy/DeviceKeyHandler;Z)Z
+    invoke-static {v3, v1}, Lcom/android/server/policy/DeviceKeyHandler;->access$602(Lcom/android/server/policy/DeviceKeyHandler;Z)Z
 
-    invoke-static {}, Lcom/android/server/policy/DeviceKeyHandler;->access$500()Z
+    invoke-static {}, Lcom/android/server/policy/DeviceKeyHandler;->access$400()Z
 
     move-result v1
 
@@ -120,7 +120,7 @@
 
     iget-object v4, p0, Lcom/android/server/policy/DeviceKeyHandler$2;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
-    invoke-static {v4}, Lcom/android/server/policy/DeviceKeyHandler;->access$700(Lcom/android/server/policy/DeviceKeyHandler;)Z
+    invoke-static {v4}, Lcom/android/server/policy/DeviceKeyHandler;->access$600(Lcom/android/server/policy/DeviceKeyHandler;)Z
 
     move-result v4
 
@@ -135,7 +135,7 @@
     :cond_2
     iget-object v1, p0, Lcom/android/server/policy/DeviceKeyHandler$2;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
-    invoke-static {v1}, Lcom/android/server/policy/DeviceKeyHandler;->access$600(Lcom/android/server/policy/DeviceKeyHandler;)Ljava/lang/Object;
+    invoke-static {v1}, Lcom/android/server/policy/DeviceKeyHandler;->access$500(Lcom/android/server/policy/DeviceKeyHandler;)Ljava/lang/Object;
 
     move-result-object v1
 

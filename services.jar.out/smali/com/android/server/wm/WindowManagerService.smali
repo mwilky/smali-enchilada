@@ -5493,7 +5493,7 @@
 
     new-instance v3, Ljava/lang/RuntimeException;
 
-    const-string v4, "here"
+    const-string/jumbo v4, "here"
 
     invoke-direct {v3, v4}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -12379,7 +12379,7 @@
 
     new-instance v1, Ljava/lang/RuntimeException;
 
-    const-string v2, "here"
+    const-string/jumbo v2, "here"
 
     invoke-direct {v1, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -12527,7 +12527,7 @@
 
     new-instance v0, Ljava/lang/RuntimeException;
 
-    const-string v1, "here"
+    const-string/jumbo v1, "here"
 
     invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -14592,7 +14592,7 @@
 
     new-instance v0, Ljava/lang/RuntimeException;
 
-    const-string v1, "here"
+    const-string/jumbo v1, "here"
 
     invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -14604,7 +14604,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "hideBootMessagesLocked: mDisplayEnabled="
+    const-string/jumbo v3, "hideBootMessagesLocked: mDisplayEnabled="
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -14917,6 +14917,32 @@
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mPolicy:Lcom/android/server/policy/WindowManagerPolicy;
 
     invoke-interface {v0}, Lcom/android/server/policy/WindowManagerPolicy;->isGestureButtonEnabled()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
+.method public isGestureButtonForLauncher()Z
+    .locals 1
+
+    sget-boolean v0, Lcom/android/server/wm/WindowManagerService;->IS_GESTURE_BUTTON_ENABLED:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mPolicy:Lcom/android/server/policy/WindowManagerPolicy;
+
+    invoke-interface {v0}, Lcom/android/server/policy/WindowManagerPolicy;->isGestureButtonForLauncher()Z
 
     move-result v0
 
@@ -24005,7 +24031,7 @@
 
     new-instance v2, Ljava/lang/RuntimeException;
 
-    const-string v3, "here"
+    const-string/jumbo v3, "here"
 
     invoke-direct {v2, v3}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -25838,7 +25864,7 @@
 
     move-result-object v1
 
-    const v2, 0x5020019
+    const v2, 0x502001a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -25873,7 +25899,7 @@
 
     move-result-object v1
 
-    const v2, 0x502001a
+    const v2, 0x502001b
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

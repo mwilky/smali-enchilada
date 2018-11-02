@@ -654,7 +654,7 @@
     if-nez v12, :cond_6
 
     :cond_4
-    const-string v12, "http"
+    const-string/jumbo v12, "http"
 
     invoke-virtual {v10, v12}, Landroid/content/IntentFilter;->hasDataScheme(Ljava/lang/String;)Z
 
@@ -662,7 +662,7 @@
 
     if-nez v12, :cond_5
 
-    const-string v12, "https"
+    const-string/jumbo v12, "https"
 
     invoke-virtual {v10, v12}, Landroid/content/IntentFilter;->hasDataScheme(Ljava/lang/String;)Z
 

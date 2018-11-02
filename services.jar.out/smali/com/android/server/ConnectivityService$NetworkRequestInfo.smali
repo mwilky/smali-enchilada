@@ -47,7 +47,7 @@
 
     iget-object v0, p0, Lcom/android/server/ConnectivityService$NetworkRequestInfo;->request:Landroid/net/NetworkRequest;
 
-    invoke-static {p1, v0}, Lcom/android/server/ConnectivityService;->access$5600(Lcom/android/server/ConnectivityService;Landroid/net/NetworkRequest;)V
+    invoke-static {p1, v0}, Lcom/android/server/ConnectivityService;->access$5800(Lcom/android/server/ConnectivityService;Landroid/net/NetworkRequest;)V
 
     iput-object p3, p0, Lcom/android/server/ConnectivityService$NetworkRequestInfo;->mPendingIntent:Landroid/app/PendingIntent;
 
@@ -87,7 +87,7 @@
 
     iget-object v0, p0, Lcom/android/server/ConnectivityService$NetworkRequestInfo;->request:Landroid/net/NetworkRequest;
 
-    invoke-static {p1, v0}, Lcom/android/server/ConnectivityService;->access$5600(Lcom/android/server/ConnectivityService;Landroid/net/NetworkRequest;)V
+    invoke-static {p1, v0}, Lcom/android/server/ConnectivityService;->access$5800(Lcom/android/server/ConnectivityService;Landroid/net/NetworkRequest;)V
 
     iput-object p4, p0, Lcom/android/server/ConnectivityService$NetworkRequestInfo;->mBinder:Landroid/os/IBinder;
 
@@ -134,7 +134,7 @@
 
     iget-object v0, p0, Lcom/android/server/ConnectivityService$NetworkRequestInfo;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$5700(Lcom/android/server/ConnectivityService;)Landroid/util/SparseIntArray;
+    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$5900(Lcom/android/server/ConnectivityService;)Landroid/util/SparseIntArray;
 
     move-result-object v0
 
@@ -143,7 +143,7 @@
     :try_start_0
     iget-object v1, p0, Lcom/android/server/ConnectivityService$NetworkRequestInfo;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v1}, Lcom/android/server/ConnectivityService;->access$5700(Lcom/android/server/ConnectivityService;)Landroid/util/SparseIntArray;
+    invoke-static {v1}, Lcom/android/server/ConnectivityService;->access$5900(Lcom/android/server/ConnectivityService;)Landroid/util/SparseIntArray;
 
     move-result-object v1
 
@@ -165,7 +165,7 @@
 
     iget-object v2, p0, Lcom/android/server/ConnectivityService$NetworkRequestInfo;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v2}, Lcom/android/server/ConnectivityService;->access$5700(Lcom/android/server/ConnectivityService;)Landroid/util/SparseIntArray;
+    invoke-static {v2}, Lcom/android/server/ConnectivityService;->access$5900(Lcom/android/server/ConnectivityService;)Landroid/util/SparseIntArray;
 
     move-result-object v2
 

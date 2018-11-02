@@ -72,7 +72,7 @@
 
     const-string v8, "NsdService"
 
-    const-string v9, "id %d for %s has no client mapping"
+    const-string/jumbo v9, "id %d for %s has no client mapping"
 
     new-array v0, v0, [Ljava/lang/Object;
 
@@ -525,6 +525,8 @@
     const/4 v3, 0x1
 
     return v3
+
+    nop
 
     nop
 

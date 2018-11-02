@@ -26,7 +26,7 @@
 
 .field private static final BRIGHTNESS_RAMP_RATE_SCREENON:I = 0x0
 
-.field private static final COLOR_FADE_OFF_ANIMATION_DURATION_MILLIS:I = 0x190
+.field private static final COLOR_FADE_OFF_ANIMATION_DURATION_MILLIS:I = 0x0
 
 .field private static final COLOR_FADE_ON_ANIMATION_DURATION_MILLIS:I = 0xfa
 
@@ -3044,7 +3044,7 @@
 
     iget-object v0, p0, Lcom/android/server/display/DisplayPowerController;->mColorFadeOffAnimator:Landroid/animation/ObjectAnimator;
 
-    const-wide/16 v1, 0x190
+    const-wide/16 v1, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
@@ -3640,7 +3640,7 @@
 
     const/4 v4, 0x3
 
-    if-eq v3, p1, :cond_5
+    if-eq v3, p1, :cond_6
 
     const/4 v3, 0x2
 
@@ -3677,7 +3677,7 @@
 
     :cond_2
     :goto_1
-    if-nez p2, :cond_5
+    if-nez p2, :cond_6
 
     const-wide/32 v5, 0x20000
 
@@ -3703,6 +3703,19 @@
     invoke-virtual {v5, v3}, Lcom/oneplus/display/ColorBalanceManager;->sendMsg(I)V
 
     :cond_4
+    if-ne p1, v4, :cond_5
+
+    const-string v3, "FingerPrintMode"
+
+    invoke-static {v3, v1, v0}, Lcom/oneplus/oimc/OIMCManager;->notifyModeChange(Ljava/lang/String;II)V
+
+    const-string v3, "DisplayPowerController"
+
+    const-string v5, " setScreenState doze"
+
+    invoke-static {v3, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_5
     :try_start_0
     iget-object v3, p0, Lcom/android/server/display/DisplayPowerController;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
 
@@ -3715,17 +3728,17 @@
     :catch_0
     move-exception v3
 
-    :cond_5
+    :cond_6
     :goto_2
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_7
 
     iget v3, p0, Lcom/android/server/display/DisplayPowerController;->mReportedScreenStateToPolicy:I
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_7
 
     iget-boolean v3, p0, Lcom/android/server/display/DisplayPowerController;->mScreenOffBecauseOfProximity:Z
 
-    if-nez v3, :cond_6
+    if-nez v3, :cond_7
 
     invoke-direct {p0, v0}, Lcom/android/server/display/DisplayPowerController;->setReportedScreenState(I)V
 
@@ -3737,12 +3750,12 @@
 
     goto :goto_3
 
-    :cond_6
-    if-nez v2, :cond_7
+    :cond_7
+    if-nez v2, :cond_8
 
     iget v3, p0, Lcom/android/server/display/DisplayPowerController;->mReportedScreenStateToPolicy:I
 
-    if-ne v3, v4, :cond_7
+    if-ne v3, v4, :cond_8
 
     invoke-direct {p0}, Lcom/android/server/display/DisplayPowerController;->unblockScreenOff()V
 
@@ -3752,13 +3765,13 @@
 
     invoke-direct {p0, v0}, Lcom/android/server/display/DisplayPowerController;->setReportedScreenState(I)V
 
-    :cond_7
+    :cond_8
     :goto_3
-    if-nez v2, :cond_9
+    if-nez v2, :cond_a
 
     iget v3, p0, Lcom/android/server/display/DisplayPowerController;->mReportedScreenStateToPolicy:I
 
-    if-nez v3, :cond_9
+    if-nez v3, :cond_a
 
     invoke-direct {p0, v1}, Lcom/android/server/display/DisplayPowerController;->setReportedScreenState(I)V
 
@@ -3772,13 +3785,13 @@
 
     cmpl-float v3, v3, v4
 
-    if-nez v3, :cond_8
+    if-nez v3, :cond_9
 
     invoke-direct {p0}, Lcom/android/server/display/DisplayPowerController;->blockScreenOn()V
 
     goto :goto_4
 
-    :cond_8
+    :cond_9
     invoke-direct {p0}, Lcom/android/server/display/DisplayPowerController;->unblockScreenOn()V
 
     :goto_4
@@ -3788,8 +3801,8 @@
 
     invoke-interface {v3, v4}, Lcom/android/server/policy/WindowManagerPolicy;->screenTurningOn(Lcom/android/server/policy/WindowManagerPolicy$ScreenOnListener;)V
 
-    :cond_9
-    if-eqz v2, :cond_a
+    :cond_a
+    if-eqz v2, :cond_b
 
     invoke-static {}, Lcom/android/server/am/RestartProcessManager;->getInstance()Lcom/android/server/am/RestartProcessManager;
 
@@ -3797,18 +3810,18 @@
 
     invoke-virtual {v3, v0}, Lcom/android/server/am/RestartProcessManager;->writeRecord(Z)V
 
-    :cond_a
+    :cond_b
     invoke-static {v2}, Lcom/android/server/am/RestartProcessManager;->setScreenState(Z)V
 
     iget-object v3, p0, Lcom/android/server/display/DisplayPowerController;->mPendingScreenOnUnblocker:Lcom/android/server/display/DisplayPowerController$ScreenOnUnblocker;
 
-    if-nez v3, :cond_b
+    if-nez v3, :cond_c
 
     move v0, v1
 
     nop
 
-    :cond_b
+    :cond_c
     return v0
 .end method
 

@@ -34,7 +34,7 @@
 
     iget-object v0, p0, Lcom/android/server/ConnectivityService$NetworkStateTrackerHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$2600(Lcom/android/server/ConnectivityService;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$400(Lcom/android/server/ConnectivityService;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -71,14 +71,14 @@
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/ConnectivityService$NetworkStateTrackerHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v0, p1}, Lcom/android/server/ConnectivityService;->access$1100(Lcom/android/server/ConnectivityService;Landroid/os/Message;)V
+    invoke-static {v0, p1}, Lcom/android/server/ConnectivityService;->access$1400(Lcom/android/server/ConnectivityService;Landroid/os/Message;)V
 
     goto :goto_0
 
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/ConnectivityService$NetworkStateTrackerHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$1000(Lcom/android/server/ConnectivityService;)Ljava/util/HashMap;
+    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$1300(Lcom/android/server/ConnectivityService;)Ljava/util/HashMap;
 
     move-result-object v0
 
@@ -101,7 +101,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/server/ConnectivityService$NetworkStateTrackerHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v0, p1}, Lcom/android/server/ConnectivityService;->access$900(Lcom/android/server/ConnectivityService;Landroid/os/Message;)V
+    invoke-static {v0, p1}, Lcom/android/server/ConnectivityService;->access$1200(Lcom/android/server/ConnectivityService;Landroid/os/Message;)V
 
     nop
 
@@ -142,7 +142,7 @@
 
     iget v2, p1, Landroid/os/Message;->what:I
 
-    invoke-static {v1, v0, v2}, Lcom/android/server/ConnectivityService;->access$2800(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;I)Z
+    invoke-static {v1, v0, v2}, Lcom/android/server/ConnectivityService;->access$3000(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;I)Z
 
     move-result v1
 
@@ -150,7 +150,7 @@
 
     iget-object v1, p0, Lcom/android/server/ConnectivityService$NetworkStateTrackerHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v1, v0}, Lcom/android/server/ConnectivityService;->access$2900(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;)V
+    invoke-static {v1, v0}, Lcom/android/server/ConnectivityService;->access$3100(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;)V
 
     :cond_1
     const/4 v0, 0x1
@@ -163,7 +163,7 @@
 
     iget-object v0, p0, Lcom/android/server/ConnectivityService$NetworkStateTrackerHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$1000(Lcom/android/server/ConnectivityService;)Ljava/util/HashMap;
+    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$1300(Lcom/android/server/ConnectivityService;)Ljava/util/HashMap;
 
     move-result-object v0
 
@@ -179,7 +179,7 @@
 
     if-nez v0, :cond_1
 
-    invoke-static {}, Lcom/android/server/ConnectivityService;->access$1200()Z
+    invoke-static {}, Lcom/android/server/ConnectivityService;->access$1500()Z
 
     move-result v2
 
@@ -193,7 +193,7 @@
 
     iget v4, p1, Landroid/os/Message;->what:I
 
-    invoke-static {v4}, Lcom/android/server/ConnectivityService;->access$1300(I)Ljava/lang/String;
+    invoke-static {v4}, Lcom/android/server/ConnectivityService;->access$1600(I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -228,7 +228,7 @@
 
     iget v2, p1, Landroid/os/Message;->arg1:I
 
-    invoke-static {v1, v0, v2}, Lcom/android/server/ConnectivityService;->access$1700(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;I)V
+    invoke-static {v1, v0, v2}, Lcom/android/server/ConnectivityService;->access$2000(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;I)V
 
     goto/16 :goto_0
 
@@ -273,7 +273,7 @@
     if-eqz v2, :cond_3
 
     :cond_2
-    invoke-static {}, Lcom/android/server/ConnectivityService;->access$1400()Ljava/lang/String;
+    invoke-static {}, Lcom/android/server/ConnectivityService;->access$1700()Ljava/lang/String;
 
     move-result-object v2
 
@@ -304,7 +304,7 @@
 
     move-result v3
 
-    invoke-static {v2, v3, v0, v1}, Lcom/android/server/ConnectivityService;->access$1500(Lcom/android/server/ConnectivityService;ILcom/android/server/connectivity/NetworkAgentInfo;Landroid/net/NetworkCapabilities;)V
+    invoke-static {v2, v3, v0, v1}, Lcom/android/server/ConnectivityService;->access$1800(Lcom/android/server/ConnectivityService;ILcom/android/server/connectivity/NetworkAgentInfo;Landroid/net/NetworkCapabilities;)V
 
     goto :goto_0
 
@@ -315,14 +315,14 @@
 
     iget-object v2, p0, Lcom/android/server/ConnectivityService$NetworkStateTrackerHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v2, v0, v1}, Lcom/android/server/ConnectivityService;->access$1600(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;Landroid/net/NetworkInfo;)V
+    invoke-static {v2, v0, v1}, Lcom/android/server/ConnectivityService;->access$1900(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;Landroid/net/NetworkInfo;)V
 
     goto :goto_0
 
     :cond_4
     iget-object v1, p0, Lcom/android/server/ConnectivityService$NetworkStateTrackerHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v1}, Lcom/android/server/ConnectivityService;->access$1800(Lcom/android/server/ConnectivityService;)Lcom/android/server/connectivity/KeepaliveTracker;
+    invoke-static {v1}, Lcom/android/server/ConnectivityService;->access$2100(Lcom/android/server/ConnectivityService;)Lcom/android/server/connectivity/KeepaliveTracker;
 
     move-result-object v1
 
@@ -343,7 +343,7 @@
 
     const-string v2, "ERROR: already-connected network explicitly selected."
 
-    invoke-static {v2}, Lcom/android/server/ConnectivityService;->access$700(Ljava/lang/String;)V
+    invoke-static {v2}, Lcom/android/server/ConnectivityService;->access$1000(Ljava/lang/String;)V
 
     :cond_6
     iget-object v2, v0, Lcom/android/server/connectivity/NetworkAgentInfo;->networkMisc:Landroid/net/NetworkMisc;
@@ -412,7 +412,7 @@
 
     iget v3, v2, Landroid/os/Message;->arg2:I
 
-    invoke-static {v0, v3}, Lcom/android/server/ConnectivityService;->access$1900(Lcom/android/server/ConnectivityService;I)Lcom/android/server/connectivity/NetworkAgentInfo;
+    invoke-static {v0, v3}, Lcom/android/server/ConnectivityService;->access$2200(Lcom/android/server/ConnectivityService;I)Lcom/android/server/connectivity/NetworkAgentInfo;
 
     move-result-object v0
 
@@ -427,7 +427,7 @@
 
     check-cast v4, Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;
 
-    invoke-static {v3, v0, v4}, Lcom/android/server/ConnectivityService;->access$2700(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;)V
+    invoke-static {v3, v0, v4}, Lcom/android/server/ConnectivityService;->access$2900(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;)V
 
     goto/16 :goto_5
 
@@ -436,13 +436,13 @@
 
     iget v0, v2, Landroid/os/Message;->arg1:I
 
-    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$2300(I)Z
+    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$2600(I)Z
 
     move-result v13
 
     iget-object v0, v1, Lcom/android/server/ConnectivityService$NetworkStateTrackerHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v0, v3}, Lcom/android/server/ConnectivityService;->access$1900(Lcom/android/server/ConnectivityService;I)Lcom/android/server/connectivity/NetworkAgentInfo;
+    invoke-static {v0, v3}, Lcom/android/server/ConnectivityService;->access$2200(Lcom/android/server/ConnectivityService;I)Lcom/android/server/connectivity/NetworkAgentInfo;
 
     move-result-object v14
 
@@ -502,7 +502,7 @@
 
     iget-object v4, v1, Lcom/android/server/ConnectivityService$NetworkStateTrackerHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v4, v14}, Lcom/android/server/ConnectivityService;->access$2400(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;)V
+    invoke-static {v4, v14}, Lcom/android/server/ConnectivityService;->access$2700(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;)V
 
     goto/16 :goto_5
 
@@ -511,14 +511,14 @@
 
     iget-object v7, v14, Lcom/android/server/connectivity/NetworkAgentInfo;->networkCapabilities:Landroid/net/NetworkCapabilities;
 
-    invoke-static {v4, v0, v14, v7}, Lcom/android/server/ConnectivityService;->access$1500(Lcom/android/server/ConnectivityService;ILcom/android/server/connectivity/NetworkAgentInfo;Landroid/net/NetworkCapabilities;)V
+    invoke-static {v4, v0, v14, v7}, Lcom/android/server/ConnectivityService;->access$1800(Lcom/android/server/ConnectivityService;ILcom/android/server/connectivity/NetworkAgentInfo;Landroid/net/NetworkCapabilities;)V
 
     :cond_4
     if-nez v13, :cond_5
 
     iget-object v0, v1, Lcom/android/server/ConnectivityService$NetworkStateTrackerHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$2500(Lcom/android/server/ConnectivityService;)Lcom/android/server/connectivity/NetworkNotificationManager;
+    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$2800(Lcom/android/server/ConnectivityService;)Lcom/android/server/connectivity/NetworkNotificationManager;
 
     move-result-object v0
 
@@ -531,7 +531,7 @@
 
     const-string v0, "EVENT_PROVISIONING_NOTIFICATION from unknown NetworkMonitor"
 
-    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$700(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$1000(Ljava/lang/String;)V
 
     goto/16 :goto_5
 
@@ -573,7 +573,7 @@
     :cond_7
     if-nez v0, :cond_8
 
-    const-string v0, "http://g.cn/generate_204"
+    const-string/jumbo v0, "http://g.cn/generate_204"
 
     :cond_8
     move-object v15, v0
@@ -605,7 +605,7 @@
     :try_start_0
     iget-object v0, v1, Lcom/android/server/ConnectivityService$NetworkStateTrackerHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$2600(Lcom/android/server/ConnectivityService;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$400(Lcom/android/server/ConnectivityService;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -622,7 +622,7 @@
 
     iget-object v6, v1, Lcom/android/server/ConnectivityService$NetworkStateTrackerHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v6}, Lcom/android/server/ConnectivityService;->access$2500(Lcom/android/server/ConnectivityService;)Lcom/android/server/connectivity/NetworkNotificationManager;
+    invoke-static {v6}, Lcom/android/server/ConnectivityService;->access$2800(Lcom/android/server/ConnectivityService;)Lcom/android/server/connectivity/NetworkNotificationManager;
 
     move-result-object v6
 
@@ -658,7 +658,7 @@
     :cond_9
     iget-object v0, v1, Lcom/android/server/ConnectivityService$NetworkStateTrackerHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$2500(Lcom/android/server/ConnectivityService;)Lcom/android/server/connectivity/NetworkNotificationManager;
+    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$2800(Lcom/android/server/ConnectivityService;)Lcom/android/server/connectivity/NetworkNotificationManager;
 
     move-result-object v6
 
@@ -689,7 +689,7 @@
 
     iget v3, v2, Landroid/os/Message;->arg2:I
 
-    invoke-static {v0, v3}, Lcom/android/server/ConnectivityService;->access$1900(Lcom/android/server/ConnectivityService;I)Lcom/android/server/connectivity/NetworkAgentInfo;
+    invoke-static {v0, v3}, Lcom/android/server/ConnectivityService;->access$2200(Lcom/android/server/ConnectivityService;I)Lcom/android/server/connectivity/NetworkAgentInfo;
 
     move-result-object v0
 
@@ -833,7 +833,7 @@
 
     iget-object v12, v0, Lcom/android/server/connectivity/NetworkAgentInfo;->networkCapabilities:Landroid/net/NetworkCapabilities;
 
-    invoke-static {v11, v10, v0, v12}, Lcom/android/server/ConnectivityService;->access$1500(Lcom/android/server/ConnectivityService;ILcom/android/server/connectivity/NetworkAgentInfo;Landroid/net/NetworkCapabilities;)V
+    invoke-static {v11, v10, v0, v12}, Lcom/android/server/ConnectivityService;->access$1800(Lcom/android/server/ConnectivityService;ILcom/android/server/connectivity/NetworkAgentInfo;Landroid/net/NetworkCapabilities;)V
 
     invoke-virtual {v0}, Lcom/android/server/connectivity/NetworkAgentInfo;->getCurrentScore()I
 
@@ -843,12 +843,12 @@
 
     iget-object v11, v1, Lcom/android/server/ConnectivityService$NetworkStateTrackerHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v11, v0}, Lcom/android/server/ConnectivityService;->access$2000(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;)V
+    invoke-static {v11, v0}, Lcom/android/server/ConnectivityService;->access$2300(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;)V
 
     :cond_11
     iget-object v10, v1, Lcom/android/server/ConnectivityService$NetworkStateTrackerHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v10, v0}, Lcom/android/server/ConnectivityService;->access$2100(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;)V
+    invoke-static {v10, v0}, Lcom/android/server/ConnectivityService;->access$2400(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;)V
 
     new-instance v10, Landroid/os/Bundle;
 
@@ -879,7 +879,7 @@
 
     iget-object v4, v1, Lcom/android/server/ConnectivityService$NetworkStateTrackerHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v4, v0}, Lcom/android/server/ConnectivityService;->access$2200(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;)V
+    invoke-static {v4, v0}, Lcom/android/server/ConnectivityService;->access$2500(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;)V
 
     :cond_13
     :goto_5

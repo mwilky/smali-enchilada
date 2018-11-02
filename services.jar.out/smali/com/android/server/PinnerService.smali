@@ -1258,7 +1258,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "ignoring error closing resource: "
+    const-string/jumbo v3, "ignoring error closing resource: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1331,7 +1331,7 @@
 
     const-string v1, "PinnerService"
 
-    const-string v2, "ignoring error in unmap"
+    const-string/jumbo v2, "ignoring error in unmap"
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 

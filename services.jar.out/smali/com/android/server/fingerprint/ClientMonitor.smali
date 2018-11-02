@@ -315,7 +315,7 @@
 
     new-instance v4, Ljava/lang/Exception;
 
-    const-string v5, "here"
+    const-string/jumbo v5, "here"
 
     invoke-direct {v4, v5}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 

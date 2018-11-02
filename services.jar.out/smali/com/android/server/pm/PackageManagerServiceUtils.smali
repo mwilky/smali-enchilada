@@ -582,7 +582,7 @@
 
     if-eqz v3, :cond_1
 
-    const-string v3, "ignored: updated version"
+    const-string/jumbo v3, "ignored: updated version"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
@@ -670,7 +670,7 @@
 
     if-eqz v3, :cond_2
 
-    const-string v3, "ignored: updated version"
+    const-string/jumbo v3, "ignored: updated version"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 

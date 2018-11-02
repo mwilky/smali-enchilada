@@ -58,6 +58,30 @@
 
     invoke-virtual {v2, v1, v0}, Lcom/android/server/fingerprint/FingerprintService;->resetFailedAttemptsForUser(ZI)V
 
+    goto :goto_0
+
     :cond_0
+    const-string v0, "android.intent.action.BOOT_COMPLETED"
+
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$2;->this$0:Lcom/android/server/fingerprint/FingerprintService;
+
+    invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->access$000(Lcom/android/server/fingerprint/FingerprintService;)Lcom/oneplus/onlineconfig/FingerprintConfig;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/oneplus/onlineconfig/FingerprintConfig;->resolveOnlineConfig()V
+
+    :cond_1
+    :goto_0
     return-void
 .end method

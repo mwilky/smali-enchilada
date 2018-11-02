@@ -98,7 +98,7 @@
 
     const-string v7, "android.intent.extra.TEXT"
 
-    const-string v8, "help_url_upgrading"
+    const-string/jumbo v8, "help_url_upgrading"
 
     invoke-virtual {v6, v7, v8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
@@ -208,6 +208,8 @@
 
     :goto_1
     return-void
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1

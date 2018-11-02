@@ -253,7 +253,7 @@
 
     const-string v2, "AutofillUI"
 
-    const-string v3, "hideAllUiThread(): destroying Save UI because pending restoration is finished"
+    const-string/jumbo v3, "hideAllUiThread(): destroying Save UI because pending restoration is finished"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -303,7 +303,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "hideSaveUiUiThread(): mSaveUi="
+    const-string/jumbo v2, "hideSaveUiUiThread(): mSaveUi="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

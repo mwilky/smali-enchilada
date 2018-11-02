@@ -740,7 +740,7 @@
 
     invoke-interface {v4, v7, v6}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    const-string v6, "http://xmlpull.org/v1/doc/features.html#indent-output"
+    const-string/jumbo v6, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     invoke-interface {v4, v6, v5}, Lorg/xmlpull/v1/XmlSerializer;->setFeature(Ljava/lang/String;Z)V
 

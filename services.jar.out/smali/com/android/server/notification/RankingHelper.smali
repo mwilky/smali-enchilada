@@ -4362,7 +4362,7 @@
 
     if-eqz v4, :cond_6
 
-    const-string v4, "id"
+    const-string/jumbo v4, "id"
 
     const/4 v5, 0x0
 
@@ -4407,7 +4407,7 @@
 
     if-eqz v4, :cond_9
 
-    const-string v4, "id"
+    const-string/jumbo v4, "id"
 
     invoke-interface {v9, v5, v4}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -5367,7 +5367,7 @@
     move v5, v4
 
     :goto_0
-    if-ge v5, v3, :cond_c
+    if-ge v5, v3, :cond_d
 
     iget-object v6, p0, Lcom/android/server/notification/RankingHelper;->mRecords:Landroid/util/ArrayMap;
 
@@ -5440,7 +5440,7 @@
     move v7, v2
 
     :goto_2
-    if-eqz v7, :cond_b
+    if-eqz v7, :cond_c
 
     const-string/jumbo v9, "package"
 
@@ -5573,7 +5573,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_a
+    if-eqz v9, :cond_b
 
     invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -5581,13 +5581,18 @@
 
     check-cast v9, Landroid/app/NotificationChannel;
 
-    if-eqz p2, :cond_8
+    if-nez v9, :cond_8
+
+    goto :goto_4
+
+    :cond_8
+    if-eqz p2, :cond_9
 
     invoke-virtual {v9}, Landroid/app/NotificationChannel;->isDeleted()Z
 
     move-result v10
 
-    if-nez v10, :cond_9
+    if-nez v10, :cond_a
 
     iget-object v10, p0, Lcom/android/server/notification/RankingHelper;->mContext:Landroid/content/Context;
 
@@ -5595,25 +5600,25 @@
 
     goto :goto_5
 
-    :cond_8
+    :cond_9
     invoke-virtual {v9, p1}, Landroid/app/NotificationChannel;->writeXml(Lorg/xmlpull/v1/XmlSerializer;)V
 
-    :cond_9
+    :cond_a
     :goto_5
     goto :goto_4
 
-    :cond_a
+    :cond_b
     const-string/jumbo v8, "package"
 
     invoke-interface {p1, v1, v8}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    :cond_b
+    :cond_c
     :goto_6
     add-int/lit8 v5, v5, 0x1
 
     goto/16 :goto_0
 
-    :cond_c
+    :cond_d
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0

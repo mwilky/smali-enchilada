@@ -62,7 +62,7 @@
     :cond_0
     iget-object v2, p0, Lcom/android/server/policy/DeviceKeyHandler$1;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
-    invoke-static {v2}, Lcom/android/server/policy/DeviceKeyHandler;->access$400(Lcom/android/server/policy/DeviceKeyHandler;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/server/policy/DeviceKeyHandler;->access$300(Lcom/android/server/policy/DeviceKeyHandler;)Landroid/os/Handler;
 
     move-result-object v2
 

@@ -848,7 +848,7 @@
 
     new-instance v1, Ljava/io/File;
 
-    const-string v2, "icon.png"
+    const-string/jumbo v2, "icon.png"
 
     invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -2657,7 +2657,7 @@
 
     move-result-object v4
 
-    const-string v5, "icon.png"
+    const-string/jumbo v5, "icon.png"
 
     invoke-direct {v3, v4, v5}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -2780,7 +2780,7 @@
 
     invoke-interface {v5, v4, v6}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    const-string v6, "http://xmlpull.org/v1/doc/features.html#indent-output"
+    const-string/jumbo v6, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     const/4 v7, 0x1
 
@@ -2985,7 +2985,7 @@
 
     new-instance v1, Ljava/io/File;
 
-    const-string v2, "icon.png"
+    const-string/jumbo v2, "icon.png"
 
     invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -3162,7 +3162,7 @@
 
     move-result-object v1
 
-    const-string v2, "icon.png"
+    const-string/jumbo v2, "icon.png"
 
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -3507,7 +3507,7 @@
 
     new-instance v9, Ljava/io/File;
 
-    const-string v10, "icon.png"
+    const-string/jumbo v10, "icon.png"
 
     invoke-direct {v9, v8, v10}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 

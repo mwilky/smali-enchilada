@@ -124,6 +124,10 @@
 
 .field final processName:Ljava/lang/String;
 
+.field relativeRestartCount:I
+
+.field relativeRestartTime:J
+
 .field restartCount:I
 
 .field restartDelay:J

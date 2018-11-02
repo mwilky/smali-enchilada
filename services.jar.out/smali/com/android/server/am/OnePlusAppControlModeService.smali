@@ -45,7 +45,7 @@
 .end method
 
 .method public static getAllAppControlModes(I)Ljava/util/List;
-    .locals 13
+    .locals 14
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -80,7 +80,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    if-nez p0, :cond_7
+    if-nez p0, :cond_8
 
     move-object v1, v0
 
@@ -129,98 +129,118 @@
     move v4, v2
 
     :goto_1
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    const/4 v5, 0x1
 
-    move-result-object v5
+    if-nez v0, :cond_2
+
+    nop
 
     :goto_2
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+    if-ge v2, v4, :cond_6
 
-    move-result v6
+    new-instance v6, Lcom/oneplus/appboot/AppControlMode;
 
-    if-eqz v6, :cond_5
+    aget-object v7, v1, v2
 
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-direct {v6, v7, p0, v5}, Lcom/oneplus/appboot/AppControlMode;-><init>(Ljava/lang/String;II)V
 
-    move-result-object v6
+    invoke-interface {v3, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    check-cast v6, Lcom/oneplus/appboot/AppBootMode;
-
-    const/4 v7, 0x0
-
-    move v8, v2
-
-    :goto_3
-    if-ge v8, v4, :cond_3
-
-    iget-object v9, v6, Lcom/oneplus/appboot/AppBootMode;->packageName:Ljava/lang/String;
-
-    aget-object v10, v1, v8
-
-    invoke-virtual {v9, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_2
-
-    const/4 v7, 0x1
-
-    goto :goto_4
-
-    :cond_2
-    add-int/lit8 v8, v8, 0x1
-
-    goto :goto_3
-
-    :cond_3
-    :goto_4
-    iget v8, v6, Lcom/oneplus/appboot/AppBootMode;->mode:I
-
-    const/4 v9, 0x1
-
-    if-ne v8, v9, :cond_4
-
-    goto :goto_5
-
-    :cond_4
-    move v9, v2
-
-    :goto_5
-    move v8, v9
-
-    iget-object v9, v6, Lcom/oneplus/appboot/AppBootMode;->packageName:Ljava/lang/String;
-
-    invoke-static {v9, v8, v7}, Lcom/android/server/am/OnePlusAppControlModeService;->getAppControlListMergedBlack(Ljava/lang/String;ZZ)Z
-
-    move-result v9
-
-    new-instance v10, Lcom/oneplus/appboot/AppControlMode;
-
-    iget-object v11, v6, Lcom/oneplus/appboot/AppBootMode;->packageName:Ljava/lang/String;
-
-    xor-int/lit8 v12, v9, 0x1
-
-    invoke-direct {v10, v11, p0, v12}, Lcom/oneplus/appboot/AppControlMode;-><init>(Ljava/lang/String;II)V
-
-    invoke-interface {v3, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_2
 
+    :cond_2
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v6
+
+    :goto_3
+    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_6
+
+    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lcom/oneplus/appboot/AppBootMode;
+
+    const/4 v8, 0x0
+
+    move v9, v2
+
+    :goto_4
+    if-ge v9, v4, :cond_4
+
+    iget-object v10, v7, Lcom/oneplus/appboot/AppBootMode;->packageName:Ljava/lang/String;
+
+    aget-object v11, v1, v9
+
+    invoke-virtual {v10, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_3
+
+    const/4 v8, 0x1
+
+    goto :goto_5
+
+    :cond_3
+    add-int/lit8 v9, v9, 0x1
+
+    goto :goto_4
+
+    :cond_4
+    :goto_5
+    iget v9, v7, Lcom/oneplus/appboot/AppBootMode;->mode:I
+
+    if-ne v9, v5, :cond_5
+
+    move v9, v5
+
+    goto :goto_6
+
     :cond_5
+    move v9, v2
+
+    :goto_6
+    iget-object v10, v7, Lcom/oneplus/appboot/AppBootMode;->packageName:Ljava/lang/String;
+
+    invoke-static {v10, v9, v8}, Lcom/android/server/am/OnePlusAppControlModeService;->getAppControlListMergedBlack(Ljava/lang/String;ZZ)Z
+
+    move-result v10
+
+    new-instance v11, Lcom/oneplus/appboot/AppControlMode;
+
+    iget-object v12, v7, Lcom/oneplus/appboot/AppBootMode;->packageName:Ljava/lang/String;
+
+    xor-int/lit8 v13, v10, 0x1
+
+    invoke-direct {v11, v12, p0, v13}, Lcom/oneplus/appboot/AppControlMode;-><init>(Ljava/lang/String;II)V
+
+    invoke-interface {v3, v11}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_3
+
+    :cond_6
     sget-boolean v2, Lcom/android/server/am/OnePlusAppControlModeService;->DEBUG_ONEPLUS:Z
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_7
 
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    :goto_6
+    :goto_7
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_6
+    if-eqz v5, :cond_7
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -246,12 +266,12 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_6
-
-    :cond_6
-    return-object v3
+    goto :goto_7
 
     :cond_7
+    return-object v3
+
+    :cond_8
     return-object v0
 .end method
 

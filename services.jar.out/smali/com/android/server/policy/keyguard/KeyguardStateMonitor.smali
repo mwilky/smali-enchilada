@@ -367,7 +367,7 @@
     return v0
 .end method
 
-.method public onFingerprintStateChange(Z)V
+.method public onFingerprintStateChange(ZIII)V
     .locals 3
 
     const-string v0, "KeyguardStateMonitor"
@@ -390,6 +390,18 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
+    const-string v2, ", authType:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, ", result:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -400,13 +412,11 @@
 
     if-eq v0, p1, :cond_0
 
-    if-nez p1, :cond_0
-
     iput-boolean p1, p0, Lcom/android/server/policy/keyguard/KeyguardStateMonitor;->mFingerprintAuthenticating:Z
 
     iget-object v0, p0, Lcom/android/server/policy/keyguard/KeyguardStateMonitor;->mCallback:Lcom/android/server/policy/keyguard/KeyguardStateMonitor$StateCallback;
 
-    invoke-interface {v0}, Lcom/android/server/policy/keyguard/KeyguardStateMonitor$StateCallback;->onKeyguardFingerprintChanged()V
+    invoke-interface {v0, p2, p3, p4}, Lcom/android/server/policy/keyguard/KeyguardStateMonitor$StateCallback;->onKeyguardFingerprintChanged(III)V
 
     :cond_0
     iput-boolean p1, p0, Lcom/android/server/policy/keyguard/KeyguardStateMonitor;->mFingerprintAuthenticating:Z

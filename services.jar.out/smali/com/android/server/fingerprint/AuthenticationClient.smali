@@ -478,18 +478,35 @@
     const/4 v0, 0x1
 
     :goto_8
-    if-nez v3, :cond_e
+    if-nez v3, :cond_f
 
-    if-eqz v4, :cond_8
+    if-eqz v4, :cond_9
 
-    invoke-virtual {p0}, Lcom/android/server/fingerprint/AuthenticationClient;->vibrateError()V
+    iget-boolean v5, p0, Lcom/android/server/fingerprint/AuthenticationClient;->mSupportCustomFingerprint:Z
+
+    if-eqz v5, :cond_8
+
+    const-string v5, "com.android.systemui"
+
+    invoke-virtual {p0}, Lcom/android/server/fingerprint/AuthenticationClient;->getOwnerString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_9
 
     :cond_8
+    invoke-virtual {p0}, Lcom/android/server/fingerprint/AuthenticationClient;->vibrateError()V
+
+    :cond_9
     invoke-virtual {p0}, Lcom/android/server/fingerprint/AuthenticationClient;->handleFailedAttempt()I
 
     move-result v5
 
-    if-eqz v5, :cond_c
+    if-eqz v5, :cond_d
 
     :try_start_2
     iput-boolean v2, p0, Lcom/android/server/fingerprint/AuthenticationClient;->mInLockout:Z
@@ -518,13 +535,13 @@
 
     invoke-virtual {p0, v1}, Lcom/android/server/fingerprint/AuthenticationClient;->stop(Z)I
 
-    if-ne v5, v2, :cond_9
+    if-ne v5, v2, :cond_a
 
     const/4 v6, 0x7
 
     goto :goto_9
 
-    :cond_9
+    :cond_a
     const/16 v6, 0x9
 
     :goto_9
@@ -536,13 +553,13 @@
 
     iget-object v7, p0, Lcom/android/server/fingerprint/AuthenticationClient;->mBundle:Landroid/os/Bundle;
 
-    if-nez v7, :cond_a
+    if-nez v7, :cond_b
 
     iget-boolean v7, p0, Lcom/android/server/fingerprint/AuthenticationClient;->mSupportCustomFingerprint:Z
 
-    if-nez v7, :cond_b
+    if-nez v7, :cond_c
 
-    :cond_a
+    :cond_b
     iget-object v7, p0, Lcom/android/server/fingerprint/AuthenticationClient;->mStatusBarService:Lcom/android/internal/statusbar/IStatusBarService;
 
     iget-object v8, p0, Lcom/android/server/fingerprint/AuthenticationClient;->mFingerprintManager:Landroid/hardware/fingerprint/FingerprintManager;
@@ -555,7 +572,7 @@
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_2
 
-    :cond_b
+    :cond_c
     goto :goto_a
 
     :catch_2
@@ -567,21 +584,21 @@
 
     invoke-static {v7, v8, v6}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :cond_c
+    :cond_d
     :goto_a
-    if-eqz v5, :cond_d
+    if-eqz v5, :cond_e
 
     move v1, v2
 
     nop
 
-    :cond_d
+    :cond_e
     or-int/2addr v0, v1
 
     goto :goto_b
 
-    :cond_e
-    if-eqz v4, :cond_f
+    :cond_f
+    if-eqz v4, :cond_11
 
     invoke-virtual {p0}, Lcom/android/server/fingerprint/AuthenticationClient;->getContext()Landroid/content/Context;
 
@@ -591,11 +608,28 @@
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_11
 
+    const-string v1, "com.android.systemui"
+
+    invoke-virtual {p0}, Lcom/android/server/fingerprint/AuthenticationClient;->getOwnerString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_10
+
+    iget-boolean v1, p0, Lcom/android/server/fingerprint/AuthenticationClient;->mSupportCustomFingerprint:Z
+
+    if-nez v1, :cond_11
+
+    :cond_10
     invoke-virtual {p0}, Lcom/android/server/fingerprint/AuthenticationClient;->vibrateSuccess()V
 
-    :cond_f
+    :cond_11
     or-int/2addr v0, v2
 
     invoke-virtual {p0}, Lcom/android/server/fingerprint/AuthenticationClient;->resetFailedAttempts()V

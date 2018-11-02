@@ -820,7 +820,7 @@
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    const-string v3, "high"
+    const-string/jumbo v3, "high"
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4314,7 +4314,7 @@
 
     aget-object v2, p1, v2
 
-    const-string v3, "high"
+    const-string/jumbo v3, "high"
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

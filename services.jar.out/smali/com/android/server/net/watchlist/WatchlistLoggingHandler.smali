@@ -1028,7 +1028,7 @@
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    const-string v2, "host"
+    const-string/jumbo v2, "host"
 
     invoke-virtual {v1, v2, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1269,7 +1269,7 @@
 
     move-result-object v0
 
-    const-string v1, "host"
+    const-string/jumbo v1, "host"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -1301,8 +1301,6 @@
 
     :goto_0
     return-void
-
-    nop
 
     nop
 

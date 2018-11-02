@@ -81,7 +81,7 @@
 .method public onChange(Z)V
     .locals 2
 
-    invoke-static {}, Lcom/android/server/ConnectivityService;->access$1400()Ljava/lang/String;
+    invoke-static {}, Lcom/android/server/ConnectivityService;->access$1700()Ljava/lang/String;
 
     move-result-object v0
 
@@ -134,7 +134,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/android/server/ConnectivityService;->access$700(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/android/server/ConnectivityService;->access$1000(Ljava/lang/String;)V
 
     :goto_0
     return-void

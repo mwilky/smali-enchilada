@@ -1951,6 +1951,18 @@
 
     if-eqz v0, :cond_3
 
+    const-string/jumbo v1, "mms"
+
+    invoke-virtual {v0}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
     const-string v1, "android.intent.extra.STREAM"
 
     invoke-direct {p0, v0, v2}, Lcom/android/server/am/ActivityStarter;->maybeAddUserId(Landroid/net/Uri;I)Landroid/net/Uri;

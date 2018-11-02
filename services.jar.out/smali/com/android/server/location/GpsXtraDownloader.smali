@@ -249,7 +249,7 @@
 
     const-string/jumbo v2, "x-wap-profile"
 
-    const-string v3, "http://www.openmobilealliance.org/tech/profiles/UAPROF/ccppschema-20021212#"
+    const-string/jumbo v3, "http://www.openmobilealliance.org/tech/profiles/UAPROF/ccppschema-20021212#"
 
     invoke-virtual {v1, v2, v3}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 

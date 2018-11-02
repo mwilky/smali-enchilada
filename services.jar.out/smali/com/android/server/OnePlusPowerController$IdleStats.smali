@@ -68,7 +68,7 @@
 
     new-instance v3, Ljava/io/File;
 
-    const-string v4, "idle-records.xml"
+    const-string/jumbo v4, "idle-records.xml"
 
     invoke-direct {v3, v1, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -107,7 +107,7 @@
     :cond_0
     if-ne v3, v4, :cond_13
 
-    const-string v0, "idle-items"
+    const-string/jumbo v0, "idle-items"
 
     invoke-interface/range {p1 .. p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
@@ -818,7 +818,7 @@
 
     invoke-interface {p1, v2, v1}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    const-string v1, "idle-items"
+    const-string/jumbo v1, "idle-items"
 
     invoke-interface {p1, v2, v1}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -941,7 +941,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-string v1, "idle-items"
+    const-string/jumbo v1, "idle-items"
 
     invoke-interface {p1, v2, v1}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 

@@ -313,7 +313,7 @@
     goto :goto_2
 
     :cond_1
-    const-string v4, "hexdump"
+    const-string/jumbo v4, "hexdump"
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

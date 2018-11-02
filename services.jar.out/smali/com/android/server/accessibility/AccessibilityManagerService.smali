@@ -2655,7 +2655,7 @@
 
     move-result-object v0
 
-    const-string v1, "high_text_contrast_enabled"
+    const-string/jumbo v1, "high_text_contrast_enabled"
 
     iget v2, p1, Lcom/android/server/accessibility/AccessibilityManagerService$UserState;->mUserId:I
 

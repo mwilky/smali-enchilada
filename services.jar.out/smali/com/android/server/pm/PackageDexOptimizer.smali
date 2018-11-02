@@ -2002,7 +2002,7 @@
 
     if-ne v1, v2, :cond_8
 
-    const-string v1, "idle_background_job"
+    const-string/jumbo v1, "idle_background_job"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 

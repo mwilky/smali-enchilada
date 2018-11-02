@@ -76,7 +76,7 @@
 
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$BinderService;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
-    invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$5100(Lcom/android/server/oneplus/display/ColorBalanceService;)Lcom/android/server/oneplus/display/ColorBalanceService$AutoMode;
+    invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$5200(Lcom/android/server/oneplus/display/ColorBalanceService;)Lcom/android/server/oneplus/display/ColorBalanceService$AutoMode;
 
     move-result-object v0
 
@@ -84,7 +84,7 @@
 
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$BinderService;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
-    invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$5100(Lcom/android/server/oneplus/display/ColorBalanceService;)Lcom/android/server/oneplus/display/ColorBalanceService$AutoMode;
+    invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$5200(Lcom/android/server/oneplus/display/ColorBalanceService;)Lcom/android/server/oneplus/display/ColorBalanceService$AutoMode;
 
     move-result-object v0
 
@@ -138,7 +138,7 @@
 
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$BinderService;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
-    invoke-static {v0, p1}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$4800(Lcom/android/server/oneplus/display/ColorBalanceService;I)V
+    invoke-static {v0, p1}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$4900(Lcom/android/server/oneplus/display/ColorBalanceService;I)V
 
     return-void
 .end method
@@ -185,7 +185,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$BinderService;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
-    invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$4900(Lcom/android/server/oneplus/display/ColorBalanceService;)Ljava/lang/Boolean;
+    invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$5000(Lcom/android/server/oneplus/display/ColorBalanceService;)Ljava/lang/Boolean;
 
     move-result-object v0
 
@@ -225,7 +225,7 @@
     :goto_0
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$BinderService;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
-    invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$5004(Lcom/android/server/oneplus/display/ColorBalanceService;)I
+    invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$5104(Lcom/android/server/oneplus/display/ColorBalanceService;)I
 
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$BinderService;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 

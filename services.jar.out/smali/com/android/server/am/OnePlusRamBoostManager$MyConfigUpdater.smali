@@ -43,7 +43,7 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "OnePlusRamBoostManager"
+    const-string v0, "OnePlusSmartBoostManager"
 
     const-string/jumbo v1, "updateConfig"
 
@@ -52,7 +52,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager$MyConfigUpdater;->this$0:Lcom/android/server/am/OnePlusRamBoostManager;
 
-    invoke-static {v0, p1}, Lcom/android/server/am/OnePlusRamBoostManager;->access$1100(Lcom/android/server/am/OnePlusRamBoostManager;Lorg/json/JSONArray;)V
+    invoke-static {v0, p1}, Lcom/android/server/am/OnePlusRamBoostManager;->access$1200(Lcom/android/server/am/OnePlusRamBoostManager;Lorg/json/JSONArray;)V
 
     return-void
 .end method

@@ -1264,6 +1264,91 @@
     throw v1
 .end method
 
+.method public disableEmbryoTemporary()V
+    .locals 4
+
+    iget-object v0, p0, Lcom/android/server/am/Uterus;->mSupervisors:Ljava/util/List;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lcom/android/server/am/Uterus;->mSupervisors:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/android/server/am/EmbryoSupervisor;
+
+    invoke-virtual {v2}, Lcom/android/server/am/EmbryoSupervisor;->isWaitingForFork()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-virtual {v2}, Lcom/android/server/am/EmbryoSupervisor;->setAbortion()V
+
+    goto :goto_1
+
+    :cond_0
+    invoke-virtual {v2}, Lcom/android/server/am/EmbryoSupervisor;->destroy()V
+
+    :goto_1
+    goto :goto_0
+
+    :cond_1
+    iget-object v1, p0, Lcom/android/server/am/Uterus;->mSupervisors:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->clear()V
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    iget-object v1, p0, Lcom/android/server/am/Uterus;->mAllSupervisorMap:Ljava/util/Map;
+
+    monitor-enter v1
+
+    :try_start_1
+    iget-object v0, p0, Lcom/android/server/am/Uterus;->mAllSupervisorMap:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->clear()V
+
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+
+    :catchall_1
+    move-exception v1
+
+    :try_start_2
+    monitor-exit v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    throw v1
+.end method
+
 .method public dumpsys(Ljava/io/PrintWriter;)V
     .locals 6
 

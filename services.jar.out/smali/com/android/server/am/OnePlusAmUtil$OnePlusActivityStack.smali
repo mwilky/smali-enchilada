@@ -74,6 +74,21 @@
 
     invoke-virtual {v0, v1, p3}, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->updateSceneScreenEffectFlag(Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/ActivityRecord;)V
 
+    iget-object v0, p3, Lcom/android/server/am/ActivityRecord;->info:Landroid/content/pm/ActivityInfo;
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lcom/android/server/am/OnePlusTemperatureMonitor;->getInstance()Lcom/android/server/am/OnePlusTemperatureMonitor;
+
+    move-result-object v0
+
+    iget-object v1, p3, Lcom/android/server/am/ActivityRecord;->info:Landroid/content/pm/ActivityInfo;
+
+    iget-object v1, v1, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lcom/android/server/am/OnePlusTemperatureMonitor;->startAntutuMonitor(Ljava/lang/String;)Z
+
+    :cond_0
     const/4 v0, 0x0
 
     return v0

@@ -49,7 +49,7 @@
 
     invoke-virtual {v0}, Lcom/android/server/policy/PhoneWindowManager$MyOrientationListener;->onTouchStart()V
 
-    invoke-static {}, Lcom/android/server/policy/PhoneWindowManager;->access$3400()Z
+    invoke-static {}, Lcom/android/server/policy/PhoneWindowManager;->access$3600()Z
 
     move-result v0
 
@@ -63,7 +63,7 @@
 
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$9;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-static {v0}, Lcom/android/server/policy/PhoneWindowManager;->access$3500(Lcom/android/server/policy/PhoneWindowManager;)Z
+    invoke-static {v0}, Lcom/android/server/policy/PhoneWindowManager;->access$3700(Lcom/android/server/policy/PhoneWindowManager;)Z
 
     move-result v0
 
@@ -79,7 +79,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/server/policy/PhoneWindowManager;->access$3502(Lcom/android/server/policy/PhoneWindowManager;Z)Z
+    invoke-static {v0, v1}, Lcom/android/server/policy/PhoneWindowManager;->access$3702(Lcom/android/server/policy/PhoneWindowManager;Z)Z
 
     :cond_0
     return-void
@@ -111,7 +111,7 @@
     invoke-virtual {v1, v2, p1}, Landroid/os/PowerManagerInternal;->powerHint(II)V
 
     :cond_0
-    invoke-static {}, Lcom/android/server/policy/PhoneWindowManager;->access$3400()Z
+    invoke-static {}, Lcom/android/server/policy/PhoneWindowManager;->access$3600()Z
 
     move-result v1
 
@@ -135,7 +135,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static {v1, v2}, Lcom/android/server/policy/PhoneWindowManager;->access$3502(Lcom/android/server/policy/PhoneWindowManager;Z)Z
+    invoke-static {v1, v2}, Lcom/android/server/policy/PhoneWindowManager;->access$3702(Lcom/android/server/policy/PhoneWindowManager;Z)Z
 
     :cond_1
     iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$9;->this$0:Lcom/android/server/policy/PhoneWindowManager;
@@ -167,7 +167,7 @@
 
     iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$9;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-static {v1, v4}, Lcom/android/server/policy/PhoneWindowManager;->access$3502(Lcom/android/server/policy/PhoneWindowManager;Z)Z
+    invoke-static {v1, v4}, Lcom/android/server/policy/PhoneWindowManager;->access$3702(Lcom/android/server/policy/PhoneWindowManager;Z)Z
 
     :cond_3
     return-void
@@ -296,7 +296,7 @@
     return-void
 
     :cond_1
-    invoke-static {}, Lcom/android/server/policy/PhoneWindowManager;->access$3400()Z
+    invoke-static {}, Lcom/android/server/policy/PhoneWindowManager;->access$3600()Z
 
     move-result v1
 
@@ -474,7 +474,7 @@
 
     const/4 v2, 0x1
 
-    invoke-static {v0, v1, v2}, Lcom/android/server/policy/PhoneWindowManager;->access$3300(Lcom/android/server/policy/PhoneWindowManager;Lcom/android/server/policy/WindowManagerPolicy$WindowState;Z)V
+    invoke-static {v0, v1, v2}, Lcom/android/server/policy/PhoneWindowManager;->access$3500(Lcom/android/server/policy/PhoneWindowManager;Lcom/android/server/policy/WindowManagerPolicy$WindowState;Z)V
 
     :cond_0
     return-void

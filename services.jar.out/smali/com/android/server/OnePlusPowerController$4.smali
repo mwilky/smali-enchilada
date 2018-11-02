@@ -282,54 +282,23 @@
     monitor-enter v5
 
     :try_start_0
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$1300()I
+    iget-object v2, p0, Lcom/android/server/OnePlusPowerController$4;->this$0:Lcom/android/server/OnePlusPowerController;
+
+    invoke-static {}, Ljava/time/LocalDateTime;->now()Ljava/time/LocalDateTime;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v6}, Lcom/android/server/OnePlusPowerController;->getSleepState(Ljava/time/LocalDateTime;)I
 
     move-result v2
 
-    const/16 v6, 0x1e6c
+    invoke-static {v2}, Lcom/android/server/OnePlusPowerController;->access$1302(I)I
+
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$1300()I
+
+    move-result v2
 
     if-ne v2, v4, :cond_7
-
-    invoke-static {v6}, Lcom/android/server/OnePlusPowerController;->access$1302(I)I
-
-    iget-object v2, p0, Lcom/android/server/OnePlusPowerController$4;->this$0:Lcom/android/server/OnePlusPowerController;
-
-    invoke-static {v2}, Lcom/android/server/OnePlusPowerController;->access$900(Lcom/android/server/OnePlusPowerController;)I
-
-    move-result v2
-
-    if-lez v2, :cond_8
-
-    iget-object v2, p0, Lcom/android/server/OnePlusPowerController$4;->this$0:Lcom/android/server/OnePlusPowerController;
-
-    invoke-static {v2}, Lcom/android/server/OnePlusPowerController;->access$200(Lcom/android/server/OnePlusPowerController;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_8
-
-    iget-object v2, p0, Lcom/android/server/OnePlusPowerController$4;->this$0:Lcom/android/server/OnePlusPowerController;
-
-    invoke-static {v2}, Lcom/android/server/OnePlusPowerController;->access$1900(Lcom/android/server/OnePlusPowerController;)Lcom/android/server/OnePlusPowerController$MyHandler;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v6}, Lcom/android/server/OnePlusPowerController$MyHandler;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
-
-    goto :goto_0
-
-    :cond_7
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$1300()I
-
-    move-result v2
-
-    if-ne v2, v6, :cond_8
-
-    invoke-static {v4}, Lcom/android/server/OnePlusPowerController;->access$1302(I)I
 
     iget-object v2, p0, Lcom/android/server/OnePlusPowerController$4;->this$0:Lcom/android/server/OnePlusPowerController;
 
@@ -354,6 +323,45 @@
     move-result-object v2
 
     invoke-virtual {v2, v4}, Lcom/android/server/OnePlusPowerController$MyHandler;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
+
+    goto :goto_0
+
+    :cond_7
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$1300()I
+
+    move-result v2
+
+    const/16 v3, 0x1e6c
+
+    if-ne v2, v3, :cond_8
+
+    iget-object v2, p0, Lcom/android/server/OnePlusPowerController$4;->this$0:Lcom/android/server/OnePlusPowerController;
+
+    invoke-static {v2}, Lcom/android/server/OnePlusPowerController;->access$900(Lcom/android/server/OnePlusPowerController;)I
+
+    move-result v2
+
+    if-lez v2, :cond_8
+
+    iget-object v2, p0, Lcom/android/server/OnePlusPowerController$4;->this$0:Lcom/android/server/OnePlusPowerController;
+
+    invoke-static {v2}, Lcom/android/server/OnePlusPowerController;->access$200(Lcom/android/server/OnePlusPowerController;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_8
+
+    iget-object v2, p0, Lcom/android/server/OnePlusPowerController$4;->this$0:Lcom/android/server/OnePlusPowerController;
+
+    invoke-static {v2}, Lcom/android/server/OnePlusPowerController;->access$1900(Lcom/android/server/OnePlusPowerController;)Lcom/android/server/OnePlusPowerController$MyHandler;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v3}, Lcom/android/server/OnePlusPowerController$MyHandler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v2
 
@@ -670,18 +678,6 @@
     monitor-enter v1
 
     :try_start_2
-    iget-object v2, p0, Lcom/android/server/OnePlusPowerController$4;->this$0:Lcom/android/server/OnePlusPowerController;
-
-    invoke-static {}, Ljava/time/LocalDateTime;->now()Ljava/time/LocalDateTime;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/android/server/OnePlusPowerController;->getSleepState(Ljava/time/LocalDateTime;)I
-
-    move-result v2
-
-    invoke-static {v2}, Lcom/android/server/OnePlusPowerController;->access$1302(I)I
-
     iget-object v2, p0, Lcom/android/server/OnePlusPowerController$4;->this$0:Lcom/android/server/OnePlusPowerController;
 
     invoke-virtual {v2}, Lcom/android/server/OnePlusPowerController;->scheduleNextAlarmIfNeededLocked()V

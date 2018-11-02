@@ -1214,7 +1214,7 @@
 
     invoke-interface {v8, v6, v9}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    const-string v9, "http://xmlpull.org/v1/doc/features.html#indent-output"
+    const-string/jumbo v9, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     const/4 v10, 0x1
 

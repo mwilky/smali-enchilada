@@ -976,7 +976,7 @@
 
     iput-object v10, v9, Landroid/content/pm/PermissionInfo;->name:Ljava/lang/String;
 
-    const-string v10, "icon"
+    const-string/jumbo v10, "icon"
 
     invoke-static {p1, v3, v10, v2}, Lcom/android/server/pm/permission/BasePermission;->readInt(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;Ljava/lang/String;I)I
 
@@ -2385,7 +2385,7 @@
 
     if-eqz v2, :cond_3
 
-    const-string v2, "icon"
+    const-string/jumbo v2, "icon"
 
     iget v3, v0, Landroid/content/pm/PermissionInfo;->icon:I
 

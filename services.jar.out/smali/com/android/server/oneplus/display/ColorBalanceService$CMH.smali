@@ -91,34 +91,41 @@
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
-    iget v1, p1, Landroid/os/Message;->arg1:I
-
-    invoke-virtual {v0, v1}, Lcom/android/server/oneplus/display/ColorBalanceService;->onResetStatus(I)V
+    invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$4800(Lcom/android/server/oneplus/display/ColorBalanceService;)V
 
     goto/16 :goto_0
 
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
-    invoke-virtual {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->Night2ReadMode()V
+    iget v1, p1, Landroid/os/Message;->arg1:I
+
+    invoke-virtual {v0, v1}, Lcom/android/server/oneplus/display/ColorBalanceService;->onResetStatus(I)V
 
     goto/16 :goto_0
 
     :pswitch_3
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
-    invoke-virtual {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->Read2NightMode()V
+    invoke-virtual {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->Night2ReadMode()V
 
     goto/16 :goto_0
 
     :pswitch_4
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
-    invoke-static {v0, p1}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$4100(Lcom/android/server/oneplus/display/ColorBalanceService;Landroid/os/Message;)V
+    invoke-virtual {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->Read2NightMode()V
 
     goto/16 :goto_0
 
     :pswitch_5
+    iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
+
+    invoke-static {v0, p1}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$4100(Lcom/android/server/oneplus/display/ColorBalanceService;Landroid/os/Message;)V
+
+    goto/16 :goto_0
+
+    :pswitch_6
     iget v0, p1, Landroid/os/Message;->arg1:I
 
     if-ne v0, v2, :cond_1
@@ -136,7 +143,7 @@
 
     goto/16 :goto_0
 
-    :pswitch_6
+    :pswitch_7
     iget v0, p1, Landroid/os/Message;->arg1:I
 
     if-ne v0, v2, :cond_2
@@ -154,14 +161,14 @@
 
     goto/16 :goto_0
 
-    :pswitch_7
+    :pswitch_8
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$4700(Lcom/android/server/oneplus/display/ColorBalanceService;)V
 
     goto/16 :goto_0
 
-    :pswitch_8
+    :pswitch_9
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$2700(Lcom/android/server/oneplus/display/ColorBalanceService;)I
@@ -196,7 +203,7 @@
 
     goto/16 :goto_0
 
-    :pswitch_9
+    :pswitch_a
     const-string v0, "ColorBalanceService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -331,7 +338,7 @@
     :cond_4
     goto/16 :goto_0
 
-    :pswitch_a
+    :pswitch_b
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     iget v1, p1, Landroid/os/Message;->arg1:I
@@ -342,7 +349,7 @@
 
     goto/16 :goto_0
 
-    :pswitch_b
+    :pswitch_c
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     iget v1, p1, Landroid/os/Message;->arg1:I
@@ -353,7 +360,7 @@
 
     goto/16 :goto_0
 
-    :pswitch_c
+    :pswitch_d
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -368,7 +375,7 @@
 
     goto/16 :goto_0
 
-    :pswitch_d
+    :pswitch_e
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     iget-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
@@ -389,7 +396,7 @@
 
     goto/16 :goto_0
 
-    :pswitch_e
+    :pswitch_f
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     iget-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
@@ -408,21 +415,21 @@
 
     goto/16 :goto_0
 
-    :pswitch_f
+    :pswitch_10
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v0, p1}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$4000(Lcom/android/server/oneplus/display/ColorBalanceService;Landroid/os/Message;)V
 
     goto/16 :goto_0
 
-    :pswitch_10
+    :pswitch_11
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v0, p1}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$3900(Lcom/android/server/oneplus/display/ColorBalanceService;Landroid/os/Message;)V
 
     goto/16 :goto_0
 
-    :pswitch_11
+    :pswitch_12
     iget v0, p1, Landroid/os/Message;->arg1:I
 
     iget-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
@@ -449,7 +456,7 @@
 
     goto :goto_0
 
-    :pswitch_12
+    :pswitch_13
     iget v0, p1, Landroid/os/Message;->arg1:I
 
     iget-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
@@ -476,7 +483,7 @@
 
     goto :goto_0
 
-    :pswitch_13
+    :pswitch_14
     const-string v0, "ColorBalanceService"
 
     const-string v1, "MSG_SAVE_MODE is not support"
@@ -485,7 +492,7 @@
 
     goto :goto_0
 
-    :pswitch_14
+    :pswitch_15
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     iget v1, p1, Landroid/os/Message;->arg1:I
@@ -494,7 +501,7 @@
 
     goto :goto_0
 
-    :pswitch_15
+    :pswitch_16
     const-string v0, "ColorBalanceService"
 
     const-string v2, "MSG_SCREEN_OFF"
@@ -515,7 +522,7 @@
 
     goto :goto_0
 
-    :pswitch_16
+    :pswitch_17
     const-string v0, "ColorBalanceService"
 
     const-string v1, "MSG_SCREEN_ON"
@@ -540,15 +547,18 @@
     :goto_0
     return-void
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
+        :pswitch_17
         :pswitch_16
         :pswitch_15
         :pswitch_14
         :pswitch_13
         :pswitch_12
-        :pswitch_11
         :pswitch_0
+        :pswitch_11
         :pswitch_10
         :pswitch_f
         :pswitch_e

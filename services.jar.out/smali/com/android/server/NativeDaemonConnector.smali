@@ -1353,7 +1353,7 @@
 .end method
 
 .method public varargs executeForList(JLjava/lang/String;[Ljava/lang/Object;)[Lcom/android/server/NativeDaemonEvent;
-    .locals 22
+    .locals 23
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/NativeDaemonConnectorException;
@@ -1492,7 +1492,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_6
 
     :try_start_1
     iget-object v0, v1, Lcom/android/server/NativeDaemonConnector;->mOutputStream:Ljava/io/OutputStream;
@@ -1517,65 +1517,145 @@
 
     const/4 v0, 0x0
 
-    :goto_0
+    :cond_1
     iget-object v14, v1, Lcom/android/server/NativeDaemonConnector;->mResponseQueue:Lcom/android/server/NativeDaemonConnector$ResponseQueue;
 
     invoke-virtual {v14, v9, v2, v3, v13}, Lcom/android/server/NativeDaemonConnector$ResponseQueue;->remove(IJLjava/lang/String;)Lcom/android/server/NativeDaemonEvent;
 
     move-result-object v0
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_5
 
-    new-instance v14, Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v0}, Lcom/android/server/NativeDaemonEvent;->isClassContinue()Z
 
-    const-wide/16 v15, 0x3e8
+    move-result v14
 
-    move-object/from16 v17, v7
+    if-nez v14, :cond_1
 
-    move-object/from16 v18, v8
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    div-long v7, v2, v15
+    move-result-wide v14
 
-    invoke-virtual {v14, v7, v8}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    sub-long v16, v14, v4
 
-    const-string v7, " seconds pass by waiting for response to "
+    const-wide/16 v18, 0x1f4
 
-    invoke-virtual {v14, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    cmp-long v16, v16, v18
 
-    invoke-virtual {v14, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-lez v16, :cond_2
 
-    const-string v7, ", try again..."
+    move-object/from16 v20, v7
 
-    invoke-virtual {v14, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    move-object/from16 v21, v8
+
+    const-string v8, "NDC Command {"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string/jumbo v8, "} took too long ("
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move/from16 v22, v9
+
+    sub-long v8, v14, v4
+
+    invoke-virtual {v7, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string/jumbo v8, "ms)"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v7
 
     invoke-direct {v1, v7}, Lcom/android/server/NativeDaemonConnector;->loge(Ljava/lang/String;)V
 
-    iget-object v7, v1, Lcom/android/server/NativeDaemonConnector;->mResponseQueue:Lcom/android/server/NativeDaemonConnector$ResponseQueue;
+    goto :goto_0
 
-    invoke-virtual {v7, v9, v2, v3, v13}, Lcom/android/server/NativeDaemonConnector$ResponseQueue;->remove(IJLjava/lang/String;)Lcom/android/server/NativeDaemonEvent;
+    :cond_2
+    move-object/from16 v20, v7
 
-    move-result-object v0
+    move-object/from16 v21, v8
 
-    if-eqz v0, :cond_1
+    move/from16 v22, v9
 
-    goto :goto_1
+    :goto_0
+    invoke-virtual {v0}, Lcom/android/server/NativeDaemonEvent;->isClassClientError()Z
 
-    :cond_1
+    move-result v7
+
+    if-nez v7, :cond_4
+
+    invoke-virtual {v0}, Lcom/android/server/NativeDaemonEvent;->isClassServerError()Z
+
+    move-result v7
+
+    if-nez v7, :cond_3
+
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
+
+    move-result v7
+
+    new-array v7, v7, [Lcom/android/server/NativeDaemonEvent;
+
+    invoke-virtual {v6, v7}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, [Lcom/android/server/NativeDaemonEvent;
+
+    return-object v7
+
+    :cond_3
+    new-instance v7, Lcom/android/server/NativeDaemonConnector$NativeDaemonFailureException;
+
+    invoke-direct {v7, v13, v0}, Lcom/android/server/NativeDaemonConnector$NativeDaemonFailureException;-><init>(Ljava/lang/String;Lcom/android/server/NativeDaemonEvent;)V
+
+    throw v7
+
+    :cond_4
+    new-instance v7, Lcom/android/server/NativeDaemonConnector$NativeDaemonArgumentException;
+
+    invoke-direct {v7, v13, v0}, Lcom/android/server/NativeDaemonConnector$NativeDaemonArgumentException;-><init>(Ljava/lang/String;Lcom/android/server/NativeDaemonEvent;)V
+
+    throw v7
+
+    :cond_5
+    move-object/from16 v20, v7
+
+    move-object/from16 v21, v8
+
+    move/from16 v22, v9
+
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v8, "timed-out waiting for response to "
+    const-wide/16 v8, 0x3e8
+
+    div-long v8, v2, v8
+
+    invoke-virtual {v7, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v8, " seconds pass by waiting for response to "
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v7, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v8, ", try again..."
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -1589,145 +1669,49 @@
 
     throw v7
 
-    :cond_2
-    move-object/from16 v17, v7
-
-    move-object/from16 v18, v8
-
-    :goto_1
-    invoke-virtual {v6, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {v0}, Lcom/android/server/NativeDaemonEvent;->isClassContinue()Z
-
-    move-result v7
-
-    if-nez v7, :cond_6
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v7
-
-    sub-long v14, v7, v4
-
-    const-wide/16 v19, 0x1f4
-
-    cmp-long v14, v14, v19
-
-    if-lez v14, :cond_3
-
-    new-instance v14, Ljava/lang/StringBuilder;
-
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v15, "NDC Command {"
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v14, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string/jumbo v15, "} took too long ("
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sub-long v2, v7, v4
-
-    invoke-virtual {v14, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string/jumbo v2, "ms)"
-
-    invoke-virtual {v14, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Lcom/android/server/NativeDaemonConnector;->loge(Ljava/lang/String;)V
-
-    :cond_3
-    invoke-virtual {v0}, Lcom/android/server/NativeDaemonEvent;->isClassClientError()Z
-
-    move-result v2
-
-    if-nez v2, :cond_5
-
-    invoke-virtual {v0}, Lcom/android/server/NativeDaemonEvent;->isClassServerError()Z
-
-    move-result v2
-
-    if-nez v2, :cond_4
-
-    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    new-array v2, v2, [Lcom/android/server/NativeDaemonEvent;
-
-    invoke-virtual {v6, v2}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, [Lcom/android/server/NativeDaemonEvent;
-
-    return-object v2
-
-    :cond_4
-    new-instance v2, Lcom/android/server/NativeDaemonConnector$NativeDaemonFailureException;
-
-    invoke-direct {v2, v13, v0}, Lcom/android/server/NativeDaemonConnector$NativeDaemonFailureException;-><init>(Ljava/lang/String;Lcom/android/server/NativeDaemonEvent;)V
-
-    throw v2
-
-    :cond_5
-    new-instance v2, Lcom/android/server/NativeDaemonConnector$NativeDaemonArgumentException;
-
-    invoke-direct {v2, v13, v0}, Lcom/android/server/NativeDaemonConnector$NativeDaemonArgumentException;-><init>(Ljava/lang/String;Lcom/android/server/NativeDaemonEvent;)V
-
-    throw v2
-
-    :cond_6
-    move-object/from16 v7, v17
-
-    move-object/from16 v8, v18
-
-    goto/16 :goto_0
-
     :catch_0
     move-exception v0
 
-    move-object/from16 v17, v7
+    move-object/from16 v20, v7
 
-    move-object/from16 v18, v8
+    move-object/from16 v21, v8
+
+    move/from16 v22, v9
 
     :try_start_3
-    new-instance v2, Lcom/android/server/NativeDaemonConnectorException;
+    new-instance v7, Lcom/android/server/NativeDaemonConnectorException;
 
-    const-string/jumbo v3, "problem sending command"
+    const-string/jumbo v8, "problem sending command"
 
-    invoke-direct {v2, v3, v0}, Lcom/android/server/NativeDaemonConnectorException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v7, v8, v0}, Lcom/android/server/NativeDaemonConnectorException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    throw v2
+    throw v7
 
-    :cond_7
-    move-object/from16 v17, v7
+    :cond_6
+    move-object/from16 v20, v7
 
-    move-object/from16 v18, v8
+    move-object/from16 v21, v8
+
+    move/from16 v22, v9
 
     new-instance v0, Lcom/android/server/NativeDaemonConnectorException;
 
-    const-string/jumbo v2, "missing output stream"
+    const-string/jumbo v7, "missing output stream"
 
-    invoke-direct {v0, v2}, Lcom/android/server/NativeDaemonConnectorException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v7}, Lcom/android/server/NativeDaemonConnectorException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     :catchall_0
     move-exception v0
 
-    move-object/from16 v17, v7
+    move-object/from16 v20, v7
 
-    move-object/from16 v18, v8
+    move-object/from16 v21, v8
 
-    :goto_2
+    move/from16 v22, v9
+
+    :goto_1
     monitor-exit v14
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
@@ -1737,7 +1721,7 @@
     :catchall_1
     move-exception v0
 
-    goto :goto_2
+    goto :goto_1
 .end method
 
 .method public executeForList(Lcom/android/server/NativeDaemonConnector$Command;)[Lcom/android/server/NativeDaemonEvent;

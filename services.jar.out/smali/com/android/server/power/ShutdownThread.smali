@@ -77,6 +77,8 @@
 
 .field private static final VIBRATION_ATTRIBUTES:Landroid/media/AudioAttributes;
 
+.field private static mNeedShutdownDialog:Z = false
+
 .field private static mReason:Ljava/lang/String; = null
 
 .field private static mReboot:Z = false
@@ -189,6 +191,10 @@
     const-string v0, "begin_shutdown"
 
     sput-object v0, Lcom/android/server/power/ShutdownThread;->METRIC_SHUTDOWN_TIME_START:Ljava/lang/String;
+
+    const/4 v0, 0x1
+
+    sput-boolean v0, Lcom/android/server/power/ShutdownThread;->mNeedShutdownDialog:Z
 
     return-void
 .end method
@@ -731,7 +737,7 @@
 .end method
 
 .method public static rebootOrShutdown(Landroid/content/Context;ZLjava/lang/String;)V
-    .locals 10
+    .locals 12
 
     const-string/jumbo v0, "vendor.peripheral.shutdown_critical_list"
 
@@ -747,35 +753,39 @@
 
     move-result v1
 
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
     if-nez v1, :cond_7
 
     const-string v1, "ShutdownThread"
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "Shutdown critical subsyslist is :"
+    const-string v5, "Shutdown critical subsyslist is :"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, ": "
+    const-string v5, ": "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     const-string v1, "ShutdownThread"
 
-    const-string v2, "Waiting for a maximum of 10000ms"
+    const-string v4, "Waiting for a maximum of 10000ms"
 
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     const-string v1, " "
 
@@ -783,152 +793,35 @@
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    const/4 v4, 0x0
 
-    const/4 v3, 0x1
+    const/4 v5, 0x1
 
-    array-length v4, v1
+    array-length v6, v1
 
     :goto_0
-    const/4 v3, 0x1
+    const/4 v5, 0x1
 
-    const/4 v5, 0x0
+    move v7, v5
 
-    move v6, v3
-
-    move v3, v5
+    move v5, v2
 
     :goto_1
-    if-ge v3, v4, :cond_1
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v8, "vendor.peripheral."
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    aget-object v8, v1, v3
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v8, ".state"
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    const-string v8, "ERROR"
-
-    invoke-static {v7, v8}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v7
-
-    const-string v8, "ONLINE"
-
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_0
-
-    const/4 v6, 0x0
-
-    :cond_0
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    if-nez v6, :cond_2
-
-    const-wide/16 v7, 0x64
-
-    invoke-static {v7, v8}, Landroid/os/SystemClock;->sleep(J)V
-
-    add-int/lit8 v2, v2, 0x1
-
-    :cond_2
-    const/4 v3, 0x1
-
-    if-eq v6, v3, :cond_4
-
-    const/16 v7, 0x64
-
-    if-lt v2, v7, :cond_3
-
-    goto :goto_2
-
-    :cond_3
-    move v3, v6
-
-    goto :goto_0
-
-    :cond_4
-    :goto_2
-    if-eq v6, v3, :cond_6
-
-    nop
-
-    :goto_3
-    move v3, v5
-
-    array-length v5, v1
-
-    if-ge v3, v5, :cond_7
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v7, "vendor.peripheral."
-
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    aget-object v7, v1, v3
-
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v7, ".state"
-
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    const-string v7, "ERROR"
-
-    invoke-static {v5, v7}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    const-string v7, "ONLINE"
-
-    invoke-virtual {v5, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_5
-
-    const-string v7, "ShutdownThread"
+    if-ge v5, v6, :cond_1
 
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "Subsystem "
+    const-string/jumbo v9, "vendor.peripheral."
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aget-object v9, v1, v3
+    aget-object v9, v1, v5
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v9, "did not shut down within timeout"
+    const-string v9, ".state"
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -936,43 +829,178 @@
 
     move-result-object v8
 
-    invoke-static {v7, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v9, "ERROR"
+
+    invoke-static {v8, v9}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v8
+
+    const-string v9, "ONLINE"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_0
+
+    const/4 v7, 0x0
+
+    :cond_0
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    if-nez v7, :cond_2
+
+    const-wide/16 v8, 0x64
+
+    invoke-static {v8, v9}, Landroid/os/SystemClock;->sleep(J)V
+
+    add-int/lit8 v4, v4, 0x1
+
+    :cond_2
+    if-eq v7, v3, :cond_4
+
+    const/16 v5, 0x64
+
+    if-lt v4, v5, :cond_3
+
+    goto :goto_2
+
+    :cond_3
+    move v5, v7
+
+    goto :goto_0
+
+    :cond_4
+    :goto_2
+    if-eq v7, v3, :cond_6
+
+    move v5, v2
+
+    :goto_3
+    array-length v8, v1
+
+    if-ge v5, v8, :cond_7
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v9, "vendor.peripheral."
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    aget-object v9, v1, v5
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v9, ".state"
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    const-string v9, "ERROR"
+
+    invoke-static {v8, v9}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v8
+
+    const-string v9, "ONLINE"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_5
+
+    const-string v9, "ShutdownThread"
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v11, "Subsystem "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    aget-object v11, v1, v5
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v11, "did not shut down within timeout"
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v9, v10}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_5
-    add-int/lit8 v3, v3, 0x1
-
-    move v5, v3
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_3
 
     :cond_6
-    const-string v3, "ShutdownThread"
+    const-string v5, "ShutdownThread"
 
-    const-string v5, "Vendor subsystem(s) shutdown successful"
+    const-string v8, "Vendor subsystem(s) shutdown successful"
 
-    invoke-static {v3, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v8}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_7
-    if-eqz p1, :cond_8
+    const-wide/16 v4, 0x1f4
+
+    if-eqz p1, :cond_9
 
     const-string v1, "ShutdownThread"
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "Rebooting, reason: "
+    const-string v7, "Rebooting, reason: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v6
 
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    new-array v1, v3, [I
+
+    const/16 v3, 0x49
+
+    aput v3, v1, v2
+
+    invoke-static {v1}, Landroid/util/OpFeatures;->isSupport([I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_8
+
+    :try_start_0
+    invoke-static {v4, v5}, Ljava/lang/Thread;->sleep(J)V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_4
+
+    :catch_0
+    move-exception v1
+
+    :cond_8
+    :goto_4
     invoke-static {p2}, Lcom/android/server/power/PowerManagerService;->lowLevelReboot(Ljava/lang/String;)V
 
     const-string v1, "ShutdownThread"
@@ -983,48 +1011,46 @@
 
     const/4 p2, 0x0
 
-    goto :goto_5
+    goto :goto_6
 
-    :cond_8
-    if-eqz p0, :cond_9
+    :cond_9
+    if-eqz p0, :cond_a
 
     new-instance v1, Landroid/os/SystemVibrator;
 
     invoke-direct {v1, p0}, Landroid/os/SystemVibrator;-><init>(Landroid/content/Context;)V
 
-    const-wide/16 v2, 0x1f4
-
-    :try_start_0
-    sget-object v4, Lcom/android/server/power/ShutdownThread;->VIBRATION_ATTRIBUTES:Landroid/media/AudioAttributes;
-
-    invoke-virtual {v1, v2, v3, v4}, Landroid/os/Vibrator;->vibrate(JLandroid/media/AudioAttributes;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_4
-
-    :catch_0
-    move-exception v4
-
-    const-string v5, "ShutdownThread"
-
-    const-string v6, "Failed to vibrate during shutdown."
-
-    invoke-static {v5, v6, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    :goto_4
     :try_start_1
-    invoke-static {v2, v3}, Ljava/lang/Thread;->sleep(J)V
+    sget-object v2, Lcom/android/server/power/ShutdownThread;->VIBRATION_ATTRIBUTES:Landroid/media/AudioAttributes;
+
+    invoke-virtual {v1, v4, v5, v2}, Landroid/os/Vibrator;->vibrate(JLandroid/media/AudioAttributes;)V
     :try_end_1
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     goto :goto_5
 
     :catch_1
     move-exception v2
 
-    :cond_9
+    const-string v3, "ShutdownThread"
+
+    const-string v6, "Failed to vibrate during shutdown."
+
+    invoke-static {v3, v6, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
     :goto_5
+    :try_start_2
+    invoke-static {v4, v5}, Ljava/lang/Thread;->sleep(J)V
+    :try_end_2
+    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_2
+
+    goto :goto_6
+
+    :catch_2
+    move-exception v2
+
+    :cond_a
+    :goto_6
     const-string v1, "ShutdownThread"
 
     const-string v2, "Performing low-level shutdown..."
@@ -1314,6 +1340,32 @@
     return-void
 .end method
 
+.method public static setShutdownDialogEnabled(Z)V
+    .locals 3
+
+    const-string v0, "ShutdownThread"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Need shutdown dialog: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    sput-boolean p0, Lcom/android/server/power/ShutdownThread;->mNeedShutdownDialog:Z
+
+    return-void
+.end method
+
 .method private static showShutdownAnimation()V
     .locals 2
 
@@ -1359,13 +1411,17 @@
 
     invoke-direct {v0, p0, v1}, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;I)V
 
-    sget-object v1, Lcom/android/server/power/ShutdownThread;->mReason:Ljava/lang/String;
+    sget-boolean v1, Lcom/android/server/power/ShutdownThread;->mNeedShutdownDialog:Z
 
     const/4 v2, 0x0
 
     const/4 v3, 0x0
 
     const/4 v4, 0x1
+
+    if-eqz v1, :cond_3
+
+    sget-object v1, Lcom/android/server/power/ShutdownThread;->mReason:Ljava/lang/String;
 
     if-eqz v1, :cond_3
 
@@ -1437,7 +1493,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    goto :goto_1
+    goto/16 :goto_1
 
     :cond_1
     invoke-static {}, Lcom/android/server/power/ShutdownThread;->showSysuiReboot()Z
@@ -1462,11 +1518,15 @@
     goto :goto_1
 
     :cond_3
-    sget-object v1, Lcom/android/server/power/ShutdownThread;->mReason:Ljava/lang/String;
+    sget-boolean v1, Lcom/android/server/power/ShutdownThread;->mNeedShutdownDialog:Z
 
     const v5, 0x1040612
 
     const v6, 0x104057c
+
+    if-eqz v1, :cond_5
+
+    sget-object v1, Lcom/android/server/power/ShutdownThread;->mReason:Ljava/lang/String;
 
     if-eqz v1, :cond_5
 
@@ -1561,6 +1621,8 @@
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->show()V
 
     return-object v0
+
+    nop
 
     :array_0
     .array-data 4

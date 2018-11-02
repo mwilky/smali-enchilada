@@ -64,6 +64,8 @@
 
 .field public static final DISPATCH_APP_VISIBILITY_TIMEOUT:I = 0x2454
 
+.field public static final DISPATCH_RESIZED_TIMEOUT:I = 0x24b8
+
 .field public static final DISPLAY_EVENT_TIMEOUT:I = 0x23f0
 
 .field private static final FORCE_STOP_SENSOR_FILE:Ljava/lang/String; = "force_stop_sensor.xml"
@@ -4528,17 +4530,21 @@
     :cond_2
     const/16 v0, 0x2328
 
-    if-eq p0, v0, :cond_6
+    if-eq p0, v0, :cond_7
 
     const/16 v0, 0x238c
 
-    if-eq p0, v0, :cond_5
+    if-eq p0, v0, :cond_6
 
     const/16 v0, 0x23f0
 
-    if-eq p0, v0, :cond_4
+    if-eq p0, v0, :cond_5
 
     const/16 v0, 0x2454
+
+    if-eq p0, v0, :cond_4
+
+    const/16 v0, 0x24b8
 
     if-eq p0, v0, :cond_3
 
@@ -4578,6 +4584,17 @@
     goto :goto_0
 
     :cond_6
+    sget-object v1, Lcom/android/server/am/OnePlusProcessManager;->mOneplusProcessHandler:Landroid/os/Handler;
+
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-static {v0, p1, p2}, Lcom/android/server/am/OnePlusProcessManager;->sendTimeOutMmgDelayed(Landroid/os/Message;II)V
+
+    goto :goto_0
+
+    :cond_7
     sget-object v1, Lcom/android/server/am/OnePlusProcessManager;->mOneplusProcessHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
@@ -4618,17 +4635,21 @@
     :cond_2
     const/16 v0, 0x2328
 
-    if-eq p0, v0, :cond_6
+    if-eq p0, v0, :cond_7
 
     const/16 v0, 0x238c
 
-    if-eq p0, v0, :cond_5
+    if-eq p0, v0, :cond_6
 
     const/16 v0, 0x23f0
 
-    if-eq p0, v0, :cond_4
+    if-eq p0, v0, :cond_5
 
     const/16 v0, 0x2454
+
+    if-eq p0, v0, :cond_4
+
+    const/16 v0, 0x24b8
 
     if-eq p0, v0, :cond_3
 
@@ -4656,6 +4677,13 @@
     goto :goto_0
 
     :cond_6
+    sget-object v1, Lcom/android/server/am/OnePlusProcessManager;->mOneplusProcessHandler:Landroid/os/Handler;
+
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->removeMessages(I)V
+
+    goto :goto_0
+
+    :cond_7
     sget-object v1, Lcom/android/server/am/OnePlusProcessManager;->mOneplusProcessHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->removeMessages(I)V
@@ -7861,9 +7889,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget-object v0, Lcom/android/server/am/OnePlusProcessManager;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
+    const/16 v0, 0x9
 
-    invoke-static {p0, p1}, Lcom/android/server/am/ActivityManagerService;->killProcessGroup(II)V
+    invoke-static {p1, v0}, Lcom/android/server/am/OnePlusProcessManager;->sendSignal(II)V
 
     return-void
 .end method

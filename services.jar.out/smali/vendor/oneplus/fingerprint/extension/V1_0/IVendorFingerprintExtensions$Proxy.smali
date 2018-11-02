@@ -709,6 +709,61 @@
     throw v2
 .end method
 
+.method public setParam(I)I
+    .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    new-instance v0, Landroid/os/HwParcel;
+
+    invoke-direct {v0}, Landroid/os/HwParcel;-><init>()V
+
+    const-string/jumbo v1, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
+
+    invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Landroid/os/HwParcel;->writeInt32(I)V
+
+    new-instance v1, Landroid/os/HwParcel;
+
+    invoke-direct {v1}, Landroid/os/HwParcel;-><init>()V
+
+    :try_start_0
+    iget-object v2, p0, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->mRemote:Landroid/os/IHwBinder;
+
+    const/16 v3, 0x8
+
+    const/4 v4, 0x0
+
+    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IHwBinder;->transact(ILandroid/os/HwParcel;Landroid/os/HwParcel;I)V
+
+    invoke-virtual {v1}, Landroid/os/HwParcel;->verifySuccess()V
+
+    invoke-virtual {v0}, Landroid/os/HwParcel;->releaseTemporaryStorage()V
+
+    invoke-virtual {v1}, Landroid/os/HwParcel;->readInt32()I
+
+    move-result v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    nop
+
+    invoke-virtual {v1}, Landroid/os/HwParcel;->release()V
+
+    return v2
+
+    :catchall_0
+    move-exception v2
+
+    invoke-virtual {v1}, Landroid/os/HwParcel;->release()V
+
+    throw v2
+.end method
+
 .method public startEngTest(I)I
     .locals 5
     .annotation system Ldalvik/annotation/Throws;

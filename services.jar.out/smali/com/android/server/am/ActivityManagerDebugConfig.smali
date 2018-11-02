@@ -573,33 +573,27 @@
 
     sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL:Z
 
-    if-nez v1, :cond_1a
+    if-nez v1, :cond_1b
 
-    move v1, v0
+    sget-boolean v1, Lcom/android/server/am/ActivityManagerService;->DEBUG_ONEPLUS:Z
+
+    if-eqz v1, :cond_1a
 
     goto :goto_1a
 
     :cond_1a
-    move v1, v2
-
-    :goto_1a
-    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RECENTS:Z
-
-    sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RECENTS:Z
-
-    if-nez v1, :cond_1b
-
     move v1, v0
 
     goto :goto_1b
 
     :cond_1b
+    :goto_1a
     move v1, v2
 
     :goto_1b
-    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RECENTS_TRIM_TASKS:Z
+    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RECENTS:Z
 
-    sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL_ACTIVITIES:Z
+    sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RECENTS:Z
 
     if-nez v1, :cond_1c
 
@@ -611,9 +605,9 @@
     move v1, v2
 
     :goto_1c
-    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RELEASE:Z
+    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RECENTS_TRIM_TASKS:Z
 
-    sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL:Z
+    sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL_ACTIVITIES:Z
 
     if-nez v1, :cond_1d
 
@@ -625,9 +619,9 @@
     move v1, v2
 
     :goto_1d
-    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RESULTS:Z
+    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RELEASE:Z
 
-    sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL_ACTIVITIES:Z
+    sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL:Z
 
     if-nez v1, :cond_1e
 
@@ -639,9 +633,9 @@
     move v1, v2
 
     :goto_1e
-    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_SAVED_STATE:Z
+    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RESULTS:Z
 
-    sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL:Z
+    sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL_ACTIVITIES:Z
 
     if-nez v1, :cond_1f
 
@@ -653,7 +647,7 @@
     move v1, v2
 
     :goto_1f
-    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_SERVICE:Z
+    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_SAVED_STATE:Z
 
     sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL:Z
 
@@ -667,7 +661,7 @@
     move v1, v2
 
     :goto_20
-    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_FOREGROUND_SERVICE:Z
+    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_SERVICE:Z
 
     sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL:Z
 
@@ -681,7 +675,7 @@
     move v1, v2
 
     :goto_21
-    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_SERVICE_EXECUTING:Z
+    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_FOREGROUND_SERVICE:Z
 
     sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL:Z
 
@@ -695,9 +689,9 @@
     move v1, v2
 
     :goto_22
-    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_STACK:Z
+    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_SERVICE_EXECUTING:Z
 
-    sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL_ACTIVITIES:Z
+    sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL:Z
 
     if-nez v1, :cond_23
 
@@ -709,9 +703,9 @@
     move v1, v2
 
     :goto_23
-    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_STATES:Z
+    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_STACK:Z
 
-    sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL:Z
+    sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL_ACTIVITIES:Z
 
     if-nez v1, :cond_24
 
@@ -723,7 +717,7 @@
     move v1, v2
 
     :goto_24
-    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_SWITCH:Z
+    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_STATES:Z
 
     sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL:Z
 
@@ -737,7 +731,7 @@
     move v1, v2
 
     :goto_25
-    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_TASKS:Z
+    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_SWITCH:Z
 
     sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL:Z
 
@@ -751,7 +745,7 @@
     move v1, v2
 
     :goto_26
-    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_TRANSITION:Z
+    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_TASKS:Z
 
     sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL:Z
 
@@ -765,7 +759,7 @@
     move v1, v2
 
     :goto_27
-    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_UID_OBSERVERS:Z
+    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_TRANSITION:Z
 
     sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL:Z
 
@@ -779,7 +773,7 @@
     move v1, v2
 
     :goto_28
-    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_URI_PERMISSION:Z
+    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_UID_OBSERVERS:Z
 
     sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL:Z
 
@@ -793,7 +787,7 @@
     move v1, v2
 
     :goto_29
-    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_USER_LEAVING:Z
+    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_URI_PERMISSION:Z
 
     sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL:Z
 
@@ -807,7 +801,7 @@
     move v1, v2
 
     :goto_2a
-    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_VISIBILITY:Z
+    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_USER_LEAVING:Z
 
     sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL:Z
 
@@ -821,7 +815,7 @@
     move v1, v2
 
     :goto_2b
-    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_USAGE_STATS:Z
+    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_VISIBILITY:Z
 
     sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL:Z
 
@@ -835,7 +829,7 @@
     move v1, v2
 
     :goto_2c
-    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_PERMISSIONS_REVIEW:Z
+    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_USAGE_STATS:Z
 
     sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL:Z
 
@@ -849,18 +843,32 @@
     move v1, v2
 
     :goto_2d
-    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_WHITELISTS:Z
+    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_PERMISSIONS_REVIEW:Z
 
     sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL:Z
 
     if-nez v1, :cond_2e
 
+    move v1, v0
+
     goto :goto_2e
 
     :cond_2e
-    move v0, v2
+    move v1, v2
 
     :goto_2e
+    sput-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_WHITELISTS:Z
+
+    sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_ALL:Z
+
+    if-nez v1, :cond_2f
+
+    goto :goto_2f
+
+    :cond_2f
+    move v0, v2
+
+    :goto_2f
     sput-boolean v0, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_METRICS:Z
 
     return-void
@@ -898,6 +906,8 @@
     sput-boolean p1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_PAUSE:Z
 
     sput-boolean p1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RECENTS:Z
+
+    sput-boolean p1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RECENTS_TRIM_TASKS:Z
 
     sput-boolean p1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RELEASE:Z
 

@@ -77,33 +77,35 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 12
+    .locals 13
 
-    const-string v0, "/system/bin/audioserver"
+    const-string v0, "/vendor/bin/hw/android.hardware.camera.provider@2.4-service"
 
-    const-string v1, "/system/bin/cameraserver"
+    const-string v1, "/system/bin/audioserver"
 
-    const-string v2, "/system/bin/drmserver"
+    const-string v2, "/system/bin/cameraserver"
 
-    const-string v3, "/system/bin/mediadrmserver"
+    const-string v3, "/system/bin/drmserver"
 
-    const-string v4, "/system/bin/mediaserver"
+    const-string v4, "/system/bin/mediadrmserver"
 
-    const-string v5, "/system/bin/sdcard"
+    const-string v5, "/system/bin/mediaserver"
 
-    const-string v6, "/system/bin/surfaceflinger"
+    const-string v6, "/system/bin/sdcard"
 
-    const-string/jumbo v7, "media.extractor"
+    const-string v7, "/system/bin/surfaceflinger"
 
-    const-string/jumbo v8, "media.metrics"
+    const-string/jumbo v8, "media.extractor"
 
-    const-string/jumbo v9, "media.codec"
+    const-string/jumbo v9, "media.metrics"
 
-    const-string v10, "com.android.bluetooth"
+    const-string/jumbo v10, "media.codec"
 
-    const-string/jumbo v11, "statsd"
+    const-string v11, "com.android.bluetooth"
 
-    filled-new-array/range {v0 .. v11}, [Ljava/lang/String;
+    const-string/jumbo v12, "statsd"
+
+    filled-new-array/range {v0 .. v12}, [Ljava/lang/String;
 
     move-result-object v0
 
@@ -237,7 +239,7 @@
 
     move-result-object v3
 
-    const-string v4, "i/o thread"
+    const-string/jumbo v4, "i/o thread"
 
     move-object v1, v7
 

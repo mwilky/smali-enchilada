@@ -66,6 +66,8 @@
 
 .field private static final MSG_CHECK_SRGBSEN:I = 0xf
 
+.field private static final MSG_CLOSEPTOPETIES:I = 0x18
+
 .field private static final MSG_DEFAULT_MODE:I = 0x6
 
 .field private static final MSG_DISABLECOLOR:I = 0x17
@@ -164,6 +166,8 @@
 
 
 # instance fields
+.field colorbalance_stop:Z
+
 .field colortemprature:[I
 
 .field config_autocolortemp:[I
@@ -173,6 +177,10 @@
 .field config_colorbalance:[[I
 
 .field private dtm:Lcom/android/server/display/DisplayTransformManager;
+
+.field flinger:Landroid/os/IBinder;
+
+.field has_fingerprint:Z
 
 .field private mAutoMode:Lcom/android/server/oneplus/display/ColorBalanceService$AutoMode;
 
@@ -218,7 +226,13 @@
 
 .field private mCurrentUser:I
 
+.field private mDisableStatus:I
+
+.field private mDozeColorStatus:I
+
 .field private mFactor:F
+
+.field private mFpm:Landroid/hardware/fingerprint/FingerprintManager;
 
 .field private mGeneration:I
 
@@ -299,6 +313,8 @@
 .field private mSRGBSensorEnabled:Z
 
 .field private mSRGBSensorListener:Landroid/hardware/SensorEventListener;
+
+.field private mScreenOn_Quick:Ljava/lang/Boolean;
 
 .field private mSensorColortemperature:I
 
@@ -413,7 +429,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 10
+    .locals 12
 
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
@@ -579,489 +595,505 @@
 
     iput-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mColorDisableStatus:Ljava/lang/Boolean;
 
+    const/16 v3, 0xa
+
+    iput v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mDisableStatus:I
+
+    iput v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mDozeColorStatus:I
+
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v3
+    move-result-object v4
 
-    iput-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mBootColorStatus:Ljava/lang/Boolean;
+    iput-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mBootColorStatus:Ljava/lang/Boolean;
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v3
+    move-result-object v4
 
-    iput-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mBootStatus:Ljava/lang/Boolean;
+    iput-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mScreenOn_Quick:Ljava/lang/Boolean;
 
-    const/16 v3, 0x10
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    new-array v4, v3, [F
+    move-result-object v4
 
-    fill-array-data v4, :array_0
+    iput-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mBootStatus:Ljava/lang/Boolean;
 
-    iput-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mColorMatrix:[F
+    iput-boolean v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->has_fingerprint:Z
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    iput-boolean v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->colorbalance_stop:Z
 
-    iput v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mFactor:F
+    const/4 v4, 0x0
 
-    new-instance v4, Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->flinger:Landroid/os/IBinder;
 
-    invoke-direct {v4}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
+    const/16 v5, 0x10
 
-    iput-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIgnoreAllColorMatrixChanges:Ljava/util/concurrent/atomic/AtomicBoolean;
+    new-array v6, v5, [F
 
-    const/16 v4, 0x84
+    fill-array-data v6, :array_0
 
-    new-array v5, v4, [I
+    iput-object v6, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mColorMatrix:[F
 
-    fill-array-data v5, :array_1
+    const/high16 v6, 0x3f800000    # 1.0f
 
-    iput-object v5, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->colortemprature:[I
+    iput v6, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mFactor:F
 
-    const/16 v5, 0x36
+    new-instance v6, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    new-array v6, v5, [I
+    invoke-direct {v6}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
 
-    fill-array-data v6, :array_2
+    iput-object v6, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIgnoreAllColorMatrixChanges:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iput-object v6, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->config_autocolortemp:[I
-
-    new-array v6, v5, [I
-
-    fill-array-data v6, :array_3
-
-    iput-object v6, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->config_autoseekbar:[I
-
-    new-array v5, v5, [[I
-
-    const/4 v6, 0x7
+    const/16 v6, 0x84
 
     new-array v7, v6, [I
 
-    fill-array-data v7, :array_4
+    fill-array-data v7, :array_1
 
-    aput-object v7, v5, v0
+    iput-object v7, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->colortemprature:[I
 
-    new-array v7, v6, [I
-
-    fill-array-data v7, :array_5
-
-    aput-object v7, v5, v2
-
-    new-array v7, v6, [I
-
-    fill-array-data v7, :array_6
-
-    const/4 v8, 0x2
-
-    aput-object v7, v5, v8
-
-    const/4 v7, 0x6
+    const/16 v7, 0x36
 
     new-array v8, v7, [I
 
-    fill-array-data v8, :array_7
+    fill-array-data v8, :array_2
 
-    const/4 v9, 0x3
-
-    aput-object v8, v5, v9
+    iput-object v8, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->config_autocolortemp:[I
 
     new-array v8, v7, [I
 
-    fill-array-data v8, :array_8
+    fill-array-data v8, :array_3
 
-    const/4 v9, 0x4
+    iput-object v8, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->config_autoseekbar:[I
 
-    aput-object v8, v5, v9
+    new-array v7, v7, [[I
 
-    new-array v8, v7, [I
+    const/4 v8, 0x7
 
-    fill-array-data v8, :array_9
+    new-array v9, v8, [I
 
-    const/4 v9, 0x5
+    fill-array-data v9, :array_4
 
-    aput-object v8, v5, v9
+    aput-object v9, v7, v0
 
-    new-array v8, v7, [I
+    new-array v9, v8, [I
 
-    fill-array-data v8, :array_a
+    fill-array-data v9, :array_5
 
-    aput-object v8, v5, v7
+    aput-object v9, v7, v2
 
-    new-array v8, v7, [I
+    new-array v9, v8, [I
 
-    fill-array-data v8, :array_b
+    fill-array-data v9, :array_6
 
-    aput-object v8, v5, v6
+    const/4 v10, 0x2
 
-    new-array v6, v7, [I
+    aput-object v9, v7, v10
 
-    fill-array-data v6, :array_c
+    const/4 v9, 0x6
 
-    const/16 v8, 0x8
+    new-array v10, v9, [I
 
-    aput-object v6, v5, v8
+    fill-array-data v10, :array_7
 
-    new-array v6, v7, [I
+    const/4 v11, 0x3
 
-    fill-array-data v6, :array_d
+    aput-object v10, v7, v11
 
-    const/16 v8, 0x9
+    new-array v10, v9, [I
 
-    aput-object v6, v5, v8
+    fill-array-data v10, :array_8
 
-    new-array v6, v7, [I
+    const/4 v11, 0x4
 
-    fill-array-data v6, :array_e
+    aput-object v10, v7, v11
 
-    const/16 v8, 0xa
+    new-array v10, v9, [I
 
-    aput-object v6, v5, v8
+    fill-array-data v10, :array_9
 
-    new-array v6, v7, [I
+    const/4 v11, 0x5
 
-    fill-array-data v6, :array_f
+    aput-object v10, v7, v11
+
+    new-array v10, v9, [I
+
+    fill-array-data v10, :array_a
+
+    aput-object v10, v7, v9
+
+    new-array v10, v9, [I
+
+    fill-array-data v10, :array_b
+
+    aput-object v10, v7, v8
+
+    new-array v8, v9, [I
+
+    fill-array-data v8, :array_c
+
+    const/16 v10, 0x8
+
+    aput-object v8, v7, v10
+
+    new-array v8, v9, [I
+
+    fill-array-data v8, :array_d
+
+    const/16 v10, 0x9
+
+    aput-object v8, v7, v10
+
+    new-array v8, v9, [I
+
+    fill-array-data v8, :array_e
+
+    aput-object v8, v7, v3
+
+    new-array v3, v9, [I
+
+    fill-array-data v3, :array_f
 
     const/16 v8, 0xb
 
-    aput-object v6, v5, v8
+    aput-object v3, v7, v8
 
-    new-array v6, v7, [I
+    new-array v3, v9, [I
 
-    fill-array-data v6, :array_10
+    fill-array-data v3, :array_10
 
     const/16 v8, 0xc
 
-    aput-object v6, v5, v8
+    aput-object v3, v7, v8
 
-    new-array v6, v7, [I
+    new-array v3, v9, [I
 
-    fill-array-data v6, :array_11
+    fill-array-data v3, :array_11
 
     const/16 v8, 0xd
 
-    aput-object v6, v5, v8
+    aput-object v3, v7, v8
 
-    new-array v6, v7, [I
+    new-array v3, v9, [I
 
-    fill-array-data v6, :array_12
+    fill-array-data v3, :array_12
 
     const/16 v8, 0xe
 
-    aput-object v6, v5, v8
+    aput-object v3, v7, v8
 
-    new-array v6, v7, [I
+    new-array v3, v9, [I
 
-    fill-array-data v6, :array_13
+    fill-array-data v3, :array_13
 
     const/16 v8, 0xf
 
-    aput-object v6, v5, v8
+    aput-object v3, v7, v8
 
-    new-array v6, v7, [I
+    new-array v3, v9, [I
 
-    fill-array-data v6, :array_14
+    fill-array-data v3, :array_14
 
-    aput-object v6, v5, v3
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_15
 
-    const/16 v6, 0x11
+    const/16 v5, 0x11
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_16
 
-    const/16 v6, 0x12
+    const/16 v5, 0x12
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_17
 
-    const/16 v6, 0x13
+    const/16 v5, 0x13
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_18
 
-    const/16 v6, 0x14
+    const/16 v5, 0x14
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_19
 
-    const/16 v6, 0x15
+    const/16 v5, 0x15
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_1a
 
-    const/16 v6, 0x16
+    const/16 v5, 0x16
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_1b
 
-    const/16 v6, 0x17
+    const/16 v5, 0x17
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_1c
 
-    const/16 v6, 0x18
+    const/16 v5, 0x18
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_1d
 
-    const/16 v6, 0x19
+    const/16 v5, 0x19
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_1e
 
-    const/16 v6, 0x1a
+    const/16 v5, 0x1a
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_1f
 
-    const/16 v6, 0x1b
+    const/16 v5, 0x1b
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_20
 
-    const/16 v6, 0x1c
+    const/16 v5, 0x1c
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_21
 
-    const/16 v6, 0x1d
+    const/16 v5, 0x1d
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_22
 
-    const/16 v6, 0x1e
+    const/16 v5, 0x1e
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_23
 
-    const/16 v6, 0x1f
+    const/16 v5, 0x1f
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_24
 
-    const/16 v6, 0x20
+    const/16 v5, 0x20
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_25
 
-    const/16 v6, 0x21
+    const/16 v5, 0x21
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_26
 
-    const/16 v6, 0x22
+    const/16 v5, 0x22
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_27
 
-    const/16 v6, 0x23
+    const/16 v5, 0x23
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_28
 
-    const/16 v6, 0x24
+    const/16 v5, 0x24
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_29
 
-    const/16 v6, 0x25
+    const/16 v5, 0x25
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_2a
 
-    const/16 v6, 0x26
+    const/16 v5, 0x26
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_2b
 
-    const/16 v6, 0x27
+    const/16 v5, 0x27
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_2c
 
-    const/16 v6, 0x28
+    const/16 v5, 0x28
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_2d
 
-    const/16 v6, 0x29
+    const/16 v5, 0x29
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_2e
 
-    const/16 v6, 0x2a
+    const/16 v5, 0x2a
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_2f
 
-    const/16 v6, 0x2b
+    const/16 v5, 0x2b
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_30
 
-    const/16 v6, 0x2c
+    const/16 v5, 0x2c
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_31
 
-    const/16 v6, 0x2d
+    const/16 v5, 0x2d
 
-    aput-object v3, v5, v6
+    aput-object v3, v7, v5
 
-    new-array v3, v7, [I
+    new-array v3, v9, [I
 
     fill-array-data v3, :array_32
 
-    aput-object v3, v5, v1
+    aput-object v3, v7, v1
 
-    new-array v1, v7, [I
+    new-array v1, v9, [I
 
     fill-array-data v1, :array_33
 
     const/16 v3, 0x2f
 
-    aput-object v1, v5, v3
+    aput-object v1, v7, v3
 
-    new-array v1, v7, [I
+    new-array v1, v9, [I
 
     fill-array-data v1, :array_34
 
     const/16 v3, 0x30
 
-    aput-object v1, v5, v3
+    aput-object v1, v7, v3
 
-    new-array v1, v7, [I
+    new-array v1, v9, [I
 
     fill-array-data v1, :array_35
 
     const/16 v3, 0x31
 
-    aput-object v1, v5, v3
+    aput-object v1, v7, v3
 
-    new-array v1, v7, [I
+    new-array v1, v9, [I
 
     fill-array-data v1, :array_36
 
-    const/16 v6, 0x32
+    const/16 v5, 0x32
 
-    aput-object v1, v5, v6
+    aput-object v1, v7, v5
 
-    new-array v1, v7, [I
+    new-array v1, v9, [I
 
     fill-array-data v1, :array_37
 
-    const/16 v6, 0x33
+    const/16 v5, 0x33
 
-    aput-object v1, v5, v6
+    aput-object v1, v7, v5
 
-    new-array v1, v7, [I
+    new-array v1, v9, [I
 
     fill-array-data v1, :array_38
 
-    const/16 v6, 0x34
+    const/16 v5, 0x34
 
-    aput-object v1, v5, v6
+    aput-object v1, v7, v5
 
-    new-array v1, v7, [I
+    new-array v1, v9, [I
 
     fill-array-data v1, :array_39
 
-    const/16 v6, 0x35
+    const/16 v5, 0x35
 
-    aput-object v1, v5, v6
+    aput-object v1, v7, v5
 
-    iput-object v5, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->config_colorbalance:[[I
+    iput-object v7, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->config_colorbalance:[[I
 
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mSensorManager:Landroid/hardware/SensorManager;
+    iput-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mSensorManager:Landroid/hardware/SensorManager;
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -1093,17 +1125,17 @@
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-direct {v1, v5}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    invoke-direct {v1, v4}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     iput-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroid/os/HandlerThread;
 
-    const-string v5, "ColorBalanceThread"
+    const-string v4, "ColorBalanceThread"
 
-    invoke-direct {v1, v5}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v4}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
     iput-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mColorBalanceThread:Landroid/os/HandlerThread;
 
@@ -1113,13 +1145,13 @@
 
     new-instance v1, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;
 
-    iget-object v5, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mColorBalanceThread:Landroid/os/HandlerThread;
+    iget-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mColorBalanceThread:Landroid/os/HandlerThread;
 
-    invoke-virtual {v5}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+    invoke-virtual {v4}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-direct {v1, p0, v5}, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;-><init>(Lcom/android/server/oneplus/display/ColorBalanceService;Landroid/os/Looper;)V
+    invoke-direct {v1, p0, v4}, Lcom/android/server/oneplus/display/ColorBalanceService$CMH;-><init>(Lcom/android/server/oneplus/display/ColorBalanceService;Landroid/os/Looper;)V
 
     iput-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mCMHHandler:Lcom/android/server/oneplus/display/ColorBalanceService$CMH;
 
@@ -1129,9 +1161,9 @@
 
     move-result-object v1
 
-    const-string/jumbo v5, "oem.read_mode.support"
+    const-string/jumbo v4, "oem.read_mode.support"
 
-    invoke-virtual {v1, v5}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+    invoke-virtual {v1, v4}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
 
     move-result v1
 
@@ -1153,7 +1185,7 @@
 
     sput v1, Lcom/android/server/oneplus/display/ColorBalanceService;->COLOR_DELTA:I
 
-    sput v4, Lcom/android/server/oneplus/display/ColorBalanceService;->NIGHT_MODE_SEEKBAR_MAX:I
+    sput v6, Lcom/android/server/oneplus/display/ColorBalanceService;->NIGHT_MODE_SEEKBAR_MAX:I
 
     goto :goto_0
 
@@ -1181,7 +1213,7 @@
 
     sput v0, Lcom/android/server/oneplus/display/ColorBalanceService;->SENSOR_TYPE_RGB:I
 
-    sput v7, Lcom/android/server/oneplus/display/ColorBalanceService;->RGBSENSOR_Dither:I
+    sput v9, Lcom/android/server/oneplus/display/ColorBalanceService;->RGBSENSOR_Dither:I
 
     :cond_1
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -1189,6 +1221,14 @@
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mBootStatus:Ljava/lang/Boolean;
+
+    const-string v0, "SurfaceFlinger"
+
+    invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->flinger:Landroid/os/IBinder;
 
     new-instance v0, Landroid/content/IntentFilter;
 
@@ -2041,11 +2081,11 @@
 
     move-result v0
 
+    const/4 v1, 0x0
+
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
@@ -2060,9 +2100,22 @@
     return-void
 
     :cond_0
+    iget-boolean v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->has_fingerprint:Z
+
+    if-eqz v0, :cond_1
+
+    return-void
+
+    :cond_1
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mScreenOn_Quick:Ljava/lang/Boolean;
+
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsNightModeActivated:Ljava/lang/Boolean;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mContext:Landroid/content/Context;
 
@@ -2090,48 +2143,48 @@
 
     const/4 v4, 0x2
 
-    if-ne v1, v3, :cond_3
+    if-ne v1, v3, :cond_4
 
-    if-ne v0, v4, :cond_1
+    if-ne v0, v4, :cond_2
 
     invoke-direct {p0, v3}, Lcom/android/server/oneplus/display/ColorBalanceService;->setNightMode(Z)V
 
     invoke-direct {p0, v3}, Lcom/android/server/oneplus/display/ColorBalanceService;->setSRGB(Z)V
 
-    :cond_1
-    if-ne v0, v2, :cond_2
+    :cond_2
+    if-ne v0, v2, :cond_3
 
     invoke-direct {p0, v3}, Lcom/android/server/oneplus/display/ColorBalanceService;->setNightMode(Z)V
 
     invoke-direct {p0, v3}, Lcom/android/server/oneplus/display/ColorBalanceService;->setDciP3(Z)V
 
-    :cond_2
-    if-eq v0, v4, :cond_6
+    :cond_3
+    if-eq v0, v4, :cond_7
 
-    if-eq v0, v2, :cond_6
+    if-eq v0, v2, :cond_7
 
     invoke-direct {p0, v3}, Lcom/android/server/oneplus/display/ColorBalanceService;->setNightMode(Z)V
 
     goto :goto_0
 
-    :cond_3
-    if-ne v0, v4, :cond_4
+    :cond_4
+    if-ne v0, v4, :cond_5
 
     invoke-direct {p0, v3}, Lcom/android/server/oneplus/display/ColorBalanceService;->setSRGB(Z)V
 
-    :cond_4
-    if-ne v0, v2, :cond_5
+    :cond_5
+    if-ne v0, v2, :cond_6
 
     invoke-direct {p0, v3}, Lcom/android/server/oneplus/display/ColorBalanceService;->setDciP3(Z)V
 
-    :cond_5
+    :cond_6
     const/4 v1, 0x5
 
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_7
 
     invoke-direct {p0, v3}, Lcom/android/server/oneplus/display/ColorBalanceService;->setAdaptitionColorMode(Z)V
 
-    :cond_6
+    :cond_7
     :goto_0
     return-void
 .end method
@@ -2528,7 +2581,15 @@
     return-void
 .end method
 
-.method static synthetic access$4800(Lcom/android/server/oneplus/display/ColorBalanceService;I)V
+.method static synthetic access$4800(Lcom/android/server/oneplus/display/ColorBalanceService;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/server/oneplus/display/ColorBalanceService;->closePropeties()V
+
+    return-void
+.end method
+
+.method static synthetic access$4900(Lcom/android/server/oneplus/display/ColorBalanceService;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/oneplus/display/ColorBalanceService;->sendMsgInternal(I)V
@@ -2536,7 +2597,7 @@
     return-void
 .end method
 
-.method static synthetic access$4900(Lcom/android/server/oneplus/display/ColorBalanceService;)Ljava/lang/Boolean;
+.method static synthetic access$5000(Lcom/android/server/oneplus/display/ColorBalanceService;)Ljava/lang/Boolean;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsSupportReadingMode:Ljava/lang/Boolean;
@@ -2544,7 +2605,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$5004(Lcom/android/server/oneplus/display/ColorBalanceService;)I
+.method static synthetic access$5104(Lcom/android/server/oneplus/display/ColorBalanceService;)I
     .locals 1
 
     iget v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mStartSetCount:I
@@ -2556,7 +2617,7 @@
     return v0
 .end method
 
-.method static synthetic access$5100(Lcom/android/server/oneplus/display/ColorBalanceService;)Lcom/android/server/oneplus/display/ColorBalanceService$AutoMode;
+.method static synthetic access$5200(Lcom/android/server/oneplus/display/ColorBalanceService;)Lcom/android/server/oneplus/display/ColorBalanceService$AutoMode;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mAutoMode:Lcom/android/server/oneplus/display/ColorBalanceService$AutoMode;
@@ -3195,9 +3256,11 @@
 
     invoke-static {v0, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 v0, 0x0
+    const/16 v0, 0x20
 
-    invoke-virtual {v1, v7, v2, v0, v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->sendMsgWithValueDelayed(IIII)V
+    const/4 v5, 0x0
+
+    invoke-virtual {v1, v7, v2, v5, v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->sendMsgWithValueDelayed(IIII)V
 
     goto :goto_6
 
@@ -3788,7 +3851,7 @@
 
     const-string v0, "ColorBalanceService"
 
-    const-string v4, "changeReading2NightMode done(20000)!"
+    const-string v4, "changeReading2NightMode done(20000 -> 30000)!"
 
     invoke-static {v0, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -3860,15 +3923,100 @@
 
     const-string v2, "ColorBalanceService"
 
-    const-string v3, "close matrix!"
+    const-string v4, "close matrix!"
 
-    invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_1
+    const/16 v2, 0x18
+
+    const/16 v4, 0x20
+
+    invoke-virtual {p0, v2, v3, v3, v4}, Lcom/android/server/oneplus/display/ColorBalanceService;->sendMsgWithValueDelayed(IIII)V
+
     return-void
 
     :cond_2
     :goto_0
+    const-string/jumbo v2, "persist.vendor.color.matrix"
+
+    const-string v3, "0"
+
+    invoke-static {v2, v3}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method private closePropeties()V
+    .locals 6
+
+    const-string v0, "ColorBalanceService"
+
+    const-string v1, "close Propeties!"
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string/jumbo v0, "persist.vendor.color.matrix"
+
+    const-string v1, "0"
+
+    invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->flinger:Landroid/os/IBinder;
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    const-string v1, "android.ui.ISurfaceComposer"
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    const/16 v1, 0xb
+
+    const/16 v2, 0xb
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->flinger:Landroid/os/IBinder;
+
+    const/16 v3, 0x3f7
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    invoke-interface {v2, v3, v0, v4, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    goto :goto_0
+
+    :cond_0
+    const-string v0, "ColorBalanceService"
+
+    const-string v1, "close Propeties flinger is null"
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    goto :goto_1
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "ColorBalanceService"
+
+    const-string/jumbo v2, "read flinger 1015 is fail"
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_1
     return-void
 .end method
 
@@ -4640,7 +4788,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "ignored,Stable color is "
+    const-string/jumbo v3, "ignored,Stable color is "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6974,21 +7122,6 @@
 .end method
 
 .method private opSetActiveModesId(I)V
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mSDM:Lcom/oneplus/display/SDManager;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mSDM:Lcom/oneplus/display/SDManager;
-
-    invoke-virtual {v0, p1}, Lcom/oneplus/display/SDManager;->SetActiveModesId(I)V
-
-    :cond_0
-    return-void
-.end method
-
-.method private opSetColorBalance(II)V
     .locals 3
 
     const-string v0, "ColorBalanceService"
@@ -6997,7 +7130,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "opSetColorBalance: value"
+    const-string/jumbo v2, "opSetActiveModesId: mode = "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7009,8 +7142,32 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mSDM:Lcom/oneplus/display/SDManager;
+
+    if-eqz v0, :cond_0
+
+    iget-boolean v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->colorbalance_stop:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mSDM:Lcom/oneplus/display/SDManager;
+
+    invoke-virtual {v0, p1}, Lcom/oneplus/display/SDManager;->SetActiveModesId(I)V
+
+    :cond_0
+    return-void
+.end method
+
+.method private opSetColorBalance(II)V
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->colorbalance_stop:Z
+
+    if-nez v0, :cond_0
+
     invoke-direct {p0, p1, p2}, Lcom/android/server/oneplus/display/ColorBalanceService;->oneplusSetColorBalance(II)V
 
+    :cond_0
     return-void
 .end method
 
@@ -7941,13 +8098,17 @@
 .end method
 
 .method private processScreenOn(Z)V
-    .locals 6
+    .locals 7
 
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
     :try_start_0
+    iget-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsNightModeActivated:Ljava/lang/Boolean;
+
+    if-eqz v1, :cond_0
+
     const-string v1, "ColorBalanceService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -7960,21 +8121,184 @@
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
+    const-string v3, " reason = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget v3, Lcom/android/server/power/PowerManagerService;->mGo_to_sleep_Reason:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_b
 
+    iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v2
+
+    const-string v3, "android.hardware.fingerprint"
+
+    invoke-virtual {v2, v3}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mContext:Landroid/content/Context;
+
+    const-string v3, "fingerprint"
+
+    invoke-virtual {v2, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/hardware/fingerprint/FingerprintManager;
+
+    iput-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mFpm:Landroid/hardware/fingerprint/FingerprintManager;
+
+    :cond_1
+    iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mFpm:Landroid/hardware/fingerprint/FingerprintManager;
+
+    const/4 v3, -0x1
+
+    const/4 v4, 0x1
+
+    if-eqz v2, :cond_3
+
+    new-array v2, v4, [I
+
+    const/16 v5, 0x47
+
+    aput v5, v2, v1
+
+    invoke-static {v2}, Landroid/util/OpFeatures;->isSupport([I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mFpm:Landroid/hardware/fingerprint/FingerprintManager;
+
+    invoke-virtual {v2}, Landroid/hardware/fingerprint/FingerprintManager;->isHardwareDetected()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mFpm:Landroid/hardware/fingerprint/FingerprintManager;
+
+    invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
+
+    move-result v5
+
+    invoke-virtual {v2, v5}, Landroid/hardware/fingerprint/FingerprintManager;->getEnrolledFingerprints(I)Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-lez v2, :cond_2
+
+    sget v2, Lcom/android/server/power/PowerManagerService;->mGo_to_sleep_Reason:I
+
+    const/16 v5, 0x8
+
+    if-eq v2, v5, :cond_2
+
+    sget v2, Lcom/android/server/power/PowerManagerService;->mGo_to_sleep_Reason:I
+
+    if-eq v2, v3, :cond_2
+
+    move v2, v4
+
+    goto :goto_0
+
+    :cond_2
+    move v2, v1
+
+    :goto_0
+    iput-boolean v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->has_fingerprint:Z
+
+    goto :goto_1
+
+    :cond_3
+    const-string v2, "ColorBalanceService"
+
+    const-string/jumbo v5, "mFpm == null"
+
+    invoke-static {v2, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_1
+    sput v3, Lcom/android/server/power/PowerManagerService;->mGo_to_sleep_Reason:I
+
+    const-string v2, "ColorBalanceService"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "has_fingerprint = "
+
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v5, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->has_fingerprint:Z
+
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-boolean v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->has_fingerprint:Z
+
+    const/4 v3, 0x2
+
+    if-nez v2, :cond_4
+
+    const-string v2, "ColorDisable"
+
+    invoke-static {v2}, Lcom/oneplus/oimc/OIMCManager;->getRemoteFuncStatus(Ljava/lang/String;)I
+
+    move-result v2
+
+    if-ne v2, v4, :cond_5
+
+    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mScreenOn_Quick:Ljava/lang/Boolean;
+
+    const-string v2, "FingerPrintMode"
+
+    invoke-static {v2, v3, v1}, Lcom/oneplus/oimc/OIMCManager;->notifyModeChange(Ljava/lang/String;II)V
+
+    goto :goto_2
+
+    :cond_4
+    const-string v2, "FingerPrintMode"
+
+    invoke-static {v2, v4, v1}, Lcom/oneplus/oimc/OIMCManager;->notifyModeChange(Ljava/lang/String;II)V
+
+    :cond_5
+    :goto_2
     iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsNightModeActivated:Ljava/lang/Boolean;
 
-    const/4 v3, 0x1
-
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_6
 
     iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsNightModeActivated:Ljava/lang/Boolean;
 
@@ -7982,16 +8306,16 @@
 
     move-result v2
 
-    if-nez v2, :cond_3
+    if-nez v2, :cond_9
 
-    :cond_0
+    :cond_6
     iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingModeActivated:Ljava/lang/Boolean;
 
     invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v2
 
-    if-nez v2, :cond_3
+    if-nez v2, :cond_9
 
     iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsAutoModeActivated:Ljava/lang/Boolean;
 
@@ -7999,7 +8323,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_7
 
     iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mAutoSensor:Ljava/lang/Boolean;
 
@@ -8007,18 +8331,18 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_7
 
-    goto :goto_0
+    goto :goto_3
 
-    :cond_1
+    :cond_7
     iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsSupportReadingMode:Ljava/lang/Boolean;
 
     invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v2
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_a
 
     iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mContext:Landroid/content/Context;
 
@@ -8026,52 +8350,54 @@
 
     move-result-object v2
 
-    const-string/jumbo v4, "screen_color_mode_settings_value"
+    const-string/jumbo v5, "screen_color_mode_settings_value"
 
-    const/4 v5, -0x2
+    const/4 v6, -0x2
 
-    invoke-static {v2, v4, v3, v5}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+    invoke-static {v2, v5, v4, v6}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v2
 
-    const/4 v3, 0x2
-
-    if-eq v2, v3, :cond_2
+    if-eq v2, v3, :cond_8
 
     const/4 v3, 0x4
 
-    if-ne v2, v3, :cond_4
+    if-ne v2, v3, :cond_a
 
-    :cond_2
+    :cond_8
+    iget-boolean v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->has_fingerprint:Z
+
+    if-nez v3, :cond_a
+
     invoke-direct {p0, v1}, Lcom/android/server/oneplus/display/ColorBalanceService;->setAdaptitionColorMode(Z)V
 
     invoke-direct {p0}, Lcom/android/server/oneplus/display/ColorBalanceService;->revertStatus()V
 
-    goto :goto_1
+    goto :goto_4
 
-    :cond_3
-    :goto_0
-    invoke-direct {p0, v3}, Lcom/android/server/oneplus/display/ColorBalanceService;->setSRGBSensorEnabled(Z)Z
+    :cond_9
+    :goto_3
+    invoke-direct {p0, v4}, Lcom/android/server/oneplus/display/ColorBalanceService;->setSRGBSensorEnabled(Z)Z
 
-    :cond_4
-    :goto_1
+    :cond_a
+    :goto_4
     sget v1, Lcom/android/server/oneplus/display/ColorBalanceService;->SENSOR_TYPE_RGB:I
 
     const v2, 0x1fa2639
 
-    if-ne v1, v2, :cond_6
+    if-ne v1, v2, :cond_c
 
     const/16 v1, 0x11
 
     invoke-virtual {p0, v1}, Lcom/android/server/oneplus/display/ColorBalanceService;->sendMsg(I)V
 
-    goto :goto_2
+    goto :goto_5
 
-    :cond_5
+    :cond_b
     invoke-direct {p0, v1}, Lcom/android/server/oneplus/display/ColorBalanceService;->setSRGBSensorEnabled(Z)Z
 
-    :cond_6
-    :goto_2
+    :cond_c
+    :goto_5
     monitor-exit v0
 
     return-void
@@ -8135,6 +8461,14 @@
 
     if-nez v0, :cond_0
 
+    iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingModeActivated:Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
     iget v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mModeStage:I
 
     if-eq v0, v1, :cond_0
@@ -8193,7 +8527,7 @@
 
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mGeneration:I
 
-    if-ne v0, v2, :cond_34
+    if-ne v0, v2, :cond_35
 
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mGeneration:I
 
@@ -8303,7 +8637,7 @@
     :cond_3
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mGeneration:I
 
-    if-ne v0, v2, :cond_34
+    if-ne v0, v2, :cond_35
 
     iget-object v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingModeActivated:Ljava/lang/Boolean;
 
@@ -8317,7 +8651,7 @@
 
     const/16 v15, 0xb
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1a
 
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mReadingModeClosingStage:I
 
@@ -8348,7 +8682,7 @@
     :cond_4
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mModeStage:I
 
-    if-eq v0, v9, :cond_34
+    if-eq v0, v9, :cond_35
 
     iget-object v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingOrNightModeOpendLastSesson:Ljava/lang/Boolean;
 
@@ -8356,7 +8690,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_19
 
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mReadingModeOpingStage:I
 
@@ -8893,7 +9227,7 @@
 
     const/16 v6, 0x7530
 
-    if-ne v0, v6, :cond_34
+    if-ne v0, v6, :cond_35
 
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mFactor:F
 
@@ -8906,8 +9240,6 @@
     if-lez v0, :cond_17
 
     iput v8, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mFactor:F
-
-    invoke-direct/range {p0 .. p0}, Lcom/android/server/oneplus/display/ColorBalanceService;->closeMatrix()V
 
     iput v5, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mReadingModeOpingStage:I
 
@@ -8936,13 +9268,26 @@
 
     invoke-direct/range {p0 .. p0}, Lcom/android/server/oneplus/display/ColorBalanceService;->setDTMColorMatrix()V
 
+    iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mFactor:F
+
+    float-to-double v5, v0
+
+    const-wide v7, 0x3fefff2e48e8a71eL    # 0.9999
+
+    cmpl-double v0, v5, v7
+
+    if-lez v0, :cond_18
+
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/oneplus/display/ColorBalanceService;->closeMatrix()V
+
+    :cond_18
     const/16 v0, 0x10
 
     invoke-virtual {v1, v15, v2, v12, v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->sendMsgWithValueDelayed(IIII)V
 
     goto/16 :goto_a
 
-    :cond_18
+    :cond_19
     iput v8, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mFactor:F
 
     invoke-direct/range {p0 .. p0}, Lcom/android/server/oneplus/display/ColorBalanceService;->closeMatrix()V
@@ -8983,39 +9328,39 @@
 
     goto/16 :goto_a
 
-    :cond_19
+    :cond_1a
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mModeStage:I
 
     const/16 v14, 0x8
 
-    if-eq v0, v14, :cond_34
+    if-eq v0, v14, :cond_35
 
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mModeStage:I
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_35
 
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mReadingModeClosingStage:I
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_31
 
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mReadingModeClosingStage:I
 
     const/16 v14, 0x1f4
 
-    if-ne v0, v14, :cond_1a
+    if-ne v0, v14, :cond_1b
 
     goto/16 :goto_9
 
-    :cond_1a
+    :cond_1b
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mReadingModeClosingStage:I
 
     const/16 v14, 0x3e8
 
-    if-ne v0, v14, :cond_20
+    if-ne v0, v14, :cond_21
 
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mCurrentReadingColorbalance:I
 
-    if-ne v0, v3, :cond_1b
+    if-ne v0, v3, :cond_1c
 
     invoke-static {v12}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -9051,18 +9396,18 @@
 
     goto/16 :goto_a
 
-    :cond_1b
+    :cond_1c
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mCurrentReadingColorbalance:I
 
     iget v6, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mCurrentReadingColorbalance:I
 
-    if-le v6, v3, :cond_1c
+    if-le v6, v3, :cond_1d
 
     const/4 v6, -0x1
 
     goto :goto_3
 
-    :cond_1c
+    :cond_1d
     move v6, v11
 
     :goto_3
@@ -9072,43 +9417,43 @@
 
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mCurrentReadingColorbalance:I
 
-    if-eq v0, v3, :cond_1e
+    if-eq v0, v3, :cond_1f
 
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mCurrentReadingColorbalance:I
 
     iget v6, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mCurrentReadingColorbalance:I
 
-    if-le v6, v3, :cond_1d
+    if-le v6, v3, :cond_1e
 
     const/4 v11, -0x1
 
     nop
 
-    :cond_1d
+    :cond_1e
     add-int/2addr v0, v11
 
     iput v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mCurrentReadingColorbalance:I
 
-    :cond_1e
+    :cond_1f
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mReadingModeOpingStage:I
 
-    if-ne v0, v5, :cond_1f
+    if-ne v0, v5, :cond_20
 
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mCurrentReadingColorbalance:I
 
     invoke-direct {v1, v0, v12}, Lcom/android/server/oneplus/display/ColorBalanceService;->opSetColorBalance(II)V
 
-    :cond_1f
+    :cond_20
     invoke-virtual {v1, v15, v2, v3, v7}, Lcom/android/server/oneplus/display/ColorBalanceService;->sendMsgWithValueDelayed(IIII)V
 
     goto/16 :goto_a
 
-    :cond_20
+    :cond_21
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mReadingModeClosingStage:I
 
     const/16 v5, 0x9c4
 
-    if-ne v0, v5, :cond_26
+    if-ne v0, v5, :cond_27
 
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mFactor:F
 
@@ -9118,7 +9463,7 @@
 
     cmpl-double v0, v5, v10
 
-    if-lez v0, :cond_21
+    if-lez v0, :cond_22
 
     iput v8, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mFactor:F
 
@@ -9136,14 +9481,14 @@
 
     goto/16 :goto_a
 
-    :cond_21
+    :cond_22
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mFactor:F
 
     const v5, 0x3d48b439    # 0.049f
 
     cmpl-float v0, v0, v5
 
-    if-lez v0, :cond_22
+    if-lez v0, :cond_23
 
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mFactor:F
 
@@ -9151,7 +9496,7 @@
 
     cmpg-float v0, v0, v5
 
-    if-gez v0, :cond_22
+    if-gez v0, :cond_23
 
     const-string v0, "ColorBalanceService"
 
@@ -9179,14 +9524,14 @@
 
     goto/16 :goto_4
 
-    :cond_22
+    :cond_23
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mFactor:F
 
     const v5, 0x3e7ef9db    # 0.249f
 
     cmpl-float v0, v0, v5
 
-    if-lez v0, :cond_23
+    if-lez v0, :cond_24
 
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mFactor:F
 
@@ -9194,7 +9539,7 @@
 
     cmpg-float v0, v0, v5
 
-    if-gez v0, :cond_23
+    if-gez v0, :cond_24
 
     const/16 v0, 0x8
 
@@ -9226,14 +9571,14 @@
 
     goto :goto_4
 
-    :cond_23
+    :cond_24
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mFactor:F
 
     const v5, 0x3efae148    # 0.49f
 
     cmpl-float v0, v0, v5
 
-    if-lez v0, :cond_24
+    if-lez v0, :cond_25
 
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mFactor:F
 
@@ -9241,7 +9586,7 @@
 
     cmpg-float v0, v0, v5
 
-    if-gez v0, :cond_24
+    if-gez v0, :cond_25
 
     invoke-direct {v1, v9}, Lcom/android/server/oneplus/display/ColorBalanceService;->opSetActiveModesId(I)V
 
@@ -9269,14 +9614,14 @@
 
     goto :goto_4
 
-    :cond_24
+    :cond_25
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mFactor:F
 
     const v5, 0x3f3fbe77    # 0.749f
 
     cmpl-float v0, v0, v5
 
-    if-lez v0, :cond_25
+    if-lez v0, :cond_26
 
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mFactor:F
 
@@ -9284,7 +9629,7 @@
 
     cmpg-float v0, v0, v5
 
-    if-gez v0, :cond_25
+    if-gez v0, :cond_26
 
     const/4 v0, 0x4
 
@@ -9314,7 +9659,7 @@
 
     invoke-static {v0, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_25
+    :cond_26
     :goto_4
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mFactor:F
 
@@ -9336,12 +9681,12 @@
 
     goto/16 :goto_a
 
-    :cond_26
+    :cond_27
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mReadingModeClosingStage:I
 
     const/16 v5, 0x1388
 
-    if-ne v0, v5, :cond_2a
+    if-ne v0, v5, :cond_2b
 
     iget-object v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mContext:Landroid/content/Context;
 
@@ -9355,7 +9700,7 @@
 
     move-result v0
 
-    if-ne v0, v11, :cond_27
+    if-ne v0, v11, :cond_28
 
     invoke-direct/range {p0 .. p0}, Lcom/android/server/oneplus/display/ColorBalanceService;->revertStatus()V
 
@@ -9371,18 +9716,18 @@
 
     goto :goto_6
 
-    :cond_27
+    :cond_28
     const/4 v5, 0x2
 
-    if-eq v0, v5, :cond_29
+    if-eq v0, v5, :cond_2a
 
     const/4 v5, 0x4
 
-    if-ne v0, v5, :cond_28
+    if-ne v0, v5, :cond_29
 
     goto :goto_5
 
-    :cond_28
+    :cond_29
     iput v8, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mFactor:F
 
     invoke-direct/range {p0 .. p0}, Lcom/android/server/oneplus/display/ColorBalanceService;->closeMatrix()V
@@ -9405,7 +9750,7 @@
 
     goto :goto_6
 
-    :cond_29
+    :cond_2a
     :goto_5
     invoke-direct/range {p0 .. p0}, Lcom/android/server/oneplus/display/ColorBalanceService;->revertStatus()V
 
@@ -9434,12 +9779,12 @@
 
     goto/16 :goto_a
 
-    :cond_2a
+    :cond_2b
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mReadingModeClosingStage:I
 
     const/16 v5, 0x2710
 
-    if-ne v0, v5, :cond_2e
+    if-ne v0, v5, :cond_2f
 
     iget-object v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mContext:Landroid/content/Context;
 
@@ -9455,7 +9800,7 @@
 
     const/16 v5, 0x2b
 
-    if-ne v0, v6, :cond_2b
+    if-ne v0, v6, :cond_2c
 
     iget-object v6, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mContext:Landroid/content/Context;
 
@@ -9473,10 +9818,10 @@
 
     rsub-int/lit8 v5, v6, 0x64
 
-    :cond_2b
+    :cond_2c
     iget v6, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mCurrentReadingColorbalance:I
 
-    if-ne v6, v5, :cond_2c
+    if-ne v6, v5, :cond_2d
 
     iput v10, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mReadingModeClosingStage:I
 
@@ -9488,18 +9833,18 @@
 
     goto :goto_7
 
-    :cond_2c
+    :cond_2d
     iget v6, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mCurrentReadingColorbalance:I
 
     iget v7, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mCurrentReadingColorbalance:I
 
-    if-le v7, v5, :cond_2d
+    if-le v7, v5, :cond_2e
 
     const/4 v11, -0x1
 
     nop
 
-    :cond_2d
+    :cond_2e
     add-int/2addr v6, v11
 
     iput v6, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mCurrentReadingColorbalance:I
@@ -9515,10 +9860,10 @@
 
     goto/16 :goto_a
 
-    :cond_2e
+    :cond_2f
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mReadingModeClosingStage:I
 
-    if-ne v0, v10, :cond_34
+    if-ne v0, v10, :cond_35
 
     iget-object v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mContext:Landroid/content/Context;
 
@@ -9532,13 +9877,13 @@
 
     move-result v0
 
-    if-eq v0, v7, :cond_2f
+    if-eq v0, v7, :cond_30
 
     invoke-direct {v1, v12}, Lcom/android/server/oneplus/display/ColorBalanceService;->setSRGBSensorEnabled(Z)Z
 
     goto :goto_8
 
-    :cond_2f
+    :cond_30
     invoke-static {v11}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v5
@@ -9566,7 +9911,7 @@
 
     goto :goto_a
 
-    :cond_30
+    :cond_31
     :goto_9
     iget v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mFactor:F
 
@@ -9576,7 +9921,7 @@
 
     cmpg-double v0, v5, v7
 
-    if-gez v0, :cond_33
+    if-gez v0, :cond_34
 
     invoke-direct {v1, v11}, Lcom/android/server/oneplus/display/ColorBalanceService;->opSetActiveModesId(I)V
 
@@ -9604,16 +9949,16 @@
 
     const/4 v6, 0x2
 
-    if-eq v5, v6, :cond_31
+    if-eq v5, v6, :cond_32
 
     const/4 v6, 0x4
 
-    if-ne v5, v6, :cond_32
-
-    :cond_31
-    const/16 v0, 0x2d
+    if-ne v5, v6, :cond_33
 
     :cond_32
+    const/16 v0, 0x2d
+
+    :cond_33
     invoke-virtual {v1, v15, v2, v0, v12}, Lcom/android/server/oneplus/display/ColorBalanceService;->sendMsgWithValueDelayed(IIII)V
 
     const-string v6, "ColorBalanceService"
@@ -9624,7 +9969,7 @@
 
     goto :goto_a
 
-    :cond_33
+    :cond_34
     const/16 v0, 0x1f4
 
     iput v0, v1, Lcom/android/server/oneplus/display/ColorBalanceService;->mReadingModeClosingStage:I
@@ -9667,7 +10012,7 @@
 
     invoke-static {v0, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_34
+    :cond_35
     :goto_a
     monitor-exit v4
 
@@ -10962,7 +11307,7 @@
 .end method
 
 .method private setUp()V
-    .locals 7
+    .locals 10
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -10976,11 +11321,11 @@
 
     const-string v1, "colorbalanceservice-night-reading-mode"
 
-    const/4 v2, 0x0
+    const/4 v2, -0x2
 
-    const/4 v3, -0x2
+    const/4 v3, 0x0
 
-    invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+    invoke-static {v0, v1, v3, v2}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v0
 
@@ -10992,19 +11337,19 @@
 
     invoke-virtual {p0}, Lcom/android/server/oneplus/display/ColorBalanceService;->getContext()Landroid/content/Context;
 
-    move-result-object v3
+    move-result-object v4
 
-    iget v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mCurrentUser:I
+    iget v5, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mCurrentUser:I
 
-    invoke-direct {v1, v3, v4}, Lcom/android/internal/app/ColorDisplayController;-><init>(Landroid/content/Context;I)V
+    invoke-direct {v1, v4, v5}, Lcom/android/internal/app/ColorDisplayController;-><init>(Landroid/content/Context;I)V
 
     iput-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mController:Lcom/android/internal/app/ColorDisplayController;
 
     const-string v1, "ColorBalanceService"
 
-    const-string v3, "ColorDisplayController is NULL"
+    const-string v4, "ColorDisplayController is NULL"
 
-    invoke-static {v1, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
     iget-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mController:Lcom/android/internal/app/ColorDisplayController;
@@ -11013,191 +11358,244 @@
 
     const-string v1, "ColorBalanceService"
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "setUp: currentUser="
+    const-string/jumbo v5, "setUp: currentUser="
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mCurrentUser:I
+    iget v5, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mCurrentUser:I
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mController:Lcom/android/internal/app/ColorDisplayController;
-
-    invoke-virtual {v1}, Lcom/android/internal/app/ColorDisplayController;->isActivated()Z
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    iget-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mController:Lcom/android/internal/app/ColorDisplayController;
-
-    invoke-virtual {v3}, Lcom/android/internal/app/ColorDisplayController;->isReadingModeActivated()Z
-
-    move-result v3
-
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v3
-
-    const-string v4, "ColorBalanceService"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "#0 reading mode isReadingModeActivated isReadon = "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mController:Lcom/android/internal/app/ColorDisplayController;
-
-    invoke-virtual {v4}, Lcom/android/internal/app/ColorDisplayController;->isReadingModeActivated()Z
-
-    move-result v4
-
-    const/4 v5, 0x1
-
-    if-eqz v4, :cond_2
-
-    iget-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingOrNightModeOpendLastSesson:Ljava/lang/Boolean;
-
-    if-nez v4, :cond_1
-
-    const-string v4, "ColorBalanceService"
-
-    const-string v6, "#1 reading mode had been opened!"
-
-    invoke-static {v4, v6}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
-    iput-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingOrNightModeOpendLastSesson:Ljava/lang/Boolean;
+    invoke-static {v1, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v4, "accessibility_display_inversion_enabled"
+
+    invoke-static {v1, v4, v3, v2}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v1
+
+    iget-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v4
+
+    const-string v5, "accessibility_display_daltonizer_enabled"
+
+    invoke-static {v4, v5, v3, v2}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v2
+
+    const/4 v4, 0x1
+
+    if-eq v1, v4, :cond_2
+
+    if-ne v2, v4, :cond_1
 
     goto :goto_0
 
     :cond_1
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    if-nez v1, :cond_3
 
-    move-result-object v4
+    if-nez v2, :cond_3
 
-    iput-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingOrNightModeOpendLastSesson:Ljava/lang/Boolean;
-
-    const-string v4, "ColorBalanceService"
-
-    const-string v6, "#1 reading mode had been close!"
-
-    invoke-static {v4, v6}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    :goto_0
-    iget-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mBootStatus:Ljava/lang/Boolean;
-
-    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_3
-
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v4
-
-    iput-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mBootColorStatus:Ljava/lang/Boolean;
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v4
-
-    iput-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mBootStatus:Ljava/lang/Boolean;
+    iput-boolean v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->colorbalance_stop:Z
 
     goto :goto_1
 
     :cond_2
-    sget-object v4, Lcom/oneplus/oimc/OIMCRule;->Rule_Disable_GrayColor:Lcom/oneplus/oimc/OIMCRule;
-
-    invoke-static {v4}, Lcom/oneplus/oimc/OIMCManager;->removeFuncRuleGlobal(Lcom/oneplus/oimc/OIMCRule;)V
-
-    const-string v4, "ColorBalanceService"
-
-    const-string v6, "#2 reading mode had been close!"
-
-    invoke-static {v4, v6}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    :goto_0
+    iput-boolean v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->colorbalance_stop:Z
 
     :cond_3
     :goto_1
-    iget-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mController:Lcom/android/internal/app/ColorDisplayController;
+    iget-object v5, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mController:Lcom/android/internal/app/ColorDisplayController;
 
-    invoke-virtual {v4}, Lcom/android/internal/app/ColorDisplayController;->isActivated()Z
+    invoke-virtual {v5}, Lcom/android/internal/app/ColorDisplayController;->isActivated()Z
 
-    move-result v4
-
-    if-eqz v4, :cond_5
-
-    iget-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mAutoMode:Lcom/android/server/oneplus/display/ColorBalanceService$AutoMode;
-
-    if-nez v4, :cond_5
-
-    iget-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingOrNightModeOpendLastSesson:Ljava/lang/Boolean;
-
-    if-nez v4, :cond_4
-
-    const-string v2, "ColorBalanceService"
-
-    const-string v4, "#1 night mode had been opened!"
-
-    invoke-static {v2, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    move-result v5
 
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v2
+    move-result-object v5
 
-    iput-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingOrNightModeOpendLastSesson:Ljava/lang/Boolean;
+    iget-object v6, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mController:Lcom/android/internal/app/ColorDisplayController;
+
+    invoke-virtual {v6}, Lcom/android/internal/app/ColorDisplayController;->isReadingModeActivated()Z
+
+    move-result v6
+
+    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v6
+
+    const-string v7, "ColorBalanceService"
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "#0 reading mode isReadingModeActivated isReadon = "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v9, " colorbalance_stop = "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v9, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->colorbalance_stop:Z
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v7, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mController:Lcom/android/internal/app/ColorDisplayController;
+
+    invoke-virtual {v7}, Lcom/android/internal/app/ColorDisplayController;->isReadingModeActivated()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_5
+
+    iget-object v7, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingOrNightModeOpendLastSesson:Ljava/lang/Boolean;
+
+    if-nez v7, :cond_4
+
+    const-string v7, "ColorBalanceService"
+
+    const-string v8, "#1 reading mode had been opened!"
+
+    invoke-static {v7, v8}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v7
+
+    iput-object v7, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingOrNightModeOpendLastSesson:Ljava/lang/Boolean;
 
     goto :goto_2
 
     :cond_4
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v2
+    move-result-object v7
 
-    iput-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingOrNightModeOpendLastSesson:Ljava/lang/Boolean;
+    iput-object v7, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingOrNightModeOpendLastSesson:Ljava/lang/Boolean;
+
+    const-string v7, "ColorBalanceService"
+
+    const-string v8, "#1 reading mode had been close!"
+
+    invoke-static {v7, v8}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_2
-    iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mController:Lcom/android/internal/app/ColorDisplayController;
+    iget-object v7, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mBootStatus:Ljava/lang/Boolean;
 
-    invoke-virtual {v2, v5}, Lcom/android/internal/app/ColorDisplayController;->setActivated(Z)Z
+    invoke-virtual {v7}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_6
+
+    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v7
+
+    iput-object v7, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mBootColorStatus:Ljava/lang/Boolean;
+
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v7
+
+    iput-object v7, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mBootStatus:Ljava/lang/Boolean;
 
     goto :goto_3
 
     :cond_5
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    sget-object v7, Lcom/oneplus/oimc/OIMCRule;->Rule_Disable_GrayColor:Lcom/oneplus/oimc/OIMCRule;
+
+    invoke-static {v7}, Lcom/oneplus/oimc/OIMCManager;->removeFuncRuleGlobal(Lcom/oneplus/oimc/OIMCRule;)V
+
+    const-string v7, "ColorBalanceService"
+
+    const-string v8, "#2 reading mode had been close!"
+
+    invoke-static {v7, v8}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_6
+    :goto_3
+    iget-object v7, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mController:Lcom/android/internal/app/ColorDisplayController;
+
+    invoke-virtual {v7}, Lcom/android/internal/app/ColorDisplayController;->isActivated()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_8
+
+    iget-object v7, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mAutoMode:Lcom/android/server/oneplus/display/ColorBalanceService$AutoMode;
+
+    if-nez v7, :cond_8
+
+    iget-object v7, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingOrNightModeOpendLastSesson:Ljava/lang/Boolean;
+
+    if-nez v7, :cond_7
+
+    const-string v3, "ColorBalanceService"
+
+    const-string v7, "#1 night mode had been opened!"
+
+    invoke-static {v3, v7}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingOrNightModeOpendLastSesson:Ljava/lang/Boolean;
+
+    goto :goto_4
+
+    :cond_7
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingOrNightModeOpendLastSesson:Ljava/lang/Boolean;
+
+    :goto_4
+    iget-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mController:Lcom/android/internal/app/ColorDisplayController;
+
+    invoke-virtual {v3, v4}, Lcom/android/internal/app/ColorDisplayController;->setActivated(Z)Z
+
+    goto :goto_5
+
+    :cond_8
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v4
 
     iput-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingOrNightModeOpendLastSesson:Ljava/lang/Boolean;
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v4
 
@@ -11209,22 +11607,22 @@
 
     iget-object v4, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mController:Lcom/android/internal/app/ColorDisplayController;
 
-    invoke-virtual {v4, v2}, Lcom/android/internal/app/ColorDisplayController;->setActivated(Z)Z
+    invoke-virtual {v4, v3}, Lcom/android/internal/app/ColorDisplayController;->setActivated(Z)Z
 
-    const-string v2, "ColorBalanceService"
+    const-string v3, "ColorBalanceService"
 
     const-string v4, "#3 night mode have to  closed!"
 
-    invoke-static {v2, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_3
-    iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mController:Lcom/android/internal/app/ColorDisplayController;
+    :goto_5
+    iget-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mController:Lcom/android/internal/app/ColorDisplayController;
 
-    invoke-virtual {v2}, Lcom/android/internal/app/ColorDisplayController;->getAutoMode()I
+    invoke-virtual {v3}, Lcom/android/internal/app/ColorDisplayController;->getAutoMode()I
 
-    move-result v2
+    move-result v3
 
-    invoke-virtual {p0, v2}, Lcom/android/server/oneplus/display/ColorBalanceService;->onAutoModeChanged(I)V
+    invoke-virtual {p0, v3}, Lcom/android/server/oneplus/display/ColorBalanceService;->onAutoModeChanged(I)V
 
     return-void
 .end method
@@ -11826,59 +12224,105 @@
 
 # virtual methods
 .method public Night2ReadMode()V
-    .locals 3
+    .locals 4
 
     const-string v0, "ColorBalanceService"
 
-    const-string v1, "Night2ReadMode changing night to reading mode"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v0, 0x0
+    const-string v2, "Night2ReadMode changing night to reading mode mScreenOn_Quick = "
 
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mScreenOn_Quick:Ljava/lang/Boolean;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsNightModeActivated:Ljava/lang/Boolean;
+    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 v1, 0x1
+    iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mScreenOn_Quick:Ljava/lang/Boolean;
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result-object v2
+    move-result v0
 
-    iput-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingModeActivated:Ljava/lang/Boolean;
+    const/4 v1, 0x2
 
-    iput v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mNightModeClosingStage:I
+    const/4 v2, 0x0
 
-    const/4 v2, 0x2
+    if-eqz v0, :cond_0
 
-    iput v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mModeEnable:I
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iput v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mNight2ReadingModeStage:I
+    move-result-object v0
 
-    const/4 v0, 0x5
+    iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mScreenOn_Quick:Ljava/lang/Boolean;
 
-    iput v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mModeStage:I
+    invoke-virtual {p0, v1}, Lcom/android/server/oneplus/display/ColorBalanceService;->onResetStatus(I)V
 
-    iget v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mGeneration:I
+    goto :goto_0
 
-    add-int/2addr v0, v1
+    :cond_0
+    const-string/jumbo v0, "persist.vendor.color.matrix"
 
-    iput v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mGeneration:I
+    const-string v3, "1"
 
-    iget v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mGeneration:I
+    invoke-static {v0, v3}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    const/16 v1, 0xd
+    const/4 v0, 0x1
 
-    invoke-virtual {p0, v1, v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->sendMsgWithValue(II)V
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsScreenOn:Ljava/lang/Boolean;
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsNightModeActivated:Ljava/lang/Boolean;
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingModeActivated:Ljava/lang/Boolean;
+
+    iput v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mNightModeClosingStage:I
+
+    iput v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mModeEnable:I
+
+    iput v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mNight2ReadingModeStage:I
+
+    const/4 v1, 0x5
+
+    iput v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mModeStage:I
+
+    iget v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mGeneration:I
+
+    add-int/2addr v1, v0
+
+    iput v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mGeneration:I
+
+    const/16 v0, 0xd
+
+    iget v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mGeneration:I
+
+    invoke-virtual {p0, v0, v1}, Lcom/android/server/oneplus/display/ColorBalanceService;->sendMsgWithValue(II)V
+
+    :goto_0
     return-void
 .end method
 
 .method public NightModeActivated(Z)V
-    .locals 5
+    .locals 6
 
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mBootColorStatus:Ljava/lang/Boolean;
 
@@ -11905,23 +12349,62 @@
     return-void
 
     :cond_0
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsNightModeActivated:Ljava/lang/Boolean;
-
     const/16 v0, 0xa
 
     const/4 v2, 0x1
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_2
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsScreenOn:Ljava/lang/Boolean;
 
     const-string v3, "ColorBalanceService"
 
-    const-string v4, "NightModeActivated: turn on night mode!"
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "NightModeActivated: turn on night mode! mScreenOn_Quick = "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v5, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mScreenOn_Quick:Ljava/lang/Boolean;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mScreenOn_Quick:Ljava/lang/Boolean;
+
+    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mScreenOn_Quick:Ljava/lang/Boolean;
+
+    invoke-virtual {p0, v2}, Lcom/android/server/oneplus/display/ColorBalanceService;->onResetStatus(I)V
+
+    goto :goto_0
+
+    :cond_1
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsNightModeActivated:Ljava/lang/Boolean;
 
     iget v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mGeneration:I
 
@@ -11943,18 +12426,28 @@
 
     iput v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mStableColor:I
 
+    const/4 v1, 0x2
+
+    iput v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mDisableStatus:I
+
     iget v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mGeneration:I
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/oneplus/display/ColorBalanceService;->sendMsgWithValue(II)V
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     const-string v3, "ColorBalanceService"
 
     const-string v4, "NightModeActivated: turn off night mode!"
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsNightModeActivated:Ljava/lang/Boolean;
 
     iget v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mGeneration:I
 
@@ -11999,43 +12492,103 @@
 
     const-string v0, "ColorBalanceService"
 
-    const-string v1, "Read2NightMode changing read to nighting mode"
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Read2NightMode changing read to nighting mode mScreenOn_Quick="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mScreenOn_Quick:Ljava/lang/Boolean;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mMode:I
+    iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mBootColorStatus:Ljava/lang/Boolean;
 
-    const/4 v1, 0x1
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    or-int/2addr v0, v1
+    move-result v0
 
-    iput v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mMode:I
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
+    iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mBootColorStatus:Ljava/lang/Boolean;
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mScreenOn_Quick:Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    const/4 v2, 0x1
+
+    if-eqz v0, :cond_1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mScreenOn_Quick:Ljava/lang/Boolean;
+
+    invoke-virtual {p0, v2}, Lcom/android/server/oneplus/display/ColorBalanceService;->onResetStatus(I)V
+
+    goto :goto_0
+
+    :cond_1
+    const-string/jumbo v0, "persist.vendor.color.matrix"
+
+    const-string v3, "1"
+
+    invoke-static {v0, v3}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsScreenOn:Ljava/lang/Boolean;
+
+    iget v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mMode:I
+
+    or-int/2addr v0, v2
+
+    iput v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mMode:I
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
     iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsNightModeActivated:Ljava/lang/Boolean;
 
-    const/4 v0, 0x0
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    move-result-object v0
 
-    move-result-object v2
+    iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingModeActivated:Ljava/lang/Boolean;
 
-    iput-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingModeActivated:Ljava/lang/Boolean;
+    iput v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mModeEnable:I
 
-    iput v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mModeEnable:I
-
-    iput v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mReading2NightModeStage:I
+    iput v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mReading2NightModeStage:I
 
     sget v0, Lcom/android/server/oneplus/display/ColorBalanceService;->NIGHT_MODE_SEEKBAR_MAX:I
 
-    iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v2
+    move-result-object v1
 
     const-string/jumbo v3, "oem_nightmode_progress_status"
 
@@ -12043,39 +12596,46 @@
 
     const/4 v5, -0x2
 
-    invoke-static {v2, v3, v4, v5}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+    invoke-static {v1, v3, v4, v5}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
-    move-result v2
+    move-result v1
 
-    sub-int/2addr v0, v2
+    sub-int/2addr v0, v1
 
-    sget v2, Lcom/android/server/oneplus/display/ColorBalanceService;->COLOR_DELTA:I
+    sget v1, Lcom/android/server/oneplus/display/ColorBalanceService;->COLOR_DELTA:I
 
-    sub-int/2addr v0, v2
+    sub-int/2addr v0, v1
 
     iput v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mPretNightColorbalance:I
 
     iput v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mCurrentNightColorbalance:I
 
-    iput v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mModeStage:I
+    iput v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mModeStage:I
 
     iget v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mGeneration:I
 
-    add-int/2addr v0, v1
+    add-int/2addr v0, v2
 
     iput v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mGeneration:I
 
-    iget v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mGeneration:I
+    const/16 v0, 0xe
 
-    const/16 v1, 0xe
+    iget v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mGeneration:I
 
-    invoke-virtual {p0, v1, v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->sendMsgWithValue(II)V
+    invoke-virtual {p0, v0, v1}, Lcom/android/server/oneplus/display/ColorBalanceService;->sendMsgWithValue(II)V
 
+    :goto_0
     return-void
 .end method
 
 .method public ReadModeActivated(Z)V
-    .locals 5
+    .locals 6
+
+    const-string/jumbo v0, "persist.vendor.color.matrix"
+
+    const-string v1, "1"
+
+    invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
     const/16 v0, 0xb
 
@@ -12083,13 +12643,54 @@
 
     const/4 v2, 0x0
 
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_1
 
     const-string v3, "ColorBalanceService"
 
-    const-string/jumbo v4, "onReadingModeActivated Turning on reading mode"
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "onReadingModeActivated Turning on reading mode mScreenOn_Quick = "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v5, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mScreenOn_Quick:Ljava/lang/Boolean;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
 
     invoke-static {v3, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mScreenOn_Quick:Ljava/lang/Boolean;
+
+    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v3
+
+    const/4 v4, 0x2
+
+    if-eqz v3, :cond_0
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mScreenOn_Quick:Ljava/lang/Boolean;
+
+    invoke-virtual {p0, v4}, Lcom/android/server/oneplus/display/ColorBalanceService;->onResetStatus(I)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsScreenOn:Ljava/lang/Boolean;
 
     iput v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mStableCount:I
 
@@ -12108,8 +12709,6 @@
     iput v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mCurrentReadingColorbalance:I
 
     iget v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mMode:I
-
-    const/4 v4, 0x2
 
     or-int/2addr v3, v4
 
@@ -12135,19 +12734,36 @@
 
     iput v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mGeneration:I
 
+    iput v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mDisableStatus:I
+
     iget v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mGeneration:I
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/oneplus/display/ColorBalanceService;->sendMsgWithValue(II)V
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     const-string v3, "ColorBalanceService"
 
     const-string/jumbo v4, "onReadingModeActivated Turning off reading mode"
 
     invoke-static {v3, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    iget-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mBootColorStatus:Ljava/lang/Boolean;
+
+    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mBootColorStatus:Ljava/lang/Boolean;
+
+    :cond_2
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v3
@@ -12422,6 +13038,169 @@
     invoke-virtual {v0, p1}, Lcom/android/server/oneplus/display/ColorBalanceService$AutoMode;->onCustomStartTimeChanged(Ljava/time/LocalTime;)V
 
     :cond_0
+    return-void
+.end method
+
+.method public onDisplayInversionChange(Z)V
+    .locals 9
+
+    const-string v0, "ColorBalanceService"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "onDisplayInversionChange activated = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v2, " mIsReadingModeActivated="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingModeActivated:Ljava/lang/Boolean;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v2, " mIsReadingModeActivated"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingModeActivated:Ljava/lang/Boolean;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    iput-boolean p1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->colorbalance_stop:Z
+
+    if-nez p1, :cond_2
+
+    iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingModeActivated:Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    const-wide/16 v2, 0x14
+
+    if-eqz v0, :cond_0
+
+    :try_start_0
+    invoke-static {v2, v3}, Ljava/lang/Thread;->sleep(J)V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    invoke-virtual {v0}, Ljava/lang/InterruptedException;->printStackTrace()V
+
+    :goto_0
+    iget v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mCurrentReadingColorbalance:I
+
+    invoke-direct {p0, v0, v1}, Lcom/android/server/oneplus/display/ColorBalanceService;->opSetColorBalance(II)V
+
+    goto :goto_3
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsNightModeActivated:Ljava/lang/Boolean;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsNightModeActivated:Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :try_start_1
+    invoke-static {v2, v3}, Ljava/lang/Thread;->sleep(J)V
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_1
+
+    goto :goto_1
+
+    :catch_1
+    move-exception v0
+
+    invoke-virtual {v0}, Ljava/lang/InterruptedException;->printStackTrace()V
+
+    :goto_1
+    iget v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mCurrentNightColorbalance:I
+
+    invoke-direct {p0, v0, v1}, Lcom/android/server/oneplus/display/ColorBalanceService;->opSetColorBalance(II)V
+
+    goto :goto_3
+
+    :cond_1
+    iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string/jumbo v4, "screen_color_mode_settings_value"
+
+    const/4 v5, 0x1
+
+    const/4 v6, -0x2
+
+    invoke-static {v0, v4, v5, v6}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x3
+
+    if-ne v0, v5, :cond_2
+
+    iget-object v5, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v5}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v5
+
+    const-string/jumbo v7, "oem_screen_better_value"
+
+    const/16 v8, 0x39
+
+    invoke-static {v5, v7, v8, v6}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v5
+
+    rsub-int/lit8 v4, v5, 0x64
+
+    :try_start_2
+    invoke-static {v2, v3}, Ljava/lang/Thread;->sleep(J)V
+    :try_end_2
+    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_2
+
+    goto :goto_2
+
+    :catch_2
+    move-exception v2
+
+    invoke-virtual {v2}, Ljava/lang/InterruptedException;->printStackTrace()V
+
+    :goto_2
+    invoke-direct {p0, v4, v1}, Lcom/android/server/oneplus/display/ColorBalanceService;->opSetColorBalance(II)V
+
+    :cond_2
+    :goto_3
     return-void
 .end method
 
@@ -14042,11 +14821,28 @@
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
+    const-string v2, " mDisableStatus = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mDisableStatus:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mDisableStatus:I
+
+    if-ne v0, p1, :cond_0
+
+    return-void
+
+    :cond_0
+    iput p1, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mDisableStatus:I
 
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mLock:Ljava/lang/Object;
 
@@ -14073,7 +14869,7 @@
 
     const/4 v5, 0x0
 
-    if-nez p1, :cond_0
+    if-nez p1, :cond_1
 
     invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -14125,16 +14921,30 @@
 
     invoke-direct {p0, v5}, Lcom/android/server/oneplus/display/ColorBalanceService;->opSetActiveModesId(I)V
 
+    const-string v2, "ColorBalanceService"
+
+    const-string v3, "close all color"
+
+    invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
     goto/16 :goto_0
 
-    :cond_0
-    if-ne p1, v4, :cond_3
+    :cond_1
+    if-ne p1, v4, :cond_4
 
-    if-eq v1, v4, :cond_1
+    iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsNightModeActivated:Ljava/lang/Boolean;
+
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v2
+
+    if-nez v2, :cond_8
+
+    if-eq v1, v4, :cond_2
 
     invoke-direct {p0}, Lcom/android/server/oneplus/display/ColorBalanceService;->revertStatus()V
 
-    :cond_1
+    :cond_2
     sget v2, Lcom/android/server/oneplus/display/ColorBalanceService;->NIGHT_MODE_SEEKBAR_MAX:I
 
     iget-object v6, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mContext:Landroid/content/Context;
@@ -14161,16 +14971,6 @@
 
     iput v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mFactor:F
 
-    invoke-direct {p0}, Lcom/android/server/oneplus/display/ColorBalanceService;->closeMatrix()V
-
-    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v3
-
-    invoke-direct {p0, v3}, Lcom/android/server/oneplus/display/ColorBalanceService;->setNightModeProp(Ljava/lang/Boolean;)I
-
-    invoke-direct {p0, v5}, Lcom/android/server/oneplus/display/ColorBalanceService;->opSetActiveModesId(I)V
-
     invoke-direct {p0, v2, v5}, Lcom/android/server/oneplus/display/ColorBalanceService;->opSetColorBalance(II)V
 
     iget-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsAutoModeActivated:Ljava/lang/Boolean;
@@ -14179,7 +14979,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_3
 
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -14193,21 +14993,41 @@
 
     iput-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsAutoModeActivated:Ljava/lang/Boolean;
 
-    :cond_2
+    :cond_3
+    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    invoke-direct {p0, v3}, Lcom/android/server/oneplus/display/ColorBalanceService;->setNightModeProp(Ljava/lang/Boolean;)I
+
+    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsNightModeActivated:Ljava/lang/Boolean;
+
     const-string v3, "ColorBalanceService"
 
-    const-string v4, "Screen off,nightModeSwitch ON done!"
+    const-string/jumbo v4, "resume colorbalance"
 
     invoke-static {v3, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    :cond_3
+    :cond_4
     const/4 v3, 0x2
 
     const/4 v6, 0x3
 
-    if-ne p1, v3, :cond_5
+    if-ne p1, v3, :cond_6
+
+    iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingModeActivated:Ljava/lang/Boolean;
+
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v2
+
+    if-nez v2, :cond_8
 
     invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -14215,11 +15035,11 @@
 
     iput-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mColorDisableStatus:Ljava/lang/Boolean;
 
-    if-eq v1, v4, :cond_4
+    if-eq v1, v4, :cond_5
 
     invoke-direct {p0}, Lcom/android/server/oneplus/display/ColorBalanceService;->revertStatus()V
 
-    :cond_4
+    :cond_5
     invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v2
@@ -14232,9 +15052,15 @@
 
     invoke-direct {p0, v2, v5}, Lcom/android/server/oneplus/display/ColorBalanceService;->opSetColorBalance(II)V
 
+    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mIsReadingModeActivated:Ljava/lang/Boolean;
+
     const-string v2, "ColorBalanceService"
 
-    const-string v3, "Screen off,readingModeSwitch ON done!"
+    const-string/jumbo v3, "resume gary color!"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -14244,7 +15070,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_8
 
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -14260,8 +15086,8 @@
 
     goto :goto_0
 
-    :cond_5
-    if-ne p1, v6, :cond_6
+    :cond_6
+    if-ne p1, v6, :cond_7
 
     invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -14291,8 +15117,8 @@
 
     goto :goto_0
 
-    :cond_6
-    if-ne p1, v2, :cond_7
+    :cond_7
+    if-ne p1, v2, :cond_8
 
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -14300,11 +15126,11 @@
 
     iput-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService;->mColorDisableStatus:Ljava/lang/Boolean;
 
-    if-eq v1, v4, :cond_7
+    if-eq v1, v4, :cond_8
 
     invoke-direct {p0}, Lcom/android/server/oneplus/display/ColorBalanceService;->revertStatus()V
 
-    :cond_7
+    :cond_8
     :goto_0
     monitor-exit v0
 

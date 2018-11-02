@@ -58,8 +58,6 @@
 
 .field private static final NAV_BAR_RIGHT:I = 0x1
 
-.field static final OP_LAUNCHER_GESTURE:Z
-
 .field private static final SWIPE_TIMEOUT_MS:J = 0x190L
 
 .field private static final TAG:Ljava/lang/String; = "OemGestureButton"
@@ -83,6 +81,8 @@
 .field public static mGestureButtonMovingHome:Z
 
 .field public static mIsAnimationStart:Z
+
+.field public static mLauncherGesture:Z
 
 .field public static mNeedRecoverAnimation:Z
 
@@ -201,14 +201,6 @@
 
     sput-boolean v1, Lcom/android/server/policy/OemGestureButton;->IS_GESTURE_BUTTON_ENABLED:Z
 
-    const-string/jumbo v1, "persist.gesture_button.launcher"
-
-    invoke-static {v1, v2}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v1
-
-    sput-boolean v1, Lcom/android/server/policy/OemGestureButton;->OP_LAUNCHER_GESTURE:Z
-
     const-string/jumbo v1, "persist.gesture_button.finger"
 
     invoke-static {v1, v0}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
@@ -283,6 +275,8 @@
     sput-boolean v2, Lcom/android/server/policy/OemGestureButton;->mIsAnimationStart:Z
 
     sput-boolean v2, Lcom/android/server/policy/OemGestureButton;->mGestureButtonMovingHome:Z
+
+    sput-boolean v2, Lcom/android/server/policy/OemGestureButton;->mLauncherGesture:Z
 
     const-string/jumbo v0, "persist.gesture_button.dis"
 
@@ -369,6 +363,8 @@
     sput-object v1, Lcom/android/server/policy/OemGestureButton;->FAST_OUT_INTERPOLATOR:Landroid/view/animation/Interpolator;
 
     return-void
+
+    nop
 
     nop
 
@@ -1378,7 +1374,7 @@
     goto/16 :goto_e
 
     :pswitch_0
-    sget-boolean v9, Lcom/android/server/policy/OemGestureButton;->OP_LAUNCHER_GESTURE:Z
+    sget-boolean v9, Lcom/android/server/policy/OemGestureButton;->mLauncherGesture:Z
 
     if-eqz v9, :cond_3
 
@@ -1706,7 +1702,7 @@
     goto/16 :goto_e
 
     :pswitch_1
-    sget-boolean v5, Lcom/android/server/policy/OemGestureButton;->OP_LAUNCHER_GESTURE:Z
+    sget-boolean v5, Lcom/android/server/policy/OemGestureButton;->mLauncherGesture:Z
 
     if-eqz v5, :cond_12
 
@@ -2193,7 +2189,7 @@
     invoke-static {v5, v10}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_27
-    sget-boolean v5, Lcom/android/server/policy/OemGestureButton;->OP_LAUNCHER_GESTURE:Z
+    sget-boolean v5, Lcom/android/server/policy/OemGestureButton;->mLauncherGesture:Z
 
     if-eqz v5, :cond_28
 
@@ -2304,7 +2300,7 @@
     :cond_2c
     :goto_c
     :pswitch_3
-    sget-boolean v5, Lcom/android/server/policy/OemGestureButton;->OP_LAUNCHER_GESTURE:Z
+    sget-boolean v5, Lcom/android/server/policy/OemGestureButton;->mLauncherGesture:Z
 
     if-eqz v5, :cond_2d
 

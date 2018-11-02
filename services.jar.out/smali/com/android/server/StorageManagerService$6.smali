@@ -50,7 +50,7 @@
 
     move-result-object v0
 
-    const-string v1, "ident"
+    const-string/jumbo v1, "ident"
 
     invoke-virtual {p2, v1}, Landroid/os/PersistableBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 

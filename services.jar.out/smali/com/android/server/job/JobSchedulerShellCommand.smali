@@ -1241,7 +1241,7 @@
 
     move-result-object v0
 
-    const-string v1, "idle"
+    const-string/jumbo v1, "idle"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1405,7 +1405,7 @@
     goto :goto_2
 
     :sswitch_4
-    const-string v3, "heartbeat"
+    const-string/jumbo v3, "heartbeat"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1630,6 +1630,8 @@
     invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     return v1
+
+    nop
 
     :sswitch_data_0
     .sparse-switch

@@ -598,7 +598,7 @@
 .end method
 
 .method public static requiresClat(Lcom/android/server/connectivity/NetworkAgentInfo;)Z
-    .locals 9
+    .locals 10
 
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkAgentInfo;->networkInfo:Landroid/net/NetworkInfo;
 
@@ -654,11 +654,25 @@
     move v3, v4
 
     :goto_0
-    const-string/jumbo v6, "persist.vendor.net.doxlat"
+    const/4 v6, 0x1
 
-    invoke-static {v6, v5}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+    sget-object v7, Lcom/android/server/connectivity/Nat464Xlat;->TAG:Ljava/lang/String;
 
-    move-result v6
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "Android Xlat enabled is doXlat="
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     if-nez v6, :cond_1
 

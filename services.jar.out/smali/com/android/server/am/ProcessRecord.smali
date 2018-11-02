@@ -2446,6 +2446,8 @@
 
     check-cast v5, Lcom/android/server/am/ServiceRecord;
 
+    if-eqz v5, :cond_2
+
     iget-boolean v6, v5, Lcom/android/server/am/ServiceRecord;->isForeground:Z
 
     if-eqz v6, :cond_2

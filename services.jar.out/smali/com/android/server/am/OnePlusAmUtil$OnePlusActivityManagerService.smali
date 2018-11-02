@@ -112,7 +112,7 @@
 
     move-result-object v1
 
-    const v2, 0x5020015
+    const v2, 0x5020016
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -1020,6 +1020,14 @@
     iget-object v1, p0, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, v1}, Lcom/oneplus/oiface/OifaceManager;->initOnlineConfig(Landroid/content/Context;)V
+
+    invoke-static {}, Lcom/android/server/am/OnePlusTemperatureMonitor;->getInstance()Lcom/android/server/am/OnePlusTemperatureMonitor;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0, v1}, Lcom/android/server/am/OnePlusTemperatureMonitor;->initEnv(Landroid/content/Context;)V
 
     return-void
 .end method

@@ -4364,7 +4364,7 @@
     goto :goto_2
 
     :cond_6
-    const-string v5, "i"
+    const-string/jumbo v5, "i"
 
     invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4696,7 +4696,7 @@
 
     if-eqz v9, :cond_9
 
-    const-string v9, "id"
+    const-string/jumbo v9, "id"
 
     invoke-interface {v2, v7, v9}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -4872,7 +4872,7 @@
 
     :cond_d
     :goto_3
-    const-string v9, "id"
+    const-string/jumbo v9, "id"
 
     invoke-interface {v2, v7, v9}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -6788,7 +6788,7 @@
 
     invoke-interface {v3, v0, v5}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    const-string v5, "http://xmlpull.org/v1/doc/features.html#indent-output"
+    const-string/jumbo v5, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     invoke-interface {v3, v5, v4}, Lorg/xmlpull/v1/XmlSerializer;->setFeature(Ljava/lang/String;Z)V
 
@@ -7038,7 +7038,7 @@
 
     const-string/jumbo v3, "type"
 
-    const-string v5, "i"
+    const-string/jumbo v5, "i"
 
     invoke-interface {p1, v4, v3, v5}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -7355,7 +7355,7 @@
 
     invoke-interface {v3, v6, v5}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    const-string v5, "http://xmlpull.org/v1/doc/features.html#indent-output"
+    const-string/jumbo v5, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     invoke-interface {v3, v5, v4}, Lorg/xmlpull/v1/XmlSerializer;->setFeature(Ljava/lang/String;Z)V
 
@@ -7413,7 +7413,7 @@
 
     invoke-interface {v3, v6, v4}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v4, "id"
+    const-string/jumbo v4, "id"
 
     iget v5, p0, Lcom/android/server/pm/UserManagerService;->mDeviceOwnerUserId:I
 
@@ -7488,7 +7488,7 @@
 
     invoke-interface {v3, v6, v9}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v9, "id"
+    const-string/jumbo v9, "id"
 
     invoke-static {v8}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -12166,7 +12166,7 @@
 
     if-eqz v4, :cond_14
 
-    const-string v4, "id"
+    const-string/jumbo v4, "id"
 
     const/4 v5, -0x1
 
@@ -12205,7 +12205,7 @@
 
     move-result v5
 
-    const-string v0, "icon"
+    const-string/jumbo v0, "icon"
 
     move/from16 v31, v4
 
@@ -14005,7 +14005,7 @@
 
     invoke-interface {v0, v3, v2}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    const-string v2, "http://xmlpull.org/v1/doc/features.html#indent-output"
+    const-string/jumbo v2, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     invoke-interface {v0, v2, v1}, Lorg/xmlpull/v1/XmlSerializer;->setFeature(Ljava/lang/String;Z)V
 
@@ -14015,7 +14015,7 @@
 
     invoke-interface {v0, v3, v2}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v2, "id"
+    const-string/jumbo v2, "id"
 
     iget v4, v1, Landroid/content/pm/UserInfo;->id:I
 
@@ -14080,7 +14080,7 @@
 
     if-eqz v2, :cond_1
 
-    const-string v2, "icon"
+    const-string/jumbo v2, "icon"
 
     iget-object v4, v1, Landroid/content/pm/UserInfo;->iconPath:Ljava/lang/String;
 

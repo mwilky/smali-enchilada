@@ -75,7 +75,7 @@
     const/4 v1, 0x0
 
     :try_start_0
-    const-string v2, "ime <command>:"
+    const-string/jumbo v2, "ime <command>:"
 
     invoke-virtual {v0, v2}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
 
@@ -240,7 +240,7 @@
     return v0
 
     :cond_1
-    const-string v0, "ime"
+    const-string/jumbo v0, "ime"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -256,7 +256,7 @@
 
     if-eqz v0, :cond_4
 
-    const-string v2, "help"
+    const-string/jumbo v2, "help"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

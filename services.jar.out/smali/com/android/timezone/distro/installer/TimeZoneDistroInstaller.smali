@@ -115,7 +115,7 @@
 
     const-string/jumbo v0, "tzdata"
 
-    const-string v1, "icu/icu_tzdata.dat"
+    const-string/jumbo v1, "icu/icu_tzdata.dat"
 
     filled-new-array {v0, v1}, [Ljava/lang/String;
 

@@ -36,7 +36,7 @@
 
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$5;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-static {v0, p1}, Lcom/android/server/policy/PhoneWindowManager;->access$2902(Lcom/android/server/policy/PhoneWindowManager;Z)Z
+    invoke-static {v0, p1}, Lcom/android/server/policy/PhoneWindowManager;->access$3102(Lcom/android/server/policy/PhoneWindowManager;Z)Z
 
     return-void
 .end method

@@ -455,7 +455,7 @@
 .end method
 
 .method public restoreOneFile(Ljava/io/InputStream;Z[BLandroid/content/pm/PackageInfo;ZILandroid/app/backup/IBackupManagerMonitor;)Z
-    .locals 52
+    .locals 51
 
     move-object/from16 v1, p0
 
@@ -498,9 +498,9 @@
 
     const/4 v8, -0x3
 
-    const/4 v6, 0x1
+    const/4 v6, 0x0
 
-    const/4 v5, 0x0
+    const/4 v5, 0x1
 
     :try_start_0
     invoke-virtual {v9}, Lcom/android/server/backup/utils/TarBackupReader;->readTarHeaders()Lcom/android/server/backup/FileMetadata;
@@ -509,7 +509,7 @@
 
     move-object v4, v0
 
-    if-eqz v4, :cond_20
+    if-eqz v4, :cond_22
 
     iget-object v0, v4, Lcom/android/server/backup/FileMetadata;->packageName:Ljava/lang/String;
 
@@ -521,7 +521,7 @@
 
     move-result v0
     :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_20
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_25
 
     if-nez v0, :cond_3
 
@@ -569,15 +569,15 @@
     :catch_0
     move-exception v0
 
-    move/from16 v7, p6
+    move/from16 v4, p6
 
-    move-object v8, v12
+    move-object/from16 v49, v9
 
     move-object/from16 v43, v14
 
     move-object/from16 v30, v15
 
-    goto/16 :goto_1b
+    goto/16 :goto_1e
 
     :cond_1
     iget-object v0, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mPackagePolicies:Ljava/util/HashMap;
@@ -611,9 +611,9 @@
 
     invoke-direct {v1, v0}, Lcom/android/server/backup/restore/FullRestoreEngine;->tearDownAgent(Landroid/content/pm/ApplicationInfo;)V
 
-    iput-object v5, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mTargetApp:Landroid/content/pm/ApplicationInfo;
+    iput-object v6, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mTargetApp:Landroid/content/pm/ApplicationInfo;
 
-    iput-object v5, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mAgentPackage:Ljava/lang/String;
+    iput-object v6, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mAgentPackage:Ljava/lang/String;
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -627,7 +627,7 @@
 
     move-result v0
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_20
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_25
 
     if-eqz v0, :cond_4
 
@@ -662,11 +662,9 @@
 
     move/from16 v4, p5
 
-    move-object v15, v5
+    move v15, v5
 
     move-object/from16 v5, v29
-
-    move v15, v6
 
     move-object v6, v0
 
@@ -708,36 +706,36 @@
 
     nop
 
-    move/from16 v7, p6
+    move/from16 v4, p6
 
     move-object v3, v6
 
-    move-object v8, v12
+    move-object/from16 v49, v9
 
     move-object/from16 v43, v14
 
-    goto/16 :goto_19
+    goto/16 :goto_1c
 
     :catch_1
     move-exception v0
 
-    move/from16 v7, p6
+    move/from16 v4, p6
 
-    move-object v8, v12
+    move-object/from16 v49, v9
 
     move-object/from16 v43, v14
 
     :goto_0
     move-object/from16 v30, p7
 
-    goto/16 :goto_1b
+    goto/16 :goto_1e
 
     :cond_4
     move-object v13, v3
 
-    move v15, v6
-
     move-object v6, v4
+
+    move v15, v5
 
     :try_start_4
     iget-object v0, v6, Lcom/android/server/backup/FileMetadata;->path:Ljava/lang/String;
@@ -748,7 +746,7 @@
 
     move-result v0
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_20
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_25
 
     if-eqz v0, :cond_5
 
@@ -776,30 +774,30 @@
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_2
 
-    move/from16 v7, p6
+    move/from16 v4, p6
 
     move-object/from16 v30, v2
 
     move-object v3, v6
 
-    move-object v8, v12
+    move-object/from16 v49, v9
 
     move-object/from16 v43, v14
 
-    goto/16 :goto_1a
+    goto/16 :goto_1d
 
     :catch_2
     move-exception v0
 
-    move/from16 v7, p6
+    move/from16 v4, p6
 
     move-object/from16 v30, v2
 
-    move-object v8, v12
+    move-object/from16 v49, v9
 
     move-object/from16 v43, v14
 
-    goto/16 :goto_1b
+    goto/16 :goto_1e
 
     :cond_5
     const/4 v0, 0x1
@@ -823,7 +821,7 @@
 
     aget v2, v2, v3
     :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_20
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_25
 
     packed-switch v2, :pswitch_data_0
 
@@ -836,7 +834,7 @@
     :try_start_8
     const-string v2, "BackupManagerService"
     :try_end_8
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_1f
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_24
 
     goto/16 :goto_2
 
@@ -986,15 +984,15 @@
     :catch_3
     move-exception v0
 
-    move/from16 v7, p6
+    move/from16 v4, p6
 
-    move-object v8, v12
+    move-object/from16 v49, v9
 
     move-object/from16 v43, v14
 
     move-object/from16 v30, p7
 
-    goto/16 :goto_1b
+    goto/16 :goto_1e
 
     :pswitch_2
     move-object v3, v6
@@ -1026,7 +1024,7 @@
 
     move-result v2
     :try_end_c
-    .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_1f
+    .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_24
 
     if-eqz v2, :cond_9
 
@@ -1044,13 +1042,11 @@
     :catch_4
     move-exception v0
 
-    move/from16 v7, p6
-
-    move-object v8, v12
+    move/from16 v4, p6
 
     move-object/from16 v43, v14
 
-    move-object v9, v15
+    move-object/from16 v49, v15
 
     goto/16 :goto_0
 
@@ -1235,7 +1231,7 @@
     const/4 v2, 0x0
 
     :cond_f
-    if-eqz v2, :cond_1c
+    if-eqz v2, :cond_1d
 
     const/4 v6, 0x1
 
@@ -1248,7 +1244,7 @@
 
     move-result v0
     :try_end_10
-    .catch Ljava/io/IOException; {:try_start_10 .. :try_end_10} :catch_1f
+    .catch Ljava/io/IOException; {:try_start_10 .. :try_end_10} :catch_20
 
     move v9, v0
 
@@ -1273,7 +1269,7 @@
 
     move-result-wide v16
     :try_end_12
-    .catch Ljava/io/IOException; {:try_start_12 .. :try_end_12} :catch_1f
+    .catch Ljava/io/IOException; {:try_start_12 .. :try_end_12} :catch_20
 
     :goto_7
     move-wide/from16 v35, v16
@@ -1857,12 +1853,12 @@
     :catch_18
     move-exception v0
 
-    move/from16 v7, p6
+    move/from16 v4, p6
 
-    move-object/from16 v9, v44
+    move-object/from16 v49, v44
 
     :goto_b
-    move-object/from16 v8, p4
+    move-object/from16 v12, p4
 
     goto/16 :goto_0
 
@@ -1890,6 +1886,8 @@
     const-string v4, "Couldn\'t establish restore"
 
     invoke-static {v2, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_21
+    .catch Ljava/io/IOException; {:try_start_21 .. :try_end_21} :catch_1f
 
     const/4 v6, 0x0
 
@@ -1901,43 +1899,50 @@
     move v2, v0
 
     :goto_e
-    if-eqz v2, :cond_19
+    if-eqz v2, :cond_1a
 
     const/4 v0, 0x1
 
+    :try_start_22
+    iget-object v4, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mPipes:[Landroid/os/ParcelFileDescriptor;
+
+    const/4 v5, 0x1
+
+    aget-object v4, v4, v5
+    :try_end_22
+    .catch Ljava/io/IOException; {:try_start_22 .. :try_end_22} :catch_1d
+
+    if-eqz v4, :cond_19
+
+    :try_start_23
     new-instance v4, Ljava/io/FileOutputStream;
 
-    iget-object v5, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mPipes:[Landroid/os/ParcelFileDescriptor;
+    iget-object v7, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mPipes:[Landroid/os/ParcelFileDescriptor;
 
-    const/4 v7, 0x1
+    aget-object v7, v7, v5
 
-    aget-object v5, v5, v7
+    invoke-virtual {v7}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
-    invoke-virtual {v5}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
+    move-result-object v7
 
-    move-result-object v5
+    invoke-direct {v4, v7}, Ljava/io/FileOutputStream;-><init>(Ljava/io/FileDescriptor;)V
 
-    invoke-direct {v4, v5}, Ljava/io/FileOutputStream;-><init>(Ljava/io/FileDescriptor;)V
-    :try_end_21
-    .catch Ljava/io/IOException; {:try_start_21 .. :try_end_21} :catch_1d
+    move v9, v0
 
-    move v5, v0
-
-    move-wide/from16 v8, v41
+    move-wide/from16 v7, v41
 
     :goto_f
     const-wide/16 v12, 0x0
 
-    cmp-long v0, v8, v12
+    cmp-long v0, v7, v12
 
     if-lez v0, :cond_18
 
-    :try_start_22
     array-length v0, v11
 
     int-to-long v12, v0
 
-    cmp-long v0, v8, v12
+    cmp-long v0, v7, v12
 
     if-lez v0, :cond_14
 
@@ -1946,7 +1951,7 @@
     goto :goto_10
 
     :cond_14
-    long-to-int v0, v8
+    long-to-int v0, v7
 
     :goto_10
     move v12, v0
@@ -1963,20 +1968,20 @@
 
     iget-wide v14, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mBytes:J
 
-    move-wide/from16 v48, v8
+    move/from16 v47, v6
 
-    int-to-long v7, v13
+    int-to-long v5, v13
 
-    add-long/2addr v14, v7
+    add-long/2addr v14, v5
 
     iput-wide v14, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mBytes:J
-    :try_end_22
-    .catch Ljava/io/IOException; {:try_start_22 .. :try_end_22} :catch_18
+    :try_end_23
+    .catch Ljava/io/IOException; {:try_start_23 .. :try_end_23} :catch_18
 
     goto :goto_11
 
     :cond_15
-    move-wide/from16 v48, v8
+    move/from16 v47, v6
 
     :goto_11
     if-gtz v13, :cond_16
@@ -1984,132 +1989,165 @@
     goto :goto_13
 
     :cond_16
-    int-to-long v7, v13
+    int-to-long v5, v13
 
-    sub-long v7, v48, v7
+    sub-long/2addr v7, v5
 
-    if-eqz v5, :cond_17
+    if-eqz v9, :cond_17
 
-    const/4 v9, 0x0
+    const/4 v5, 0x0
 
-    :try_start_23
-    invoke-virtual {v4, v11, v9, v13}, Ljava/io/FileOutputStream;->write([BII)V
-    :try_end_23
-    .catch Ljava/io/IOException; {:try_start_23 .. :try_end_23} :catch_1a
+    :try_start_24
+    invoke-virtual {v4, v11, v5, v13}, Ljava/io/FileOutputStream;->write([BII)V
+    :try_end_24
+    .catch Ljava/io/IOException; {:try_start_24 .. :try_end_24} :catch_1a
 
     goto :goto_12
 
     :catch_1a
     move-exception v0
 
-    move-object v9, v0
+    move-object v5, v0
 
-    :try_start_24
-    const-string v9, "BackupManagerService"
+    :try_start_25
+    const-string v5, "BackupManagerService"
 
-    new-instance v14, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v15, "Failed to write to restore pipe: "
+    const-string v14, "Failed to write to restore pipe: "
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
-    move-result-object v15
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
     move-result-object v14
 
-    invoke-static {v9, v14}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_24
-    .catch Ljava/io/IOException; {:try_start_24 .. :try_end_24} :catch_18
+    invoke-virtual {v6, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v0, 0x0
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move v5, v0
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_25
+    .catch Ljava/io/IOException; {:try_start_25 .. :try_end_25} :catch_18
+
+    const/4 v9, 0x0
 
     :cond_17
     :goto_12
-    move-wide v8, v7
+    nop
 
-    const/4 v7, 0x1
+    move/from16 v6, v47
+
+    const/4 v5, 0x1
 
     goto :goto_f
 
     :cond_18
-    move-wide/from16 v48, v8
+    move/from16 v47, v6
+
+    goto :goto_13
+
+    :cond_19
+    move/from16 v47, v6
+
+    move v9, v0
+
+    move-wide/from16 v7, v41
 
     :goto_13
-    :try_start_25
-    iget-wide v7, v3, Lcom/android/server/backup/FileMetadata;->size:J
-    :try_end_25
-    .catch Ljava/io/IOException; {:try_start_25 .. :try_end_25} :catch_1d
-
-    move-object/from16 v9, v44
-
     :try_start_26
-    invoke-virtual {v9, v7, v8}, Lcom/android/server/backup/utils/TarBackupReader;->skipTarPadding(J)V
-
-    iget-object v0, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mBackupManagerService:Lcom/android/server/backup/BackupManagerService;
+    iget-wide v4, v3, Lcom/android/server/backup/FileMetadata;->size:J
     :try_end_26
-    .catch Ljava/io/IOException; {:try_start_26 .. :try_end_26} :catch_1b
+    .catch Ljava/io/IOException; {:try_start_26 .. :try_end_26} :catch_1d
 
-    move/from16 v7, p6
+    move-object/from16 v6, v44
 
     :try_start_27
-    invoke-virtual {v0, v7}, Lcom/android/server/backup/BackupManagerService;->waitUntilOperationComplete(I)Z
+    invoke-virtual {v6, v4, v5}, Lcom/android/server/backup/utils/TarBackupReader;->skipTarPadding(J)V
+
+    iget-object v0, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mBackupManagerService:Lcom/android/server/backup/BackupManagerService;
+    :try_end_27
+    .catch Ljava/io/IOException; {:try_start_27 .. :try_end_27} :catch_1c
+
+    move/from16 v4, p6
+
+    :try_start_28
+    invoke-virtual {v0, v4}, Lcom/android/server/backup/BackupManagerService;->waitUntilOperationComplete(I)Z
 
     move-result v0
+    :try_end_28
+    .catch Ljava/io/IOException; {:try_start_28 .. :try_end_28} :catch_1b
 
-    move v6, v0
+    move/from16 v47, v0
 
-    goto :goto_14
+    goto :goto_15
 
     :catch_1b
     move-exception v0
 
-    move/from16 v7, p6
+    goto :goto_14
+
+    :catch_1c
+    move-exception v0
+
+    move/from16 v4, p6
+
+    :goto_14
+    move-object/from16 v49, v6
 
     goto/16 :goto_b
 
-    :cond_19
-    move/from16 v7, p6
+    :catch_1d
+    move-exception v0
 
-    move-object/from16 v9, v44
+    move/from16 v4, p6
 
-    move-wide/from16 v48, v41
+    move-object/from16 v49, v44
 
-    :goto_14
-    if-nez v6, :cond_1a
+    move-object/from16 v12, p4
 
+    goto :goto_16
+
+    :cond_1a
+    move/from16 v4, p6
+
+    move/from16 v47, v6
+
+    move-object/from16 v6, v44
+
+    move-wide/from16 v7, v41
+
+    :goto_15
+    if-nez v47, :cond_1b
+
+    :try_start_29
     const-string v0, "BackupManagerService"
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "Agent failure restoring "
+    const-string v9, "Agent failure restoring "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v5, v46
+    move-object/from16 v9, v46
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v8, "; ending restore"
+    const-string v12, "; ending restore"
 
-    invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-static {v0, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v0, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mBackupManagerService:Lcom/android/server/backup/BackupManagerService;
 
@@ -2117,9 +2155,9 @@
 
     move-result-object v0
 
-    const/16 v4, 0x12
+    const/16 v5, 0x12
 
-    invoke-virtual {v0, v4}, Landroid/os/Handler;->removeMessages(I)V
+    invoke-virtual {v0, v5}, Landroid/os/Handler;->removeMessages(I)V
 
     invoke-direct/range {p0 .. p0}, Lcom/android/server/backup/restore/FullRestoreEngine;->tearDownPipes()V
 
@@ -2127,228 +2165,273 @@
 
     invoke-direct {v1, v0}, Lcom/android/server/backup/restore/FullRestoreEngine;->tearDownAgent(Landroid/content/pm/ApplicationInfo;)V
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    iput-object v4, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mAgent:Landroid/app/IBackupAgent;
+    iput-object v5, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mAgent:Landroid/app/IBackupAgent;
 
     iget-object v0, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mPackagePolicies:Ljava/util/HashMap;
 
-    sget-object v8, Lcom/android/server/backup/restore/RestorePolicy;->IGNORE:Lcom/android/server/backup/restore/RestorePolicy;
+    sget-object v12, Lcom/android/server/backup/restore/RestorePolicy;->IGNORE:Lcom/android/server/backup/restore/RestorePolicy;
 
-    invoke-virtual {v0, v5, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_27
-    .catch Ljava/io/IOException; {:try_start_27 .. :try_end_27} :catch_1c
+    invoke-virtual {v0, v9, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_29
+    .catch Ljava/io/IOException; {:try_start_29 .. :try_end_29} :catch_1e
 
-    move-object/from16 v8, p4
+    move-object/from16 v12, p4
 
-    if-eqz v8, :cond_1b
+    if-eqz v12, :cond_1c
 
     const/4 v0, -0x2
 
-    :try_start_28
+    :try_start_2a
     invoke-virtual {v1, v0}, Lcom/android/server/backup/restore/FullRestoreEngine;->setResult(I)V
 
-    const/4 v12, 0x0
+    const/4 v13, 0x0
 
-    invoke-virtual {v1, v12}, Lcom/android/server/backup/restore/FullRestoreEngine;->setRunning(Z)V
+    invoke-virtual {v1, v13}, Lcom/android/server/backup/restore/FullRestoreEngine;->setRunning(Z)V
+    :try_end_2a
+    .catch Ljava/io/IOException; {:try_start_2a .. :try_end_2a} :catch_21
 
-    return v12
-
-    :catch_1c
-    move-exception v0
-
-    goto/16 :goto_b
-
-    :cond_1a
-    move-object/from16 v5, v46
-
-    const/4 v4, 0x0
-
-    move-object/from16 v8, p4
-
-    :cond_1b
-    move/from16 v39, v2
-
-    goto :goto_15
-
-    :catch_1d
-    move-exception v0
-
-    move/from16 v7, p6
-
-    move-object/from16 v9, v44
-
-    move-object/from16 v8, p4
-
-    move-object/from16 v30, p7
-
-    goto/16 :goto_1b
-
-    :cond_1c
-    move/from16 v7, p6
-
-    move/from16 v39, v2
-
-    move-object v8, v12
-
-    move-object v5, v13
-
-    move-object/from16 v43, v14
-
-    move-object v9, v15
-
-    const/4 v4, 0x0
-
-    :goto_15
-    if-nez v39, :cond_21
-
-    iget-wide v12, v3, Lcom/android/server/backup/FileMetadata;->size:J
-
-    const-wide/16 v14, 0x1ff
-
-    add-long/2addr v12, v14
-
-    const-wide/16 v14, -0x200
-
-    and-long/2addr v12, v14
-
-    :goto_16
-    const-wide/16 v14, 0x0
-
-    cmp-long v0, v12, v14
-
-    if-lez v0, :cond_21
-
-    array-length v0, v11
-
-    int-to-long v14, v0
-
-    cmp-long v0, v12, v14
-
-    if-lez v0, :cond_1d
-
-    array-length v0, v11
-
-    goto :goto_17
-
-    :cond_1d
-    long-to-int v0, v12
-
-    :goto_17
-    const/4 v2, 0x0
-
-    invoke-virtual {v10, v11, v2, v0}, Ljava/io/InputStream;->read([BII)I
-
-    move-result v6
-
-    int-to-long v14, v6
-
-    const-wide/16 v16, 0x0
-
-    cmp-long v2, v14, v16
-
-    if-ltz v2, :cond_1e
-
-    move-object/from16 v50, v5
-
-    iget-wide v4, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mBytes:J
-
-    add-long/2addr v4, v14
-
-    iput-wide v4, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mBytes:J
-    :try_end_28
-    .catch Ljava/io/IOException; {:try_start_28 .. :try_end_28} :catch_1e
-
-    goto :goto_18
-
-    :cond_1e
-    move-object/from16 v50, v5
-
-    :goto_18
-    const-wide/16 v4, 0x0
-
-    cmp-long v2, v14, v4
-
-    if-gtz v2, :cond_1f
-
-    goto :goto_19
-
-    :cond_1f
-    sub-long/2addr v12, v14
-
-    nop
-
-    move-object/from16 v5, v50
-
-    const/4 v4, 0x0
-
-    goto :goto_16
+    return v13
 
     :catch_1e
     move-exception v0
 
-    goto/16 :goto_0
+    move-object/from16 v12, p4
+
+    goto :goto_19
+
+    :cond_1b
+    move-object/from16 v9, v46
+
+    const/4 v5, 0x0
+
+    move-object/from16 v12, p4
+
+    :cond_1c
+    move/from16 v39, v2
+
+    goto :goto_17
 
     :catch_1f
     move-exception v0
 
-    move/from16 v7, p6
+    move/from16 v4, p6
 
-    move-object v8, v12
+    move-object/from16 v12, p4
 
-    move-object/from16 v43, v14
+    move-object/from16 v49, v44
 
-    move-object v9, v15
-
+    :goto_16
     move-object/from16 v30, p7
 
-    goto :goto_1b
-
-    :cond_20
-    move/from16 v7, p6
-
-    move-object v3, v4
-
-    move-object v8, v12
-
-    move-object/from16 v43, v14
-
-    :cond_21
-    :goto_19
-    move-object/from16 v30, p7
-
-    :goto_1a
-    move-object/from16 v51, v3
-
-    goto :goto_1c
+    goto/16 :goto_1e
 
     :catch_20
     move-exception v0
 
-    move/from16 v7, p6
+    move/from16 v4, p6
 
-    move-object v8, v12
+    move-object/from16 v43, v14
+
+    move-object/from16 v49, v15
+
+    move-object/from16 v30, p7
+
+    goto/16 :goto_1e
+
+    :cond_1d
+    move/from16 v4, p6
+
+    move/from16 v39, v2
+
+    move-object v9, v13
+
+    move-object/from16 v43, v14
+
+    move-object v6, v15
+
+    const/4 v5, 0x0
+
+    :goto_17
+    if-nez v39, :cond_21
+
+    :try_start_2b
+    iget-wide v7, v3, Lcom/android/server/backup/FileMetadata;->size:J
+
+    const-wide/16 v13, 0x1ff
+
+    add-long/2addr v7, v13
+
+    const-wide/16 v13, -0x200
+
+    and-long/2addr v7, v13
+
+    :goto_18
+    const-wide/16 v13, 0x0
+
+    cmp-long v0, v7, v13
+
+    if-lez v0, :cond_21
+
+    array-length v0, v11
+    :try_end_2b
+    .catch Ljava/io/IOException; {:try_start_2b .. :try_end_2b} :catch_23
+
+    int-to-long v13, v0
+
+    cmp-long v0, v7, v13
+
+    if-lez v0, :cond_1e
+
+    :try_start_2c
+    array-length v0, v11
+    :try_end_2c
+    .catch Ljava/io/IOException; {:try_start_2c .. :try_end_2c} :catch_21
+
+    goto :goto_1a
+
+    :catch_21
+    move-exception v0
+
+    :goto_19
+    move-object/from16 v49, v6
+
+    goto/16 :goto_0
+
+    :cond_1e
+    long-to-int v0, v7
+
+    :goto_1a
+    const/4 v2, 0x0
+
+    :try_start_2d
+    invoke-virtual {v10, v11, v2, v0}, Ljava/io/InputStream;->read([BII)I
+
+    move-result v13
+    :try_end_2d
+    .catch Ljava/io/IOException; {:try_start_2d .. :try_end_2d} :catch_23
+
+    int-to-long v13, v13
+
+    const-wide/16 v15, 0x0
+
+    cmp-long v2, v13, v15
+
+    if-ltz v2, :cond_1f
+
+    move-object/from16 v49, v6
+
+    :try_start_2e
+    iget-wide v5, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mBytes:J
+
+    add-long/2addr v5, v13
+
+    iput-wide v5, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mBytes:J
+    :try_end_2e
+    .catch Ljava/io/IOException; {:try_start_2e .. :try_end_2e} :catch_22
+
+    goto :goto_1b
+
+    :catch_22
+    move-exception v0
+
+    goto/16 :goto_0
+
+    :cond_1f
+    move-object/from16 v49, v6
+
+    :goto_1b
+    const-wide/16 v5, 0x0
+
+    cmp-long v2, v13, v5
+
+    if-gtz v2, :cond_20
+
+    goto :goto_1c
+
+    :cond_20
+    sub-long/2addr v7, v13
+
+    nop
+
+    move-object/from16 v6, v49
+
+    const/4 v5, 0x0
+
+    goto :goto_18
+
+    :catch_23
+    move-exception v0
+
+    move-object/from16 v49, v6
+
+    move-object/from16 v30, p7
+
+    goto :goto_1e
+
+    :cond_21
+    move-object/from16 v49, v6
+
+    goto :goto_1c
+
+    :catch_24
+    move-exception v0
+
+    move/from16 v4, p6
+
+    move-object/from16 v43, v14
+
+    move-object/from16 v49, v15
+
+    move-object/from16 v30, p7
+
+    goto :goto_1e
+
+    :cond_22
+    move-object v3, v4
+
+    move-object/from16 v49, v9
+
+    move-object/from16 v43, v14
+
+    move/from16 v4, p6
+
+    :goto_1c
+    move-object/from16 v30, p7
+
+    :goto_1d
+    move-object/from16 v50, v3
+
+    goto :goto_1f
+
+    :catch_25
+    move-exception v0
+
+    move/from16 v4, p6
+
+    move-object/from16 v49, v9
 
     move-object/from16 v43, v14
 
     move-object/from16 v30, p7
 
-    :goto_1b
+    :goto_1e
     const-string v2, "BackupManagerService"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "io exception on restore socket read: "
+    const-string/jumbo v5, "io exception on restore socket read: "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -2362,12 +2445,12 @@
 
     nop
 
-    const/16 v51, 0x0
+    const/16 v50, 0x0
 
-    :goto_1c
-    move-object/from16 v0, v51
+    :goto_1f
+    move-object/from16 v0, v50
 
-    if-nez v0, :cond_22
+    if-nez v0, :cond_23
 
     invoke-direct/range {p0 .. p0}, Lcom/android/server/backup/restore/FullRestoreEngine;->tearDownPipes()V
 
@@ -2375,32 +2458,30 @@
 
     invoke-virtual {v1, v15}, Lcom/android/server/backup/restore/FullRestoreEngine;->setRunning(Z)V
 
-    if-eqz p2, :cond_23
+    if-eqz p2, :cond_24
 
     iget-object v3, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mTargetApp:Landroid/content/pm/ApplicationInfo;
 
     invoke-direct {v1, v3}, Lcom/android/server/backup/restore/FullRestoreEngine;->tearDownAgent(Landroid/content/pm/ApplicationInfo;)V
 
-    goto :goto_1d
-
-    :cond_22
-    const/4 v15, 0x0
+    goto :goto_20
 
     :cond_23
-    :goto_1d
-    if-eqz v0, :cond_24
-
-    const/16 v47, 0x1
-
-    goto :goto_1e
+    const/4 v15, 0x0
 
     :cond_24
-    move/from16 v47, v15
+    :goto_20
+    if-eqz v0, :cond_25
 
-    :goto_1e
-    return v47
+    const/16 v48, 0x1
 
-    nop
+    goto :goto_21
+
+    :cond_25
+    move/from16 v48, v15
+
+    :goto_21
+    return v48
 
     nop
 

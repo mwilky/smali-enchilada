@@ -12,6 +12,8 @@
 # instance fields
 .field private final mContext:Landroid/content/Context;
 
+.field private final mGetLocation:Ljava/lang/Object;
+
 .field private final mServiceWatcher:Lcom/android/server/ServiceWatcher;
 
 
@@ -20,6 +22,8 @@
     .locals 10
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p0, p0, Lcom/android/server/location/GeocoderProxy;->mGetLocation:Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/android/server/location/GeocoderProxy;->mContext:Landroid/content/Context;
 
@@ -48,6 +52,14 @@
     iput-object v9, p0, Lcom/android/server/location/GeocoderProxy;->mServiceWatcher:Lcom/android/server/ServiceWatcher;
 
     return-void
+.end method
+
+.method static synthetic access$000(Lcom/android/server/location/GeocoderProxy;)Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/location/GeocoderProxy;->mGetLocation:Ljava/lang/Object;
+
+    return-object v0
 .end method
 
 .method private bind()Z

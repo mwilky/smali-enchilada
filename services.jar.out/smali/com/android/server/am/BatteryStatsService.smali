@@ -21,6 +21,8 @@
 
 .field private static final MAX_LOW_POWER_STATS_SIZE:I = 0x800
 
+.field private static MIN_EXT_FLUSH_TIME_MS:I = 0x0
+
 .field static final TAG:Ljava/lang/String; = "BatteryStatsService"
 
 .field private static sService:Lcom/android/internal/app/IBatteryStats;
@@ -30,6 +32,8 @@
 .field private final mContext:Landroid/content/Context;
 
 .field private mDecoderStat:Ljava/nio/charset/CharsetDecoder;
+
+.field private mLastExternelFlush:J
 
 .field final mStats:Lcom/android/internal/os/BatteryStatsImpl;
 
@@ -43,6 +47,16 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    const/16 v0, 0xbb8
+
+    sput v0, Lcom/android/server/am/BatteryStatsService;->MIN_EXT_FLUSH_TIME_MS:I
+
+    return-void
+.end method
+
 .method constructor <init>(Landroid/content/Context;Ljava/io/File;Landroid/os/Handler;)V
     .locals 5
 
@@ -87,6 +101,10 @@
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/am/BatteryStatsService;->mUtf16BufferStat:Ljava/nio/CharBuffer;
+
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Lcom/android/server/am/BatteryStatsService;->mLastExternelFlush:J
 
     iput-object p1, p0, Lcom/android/server/am/BatteryStatsService;->mContext:Landroid/content/Context;
 
@@ -2416,6 +2434,84 @@
     move-exception v0
 
     throw v0
+.end method
+
+.method public flushExternel()V
+    .locals 6
+
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v0
+
+    iget-wide v2, p0, Lcom/android/server/am/BatteryStatsService;->mLastExternelFlush:J
+
+    sub-long v2, v0, v2
+
+    sget v4, Lcom/android/server/am/BatteryStatsService;->MIN_EXT_FLUSH_TIME_MS:I
+
+    int-to-long v4, v4
+
+    cmp-long v2, v2, v4
+
+    if-gtz v2, :cond_0
+
+    const-string v2, "BatteryStatsService"
+
+    const-string v3, "ext-flush too soon, skip"
+
+    invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v2, p0, Lcom/android/server/am/BatteryStatsService;->mWorker:Lcom/android/server/am/BatteryExternalStatsWorker;
+
+    const-string v3, "BGC"
+
+    const/16 v4, 0x1f
+
+    invoke-virtual {v2, v3, v4}, Lcom/android/server/am/BatteryExternalStatsWorker;->scheduleSync(Ljava/lang/String;I)Ljava/util/concurrent/Future;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/android/server/am/BatteryStatsService;->awaitUninterruptibly(Ljava/util/concurrent/Future;)V
+
+    const-string v2, "BatteryStatsService"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "@@@@ awaitUninterruptibly in "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v4
+
+    sub-long/2addr v4, v0
+
+    invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v4, " ms"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v2
+
+    iput-wide v2, p0, Lcom/android/server/am/BatteryStatsService;->mLastExternelFlush:J
+
+    :goto_0
+    return-void
 .end method
 
 .method public getActiveStatistics()Lcom/android/internal/os/BatteryStatsImpl;

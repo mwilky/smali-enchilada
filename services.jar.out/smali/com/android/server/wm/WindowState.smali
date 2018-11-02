@@ -251,6 +251,8 @@
 
 .field mPolicyVisibilityAfterAnim:Z
 
+.field mPowerManagerInternal:Landroid/os/PowerManagerInternal;
+
 .field private mPowerManagerWrapper:Lcom/android/server/wm/WindowState$PowerManagerWrapper;
 
 .field mRelayoutCalled:Z
@@ -1166,36 +1168,44 @@
 
     iput-object v0, v1, Lcom/android/server/wm/WindowState;->mInputWindowHandle:Lcom/android/server/input/InputWindowHandle;
 
+    move-object/from16 v6, p1
+
+    iget-object v0, v6, Lcom/android/server/wm/WindowManagerService;->mPowerManagerInternal:Landroid/os/PowerManagerInternal;
+
+    iput-object v0, v1, Lcom/android/server/wm/WindowState;->mPowerManagerInternal:Landroid/os/PowerManagerInternal;
+
     return-void
 
     :catch_0
     move-exception v0
 
-    const/4 v6, 0x0
+    move-object/from16 v6, p1
 
-    iput-object v6, v1, Lcom/android/server/wm/WindowState;->mDeathRecipient:Lcom/android/server/wm/WindowState$DeathRecipient;
+    const/4 v7, 0x0
 
-    const/4 v6, 0x0
+    iput-object v7, v1, Lcom/android/server/wm/WindowState;->mDeathRecipient:Lcom/android/server/wm/WindowState$DeathRecipient;
 
-    iput-boolean v6, v1, Lcom/android/server/wm/WindowState;->mIsChildWindow:Z
+    const/4 v7, 0x0
 
-    iput-boolean v6, v1, Lcom/android/server/wm/WindowState;->mLayoutAttached:Z
+    iput-boolean v7, v1, Lcom/android/server/wm/WindowState;->mIsChildWindow:Z
 
-    iput-boolean v6, v1, Lcom/android/server/wm/WindowState;->mIsImWindow:Z
+    iput-boolean v7, v1, Lcom/android/server/wm/WindowState;->mLayoutAttached:Z
 
-    iput-boolean v6, v1, Lcom/android/server/wm/WindowState;->mIsWallpaper:Z
+    iput-boolean v7, v1, Lcom/android/server/wm/WindowState;->mIsImWindow:Z
 
-    iput-boolean v6, v1, Lcom/android/server/wm/WindowState;->mIsFloatingLayer:Z
+    iput-boolean v7, v1, Lcom/android/server/wm/WindowState;->mIsWallpaper:Z
 
-    iput v6, v1, Lcom/android/server/wm/WindowState;->mBaseLayer:I
+    iput-boolean v7, v1, Lcom/android/server/wm/WindowState;->mIsFloatingLayer:Z
 
-    iput v6, v1, Lcom/android/server/wm/WindowState;->mSubLayer:I
+    iput v7, v1, Lcom/android/server/wm/WindowState;->mBaseLayer:I
 
-    const/4 v6, 0x0
+    iput v7, v1, Lcom/android/server/wm/WindowState;->mSubLayer:I
 
-    iput-object v6, v1, Lcom/android/server/wm/WindowState;->mInputWindowHandle:Lcom/android/server/input/InputWindowHandle;
+    const/4 v7, 0x0
 
-    iput-object v6, v1, Lcom/android/server/wm/WindowState;->mWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
+    iput-object v7, v1, Lcom/android/server/wm/WindowState;->mInputWindowHandle:Lcom/android/server/input/InputWindowHandle;
+
+    iput-object v7, v1, Lcom/android/server/wm/WindowState;->mWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
 
     return-void
 .end method
@@ -1833,7 +1843,7 @@
 .end method
 
 .method private dispatchResized(Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;ZLandroid/util/MergedConfiguration;ZILandroid/view/DisplayCutout;)V
-    .locals 18
+    .locals 19
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1845,8 +1855,6 @@
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/WindowState;->isDragResizeChanged()Z
 
     move-result v1
-
-    const/4 v2, 0x1
 
     if-nez v1, :cond_1
 
@@ -1863,9 +1871,19 @@
 
     :cond_1
     :goto_0
-    move v14, v2
+    const/4 v14, 0x1
 
     :goto_1
+    iget v3, v0, Lcom/android/server/wm/WindowState;->mOwnerUid:I
+
+    iget-object v4, v0, Lcom/android/server/wm/WindowState;->mSession:Lcom/android/server/wm/Session;
+
+    iget v4, v4, Lcom/android/server/wm/Session;->mPid:I
+
+    const/16 v15, 0x24b8
+
+    invoke-static {v15, v3, v4}, Lcom/android/server/am/OnePlusProcessManager;->checkTimeoutBegin(III)V
+
     iget-object v4, v0, Lcom/android/server/wm/WindowState;->mClient:Landroid/view/IWindow;
 
     invoke-virtual/range {p0 .. p1}, Lcom/android/server/wm/WindowState;->getBackdropFrame(Landroid/graphics/Rect;)Landroid/graphics/Rect;
@@ -1876,13 +1894,13 @@
 
     invoke-interface {v3, v0}, Lcom/android/server/policy/WindowManagerPolicy;->isNavBarForcedShownLw(Lcom/android/server/policy/WindowManagerPolicy$WindowState;)Z
 
-    move-result v15
+    move-result v3
 
-    new-instance v3, Landroid/view/DisplayCutout$ParcelableWrapper;
+    new-instance v12, Landroid/view/DisplayCutout$ParcelableWrapper;
 
-    move-object/from16 v12, p11
+    move-object/from16 v11, p11
 
-    invoke-direct {v3, v12}, Landroid/view/DisplayCutout$ParcelableWrapper;-><init>(Landroid/view/DisplayCutout;)V
+    invoke-direct {v12, v11}, Landroid/view/DisplayCutout$ParcelableWrapper;-><init>(Landroid/view/DisplayCutout;)V
 
     move-object/from16 v5, p1
 
@@ -1898,13 +1916,21 @@
 
     move/from16 v11, p7
 
+    move-object/from16 v17, v12
+
     move-object/from16 v12, p8
+
+    move v2, v15
+
+    move v15, v3
 
     move/from16 v16, p10
 
-    move-object/from16 v17, v3
-
     invoke-interface/range {v4 .. v17}, Landroid/view/IWindow;->resized(Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;ZLandroid/util/MergedConfiguration;Landroid/graphics/Rect;ZZILandroid/view/DisplayCutout$ParcelableWrapper;)V
+
+    invoke-static {v2}, Lcom/android/server/am/OnePlusProcessManager;->checkTimeoutEnd(I)V
+
+    const/4 v2, 0x1
 
     iput-boolean v2, v0, Lcom/android/server/wm/WindowState;->mDragResizingChangeReported:Z
 
@@ -11263,7 +11289,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "hideWallpaperWindow "
+    const-string/jumbo v3, "hideWallpaperWindow "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -14126,7 +14152,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "hiding "
+    const-string/jumbo v3, "hiding "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -14640,6 +14666,14 @@
     invoke-static {v5, v6}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_6
+    iget-object v5, p0, Lcom/android/server/wm/WindowState;->mPowerManagerInternal:Landroid/os/PowerManagerInternal;
+
+    iget-object v6, p0, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
+
+    iget-object v6, v6, Landroid/view/WindowManager$LayoutParams;->packageName:Ljava/lang/String;
+
+    invoke-virtual {v5, v6}, Landroid/os/PowerManagerInternal;->setPackageNameWithScreenFlag(Ljava/lang/String;)V
+
     iget-object v5, p0, Lcom/android/server/wm/WindowState;->mPowerManagerWrapper:Lcom/android/server/wm/WindowState$PowerManagerWrapper;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J

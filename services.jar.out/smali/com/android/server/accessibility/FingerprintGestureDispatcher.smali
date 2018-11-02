@@ -359,6 +359,12 @@
     return-void
 .end method
 
+.method public onFingerprintEventCallback(IIII)V
+    .locals 0
+
+    return-void
+.end method
+
 .method public onFingerprintGesture(I)Z
     .locals 5
 

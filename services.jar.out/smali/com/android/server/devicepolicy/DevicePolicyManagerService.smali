@@ -9465,7 +9465,7 @@
 
     iget-object v0, v2, Lcom/android/server/devicepolicy/DevicePolicyManagerService$DevicePolicyData;->mAffiliationIds:Ljava/util/Set;
 
-    const-string v4, "id"
+    const-string/jumbo v4, "id"
 
     const/4 v5, 0x0
 
@@ -13646,7 +13646,7 @@
 
     invoke-interface {v4, v2, v8}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v8, "id"
+    const-string/jumbo v8, "id"
 
     invoke-interface {v4, v2, v8, v7}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -34875,7 +34875,7 @@
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, "ids must not contain empty string"
+    const-string/jumbo v2, "ids must not contain empty string"
 
     invoke-direct {v0, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -34952,7 +34952,7 @@
     :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "ids must not be null"
+    const-string/jumbo v1, "ids must not be null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

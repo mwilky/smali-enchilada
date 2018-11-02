@@ -424,7 +424,7 @@
     move-object/from16 v16, v0
 
     :try_start_3
-    const-string v0, "id"
+    const-string/jumbo v0, "id"
     :try_end_3
     .catch Ljava/lang/IllegalArgumentException; {:try_start_3 .. :try_end_3} :catch_2
     .catch Ljava/io/EOFException; {:try_start_3 .. :try_end_3} :catch_6
@@ -1113,8 +1113,6 @@
 
     nop
 
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_2
@@ -1501,7 +1499,7 @@
     :goto_4
     if-eqz v1, :cond_5
 
-    const-string v0, "id"
+    const-string/jumbo v0, "id"
 
     invoke-virtual {p0, v0}, Ljava/io/DataOutputStream;->writeUTF(Ljava/lang/String;)V
 
@@ -1557,8 +1555,6 @@
     invoke-virtual {p0, v0}, Ljava/io/DataOutputStream;->writeUTF(Ljava/lang/String;)V
 
     return v1
-
-    nop
 
     nop
 

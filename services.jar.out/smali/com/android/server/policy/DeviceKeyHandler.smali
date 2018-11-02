@@ -565,31 +565,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1000(Lcom/android/server/policy/DeviceKeyHandler;)Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/android/server/policy/DeviceKeyHandler;->mFlashlightEnabled:Z
-
-    return v0
-.end method
-
-.method static synthetic access$1002(Lcom/android/server/policy/DeviceKeyHandler;Z)Z
-    .locals 0
-
-    iput-boolean p1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mFlashlightEnabled:Z
-
-    return p1
-.end method
-
-.method static synthetic access$200(Lcom/android/server/policy/DeviceKeyHandler;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/android/server/policy/DeviceKeyHandler;->updateOemSettings()V
-
-    return-void
-.end method
-
-.method static synthetic access$400(Lcom/android/server/policy/DeviceKeyHandler;)Landroid/os/Handler;
+.method static synthetic access$300(Lcom/android/server/policy/DeviceKeyHandler;)Landroid/os/Handler;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/policy/DeviceKeyHandler;->mHandler:Landroid/os/Handler;
@@ -597,7 +573,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$500()Z
+.method static synthetic access$400()Z
     .locals 1
 
     sget-boolean v0, Lcom/android/server/policy/DeviceKeyHandler;->DEBUG:Z
@@ -605,7 +581,7 @@
     return v0
 .end method
 
-.method static synthetic access$600(Lcom/android/server/policy/DeviceKeyHandler;)Ljava/lang/Object;
+.method static synthetic access$500(Lcom/android/server/policy/DeviceKeyHandler;)Ljava/lang/Object;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/policy/DeviceKeyHandler;->mObject:Ljava/lang/Object;
@@ -613,7 +589,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$700(Lcom/android/server/policy/DeviceKeyHandler;)Z
+.method static synthetic access$600(Lcom/android/server/policy/DeviceKeyHandler;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/server/policy/DeviceKeyHandler;->mProximitySensorActive:Z
@@ -621,7 +597,7 @@
     return v0
 .end method
 
-.method static synthetic access$702(Lcom/android/server/policy/DeviceKeyHandler;Z)Z
+.method static synthetic access$602(Lcom/android/server/policy/DeviceKeyHandler;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mProximitySensorActive:Z
@@ -629,20 +605,28 @@
     return p1
 .end method
 
-.method static synthetic access$800(Lcom/android/server/policy/DeviceKeyHandler;)Landroid/app/ActivityManager;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/server/policy/DeviceKeyHandler;->mActivityManager:Landroid/app/ActivityManager;
-
-    return-object v0
-.end method
-
-.method static synthetic access$900(Lcom/android/server/policy/DeviceKeyHandler;)V
+.method static synthetic access$700(Lcom/android/server/policy/DeviceKeyHandler;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/policy/DeviceKeyHandler;->processKeyEvent()V
 
     return-void
+.end method
+
+.method static synthetic access$800(Lcom/android/server/policy/DeviceKeyHandler;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/server/policy/DeviceKeyHandler;->mFlashlightEnabled:Z
+
+    return v0
+.end method
+
+.method static synthetic access$802(Lcom/android/server/policy/DeviceKeyHandler;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mFlashlightEnabled:Z
+
+    return p1
 .end method
 
 .method private acquireGestureWakeLock(Ljava/lang/String;)V
@@ -1384,6 +1368,25 @@
 
     move-result-object v3
 
+    iget-object v4, p0, Lcom/android/server/policy/DeviceKeyHandler;->mActivityManager:Landroid/app/ActivityManager;
+
+    invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    const-string v4, "15"
+
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_1
+
+    return-void
+
+    :cond_1
     const-string v4, "DeviceKeyHandler"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1416,7 +1419,7 @@
 
     const/4 v9, 0x1
 
-    if-nez v4, :cond_6
+    if-nez v4, :cond_7
 
     invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
 
@@ -1424,15 +1427,15 @@
 
     const/16 v10, 0x31
 
-    if-eq v4, v10, :cond_3
+    if-eq v4, v10, :cond_4
 
     const/16 v10, 0x37
 
-    if-eq v4, v10, :cond_2
+    if-eq v4, v10, :cond_3
 
     const/16 v10, 0x624
 
-    if-eq v4, v10, :cond_1
+    if-eq v4, v10, :cond_2
 
     packed-switch v4, :pswitch_data_0
 
@@ -1445,7 +1448,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_5
 
     move v4, v9
 
@@ -1458,52 +1461,52 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_5
 
     move v4, v7
 
     goto :goto_1
 
-    :cond_1
+    :cond_2
     const-string v4, "15"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_5
 
     move v4, v6
 
     goto :goto_1
 
-    :cond_2
+    :cond_3
     const-string v4, "7"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_5
 
     move v4, v2
 
     goto :goto_1
 
-    :cond_3
+    :cond_4
     const-string v4, "1"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_5
 
     move v4, v5
 
     goto :goto_1
 
-    :cond_4
+    :cond_5
     :goto_0
     move v4, v8
 
@@ -1515,7 +1518,7 @@
     :pswitch_2
     iget-boolean v4, p0, Lcom/android/server/policy/DeviceKeyHandler;->mSleeping:Z
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_7
 
     invoke-direct {p0, v3}, Lcom/android/server/policy/DeviceKeyHandler;->acquireGestureWakeLock(Ljava/lang/String;)V
 
@@ -1534,13 +1537,13 @@
     :pswitch_3
     iget-boolean v4, p0, Lcom/android/server/policy/DeviceKeyHandler;->mSleeping:Z
 
-    if-nez v4, :cond_5
+    if-nez v4, :cond_6
 
     iget-boolean v4, p0, Lcom/android/server/policy/DeviceKeyHandler;->mDoubleScreenOn:Z
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_7
 
-    :cond_5
+    :cond_6
     invoke-direct {p0, v3}, Lcom/android/server/policy/DeviceKeyHandler;->acquireGestureWakeLock(Ljava/lang/String;)V
 
     invoke-direct {p0}, Lcom/android/server/policy/DeviceKeyHandler;->performVibration()V
@@ -1588,7 +1591,7 @@
 
     nop
 
-    :cond_6
+    :cond_7
     :goto_2
     iget-object v4, p0, Lcom/android/server/policy/DeviceKeyHandler;->mGestureMap:Ljava/util/HashMap;
 
@@ -1598,7 +1601,7 @@
 
     check-cast v4, Lcom/android/server/policy/DeviceKeyHandler$ActionInfo;
 
-    if-eqz v4, :cond_b
+    if-eqz v4, :cond_c
 
     const-string v10, "DeviceKeyHandler"
 
@@ -1641,7 +1644,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_8
 
     move v5, v9
 
@@ -1654,7 +1657,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_8
 
     const/4 v5, 0x5
 
@@ -1667,7 +1670,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_8
 
     move v5, v7
 
@@ -1680,7 +1683,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_8
 
     move v5, v2
 
@@ -1693,7 +1696,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_8
 
     move v5, v6
 
@@ -1706,7 +1709,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_7
+    if-eqz v6, :cond_8
 
     goto :goto_4
 
@@ -1717,13 +1720,13 @@
 
     move-result v5
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_8
 
     const/4 v5, 0x6
 
     goto :goto_4
 
-    :cond_7
+    :cond_8
     :goto_3
     move v5, v8
 
@@ -1739,7 +1742,7 @@
 
     iget-object v6, p0, Lcom/android/server/policy/DeviceKeyHandler;->mKeyguardDelegate:Lcom/android/server/policy/keyguard/KeyguardServiceDelegate;
 
-    if-eqz v6, :cond_b
+    if-eqz v6, :cond_c
 
     const-string v6, "com.oneplus.soundrecorder"
 
@@ -1751,7 +1754,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_8
+    if-nez v6, :cond_9
 
     iget-object v6, p0, Lcom/android/server/policy/DeviceKeyHandler;->mKeyguardDelegate:Lcom/android/server/policy/keyguard/KeyguardServiceDelegate;
 
@@ -1759,30 +1762,30 @@
 
     move-result v6
 
-    if-eqz v6, :cond_8
+    if-eqz v6, :cond_9
 
     iget-boolean v6, p0, Lcom/android/server/policy/DeviceKeyHandler;->mKeyguardOcclude:Z
 
-    if-nez v6, :cond_8
+    if-nez v6, :cond_9
 
     invoke-virtual {p0, v4, v9}, Lcom/android/server/policy/DeviceKeyHandler;->startWithKeyguardUnlocked(Lcom/android/server/policy/DeviceKeyHandler$ActionInfo;Z)Z
 
     move-result v5
 
-    if-eqz v5, :cond_9
+    if-eqz v5, :cond_a
 
     iput-object v4, p0, Lcom/android/server/policy/DeviceKeyHandler;->mActionInfo:Lcom/android/server/policy/DeviceKeyHandler$ActionInfo;
 
     goto :goto_5
 
-    :cond_8
+    :cond_9
     invoke-virtual {p0, v4, v2}, Lcom/android/server/policy/DeviceKeyHandler;->startWithKeyguardUnlocked(Lcom/android/server/policy/DeviceKeyHandler$ActionInfo;Z)Z
 
     move-result v5
 
-    :cond_9
+    :cond_a
     :goto_5
-    if-eqz v5, :cond_b
+    if-eqz v5, :cond_c
 
     invoke-direct {p0}, Lcom/android/server/policy/DeviceKeyHandler;->performVibration()V
 
@@ -1796,7 +1799,7 @@
 
     iget-object v6, p0, Lcom/android/server/policy/DeviceKeyHandler;->mKeyguardDelegate:Lcom/android/server/policy/keyguard/KeyguardServiceDelegate;
 
-    if-eqz v6, :cond_b
+    if-eqz v6, :cond_c
 
     const-string v6, "com.oneplus.soundrecorder"
 
@@ -1808,7 +1811,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_a
+    if-eqz v6, :cond_b
 
     iget-object v6, p0, Lcom/android/server/policy/DeviceKeyHandler;->mKeyguardDelegate:Lcom/android/server/policy/keyguard/KeyguardServiceDelegate;
 
@@ -1816,9 +1819,9 @@
 
     move-result v2
 
-    if-nez v2, :cond_b
+    if-nez v2, :cond_c
 
-    :cond_a
+    :cond_b
     iget-object v2, p0, Lcom/android/server/policy/DeviceKeyHandler;->mKeyguardDelegate:Lcom/android/server/policy/keyguard/KeyguardServiceDelegate;
 
     new-instance v6, Lcom/android/server/policy/DeviceKeyHandler$3;
@@ -1867,9 +1870,11 @@
 
     nop
 
-    :cond_b
+    :cond_c
     :goto_6
     return-void
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x34
@@ -2166,265 +2171,6 @@
     invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     return v9
-.end method
-
-.method private updateOemSettings()V
-    .locals 7
-
-    iget-object v0, p0, Lcom/android/server/policy/DeviceKeyHandler;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "oem_acc_blackscreen_gestrue_enable"
-
-    const/4 v2, -0x2
-
-    const/4 v3, 0x0
-
-    invoke-static {v0, v1, v3, v2}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
-
-    move-result v1
-
-    iput v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
-
-    sget-boolean v1, Lcom/android/server/policy/DeviceKeyHandler;->DEBUG:Z
-
-    if-eqz v1, :cond_0
-
-    const-string v1, "DeviceKeyHandler"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v5, "updateH2OemSettings(): mBlackKeySettingState = "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v5, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
-
-    invoke-static {v5}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v1, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_0
-    iget v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
-
-    const/4 v4, 0x7
-
-    invoke-static {v1, v4}, Lcom/android/server/policy/DeviceKeyHandler;->getOffset(II)I
-
-    move-result v1
-
-    const/4 v4, 0x1
-
-    if-ne v1, v4, :cond_1
-
-    move v1, v4
-
-    goto :goto_0
-
-    :cond_1
-    move v1, v3
-
-    :goto_0
-    iput-boolean v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mDoubleScreenOn:Z
-
-    iget v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
-
-    const/4 v5, 0x5
-
-    invoke-static {v1, v5}, Lcom/android/server/policy/DeviceKeyHandler;->getOffset(II)I
-
-    move-result v1
-
-    if-ne v1, v4, :cond_2
-
-    move v1, v4
-
-    goto :goto_1
-
-    :cond_2
-    move v1, v3
-
-    :goto_1
-    iput-boolean v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mMusic_control:Z
-
-    iget v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
-
-    const/4 v5, 0x4
-
-    invoke-static {v1, v5}, Lcom/android/server/policy/DeviceKeyHandler;->getOffset(II)I
-
-    move-result v1
-
-    if-ne v1, v4, :cond_3
-
-    move v1, v4
-
-    goto :goto_2
-
-    :cond_3
-    move v1, v3
-
-    :goto_2
-    iput-boolean v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mMusic_prev:Z
-
-    iget v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
-
-    const/4 v5, 0x3
-
-    invoke-static {v1, v5}, Lcom/android/server/policy/DeviceKeyHandler;->getOffset(II)I
-
-    move-result v1
-
-    if-ne v1, v4, :cond_4
-
-    move v1, v4
-
-    goto :goto_3
-
-    :cond_4
-    move v1, v3
-
-    :goto_3
-    iput-boolean v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mMusic_next:Z
-
-    iget v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
-
-    const/4 v5, 0x2
-
-    invoke-static {v1, v5}, Lcom/android/server/policy/DeviceKeyHandler;->getOffset(II)I
-
-    move-result v1
-
-    if-ne v1, v4, :cond_5
-
-    move v1, v4
-
-    goto :goto_4
-
-    :cond_5
-    move v1, v3
-
-    :goto_4
-    iput-boolean v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mMusic_pause:Z
-
-    iget v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
-
-    invoke-static {v1, v4}, Lcom/android/server/policy/DeviceKeyHandler;->getOffset(II)I
-
-    move-result v1
-
-    if-ne v1, v4, :cond_6
-
-    move v1, v4
-
-    goto :goto_5
-
-    :cond_6
-    move v1, v3
-
-    :goto_5
-    iput-boolean v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mMusic_play:Z
-
-    iget v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
-
-    const/4 v6, 0x6
-
-    invoke-static {v1, v6}, Lcom/android/server/policy/DeviceKeyHandler;->getOffset(II)I
-
-    move-result v1
-
-    if-ne v1, v4, :cond_7
-
-    move v1, v4
-
-    goto :goto_6
-
-    :cond_7
-    move v1, v3
-
-    :goto_6
-    iput-boolean v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mOld_O:Z
-
-    iget v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
-
-    invoke-static {v1, v3}, Lcom/android/server/policy/DeviceKeyHandler;->getOffset(II)I
-
-    move-result v1
-
-    if-ne v1, v4, :cond_8
-
-    move v1, v4
-
-    goto :goto_7
-
-    :cond_8
-    move v1, v3
-
-    :goto_7
-    iput-boolean v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mOld_V:Z
-
-    iget-boolean v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mMusic_play:Z
-
-    if-ne v1, v4, :cond_9
-
-    iput-boolean v4, p0, Lcom/android/server/policy/DeviceKeyHandler;->mMusic_pause:Z
-
-    :cond_9
-    invoke-virtual {p0, v0}, Lcom/android/server/policy/DeviceKeyHandler;->makeGestureMap(Landroid/content/ContentResolver;)V
-
-    new-array v1, v5, [B
-
-    iget v5, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
-
-    and-int/lit16 v5, v5, 0xff
-
-    int-to-byte v5, v5
-
-    aput-byte v5, v1, v3
-
-    iget v5, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
-
-    shr-int/lit8 v5, v5, 0x8
-
-    and-int/lit16 v5, v5, 0xff
-
-    int-to-byte v5, v5
-
-    aput-byte v5, v1, v4
-
-    const-string v5, "/proc/touchpanel/gesture_enable"
-
-    invoke-static {v5, v1}, Lcom/android/server/policy/FileUtils;->writeByteArray(Ljava/lang/String;[B)Z
-
-    const-string/jumbo v5, "oem_acc_anti_misoperation_screen"
-
-    invoke-static {v0, v5, v3, v2}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
-
-    move-result v2
-
-    if-ne v2, v4, :cond_a
-
-    move v3, v4
-
-    nop
-
-    :cond_a
-    iput-boolean v3, p0, Lcom/android/server/policy/DeviceKeyHandler;->mPocketmodeEnabled:Z
-
-    return-void
 .end method
 
 
@@ -3090,5 +2836,264 @@
 
     :cond_0
     :goto_1
+    return-void
+.end method
+
+.method public updateOemSettings()V
+    .locals 7
+
+    iget-object v0, p0, Lcom/android/server/policy/DeviceKeyHandler;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "oem_acc_blackscreen_gestrue_enable"
+
+    const/4 v2, -0x2
+
+    const/4 v3, 0x0
+
+    invoke-static {v0, v1, v3, v2}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
+
+    sget-boolean v1, Lcom/android/server/policy/DeviceKeyHandler;->DEBUG:Z
+
+    if-eqz v1, :cond_0
+
+    const-string v1, "DeviceKeyHandler"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "updateH2OemSettings(): mBlackKeySettingState = "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v5, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
+
+    invoke-static {v5}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v1, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    iget v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
+
+    const/4 v4, 0x7
+
+    invoke-static {v1, v4}, Lcom/android/server/policy/DeviceKeyHandler;->getOffset(II)I
+
+    move-result v1
+
+    const/4 v4, 0x1
+
+    if-ne v1, v4, :cond_1
+
+    move v1, v4
+
+    goto :goto_0
+
+    :cond_1
+    move v1, v3
+
+    :goto_0
+    iput-boolean v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mDoubleScreenOn:Z
+
+    iget v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
+
+    const/4 v5, 0x5
+
+    invoke-static {v1, v5}, Lcom/android/server/policy/DeviceKeyHandler;->getOffset(II)I
+
+    move-result v1
+
+    if-ne v1, v4, :cond_2
+
+    move v1, v4
+
+    goto :goto_1
+
+    :cond_2
+    move v1, v3
+
+    :goto_1
+    iput-boolean v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mMusic_control:Z
+
+    iget v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
+
+    const/4 v5, 0x4
+
+    invoke-static {v1, v5}, Lcom/android/server/policy/DeviceKeyHandler;->getOffset(II)I
+
+    move-result v1
+
+    if-ne v1, v4, :cond_3
+
+    move v1, v4
+
+    goto :goto_2
+
+    :cond_3
+    move v1, v3
+
+    :goto_2
+    iput-boolean v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mMusic_prev:Z
+
+    iget v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
+
+    const/4 v5, 0x3
+
+    invoke-static {v1, v5}, Lcom/android/server/policy/DeviceKeyHandler;->getOffset(II)I
+
+    move-result v1
+
+    if-ne v1, v4, :cond_4
+
+    move v1, v4
+
+    goto :goto_3
+
+    :cond_4
+    move v1, v3
+
+    :goto_3
+    iput-boolean v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mMusic_next:Z
+
+    iget v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
+
+    const/4 v5, 0x2
+
+    invoke-static {v1, v5}, Lcom/android/server/policy/DeviceKeyHandler;->getOffset(II)I
+
+    move-result v1
+
+    if-ne v1, v4, :cond_5
+
+    move v1, v4
+
+    goto :goto_4
+
+    :cond_5
+    move v1, v3
+
+    :goto_4
+    iput-boolean v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mMusic_pause:Z
+
+    iget v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
+
+    invoke-static {v1, v4}, Lcom/android/server/policy/DeviceKeyHandler;->getOffset(II)I
+
+    move-result v1
+
+    if-ne v1, v4, :cond_6
+
+    move v1, v4
+
+    goto :goto_5
+
+    :cond_6
+    move v1, v3
+
+    :goto_5
+    iput-boolean v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mMusic_play:Z
+
+    iget v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
+
+    const/4 v6, 0x6
+
+    invoke-static {v1, v6}, Lcom/android/server/policy/DeviceKeyHandler;->getOffset(II)I
+
+    move-result v1
+
+    if-ne v1, v4, :cond_7
+
+    move v1, v4
+
+    goto :goto_6
+
+    :cond_7
+    move v1, v3
+
+    :goto_6
+    iput-boolean v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mOld_O:Z
+
+    iget v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
+
+    invoke-static {v1, v3}, Lcom/android/server/policy/DeviceKeyHandler;->getOffset(II)I
+
+    move-result v1
+
+    if-ne v1, v4, :cond_8
+
+    move v1, v4
+
+    goto :goto_7
+
+    :cond_8
+    move v1, v3
+
+    :goto_7
+    iput-boolean v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mOld_V:Z
+
+    iget-boolean v1, p0, Lcom/android/server/policy/DeviceKeyHandler;->mMusic_play:Z
+
+    if-ne v1, v4, :cond_9
+
+    iput-boolean v4, p0, Lcom/android/server/policy/DeviceKeyHandler;->mMusic_pause:Z
+
+    :cond_9
+    invoke-virtual {p0, v0}, Lcom/android/server/policy/DeviceKeyHandler;->makeGestureMap(Landroid/content/ContentResolver;)V
+
+    new-array v1, v5, [B
+
+    iget v5, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
+
+    and-int/lit16 v5, v5, 0xff
+
+    int-to-byte v5, v5
+
+    aput-byte v5, v1, v3
+
+    iget v5, p0, Lcom/android/server/policy/DeviceKeyHandler;->mBlackKeySettingState:I
+
+    shr-int/lit8 v5, v5, 0x8
+
+    and-int/lit16 v5, v5, 0xff
+
+    int-to-byte v5, v5
+
+    aput-byte v5, v1, v4
+
+    const-string v5, "/proc/touchpanel/gesture_enable"
+
+    invoke-static {v5, v1}, Lcom/android/server/policy/FileUtils;->writeByteArray(Ljava/lang/String;[B)Z
+
+    const-string/jumbo v5, "oem_acc_anti_misoperation_screen"
+
+    invoke-static {v0, v5, v3, v2}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v2
+
+    if-ne v2, v4, :cond_a
+
+    move v3, v4
+
+    nop
+
+    :cond_a
+    iput-boolean v3, p0, Lcom/android/server/policy/DeviceKeyHandler;->mPocketmodeEnabled:Z
+
     return-void
 .end method

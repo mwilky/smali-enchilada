@@ -55,7 +55,7 @@
 
     invoke-direct {v1, v2, v3}, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceLockoutResetMonitor;-><init>(Lcom/android/server/fingerprint/FingerprintService;Landroid/hardware/fingerprint/IFingerprintServiceLockoutResetCallback;)V
 
-    invoke-static {v0, v1}, Lcom/android/server/fingerprint/FingerprintService;->access$3000(Lcom/android/server/fingerprint/FingerprintService;Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceLockoutResetMonitor;)V
+    invoke-static {v0, v1}, Lcom/android/server/fingerprint/FingerprintService;->access$3300(Lcom/android/server/fingerprint/FingerprintService;Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceLockoutResetMonitor;)V
 
     return-void
 .end method

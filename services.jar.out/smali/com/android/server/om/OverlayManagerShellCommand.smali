@@ -570,7 +570,7 @@
 
     move-result-object v3
 
-    const-string v6, "highest"
+    const-string/jumbo v6, "highest"
 
     invoke-virtual {v6, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

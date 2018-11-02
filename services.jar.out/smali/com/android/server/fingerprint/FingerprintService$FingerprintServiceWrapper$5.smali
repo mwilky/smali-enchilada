@@ -49,7 +49,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static {v0, v1, v2}, Lcom/android/server/fingerprint/FingerprintService;->access$2500(Lcom/android/server/fingerprint/FingerprintService;ILjava/lang/String;)V
+    invoke-static {v0, v1, v2}, Lcom/android/server/fingerprint/FingerprintService;->access$2700(Lcom/android/server/fingerprint/FingerprintService;ILjava/lang/String;)V
 
     return-void
 .end method

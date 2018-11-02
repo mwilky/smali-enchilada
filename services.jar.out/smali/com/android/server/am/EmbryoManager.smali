@@ -684,7 +684,7 @@
 
     move-result v5
 
-    const-string/jumbo v6, "persist.sys.embryo.optheme"
+    const-string/jumbo v6, "persist.sys.embryo.limit"
 
     const/16 v7, 0x20
 
@@ -906,7 +906,7 @@
 .end method
 
 .method public checkBackgroundLevel(Ljava/util/List;)Z
-    .locals 6
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -918,50 +918,78 @@
 
     const/4 v0, 0x0
 
+    const/4 v1, 0x0
+
     invoke-interface {p1}, Ljava/util/List;->size()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    sub-int/2addr v1, v2
+    sub-int/2addr v2, v3
 
     :goto_0
-    if-ltz v1, :cond_1
+    if-ltz v2, :cond_2
 
-    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v4
 
-    check-cast v3, Lcom/android/server/am/ProcessRecord;
+    check-cast v4, Lcom/android/server/am/ProcessRecord;
 
-    iget-object v4, v3, Lcom/android/server/am/ProcessRecord;->thread:Landroid/app/IApplicationThread;
+    iget-object v5, v4, Lcom/android/server/am/ProcessRecord;->thread:Landroid/app/IApplicationThread;
 
-    if-eqz v4, :cond_0
+    if-eqz v5, :cond_0
 
-    iget v4, v3, Lcom/android/server/am/ProcessRecord;->setProcState:I
+    iget v5, v4, Lcom/android/server/am/ProcessRecord;->setProcState:I
 
-    const/16 v5, 0xf
+    const/16 v6, 0xf
 
-    if-lt v4, v5, :cond_0
+    if-lt v5, v6, :cond_0
 
     add-int/lit8 v0, v0, 0x1
 
-    const/16 v4, 0xa
+    const/16 v5, 0xa
 
-    if-lt v0, v4, :cond_0
+    if-lt v0, v5, :cond_0
 
-    return v2
+    return v3
 
     :cond_0
-    add-int/lit8 v1, v1, -0x1
+    iget-object v5, v4, Lcom/android/server/am/ProcessRecord;->thread:Landroid/app/IApplicationThread;
+
+    if-eqz v5, :cond_1
+
+    iget v5, v4, Lcom/android/server/am/ProcessRecord;->setProcState:I
+
+    const/4 v6, 0x6
+
+    if-lt v5, v6, :cond_1
+
+    add-int/lit8 v1, v1, 0x1
+
+    :cond_1
+    add-int/lit8 v2, v2, -0x1
 
     goto :goto_0
 
-    :cond_1
-    const/4 v1, 0x0
+    :cond_2
+    if-nez v1, :cond_3
 
-    return v1
+    const-string v2, "EmbryoManager"
+
+    const-string v3, "clean embryo process"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v2, p0, Lcom/android/server/am/EmbryoManager;->mUterus:Lcom/android/server/am/Uterus;
+
+    invoke-virtual {v2}, Lcom/android/server/am/Uterus;->disableEmbryoTemporary()V
+
+    :cond_3
+    const/4 v2, 0x0
+
+    return v2
 .end method
 
 .method public cleanup()V

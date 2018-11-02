@@ -75,7 +75,7 @@
 
     move-result-object v1
 
-    const-string v2, "ifw"
+    const-string/jumbo v2, "ifw"
 
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 

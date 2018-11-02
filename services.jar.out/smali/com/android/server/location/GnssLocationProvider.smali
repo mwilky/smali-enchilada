@@ -7932,7 +7932,7 @@
 
     if-eqz v3, :cond_5
 
-    const-string v3, "host"
+    const-string/jumbo v3, "host"
 
     invoke-virtual {p2, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -7956,7 +7956,7 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "host:"
+    const-string/jumbo v8, "host:"
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

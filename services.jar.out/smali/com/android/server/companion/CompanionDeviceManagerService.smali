@@ -672,7 +672,7 @@
 
     invoke-interface {v0, p1, v1}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    const-string v1, "http://xmlpull.org/v1/doc/features.html#indent-output"
+    const-string/jumbo v1, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     const/4 v2, 0x1
 

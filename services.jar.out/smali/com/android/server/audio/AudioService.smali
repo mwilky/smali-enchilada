@@ -6543,9 +6543,20 @@
 
     move-result-object v6
 
+    if-nez v6, :cond_5
+
+    const-string v7, "AudioService"
+
+    const-string v8, "handleBtScoActiveDeviceChange: btDeviceName is null, sending empty string"
+
+    invoke-static {v7, v8}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v6, ""
+
+    :cond_5
     const/4 v7, 0x0
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_6
 
     aget v8, v4, v5
 
@@ -6557,7 +6568,7 @@
 
     goto :goto_2
 
-    :cond_5
+    :cond_6
     array-length v8, v4
 
     move v9, v7
@@ -6565,7 +6576,7 @@
     move v7, v5
 
     :goto_1
-    if-ge v7, v8, :cond_6
+    if-ge v7, v8, :cond_7
 
     aget v10, v4, v7
 
@@ -6579,7 +6590,7 @@
 
     goto :goto_1
 
-    :cond_6
+    :cond_7
     move v7, v9
 
     :goto_2
@@ -6587,13 +6598,13 @@
 
     move-result v8
 
-    if-eqz v8, :cond_7
+    if-eqz v8, :cond_8
 
-    if-eqz v7, :cond_7
+    if-eqz v7, :cond_8
 
     goto :goto_3
 
-    :cond_7
+    :cond_8
     move v0, v5
 
     :goto_3
@@ -6622,8 +6633,6 @@
     invoke-static {v5, v7}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     return v0
-
-    nop
 
     :array_0
     .array-data 4
@@ -8236,7 +8245,7 @@
 
     if-eqz v5, :cond_5
 
-    const-string v5, "id"
+    const-string/jumbo v5, "id"
 
     invoke-interface {v0, v2, v5}, Landroid/content/res/XmlResourceParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -12315,7 +12324,11 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x1
+    const/high16 v5, -0x7e000000
+
+    const/high16 v6, 0x4000000
+
+    const/4 v7, 0x1
 
     if-ne v2, v3, :cond_1
 
@@ -12325,7 +12338,7 @@
 
     const-string/jumbo v3, "microphone"
 
-    invoke-virtual {v12, v3, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v12, v3, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     goto :goto_2
 
@@ -12341,54 +12354,50 @@
     goto :goto_1
 
     :cond_2
-    const/high16 v3, -0x7e000000
-
-    const/high16 v6, 0x4000000
-
     if-ne v2, v6, :cond_4
 
-    const-string v6, "AudioService"
+    const-string v3, "AudioService"
 
-    const-string/jumbo v7, "lht sendDeviceConnectionInetent Intent.ACTION_HEADSET_PLUG"
+    const-string/jumbo v8, "lht sendDeviceConnectionInetent Intent.ACTION_HEADSET_PLUG"
 
-    invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string v6, "android.intent.action.HEADSET_PLUG"
+    const-string v3, "android.intent.action.HEADSET_PLUG"
 
-    invoke-virtual {v12, v6}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v12, v3}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    const-string/jumbo v6, "usbheadset"
+    const-string/jumbo v3, "usbheadset"
 
-    invoke-virtual {v12, v6, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v12, v3, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    const-string/jumbo v6, "microphone"
+    const-string/jumbo v3, "microphone"
 
-    const-string v7, ""
+    const-string v8, ""
 
-    invoke-static {v3, v7}, Landroid/media/AudioSystem;->getDeviceConnectionState(ILjava/lang/String;)I
+    invoke-static {v5, v8}, Landroid/media/AudioSystem;->getDeviceConnectionState(ILjava/lang/String;)I
 
-    move-result v3
+    move-result v8
 
-    if-ne v3, v5, :cond_3
+    if-ne v8, v7, :cond_3
 
     nop
 
-    move v3, v5
+    move v8, v7
 
     goto :goto_0
 
     :cond_3
     nop
 
-    move v3, v4
+    move v8, v4
 
     :goto_0
-    invoke-virtual {v12, v6, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v12, v3, v8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     goto :goto_2
 
     :cond_4
-    if-ne v2, v3, :cond_6
+    if-ne v2, v5, :cond_6
 
     const-string v3, ""
 
@@ -12396,7 +12405,7 @@
 
     move-result v3
 
-    if-ne v3, v5, :cond_5
+    if-ne v3, v7, :cond_5
 
     const-string v3, "android.intent.action.HEADSET_PLUG"
 
@@ -12404,7 +12413,7 @@
 
     const-string/jumbo v3, "microphone"
 
-    invoke-virtual {v12, v3, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v12, v3, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     goto :goto_2
 
@@ -12468,7 +12477,7 @@
 
     const-string/jumbo v3, "standard"
 
-    invoke-virtual {v12, v3, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v12, v3, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     const-string v0, "Headset"
 
@@ -12508,7 +12517,9 @@
 
     iget v0, v1, Lcom/android/server/audio/AudioService;->mAutoPlayMusic:I
 
-    if-ne v0, v5, :cond_e
+    if-ne v0, v7, :cond_f
+
+    if-eq v2, v5, :cond_f
 
     const-string/jumbo v0, "media_session"
 
@@ -12524,7 +12535,7 @@
 
     const/4 v4, 0x0
 
-    move v6, v5
+    move v5, v7
 
     :try_start_1
     invoke-interface {v8}, Landroid/media/session/ISessionManager;->getCurrentMediaButtonPackageName()Ljava/lang/String;
@@ -12543,7 +12554,7 @@
     move-object v0, v3
 
     :goto_5
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_d
 
     const-string v3, "com.tencent.qqmusic"
 
@@ -12551,19 +12562,30 @@
 
     move-result v3
 
-    if-eqz v3, :cond_c
+    if-eqz v3, :cond_d
 
     const/16 v3, 0x708
 
+    if-ne v2, v6, :cond_c
+
+    const-string/jumbo v4, "qq.auto.play.delay"
+
+    const/16 v6, 0xc1c
+
+    invoke-static {v4, v6}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+
+    move-result v3
+
+    :cond_c
     move/from16 v16, v3
 
     goto :goto_6
 
-    :cond_c
+    :cond_d
     move/from16 v16, v4
 
     :goto_6
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_e
 
     const-string/jumbo v3, "tv.danmaku.bili"
 
@@ -12571,14 +12593,14 @@
 
     move-result v3
 
-    if-eqz v3, :cond_d
+    if-eqz v3, :cond_e
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    :cond_d
-    move v7, v6
+    :cond_e
+    move v6, v5
 
-    if-ne v7, v5, :cond_e
+    if-ne v6, v7, :cond_f
 
     iget-object v3, v1, Lcom/android/server/audio/AudioService;->mAudioHandler:Lcom/android/server/audio/AudioService$AudioHandler;
 
@@ -12586,27 +12608,25 @@
 
     const/4 v5, 0x0
 
+    const/4 v7, 0x0
+
     const/16 v17, 0x0
 
-    const/16 v18, 0x0
+    move/from16 v18, v6
 
     move v6, v10
 
-    move/from16 v19, v7
+    move-object/from16 v19, v8
 
-    move/from16 v7, v17
+    move-object/from16 v8, v17
 
-    move-object/from16 v17, v8
-
-    move-object/from16 v8, v18
-
-    move-object/from16 v18, v9
+    move-object/from16 v17, v9
 
     move/from16 v9, v16
 
     invoke-static/range {v3 .. v9}, Lcom/android/server/audio/AudioService;->sendMsg(Landroid/os/Handler;IIIILjava/lang/Object;I)V
 
-    :cond_e
+    :cond_f
     return-void
 
     :catchall_0
@@ -16969,7 +16989,7 @@
 
     const-string v8, "de_LU"
 
-    const-string v9, "hr_HR"
+    const-string/jumbo v9, "hr_HR"
 
     const-string/jumbo v10, "it_IT"
 
@@ -17005,7 +17025,7 @@
 
     const-string v26, "fr_LU"
 
-    const-string v27, "hu_HU"
+    const-string/jumbo v27, "hu_HU"
 
     const-string/jumbo v28, "nl_BE"
 

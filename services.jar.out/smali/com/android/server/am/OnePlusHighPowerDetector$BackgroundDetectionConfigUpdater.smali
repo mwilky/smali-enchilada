@@ -39,7 +39,7 @@
 
     iget-object v0, p0, Lcom/android/server/am/OnePlusHighPowerDetector$BackgroundDetectionConfigUpdater;->this$0:Lcom/android/server/am/OnePlusHighPowerDetector;
 
-    invoke-static {v0, p1}, Lcom/android/server/am/OnePlusHighPowerDetector;->access$1000(Lcom/android/server/am/OnePlusHighPowerDetector;Lorg/json/JSONArray;)V
+    invoke-static {v0, p1}, Lcom/android/server/am/OnePlusHighPowerDetector;->access$1300(Lcom/android/server/am/OnePlusHighPowerDetector;Lorg/json/JSONArray;)V
 
     return-void
 .end method

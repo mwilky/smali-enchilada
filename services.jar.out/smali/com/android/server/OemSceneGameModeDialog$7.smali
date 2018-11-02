@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lcom/android/server/OemSceneGameModeDialog$7;->this$0:Lcom/android/server/OemSceneGameModeDialog;
 
@@ -57,7 +57,9 @@
 
     iget-object v1, v1, Lcom/android/server/OemSceneGameModeDialog;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    sget-object v2, Landroid/os/UserHandle;->CURRENT:Landroid/os/UserHandle;
+
+    invoke-virtual {v1, v0, v2}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
     return-void
 .end method

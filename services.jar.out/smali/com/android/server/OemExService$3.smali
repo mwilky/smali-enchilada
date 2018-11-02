@@ -47,29 +47,37 @@
     goto :goto_0
 
     :cond_0
-    iget-object v2, p0, Lcom/android/server/OemExService$3;->this$0:Lcom/android/server/OemExService;
+    iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    invoke-static {v2}, Lcom/android/server/OemExService;->access$600(Lcom/android/server/OemExService;)V
+    check-cast v2, Ljava/lang/Boolean;
 
-    iget-object v2, p0, Lcom/android/server/OemExService$3;->this$0:Lcom/android/server/OemExService;
-
-    invoke-static {v2}, Lcom/android/server/OemExService;->access$700(Lcom/android/server/OemExService;)Landroid/os/PowerManager$WakeLock;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    iget-object v3, p0, Lcom/android/server/OemExService$3;->this$0:Lcom/android/server/OemExService;
 
-    iget-object v2, p0, Lcom/android/server/OemExService$3;->this$0:Lcom/android/server/OemExService;
+    invoke-static {v3, v2}, Lcom/android/server/OemExService;->access$600(Lcom/android/server/OemExService;Z)V
 
-    invoke-static {v2}, Lcom/android/server/OemExService;->access$700(Lcom/android/server/OemExService;)Landroid/os/PowerManager$WakeLock;
+    iget-object v3, p0, Lcom/android/server/OemExService$3;->this$0:Lcom/android/server/OemExService;
 
-    move-result-object v2
+    invoke-static {v3}, Lcom/android/server/OemExService;->access$700(Lcom/android/server/OemExService;)Landroid/os/PowerManager$WakeLock;
 
-    invoke-virtual {v2}, Landroid/os/PowerManager$WakeLock;->release()V
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    iget-object v3, p0, Lcom/android/server/OemExService$3;->this$0:Lcom/android/server/OemExService;
+
+    invoke-static {v3}, Lcom/android/server/OemExService;->access$700(Lcom/android/server/OemExService;)Landroid/os/PowerManager$WakeLock;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/os/PowerManager$WakeLock;->release()V
 
     :cond_1
     :goto_0

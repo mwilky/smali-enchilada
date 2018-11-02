@@ -457,16 +457,23 @@
 
     const/16 v1, 0x18
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
     iget v2, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mInterfaceType:I
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_3
 
+    if-nez p1, :cond_1
+
+    const-string v0, "0.0.0.0"
+
+    goto :goto_0
+
+    :cond_1
     iget-object v2, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mCallerPkg:Ljava/lang/String;
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mCallerPkg:Ljava/lang/String;
 
@@ -476,34 +483,35 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
     const-string v0, "192.168.43.1"
 
+    const/16 v1, 0x18
+
     goto :goto_0
 
-    :cond_1
+    :cond_2
     invoke-direct {p0}, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->getRandomWifiIPv4Address()Ljava/lang/String;
 
     move-result-object v0
 
-    :goto_0
     const/16 v1, 0x18
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_2
+    :cond_3
     iget v2, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mInterfaceType:I
 
     const/4 v4, 0x3
 
-    if-ne v2, v4, :cond_7
+    if-ne v2, v4, :cond_8
 
     const-string v0, "192.168.50.1"
 
     const/16 v1, 0x18
 
-    :goto_1
+    :goto_0
     const/4 v2, 0x0
 
     :try_start_0
@@ -515,7 +523,7 @@
 
     move-result-object v4
 
-    if-nez v4, :cond_3
+    if-nez v4, :cond_4
 
     iget-object v3, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mLog:Landroid/net/util/SharedLog;
 
@@ -525,7 +533,7 @@
 
     return v2
 
-    :cond_3
+    :cond_4
     invoke-static {v0}, Landroid/net/NetworkUtils;->numericToInetAddress(Ljava/lang/String;)Ljava/net/InetAddress;
 
     move-result-object v5
@@ -538,23 +546,23 @@
 
     iget v7, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mInterfaceType:I
 
-    if-nez v7, :cond_4
+    if-nez v7, :cond_5
 
     invoke-virtual {v4}, Landroid/net/InterfaceConfiguration;->ignoreInterfaceUpDownStatus()V
 
-    goto :goto_2
+    goto :goto_1
 
-    :cond_4
-    if-eqz p1, :cond_5
+    :cond_5
+    if-eqz p1, :cond_6
 
     invoke-virtual {v4}, Landroid/net/InterfaceConfiguration;->setInterfaceUp()V
 
-    goto :goto_2
+    goto :goto_1
 
-    :cond_5
+    :cond_6
     invoke-virtual {v4}, Landroid/net/InterfaceConfiguration;->setInterfaceDown()V
 
-    :goto_2
+    :goto_1
     const-string/jumbo v7, "running"
 
     invoke-virtual {v4, v7}, Landroid/net/InterfaceConfiguration;->clearFlag(Ljava/lang/String;)V
@@ -575,7 +583,7 @@
 
     invoke-direct {v2, v6}, Landroid/net/RouteInfo;-><init>(Landroid/net/LinkAddress;)V
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_7
 
     iget-object v4, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mLinkProperties:Landroid/net/LinkProperties;
 
@@ -585,9 +593,9 @@
 
     invoke-virtual {v4, v2}, Landroid/net/LinkProperties;->addRoute(Landroid/net/RouteInfo;)Z
 
-    goto :goto_3
+    goto :goto_2
 
-    :cond_6
+    :cond_7
     iget-object v4, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mLinkProperties:Landroid/net/LinkProperties;
 
     invoke-virtual {v4, v6}, Landroid/net/LinkProperties;->removeLinkAddress(Landroid/net/LinkAddress;)Z
@@ -596,7 +604,7 @@
 
     invoke-virtual {v4, v2}, Landroid/net/LinkProperties;->removeRoute(Landroid/net/RouteInfo;)Z
 
-    :goto_3
+    :goto_2
     return v3
 
     :catch_0
@@ -622,7 +630,7 @@
 
     return v2
 
-    :cond_7
+    :cond_8
     return v3
 .end method
 
@@ -1500,10 +1508,15 @@
 
     invoke-direct {p0, v0}, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->configureIPv4(Z)Z
 
+    iget v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mInterfaceType:I
+
+    if-eqz v0, :cond_0
+
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mInterfaceCtrl:Landroid/net/ip/InterfaceController;
 
     invoke-virtual {v0}, Landroid/net/ip/InterfaceController;->clearIPv4Address()Z
 
+    :cond_0
     return-void
 .end method
 

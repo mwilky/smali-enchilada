@@ -460,7 +460,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
-    const-string v3, "idle_after_inactive_to"
+    const-string/jumbo v3, "idle_after_inactive_to"
 
     invoke-virtual {v0, v3, v11, v12}, Landroid/util/KeyValueListParser;->getDurationMillis(Ljava/lang/String;J)J
 
@@ -470,7 +470,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
-    const-string v3, "idle_pending_to"
+    const-string/jumbo v3, "idle_pending_to"
 
     invoke-virtual {v0, v3, v4, v5}, Landroid/util/KeyValueListParser;->getDurationMillis(Ljava/lang/String;J)J
 
@@ -490,7 +490,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
-    const-string v3, "idle_pending_factor"
+    const-string/jumbo v3, "idle_pending_factor"
 
     invoke-virtual {v0, v3, v6}, Landroid/util/KeyValueListParser;->getFloat(Ljava/lang/String;F)F
 
@@ -500,7 +500,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
-    const-string v3, "idle_to"
+    const-string/jumbo v3, "idle_to"
 
     const-wide/32 v7, 0x36ee80
 
@@ -524,7 +524,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
-    const-string v3, "idle_factor"
+    const-string/jumbo v3, "idle_factor"
 
     invoke-virtual {v0, v3, v6}, Landroid/util/KeyValueListParser;->getFloat(Ljava/lang/String;F)F
 
@@ -686,7 +686,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
-    const-string v3, "idle_after_inactive_to"
+    const-string/jumbo v3, "idle_after_inactive_to"
 
     const-wide/32 v4, 0x668a0
 
@@ -722,7 +722,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
-    const-string v3, "idle_pending_to"
+    const-string/jumbo v3, "idle_pending_to"
 
     const-wide/32 v4, 0xea60
 
@@ -746,7 +746,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$Constants;->mParser:Landroid/util/KeyValueListParser;
 
-    const-string v3, "idle_factor"
+    const-string/jumbo v3, "idle_factor"
 
     const/high16 v4, 0x40400000    # 3.0f
 
@@ -1086,7 +1086,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v0, "idle_after_inactive_to"
+    const-string/jumbo v0, "idle_after_inactive_to"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -1104,7 +1104,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v0, "idle_pending_to"
+    const-string/jumbo v0, "idle_pending_to"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -1140,7 +1140,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v0, "idle_pending_factor"
+    const-string/jumbo v0, "idle_pending_factor"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -1156,7 +1156,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v0, "idle_to"
+    const-string/jumbo v0, "idle_to"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -1192,7 +1192,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v0, "idle_factor"
+    const-string/jumbo v0, "idle_factor"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 

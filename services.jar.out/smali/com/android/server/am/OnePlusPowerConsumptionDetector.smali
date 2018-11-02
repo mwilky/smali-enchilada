@@ -860,7 +860,7 @@
     goto :goto_0
 
     :pswitch_c
-    const-string v0, "idle"
+    const-string/jumbo v0, "idle"
 
     nop
 
@@ -868,8 +868,6 @@
     nop
 
     return-object v0
-
-    nop
 
     nop
 

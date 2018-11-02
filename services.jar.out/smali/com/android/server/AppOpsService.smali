@@ -1932,7 +1932,7 @@
 
     new-instance v7, Ljava/lang/RuntimeException;
 
-    const-string v8, "here"
+    const-string/jumbo v8, "here"
 
     invoke-direct {v7, v8}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -4385,7 +4385,7 @@
 
     move-result-object v11
 
-    const-string v12, "ignore_all"
+    const-string/jumbo v12, "ignore_all"
 
     invoke-virtual {v11, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -14529,7 +14529,7 @@
 
     move-result-object v1
 
-    const v2, 0x5020016
+    const v2, 0x5020017
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -14555,7 +14555,7 @@
 
     move-result-object v1
 
-    const v2, 0x5020018
+    const v2, 0x5020019
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

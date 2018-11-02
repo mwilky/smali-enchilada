@@ -1,5 +1,5 @@
 .class Lcom/android/server/ConnectivityService$5;
-.super Landroid/net/NetworkPolicyManager$Listener;
+.super Lcom/android/server/net/BaseNetdEventCallback;
 .source "ConnectivityService.java"
 
 
@@ -24,36 +24,56 @@
 
     iput-object p1, p0, Lcom/android/server/ConnectivityService$5;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-direct {p0}, Landroid/net/NetworkPolicyManager$Listener;-><init>()V
+    invoke-direct {p0}, Lcom/android/server/net/BaseNetdEventCallback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onRestrictBackgroundChanged(Z)V
-    .locals 1
+.method public onPrivateDnsValidationEvent(ILjava/lang/String;Ljava/lang/String;Z)V
+    .locals 5
 
-    if-eqz p1, :cond_0
-
-    const-string/jumbo v0, "onRestrictBackgroundChanged(true): disabling tethering"
-
-    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$000(Ljava/lang/String;)V
-
+    :try_start_0
     iget-object v0, p0, Lcom/android/server/ConnectivityService$5;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$800(Lcom/android/server/ConnectivityService;)Lcom/android/server/connectivity/Tethering;
+    invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$900(Lcom/android/server/ConnectivityService;)Lcom/android/server/ConnectivityService$InternalHandler;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/android/server/connectivity/Tethering;->untetherAll()V
+    iget-object v1, p0, Lcom/android/server/ConnectivityService$5;->this$0:Lcom/android/server/ConnectivityService;
 
-    :cond_0
-    return-void
-.end method
+    invoke-static {v1}, Lcom/android/server/ConnectivityService;->access$900(Lcom/android/server/ConnectivityService;)Lcom/android/server/ConnectivityService$InternalHandler;
 
-.method public onUidRulesChanged(II)V
-    .locals 0
+    move-result-object v1
 
+    const/16 v2, 0x26
+
+    new-instance v3, Lcom/android/server/connectivity/DnsManager$PrivateDnsValidationUpdate;
+
+    invoke-static {p2}, Ljava/net/InetAddress;->parseNumericAddress(Ljava/lang/String;)Ljava/net/InetAddress;
+
+    move-result-object v4
+
+    invoke-direct {v3, p1, v4, p3, p4}, Lcom/android/server/connectivity/DnsManager$PrivateDnsValidationUpdate;-><init>(ILjava/net/InetAddress;Ljava/lang/String;Z)V
+
+    invoke-virtual {v1, v2, v3}, Lcom/android/server/ConnectivityService$InternalHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/android/server/ConnectivityService$InternalHandler;->sendMessage(Landroid/os/Message;)Z
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "Error parsing ip address in validation event"
+
+    invoke-static {v1}, Lcom/android/server/ConnectivityService;->access$1000(Ljava/lang/String;)V
+
+    :goto_0
     return-void
 .end method

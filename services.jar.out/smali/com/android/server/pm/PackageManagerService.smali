@@ -1065,7 +1065,7 @@
 
     sget-object v2, Lcom/android/server/pm/PackageManagerService;->sBrowserIntent:Landroid/content/Intent;
 
-    const-string v3, "http:"
+    const-string/jumbo v3, "http:"
 
     invoke-static {v3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -1693,7 +1693,7 @@
 
     move-result-object v1
 
-    const v2, 0x5020010
+    const v2, 0x5020011
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -22197,7 +22197,7 @@
 
     new-instance v8, Ljava/lang/RuntimeException;
 
-    const-string v10, "here"
+    const-string/jumbo v10, "here"
 
     invoke-direct {v8, v10}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -22690,7 +22690,7 @@
 
     if-eqz v5, :cond_3
 
-    const-string v5, "http"
+    const-string/jumbo v5, "http"
 
     invoke-virtual {v4, v5}, Landroid/content/IntentFilter;->hasDataScheme(Ljava/lang/String;)Z
 
@@ -22698,7 +22698,7 @@
 
     if-nez v5, :cond_2
 
-    const-string v5, "https"
+    const-string/jumbo v5, "https"
 
     invoke-virtual {v4, v5}, Landroid/content/IntentFilter;->hasDataScheme(Ljava/lang/String;)Z
 
@@ -31471,7 +31471,7 @@
 
     if-eqz v0, :cond_1
 
-    const-string v0, "http"
+    const-string/jumbo v0, "http"
 
     invoke-virtual {p0, v0}, Landroid/content/pm/PackageParser$ActivityIntentInfo;->hasDataScheme(Ljava/lang/String;)Z
 
@@ -31479,7 +31479,7 @@
 
     if-nez v0, :cond_0
 
-    const-string v0, "https"
+    const-string/jumbo v0, "https"
 
     invoke-virtual {p0, v0}, Landroid/content/pm/PackageParser$ActivityIntentInfo;->hasDataScheme(Ljava/lang/String;)Z
 
@@ -69783,7 +69783,7 @@
     goto/16 :goto_8
 
     :cond_1c
-    const-string v0, "i"
+    const-string/jumbo v0, "i"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -69791,7 +69791,7 @@
 
     if-nez v0, :cond_2a
 
-    const-string v0, "ifv"
+    const-string/jumbo v0, "ifv"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -70568,7 +70568,7 @@
     :cond_4a
     if-eqz v0, :cond_4b
 
-    const-string v3, "ifv,"
+    const-string/jumbo v3, "ifv,"
 
     invoke-virtual {v9, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -71426,7 +71426,7 @@
 
     invoke-interface {v4, v0, v6}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    const-string v0, "http://xmlpull.org/v1/doc/features.html#indent-output"
+    const-string/jumbo v0, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     invoke-interface {v4, v0, v5}, Lorg/xmlpull/v1/XmlSerializer;->setFeature(Ljava/lang/String;Z)V
 
@@ -89155,7 +89155,7 @@
 
     move-result v1
 
-    const-string v8, "hiding pkg"
+    const-string/jumbo v8, "hiding pkg"
 
     invoke-direct {p0, p1, v1, v8}, Lcom/android/server/pm/PackageManagerService;->killApplication(Ljava/lang/String;ILjava/lang/String;)V
 

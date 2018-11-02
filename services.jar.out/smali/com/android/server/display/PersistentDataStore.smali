@@ -711,7 +711,7 @@
 
     invoke-interface {p1, v2, v1}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    const-string v1, "http://xmlpull.org/v1/doc/features.html#indent-output"
+    const-string/jumbo v1, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     invoke-interface {p1, v1, v0}, Lorg/xmlpull/v1/XmlSerializer;->setFeature(Ljava/lang/String;Z)V
 

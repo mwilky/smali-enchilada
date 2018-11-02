@@ -900,7 +900,7 @@
     invoke-static {v9, v0, v1, v2, v3}, Lcom/android/internal/usb/DumpUtils;->writeAccessory(Lcom/android/internal/util/dump/DualDumpOutputStream;Ljava/lang/String;JLandroid/hardware/usb/UsbAccessory;)V
 
     :cond_0
-    const-string v0, "host_connected"
+    const-string/jumbo v0, "host_connected"
 
     const-wide v1, 0x10800000008L
 
@@ -932,7 +932,7 @@
 
     invoke-virtual {v9, v0, v1, v2, v3}, Lcom/android/internal/util/dump/DualDumpOutputStream;->write(Ljava/lang/String;JZ)V
 
-    const-string v0, "hide_usb_notification"
+    const-string/jumbo v0, "hide_usb_notification"
 
     const-wide v1, 0x1080000000cL
 
@@ -2986,7 +2986,7 @@
 
     const-string v11, "android.intent.extra.TEXT"
 
-    const-string v12, "help_url_audio_accessory_not_supported"
+    const-string/jumbo v12, "help_url_audio_accessory_not_supported"
 
     invoke-virtual {v10, v11, v12}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
@@ -3155,7 +3155,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    const-string v1, "host_connected"
+    const-string/jumbo v1, "host_connected"
 
     iget-boolean v2, p0, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->mHostConnected:Z
 

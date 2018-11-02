@@ -465,11 +465,13 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    const/4 v1, 0x1
+    iget-object v1, p0, Lcom/android/server/dreams/DreamController;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {p0, v1}, Lcom/android/server/dreams/DreamController;->stopDream(Z)V
+    new-instance v2, Lcom/android/server/dreams/DreamController$5;
 
-    return-void
+    invoke-direct {v2, p0}, Lcom/android/server/dreams/DreamController$5;-><init>(Lcom/android/server/dreams/DreamController;)V
+
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     :cond_0
     :goto_0
@@ -509,11 +511,13 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    const/4 v1, 0x1
+    iget-object v1, p0, Lcom/android/server/dreams/DreamController;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {p0, v1}, Lcom/android/server/dreams/DreamController;->stopDream(Z)V
+    new-instance v2, Lcom/android/server/dreams/DreamController$4;
 
-    return-void
+    invoke-direct {v2, p0}, Lcom/android/server/dreams/DreamController$4;-><init>(Lcom/android/server/dreams/DreamController;)V
+
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     :cond_0
     :goto_0

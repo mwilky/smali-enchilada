@@ -8283,7 +8283,7 @@
 
     if-eqz v0, :cond_2a
 
-    const-string v0, "identifier"
+    const-string/jumbo v0, "identifier"
 
     const/4 v5, 0x0
 
@@ -8397,7 +8397,7 @@
 
     if-eqz v0, :cond_2c
 
-    const-string v0, "identifier"
+    const-string/jumbo v0, "identifier"
 
     const/4 v3, 0x0
 
@@ -8424,7 +8424,7 @@
 
     if-eqz v0, :cond_2e
 
-    const-string v0, "identifier"
+    const-string/jumbo v0, "identifier"
 
     const/4 v3, 0x0
 
@@ -11955,7 +11955,7 @@
     goto :goto_4
 
     :cond_3
-    const-string v2, "i"
+    const-string/jumbo v2, "i"
 
     :goto_4
     invoke-virtual {v7, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -12045,7 +12045,7 @@
     goto :goto_9
 
     :cond_8
-    const-string v2, "ia"
+    const-string/jumbo v2, "ia"
 
     :goto_9
     invoke-virtual {v7, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -19200,7 +19200,7 @@
     move-result v16
 
     :goto_9
-    const-string v11, "hidden"
+    const-string/jumbo v11, "hidden"
 
     invoke-interface {v0, v10, v11}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -20176,6 +20176,8 @@
 
     :goto_1f
     return-void
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -22888,7 +22890,7 @@
 
     invoke-interface {p1, v3, v2, v4}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v2, "identifier"
+    const-string/jumbo v2, "identifier"
 
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -23006,7 +23008,7 @@
 
     invoke-interface {v4, v7, v6}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    const-string v6, "http://xmlpull.org/v1/doc/features.html#indent-output"
+    const-string/jumbo v6, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     invoke-interface {v4, v6, v5}, Lorg/xmlpull/v1/XmlSerializer;->setFeature(Ljava/lang/String;Z)V
 
@@ -24395,7 +24397,7 @@
 
     invoke-interface {v9, v11, v0}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    const-string v0, "http://xmlpull.org/v1/doc/features.html#indent-output"
+    const-string/jumbo v0, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     invoke-interface {v9, v0, v10}, Lorg/xmlpull/v1/XmlSerializer;->setFeature(Ljava/lang/String;Z)V
 
@@ -24502,7 +24504,7 @@
 
     if-eqz v0, :cond_6
 
-    const-string v0, "hidden"
+    const-string/jumbo v0, "hidden"
 
     const-string/jumbo v10, "true"
 
@@ -25287,7 +25289,7 @@
 
     invoke-interface {p1, v1, v0}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v0, "identifier"
+    const-string/jumbo v0, "identifier"
 
     invoke-virtual {p2}, Lcom/android/server/pm/PackageKeySetData;->getProperSigningKeySet()J
 
@@ -25339,7 +25341,7 @@
 
     invoke-interface {p1, v6, v5}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v5, "identifier"
+    const-string/jumbo v5, "identifier"
 
     invoke-static {v3, v4}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 

@@ -121,6 +121,8 @@
 
 .field private mLastPowerStateFromWifi:I
 
+.field private final mLimitHandler:Landroid/os/Handler;
+
 .field private mMobileActivityFromRadio:Z
 
 .field private mNetdService:Landroid/net/INetd;
@@ -381,6 +383,8 @@
 
     iput-object v0, p0, Lcom/android/server/NetworkManagementService;->mFgHandler:Landroid/os/Handler;
 
+    iput-object v0, p0, Lcom/android/server/NetworkManagementService;->mLimitHandler:Landroid/os/Handler;
+
     iput-object v0, p0, Lcom/android/server/NetworkManagementService;->mThread:Ljava/lang/Thread;
 
     iput-object v0, p0, Lcom/android/server/NetworkManagementService;->mServices:Lcom/android/server/NetworkManagementService$SystemServices;
@@ -599,6 +603,20 @@
 
     iput-object v1, p0, Lcom/android/server/NetworkManagementService;->mDaemonHandler:Landroid/os/Handler;
 
+    new-instance v1, Landroid/os/Handler;
+
+    invoke-static {}, Lcom/android/server/FgThread;->get()Lcom/android/server/FgThread;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/android/server/FgThread;->getLooper()Landroid/os/Looper;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    iput-object v1, p0, Lcom/android/server/NetworkManagementService;->mLimitHandler:Landroid/os/Handler;
+
     invoke-static {}, Lcom/android/server/Watchdog;->getInstance()Lcom/android/server/Watchdog;
 
     move-result-object v1
@@ -642,10 +660,10 @@
     throw v2
 .end method
 
-.method static synthetic access$1000(Lcom/android/server/NetworkManagementService;Ljava/lang/String;Ljava/lang/String;)V
+.method static synthetic access$1000(Lcom/android/server/NetworkManagementService;Ljava/lang/String;Z)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lcom/android/server/NetworkManagementService;->notifyLimitReached(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2}, Lcom/android/server/NetworkManagementService;->notifyInterfaceLinkStateChanged(Ljava/lang/String;Z)V
 
     return-void
 .end method
@@ -724,12 +742,12 @@
     return-void
 .end method
 
-.method static synthetic access$200(Lcom/android/server/NetworkManagementService;)Ljava/util/concurrent/CountDownLatch;
-    .locals 1
+.method static synthetic access$200(Lcom/android/server/NetworkManagementService;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
 
-    iget-object v0, p0, Lcom/android/server/NetworkManagementService;->mConnectedSignal:Ljava/util/concurrent/CountDownLatch;
+    invoke-direct {p0, p1, p2}, Lcom/android/server/NetworkManagementService;->notifyLimitReached(Ljava/lang/String;Ljava/lang/String;)V
 
-    return-object v0
+    return-void
 .end method
 
 .method static synthetic access$2000(Lcom/android/server/NetworkManagementService;)Ljava/lang/Object;
@@ -738,14 +756,6 @@
     iget-object v0, p0, Lcom/android/server/NetworkManagementService;->mRulesLock:Ljava/lang/Object;
 
     return-object v0
-.end method
-
-.method static synthetic access$202(Lcom/android/server/NetworkManagementService;Ljava/util/concurrent/CountDownLatch;)Ljava/util/concurrent/CountDownLatch;
-    .locals 0
-
-    iput-object p1, p0, Lcom/android/server/NetworkManagementService;->mConnectedSignal:Ljava/util/concurrent/CountDownLatch;
-
-    return-object p1
 .end method
 
 .method static synthetic access$2100(Lcom/android/server/NetworkManagementService;I)Landroid/util/SparseIntArray;
@@ -774,7 +784,23 @@
     return-object v0
 .end method
 
-.method static synthetic access$300(Lcom/android/server/NetworkManagementService;)V
+.method static synthetic access$300(Lcom/android/server/NetworkManagementService;)Ljava/util/concurrent/CountDownLatch;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/NetworkManagementService;->mConnectedSignal:Ljava/util/concurrent/CountDownLatch;
+
+    return-object v0
+.end method
+
+.method static synthetic access$302(Lcom/android/server/NetworkManagementService;Ljava/util/concurrent/CountDownLatch;)Ljava/util/concurrent/CountDownLatch;
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/server/NetworkManagementService;->mConnectedSignal:Ljava/util/concurrent/CountDownLatch;
+
+    return-object p1
+.end method
+
+.method static synthetic access$400(Lcom/android/server/NetworkManagementService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/NetworkManagementService;->connectNativeNetdService()V
@@ -782,7 +808,7 @@
     return-void
 .end method
 
-.method static synthetic access$400(Lcom/android/server/NetworkManagementService;)V
+.method static synthetic access$500(Lcom/android/server/NetworkManagementService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/NetworkManagementService;->prepareNativeDaemon()V
@@ -790,7 +816,7 @@
     return-void
 .end method
 
-.method static synthetic access$500(Lcom/android/server/NetworkManagementService;)Landroid/os/Handler;
+.method static synthetic access$600(Lcom/android/server/NetworkManagementService;)Landroid/os/Handler;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/NetworkManagementService;->mFgHandler:Landroid/os/Handler;
@@ -798,7 +824,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$600(Lcom/android/server/NetworkManagementService;Ljava/lang/String;)V
+.method static synthetic access$700(Lcom/android/server/NetworkManagementService;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/NetworkManagementService;->notifyInterfaceAdded(Ljava/lang/String;)V
@@ -806,7 +832,7 @@
     return-void
 .end method
 
-.method static synthetic access$700(Lcom/android/server/NetworkManagementService;Ljava/lang/String;)V
+.method static synthetic access$800(Lcom/android/server/NetworkManagementService;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/NetworkManagementService;->notifyInterfaceRemoved(Ljava/lang/String;)V
@@ -814,18 +840,10 @@
     return-void
 .end method
 
-.method static synthetic access$800(Lcom/android/server/NetworkManagementService;Ljava/lang/String;Z)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lcom/android/server/NetworkManagementService;->notifyInterfaceStatusChanged(Ljava/lang/String;Z)V
-
-    return-void
-.end method
-
 .method static synthetic access$900(Lcom/android/server/NetworkManagementService;Ljava/lang/String;Z)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lcom/android/server/NetworkManagementService;->notifyInterfaceLinkStateChanged(Ljava/lang/String;Z)V
+    invoke-direct {p0, p1, p2}, Lcom/android/server/NetworkManagementService;->notifyInterfaceStatusChanged(Ljava/lang/String;Z)V
 
     return-void
 .end method
@@ -1678,59 +1696,93 @@
 .end method
 
 .method private invokeForAllObservers(Lcom/android/server/NetworkManagementService$NetworkManagementEventCallback;)V
-    .locals 3
+    .locals 5
 
-    iget-object v0, p0, Lcom/android/server/NetworkManagementService;->mObservers:Landroid/os/RemoteCallbackList;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Landroid/os/RemoteCallbackList;->beginBroadcast()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    :goto_0
-    if-ge v1, v0, :cond_0
+    move v1, v0
 
     :try_start_0
     iget-object v2, p0, Lcom/android/server/NetworkManagementService;->mObservers:Landroid/os/RemoteCallbackList;
 
-    invoke-virtual {v2, v1}, Landroid/os/RemoteCallbackList;->getBroadcastItem(I)Landroid/os/IInterface;
+    invoke-virtual {v2}, Landroid/os/RemoteCallbackList;->beginBroadcast()I
+
+    move-result v2
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_1
+
+    move v1, v2
+
+    nop
+
+    nop
+
+    :goto_0
+    if-ge v0, v1, :cond_0
+
+    :try_start_1
+    iget-object v2, p0, Lcom/android/server/NetworkManagementService;->mObservers:Landroid/os/RemoteCallbackList;
+
+    invoke-virtual {v2, v0}, Landroid/os/RemoteCallbackList;->getBroadcastItem(I)Landroid/os/IInterface;
 
     move-result-object v2
 
     check-cast v2, Landroid/net/INetworkManagementEventObserver;
 
     invoke-interface {p1, v2}, Lcom/android/server/NetworkManagementService$NetworkManagementEventCallback;->sendCallback(Landroid/net/INetworkManagementEventObserver;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_1
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_1
 
     :catchall_0
-    move-exception v1
+    move-exception v0
 
     iget-object v2, p0, Lcom/android/server/NetworkManagementService;->mObservers:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {v2}, Landroid/os/RemoteCallbackList;->finishBroadcast()V
 
-    throw v1
+    throw v0
 
     :catch_0
     move-exception v2
 
     :goto_1
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    iget-object v1, p0, Lcom/android/server/NetworkManagementService;->mObservers:Landroid/os/RemoteCallbackList;
+    iget-object v0, p0, Lcom/android/server/NetworkManagementService;->mObservers:Landroid/os/RemoteCallbackList;
 
-    invoke-virtual {v1}, Landroid/os/RemoteCallbackList;->finishBroadcast()V
+    invoke-virtual {v0}, Landroid/os/RemoteCallbackList;->finishBroadcast()V
 
     nop
+
+    return-void
+
+    :catch_1
+    move-exception v0
+
+    const-string v2, "NetworkManagement"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "problem beginBroadcast: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 .end method
@@ -4200,7 +4252,7 @@
     :try_start_1
     iget-object v3, p0, Lcom/android/server/NetworkManagementService;->mConnector:Lcom/android/server/NativeDaemonConnector;
 
-    const-string v4, "idletimer"
+    const-string/jumbo v4, "idletimer"
 
     const/4 v5, 0x4
 
@@ -4257,9 +4309,9 @@
     :cond_2
     iget-object v2, p0, Lcom/android/server/NetworkManagementService;->mDaemonHandler:Landroid/os/Handler;
 
-    new-instance v3, Lcom/android/server/NetworkManagementService$1;
+    new-instance v3, Lcom/android/server/NetworkManagementService$2;
 
-    invoke-direct {v3, p0, p3}, Lcom/android/server/NetworkManagementService$1;-><init>(Lcom/android/server/NetworkManagementService;I)V
+    invoke-direct {v3, p0, p3}, Lcom/android/server/NetworkManagementService$2;-><init>(Lcom/android/server/NetworkManagementService;I)V
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -6985,7 +7037,7 @@
     :try_start_1
     iget-object v2, p0, Lcom/android/server/NetworkManagementService;->mConnector:Lcom/android/server/NativeDaemonConnector;
 
-    const-string v4, "idletimer"
+    const-string/jumbo v4, "idletimer"
 
     const/4 v5, 0x4
 
@@ -7033,9 +7085,9 @@
 
     iget-object v2, p0, Lcom/android/server/NetworkManagementService;->mDaemonHandler:Landroid/os/Handler;
 
-    new-instance v3, Lcom/android/server/NetworkManagementService$2;
+    new-instance v3, Lcom/android/server/NetworkManagementService$3;
 
-    invoke-direct {v3, p0, v1}, Lcom/android/server/NetworkManagementService$2;-><init>(Lcom/android/server/NetworkManagementService;Lcom/android/server/NetworkManagementService$IdleTimerParams;)V
+    invoke-direct {v3, p0, v1}, Lcom/android/server/NetworkManagementService$3;-><init>(Lcom/android/server/NetworkManagementService;Lcom/android/server/NetworkManagementService$IdleTimerParams;)V
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -8900,7 +8952,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "iface "
+    const-string/jumbo v3, "iface "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -9338,7 +9390,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "iface "
+    const-string/jumbo v3, "iface "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -10379,11 +10431,13 @@
     return-void
 
     :cond_0
-    const-string v1, "globalAlert"
+    iget-object v1, p0, Lcom/android/server/NetworkManagementService;->mLimitHandler:Landroid/os/Handler;
 
-    const/4 v2, 0x0
+    new-instance v2, Lcom/android/server/NetworkManagementService$1;
 
-    invoke-direct {p0, v1, v2}, Lcom/android/server/NetworkManagementService;->notifyLimitReached(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v2, p0}, Lcom/android/server/NetworkManagementService$1;-><init>(Lcom/android/server/NetworkManagementService;)V
+
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     monitor-exit v0
 

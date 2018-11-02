@@ -1234,7 +1234,7 @@
 
     iget-object v0, p0, Lcom/android/server/content/SyncOperation;->extras:Landroid/os/Bundle;
 
-    const-string v1, "ignore_backoff"
+    const-string/jumbo v1, "ignore_backoff"
 
     const/4 v2, 0x0
 
@@ -1377,7 +1377,7 @@
 
     iget-object v0, p0, Lcom/android/server/content/SyncOperation;->extras:Landroid/os/Bundle;
 
-    const-string v1, "ignore_settings"
+    const-string/jumbo v1, "ignore_settings"
 
     const/4 v2, 0x0
 

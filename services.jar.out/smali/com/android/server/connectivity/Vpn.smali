@@ -5540,7 +5540,7 @@
 
     aput-object v14, v13, v15
 
-    const-string v14, "hybridrsa"
+    const-string/jumbo v14, "hybridrsa"
 
     aput-object v14, v13, v22
 
@@ -5820,7 +5820,7 @@
 
     const/16 v15, 0xe
 
-    const-string v16, "idle"
+    const-string/jumbo v16, "idle"
 
     aput-object v16, v14, v15
 
@@ -5927,7 +5927,7 @@
 
     const/16 v15, 0xd
 
-    const-string v16, "idle"
+    const-string/jumbo v16, "idle"
 
     aput-object v16, v14, v15
 
@@ -6071,6 +6071,8 @@
     invoke-direct {v2, v5}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
 
     throw v2
+
+    nop
 
     nop
 

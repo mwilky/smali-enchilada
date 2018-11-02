@@ -654,7 +654,7 @@
 
     check-cast v1, Lcom/android/server/net/NetworkStatsCollection$Key;
 
-    const-string v2, "ident="
+    const-string/jumbo v2, "ident="
 
     invoke-virtual {p1, v2}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
 

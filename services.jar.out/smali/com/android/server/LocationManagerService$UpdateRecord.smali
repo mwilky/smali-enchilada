@@ -50,7 +50,7 @@
 
     nop
 
-    invoke-static {p1}, Lcom/android/server/LocationManagerService;->access$2200(Lcom/android/server/LocationManagerService;)Landroid/app/ActivityManager;
+    invoke-static {p1}, Lcom/android/server/LocationManagerService;->access$1900(Lcom/android/server/LocationManagerService;)Landroid/app/ActivityManager;
 
     move-result-object v0
 
@@ -64,13 +64,13 @@
 
     move-result v0
 
-    invoke-static {v0}, Lcom/android/server/LocationManagerService;->access$2300(I)Z
+    invoke-static {v0}, Lcom/android/server/LocationManagerService;->access$2000(I)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/server/LocationManagerService$UpdateRecord;->mIsForegroundUid:Z
 
-    invoke-static {p1}, Lcom/android/server/LocationManagerService;->access$2400(Lcom/android/server/LocationManagerService;)Ljava/util/HashMap;
+    invoke-static {p1}, Lcom/android/server/LocationManagerService;->access$2100(Lcom/android/server/LocationManagerService;)Ljava/util/HashMap;
 
     move-result-object v0
 
@@ -88,7 +88,7 @@
 
     move-object v0, v1
 
-    invoke-static {p1}, Lcom/android/server/LocationManagerService;->access$2400(Lcom/android/server/LocationManagerService;)Ljava/util/HashMap;
+    invoke-static {p1}, Lcom/android/server/LocationManagerService;->access$2100(Lcom/android/server/LocationManagerService;)Ljava/util/HashMap;
 
     move-result-object v1
 
@@ -132,7 +132,7 @@
     invoke-static {v1, v2, v2, v3}, Lcom/android/server/LocationManagerService;->updateLocationReceiver(IZZZ)V
 
     :goto_0
-    invoke-static {p1}, Lcom/android/server/LocationManagerService;->access$2500(Lcom/android/server/LocationManagerService;)Lcom/android/server/location/LocationRequestStatistics;
+    invoke-static {p1}, Lcom/android/server/LocationManagerService;->access$2200(Lcom/android/server/LocationManagerService;)Lcom/android/server/location/LocationRequestStatistics;
 
     move-result-object v4
 
@@ -162,7 +162,7 @@
 
     iget-object v0, p0, Lcom/android/server/LocationManagerService$UpdateRecord;->this$0:Lcom/android/server/LocationManagerService;
 
-    invoke-static {v0}, Lcom/android/server/LocationManagerService;->access$2500(Lcom/android/server/LocationManagerService;)Lcom/android/server/location/LocationRequestStatistics;
+    invoke-static {v0}, Lcom/android/server/LocationManagerService;->access$2200(Lcom/android/server/LocationManagerService;)Lcom/android/server/location/LocationRequestStatistics;
 
     move-result-object v0
 
@@ -178,7 +178,7 @@
 
     iget-object v0, p0, Lcom/android/server/LocationManagerService$UpdateRecord;->this$0:Lcom/android/server/LocationManagerService;
 
-    invoke-static {v0}, Lcom/android/server/LocationManagerService;->access$2400(Lcom/android/server/LocationManagerService;)Ljava/util/HashMap;
+    invoke-static {v0}, Lcom/android/server/LocationManagerService;->access$2100(Lcom/android/server/LocationManagerService;)Ljava/util/HashMap;
 
     move-result-object v0
 
@@ -254,7 +254,7 @@
 
     iget-object v3, p0, Lcom/android/server/LocationManagerService$UpdateRecord;->mReceiver:Lcom/android/server/LocationManagerService$Receiver;
 
-    invoke-static {v2, v3}, Lcom/android/server/LocationManagerService;->access$2000(Lcom/android/server/LocationManagerService;Lcom/android/server/LocationManagerService$Receiver;)V
+    invoke-static {v2, v3}, Lcom/android/server/LocationManagerService;->access$1700(Lcom/android/server/LocationManagerService;Lcom/android/server/LocationManagerService$Receiver;)V
 
     :cond_3
     return-void
@@ -339,7 +339,7 @@
 
     iget-object v0, p0, Lcom/android/server/LocationManagerService$UpdateRecord;->this$0:Lcom/android/server/LocationManagerService;
 
-    invoke-static {v0}, Lcom/android/server/LocationManagerService;->access$2500(Lcom/android/server/LocationManagerService;)Lcom/android/server/location/LocationRequestStatistics;
+    invoke-static {v0}, Lcom/android/server/LocationManagerService;->access$2200(Lcom/android/server/LocationManagerService;)Lcom/android/server/location/LocationRequestStatistics;
 
     move-result-object v0
 

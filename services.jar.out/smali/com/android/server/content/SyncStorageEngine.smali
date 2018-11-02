@@ -1303,7 +1303,7 @@
     const/4 v7, 0x0
 
     :try_start_0
-    const-string v0, "id"
+    const-string/jumbo v0, "id"
 
     invoke-interface {v2, v7, v0}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -4417,7 +4417,7 @@
 
     invoke-interface {v2, v0, v4}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    const-string v4, "http://xmlpull.org/v1/doc/features.html#indent-output"
+    const-string/jumbo v4, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     invoke-interface {v2, v4, v3}, Lorg/xmlpull/v1/XmlSerializer;->setFeature(Ljava/lang/String;Z)V
 
@@ -4540,7 +4540,7 @@
 
     invoke-interface {v2, v0, v8}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v8, "id"
+    const-string/jumbo v8, "id"
 
     iget v9, v6, Lcom/android/server/content/SyncStorageEngine$AuthorityInfo;->ident:I
 

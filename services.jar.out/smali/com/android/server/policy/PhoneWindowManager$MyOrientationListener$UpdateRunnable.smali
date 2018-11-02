@@ -91,7 +91,7 @@
 
     iget v2, p0, Lcom/android/server/policy/PhoneWindowManager$MyOrientationListener$UpdateRunnable;->mRotation:I
 
-    invoke-static {v1, v2, v0}, Lcom/android/server/policy/PhoneWindowManager;->access$2800(Lcom/android/server/policy/PhoneWindowManager;IZ)V
+    invoke-static {v1, v2, v0}, Lcom/android/server/policy/PhoneWindowManager;->access$3000(Lcom/android/server/policy/PhoneWindowManager;IZ)V
 
     goto :goto_0
 

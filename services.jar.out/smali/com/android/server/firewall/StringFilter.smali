@@ -128,7 +128,7 @@
 
     new-instance v0, Lcom/android/server/firewall/StringFilter$9;
 
-    const-string v1, "host"
+    const-string/jumbo v1, "host"
 
     invoke-direct {v0, v1}, Lcom/android/server/firewall/StringFilter$9;-><init>(Ljava/lang/String;)V
 

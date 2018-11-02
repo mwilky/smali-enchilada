@@ -206,7 +206,7 @@
 
     move-result-object v2
 
-    const/16 v3, 0x7d3
+    const/16 v3, 0x7de
 
     invoke-virtual {v2, v3}, Landroid/view/Window;->setType(I)V
 

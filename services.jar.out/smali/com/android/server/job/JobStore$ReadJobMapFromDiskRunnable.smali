@@ -224,7 +224,7 @@
 
     :cond_5
     :goto_1
-    const-string v5, "idle"
+    const-string/jumbo v5, "idle"
 
     invoke-interface {p2, v1, v5}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 

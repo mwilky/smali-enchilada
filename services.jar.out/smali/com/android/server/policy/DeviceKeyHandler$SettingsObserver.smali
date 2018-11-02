@@ -106,7 +106,7 @@
 
     iget-object v1, p0, Lcom/android/server/policy/DeviceKeyHandler$SettingsObserver;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
-    invoke-static {v1}, Lcom/android/server/policy/DeviceKeyHandler;->access$200(Lcom/android/server/policy/DeviceKeyHandler;)V
+    invoke-virtual {v1}, Lcom/android/server/policy/DeviceKeyHandler;->updateOemSettings()V
 
     return-void
 .end method
@@ -116,7 +116,7 @@
 
     iget-object v0, p0, Lcom/android/server/policy/DeviceKeyHandler$SettingsObserver;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
-    invoke-static {v0}, Lcom/android/server/policy/DeviceKeyHandler;->access$200(Lcom/android/server/policy/DeviceKeyHandler;)V
+    invoke-virtual {v0}, Lcom/android/server/policy/DeviceKeyHandler;->updateOemSettings()V
 
     return-void
 .end method

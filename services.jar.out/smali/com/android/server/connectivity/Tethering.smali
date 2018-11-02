@@ -4435,7 +4435,7 @@
 
     iget-object v0, v13, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
-    const-string v10, "hide_icon"
+    const-string/jumbo v10, "hide_icon"
 
     if-nez v5, :cond_b
 
@@ -4511,6 +4511,8 @@
     move-exception v0
 
     goto :goto_8
+
+    nop
 
     nop
 

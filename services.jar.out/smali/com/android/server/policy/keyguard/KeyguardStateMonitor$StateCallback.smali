@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract onKeyguardFingerprintChanged()V
+.method public abstract onKeyguardFingerprintChanged(III)V
 .end method
 
 .method public abstract onShowingChanged()V

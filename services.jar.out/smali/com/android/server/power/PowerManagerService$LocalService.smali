@@ -358,6 +358,16 @@
     return-void
 .end method
 
+.method public setPackageNameWithScreenFlag(Ljava/lang/String;)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
+
+    invoke-virtual {v0, p1}, Lcom/android/server/power/PowerManagerService;->setPackageNameWithScreenFlagInternal(Ljava/lang/String;)V
+
+    return-void
+.end method
+
 .method public setScreenBrightnessOverrideFromWindowManager(I)V
     .locals 1
 

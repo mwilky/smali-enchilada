@@ -124,7 +124,7 @@
 
     iput-object p1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$AccessibilityContentObserver;->mDisplayDaltonizerUri:Landroid/net/Uri;
 
-    const-string p1, "high_text_contrast_enabled"
+    const-string/jumbo p1, "high_text_contrast_enabled"
 
     invoke-static {p1}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 

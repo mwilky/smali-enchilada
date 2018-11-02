@@ -49,7 +49,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -60,6 +60,12 @@
     const/4 v3, 0x0
 
     aget v2, v2, v3
+
+    invoke-static {}, Lcom/android/server/display/AutomaticBrightnessController;->access$800()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
 
     const-string v4, "AutomaticBrightnessController"
 
@@ -79,19 +85,28 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    :cond_0
     iget-object v4, p0, Lcom/android/server/display/AutomaticBrightnessController$3;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
 
-    invoke-static {v4}, Lcom/android/server/display/AutomaticBrightnessController;->access$800(Lcom/android/server/display/AutomaticBrightnessController;)Z
+    invoke-static {v4}, Lcom/android/server/display/AutomaticBrightnessController;->access$900(Lcom/android/server/display/AutomaticBrightnessController;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_2
 
-    invoke-static {}, Lcom/android/server/display/AutomaticBrightnessController;->access$900()Z
+    iget-object v4, p0, Lcom/android/server/display/AutomaticBrightnessController$3;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
+
+    invoke-static {v4}, Lcom/android/server/display/AutomaticBrightnessController;->access$1000(Lcom/android/server/display/AutomaticBrightnessController;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    invoke-static {}, Lcom/android/server/display/AutomaticBrightnessController;->access$800()Z
 
     move-result v3
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_1
 
     const-string v3, "AutomaticBrightnessController"
 
@@ -111,70 +126,70 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_0
+    :cond_1
     return-void
 
-    :cond_1
+    :cond_2
     iget-object v4, p0, Lcom/android/server/display/AutomaticBrightnessController$3;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
 
     iget-boolean v4, v4, Lcom/android/server/display/AutomaticBrightnessController;->mUpdate_Fast:Z
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_3
 
     iget-object v4, p0, Lcom/android/server/display/AutomaticBrightnessController$3;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
 
     iput-boolean v3, v4, Lcom/android/server/display/AutomaticBrightnessController;->mUpdate_Fast:Z
 
-    :cond_2
-    iget-object v4, p0, Lcom/android/server/display/AutomaticBrightnessController$3;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
-
-    invoke-static {v4}, Lcom/android/server/display/AutomaticBrightnessController;->access$1000(Lcom/android/server/display/AutomaticBrightnessController;)Z
-
-    move-result v4
-
-    const/4 v5, 0x1
-
-    if-eqz v4, :cond_3
-
+    :cond_3
     iget-object v4, p0, Lcom/android/server/display/AutomaticBrightnessController$3;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
 
     invoke-static {v4}, Lcom/android/server/display/AutomaticBrightnessController;->access$1100(Lcom/android/server/display/AutomaticBrightnessController;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_3
+    const/4 v5, 0x1
+
+    if-eqz v4, :cond_4
 
     iget-object v4, p0, Lcom/android/server/display/AutomaticBrightnessController$3;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
 
-    invoke-static {v4}, Lcom/android/server/display/AutomaticBrightnessController;->access$1200(Lcom/android/server/display/AutomaticBrightnessController;)F
+    invoke-static {v4}, Lcom/android/server/display/AutomaticBrightnessController;->access$1200(Lcom/android/server/display/AutomaticBrightnessController;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_4
+
+    iget-object v4, p0, Lcom/android/server/display/AutomaticBrightnessController$3;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
+
+    invoke-static {v4}, Lcom/android/server/display/AutomaticBrightnessController;->access$1300(Lcom/android/server/display/AutomaticBrightnessController;)F
 
     move-result v4
 
     cmpl-float v4, v2, v4
 
-    if-lez v4, :cond_3
-
-    iget-object v4, p0, Lcom/android/server/display/AutomaticBrightnessController$3;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
-
-    invoke-static {v4, v3}, Lcom/android/server/display/AutomaticBrightnessController;->access$1002(Lcom/android/server/display/AutomaticBrightnessController;Z)Z
+    if-lez v4, :cond_4
 
     iget-object v4, p0, Lcom/android/server/display/AutomaticBrightnessController$3;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
 
     invoke-static {v4, v3}, Lcom/android/server/display/AutomaticBrightnessController;->access$1102(Lcom/android/server/display/AutomaticBrightnessController;Z)Z
 
+    iget-object v4, p0, Lcom/android/server/display/AutomaticBrightnessController$3;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
+
+    invoke-static {v4, v3}, Lcom/android/server/display/AutomaticBrightnessController;->access$1202(Lcom/android/server/display/AutomaticBrightnessController;Z)Z
+
     iget-object v3, p0, Lcom/android/server/display/AutomaticBrightnessController$3;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
 
-    invoke-static {v3, v5}, Lcom/android/server/display/AutomaticBrightnessController;->access$1302(Lcom/android/server/display/AutomaticBrightnessController;Z)Z
+    invoke-static {v3, v5}, Lcom/android/server/display/AutomaticBrightnessController;->access$1402(Lcom/android/server/display/AutomaticBrightnessController;Z)Z
 
     iget-object v3, p0, Lcom/android/server/display/AutomaticBrightnessController$3;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
 
     iput-boolean v5, v3, Lcom/android/server/display/AutomaticBrightnessController;->mUpdate_Fast:Z
 
-    invoke-static {}, Lcom/android/server/display/AutomaticBrightnessController;->access$900()Z
+    invoke-static {}, Lcom/android/server/display/AutomaticBrightnessController;->access$800()Z
 
     move-result v3
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_4
 
     const-string v3, "AutomaticBrightnessController"
 
@@ -194,22 +209,22 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_3
+    :cond_4
     const/4 v3, 0x0
 
     cmpl-float v4, v2, v3
 
-    if-nez v4, :cond_5
+    if-nez v4, :cond_6
 
     iget-object v4, p0, Lcom/android/server/display/AutomaticBrightnessController$3;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
 
-    invoke-static {v4}, Lcom/android/server/display/AutomaticBrightnessController;->access$1200(Lcom/android/server/display/AutomaticBrightnessController;)F
+    invoke-static {v4}, Lcom/android/server/display/AutomaticBrightnessController;->access$1300(Lcom/android/server/display/AutomaticBrightnessController;)F
 
     move-result v4
 
     cmpl-float v4, v4, v3
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_6
 
     iget-object v4, p0, Lcom/android/server/display/AutomaticBrightnessController$3;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
 
@@ -217,15 +232,15 @@
 
     move-result v4
 
-    if-nez v4, :cond_5
+    if-nez v4, :cond_6
 
     iget-object v4, p0, Lcom/android/server/display/AutomaticBrightnessController$3;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
 
-    invoke-static {v4}, Lcom/android/server/display/AutomaticBrightnessController;->access$1400(Lcom/android/server/display/AutomaticBrightnessController;)Z
+    invoke-static {v4}, Lcom/android/server/display/AutomaticBrightnessController;->access$1000(Lcom/android/server/display/AutomaticBrightnessController;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_6
 
     iget-object v3, p0, Lcom/android/server/display/AutomaticBrightnessController$3;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
 
@@ -241,7 +256,7 @@
 
     sget-boolean v3, Lcom/android/server/display/AutomaticBrightnessController;->DEBUG:Z
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_5
 
     const-string v3, "AutomaticBrightnessController"
 
@@ -249,21 +264,21 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_4
+    :cond_5
     return-void
 
-    :cond_5
+    :cond_6
     iget-object v4, p0, Lcom/android/server/display/AutomaticBrightnessController$3;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
 
     invoke-static {v4}, Lcom/android/server/display/AutomaticBrightnessController;->access$200(Lcom/android/server/display/AutomaticBrightnessController;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_8
 
     cmpl-float v3, v2, v3
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_7
 
     iget-object v3, p0, Lcom/android/server/display/AutomaticBrightnessController$3;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
 
@@ -271,7 +286,7 @@
 
     sget-boolean v3, Lcom/android/server/display/AutomaticBrightnessController;->DEBUG:Z
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_8
 
     const-string v3, "AutomaticBrightnessController"
 
@@ -305,15 +320,15 @@
 
     goto :goto_0
 
-    :cond_6
+    :cond_7
     return-void
 
-    :cond_7
+    :cond_8
     :goto_0
     iget-object v3, p0, Lcom/android/server/display/AutomaticBrightnessController$3;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
 
     invoke-static {v3, v0, v1, v2}, Lcom/android/server/display/AutomaticBrightnessController;->access$100(Lcom/android/server/display/AutomaticBrightnessController;JF)V
 
-    :cond_8
+    :cond_9
     return-void
 .end method

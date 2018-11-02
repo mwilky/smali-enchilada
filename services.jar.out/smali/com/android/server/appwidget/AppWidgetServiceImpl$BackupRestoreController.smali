@@ -580,7 +580,7 @@
     invoke-virtual {v0, v7, v8}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     :cond_3
-    const-string v7, "host_category"
+    const-string/jumbo v7, "host_category"
 
     invoke-interface {p1, v2, v7}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -770,7 +770,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    const-string v1, "hostId"
+    const-string/jumbo v1, "hostId"
 
     iget-object v2, p3, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;->id:Lcom/android/server/appwidget/AppWidgetServiceImpl$HostId;
 
@@ -2226,7 +2226,7 @@
 
     move-result v10
 
-    const-string v11, "id"
+    const-string/jumbo v11, "id"
 
     const/4 v13, 0x0
 
@@ -2305,7 +2305,7 @@
 
     if-eqz v4, :cond_b
 
-    const-string v4, "id"
+    const-string/jumbo v4, "id"
 
     const/4 v10, 0x0
 
