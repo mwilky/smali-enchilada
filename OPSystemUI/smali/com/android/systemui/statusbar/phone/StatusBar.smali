@@ -22175,6 +22175,8 @@
     
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->updateShowSeconds()V
     
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->setTag()V
+    
     :cond_right
     const-string v0, "clock_right"
 
