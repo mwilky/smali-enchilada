@@ -22,6 +22,20 @@
 
 
 # static fields
+.field public static mDoublePressHomeCustomApp:Ljava/lang/String;
+
+.field public static mLongPressHomeCustomApp:Ljava/lang/String;
+
+.field public static mDoublePressBackCustomApp:Ljava/lang/String;
+
+.field public static mLongPressBackCustomApp:Ljava/lang/String;
+
+.field public static mDoublePressRecentCustomApp:Ljava/lang/String;
+
+.field public static mLongPressRecentCustomApp:Ljava/lang/String;
+
+.field public static mLongPressFingerprintCustomApp:Ljava/lang/String;
+
 .field private static final ACTION_WIFI_DISPLAY_VIDEO:Ljava/lang/String; = "org.codeaurora.intent.action.WIFI_DISPLAY_VIDEO"
 
 .field static final ALTERNATE_CAR_MODE_NAV_SIZE:Z = false
@@ -31980,6 +31994,8 @@
 
 .method public updateSettings()V
     .locals 14
+    
+    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->setCustomApp()V
 
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
 
@@ -32758,4 +32774,82 @@
     invoke-virtual {p1, v0, v1}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
     return-void
+.end method
+
+.method public takeFullScreenshot()V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0, v0}, Lcom/android/server/policy/PhoneWindowManager;->takeOPScreenshot(II)V
+
+    return-void
+.end method
+
+.method public setCustomApp()V
+	.locals 2
+	
+	iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+	const-string/jumbo v1, "tweaks_custom_home_double_app"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+    
+    sput-object v1, Lcom/android/server/policy/PhoneWindowManager;->mDoublePressHomeCustomApp:Ljava/lang/String;
+    
+    const-string/jumbo v1, "tweaks_custom_home_long_app"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+    
+    sput-object v1, Lcom/android/server/policy/PhoneWindowManager;->mLongPressHomeCustomApp:Ljava/lang/String;
+    
+    const-string/jumbo v1, "tweaks_custom_back_double_app"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+    
+    sput-object v1, Lcom/android/server/policy/PhoneWindowManager;->mDoublePressBackCustomApp:Ljava/lang/String;
+    
+    const-string/jumbo v1, "tweaks_custom_back_long_app"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+    
+    sput-object v1, Lcom/android/server/policy/PhoneWindowManager;->mLongPressBackCustomApp:Ljava/lang/String;
+    
+    const-string/jumbo v1, "tweaks_custom_recent_double_app"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+    
+    sput-object v1, Lcom/android/server/policy/PhoneWindowManager;->mDoublePressRecentCustomApp:Ljava/lang/String;
+    
+    const-string/jumbo v1, "tweaks_custom_recent_long_app"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+    
+    sput-object v1, Lcom/android/server/policy/PhoneWindowManager;->mLongPressRecentCustomApp:Ljava/lang/String;
+    
+    const-string/jumbo v1, "tweaks_custom_fingerprint_long_app"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+    
+    sput-object v1, Lcom/android/server/policy/PhoneWindowManager;->mLongPressFingerprintCustomApp:Ljava/lang/String;
+   
+   return-void   
 .end method
