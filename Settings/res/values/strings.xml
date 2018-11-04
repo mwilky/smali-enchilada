@@ -6022,4 +6022,11 @@ Update settings to:
     <item type="string" name="APKTOOL_DUMMY_d18">false</item>
     <item type="string" name="APKTOOL_DUMMY_d19">false</item>
     <item type="string" name="APKTOOL_DUMMY_1277">false</item>
+    <string name="hardware_keys_action_kill">Kill foreground app</string>
+    <string name="hardware_keys_action_screenshot">Full screenshot</string>
+    <string name="hardware_keys_action_screenshot2">Croppable screenshot</string>
+    <string name="hardware_keys_action_app">Launch custom app (select app in RiCE)</string>
+    <string name="hardware_keys_action_previous_app">Switch to previous app</string>
+    <string name="hardware_keys_action_default_double_recents">Nothing (Switch to previous app)</string>
+    <string name="oneplus_search_keyword_fingerprint_key">fingerprint</string>
 </resources>
