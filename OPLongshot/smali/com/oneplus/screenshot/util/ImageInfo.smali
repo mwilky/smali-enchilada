@@ -17,7 +17,7 @@
 .method protected getSuffix()Ljava/lang/String;
     .locals 1
 
-    const-string v0, ".png"
+    const-string v0, ".jpg"
 
     return-object v0
 .end method

@@ -123,6 +123,7 @@
         <item>com.amazon.mShop.android.shopping</item>
         <item>com.oneplus.filemanager</item>
         <item>com.oneplus.gallery</item>
+        <item>com.android.settings/com.android.settings.SubSettings</item>
     </string-array>
     <string-array name="largetop_list_activity">
         <item>com.ss.android.article.news/com.ss.android.detail.feature.detail2.view.NewVideoDetailActivity</item>
@@ -151,6 +152,9 @@
         <item>com.google.android.apps.photos</item>
         <item>com.baidu.netdisk</item>
     </string-array>
+    <string-array name="with_issue_report_activity">
+        <item>com.taobao.taobao</item>
+    </string-array>
     <string-array name="level3_scrollbar_activity">
         <item>com.android.dialer</item>
         <item>com.youdao.dict</item>
@@ -160,6 +164,7 @@
     <string-array name="level4_scrollbar_activity">
         <item>com.bbm/com.bbm.ui.activities.MainActivity</item>
         <item>com.xunmeng.pinduoduo</item>
+        <item>net.oneplus.forums</item>
     </string-array>
     <string-array name="config_line_sample_list">
         <item>70|80|1</item>

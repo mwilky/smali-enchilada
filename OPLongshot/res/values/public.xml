@@ -25,7 +25,12 @@
     <public type="drawable" name="longshot_guide_rounded_background" id="0x7f020023" />
     <public type="drawable" name="oneplus_screenshot_notif_back" id="0x7f020025" />
     <public type="drawable" name="oneplus_screenshot_notif_back_big" id="0x7f020026" />
+    <public type="drawable" name="screenshot_footer_ic_delete" id="0x7f020028" />
+    <public type="drawable" name="screenshot_footer_ic_disabled_longshot" id="0x7f020029" />
+    <public type="drawable" name="screenshot_footer_ic_edit" id="0x7f02002a" />
+    <public type="drawable" name="screenshot_footer_ic_enabled_longshot" id="0x7f02002b" />
     <public type="drawable" name="screenshot_footer_ic_longshot" id="0x7f02002c" />
+    <public type="drawable" name="screenshot_footer_ic_share" id="0x7f02002d" />
     <public type="drawable" name="stat_notify_image_error" id="0x7f020031" />
     <public type="drawable" name="stat_notify_screenshot_image" id="0x7f020032" />
     <public type="drawable" name="dim_edit" id="0x7f020033" />
@@ -60,11 +65,6 @@
     <public type="drawable" name="screenshot_notif_bg" id="0x7f02002e" />
     <public type="drawable" name="screenshot_notif_bg_big" id="0x7f02002f" />
     <public type="drawable" name="ic_longshot_guide_arrow" id="0x7f02001c" />
-    <public type="drawable" name="screenshot_footer_ic_delete" id="0x7f020028" />
-    <public type="drawable" name="screenshot_footer_ic_disabled_longshot" id="0x7f020029" />
-    <public type="drawable" name="screenshot_footer_ic_edit" id="0x7f02002a" />
-    <public type="drawable" name="screenshot_footer_ic_enabled_longshot" id="0x7f02002b" />
-    <public type="drawable" name="screenshot_footer_ic_share" id="0x7f02002d" />
     <public type="drawable" name="screenshot_panel" id="0x7f020030" />
     <public type="layout" name="custom_notify" id="0x7f030000" />
     <public type="layout" name="global_screenshot" id="0x7f030001" />
@@ -255,10 +255,11 @@
     <public type="array" name="limit_left_activity" id="0x7f080023" />
     <public type="array" name="limit_right_activity" id="0x7f080024" />
     <public type="array" name="level2_scrollbar_activity" id="0x7f080025" />
-    <public type="array" name="level3_scrollbar_activity" id="0x7f080026" />
-    <public type="array" name="level4_scrollbar_activity" id="0x7f080027" />
-    <public type="array" name="config_line_sample_list" id="0x7f080028" />
-    <public type="array" name="config_line_sample_bglist" id="0x7f080029" />
+    <public type="array" name="with_issue_report_activity" id="0x7f080026" />
+    <public type="array" name="level3_scrollbar_activity" id="0x7f080027" />
+    <public type="array" name="level4_scrollbar_activity" id="0x7f080028" />
+    <public type="array" name="config_line_sample_list" id="0x7f080029" />
+    <public type="array" name="config_line_sample_bglist" id="0x7f08002a" />
     <public type="color" name="guide_edit_text_color" id="0x7f090000" />
     <public type="color" name="guide_main_text_color" id="0x7f090001" />
     <public type="color" name="btn_float_text_color" id="0x7f090002" />

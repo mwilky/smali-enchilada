@@ -6,6 +6,8 @@
 # instance fields
 .field context:Landroid/content/Context;
 
+.field delayAction:Ljava/lang/Runnable;
+
 .field errorMsgResId:I
 
 .field finisher:Ljava/lang/Runnable;
@@ -57,5 +59,20 @@
 
     iput v0, p0, Lcom/oneplus/screenshot/SaveImageInBackgroundData;->iconSize:I
 
+    return-void
+.end method
+
+.method doDelayAction()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/oneplus/screenshot/SaveImageInBackgroundData;->delayAction:Ljava/lang/Runnable;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/oneplus/screenshot/SaveImageInBackgroundData;->delayAction:Ljava/lang/Runnable;
+
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    :cond_0
     return-void
 .end method

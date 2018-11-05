@@ -114,6 +114,8 @@
 
 .field public static IS_UNSUPPORTED:Z = false
 
+.field public static IS_WITH_ISSUE_REPORT:Z = false
+
 .field public static final enum KEEP_LIST_ACTIVITY:Lcom/oneplus/screenshot/longshot/util/Configs;
 
 .field public static final enum LARGETOP_LIST_ACTIVITY:Lcom/oneplus/screenshot/longshot/util/Configs;
@@ -424,6 +426,8 @@
 .field private static final TAG:Ljava/lang/String; = "Longshot.Configs"
 
 .field public static final enum WIDTH_SAMPLE_LIST:Lcom/oneplus/screenshot/longshot/util/Configs;
+
+.field public static final enum WITH_ISSUE_REPORT_ACTIVITY:Lcom/oneplus/screenshot/longshot/util/Configs;
 
 .field private static gaInstance:Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;
 
@@ -2004,7 +2008,7 @@
 
     const/16 v14, 0x6e
 
-    const v15, 0x7f080028
+    const v15, 0x7f080029
 
     invoke-direct {v0, v1, v14, v2, v15}, Lcom/oneplus/screenshot/longshot/util/Configs;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
 
@@ -2018,7 +2022,7 @@
 
     const/16 v14, 0x6f
 
-    const v15, 0x7f080029
+    const v15, 0x7f08002a
 
     invoke-direct {v0, v1, v14, v2, v15}, Lcom/oneplus/screenshot/longshot/util/Configs;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
 
@@ -2550,7 +2554,7 @@
 
     const/16 v14, 0x95
 
-    const v15, 0x7f080026
+    const v15, 0x7f080027
 
     invoke-direct {v0, v1, v14, v2, v15}, Lcom/oneplus/screenshot/longshot/util/Configs;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
 
@@ -2564,7 +2568,7 @@
 
     const/16 v14, 0x96
 
-    const v15, 0x7f080027
+    const v15, 0x7f080028
 
     invoke-direct {v0, v1, v14, v2, v15}, Lcom/oneplus/screenshot/longshot/util/Configs;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
 
@@ -2584,7 +2588,21 @@
 
     sput-object v0, Lcom/oneplus/screenshot/longshot/util/Configs;->NOT_IGNORE_FAIL_ACTIVITY:Lcom/oneplus/screenshot/longshot/util/Configs;
 
-    const/16 v0, 0x98
+    new-instance v0, Lcom/oneplus/screenshot/longshot/util/Configs;
+
+    const-string v1, "WITH_ISSUE_REPORT_ACTIVITY"
+
+    const-string v2, "array"
+
+    const/16 v14, 0x98
+
+    const v15, 0x7f080026
+
+    invoke-direct {v0, v1, v14, v2, v15}, Lcom/oneplus/screenshot/longshot/util/Configs;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
+
+    sput-object v0, Lcom/oneplus/screenshot/longshot/util/Configs;->WITH_ISSUE_REPORT_ACTIVITY:Lcom/oneplus/screenshot/longshot/util/Configs;
+
+    const/16 v0, 0x99
 
     new-array v0, v0, [Lcom/oneplus/screenshot/longshot/util/Configs;
 
@@ -3478,6 +3496,12 @@
 
     aput-object v1, v0, v2
 
+    sget-object v1, Lcom/oneplus/screenshot/longshot/util/Configs;->WITH_ISSUE_REPORT_ACTIVITY:Lcom/oneplus/screenshot/longshot/util/Configs;
+
+    const/16 v2, 0x98
+
+    aput-object v1, v0, v2
+
     sput-object v0, Lcom/oneplus/screenshot/longshot/util/Configs;->$VALUES:[Lcom/oneplus/screenshot/longshot/util/Configs;
 
     sput-boolean v3, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_UNSUPPORTED:Z
@@ -3549,6 +3573,8 @@
     sput-boolean v3, Lcom/oneplus/screenshot/longshot/util/Configs;->mNoFooter:Z
 
     sput v3, Lcom/oneplus/screenshot/longshot/util/Configs;->mHeaderOffset:I
+
+    sput-boolean v3, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_WITH_ISSUE_REPORT:Z
 
     const/4 v0, 0x0
 
@@ -5206,6 +5232,18 @@
     move-result v1
 
     sput-boolean v1, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_CLOSE_BETA:Z
+
+    sget-object v1, Lcom/oneplus/screenshot/longshot/util/Configs;->mTopActivity:Landroid/content/ComponentName;
+
+    sget-object v2, Lcom/oneplus/screenshot/longshot/util/Configs;->WITH_ISSUE_REPORT_ACTIVITY:Lcom/oneplus/screenshot/longshot/util/Configs;
+
+    iget-object v2, v2, Lcom/oneplus/screenshot/longshot/util/Configs;->mArray:[Ljava/lang/String;
+
+    invoke-static {v1, v2}, Lcom/oneplus/screenshot/longshot/util/Configs;->isActivity(Landroid/content/ComponentName;[Ljava/lang/String;)Z
+
+    move-result v1
+
+    sput-boolean v1, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_WITH_ISSUE_REPORT:Z
 
     invoke-static {p0}, Lcom/oneplus/screenshot/longshot/util/Configs;->loadLineParams(Landroid/content/Context;)V
 

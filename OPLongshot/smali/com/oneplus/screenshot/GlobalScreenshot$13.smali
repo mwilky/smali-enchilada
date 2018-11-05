@@ -36,7 +36,7 @@
 
     iget-object v0, p0, Lcom/oneplus/screenshot/GlobalScreenshot$13;->this$0:Lcom/oneplus/screenshot/GlobalScreenshot;
 
-    invoke-static {v0}, Lcom/oneplus/screenshot/GlobalScreenshot;->access$1900(Lcom/oneplus/screenshot/GlobalScreenshot;)Landroid/widget/ImageView;
+    invoke-static {v0}, Lcom/oneplus/screenshot/GlobalScreenshot;->access$2200(Lcom/oneplus/screenshot/GlobalScreenshot;)Landroid/widget/ImageView;
 
     move-result-object v0
 
@@ -46,7 +46,7 @@
 
     iget-object v0, p0, Lcom/oneplus/screenshot/GlobalScreenshot$13;->this$0:Lcom/oneplus/screenshot/GlobalScreenshot;
 
-    invoke-static {v0}, Lcom/oneplus/screenshot/GlobalScreenshot;->access$1500(Lcom/oneplus/screenshot/GlobalScreenshot;)Landroid/widget/ImageView;
+    invoke-static {v0}, Lcom/oneplus/screenshot/GlobalScreenshot;->access$1800(Lcom/oneplus/screenshot/GlobalScreenshot;)Landroid/widget/ImageView;
 
     move-result-object v0
 
@@ -54,7 +54,7 @@
 
     iget-object v0, p0, Lcom/oneplus/screenshot/GlobalScreenshot$13;->this$0:Lcom/oneplus/screenshot/GlobalScreenshot;
 
-    invoke-static {v0}, Lcom/oneplus/screenshot/GlobalScreenshot;->access$1500(Lcom/oneplus/screenshot/GlobalScreenshot;)Landroid/widget/ImageView;
+    invoke-static {v0}, Lcom/oneplus/screenshot/GlobalScreenshot;->access$1800(Lcom/oneplus/screenshot/GlobalScreenshot;)Landroid/widget/ImageView;
 
     move-result-object v0
 

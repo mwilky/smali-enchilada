@@ -1,4 +1,4 @@
-.class Lcom/oneplus/screenshot/GlobalScreenshot$8;
+.class Lcom/oneplus/screenshot/GlobalScreenshot$19;
 .super Ljava/lang/Object;
 .source "GlobalScreenshot.java"
 
@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/oneplus/screenshot/GlobalScreenshot;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/oneplus/screenshot/GlobalScreenshot;->onClick(Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/oneplus/screenshot/GlobalScreenshot;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/oneplus/screenshot/GlobalScreenshot$8;->this$0:Lcom/oneplus/screenshot/GlobalScreenshot;
+    iput-object p1, p0, Lcom/oneplus/screenshot/GlobalScreenshot$19;->this$0:Lcom/oneplus/screenshot/GlobalScreenshot;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,9 +37,9 @@
 .method public run()V
     .locals 1
 
-    iget-object v0, p0, Lcom/oneplus/screenshot/GlobalScreenshot$8;->this$0:Lcom/oneplus/screenshot/GlobalScreenshot;
+    iget-object v0, p0, Lcom/oneplus/screenshot/GlobalScreenshot$19;->this$0:Lcom/oneplus/screenshot/GlobalScreenshot;
 
-    invoke-static {v0}, Lcom/oneplus/screenshot/GlobalScreenshot;->access$2100(Lcom/oneplus/screenshot/GlobalScreenshot;)V
+    invoke-static {v0}, Lcom/oneplus/screenshot/GlobalScreenshot;->access$000(Lcom/oneplus/screenshot/GlobalScreenshot;)V
 
     return-void
 .end method
