@@ -32,6 +32,8 @@
 
 .field public static mCustomNavBarHeight:I
 
+.field public static mBlockPowerMenuKeyguard:Z
+
 .field public static mDoublePressHomeCustomApp:Ljava/lang/String;
 
 .field public static mLongPressHomeCustomApp:Ljava/lang/String;
@@ -5513,7 +5515,24 @@
     move-result v9
 
     if-eqz v9, :cond_14
+    
+    sget-boolean v0, Lcom/android/server/policy/PhoneWindowManager;->mBlockPowerMenuKeyguard:Z
+    
+    if-eqz v0, :cond_mw
+    
+    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->isScreenOn()Z
+    
+    move-result v0
+    
+    if-eqz v0, :cond_mw
+    
+    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->keyguardOn()Z
 
+    move-result v0
+    
+    if-nez v0, :cond_14
+    
+    :cond_mw
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getFlags()I
 
     move-result v9
@@ -29138,35 +29157,6 @@
 
     :cond_14
     :goto_2
-    iget v3, p0, Lcom/android/server/policy/PhoneWindowManager;->mAllowAllRotations:I
-
-    if-gez v3, :cond_16
-
-    iget-object v3, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    const v4, 0x1120006
-
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getBoolean(I)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_15
-
-    move v3, v5
-
-    goto :goto_3
-
-    :cond_15
-    move v3, v1
-
-    :goto_3
-    iput v3, p0, Lcom/android/server/policy/PhoneWindowManager;->mAllowAllRotations:I
-
-    :cond_16
     if-ne v2, v6, :cond_18
 
     iget v3, p0, Lcom/android/server/policy/PhoneWindowManager;->mAllowAllRotations:I
@@ -31563,6 +31553,10 @@
     invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->getNavBarHeightTweak()V
     
     invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->setCustomApp()V
+    
+    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->allowAllRotations()V
+    
+    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->setBlockPowerMenuKeyguard()V
 
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
 
@@ -32539,5 +32533,48 @@
     :cond_exit
     return-void
 .end method
+
+.method public allowAllRotations()V
+	.locals 3
 	
+	iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "tweaks_all_rotations"
+    
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+    
+    iput v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mAllowAllRotations:I
+    
+    return-void   
+.end method
+
+.method public setBlockPowerMenuKeyguard()V
+	.locals 3
 	
+	iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "tweaks_block_power_menu_keyguard"
+    
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+    
+    sput-boolean v0, Lcom/android/server/policy/PhoneWindowManager;->mBlockPowerMenuKeyguard:Z
+    
+    return-void   
+.end method
+
