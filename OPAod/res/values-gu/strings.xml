@@ -403,6 +403,7 @@ Codec પસંદગી ટ્રિગર કરો: પ્લેબૅક ક
     <string name="wait_for_debugger">ડીબગર માટે રાહ જુઓ</string>
     <string name="wait_for_debugger_summary">ડીબગ કરેલ ઍપ્લિકેશનો ક્રિયાન્વિત થતા પહેલાં ડીબગર જોડાઈ તેની રાહ જુએ છે</string>
     <string name="wifi_ap_unable_to_handle_new_sta">ઍક્સેસ પૉઇન્ટ અસ્થાયીરૂપે ભરાયેલ છે</string>
+    <string name="wifi_auth_password_wrong">પાસવર્ડ ખોટો હોઈ શકે છે</string>
     <string name="wifi_cant_connect">કનેક્ટ કરી શકાતું નથી</string>
     <string name="wifi_cant_connect_to_ap">"'%1$s' સાથે કનેક્ટ કરી શકાતું નથી"</string>
     <string name="wifi_check_password_try_again">પાસવર્ડ તપાસો અને ફરી પ્રયાસ કરો</string>

@@ -403,6 +403,7 @@
     <string name="wait_for_debugger">ਡੀਬੱਗਰ ਦੀ ਉਡੀਕ ਕਰੋ</string>
     <string name="wait_for_debugger_summary">ਡੀਬੱਗ ਕੀਤੇ ਐਪਲੀਕੇਸ਼ਨ ਐਗਜੀਕਿਊਟ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਅਟੈਚ ਕਰਨ ਲਈ ਡੀਬੱਗਰ ਦੀ ਉਡੀਕ ਕਰਦੇ ਹਨ</string>
     <string name="wifi_ap_unable_to_handle_new_sta">"ਐਕਸੈੱਸ ਪੁਆਇੰਟ ਅਸਥਾਈ ਤੌਰ 'ਤੇ ਸੰਪੂਰਨ ਰੁਝੇਂਵੇਂ ਵਿੱਚ ਹੈ"</string>
+    <string name="wifi_auth_password_wrong">ਪਾਸਵਰਡ ਗਲਤ ਹੋ ਸਕਦਾ ਹੈ</string>
     <string name="wifi_cant_connect">ਕਨੈਕਟ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ</string>
     <string name="wifi_cant_connect_to_ap">"'%1$s' ਨਾਲ ਕਨੈਕਟ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ"</string>
     <string name="wifi_check_password_try_again">ਪਾਸਵਰਡ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>

@@ -403,6 +403,7 @@
     <string name="wait_for_debugger">பிழைதிருத்திக்குக் காத்திருக்கவும்</string>
     <string name="wait_for_debugger_summary">பிழைதிருத்தப்பட்ட பயன்பாடு செயல்படுவதற்கு முன்பு பிழைதிருத்தியை இணைப்பதற்குக் காத்திருக்கிறது</string>
     <string name="wifi_ap_unable_to_handle_new_sta">தற்காலிகமாக அணுகல் புள்ளி நிரம்பியுள்ளது</string>
+    <string name="wifi_auth_password_wrong">கடவுச்சொல் தவறாக இருக்கலாம்</string>
     <string name="wifi_cant_connect">இணைக்க முடியவில்லை</string>
     <string name="wifi_cant_connect_to_ap">"'%1$s' உடன் இணைக்க முடியவில்லை"</string>
     <string name="wifi_check_password_try_again">கடவுச்சொல்லைச் சரிபார்த்து, மீண்டும் முயலவும்</string>

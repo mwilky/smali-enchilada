@@ -108,7 +108,7 @@
 
     move-result-object v2
 
-    const v5, 0x7f0701e5
+    const v5, 0x7f0701e9
 
     invoke-virtual {v2, v5}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -129,12 +129,12 @@
 
     if-eqz v2, :cond_3
 
-    const v2, 0x7f0701e2
+    const v2, 0x7f0701e6
 
     goto :goto_0
 
     :cond_3
-    const v2, 0x7f0701e3
+    const v2, 0x7f0701e7
 
     :goto_0
     iget-object v5, p0, Lcom/oneplus/aod/VolumneController$1;->this$0:Lcom/oneplus/aod/VolumneController;
@@ -154,7 +154,7 @@
 
     move-result-object v2
 
-    const v5, 0x7f0701e4
+    const v5, 0x7f0701e8
 
     invoke-virtual {v2, v5}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -197,7 +197,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f100214
+    const v2, 0x7f100217
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -224,12 +224,12 @@
 
     if-eqz v1, :cond_8
 
-    const v1, 0x7f100215
+    const v1, 0x7f100218
 
     goto :goto_2
 
     :cond_8
-    const v1, 0x7f100212
+    const v1, 0x7f100215
 
     :goto_2
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(I)V
@@ -243,7 +243,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f100213
+    const v2, 0x7f100216
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 

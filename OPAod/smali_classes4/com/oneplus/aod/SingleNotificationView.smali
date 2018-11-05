@@ -294,7 +294,7 @@
 .end method
 
 .method private updateViewInternal(Lcom/oneplus/aod/NotificationData$Entry;)V
-    .locals 17
+    .locals 18
 
     move-object/from16 v1, p0
 
@@ -436,32 +436,6 @@
     invoke-static {v13, v14}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_1
-    const-string v0, "SingleNotificationView"
-
-    new-instance v13, Ljava/lang/StringBuilder;
-
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v14, "updateViewInternal: custom="
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v13, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v14, ", show public="
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v14, v1, Lcom/oneplus/aod/SingleNotificationView;->mShowingPublic:Z
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-static {v0, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     iget-object v0, v1, Lcom/oneplus/aod/SingleNotificationView;->mNewPostedNotification:Landroid/service/notification/StatusBarNotification;
 
     invoke-virtual {v0}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
@@ -470,72 +444,136 @@
 
     iget v0, v0, Landroid/app/Notification;->color:I
 
-    iget-object v13, v1, Lcom/oneplus/aod/SingleNotificationView;->mHeader:Landroid/widget/TextView;
+    if-nez v0, :cond_2
 
-    if-eqz v13, :cond_3
+    iget-object v13, v1, Lcom/oneplus/aod/SingleNotificationView;->mContext:Landroid/content/Context;
 
-    invoke-direct/range {p0 .. p0}, Lcom/oneplus/aod/SingleNotificationView;->resolveAppName()Ljava/lang/String;
+    invoke-virtual {v13}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v13
 
-    if-nez v0, :cond_2
+    const v14, 0x106000b
 
-    iget-object v14, v1, Lcom/oneplus/aod/SingleNotificationView;->mContext:Landroid/content/Context;
+    invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getColor(I)I
 
-    invoke-virtual {v14}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v14
-
-    const v15, 0x106000b
-
-    invoke-virtual {v14, v15}, Landroid/content/res/Resources;->getColor(I)I
-
-    move-result v14
+    move-result v13
 
     goto :goto_2
 
     :cond_2
-    iget-object v14, v1, Lcom/oneplus/aod/SingleNotificationView;->mNewPostedNotification:Landroid/service/notification/StatusBarNotification;
+    const/16 v13, 0x19
 
-    invoke-virtual {v14}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
+    invoke-static {v0, v13}, Lcom/android/internal/util/NotificationColorUtil;->changeColorLightness(II)I
+
+    move-result v13
+
+    :goto_2
+    const-string v14, "SingleNotificationView"
+
+    new-instance v15, Ljava/lang/StringBuilder;
+
+    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v12, "updateViewInternal: custom="
+
+    invoke-virtual {v15, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v15, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v12, ", show public="
+
+    invoke-virtual {v15, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v12, v1, Lcom/oneplus/aod/SingleNotificationView;->mShowingPublic:Z
+
+    invoke-virtual {v15, v12}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v12, ", color=0x"
+
+    invoke-virtual {v15, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-virtual {v15, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v12, ", headerColor=0x"
+
+    invoke-virtual {v15, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {v13}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-virtual {v15, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v14, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v12, v1, Lcom/oneplus/aod/SingleNotificationView;->mHeader:Landroid/widget/TextView;
+
+    if-eqz v12, :cond_4
+
+    invoke-direct/range {p0 .. p0}, Lcom/oneplus/aod/SingleNotificationView;->resolveAppName()Ljava/lang/String;
+
+    move-result-object v12
+
+    if-eqz v12, :cond_3
+
+    iget-object v14, v1, Lcom/oneplus/aod/SingleNotificationView;->mHeader:Landroid/widget/TextView;
+
+    invoke-virtual {v14, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v14, v1, Lcom/oneplus/aod/SingleNotificationView;->mHeader:Landroid/widget/TextView;
+
+    invoke-virtual {v14, v13}, Landroid/widget/TextView;->setTextColor(I)V
+
+    :cond_3
+    goto :goto_3
+
+    :cond_4
+    const-string v12, "SingleNotificationView"
+
+    new-instance v14, Ljava/lang/StringBuilder;
+
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v15, v1, Lcom/oneplus/aod/SingleNotificationView;->mNewPostedNotification:Landroid/service/notification/StatusBarNotification;
+
+    invoke-virtual {v15}, Landroid/service/notification/StatusBarNotification;->getKey()Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v15, " mHeader is null"
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v14
 
-    iget v14, v14, Landroid/app/Notification;->color:I
+    invoke-static {v12, v14}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v15, 0x19
+    :goto_3
+    iget-object v12, v1, Lcom/oneplus/aod/SingleNotificationView;->mIcon:Landroid/widget/ImageView;
 
-    invoke-static {v14, v15}, Lcom/android/internal/util/NotificationColorUtil;->changeColorLightness(II)I
+    if-eqz v12, :cond_8
 
-    move-result v14
+    if-eqz v4, :cond_8
 
-    :goto_2
-    move v0, v14
+    iget-object v12, v1, Lcom/oneplus/aod/SingleNotificationView;->mContext:Landroid/content/Context;
 
-    if-eqz v13, :cond_3
+    invoke-virtual {v4, v12}, Landroid/graphics/drawable/Icon;->loadDrawable(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
 
-    iget-object v14, v1, Lcom/oneplus/aod/SingleNotificationView;->mHeader:Landroid/widget/TextView;
+    move-result-object v12
 
-    invoke-virtual {v14, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    iget-object v14, v1, Lcom/oneplus/aod/SingleNotificationView;->mHeader:Landroid/widget/TextView;
-
-    invoke-virtual {v14, v0}, Landroid/widget/TextView;->setTextColor(I)V
-
-    :cond_3
-    iget-object v13, v1, Lcom/oneplus/aod/SingleNotificationView;->mIcon:Landroid/widget/ImageView;
-
-    if-eqz v13, :cond_7
-
-    if-eqz v4, :cond_7
-
-    iget-object v13, v1, Lcom/oneplus/aod/SingleNotificationView;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v4, v13}, Landroid/graphics/drawable/Icon;->loadDrawable(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v13
-
-    if-nez v13, :cond_4
+    if-nez v12, :cond_5
 
     const-string v10, "SingleNotificationView"
 
@@ -545,56 +583,75 @@
 
     return-void
 
-    :cond_4
-    invoke-virtual {v13}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
+    :cond_5
+    invoke-virtual {v12}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
 
     move-result-object v14
 
     invoke-virtual {v14}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable()Landroid/graphics/drawable/Drawable;
 
-    move-result-object v13
+    move-result-object v12
 
     iget-object v14, v1, Lcom/oneplus/aod/SingleNotificationView;->mIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v14, v10}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    iget-object v10, v1, Lcom/oneplus/aod/SingleNotificationView;->mNewPostedNotification:Landroid/service/notification/StatusBarNotification;
-
-    invoke-virtual {v10}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
-
-    move-result-object v10
-
-    iget v10, v10, Landroid/app/Notification;->color:I
-
-    if-eqz v10, :cond_5
+    if-eqz v0, :cond_6
 
     iget-object v10, v1, Lcom/oneplus/aod/SingleNotificationView;->mIcon:Landroid/widget/ImageView;
 
-    invoke-virtual {v10, v0}, Landroid/widget/ImageView;->setColorFilter(I)V
-
-    :cond_5
-    if-eqz v4, :cond_6
-
-    iget-object v10, v1, Lcom/oneplus/aod/SingleNotificationView;->mIcon:Landroid/widget/ImageView;
-
-    invoke-virtual {v10, v13}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    goto :goto_3
+    invoke-virtual {v10, v13}, Landroid/widget/ImageView;->setColorFilter(I)V
 
     :cond_6
+    if-eqz v4, :cond_7
+
+    iget-object v10, v1, Lcom/oneplus/aod/SingleNotificationView;->mIcon:Landroid/widget/ImageView;
+
+    invoke-virtual {v10, v12}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    goto :goto_4
+
+    :cond_7
     const-string v10, "SingleNotificationView"
 
     const-string v14, "private layout icon null"
 
     invoke-static {v10, v14}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_7
-    :goto_3
+    :goto_4
+    goto :goto_5
+
+    :cond_8
+    const-string v10, "SingleNotificationView"
+
+    new-instance v12, Ljava/lang/StringBuilder;
+
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v14, v1, Lcom/oneplus/aod/SingleNotificationView;->mNewPostedNotification:Landroid/service/notification/StatusBarNotification;
+
+    invoke-virtual {v14}, Landroid/service/notification/StatusBarNotification;->getKey()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-virtual {v12, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v14, " mIcon and icon is null"
+
+    invoke-virtual {v12, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v10, v12}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_5
     iget-boolean v10, v1, Lcom/oneplus/aod/SingleNotificationView;->mShowingPublic:Z
 
-    const/16 v13, 0x8
+    const/16 v12, 0x8
 
-    if-nez v10, :cond_d
+    if-nez v10, :cond_e
 
     iget-object v10, v1, Lcom/oneplus/aod/SingleNotificationView;->mNotificationData:Lcom/oneplus/aod/NotificationData;
 
@@ -608,7 +665,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_8
+    if-eqz v10, :cond_9
 
     iget-object v10, v1, Lcom/oneplus/aod/SingleNotificationView;->mContext:Landroid/content/Context;
 
@@ -620,35 +677,35 @@
 
     move-result v10
 
-    if-eqz v10, :cond_8
+    if-eqz v10, :cond_9
 
-    goto :goto_7
-
-    :cond_8
-    iget-object v10, v1, Lcom/oneplus/aod/SingleNotificationView;->mSmallText:Landroid/widget/TextView;
-
-    if-eqz v10, :cond_c
-
-    iget-object v10, v1, Lcom/oneplus/aod/SingleNotificationView;->mTitle:Landroid/widget/TextView;
-
-    if-nez v10, :cond_9
-
-    goto :goto_6
+    goto :goto_9
 
     :cond_9
+    iget-object v10, v1, Lcom/oneplus/aod/SingleNotificationView;->mSmallText:Landroid/widget/TextView;
+
+    if-eqz v10, :cond_d
+
     iget-object v10, v1, Lcom/oneplus/aod/SingleNotificationView;->mTitle:Landroid/widget/TextView;
 
-    const-string v12, ""
+    if-nez v10, :cond_a
 
-    invoke-virtual {v10, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    goto :goto_8
+
+    :cond_a
+    iget-object v10, v1, Lcom/oneplus/aod/SingleNotificationView;->mTitle:Landroid/widget/TextView;
+
+    const-string v14, ""
+
+    invoke-virtual {v10, v14}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     iget-object v10, v1, Lcom/oneplus/aod/SingleNotificationView;->mSmallText:Landroid/widget/TextView;
 
-    const-string v12, ""
+    const-string v14, ""
 
-    invoke-virtual {v10, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v10, v14}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    if-eqz v5, :cond_a
+    if-eqz v5, :cond_b
 
     iget-object v10, v1, Lcom/oneplus/aod/SingleNotificationView;->mTitle:Landroid/widget/TextView;
 
@@ -658,19 +715,19 @@
 
     invoke-interface {v5}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v14
 
-    invoke-virtual {v10, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v10, v14}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_4
+    goto :goto_6
 
-    :cond_a
+    :cond_b
     iget-object v10, v1, Lcom/oneplus/aod/SingleNotificationView;->mTitle:Landroid/widget/TextView;
 
-    invoke-virtual {v10, v13}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v10, v12}, Landroid/widget/TextView;->setVisibility(I)V
 
-    :goto_4
-    if-eqz v3, :cond_b
+    :goto_6
+    if-eqz v3, :cond_c
 
     iget-object v10, v1, Lcom/oneplus/aod/SingleNotificationView;->mSmallText:Landroid/widget/TextView;
 
@@ -684,12 +741,12 @@
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_5
+    goto :goto_7
 
-    :cond_b
+    :cond_c
     iget-object v10, v1, Lcom/oneplus/aod/SingleNotificationView;->mSmallText:Landroid/widget/TextView;
 
-    invoke-virtual {v10, v13}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v10, v12}, Landroid/widget/TextView;->setVisibility(I)V
 
     const-string v10, "SingleNotificationView"
 
@@ -697,15 +754,15 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_5
-    return-void
-
-    :cond_c
-    :goto_6
+    :goto_7
     return-void
 
     :cond_d
-    :goto_7
+    :goto_8
+    return-void
+
+    :cond_e
+    :goto_9
     iget-object v10, v1, Lcom/oneplus/aod/SingleNotificationView;->mSmallText:Landroid/widget/TextView;
 
     iget-object v14, v1, Lcom/oneplus/aod/SingleNotificationView;->mContext:Landroid/content/Context;
@@ -714,17 +771,19 @@
 
     move-result-object v14
 
-    const/high16 v15, 0x50a0000
+    const/4 v12, 0x1
 
-    new-array v13, v12, [Ljava/lang/Object;
+    new-array v15, v12, [Ljava/lang/Object;
 
     invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v16
 
-    aput-object v16, v13, v11
+    aput-object v16, v15, v11
 
-    invoke-virtual {v14, v15, v12, v13}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
+    const/high16 v11, 0x50a0000
+
+    invoke-virtual {v14, v11, v12, v15}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v11
 
@@ -766,7 +825,7 @@
 
     if-nez v1, :cond_0
 
-    const v1, 0x7f090114
+    const v1, 0x7f090115
 
     invoke-virtual {p0, v1}, Lcom/oneplus/aod/SingleNotificationView;->findViewById(I)Landroid/view/View;
 
@@ -789,7 +848,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f060229
+    const v3, 0x7f060227
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -803,7 +862,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f060228
+    const v3, 0x7f060226
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -819,7 +878,7 @@
 
     if-nez v2, :cond_1
 
-    const v2, 0x7f090078
+    const v2, 0x7f090079
 
     invoke-virtual {p0, v2}, Lcom/oneplus/aod/SingleNotificationView;->findViewById(I)Landroid/view/View;
 
@@ -834,7 +893,7 @@
 
     if-nez v2, :cond_2
 
-    const v2, 0x7f090113
+    const v2, 0x7f090114
 
     invoke-virtual {p0, v2}, Lcom/oneplus/aod/SingleNotificationView;->findViewById(I)Landroid/view/View;
 
@@ -859,7 +918,7 @@
 
     if-nez v2, :cond_3
 
-    const v2, 0x7f090116
+    const v2, 0x7f090117
 
     invoke-virtual {p0, v2}, Lcom/oneplus/aod/SingleNotificationView;->findViewById(I)Landroid/view/View;
 
@@ -898,7 +957,7 @@
 
     if-nez v2, :cond_5
 
-    const v2, 0x7f090115
+    const v2, 0x7f090116
 
     invoke-virtual {p0, v2}, Lcom/oneplus/aod/SingleNotificationView;->findViewById(I)Landroid/view/View;
 
@@ -930,7 +989,7 @@
 
     if-nez v2, :cond_7
 
-    const v2, 0x7f0900b3
+    const v2, 0x7f0900b4
 
     invoke-virtual {p0, v2}, Lcom/oneplus/aod/SingleNotificationView;->findViewById(I)Landroid/view/View;
 
@@ -945,7 +1004,7 @@
 
     if-nez v2, :cond_8
 
-    const v2, 0x7f0900b0
+    const v2, 0x7f0900b1
 
     invoke-virtual {p0, v2}, Lcom/oneplus/aod/SingleNotificationView;->findViewById(I)Landroid/view/View;
 

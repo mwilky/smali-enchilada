@@ -54,7 +54,7 @@
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$LightCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1000(Lcom/oneplus/doze/DozeService;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1400(Lcom/oneplus/doze/DozeService;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -97,7 +97,7 @@
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$LightCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$2600(Lcom/oneplus/doze/DozeService;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$2900(Lcom/oneplus/doze/DozeService;)Landroid/os/Handler;
 
     move-result-object v0
 
@@ -105,7 +105,7 @@
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$LightCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$2100(Lcom/oneplus/doze/DozeService;)Landroid/hardware/SensorManager;
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$2500(Lcom/oneplus/doze/DozeService;)Landroid/hardware/SensorManager;
 
     move-result-object v0
 
@@ -143,7 +143,7 @@
     :cond_0
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$LightCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$2100(Lcom/oneplus/doze/DozeService;)Landroid/hardware/SensorManager;
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$2500(Lcom/oneplus/doze/DozeService;)Landroid/hardware/SensorManager;
 
     move-result-object v0
 
@@ -170,7 +170,7 @@
 
     iget-object v2, p0, Lcom/oneplus/doze/DozeService$LightCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v2}, Lcom/oneplus/doze/DozeService;->access$2100(Lcom/oneplus/doze/DozeService;)Landroid/hardware/SensorManager;
+    invoke-static {v2}, Lcom/oneplus/doze/DozeService;->access$2500(Lcom/oneplus/doze/DozeService;)Landroid/hardware/SensorManager;
 
     move-result-object v2
 
@@ -180,7 +180,7 @@
 
     iget-object v3, p0, Lcom/oneplus/doze/DozeService$LightCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v3}, Lcom/oneplus/doze/DozeService;->access$2600(Lcom/oneplus/doze/DozeService;)Landroid/os/Handler;
+    invoke-static {v3}, Lcom/oneplus/doze/DozeService;->access$2900(Lcom/oneplus/doze/DozeService;)Landroid/os/Handler;
 
     move-result-object v7
 
@@ -192,7 +192,7 @@
 
     iget-object v2, p0, Lcom/oneplus/doze/DozeService$LightCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v2}, Lcom/oneplus/doze/DozeService;->access$2600(Lcom/oneplus/doze/DozeService;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/oneplus/doze/DozeService;->access$2900(Lcom/oneplus/doze/DozeService;)Landroid/os/Handler;
 
     move-result-object v2
 

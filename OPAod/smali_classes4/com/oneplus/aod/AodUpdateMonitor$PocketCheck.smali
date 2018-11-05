@@ -96,7 +96,7 @@
 
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3100(Lcom/oneplus/aod/AodUpdateMonitor;)I
+    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3200(Lcom/oneplus/aod/AodUpdateMonitor;)I
 
     move-result v2
 
@@ -132,7 +132,7 @@
     :goto_0
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3100(Lcom/oneplus/aod/AodUpdateMonitor;)I
+    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3200(Lcom/oneplus/aod/AodUpdateMonitor;)I
 
     move-result v2
 
@@ -179,7 +179,7 @@
 
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v2, p1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3102(Lcom/oneplus/aod/AodUpdateMonitor;I)I
+    invoke-static {v2, p1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3202(Lcom/oneplus/aod/AodUpdateMonitor;I)I
 
     if-nez v1, :cond_2
 
@@ -193,7 +193,7 @@
 
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v2, v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2900(Lcom/oneplus/aod/AodUpdateMonitor;Z)V
+    invoke-static {v2, v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3000(Lcom/oneplus/aod/AodUpdateMonitor;Z)V
 
     goto :goto_1
 
@@ -222,7 +222,7 @@
 
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v2, v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2900(Lcom/oneplus/aod/AodUpdateMonitor;Z)V
+    invoke-static {v2, v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3000(Lcom/oneplus/aod/AodUpdateMonitor;Z)V
 
     :cond_3
     :goto_1
@@ -439,7 +439,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3102(Lcom/oneplus/aod/AodUpdateMonitor;I)I
+    invoke-static {v0, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3202(Lcom/oneplus/aod/AodUpdateMonitor;I)I
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 

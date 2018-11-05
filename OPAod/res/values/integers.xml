@@ -9,6 +9,7 @@
     <integer name="cancel_button_image_alpha">127</integer>
     <integer name="config_activityDefaultDur">220</integer>
     <integer name="config_activityShortDur">150</integer>
+    <integer name="config_owner_infor_max_length">50</integer>
     <integer name="config_toastDefaultGravity">0x00000051</integer>
     <integer name="config_tooltipAnimTime">150</integer>
     <integer name="date_picker_header_max_lines_material">2</integer>

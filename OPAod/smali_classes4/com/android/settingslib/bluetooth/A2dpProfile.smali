@@ -384,7 +384,7 @@
 .end method
 
 .method public getHighQualityAudioOptionLabel(Landroid/bluetooth/BluetoothDevice;)Ljava/lang/String;
-    .locals 11
+    .locals 12
 
     sget v0, Lcom/android/settingslib/R$string;->bluetooth_profile_a2dp_high_quality_unknown_codec:I
 
@@ -402,7 +402,7 @@
 
     if-eq v1, v2, :cond_0
 
-    goto/16 :goto_5
+    goto :goto_5
 
     :cond_0
     const/4 v1, 0x0
@@ -415,135 +415,129 @@
 
     if-eqz v2, :cond_1
 
-    iget-object v2, p0, Lcom/android/settingslib/bluetooth/A2dpProfile;->mServiceWrapper:Lcom/android/settingslib/wrapper/BluetoothA2dpWrapper;
-
-    invoke-virtual {v2, p1}, Lcom/android/settingslib/wrapper/BluetoothA2dpWrapper;->getCodecStatus(Landroid/bluetooth/BluetoothDevice;)Landroid/bluetooth/BluetoothCodecStatus;
-
-    move-result-object v2
-
     invoke-virtual {v2}, Landroid/bluetooth/BluetoothCodecStatus;->getCodecsSelectableCapabilities()[Landroid/bluetooth/BluetoothCodecConfig;
 
     move-result-object v1
 
-    sget-object v2, Lcom/android/settingslib/bluetooth/-$$Lambda$A2dpProfile$exPXCssgW4cryyr_RqCY5K-rQFI;->INSTANCE:Lcom/android/settingslib/bluetooth/-$$Lambda$A2dpProfile$exPXCssgW4cryyr_RqCY5K-rQFI;
+    sget-object v3, Lcom/android/settingslib/bluetooth/-$$Lambda$A2dpProfile$exPXCssgW4cryyr_RqCY5K-rQFI;->INSTANCE:Lcom/android/settingslib/bluetooth/-$$Lambda$A2dpProfile$exPXCssgW4cryyr_RqCY5K-rQFI;
 
-    invoke-static {v1, v2}, Ljava/util/Arrays;->sort([Ljava/lang/Object;Ljava/util/Comparator;)V
+    invoke-static {v1, v3}, Ljava/util/Arrays;->sort([Ljava/lang/Object;Ljava/util/Comparator;)V
 
     :cond_1
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
     if-eqz v1, :cond_3
 
-    array-length v4, v1
+    array-length v5, v1
 
-    if-ge v4, v3, :cond_2
+    if-ge v5, v4, :cond_2
 
     goto :goto_0
 
     :cond_2
-    aget-object v4, v1, v2
+    aget-object v5, v1, v3
 
     goto :goto_1
 
     :cond_3
     :goto_0
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
     :goto_1
-    if-eqz v4, :cond_5
+    if-eqz v5, :cond_5
 
-    invoke-virtual {v4}, Landroid/bluetooth/BluetoothCodecConfig;->isMandatoryCodec()Z
+    invoke-virtual {v5}, Landroid/bluetooth/BluetoothCodecConfig;->isMandatoryCodec()Z
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_4
+    if-eqz v6, :cond_4
 
     goto :goto_2
 
     :cond_4
-    invoke-virtual {v4}, Landroid/bluetooth/BluetoothCodecConfig;->getCodecType()I
+    invoke-virtual {v5}, Landroid/bluetooth/BluetoothCodecConfig;->getCodecType()I
 
-    move-result v5
+    move-result v6
 
     goto :goto_3
 
     :cond_5
     :goto_2
-    const v5, 0xf4240
+    const v6, 0xf4240
 
     :goto_3
-    const/4 v6, -0x1
+    const/4 v7, -0x1
 
-    packed-switch v5, :pswitch_data_0
+    packed-switch v6, :pswitch_data_0
 
     goto :goto_4
 
     :pswitch_0
-    const/4 v6, 0x5
+    const/4 v7, 0x5
 
     goto :goto_4
 
     :pswitch_1
-    const/4 v6, 0x4
+    const/4 v7, 0x4
 
     goto :goto_4
 
     :pswitch_2
-    const/4 v6, 0x3
+    const/4 v7, 0x3
 
     goto :goto_4
 
     :pswitch_3
-    const/4 v6, 0x2
+    const/4 v7, 0x2
 
     goto :goto_4
 
     :pswitch_4
-    const/4 v6, 0x1
+    const/4 v7, 0x1
 
     nop
 
     :goto_4
-    if-gez v6, :cond_6
+    if-gez v7, :cond_6
 
-    iget-object v2, p0, Lcom/android/settingslib/bluetooth/A2dpProfile;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/android/settingslib/bluetooth/A2dpProfile;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v2, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v3, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    return-object v2
+    return-object v3
 
     :cond_6
-    iget-object v7, p0, Lcom/android/settingslib/bluetooth/A2dpProfile;->mContext:Landroid/content/Context;
+    iget-object v8, p0, Lcom/android/settingslib/bluetooth/A2dpProfile;->mContext:Landroid/content/Context;
 
-    sget v8, Lcom/android/settingslib/R$string;->bluetooth_profile_a2dp_high_quality:I
+    sget v9, Lcom/android/settingslib/R$string;->bluetooth_profile_a2dp_high_quality:I
 
-    new-array v3, v3, [Ljava/lang/Object;
+    new-array v4, v4, [Ljava/lang/Object;
 
-    iget-object v9, p0, Lcom/android/settingslib/bluetooth/A2dpProfile;->mContext:Landroid/content/Context;
+    iget-object v10, p0, Lcom/android/settingslib/bluetooth/A2dpProfile;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v9}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v10}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v9
+    move-result-object v10
 
-    sget v10, Lcom/android/settingslib/R$array;->bluetooth_a2dp_codec_titles:I
+    sget v11, Lcom/android/settingslib/R$array;->bluetooth_a2dp_codec_titles:I
 
-    invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
+    invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v10
 
-    aget-object v9, v9, v6
+    aget-object v10, v10, v7
 
-    aput-object v9, v3, v2
+    aput-object v10, v4, v3
 
-    invoke-virtual {v7, v8, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v8, v9, v4}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    return-object v2
+    return-object v3
 
     :cond_7
     :goto_5
@@ -554,6 +548,8 @@
     move-result-object v1
 
     return-object v1
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

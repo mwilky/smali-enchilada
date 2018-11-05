@@ -23,6 +23,16 @@
 
 
 # instance fields
+.field private final CHARGE_ICONS:[I
+
+.field private final STATE_CHARGED:I
+
+.field private final STATE_CHARGING:I
+
+.field private final STATE_FAST_CHARGING:I
+
+.field private final STATE_INVALID:I
+
 .field private mAodUpdateMonitor:Lcom/oneplus/aod/AodUpdateMonitor;
 
 .field private mAodUpdateMonitorCallback:Lcom/oneplus/aod/AodUpdateMonitorCallback;
@@ -46,6 +56,10 @@
         }
     .end annotation
 .end field
+
+.field private mChargeState:I
+
+.field private mChargeView:Landroid/widget/ImageView;
 
 .field protected mCharged:Z
 
@@ -120,6 +134,30 @@
 
     iput v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mBatteryStyle:I
 
+    const/4 v1, 0x3
+
+    new-array v1, v1, [I
+
+    fill-array-data v1, :array_0
+
+    iput-object v1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->CHARGE_ICONS:[I
+
+    const/4 v1, -0x1
+
+    iput v1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->STATE_INVALID:I
+
+    iput v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->STATE_CHARGED:I
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->STATE_CHARGING:I
+
+    const/4 v0, 0x2
+
+    iput v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->STATE_FAST_CHARGING:I
+
+    iput v1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mChargeState:I
+
     new-instance v0, Lcom/oneplus/aod/battery/BatteryControllerImpl$1;
 
     invoke-direct {v0, p0}, Lcom/oneplus/aod/battery/BatteryControllerImpl$1;-><init>(Lcom/oneplus/aod/battery/BatteryControllerImpl;)V
@@ -160,7 +198,7 @@
 
     iput-object v1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mBatteryMeterView:Lcom/oneplus/aod/battery/BatteryMeterView;
 
-    const v1, 0x7f09003b
+    const v1, 0x7f09003c
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -170,7 +208,7 @@
 
     iput-object v1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mBatteryDashChargeView:Lcom/oneplus/aod/battery/BatteryDashChargeView;
 
-    const v1, 0x7f09003a
+    const v1, 0x7f09003b
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -179,6 +217,16 @@
     check-cast v1, Landroid/widget/LinearLayout;
 
     iput-object v1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mBatteryContainer:Landroid/widget/LinearLayout;
+
+    const v1, 0x7f09003a
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/ImageView;
+
+    iput-object v1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mChargeView:Landroid/widget/ImageView;
 
     iput-object p2, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mAodUpdateMonitor:Lcom/oneplus/aod/AodUpdateMonitor;
 
@@ -199,6 +247,13 @@
     invoke-direct {p0}, Lcom/oneplus/aod/battery/BatteryControllerImpl;->updatePowerSave()V
 
     return-void
+
+    :array_0
+    .array-data 4
+        0x7f0700f5
+        0x7f0700f6
+        0x7f0700f7
+    .end array-data
 .end method
 
 .method static synthetic access$000(Lcom/oneplus/aod/battery/BatteryControllerImpl;)Lcom/oneplus/aod/clock/ClockViewCtrl;
@@ -780,6 +835,14 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(I)V
 
+    const-string v0, "  mChargeState="
+
+    invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    iget v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mChargeState:I
+
+    invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(I)V
+
     return-void
 .end method
 
@@ -831,6 +894,22 @@
     iget v2, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mBatteryStyle:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, " mChargeState:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v2, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mChargeState:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, " mCharged:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v2, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mCharged:Z
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -893,19 +972,31 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-boolean v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mFastcharge:Z
+    const/4 v0, 0x1
 
-    const/16 v1, 0x8
+    new-array v1, v0, [I
 
-    if-eqz v0, :cond_1
+    const/16 v3, 0x55
 
-    iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mBatteryDashChargeView:Lcom/oneplus/aod/battery/BatteryDashChargeView;
+    aput v3, v1, v2
 
-    iget v3, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mLevel:I
+    invoke-static {v1}, Landroid/util/OpFeatures;->isSupport([I)Z
 
-    const/4 v4, 0x1
+    move-result v1
 
-    invoke-virtual {v0, v3, v4}, Lcom/oneplus/aod/battery/BatteryDashChargeView;->setLevel(IZ)V
+    const/16 v3, 0x8
+
+    if-eqz v1, :cond_2
+
+    iget-boolean v1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mFastcharge:Z
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mBatteryDashChargeView:Lcom/oneplus/aod/battery/BatteryDashChargeView;
+
+    iget v4, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mLevel:I
+
+    invoke-virtual {v1, v4, v0}, Lcom/oneplus/aod/battery/BatteryDashChargeView;->setLevel(IZ)V
 
     iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mBatteryDashChargeView:Lcom/oneplus/aod/battery/BatteryDashChargeView;
 
@@ -913,18 +1004,64 @@
 
     iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mBatteryMeterView:Lcom/oneplus/aod/battery/BatteryMeterView;
 
-    invoke-virtual {v0, v1}, Lcom/oneplus/aod/battery/BatteryMeterView;->setVisibility(I)V
+    invoke-virtual {v0, v3}, Lcom/oneplus/aod/battery/BatteryMeterView;->setVisibility(I)V
 
     goto :goto_1
 
     :cond_1
     iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mBatteryDashChargeView:Lcom/oneplus/aod/battery/BatteryDashChargeView;
 
-    invoke-virtual {v0, v1}, Lcom/oneplus/aod/battery/BatteryDashChargeView;->setVisibility(I)V
+    invoke-virtual {v0, v3}, Lcom/oneplus/aod/battery/BatteryDashChargeView;->setVisibility(I)V
 
     iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mBatteryMeterView:Lcom/oneplus/aod/battery/BatteryMeterView;
 
     invoke-virtual {v0, v2}, Lcom/oneplus/aod/battery/BatteryMeterView;->setVisibility(I)V
+
+    goto :goto_1
+
+    :cond_2
+    iget v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mChargeState:I
+
+    const/4 v1, -0x1
+
+    if-ne v0, v1, :cond_3
+
+    iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mChargeView:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mBatteryDashChargeView:Lcom/oneplus/aod/battery/BatteryDashChargeView;
+
+    invoke-virtual {v0, v3}, Lcom/oneplus/aod/battery/BatteryDashChargeView;->setVisibility(I)V
+
+    iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mBatteryMeterView:Lcom/oneplus/aod/battery/BatteryMeterView;
+
+    invoke-virtual {v0, v2}, Lcom/oneplus/aod/battery/BatteryMeterView;->setVisibility(I)V
+
+    goto :goto_1
+
+    :cond_3
+    iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mChargeView:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mChargeView:Landroid/widget/ImageView;
+
+    iget-object v1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->CHARGE_ICONS:[I
+
+    iget v2, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mChargeState:I
+
+    aget v1, v1, v2
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mBatteryDashChargeView:Lcom/oneplus/aod/battery/BatteryDashChargeView;
+
+    invoke-virtual {v0, v3}, Lcom/oneplus/aod/battery/BatteryDashChargeView;->setVisibility(I)V
+
+    iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mBatteryMeterView:Lcom/oneplus/aod/battery/BatteryMeterView;
+
+    invoke-virtual {v0, v3}, Lcom/oneplus/aod/battery/BatteryMeterView;->setVisibility(I)V
 
     :goto_1
     return-void
@@ -949,7 +1086,7 @@
 .end method
 
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 7
+    .locals 8
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -965,7 +1102,7 @@
 
     const/4 v3, 0x0
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_a
 
     iget-boolean v1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mTestmode:Z
 
@@ -1061,61 +1198,96 @@
 
     iget-boolean v5, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mCharged:Z
 
+    const/4 v7, 0x2
+
     if-nez v5, :cond_5
 
-    const/4 v5, 0x2
-
-    if-ne v4, v5, :cond_4
+    if-ne v4, v7, :cond_4
 
     goto :goto_2
 
     :cond_4
-    move v2, v3
+    move v5, v3
 
-    nop
+    goto :goto_3
 
     :cond_5
     :goto_2
-    iput-boolean v2, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mCharging:Z
+    move v5, v2
 
-    const-string v2, "fastcharge_status"
+    :goto_3
+    iput-boolean v5, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mCharging:Z
 
-    invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    const-string v5, "fastcharge_status"
 
-    move-result v2
+    invoke-virtual {p2, v5, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
-    iput-boolean v2, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mFastcharge:Z
+    move-result v5
 
+    iput-boolean v5, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mFastcharge:Z
+
+    iget-boolean v5, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mPluggedIn:Z
+
+    if-eqz v5, :cond_8
+
+    iget v5, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mLevel:I
+
+    if-lt v5, v6, :cond_6
+
+    iput v3, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mChargeState:I
+
+    goto :goto_4
+
+    :cond_6
+    iget-boolean v3, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mFastcharge:Z
+
+    if-eqz v3, :cond_7
+
+    iput v7, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mChargeState:I
+
+    goto :goto_4
+
+    :cond_7
+    iput v2, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mChargeState:I
+
+    goto :goto_4
+
+    :cond_8
+    const/4 v2, -0x1
+
+    iput v2, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mChargeState:I
+
+    :goto_4
     invoke-virtual {p0}, Lcom/oneplus/aod/battery/BatteryControllerImpl;->fireBatteryLevelChanged()V
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_9
 
     invoke-direct {p0}, Lcom/oneplus/aod/battery/BatteryControllerImpl;->fireBatteryStylechange()V
 
-    :cond_6
-    goto :goto_3
+    :cond_9
+    goto :goto_5
 
-    :cond_7
+    :cond_a
     const-string v1, "android.os.action.POWER_SAVE_MODE_CHANGED"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_b
 
     invoke-direct {p0}, Lcom/oneplus/aod/battery/BatteryControllerImpl;->updatePowerSave()V
 
-    goto :goto_3
+    goto :goto_5
 
-    :cond_8
+    :cond_b
     const-string v1, "android.os.action.POWER_SAVE_MODE_CHANGING"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_c
 
     const-string v1, "mode"
 
@@ -1125,16 +1297,16 @@
 
     invoke-direct {p0, v1}, Lcom/oneplus/aod/battery/BatteryControllerImpl;->setPowerSave(Z)V
 
-    goto :goto_3
+    goto :goto_5
 
-    :cond_9
+    :cond_c
     const-string v1, "android.intent.action.BOOT_COMPLETED"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_d
 
     iget-object v1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mSettingObserver:Lcom/oneplus/aod/battery/BatteryControllerImpl$SettingObserver;
 
@@ -1142,16 +1314,16 @@
 
     invoke-virtual {v1, v2}, Lcom/oneplus/aod/battery/BatteryControllerImpl$SettingObserver;->update(Landroid/net/Uri;)V
 
-    goto :goto_3
+    goto :goto_5
 
-    :cond_a
+    :cond_d
     const-string v1, "com.android.systemui.BATTERY_LEVEL_TEST"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_e
 
     iput-boolean v2, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mTestmode:Z
 
@@ -1163,8 +1335,8 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_b
-    :goto_3
+    :cond_e
+    :goto_5
     return-void
 .end method
 

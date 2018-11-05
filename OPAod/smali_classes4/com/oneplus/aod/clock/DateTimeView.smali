@@ -322,7 +322,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0900e3
+    const v1, 0x7f0900e4
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -415,7 +415,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0600a7
+    const v3, 0x7f0600a5
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -436,7 +436,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0600a6
+    const v3, 0x7f0600a4
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -457,7 +457,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0600a5
+    const v3, 0x7f0600a3
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -478,7 +478,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0600a8
+    const v3, 0x7f0600a6
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -506,7 +506,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0600a3
+    const v4, 0x7f0600a1
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -533,7 +533,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0600a2
+    const v4, 0x7f0600a0
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -548,7 +548,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0600a4
+    const v4, 0x7f0600a2
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -577,7 +577,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0600af
+    const v4, 0x7f0600ad
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -686,7 +686,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const v0, 0x7f090062
+    const v0, 0x7f090063
 
     invoke-virtual {p0, v0}, Lcom/oneplus/aod/clock/DateTimeView;->findViewById(I)Landroid/view/View;
 

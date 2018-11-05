@@ -61,7 +61,7 @@
 
     sget v1, Lcom/oneplus/aod/AodUpdateMonitor;->STATE_DOZING:I
 
-    invoke-static {v0, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2500(Lcom/oneplus/aod/AodUpdateMonitor;I)V
+    invoke-static {v0, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2600(Lcom/oneplus/aod/AodUpdateMonitor;I)V
 
     return-void
 .end method
@@ -79,7 +79,7 @@
 
     sget v1, Lcom/oneplus/aod/AodUpdateMonitor;->STATE_PULSING:I
 
-    invoke-static {v0, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2500(Lcom/oneplus/aod/AodUpdateMonitor;I)V
+    invoke-static {v0, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2600(Lcom/oneplus/aod/AodUpdateMonitor;I)V
 
     return-void
 .end method

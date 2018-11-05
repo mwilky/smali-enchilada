@@ -111,10 +111,8 @@
     <dimen name="battery_empty_view_height">90.0px</dimen>
     <dimen name="battery_height">14.5dip</dimen>
     <dimen name="battery_icon_container_height">45.0px</dimen>
-    <dimen name="battery_icon_container_width">46.0px</dimen>
     <dimen name="battery_icon_height">37.0px</dimen>
     <dimen name="battery_icon_width">19.0px</dimen>
-    <dimen name="battery_percentage_marginLeft">6.0dip</dimen>
     <dimen name="battery_powersave_outline_thickness">1.0dip</dimen>
     <dimen name="battery_width">9.5dip</dimen>
     <dimen name="bottom_text_spacing_digital">-1.0dip</dimen>

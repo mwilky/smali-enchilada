@@ -480,12 +480,12 @@
 
     if-eqz v3, :cond_1
 
-    const v7, 0x7f0600aa
+    const v7, 0x7f0600a8
 
     goto :goto_1
 
     :cond_1
-    const v7, 0x7f0600ae
+    const v7, 0x7f0600ac
 
     :goto_1
     invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -693,12 +693,12 @@
 
     if-eqz v5, :cond_1
 
-    const v9, 0x7f0600aa
+    const v9, 0x7f0600a8
 
     goto :goto_1
 
     :cond_1
-    const v9, 0x7f0600ae
+    const v9, 0x7f0600ac
 
     :goto_1
     invoke-virtual {v6, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1027,7 +1027,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0600ab
+    const v4, 0x7f0600a9
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1048,7 +1048,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0600a9
+    const v4, 0x7f0600a7
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1092,7 +1092,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0600ad
+    const v1, 0x7f0600ab
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1253,7 +1253,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0600af
+    const v2, 0x7f0600ad
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

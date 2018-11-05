@@ -7,13 +7,7 @@
 
 
 # static fields
-.field public static KEY_AOD_CLOCK_STYLE:Ljava/lang/String; = null
-
-.field public static final THEME_ANDROID:I = 0x2
-
-.field public static final THEME_BLACK:I = 0x1
-
-.field public static final THEME_WHITE:I
+.field public static KEY_AOD_CLOCK_STYLE:Ljava/lang/String;
 
 
 # instance fields
@@ -134,24 +128,6 @@
     return-void
 .end method
 
-.method public static getThemeColor(Landroid/content/Context;)I
-    .locals 3
-
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    const-string v1, "oem_black_mode"
-
-    const/4 v2, 0x2
-
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
 .method private init()V
     .locals 6
 
@@ -243,7 +219,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mDefaultClock:Landroid/widget/RelativeLayout;
 
-    const v3, 0x7f09010c
+    const v3, 0x7f09010d
 
     invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 
@@ -255,7 +231,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mDefaultClock:Landroid/widget/RelativeLayout;
 
-    const v4, 0x7f090040
+    const v4, 0x7f090041
 
     invoke-virtual {v0, v4}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 
@@ -429,7 +405,7 @@
 
     invoke-virtual {v0, p0}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    invoke-static {p0}, Lcom/oneplus/settings/AodChooseClockStyleActivity;->getThemeColor(Landroid/content/Context;)I
+    invoke-static {p0}, Lcom/oneplus/settings/ThemeColorUtils;->getThemeColor(Landroid/content/Context;)I
 
     move-result v0
 
@@ -437,13 +413,7 @@
 
     if-eq v0, v1, :cond_1
 
-    invoke-static {p0}, Lcom/oneplus/settings/AodChooseClockStyleActivity;->getThemeColor(Landroid/content/Context;)I
-
-    move-result v0
-
     if-nez v0, :cond_0
-
-    const/16 v0, 0x2000
 
     invoke-virtual {p0}, Lcom/oneplus/settings/AodChooseClockStyleActivity;->getWindow()Landroid/view/Window;
 
@@ -453,159 +423,161 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Landroid/view/View;->setSystemUiVisibility(I)V
+    const/16 v2, 0x2000
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setSystemUiVisibility(I)V
 
     :cond_0
-    iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mBackground:Landroid/widget/LinearLayout;
+    iget-object v1, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mBackground:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f050200
+    const v2, 0x7f050200
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
+    invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
 
-    iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mDefaultClockDes:Landroid/widget/TextView;
-
-    invoke-virtual {p0}, Lcom/oneplus/settings/AodChooseClockStyleActivity;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f050233
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mClassicClockDes:Landroid/widget/TextView;
+    iget-object v1, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mDefaultClockDes:Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lcom/oneplus/settings/AodChooseClockStyleActivity;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
+    const v3, 0x7f050233
 
-    move-result v1
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+    move-result v2
 
-    iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mAnalogClockDes:Landroid/widget/TextView;
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    invoke-virtual {p0}, Lcom/oneplus/settings/AodChooseClockStyleActivity;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mDigitalClockDes:Landroid/widget/TextView;
+    iget-object v1, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mClassicClockDes:Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lcom/oneplus/settings/AodChooseClockStyleActivity;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
-    move-result v1
+    move-result v2
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mDefaultClockBorder:Landroid/view/View;
+    iget-object v1, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mAnalogClockDes:Landroid/widget/TextView;
 
-    const/4 v1, 0x4
+    invoke-virtual {p0}, Lcom/oneplus/settings/AodChooseClockStyleActivity;->getResources()Landroid/content/res/Resources;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    move-result-object v2
 
-    iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mClassicClockBorder:Landroid/view/View;
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    move-result v2
 
-    iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mAnalogClockBorder:Landroid/view/View;
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    iget-object v1, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mDigitalClockDes:Landroid/widget/TextView;
 
-    iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mDigitalClockBorder:Landroid/view/View;
+    invoke-virtual {p0}, Lcom/oneplus/settings/AodChooseClockStyleActivity;->getResources()Landroid/content/res/Resources;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    move-result-object v2
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
+
+    iget-object v1, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mDefaultClockBorder:Landroid/view/View;
+
+    const/4 v2, 0x4
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
+
+    iget-object v1, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mClassicClockBorder:Landroid/view/View;
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
+
+    iget-object v1, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mAnalogClockBorder:Landroid/view/View;
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
+
+    iget-object v1, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mDigitalClockBorder:Landroid/view/View;
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 
     :cond_1
-    iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mBackground:Landroid/widget/LinearLayout;
+    iget-object v1, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mBackground:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f0501fc
+    const v2, 0x7f0501fc
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
+    invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
 
-    iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mDefaultClockDes:Landroid/widget/TextView;
-
-    invoke-virtual {p0}, Lcom/oneplus/settings/AodChooseClockStyleActivity;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f050231
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mClassicClockDes:Landroid/widget/TextView;
+    iget-object v1, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mDefaultClockDes:Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lcom/oneplus/settings/AodChooseClockStyleActivity;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
+    const v3, 0x7f050231
 
-    move-result v1
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+    move-result v2
 
-    iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mAnalogClockDes:Landroid/widget/TextView;
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    invoke-virtual {p0}, Lcom/oneplus/settings/AodChooseClockStyleActivity;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mDigitalClockDes:Landroid/widget/TextView;
+    iget-object v1, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mClassicClockDes:Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lcom/oneplus/settings/AodChooseClockStyleActivity;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
-    move-result v1
+    move-result v2
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mDefaultClockBorder:Landroid/view/View;
+    iget-object v1, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mAnalogClockDes:Landroid/widget/TextView;
 
-    const/4 v1, 0x0
+    invoke-virtual {p0}, Lcom/oneplus/settings/AodChooseClockStyleActivity;->getResources()Landroid/content/res/Resources;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    move-result-object v2
 
-    iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mClassicClockBorder:Landroid/view/View;
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    move-result v2
 
-    iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mAnalogClockBorder:Landroid/view/View;
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    iget-object v1, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mDigitalClockDes:Landroid/widget/TextView;
 
-    iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mDigitalClockBorder:Landroid/view/View;
+    invoke-virtual {p0}, Lcom/oneplus/settings/AodChooseClockStyleActivity;->getResources()Landroid/content/res/Resources;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    move-result-object v2
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
+
+    iget-object v1, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mDefaultClockBorder:Landroid/view/View;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
+
+    iget-object v1, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mClassicClockBorder:Landroid/view/View;
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
+
+    iget-object v1, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mAnalogClockBorder:Landroid/view/View;
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
+
+    iget-object v1, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mDigitalClockBorder:Landroid/view/View;
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
     :goto_0
     return-void

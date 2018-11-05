@@ -65,7 +65,7 @@
 
     iput-object v1, p0, Lcom/oneplus/aod/DisplayViewManager;->mResetViewRunnable:Ljava/lang/Runnable;
 
-    const v1, 0x7f09009c
+    const v1, 0x7f09009d
 
     invoke-virtual {p2, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -75,7 +75,7 @@
 
     iput-object v1, p0, Lcom/oneplus/aod/DisplayViewManager;->mMainView:Lcom/oneplus/aod/AodMain;
 
-    const v1, 0x7f090117
+    const v1, 0x7f090118
 
     invoke-virtual {p2, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -85,7 +85,7 @@
 
     iput-object v1, p0, Lcom/oneplus/aod/DisplayViewManager;->mSingleNotificationView:Landroid/view/ViewGroup;
 
-    const v1, 0x7f090134
+    const v1, 0x7f090135
 
     invoke-virtual {p2, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

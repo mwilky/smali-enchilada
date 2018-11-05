@@ -14,6 +14,8 @@
 
 
 # static fields
+.field private static final MINUTE:I = 0xea60
+
 .field private static final RESULT_FAR:I = 0x2
 
 .field private static final RESULT_NEAR:I = 0x1
@@ -99,6 +101,10 @@
 
 .field private mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
+.field private mMinuteHandler:Landroid/os/Handler;
+
+.field private final mMinuteTick:Ljava/lang/Runnable;
+
 .field private mNotificationCollectorService:Lcom/oneplus/aod/NotificationCollectorService;
 
 .field private mNotificationManager:Lcom/oneplus/aod/NotificationManager;
@@ -110,6 +116,8 @@
 .field private mPocketState:I
 
 .field private mReceiver:Landroid/content/BroadcastReceiver;
+
+.field private final mRemoveWindow:Ljava/lang/Runnable;
 
 .field private mSensorManager:Landroid/hardware/SensorManager;
 
@@ -198,7 +206,19 @@
 
     invoke-direct {v1, p0}, Lcom/oneplus/aod/AodUpdateMonitor$3;-><init>(Lcom/oneplus/aod/AodUpdateMonitor;)V
 
+    iput-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mRemoveWindow:Ljava/lang/Runnable;
+
+    new-instance v1, Lcom/oneplus/aod/AodUpdateMonitor$4;
+
+    invoke-direct {v1, p0}, Lcom/oneplus/aod/AodUpdateMonitor$4;-><init>(Lcom/oneplus/aod/AodUpdateMonitor;)V
+
     iput-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mReceiver:Landroid/content/BroadcastReceiver;
+
+    new-instance v1, Lcom/oneplus/aod/AodUpdateMonitor$5;
+
+    invoke-direct {v1, p0}, Lcom/oneplus/aod/AodUpdateMonitor$5;-><init>(Lcom/oneplus/aod/AodUpdateMonitor;)V
+
+    iput-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mMinuteTick:Ljava/lang/Runnable;
 
     iput-object p1, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mContext:Landroid/content/Context;
 
@@ -260,20 +280,20 @@
     return v0
 .end method
 
-.method static synthetic access$1000(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/lang/String;
+.method static synthetic access$1000(Lcom/oneplus/aod/AodUpdateMonitor;)Z
     .locals 1
 
-    iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mWakingUpReason:Ljava/lang/String;
+    iget-boolean v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mDozingRequested:Z
 
-    return-object v0
+    return v0
 .end method
 
-.method static synthetic access$1002(Lcom/oneplus/aod/AodUpdateMonitor;Ljava/lang/String;)Ljava/lang/String;
+.method static synthetic access$1002(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
     .locals 0
 
-    iput-object p1, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mWakingUpReason:Ljava/lang/String;
+    iput-boolean p1, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mDozingRequested:Z
 
-    return-object p1
+    return p1
 .end method
 
 .method static synthetic access$102(Lcom/oneplus/aod/AodUpdateMonitor;I)I
@@ -284,7 +304,23 @@
     return p1
 .end method
 
-.method static synthetic access$1102(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
+.method static synthetic access$1100(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mWakingUpReason:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1102(Lcom/oneplus/aod/AodUpdateMonitor;Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
+
+    iput-object p1, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mWakingUpReason:Ljava/lang/String;
+
+    return-object p1
+.end method
+
+.method static synthetic access$1202(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mApplySpeedUpPolicy:Z
@@ -292,7 +328,7 @@
     return p1
 .end method
 
-.method static synthetic access$1200(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/widget/RelativeLayout;
+.method static synthetic access$1300(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/widget/RelativeLayout;
     .locals 1
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mAodView:Landroid/widget/RelativeLayout;
@@ -300,7 +336,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1302(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
+.method static synthetic access$1402(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mIsWakingUp:Z
@@ -308,7 +344,7 @@
     return p1
 .end method
 
-.method static synthetic access$1400(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/aod/battery/BatteryControllerImpl;
+.method static synthetic access$1500(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/aod/battery/BatteryControllerImpl;
     .locals 1
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mBatteryController:Lcom/oneplus/aod/battery/BatteryControllerImpl;
@@ -316,23 +352,15 @@
     return-object v0
 .end method
 
-.method static synthetic access$1500(Lcom/oneplus/aod/AodUpdateMonitor;)Z
+.method static synthetic access$1600(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/lang/Runnable;
     .locals 1
 
-    iget-boolean v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mDozingRequested:Z
+    iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mRemoveWindow:Ljava/lang/Runnable;
 
-    return v0
+    return-object v0
 .end method
 
-.method static synthetic access$1502(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
-    .locals 0
-
-    iput-boolean p1, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mDozingRequested:Z
-
-    return p1
-.end method
-
-.method static synthetic access$1600(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/view/WindowManager$LayoutParams;
+.method static synthetic access$1700(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/view/WindowManager$LayoutParams;
     .locals 1
 
     invoke-direct {p0}, Lcom/oneplus/aod/AodUpdateMonitor;->getAodViewLayoutParams()Landroid/view/WindowManager$LayoutParams;
@@ -342,7 +370,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1700(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/view/WindowManager;
+.method static synthetic access$1800(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/view/WindowManager;
     .locals 1
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mWm:Landroid/view/WindowManager;
@@ -350,7 +378,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1800(Lcom/oneplus/aod/AodUpdateMonitor;)Z
+.method static synthetic access$1900(Lcom/oneplus/aod/AodUpdateMonitor;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mIsWindowRemoved:Z
@@ -358,20 +386,12 @@
     return v0
 .end method
 
-.method static synthetic access$1802(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
+.method static synthetic access$1902(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mIsWindowRemoved:Z
 
     return p1
-.end method
-
-.method static synthetic access$1900(Lcom/oneplus/aod/AodUpdateMonitor;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/oneplus/aod/AodUpdateMonitor;->updateDozing()V
-
-    return-void
 .end method
 
 .method static synthetic access$200(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/content/Context;
@@ -382,7 +402,15 @@
     return-object v0
 .end method
 
-.method static synthetic access$2000(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/lang/String;
+.method static synthetic access$2000(Lcom/oneplus/aod/AodUpdateMonitor;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/oneplus/aod/AodUpdateMonitor;->updateDozing()V
+
+    return-void
+.end method
+
+.method static synthetic access$2100(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->ACTION_UPDATE_TIME:Ljava/lang/String;
@@ -390,7 +418,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2100(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/content/BroadcastReceiver;
+.method static synthetic access$2200(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/content/BroadcastReceiver;
     .locals 1
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mReceiver:Landroid/content/BroadcastReceiver;
@@ -398,7 +426,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2202(Lcom/oneplus/aod/AodUpdateMonitor;I)I
+.method static synthetic access$2302(Lcom/oneplus/aod/AodUpdateMonitor;I)I
     .locals 0
 
     iput p1, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mZenMode:I
@@ -406,7 +434,7 @@
     return p1
 .end method
 
-.method static synthetic access$2300(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/aod/VolumneController;
+.method static synthetic access$2400(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/aod/VolumneController;
     .locals 1
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mVolumnController:Lcom/oneplus/aod/VolumneController;
@@ -414,7 +442,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2402(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
+.method static synthetic access$2502(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mNotificationWakeUpEnable:Z
@@ -422,7 +450,7 @@
     return p1
 .end method
 
-.method static synthetic access$2500(Lcom/oneplus/aod/AodUpdateMonitor;I)V
+.method static synthetic access$2600(Lcom/oneplus/aod/AodUpdateMonitor;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/oneplus/aod/AodUpdateMonitor;->handleDreamStateUpdate(I)V
@@ -430,7 +458,7 @@
     return-void
 .end method
 
-.method static synthetic access$2600(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/util/ArrayList;
+.method static synthetic access$2700(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/util/ArrayList;
     .locals 1
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mAodUpdateMonitorCallbacks:Ljava/util/ArrayList;
@@ -438,7 +466,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2702(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
+.method static synthetic access$2802(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mIsSecure:Z
@@ -446,20 +474,12 @@
     return p1
 .end method
 
-.method static synthetic access$2800(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/android/internal/widget/LockPatternUtils;
+.method static synthetic access$2900(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/android/internal/widget/LockPatternUtils;
     .locals 1
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     return-object v0
-.end method
-
-.method static synthetic access$2900(Lcom/oneplus/aod/AodUpdateMonitor;Z)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcom/oneplus/aod/AodUpdateMonitor;->handleAlwaysOn(Z)V
-
-    return-void
 .end method
 
 .method static synthetic access$300(Lcom/oneplus/aod/AodUpdateMonitor;I)V
@@ -470,7 +490,15 @@
     return-void
 .end method
 
-.method static synthetic access$3000(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/doze/DozeScrimController;
+.method static synthetic access$3000(Lcom/oneplus/aod/AodUpdateMonitor;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/oneplus/aod/AodUpdateMonitor;->handleAlwaysOn(Z)V
+
+    return-void
+.end method
+
+.method static synthetic access$3100(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/doze/DozeScrimController;
     .locals 1
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mDozeScrimController:Lcom/oneplus/doze/DozeScrimController;
@@ -478,7 +506,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3100(Lcom/oneplus/aod/AodUpdateMonitor;)I
+.method static synthetic access$3200(Lcom/oneplus/aod/AodUpdateMonitor;)I
     .locals 1
 
     iget v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mPocketState:I
@@ -486,7 +514,7 @@
     return v0
 .end method
 
-.method static synthetic access$3102(Lcom/oneplus/aod/AodUpdateMonitor;I)I
+.method static synthetic access$3202(Lcom/oneplus/aod/AodUpdateMonitor;I)I
     .locals 0
 
     iput p1, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mPocketState:I
@@ -494,7 +522,7 @@
     return p1
 .end method
 
-.method static synthetic access$3200(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;
+.method static synthetic access$3300(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;
     .locals 1
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mPocketCheck:Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;
@@ -502,7 +530,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3300(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/app/PendingIntent;
+.method static synthetic access$3400(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/app/PendingIntent;
     .locals 1
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mAlarmIntent:Landroid/app/PendingIntent;
@@ -510,7 +538,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3302(Lcom/oneplus/aod/AodUpdateMonitor;Landroid/app/PendingIntent;)Landroid/app/PendingIntent;
+.method static synthetic access$3402(Lcom/oneplus/aod/AodUpdateMonitor;Landroid/app/PendingIntent;)Landroid/app/PendingIntent;
     .locals 0
 
     iput-object p1, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mAlarmIntent:Landroid/app/PendingIntent;
@@ -518,7 +546,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$3400(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/app/AlarmManager;
+.method static synthetic access$3500(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/app/AlarmManager;
     .locals 1
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mAlarmManager:Landroid/app/AlarmManager;
@@ -574,6 +602,14 @@
     return-object v0
 .end method
 
+.method static synthetic access$4500(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/os/Handler;
+    .locals 1
+
+    iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mMinuteHandler:Landroid/os/Handler;
+
+    return-object v0
+.end method
+
 .method static synthetic access$600(Lcom/oneplus/aod/AodUpdateMonitor;)Z
     .locals 1
 
@@ -615,7 +651,7 @@
 .end method
 
 .method private caculateAlarmDelay(Z)J
-    .locals 13
+    .locals 12
 
     const-wide/32 v0, 0xea60
 
@@ -652,158 +688,154 @@
     goto/16 :goto_1
 
     :cond_0
-    invoke-virtual {p0}, Lcom/oneplus/aod/AodUpdateMonitor;->inverseCalculate()Z
-
-    move-result v3
-
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+    invoke-virtual {v3}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4}, Ljava/util/Date;->getHours()I
+    invoke-virtual {v3}, Ljava/util/Date;->getHours()I
+
+    move-result v4
+
+    invoke-virtual {v3}, Ljava/util/Date;->getMinutes()I
 
     move-result v5
 
-    invoke-virtual {v4}, Ljava/util/Date;->getMinutes()I
+    invoke-virtual {v3}, Ljava/util/Date;->getSeconds()I
 
     move-result v6
 
-    invoke-virtual {v4}, Ljava/util/Date;->getSeconds()I
+    const-string v7, "AodUpdateMonitor"
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "currentH = "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v9, ", currentM = "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v7, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mDisplayPeriodFrom:Lcom/oneplus/settings/TextTime;
+
+    invoke-virtual {v7}, Lcom/oneplus/settings/TextTime;->getHour()I
 
     move-result v7
 
-    const-string v8, "AodUpdateMonitor"
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "currentH = "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v10, ", currentM = "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     iget-object v8, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mDisplayPeriodFrom:Lcom/oneplus/settings/TextTime;
 
-    invoke-virtual {v8}, Lcom/oneplus/settings/TextTime;->getHour()I
+    invoke-virtual {v8}, Lcom/oneplus/settings/TextTime;->getMin()I
 
     move-result v8
 
-    iget-object v9, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mDisplayPeriodFrom:Lcom/oneplus/settings/TextTime;
+    const-string v9, "AodUpdateMonitor"
 
-    invoke-virtual {v9}, Lcom/oneplus/settings/TextTime;->getMin()I
+    new-instance v10, Ljava/lang/StringBuilder;
 
-    move-result v9
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v10, "AodUpdateMonitor"
+    const-string v11, "caculateAlarmDelay: fromHour = "
 
-    new-instance v11, Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v12, "caculateAlarmDelay: fromHour = "
+    const-string v11, ", fromMin = "
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v12, ", fromMin = "
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v10
 
-    invoke-virtual {v11, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-gt v7, v4, :cond_2
 
-    move-result-object v11
+    if-ne v7, v4, :cond_1
 
-    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    if-gt v8, v5, :cond_2
-
-    if-ne v8, v5, :cond_1
-
-    if-le v9, v6, :cond_1
+    if-le v8, v5, :cond_1
 
     goto :goto_0
 
     :cond_1
-    const v10, 0x15180
+    const v9, 0x15180
 
-    mul-int/lit8 v11, v5, 0x3c
+    mul-int/lit8 v10, v4, 0x3c
 
-    mul-int/lit8 v11, v11, 0x3c
+    mul-int/lit8 v10, v10, 0x3c
 
-    sub-int/2addr v10, v11
+    sub-int/2addr v9, v10
 
-    mul-int/lit8 v11, v6, 0x3c
+    mul-int/lit8 v10, v5, 0x3c
 
-    sub-int/2addr v10, v11
+    sub-int/2addr v9, v10
 
-    sub-int/2addr v10, v7
+    sub-int/2addr v9, v6
 
-    mul-int/lit16 v10, v10, 0x3e8
+    mul-int/lit16 v9, v9, 0x3e8
+
+    mul-int/lit8 v10, v7, 0x3c
+
+    mul-int/lit8 v10, v10, 0x3c
 
     mul-int/lit8 v11, v8, 0x3c
 
-    mul-int/lit8 v11, v11, 0x3c
-
-    mul-int/lit8 v12, v9, 0x3c
-
-    add-int/2addr v11, v12
-
-    mul-int/lit16 v11, v11, 0x3e8
-
     add-int/2addr v10, v11
 
-    int-to-long v3, v10
+    mul-int/lit16 v10, v10, 0x3e8
+
+    add-int/2addr v9, v10
+
+    int-to-long v3, v9
 
     goto :goto_1
 
     :cond_2
     :goto_0
+    mul-int/lit8 v9, v7, 0x3c
+
+    mul-int/lit8 v9, v9, 0x3c
+
     mul-int/lit8 v10, v8, 0x3c
+
+    add-int/2addr v9, v10
+
+    mul-int/lit16 v9, v9, 0x3e8
+
+    mul-int/lit8 v10, v4, 0x3c
 
     mul-int/lit8 v10, v10, 0x3c
 
-    mul-int/lit8 v11, v9, 0x3c
+    mul-int/lit8 v11, v5, 0x3c
 
     add-int/2addr v10, v11
 
+    add-int/2addr v10, v6
+
     mul-int/lit16 v10, v10, 0x3e8
 
-    mul-int/lit8 v11, v5, 0x3c
+    sub-int/2addr v9, v10
 
-    mul-int/lit8 v11, v11, 0x3c
-
-    mul-int/lit8 v12, v6, 0x3c
-
-    add-int/2addr v11, v12
-
-    add-int/2addr v11, v7
-
-    mul-int/lit16 v11, v11, 0x3e8
-
-    sub-int/2addr v10, v11
-
-    int-to-long v0, v10
+    int-to-long v0, v9
 
     move-wide v3, v0
 
@@ -822,7 +854,7 @@
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    const v1, 0x10500
+    const/16 v1, 0x500
 
     const/16 v2, 0x10
 
@@ -1031,7 +1063,7 @@
 .end method
 
 .method private handleDreamStateUpdate(I)V
-    .locals 3
+    .locals 6
 
     iget v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mDreamState:I
 
@@ -1095,6 +1127,67 @@
     goto :goto_0
 
     :cond_2
+    invoke-static {}, Lcom/oneplus/aod/Utils;->isAlwaysOnEnabled()Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    iget v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mDreamState:I
+
+    sget v1, Lcom/oneplus/aod/AodUpdateMonitor;->STATE_PULSING:I
+
+    if-ne v0, v1, :cond_3
+
+    iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mMinuteHandler:Landroid/os/Handler;
+
+    if-nez v0, :cond_3
+
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
+
+    iput-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mMinuteHandler:Landroid/os/Handler;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    const-wide/32 v2, 0xea60
+
+    div-long v4, v0, v2
+
+    mul-long/2addr v4, v2
+
+    add-long/2addr v4, v2
+
+    sub-long/2addr v4, v0
+
+    iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mMinuteHandler:Landroid/os/Handler;
+
+    iget-object v3, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mMinuteTick:Ljava/lang/Runnable;
+
+    invoke-virtual {v2, v3, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    goto :goto_1
+
+    :cond_3
+    iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mMinuteHandler:Landroid/os/Handler;
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mMinuteHandler:Landroid/os/Handler;
+
+    iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mMinuteTick:Ljava/lang/Runnable;
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mMinuteHandler:Landroid/os/Handler;
+
+    :cond_4
+    :goto_1
     return-void
 .end method
 
@@ -2003,7 +2096,7 @@
 .end method
 
 .method public setAlarm(Z)V
-    .locals 11
+    .locals 8
 
     const-string v0, "sys.aod.localtest"
 
@@ -2040,154 +2133,95 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mAlarmIntent:Landroid/app/PendingIntent;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
     new-instance v1, Landroid/content/Intent;
 
-    iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor;->ACTION_UPDATE_TIME:Ljava/lang/String;
+    iget-object v3, p0, Lcom/oneplus/aod/AodUpdateMonitor;->ACTION_UPDATE_TIME:Ljava/lang/String;
 
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    const/high16 v2, 0x10000000
+    const/high16 v3, 0x10000000
 
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+    invoke-virtual {v1, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mContext:Landroid/content/Context;
 
-    const/4 v3, 0x0
+    invoke-static {v3, v2, v1, v2}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
-    invoke-static {v2, v3, v1, v3}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+    move-result-object v3
 
-    move-result-object v2
+    iput-object v3, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mAlarmIntent:Landroid/app/PendingIntent;
 
-    iput-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mAlarmIntent:Landroid/app/PendingIntent;
-
+    :cond_1
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
-    move-result-object v2
+    move-result-object v1
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v4
+    move-result-wide v3
 
-    invoke-virtual {v2, v4, v5}, Ljava/util/Calendar;->setTimeInMillis(J)V
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v4
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v4
+    invoke-virtual {v1, v3, v4}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
     invoke-direct {p0, p1}, Lcom/oneplus/aod/AodUpdateMonitor;->caculateAlarmDelay(Z)J
 
-    move-result-wide v5
+    move-result-wide v3
 
-    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    const-string v4, "AodUpdateMonitor"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "delay = "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/Long;->intValue()I
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
 
-    const-string v6, "AodUpdateMonitor"
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    const/16 v4, 0xe
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v3}, Ljava/lang/Long;->intValue()I
 
-    const-string v8, "delay = "
+    move-result v5
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4, v5}, Ljava/util/Calendar;->add(II)V
 
-    invoke-virtual {v5}, Ljava/lang/Long;->intValue()I
+    iget-object v4, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mAlarmManager:Landroid/app/AlarmManager;
 
-    move-result v8
+    invoke-virtual {v1}, Ljava/util/Calendar;->getTimeInMillis()J
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-wide v5
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v7, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mAlarmIntent:Landroid/app/PendingIntent;
 
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const/16 v6, 0xe
-
-    invoke-virtual {v5}, Ljava/lang/Long;->intValue()I
-
-    move-result v7
-
-    invoke-virtual {v2, v6, v7}, Ljava/util/Calendar;->add(II)V
-
-    new-instance v6, Landroid/app/AlarmManager$AlarmClockInfo;
-
-    invoke-virtual {v2}, Ljava/util/Calendar;->getTimeInMillis()J
-
-    move-result-wide v7
-
-    iget-object v9, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mAlarmIntent:Landroid/app/PendingIntent;
-
-    invoke-direct {v6, v7, v8, v9}, Landroid/app/AlarmManager$AlarmClockInfo;-><init>(JLandroid/app/PendingIntent;)V
-
-    iget-object v7, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mAlarmManager:Landroid/app/AlarmManager;
-
-    invoke-virtual {v2}, Ljava/util/Calendar;->getTimeInMillis()J
-
-    move-result-wide v8
-
-    iget-object v10, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mAlarmIntent:Landroid/app/PendingIntent;
-
-    invoke-virtual {v7, v3, v8, v9, v10}, Landroid/app/AlarmManager;->setExact(IJLandroid/app/PendingIntent;)V
+    invoke-virtual {v4, v2, v5, v6, v7}, Landroid/app/AlarmManager;->setExact(IJLandroid/app/PendingIntent;)V
 
     return-void
 .end method
 
 .method public setDisplayMode(I)V
-    .locals 3
+    .locals 0
 
-    :try_start_0
-    const-string v0, "AodUpdateMonitor"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "setAodMode: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget-boolean v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mDozing:Z
-
-    if-nez v0, :cond_0
-
-    const-string v0, "AodUpdateMonitor"
-
-    const-string v1, "setAodMode fail due to waking up or not dreaming"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mDaemon:Lvendor/oneplus/hardware/display/V1_0/IOneplusDisplay;
-
-    const/16 v1, 0x8
-
-    invoke-interface {v0, v1, p1}, Lvendor/oneplus/hardware/display/V1_0/IOneplusDisplay;->setMode(II)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    :goto_0
     return-void
 .end method
 

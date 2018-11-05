@@ -113,7 +113,7 @@
 
     iput-object p1, p0, Lcom/oneplus/aod/clock/ClockViewCtrl;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f090061
+    const v1, 0x7f090062
 
     invoke-virtual {p2, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -123,7 +123,7 @@
 
     iput-object v1, p0, Lcom/oneplus/aod/clock/ClockViewCtrl;->mDateTimeView:Lcom/oneplus/aod/clock/DateTimeView;
 
-    const v1, 0x7f09004f
+    const v1, 0x7f090050
 
     invoke-virtual {p2, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -133,7 +133,7 @@
 
     iput-object v1, p0, Lcom/oneplus/aod/clock/ClockViewCtrl;->mClockView:Lcom/oneplus/aod/clock/OPTextClock;
 
-    const v1, 0x7f090062
+    const v1, 0x7f090063
 
     invoke-virtual {p2, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

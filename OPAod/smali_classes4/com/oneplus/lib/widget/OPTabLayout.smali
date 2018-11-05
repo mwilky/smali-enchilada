@@ -63,7 +63,7 @@
 
 .field private mTabMaxWidth:I
 
-.field private final mTabMinWidth:I
+.field private mTabMinWidth:I
 
 .field private mTabPaddingBottom:I
 
@@ -1985,6 +1985,14 @@
     invoke-direct {p0}, Lcom/oneplus/lib/widget/OPTabLayout;->applyModeAndGravity()V
 
     :cond_0
+    return-void
+.end method
+
+.method public setTabMinWidth(I)V
+    .locals 0
+
+    iput p1, p0, Lcom/oneplus/lib/widget/OPTabLayout;->mTabMinWidth:I
+
     return-void
 .end method
 

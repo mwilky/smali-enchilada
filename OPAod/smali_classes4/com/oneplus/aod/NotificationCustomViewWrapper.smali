@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final CUSTOM_BACKGROUND_TAG:I = 0x7f09005a
+.field private static final CUSTOM_BACKGROUND_TAG:I = 0x7f09005b
 
 
 # instance fields
@@ -137,7 +137,7 @@
 
     instance-of v2, v0, Landroid/graphics/drawable/ColorDrawable;
 
-    const v3, 0x7f09005a
+    const v3, 0x7f09005b
 
     if-eqz v2, :cond_0
 

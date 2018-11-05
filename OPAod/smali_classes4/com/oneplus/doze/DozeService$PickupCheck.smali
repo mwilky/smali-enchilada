@@ -60,7 +60,7 @@
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$PickupCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1000(Lcom/oneplus/doze/DozeService;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1400(Lcom/oneplus/doze/DozeService;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -135,7 +135,7 @@
 
     iget-object v2, p0, Lcom/oneplus/doze/DozeService$PickupCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v2}, Lcom/oneplus/doze/DozeService;->access$300(Lcom/oneplus/doze/DozeService;)Z
+    invoke-static {v2}, Lcom/oneplus/doze/DozeService;->access$700(Lcom/oneplus/doze/DozeService;)Z
 
     move-result v2
 
@@ -143,7 +143,7 @@
 
     iget-object v2, p0, Lcom/oneplus/doze/DozeService$PickupCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v2}, Lcom/oneplus/doze/DozeService;->access$200(Lcom/oneplus/doze/DozeService;)Landroid/content/Context;
+    invoke-static {v2}, Lcom/oneplus/doze/DozeService;->access$600(Lcom/oneplus/doze/DozeService;)Landroid/content/Context;
 
     move-result-object v2
 
@@ -159,7 +159,7 @@
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$PickupCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0, v1}, Lcom/oneplus/doze/DozeService;->access$1100(Lcom/oneplus/doze/DozeService;I)V
+    invoke-static {v0, v1}, Lcom/oneplus/doze/DozeService;->access$1500(Lcom/oneplus/doze/DozeService;I)V
 
     goto :goto_0
 
@@ -170,7 +170,7 @@
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$PickupCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$300(Lcom/oneplus/doze/DozeService;)Z
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$700(Lcom/oneplus/doze/DozeService;)Z
 
     move-result v0
 
@@ -178,7 +178,7 @@
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$PickupCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$2700(Lcom/oneplus/doze/DozeService;)I
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$3000(Lcom/oneplus/doze/DozeService;)I
 
     move-result v0
 
@@ -186,7 +186,7 @@
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$PickupCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$200(Lcom/oneplus/doze/DozeService;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$600(Lcom/oneplus/doze/DozeService;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -203,7 +203,7 @@
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$PickupCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$200(Lcom/oneplus/doze/DozeService;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$600(Lcom/oneplus/doze/DozeService;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -219,7 +219,7 @@
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$PickupCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1900(Lcom/oneplus/doze/DozeService;)V
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$2300(Lcom/oneplus/doze/DozeService;)V
 
     :cond_3
     :goto_0
@@ -240,7 +240,7 @@
     :cond_0
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$PickupCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$2100(Lcom/oneplus/doze/DozeService;)Landroid/hardware/SensorManager;
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$2500(Lcom/oneplus/doze/DozeService;)Landroid/hardware/SensorManager;
 
     move-result-object v0
 
@@ -254,7 +254,7 @@
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$PickupCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$2100(Lcom/oneplus/doze/DozeService;)Landroid/hardware/SensorManager;
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$2500(Lcom/oneplus/doze/DozeService;)Landroid/hardware/SensorManager;
 
     move-result-object v0
 
@@ -286,7 +286,7 @@
     :cond_0
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$PickupCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$2100(Lcom/oneplus/doze/DozeService;)Landroid/hardware/SensorManager;
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$2500(Lcom/oneplus/doze/DozeService;)Landroid/hardware/SensorManager;
 
     move-result-object v0
 
@@ -325,7 +325,7 @@
 
     iget-object v1, p0, Lcom/oneplus/doze/DozeService$PickupCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v1}, Lcom/oneplus/doze/DozeService;->access$2100(Lcom/oneplus/doze/DozeService;)Landroid/hardware/SensorManager;
+    invoke-static {v1}, Lcom/oneplus/doze/DozeService;->access$2500(Lcom/oneplus/doze/DozeService;)Landroid/hardware/SensorManager;
 
     move-result-object v2
 
@@ -335,7 +335,7 @@
 
     iget-object v1, p0, Lcom/oneplus/doze/DozeService$PickupCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v1}, Lcom/oneplus/doze/DozeService;->access$2600(Lcom/oneplus/doze/DozeService;)Landroid/os/Handler;
+    invoke-static {v1}, Lcom/oneplus/doze/DozeService;->access$2900(Lcom/oneplus/doze/DozeService;)Landroid/os/Handler;
 
     move-result-object v7
 
@@ -347,7 +347,7 @@
 
     iget-object v1, p0, Lcom/oneplus/doze/DozeService$PickupCheck;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v1}, Lcom/oneplus/doze/DozeService;->access$2600(Lcom/oneplus/doze/DozeService;)Landroid/os/Handler;
+    invoke-static {v1}, Lcom/oneplus/doze/DozeService;->access$2900(Lcom/oneplus/doze/DozeService;)Landroid/os/Handler;
 
     move-result-object v1
 

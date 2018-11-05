@@ -21,10 +21,6 @@
 
 .field private mPercentage:Landroid/widget/TextView;
 
-.field private mShowPercentage:Z
-
-.field private final mSlotBattery:Ljava/lang/String;
-
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
@@ -101,14 +97,6 @@
     invoke-virtual {v2, v3}, Lcom/oneplus/aod/battery/BatteryMeterDrawable;->setIconPlace(Z)V
 
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
-
-    const v2, 0x104063c
-
-    invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/oneplus/aod/battery/BatteryMeterView;->mSlotBattery:Ljava/lang/String;
 
     iget-object v2, p0, Lcom/oneplus/aod/battery/BatteryMeterView;->mDrawable:Lcom/oneplus/aod/battery/BatteryMeterDrawable;
 
@@ -203,7 +191,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0900e6
+    const v1, 0x7f0900e7
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -222,14 +210,6 @@
 
     invoke-virtual {v0}, Lcom/oneplus/aod/battery/BatteryMeterDrawable;->startListening()V
 
-    iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryMeterView;->mDrawable:Lcom/oneplus/aod/battery/BatteryMeterDrawable;
-
-    invoke-virtual {v0}, Lcom/oneplus/aod/battery/BatteryMeterDrawable;->getShowPercentage()Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/oneplus/aod/battery/BatteryMeterView;->mShowPercentage:Z
-
     invoke-direct {p0}, Lcom/oneplus/aod/battery/BatteryMeterView;->updateBatteryMeterVisibility()V
 
     invoke-virtual {p0}, Lcom/oneplus/aod/battery/BatteryMeterView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -244,7 +224,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f060071
+    const v2, 0x7f060070
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -258,7 +238,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f060070
+    const v2, 0x7f06006f
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -320,17 +300,19 @@
 
     iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryMeterView;->mPercentage:Landroid/widget/TextView;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-static {}, Ljava/text/NumberFormat;->getPercentInstance()Ljava/text/NumberFormat;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v1
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    int-to-float v2, p1
 
-    const-string v2, "%"
+    const/high16 v3, 0x42c80000    # 100.0f
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    div-float/2addr v2, v3
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    float-to-double v2, v2
+
+    invoke-virtual {v1, v2, v3}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
 
     move-result-object v1
 
@@ -431,18 +413,6 @@
 
 .method public onPowerSaveChanged(Z)V
     .locals 0
-
-    return-void
-.end method
-
-.method public setBatteryController(Lcom/oneplus/aod/battery/BatteryController;)V
-    .locals 1
-
-    iput-object p1, p0, Lcom/oneplus/aod/battery/BatteryMeterView;->mBatteryController:Lcom/oneplus/aod/battery/BatteryController;
-
-    iget-object v0, p0, Lcom/oneplus/aod/battery/BatteryMeterView;->mDrawable:Lcom/oneplus/aod/battery/BatteryMeterDrawable;
-
-    invoke-virtual {v0, p1}, Lcom/oneplus/aod/battery/BatteryMeterDrawable;->setBatteryController(Lcom/oneplus/aod/battery/BatteryController;)V
 
     return-void
 .end method

@@ -73,7 +73,7 @@
     :cond_0
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$TriggerSensor;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$200(Lcom/oneplus/doze/DozeService;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$600(Lcom/oneplus/doze/DozeService;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -107,7 +107,7 @@
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$TriggerSensor;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$400(Lcom/oneplus/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$800(Lcom/oneplus/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v0
 
@@ -116,7 +116,7 @@
     :try_start_0
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$TriggerSensor;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1000(Lcom/oneplus/doze/DozeService;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1400(Lcom/oneplus/doze/DozeService;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -128,7 +128,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {p1}, Lcom/oneplus/doze/DozeService;->access$2200(Landroid/hardware/TriggerEvent;)Ljava/lang/String;
+    invoke-static {p1}, Lcom/oneplus/doze/DozeService;->access$2600(Landroid/hardware/TriggerEvent;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -162,7 +162,7 @@
 
     iget-object v4, p0, Lcom/oneplus/doze/DozeService$TriggerSensor;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v4}, Lcom/oneplus/doze/DozeService;->access$200(Lcom/oneplus/doze/DozeService;)Landroid/content/Context;
+    invoke-static {v4}, Lcom/oneplus/doze/DozeService;->access$600(Lcom/oneplus/doze/DozeService;)Landroid/content/Context;
 
     move-result-object v4
 
@@ -172,7 +172,7 @@
 
     iget-object v4, p0, Lcom/oneplus/doze/DozeService$TriggerSensor;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v4}, Lcom/oneplus/doze/DozeService;->access$2300(Lcom/oneplus/doze/DozeService;)Lcom/oneplus/doze/DozeParameters;
+    invoke-static {v4}, Lcom/oneplus/doze/DozeService;->access$2700(Lcom/oneplus/doze/DozeService;)Lcom/oneplus/doze/DozeParameters;
 
     move-result-object v4
 
@@ -189,7 +189,7 @@
 
     iget-object v1, p0, Lcom/oneplus/doze/DozeService$TriggerSensor;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v1}, Lcom/oneplus/doze/DozeService;->access$200(Lcom/oneplus/doze/DozeService;)Landroid/content/Context;
+    invoke-static {v1}, Lcom/oneplus/doze/DozeService;->access$600(Lcom/oneplus/doze/DozeService;)Landroid/content/Context;
 
     move-result-object v1
 
@@ -234,7 +234,7 @@
 
     iget v4, p0, Lcom/oneplus/doze/DozeService$TriggerSensor;->mPulseReason:I
 
-    invoke-static {v1, v4, v0}, Lcom/oneplus/doze/DozeService;->access$2400(Lcom/oneplus/doze/DozeService;IZ)V
+    invoke-static {v1, v4, v0}, Lcom/oneplus/doze/DozeService;->access$400(Lcom/oneplus/doze/DozeService;IZ)V
 
     invoke-virtual {p0}, Lcom/oneplus/doze/DozeService$TriggerSensor;->updateListener()V
 
@@ -244,7 +244,7 @@
 
     iget-object v1, p0, Lcom/oneplus/doze/DozeService$TriggerSensor;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v1}, Lcom/oneplus/doze/DozeService;->access$2500(Lcom/oneplus/doze/DozeService;)J
+    invoke-static {v1}, Lcom/oneplus/doze/DozeService;->access$2800(Lcom/oneplus/doze/DozeService;)J
 
     move-result-wide v6
 
@@ -252,7 +252,7 @@
 
     iget-object v1, p0, Lcom/oneplus/doze/DozeService$TriggerSensor;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v1}, Lcom/oneplus/doze/DozeService;->access$2300(Lcom/oneplus/doze/DozeService;)Lcom/oneplus/doze/DozeParameters;
+    invoke-static {v1}, Lcom/oneplus/doze/DozeService;->access$2700(Lcom/oneplus/doze/DozeService;)Lcom/oneplus/doze/DozeParameters;
 
     move-result-object v1
 
@@ -283,7 +283,7 @@
 
     iget-object v2, p0, Lcom/oneplus/doze/DozeService$TriggerSensor;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v2}, Lcom/oneplus/doze/DozeService;->access$200(Lcom/oneplus/doze/DozeService;)Landroid/content/Context;
+    invoke-static {v2}, Lcom/oneplus/doze/DozeService;->access$600(Lcom/oneplus/doze/DozeService;)Landroid/content/Context;
 
     move-result-object v2
 
@@ -294,7 +294,7 @@
     :cond_3
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$TriggerSensor;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$400(Lcom/oneplus/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$800(Lcom/oneplus/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v0
 
@@ -309,7 +309,7 @@
 
     iget-object v1, p0, Lcom/oneplus/doze/DozeService$TriggerSensor;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v1}, Lcom/oneplus/doze/DozeService;->access$400(Lcom/oneplus/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {v1}, Lcom/oneplus/doze/DozeService;->access$800(Lcom/oneplus/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v1
 
@@ -450,7 +450,7 @@
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$TriggerSensor;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$2100(Lcom/oneplus/doze/DozeService;)Landroid/hardware/SensorManager;
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$2500(Lcom/oneplus/doze/DozeService;)Landroid/hardware/SensorManager;
 
     move-result-object v0
 
@@ -464,7 +464,7 @@
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$TriggerSensor;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1000(Lcom/oneplus/doze/DozeService;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1400(Lcom/oneplus/doze/DozeService;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -495,7 +495,7 @@
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$TriggerSensor;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$2100(Lcom/oneplus/doze/DozeService;)Landroid/hardware/SensorManager;
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$2500(Lcom/oneplus/doze/DozeService;)Landroid/hardware/SensorManager;
 
     move-result-object v0
 
@@ -507,7 +507,7 @@
 
     iget-object v1, p0, Lcom/oneplus/doze/DozeService$TriggerSensor;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v1}, Lcom/oneplus/doze/DozeService;->access$1000(Lcom/oneplus/doze/DozeService;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/oneplus/doze/DozeService;->access$1400(Lcom/oneplus/doze/DozeService;)Ljava/lang/String;
 
     move-result-object v1
 

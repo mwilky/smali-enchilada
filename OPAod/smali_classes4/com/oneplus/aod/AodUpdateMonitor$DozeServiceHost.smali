@@ -78,14 +78,6 @@
     return-void
 .end method
 
-.method static synthetic access$3500(Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->removeWindow()V
-
-    return-void
-.end method
-
 .method static synthetic access$3600(Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;Ljava/lang/Runnable;)V
     .locals 0
 
@@ -119,7 +111,7 @@
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3000(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/doze/DozeScrimController;
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3100(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/doze/DozeScrimController;
 
     move-result-object v0
 
@@ -141,17 +133,17 @@
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1500(Lcom/oneplus/aod/AodUpdateMonitor;)Z
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1000(Lcom/oneplus/aod/AodUpdateMonitor;)Z
 
     move-result v0
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_4
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1200(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/widget/RelativeLayout;
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1300(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/widget/RelativeLayout;
 
     move-result-object v0
 
@@ -161,31 +153,63 @@
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1700(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/view/WindowManager;
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1300(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/widget/RelativeLayout;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/RelativeLayout;->isAttachedToWindow()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->mHandler:Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost$H;
+
+    iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
+
+    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1600(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/lang/Runnable;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost$H;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    const-string v0, "AodUpdateMonitor"
+
+    const-string v2, "mAodView has already been added to window, do not add it again."
+
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
+
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1800(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/view/WindowManager;
 
     move-result-object v0
 
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1200(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/widget/RelativeLayout;
+    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1300(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/widget/RelativeLayout;
 
     move-result-object v2
 
     iget-object v3, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v3}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1600(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/view/WindowManager$LayoutParams;
+    invoke-static {v3}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1700(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v3
 
     invoke-interface {v0, v2, v3}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
+    :goto_0
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v0, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1802(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
+    invoke-static {v0, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1902(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1200(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/widget/RelativeLayout;
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1300(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/widget/RelativeLayout;
 
     move-result-object v0
 
@@ -193,11 +217,11 @@
 
     move-result v0
 
-    or-int/lit16 v0, v0, 0xa02
+    or-int/lit16 v0, v0, 0x700
 
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1200(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/widget/RelativeLayout;
+    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1300(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/widget/RelativeLayout;
 
     move-result-object v2
 
@@ -205,7 +229,7 @@
 
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1200(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/widget/RelativeLayout;
+    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1300(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/widget/RelativeLayout;
 
     move-result-object v2
 
@@ -215,11 +239,21 @@
 
     const/4 v3, 0x1
 
-    invoke-static {v2, v3}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1502(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
+    invoke-static {v2, v3}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1002(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
 
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v2, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1102(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
+    invoke-static {v2, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1202(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
+
+    iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
+
+    invoke-static {v2, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1402(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
+
+    iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
+
+    const-string v4, ""
+
+    invoke-static {v2, v4}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1102(Lcom/oneplus/aod/AodUpdateMonitor;Ljava/lang/String;)Ljava/lang/String;
 
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
@@ -237,7 +271,7 @@
 
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1900(Lcom/oneplus/aod/AodUpdateMonitor;)V
+    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2000(Lcom/oneplus/aod/AodUpdateMonitor;)V
 
     new-instance v2, Landroid/content/IntentFilter;
 
@@ -249,7 +283,7 @@
 
     iget-object v4, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v4}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2000(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/lang/String;
+    invoke-static {v4}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2100(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -263,7 +297,7 @@
 
     iget-object v5, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v5}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2100(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/content/BroadcastReceiver;
+    invoke-static {v5}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2200(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/content/BroadcastReceiver;
 
     move-result-object v5
 
@@ -281,7 +315,7 @@
 
     iget-object v5, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v5}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2300(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/aod/VolumneController;
+    invoke-static {v5}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2400(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/aod/VolumneController;
 
     move-result-object v5
 
@@ -289,7 +323,7 @@
 
     move-result v5
 
-    invoke-static {v4, v5}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2202(Lcom/oneplus/aod/AodUpdateMonitor;I)I
+    invoke-static {v4, v5}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2302(Lcom/oneplus/aod/AodUpdateMonitor;I)I
 
     iget-object v4, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
@@ -297,20 +331,20 @@
 
     move-result v5
 
-    invoke-static {v4, v5}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2402(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
+    invoke-static {v4, v5}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2502(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
 
     iget-object v4, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     sget v5, Lcom/oneplus/aod/AodUpdateMonitor;->STATE_DOZING:I
 
-    invoke-static {v4, v5}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2500(Lcom/oneplus/aod/AodUpdateMonitor;I)V
+    invoke-static {v4, v5}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2600(Lcom/oneplus/aod/AodUpdateMonitor;I)V
 
     move v4, v1
 
-    :goto_0
+    :goto_1
     iget-object v5, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v5}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2600(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/util/ArrayList;
+    invoke-static {v5}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2700(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/util/ArrayList;
 
     move-result-object v5
 
@@ -318,11 +352,11 @@
 
     move-result v5
 
-    if-ge v4, v5, :cond_1
+    if-ge v4, v5, :cond_2
 
     iget-object v5, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v5}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2600(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/util/ArrayList;
+    invoke-static {v5}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2700(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/util/ArrayList;
 
     move-result-object v5
 
@@ -338,21 +372,21 @@
 
     check-cast v5, Lcom/oneplus/aod/AodUpdateMonitorCallback;
 
-    if-eqz v5, :cond_0
+    if-eqz v5, :cond_1
 
     invoke-virtual {v5}, Lcom/oneplus/aod/AodUpdateMonitorCallback;->onStartDozing()V
 
-    :cond_0
+    :cond_1
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_1
+    :cond_2
     iget-object v4, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     iget-object v5, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v5}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2800(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/android/internal/widget/LockPatternUtils;
+    invoke-static {v5}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2900(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/android/internal/widget/LockPatternUtils;
 
     move-result-object v5
 
@@ -366,30 +400,30 @@
 
     move-result v5
 
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_3
 
-    goto :goto_1
-
-    :cond_2
-    move v3, v1
-
-    :goto_1
-    invoke-static {v4, v3}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2702(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
+    goto :goto_2
 
     :cond_3
+    move v3, v1
+
+    :goto_2
+    invoke-static {v4, v3}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2802(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
+
+    :cond_4
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     invoke-static {}, Lcom/oneplus/aod/Utils;->isAlwaysOnEnabled()Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v0, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2900(Lcom/oneplus/aod/AodUpdateMonitor;Z)V
+    invoke-static {v0, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3000(Lcom/oneplus/aod/AodUpdateMonitor;Z)V
 
-    :cond_4
+    :cond_5
     return-void
 .end method
 
@@ -398,7 +432,7 @@
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1500(Lcom/oneplus/aod/AodUpdateMonitor;)Z
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1000(Lcom/oneplus/aod/AodUpdateMonitor;)Z
 
     move-result v0
 
@@ -408,7 +442,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1502(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
+    invoke-static {v0, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1002(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
@@ -416,11 +450,11 @@
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v0, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3102(Lcom/oneplus/aod/AodUpdateMonitor;I)I
+    invoke-static {v0, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3202(Lcom/oneplus/aod/AodUpdateMonitor;I)I
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3200(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3300(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;
 
     move-result-object v0
 
@@ -428,7 +462,7 @@
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3300(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/app/PendingIntent;
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3400(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/app/PendingIntent;
 
     move-result-object v0
 
@@ -436,13 +470,13 @@
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3400(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/app/AlarmManager;
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3500(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/app/AlarmManager;
 
     move-result-object v0
 
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3300(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/app/PendingIntent;
+    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3400(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/app/PendingIntent;
 
     move-result-object v2
 
@@ -452,7 +486,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static {v0, v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3302(Lcom/oneplus/aod/AodUpdateMonitor;Landroid/app/PendingIntent;)Landroid/app/PendingIntent;
+    invoke-static {v0, v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3402(Lcom/oneplus/aod/AodUpdateMonitor;Landroid/app/PendingIntent;)Landroid/app/PendingIntent;
 
     :cond_0
     move v0, v1
@@ -460,7 +494,7 @@
     :goto_0
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2600(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/util/ArrayList;
+    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2700(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/util/ArrayList;
 
     move-result-object v2
 
@@ -472,7 +506,7 @@
 
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2600(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/util/ArrayList;
+    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2700(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/util/ArrayList;
 
     move-result-object v2
 
@@ -500,7 +534,7 @@
     :cond_2
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1900(Lcom/oneplus/aod/AodUpdateMonitor;)V
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2000(Lcom/oneplus/aod/AodUpdateMonitor;)V
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
@@ -524,7 +558,7 @@
 
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2100(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/content/BroadcastReceiver;
+    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2200(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/content/BroadcastReceiver;
 
     move-result-object v2
 
@@ -534,11 +568,11 @@
 
     sget v2, Lcom/oneplus/aod/AodUpdateMonitor;->STATE_IDLE:I
 
-    invoke-static {v0, v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2500(Lcom/oneplus/aod/AodUpdateMonitor;I)V
+    invoke-static {v0, v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2600(Lcom/oneplus/aod/AodUpdateMonitor;I)V
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v0, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1302(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
+    invoke-static {v0, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1402(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
 
     const/4 v0, 0x0
 
@@ -550,7 +584,7 @@
 
     iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1000(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1100(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -567,7 +601,7 @@
     goto :goto_1
 
     :cond_3
-    const/16 v1, 0x32
+    const/16 v1, 0x46
 
     :goto_1
     move v0, v1
@@ -575,82 +609,17 @@
     :cond_4
     iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->mHandler:Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost$H;
 
-    new-instance v2, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost$2;
+    iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-direct {v2, p0}, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost$2;-><init>(Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;)V
+    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1600(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/lang/Runnable;
+
+    move-result-object v2
 
     int-to-long v3, v0
 
     invoke-virtual {v1, v2, v3, v4}, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost$H;->postDelayed(Ljava/lang/Runnable;J)Z
 
     :cond_5
-    return-void
-.end method
-
-.method private removeWindow()V
-    .locals 3
-
-    iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
-
-    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1800(Lcom/oneplus/aod/AodUpdateMonitor;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
-
-    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1200(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/widget/RelativeLayout;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/RelativeLayout;->getSystemUiVisibility()I
-
-    move-result v0
-
-    and-int/lit16 v0, v0, -0xe07
-
-    iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
-
-    invoke-static {v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1200(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/widget/RelativeLayout;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/widget/RelativeLayout;->setSystemUiVisibility(I)V
-
-    iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
-
-    invoke-static {v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1700(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/view/WindowManager;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
-
-    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1200(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/widget/RelativeLayout;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2}, Landroid/view/WindowManager;->removeViewImmediate(Landroid/view/View;)V
-
-    iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
-
-    const/4 v2, 0x1
-
-    invoke-static {v1, v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1802(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
-
-    iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
-
-    invoke-static {v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1200(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/widget/RelativeLayout;
-
-    move-result-object v1
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->setAlpha(F)V
-
     return-void
 .end method
 
@@ -911,7 +880,7 @@
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1400(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/aod/battery/BatteryControllerImpl;
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1500(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/aod/battery/BatteryControllerImpl;
 
     move-result-object v0
 
@@ -919,7 +888,7 @@
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1400(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/aod/battery/BatteryControllerImpl;
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1500(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/aod/battery/BatteryControllerImpl;
 
     move-result-object v0
 
@@ -992,6 +961,23 @@
 .method public onWakingUp(Ljava/lang/String;)V
     .locals 4
 
+    iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
+
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1000(Lcom/oneplus/aod/AodUpdateMonitor;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string v0, "AodUpdateMonitor"
+
+    const-string v1, "onWakingUp: not dozing, don\'t set wake up state"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_0
     const-string v0, "AodUpdateMonitor"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1012,60 +998,66 @@
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v0, p1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1002(Lcom/oneplus/aod/AodUpdateMonitor;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1102(Lcom/oneplus/aod/AodUpdateMonitor;Ljava/lang/String;)Ljava/lang/String;
 
-    const/4 v0, 0x0
+    invoke-static {}, Lcom/oneplus/aod/Utils;->isCustomFingerprint()Z
 
-    const/4 v1, 0x1
+    move-result v0
 
-    if-eqz p1, :cond_0
+    const/4 v1, 0x0
 
-    const-string v2, "FINGERPRINT"
+    const/4 v2, 0x1
 
-    invoke-virtual {p1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    if-eqz v0, :cond_1
 
-    move-result v2
+    if-eqz p1, :cond_1
 
-    if-eqz v2, :cond_0
+    const-string v0, "FINGERPRINT"
 
-    iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
+    invoke-virtual {p1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    invoke-static {v2, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1102(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
+    move-result v0
 
-    const-string v2, "WALLPAPER"
-
-    invoke-virtual {p1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
-
-    invoke-virtual {v2, v0}, Lcom/oneplus/aod/AodUpdateMonitor;->setDisplayMode(I)V
-
-    iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
-
-    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1200(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/widget/RelativeLayout;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v2, v3}, Landroid/widget/RelativeLayout;->setAlpha(F)V
-
-    :cond_0
-    iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
-
-    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$900(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/aod/DisplayViewManager;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Lcom/oneplus/aod/DisplayViewManager;->setState(I)V
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v0, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1302(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
+    invoke-static {v0, v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1202(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
+
+    const-string v0, "WALLPAPER"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
+
+    invoke-virtual {v0, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->setDisplayMode(I)V
+
+    iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
+
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1300(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/widget/RelativeLayout;
+
+    move-result-object v0
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout;->setAlpha(F)V
+
+    :cond_1
+    iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
+
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$900(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/aod/DisplayViewManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Lcom/oneplus/aod/DisplayViewManager;->setState(I)V
+
+    iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
+
+    invoke-static {v0, v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1402(Lcom/oneplus/aod/AodUpdateMonitor;Z)Z
 
     return-void
 .end method

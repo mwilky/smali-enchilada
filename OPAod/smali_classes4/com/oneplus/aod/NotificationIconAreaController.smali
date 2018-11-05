@@ -142,7 +142,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f060234
+    const v1, 0x7f060232
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -150,7 +150,7 @@
 
     iput v1, p0, Lcom/oneplus/aod/NotificationIconAreaController;->mIconSize:I
 
-    const v1, 0x7f060232
+    const v1, 0x7f060230
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -273,7 +273,7 @@
 .method protected initializeNotificationAreaViews(Landroid/content/Context;Landroid/view/ViewGroup;)V
     .locals 2
 
-    const v0, 0x7f09003c
+    const v0, 0x7f09003d
 
     invoke-virtual {p2, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -281,7 +281,7 @@
 
     iput-object v0, p0, Lcom/oneplus/aod/NotificationIconAreaController;->mBatteryEmptyView:Landroid/view/View;
 
-    const v0, 0x7f0900b5
+    const v0, 0x7f0900b6
 
     invoke-virtual {p2, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -289,7 +289,7 @@
 
     iput-object v0, p0, Lcom/oneplus/aod/NotificationIconAreaController;->mNotificationEmptyView:Landroid/view/View;
 
-    const v0, 0x7f0900b4
+    const v0, 0x7f0900b5
 
     invoke-virtual {p2, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -301,7 +301,7 @@
 
     iget-object v0, p0, Lcom/oneplus/aod/NotificationIconAreaController;->mNotificationIconArea:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f0900b1
+    const v1, 0x7f0900b2
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -313,7 +313,7 @@
 
     iget-object v0, p0, Lcom/oneplus/aod/NotificationIconAreaController;->mNotificationIconArea:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f0900a8
+    const v1, 0x7f0900a9
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -524,7 +524,7 @@
 
     move-result v5
 
-    const v7, 0x7f060232
+    const v7, 0x7f060230
 
     const/4 v8, 0x0
 

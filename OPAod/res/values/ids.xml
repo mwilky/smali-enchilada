@@ -48,6 +48,7 @@
     <item type="id" name="back_button">false</item>
     <item type="id" name="background">false</item>
     <item type="id" name="battery">false</item>
+    <item type="id" name="battery_charge">false</item>
     <item type="id" name="battery_container">false</item>
     <item type="id" name="battery_dash_charge">false</item>
     <item type="id" name="battery_empty_view">false</item>

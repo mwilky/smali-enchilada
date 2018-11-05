@@ -8,6 +8,7 @@
     value = {
         Lcom/oneplus/doze/DozeService$LightCheck;,
         Lcom/oneplus/doze/DozeService$ProximityCheck;,
+        Lcom/oneplus/doze/DozeService$CustomProximityCheck;,
         Lcom/oneplus/doze/DozeService$MotionCheck;,
         Lcom/oneplus/doze/DozeService$PickupCheck;,
         Lcom/oneplus/doze/DozeService$TriggerSensor;
@@ -66,6 +67,8 @@
 
 .field private mMotion:Lcom/oneplus/doze/DozeService$MotionCheck;
 
+.field private mMotionResult:I
+
 .field private mNotificationPulseTime:J
 
 .field private mPickUp:Lcom/oneplus/doze/DozeService$PickupCheck;
@@ -75,6 +78,10 @@
 .field private mPowerManager:Landroid/os/PowerManager;
 
 .field private mPowerSaveActive:Z
+
+.field private mProximity:Lcom/oneplus/doze/DozeService$CustomProximityCheck;
+
+.field private mProximityResult:I
 
 .field private mPulsing:Z
 
@@ -143,6 +150,10 @@
 
     iput-object v0, p0, Lcom/oneplus/doze/DozeService;->mHandler:Landroid/os/Handler;
 
+    iput v4, p0, Lcom/oneplus/doze/DozeService;->mProximityResult:I
+
+    iput v4, p0, Lcom/oneplus/doze/DozeService;->mMotionResult:I
+
     new-array v0, v1, [I
 
     const/16 v2, 0x47
@@ -163,23 +174,23 @@
 
     iput-object v0, p0, Lcom/oneplus/doze/DozeService;->mModeClient:Lvendor/oneplus/hardware/display/V1_0/IOneplusDisplay;
 
-    new-instance v0, Lcom/oneplus/doze/DozeService$3;
+    new-instance v0, Lcom/oneplus/doze/DozeService$4;
 
-    invoke-direct {v0, p0}, Lcom/oneplus/doze/DozeService$3;-><init>(Lcom/oneplus/doze/DozeService;)V
+    invoke-direct {v0, p0}, Lcom/oneplus/doze/DozeService$4;-><init>(Lcom/oneplus/doze/DozeService;)V
 
     iput-object v0, p0, Lcom/oneplus/doze/DozeService;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
-    new-instance v0, Lcom/oneplus/doze/DozeService$4;
+    new-instance v0, Lcom/oneplus/doze/DozeService$5;
 
     iget-object v2, p0, Lcom/oneplus/doze/DozeService;->mHandler:Landroid/os/Handler;
 
-    invoke-direct {v0, p0, v2}, Lcom/oneplus/doze/DozeService$4;-><init>(Lcom/oneplus/doze/DozeService;Landroid/os/Handler;)V
+    invoke-direct {v0, p0, v2}, Lcom/oneplus/doze/DozeService$5;-><init>(Lcom/oneplus/doze/DozeService;Landroid/os/Handler;)V
 
     iput-object v0, p0, Lcom/oneplus/doze/DozeService;->mSettingsObserver:Landroid/database/ContentObserver;
 
-    new-instance v0, Lcom/oneplus/doze/DozeService$5;
+    new-instance v0, Lcom/oneplus/doze/DozeService$6;
 
-    invoke-direct {v0, p0}, Lcom/oneplus/doze/DozeService$5;-><init>(Lcom/oneplus/doze/DozeService;)V
+    invoke-direct {v0, p0}, Lcom/oneplus/doze/DozeService$6;-><init>(Lcom/oneplus/doze/DozeService;)V
 
     iput-object v0, p0, Lcom/oneplus/doze/DozeService;->mHostCallback:Lcom/oneplus/doze/DozeHost$Callback;
 
@@ -194,7 +205,39 @@
     return-void
 .end method
 
-.method static synthetic access$1000(Lcom/oneplus/doze/DozeService;)Ljava/lang/String;
+.method static synthetic access$1000(Lcom/oneplus/doze/DozeService;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/oneplus/doze/DozeService;->mDreaming:Z
+
+    return v0
+.end method
+
+.method static synthetic access$1100(Lcom/oneplus/doze/DozeService;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/oneplus/doze/DozeService;->turnDisplayOn()V
+
+    return-void
+.end method
+
+.method static synthetic access$1200(Lcom/oneplus/doze/DozeService;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/oneplus/doze/DozeService;->reregisterAllSensors()V
+
+    return-void
+.end method
+
+.method static synthetic access$1300(Lcom/oneplus/doze/DozeService;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/oneplus/doze/DozeService;->turnDisplayOff()V
+
+    return-void
+.end method
+
+.method static synthetic access$1400(Lcom/oneplus/doze/DozeService;)Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService;->mTag:Ljava/lang/String;
@@ -202,7 +245,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1100(Lcom/oneplus/doze/DozeService;I)V
+.method static synthetic access$1500(Lcom/oneplus/doze/DozeService;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/oneplus/doze/DozeService;->requestPulse(I)V
@@ -210,7 +253,7 @@
     return-void
 .end method
 
-.method static synthetic access$1200(Lcom/oneplus/doze/DozeService;)Z
+.method static synthetic access$1600(Lcom/oneplus/doze/DozeService;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/oneplus/doze/DozeService;->mCarMode:Z
@@ -218,7 +261,7 @@
     return v0
 .end method
 
-.method static synthetic access$1202(Lcom/oneplus/doze/DozeService;Z)Z
+.method static synthetic access$1602(Lcom/oneplus/doze/DozeService;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/oneplus/doze/DozeService;->mCarMode:Z
@@ -226,7 +269,7 @@
     return p1
 .end method
 
-.method static synthetic access$1300(Lcom/oneplus/doze/DozeService;)V
+.method static synthetic access$1700(Lcom/oneplus/doze/DozeService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/oneplus/doze/DozeService;->finishForCarMode()V
@@ -234,7 +277,7 @@
     return-void
 .end method
 
-.method static synthetic access$1400(Lcom/oneplus/doze/DozeService;)Z
+.method static synthetic access$1800(Lcom/oneplus/doze/DozeService;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/oneplus/doze/DozeService;->mPowerSaveActive:Z
@@ -242,7 +285,7 @@
     return v0
 .end method
 
-.method static synthetic access$1402(Lcom/oneplus/doze/DozeService;Z)Z
+.method static synthetic access$1802(Lcom/oneplus/doze/DozeService;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/oneplus/doze/DozeService;->mPowerSaveActive:Z
@@ -250,7 +293,7 @@
     return p1
 .end method
 
-.method static synthetic access$1500(Lcom/oneplus/doze/DozeService;)Z
+.method static synthetic access$1900(Lcom/oneplus/doze/DozeService;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/oneplus/doze/DozeService;->mSupportCustomFingerprint:Z
@@ -258,7 +301,15 @@
     return v0
 .end method
 
-.method static synthetic access$1600(Lcom/oneplus/doze/DozeService;)V
+.method static synthetic access$200(Lcom/oneplus/doze/DozeService;)I
+    .locals 1
+
+    iget v0, p0, Lcom/oneplus/doze/DozeService;->mProximityResult:I
+
+    return v0
+.end method
+
+.method static synthetic access$2000(Lcom/oneplus/doze/DozeService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/oneplus/doze/DozeService;->requestNotificationPulse()V
@@ -266,7 +317,15 @@
     return-void
 .end method
 
-.method static synthetic access$1700(Lcom/oneplus/doze/DozeService;)V
+.method static synthetic access$202(Lcom/oneplus/doze/DozeService;I)I
+    .locals 0
+
+    iput p1, p0, Lcom/oneplus/doze/DozeService;->mProximityResult:I
+
+    return p1
+.end method
+
+.method static synthetic access$2100(Lcom/oneplus/doze/DozeService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/oneplus/doze/DozeService;->requestThreeKeyStatePulse()V
@@ -274,7 +333,7 @@
     return-void
 .end method
 
-.method static synthetic access$1800(Lcom/oneplus/doze/DozeService;)V
+.method static synthetic access$2200(Lcom/oneplus/doze/DozeService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/oneplus/doze/DozeService;->finishToSavePower()V
@@ -282,7 +341,7 @@
     return-void
 .end method
 
-.method static synthetic access$1900(Lcom/oneplus/doze/DozeService;)V
+.method static synthetic access$2300(Lcom/oneplus/doze/DozeService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/oneplus/doze/DozeService;->checkLightSensor()V
@@ -290,15 +349,7 @@
     return-void
 .end method
 
-.method static synthetic access$200(Lcom/oneplus/doze/DozeService;)Landroid/content/Context;
-    .locals 1
-
-    iget-object v0, p0, Lcom/oneplus/doze/DozeService;->mContext:Landroid/content/Context;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2000(Lcom/oneplus/doze/DozeService;)Lcom/oneplus/doze/DozeService$PickupCheck;
+.method static synthetic access$2400(Lcom/oneplus/doze/DozeService;)Lcom/oneplus/doze/DozeService$PickupCheck;
     .locals 1
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService;->mPickUp:Lcom/oneplus/doze/DozeService$PickupCheck;
@@ -306,7 +357,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2100(Lcom/oneplus/doze/DozeService;)Landroid/hardware/SensorManager;
+.method static synthetic access$2500(Lcom/oneplus/doze/DozeService;)Landroid/hardware/SensorManager;
     .locals 1
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService;->mSensorManager:Landroid/hardware/SensorManager;
@@ -314,7 +365,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2200(Landroid/hardware/TriggerEvent;)Ljava/lang/String;
+.method static synthetic access$2600(Landroid/hardware/TriggerEvent;)Ljava/lang/String;
     .locals 1
 
     invoke-static {p0}, Lcom/oneplus/doze/DozeService;->triggerEventToString(Landroid/hardware/TriggerEvent;)Ljava/lang/String;
@@ -324,7 +375,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2300(Lcom/oneplus/doze/DozeService;)Lcom/oneplus/doze/DozeParameters;
+.method static synthetic access$2700(Lcom/oneplus/doze/DozeService;)Lcom/oneplus/doze/DozeParameters;
     .locals 1
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService;->mDozeParameters:Lcom/oneplus/doze/DozeParameters;
@@ -332,15 +383,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2400(Lcom/oneplus/doze/DozeService;IZ)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lcom/oneplus/doze/DozeService;->requestPulse(IZ)V
-
-    return-void
-.end method
-
-.method static synthetic access$2500(Lcom/oneplus/doze/DozeService;)J
+.method static synthetic access$2800(Lcom/oneplus/doze/DozeService;)J
     .locals 2
 
     iget-wide v0, p0, Lcom/oneplus/doze/DozeService;->mNotificationPulseTime:J
@@ -348,7 +391,7 @@
     return-wide v0
 .end method
 
-.method static synthetic access$2600(Lcom/oneplus/doze/DozeService;)Landroid/os/Handler;
+.method static synthetic access$2900(Lcom/oneplus/doze/DozeService;)Landroid/os/Handler;
     .locals 1
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService;->mHandler:Landroid/os/Handler;
@@ -356,7 +399,15 @@
     return-object v0
 .end method
 
-.method static synthetic access$2700(Lcom/oneplus/doze/DozeService;)I
+.method static synthetic access$300(Lcom/oneplus/doze/DozeService;)I
+    .locals 1
+
+    iget v0, p0, Lcom/oneplus/doze/DozeService;->mMotionResult:I
+
+    return v0
+.end method
+
+.method static synthetic access$3000(Lcom/oneplus/doze/DozeService;)I
     .locals 1
 
     iget v0, p0, Lcom/oneplus/doze/DozeService;->mReason:I
@@ -364,7 +415,15 @@
     return v0
 .end method
 
-.method static synthetic access$2800(Lcom/oneplus/doze/DozeService;)Lcom/oneplus/doze/DozeService$MotionCheck;
+.method static synthetic access$302(Lcom/oneplus/doze/DozeService;I)I
+    .locals 0
+
+    iput p1, p0, Lcom/oneplus/doze/DozeService;->mMotionResult:I
+
+    return p1
+.end method
+
+.method static synthetic access$3100(Lcom/oneplus/doze/DozeService;)Lcom/oneplus/doze/DozeService$MotionCheck;
     .locals 1
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService;->mMotion:Lcom/oneplus/doze/DozeService$MotionCheck;
@@ -372,15 +431,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$300(Lcom/oneplus/doze/DozeService;)Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/oneplus/doze/DozeService;->mPulsing:Z
-
-    return v0
-.end method
-
-.method static synthetic access$3002(Lcom/oneplus/doze/DozeService;I)I
+.method static synthetic access$3302(Lcom/oneplus/doze/DozeService;I)I
     .locals 0
 
     iput p1, p0, Lcom/oneplus/doze/DozeService;->mScreenMode:I
@@ -388,15 +439,7 @@
     return p1
 .end method
 
-.method static synthetic access$302(Lcom/oneplus/doze/DozeService;Z)Z
-    .locals 0
-
-    iput-boolean p1, p0, Lcom/oneplus/doze/DozeService;->mPulsing:Z
-
-    return p1
-.end method
-
-.method static synthetic access$3100(Lcom/oneplus/doze/DozeService;I)V
+.method static synthetic access$3400(Lcom/oneplus/doze/DozeService;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/oneplus/doze/DozeService;->setDisplayMode(I)V
@@ -404,7 +447,39 @@
     return-void
 .end method
 
-.method static synthetic access$400(Lcom/oneplus/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
+.method static synthetic access$400(Lcom/oneplus/doze/DozeService;IZ)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lcom/oneplus/doze/DozeService;->requestPulse(IZ)V
+
+    return-void
+.end method
+
+.method static synthetic access$600(Lcom/oneplus/doze/DozeService;)Landroid/content/Context;
+    .locals 1
+
+    iget-object v0, p0, Lcom/oneplus/doze/DozeService;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$700(Lcom/oneplus/doze/DozeService;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/oneplus/doze/DozeService;->mPulsing:Z
+
+    return v0
+.end method
+
+.method static synthetic access$702(Lcom/oneplus/doze/DozeService;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/oneplus/doze/DozeService;->mPulsing:Z
+
+    return p1
+.end method
+
+.method static synthetic access$800(Lcom/oneplus/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
     .locals 1
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -412,7 +487,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$500(Lcom/oneplus/doze/DozeService;I)V
+.method static synthetic access$900(Lcom/oneplus/doze/DozeService;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/oneplus/doze/DozeService;->continuePulsing(I)V
@@ -420,47 +495,91 @@
     return-void
 .end method
 
-.method static synthetic access$600(Lcom/oneplus/doze/DozeService;)Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/oneplus/doze/DozeService;->mDreaming:Z
-
-    return v0
-.end method
-
-.method static synthetic access$700(Lcom/oneplus/doze/DozeService;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/oneplus/doze/DozeService;->turnDisplayOn()V
-
-    return-void
-.end method
-
-.method static synthetic access$800(Lcom/oneplus/doze/DozeService;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/oneplus/doze/DozeService;->reregisterAllSensors()V
-
-    return-void
-.end method
-
-.method static synthetic access$900(Lcom/oneplus/doze/DozeService;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/oneplus/doze/DozeService;->turnDisplayOff()V
-
-    return-void
-.end method
-
 .method private checkLightSensor()V
     .locals 1
 
-    new-instance v0, Lcom/oneplus/doze/DozeService$6;
+    new-instance v0, Lcom/oneplus/doze/DozeService$7;
 
-    invoke-direct {v0, p0}, Lcom/oneplus/doze/DozeService$6;-><init>(Lcom/oneplus/doze/DozeService;)V
+    invoke-direct {v0, p0}, Lcom/oneplus/doze/DozeService$7;-><init>(Lcom/oneplus/doze/DozeService;)V
 
-    invoke-virtual {v0}, Lcom/oneplus/doze/DozeService$6;->check()V
+    invoke-virtual {v0}, Lcom/oneplus/doze/DozeService$7;->check()V
 
+    return-void
+.end method
+
+.method private checkShouldPulseAfterScreenTurnOff()V
+    .locals 3
+
+    invoke-static {}, Lcom/oneplus/aod/Utils;->isCustomFingerprint()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/oneplus/doze/DozeService;->mFingerprintManager:Landroid/hardware/fingerprint/FingerprintManager;
+
+    invoke-virtual {v1, v0}, Landroid/hardware/fingerprint/FingerprintManager;->hasEnrolledFingerprints(I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    return-void
+
+    :cond_1
+    invoke-static {}, Lcom/oneplus/aod/Utils;->isMotionAwakeOn()Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    iget-object v1, p0, Lcom/oneplus/doze/DozeService;->mContext:Landroid/content/Context;
+
+    invoke-static {v1, v0}, Lcom/oneplus/aod/Utils;->isSingleTapEnabled(Landroid/content/Context;I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return-void
+
+    :cond_2
+    iget-boolean v1, p0, Lcom/oneplus/doze/DozeService;->mPulsing:Z
+
+    if-nez v1, :cond_3
+
+    const-string v1, "DozeService"
+
+    const-string v2, "requestPulse when startDozing"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v1, p0, Lcom/oneplus/doze/DozeService;->mContext:Landroid/content/Context;
+
+    invoke-static {v1}, Lcom/oneplus/aod/AodUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/oneplus/aod/AodUpdateMonitor;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/oneplus/aod/AodUpdateMonitor;->getDisplayViewManager()Lcom/oneplus/aod/DisplayViewManager;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2}, Lcom/oneplus/aod/DisplayViewManager;->setState(I)V
+
+    const/4 v1, 0x3
+
+    invoke-direct {p0, v1, v2}, Lcom/oneplus/doze/DozeService;->requestPulse(IZ)V
+
+    :cond_3
     return-void
 .end method
 
@@ -497,9 +616,9 @@
     :cond_1
     iget-object v0, p0, Lcom/oneplus/doze/DozeService;->mHost:Lcom/oneplus/doze/DozeHost;
 
-    new-instance v1, Lcom/oneplus/doze/DozeService$2;
+    new-instance v1, Lcom/oneplus/doze/DozeService$3;
 
-    invoke-direct {v1, p0}, Lcom/oneplus/doze/DozeService$2;-><init>(Lcom/oneplus/doze/DozeService;)V
+    invoke-direct {v1, p0}, Lcom/oneplus/doze/DozeService$3;-><init>(Lcom/oneplus/doze/DozeService;)V
 
     invoke-interface {v0, v1, p1}, Lcom/oneplus/doze/DozeHost;->pulseWhileDozing(Lcom/oneplus/doze/DozeHost$PulseCallback;I)V
 
@@ -732,7 +851,7 @@
 
     iget-boolean v0, p0, Lcom/oneplus/doze/DozeService;->mSupportCustomFingerprint:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService;->mContext:Landroid/content/Context;
 
@@ -740,36 +859,45 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService;->mMotion:Lcom/oneplus/doze/DozeService$MotionCheck;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService;->mMotion:Lcom/oneplus/doze/DozeService$MotionCheck;
 
     invoke-virtual {v0, p1}, Lcom/oneplus/doze/DozeService$MotionCheck;->setListening(Z)V
 
+    :cond_0
+    iget-object v0, p0, Lcom/oneplus/doze/DozeService;->mProximity:Lcom/oneplus/doze/DozeService$CustomProximityCheck;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/oneplus/doze/DozeService;->mProximity:Lcom/oneplus/doze/DozeService$CustomProximityCheck;
+
+    invoke-virtual {v0, p1}, Lcom/oneplus/doze/DozeService$CustomProximityCheck;->setListening(Z)V
+
     goto :goto_0
 
-    :cond_0
+    :cond_1
     iget-object v0, p0, Lcom/oneplus/doze/DozeService;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->isProximityDozeEnable(Landroid/content/Context;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService;->mPickUp:Lcom/oneplus/doze/DozeService$PickupCheck;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lcom/oneplus/doze/DozeService;->mPickUp:Lcom/oneplus/doze/DozeService$PickupCheck;
 
     invoke-virtual {v0, p1}, Lcom/oneplus/doze/DozeService$PickupCheck;->setListening(Z)V
 
-    :cond_1
+    :cond_2
     :goto_0
     invoke-direct {p0, p1}, Lcom/oneplus/doze/DozeService;->listenForNotifications(Z)V
 
@@ -814,7 +942,7 @@
 .method private requestPulse(I)V
     .locals 1
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     invoke-direct {p0, p1, v0}, Lcom/oneplus/doze/DozeService;->requestPulse(IZ)V
 
@@ -822,7 +950,7 @@
 .end method
 
 .method private requestPulse(IZ)V
-    .locals 10
+    .locals 4
 
     const-string v0, "DozeService"
 
@@ -874,113 +1002,52 @@
 
     iput p1, p0, Lcom/oneplus/doze/DozeService;->mReason:I
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    if-eq p1, v0, :cond_0
 
-    new-array v2, v1, [I
+    const/4 v1, 0x5
 
-    const/4 v3, 0x0
+    if-eq p1, v1, :cond_0
 
-    const/16 v4, 0x47
+    if-eqz p1, :cond_0
 
-    aput v4, v2, v3
-
-    invoke-static {v2}, Landroid/util/OpFeatures;->isSupport([I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    const/4 v2, 0x3
-
-    if-ne p1, v2, :cond_0
-
-    move v3, v1
-
-    nop
-
-    :cond_0
-    move v0, v3
-
-    :cond_1
-    if-eq p1, v1, :cond_2
-
-    const/4 v2, 0x5
-
-    if-eq p1, v2, :cond_2
-
-    if-eqz p1, :cond_2
-
-    if-eqz v0, :cond_3
-
-    :cond_2
-    iget-boolean v2, p0, Lcom/oneplus/doze/DozeService;->mPulsing:Z
-
-    if-eqz v2, :cond_3
-
-    iget-object v2, p0, Lcom/oneplus/doze/DozeService;->mContext:Landroid/content/Context;
-
-    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/oneplus/aod/AodUpdateMonitor;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Lcom/oneplus/aod/AodUpdateMonitor;->continePulse(I)V
-
-    :cond_3
-    iget-object v2, p0, Lcom/oneplus/doze/DozeService;->mHost:Lcom/oneplus/doze/DozeHost;
-
-    if-eqz v2, :cond_8
-
-    iget-boolean v2, p0, Lcom/oneplus/doze/DozeService;->mDreaming:Z
-
-    if-eqz v2, :cond_8
-
-    iget-boolean v2, p0, Lcom/oneplus/doze/DozeService;->mPulsing:Z
-
-    if-nez v2, :cond_8
-
-    iget-object v2, p0, Lcom/oneplus/doze/DozeService;->mContext:Landroid/content/Context;
-
-    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/oneplus/aod/AodUpdateMonitor;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->isAlwaysOnFired()Z
-
-    move-result v2
-
-    if-nez v2, :cond_4
-
-    iget-object v2, p0, Lcom/oneplus/doze/DozeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
-
-    invoke-virtual {v2}, Landroid/os/PowerManager$WakeLock;->acquire()V
-
-    :cond_4
-    iput-boolean v1, p0, Lcom/oneplus/doze/DozeService;->mPulsing:Z
-
-    iget-object v1, p0, Lcom/oneplus/doze/DozeService;->mDozeParameters:Lcom/oneplus/doze/DozeParameters;
-
-    invoke-virtual {v1}, Lcom/oneplus/doze/DozeParameters;->getProxCheckBeforePulse()Z
+    invoke-static {}, Lcom/oneplus/aod/Utils;->isCustomFingerprint()Z
 
     move-result v1
 
-    if-nez v1, :cond_5
+    if-eqz v1, :cond_0
 
-    invoke-direct {p0, p1}, Lcom/oneplus/doze/DozeService;->continuePulsing(I)V
+    const/4 v1, 0x3
 
-    return-void
+    if-ne p1, v1, :cond_1
 
-    :cond_5
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+    :cond_0
+    iget-boolean v1, p0, Lcom/oneplus/doze/DozeService;->mPulsing:Z
 
-    move-result-wide v8
+    if-eqz v1, :cond_1
 
-    if-eqz p2, :cond_6
+    iget-object v1, p0, Lcom/oneplus/doze/DozeService;->mContext:Landroid/content/Context;
 
-    invoke-direct {p0, p1}, Lcom/oneplus/doze/DozeService;->continuePulsing(I)V
+    invoke-static {v1}, Lcom/oneplus/aod/AodUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/oneplus/aod/AodUpdateMonitor;
 
-    :cond_6
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Lcom/oneplus/aod/AodUpdateMonitor;->continePulse(I)V
+
+    :cond_1
+    iget-object v1, p0, Lcom/oneplus/doze/DozeService;->mHost:Lcom/oneplus/doze/DozeHost;
+
+    if-eqz v1, :cond_7
+
+    iget-boolean v1, p0, Lcom/oneplus/doze/DozeService;->mDreaming:Z
+
+    if-eqz v1, :cond_7
+
+    iget-boolean v1, p0, Lcom/oneplus/doze/DozeService;->mPulsing:Z
+
+    if-nez v1, :cond_7
+
     iget-object v1, p0, Lcom/oneplus/doze/DozeService;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/oneplus/aod/AodUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/oneplus/aod/AodUpdateMonitor;
@@ -991,30 +1058,96 @@
 
     move-result v1
 
-    if-nez v1, :cond_7
+    if-nez v1, :cond_2
 
-    new-instance v1, Lcom/oneplus/doze/DozeService$1;
+    iget-object v1, p0, Lcom/oneplus/doze/DozeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    move-object v2, v1
+    invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    move-object v3, p0
+    :cond_2
+    iput-boolean v0, p0, Lcom/oneplus/doze/DozeService;->mPulsing:Z
 
-    move-wide v4, v8
+    iget-object v1, p0, Lcom/oneplus/doze/DozeService;->mDozeParameters:Lcom/oneplus/doze/DozeParameters;
 
-    move v6, p1
+    invoke-virtual {v1}, Lcom/oneplus/doze/DozeParameters;->getProxCheckBeforePulse()Z
 
-    move v7, p2
+    move-result v1
 
-    invoke-direct/range {v2 .. v7}, Lcom/oneplus/doze/DozeService$1;-><init>(Lcom/oneplus/doze/DozeService;JIZ)V
+    if-nez v1, :cond_3
 
-    invoke-virtual {v1}, Lcom/oneplus/doze/DozeService$1;->check()V
+    invoke-direct {p0, p1}, Lcom/oneplus/doze/DozeService;->continuePulsing(I)V
+
+    return-void
+
+    :cond_3
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v1
+
+    iget-object v3, p0, Lcom/oneplus/doze/DozeService;->mContext:Landroid/content/Context;
+
+    invoke-static {v3}, Lcom/oneplus/aod/AodUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/oneplus/aod/AodUpdateMonitor;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/oneplus/aod/AodUpdateMonitor;->isAlwaysOnFired()Z
+
+    move-result v3
+
+    if-nez v3, :cond_6
+
+    if-eqz p2, :cond_6
+
+    invoke-static {}, Lcom/oneplus/aod/Utils;->isCustomFingerprint()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_5
+
+    iget v3, p0, Lcom/oneplus/doze/DozeService;->mProximityResult:I
+
+    if-ne v3, v0, :cond_4
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/oneplus/doze/DozeService;->mPulsing:Z
+
+    iget-object v0, p0, Lcom/oneplus/doze/DozeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
+
+    iget-object v0, p0, Lcom/oneplus/doze/DozeService;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/oneplus/aod/AodUpdateMonitor;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->getDisplayViewManager()Lcom/oneplus/aod/DisplayViewManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/oneplus/aod/DisplayViewManager;->resetViewState()V
+
+    return-void
+
+    :cond_4
+    invoke-direct {p0, p1}, Lcom/oneplus/doze/DozeService;->continuePulsing(I)V
 
     goto :goto_0
 
-    :cond_7
+    :cond_5
+    new-instance v0, Lcom/oneplus/doze/DozeService$2;
+
+    invoke-direct {v0, p0, v1, v2, p1}, Lcom/oneplus/doze/DozeService$2;-><init>(Lcom/oneplus/doze/DozeService;JI)V
+
+    invoke-virtual {v0}, Lcom/oneplus/doze/DozeService$2;->check()V
+
+    goto :goto_0
+
+    :cond_6
     invoke-direct {p0, p1}, Lcom/oneplus/doze/DozeService;->continuePulsing(I)V
 
-    :cond_8
+    :cond_7
     :goto_0
     return-void
 .end method
@@ -1431,6 +1564,12 @@
 
     iput-object v1, p0, Lcom/oneplus/doze/DozeService;->mMotion:Lcom/oneplus/doze/DozeService$MotionCheck;
 
+    new-instance v1, Lcom/oneplus/doze/DozeService$1;
+
+    invoke-direct {v1, p0}, Lcom/oneplus/doze/DozeService$1;-><init>(Lcom/oneplus/doze/DozeService;)V
+
+    iput-object v1, p0, Lcom/oneplus/doze/DozeService;->mProximity:Lcom/oneplus/doze/DozeService$CustomProximityCheck;
+
     :goto_0
     iget-object v1, p0, Lcom/oneplus/doze/DozeService;->mContext:Landroid/content/Context;
 
@@ -1737,8 +1876,6 @@
     invoke-virtual {v0, v1}, Lcom/oneplus/aod/DisplayViewManager;->setState(I)V
 
     const/4 v0, 0x7
-
-    const/4 v1, 0x0
 
     invoke-direct {p0, v0, v1}, Lcom/oneplus/doze/DozeService;->requestPulse(IZ)V
 

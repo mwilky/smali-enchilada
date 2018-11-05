@@ -287,7 +287,7 @@
     <string name="oneplus_aod_display_text_title">个人签名</string>
     <string name="oneplus_aod_mode_always_on">息屏常亮</string>
     <string name="oneplus_aod_mode_lift_up">抬手显示</string>
-    <string name="oneplus_aod_mode_shake_up">稍微移动手机显示</string>
+    <string name="oneplus_aod_mode_shake_up">拿起手机显示</string>
     <string name="oneplus_aod_mode_single_tap">轻触屏幕显示</string>
     <string name="oneplus_aod_settings">主动显示</string>
     <string name="oneplus_aod_settings_what_to_show">显示内容</string>
@@ -297,6 +297,8 @@
     <string name="oneplus_display_time_from">从</string>
     <string name="oneplus_display_time_start">开始时间</string>
     <string name="oneplus_display_time_to">到</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">已开启，</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">将被关闭</string>
     <string name="op_accessibility_quick_settings_page">第 %1$d 页，共 %2$d 页</string>
     <string name="overlay_display_devices_title">模拟辅助显示设备</string>
     <string name="owner_info_settings_edit_text_hint">例如，小明的 Android 设备。</string>
@@ -410,6 +412,7 @@
     <string name="time_picker_prompt_label">输入时间</string>
     <string name="time_unit_just_now">刚刚</string>
     <string name="title_convert_fbe">正在转换为文件加密</string>
+    <string name="touchscreen_double_tap_to_wake_gesture_title">双击亮屏</string>
     <string name="track_frame_time">GPU 渲染模式分析</string>
     <string name="transition_animation_scale_title">过渡动画缩放</string>
     <string name="tts_default_lang_summary">设置文字转语音功能要使用的语言</string>
@@ -457,6 +460,7 @@
     <string name="wait_for_debugger">等待调试程序</string>
     <string name="wait_for_debugger_summary">调试应用会在执行前等待附加调试器</string>
     <string name="wifi_ap_unable_to_handle_new_sta">接入点暂时满载</string>
+    <string name="wifi_auth_password_wrong">密码不正确。</string>
     <string name="wifi_cant_connect">无法连接</string>
     <string name="wifi_cant_connect_to_ap">无法连接到“%1$s”</string>
     <string name="wifi_check_password_try_again">请检查密码，然后重试</string>

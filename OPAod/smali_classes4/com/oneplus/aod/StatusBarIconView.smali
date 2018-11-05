@@ -98,7 +98,7 @@
 
     iget-object v0, p0, Lcom/oneplus/aod/StatusBarIconView;->mNumberPain:Landroid/graphics/Paint;
 
-    const v1, 0x7f070142
+    const v1, 0x7f070146
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getColor(I)I
 
@@ -280,7 +280,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f060233
+    const v4, 0x7f060231
 
     const/4 v5, 0x1
 
@@ -1078,7 +1078,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f07010d
+    const v7, 0x7f070111
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

@@ -405,7 +405,7 @@
 
     const-string v0, "doze.pickup.vibration.threshold"
 
-    const v1, 0x7f0a0010
+    const v1, 0x7f0a0011
 
     invoke-direct {p0, v0, v1}, Lcom/oneplus/doze/DozeParameters;->getInt(Ljava/lang/String;I)I
 
@@ -457,7 +457,7 @@
 
     const-string v0, "doze.pulse.duration.in.pickup"
 
-    const v1, 0x7f0a0012
+    const v1, 0x7f0a0013
 
     invoke-direct {p0, v0, v1}, Lcom/oneplus/doze/DozeParameters;->getInt(Ljava/lang/String;I)I
 
@@ -468,7 +468,7 @@
     :cond_0
     const-string v0, "doze.pulse.duration.in"
 
-    const v1, 0x7f0a0011
+    const v1, 0x7f0a0012
 
     invoke-direct {p0, v0, v1}, Lcom/oneplus/doze/DozeParameters;->getInt(Ljava/lang/String;I)I
 
@@ -483,7 +483,7 @@
 
     const-string v0, "doze.pulse.duration.invisible"
 
-    const v1, 0x7f0a0013
+    const v1, 0x7f0a0014
 
     invoke-direct {p0, v0, v1}, Lcom/oneplus/doze/DozeParameters;->getInt(Ljava/lang/String;I)I
 
@@ -511,7 +511,7 @@
 
     const-string v0, "doze.pulse.duration.out"
 
-    const v1, 0x7f0a0022
+    const v1, 0x7f0a0023
 
     invoke-direct {p0, v0, v1}, Lcom/oneplus/doze/DozeParameters;->getInt(Ljava/lang/String;I)I
 
@@ -525,7 +525,7 @@
 
     const-string v0, "doze.pulse.duration.visible"
 
-    const v1, 0x7f0a0015
+    const v1, 0x7f0a0016
 
     invoke-direct {p0, v0, v1}, Lcom/oneplus/doze/DozeParameters;->getInt(Ljava/lang/String;I)I
 
@@ -543,7 +543,7 @@
 
     const-string v0, "doze.pulse.duration.visible"
 
-    const v1, 0x7f0a000f
+    const v1, 0x7f0a0010
 
     invoke-direct {p0, v0, v1}, Lcom/oneplus/doze/DozeParameters;->getInt(Ljava/lang/String;I)I
 
@@ -558,7 +558,7 @@
 
     const-string v0, "doze.pulse.duration.visible"
 
-    const v1, 0x7f0a000e
+    const v1, 0x7f0a000f
 
     invoke-direct {p0, v0, v1}, Lcom/oneplus/doze/DozeParameters;->getInt(Ljava/lang/String;I)I
 
@@ -573,7 +573,7 @@
 
     const-string v0, "doze.pulse.duration.visible"
 
-    const v1, 0x7f0a0017
+    const v1, 0x7f0a0018
 
     invoke-direct {p0, v0, v1}, Lcom/oneplus/doze/DozeParameters;->getInt(Ljava/lang/String;I)I
 
@@ -584,7 +584,7 @@
     :cond_2
     const-string v0, "doze.pulse.duration.visible"
 
-    const v1, 0x7f0a0015
+    const v1, 0x7f0a0016
 
     invoke-direct {p0, v0, v1}, Lcom/oneplus/doze/DozeParameters;->getInt(Ljava/lang/String;I)I
 

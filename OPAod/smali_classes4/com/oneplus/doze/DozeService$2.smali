@@ -1,14 +1,11 @@
 .class Lcom/oneplus/doze/DozeService$2;
-.super Ljava/lang/Object;
+.super Lcom/oneplus/doze/DozeService$ProximityCheck;
 .source "DozeService.java"
-
-# interfaces
-.implements Lcom/oneplus/doze/DozeHost$PulseCallback;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/oneplus/doze/DozeService;->continuePulsing(I)V
+    value = Lcom/oneplus/doze/DozeService;->requestPulse(IZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,173 +17,119 @@
 # instance fields
 .field final synthetic this$0:Lcom/oneplus/doze/DozeService;
 
+.field final synthetic val$reason:I
+
+.field final synthetic val$start:J
+
 
 # direct methods
-.method constructor <init>(Lcom/oneplus/doze/DozeService;)V
+.method constructor <init>(Lcom/oneplus/doze/DozeService;JI)V
     .locals 0
 
     iput-object p1, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-wide p2, p0, Lcom/oneplus/doze/DozeService$2;->val$start:J
+
+    iput p4, p0, Lcom/oneplus/doze/DozeService$2;->val$reason:I
+
+    const/4 p2, 0x0
+
+    invoke-direct {p0, p1, p2}, Lcom/oneplus/doze/DozeService$ProximityCheck;-><init>(Lcom/oneplus/doze/DozeService;Lcom/oneplus/doze/DozeService$1;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onPulseFinished()V
-    .locals 3
+.method public onProximityResult(I)V
+    .locals 8
 
-    const-string v0, "DozeService"
+    const/4 v0, 0x0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const/4 v1, 0x1
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    if-ne p1, v1, :cond_0
 
-    const-string v2, "onPulseFinished, "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v2, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
-
-    invoke-static {v2}, Lcom/oneplus/doze/DozeService;->access$300(Lcom/oneplus/doze/DozeService;)Z
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v2, " , "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v2, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
-
-    invoke-static {v2}, Lcom/oneplus/doze/DozeService;->access$600(Lcom/oneplus/doze/DozeService;)Z
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget-object v0, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
-
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$300(Lcom/oneplus/doze/DozeService;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
-
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$600(Lcom/oneplus/doze/DozeService;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/oneplus/doze/DozeService;->access$302(Lcom/oneplus/doze/DozeService;Z)Z
-
-    iget-object v0, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
-
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$800(Lcom/oneplus/doze/DozeService;)V
-
-    iget-object v0, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
-
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$900(Lcom/oneplus/doze/DozeService;)V
+    goto :goto_0
 
     :cond_0
+    move v1, v0
+
+    :goto_0
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v2
+
+    iget-object v4, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
+
+    invoke-static {v4}, Lcom/oneplus/doze/DozeService;->access$600(Lcom/oneplus/doze/DozeService;)Landroid/content/Context;
+
+    move-result-object v4
+
+    iget-wide v5, p0, Lcom/oneplus/doze/DozeService$2;->val$start:J
+
+    sub-long v5, v2, v5
+
+    iget v7, p0, Lcom/oneplus/doze/DozeService$2;->val$reason:I
+
+    invoke-static {v4, v1, v5, v6, v7}, Lcom/oneplus/doze/DozeLog;->traceProximityResult(Landroid/content/Context;ZJI)V
+
+    const-string v4, "DozeService"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "isNear = "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    if-eqz v1, :cond_1
+
+    iget-object v4, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
+
+    invoke-static {v4, v0}, Lcom/oneplus/doze/DozeService;->access$702(Lcom/oneplus/doze/DozeService;Z)Z
+
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$400(Lcom/oneplus/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
-
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$400(Lcom/oneplus/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$800(Lcom/oneplus/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    :cond_1
+    iget-object v0, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
+
+    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$600(Lcom/oneplus/doze/DozeService;)Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/oneplus/aod/AodUpdateMonitor;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->getDisplayViewManager()Lcom/oneplus/aod/DisplayViewManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/oneplus/aod/DisplayViewManager;->resetViewState()V
+
     return-void
-.end method
 
-.method public onPulseStarted()V
-    .locals 3
-
-    const-string v0, "DozeService"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "onPulseStarted, "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v2, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
-
-    invoke-static {v2}, Lcom/oneplus/doze/DozeService;->access$300(Lcom/oneplus/doze/DozeService;)Z
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v2, " , "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v2, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
-
-    invoke-static {v2}, Lcom/oneplus/doze/DozeService;->access$600(Lcom/oneplus/doze/DozeService;)Z
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
+    :cond_1
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
 
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$300(Lcom/oneplus/doze/DozeService;)Z
+    iget v4, p0, Lcom/oneplus/doze/DozeService$2;->val$reason:I
 
-    move-result v0
+    invoke-static {v0, v4}, Lcom/oneplus/doze/DozeService;->access$900(Lcom/oneplus/doze/DozeService;I)V
 
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
-
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$600(Lcom/oneplus/doze/DozeService;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
-
-    invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$700(Lcom/oneplus/doze/DozeService;)V
-
-    :cond_0
     return-void
 .end method

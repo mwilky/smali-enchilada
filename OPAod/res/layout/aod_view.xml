@@ -4,12 +4,11 @@
     <com.oneplus.aod.AodMain android:orientation="vertical" android:id="@id/main_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/main_view_horizontal_margin" android:layout_marginRight="@dimen/main_view_horizontal_margin">
         <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/date_time_view" />
         <View android:id="@id/battery_empty_view" android:layout_width="fill_parent" android:layout_height="@dimen/battery_empty_view_height" />
-        <LinearLayout android:orientation="horizontal" android:id="@id/battery_container" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <TextView android:textAppearance="@style/battery_percentage" android:gravity="center" android:id="@id/percentage" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-            <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="@dimen/battery_icon_container_width" android:layout_height="fill_parent">
-                <com.oneplus.aod.battery.BatteryMeterView android:id="@id/battery" android:layout_width="@dimen/battery_icon_width" android:layout_height="@dimen/battery_icon_height" />
-                <com.oneplus.aod.battery.BatteryDashChargeView android:layout_gravity="center" android:id="@id/battery_dash_charge" android:visibility="gone" android:layout_width="@dimen/battery_dash_icon_width" android:layout_height="@dimen/battery_dash_icon_height" android:src="@drawable/ic_sys_dash_charging_state_0" android:scaleType="centerCrop" />
-            </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/battery_container" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textAppearance="@style/battery_percentage" android:id="@id/percentage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="2.0px" android:layout_marginEnd="11.0px" />
+            <com.oneplus.aod.battery.BatteryMeterView android:id="@id/battery" android:layout_width="@dimen/battery_icon_width" android:layout_height="@dimen/battery_icon_height" />
+            <com.oneplus.aod.battery.BatteryDashChargeView android:layout_gravity="center" android:id="@id/battery_dash_charge" android:visibility="gone" android:layout_width="@dimen/battery_dash_icon_width" android:layout_height="@dimen/battery_dash_icon_height" android:src="@drawable/ic_sys_dash_charging_state_0" android:scaleType="centerCrop" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/battery_charge" android:visibility="gone" android:layout_width="42.0px" android:layout_height="42.0px" />
         </LinearLayout>
         <View android:id="@id/notification_icon_empty_view" android:layout_width="fill_parent" android:layout_height="@dimen/notification_icon_empty_view_height" />
         <LinearLayout android:orientation="horizontal" android:id="@id/notification_icon_area_inner" android:layout_width="fill_parent" android:layout_height="wrap_content">

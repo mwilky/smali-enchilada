@@ -15,8 +15,6 @@
 # instance fields
 .field private mOwnerInfo:Landroid/widget/EditText;
 
-.field private mUserId:I
-
 .field private mView:Landroid/view/View;
 
 
@@ -40,7 +38,7 @@
 .end method
 
 .method private initView()V
-    .locals 3
+    .locals 4
 
     invoke-virtual {p0}, Lcom/oneplus/settings/AodDisplayTextSettings;->getActivity()Landroid/app/Activity;
 
@@ -60,37 +58,59 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/oneplus/settings/AodDisplayTextSettings;->mView:Landroid/view/View;
-
-    const v2, 0x7f0900e4
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0}, Lcom/oneplus/settings/AodDisplayTextSettings;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    check-cast v1, Landroid/widget/EditText;
+    const v2, 0x7f0a0009
 
-    iput-object v1, p0, Lcom/oneplus/settings/AodDisplayTextSettings;->mOwnerInfo:Landroid/widget/EditText;
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v1
 
-    if-nez v1, :cond_0
+    iget-object v2, p0, Lcom/oneplus/settings/AodDisplayTextSettings;->mView:Landroid/view/View;
 
-    iget-object v1, p0, Lcom/oneplus/settings/AodDisplayTextSettings;->mOwnerInfo:Landroid/widget/EditText;
+    const v3, 0x7f0900e5
 
-    invoke-virtual {v1, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    iget-object v1, p0, Lcom/oneplus/settings/AodDisplayTextSettings;->mOwnerInfo:Landroid/widget/EditText;
+    move-result-object v2
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    check-cast v2, Landroid/widget/EditText;
+
+    iput-object v2, p0, Lcom/oneplus/settings/AodDisplayTextSettings;->mOwnerInfo:Landroid/widget/EditText;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    invoke-virtual {v1, v2}, Landroid/widget/EditText;->setSelection(I)V
+    if-nez v2, :cond_1
+
+    iget-object v2, p0, Lcom/oneplus/settings/AodDisplayTextSettings;->mOwnerInfo:Landroid/widget/EditText;
+
+    invoke-virtual {v2, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v2, p0, Lcom/oneplus/settings/AodDisplayTextSettings;->mOwnerInfo:Landroid/widget/EditText;
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    if-le v3, v1, :cond_0
+
+    move v3, v1
+
+    goto :goto_0
 
     :cond_0
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    :goto_0
+    invoke-virtual {v2, v3}, Landroid/widget/EditText;->setSelection(I)V
+
+    :cond_1
     return-void
 .end method
 
@@ -205,7 +225,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0c007e
+    const v1, 0x7f0c007f
 
     const/4 v2, 0x0
 
@@ -237,7 +257,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100193
+    const v1, 0x7f100195
 
     invoke-virtual {v0, v1, p0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

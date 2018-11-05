@@ -403,6 +403,7 @@
     <string name="wait_for_debugger">डीबगरची प्रतीक्षा करा</string>
     <string name="wait_for_debugger_summary">डीबग केलेले अॅप्लिकेशन अंमलात आणण्यापूर्वी डीबगर संलग्न करण्याची प्रतीक्षा करतो</string>
     <string name="wifi_ap_unable_to_handle_new_sta">अॅक्सेस पॉइंट तात्पुरते भरलेले</string>
+    <string name="wifi_auth_password_wrong">पासवर्ड चुकीचा असू शकतो</string>
     <string name="wifi_cant_connect">कनेक्ट करू शकत नाही</string>
     <string name="wifi_cant_connect_to_ap">"'%1$s'शी कनेक्‍ट करू शकत नाही"</string>
     <string name="wifi_check_password_try_again">पासवर्ड तपासा आणि पुन्‍हा प्रयत्‍न करा</string>

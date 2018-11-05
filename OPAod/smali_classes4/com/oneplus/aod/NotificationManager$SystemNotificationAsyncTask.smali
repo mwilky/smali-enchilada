@@ -112,6 +112,8 @@
 
     move-result-object v0
 
+    if-eqz v0, :cond_0
+
     iput-object p1, v0, Lcom/oneplus/aod/NotificationData$Entry;->mIsSystemNotification:Ljava/lang/Boolean;
 
     :cond_0
