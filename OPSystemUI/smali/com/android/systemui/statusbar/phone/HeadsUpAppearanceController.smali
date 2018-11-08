@@ -321,6 +321,10 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mClockView:Landroid/view/View;
     
     if-ne v2, v3, :cond_mw
+    
+	sget-boolean v3, Lcom/android/mwilky/Renovate;->mSwapBatteryPosition:Z
+	
+	if-eqz v3, :cond_mw
 	
 	iget-object v0, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mLeftBatteryView:Landroid/view/View;	
 
@@ -353,11 +357,13 @@
 .end method
 
 .method private setShown(Z)V
-    .locals 9
+    .locals 10
     
     const/4 v7, 0x1
 	
 	sget v8, Lcom/android/mwilky/Renovate;->mClockPosition:I
+	
+	sget-boolean v9, Lcom/android/mwilky/Renovate;->mSwapBatteryPosition:Z
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mShown:Z
 
@@ -404,6 +410,8 @@
 	
 	if-ne v7, v8, :cond_mw
 	
+	if-eqz v9, :cond_mw
+	
 	iget-object v2, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mLeftBatteryView:Landroid/view/View;	
 
     :cond_mw
@@ -420,6 +428,8 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mClockView:Landroid/view/View;
     
     if-ne v7, v8, :cond_mw2
+    
+    if-eqz v9, :cond_mw2
 	
 	iget-object v0, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mLeftBatteryView:Landroid/view/View;	
 
@@ -440,6 +450,8 @@
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mClockView:Landroid/view/View;
     
     if-ne v7, v8, :cond_mw3
+    
+    if-eqz v9, :cond_mw3
 	
 	iget-object v6, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mLeftBatteryView:Landroid/view/View;	
 
@@ -457,6 +469,8 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mClockView:Landroid/view/View;
     
     if-ne v7, v8, :cond_mw4
+    
+    if-eqz v9, :cond_mw4
 	
 	iget-object v0, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mLeftBatteryView:Landroid/view/View;	
 
