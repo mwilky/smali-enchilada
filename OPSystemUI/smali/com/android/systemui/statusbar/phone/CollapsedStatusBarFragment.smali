@@ -1061,6 +1061,10 @@
 	sget v1, Lcom/android/mwilky/Renovate;->mClockPosition:I
 	
 	if-ne v0, v1, :cond_mw
+	
+	sget-boolean v1, Lcom/android/mwilky/Renovate;->mSwapBatteryPosition:Z
+	
+	if-eqz v1, :cond_mw
     
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mLeftBatteryMeterView:Lcom/android/systemui/BatteryMeterViewLeft;
 	
@@ -1080,12 +1084,17 @@
 	sget v1, Lcom/android/mwilky/Renovate;->mClockPosition:I
 	
 	if-ne v0, v1, :cond_mw
+	
+	sget-boolean v1, Lcom/android/mwilky/Renovate;->mSwapBatteryPosition:Z
+	
+	if-eqz v1, :cond_mw
     
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mLeftBatteryMeterView:Lcom/android/systemui/BatteryMeterViewLeft;
 	
 	if-eqz v0, :cond_mw
 
     invoke-direct {p0, v0, p1}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->animateShow(Landroid/view/View;Z)V
+    
 	:cond_mw
     return-void
 .end method
