@@ -17079,6 +17079,8 @@
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarPeek(Landroid/content/Context;)V
     
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsAnimationValues(Landroid/content/Context;)V
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setHideLockscreenAlbumArt(Landroid/content/Context;)V
 
     const-class v0, Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
 
@@ -19338,6 +19340,10 @@
     const/4 v7, 0x0
 
     if-eqz v5, :cond_4
+    
+    sget-boolean v8, Lcom/android/mwilky/Renovate;->mHideLockscreenAlbumArt:Z
+    
+    if-nez v8, :cond_4
 
     const-string v8, "android.media.metadata.ART"
 
