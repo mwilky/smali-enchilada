@@ -21452,90 +21452,90 @@
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationsOnDensityOrFontScaleChanged()V
 
     :cond_et
-    const-string v0, "oem_black_mode"
+    #const-string v0, "oem_black_mode"
     
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    #invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    #move-result v0
 
-    if-eqz v0, :cond_obm
+    #if-eqz v0, :cond_obm
 
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationBuilderColors()V
+    #invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationBuilderColors()V
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    #iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
     
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setExtendedTheming(Landroid/content/Context;)V
+    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->setExtendedTheming(Landroid/content/Context;)V
     
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setNotifBackgroundColorForTheme(Landroid/content/Context;)V
+    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->setNotifBackgroundColorForTheme(Landroid/content/Context;)V
     
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->getAccentColor(Landroid/content/Context;)V
+    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->getAccentColor(Landroid/content/Context;)V
     
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationsOnDensityOrFontScaleChanged()V
+    #invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationsOnDensityOrFontScaleChanged()V
 
-    :cond_obm
-    const-string v0, "oem_white_mode_accent_color"
+    #:cond_obm
+    #const-string v0, "oem_white_mode_accent_color"
     
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    #invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    #move-result v0
 
-    if-eqz v0, :cond_owma
+    #if-eqz v0, :cond_owma
 
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationBuilderColors()V
+    #invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationBuilderColors()V
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    #iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
     
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setExtendedTheming(Landroid/content/Context;)V
+    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->setExtendedTheming(Landroid/content/Context;)V
     
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setNotifBackgroundColorForTheme(Landroid/content/Context;)V
+    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->setNotifBackgroundColorForTheme(Landroid/content/Context;)V
     
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->getAccentColor(Landroid/content/Context;)V
+    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->getAccentColor(Landroid/content/Context;)V
     
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationsOnDensityOrFontScaleChanged()V
+    #invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationsOnDensityOrFontScaleChanged()V
 
-    :cond_owma
-    const-string v0, "oem_black_mode_accent_color"
+    #:cond_owma
+    #const-string v0, "oem_black_mode_accent_color"
     
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    #invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    #move-result v0
 
-    if-eqz v0, :cond_obma
+    #if-eqz v0, :cond_obma
 
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationBuilderColors()V
+    #invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationBuilderColors()V
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    #iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
     
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setExtendedTheming(Landroid/content/Context;)V
+    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->setExtendedTheming(Landroid/content/Context;)V
     
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setNotifBackgroundColorForTheme(Landroid/content/Context;)V
+    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->setNotifBackgroundColorForTheme(Landroid/content/Context;)V
     
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->getAccentColor(Landroid/content/Context;)V
+    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->getAccentColor(Landroid/content/Context;)V
     
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationsOnDensityOrFontScaleChanged()V
+    #invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationsOnDensityOrFontScaleChanged()V
 
-    :cond_obma
-    const-string v0, "oem_special_theme"
+    #:cond_obma
+    #const-string v0, "oem_special_theme"
     
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    #invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    #move-result v0
 
-    if-eqz v0, :cond_ost
+    #if-eqz v0, :cond_ost
 
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationBuilderColors()V
+    #invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationBuilderColors()V
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    #iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
     
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setExtendedTheming(Landroid/content/Context;)V
+    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->setExtendedTheming(Landroid/content/Context;)V
     
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setNotifBackgroundColorForTheme(Landroid/content/Context;)V
+    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->setNotifBackgroundColorForTheme(Landroid/content/Context;)V
     
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->getAccentColor(Landroid/content/Context;)V
+    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->getAccentColor(Landroid/content/Context;)V
     
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationsOnDensityOrFontScaleChanged()V
+    #invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationsOnDensityOrFontScaleChanged()V
 
-    :cond_ost
+    #:cond_ost
     const-string v0, "tweaks_hide_lockscreen_statusbar"
     
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -21783,17 +21783,17 @@
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     
-    const-string v4, "oem_black_mode_accent_color"
+    #const-string v4, "oem_black_mode_accent_color"
 
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    #invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     
-    const-string v4, "oem_white_mode_accent_color"
+    #const-string v4, "oem_white_mode_accent_color"
 
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    #invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     
-    const-string v4, "oem_special_theme"
+    #const-string v4, "oem_special_theme"
 
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    #invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     
     const-string v4, "tweaks_hide_lockscreen_statusbar"
 
