@@ -2910,10 +2910,17 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mIconTintColor:I
     
+    invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusBar;->isCameraNotchIgnoring()Z
+
+    move-result v1
+    
+    if-nez v1, :cond_notch
+    
     iget v1, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mDarkIconColor:I #dark color
     
     if-nez v2, :cond_0 #set to grey if dark intensity is 1
     
+    :cond_notch
     iget v1, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mIconTintColor:I
 
     :cond_0
