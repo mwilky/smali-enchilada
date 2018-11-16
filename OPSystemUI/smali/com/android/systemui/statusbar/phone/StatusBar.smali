@@ -17050,6 +17050,8 @@
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsAnimationValues(Landroid/content/Context;)V
     
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setHideLockscreenAlbumArt(Landroid/content/Context;)V
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setLockscreenShortcuts(Landroid/content/Context;)V
 
     const-class v0, Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
 
@@ -21629,6 +21631,19 @@
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsAnimationValues(Landroid/content/Context;)V
 
     :cond_ai
+    const-string v0, "tweaks_hide_lockscreen_shortcuts"
+    
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_lss
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setLockscreenShortcuts(Landroid/content/Context;)V
+
+    :cond_lss
 	return-void
 .end method
 
@@ -21820,6 +21835,10 @@
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     
     const-string v4, "tweaks_qstile_animation_interpolator"
+    
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    
+    const-string v4, "tweaks_hide_lockscreen_shortcuts"
     
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
