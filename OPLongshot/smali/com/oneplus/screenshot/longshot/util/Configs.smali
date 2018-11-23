@@ -56,7 +56,7 @@
 
 .field public static final enum CUSTOMIZE_MOVE_LIST_ACTIVITY:Lcom/oneplus/screenshot/longshot/util/Configs;
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field public static final enum EFFECT_DELAY:Lcom/oneplus/screenshot/longshot/util/Configs;
 
@@ -82,11 +82,13 @@
 
 .field public static IMEI_NUMBER:Ljava/lang/String; = null
 
+.field public static IS_ADD_WATERMARK:Z = false
+
 .field public static IS_BG_LIST:Z = false
 
 .field public static IS_BIGTOP_LIST:Z = false
 
-.field public static IS_CLOSE_BETA:Z = false
+.field public static IS_ENCRYPT_IMAGE:Z = false
 
 .field public static IS_HIGHER_LIST:Z = false
 
@@ -425,6 +427,8 @@
 
 .field private static final TAG:Ljava/lang/String; = "Longshot.Configs"
 
+.field public static WATERMARK_TIMES:I
+
 .field public static final enum WIDTH_SAMPLE_LIST:Lcom/oneplus/screenshot/longshot/util/Configs;
 
 .field public static final enum WITH_ISSUE_REPORT_ACTIVITY:Lcom/oneplus/screenshot/longshot/util/Configs;
@@ -436,6 +440,8 @@
 .field public static mHeaderOffset:I
 
 .field public static mNoFooter:Z
+
+.field private static mOSTracker:Lnet/oneplus/odm/insight/tracker/OSTracker;
 
 .field private static mToast:Landroid/widget/Toast;
 
@@ -3592,7 +3598,11 @@
 
     sput v6, Lcom/oneplus/screenshot/longshot/util/Configs;->RLEASE_TYPE_CLOSE_BETA:I
 
-    sput-boolean v3, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_CLOSE_BETA:Z
+    sput-boolean v3, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_ADD_WATERMARK:Z
+
+    sput-boolean v3, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_ENCRYPT_IMAGE:Z
+
+    sput v4, Lcom/oneplus/screenshot/longshot/util/Configs;->WATERMARK_TIMES:I
 
     new-array v0, v4, [I
 
@@ -3684,6 +3694,31 @@
     sget-object v2, Lcom/oneplus/screenshot/longshot/util/Configs;->mView:Landroid/view/View;
 
     invoke-interface {v0, v2, v1}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public static caculateWaterMarkShowTimes(Landroid/content/Context;)V
+    .locals 4
+
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    invoke-static {p0}, Lcom/oneplus/screenshot/longshot/util/Configs;->getWaterMarkShowTimes(Landroid/content/Context;)I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    if-gt v1, v2, :cond_0
+
+    const-string v2, "oem_screenshot_watermark_times"
+
+    add-int/lit8 v3, v1, 0x1
+
+    invoke-static {v0, v2, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     :cond_0
     return-void
@@ -4374,7 +4409,7 @@
 .end method
 
 .method public static getSideOffset(ZZ)I
-    .locals 5
+    .locals 3
 
     sget-object v0, Lcom/oneplus/screenshot/longshot/util/Configs;->LEFT_SIDE_OFFSET_LEVEL_1:Lcom/oneplus/screenshot/longshot/util/Configs;
 
@@ -4454,40 +4489,6 @@
     move-result v0
 
     :goto_1
-    const-string v2, "Longshot.Configs"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, " scrollbarSide:"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v4, " getRightSideOffset:"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v4, " LEVEL:"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {}, Lcom/oneplus/screenshot/longshot/util/Configs;->getLevelSkipEdge()I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     return v0
 
     :pswitch_data_0
@@ -4546,6 +4547,42 @@
     const/4 v2, 0x0
 
     return-object v2
+.end method
+
+.method private static getWaterMarkShowTimes(Landroid/content/Context;)I
+    .locals 5
+
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "oem_screenshot_watermark_times"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    const-string v2, "Longshot.Configs"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "getWaterMarkShowTimes :"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    return v1
 .end method
 
 .method private static isActivity(Landroid/content/ComponentName;[Ljava/lang/String;)Z
@@ -4610,8 +4647,8 @@
     return v0
 .end method
 
-.method public static isCloseBeta()Z
-    .locals 2
+.method private static isCloseBeta()Z
+    .locals 4
 
     invoke-static {}, Lcom/oneplus/screenshot/longshot/util/Configs;->getReleaseType()I
 
@@ -4629,6 +4666,24 @@
     const/4 v0, 0x0
 
     :goto_0
+    const-string v1, "Longshot.Configs"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "isCloseBeta:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
     return v0
 .end method
 
@@ -4805,7 +4860,7 @@
 .end method
 
 .method public static load(Landroid/content/Context;)V
-    .locals 13
+    .locals 10
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -4844,32 +4899,6 @@
 
     iput v6, v5, Lcom/oneplus/screenshot/longshot/util/Configs;->mValue:I
 
-    const-string v6, "Longshot.Configs"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v5}, Lcom/oneplus/screenshot/longshot/util/Configs;->name()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v8, "="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v8, v5, Lcom/oneplus/screenshot/longshot/util/Configs;->mValue:I
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     goto :goto_2
 
     :cond_0
@@ -4890,32 +4919,6 @@
     move-result v6
 
     iput v6, v5, Lcom/oneplus/screenshot/longshot/util/Configs;->mValue:I
-
-    const-string v6, "Longshot.Configs"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v5}, Lcom/oneplus/screenshot/longshot/util/Configs;->name()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v8, "="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v8, v5, Lcom/oneplus/screenshot/longshot/util/Configs;->mValue:I
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_2
 
@@ -4949,24 +4952,6 @@
 
     aget-object v9, v6, v8
 
-    const-string v10, "Longshot.Configs"
-
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v12, "    "
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v11, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_1
@@ -4978,40 +4963,14 @@
     :goto_2
     add-int/lit8 v4, v4, 0x1
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_4
-    const-string v1, "Longshot.Configs"
-
-    const-string v2, "=============================================================="
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     invoke-static {p0}, Lcom/oneplus/screenshot/longshot/util/Configs;->getTopActivity(Landroid/content/Context;)Landroid/content/ComponentName;
 
     move-result-object v1
 
     sput-object v1, Lcom/oneplus/screenshot/longshot/util/Configs;->mTopActivity:Landroid/content/ComponentName;
-
-    const-string v1, "Longshot.Configs"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "load, topActivity = "
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-object v4, Lcom/oneplus/screenshot/longshot/util/Configs;->mTopActivity:Landroid/content/ComponentName;
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     sput-boolean v3, Lcom/oneplus/screenshot/longshot/util/Configs;->STOP_BY_USER:Z
 
@@ -5227,11 +5186,23 @@
 
     sput-object v1, Lcom/oneplus/screenshot/longshot/util/Configs;->IMEI_NUMBER:Ljava/lang/String;
 
-    invoke-static {}, Lcom/oneplus/screenshot/longshot/util/Configs;->isCloseBeta()Z
+    invoke-static {}, Lcom/oneplus/screenshot/longshot/util/Configs;->shouldEncrytImage()Z
 
     move-result v1
 
-    sput-boolean v1, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_CLOSE_BETA:Z
+    sput-boolean v1, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_ENCRYPT_IMAGE:Z
+
+    invoke-static {p0}, Lcom/oneplus/screenshot/longshot/util/Configs;->getWaterMarkShowTimes(Landroid/content/Context;)I
+
+    move-result v1
+
+    sput v1, Lcom/oneplus/screenshot/longshot/util/Configs;->WATERMARK_TIMES:I
+
+    invoke-static {p0}, Lcom/oneplus/screenshot/longshot/util/Configs;->shouldAddWatermark(Landroid/content/Context;)Z
+
+    move-result v1
+
+    sput-boolean v1, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_ADD_WATERMARK:Z
 
     sget-object v1, Lcom/oneplus/screenshot/longshot/util/Configs;->mTopActivity:Landroid/content/ComponentName;
 
@@ -5249,371 +5220,13 @@
 
     invoke-static {p0}, Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;->init(Landroid/content/Context;)V
 
-    const-string v1, "Longshot.Configs"
+    new-instance v1, Lnet/oneplus/odm/insight/tracker/OSTracker;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "RHJ2VVOOTS"
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1, p0, v2}, Lnet/oneplus/odm/insight/tracker/OSTracker;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    const-string v3, "IS_UNSUPPORTED="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-boolean v3, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_UNSUPPORTED:Z
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "Longshot.Configs"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "IS_STRICT_LIST="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-boolean v3, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_STRICT_LIST:Z
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "Longshot.Configs"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "IS_SMALL_LIST="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-boolean v3, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_SMALL_LIST:Z
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "Longshot.Configs"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "IS_LOWER_LIST="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-boolean v3, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_LOWER_LIST:Z
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "Longshot.Configs"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "IS_PAGE_LIST="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-boolean v3, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_PAGE_LIST:Z
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "Longshot.Configs"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "IS_KEEP_LIST="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-boolean v3, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_KEEP_LIST:Z
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "Longshot.Configs"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "IS_NON_LIST="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-boolean v3, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_NON_LIST:Z
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "Longshot.Configs"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "IS_BG_LIST="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-boolean v3, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_BG_LIST:Z
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "Longshot.Configs"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "IS_RTL="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-boolean v3, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_RTL:Z
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "Longshot.Configs"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "LEVEL_ERROR="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v3, Lcom/oneplus/screenshot/longshot/util/Configs;->LEVEL_ERROR:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "Longshot.Configs"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "LEVEL_STITCH_NEXT="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v3, Lcom/oneplus/screenshot/longshot/util/Configs;->LEVEL_STITCH_NEXT:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "Longshot.Configs"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "LEVEL_STITCH_LAST="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v3, Lcom/oneplus/screenshot/longshot/util/Configs;->LEVEL_STITCH_LAST:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "Longshot.Configs"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "LEVEL_STITCH_MATCH ="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v3, Lcom/oneplus/screenshot/longshot/util/Configs;->LEVEL_STITCH_MATCH:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "Longshot.Configs"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "LEVEL_DELAY="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v3, Lcom/oneplus/screenshot/longshot/util/Configs;->LEVEL_DELAY:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "Longshot.Configs"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "LIMIT_LEFT="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v3, Lcom/oneplus/screenshot/longshot/util/Configs;->LIMIT_LEFT:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "Longshot.Configs"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "LIMIT_RIGHT="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v3, Lcom/oneplus/screenshot/longshot/util/Configs;->LIMIT_RIGHT:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "Longshot.Configs"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "LEVEL_RIGHT_SIDE_OFFSET="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v3, Lcom/oneplus/screenshot/longshot/util/Configs;->LEVEL_RIGHT_SIDE_OFFSET:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "Longshot.Configs"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "LEVEL_LEFT_SIDE_OFFSET="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v3, Lcom/oneplus/screenshot/longshot/util/Configs;->LEVEL_LEFT_SIDE_OFFSET:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "Longshot.Configs"
-
-    const-string v2, "=============================================================="
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    sput-object v1, Lcom/oneplus/screenshot/longshot/util/Configs;->mOSTracker:Lnet/oneplus/odm/insight/tracker/OSTracker;
 
     return-void
 .end method
@@ -5863,7 +5476,7 @@
 .end method
 
 .method public static sendAppTrackerEvent(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 2
+    .locals 4
 
     sget-object v0, Lcom/oneplus/screenshot/longshot/util/Configs;->mAppTrackers:Lnet/oneplus/odm/insight/tracker/AppTracker;
 
@@ -5876,11 +5489,24 @@
     sput-object v0, Lcom/oneplus/screenshot/longshot/util/Configs;->mAppTrackers:Lnet/oneplus/odm/insight/tracker/AppTracker;
 
     :cond_0
-    if-nez p3, :cond_1
+    sget-object v0, Lcom/oneplus/screenshot/longshot/util/Configs;->mOSTracker:Lnet/oneplus/odm/insight/tracker/OSTracker;
+
+    if-nez v0, :cond_1
+
+    new-instance v0, Lnet/oneplus/odm/insight/tracker/OSTracker;
+
+    const-string v1, "RHJ2VVOOTS"
+
+    invoke-direct {v0, p0, v1}, Lnet/oneplus/odm/insight/tracker/OSTracker;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+
+    sput-object v0, Lcom/oneplus/screenshot/longshot/util/Configs;->mOSTracker:Lnet/oneplus/odm/insight/tracker/OSTracker;
+
+    :cond_1
+    if-nez p3, :cond_2
 
     sget-object p3, Lcom/oneplus/screenshot/longshot/util/Configs;->mTopFocusWindow:Ljava/lang/String;
 
-    :cond_1
+    :cond_2
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -5891,27 +5517,148 @@
 
     invoke-virtual {v1, p1, v0}, Lnet/oneplus/odm/insight/tracker/AppTracker;->onEvent(Ljava/lang/String;Ljava/util/Map;)V
 
-    sget-object v1, Lcom/oneplus/screenshot/longshot/util/Configs;->gaInstance:Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;
+    new-instance v1, Ljava/util/HashMap;
 
-    if-nez v1, :cond_2
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+
+    const-string v2, "normal"
+
+    invoke-virtual {v2, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    const-string v2, "pn"
+
+    invoke-virtual {v1, v2, p3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v2, "type"
+
+    const-string v3, "0"
+
+    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v2, Lcom/oneplus/screenshot/longshot/util/Configs;->mOSTracker:Lnet/oneplus/odm/insight/tracker/OSTracker;
+
+    const-string v3, "screenshot"
+
+    invoke-virtual {v2, v3, v1}, Lnet/oneplus/odm/insight/tracker/OSTracker;->onEvent(Ljava/lang/String;Ljava/util/Map;)V
+
+    goto :goto_0
+
+    :cond_3
+    const-string v2, "long"
+
+    invoke-virtual {v2, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    const-string v2, "pn"
+
+    invoke-virtual {v1, v2, p3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v2, "type"
+
+    const-string v3, "1"
+
+    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v2, Lcom/oneplus/screenshot/longshot/util/Configs;->mOSTracker:Lnet/oneplus/odm/insight/tracker/OSTracker;
+
+    const-string v3, "screenshot"
+
+    invoke-virtual {v2, v3, v1}, Lnet/oneplus/odm/insight/tracker/OSTracker;->onEvent(Ljava/lang/String;Ljava/util/Map;)V
+
+    :cond_4
+    :goto_0
+    sget-object v2, Lcom/oneplus/screenshot/longshot/util/Configs;->gaInstance:Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;
+
+    if-nez v2, :cond_5
 
     invoke-static {p0}, Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;->getInstance(Landroid/content/Context;)Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;
 
+    move-result-object v2
+
+    sput-object v2, Lcom/oneplus/screenshot/longshot/util/Configs;->gaInstance:Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;
+
+    :cond_5
+    sget-object v2, Lcom/oneplus/screenshot/longshot/util/Configs;->gaInstance:Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;
+
+    if-eqz v2, :cond_6
+
+    sget-object v2, Lcom/oneplus/screenshot/longshot/util/Configs;->gaInstance:Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;
+
+    invoke-virtual {v2, p1, p2, p3}, Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;->send(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_6
+    return-void
+.end method
+
+.method private static shouldAddWatermark(Landroid/content/Context;)Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method private static shouldEncrytImage()Z
+    .locals 4
+
+    invoke-static {}, Lcom/oneplus/screenshot/longshot/util/Configs;->isCloseBeta()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    const-string v0, "true"
+
+    const-string v1, "persist.test.encryt"
+
+    invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+
     move-result-object v1
 
-    sput-object v1, Lcom/oneplus/screenshot/longshot/util/Configs;->gaInstance:Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    :cond_2
-    sget-object v1, Lcom/oneplus/screenshot/longshot/util/Configs;->gaInstance:Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;
+    move-result v0
 
-    if-eqz v1, :cond_3
+    if-eqz v0, :cond_0
 
-    sget-object v1, Lcom/oneplus/screenshot/longshot/util/Configs;->gaInstance:Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;
+    goto :goto_0
 
-    invoke-virtual {v1, p1, p2, p3}, Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;->send(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    :cond_0
+    const/4 v0, 0x0
 
-    :cond_3
-    return-void
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 v0, 0x1
+
+    :goto_1
+    const-string v1, "Longshot.Configs"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "shouldEncrytImage:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    return v0
 .end method
 
 .method public static showNotifyWindow(Landroid/content/Context;ZLjava/lang/String;Ljava/lang/String;)V

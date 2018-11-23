@@ -234,17 +234,8 @@
     invoke-static {v3, v4, v5}, Lcom/oneplus/screenshot/statistics/EventStatistics;->addError(Landroid/content/Context;Lcom/oneplus/screenshot/statistics/EventStatistics$Error;Ljava/lang/String;)V
 
     :goto_0
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
-    sget-boolean v2, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_CLOSE_BETA:Z
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Lcom/oneplus/screenshot/service/SaveTask;->mContext:Landroid/content/Context;
-
-    invoke-static {v1, v2}, Lcom/oneplus/screenshot/util/Utils;->addWatermarkForLongshot(Landroid/graphics/Bitmap;Landroid/content/Context;)V
-
-    :cond_0
     iget-object v2, p0, Lcom/oneplus/screenshot/service/SaveTask;->mContext:Landroid/content/Context;
 
     iget-object v3, p0, Lcom/oneplus/screenshot/service/SaveTask;->mImageInfo:Lcom/oneplus/screenshot/util/ImageInfo;
@@ -255,7 +246,7 @@
 
     goto :goto_1
 
-    :cond_1
+    :cond_0
     sget-object v2, Lcom/oneplus/screenshot/service/SaveTask;->TAG:Ljava/lang/String;
 
     const-string v3, "image is null"

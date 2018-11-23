@@ -20,6 +20,8 @@
 
 .field imageUri:Landroid/net/Uri;
 
+.field needRecycle:Z
+
 .field previewWidth:I
 
 .field previewheight:I

@@ -18,7 +18,7 @@
 # static fields
 .field private static final SCREENSHOTS_DIR_NAME:Ljava/lang/String; = "Screenshots"
 
-.field private static final SCREENSHOT_FILE_NAME_TEMPLATE:Ljava/lang/String; = "Screenshot_%s.png"
+.field private static final SCREENSHOT_FILE_NAME_TEMPLATE:Ljava/lang/String; = "Screenshot_%s.jpg"
 
 .field private static final SCREENSHOT_SHARE_SUBJECT_TEMPLATE:Ljava/lang/String; = "Screenshot (%s)"
 
@@ -30,15 +30,17 @@
 # instance fields
 .field private deleteIntent:Landroid/app/PendingIntent;
 
-.field private final mImageFileName:Ljava/lang/String;
+.field private mImageFileName:Ljava/lang/String;
 
-.field private final mImageFilePath:Ljava/lang/String;
+.field private mImageFilePath:Ljava/lang/String;
 
 .field private final mImageHeight:I
 
 .field private final mImageTime:J
 
 .field private final mImageWidth:I
+
+.field private mNeedRecycle:Z
 
 .field private final mNotificationBuilder:Landroid/app/Notification$Builder;
 
@@ -77,6 +79,10 @@
 
     iput-object v10, v7, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->uri:Landroid/net/Uri;
 
+    const/4 v0, 0x0
+
+    iput-boolean v0, v7, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mNeedRecycle:Z
+
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v11
@@ -85,45 +91,43 @@
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v0
+    move-result-wide v1
 
-    iput-wide v0, v7, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageTime:J
+    iput-wide v1, v7, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageTime:J
 
-    iget-wide v0, v7, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageTime:J
+    iget-wide v1, v7, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageTime:J
 
-    const-wide/16 v2, 0x3e8
+    const-wide/16 v3, 0x3e8
 
-    div-long/2addr v0, v2
+    div-long/2addr v1, v3
 
-    sput-wide v0, Lcom/oneplus/screenshot/GlobalScreenshot;->mLastImageTime:J
+    sput-wide v1, Lcom/oneplus/screenshot/GlobalScreenshot;->mLastImageTime:J
 
-    new-instance v0, Ljava/text/SimpleDateFormat;
+    new-instance v1, Ljava/text/SimpleDateFormat;
 
-    const-string v1, "yyyyMMdd-HHmmss"
+    const-string v2, "yyyyMMdd-HHmmss"
 
-    invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    new-instance v1, Ljava/util/Date;
+    new-instance v2, Ljava/util/Date;
 
-    iget-wide v2, v7, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageTime:J
+    iget-wide v3, v7, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageTime:J
 
-    invoke-direct {v1, v2, v3}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v2, v3, v4}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v0, v1}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v12
 
-    const-string v0, "Screenshot_%s.png"
+    const-string v1, "Screenshot_%s.jpg"
 
     const/4 v13, 0x1
 
-    new-array v1, v13, [Ljava/lang/Object;
+    new-array v2, v13, [Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    aput-object v12, v2, v0
 
-    aput-object v12, v1, v2
-
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -178,6 +182,10 @@
     iget v15, v9, Lcom/oneplus/screenshot/SaveImageInBackgroundData;->previewWidth:I
 
     iget v6, v9, Lcom/oneplus/screenshot/SaveImageInBackgroundData;->previewheight:I
+
+    iget-boolean v0, v9, Lcom/oneplus/screenshot/SaveImageInBackgroundData;->needRecycle:Z
+
+    iput-boolean v0, v7, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mNeedRecycle:Z
 
     new-instance v0, Landroid/graphics/Paint;
 
@@ -579,7 +587,7 @@
 .end method
 
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
-    .locals 21
+    .locals 25
 
     move-object/from16 v1, p0
 
@@ -668,138 +676,308 @@
     return-object v2
 
     :cond_2
+    const/4 v8, 0x0
+
     :try_start_0
     iget-object v0, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mScreenshotDir:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
-    iget-wide v7, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageTime:J
+    iget-wide v9, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageTime:J
 
-    const-wide/16 v9, 0x3e8
+    const-wide/16 v11, 0x3e8
 
-    div-long/2addr v7, v9
+    div-long/2addr v9, v11
 
     new-instance v0, Ljava/io/FileOutputStream;
 
-    iget-object v9, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageFilePath:Ljava/lang/String;
+    iget-object v11, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageFilePath:Ljava/lang/String;
 
-    invoke-direct {v0, v9}, Ljava/io/FileOutputStream;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v11}, Ljava/io/FileOutputStream;-><init>(Ljava/lang/String;)V
 
-    sget-object v9, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
+    move-object v11, v0
 
-    const/16 v10, 0x64
+    sget-object v0, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
-    invoke-virtual {v5, v9, v10, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
+    const/16 v12, 0x64
 
-    invoke-virtual {v0}, Ljava/io/OutputStream;->flush()V
+    invoke-virtual {v5, v0, v12, v11}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
+    const-string v0, "Longshot.SaveImageInBackgroundTask"
 
-    new-instance v9, Landroid/content/ContentValues;
+    const-string v12, "compress end"
 
-    invoke-direct {v9}, Landroid/content/ContentValues;-><init>()V
+    invoke-static {v0, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {v11}, Ljava/io/OutputStream;->flush()V
+
+    invoke-virtual {v11}, Ljava/io/OutputStream;->close()V
+
+    sget-boolean v0, Lcom/oneplus/screenshot/longshot/util/Configs;->IS_ENCRYPT_IMAGE:Z
+
+    move v12, v0
+
+    if-eqz v12, :cond_4
+
+    iget-object v0, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageFilePath:Ljava/lang/String;
+
+    const-string v13, "\\."
+
+    invoke-virtual {v0, v13}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v0
+
+    move-object v13, v0
+
+    new-instance v0, Ljava/lang/StringBuffer;
+
+    aget-object v14, v13, v8
+
+    invoke-direct {v0, v14}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
+
+    move-object v14, v0
+
+    const-string v0, ".jpg"
+
+    invoke-virtual {v14, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    new-instance v0, Ljava/lang/StringBuffer;
+
+    aget-object v15, v13, v8
+
+    invoke-direct {v0, v15}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
+
+    move-object v15, v0
+
+    const-string v0, ".png"
+
+    invoke-virtual {v15, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    sget-object v0, Lcom/oneplus/screenshot/longshot/util/Configs;->IMEI_NUMBER:Ljava/lang/String;
+
+    move-object/from16 v16, v0
+
+    const-string v0, "Longshot.SaveImageInBackgroundTask"
+
+    const-string v2, "doencrypt s"
+
+    invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {v14}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v15}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    move-object/from16 v7, v16
+
+    invoke-static {v0, v7, v2}, Lcom/oneplus/screenshot/Native;->doencrypt(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v0, "Longshot.SaveImageInBackgroundTask"
+
+    const-string v2, "doencrypt e"
+
+    invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v0, "Longshot.SaveImageInBackgroundTask"
+
+    const-string v2, " delete file s"
+
+    invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    new-instance v0, Ljava/io/File;
+
+    iget-object v2, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mScreenshotDir:Ljava/io/File;
+
+    iget-object v8, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageFileName:Ljava/lang/String;
+
+    invoke-direct {v0, v2, v8}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_3
+
+    move-object v2, v0
+
+    :try_start_1
+    invoke-virtual {v2}, Ljava/io/File;->exists()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-virtual {v2}, Ljava/io/File;->delete()Z
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+
+    :cond_3
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    :try_start_2
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    :goto_0
+    const-string v0, "Longshot.SaveImageInBackgroundTask"
+
+    const-string v8, " delete file e"
+
+    invoke-static {v0, v8}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    new-instance v0, Ljava/lang/StringBuffer;
+
+    iget-object v8, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageFileName:Ljava/lang/String;
+
+    move-object/from16 v17, v2
+
+    const-string v2, "\\."
+
+    invoke-virtual {v8, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v2
+
+    const/4 v8, 0x0
+
+    aget-object v2, v2, v8
+
+    invoke-direct {v0, v2}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
+
+    const-string v2, ".png"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageFileName:Ljava/lang/String;
+
+    invoke-virtual {v15}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageFilePath:Ljava/lang/String;
+
+    :cond_4
+    new-instance v0, Landroid/content/ContentValues;
+
+    invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
     invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v10
+    move-result-object v2
 
-    const-string v11, "_data"
+    const-string v7, "_data"
 
-    iget-object v12, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageFilePath:Ljava/lang/String;
+    iget-object v8, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageFilePath:Ljava/lang/String;
 
-    invoke-virtual {v9, v11, v12}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v7, v8}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v11, "title"
+    const-string v7, "title"
 
-    iget-object v12, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageFileName:Ljava/lang/String;
+    iget-object v8, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageFileName:Ljava/lang/String;
 
-    invoke-virtual {v9, v11, v12}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v7, v8}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v11, "_display_name"
+    const-string v7, "_display_name"
 
-    iget-object v12, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageFileName:Ljava/lang/String;
+    iget-object v8, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageFileName:Ljava/lang/String;
 
-    invoke-virtual {v9, v11, v12}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v7, v8}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v11, "datetaken"
+    const-string v7, "datetaken"
 
-    iget-wide v12, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageTime:J
+    iget-wide v13, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageTime:J
 
-    invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v13, v14}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v12
+    move-result-object v8
 
-    invoke-virtual {v9, v11, v12}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+    invoke-virtual {v0, v7, v8}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    const-string v11, "date_added"
+    const-string v7, "date_added"
 
-    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v12
+    move-result-object v8
 
-    invoke-virtual {v9, v11, v12}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+    invoke-virtual {v0, v7, v8}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    const-string v11, "date_modified"
+    const-string v7, "date_modified"
 
-    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v12
+    move-result-object v8
 
-    invoke-virtual {v9, v11, v12}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+    invoke-virtual {v0, v7, v8}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    const-string v11, "mime_type"
+    if-eqz v12, :cond_5
 
-    const-string v12, "image/png"
+    const-string v7, "mime_type"
 
-    invoke-virtual {v9, v11, v12}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+    const-string v8, "image/png"
 
-    const-string v11, "width"
+    invoke-virtual {v0, v7, v8}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget v12, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageWidth:I
+    goto :goto_1
 
-    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    :cond_5
+    const-string v7, "mime_type"
 
-    move-result-object v12
+    const-string v8, "image/jpeg"
 
-    invoke-virtual {v9, v11, v12}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    invoke-virtual {v0, v7, v8}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v11, "height"
+    :goto_1
+    const-string v7, "width"
 
-    iget v12, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageHeight:I
+    iget v8, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageWidth:I
 
-    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v12
+    move-result-object v8
 
-    invoke-virtual {v9, v11, v12}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    invoke-virtual {v0, v7, v8}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    const-string v11, "_size"
+    const-string v7, "height"
 
-    new-instance v12, Ljava/io/File;
+    iget v8, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageHeight:I
+
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    invoke-virtual {v0, v7, v8}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    const-string v7, "_size"
+
+    new-instance v8, Ljava/io/File;
 
     iget-object v13, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mImageFilePath:Ljava/lang/String;
 
-    invoke-direct {v12, v13}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v8, v13}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v12}, Ljava/io/File;->length()J
+    invoke-virtual {v8}, Ljava/io/File;->length()J
 
-    move-result-wide v12
+    move-result-wide v13
 
-    invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v13, v14}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v12
+    move-result-object v8
 
-    invoke-virtual {v9, v11, v12}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+    invoke-virtual {v0, v7, v8}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    sget-object v11, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
+    sget-object v7, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
-    invoke-virtual {v10, v11, v9}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
+    invoke-virtual {v2, v7, v0}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
 
-    move-result-object v11
+    move-result-object v7
 
     invoke-static {}, Ljava/text/DateFormat;->getDateTimeInstance()Ljava/text/DateFormat;
 
-    move-result-object v12
+    move-result-object v8
 
     new-instance v13, Ljava/util/Date;
 
@@ -807,147 +985,163 @@
 
     invoke-direct {v13, v14, v15}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v12, v13}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v8, v13}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v8
 
     const-string v13, "Screenshot (%s)"
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_3
 
     const/4 v14, 0x1
 
+    :try_start_3
     new-array v15, v14, [Ljava/lang/Object;
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
 
     const/4 v14, 0x0
 
-    aput-object v12, v15, v14
+    :try_start_4
+    aput-object v8, v15, v14
 
     invoke-static {v13, v15}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v13
 
-    new-instance v15, Landroid/content/Intent;
+    new-instance v14, Landroid/content/Intent;
 
-    const-string v2, "android.intent.action.SEND"
+    const-string v15, "android.intent.action.SEND"
 
-    invoke-direct {v15, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-direct {v14, v15}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    move-object v2, v15
+    if-eqz v12, :cond_6
 
     const-string v15, "image/png"
 
-    invoke-virtual {v2, v15}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v14, v15}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
+    goto :goto_2
+
+    :cond_6
+    const-string v15, "image/jpeg"
+
+    invoke-virtual {v14, v15}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
+
+    :goto_2
     const-string v15, "android.intent.extra.STREAM"
 
-    invoke-virtual {v2, v15, v11}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+    invoke-virtual {v14, v15, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
     const-string v15, "android.intent.extra.SUBJECT"
 
-    invoke-virtual {v2, v15, v13}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v14, v15, v13}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     const v15, -0x7fffff3d
 
-    invoke-virtual {v2, v15}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+    invoke-virtual {v14, v15}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     new-instance v15, Landroid/content/Intent;
 
-    const-class v14, Lcom/oneplus/screenshot/GlobalScreenshot$TargetChosenReceiver;
+    move-object/from16 v18, v0
 
-    invoke-direct {v15, v4, v14}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    const-class v0, Lcom/oneplus/screenshot/GlobalScreenshot$TargetChosenReceiver;
 
-    const/high16 v14, 0x50000000
+    invoke-direct {v15, v4, v0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    move-object/from16 v16, v0
+    const/high16 v0, 0x50000000
 
-    const/4 v0, 0x0
+    move-object/from16 v19, v2
 
-    invoke-static {v4, v0, v15, v14}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+    const/4 v2, 0x0
 
-    move-result-object v15
-
-    move-object v0, v15
-
-    nop
-
-    invoke-virtual {v0}, Landroid/app/PendingIntent;->getIntentSender()Landroid/content/IntentSender;
+    invoke-static {v4, v2, v15, v0}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v15
-
-    const/4 v14, 0x0
-
-    invoke-static {v2, v14, v15}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;Landroid/content/IntentSender;)Landroid/content/Intent;
-
-    move-result-object v15
-
-    const v14, 0x10008000
-
-    invoke-virtual {v15, v14}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    move-result-object v14
-
-    const/high16 v15, 0x10000000
-
-    move-object/from16 v17, v0
-
-    const/4 v0, 0x0
-
-    invoke-static {v4, v0, v14, v15}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
-
-    move-result-object v15
-
-    move-object v0, v15
-
-    new-instance v15, Landroid/app/Notification$Action$Builder;
-
-    move-object/from16 v18, v2
-
-    const v2, 0x1040602
-
-    invoke-virtual {v6, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    const v3, 0x7f020022
-
-    invoke-direct {v15, v3, v2, v0}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
     move-object v2, v15
 
-    iget-object v3, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mNotificationBuilder:Landroid/app/Notification$Builder;
+    nop
 
-    invoke-virtual {v2}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
+    invoke-virtual {v2}, Landroid/app/PendingIntent;->getIntentSender()Landroid/content/IntentSender;
 
     move-result-object v15
 
-    invoke-virtual {v3, v15}, Landroid/app/Notification$Builder;->addAction(Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;
+    move-object/from16 v20, v2
 
-    new-instance v3, Landroid/content/Intent;
+    const/4 v2, 0x0
 
-    const-class v15, Lcom/oneplus/screenshot/GlobalScreenshot$DeleteScreenshotReceiver;
+    invoke-static {v14, v2, v15}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;Landroid/content/IntentSender;)Landroid/content/Intent;
 
-    invoke-direct {v3, v4, v15}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    move-result-object v15
 
-    const-string v15, "android:screenshot_uri_id"
+    const v2, 0x10008000
 
-    move-object/from16 v19, v0
+    invoke-virtual {v15, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    invoke-virtual {v11}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v0
-
-    invoke-virtual {v3, v15, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    move-result-object v0
+    const/high16 v15, 0x10000000
 
     const/4 v3, 0x0
 
-    const/high16 v15, 0x50000000
+    invoke-static {v4, v3, v2, v15}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
-    invoke-static {v4, v3, v0, v15}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+    move-result-object v15
+
+    move-object v3, v15
+
+    new-instance v15, Landroid/app/Notification$Action$Builder;
+
+    const v0, 0x1040602
+
+    invoke-virtual {v6, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    new-instance v3, Landroid/app/Notification$Action$Builder;
+    move-object/from16 v21, v8
+
+    const v8, 0x7f020022
+
+    invoke-direct {v15, v8, v0, v3}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
+
+    move-object v0, v15
+
+    iget-object v8, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mNotificationBuilder:Landroid/app/Notification$Builder;
+
+    invoke-virtual {v0}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
+
+    move-result-object v15
+
+    invoke-virtual {v8, v15}, Landroid/app/Notification$Builder;->addAction(Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;
+
+    new-instance v8, Landroid/content/Intent;
+
+    const-class v15, Lcom/oneplus/screenshot/GlobalScreenshot$DeleteScreenshotReceiver;
+
+    invoke-direct {v8, v4, v15}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    const-string v15, "android:screenshot_uri_id"
+
+    move-object/from16 v22, v0
+
+    invoke-virtual {v7}, Landroid/net/Uri;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v8, v15, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object v0
+
+    const/4 v8, 0x0
+
+    const/high16 v15, 0x50000000
+
+    invoke-static {v4, v8, v0, v15}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object v0
+
+    new-instance v8, Landroid/app/Notification$Action$Builder;
 
     const v15, 0x10401c1
 
@@ -955,57 +1149,75 @@
 
     move-result-object v15
 
-    move-object/from16 v20, v2
+    move-object/from16 v23, v3
 
-    const v2, 0x7f020021
+    const v3, 0x7f020021
 
-    invoke-direct {v3, v2, v15, v0}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
+    invoke-direct {v8, v3, v15, v0}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    move-object v2, v3
+    move-object v3, v8
 
-    iget-object v3, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mNotificationBuilder:Landroid/app/Notification$Builder;
+    iget-object v8, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mNotificationBuilder:Landroid/app/Notification$Builder;
 
-    invoke-virtual {v2}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
+    invoke-virtual {v3}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
 
     move-result-object v15
 
-    invoke-virtual {v3, v15}, Landroid/app/Notification$Builder;->addAction(Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;
+    invoke-virtual {v8, v15}, Landroid/app/Notification$Builder;->addAction(Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;
 
-    iget-object v3, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mParams:Lcom/oneplus/screenshot/SaveImageInBackgroundData;
+    iget-object v8, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mParams:Lcom/oneplus/screenshot/SaveImageInBackgroundData;
 
-    iput-object v11, v3, Lcom/oneplus/screenshot/SaveImageInBackgroundData;->imageUri:Landroid/net/Uri;
+    iput-object v7, v8, Lcom/oneplus/screenshot/SaveImageInBackgroundData;->imageUri:Landroid/net/Uri;
 
-    iget-object v3, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mParams:Lcom/oneplus/screenshot/SaveImageInBackgroundData;
-
-    const/4 v15, 0x0
-
-    iput-object v15, v3, Lcom/oneplus/screenshot/SaveImageInBackgroundData;->image:Landroid/graphics/Bitmap;
-
-    iget-object v3, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mParams:Lcom/oneplus/screenshot/SaveImageInBackgroundData;
+    iget-object v8, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mParams:Lcom/oneplus/screenshot/SaveImageInBackgroundData;
 
     const/4 v15, 0x0
 
-    iput v15, v3, Lcom/oneplus/screenshot/SaveImageInBackgroundData;->errorMsgResId:I
+    iput-object v15, v8, Lcom/oneplus/screenshot/SaveImageInBackgroundData;->image:Landroid/graphics/Bitmap;
 
-    iput-object v14, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->viewIntent:Landroid/content/Intent;
+    iget-object v8, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mParams:Lcom/oneplus/screenshot/SaveImageInBackgroundData;
+
+    const/4 v15, 0x0
+
+    iput v15, v8, Lcom/oneplus/screenshot/SaveImageInBackgroundData;->errorMsgResId:I
+
+    iput-object v2, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->viewIntent:Landroid/content/Intent;
 
     iput-object v0, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->deleteIntent:Landroid/app/PendingIntent;
 
-    iget-object v3, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mParams:Lcom/oneplus/screenshot/SaveImageInBackgroundData;
+    iget-object v8, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mParams:Lcom/oneplus/screenshot/SaveImageInBackgroundData;
 
-    iget-object v3, v3, Lcom/oneplus/screenshot/SaveImageInBackgroundData;->handler:Landroid/os/Handler;
+    iget-object v8, v8, Lcom/oneplus/screenshot/SaveImageInBackgroundData;->handler:Landroid/os/Handler;
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_3
 
     const/4 v15, 0x1
 
-    invoke-virtual {v3, v15}, Landroid/os/Handler;->sendEmptyMessage(I)Z
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    :try_start_5
+    invoke-virtual {v8, v15}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_1
 
-    goto :goto_0
+    goto :goto_4
 
-    :catch_0
+    :catch_1
     move-exception v0
 
+    goto :goto_3
+
+    :catch_2
+    move-exception v0
+
+    move v15, v14
+
+    goto :goto_3
+
+    :catch_3
+    move-exception v0
+
+    const/4 v15, 0x1
+
+    :goto_3
     iget-object v2, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mParams:Lcom/oneplus/screenshot/SaveImageInBackgroundData;
 
     invoke-virtual {v2}, Lcom/oneplus/screenshot/SaveImageInBackgroundData;->clearImage()V
@@ -1022,7 +1234,70 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :goto_0
+    :goto_4
+    const-string v0, "Longshot.SaveImageInBackgroundTask"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "saving image end, "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-eqz v5, :cond_7
+
+    goto :goto_5
+
+    :cond_7
+    const/4 v15, 0x0
+
+    :goto_5
+    invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v3, ", needRecycle:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v3, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mNeedRecycle:Z
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v3, ",  busy:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget-boolean v3, Lcom/oneplus/screenshot/GlobalScreenshot;->mIsBusy:Z
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    if-eqz v5, :cond_8
+
+    iget-boolean v0, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mNeedRecycle:Z
+
+    if-eqz v0, :cond_8
+
+    sget-boolean v0, Lcom/oneplus/screenshot/GlobalScreenshot;->mIsBusy:Z
+
+    if-nez v0, :cond_8
+
+    const-string v0, "Longshot.SaveImageInBackgroundTask"
+
+    const-string v2, "recycle after saving"
+
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {v5}, Landroid/graphics/Bitmap;->recycle()V
+
+    const/4 v5, 0x0
+
+    :cond_8
     iget-object v0, v1, Lcom/oneplus/screenshot/SaveImageInBackgroundTask;->mParams:Lcom/oneplus/screenshot/SaveImageInBackgroundData;
 
     invoke-virtual {v0}, Lcom/oneplus/screenshot/SaveImageInBackgroundData;->doDelayAction()V
@@ -1168,7 +1443,7 @@
 
     iget-object v3, v3, Lcom/oneplus/screenshot/SaveImageInBackgroundData;->imageUri:Landroid/net/Uri;
 
-    const-string v4, "image/png"
+    const-string v4, "image/jpeg"
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
 
