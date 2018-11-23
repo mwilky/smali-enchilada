@@ -14,6 +14,14 @@
 .end annotation
 
 
+# static fields
+.field public static final FAST_CHARGE_STATE_NONE:I = 0x0
+
+.field public static final FAST_CHARGE_STATE_NORMAL:I = 0x1
+
+.field public static final FAST_CHARGE_STATE_WARP:I = 0x2
+
+
 # virtual methods
 .method public abstract addStateChangedCallback(Lcom/oneplus/aod/battery/BatteryController$BatteryStateChangeCallback;)V
 .end method

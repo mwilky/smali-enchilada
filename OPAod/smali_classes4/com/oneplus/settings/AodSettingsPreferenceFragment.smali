@@ -1511,7 +1511,7 @@
 
     const-string v2, "AOD"
 
-    const-string v3, "SingleTap "
+    const-string v3, "Tap "
 
     invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -1649,7 +1649,7 @@
 
     const-string v2, "AOD"
 
-    const-string v3, "ShakeUp"
+    const-string v3, "Pick"
 
     invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 

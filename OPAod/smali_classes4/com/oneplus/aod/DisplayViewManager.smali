@@ -204,78 +204,86 @@
 
     const/4 v3, 0x1
 
+    if-eq v0, v3, :cond_3
+
+    iget v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mState:I
+
+    if-nez v0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    iget v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mState:I
+
+    const/4 v3, 0x2
+
     if-ne v0, v3, :cond_2
 
+    iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mMainView:Lcom/oneplus/aod/AodMain;
+
+    invoke-virtual {v0, v2}, Lcom/oneplus/aod/AodMain;->setVisibility(I)V
+
+    iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mSingleNotificationView:Landroid/view/ViewGroup;
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mThreeKeyview:Landroid/view/ViewGroup;
+
+    invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    goto :goto_2
+
+    :cond_2
+    iget v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mState:I
+
+    const/4 v3, 0x3
+
+    if-ne v0, v3, :cond_5
+
+    iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mMainView:Lcom/oneplus/aod/AodMain;
+
+    invoke-virtual {v0, v2}, Lcom/oneplus/aod/AodMain;->setVisibility(I)V
+
+    iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mSingleNotificationView:Landroid/view/ViewGroup;
+
+    invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mThreeKeyview:Landroid/view/ViewGroup;
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    goto :goto_2
+
+    :cond_3
+    :goto_0
     invoke-static {}, Lcom/oneplus/aod/Utils;->isAlwaysOnEnabled()Z
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_4
 
     iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mMainView:Lcom/oneplus/aod/AodMain;
 
     invoke-virtual {v0, v1}, Lcom/oneplus/aod/AodMain;->setVisibility(I)V
 
-    goto :goto_0
-
-    :cond_1
-    iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mMainView:Lcom/oneplus/aod/AodMain;
-
-    invoke-virtual {v0, v2}, Lcom/oneplus/aod/AodMain;->setVisibility(I)V
-
-    :goto_0
-    iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mSingleNotificationView:Landroid/view/ViewGroup;
-
-    invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->setVisibility(I)V
-
-    iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mThreeKeyview:Landroid/view/ViewGroup;
-
-    invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->setVisibility(I)V
-
     goto :goto_1
-
-    :cond_2
-    iget v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mState:I
-
-    const/4 v3, 0x2
-
-    if-ne v0, v3, :cond_3
-
-    iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mMainView:Lcom/oneplus/aod/AodMain;
-
-    invoke-virtual {v0, v2}, Lcom/oneplus/aod/AodMain;->setVisibility(I)V
-
-    iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mSingleNotificationView:Landroid/view/ViewGroup;
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
-
-    iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mThreeKeyview:Landroid/view/ViewGroup;
-
-    invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->setVisibility(I)V
-
-    goto :goto_1
-
-    :cond_3
-    iget v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mState:I
-
-    const/4 v3, 0x3
-
-    if-ne v0, v3, :cond_4
-
-    iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mMainView:Lcom/oneplus/aod/AodMain;
-
-    invoke-virtual {v0, v2}, Lcom/oneplus/aod/AodMain;->setVisibility(I)V
-
-    iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mSingleNotificationView:Landroid/view/ViewGroup;
-
-    invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->setVisibility(I)V
-
-    iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mThreeKeyview:Landroid/view/ViewGroup;
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     :cond_4
+    iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mMainView:Lcom/oneplus/aod/AodMain;
+
+    invoke-virtual {v0, v2}, Lcom/oneplus/aod/AodMain;->setVisibility(I)V
+
     :goto_1
+    iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mSingleNotificationView:Landroid/view/ViewGroup;
+
+    invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mThreeKeyview:Landroid/view/ViewGroup;
+
+    invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    :cond_5
+    :goto_2
     return-void
 .end method
 

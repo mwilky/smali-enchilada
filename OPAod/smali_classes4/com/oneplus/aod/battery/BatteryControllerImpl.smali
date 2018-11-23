@@ -1102,7 +1102,7 @@
 
     const/4 v3, 0x0
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_b
 
     iget-boolean v1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mTestmode:Z
 
@@ -1220,74 +1220,84 @@
 
     const-string v5, "fastcharge_status"
 
-    invoke-virtual {p2, v5, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    invoke-virtual {p2, v5, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v5
 
-    iput-boolean v5, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mFastcharge:Z
+    if-lez v5, :cond_6
 
-    iget-boolean v5, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mPluggedIn:Z
-
-    if-eqz v5, :cond_8
-
-    iget v5, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mLevel:I
-
-    if-lt v5, v6, :cond_6
-
-    iput v3, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mChargeState:I
+    move v5, v2
 
     goto :goto_4
 
     :cond_6
+    move v5, v3
+
+    :goto_4
+    iput-boolean v5, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mFastcharge:Z
+
+    iget-boolean v5, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mPluggedIn:Z
+
+    if-eqz v5, :cond_9
+
+    iget v5, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mLevel:I
+
+    if-lt v5, v6, :cond_7
+
+    iput v3, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mChargeState:I
+
+    goto :goto_5
+
+    :cond_7
     iget-boolean v3, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mFastcharge:Z
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_8
 
     iput v7, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mChargeState:I
 
-    goto :goto_4
-
-    :cond_7
-    iput v2, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mChargeState:I
-
-    goto :goto_4
+    goto :goto_5
 
     :cond_8
+    iput v2, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mChargeState:I
+
+    goto :goto_5
+
+    :cond_9
     const/4 v2, -0x1
 
     iput v2, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mChargeState:I
 
-    :goto_4
+    :goto_5
     invoke-virtual {p0}, Lcom/oneplus/aod/battery/BatteryControllerImpl;->fireBatteryLevelChanged()V
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_a
 
     invoke-direct {p0}, Lcom/oneplus/aod/battery/BatteryControllerImpl;->fireBatteryStylechange()V
 
-    :cond_9
-    goto :goto_5
-
     :cond_a
+    goto :goto_6
+
+    :cond_b
     const-string v1, "android.os.action.POWER_SAVE_MODE_CHANGED"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_c
 
     invoke-direct {p0}, Lcom/oneplus/aod/battery/BatteryControllerImpl;->updatePowerSave()V
 
-    goto :goto_5
+    goto :goto_6
 
-    :cond_b
+    :cond_c
     const-string v1, "android.os.action.POWER_SAVE_MODE_CHANGING"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_d
 
     const-string v1, "mode"
 
@@ -1297,16 +1307,16 @@
 
     invoke-direct {p0, v1}, Lcom/oneplus/aod/battery/BatteryControllerImpl;->setPowerSave(Z)V
 
-    goto :goto_5
+    goto :goto_6
 
-    :cond_c
+    :cond_d
     const-string v1, "android.intent.action.BOOT_COMPLETED"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_e
 
     iget-object v1, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mSettingObserver:Lcom/oneplus/aod/battery/BatteryControllerImpl$SettingObserver;
 
@@ -1314,16 +1324,16 @@
 
     invoke-virtual {v1, v2}, Lcom/oneplus/aod/battery/BatteryControllerImpl$SettingObserver;->update(Landroid/net/Uri;)V
 
-    goto :goto_5
+    goto :goto_6
 
-    :cond_d
+    :cond_e
     const-string v1, "com.android.systemui.BATTERY_LEVEL_TEST"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_f
 
     iput-boolean v2, p0, Lcom/oneplus/aod/battery/BatteryControllerImpl;->mTestmode:Z
 
@@ -1335,8 +1345,8 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_e
-    :goto_5
+    :cond_f
+    :goto_6
     return-void
 .end method
 
