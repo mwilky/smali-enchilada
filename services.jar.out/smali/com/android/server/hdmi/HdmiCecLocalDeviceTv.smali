@@ -203,7 +203,7 @@
 
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;->mService:Lcom/android/server/hdmi/HdmiControlService;
 
-    const-string v1, "hdmi_control_auto_device_off_enabled"
+    const-string/jumbo v1, "hdmi_control_auto_device_off_enabled"
 
     const/4 v2, 0x1
 
@@ -215,7 +215,7 @@
 
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;->mService:Lcom/android/server/hdmi/HdmiControlService;
 
-    const-string v1, "hdmi_control_auto_wakeup_enabled"
+    const-string/jumbo v1, "hdmi_control_auto_wakeup_enabled"
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/hdmi/HdmiControlService;->readBooleanSetting(Ljava/lang/String;Z)Z
 
@@ -225,7 +225,7 @@
 
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;->mService:Lcom/android/server/hdmi/HdmiControlService;
 
-    const-string v1, "hdmi_system_audio_control_enabled"
+    const-string/jumbo v1, "hdmi_system_audio_control_enabled"
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/hdmi/HdmiControlService;->readBooleanSetting(Ljava/lang/String;Z)Z
 

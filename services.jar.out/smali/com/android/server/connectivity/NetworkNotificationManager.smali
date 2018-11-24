@@ -120,7 +120,7 @@
 
     move-result-object v0
 
-    const v1, 0x1070061
+    const v1, 0x1070062
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -620,7 +620,7 @@
 
     packed-switch v7, :pswitch_data_0
 
-    move v0, v14
+    const/4 v0, 0x1
 
     new-array v14, v0, [Ljava/lang/Object;
 
@@ -698,25 +698,23 @@
 
     invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v16
+    move-result-object v0
 
-    aput-object v16, v14, v15
+    aput-object v0, v14, v15
 
     invoke-virtual {v11, v13, v14}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
+    move-result-object v0
+
+    iget-object v13, v1, Lcom/android/server/connectivity/NetworkNotificationManager;->mTelephonyManager:Landroid/telephony/TelephonyManager;
+
+    invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubscriptionId()I
+
+    move-result v14
+
+    invoke-virtual {v13, v14}, Landroid/telephony/TelephonyManager;->getNetworkOperatorName(I)Ljava/lang/String;
+
     move-result-object v13
-
-    iget-object v14, v1, Lcom/android/server/connectivity/NetworkNotificationManager;->mTelephonyManager:Landroid/telephony/TelephonyManager;
-
-    invoke-virtual {v14}, Landroid/telephony/TelephonyManager;->getNetworkOperatorName()Ljava/lang/String;
-
-    move-result-object v14
-
-    nop
-
-    move-object v0, v13
-
-    move-object v13, v14
 
     goto :goto_3
 
@@ -970,8 +968,6 @@
     invoke-static {v0, v1}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
-
-    nop
 
     nop
 

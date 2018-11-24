@@ -94,7 +94,7 @@
     :cond_1
     iget-boolean v2, p0, Lcom/android/server/am/OnePlusBGController$UidStat;->mIsFgBlack:Z
 
-    invoke-static {p1, v2, p4}, Lcom/android/server/am/OnePlusBGController;->access$2400(Lcom/android/server/am/OnePlusBGController;ZI)Z
+    invoke-static {p1, v2, p4}, Lcom/android/server/am/OnePlusBGController;->access$2500(Lcom/android/server/am/OnePlusBGController;ZI)Z
 
     move-result v2
 
@@ -162,7 +162,7 @@
 
     invoke-static {v0}, Lcom/android/server/am/OnePlusBGController;->myLog(Ljava/lang/String;)V
 
-    invoke-static {}, Lcom/android/server/am/OnePlusBGController;->access$2500()Z
+    invoke-static {}, Lcom/android/server/am/OnePlusBGController;->access$2600()Z
 
     move-result v0
 
@@ -193,7 +193,7 @@
 
     move-object v6, p0
 
-    invoke-static/range {v2 .. v7}, Lcom/android/server/am/OnePlusBGController;->access$2600(Lcom/android/server/am/OnePlusBGController;IJLcom/android/server/am/OnePlusBGController$UidStat;Lcom/android/server/am/OnePlusBGController$PROC_TYPE;)V
+    invoke-static/range {v2 .. v7}, Lcom/android/server/am/OnePlusBGController;->access$2700(Lcom/android/server/am/OnePlusBGController;IJLcom/android/server/am/OnePlusBGController$UidStat;Lcom/android/server/am/OnePlusBGController$PROC_TYPE;)V
 
     :cond_6
     return-void
@@ -324,7 +324,7 @@
 
     const/4 v2, 0x1
 
-    invoke-static {v0, v1, v2}, Lcom/android/server/am/OnePlusBGController;->access$2700(Lcom/android/server/am/OnePlusBGController;IZ)Z
+    invoke-static {v0, v1, v2}, Lcom/android/server/am/OnePlusBGController;->access$2800(Lcom/android/server/am/OnePlusBGController;IZ)Z
 
     return-void
 .end method
@@ -395,7 +395,7 @@
 
     iget-boolean v5, p0, Lcom/android/server/am/OnePlusBGController$UidStat;->mIsFgBlack:Z
 
-    invoke-static {v4, v5, v3}, Lcom/android/server/am/OnePlusBGController;->access$2400(Lcom/android/server/am/OnePlusBGController;ZI)Z
+    invoke-static {v4, v5, v3}, Lcom/android/server/am/OnePlusBGController;->access$2500(Lcom/android/server/am/OnePlusBGController;ZI)Z
 
     move-result v4
 
@@ -451,7 +451,7 @@
 
     iget-boolean v2, p0, Lcom/android/server/am/OnePlusBGController$UidStat;->mIsFgBlack:Z
 
-    invoke-static {v1, v2, p1}, Lcom/android/server/am/OnePlusBGController;->access$2400(Lcom/android/server/am/OnePlusBGController;ZI)Z
+    invoke-static {v1, v2, p1}, Lcom/android/server/am/OnePlusBGController;->access$2500(Lcom/android/server/am/OnePlusBGController;ZI)Z
 
     move-result v1
 
@@ -731,7 +731,7 @@
 
     invoke-static {v0}, Lcom/android/server/am/OnePlusBGController;->myLog(Ljava/lang/String;)V
 
-    invoke-static {}, Lcom/android/server/am/OnePlusBGController;->access$2500()Z
+    invoke-static {}, Lcom/android/server/am/OnePlusBGController;->access$2600()Z
 
     move-result v0
 
@@ -747,7 +747,7 @@
 
     move-object v4, v6
 
-    invoke-static/range {v0 .. v5}, Lcom/android/server/am/OnePlusBGController;->access$2600(Lcom/android/server/am/OnePlusBGController;IJLcom/android/server/am/OnePlusBGController$UidStat;Lcom/android/server/am/OnePlusBGController$PROC_TYPE;)V
+    invoke-static/range {v0 .. v5}, Lcom/android/server/am/OnePlusBGController;->access$2700(Lcom/android/server/am/OnePlusBGController;IJLcom/android/server/am/OnePlusBGController$UidStat;Lcom/android/server/am/OnePlusBGController$PROC_TYPE;)V
 
     :cond_a
     :goto_4

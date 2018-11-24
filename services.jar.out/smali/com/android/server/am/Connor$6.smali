@@ -52,13 +52,33 @@
 
     const/4 v3, 0x1
 
-    invoke-static {v1, v3}, Lcom/android/server/am/Connor;->access$1600(Lcom/android/server/am/Connor;Z)V
+    invoke-static {v1, v3}, Lcom/android/server/am/Connor;->access$1700(Lcom/android/server/am/Connor;Z)V
 
     iget-object v1, p0, Lcom/android/server/am/Connor$6;->this$0:Lcom/android/server/am/Connor;
 
     invoke-virtual {v1, v2}, Lcom/android/server/am/Connor;->setTraining(Z)V
 
-    goto :goto_0
+    iget-object v1, p0, Lcom/android/server/am/Connor$6;->this$0:Lcom/android/server/am/Connor;
+
+    iget-object v1, v1, Lcom/android/server/am/Connor;->mCmcSensor:Landroid/hardware/Sensor;
+
+    if-eqz v1, :cond_5
+
+    iget-object v1, p0, Lcom/android/server/am/Connor$6;->this$0:Lcom/android/server/am/Connor;
+
+    iget-object v1, v1, Lcom/android/server/am/Connor;->mSensorManager:Landroid/hardware/SensorManager;
+
+    iget-object v2, p0, Lcom/android/server/am/Connor$6;->this$0:Lcom/android/server/am/Connor;
+
+    iget-object v3, p0, Lcom/android/server/am/Connor$6;->this$0:Lcom/android/server/am/Connor;
+
+    iget-object v3, v3, Lcom/android/server/am/Connor;->mCmcSensor:Landroid/hardware/Sensor;
+
+    const/4 v4, 0x3
+
+    invoke-virtual {v1, v2, v3, v4}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
+
+    goto/16 :goto_0
 
     :cond_0
     const-string v1, "android.intent.action.ACTION_POWER_DISCONNECTED"
@@ -86,7 +106,25 @@
 
     iget-object v1, p0, Lcom/android/server/am/Connor$6;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v1, v2}, Lcom/android/server/am/Connor;->access$1600(Lcom/android/server/am/Connor;Z)V
+    invoke-static {v1, v2}, Lcom/android/server/am/Connor;->access$1700(Lcom/android/server/am/Connor;Z)V
+
+    iget-object v1, p0, Lcom/android/server/am/Connor$6;->this$0:Lcom/android/server/am/Connor;
+
+    iget-object v1, v1, Lcom/android/server/am/Connor;->mCmcSensor:Landroid/hardware/Sensor;
+
+    if-eqz v1, :cond_5
+
+    iget-object v1, p0, Lcom/android/server/am/Connor$6;->this$0:Lcom/android/server/am/Connor;
+
+    iget-object v1, v1, Lcom/android/server/am/Connor;->mSensorManager:Landroid/hardware/SensorManager;
+
+    iget-object v2, p0, Lcom/android/server/am/Connor$6;->this$0:Lcom/android/server/am/Connor;
+
+    iget-object v3, p0, Lcom/android/server/am/Connor$6;->this$0:Lcom/android/server/am/Connor;
+
+    iget-object v3, v3, Lcom/android/server/am/Connor;->mCmcSensor:Landroid/hardware/Sensor;
+
+    invoke-virtual {v1, v2, v3}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;)V
 
     goto :goto_0
 
@@ -111,17 +149,13 @@
 
     iget-object v2, p0, Lcom/android/server/am/Connor$6;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v2}, Lcom/android/server/am/Connor;->access$1100(Lcom/android/server/am/Connor;)V
+    invoke-static {v2}, Lcom/android/server/am/Connor;->access$1200(Lcom/android/server/am/Connor;)V
 
-    invoke-static {}, Lcom/android/server/am/Connor;->access$1700()Z
-
-    move-result v2
+    sget-boolean v2, Lcom/android/server/am/Connor;->mIsAlpha:Z
 
     if-nez v2, :cond_3
 
-    invoke-static {}, Lcom/android/server/am/Connor;->access$1800()Z
-
-    move-result v2
+    sget-boolean v2, Lcom/android/server/am/Connor;->mIsBeta:Z
 
     if-eqz v2, :cond_5
 
@@ -136,7 +170,7 @@
 
     iget-object v3, p0, Lcom/android/server/am/Connor$6;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v3}, Lcom/android/server/am/Connor;->access$1900(Lcom/android/server/am/Connor;)Ljava/lang/Runnable;
+    invoke-static {v3}, Lcom/android/server/am/Connor;->access$1800(Lcom/android/server/am/Connor;)Ljava/lang/Runnable;
 
     move-result-object v3
 
@@ -156,7 +190,7 @@
     :try_start_0
     iget-object v2, p0, Lcom/android/server/am/Connor$6;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v2}, Lcom/android/server/am/Connor;->access$2000(Lcom/android/server/am/Connor;)V
+    invoke-static {v2}, Lcom/android/server/am/Connor;->access$1900(Lcom/android/server/am/Connor;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

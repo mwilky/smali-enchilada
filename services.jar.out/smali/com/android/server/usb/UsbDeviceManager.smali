@@ -89,6 +89,8 @@
 
 .field private static final USB_STATE_MATCH:Ljava/lang/String; = "DEVPATH=/devices/virtual/android_usb/android0"
 
+.field private static final USB_STATE_MATCH_SEC:Ljava/lang/String; = "DEVPATH=/devices/virtual/android_usb/android1"
+
 .field private static sBlackListedInterfaces:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -591,6 +593,12 @@
 
     iget-object v6, v8, Lcom/android/server/usb/UsbDeviceManager;->mUEventObserver:Landroid/os/UEventObserver;
 
+    const-string v7, "DEVPATH=/devices/virtual/android_usb/android1"
+
+    invoke-virtual {v6, v7}, Landroid/os/UEventObserver;->startObserving(Ljava/lang/String;)V
+
+    iget-object v6, v8, Lcom/android/server/usb/UsbDeviceManager;->mUEventObserver:Landroid/os/UEventObserver;
+
     const-string v7, "DEVPATH=/devices/virtual/misc/usb_accessory"
 
     invoke-virtual {v6, v7}, Landroid/os/UEventObserver;->startObserving(Ljava/lang/String;)V
@@ -993,7 +1001,7 @@
 
     iget-object v2, p0, Lcom/android/server/usb/UsbDeviceManager;->mHandler:Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
 
-    const-string v3, "handler"
+    const-string/jumbo v3, "handler"
 
     const-wide v4, 0x10b00000001L
 

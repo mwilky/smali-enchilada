@@ -45,7 +45,7 @@
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService$PostNotificationRunnable;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
-    invoke-static {v0}, Lcom/android/server/notification/NotificationManagerService;->access$7400(Lcom/android/server/notification/NotificationManagerService;)Lcom/android/server/notification/GroupHelper;
+    invoke-static {v0}, Lcom/android/server/notification/NotificationManagerService;->access$7500(Lcom/android/server/notification/NotificationManagerService;)Lcom/android/server/notification/GroupHelper;
 
     move-result-object v0
 
@@ -57,7 +57,7 @@
 
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService$PostNotificationRunnable$1;->val$n:Landroid/service/notification/StatusBarNotification;
 
-    invoke-static {v2, v3}, Lcom/android/server/notification/NotificationManagerService;->access$7300(Lcom/android/server/notification/NotificationManagerService;Landroid/service/notification/StatusBarNotification;)Z
+    invoke-static {v2, v3}, Lcom/android/server/notification/NotificationManagerService;->access$7400(Lcom/android/server/notification/NotificationManagerService;Landroid/service/notification/StatusBarNotification;)Z
 
     move-result v2
 

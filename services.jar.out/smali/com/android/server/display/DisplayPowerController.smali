@@ -1001,7 +1001,7 @@
 
     iput v1, v0, Lcom/android/server/display/DisplayPowerController;->mPendingScreenBrightnessSetting:I
 
-    const/high16 v1, 0x7fc00000    # NaNf
+    const/high16 v1, 0x7fc00000    # Float.NaN
 
     iput v1, v0, Lcom/android/server/display/DisplayPowerController;->mTemporaryAutoBrightnessAdjustment:F
 
@@ -4037,7 +4037,7 @@
 
     cmpl-float v0, v0, v2
 
-    const/high16 v2, 0x7fc00000    # NaNf
+    const/high16 v2, 0x7fc00000    # Float.NaN
 
     if-nez v0, :cond_1
 
@@ -4812,7 +4812,7 @@
 
     if-eqz v11, :cond_28
 
-    const/high16 v14, 0x7fc00000    # NaNf
+    const/high16 v14, 0x7fc00000    # Float.NaN
 
     iput v14, v1, Lcom/android/server/display/DisplayPowerController;->mTemporaryAutoBrightnessAdjustment:F
 

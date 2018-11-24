@@ -136,7 +136,7 @@
 .end method
 
 .method public onUidStateChanged(IIJ)V
-    .locals 1
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -145,7 +145,15 @@
 
     iget-object v0, p0, Lcom/android/server/am/OnePlusBGController$UidObserver;->this$0:Lcom/android/server/am/OnePlusBGController;
 
-    invoke-virtual {v0, p1, p2}, Lcom/android/server/am/OnePlusBGController;->handleOnUidStateChanged(II)V
+    const v1, 0x101d8
+
+    const-wide/16 v2, 0x0
+
+    move v4, p1
+
+    move v5, p2
+
+    invoke-static/range {v0 .. v5}, Lcom/android/server/am/OnePlusBGController;->access$2400(Lcom/android/server/am/OnePlusBGController;IJII)V
 
     return-void
 .end method

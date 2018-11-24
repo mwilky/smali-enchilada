@@ -3871,7 +3871,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v2, "has no permission to generate keys."
+    const-string/jumbo v2, "has no permission to generate keys."
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

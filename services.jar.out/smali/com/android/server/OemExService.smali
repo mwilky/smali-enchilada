@@ -587,20 +587,6 @@
     iget-object v4, v1, Lcom/android/server/OemExService;->mSession:Landroid/content/pm/PackageInstaller$Session;
 
     invoke-virtual {v4, v7}, Landroid/content/pm/PackageInstaller$Session;->fsync(Ljava/io/OutputStream;)V
-
-    invoke-virtual {v7}, Ljava/io/OutputStream;->close()V
-
-    iget-object v4, v1, Lcom/android/server/OemExService;->mSession:Landroid/content/pm/PackageInstaller$Session;
-
-    invoke-direct {v1, v9, v6}, Lcom/android/server/OemExService;->getCommitCallback(ILjava/lang/String;)Landroid/content/IntentSender;
-
-    move-result-object v12
-
-    invoke-virtual {v4, v12}, Landroid/content/pm/PackageInstaller$Session;->commit(Landroid/content/IntentSender;)V
-
-    iget-object v4, v1, Lcom/android/server/OemExService;->mSession:Landroid/content/pm/PackageInstaller$Session;
-
-    invoke-virtual {v4}, Landroid/content/pm/PackageInstaller$Session;->close()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -609,6 +595,20 @@
     invoke-static {v8}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     nop
+
+    nop
+
+    iget-object v0, v1, Lcom/android/server/OemExService;->mSession:Landroid/content/pm/PackageInstaller$Session;
+
+    invoke-direct {v1, v9, v6}, Lcom/android/server/OemExService;->getCommitCallback(ILjava/lang/String;)Landroid/content/IntentSender;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v4}, Landroid/content/pm/PackageInstaller$Session;->commit(Landroid/content/IntentSender;)V
+
+    iget-object v0, v1, Lcom/android/server/OemExService;->mSession:Landroid/content/pm/PackageInstaller$Session;
+
+    invoke-virtual {v0}, Landroid/content/pm/PackageInstaller$Session;->close()V
 
     :goto_2
     return-void
@@ -774,7 +774,7 @@
 .end method
 
 .method private onSystemReady(Z)V
-    .locals 5
+    .locals 4
 
     const-string v0, "OemExService"
 
@@ -800,112 +800,88 @@
 
     invoke-virtual {v1}, Lcom/oneplus/threekey/ThreeKeyHw;->init()V
 
-    new-array v1, v0, [I
-
-    const/4 v2, 0x0
-
-    const/16 v3, 0x29
-
-    aput v3, v1, v2
-
-    invoke-static {v1}, Landroid/util/OpFeatures;->isSupport([I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
     new-instance v1, Lcom/oneplus/threekey/ThreeKeyAudioPolicy2;
 
-    iget-object v3, p0, Lcom/android/server/OemExService;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/server/OemExService;->mContext:Landroid/content/Context;
 
-    invoke-direct {v1, v3}, Lcom/oneplus/threekey/ThreeKeyAudioPolicy2;-><init>(Landroid/content/Context;)V
-
-    iput-object v1, p0, Lcom/android/server/OemExService;->mThreeKeyAudioPolicy:Lcom/oneplus/three_key/IThreeKeyPolicy;
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v1, Lcom/oneplus/threekey/ThreeKeyAudioPolicy;
-
-    iget-object v3, p0, Lcom/android/server/OemExService;->mContext:Landroid/content/Context;
-
-    invoke-direct {v1, v3}, Lcom/oneplus/threekey/ThreeKeyAudioPolicy;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v2}, Lcom/oneplus/threekey/ThreeKeyAudioPolicy2;-><init>(Landroid/content/Context;)V
 
     iput-object v1, p0, Lcom/android/server/OemExService;->mThreeKeyAudioPolicy:Lcom/oneplus/three_key/IThreeKeyPolicy;
 
-    :goto_0
     new-instance v1, Lcom/oneplus/threekey/ThreeKeyVibratorPolicy;
 
-    iget-object v3, p0, Lcom/android/server/OemExService;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/server/OemExService;->mContext:Landroid/content/Context;
 
-    invoke-direct {v1, v3}, Lcom/oneplus/threekey/ThreeKeyVibratorPolicy;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v2}, Lcom/oneplus/threekey/ThreeKeyVibratorPolicy;-><init>(Landroid/content/Context;)V
 
     iput-object v1, p0, Lcom/android/server/OemExService;->mThreeKeyVibratorPolicy:Lcom/oneplus/three_key/IThreeKeyPolicy;
 
     :try_start_0
     new-instance v1, Lcom/oneplus/threekey/ThreeKey;
 
-    iget-object v3, p0, Lcom/android/server/OemExService;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/server/OemExService;->mContext:Landroid/content/Context;
 
-    invoke-direct {v1, v3}, Lcom/oneplus/threekey/ThreeKey;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v2}, Lcom/oneplus/threekey/ThreeKey;-><init>(Landroid/content/Context;)V
 
     iput-object v1, p0, Lcom/android/server/OemExService;->threekey:Lcom/oneplus/threekey/ThreeKey;
 
     iget-object v1, p0, Lcom/android/server/OemExService;->threekey:Lcom/oneplus/threekey/ThreeKey;
 
-    iget-object v3, p0, Lcom/android/server/OemExService;->mThreeKeyAudioPolicy:Lcom/oneplus/three_key/IThreeKeyPolicy;
+    iget-object v2, p0, Lcom/android/server/OemExService;->mThreeKeyAudioPolicy:Lcom/oneplus/three_key/IThreeKeyPolicy;
 
-    invoke-virtual {v1, v3}, Lcom/oneplus/threekey/ThreeKey;->addThreeKeyPolicy(Lcom/oneplus/three_key/IThreeKeyPolicy;)V
-
-    iget-object v1, p0, Lcom/android/server/OemExService;->threekey:Lcom/oneplus/threekey/ThreeKey;
-
-    iget-object v3, p0, Lcom/android/server/OemExService;->mThreeKeyVibratorPolicy:Lcom/oneplus/three_key/IThreeKeyPolicy;
-
-    invoke-virtual {v1, v3}, Lcom/oneplus/threekey/ThreeKey;->addThreeKeyPolicy(Lcom/oneplus/three_key/IThreeKeyPolicy;)V
+    invoke-virtual {v1, v2}, Lcom/oneplus/threekey/ThreeKey;->addThreeKeyPolicy(Lcom/oneplus/three_key/IThreeKeyPolicy;)V
 
     iget-object v1, p0, Lcom/android/server/OemExService;->threekey:Lcom/oneplus/threekey/ThreeKey;
 
-    iget-object v3, p0, Lcom/android/server/OemExService;->threekeyhw:Lcom/oneplus/threekey/ThreeKeyHw;
+    iget-object v2, p0, Lcom/android/server/OemExService;->mThreeKeyVibratorPolicy:Lcom/oneplus/three_key/IThreeKeyPolicy;
 
-    invoke-virtual {v3}, Lcom/oneplus/threekey/ThreeKeyHw;->getState()I
+    invoke-virtual {v1, v2}, Lcom/oneplus/threekey/ThreeKey;->addThreeKeyPolicy(Lcom/oneplus/three_key/IThreeKeyPolicy;)V
 
-    move-result v3
+    iget-object v1, p0, Lcom/android/server/OemExService;->threekey:Lcom/oneplus/threekey/ThreeKey;
 
-    invoke-virtual {v1, v3}, Lcom/oneplus/threekey/ThreeKey;->init(I)V
+    iget-object v2, p0, Lcom/android/server/OemExService;->threekeyhw:Lcom/oneplus/threekey/ThreeKeyHw;
+
+    invoke-virtual {v2}, Lcom/oneplus/threekey/ThreeKeyHw;->getState()I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Lcom/oneplus/threekey/ThreeKey;->init(I)V
     :try_end_0
     .catch Lcom/oneplus/threekey/ThreeKeyHw$ThreeKeyUnsupportException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1
+    goto :goto_0
 
     :catch_0
     move-exception v1
 
-    const-string v3, "OemExService"
+    const-string v2, "OemExService"
 
-    const-string v4, "device is not support threekey"
+    const-string v3, "device is not support threekey"
 
-    invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    iput-object v3, p0, Lcom/android/server/OemExService;->threekey:Lcom/oneplus/threekey/ThreeKey;
+    iput-object v2, p0, Lcom/android/server/OemExService;->threekey:Lcom/oneplus/threekey/ThreeKey;
 
-    :goto_1
+    :goto_0
     new-array v0, v0, [I
 
-    const/16 v1, 0x19
+    const/4 v1, 0x0
 
-    aput v1, v0, v2
+    const/16 v2, 0x19
+
+    aput v2, v0, v1
 
     invoke-static {v0}, Landroid/util/OpFeatures;->isSupport([I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     sget-boolean v0, Lcom/android/server/OemExService;->DEBUG_ONEPLUS:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     const-string v0, "OemExService"
 
@@ -913,10 +889,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_1
+    :cond_0
     iget-object v0, p0, Lcom/android/server/OemExService;->mSceneModeController:Lcom/android/server/OemSceneModeController;
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1
 
     new-instance v0, Lcom/android/server/OemSceneModeController;
 
@@ -926,17 +902,17 @@
 
     iput-object v0, p0, Lcom/android/server/OemExService;->mSceneModeController:Lcom/android/server/OemSceneModeController;
 
-    :cond_2
+    :cond_1
     iget-object v0, p0, Lcom/android/server/OemExService;->mSceneModeController:Lcom/android/server/OemSceneModeController;
 
     invoke-virtual {v0}, Lcom/android/server/OemSceneModeController;->startMonitor()V
 
-    goto :goto_2
+    goto :goto_1
 
-    :cond_3
+    :cond_2
     sget-boolean v0, Lcom/android/server/OemExService;->DEBUG_ONEPLUS:Z
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     const-string v0, "OemExService"
 
@@ -944,23 +920,23 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_4
-    :goto_2
+    :cond_3
+    :goto_1
     invoke-static {}, Lcom/oneplus/custom/utils/OpCustomizeSettings;->getCustomType()Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
 
     move-result-object v0
 
     sget-object v1, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->OPR_RETAIL:Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
 
-    if-ne v0, v1, :cond_5
+    if-ne v0, v1, :cond_4
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_4
 
     const-string v0, "/op2/apps/opr"
 
     invoke-virtual {p0, v0}, Lcom/android/server/OemExService;->startApkInstall(Ljava/lang/String;)V
 
-    :cond_5
+    :cond_4
     return-void
 .end method
 

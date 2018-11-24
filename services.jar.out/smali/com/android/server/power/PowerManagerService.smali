@@ -458,6 +458,16 @@
     .end annotation
 .end field
 
+.field private mOemScreenBlackPackage:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private mOverriddenTimeout:J
 
 .field private mPlugType:I
@@ -2925,6 +2935,67 @@
     const/4 v0, 0x1
 
     return v0
+.end method
+
+.method private checkScreenBlackList(Ljava/lang/String;)Z
+    .locals 4
+
+    iget-object v0, p0, Lcom/android/server/power/PowerManagerService;->mOemScreenBlackPackage:Ljava/util/List;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lcom/android/server/power/PowerManagerService;->mOemScreenBlackPackage:Ljava/util/List;
+
+    invoke-interface {v1, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const-string v1, "PowerManagerService"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "packageName = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, " could not to screen on because of balck list"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v1, 0x1
+
+    monitor-exit v0
+
+    return v1
+
+    :cond_0
+    monitor-exit v0
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method
 
 .method private static copyWorkSource(Landroid/os/WorkSource;)Landroid/os/WorkSource;
@@ -7156,7 +7227,7 @@
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "handleSandman startDreaming = "
+    const-string/jumbo v7, "handleSandman startDreaming = "
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7344,7 +7415,7 @@
 
     const-string v0, "PowerManagerService"
 
-    const-string v5, "handleSandman: Bed time and goToSleepNoUpdateLocked"
+    const-string/jumbo v5, "handleSandman: Bed time and goToSleepNoUpdateLocked"
 
     invoke-static {v0, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -7369,7 +7440,7 @@
     :cond_c
     const-string v0, "PowerManagerService"
 
-    const-string v5, "handleSandman: time to wakeUpNoUpdateLocked"
+    const-string/jumbo v5, "handleSandman: time to wakeUpNoUpdateLocked"
 
     invoke-static {v0, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -7431,7 +7502,7 @@
 
     const-string v0, "PowerManagerService"
 
-    const-string v5, "handleSandman stopDream(false)"
+    const-string/jumbo v5, "handleSandman stopDream(false)"
 
     invoke-static {v0, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -7484,7 +7555,7 @@
 
     const-string v1, "PowerManagerService"
 
-    const-string v2, "handleScreenBrightnessBoostTimeout"
+    const-string/jumbo v2, "handleScreenBrightnessBoostTimeout"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -7555,7 +7626,7 @@
 
     const-string v1, "PowerManagerService"
 
-    const-string v2, "handleUserActivityTimeout"
+    const-string/jumbo v2, "handleUserActivityTimeout"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -7605,7 +7676,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "handleWLDeath: l="
+    const-string/jumbo v3, "handleWLDeath: l="
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -9766,6 +9837,26 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    const-string v0, "PowerManagerService"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "[OnlineConfig] jsonArray ==null mOemScreenBlackPackage = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/android/server/power/PowerManagerService;->mOemScreenBlackPackage:Ljava/util/List;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
     return-void
 
     :cond_0
@@ -9779,7 +9870,7 @@
 
     move-result v2
 
-    if-ge v1, v2, :cond_c
+    if-ge v1, v2, :cond_e
 
     invoke-virtual {p1, v1}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
@@ -9840,7 +9931,7 @@
     :cond_1
     monitor-exit v4
 
-    goto/16 :goto_5
+    goto/16 :goto_6
 
     :catchall_0
     move-exception v0
@@ -9912,7 +10003,7 @@
 
     monitor-exit v4
 
-    goto :goto_5
+    goto/16 :goto_6
 
     :catchall_1
     move-exception v0
@@ -9980,7 +10071,7 @@
     :cond_5
     monitor-exit v4
 
-    goto :goto_5
+    goto :goto_6
 
     :catchall_2
     move-exception v0
@@ -10048,7 +10139,7 @@
     :cond_7
     monitor-exit v4
 
-    goto :goto_5
+    goto :goto_6
 
     :catchall_3
     move-exception v0
@@ -10061,7 +10152,75 @@
     throw v0
 
     :cond_8
+    const-string/jumbo v3, "name"
+
+    invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "config_oemScreenBlackPackage"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_a
+
+    const-string/jumbo v3, "value"
+
+    invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcom/android/server/power/PowerManagerService;->mOemScreenBlackPackage:Ljava/util/List;
+
+    monitor-enter v4
+    :try_end_8
+    .catch Lorg/json/JSONException; {:try_start_8 .. :try_end_8} :catch_0
+
+    :try_start_9
+    iget-object v5, p0, Lcom/android/server/power/PowerManagerService;->mOemScreenBlackPackage:Ljava/util/List;
+
+    invoke-interface {v5}, Ljava/util/List;->clear()V
+
+    move v5, v0
+
     :goto_5
+    invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
+
+    move-result v6
+
+    if-ge v5, v6, :cond_9
+
+    iget-object v6, p0, Lcom/android/server/power/PowerManagerService;->mOemScreenBlackPackage:Ljava/util/List;
+
+    invoke-virtual {v3, v5}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-interface {v6, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_5
+
+    :cond_9
+    monitor-exit v4
+
+    goto :goto_6
+
+    :catchall_4
+    move-exception v0
+
+    monitor-exit v4
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_4
+
+    :try_start_a
+    throw v0
+
+    :cond_a
+    :goto_6
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -10074,7 +10233,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_a
+    if-eqz v3, :cond_c
 
     iget-object v3, p0, Lcom/android/server/power/PowerManagerService;->mKillWakeLocks:Ljava/util/HashMap;
 
@@ -10088,12 +10247,12 @@
 
     move v4, v0
 
-    :goto_6
+    :goto_7
     invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
 
     move-result v5
 
-    if-ge v4, v5, :cond_a
+    if-ge v4, v5, :cond_c
 
     invoke-virtual {v3, v4}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
@@ -10113,12 +10272,12 @@
 
     move v8, v0
 
-    :goto_7
+    :goto_8
     invoke-virtual {v7}, Lorg/json/JSONArray;->length()I
 
     move-result v9
 
-    if-ge v8, v9, :cond_9
+    if-ge v8, v9, :cond_b
 
     invoke-virtual {v7, v8}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
 
@@ -10128,14 +10287,14 @@
 
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_7
+    goto :goto_8
 
-    :cond_9
+    :cond_b
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_6
+    goto :goto_7
 
-    :cond_a
+    :cond_c
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -10148,7 +10307,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_d
 
     const-string/jumbo v3, "value"
 
@@ -10158,12 +10317,12 @@
 
     iput-boolean v3, p0, Lcom/android/server/power/PowerManagerService;->mPowerKillEnable:Z
 
-    :cond_b
+    :cond_d
     add-int/lit8 v1, v1, 0x1
 
     goto/16 :goto_0
 
-    :cond_c
+    :cond_e
     const-string v0, "PowerManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -10243,10 +10402,30 @@
     move-result-object v1
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_8
-    .catch Lorg/json/JSONException; {:try_start_8 .. :try_end_8} :catch_0
 
-    goto :goto_8
+    const-string v0, "PowerManagerService"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "[OnlineConfig] updated complete mOemScreenBlackPackage = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/android/server/power/PowerManagerService;->mOemScreenBlackPackage:Ljava/util/List;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_a
+    .catch Lorg/json/JSONException; {:try_start_a .. :try_end_a} :catch_0
+
+    goto :goto_9
 
     :catch_0
     move-exception v0
@@ -10273,7 +10452,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_8
+    :goto_9
     return-void
 .end method
 
@@ -14949,15 +15128,15 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     iget-boolean v0, p1, Lcom/android/server/power/PowerManagerService$WakeLock;->mNotifiedLong:Z
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     iget-object v0, p1, Lcom/android/server/power/PowerManagerService$WakeLock;->mUidState:Lcom/android/server/power/PowerManagerService$UidState;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     sget-boolean v2, Lcom/android/server/power/PowerManagerService;->DEBUG_WAKE:Z
 
@@ -15007,15 +15186,30 @@
     :cond_2
     iget v2, v0, Lcom/android/server/power/PowerManagerService$UidState;->mProcState:I
 
-    const/4 v3, 0x3
+    const/4 v3, 0x0
 
-    if-lt v2, v3, :cond_3
+    const/4 v4, 0x3
 
-    const/4 v1, 0x0
+    if-le v2, v4, :cond_3
 
-    return v1
+    return v3
 
     :cond_3
+    iget v2, v0, Lcom/android/server/power/PowerManagerService$UidState;->mProcState:I
+
+    if-ne v2, v4, :cond_4
+
+    iget-object v2, p1, Lcom/android/server/power/PowerManagerService$WakeLock;->mPackageName:Ljava/lang/String;
+
+    invoke-direct {p0, v2}, Lcom/android/server/power/PowerManagerService;->checkScreenBlackList(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    return v3
+
+    :cond_4
     return v1
 .end method
 
@@ -17406,6 +17600,18 @@
     move-result-object v5
 
     invoke-static {v4, v5}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    new-instance v4, Ljava/util/ArrayList;
+
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v4, p0, Lcom/android/server/power/PowerManagerService;->mOemScreenBlackPackage:Ljava/util/List;
+
+    iget-object v4, p0, Lcom/android/server/power/PowerManagerService;->mOemScreenBlackPackage:Ljava/util/List;
+
+    const-string v5, "com.joym.armorhero.sj360"
+
+    invoke-interface {v4, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     new-instance v4, Ljava/util/ArrayList;
 

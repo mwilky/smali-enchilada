@@ -703,7 +703,7 @@
     goto :goto_6
 
     :cond_7
-    const-string v9, "hash"
+    const-string/jumbo v9, "hash"
 
     invoke-static {v1, v9}, Lcom/android/server/pm/ShortcutService;->parseStringAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Ljava/lang/String;
 
@@ -1010,7 +1010,7 @@
 
     move-result-object v2
 
-    const-string v3, "hash"
+    const-string/jumbo v3, "hash"
 
     invoke-static {p2, v3, v2}, Lcom/android/server/pm/ShortcutService;->writeAttr(Lorg/xmlpull/v1/XmlSerializer;Ljava/lang/String;Ljava/lang/CharSequence;)V
 

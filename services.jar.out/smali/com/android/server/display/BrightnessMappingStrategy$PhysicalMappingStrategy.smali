@@ -425,6 +425,24 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
+    const-string v1, "  mRebootSpline="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/android/server/display/BrightnessMappingStrategy$PhysicalMappingStrategy;->mRebootSpline:Landroid/util/Spline;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string v1, "  mNitsToBacklightSpline="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -541,7 +559,7 @@
 .end method
 
 .method public getCurrentConfig()Landroid/hardware/display/BrightnessConfiguration;
-    .locals 4
+    .locals 5
 
     new-instance v0, Landroid/hardware/display/BrightnessConfiguration$Builder;
 
@@ -567,11 +585,34 @@
 
     check-cast v2, [F
 
+    invoke-static {v1, v2}, Lcom/android/server/display/BrightnessMappingStrategy;->access$300([F[F)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    const-string v3, "BrightnessMappingStrategy"
+
+    const-string v4, "ValidMapping,return Current config"
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     invoke-virtual {v0, v1, v2}, Landroid/hardware/display/BrightnessConfiguration$Builder;->setCurve([F[F)Landroid/hardware/display/BrightnessConfiguration$Builder;
 
     invoke-virtual {v0}, Landroid/hardware/display/BrightnessConfiguration$Builder;->build()Landroid/hardware/display/BrightnessConfiguration;
 
     move-result-object v3
+
+    return-object v3
+
+    :cond_0
+    const-string v3, "BrightnessMappingStrategy"
+
+    const-string v4, "InValidMapping,return Default config"
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v3, p0, Lcom/android/server/display/BrightnessMappingStrategy$PhysicalMappingStrategy;->mConfig:Landroid/hardware/display/BrightnessConfiguration;
 
     return-object v3
 .end method

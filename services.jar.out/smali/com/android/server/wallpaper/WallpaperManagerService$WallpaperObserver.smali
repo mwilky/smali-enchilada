@@ -354,7 +354,7 @@
 
     move-object v4, v15
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     :cond_8
     :goto_3
@@ -387,11 +387,11 @@
 
     move-object v4, v15
 
-    goto/16 :goto_7
+    goto/16 :goto_8
 
     :cond_9
     :goto_4
-    if-eqz v7, :cond_13
+    if-eqz v7, :cond_14
 
     :try_start_2
     sget-boolean v0, Lcom/android/server/wallpaper/WallpaperManagerService;->DEBUG:Z
@@ -557,7 +557,7 @@
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_1
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_13
 
     :try_start_a
     iget-object v0, v4, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;->setComplete:Landroid/app/IWallpaperManagerCallback;
@@ -572,16 +572,23 @@
     :catch_0
     move-exception v0
 
-    goto :goto_6
-
     :cond_13
+    :goto_6
+    :try_start_b
+    iget-object v0, v1, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperObserver;->this$0:Lcom/android/server/wallpaper/WallpaperManagerService;
+
+    iget v5, v4, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;->userId:I
+
+    invoke-static {v0, v5}, Lcom/android/server/wallpaper/WallpaperManagerService;->access$600(Lcom/android/server/wallpaper/WallpaperManagerService;I)V
+
+    goto :goto_7
+
+    :cond_14
     move-object/from16 v18, v13
 
     move-object v4, v15
 
-    :cond_14
-    :goto_6
-    :try_start_b
+    :goto_7
     monitor-exit v18
     :try_end_b
     .catchall {:try_start_b .. :try_end_b} :catchall_1
@@ -598,7 +605,7 @@
     :catchall_1
     move-exception v0
 
-    goto :goto_7
+    goto :goto_8
 
     :catchall_2
     move-exception v0
@@ -607,7 +614,7 @@
 
     move-object v4, v15
 
-    :goto_7
+    :goto_8
     :try_start_c
     monitor-exit v18
     :try_end_c

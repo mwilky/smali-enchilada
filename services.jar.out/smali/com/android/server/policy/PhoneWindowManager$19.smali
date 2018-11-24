@@ -60,14 +60,14 @@
 
     iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-static {v2, v3}, Lcom/android/server/policy/PhoneWindowManager;->access$4402(Lcom/android/server/policy/PhoneWindowManager;Z)Z
+    invoke-static {v2, v3}, Lcom/android/server/policy/PhoneWindowManager;->access$4502(Lcom/android/server/policy/PhoneWindowManager;Z)Z
 
     goto :goto_0
 
     :cond_0
     iget-object v4, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-static {v4, v2}, Lcom/android/server/policy/PhoneWindowManager;->access$4402(Lcom/android/server/policy/PhoneWindowManager;Z)Z
+    invoke-static {v4, v2}, Lcom/android/server/policy/PhoneWindowManager;->access$4502(Lcom/android/server/policy/PhoneWindowManager;Z)Z
 
     :goto_0
     iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
@@ -80,7 +80,7 @@
 
     move-result v4
 
-    invoke-static {v2, v4}, Lcom/android/server/policy/PhoneWindowManager;->access$4502(Lcom/android/server/policy/PhoneWindowManager;I)I
+    invoke-static {v2, v4}, Lcom/android/server/policy/PhoneWindowManager;->access$4602(Lcom/android/server/policy/PhoneWindowManager;I)I
 
     iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 

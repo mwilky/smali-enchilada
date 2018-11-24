@@ -139,7 +139,7 @@
 
     sget-object v0, Lcom/oneplus/notification/NotificationLightController;->TAG:Ljava/lang/String;
 
-    const-string v1, "handleSaveLightPolicyFile"
+    const-string/jumbo v1, "handleSaveLightPolicyFile"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 

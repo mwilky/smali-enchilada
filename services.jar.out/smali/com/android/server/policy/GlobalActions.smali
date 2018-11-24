@@ -7,7 +7,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z = false
+.field private static final DEBUG:Z
 
 .field private static final TAG:Ljava/lang/String; = "GlobalActions"
 
@@ -35,6 +35,16 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
+
+    sput-boolean v0, Lcom/android/server/policy/GlobalActions;->DEBUG:Z
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;Lcom/android/server/policy/WindowManagerPolicy$WindowManagerFuncs;)V
     .locals 2
 
@@ -87,7 +97,15 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/android/server/policy/GlobalActions;)V
+.method static synthetic access$000()Z
+    .locals 1
+
+    sget-boolean v0, Lcom/android/server/policy/GlobalActions;->DEBUG:Z
+
+    return v0
+.end method
+
+.method static synthetic access$100(Lcom/android/server/policy/GlobalActions;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/policy/GlobalActions;->ensureLegacyCreated()V
@@ -95,7 +113,7 @@
     return-void
 .end method
 
-.method static synthetic access$100(Lcom/android/server/policy/GlobalActions;)Z
+.method static synthetic access$200(Lcom/android/server/policy/GlobalActions;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/server/policy/GlobalActions;->mKeyguardShowing:Z
@@ -103,7 +121,7 @@
     return v0
 .end method
 
-.method static synthetic access$200(Lcom/android/server/policy/GlobalActions;)Z
+.method static synthetic access$300(Lcom/android/server/policy/GlobalActions;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/server/policy/GlobalActions;->mDeviceProvisioned:Z
@@ -111,7 +129,7 @@
     return v0
 .end method
 
-.method static synthetic access$300(Lcom/android/server/policy/GlobalActions;)Lcom/android/server/policy/LegacyGlobalActions;
+.method static synthetic access$400(Lcom/android/server/policy/GlobalActions;)Lcom/android/server/policy/LegacyGlobalActions;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/policy/GlobalActions;->mLegacyGlobalActions:Lcom/android/server/policy/LegacyGlobalActions;
@@ -151,15 +169,38 @@
 .method public onGlobalActionsAvailableChanged(Z)V
     .locals 3
 
+    sget-boolean v0, Lcom/android/server/policy/GlobalActions;->DEBUG:Z
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "GlobalActions"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "onGlobalActionsAvailableChanged "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
     iput-boolean p1, p0, Lcom/android/server/policy/GlobalActions;->mGlobalActionsAvailable:Z
 
     iget-boolean v0, p0, Lcom/android/server/policy/GlobalActions;->mShowing:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     iget-boolean v0, p0, Lcom/android/server/policy/GlobalActions;->mGlobalActionsAvailable:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     invoke-direct {p0}, Lcom/android/server/policy/GlobalActions;->ensureLegacyCreated()V
 
@@ -171,13 +212,24 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/policy/LegacyGlobalActions;->showDialog(ZZ)V
 
-    :cond_0
+    :cond_1
     return-void
 .end method
 
 .method public onGlobalActionsDismissed()V
-    .locals 1
+    .locals 2
 
+    sget-boolean v0, Lcom/android/server/policy/GlobalActions;->DEBUG:Z
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "GlobalActions"
+
+    const-string/jumbo v1, "onGlobalActionsDismissed"
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/policy/GlobalActions;->mShowing:Z
@@ -188,6 +240,17 @@
 .method public onGlobalActionsShown()V
     .locals 2
 
+    sget-boolean v0, Lcom/android/server/policy/GlobalActions;->DEBUG:Z
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "GlobalActions"
+
+    const-string/jumbo v1, "onGlobalActionsShown"
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
     iget-object v0, p0, Lcom/android/server/policy/GlobalActions;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/server/policy/GlobalActions;->mShowTimeout:Ljava/lang/Runnable;
@@ -200,9 +263,66 @@
 .method public showDialog(ZZ)V
     .locals 4
 
+    sget-boolean v0, Lcom/android/server/policy/GlobalActions;->DEBUG:Z
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    const-string v0, "GlobalActions"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "showDialog "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v3, " "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v3, " "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v3, p0, Lcom/android/server/policy/GlobalActions;->mGlobalActionsAvailable:Z
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v3, " "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v3, p0, Lcom/android/server/policy/GlobalActions;->mGlobalActionsProvider:Lcom/android/server/policy/GlobalActionsProvider;
+
+    if-eqz v3, :cond_0
+
+    move v3, v1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v3, 0x0
+
+    :goto_0
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
     iget-object v0, p0, Lcom/android/server/policy/GlobalActions;->mGlobalActionsProvider:Lcom/android/server/policy/GlobalActionsProvider;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lcom/android/server/policy/GlobalActions;->mGlobalActionsProvider:Lcom/android/server/policy/GlobalActionsProvider;
 
@@ -210,22 +330,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_2
 
     return-void
 
-    :cond_0
+    :cond_2
     iput-boolean p1, p0, Lcom/android/server/policy/GlobalActions;->mKeyguardShowing:Z
 
     iput-boolean p2, p0, Lcom/android/server/policy/GlobalActions;->mDeviceProvisioned:Z
 
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/android/server/policy/GlobalActions;->mShowing:Z
+    iput-boolean v1, p0, Lcom/android/server/policy/GlobalActions;->mShowing:Z
 
     iget-boolean v0, p0, Lcom/android/server/policy/GlobalActions;->mGlobalActionsAvailable:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Lcom/android/server/policy/GlobalActions;->mHandler:Landroid/os/Handler;
 
@@ -239,9 +357,9 @@
 
     invoke-interface {v0}, Lcom/android/server/policy/GlobalActionsProvider;->showGlobalActions()V
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_1
+    :cond_3
     invoke-direct {p0}, Lcom/android/server/policy/GlobalActions;->ensureLegacyCreated()V
 
     iget-object v0, p0, Lcom/android/server/policy/GlobalActions;->mLegacyGlobalActions:Lcom/android/server/policy/LegacyGlobalActions;
@@ -252,6 +370,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/policy/LegacyGlobalActions;->showDialog(ZZ)V
 
-    :goto_0
+    :goto_1
     return-void
 .end method

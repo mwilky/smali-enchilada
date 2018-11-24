@@ -195,7 +195,7 @@
     :goto_2
     new-instance v2, Lcom/android/server/WiredAccessoryManager$WiredAccessoryObserver$UEventInfo;
 
-    const-string v6, "hdmi_audio"
+    const-string/jumbo v6, "hdmi_audio"
 
     const/16 v7, 0x10
 
@@ -224,7 +224,7 @@
     :cond_4
     new-instance v2, Lcom/android/server/WiredAccessoryManager$WiredAccessoryObserver$UEventInfo;
 
-    const-string v5, "hdmi"
+    const-string/jumbo v5, "hdmi"
 
     const/16 v6, 0x10
 

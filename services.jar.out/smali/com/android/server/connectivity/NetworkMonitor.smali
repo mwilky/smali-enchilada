@@ -29,8 +29,6 @@
 
 .field private static final CAPTIVE_PORTAL_REEVALUATE_DELAY_MS:I = 0x927c0
 
-.field private static final CHECK_INET_INTERVAL:I = 0x2710
-
 .field private static final CMD_CAPTIVE_PORTAL_APP_FINISHED:I = 0x82009
 
 .field private static final CMD_CAPTIVE_PORTAL_RECHECK:I = 0x8200c
@@ -91,8 +89,6 @@
 
 .field private static final PROBE_TIMEOUT_MS:I = 0xbb8
 
-.field private static final PROP_SIM_COUNTRY:Ljava/lang/String; = "gsm.sim.operator.iso-country"
-
 .field private static final SOCKET_TIMEOUT:I = 0x7d0
 
 .field private static final SOCKET_TIMEOUT_MS:I = 0x2710
@@ -102,8 +98,6 @@
 .field private static final VDBG:Z = false
 
 .field private static final mIsH2Version:Z
-
-.field private static mSucceedUrl:Ljava/lang/String;
 
 
 # instance fields
@@ -120,8 +114,6 @@
 .field private final mCaptivePortalState:Lcom/android/internal/util/State;
 
 .field private final mCaptivePortalUserAgent:Ljava/lang/String;
-
-.field private mCheckInterval:I
 
 .field private final mConnectivityServiceHandler:Landroid/os/Handler;
 
@@ -162,11 +154,7 @@
 
 .field private mPrivateDnsProviderHostname:Ljava/lang/String;
 
-.field private mReCheckCaptive:I
-
 .field private mReevaluateToken:I
-
-.field private mRetryCount:I
 
 .field private final mSettings:Lcom/android/server/connectivity/NetworkMonitor$NetworkMonitorSettings;
 
@@ -200,10 +188,6 @@
     move-result-object v0
 
     sput-object v0, Lcom/android/server/connectivity/NetworkMonitor;->TAG:Ljava/lang/String;
-
-    const/4 v0, 0x0
-
-    sput-object v0, Lcom/android/server/connectivity/NetworkMonitor;->mSucceedUrl:Ljava/lang/String;
 
     const/4 v0, 0x1
 
@@ -271,15 +255,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/util/StateMachine;-><init>(Ljava/lang/String;)V
 
-    const/16 v0, 0x2710
-
-    iput v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mCheckInterval:I
-
     const/4 v0, 0x0
-
-    iput v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mReCheckCaptive:I
-
-    iput v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mRetryCount:I
 
     iput v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mReevaluateToken:I
 
@@ -475,7 +451,7 @@
 
     iput-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mCaptivePortalHttpsUrl:Ljava/net/URL;
 
-    invoke-static {p6, p1}, Lcom/android/server/connectivity/NetworkMonitor;->getCaptivePortalServerGlobalHttpUrl(Lcom/android/server/connectivity/NetworkMonitor$NetworkMonitorSettings;Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p6, p1}, Lcom/android/server/connectivity/NetworkMonitor;->getCaptivePortalServerHttpUrl(Lcom/android/server/connectivity/NetworkMonitor$NetworkMonitorSettings;Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -512,23 +488,7 @@
     return-void
 .end method
 
-.method static synthetic access$1000(Lcom/android/server/connectivity/NetworkMonitor;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcom/android/server/connectivity/NetworkMonitor;->logNetworkEvent(I)V
-
-    return-void
-.end method
-
-.method static synthetic access$1100(Lcom/android/server/connectivity/NetworkMonitor;)Lcom/android/internal/util/State;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mEvaluatingState:Lcom/android/internal/util/State;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1200(Lcom/android/server/connectivity/NetworkMonitor;)Lcom/android/server/connectivity/NetworkMonitor$CustomIntentReceiver;
+.method static synthetic access$1000(Lcom/android/server/connectivity/NetworkMonitor;)Lcom/android/server/connectivity/NetworkMonitor$CustomIntentReceiver;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mLaunchCaptivePortalAppBroadcastReceiver:Lcom/android/server/connectivity/NetworkMonitor$CustomIntentReceiver;
@@ -536,7 +496,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1202(Lcom/android/server/connectivity/NetworkMonitor;Lcom/android/server/connectivity/NetworkMonitor$CustomIntentReceiver;)Lcom/android/server/connectivity/NetworkMonitor$CustomIntentReceiver;
+.method static synthetic access$1002(Lcom/android/server/connectivity/NetworkMonitor;Lcom/android/server/connectivity/NetworkMonitor$CustomIntentReceiver;)Lcom/android/server/connectivity/NetworkMonitor$CustomIntentReceiver;
     .locals 0
 
     iput-object p1, p0, Lcom/android/server/connectivity/NetworkMonitor;->mLaunchCaptivePortalAppBroadcastReceiver:Lcom/android/server/connectivity/NetworkMonitor$CustomIntentReceiver;
@@ -544,7 +504,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$1300(Lcom/android/server/connectivity/NetworkMonitor;)Landroid/content/Context;
+.method static synthetic access$1100(Lcom/android/server/connectivity/NetworkMonitor;)Landroid/content/Context;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mContext:Landroid/content/Context;
@@ -552,7 +512,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1400(Lcom/android/server/connectivity/NetworkMonitor;)I
+.method static synthetic access$1200(Lcom/android/server/connectivity/NetworkMonitor;)I
     .locals 1
 
     iget v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mUidResponsibleForReeval:I
@@ -560,7 +520,7 @@
     return v0
 .end method
 
-.method static synthetic access$1402(Lcom/android/server/connectivity/NetworkMonitor;I)I
+.method static synthetic access$1202(Lcom/android/server/connectivity/NetworkMonitor;I)I
     .locals 0
 
     iput p1, p0, Lcom/android/server/connectivity/NetworkMonitor;->mUidResponsibleForReeval:I
@@ -568,7 +528,7 @@
     return p1
 .end method
 
-.method static synthetic access$1502(Lcom/android/server/connectivity/NetworkMonitor;Z)Z
+.method static synthetic access$1302(Lcom/android/server/connectivity/NetworkMonitor;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/connectivity/NetworkMonitor;->mUseHttps:Z
@@ -576,7 +536,7 @@
     return p1
 .end method
 
-.method static synthetic access$1600(Lcom/android/server/connectivity/NetworkMonitor;)Z
+.method static synthetic access$1400(Lcom/android/server/connectivity/NetworkMonitor;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mDontDisplaySigninNotification:Z
@@ -584,7 +544,7 @@
     return v0
 .end method
 
-.method static synthetic access$1602(Lcom/android/server/connectivity/NetworkMonitor;Z)Z
+.method static synthetic access$1402(Lcom/android/server/connectivity/NetworkMonitor;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/connectivity/NetworkMonitor;->mDontDisplaySigninNotification:Z
@@ -592,7 +552,7 @@
     return p1
 .end method
 
-.method static synthetic access$1700(Lcom/android/server/connectivity/NetworkMonitor;)Lcom/android/internal/util/State;
+.method static synthetic access$1500(Lcom/android/server/connectivity/NetworkMonitor;)Lcom/android/internal/util/State;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mEvaluatingPrivateDnsState:Lcom/android/internal/util/State;
@@ -600,7 +560,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1800(Lcom/android/server/connectivity/NetworkMonitor;)Z
+.method static synthetic access$1600(Lcom/android/server/connectivity/NetworkMonitor;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mUserDoesNotWant:Z
@@ -608,7 +568,7 @@
     return v0
 .end method
 
-.method static synthetic access$1802(Lcom/android/server/connectivity/NetworkMonitor;Z)Z
+.method static synthetic access$1602(Lcom/android/server/connectivity/NetworkMonitor;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/connectivity/NetworkMonitor;->mUserDoesNotWant:Z
@@ -616,7 +576,7 @@
     return p1
 .end method
 
-.method static synthetic access$1900(Lcom/android/server/connectivity/NetworkMonitor;Ljava/lang/Object;)V
+.method static synthetic access$1700(Lcom/android/server/connectivity/NetworkMonitor;Ljava/lang/Object;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/NetworkMonitor;->notifyNetworkTestResultInvalid(Ljava/lang/Object;)V
@@ -624,7 +584,7 @@
     return-void
 .end method
 
-.method static synthetic access$2000(Lcom/android/server/connectivity/NetworkMonitor;)Z
+.method static synthetic access$1800(Lcom/android/server/connectivity/NetworkMonitor;)Z
     .locals 1
 
     invoke-direct {p0}, Lcom/android/server/connectivity/NetworkMonitor;->isValidationRequired()Z
@@ -634,7 +594,7 @@
     return v0
 .end method
 
-.method static synthetic access$2100(Lcom/android/server/connectivity/NetworkMonitor;)Ljava/lang/String;
+.method static synthetic access$1900(Lcom/android/server/connectivity/NetworkMonitor;)Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mPrivateDnsProviderHostname:Ljava/lang/String;
@@ -642,7 +602,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2102(Lcom/android/server/connectivity/NetworkMonitor;Ljava/lang/String;)Ljava/lang/String;
+.method static synthetic access$1902(Lcom/android/server/connectivity/NetworkMonitor;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
     iput-object p1, p0, Lcom/android/server/connectivity/NetworkMonitor;->mPrivateDnsProviderHostname:Ljava/lang/String;
@@ -650,7 +610,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$2200(Lcom/android/server/connectivity/NetworkMonitor;)Lcom/android/server/connectivity/NetworkMonitor$ValidationStage;
+.method static synthetic access$2000(Lcom/android/server/connectivity/NetworkMonitor;)Lcom/android/server/connectivity/NetworkMonitor$ValidationStage;
     .locals 1
 
     invoke-direct {p0}, Lcom/android/server/connectivity/NetworkMonitor;->validationStage()Lcom/android/server/connectivity/NetworkMonitor$ValidationStage;
@@ -660,7 +620,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2300(Lcom/android/server/connectivity/NetworkMonitor;Lcom/android/server/connectivity/NetworkMonitor$ValidationStage;Lcom/android/server/connectivity/NetworkMonitor$EvaluationResult;)I
+.method static synthetic access$2100(Lcom/android/server/connectivity/NetworkMonitor;Lcom/android/server/connectivity/NetworkMonitor$ValidationStage;Lcom/android/server/connectivity/NetworkMonitor$EvaluationResult;)I
     .locals 1
 
     invoke-direct {p0, p1, p2}, Lcom/android/server/connectivity/NetworkMonitor;->networkEventType(Lcom/android/server/connectivity/NetworkMonitor$ValidationStage;Lcom/android/server/connectivity/NetworkMonitor$EvaluationResult;)I
@@ -670,7 +630,7 @@
     return v0
 .end method
 
-.method static synthetic access$2400(Lcom/android/server/connectivity/NetworkMonitor;I)V
+.method static synthetic access$2200(Lcom/android/server/connectivity/NetworkMonitor;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/NetworkMonitor;->maybeLogEvaluationResult(I)V
@@ -678,7 +638,7 @@
     return-void
 .end method
 
-.method static synthetic access$2500(Lcom/android/server/connectivity/NetworkMonitor;)I
+.method static synthetic access$2300(Lcom/android/server/connectivity/NetworkMonitor;)I
     .locals 1
 
     iget v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mNetId:I
@@ -686,7 +646,7 @@
     return v0
 .end method
 
-.method static synthetic access$2600(Lcom/android/server/connectivity/NetworkMonitor;)Landroid/os/Handler;
+.method static synthetic access$2400(Lcom/android/server/connectivity/NetworkMonitor;)Landroid/os/Handler;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mConnectivityServiceHandler:Landroid/os/Handler;
@@ -694,7 +654,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2708(Lcom/android/server/connectivity/NetworkMonitor;)I
+.method static synthetic access$2508(Lcom/android/server/connectivity/NetworkMonitor;)I
     .locals 2
 
     iget v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mValidations:I
@@ -706,7 +666,7 @@
     return v0
 .end method
 
-.method static synthetic access$2800(Lcom/android/server/connectivity/NetworkMonitor;)Lcom/android/internal/util/State;
+.method static synthetic access$2600(Lcom/android/server/connectivity/NetworkMonitor;)Lcom/android/internal/util/State;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mValidatedState:Lcom/android/internal/util/State;
@@ -714,7 +674,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2900()Z
+.method static synthetic access$2700()Z
     .locals 1
 
     sget-boolean v0, Lcom/android/server/connectivity/NetworkMonitor;->mIsH2Version:Z
@@ -722,7 +682,7 @@
     return v0
 .end method
 
-.method static synthetic access$3000(Lcom/android/server/connectivity/NetworkMonitor;)Landroid/net/captiveportal/CaptivePortalProbeResult;
+.method static synthetic access$2800(Lcom/android/server/connectivity/NetworkMonitor;)Landroid/net/captiveportal/CaptivePortalProbeResult;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mLastPortalProbeResult:Landroid/net/captiveportal/CaptivePortalProbeResult;
@@ -730,7 +690,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3002(Lcom/android/server/connectivity/NetworkMonitor;Landroid/net/captiveportal/CaptivePortalProbeResult;)Landroid/net/captiveportal/CaptivePortalProbeResult;
+.method static synthetic access$2802(Lcom/android/server/connectivity/NetworkMonitor;Landroid/net/captiveportal/CaptivePortalProbeResult;)Landroid/net/captiveportal/CaptivePortalProbeResult;
     .locals 0
 
     iput-object p1, p0, Lcom/android/server/connectivity/NetworkMonitor;->mLastPortalProbeResult:Landroid/net/captiveportal/CaptivePortalProbeResult;
@@ -738,7 +698,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$3100(Lcom/android/server/connectivity/NetworkMonitor;)Landroid/net/Network;
+.method static synthetic access$2900(Lcom/android/server/connectivity/NetworkMonitor;)Landroid/net/Network;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mNetwork:Landroid/net/Network;
@@ -746,7 +706,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3200(Lcom/android/server/connectivity/NetworkMonitor;)Ljava/lang/String;
+.method static synthetic access$3000(Lcom/android/server/connectivity/NetworkMonitor;)Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mCaptivePortalUserAgent:Ljava/lang/String;
@@ -754,7 +714,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3300(Lcom/android/server/connectivity/NetworkMonitor;)Landroid/net/util/Stopwatch;
+.method static synthetic access$3100(Lcom/android/server/connectivity/NetworkMonitor;)Landroid/net/util/Stopwatch;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mEvaluationTimer:Landroid/net/util/Stopwatch;
@@ -762,7 +722,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3400(Lcom/android/server/connectivity/NetworkMonitor;)I
+.method static synthetic access$3200(Lcom/android/server/connectivity/NetworkMonitor;)I
     .locals 1
 
     iget v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mReevaluateToken:I
@@ -770,7 +730,7 @@
     return v0
 .end method
 
-.method static synthetic access$3404(Lcom/android/server/connectivity/NetworkMonitor;)I
+.method static synthetic access$3204(Lcom/android/server/connectivity/NetworkMonitor;)I
     .locals 1
 
     iget v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mReevaluateToken:I
@@ -782,15 +742,7 @@
     return v0
 .end method
 
-.method static synthetic access$3502(Lcom/android/server/connectivity/NetworkMonitor;I)I
-    .locals 0
-
-    iput p1, p0, Lcom/android/server/connectivity/NetworkMonitor;->mRetryCount:I
-
-    return p1
-.end method
-
-.method static synthetic access$3600(Lcom/android/server/connectivity/NetworkMonitor;Ljava/lang/String;)V
+.method static synthetic access$3300(Lcom/android/server/connectivity/NetworkMonitor;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
@@ -798,7 +750,7 @@
     return-void
 .end method
 
-.method static synthetic access$3700(Lcom/android/server/connectivity/NetworkMonitor;)Lcom/android/internal/util/State;
+.method static synthetic access$3400(Lcom/android/server/connectivity/NetworkMonitor;)Lcom/android/internal/util/State;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mCaptivePortalState:Lcom/android/internal/util/State;
@@ -806,7 +758,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3800(Lcom/android/server/connectivity/NetworkMonitor;I)V
+.method static synthetic access$3500(Lcom/android/server/connectivity/NetworkMonitor;I)V
     .locals 0
 
     invoke-virtual {p0, p1}, Lcom/android/server/connectivity/NetworkMonitor;->removeMessages(I)V
@@ -814,7 +766,7 @@
     return-void
 .end method
 
-.method static synthetic access$3900(Lcom/android/server/connectivity/NetworkMonitor;)Lcom/android/server/connectivity/NetworkAgentInfo;
+.method static synthetic access$3600(Lcom/android/server/connectivity/NetworkMonitor;)Lcom/android/server/connectivity/NetworkAgentInfo;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mNetworkAgentInfo:Lcom/android/server/connectivity/NetworkAgentInfo;
@@ -822,7 +774,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$4000(Lcom/android/server/connectivity/NetworkMonitor;Landroid/net/ProxyInfo;Ljava/net/URL;I)Landroid/net/captiveportal/CaptivePortalProbeResult;
+.method static synthetic access$3700(Lcom/android/server/connectivity/NetworkMonitor;Landroid/net/ProxyInfo;Ljava/net/URL;I)Landroid/net/captiveportal/CaptivePortalProbeResult;
     .locals 1
 
     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/connectivity/NetworkMonitor;->sendDnsAndHttpProbes(Landroid/net/ProxyInfo;Ljava/net/URL;I)Landroid/net/captiveportal/CaptivePortalProbeResult;
@@ -830,16 +782,6 @@
     move-result-object v0
 
     return-object v0
-.end method
-
-.method static synthetic access$4100(Lcom/android/server/connectivity/NetworkMonitor;)Z
-    .locals 1
-
-    invoke-direct {p0}, Lcom/android/server/connectivity/NetworkMonitor;->isCountryChina()Z
-
-    move-result v0
-
-    return v0
 .end method
 
 .method static synthetic access$600()Ljava/lang/String;
@@ -860,48 +802,20 @@
     return-object v0
 .end method
 
-.method static synthetic access$800(Lcom/android/server/connectivity/NetworkMonitor;)I
-    .locals 1
-
-    iget v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mCheckInterval:I
-
-    return v0
-.end method
-
-.method static synthetic access$802(Lcom/android/server/connectivity/NetworkMonitor;I)I
+.method static synthetic access$800(Lcom/android/server/connectivity/NetworkMonitor;I)V
     .locals 0
 
-    iput p1, p0, Lcom/android/server/connectivity/NetworkMonitor;->mCheckInterval:I
+    invoke-direct {p0, p1}, Lcom/android/server/connectivity/NetworkMonitor;->logNetworkEvent(I)V
 
-    return p1
+    return-void
 .end method
 
-.method static synthetic access$900(Lcom/android/server/connectivity/NetworkMonitor;)I
+.method static synthetic access$900(Lcom/android/server/connectivity/NetworkMonitor;)Lcom/android/internal/util/State;
     .locals 1
 
-    iget v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mReCheckCaptive:I
+    iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mEvaluatingState:Lcom/android/internal/util/State;
 
-    return v0
-.end method
-
-.method static synthetic access$902(Lcom/android/server/connectivity/NetworkMonitor;I)I
-    .locals 0
-
-    iput p1, p0, Lcom/android/server/connectivity/NetworkMonitor;->mReCheckCaptive:I
-
-    return p1
-.end method
-
-.method static synthetic access$908(Lcom/android/server/connectivity/NetworkMonitor;)I
-    .locals 2
-
-    iget v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mReCheckCaptive:I
-
-    add-int/lit8 v1, v0, 0x1
-
-    iput v1, p0, Lcom/android/server/connectivity/NetworkMonitor;->mReCheckCaptive:I
-
-    return v0
+    return-object v0
 .end method
 
 .method private static getCaptivePortalChinaHttpUrl(Lcom/android/server/connectivity/NetworkMonitor$NetworkMonitorSettings;Landroid/content/Context;)Ljava/lang/String;
@@ -910,20 +824,6 @@
     const-string v0, "captive_portal_china_http_url"
 
     const-string/jumbo v1, "http://g.cn/generate_204"
-
-    invoke-interface {p0, p1, v0, v1}, Lcom/android/server/connectivity/NetworkMonitor$NetworkMonitorSettings;->getSetting(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private static getCaptivePortalServerGlobalHttpUrl(Lcom/android/server/connectivity/NetworkMonitor$NetworkMonitorSettings;Landroid/content/Context;)Ljava/lang/String;
-    .locals 2
-
-    const-string v0, "captive_portal_http_url"
-
-    const-string/jumbo v1, "http://connectivitycheck.gstatic.com/generate_204"
 
     invoke-interface {p0, p1, v0, v1}, Lcom/android/server/connectivity/NetworkMonitor$NetworkMonitorSettings;->getSetting(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -1740,7 +1640,7 @@
 .method private notifyNetworkTestResultInvalid(Ljava/lang/Object;)V
     .locals 4
 
-    invoke-direct {p0}, Lcom/android/server/connectivity/NetworkMonitor;->isCountryChina()Z
+    invoke-direct {p0}, Lcom/android/server/connectivity/NetworkMonitor;->isSetupWizardCompleted()Z
 
     move-result v0
 
@@ -1748,6 +1648,18 @@
 
     if-eqz v0, :cond_0
 
+    invoke-direct {p0}, Lcom/android/server/connectivity/NetworkMonitor;->isCountryChinaLocal()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    sget-boolean v0, Lcom/android/server/connectivity/NetworkMonitor;->mIsH2Version:Z
+
+    if-eqz v0, :cond_2
+
+    :cond_1
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mConnectivityServiceHandler:Landroid/os/Handler;
 
     const/4 v2, 0x0
@@ -1762,7 +1674,7 @@
 
     return-void
 
-    :cond_0
+    :cond_2
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor;->mConnectivityServiceHandler:Landroid/os/Handler;
 
     const/4 v2, 0x1
@@ -2191,561 +2103,337 @@
     .end packed-switch
 .end method
 
-.method private sendParallelHttpProbes(Landroid/net/ProxyInfo;Ljava/net/URL;Ljava/net/URL;Ljava/net/URL;)Landroid/net/captiveportal/CaptivePortalProbeResult;
-    .locals 16
+.method private sendParallelHttpChinaProbes(Landroid/net/ProxyInfo;Ljava/net/URL;)Landroid/net/captiveportal/CaptivePortalProbeResult;
+    .locals 5
 
-    move-object/from16 v9, p0
+    new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
-    invoke-direct/range {p0 .. p0}, Lcom/android/server/connectivity/NetworkMonitor;->isCountryChinaLocal()Z
+    const/4 v1, 0x1
 
-    move-result v10
+    invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
 
-    const/4 v0, 0x1
+    new-instance v1, Lcom/android/server/connectivity/NetworkMonitor$2ProbeThread;
 
-    if-ne v10, v0, :cond_0
+    invoke-direct {v1, p0, p1, p2, v0}, Lcom/android/server/connectivity/NetworkMonitor$2ProbeThread;-><init>(Lcom/android/server/connectivity/NetworkMonitor;Landroid/net/ProxyInfo;Ljava/net/URL;Ljava/util/concurrent/CountDownLatch;)V
+
+    :try_start_0
+    invoke-virtual {v1}, Lcom/android/server/connectivity/NetworkMonitor$2ProbeThread;->start()V
+
+    const-wide/16 v2, 0xbb8
+
+    sget-object v4, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-virtual {v0, v2, v3, v4}, Ljava/util/concurrent/CountDownLatch;->await(JLjava/util/concurrent/TimeUnit;)Z
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_1
+
+    nop
+
+    invoke-virtual {v1}, Lcom/android/server/connectivity/NetworkMonitor$2ProbeThread;->result()Landroid/net/captiveportal/CaptivePortalProbeResult;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {}, Landroid/os/Process;->myTid()I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v4, ", httpChinaResult result ["
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v4, "], ["
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isPortal()Z
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v4, ", "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isSuccessful()Z
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v4, "]"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {p0, v3}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
+
+    invoke-virtual {v2}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isPortal()Z
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    invoke-virtual {v2}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isSuccessful()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x2
+    :try_start_1
+    invoke-virtual {v1}, Lcom/android/server/connectivity/NetworkMonitor$2ProbeThread;->join()V
 
+    invoke-virtual {v1}, Lcom/android/server/connectivity/NetworkMonitor$2ProbeThread;->result()Landroid/net/captiveportal/CaptivePortalProbeResult;
+
+    move-result-object v3
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+
+    return-object v3
+
+    :catch_0
+    move-exception v3
+
+    const-string v4, "Error: http or https probe wait interrupted!"
+
+    invoke-direct {p0, v4}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
+
+    sget-object v4, Landroid/net/captiveportal/CaptivePortalProbeResult;->FAILED:Landroid/net/captiveportal/CaptivePortalProbeResult;
+
+    return-object v4
+
+    :cond_1
     :goto_0
-    move v11, v0
+    const-string/jumbo v3, "use g.cn result"
+
+    invoke-direct {p0, v3}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
+
+    return-object v2
+
+    :catch_1
+    move-exception v2
+
+    const-string v3, "Error: array out of bound!"
+
+    invoke-direct {p0, v3}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
+
+    sget-object v3, Landroid/net/captiveportal/CaptivePortalProbeResult;->FAILED:Landroid/net/captiveportal/CaptivePortalProbeResult;
+
+    return-object v3
+
+    :catch_2
+    move-exception v2
+
+    const-string v3, "Error: probes wait interrupted!"
+
+    invoke-direct {p0, v3}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
+
+    sget-object v3, Landroid/net/captiveportal/CaptivePortalProbeResult;->FAILED:Landroid/net/captiveportal/CaptivePortalProbeResult;
+
+    return-object v3
+.end method
+
+.method private sendParallelHttpProbes(Landroid/net/ProxyInfo;Ljava/net/URL;Ljava/net/URL;)Landroid/net/captiveportal/CaptivePortalProbeResult;
+    .locals 10
 
     new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
-    invoke-direct {v0, v11}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
+    const/4 v1, 0x2
 
-    move-object v12, v0
+    invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
 
-    const/4 v0, 0x0
+    new-instance v1, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;
 
-    const/4 v13, 0x0
+    const/4 v4, 0x1
 
-    const/4 v14, 0x0
+    move-object v2, v1
 
-    if-eqz v10, :cond_1
+    move-object v3, p0
 
-    new-instance v15, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;
+    move-object v5, p1
 
-    const/4 v3, 0x2
+    move-object v6, p2
 
-    move-object v1, v15
+    move-object v7, p3
 
-    move-object v2, v9
+    move-object v8, v0
 
-    move-object/from16 v4, p1
+    invoke-direct/range {v2 .. v8}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;-><init>(Lcom/android/server/connectivity/NetworkMonitor;ZLandroid/net/ProxyInfo;Ljava/net/URL;Ljava/net/URL;Ljava/util/concurrent/CountDownLatch;)V
 
-    move-object/from16 v5, p2
+    new-instance v9, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;
 
-    move-object/from16 v6, p4
-
-    move-object/from16 v7, p3
-
-    move-object v8, v12
-
-    invoke-direct/range {v1 .. v8}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;-><init>(Lcom/android/server/connectivity/NetworkMonitor;ILandroid/net/ProxyInfo;Ljava/net/URL;Ljava/net/URL;Ljava/net/URL;Ljava/util/concurrent/CountDownLatch;)V
-
-    move-object v14, v15
-
-    :goto_1
-    move-object v1, v0
-
-    goto :goto_2
-
-    :cond_1
-    new-instance v15, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;
-
-    const/4 v3, 0x0
-
-    move-object v1, v15
+    const/4 v4, 0x0
 
     move-object v2, v9
 
-    move-object/from16 v4, p1
+    invoke-direct/range {v2 .. v8}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;-><init>(Lcom/android/server/connectivity/NetworkMonitor;ZLandroid/net/ProxyInfo;Ljava/net/URL;Ljava/net/URL;Ljava/util/concurrent/CountDownLatch;)V
 
-    move-object/from16 v5, p2
-
-    move-object/from16 v6, p4
-
-    move-object/from16 v7, p3
-
-    move-object v8, v12
-
-    invoke-direct/range {v1 .. v8}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;-><init>(Lcom/android/server/connectivity/NetworkMonitor;ILandroid/net/ProxyInfo;Ljava/net/URL;Ljava/net/URL;Ljava/net/URL;Ljava/util/concurrent/CountDownLatch;)V
-
-    move-object v0, v15
-
-    new-instance v15, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;
-
-    const/4 v3, 0x1
-
-    move-object v1, v15
-
-    invoke-direct/range {v1 .. v8}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;-><init>(Lcom/android/server/connectivity/NetworkMonitor;ILandroid/net/ProxyInfo;Ljava/net/URL;Ljava/net/URL;Ljava/net/URL;Ljava/util/concurrent/CountDownLatch;)V
-
-    move-object v13, v15
-
-    goto :goto_1
-
-    :goto_2
-    if-eqz p2, :cond_2
-
-    if-eqz v1, :cond_2
+    move-object v2, v9
 
     :try_start_0
     invoke-virtual {v1}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->start()V
 
-    goto :goto_3
+    invoke-virtual {v2}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->start()V
 
-    :catch_0
-    move-exception v0
-
-    goto/16 :goto_9
-
-    :catch_1
-    move-exception v0
-
-    goto/16 :goto_a
-
-    :cond_2
-    :goto_3
-    if-eqz v13, :cond_3
-
-    invoke-virtual {v13}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->start()V
-
-    :cond_3
-    if-eqz v14, :cond_4
-
-    invoke-virtual {v14}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->start()V
-
-    :cond_4
     const-wide/16 v3, 0xbb8
 
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-object v5, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-virtual {v12, v3, v4, v0}, Ljava/util/concurrent/CountDownLatch;->await(JLjava/util/concurrent/TimeUnit;)Z
+    invoke-virtual {v0, v3, v4, v5}, Ljava/util/concurrent/CountDownLatch;->await(JLjava/util/concurrent/TimeUnit;)Z
     :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_1
 
     nop
 
-    new-instance v0, Landroid/net/captiveportal/CaptivePortalProbeResult;
-
-    const/16 v3, 0x257
-
-    invoke-direct {v0, v3}, Landroid/net/captiveportal/CaptivePortalProbeResult;-><init>(I)V
-
-    new-instance v4, Landroid/net/captiveportal/CaptivePortalProbeResult;
-
-    invoke-direct {v4, v3}, Landroid/net/captiveportal/CaptivePortalProbeResult;-><init>(I)V
-
-    new-instance v5, Landroid/net/captiveportal/CaptivePortalProbeResult;
-
-    invoke-direct {v5, v3}, Landroid/net/captiveportal/CaptivePortalProbeResult;-><init>(I)V
-
-    move-object v3, v5
-
-    if-eqz v1, :cond_5
-
     invoke-virtual {v1}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->result()Landroid/net/captiveportal/CaptivePortalProbeResult;
-
-    move-result-object v0
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-static {}, Landroid/os/Process;->myTid()I
-
-    move-result v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v6, ", httpsResult result ["
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v6, "], ["
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isPortal()Z
-
-    move-result v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v6, ", "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isSuccessful()Z
-
-    move-result v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v6, "]"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-direct {v9, v5}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
-
-    :cond_5
-    move-object v5, v0
-
-    if-eqz v13, :cond_6
-
-    invoke-virtual {v13}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->result()Landroid/net/captiveportal/CaptivePortalProbeResult;
-
-    move-result-object v4
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-static {}, Landroid/os/Process;->myTid()I
-
-    move-result v6
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v6, ", httpResult result ["
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v6, "], ["
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isPortal()Z
-
-    move-result v6
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v6, ", "
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isSuccessful()Z
-
-    move-result v6
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v6, "]"
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v9, v0}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
-
-    :cond_6
-    if-eqz v14, :cond_7
-
-    invoke-virtual {v14}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->result()Landroid/net/captiveportal/CaptivePortalProbeResult;
 
     move-result-object v3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->result()Landroid/net/captiveportal/CaptivePortalProbeResult;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v4
 
-    invoke-static {}, Landroid/os/Process;->myTid()I
-
-    move-result v6
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v6, ", httpChinaResult result ["
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v6, "], ["
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isPortal()Z
-
-    move-result v6
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v6, ", "
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isSuccessful()Z
-
-    move-result v6
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v6, "]"
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v9, v0}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
-
-    :cond_7
-    invoke-virtual {v3}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isPortal()Z
-
-    move-result v0
-
-    if-nez v0, :cond_13
-
-    invoke-virtual {v3}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isSuccessful()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_8
-
-    goto/16 :goto_8
-
-    :cond_8
     invoke-virtual {v4}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isPortal()Z
 
-    move-result v0
+    move-result v5
 
-    if-nez v0, :cond_12
+    if-eqz v5, :cond_0
 
-    invoke-virtual {v4}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isSuccessful()Z
+    return-object v4
 
-    move-result v0
+    :cond_0
+    invoke-virtual {v3}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isPortal()Z
 
-    if-eqz v0, :cond_9
+    move-result v5
 
-    goto/16 :goto_7
+    if-nez v5, :cond_5
 
-    :cond_9
-    invoke-virtual {v5}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isPortal()Z
+    invoke-virtual {v3}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isSuccessful()Z
 
-    move-result v0
+    move-result v5
 
-    if-nez v0, :cond_11
+    if-eqz v5, :cond_1
 
-    invoke-virtual {v5}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isSuccessful()Z
+    goto :goto_1
 
-    move-result v0
+    :cond_1
+    invoke-direct {p0}, Lcom/android/server/connectivity/NetworkMonitor;->nextFallbackSpec()Landroid/net/captiveportal/CaptivePortalProbeSpec;
 
-    if-eqz v0, :cond_a
+    move-result-object v5
 
-    goto/16 :goto_6
+    if-eqz v5, :cond_2
 
-    :cond_a
-    invoke-direct/range {p0 .. p0}, Lcom/android/server/connectivity/NetworkMonitor;->nextFallbackSpec()Landroid/net/captiveportal/CaptivePortalProbeSpec;
+    invoke-virtual {v5}, Landroid/net/captiveportal/CaptivePortalProbeSpec;->getUrl()Ljava/net/URL;
 
     move-result-object v6
 
-    if-eqz v6, :cond_b
+    goto :goto_0
 
-    invoke-virtual {v6}, Landroid/net/captiveportal/CaptivePortalProbeSpec;->getUrl()Ljava/net/URL;
+    :cond_2
+    invoke-direct {p0}, Lcom/android/server/connectivity/NetworkMonitor;->nextFallbackUrl()Ljava/net/URL;
 
-    move-result-object v0
+    move-result-object v6
 
-    goto :goto_4
+    :goto_0
+    if-eqz v6, :cond_3
 
-    :cond_b
-    invoke-direct/range {p0 .. p0}, Lcom/android/server/connectivity/NetworkMonitor;->nextFallbackUrl()Ljava/net/URL;
+    const/4 v7, 0x4
 
-    move-result-object v0
+    invoke-virtual {p0, v6, v7, v5}, Lcom/android/server/connectivity/NetworkMonitor;->sendHttpProbe(Ljava/net/URL;ILandroid/net/captiveportal/CaptivePortalProbeSpec;)Landroid/net/captiveportal/CaptivePortalProbeResult;
 
-    :goto_4
-    move-object v7, v0
+    move-result-object v7
 
-    if-eqz v7, :cond_c
-
-    invoke-direct/range {p0 .. p0}, Lcom/android/server/connectivity/NetworkMonitor;->isCountryChina()Z
-
-    move-result v0
-
-    if-nez v0, :cond_c
-
-    const/4 v0, 0x4
-
-    invoke-virtual {v9, v7, v0, v6}, Lcom/android/server/connectivity/NetworkMonitor;->sendHttpProbe(Ljava/net/URL;ILandroid/net/captiveportal/CaptivePortalProbeSpec;)Landroid/net/captiveportal/CaptivePortalProbeResult;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isPortal()Z
+    invoke-virtual {v7}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isPortal()Z
 
     move-result v8
 
-    if-eqz v8, :cond_c
+    if-eqz v8, :cond_3
 
-    const-string/jumbo v8, "use fallback result"
+    return-object v7
 
-    invoke-direct {v9, v8}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
-
-    invoke-virtual {v7}, Ljava/net/URL;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    sput-object v8, Lcom/android/server/connectivity/NetworkMonitor;->mSucceedUrl:Ljava/lang/String;
-
-    return-object v0
-
-    :cond_c
-    if-eqz v14, :cond_d
-
+    :cond_3
     :try_start_1
-    invoke-virtual {v14}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->join()V
+    invoke-virtual {v2}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->join()V
 
-    invoke-virtual {v14}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->result()Landroid/net/captiveportal/CaptivePortalProbeResult;
+    invoke-virtual {v2}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->result()Landroid/net/captiveportal/CaptivePortalProbeResult;
 
-    move-result-object v0
+    move-result-object v7
 
-    return-object v0
+    invoke-virtual {v7}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isPortal()Z
 
-    :catch_2
-    move-exception v0
+    move-result v7
 
-    goto :goto_5
+    if-eqz v7, :cond_4
 
-    :cond_d
-    if-eqz v13, :cond_f
+    invoke-virtual {v2}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->result()Landroid/net/captiveportal/CaptivePortalProbeResult;
 
-    invoke-virtual {v13}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->join()V
+    move-result-object v7
 
-    invoke-virtual {v13}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->result()Landroid/net/captiveportal/CaptivePortalProbeResult;
+    return-object v7
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isPortal()Z
-
-    move-result v0
-
-    if-nez v0, :cond_e
-
-    invoke-virtual {v13}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->result()Landroid/net/captiveportal/CaptivePortalProbeResult;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isSuccessful()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_f
-
-    :cond_e
-    invoke-virtual {v13}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->result()Landroid/net/captiveportal/CaptivePortalProbeResult;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_f
-    if-eqz v1, :cond_10
-
+    :cond_4
     invoke-virtual {v1}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->join()V
 
     invoke-virtual {v1}, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->result()Landroid/net/captiveportal/CaptivePortalProbeResult;
 
-    move-result-object v0
-
-    return-object v0
-
-    :cond_10
-    sget-object v0, Landroid/net/captiveportal/CaptivePortalProbeResult;->FAILED:Landroid/net/captiveportal/CaptivePortalProbeResult;
+    move-result-object v7
     :try_end_1
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
-    return-object v0
+    return-object v7
 
-    :goto_5
-    nop
+    :catch_0
+    move-exception v7
 
     const-string v8, "Error: http or https probe wait interrupted!"
 
-    invoke-direct {v9, v8}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
+    invoke-direct {p0, v8}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
 
     sget-object v8, Landroid/net/captiveportal/CaptivePortalProbeResult;->FAILED:Landroid/net/captiveportal/CaptivePortalProbeResult;
 
     return-object v8
 
-    :cond_11
-    :goto_6
-    const-string/jumbo v0, "use https result"
+    :cond_5
+    :goto_1
+    return-object v3
 
-    invoke-direct {v9, v0}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
+    :catch_1
+    move-exception v3
 
-    invoke-virtual/range {p2 .. p2}, Ljava/net/URL;->toString()Ljava/lang/String;
+    const-string v4, "Error: array out of bound!"
 
-    move-result-object v0
+    invoke-direct {p0, v4}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
 
-    sput-object v0, Lcom/android/server/connectivity/NetworkMonitor;->mSucceedUrl:Ljava/lang/String;
-
-    return-object v5
-
-    :cond_12
-    :goto_7
-    const-string/jumbo v0, "use connectivitycheck.gstatic.com result"
-
-    invoke-direct {v9, v0}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
-
-    invoke-virtual/range {p3 .. p3}, Ljava/net/URL;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/android/server/connectivity/NetworkMonitor;->mSucceedUrl:Ljava/lang/String;
+    sget-object v4, Landroid/net/captiveportal/CaptivePortalProbeResult;->FAILED:Landroid/net/captiveportal/CaptivePortalProbeResult;
 
     return-object v4
 
-    :cond_13
-    :goto_8
-    const-string/jumbo v0, "use g.cn result"
+    :catch_2
+    move-exception v3
 
-    invoke-direct {v9, v0}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
+    const-string v4, "Error: probes wait interrupted!"
 
-    invoke-virtual/range {p4 .. p4}, Ljava/net/URL;->toString()Ljava/lang/String;
+    invoke-direct {p0, v4}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
 
-    move-result-object v0
+    sget-object v4, Landroid/net/captiveportal/CaptivePortalProbeResult;->FAILED:Landroid/net/captiveportal/CaptivePortalProbeResult;
 
-    sput-object v0, Lcom/android/server/connectivity/NetworkMonitor;->mSucceedUrl:Ljava/lang/String;
-
-    return-object v3
-
-    :goto_9
-    nop
-
-    const-string v3, "Error: array out of bound!"
-
-    invoke-direct {v9, v3}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
-
-    sget-object v3, Landroid/net/captiveportal/CaptivePortalProbeResult;->FAILED:Landroid/net/captiveportal/CaptivePortalProbeResult;
-
-    return-object v3
-
-    :goto_a
-    nop
-
-    const-string v3, "Error: probes wait interrupted!"
-
-    invoke-direct {v9, v3}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
-
-    sget-object v3, Landroid/net/captiveportal/CaptivePortalProbeResult;->FAILED:Landroid/net/captiveportal/CaptivePortalProbeResult;
-
-    return-object v3
+    return-object v4
 .end method
 
 .method private smToString(Landroid/os/Message;)Ljava/lang/String;
@@ -3014,7 +2702,7 @@
     return-object v0
 
     :cond_0
-    invoke-direct/range {p0 .. p0}, Lcom/android/server/connectivity/NetworkMonitor;->isCountryChina()Z
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/connectivity/NetworkMonitor;->isSetupWizardCompleted()Z
 
     move-result v0
 
@@ -3022,6 +2710,18 @@
 
     if-eqz v0, :cond_1
 
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/connectivity/NetworkMonitor;->isCountryChinaLocal()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    :cond_1
+    sget-boolean v0, Lcom/android/server/connectivity/NetworkMonitor;->mIsH2Version:Z
+
+    if-eqz v0, :cond_3
+
+    :cond_2
     iget-object v0, v7, Lcom/android/server/connectivity/NetworkMonitor;->mConnectivityServiceHandler:Landroid/os/Handler;
 
     const v2, 0x82002
@@ -3036,155 +2736,155 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    :cond_1
+    :cond_3
     const/4 v0, 0x0
 
     iget-object v8, v7, Lcom/android/server/connectivity/NetworkMonitor;->mCaptivePortalHttpsUrl:Ljava/net/URL;
 
     iget-object v2, v7, Lcom/android/server/connectivity/NetworkMonitor;->mCaptivePortalHttpUrl:Ljava/net/URL;
 
-    iget-object v9, v7, Lcom/android/server/connectivity/NetworkMonitor;->mCaptivePortalChinaHttpUrl:Ljava/net/URL;
+    iget-boolean v3, v7, Lcom/android/server/connectivity/NetworkMonitor;->systemReady:Z
 
-    iget-object v3, v7, Lcom/android/server/connectivity/NetworkMonitor;->mNetworkAgentInfo:Lcom/android/server/connectivity/NetworkAgentInfo;
+    if-eqz v3, :cond_5
 
-    iget-object v3, v3, Lcom/android/server/connectivity/NetworkAgentInfo;->linkProperties:Landroid/net/LinkProperties;
+    if-eqz v2, :cond_5
 
-    invoke-virtual {v3}, Landroid/net/LinkProperties;->getHttpProxy()Landroid/net/ProxyInfo;
+    invoke-virtual {v2}, Ljava/net/URL;->getHost()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v3
 
-    if-eqz v10, :cond_2
+    const-string/jumbo v4, "qualcomm"
 
-    sget-object v3, Landroid/net/Uri;->EMPTY:Landroid/net/Uri;
-
-    invoke-virtual {v10}, Landroid/net/ProxyInfo;->getPacFileUrl()Landroid/net/Uri;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
-    if-nez v3, :cond_2
+    if-eqz v3, :cond_5
 
-    invoke-virtual {v10}, Landroid/net/ProxyInfo;->getPacFileUrl()Landroid/net/Uri;
+    iget-object v3, v7, Lcom/android/server/connectivity/NetworkMonitor;->mContext:Landroid/content/Context;
 
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    invoke-direct {v7, v3}, Lcom/android/server/connectivity/NetworkMonitor;->makeURL(Ljava/lang/String;)Ljava/net/URL;
+    const v4, 0x50c0013
+
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    if-nez v3, :cond_4
+
+    const-string/jumbo v4, "http://connectivitycheck.gstatic.com/generate_204"
+
+    goto :goto_0
+
+    :cond_4
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "http://"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v5, "/generate_204"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    :goto_0
+    invoke-direct {v7, v4}, Lcom/android/server/connectivity/NetworkMonitor;->makeURL(Ljava/lang/String;)Ljava/net/URL;
+
+    move-result-object v2
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "replace qualcomm server to "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/net/URL;->getHost()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v7, v4}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
+
+    :cond_5
+    move-object v9, v2
+
+    iget-object v10, v7, Lcom/android/server/connectivity/NetworkMonitor;->mCaptivePortalChinaHttpUrl:Ljava/net/URL;
+
+    iget-object v2, v7, Lcom/android/server/connectivity/NetworkMonitor;->mNetworkAgentInfo:Lcom/android/server/connectivity/NetworkAgentInfo;
+
+    iget-object v2, v2, Lcom/android/server/connectivity/NetworkAgentInfo;->linkProperties:Landroid/net/LinkProperties;
+
+    invoke-virtual {v2}, Landroid/net/LinkProperties;->getHttpProxy()Landroid/net/ProxyInfo;
+
+    move-result-object v11
+
+    if-eqz v11, :cond_6
+
+    sget-object v2, Landroid/net/Uri;->EMPTY:Landroid/net/Uri;
+
+    invoke-virtual {v11}, Landroid/net/ProxyInfo;->getPacFileUrl()Landroid/net/Uri;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_6
+
+    invoke-virtual {v11}, Landroid/net/ProxyInfo;->getPacFileUrl()Landroid/net/Uri;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/net/Uri;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v7, v2}, Lcom/android/server/connectivity/NetworkMonitor;->makeURL(Ljava/lang/String;)Ljava/net/URL;
 
     move-result-object v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_6
 
     sget-object v1, Landroid/net/captiveportal/CaptivePortalProbeResult;->FAILED:Landroid/net/captiveportal/CaptivePortalProbeResult;
 
     return-object v1
 
-    :cond_2
-    move-object v11, v0
+    :cond_6
+    move-object v12, v0
 
-    iget-boolean v0, v7, Lcom/android/server/connectivity/NetworkMonitor;->systemReady:Z
+    if-nez v12, :cond_8
 
-    if-eqz v0, :cond_4
+    if-eqz v9, :cond_7
 
-    if-eqz v2, :cond_4
+    if-eqz v8, :cond_7
 
-    invoke-virtual {v2}, Ljava/net/URL;->getHost()Ljava/lang/String;
+    if-nez v10, :cond_8
 
-    move-result-object v0
-
-    const-string/jumbo v3, "qualcomm"
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    iget-object v0, v7, Lcom/android/server/connectivity/NetworkMonitor;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v3, 0x50c0013
-
-    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :cond_3
-
-    const-string/jumbo v3, "http://connectivitycheck.gstatic.com/generate_204"
-
-    goto :goto_0
-
-    :cond_3
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "http://"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v4, "/generate_204"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    :goto_0
-    invoke-direct {v7, v3}, Lcom/android/server/connectivity/NetworkMonitor;->makeURL(Ljava/lang/String;)Ljava/net/URL;
-
-    move-result-object v2
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "replace qualcomm server to "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/net/URL;->getHost()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v7, v3}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
-
-    :cond_4
-    move-object v12, v2
-
-    if-nez v11, :cond_6
-
-    if-eqz v12, :cond_5
-
-    if-eqz v8, :cond_5
-
-    if-nez v9, :cond_6
-
-    :cond_5
+    :cond_7
     sget-object v0, Landroid/net/captiveportal/CaptivePortalProbeResult;->FAILED:Landroid/net/captiveportal/CaptivePortalProbeResult;
 
     return-object v0
 
-    :cond_6
+    :cond_8
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v13
@@ -3197,30 +2897,45 @@
 
     invoke-static {v0}, Landroid/net/captiveportal/CaptivePortalProbeResult;->setCaptivePortalUrlBlacklist(Ljava/util/ArrayList;)V
 
-    if-eqz v11, :cond_7
+    if-eqz v12, :cond_9
 
     const/4 v0, 0x3
 
-    invoke-direct {v7, v1, v11, v0}, Lcom/android/server/connectivity/NetworkMonitor;->sendDnsAndHttpProbes(Landroid/net/ProxyInfo;Ljava/net/URL;I)Landroid/net/captiveportal/CaptivePortalProbeResult;
+    invoke-direct {v7, v1, v12, v0}, Lcom/android/server/connectivity/NetworkMonitor;->sendDnsAndHttpProbes(Landroid/net/ProxyInfo;Ljava/net/URL;I)Landroid/net/captiveportal/CaptivePortalProbeResult;
 
     move-result-object v0
 
     :goto_1
     goto :goto_2
 
-    :cond_7
-    iget-boolean v0, v7, Lcom/android/server/connectivity/NetworkMonitor;->mUseHttps:Z
+    :cond_9
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/connectivity/NetworkMonitor;->isCountryChinaLocal()Z
 
-    if-eqz v0, :cond_8
+    move-result v0
 
-    invoke-direct {v7, v10, v8, v12, v9}, Lcom/android/server/connectivity/NetworkMonitor;->sendParallelHttpProbes(Landroid/net/ProxyInfo;Ljava/net/URL;Ljava/net/URL;Ljava/net/URL;)Landroid/net/captiveportal/CaptivePortalProbeResult;
+    if-eqz v0, :cond_a
+
+    invoke-direct {v7, v11, v10}, Lcom/android/server/connectivity/NetworkMonitor;->sendParallelHttpChinaProbes(Landroid/net/ProxyInfo;Ljava/net/URL;)Landroid/net/captiveportal/CaptivePortalProbeResult;
 
     move-result-object v0
 
     goto :goto_1
 
-    :cond_8
-    invoke-direct {v7, v10, v1, v12, v9}, Lcom/android/server/connectivity/NetworkMonitor;->sendParallelHttpProbes(Landroid/net/ProxyInfo;Ljava/net/URL;Ljava/net/URL;Ljava/net/URL;)Landroid/net/captiveportal/CaptivePortalProbeResult;
+    :cond_a
+    iget-boolean v0, v7, Lcom/android/server/connectivity/NetworkMonitor;->mUseHttps:Z
+
+    if-eqz v0, :cond_b
+
+    invoke-direct {v7, v11, v8, v9}, Lcom/android/server/connectivity/NetworkMonitor;->sendParallelHttpProbes(Landroid/net/ProxyInfo;Ljava/net/URL;Ljava/net/URL;)Landroid/net/captiveportal/CaptivePortalProbeResult;
+
+    move-result-object v0
+
+    goto :goto_1
+
+    :cond_b
+    const/4 v0, 0x1
+
+    invoke-direct {v7, v11, v9, v0}, Lcom/android/server/connectivity/NetworkMonitor;->sendDnsAndHttpProbes(Landroid/net/ProxyInfo;Ljava/net/URL;I)Landroid/net/captiveportal/CaptivePortalProbeResult;
 
     move-result-object v0
 
@@ -3293,7 +3008,7 @@
 .end method
 
 .method protected sendHttpProbe(Ljava/net/URL;ILandroid/net/captiveportal/CaptivePortalProbeSpec;)Landroid/net/captiveportal/CaptivePortalProbeResult;
-    .locals 21
+    .locals 19
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
@@ -3384,7 +3099,9 @@
     :catchall_0
     move-exception v0
 
-    goto/16 :goto_6
+    move-object/from16 v18, v7
+
+    goto/16 :goto_5
 
     :catch_0
     move-exception v0
@@ -3482,9 +3199,9 @@
 
     if-ne v6, v7, :cond_5
 
-    const/4 v8, 0x3
+    const/4 v7, 0x3
 
-    if-ne v3, v8, :cond_2
+    if-ne v3, v7, :cond_2
 
     const-string v7, "PAC fetch 200 response interpreted as 204 response."
 
@@ -3497,13 +3214,13 @@
     :cond_2
     invoke-virtual {v5}, Ljava/net/HttpURLConnection;->getContentLengthLong()J
 
-    move-result-wide v15
+    move-result-wide v7
 
-    const-wide/16 v19, 0x0
+    const-wide/16 v15, 0x0
 
-    cmp-long v8, v15, v19
+    cmp-long v7, v7, v15
 
-    if-nez v8, :cond_3
+    if-nez v7, :cond_3
 
     const-string v7, "200 response with Content-length=0 interpreted as 204 response."
 
@@ -3516,13 +3233,13 @@
     :cond_3
     invoke-virtual {v5}, Ljava/net/HttpURLConnection;->getContentLengthLong()J
 
-    move-result-wide v15
+    move-result-wide v7
 
-    const-wide/16 v19, -0x1
+    const-wide/16 v15, -0x1
 
-    cmp-long v8, v15, v19
+    cmp-long v7, v7, v15
 
-    if-nez v8, :cond_4
+    if-nez v7, :cond_4
 
     invoke-virtual {v5}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
 
@@ -3545,13 +3262,11 @@
     goto :goto_2
 
     :cond_4
-    invoke-direct/range {p0 .. p0}, Lcom/android/server/connectivity/NetworkMonitor;->isCountryChina()Z
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/connectivity/NetworkMonitor;->isCountryChinaLocal()Z
 
-    move-result v8
+    move-result v7
 
-    if-eqz v8, :cond_5
-
-    if-ne v6, v7, :cond_5
+    if-eqz v7, :cond_5
 
     invoke-virtual {v5}, Ljava/net/HttpURLConnection;->getContentLength()I
 
@@ -3589,16 +3304,14 @@
 
     move-object/from16 v7, v18
 
-    goto/16 :goto_5
+    goto :goto_4
 
     :catchall_1
     move-exception v0
 
     move-object/from16 v8, v17
 
-    move-object/from16 v7, v18
-
-    goto/16 :goto_6
+    goto :goto_5
 
     :catch_1
     move-exception v0
@@ -3612,7 +3325,7 @@
 
     move-object/from16 v18, v7
 
-    goto/16 :goto_6
+    goto :goto_5
 
     :catch_2
     move-exception v0
@@ -3626,7 +3339,9 @@
     :catchall_3
     move-exception v0
 
-    goto/16 :goto_6
+    move-object/from16 v18, v7
+
+    goto :goto_5
 
     :catch_3
     move-exception v0
@@ -3651,80 +3366,20 @@
 
     invoke-direct {v1, v3, v2, v8}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(ILjava/lang/Object;Ljava/lang/String;)V
     :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_4
 
-    const/16 v8, 0x257
+    nop
 
-    if-ne v6, v8, :cond_7
-
-    :try_start_6
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v10, "isCountryChina = "
-
-    invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-direct/range {p0 .. p0}, Lcom/android/server/connectivity/NetworkMonitor;->isCountryChina()Z
-
-    move-result v10
-
-    invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v10, ", mRetryCount = "
-
-    invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v10, v1, Lcom/android/server/connectivity/NetworkMonitor;->mRetryCount:I
-
-    invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-direct {v1, v8}, Lcom/android/server/connectivity/NetworkMonitor;->validationLog(Ljava/lang/String;)V
-
-    invoke-direct/range {p0 .. p0}, Lcom/android/server/connectivity/NetworkMonitor;->isCountryChina()Z
-
-    move-result v8
-
-    if-eqz v8, :cond_7
-
-    iget v8, v1, Lcom/android/server/connectivity/NetworkMonitor;->mRetryCount:I
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_4
-
-    const/4 v10, 0x5
-
-    if-lt v8, v10, :cond_7
-
-    const/16 v0, 0xcc
-
-    move v6, v0
-
-    goto :goto_4
-
-    :catchall_4
-    move-exception v0
-
-    move-object/from16 v8, v17
-
-    goto :goto_6
-
-    :cond_7
-    :goto_4
-    if-eqz v5, :cond_8
+    if-eqz v5, :cond_7
 
     invoke-virtual {v5}, Ljava/net/HttpURLConnection;->disconnect()V
 
-    :cond_8
+    :cond_7
     invoke-static {v9}, Landroid/net/TrafficStats;->setThreadStatsTag(I)V
 
     nop
 
-    :goto_5
+    :goto_4
     move-object/from16 v8, v17
 
     invoke-virtual {v8}, Landroid/net/util/Stopwatch;->stop()J
@@ -3733,7 +3388,7 @@
 
     invoke-direct {v1, v10, v11, v3, v6}, Lcom/android/server/connectivity/NetworkMonitor;->logValidationProbe(JII)V
 
-    if-nez v4, :cond_9
+    if-nez v4, :cond_8
 
     new-instance v0, Landroid/net/captiveportal/CaptivePortalProbeResult;
 
@@ -3745,24 +3400,26 @@
 
     return-object v0
 
-    :cond_9
+    :cond_8
     invoke-virtual {v4, v6, v7}, Landroid/net/captiveportal/CaptivePortalProbeSpec;->getResult(ILjava/lang/String;)Landroid/net/captiveportal/CaptivePortalProbeResult;
 
     move-result-object v0
 
     return-object v0
 
-    :catchall_5
+    :catchall_4
     move-exception v0
 
     move-object/from16 v8, v17
 
-    :goto_6
-    if-eqz v5, :cond_a
+    move-object/from16 v18, v7
+
+    :goto_5
+    if-eqz v5, :cond_9
 
     invoke-virtual {v5}, Ljava/net/HttpURLConnection;->disconnect()V
 
-    :cond_a
+    :cond_9
     invoke-static {v9}, Landroid/net/TrafficStats;->setThreadStatsTag(I)V
 
     throw v0

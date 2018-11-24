@@ -2077,7 +2077,7 @@
 .end method
 
 .method private reportLaunchTimeLocked(J)V
-    .locals 16
+    .locals 17
 
     move-object/from16 v7, p0
 
@@ -2142,15 +2142,15 @@
 
     move-result-object v2
 
-    const/4 v3, 0x0
+    const/4 v13, 0x0
 
-    invoke-static {v0, v1, v2, v3}, Landroid/os/Trace;->asyncTraceEnd(JLjava/lang/String;I)V
+    invoke-static {v0, v1, v2, v13}, Landroid/os/Trace;->asyncTraceEnd(JLjava/lang/String;I)V
 
     const/16 v0, 0x7539
 
-    const/4 v1, 0x5
+    const/4 v3, 0x5
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v1, v3, [Ljava/lang/Object;
 
     iget v2, v7, Lcom/android/server/am/ActivityRecord;->userId:I
 
@@ -2158,7 +2158,7 @@
 
     move-result-object v2
 
-    aput-object v2, v1, v3
+    aput-object v2, v1, v13
 
     invoke-static/range {p0 .. p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
@@ -2168,31 +2168,31 @@
 
     move-result-object v2
 
-    const/4 v13, 0x1
+    const/4 v4, 0x1
 
-    aput-object v2, v1, v13
+    aput-object v2, v1, v4
 
     const/4 v2, 0x2
 
-    iget-object v4, v7, Lcom/android/server/am/ActivityRecord;->shortComponentName:Ljava/lang/String;
+    iget-object v3, v7, Lcom/android/server/am/ActivityRecord;->shortComponentName:Ljava/lang/String;
 
-    aput-object v4, v1, v2
+    aput-object v3, v1, v2
 
     invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
 
-    const/4 v4, 0x3
+    const/4 v3, 0x3
 
-    aput-object v2, v1, v4
+    aput-object v2, v1, v3
 
     const/4 v2, 0x4
 
     invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v14
+    move-result-object v15
 
-    aput-object v14, v1, v2
+    aput-object v15, v1, v2
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
@@ -2200,7 +2200,7 @@
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mStringBuilder:Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->setLength(I)V
+    invoke-virtual {v0, v13}, Ljava/lang/StringBuilder;->setLength(I)V
 
     const-string v1, "Displayed "
 
@@ -2238,9 +2238,9 @@
 
     iget-object v2, v7, Lcom/android/server/am/ActivityRecord;->packageName:Ljava/lang/String;
 
-    long-to-int v11, v5
+    long-to-int v4, v5
 
-    invoke-virtual {v1, v4, v3, v2, v11}, Landroid/util/BoostFramework;->perfUXEngine_events(IILjava/lang/String;I)I
+    invoke-virtual {v1, v3, v13, v2, v4}, Landroid/util/BoostFramework;->perfUXEngine_events(IILjava/lang/String;I)I
 
     goto :goto_1
 
@@ -2253,9 +2253,9 @@
 
     iget-object v2, v7, Lcom/android/server/am/ActivityRecord;->packageName:Ljava/lang/String;
 
-    long-to-int v11, v9
+    long-to-int v4, v9
 
-    invoke-virtual {v1, v4, v3, v2, v11}, Landroid/util/BoostFramework;->perfUXEngine_events(IILjava/lang/String;I)I
+    invoke-virtual {v1, v3, v13, v2, v4}, Landroid/util/BoostFramework;->perfUXEngine_events(IILjava/lang/String;I)I
 
     :cond_3
     :goto_1
@@ -2285,7 +2285,7 @@
 
     move-result v1
 
-    invoke-virtual {v0, v3, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v0, v13, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v0
 
@@ -2308,67 +2308,86 @@
 
     move-object v2, v7
 
+    const/4 v11, 0x5
+
+    const/4 v12, 0x1
+
     move-wide v3, v9
 
-    move-wide v11, v5
+    move-wide v14, v5
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/server/am/ActivityStackSupervisor;->reportActivityLaunchedLocked(ZLcom/android/server/am/ActivityRecord;JJ)V
 
-    sget-object v0, Lcom/android/server/am/ActivityRecord;->mPerfFirstDraw:Landroid/util/BoostFramework;
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/ActivityRecord;->isAppInfoGame()I
 
-    if-nez v0, :cond_5
+    move-result v0
 
-    new-instance v0, Landroid/util/BoostFramework;
+    iget-object v1, v7, Lcom/android/server/am/ActivityRecord;->mUxPerf:Landroid/util/BoostFramework;
 
-    invoke-direct {v0}, Landroid/util/BoostFramework;-><init>()V
+    if-eqz v1, :cond_5
 
-    sput-object v0, Lcom/android/server/am/ActivityRecord;->mPerfFirstDraw:Landroid/util/BoostFramework;
+    iget-object v1, v7, Lcom/android/server/am/ActivityRecord;->mUxPerf:Landroid/util/BoostFramework;
+
+    iget-object v2, v7, Lcom/android/server/am/ActivityRecord;->packageName:Ljava/lang/String;
+
+    invoke-virtual {v1, v11, v13, v2, v0}, Landroid/util/BoostFramework;->perfUXEngine_events(IILjava/lang/String;I)I
 
     :cond_5
-    sget-object v0, Lcom/android/server/am/ActivityRecord;->mPerfFirstDraw:Landroid/util/BoostFramework;
+    sget-object v1, Lcom/android/server/am/ActivityRecord;->mPerfFirstDraw:Landroid/util/BoostFramework;
 
-    if-eqz v0, :cond_6
+    if-nez v1, :cond_6
 
-    sget-object v0, Lcom/android/server/am/ActivityRecord;->mPerfFirstDraw:Landroid/util/BoostFramework;
+    new-instance v1, Landroid/util/BoostFramework;
 
-    const/16 v1, 0x1042
+    invoke-direct {v1}, Landroid/util/BoostFramework;-><init>()V
 
-    iget-object v2, v7, Lcom/android/server/am/ActivityRecord;->info:Landroid/content/pm/ActivityInfo;
-
-    iget-object v2, v2, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
-
-    long-to-int v3, v9
-
-    invoke-virtual {v0, v1, v2, v3, v13}, Landroid/util/BoostFramework;->perfHint(ILjava/lang/String;II)I
+    sput-object v1, Lcom/android/server/am/ActivityRecord;->mPerfFirstDraw:Landroid/util/BoostFramework;
 
     :cond_6
+    sget-object v1, Lcom/android/server/am/ActivityRecord;->mPerfFirstDraw:Landroid/util/BoostFramework;
+
+    if-eqz v1, :cond_7
+
+    sget-object v1, Lcom/android/server/am/ActivityRecord;->mPerfFirstDraw:Landroid/util/BoostFramework;
+
+    const/16 v2, 0x1042
+
+    iget-object v3, v7, Lcom/android/server/am/ActivityRecord;->info:Landroid/content/pm/ActivityInfo;
+
+    iget-object v3, v3, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+
+    long-to-int v4, v9
+
+    invoke-virtual {v1, v2, v3, v4, v12}, Landroid/util/BoostFramework;->perfHint(ILjava/lang/String;II)I
+
+    :cond_7
     nop
 
-    const-wide/16 v0, 0x0
+    const-wide/16 v1, 0x0
 
-    iput-wide v0, v7, Lcom/android/server/am/ActivityRecord;->displayStartTime:J
+    iput-wide v1, v7, Lcom/android/server/am/ActivityRecord;->displayStartTime:J
 
-    iput-wide v0, v8, Lcom/android/server/am/LaunchTimeTracker$Entry;->mLaunchStartTime:J
+    iput-wide v1, v8, Lcom/android/server/am/LaunchTimeTracker$Entry;->mLaunchStartTime:J
 
-    iget-object v0, v7, Lcom/android/server/am/ActivityRecord;->mPerf:Landroid/util/BoostFramework;
+    iget-object v1, v7, Lcom/android/server/am/ActivityRecord;->mPerf:Landroid/util/BoostFramework;
 
-    if-eqz v0, :cond_7
-
-    iget v0, v7, Lcom/android/server/am/ActivityRecord;->perfActivityBoostHandler:I
-
-    if-lez v0, :cond_7
-
-    iget-object v0, v7, Lcom/android/server/am/ActivityRecord;->mPerf:Landroid/util/BoostFramework;
+    if-eqz v1, :cond_8
 
     iget v1, v7, Lcom/android/server/am/ActivityRecord;->perfActivityBoostHandler:I
 
-    invoke-virtual {v0, v1}, Landroid/util/BoostFramework;->perfLockReleaseHandler(I)I
+    if-lez v1, :cond_8
 
-    const/4 v0, -0x1
+    iget-object v1, v7, Lcom/android/server/am/ActivityRecord;->mPerf:Landroid/util/BoostFramework;
 
-    iput v0, v7, Lcom/android/server/am/ActivityRecord;->perfActivityBoostHandler:I
+    iget v2, v7, Lcom/android/server/am/ActivityRecord;->perfActivityBoostHandler:I
 
-    :cond_7
+    invoke-virtual {v1, v2}, Landroid/util/BoostFramework;->perfLockReleaseHandler(I)I
+
+    const/4 v1, -0x1
+
+    iput v1, v7, Lcom/android/server/am/ActivityRecord;->perfActivityBoostHandler:I
+
+    :cond_8
     return-void
 .end method
 
@@ -6217,7 +6236,7 @@
 
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v2, "haveState="
+    const-string/jumbo v2, "haveState="
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -7874,6 +7893,49 @@
     return v0
 .end method
 
+.method public isAppInfoGame()I
+    .locals 3
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lcom/android/server/am/ActivityRecord;->appInfo:Landroid/content/pm/ApplicationInfo;
+
+    if-eqz v1, :cond_2
+
+    iget-object v1, p0, Lcom/android/server/am/ActivityRecord;->appInfo:Landroid/content/pm/ApplicationInfo;
+
+    iget v1, v1, Landroid/content/pm/ApplicationInfo;->category:I
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lcom/android/server/am/ActivityRecord;->appInfo:Landroid/content/pm/ApplicationInfo;
+
+    iget v1, v1, Landroid/content/pm/ApplicationInfo;->flags:I
+
+    const/high16 v2, 0x2000000
+
+    and-int/2addr v1, v2
+
+    if-ne v1, v2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 v1, 0x1
+
+    :goto_1
+    move v0, v1
+
+    :cond_2
+    return v0
+.end method
+
 .method isConfigurationCompatible(Landroid/content/res/Configuration;)Z
     .locals 5
 
@@ -8914,6 +8976,107 @@
 
     :cond_0
     return-void
+.end method
+
+.method public okToShowExcludeLocked(Z)Z
+    .locals 4
+
+    iget v0, p0, Lcom/android/server/am/ActivityRecord;->userId:I
+
+    invoke-static {v0}, Landroid/os/storage/StorageManager;->isUserKeyUnlocked(I)Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/server/am/ActivityRecord;->info:Landroid/content/pm/ActivityInfo;
+
+    iget-object v0, v0, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+
+    invoke-virtual {v0}, Landroid/content/pm/ApplicationInfo;->isEncryptionAware()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return v1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    if-eqz p1, :cond_2
+
+    sget-boolean v1, Lcom/android/server/am/ActivityManagerService;->DEBUG_ONEPLUS:Z
+
+    if-eqz v1, :cond_1
+
+    const-string v1, "ActivityManager"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "okToShowExcludeLocked, allowed find activity for "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    return v0
+
+    :cond_2
+    iget-object v2, p0, Lcom/android/server/am/ActivityRecord;->info:Landroid/content/pm/ActivityInfo;
+
+    iget v2, v2, Landroid/content/pm/ActivityInfo;->flags:I
+
+    and-int/lit16 v2, v2, 0x400
+
+    if-nez v2, :cond_4
+
+    iget-object v2, p0, Lcom/android/server/am/ActivityRecord;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+
+    iget v3, p0, Lcom/android/server/am/ActivityRecord;->userId:I
+
+    invoke-virtual {v2, v3}, Lcom/android/server/am/ActivityStackSupervisor;->isCurrentProfileLocked(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    iget-object v2, p0, Lcom/android/server/am/ActivityRecord;->service:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v2, v2, Lcom/android/server/am/ActivityManagerService;->mUserController:Lcom/android/server/am/UserController;
+
+    iget v3, p0, Lcom/android/server/am/ActivityRecord;->userId:I
+
+    invoke-virtual {v2, v3, v1}, Lcom/android/server/am/UserController;->isUserRunning(II)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    move v0, v1
+
+    goto :goto_1
+
+    :cond_4
+    :goto_0
+    nop
+
+    :goto_1
+    return v0
 .end method
 
 .method public okToShowLocked()Z

@@ -5290,7 +5290,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v2, 0x5
+    const/16 v2, 0xf
 
     invoke-static {v2}, Landroid/os/Debug;->getCallers(I)Ljava/lang/String;
 
@@ -5420,7 +5420,7 @@
 
     const/4 v9, 0x1
 
-    if-eq v8, v1, :cond_3
+    if-eq v8, v1, :cond_4
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/AppWindowToken;->isHidden()Z
 
@@ -5430,7 +5430,7 @@
 
     iget-boolean v8, v0, Lcom/android/server/wm/AppWindowToken;->mIsExiting:Z
 
-    if-nez v8, :cond_3
+    if-nez v8, :cond_4
 
     :cond_0
     if-eqz v1, :cond_1
@@ -5439,33 +5439,46 @@
 
     move-result v8
 
-    if-nez v8, :cond_3
+    if-nez v8, :cond_4
 
     :cond_1
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
-    if-eqz v7, :cond_2
+    if-eqz v7, :cond_3
+
+    new-array v8, v9, [I
+
+    const/16 v10, 0x47
+
+    aput v10, v8, v5
+
+    invoke-static {v8}, Landroid/util/OpFeatures;->isSupport([I)Z
+
+    move-result v8
+
+    if-nez v8, :cond_2
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/AppWindowToken;->isActivityTypeHome()Z
 
     move-result v8
 
-    if-eqz v8, :cond_2
+    if-eqz v8, :cond_3
 
+    :cond_2
     const/16 v8, 0x15
 
-    if-ne v2, v8, :cond_2
+    if-ne v2, v8, :cond_3
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     move-object/from16 v12, p1
 
     move/from16 v13, p5
 
     goto/16 :goto_5
 
-    :cond_3
+    :cond_4
     :goto_0
     iget-object v8, v0, Lcom/android/server/wm/AppWindowToken;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -5475,7 +5488,7 @@
 
     sget-boolean v11, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_APP_TRANSITIONS:Z
 
-    if-eqz v11, :cond_4
+    if-eqz v11, :cond_5
 
     const-string v11, "WindowManager"
 
@@ -5511,12 +5524,12 @@
 
     invoke-static {v11, v12}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_4
+    :cond_5
     const/4 v11, 0x0
 
     const/4 v12, -0x1
 
-    if-eq v2, v12, :cond_7
+    if-eq v2, v12, :cond_8
 
     move-object/from16 v12, p1
 
@@ -5526,20 +5539,20 @@
 
     move-result v14
 
-    if-eqz v14, :cond_5
+    if-eqz v14, :cond_6
 
     move v11, v9
 
     move v4, v9
 
-    :cond_5
+    :cond_6
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/AppWindowToken;->findMainWindow()Lcom/android/server/wm/WindowState;
 
     move-result-object v14
 
-    if-eqz v14, :cond_6
+    if-eqz v14, :cond_7
 
-    if-eqz v8, :cond_6
+    if-eqz v8, :cond_7
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/AppWindowToken;->getDisplayContent()Lcom/android/server/wm/DisplayContent;
 
@@ -5549,16 +5562,16 @@
 
     move-result v15
 
-    if-nez v15, :cond_6
+    if-nez v15, :cond_7
 
     invoke-virtual {v8, v14, v2}, Lcom/android/server/wm/AccessibilityController;->onAppWindowTransitionLocked(Lcom/android/server/wm/WindowState;I)V
 
-    :cond_6
+    :cond_7
     const/4 v10, 0x1
 
     goto :goto_1
 
-    :cond_7
+    :cond_8
     move-object/from16 v12, p1
 
     move/from16 v13, p5
@@ -5575,7 +5588,7 @@
     move v10, v5
 
     :goto_2
-    if-ge v10, v14, :cond_8
+    if-ge v10, v14, :cond_9
 
     iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->mChildren:Lcom/android/server/wm/WindowList;
 
@@ -5597,7 +5610,7 @@
 
     goto :goto_2
 
-    :cond_8
+    :cond_9
     xor-int/lit8 v5, v1, 0x1
 
     invoke-virtual {v0, v5}, Lcom/android/server/wm/AppWindowToken;->setHidden(Z)V
@@ -5608,16 +5621,16 @@
 
     const/4 v6, 0x1
 
-    if-nez v1, :cond_9
+    if-nez v1, :cond_a
 
     invoke-virtual {v0, v9, v9}, Lcom/android/server/wm/AppWindowToken;->stopFreezingScreen(ZZ)V
 
     goto :goto_3
 
-    :cond_9
+    :cond_a
     iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->startingWindow:Lcom/android/server/wm/WindowState;
 
-    if-eqz v5, :cond_a
+    if-eqz v5, :cond_b
 
     iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->startingWindow:Lcom/android/server/wm/WindowState;
 
@@ -5625,7 +5638,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_a
+    if-nez v5, :cond_b
 
     iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->startingWindow:Lcom/android/server/wm/WindowState;
 
@@ -5637,7 +5650,7 @@
 
     iput-boolean v10, v5, Lcom/android/server/wm/WindowState;->mPolicyVisibilityAfterAnim:Z
 
-    :cond_a
+    :cond_b
     iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->mService:Lcom/android/server/wm/WindowManagerService;
 
     invoke-static {v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -5651,7 +5664,7 @@
     :goto_3
     sget-boolean v5, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_APP_TRANSITIONS:Z
 
-    if-eqz v5, :cond_b
+    if-eqz v5, :cond_c
 
     const-string v5, "WindowManager"
 
@@ -5689,8 +5702,8 @@
 
     invoke-static {v5, v9}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_b
-    if-eqz v15, :cond_d
+    :cond_c
+    if-eqz v15, :cond_e
 
     iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -5698,7 +5711,7 @@
 
     invoke-virtual {v5}, Lcom/android/server/wm/InputMonitor;->setUpdateInputWindowsNeededLw()V
 
-    if-eqz v3, :cond_c
+    if-eqz v3, :cond_d
 
     iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -5716,7 +5729,7 @@
 
     goto :goto_4
 
-    :cond_c
+    :cond_d
     const/4 v10, 0x0
 
     :goto_4
@@ -5726,24 +5739,24 @@
 
     invoke-virtual {v5, v10}, Lcom/android/server/wm/InputMonitor;->updateInputWindowsLw(Z)V
 
-    :cond_d
+    :cond_e
     :goto_5
     invoke-direct/range {p0 .. p0}, Lcom/android/server/wm/AppWindowToken;->isReallyAnimating()Z
 
     move-result v5
 
-    if-eqz v5, :cond_e
+    if-eqz v5, :cond_f
 
     const/4 v4, 0x1
 
     goto :goto_6
 
-    :cond_e
+    :cond_f
     iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->mService:Lcom/android/server/wm/WindowManagerService;
 
     sget-boolean v5, Lcom/android/server/wm/WindowManagerService;->mSkipAppAnimation:Z
 
-    if-eqz v5, :cond_f
+    if-eqz v5, :cond_10
 
     iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -5751,7 +5764,7 @@
 
     invoke-virtual {v5, v0, v1}, Lcom/android/server/wm/TaskSnapshotController;->notifyAppVisibilityChanged(Lcom/android/server/wm/AppWindowToken;Z)V
 
-    :cond_f
+    :cond_10
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/AppWindowToken;->onAnimationFinished()V
 
     :goto_6
@@ -5766,9 +5779,9 @@
     sub-int/2addr v5, v8
 
     :goto_7
-    if-ltz v5, :cond_11
+    if-ltz v5, :cond_12
 
-    if-nez v4, :cond_11
+    if-nez v4, :cond_12
 
     iget-object v8, v0, Lcom/android/server/wm/AppWindowToken;->mChildren:Lcom/android/server/wm/WindowList;
 
@@ -5782,21 +5795,21 @@
 
     move-result v8
 
-    if-eqz v8, :cond_10
+    if-eqz v8, :cond_11
 
     const/4 v4, 0x1
 
-    :cond_10
+    :cond_11
     add-int/lit8 v5, v5, -0x1
 
     goto :goto_7
 
-    :cond_11
-    if-eqz v6, :cond_17
+    :cond_12
+    if-eqz v6, :cond_18
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_13
 
-    if-nez v4, :cond_12
+    if-nez v4, :cond_13
 
     const/4 v5, 0x1
 
@@ -5810,21 +5823,21 @@
 
     invoke-virtual {v5, v8}, Lcom/android/server/wm/WindowManagerInternal$AppTransitionListener;->onAppTransitionFinishedLocked(Landroid/os/IBinder;)V
 
-    :cond_12
-    if-nez v1, :cond_13
+    :cond_13
+    if-nez v1, :cond_14
 
     invoke-direct/range {p0 .. p0}, Lcom/android/server/wm/AppWindowToken;->isReallyAnimating()Z
 
     move-result v5
 
-    if-nez v5, :cond_14
+    if-nez v5, :cond_15
 
-    :cond_13
+    :cond_14
     xor-int/lit8 v5, v1, 0x1
 
     invoke-virtual {v0, v5}, Lcom/android/server/wm/AppWindowToken;->setClientHidden(Z)V
 
-    :cond_14
+    :cond_15
     iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->mService:Lcom/android/server/wm/WindowManagerService;
 
     iget-object v5, v5, Lcom/android/server/wm/WindowManagerService;->mClosingApps:Landroid/util/ArraySet;
@@ -5833,7 +5846,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_15
+    if-nez v5, :cond_16
 
     iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -5843,7 +5856,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_15
+    if-nez v5, :cond_16
 
     iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -5863,14 +5876,14 @@
 
     invoke-virtual {v5, v0, v1}, Lcom/android/server/wm/TaskSnapshotController;->notifyAppVisibilityChanged(Lcom/android/server/wm/AppWindowToken;Z)V
 
-    :cond_15
+    :cond_16
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/AppWindowToken;->isHidden()Z
 
     move-result v5
 
-    if-eqz v5, :cond_17
+    if-eqz v5, :cond_18
 
-    if-nez v4, :cond_17
+    if-nez v4, :cond_18
 
     iget-object v5, v0, Lcom/android/server/wm/AppWindowToken;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -5880,7 +5893,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_17
+    if-nez v5, :cond_18
 
     invoke-static {}, Landroid/view/SurfaceControl;->openTransaction()V
 
@@ -5895,7 +5908,7 @@
     sub-int/2addr v5, v8
 
     :goto_8
-    if-ltz v5, :cond_16
+    if-ltz v5, :cond_17
 
     iget-object v8, v0, Lcom/android/server/wm/AppWindowToken;->mChildren:Lcom/android/server/wm/WindowList;
 
@@ -5915,10 +5928,10 @@
 
     goto :goto_8
 
-    :cond_16
+    :cond_17
     invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
 
-    :cond_17
+    :cond_18
     return v4
 .end method
 

@@ -29,6 +29,8 @@
 
 
 # instance fields
+.field private mAssistantEventCollector:Lnet/oneplus/odm/insight/AssistantEventCollector;
+
 .field private mCallActive:Z
 
 .field private final mContext:Landroid/content/Context;
@@ -78,7 +80,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
-    .locals 5
+    .locals 6
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -98,66 +100,76 @@
 
     iput-boolean v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mRecognitionRunning:Z
 
-    new-instance v1, Ljava/util/ArrayList;
+    const/4 v1, 0x0
 
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+    iput-object v1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mAssistantEventCollector:Lnet/oneplus/odm/insight/AssistantEventCollector;
 
-    invoke-static {v1}, Landroid/hardware/soundtrigger/SoundTrigger;->listModules(Ljava/util/ArrayList;)I
+    new-instance v2, Ljava/util/ArrayList;
 
-    move-result v2
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object p1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mContext:Landroid/content/Context;
-
-    const-string/jumbo v3, "phone"
-
-    invoke-virtual {p1, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/telephony/TelephonyManager;
-
-    iput-object v3, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mTelephonyManager:Landroid/telephony/TelephonyManager;
-
-    const-string/jumbo v3, "power"
-
-    invoke-virtual {p1, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/os/PowerManager;
-
-    iput-object v3, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mPowerManager:Landroid/os/PowerManager;
-
-    new-instance v3, Ljava/util/HashMap;
-
-    invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v3, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mModelDataMap:Ljava/util/HashMap;
-
-    new-instance v3, Ljava/util/HashMap;
-
-    invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v3, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mKeyphraseUuidMap:Ljava/util/HashMap;
-
-    new-instance v3, Lcom/android/server/soundtrigger/SoundTriggerHelper$MyCallStateListener;
-
-    invoke-direct {v3, p0}, Lcom/android/server/soundtrigger/SoundTriggerHelper$MyCallStateListener;-><init>(Lcom/android/server/soundtrigger/SoundTriggerHelper;)V
-
-    iput-object v3, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
-
-    if-nez v2, :cond_1
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+    invoke-static {v2}, Landroid/hardware/soundtrigger/SoundTrigger;->listModules(Ljava/util/ArrayList;)I
 
     move-result v3
 
-    if-nez v3, :cond_0
+    iput-object p1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mContext:Landroid/content/Context;
+
+    const-string/jumbo v4, "phone"
+
+    invoke-virtual {p1, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/telephony/TelephonyManager;
+
+    iput-object v4, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mTelephonyManager:Landroid/telephony/TelephonyManager;
+
+    const-string/jumbo v4, "power"
+
+    invoke-virtual {p1, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/os/PowerManager;
+
+    iput-object v4, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mPowerManager:Landroid/os/PowerManager;
+
+    new-instance v4, Ljava/util/HashMap;
+
+    invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v4, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mModelDataMap:Ljava/util/HashMap;
+
+    new-instance v4, Ljava/util/HashMap;
+
+    invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v4, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mKeyphraseUuidMap:Ljava/util/HashMap;
+
+    new-instance v4, Lcom/android/server/soundtrigger/SoundTriggerHelper$MyCallStateListener;
+
+    invoke-direct {v4, p0}, Lcom/android/server/soundtrigger/SoundTriggerHelper$MyCallStateListener;-><init>(Lcom/android/server/soundtrigger/SoundTriggerHelper;)V
+
+    iput-object v4, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
+
+    invoke-static {p1}, Lnet/oneplus/odm/insight/AssistantEventCollector;->getInstance(Landroid/content/Context;)Lnet/oneplus/odm/insight/AssistantEventCollector;
+
+    move-result-object v4
+
+    iput-object v4, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mAssistantEventCollector:Lnet/oneplus/odm/insight/AssistantEventCollector;
+
+    if-nez v3, :cond_1
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v4
+
+    if-nez v4, :cond_0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -171,37 +183,35 @@
     :goto_0
     const-string v0, "SoundTriggerHelper"
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "listModules status="
+    const-string/jumbo v5, "listModules status="
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v4, ", # of modules="
+    const-string v5, ", # of modules="
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
-    move-result v4
+    move-result v5
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-static {v0, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 v0, 0x0
+    iput-object v1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mModuleProperties:Landroid/hardware/soundtrigger/SoundTrigger$ModuleProperties;
 
-    iput-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mModuleProperties:Landroid/hardware/soundtrigger/SoundTrigger$ModuleProperties;
-
-    iput-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mModule:Landroid/hardware/soundtrigger/SoundTriggerModule;
+    iput-object v1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mModule:Landroid/hardware/soundtrigger/SoundTriggerModule;
 
     :goto_1
     return-void
@@ -1319,6 +1329,12 @@
     invoke-direct {p0, v1, v4, v2}, Lcom/android/server/soundtrigger/SoundTriggerHelper;->updateRecognitionLocked(Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;ZZ)I
 
     :cond_3
+    iget-object v2, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mAssistantEventCollector:Lnet/oneplus/odm/insight/AssistantEventCollector;
+
+    const/4 v4, 0x2
+
+    invoke-virtual {v2, v4}, Lnet/oneplus/odm/insight/AssistantEventCollector;->collectOpenAssistantEvent(I)V
+
     return-void
 
     :catch_1

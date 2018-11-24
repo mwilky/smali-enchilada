@@ -39,7 +39,7 @@
 
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$DeviceIdleConfigUpdater;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0, p1}, Lcom/android/server/DeviceIdleController;->access$2700(Lcom/android/server/DeviceIdleController;Lorg/json/JSONArray;)V
+    invoke-static {v0, p1}, Lcom/android/server/DeviceIdleController;->access$3000(Lcom/android/server/DeviceIdleController;Lorg/json/JSONArray;)V
 
     return-void
 .end method

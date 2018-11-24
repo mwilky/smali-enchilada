@@ -47,7 +47,7 @@
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController$ConfigUpdater;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v0, p1}, Lcom/android/server/OnePlusPowerController;->access$3000(Lcom/android/server/OnePlusPowerController;Lorg/json/JSONArray;)V
+    invoke-static {v0, p1}, Lcom/android/server/OnePlusPowerController;->access$3100(Lcom/android/server/OnePlusPowerController;Lorg/json/JSONArray;)V
 
     return-void
 .end method

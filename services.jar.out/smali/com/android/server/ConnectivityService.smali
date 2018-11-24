@@ -137,6 +137,8 @@
 
 .field private static final VDBG:Z
 
+.field private static final VDBG_STALL:Z
+
 .field private static mDefaultUrlBlacklist:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -389,6 +391,8 @@
 
 .field private mStatsService:Landroid/net/INetworkStatsService;
 
+.field mSubscriptionManager:Landroid/telephony/SubscriptionManager;
+
 .field private mSystemProperties:Lcom/android/server/connectivity/MockableSystemProperties;
 
 .field private mSystemReady:Z
@@ -463,9 +467,17 @@
 
     sput-object v0, Lcom/android/server/ConnectivityService;->TAG:Ljava/lang/String;
 
-    const-string/jumbo v0, "persist.sys.assert.panic"
+    const-string/jumbo v0, "persist.radio.dbg.opdatastall"
 
     const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    sput-boolean v0, Lcom/android/server/ConnectivityService;->VDBG_STALL:Z
+
+    const-string/jumbo v0, "persist.sys.assert.panic"
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
@@ -947,6 +959,14 @@
 
     iput-object v0, v1, Lcom/android/server/ConnectivityService;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
+    iget-object v0, v1, Lcom/android/server/ConnectivityService;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Landroid/telephony/SubscriptionManager;->from(Landroid/content/Context;)Landroid/telephony/SubscriptionManager;
+
+    move-result-object v0
+
+    iput-object v0, v1, Lcom/android/server/ConnectivityService;->mSubscriptionManager:Landroid/telephony/SubscriptionManager;
+
     :try_start_0
     iget-object v0, v1, Lcom/android/server/ConnectivityService;->mPolicyManager:Landroid/net/INetworkPolicyManager;
 
@@ -1052,7 +1072,7 @@
 
     move-result-object v0
 
-    const v12, 0x1070060
+    const v12, 0x1070061
 
     invoke-virtual {v0, v12}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -6372,7 +6392,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "handleNetworkUnvalidated "
+    const-string/jumbo v2, "handleNetworkUnvalidated "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6524,7 +6544,7 @@
 .end method
 
 .method private handlePromptUnvalidated(Landroid/net/Network;)V
-    .locals 4
+    .locals 2
 
     sget-boolean v0, Lcom/android/server/ConnectivityService;->VDBG:Z
 
@@ -6534,7 +6554,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "handlePromptUnvalidated "
+    const-string/jumbo v1, "handlePromptUnvalidated "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6551,88 +6571,39 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/server/ConnectivityService;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string v2, "captive_portal_detection_enabled"
-
-    const/4 v3, 0x1
-
-    invoke-static {v1, v2, v3}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v1
-
-    if-ne v1, v3, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v3, 0x0
-
-    :goto_0
-    iput-boolean v3, p0, Lcom/android/server/ConnectivityService;->mIsCaptivePortalCheckEnabled:Z
-
-    iget-boolean v1, p0, Lcom/android/server/ConnectivityService;->mIsCaptivePortalCheckEnabled:Z
-
-    if-nez v1, :cond_2
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "handlePromptUnvalidated mIsCaptivePortalCheckEnabled "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v2, p0, Lcom/android/server/ConnectivityService;->mIsCaptivePortalCheckEnabled:Z
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
-
-    return-void
-
-    :cond_2
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_2
 
     iget-boolean v1, v0, Lcom/android/server/connectivity/NetworkAgentInfo;->everValidated:Z
 
-    if-nez v1, :cond_4
+    if-nez v1, :cond_2
 
     iget-boolean v1, v0, Lcom/android/server/connectivity/NetworkAgentInfo;->everCaptivePortalDetected:Z
 
-    if-nez v1, :cond_4
+    if-nez v1, :cond_2
 
     iget-object v1, v0, Lcom/android/server/connectivity/NetworkAgentInfo;->networkMisc:Landroid/net/NetworkMisc;
 
     iget-boolean v1, v1, Landroid/net/NetworkMisc;->explicitlySelected:Z
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_2
 
     iget-object v1, v0, Lcom/android/server/connectivity/NetworkAgentInfo;->networkMisc:Landroid/net/NetworkMisc;
 
     iget-boolean v1, v1, Landroid/net/NetworkMisc;->acceptUnvalidated:Z
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_3
+    :cond_1
     sget-object v1, Lcom/android/server/connectivity/NetworkNotificationManager$NotificationType;->NO_INTERNET:Lcom/android/server/connectivity/NetworkNotificationManager$NotificationType;
 
     invoke-direct {p0, v0, v1}, Lcom/android/server/ConnectivityService;->showValidationNotification(Lcom/android/server/connectivity/NetworkAgentInfo;Lcom/android/server/connectivity/NetworkNotificationManager$NotificationType;)V
 
     return-void
 
-    :cond_4
-    :goto_1
+    :cond_2
+    :goto_0
     return-void
 .end method
 
@@ -7735,7 +7706,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "handleSetAcceptUnvalidated network="
+    const-string/jumbo v1, "handleSetAcceptUnvalidated network="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -8008,7 +7979,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "handleUpdateTCPBuffersfor5G nai "
+    const-string/jumbo v3, "handleUpdateTCPBuffersfor5G nai "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -11496,7 +11467,7 @@
 
     const/4 v0, 0x1
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_3
 
     const/4 v1, 0x0
 
@@ -11504,7 +11475,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_3
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -11526,6 +11497,39 @@
 
     invoke-static {v2}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
 
+    const/16 v2, 0xa
+
+    invoke-virtual {p1, v2}, Landroid/net/NetworkCapabilities;->hasCapability(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Lcom/android/server/ConnectivityService;->mSubscriptionManager:Landroid/telephony/SubscriptionManager;
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Lcom/android/server/ConnectivityService;->mSubscriptionManager:Landroid/telephony/SubscriptionManager;
+
+    invoke-virtual {v2}, Landroid/telephony/SubscriptionManager;->getActiveSubscriptionInfoList()Ljava/util/List;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, p0, Lcom/android/server/ConnectivityService;->mSubscriptionManager:Landroid/telephony/SubscriptionManager;
+
+    invoke-virtual {v2}, Landroid/telephony/SubscriptionManager;->getActiveSubscriptionInfoList()Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    :cond_0
     invoke-virtual {p1}, Landroid/net/NetworkCapabilities;->getNetworkSpecifier()Landroid/net/NetworkSpecifier;
 
     move-result-object v2
@@ -11538,14 +11542,15 @@
 
     move-result v3
 
-    if-ne v2, v3, :cond_0
-
-    return v0
-
-    :cond_0
-    return v1
+    if-ne v2, v3, :cond_2
 
     :cond_1
+    return v0
+
+    :cond_2
+    return v1
+
+    :cond_3
     return v0
 .end method
 
@@ -12477,6 +12482,304 @@
     throw v1
 .end method
 
+.method private setOpDnsProp(Lcom/android/server/connectivity/NetworkAgentInfo;Landroid/net/LinkProperties;Landroid/net/LinkProperties;)V
+    .locals 6
+
+    iget-object v0, p1, Lcom/android/server/connectivity/NetworkAgentInfo;->network:Landroid/net/Network;
+
+    iget v0, v0, Landroid/net/Network;->netId:I
+
+    if-eqz p3, :cond_0
+
+    invoke-virtual {p2, p3}, Landroid/net/LinkProperties;->isIdenticalDnses(Landroid/net/LinkProperties;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    sget-boolean v1, Lcom/android/server/ConnectivityService;->VDBG_STALL:Z
+
+    if-eqz v1, :cond_8
+
+    const-string v1, "OP_DATA_STALL: updateLinkProperties() newLp = oldLp, don\'t need to call updateDnses()"
+
+    invoke-static {v1}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
+
+    goto/16 :goto_4
+
+    :cond_0
+    iget-object v1, p1, Lcom/android/server/connectivity/NetworkAgentInfo;->networkCapabilities:Landroid/net/NetworkCapabilities;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Landroid/net/NetworkCapabilities;->hasTransport(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_7
+
+    iget-object v1, p1, Lcom/android/server/connectivity/NetworkAgentInfo;->networkCapabilities:Landroid/net/NetworkCapabilities;
+
+    const/4 v3, 0x4
+
+    invoke-virtual {v1, v3}, Landroid/net/NetworkCapabilities;->hasTransport(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    const-string v1, "OP_DATA_STALL: updateLinkProperties() don\'t set prop data for VPN case"
+
+    invoke-static {v1}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
+
+    goto/16 :goto_4
+
+    :cond_1
+    invoke-virtual {p2}, Landroid/net/LinkProperties;->getDnsServers()Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/net/NetworkUtils;->makeStrings(Ljava/util/Collection;)[Ljava/lang/String;
+
+    move-result-object v1
+
+    array-length v3, v1
+
+    if-eqz v3, :cond_5
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "OP_DATA_STALL: updateLinkProperties() set vendor.oem.cellular.netId = "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
+
+    const-string/jumbo v3, "vendor.oem.cellular.netId"
+
+    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    move v3, v2
+
+    :goto_0
+    array-length v4, v1
+
+    if-ge v3, v4, :cond_2
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "OP_DATA_STALL: updateLinkProperties() tmpServers["
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v5, "] = "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    aget-object v5, v1, v3
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "OP_DATA_STALL: updateLinkProperties() set vendor.oem.cellular.serverslength = "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    array-length v4, v1
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
+
+    const-string/jumbo v3, "vendor.oem.cellular.serverslength"
+
+    array-length v4, v1
+
+    invoke-static {v4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/net/LinkProperties;->getDomains()Ljava/lang/String;
+
+    move-result-object v3
+
+    if-nez v3, :cond_3
+
+    new-array v3, v2, [Ljava/lang/String;
+
+    goto :goto_1
+
+    :cond_3
+    invoke-virtual {p2}, Landroid/net/LinkProperties;->getDomains()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, " "
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v3
+
+    :goto_1
+    nop
+
+    :goto_2
+    array-length v4, v3
+
+    if-ge v2, v4, :cond_4
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "OP_DATA_STALL: updateLinkProperties() tmpDomainStrs["
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v5, "] = "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    aget-object v5, v3, v2
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_2
+
+    :cond_4
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "OP_DATA_STALL: updateLinkProperties() set vendor.oem.cellular.domainslength = "
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    array-length v4, v3
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
+
+    const-string/jumbo v2, "vendor.oem.cellular.domainslength"
+
+    array-length v4, v3
+
+    invoke-static {v4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v2, v4}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_3
+
+    :cond_5
+    sget-boolean v2, Lcom/android/server/ConnectivityService;->VDBG_STALL:Z
+
+    if-eqz v2, :cond_6
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "OP_DATA_STALL: updateLinkProperties() netId = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v3, " serverslength = 0, don\'t save prop data"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
+
+    :cond_6
+    :goto_3
+    goto :goto_4
+
+    :cond_7
+    const-string v1, "OP_DATA_STALL: updateLinkProperties() clear prop data for non TRANSPORT_CELLULAR"
+
+    invoke-static {v1}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
+
+    const-string/jumbo v1, "vendor.oem.cellular.netId"
+
+    const-string v2, "0"
+
+    invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string/jumbo v1, "vendor.oem.cellular.serverslength"
+
+    const-string v2, "0"
+
+    invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string/jumbo v1, "vendor.oem.cellular.domainslength"
+
+    const-string v2, "0"
+
+    invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_8
+    :goto_4
+    return-void
+.end method
+
 .method private setupDataActivityTracking(Lcom/android/server/connectivity/NetworkAgentInfo;)V
     .locals 6
 
@@ -13045,6 +13348,16 @@
     move-result-object v5
 
     if-eqz v5, :cond_4
+
+    iget-object v5, v4, Lcom/android/server/ConnectivityService$NetworkRequestInfo;->request:Landroid/net/NetworkRequest;
+
+    iget v5, v5, Landroid/net/NetworkRequest;->requestId:I
+
+    invoke-direct {p0, v5}, Lcom/android/server/ConnectivityService;->getNetworkForRequest(I)Lcom/android/server/connectivity/NetworkAgentInfo;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_5
 
     iget-object v5, v4, Lcom/android/server/ConnectivityService$NetworkRequestInfo;->request:Landroid/net/NetworkRequest;
 
@@ -13799,6 +14112,8 @@
     invoke-direct {p0, p1}, Lcom/android/server/ConnectivityService;->updateTcpBufferSizes(Lcom/android/server/connectivity/NetworkAgentInfo;)V
 
     invoke-direct {p0, v0, p2, v1}, Lcom/android/server/ConnectivityService;->updateRoutes(Landroid/net/LinkProperties;Landroid/net/LinkProperties;I)Z
+
+    invoke-direct {p0, p1, v0, p2}, Lcom/android/server/ConnectivityService;->setOpDnsProp(Lcom/android/server/connectivity/NetworkAgentInfo;Landroid/net/LinkProperties;Landroid/net/LinkProperties;)V
 
     invoke-direct {p0, v0, p2, v1}, Lcom/android/server/ConnectivityService;->updateDnses(Landroid/net/LinkProperties;Landroid/net/LinkProperties;I)V
 

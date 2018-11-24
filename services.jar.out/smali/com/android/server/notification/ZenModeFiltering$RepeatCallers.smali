@@ -86,6 +86,87 @@
     return-void
 .end method
 
+.method private static asteriskPeopleString(Ljava/lang/String;)Ljava/lang/String;
+    .locals 7
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    if-eqz p0, :cond_1
+
+    invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    const/4 v1, 0x3
+
+    const-string v2, "*****"
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    mul-int/lit8 v4, v1, 0x2
+
+    sub-int/2addr v3, v4
+
+    if-le v3, v1, :cond_0
+
+    const/4 v4, 0x0
+
+    invoke-virtual {p0, v4, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    sub-int/2addr v5, v1
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    invoke-virtual {p0, v5, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_1
+    :goto_0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    const/4 v1, 0x0
+
+    goto :goto_1
+
+    :cond_2
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    :goto_1
+    return-object v1
+.end method
+
 .method private declared-synchronized cleanUp(Landroid/util/ArrayMap;J)V
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
@@ -164,7 +245,7 @@
 .end method
 
 .method private declared-synchronized isRepeat(Landroid/content/Context;Landroid/os/Bundle;)Z
-    .locals 4
+    .locals 5
 
     monitor-enter p0
 
@@ -175,7 +256,7 @@
 
     const/4 v1, 0x0
 
-    if-lez v0, :cond_2
+    if-lez v0, :cond_3
 
     if-nez p2, :cond_0
 
@@ -185,16 +266,43 @@
     invoke-static {p2}, Lcom/android/server/notification/ZenModeFiltering$RepeatCallers;->peopleString(Landroid/os/Bundle;)Ljava/lang/String;
 
     move-result-object v0
+
+    sget-boolean v2, Landroid/os/Build;->DEBUG_ONEPLUS:Z
+
+    if-eqz v2, :cond_1
+
+    const-string v2, "ZenModeHelper"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, " isRepeat peopleString is "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {v0}, Lcom/android/server/notification/ZenModeFiltering$RepeatCallers;->asteriskPeopleString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v0, :cond_1
+    :cond_1
+    if-nez v0, :cond_2
 
     monitor-exit p0
 
     return v1
 
-    :cond_1
+    :cond_2
     :try_start_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -216,7 +324,7 @@
 
     return v3
 
-    :cond_2
+    :cond_3
     :goto_0
     monitor-exit p0
 
@@ -329,7 +437,7 @@
 
     iget v0, p0, Lcom/android/server/notification/ZenModeFiltering$RepeatCallers;->mThresholdMinutes:I
 
-    if-lez v0, :cond_2
+    if-lez v0, :cond_3
 
     if-nez p2, :cond_0
 
@@ -339,16 +447,43 @@
     invoke-static {p2}, Lcom/android/server/notification/ZenModeFiltering$RepeatCallers;->peopleString(Landroid/os/Bundle;)Ljava/lang/String;
 
     move-result-object v0
+
+    sget-boolean v1, Landroid/os/Build;->DEBUG_ONEPLUS:Z
+
+    if-eqz v1, :cond_1
+
+    const-string v1, "ZenModeHelper"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, " recordCall peopleString is "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {v0}, Lcom/android/server/notification/ZenModeFiltering$RepeatCallers;->asteriskPeopleString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v0, :cond_1
+    :cond_1
+    if-nez v0, :cond_2
 
     monitor-exit p0
 
     return-void
 
-    :cond_1
+    :cond_2
     :try_start_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -372,7 +507,7 @@
 
     return-void
 
-    :cond_2
+    :cond_3
     :goto_0
     monitor-exit p0
 

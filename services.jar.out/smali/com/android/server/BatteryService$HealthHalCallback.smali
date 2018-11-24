@@ -47,7 +47,7 @@
 
     iget-object v0, p0, Lcom/android/server/BatteryService$HealthHalCallback;->this$0:Lcom/android/server/BatteryService;
 
-    invoke-static {v0, p1}, Lcom/android/server/BatteryService;->access$2000(Lcom/android/server/BatteryService;Landroid/hardware/health/V2_0/HealthInfo;)V
+    invoke-static {v0, p1}, Lcom/android/server/BatteryService;->access$2200(Lcom/android/server/BatteryService;Landroid/hardware/health/V2_0/HealthInfo;)V
 
     return-void
 .end method
@@ -62,7 +62,7 @@
     :cond_0
     const-string v0, "HealthUnregisterCallback"
 
-    invoke-static {v0}, Lcom/android/server/BatteryService;->access$2100(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/android/server/BatteryService;->access$2300(Ljava/lang/String;)V
 
     if-eqz p1, :cond_1
 
@@ -81,7 +81,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "health: cannot unregister previous callback: "
+    const-string/jumbo v3, "health: cannot unregister previous callback: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -119,7 +119,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "health: cannot unregister previous callback (transaction error): "
+    const-string/jumbo v3, "health: cannot unregister previous callback (transaction error): "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -140,19 +140,19 @@
     goto :goto_1
 
     :goto_0
-    invoke-static {}, Lcom/android/server/BatteryService;->access$2200()V
+    invoke-static {}, Lcom/android/server/BatteryService;->access$2400()V
 
     throw v0
 
     :cond_1
     :goto_1
-    invoke-static {}, Lcom/android/server/BatteryService;->access$2200()V
+    invoke-static {}, Lcom/android/server/BatteryService;->access$2400()V
 
     nop
 
     const-string v0, "HealthRegisterCallback"
 
-    invoke-static {v0}, Lcom/android/server/BatteryService;->access$2100(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/android/server/BatteryService;->access$2300(Ljava/lang/String;)V
 
     :try_start_2
     invoke-interface {p2, p0}, Landroid/hardware/health/V2_0/IHealth;->registerCallback(Landroid/hardware/health/V2_0/IHealthInfoCallback;)I
@@ -169,7 +169,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "health: cannot register callback: "
+    const-string/jumbo v3, "health: cannot register callback: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -188,7 +188,7 @@
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_1
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    invoke-static {}, Lcom/android/server/BatteryService;->access$2200()V
+    invoke-static {}, Lcom/android/server/BatteryService;->access$2400()V
 
     return-void
 
@@ -200,7 +200,7 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     :goto_2
-    invoke-static {}, Lcom/android/server/BatteryService;->access$2200()V
+    invoke-static {}, Lcom/android/server/BatteryService;->access$2400()V
 
     goto :goto_3
 
@@ -221,7 +221,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "health: cannot register callback (transaction error): "
+    const-string/jumbo v3, "health: cannot register callback (transaction error): "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -245,7 +245,7 @@
     return-void
 
     :goto_4
-    invoke-static {}, Lcom/android/server/BatteryService;->access$2200()V
+    invoke-static {}, Lcom/android/server/BatteryService;->access$2400()V
 
     throw v0
 .end method

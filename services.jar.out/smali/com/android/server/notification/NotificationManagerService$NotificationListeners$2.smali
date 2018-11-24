@@ -57,7 +57,7 @@
 
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService$NotificationListeners$2;->val$update:Landroid/service/notification/NotificationRankingUpdate;
 
-    invoke-static {v0, v1, v2, v3}, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->access$9500(Lcom/android/server/notification/NotificationManagerService$NotificationListeners;Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;Landroid/service/notification/StatusBarNotification;Landroid/service/notification/NotificationRankingUpdate;)V
+    invoke-static {v0, v1, v2, v3}, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->access$9600(Lcom/android/server/notification/NotificationManagerService$NotificationListeners;Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;Landroid/service/notification/StatusBarNotification;Landroid/service/notification/NotificationRankingUpdate;)V
 
     return-void
 .end method

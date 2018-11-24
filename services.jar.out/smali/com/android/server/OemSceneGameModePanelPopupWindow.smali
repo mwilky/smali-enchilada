@@ -17,15 +17,15 @@
 
 .field private mOptionBlock:Landroid/view/View;
 
-.field private mOptionBlockIcon:Landroid/view/View;
+.field private mOptionBlockIcon:Landroid/widget/ImageView;
 
 .field private mOptionHeadsup:Landroid/view/View;
 
-.field private mOptionHeadsupIcon:Landroid/view/View;
+.field private mOptionHeadsupIcon:Landroid/widget/ImageView;
 
 .field private mOptionWeak:Landroid/view/View;
 
-.field private mOptionWeakIcon:Landroid/view/View;
+.field private mOptionWeakIcon:Landroid/widget/ImageView;
 
 .field private mOwner:Lcom/android/server/OemSceneGameModeDialog;
 
@@ -84,7 +84,7 @@
 .end method
 
 .method private initView()V
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mContentView:Landroid/view/View;
 
@@ -136,7 +136,9 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionHeadsupIcon:Landroid/view/View;
+    check-cast v0, Landroid/widget/ImageView;
+
+    iput-object v0, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionHeadsupIcon:Landroid/widget/ImageView;
 
     iget-object v0, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mContentView:Landroid/view/View;
 
@@ -146,7 +148,9 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionWeakIcon:Landroid/view/View;
+    check-cast v0, Landroid/widget/ImageView;
+
+    iput-object v0, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionWeakIcon:Landroid/widget/ImageView;
 
     iget-object v0, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mContentView:Landroid/view/View;
 
@@ -156,8 +160,35 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionBlockIcon:Landroid/view/View;
+    check-cast v0, Landroid/widget/ImageView;
 
+    iput-object v0, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionBlockIcon:Landroid/widget/ImageView;
+
+    invoke-static {}, Lcom/oneplus/custom/utils/OpCustomizeSettings;->getCustomType()Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->MCL:Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
+
+    if-ne v0, v1, :cond_0
+
+    iget-object v0, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mContentView:Landroid/view/View;
+
+    iget-object v1, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x5060036
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    :cond_0
     return-void
 .end method
 
@@ -250,17 +281,17 @@
 
     if-nez p1, :cond_0
 
-    iget-object v2, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionHeadsupIcon:Landroid/view/View;
+    iget-object v2, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionHeadsupIcon:Landroid/widget/ImageView;
 
-    invoke-virtual {v2, v0}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v2, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    iget-object v0, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionWeakIcon:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionWeakIcon:Landroid/widget/ImageView;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    iget-object v0, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionBlockIcon:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionBlockIcon:Landroid/widget/ImageView;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
     goto :goto_0
 
@@ -269,17 +300,17 @@
 
     if-ne p1, v2, :cond_1
 
-    iget-object v2, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionHeadsupIcon:Landroid/view/View;
+    iget-object v2, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionHeadsupIcon:Landroid/widget/ImageView;
 
-    invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    iget-object v2, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionWeakIcon:Landroid/view/View;
+    iget-object v2, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionWeakIcon:Landroid/widget/ImageView;
 
-    invoke-virtual {v2, v0}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v2, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    iget-object v0, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionBlockIcon:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionBlockIcon:Landroid/widget/ImageView;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
     goto :goto_0
 
@@ -288,17 +319,17 @@
 
     if-ne p1, v2, :cond_2
 
-    iget-object v2, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionHeadsupIcon:Landroid/view/View;
+    iget-object v2, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionHeadsupIcon:Landroid/widget/ImageView;
 
-    invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    iget-object v2, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionWeakIcon:Landroid/view/View;
+    iget-object v2, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionWeakIcon:Landroid/widget/ImageView;
 
-    invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    iget-object v1, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionBlockIcon:Landroid/view/View;
+    iget-object v1, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionBlockIcon:Landroid/widget/ImageView;
 
-    invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
     goto :goto_0
 
@@ -310,5 +341,34 @@
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_0
+    invoke-static {}, Lcom/oneplus/custom/utils/OpCustomizeSettings;->getCustomType()Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->MCL:Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
+
+    if-ne v0, v1, :cond_3
+
+    iget-object v0, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionHeadsupIcon:Landroid/widget/ImageView;
+
+    sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+
+    const/16 v2, -0x61e8
+
+    invoke-virtual {v0, v2, v1}, Landroid/widget/ImageView;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
+
+    iget-object v0, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionWeakIcon:Landroid/widget/ImageView;
+
+    sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-virtual {v0, v2, v1}, Landroid/widget/ImageView;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
+
+    iget-object v0, p0, Lcom/android/server/OemSceneGameModePanelPopupWindow;->mOptionBlockIcon:Landroid/widget/ImageView;
+
+    sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-virtual {v0, v2, v1}, Landroid/widget/ImageView;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
+
+    :cond_3
     return-void
 .end method

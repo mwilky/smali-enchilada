@@ -35,6 +35,8 @@
 # instance fields
 .field private hasNotifySubscriptionInfoChangedOccurred:Z
 
+.field private mAnomalyStatus:[I
+
 .field private final mAppOps:Landroid/app/AppOpsManager;
 
 .field private mBackgroundCallState:I
@@ -206,23 +208,29 @@
 
     const/4 v4, 0x2
 
-    new-array v4, v4, [[Z
+    new-array v5, v4, [[Z
 
-    const/4 v5, 0x6
+    const/4 v6, 0x6
 
-    new-array v6, v5, [Z
+    new-array v7, v6, [Z
 
-    fill-array-data v6, :array_0
+    fill-array-data v7, :array_0
 
-    aput-object v6, v4, v0
+    aput-object v7, v5, v0
 
-    new-array v5, v5, [Z
+    new-array v6, v6, [Z
 
-    fill-array-data v5, :array_1
+    fill-array-data v6, :array_1
 
-    aput-object v5, v4, v1
+    aput-object v6, v5, v1
 
-    iput-object v4, p0, Lcom/android/server/TelephonyRegistry;->mImsCapabilityStatus:[[Z
+    iput-object v5, p0, Lcom/android/server/TelephonyRegistry;->mImsCapabilityStatus:[[Z
+
+    new-array v1, v4, [I
+
+    fill-array-data v1, :array_2
+
+    iput-object v1, p0, Lcom/android/server/TelephonyRegistry;->mAnomalyStatus:[I
 
     new-instance v1, Landroid/telephony/PreciseDataConnectionState;
 
@@ -444,8 +452,6 @@
 
     return-void
 
-    nop
-
     :array_0
     .array-data 1
         0x0t
@@ -466,6 +472,14 @@
         0x0t
         0x0t
         0x0t
+    .end array-data
+
+    nop
+
+    :array_2
+    .array-data 4
+        0x0
+        0x0
     .end array-data
 .end method
 
@@ -1793,7 +1807,7 @@
 
     invoke-virtual {v1, v2, p1}, Landroid/app/AppOpsManager;->checkPackage(ILjava/lang/String;)V
 
-    if-eqz p3, :cond_19
+    if-eqz p3, :cond_1a
 
     const-string/jumbo v1, "listen"
 
@@ -1870,7 +1884,7 @@
 
     iput p3, v4, Lcom/android/server/TelephonyRegistry$Record;->events:I
 
-    if-eqz p4, :cond_18
+    if-eqz p4, :cond_19
 
     invoke-direct {p0, v1}, Lcom/android/server/TelephonyRegistry;->validatePhoneId(I)Z
 
@@ -1878,7 +1892,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v5, :cond_18
+    if-eqz v5, :cond_19
 
     and-int/lit8 v5, p3, 0x1
 
@@ -2513,30 +2527,60 @@
     iget-object v6, v4, Lcom/android/server/TelephonyRegistry$Record;->binder:Landroid/os/IBinder;
 
     invoke-direct {p0, v6}, Lcom/android/server/TelephonyRegistry;->remove(Landroid/os/IBinder;)V
+    :try_end_26
+    .catchall {:try_start_26 .. :try_end_26} :catchall_0
 
     :cond_18
     :goto_14
-    monitor-exit v2
+    const/high16 v5, 0x200000
+
+    and-int/2addr v5, p3
+
+    if-eqz v5, :cond_19
+
+    :try_start_27
+    iget-object v5, p0, Lcom/android/server/TelephonyRegistry;->mAnomalyStatus:[I
+
+    iget-object v6, v4, Lcom/android/server/TelephonyRegistry$Record;->callback:Lcom/android/internal/telephony/IPhoneStateListener;
+
+    invoke-interface {v6, v5}, Lcom/android/internal/telephony/IPhoneStateListener;->onAnomalyStatusChange([I)V
+    :try_end_27
+    .catch Landroid/os/RemoteException; {:try_start_27 .. :try_end_27} :catch_13
+    .catchall {:try_start_27 .. :try_end_27} :catchall_0
 
     goto :goto_15
+
+    :catch_13
+    move-exception v5
+
+    :try_start_28
+    iget-object v6, v4, Lcom/android/server/TelephonyRegistry$Record;->binder:Landroid/os/IBinder;
+
+    invoke-direct {p0, v6}, Lcom/android/server/TelephonyRegistry;->remove(Landroid/os/IBinder;)V
+
+    :cond_19
+    :goto_15
+    monitor-exit v2
+
+    goto :goto_16
 
     :catchall_0
     move-exception v3
 
     monitor-exit v2
-    :try_end_26
-    .catchall {:try_start_26 .. :try_end_26} :catchall_0
+    :try_end_28
+    .catchall {:try_start_28 .. :try_end_28} :catchall_0
 
     throw v3
 
-    :cond_19
+    :cond_1a
     invoke-interface {p2}, Lcom/android/internal/telephony/IPhoneStateListener;->asBinder()Landroid/os/IBinder;
 
     move-result-object v1
 
     invoke-direct {p0, v1}, Lcom/android/server/TelephonyRegistry;->remove(Landroid/os/IBinder;)V
 
-    :goto_15
+    :goto_16
     return-void
 .end method
 
@@ -3436,6 +3480,143 @@
     invoke-direct/range {v0 .. v5}, Lcom/android/server/TelephonyRegistry;->listen(Ljava/lang/String;Lcom/android/internal/telephony/IPhoneStateListener;IZI)V
 
     return-void
+.end method
+
+.method public notifyAnomalyStatusChange([I)V
+    .locals 6
+
+    iput-object p1, p0, Lcom/android/server/TelephonyRegistry;->mAnomalyStatus:[I
+
+    const-string/jumbo v0, "notifyAnomalyStatusChange()"
+
+    invoke-direct {p0, v0}, Lcom/android/server/TelephonyRegistry;->checkNotifyPermission(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v1, "notifyAnomalyStatusChange: mAnomaly Status[0] = "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/4 v1, 0x0
+
+    aget v1, p1, v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ",Status[1] = "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/4 v1, 0x1
+
+    aget v1, p1, v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/server/TelephonyRegistry;->log(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/android/server/TelephonyRegistry;->mRecords:Ljava/util/ArrayList;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lcom/android/server/TelephonyRegistry;->mRecords:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/android/server/TelephonyRegistry$Record;
+
+    const/high16 v3, 0x200000
+
+    invoke-virtual {v2, v3}, Lcom/android/server/TelephonyRegistry$Record;->matchPhoneStateListenerEvent(I)Z
+
+    move-result v3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-eqz v3, :cond_1
+
+    :try_start_1
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "notifyAnomalyStatusChange: callback r = "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/android/server/TelephonyRegistry;->log(Ljava/lang/String;)V
+
+    iget-object v3, v2, Lcom/android/server/TelephonyRegistry$Record;->callback:Lcom/android/internal/telephony/IPhoneStateListener;
+
+    invoke-interface {v3, p1}, Lcom/android/internal/telephony/IPhoneStateListener;->onAnomalyStatusChange([I)V
+    :try_end_1
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v3
+
+    :try_start_2
+    iget-object v4, p0, Lcom/android/server/TelephonyRegistry;->mRemoveList:Ljava/util/ArrayList;
+
+    iget-object v5, v2, Lcom/android/server/TelephonyRegistry$Record;->binder:Landroid/os/IBinder;
+
+    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_1
+    :goto_1
+    goto :goto_0
+
+    :cond_2
+    invoke-direct {p0}, Lcom/android/server/TelephonyRegistry;->handleRemoveListLocked()V
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw v1
 .end method
 
 .method public notifyCallForwardingChanged(Z)V

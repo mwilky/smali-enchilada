@@ -1235,7 +1235,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "handleSyncHandlerMessage: MESSAGE_MONITOR_SYNC: "
+    const-string/jumbo v7, "handleSyncHandlerMessage: MESSAGE_MONITOR_SYNC: "
 
     invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1320,7 +1320,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "handleSyncHandlerMessage: MESSAGE_CANCEL: "
+    const-string/jumbo v5, "handleSyncHandlerMessage: MESSAGE_CANCEL: "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1366,7 +1366,7 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "handleSyncHandlerMessage: MESSAGE_SERVICE_DISCONNECTED: "
+    const-string/jumbo v8, "handleSyncHandlerMessage: MESSAGE_SERVICE_DISCONNECTED: "
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1520,7 +1520,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "handleSyncHandlerMessage: MESSAGE_SERVICE_CONNECTED: "
+    const-string/jumbo v4, "handleSyncHandlerMessage: MESSAGE_SERVICE_CONNECTED: "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1574,7 +1574,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "handleSyncHandlerMessage: dropping since the sync is no longer active: "
+    const-string/jumbo v4, "handleSyncHandlerMessage: dropping since the sync is no longer active: "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1660,6 +1660,8 @@
     invoke-virtual {v2}, Lcom/android/server/content/SyncManager$SyncTimeTracker;->update()V
 
     throw v1
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -4599,7 +4601,7 @@
 
     const-string v0, "SyncManager"
 
-    const-string v1, "handleSyncHandlerMessage: MESSAGE_ACCOUNTS_UPDATED"
+    const-string/jumbo v1, "handleSyncHandlerMessage: MESSAGE_ACCOUNTS_UPDATED"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 

@@ -82,13 +82,13 @@
 
     sub-long/2addr v2, v0
 
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1300()Z
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1500()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$2100()Z
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$2300()Z
 
     move-result v0
 

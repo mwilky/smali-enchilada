@@ -1520,7 +1520,7 @@
     or-int/lit8 v0, v0, 0x20
 
     :cond_6
-    const-string v1, "health"
+    const-string/jumbo v1, "health"
 
     invoke-virtual {p1, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 

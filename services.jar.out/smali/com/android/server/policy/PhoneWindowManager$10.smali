@@ -38,7 +38,7 @@
 
     const-wide/16 v1, 0x0
 
-    invoke-static {v0, p1, v1, v2}, Lcom/android/server/policy/PhoneWindowManager;->access$3800(Lcom/android/server/policy/PhoneWindowManager;IJ)I
+    invoke-static {v0, p1, v1, v2}, Lcom/android/server/policy/PhoneWindowManager;->access$3900(Lcom/android/server/policy/PhoneWindowManager;IJ)I
 
     return-void
 .end method
@@ -48,7 +48,7 @@
 
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-static {v0, p1, p4, p5}, Lcom/android/server/policy/PhoneWindowManager;->access$3800(Lcom/android/server/policy/PhoneWindowManager;IJ)I
+    invoke-static {v0, p1, p4, p5}, Lcom/android/server/policy/PhoneWindowManager;->access$3900(Lcom/android/server/policy/PhoneWindowManager;IJ)I
 
     move-result v0
 

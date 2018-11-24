@@ -322,6 +322,12 @@
 
     if-eqz v10, :cond_6
 
+    invoke-interface {v10}, Ljava/util/List;->size()I
+
+    move-result v11
+
+    if-lez v11, :cond_6
+
     invoke-interface {v10, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2

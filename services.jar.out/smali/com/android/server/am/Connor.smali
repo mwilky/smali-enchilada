@@ -2,14 +2,19 @@
 .super Ljava/lang/Object;
 .source "Connor.java"
 
+# interfaces
+.implements Landroid/content/pm/PackageManagerInternal$PackageListObserver;
+.implements Landroid/hardware/SensorEventListener;
+
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/am/Connor$BingoStatistic;,
+        Lcom/android/server/am/Connor$CallbackRecord;,
         Lcom/android/server/am/Connor$MDMStatistic;,
         Lcom/android/server/am/Connor$ModelInfo;,
         Lcom/android/server/am/Connor$RecordStatistic;,
+        Lcom/android/server/am/Connor$ConfCallbacks;,
         Lcom/android/server/am/Connor$Callbacks;
     }
 .end annotation
@@ -18,15 +23,13 @@
 # static fields
 .field private static final AAB_BUCKET_PREDICT_PERIOD:I = 0x36ee80
 
-.field private static final APPID:Ljava/lang/String; = "RHJ2VVOOTS"
+.field public static final CATEGORY_MM:I = 0x1
 
-.field private static final CATEGORY_MM:I = 0x1
+.field public static final CATEGORY_NN:I = 0x2
 
-.field private static final CATEGORY_NN:I = 0x2
+.field private static final CMC_SENSOR_ID:I = 0x1fa263e
 
 .field private static final CONNOR_DB:Ljava/lang/String; = "connor.db"
-
-.field private static final CONNOR_DB_VERSION:I = 0x2
 
 .field private static final CONNOR_INF_MODEL_PROTO:Ljava/lang/String; = "/system/etc/mylmdb_lstm_inf.prototxt"
 
@@ -60,15 +63,13 @@
 
 .field private static final DELAY_TO_CLOSE_DB:I = 0x1388
 
-.field private static final MAX_PREDICT:I = 0x5
+.field private static final HOME_PACKGES:[Ljava/lang/String;
+
+.field private static final MAX_PREDICT:I = 0xa
 
 .field private static final MDM_STATISTIC_TAG:Ljava/lang/String; = "accuracy_statistic"
 
 .field private static final MIN_TRAINING_ENTRY_COUNT:J = 0x2af8L
-
-.field private static final MM_MODEL_VERSION:I = 0x1
-
-.field private static final NN_MODEL_VERSION:I = 0x1
 
 .field private static final NUM_FEATURE:I = 0x3
 
@@ -78,17 +79,17 @@
 
 .field private static final TRAINING_POLL_INTERVAL:I = 0x493e0
 
-.field private static final TRAINING_POLL_INTERVAL_QUICK:I = 0x1d4c0
+.field private static final TRAINING_POLL_INTERVAL_QUICK:I = 0x4e20
 
 .field private static mGoogleSetCount:I
 
-.field private static mIsAlpha:Z
+.field public static mIsAlpha:Z
 
-.field private static mIsBeta:Z
+.field public static mIsBeta:Z
 
 
 # instance fields
-.field private mAccOfNN:I
+.field private mAABVersion:Ljava/lang/String;
 
 .field private mAm:Lcom/android/server/am/ActivityManagerService;
 
@@ -102,19 +103,22 @@
     .end annotation
 .end field
 
-.field private mBingoRateMM3:Lcom/android/server/am/Connor$BingoStatistic;
-
-.field private mBingoRateMM5:Lcom/android/server/am/Connor$BingoStatistic;
-
-.field private mBingoRateNN3:Lcom/android/server/am/Connor$BingoStatistic;
-
-.field private mBingoRateNN5:Lcom/android/server/am/Connor$BingoStatistic;
-
 .field private final mCallbacks:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
             "Lcom/android/server/am/Connor$Callbacks;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final mCallbacksWithConf:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Lcom/android/server/am/Connor$ConfCallbacks;",
+            "Lcom/android/server/am/Connor$CallbackRecord;",
             ">;"
         }
     .end annotation
@@ -132,11 +136,29 @@
     .end annotation
 .end field
 
+.field mCmcSensor:Landroid/hardware/Sensor;
+
+.field private mCollector:Lnet/oneplus/odm/insight/PreloadApplicationEventCollector;
+
 .field private mCurModel:Ljava/lang/String;
+
+.field private mCurrNN:Lcom/android/server/am/Connor$ModelInfo;
+
+.field mCurrSensorState:I
 
 .field private mDbHelper:Lcom/android/server/am/ConnorDbHelper;
 
 .field private mEnable:Z
+
+.field private mHomePkgList:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field private mIsDebugMode:Z
 
@@ -144,17 +166,39 @@
 
 .field private mIsScreenOff:Z
 
-.field private mLossOfNN:F
+.field private final mLockMMDataReady:Ljava/lang/Object;
+
+.field private mMMVersion:Ljava/lang/String;
+
+.field private mNNVersion:Ljava/lang/String;
 
 .field private mOSTracker:Lnet/oneplus/odm/insight/tracker/OSTracker;
 
+.field private mPackageSet:Ljava/util/HashSet;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashSet<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private mPredicts:[Ljava/lang/String;
 
-.field private mPredicts2:[Ljava/lang/String;
+.field private mPredictsConf:[F
+
+.field private mPredictsConfPrev:[F
 
 .field private mPredictsNN:[Ljava/lang/String;
 
-.field private mPredictsNN2:[Ljava/lang/String;
+.field private mPredictsNNConf:[F
+
+.field private mPredictsNNConfPrev:[F
+
+.field private mPredictsNNPrev:[Ljava/lang/String;
+
+.field private mPredictsPrev:[Ljava/lang/String;
 
 .field private mPrev:Ljava/lang/String;
 
@@ -190,24 +234,18 @@
 
 .field private mRunTrainingCheck:Ljava/lang/Runnable;
 
-.field private mSPCount:J
-
-.field private mSPHitMM3:J
-
-.field private mSPHitMM5:J
-
-.field private mSPHitNN3:J
-
-.field private mSPHitNN5:J
+.field mSensorManager:Landroid/hardware/SensorManager;
 
 .field private mSqlDb:Landroid/database/sqlite/SQLiteDatabase;
+
+.field private mStatistic:Lcom/android/server/am/ConnorStatistic;
 
 .field private mUstManager:Landroid/app/usage/UsageStatsManager;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 3
 
     sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
@@ -245,11 +283,23 @@
 
     sput v0, Lcom/android/server/am/Connor;->mGoogleSetCount:I
 
+    const-string v0, "com.android.systemui"
+
+    const-string v1, "com.android.packageinstaller"
+
+    const-string v2, "com.google.android.packageinstaller"
+
+    filled-new-array {v0, v1, v2}, [Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/android/server/am/Connor;->HOME_PACKGES:[Ljava/lang/String;
+
     return-void
 .end method
 
 .method public constructor <init>(Lcom/android/server/am/ActivityManagerService;)V
-    .locals 3
+    .locals 6
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -260,6 +310,12 @@
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/server/am/Connor;->mIsMMDataReady:Z
+
+    new-instance v2, Ljava/lang/Object;
+
+    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
+
+    iput-object v2, p0, Lcom/android/server/am/Connor;->mLockMMDataReady:Ljava/lang/Object;
 
     iput-boolean v1, p0, Lcom/android/server/am/Connor;->mIsDebugMode:Z
 
@@ -281,119 +337,141 @@
 
     iput-object v2, p0, Lcom/android/server/am/Connor;->mCallbacks:Ljava/util/ArrayList;
 
-    new-instance v2, Lcom/android/server/am/Connor$1;
+    new-instance v2, Ljava/util/HashMap;
 
-    invoke-direct {v2, p0}, Lcom/android/server/am/Connor$1;-><init>(Lcom/android/server/am/Connor;)V
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v2, p0, Lcom/android/server/am/Connor;->mRunInsertDb:Ljava/lang/Runnable;
-
-    new-instance v2, Lcom/android/server/am/Connor$2;
-
-    invoke-direct {v2, p0}, Lcom/android/server/am/Connor$2;-><init>(Lcom/android/server/am/Connor;)V
-
-    iput-object v2, p0, Lcom/android/server/am/Connor;->mRunIdleCloseDb:Ljava/lang/Runnable;
-
-    new-instance v2, Lcom/android/server/am/Connor$3;
-
-    invoke-direct {v2, p0}, Lcom/android/server/am/Connor$3;-><init>(Lcom/android/server/am/Connor;)V
-
-    iput-object v2, p0, Lcom/android/server/am/Connor;->mReportStatistic:Ljava/lang/Runnable;
+    iput-object v2, p0, Lcom/android/server/am/Connor;->mCallbacksWithConf:Ljava/util/HashMap;
 
     const-string v2, ""
 
     iput-object v2, p0, Lcom/android/server/am/Connor;->mCurModel:Ljava/lang/String;
 
-    new-instance v2, Lcom/android/server/am/Connor$4;
+    new-instance v2, Lcom/android/server/am/ConnorStatistic;
 
-    invoke-direct {v2, p0}, Lcom/android/server/am/Connor$4;-><init>(Lcom/android/server/am/Connor;)V
+    invoke-direct {v2, p0}, Lcom/android/server/am/ConnorStatistic;-><init>(Lcom/android/server/am/Connor;)V
 
-    iput-object v2, p0, Lcom/android/server/am/Connor;->mRunTrainingCheck:Ljava/lang/Runnable;
-
-    iput v1, p0, Lcom/android/server/am/Connor;->mAccOfNN:I
-
-    const/4 v1, 0x0
-
-    iput v1, p0, Lcom/android/server/am/Connor;->mLossOfNN:F
-
-    const-wide/16 v1, 0x0
-
-    iput-wide v1, p0, Lcom/android/server/am/Connor;->mSPCount:J
-
-    iput-wide v1, p0, Lcom/android/server/am/Connor;->mSPHitMM5:J
-
-    iput-wide v1, p0, Lcom/android/server/am/Connor;->mSPHitMM3:J
-
-    iput-wide v1, p0, Lcom/android/server/am/Connor;->mSPHitNN5:J
-
-    iput-wide v1, p0, Lcom/android/server/am/Connor;->mSPHitNN3:J
-
-    iput-object v0, p0, Lcom/android/server/am/Connor;->mBingoRateMM3:Lcom/android/server/am/Connor$BingoStatistic;
-
-    iput-object v0, p0, Lcom/android/server/am/Connor;->mBingoRateMM5:Lcom/android/server/am/Connor$BingoStatistic;
-
-    iput-object v0, p0, Lcom/android/server/am/Connor;->mBingoRateNN3:Lcom/android/server/am/Connor$BingoStatistic;
-
-    iput-object v0, p0, Lcom/android/server/am/Connor;->mBingoRateNN5:Lcom/android/server/am/Connor$BingoStatistic;
-
-    const-string v0, ""
-
-    const-string v1, ""
+    iput-object v2, p0, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
 
     const-string v2, ""
 
-    filled-new-array {v0, v1, v2}, [Ljava/lang/String;
+    const-string v3, ""
 
-    move-result-object v0
+    const-string v4, ""
 
-    iput-object v0, p0, Lcom/android/server/am/Connor;->mPredicts:[Ljava/lang/String;
+    filled-new-array {v2, v3, v4}, [Ljava/lang/String;
 
-    const-string v0, ""
+    move-result-object v2
 
-    const-string v1, ""
-
-    const-string v2, ""
-
-    filled-new-array {v0, v1, v2}, [Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/server/am/Connor;->mPredicts2:[Ljava/lang/String;
-
-    new-instance v0, Ljava/util/LinkedList;
-
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
-
-    iput-object v0, p0, Lcom/android/server/am/Connor;->mPrevApps:Ljava/util/LinkedList;
-
-    const-string v0, ""
-
-    const-string v1, ""
+    iput-object v2, p0, Lcom/android/server/am/Connor;->mPredicts:[Ljava/lang/String;
 
     const-string v2, ""
 
-    filled-new-array {v0, v1, v2}, [Ljava/lang/String;
+    const-string v3, ""
 
-    move-result-object v0
+    const-string v4, ""
 
-    iput-object v0, p0, Lcom/android/server/am/Connor;->mPredictsNN:[Ljava/lang/String;
+    filled-new-array {v2, v3, v4}, [Ljava/lang/String;
 
-    const-string v0, ""
+    move-result-object v2
 
-    const-string v1, ""
+    iput-object v2, p0, Lcom/android/server/am/Connor;->mPredictsPrev:[Ljava/lang/String;
 
-    const-string v2, ""
+    const/16 v2, 0xa
 
-    filled-new-array {v0, v1, v2}, [Ljava/lang/String;
+    new-array v3, v2, [F
 
-    move-result-object v0
+    iput-object v3, p0, Lcom/android/server/am/Connor;->mPredictsConf:[F
 
-    iput-object v0, p0, Lcom/android/server/am/Connor;->mPredictsNN2:[Ljava/lang/String;
+    new-array v3, v2, [F
 
-    new-instance v0, Ljava/util/HashMap;
+    iput-object v3, p0, Lcom/android/server/am/Connor;->mPredictsConfPrev:[F
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    new-instance v3, Ljava/util/LinkedList;
 
-    iput-object v0, p0, Lcom/android/server/am/Connor;->mClusterPredicts:Ljava/util/Map;
+    invoke-direct {v3}, Ljava/util/LinkedList;-><init>()V
+
+    iput-object v3, p0, Lcom/android/server/am/Connor;->mPrevApps:Ljava/util/LinkedList;
+
+    const-string v3, ""
+
+    const-string v4, ""
+
+    const-string v5, ""
+
+    filled-new-array {v3, v4, v5}, [Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/server/am/Connor;->mPredictsNN:[Ljava/lang/String;
+
+    const-string v3, ""
+
+    const-string v4, ""
+
+    const-string v5, ""
+
+    filled-new-array {v3, v4, v5}, [Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/server/am/Connor;->mPredictsNNPrev:[Ljava/lang/String;
+
+    new-array v3, v2, [F
+
+    iput-object v3, p0, Lcom/android/server/am/Connor;->mPredictsNNConf:[F
+
+    new-array v2, v2, [F
+
+    iput-object v2, p0, Lcom/android/server/am/Connor;->mPredictsNNConfPrev:[F
+
+    iput-object v0, p0, Lcom/android/server/am/Connor;->mNNVersion:Ljava/lang/String;
+
+    iput-object v0, p0, Lcom/android/server/am/Connor;->mMMVersion:Ljava/lang/String;
+
+    iput-object v0, p0, Lcom/android/server/am/Connor;->mAABVersion:Ljava/lang/String;
+
+    new-instance v2, Ljava/util/HashMap;
+
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v2, p0, Lcom/android/server/am/Connor;->mClusterPredicts:Ljava/util/Map;
+
+    sget-object v2, Lcom/android/server/am/Connor;->HOME_PACKGES:[Ljava/lang/String;
+
+    invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/android/server/am/Connor;->mHomePkgList:Ljava/util/List;
+
+    iput-object v0, p0, Lcom/android/server/am/Connor;->mCmcSensor:Landroid/hardware/Sensor;
+
+    iput v1, p0, Lcom/android/server/am/Connor;->mCurrSensorState:I
+
+    new-instance v0, Lcom/android/server/am/Connor$1;
+
+    invoke-direct {v0, p0}, Lcom/android/server/am/Connor$1;-><init>(Lcom/android/server/am/Connor;)V
+
+    iput-object v0, p0, Lcom/android/server/am/Connor;->mRunInsertDb:Ljava/lang/Runnable;
+
+    new-instance v0, Lcom/android/server/am/Connor$2;
+
+    invoke-direct {v0, p0}, Lcom/android/server/am/Connor$2;-><init>(Lcom/android/server/am/Connor;)V
+
+    iput-object v0, p0, Lcom/android/server/am/Connor;->mRunIdleCloseDb:Ljava/lang/Runnable;
+
+    new-instance v0, Lcom/android/server/am/Connor$3;
+
+    invoke-direct {v0, p0}, Lcom/android/server/am/Connor$3;-><init>(Lcom/android/server/am/Connor;)V
+
+    iput-object v0, p0, Lcom/android/server/am/Connor;->mReportStatistic:Ljava/lang/Runnable;
+
+    new-instance v0, Lcom/android/server/am/Connor$4;
+
+    invoke-direct {v0, p0}, Lcom/android/server/am/Connor$4;-><init>(Lcom/android/server/am/Connor;)V
+
+    iput-object v0, p0, Lcom/android/server/am/Connor;->mRunTrainingCheck:Ljava/lang/Runnable;
 
     new-instance v0, Lcom/android/server/am/Connor$5;
 
@@ -401,9 +479,9 @@
 
     iput-object v0, p0, Lcom/android/server/am/Connor;->mRunBucketPredict:Ljava/lang/Runnable;
 
-    new-instance v0, Lcom/android/server/am/Connor$12;
+    new-instance v0, Lcom/android/server/am/Connor$13;
 
-    invoke-direct {v0, p0}, Lcom/android/server/am/Connor$12;-><init>(Lcom/android/server/am/Connor;)V
+    invoke-direct {v0, p0}, Lcom/android/server/am/Connor$13;-><init>(Lcom/android/server/am/Connor;)V
 
     iput-object v0, p0, Lcom/android/server/am/Connor;->mRestoreMM:Ljava/lang/Runnable;
 
@@ -500,7 +578,17 @@
     return-object v0
 .end method
 
-.method static synthetic access$1000(Lcom/android/server/am/Connor;)V
+.method static synthetic access$1000(Lcom/android/server/am/Connor;)Z
+    .locals 1
+
+    invoke-direct {p0}, Lcom/android/server/am/Connor;->isBatFullAndCharged()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic access$1100(Lcom/android/server/am/Connor;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/am/Connor;->resetModelCheck()V
@@ -508,7 +596,7 @@
     return-void
 .end method
 
-.method static synthetic access$1100(Lcom/android/server/am/Connor;)V
+.method static synthetic access$1200(Lcom/android/server/am/Connor;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/am/Connor;->triggerTraining()V
@@ -516,7 +604,7 @@
     return-void
 .end method
 
-.method static synthetic access$1200(Lcom/android/server/am/Connor;)Ljava/util/Map;
+.method static synthetic access$1300(Lcom/android/server/am/Connor;)Ljava/util/Map;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/am/Connor;->mClusterPredicts:Ljava/util/Map;
@@ -524,7 +612,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1202(Lcom/android/server/am/Connor;Ljava/util/Map;)Ljava/util/Map;
+.method static synthetic access$1302(Lcom/android/server/am/Connor;Ljava/util/Map;)Ljava/util/Map;
     .locals 0
 
     iput-object p1, p0, Lcom/android/server/am/Connor;->mClusterPredicts:Ljava/util/Map;
@@ -532,7 +620,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$1300(Lcom/android/server/am/Connor;)Landroid/app/usage/UsageStatsManager;
+.method static synthetic access$1400(Lcom/android/server/am/Connor;)Landroid/app/usage/UsageStatsManager;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/am/Connor;->mUstManager:Landroid/app/usage/UsageStatsManager;
@@ -540,7 +628,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1302(Lcom/android/server/am/Connor;Landroid/app/usage/UsageStatsManager;)Landroid/app/usage/UsageStatsManager;
+.method static synthetic access$1402(Lcom/android/server/am/Connor;Landroid/app/usage/UsageStatsManager;)Landroid/app/usage/UsageStatsManager;
     .locals 0
 
     iput-object p1, p0, Lcom/android/server/am/Connor;->mUstManager:Landroid/app/usage/UsageStatsManager;
@@ -548,7 +636,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$1400(Lcom/android/server/am/Connor;Ljava/lang/String;)I
+.method static synthetic access$1500(Lcom/android/server/am/Connor;Ljava/lang/String;)I
     .locals 1
 
     invoke-direct {p0, p1}, Lcom/android/server/am/Connor;->String2BucketInt(Ljava/lang/String;)I
@@ -558,7 +646,7 @@
     return v0
 .end method
 
-.method static synthetic access$1500(Lcom/android/server/am/Connor;)Ljava/lang/Runnable;
+.method static synthetic access$1600(Lcom/android/server/am/Connor;)Ljava/lang/Runnable;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/am/Connor;->mRunBucketPredict:Ljava/lang/Runnable;
@@ -566,7 +654,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1600(Lcom/android/server/am/Connor;Z)V
+.method static synthetic access$1700(Lcom/android/server/am/Connor;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/am/Connor;->setScreen(Z)V
@@ -574,23 +662,7 @@
     return-void
 .end method
 
-.method static synthetic access$1700()Z
-    .locals 1
-
-    sget-boolean v0, Lcom/android/server/am/Connor;->mIsAlpha:Z
-
-    return v0
-.end method
-
-.method static synthetic access$1800()Z
-    .locals 1
-
-    sget-boolean v0, Lcom/android/server/am/Connor;->mIsBeta:Z
-
-    return v0
-.end method
-
-.method static synthetic access$1900(Lcom/android/server/am/Connor;)Ljava/lang/Runnable;
+.method static synthetic access$1800(Lcom/android/server/am/Connor;)Ljava/lang/Runnable;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/am/Connor;->mReportStatistic:Ljava/lang/Runnable;
@@ -598,15 +670,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$200(Lcom/android/server/am/Connor;)Ljava/util/LinkedList;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mQueueCv:Ljava/util/LinkedList;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2000(Lcom/android/server/am/Connor;)V
+.method static synthetic access$1900(Lcom/android/server/am/Connor;)V
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -619,6 +683,22 @@
     return-void
 .end method
 
+.method static synthetic access$200(Lcom/android/server/am/Connor;)Ljava/util/LinkedList;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mQueueCv:Ljava/util/LinkedList;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2000(Lcom/android/server/am/Connor;)Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mNNVersion:Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method static synthetic access$2100(Lcom/android/server/am/Connor;)Ljava/util/ArrayList;
     .locals 1
 
@@ -627,7 +707,23 @@
     return-object v0
 .end method
 
-.method static synthetic access$2202(Lcom/android/server/am/Connor;Z)Z
+.method static synthetic access$2200(Lcom/android/server/am/Connor;)Ljava/util/HashMap;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mCallbacksWithConf:Ljava/util/HashMap;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2300(Lcom/android/server/am/Connor;)Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mLockMMDataReady:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2402(Lcom/android/server/am/Connor;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/am/Connor;->mIsMMDataReady:Z
@@ -635,60 +731,12 @@
     return p1
 .end method
 
-.method static synthetic access$2302(Lcom/android/server/am/Connor;Lcom/android/server/am/Connor$BingoStatistic;)Lcom/android/server/am/Connor$BingoStatistic;
-    .locals 0
-
-    iput-object p1, p0, Lcom/android/server/am/Connor;->mBingoRateMM3:Lcom/android/server/am/Connor$BingoStatistic;
-
-    return-object p1
-.end method
-
-.method static synthetic access$2402(Lcom/android/server/am/Connor;Lcom/android/server/am/Connor$BingoStatistic;)Lcom/android/server/am/Connor$BingoStatistic;
-    .locals 0
-
-    iput-object p1, p0, Lcom/android/server/am/Connor;->mBingoRateMM5:Lcom/android/server/am/Connor$BingoStatistic;
-
-    return-object p1
-.end method
-
-.method static synthetic access$2500(Lcom/android/server/am/Connor;)J
-    .locals 2
-
-    iget-wide v0, p0, Lcom/android/server/am/Connor;->mSPCount:J
-
-    return-wide v0
-.end method
-
-.method static synthetic access$2600(Lcom/android/server/am/Connor;)I
+.method static synthetic access$2500(Lcom/android/server/am/Connor;)Lcom/android/server/am/ConnorStatistic;
     .locals 1
 
-    iget v0, p0, Lcom/android/server/am/Connor;->mAccOfNN:I
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
 
-    return v0
-.end method
-
-.method static synthetic access$2700(Lcom/android/server/am/Connor;)F
-    .locals 1
-
-    iget v0, p0, Lcom/android/server/am/Connor;->mLossOfNN:F
-
-    return v0
-.end method
-
-.method static synthetic access$2800(Lcom/android/server/am/Connor;)J
-    .locals 2
-
-    iget-wide v0, p0, Lcom/android/server/am/Connor;->mSPHitMM3:J
-
-    return-wide v0
-.end method
-
-.method static synthetic access$2900(Lcom/android/server/am/Connor;)J
-    .locals 2
-
-    iget-wide v0, p0, Lcom/android/server/am/Connor;->mSPHitMM5:J
-
-    return-wide v0
+    return-object v0
 .end method
 
 .method static synthetic access$300(Lcom/android/server/am/Connor;)Ljava/util/LinkedList;
@@ -697,22 +745,6 @@
     iget-object v0, p0, Lcom/android/server/am/Connor;->mAvailCv:Ljava/util/LinkedList;
 
     return-object v0
-.end method
-
-.method static synthetic access$3000(Lcom/android/server/am/Connor;)J
-    .locals 2
-
-    iget-wide v0, p0, Lcom/android/server/am/Connor;->mSPHitNN3:J
-
-    return-wide v0
-.end method
-
-.method static synthetic access$3100(Lcom/android/server/am/Connor;)J
-    .locals 2
-
-    iget-wide v0, p0, Lcom/android/server/am/Connor;->mSPHitNN5:J
-
-    return-wide v0
 .end method
 
 .method static synthetic access$400(Lcom/android/server/am/Connor;)Ljava/lang/Runnable;
@@ -747,20 +779,18 @@
     return v0
 .end method
 
-.method static synthetic access$800(Lcom/android/server/am/Connor;)Z
+.method static synthetic access$800(Lcom/android/server/am/Connor;)Ljava/lang/String;
     .locals 1
 
-    iget-boolean v0, p0, Lcom/android/server/am/Connor;->mIsScreenOff:Z
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mAABVersion:Ljava/lang/String;
 
-    return v0
+    return-object v0
 .end method
 
 .method static synthetic access$900(Lcom/android/server/am/Connor;)Z
     .locals 1
 
-    invoke-direct {p0}, Lcom/android/server/am/Connor;->isBatFullAndCharged()Z
-
-    move-result v0
+    iget-boolean v0, p0, Lcom/android/server/am/Connor;->mIsScreenOff:Z
 
     return v0
 .end method
@@ -978,31 +1008,11 @@
 
     move-result-object v7
 
-    iget v8, v7, Lcom/android/server/am/Connor$ModelInfo;->mAcc:I
+    iput-object v7, p0, Lcom/android/server/am/Connor;->mCurrNN:Lcom/android/server/am/Connor$ModelInfo;
 
-    iput v8, p0, Lcom/android/server/am/Connor;->mAccOfNN:I
+    iget-object v7, p0, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
 
-    iget v8, v7, Lcom/android/server/am/Connor$ModelInfo;->mLoss:F
-
-    iput v8, p0, Lcom/android/server/am/Connor;->mLossOfNN:F
-
-    new-instance v8, Lcom/android/server/am/Connor$BingoStatistic;
-
-    const/4 v9, 0x3
-
-    const/4 v10, 0x2
-
-    invoke-direct {v8, p0, v10, v9}, Lcom/android/server/am/Connor$BingoStatistic;-><init>(Lcom/android/server/am/Connor;II)V
-
-    iput-object v8, p0, Lcom/android/server/am/Connor;->mBingoRateNN3:Lcom/android/server/am/Connor$BingoStatistic;
-
-    new-instance v8, Lcom/android/server/am/Connor$BingoStatistic;
-
-    const/4 v9, 0x5
-
-    invoke-direct {v8, p0, v10, v9}, Lcom/android/server/am/Connor$BingoStatistic;-><init>(Lcom/android/server/am/Connor;II)V
-
-    iput-object v8, p0, Lcom/android/server/am/Connor;->mBingoRateNN5:Lcom/android/server/am/Connor$BingoStatistic;
+    invoke-virtual {v7}, Lcom/android/server/am/ConnorStatistic;->initStatisticNN()V
 
     goto :goto_0
 
@@ -1261,33 +1271,89 @@
     .locals 7
 
     :try_start_0
-    new-instance v0, Ljava/io/File;
-
-    const-string v1, "/data/system/"
-
-    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    new-instance v1, Lcom/android/server/am/Connor$8;
-
-    invoke-direct {v1, p0}, Lcom/android/server/am/Connor$8;-><init>(Lcom/android/server/am/Connor;)V
-
-    invoke-virtual {v0, v1}, Ljava/io/File;->listFiles(Ljava/io/FilenameFilter;)[Ljava/io/File;
+    invoke-static {}, Lcom/android/server/am/Connor;->nativeNNGetVer()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    iput-object v0, p0, Lcom/android/server/am/Connor;->mNNVersion:Ljava/lang/String;
 
-    array-length v1, v0
+    const/4 v0, 0x0
 
-    if-lez v1, :cond_1
+    invoke-static {v0}, Lcom/android/server/am/Connor;->nativeMMGetVer(I)Ljava/lang/String;
 
-    const/4 v1, 0x0
+    move-result-object v1
 
-    aget-object v2, v0, v1
+    iput-object v1, p0, Lcom/android/server/am/Connor;->mMMVersion:Ljava/lang/String;
+
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Lcom/android/server/am/Connor;->nativeMMGetVer(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/android/server/am/Connor;->mAABVersion:Ljava/lang/String;
+
+    const-string v1, "Connor"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "NN ver "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v3, p0, Lcom/android/server/am/Connor;->mNNVersion:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, " MM ver "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v3, p0, Lcom/android/server/am/Connor;->mMMVersion:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, " AAB ver "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v3, p0, Lcom/android/server/am/Connor;->mAABVersion:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    new-instance v1, Ljava/io/File;
+
+    const-string v2, "/data/system/"
+
+    invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    new-instance v2, Lcom/android/server/am/Connor$8;
+
+    invoke-direct {v2, p0}, Lcom/android/server/am/Connor$8;-><init>(Lcom/android/server/am/Connor;)V
+
+    invoke-virtual {v1, v2}, Ljava/io/File;->listFiles(Ljava/io/FilenameFilter;)[Ljava/io/File;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_1
+
+    array-length v2, v1
+
+    if-lez v2, :cond_1
+
+    aget-object v2, v1, v0
 
     if-eqz v2, :cond_1
 
-    aget-object v2, v0, v1
+    aget-object v2, v1, v0
 
     invoke-virtual {v2}, Ljava/io/File;->length()J
 
@@ -1301,7 +1367,7 @@
 
     const-string v2, "/system/etc/mylmdb_lstm_inf.prototxt"
 
-    aget-object v3, v0, v1
+    aget-object v3, v1, v0
 
     invoke-virtual {v3}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
@@ -1317,100 +1383,88 @@
 
     move-result v2
 
+    aget-object v0, v1, v0
+
+    invoke-virtual {v0}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
     if-eqz v2, :cond_0
 
-    aget-object v1, v0, v1
+    iget-object v3, p0, Lcom/android/server/am/Connor;->mNNVersion:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/io/File;->getName()Ljava/lang/String;
+    invoke-virtual {v0, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result-object v1
+    move-result v3
 
-    iput-object v1, p0, Lcom/android/server/am/Connor;->mCurModel:Ljava/lang/String;
+    if-eqz v3, :cond_0
 
-    iget-object v1, p0, Lcom/android/server/am/Connor;->mCurModel:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/server/am/Connor;->mCurModel:Ljava/lang/String;
 
-    invoke-direct {p0, v1}, Lcom/android/server/am/Connor;->parseModelName(Ljava/lang/String;)Lcom/android/server/am/Connor$ModelInfo;
+    iget-object v3, p0, Lcom/android/server/am/Connor;->mCurModel:Ljava/lang/String;
 
-    move-result-object v1
+    invoke-direct {p0, v3}, Lcom/android/server/am/Connor;->parseModelName(Ljava/lang/String;)Lcom/android/server/am/Connor$ModelInfo;
 
-    iget v3, v1, Lcom/android/server/am/Connor$ModelInfo;->mAcc:I
+    move-result-object v3
 
-    iput v3, p0, Lcom/android/server/am/Connor;->mAccOfNN:I
+    iput-object v3, p0, Lcom/android/server/am/Connor;->mCurrNN:Lcom/android/server/am/Connor$ModelInfo;
 
-    iget v3, v1, Lcom/android/server/am/Connor$ModelInfo;->mLoss:F
+    iget-object v3, p0, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
 
-    iput v3, p0, Lcom/android/server/am/Connor;->mLossOfNN:F
-
-    new-instance v3, Lcom/android/server/am/Connor$BingoStatistic;
-
-    const/4 v4, 0x3
-
-    const/4 v5, 0x2
-
-    invoke-direct {v3, p0, v5, v4}, Lcom/android/server/am/Connor$BingoStatistic;-><init>(Lcom/android/server/am/Connor;II)V
-
-    iput-object v3, p0, Lcom/android/server/am/Connor;->mBingoRateNN3:Lcom/android/server/am/Connor$BingoStatistic;
-
-    new-instance v3, Lcom/android/server/am/Connor$BingoStatistic;
-
-    const/4 v4, 0x5
-
-    invoke-direct {v3, p0, v5, v4}, Lcom/android/server/am/Connor$BingoStatistic;-><init>(Lcom/android/server/am/Connor;II)V
-
-    iput-object v3, p0, Lcom/android/server/am/Connor;->mBingoRateNN5:Lcom/android/server/am/Connor$BingoStatistic;
+    invoke-virtual {v3}, Lcom/android/server/am/ConnorStatistic;->initStatisticNN()V
 
     goto :goto_0
 
     :cond_0
-    const-string v1, "Connor"
+    const-string v3, "Connor"
 
-    const-string/jumbo v3, "nativeNNInit fail, perform clean up"
+    const-string/jumbo v4, "nativeNNInit fail or ver updated, perform clean up"
 
-    invoke-static {v1, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string v1, "/data/system/"
+    const-string v3, "/data/system/"
 
-    const-string v3, ".caffemodel"
+    const-string v4, ".caffemodel"
 
-    filled-new-array {v3}, [Ljava/lang/String;
+    filled-new-array {v4}, [Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-direct {p0, v1, v3}, Lcom/android/server/am/Connor;->removeFilesEndsWith(Ljava/lang/String;[Ljava/lang/String;)V
+    invoke-direct {p0, v3, v4}, Lcom/android/server/am/Connor;->removeFilesEndsWith(Ljava/lang/String;[Ljava/lang/String;)V
 
-    new-instance v1, Ljava/io/File;
+    new-instance v3, Ljava/io/File;
 
-    const-string v3, "/data/system/Label.txt"
+    const-string v4, "/data/system/Label.txt"
 
-    invoke-direct {v1, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Ljava/io/File;->delete()Z
+    invoke-virtual {v3}, Ljava/io/File;->delete()Z
 
-    const-string v1, "/data/connor_training/"
+    const-string v3, "/data/connor_training/"
 
-    const-string v3, ".caffemodel"
+    const-string v4, ".caffemodel"
 
-    const-string v4, ".solverstate"
+    const-string v5, ".solverstate"
 
-    filled-new-array {v3, v4}, [Ljava/lang/String;
+    filled-new-array {v4, v5}, [Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-direct {p0, v1, v3}, Lcom/android/server/am/Connor;->removeFilesEndsWith(Ljava/lang/String;[Ljava/lang/String;)V
+    invoke-direct {p0, v3, v4}, Lcom/android/server/am/Connor;->removeFilesEndsWith(Ljava/lang/String;[Ljava/lang/String;)V
 
     invoke-direct {p0}, Lcom/android/server/am/Connor;->copyPrototxtFiles()V
 
-    const-string/jumbo v1, "persist.vendor.connor.data_ready"
+    const-string/jumbo v3, "persist.vendor.connor.data_ready"
 
-    const-string v3, "0"
+    const-string v4, "0"
 
-    invoke-static {v1, v3}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string/jumbo v1, "persist.vendor.connor.data_entry"
+    const-string/jumbo v3, "persist.vendor.connor.data_entry"
 
-    const-string v3, "0"
+    const-string v4, "0"
 
-    invoke-static {v1, v3}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1480,174 +1534,6 @@
     const/4 v2, 0x0
 
     :goto_0
-    return v2
-.end method
-
-.method private isBingoMM(Ljava/lang/String;)Z
-    .locals 7
-
-    const/4 v0, 0x0
-
-    iget-object v1, p0, Lcom/android/server/am/Connor;->mPredicts:[Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_0
-
-    return v2
-
-    :cond_0
-    iget-object v1, p0, Lcom/android/server/am/Connor;->mPredicts:[Ljava/lang/String;
-
-    array-length v3, v1
-
-    move v4, v0
-
-    move v0, v2
-
-    :goto_0
-    if-ge v0, v3, :cond_3
-
-    aget-object v5, v1, v0
-
-    if-eqz v5, :cond_2
-
-    invoke-virtual {v5, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_2
-
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mBingoRateMM5:Lcom/android/server/am/Connor$BingoStatistic;
-
-    invoke-virtual {v0}, Lcom/android/server/am/Connor$BingoStatistic;->hit()V
-
-    const/4 v0, 0x3
-
-    if-ge v4, v0, :cond_1
-
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mBingoRateMM3:Lcom/android/server/am/Connor$BingoStatistic;
-
-    invoke-virtual {v0}, Lcom/android/server/am/Connor$BingoStatistic;->hit()V
-
-    goto :goto_1
-
-    :cond_1
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mBingoRateMM3:Lcom/android/server/am/Connor$BingoStatistic;
-
-    invoke-virtual {v0}, Lcom/android/server/am/Connor$BingoStatistic;->miss()V
-
-    :goto_1
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_2
-    add-int/lit8 v4, v4, 0x1
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_3
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mBingoRateMM5:Lcom/android/server/am/Connor$BingoStatistic;
-
-    invoke-virtual {v0}, Lcom/android/server/am/Connor$BingoStatistic;->miss()V
-
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mBingoRateMM3:Lcom/android/server/am/Connor$BingoStatistic;
-
-    invoke-virtual {v0}, Lcom/android/server/am/Connor$BingoStatistic;->miss()V
-
-    return v2
-.end method
-
-.method private isBingoNN(Ljava/lang/String;)Z
-    .locals 7
-
-    const/4 v0, 0x0
-
-    iget-object v1, p0, Lcom/android/server/am/Connor;->mPredictsNN:[Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_4
-
-    iget-object v1, p0, Lcom/android/server/am/Connor;->mCurModel:Ljava/lang/String;
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    goto :goto_2
-
-    :cond_0
-    iget-object v1, p0, Lcom/android/server/am/Connor;->mPredictsNN:[Ljava/lang/String;
-
-    array-length v3, v1
-
-    move v4, v0
-
-    move v0, v2
-
-    :goto_0
-    if-ge v0, v3, :cond_3
-
-    aget-object v5, v1, v0
-
-    if-eqz v5, :cond_2
-
-    invoke-virtual {v5, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_2
-
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mBingoRateNN5:Lcom/android/server/am/Connor$BingoStatistic;
-
-    invoke-virtual {v0}, Lcom/android/server/am/Connor$BingoStatistic;->hit()V
-
-    const/4 v0, 0x3
-
-    if-ge v4, v0, :cond_1
-
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mBingoRateNN3:Lcom/android/server/am/Connor$BingoStatistic;
-
-    invoke-virtual {v0}, Lcom/android/server/am/Connor$BingoStatistic;->hit()V
-
-    goto :goto_1
-
-    :cond_1
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mBingoRateNN3:Lcom/android/server/am/Connor$BingoStatistic;
-
-    invoke-virtual {v0}, Lcom/android/server/am/Connor$BingoStatistic;->miss()V
-
-    :goto_1
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_2
-    add-int/lit8 v4, v4, 0x1
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_3
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mBingoRateNN5:Lcom/android/server/am/Connor$BingoStatistic;
-
-    invoke-virtual {v0}, Lcom/android/server/am/Connor$BingoStatistic;->miss()V
-
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mBingoRateNN3:Lcom/android/server/am/Connor$BingoStatistic;
-
-    invoke-virtual {v0}, Lcom/android/server/am/Connor$BingoStatistic;->miss()V
-
-    return v2
-
-    :cond_4
-    :goto_2
     return v2
 .end method
 
@@ -1724,13 +1610,31 @@
 .method protected static native nativeGetSysTemp(I)I
 .end method
 
+.method protected static native nativeMMGetVer(I)Ljava/lang/String;
+.end method
+
+.method protected static native nativeMMPredictConf()[D
+.end method
+
+.method protected static native nativeMMSetDebugFlag(I)V
+.end method
+
+.method protected static native nativeNNGetVer()Ljava/lang/String;
+.end method
+
 .method protected static native nativeNNInit(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 .end method
 
 .method protected static native nativeNNPredict([Ljava/lang/String;[J)[Ljava/lang/String;
 .end method
 
-.method protected static native nativePredict()[Ljava/lang/String;
+.method protected static native nativeNNPredictConf()[F
+.end method
+
+.method protected static native nativePkgListUpdate([Ljava/lang/String;)V
+.end method
+
+.method protected static native nativePredict(I)[Ljava/lang/String;
 .end method
 
 .method protected static native nativeSetGoogleCluster([Ljava/lang/String;IJ)V
@@ -1760,12 +1664,6 @@
 
     move-result-object v2
 
-    iget v3, v2, Lcom/android/server/am/Connor$ModelInfo;->mAcc:I
-
-    iget v4, v0, Lcom/android/server/am/Connor$ModelInfo;->mAcc:I
-
-    if-lt v3, v4, :cond_1
-
     iget v3, v2, Lcom/android/server/am/Connor$ModelInfo;->mLoss:F
 
     iget v4, v0, Lcom/android/server/am/Connor$ModelInfo;->mLoss:F
@@ -1780,6 +1678,16 @@
     const/4 v1, 0x0
 
     return v1
+.end method
+
+.method private notifyPredictListener()V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/server/am/Connor;->notifyPredictUpdated()V
+
+    invoke-direct {p0}, Lcom/android/server/am/Connor;->notifyPredictUpdatedWithConf()V
+
+    return-void
 .end method
 
 .method private notifyPredictUpdated()V
@@ -1818,8 +1726,35 @@
     return-void
 .end method
 
+.method private notifyPredictUpdatedWithConf()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mCallbacksWithConf:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->size()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mBgHandler:Landroid/os/Handler;
+
+    new-instance v1, Lcom/android/server/am/Connor$12;
+
+    invoke-direct {v1, p0}, Lcom/android/server/am/Connor$12;-><init>(Lcom/android/server/am/Connor;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
+.end method
+
 .method private parseModelName(Ljava/lang/String;)Lcom/android/server/am/Connor$ModelInfo;
-    .locals 6
+    .locals 5
 
     const-string v0, "_"
 
@@ -1831,64 +1766,40 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
-
     :goto_0
-    array-length v4, v0
+    array-length v3, v0
 
-    if-ge v3, v4, :cond_2
+    if-ge v2, v3, :cond_1
 
-    const-string v4, "acc"
+    const-string/jumbo v3, "loss"
 
-    aget-object v5, v0, v3
+    aget-object v4, v0, v2
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_0
+    if-eqz v3, :cond_0
 
-    add-int/lit8 v4, v3, 0x1
+    add-int/lit8 v3, v2, 0x1
 
-    aget-object v4, v0, v4
+    aget-object v3, v0, v3
 
-    invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v3}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result v1
 
-    goto :goto_1
-
     :cond_0
-    const-string/jumbo v4, "loss"
-
-    aget-object v5, v0, v3
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    add-int/lit8 v4, v3, 0x1
-
-    aget-object v4, v0, v4
-
-    invoke-static {v4}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
-
-    move-result v2
-
-    :cond_1
-    :goto_1
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    :cond_2
-    new-instance v3, Lcom/android/server/am/Connor$ModelInfo;
+    :cond_1
+    new-instance v2, Lcom/android/server/am/Connor$ModelInfo;
 
-    invoke-direct {v3, p0, v1, v2}, Lcom/android/server/am/Connor$ModelInfo;-><init>(Lcom/android/server/am/Connor;IF)V
+    invoke-direct {v2, p0, v1}, Lcom/android/server/am/Connor$ModelInfo;-><init>(Lcom/android/server/am/Connor;F)V
 
-    return-object v3
+    return-object v2
 .end method
 
 .method private varargs removeFilesEndsWith(Ljava/lang/String;[Ljava/lang/String;)V
@@ -2154,7 +2065,7 @@
 
     if-eqz v2, :cond_0
 
-    const-wide/32 v2, 0x1d4c0
+    const-wide/16 v2, 0x4e20
 
     goto :goto_0
 
@@ -2170,631 +2081,950 @@
 
 # virtual methods
 .method public dumpsys(Ljava/io/PrintWriter;[Ljava/lang/String;)V
-    .locals 12
+    .locals 18
 
+    move-object/from16 v1, p0
+
+    move-object/from16 v2, p1
+
+    move-object/from16 v3, p2
+
+    iget-boolean v0, v1, Lcom/android/server/am/Connor;->mEnable:Z
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
     monitor-enter p0
 
     :try_start_0
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mPredicts:[Ljava/lang/String;
+    iget-object v0, v1, Lcom/android/server/am/Connor;->mPredicts:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/android/server/am/Connor;->mClusterPredicts:Ljava/util/Map;
+    move-object v4, v0
+
+    iget-object v0, v1, Lcom/android/server/am/Connor;->mClusterPredicts:Ljava/util/Map;
+
+    move-object v5, v0
 
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    sget-boolean v2, Lcom/android/server/am/Connor;->DEBUG_ONEPLUS:Z
+    sget-boolean v0, Lcom/android/server/am/Connor;->DEBUG_ONEPLUS:Z
 
-    const/4 v3, 0x0
+    const/4 v6, 0x0
 
-    const/4 v4, 0x1
+    const/4 v7, 0x1
 
-    if-eqz v2, :cond_6
+    if-eqz v0, :cond_9
 
-    array-length v2, p2
+    array-length v0, v3
 
-    if-le v2, v4, :cond_6
+    if-le v0, v7, :cond_9
 
-    const-string v2, "debug"
+    const-string v0, "debug"
 
-    aget-object v5, p2, v4
+    aget-object v8, v3, v7
 
-    invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_2
+    const/4 v8, 0x3
 
-    array-length v2, p2
+    const/4 v9, 0x2
 
-    const/4 v5, 0x3
+    if-eqz v0, :cond_3
 
-    if-ne v2, v5, :cond_2
+    array-length v0, v3
 
-    const-string/jumbo v2, "on"
+    if-ne v0, v8, :cond_3
 
-    const/4 v5, 0x2
+    const-string/jumbo v0, "on"
 
-    aget-object v6, p2, v5
+    aget-object v8, v3, v9
 
-    invoke-virtual {v2, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_1
 
-    iput-boolean v4, p0, Lcom/android/server/am/Connor;->mIsDebugMode:Z
+    iput-boolean v7, v1, Lcom/android/server/am/Connor;->mIsDebugMode:Z
 
-    const-string v2, "Connor"
+    const-string v0, "Connor"
 
-    const-string v3, "enable quick verification"
+    const-string v6, "enable quick verification"
 
-    invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v6}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/16 v0, 0x1111
+
+    invoke-static {v0}, Lcom/android/server/am/Connor;->nativeMMSetDebugFlag(I)V
 
     goto :goto_0
 
-    :cond_0
-    const-string/jumbo v2, "off"
-
-    aget-object v4, p2, v5
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    iput-boolean v3, p0, Lcom/android/server/am/Connor;->mIsDebugMode:Z
-
-    const-string v2, "Connor"
-
-    const-string v3, "disable quick verification"
-
-    invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     :cond_1
+    const-string/jumbo v0, "off"
+
+    aget-object v7, v3, v9
+
+    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iput-boolean v6, v1, Lcom/android/server/am/Connor;->mIsDebugMode:Z
+
+    const-string v0, "Connor"
+
+    const-string v7, "disable quick verification"
+
+    invoke-static {v0, v7}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {v6}, Lcom/android/server/am/Connor;->nativeMMSetDebugFlag(I)V
+
+    :cond_2
     :goto_0
     return-void
 
-    :cond_2
-    const-string/jumbo v2, "trigger"
-
-    aget-object v5, p2, v4
-
-    invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    const-string v2, "Connor"
-
-    const-string/jumbo v3, "trigger training by dumpsys"
-
-    invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-direct {p0}, Lcom/android/server/am/Connor;->triggerTraining()V
-
-    return-void
-
     :cond_3
-    const-string/jumbo v2, "replicate"
+    const-string/jumbo v0, "trigger"
 
-    aget-object v5, p2, v4
+    aget-object v10, v3, v7
 
-    invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_4
+    if-eqz v0, :cond_4
 
-    invoke-virtual {p0}, Lcom/android/server/am/Connor;->replicateData()V
+    const-string v0, "Connor"
 
-    const-string v2, "Connor"
+    const-string/jumbo v6, "trigger training by dumpsys"
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-static {v0, v6}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "replicate data done, count: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-direct {p0}, Lcom/android/server/am/Connor;->getTrainingEntryCount()J
-
-    move-result-wide v4
-
-    invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/am/Connor;->triggerTraining()V
 
     return-void
 
     :cond_4
-    const-string v2, "apply_model"
+    const-string/jumbo v0, "replicate"
 
-    aget-object v5, p2, v4
+    aget-object v10, v3, v7
 
-    invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_5
+    if-eqz v0, :cond_5
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/Connor;->replicateData()V
+
+    const-string v0, "Connor"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v7, "replicate data done, count: "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/am/Connor;->getTrainingEntryCount()J
+
+    move-result-wide v7
+
+    invoke-virtual {v6, v7, v8}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v0, v6}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_5
+    const-string v0, "apply_model"
+
+    aget-object v10, v3, v7
+
+    invoke-virtual {v0, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
 
     :try_start_1
-    invoke-direct {p0}, Lcom/android/server/am/Connor;->applyNNModel()V
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/am/Connor;->applyNNModel()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_1
 
     :catch_0
-    move-exception v2
+    move-exception v0
 
-    const-string v3, "Connor"
+    move-object v6, v0
 
-    const-string v4, "got exception when apply_model"
+    const-string v6, "Connor"
 
-    invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v7, "got exception when apply_model"
 
-    invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-static {v6, v7}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     :goto_1
     return-void
 
-    :cond_5
-    const-string/jumbo v2, "report"
+    :cond_6
+    const-string/jumbo v0, "report"
 
-    aget-object v5, p2, v4
+    aget-object v10, v3, v7
 
-    invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_6
+    if-eqz v0, :cond_7
 
-    iget-object v2, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
+    iget-object v0, v1, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
 
-    iget-object v2, v2, Lcom/android/server/am/ActivityManagerService;->mBgHandler:Landroid/os/Handler;
+    iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mBgHandler:Landroid/os/Handler;
 
-    iget-object v3, p0, Lcom/android/server/am/Connor;->mReportStatistic:Ljava/lang/Runnable;
+    iget-object v6, v1, Lcom/android/server/am/Connor;->mReportStatistic:Ljava/lang/Runnable;
 
-    invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v6}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     return-void
 
-    :cond_6
-    iget-object v2, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
+    :cond_7
+    const-string v0, "bucket"
 
-    monitor-enter v2
+    aget-object v10, v3, v7
+
+    invoke-virtual {v0, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8
+
+    iget-object v0, v1, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mBgHandler:Landroid/os/Handler;
+
+    iget-object v6, v1, Lcom/android/server/am/Connor;->mRunBucketPredict:Ljava/lang/Runnable;
+
+    invoke-virtual {v0, v6}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
+
+    :cond_8
+    const-string/jumbo v0, "next"
+
+    aget-object v10, v3, v7
+
+    invoke-virtual {v0, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
+    array-length v0, v3
+
+    if-ne v0, v8, :cond_9
 
     :try_start_2
-    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
+    aget-object v0, v3, v9
 
-    iget-object v5, p0, Lcom/android/server/am/Connor;->mBingoRateMM5:Lcom/android/server/am/Connor$BingoStatistic;
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(Ljava/lang/String;)Ljava/lang/Float;
 
-    const/high16 v6, -0x40800000    # -1.0f
+    move-result-object v0
 
-    if-eqz v5, :cond_7
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
-    iget-object v5, p0, Lcom/android/server/am/Connor;->mBingoRateMM5:Lcom/android/server/am/Connor$BingoStatistic;
+    move-result v0
 
-    invoke-virtual {v5}, Lcom/android/server/am/Connor$BingoStatistic;->getCurrHitRate()F
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    move-result v5
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v7, "next: "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Lcom/android/server/am/Connor;->getAggregateNext(F)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v6}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
     goto :goto_2
 
-    :cond_7
-    move v5, v6
+    :catch_1
+    move-exception v0
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     :goto_2
-    iget-object v7, p0, Lcom/android/server/am/Connor;->mBingoRateMM3:Lcom/android/server/am/Connor$BingoStatistic;
+    return-void
 
-    if-eqz v7, :cond_8
+    :cond_9
+    iget-object v8, v1, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
 
-    iget-object v7, p0, Lcom/android/server/am/Connor;->mBingoRateMM3:Lcom/android/server/am/Connor$BingoStatistic;
+    monitor-enter v8
 
-    invoke-virtual {v7}, Lcom/android/server/am/Connor$BingoStatistic;->getCurrHitRate()F
+    :try_start_3
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    move-result v7
+    iget-object v0, v1, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
+
+    invoke-virtual {v0}, Lcom/android/server/am/ConnorStatistic;->getHitRateOfMM5()F
+
+    move-result v0
+
+    move v9, v0
+
+    iget-object v0, v1, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
+
+    invoke-virtual {v0}, Lcom/android/server/am/ConnorStatistic;->getHitRateOfMM3()F
+
+    move-result v0
+
+    move v10, v0
+
+    iget-object v0, v1, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
+
+    invoke-virtual {v0}, Lcom/android/server/am/ConnorStatistic;->getHitRateOfNN5()F
+
+    move-result v0
+
+    move v11, v0
+
+    iget-object v0, v1, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
+
+    invoke-virtual {v0}, Lcom/android/server/am/ConnorStatistic;->getHitRateOfNN3()F
+
+    move-result v0
+
+    move v12, v0
+
+    iget-object v0, v1, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
+
+    invoke-virtual {v0}, Lcom/android/server/am/ConnorStatistic;->getHitRateOfNN()F
+
+    move-result v0
+
+    move v13, v0
+
+    iget-object v0, v1, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
+
+    invoke-virtual {v0}, Lcom/android/server/am/ConnorStatistic;->getHitRateOfMM()F
+
+    move-result v0
+
+    move v14, v0
+
+    iget-boolean v0, v1, Lcom/android/server/am/Connor;->mIsDebugMode:Z
+
+    if-eqz v0, :cond_a
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v15, "Current Model: "
+
+    invoke-virtual {v0, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v15, v1, Lcom/android/server/am/Connor;->mCurModel:Ljava/lang/String;
+
+    invoke-virtual {v0, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    :cond_a
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v15, "MM_5 hit rate: "
+
+    invoke-virtual {v0, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/4 v15, 0x0
+
+    cmpl-float v16, v9, v15
+
+    if-ltz v16, :cond_b
+
+    invoke-static {v9}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v16
 
     goto :goto_3
 
-    :cond_8
-    move v7, v6
+    :cond_b
+    const-string v16, " N/A "
 
     :goto_3
-    iget-object v8, p0, Lcom/android/server/am/Connor;->mBingoRateNN5:Lcom/android/server/am/Connor$BingoStatistic;
+    move-object/from16 v7, v16
 
-    if-eqz v8, :cond_9
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget-object v8, p0, Lcom/android/server/am/Connor;->mBingoRateNN5:Lcom/android/server/am/Connor$BingoStatistic;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v8}, Lcom/android/server/am/Connor$BingoStatistic;->getCurrHitRate()F
+    move-result-object v0
 
-    move-result v8
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "MM_3 hit rate: "
+
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    cmpl-float v7, v10, v15
+
+    if-ltz v7, :cond_c
+
+    invoke-static {v10}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v7
 
     goto :goto_4
 
-    :cond_9
-    move v8, v6
+    :cond_c
+    const-string v7, " N/A "
 
     :goto_4
-    iget-object v9, p0, Lcom/android/server/am/Connor;->mBingoRateNN3:Lcom/android/server/am/Connor$BingoStatistic;
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    if-eqz v9, :cond_a
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iget-object v6, p0, Lcom/android/server/am/Connor;->mBingoRateNN3:Lcom/android/server/am/Connor$BingoStatistic;
+    move-result-object v0
 
-    invoke-virtual {v6}, Lcom/android/server/am/Connor$BingoStatistic;->getCurrHitRate()F
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    move-result v6
-
-    nop
-
-    :cond_a
-    iget-boolean v9, p0, Lcom/android/server/am/Connor;->mIsDebugMode:Z
-
-    if-eqz v9, :cond_b
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "Current Model: "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v10, p0, Lcom/android/server/am/Connor;->mCurModel:Ljava/lang/String;
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    :cond_b
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "MM_5 hit rate: "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/4 v10, 0x0
-
-    cmpl-float v11, v5, v10
-
-    if-ltz v11, :cond_c
-
-    invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v11
-
-    goto :goto_5
-
-    :cond_c
-    const-string v11, " N/A "
+    move v0, v6
 
     :goto_5
-    invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const/4 v7, 0x4
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-ge v0, v7, :cond_e
 
-    move-result-object v9
+    iget-object v7, v1, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
 
-    invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v7, v0}, Lcom/android/server/am/ConnorStatistic;->getHitRateOfMM1(I)F
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    move-result v7
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v11, "MM_3 hit rate: "
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v15, "MM_1 conf "
 
-    cmpl-float v11, v7, v10
+    invoke-virtual {v6, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-ltz v11, :cond_d
+    sget-object v15, Lcom/android/server/am/ConnorStatistic;->CONFIDENCE_CRITERIA:[F
+
+    aget v15, v15, v0
+
+    invoke-virtual {v6, v15}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v15, " hit rate: "
+
+    invoke-virtual {v6, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/4 v15, 0x0
+
+    cmpl-float v16, v7, v15
+
+    if-ltz v16, :cond_d
 
     invoke-static {v7}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v11
+    move-result-object v15
 
     goto :goto_6
 
     :cond_d
-    const-string v11, " N/A "
+    const-string v15, " N/A "
 
     :goto_6
-    invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v6
 
-    invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v2, v6}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    add-int/lit8 v0, v0, 0x1
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    const/4 v6, 0x0
 
-    const-string v11, "NN_5 hit rate: "
+    const/4 v15, 0x0
 
-    invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    goto :goto_5
 
-    cmpl-float v11, v8, v10
+    :cond_e
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    if-ltz v11, :cond_e
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v8}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    const-string v6, "MM_1 hit rate: "
 
-    move-result-object v11
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/4 v6, 0x0
+
+    cmpl-float v15, v14, v6
+
+    if-ltz v15, :cond_f
+
+    invoke-static {v14}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v6
 
     goto :goto_7
 
-    :cond_e
-    const-string v11, " N/A "
+    :cond_f
+    const-string v6, " N/A "
 
     :goto_7
-    invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v0
 
-    invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v11, "NN_3 hit rate: "
+    const-string v6, "NN_5 hit rate: "
 
-    invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    cmpl-float v10, v6, v10
+    const/4 v6, 0x0
 
-    if-ltz v10, :cond_f
+    cmpl-float v15, v11, v6
 
-    invoke-static {v6}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    if-ltz v15, :cond_10
 
-    move-result-object v10
+    invoke-static {v11}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v6
 
     goto :goto_8
 
-    :cond_f
-    const-string v10, " N/A "
+    :cond_10
+    const-string v6, " N/A "
 
     :goto_8
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v0
 
-    invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    :try_start_3
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v10, "OP hit rate: "
+    const-string v6, "NN_3 hit rate: "
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v3}, Lcom/android/server/am/Connor;->nativeGetClusterAccu(I)[D
+    const/4 v6, 0x0
 
-    move-result-object v3
+    cmpl-float v15, v12, v6
 
-    invoke-static {v3}, Ljava/util/Arrays;->toString([D)Ljava/lang/String;
+    if-ltz v15, :cond_11
 
-    move-result-object v3
+    invoke-static {v12}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "Google hit rate: "
-
-    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {v4}, Lcom/android/server/am/Connor;->nativeGetClusterAccu(I)[D
-
-    move-result-object v4
-
-    invoke-static {v4}, Ljava/util/Arrays;->toString([D)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Google set count: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v4, Lcom/android/server/am/Connor;->mGoogleSetCount:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    move-result-object v6
 
     goto :goto_9
 
-    :catch_1
-    move-exception v3
+    :cond_11
+    const-string v6, " N/A "
 
     :goto_9
-    :try_start_4
-    const-string v3, ""
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string v3, "MM prediction: "
+    move-result-object v0
 
-    invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    invoke-static {v0}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
-
-    const-string v3, ""
-
-    invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    const-string v3, "NN prediction: "
-
-    invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
-
-    iget-object v3, p0, Lcom/android/server/am/Connor;->mPredictsNN:[Ljava/lang/String;
-
-    invoke-static {v3}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
-
-    const-string v3, ""
-
-    invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    const-string v3, "Aggregate prediction: "
-
-    invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
-
-    invoke-virtual {p0}, Lcom/android/server/am/Connor;->getAggregateNext()[Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
-
-    const-string v3, ""
-
-    invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    const-string v3, ""
-
-    invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    const-string v3, "AAB prediction:"
-
-    invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    invoke-interface {v1}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
+    const/4 v0, 0x0
 
     :goto_a
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    if-ge v0, v7, :cond_13
 
-    move-result v4
+    iget-object v6, v1, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
 
-    if-eqz v4, :cond_10
+    invoke-virtual {v6, v0}, Lcom/android/server/am/ConnorStatistic;->getHitRateOfNN1(I)F
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result v6
 
-    move-result-object v4
+    new-instance v15, Ljava/lang/StringBuilder;
 
-    check-cast v4, Ljava/lang/String;
+    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "bucket"
+    const-string v7, "NN_1 conf "
 
-    invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
+    invoke-virtual {v15, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v4}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
+    sget-object v7, Lcom/android/server/am/ConnorStatistic;->CONFIDENCE_CRITERIA:[F
 
-    const-string v9, ": "
+    aget v7, v7, v0
 
-    invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
+    invoke-virtual {v15, v7}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    invoke-interface {v1, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v7, " hit rate: "
 
-    move-result-object v9
+    invoke-virtual {v15, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    check-cast v9, [Ljava/lang/Object;
+    const/4 v7, 0x0
 
-    invoke-static {v9}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+    cmpl-float v16, v6, v7
 
-    move-result-object v9
+    if-ltz v16, :cond_12
 
-    invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-static {v6}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v7
+
+    goto :goto_b
+
+    :cond_12
+    const-string v7, " N/A "
+
+    :goto_b
+    invoke-virtual {v15, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v2, v7}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    add-int/lit8 v0, v0, 0x1
+
+    const/4 v7, 0x4
 
     goto :goto_a
 
-    :cond_10
-    monitor-exit v2
+    :cond_13
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "NN_1 hit rate: "
+
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/4 v6, 0x0
+
+    cmpl-float v6, v13, v6
+
+    if-ltz v6, :cond_14
+
+    invoke-static {v13}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v6
+
+    goto :goto_c
+
+    :cond_14
+    const-string v6, " N/A "
+
+    :goto_c
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    :try_start_4
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "OP hit rate: "
+
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/4 v6, 0x0
+
+    invoke-static {v6}, Lcom/android/server/am/Connor;->nativeGetClusterAccu(I)[D
+
+    move-result-object v6
+
+    invoke-static {v6}, Ljava/util/Arrays;->toString([D)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "Google hit rate: "
+
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/4 v6, 0x1
+
+    invoke-static {v6}, Lcom/android/server/am/Connor;->nativeGetClusterAccu(I)[D
+
+    move-result-object v6
+
+    invoke-static {v6}, Ljava/util/Arrays;->toString([D)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "Google set count: "
+
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget v6, Lcom/android/server/am/Connor;->mGoogleSetCount:I
+
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
     :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
+
+    goto :goto_d
+
+    :catch_2
+    move-exception v0
+
+    :goto_d
+    :try_start_5
+    const-string v0, ""
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    const-string v0, "MM prediction: "
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
+
+    invoke-static {v4}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
+
+    const-string v0, ""
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    const-string v0, "MM confidence: "
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
+
+    iget-object v0, v1, Lcom/android/server/am/Connor;->mPredictsConf:[F
+
+    invoke-static {v0}, Ljava/util/Arrays;->toString([F)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
+
+    const-string v0, ""
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    const-string v0, "NN prediction: "
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
+
+    iget-object v0, v1, Lcom/android/server/am/Connor;->mPredictsNN:[Ljava/lang/String;
+
+    invoke-static {v0}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
+
+    const-string v0, ""
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    const-string v0, "NN confidence: "
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
+
+    iget-object v0, v1, Lcom/android/server/am/Connor;->mPredictsNNConf:[F
+
+    invoke-static {v0}, Ljava/util/Arrays;->toString([F)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
+
+    const-string v0, ""
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    const-string v0, "Aggregate prediction: "
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/Connor;->getAggregateNext()[Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
+
+    const-string v0, ""
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    const-string v0, ""
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    const-string v0, "AAB prediction:"
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    invoke-interface {v5}, Ljava/util/Map;->keySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_e
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_15
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/String;
+
+    const-string v7, "bucket"
+
+    invoke-virtual {v2, v7}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
+
+    invoke-virtual {v2, v6}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
+
+    const-string v7, ": "
+
+    invoke-virtual {v2, v7}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
+
+    invoke-interface {v5, v6}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, [Ljava/lang/Object;
+
+    invoke-static {v7}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v2, v7}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    goto :goto_e
+
+    :cond_15
+    monitor-exit v8
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
     return-void
 
     :catchall_0
-    move-exception v3
+    move-exception v0
 
-    :try_start_5
-    monitor-exit v2
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+    :try_start_6
+    monitor-exit v8
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    throw v3
+    throw v0
 
     :catchall_1
     move-exception v0
 
-    :try_start_6
+    :try_start_7
     monitor-exit p0
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_1
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
     throw v0
 .end method
@@ -2809,13 +3039,24 @@
     return-void
 
     :cond_0
-    iget-boolean v0, p0, Lcom/android/server/am/Connor;->mIsMMDataReady:Z
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mLockMMDataReady:Ljava/lang/Object;
 
-    if-nez v0, :cond_1
+    monitor-enter v0
+
+    :try_start_0
+    iget-boolean v1, p0, Lcom/android/server/am/Connor;->mIsMMDataReady:Z
+
+    if-nez v1, :cond_1
+
+    monitor-exit v0
 
     return-void
 
     :cond_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_3
+
     if-nez p1, :cond_2
 
     return-void
@@ -2834,17 +3075,17 @@
     :cond_3
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v0
+    move-result-wide v1
 
-    const/4 v2, 0x1
+    const/4 v0, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
     if-nez p2, :cond_5
 
-    const-string v4, "com.android.systemui"
+    iget-object v4, p0, Lcom/android/server/am/Connor;->mHomePkgList:Ljava/util/List;
 
-    invoke-virtual {v4, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-interface {v4, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v4
 
@@ -2853,18 +3094,18 @@
     goto :goto_0
 
     :cond_4
-    move v4, v3
+    move v4, v0
 
     goto :goto_1
 
     :cond_5
     :goto_0
-    move v4, v2
+    move v4, v3
 
     :goto_1
     monitor-enter p0
 
-    :try_start_0
+    :try_start_1
     iget-object v5, p0, Lcom/android/server/am/Connor;->mAvailCv:Ljava/util/LinkedList;
 
     invoke-virtual {v5}, Ljava/util/LinkedList;->size()I
@@ -2897,101 +3138,194 @@
 
     if-eqz v4, :cond_7
 
+    move v7, v3
+
     goto :goto_3
 
     :cond_7
-    move v2, v3
+    move v7, v0
 
     :goto_3
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v7
 
-    invoke-virtual {v5, v6, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    invoke-virtual {v5, v6, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    const-string v2, "connor_ts"
+    const-string v6, "connor_ts"
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-virtual {v5, v2, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+    invoke-virtual {v5, v6, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    iget-object v2, p0, Lcom/android/server/am/Connor;->mQueueCv:Ljava/util/LinkedList;
+    iget-object v6, p0, Lcom/android/server/am/Connor;->mQueueCv:Ljava/util/LinkedList;
 
-    invoke-virtual {v2, v5}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
+    invoke-virtual {v6, v5}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
 
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
-    iget-object v2, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
+    iget-object v6, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
 
-    iget-object v2, v2, Lcom/android/server/am/ActivityManagerService;->mBgHandler:Landroid/os/Handler;
+    iget-object v6, v6, Lcom/android/server/am/ActivityManagerService;->mBgHandler:Landroid/os/Handler;
 
-    iget-object v6, p0, Lcom/android/server/am/Connor;->mRunInsertDb:Ljava/lang/Runnable;
+    iget-object v7, p0, Lcom/android/server/am/Connor;->mRunInsertDb:Ljava/lang/Runnable;
 
-    invoke-virtual {v2, v6}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v6, v7}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    if-nez v4, :cond_8
+    if-nez v4, :cond_9
 
-    invoke-direct {p0, p1}, Lcom/android/server/am/Connor;->isBingoMM(Ljava/lang/String;)Z
+    iget-boolean v6, p0, Lcom/android/server/am/Connor;->mIsDebugMode:Z
 
-    invoke-direct {p0, p1}, Lcom/android/server/am/Connor;->isBingoNN(Ljava/lang/String;)Z
+    if-eqz v6, :cond_8
+
+    const-string v6, "Connor"
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v8, "now launch "
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_8
+    iget-object v6, p0, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
+
+    iget-object v7, p0, Lcom/android/server/am/Connor;->mPredicts:[Ljava/lang/String;
+
+    iget-object v8, p0, Lcom/android/server/am/Connor;->mPredictsConf:[F
+
+    invoke-virtual {v6, p1, v7, v8}, Lcom/android/server/am/ConnorStatistic;->isBingoMM(Ljava/lang/String;[Ljava/lang/String;[F)Z
+
+    iget-object v6, p0, Lcom/android/server/am/Connor;->mCurModel:Ljava/lang/String;
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    if-lez v6, :cond_9
+
+    iget-object v6, p0, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
+
+    iget-object v7, p0, Lcom/android/server/am/Connor;->mPredictsNN:[Ljava/lang/String;
+
+    iget-object v8, p0, Lcom/android/server/am/Connor;->mPredictsNNConf:[F
+
+    invoke-virtual {v6, p1, v7, v8}, Lcom/android/server/am/ConnorStatistic;->isBingoNN(Ljava/lang/String;[Ljava/lang/String;[F)Z
+
+    :cond_9
     iput-object p1, p0, Lcom/android/server/am/Connor;->mPrev:Ljava/lang/String;
 
     monitor-enter p0
 
-    :try_start_1
-    invoke-static {v0, v1, p1, v4}, Lcom/android/server/am/Connor;->nativeFeed(JLjava/lang/String;Z)V
+    :try_start_2
+    invoke-static {v1, v2, p1, v4}, Lcom/android/server/am/Connor;->nativeFeed(JLjava/lang/String;Z)V
 
-    iget-object v2, p0, Lcom/android/server/am/Connor;->mPredicts:[Ljava/lang/String;
+    iget-object v6, p0, Lcom/android/server/am/Connor;->mPredicts:[Ljava/lang/String;
 
-    iput-object v2, p0, Lcom/android/server/am/Connor;->mPredicts2:[Ljava/lang/String;
+    iput-object v6, p0, Lcom/android/server/am/Connor;->mPredictsPrev:[Ljava/lang/String;
 
-    invoke-static {}, Lcom/android/server/am/Connor;->nativePredict()[Ljava/lang/String;
+    iget-object v6, p0, Lcom/android/server/am/Connor;->mPredictsConf:[F
 
-    move-result-object v2
+    iput-object v6, p0, Lcom/android/server/am/Connor;->mPredictsConfPrev:[F
 
-    iput-object v2, p0, Lcom/android/server/am/Connor;->mPredicts:[Ljava/lang/String;
+    const/16 v6, 0xa
 
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-static {v6}, Lcom/android/server/am/Connor;->nativePredict(I)[Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/android/server/am/Connor;->mPrevApps:Ljava/util/LinkedList;
+    move-result-object v6
 
-    invoke-virtual {v2}, Ljava/util/LinkedList;->size()I
+    iput-object v6, p0, Lcom/android/server/am/Connor;->mPredicts:[Ljava/lang/String;
 
-    move-result v2
+    invoke-static {}, Lcom/android/server/am/Connor;->nativeMMPredictConf()[D
 
-    const/4 v6, 0x3
+    move-result-object v6
 
-    if-ne v2, v6, :cond_9
+    array-length v7, v6
 
-    iget-object v2, p0, Lcom/android/server/am/Connor;->mPrevApps:Ljava/util/LinkedList;
+    iget-object v8, p0, Lcom/android/server/am/Connor;->mPredictsConf:[F
 
-    invoke-virtual {v2}, Ljava/util/LinkedList;->removeLast()Ljava/lang/Object;
+    array-length v8, v8
 
-    move-result-object v2
+    if-eq v7, v8, :cond_a
 
-    check-cast v2, Lcom/android/server/am/ConnorData;
+    array-length v7, v6
+
+    new-array v7, v7, [F
 
     goto :goto_4
 
-    :cond_9
-    new-instance v2, Lcom/android/server/am/ConnorData;
-
-    invoke-direct {v2}, Lcom/android/server/am/ConnorData;-><init>()V
+    :cond_a
+    iget-object v7, p0, Lcom/android/server/am/Connor;->mPredictsConf:[F
 
     :goto_4
-    invoke-virtual {v2, p1, v0, v1}, Lcom/android/server/am/ConnorData;->setData(Ljava/lang/String;J)V
+    nop
+
+    :goto_5
+    array-length v8, v6
+
+    if-ge v0, v8, :cond_b
+
+    aget-wide v8, v6, v0
+
+    double-to-float v8, v8
+
+    aput v8, v7, v0
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_5
+
+    :cond_b
+    iput-object v7, p0, Lcom/android/server/am/Connor;->mPredictsConf:[F
+
+    monitor-exit p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mPrevApps:Ljava/util/LinkedList;
+
+    invoke-virtual {v0}, Ljava/util/LinkedList;->size()I
+
+    move-result v0
+
+    const/4 v6, 0x3
+
+    if-ne v0, v6, :cond_c
+
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mPrevApps:Ljava/util/LinkedList;
+
+    invoke-virtual {v0}, Ljava/util/LinkedList;->removeLast()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/server/am/ConnorData;
+
+    goto :goto_6
+
+    :cond_c
+    new-instance v0, Lcom/android/server/am/ConnorData;
+
+    invoke-direct {v0}, Lcom/android/server/am/ConnorData;-><init>()V
+
+    :goto_6
+    invoke-virtual {v0, p1, v1, v2}, Lcom/android/server/am/ConnorData;->setData(Ljava/lang/String;J)V
 
     iget-object v7, p0, Lcom/android/server/am/Connor;->mPrevApps:Ljava/util/LinkedList;
 
-    invoke-virtual {v7, v2}, Ljava/util/LinkedList;->addFirst(Ljava/lang/Object;)V
+    invoke-virtual {v7, v0}, Ljava/util/LinkedList;->addFirst(Ljava/lang/Object;)V
 
     iget-object v7, p0, Lcom/android/server/am/Connor;->mPrevApps:Ljava/util/LinkedList;
 
@@ -2999,7 +3333,7 @@
 
     move-result v7
 
-    if-ne v7, v6, :cond_b
+    if-ne v7, v6, :cond_e
 
     iget-object v7, p0, Lcom/android/server/am/Connor;->mCurModel:Ljava/lang/String;
 
@@ -3007,22 +3341,24 @@
 
     move-result v7
 
-    if-lez v7, :cond_b
+    if-lez v7, :cond_e
 
     new-array v7, v6, [Ljava/lang/String;
 
     new-array v6, v6, [J
 
-    nop
-
-    :goto_5
     iget-object v8, p0, Lcom/android/server/am/Connor;->mPrevApps:Ljava/util/LinkedList;
 
     invoke-virtual {v8}, Ljava/util/LinkedList;->size()I
 
     move-result v8
 
-    if-ge v3, v8, :cond_a
+    sub-int/2addr v8, v3
+
+    :goto_7
+    move v3, v8
+
+    if-ltz v3, :cond_d
 
     iget-object v8, p0, Lcom/android/server/am/Connor;->mPrevApps:Ljava/util/LinkedList;
 
@@ -3052,14 +3388,21 @@
 
     aput-wide v8, v6, v3
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v8, v3, -0x1
 
-    goto :goto_5
+    goto :goto_7
 
-    :cond_a
+    :cond_d
+    monitor-enter p0
+
+    :try_start_3
     iget-object v3, p0, Lcom/android/server/am/Connor;->mPredictsNN:[Ljava/lang/String;
 
-    iput-object v3, p0, Lcom/android/server/am/Connor;->mPredictsNN2:[Ljava/lang/String;
+    iput-object v3, p0, Lcom/android/server/am/Connor;->mPredictsNNPrev:[Ljava/lang/String;
+
+    iget-object v3, p0, Lcom/android/server/am/Connor;->mPredictsNNConf:[F
+
+    iput-object v3, p0, Lcom/android/server/am/Connor;->mPredictsNNConfPrev:[F
 
     invoke-static {v7, v6}, Lcom/android/server/am/Connor;->nativeNNPredict([Ljava/lang/String;[J)[Ljava/lang/String;
 
@@ -3067,68 +3410,356 @@
 
     iput-object v3, p0, Lcom/android/server/am/Connor;->mPredictsNN:[Ljava/lang/String;
 
-    :cond_b
-    invoke-direct {p0}, Lcom/android/server/am/Connor;->notifyPredictUpdated()V
+    invoke-static {}, Lcom/android/server/am/Connor;->nativeNNPredictConf()[F
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/server/am/Connor;->mPredictsNNConf:[F
+
+    monitor-exit p0
+
+    goto :goto_8
+
+    :catchall_0
+    move-exception v3
+
+    monitor-exit p0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    throw v3
+
+    :cond_e
+    :goto_8
+    invoke-direct {p0}, Lcom/android/server/am/Connor;->notifyPredictListener()V
 
     return-void
 
-    :catchall_0
-    move-exception v2
-
-    :try_start_2
-    monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    throw v2
-
     :catchall_1
-    move-exception v2
+    move-exception v0
 
-    :try_start_3
+    :try_start_4
     monitor-exit p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    throw v2
+    throw v0
+
+    :catchall_2
+    move-exception v0
+
+    :try_start_5
+    monitor-exit p0
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
+
+    throw v0
+
+    :catchall_3
+    move-exception v1
+
+    :try_start_6
+    monitor-exit v0
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_3
+
+    throw v1
 .end method
 
-.method public getAggregateNext()[Ljava/lang/String;
-    .locals 4
+.method public getAggregateNext(F)Ljava/lang/String;
+    .locals 6
 
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mBingoRateMM5:Lcom/android/server/am/Connor$BingoStatistic;
+    :try_start_0
+    iget-boolean v0, p0, Lcom/android/server/am/Connor;->mEnable:Z
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x0
+    const-string v0, ""
 
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mBingoRateMM5:Lcom/android/server/am/Connor$BingoStatistic;
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mLockMMDataReady:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lcom/android/server/am/Connor$BingoStatistic;->getCurrHitRate()F
+    monitor-enter v0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v0
+    :try_start_1
+    iget-boolean v1, p0, Lcom/android/server/am/Connor;->mIsMMDataReady:Z
 
-    iget-object v1, p0, Lcom/android/server/am/Connor;->mBingoRateNN5:Lcom/android/server/am/Connor$BingoStatistic;
+    if-nez v1, :cond_1
 
-    const/high16 v2, -0x40800000    # -1.0f
+    const-string v1, ""
 
-    if-eqz v1, :cond_1
+    monitor-exit v0
 
-    iget-object v1, p0, Lcom/android/server/am/Connor;->mBingoRateNN5:Lcom/android/server/am/Connor$BingoStatistic;
+    return-object v1
 
-    invoke-virtual {v1}, Lcom/android/server/am/Connor$BingoStatistic;->getCurrHitRate()F
+    :cond_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    move-result v1
+    :try_start_2
+    monitor-enter p0
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+
+    :try_start_3
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mPredicts:[Ljava/lang/String;
+
+    const/high16 v1, -0x40800000    # -1.0f
+
+    const/4 v2, 0x0
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mPredicts:[Ljava/lang/String;
+
+    array-length v0, v0
+
+    if-lez v0, :cond_3
+
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mPredictsConf:[F
+
+    aget v0, v0, v2
+
+    cmpl-float v0, v0, p1
+
+    if-ltz v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mPredictsConf:[F
+
+    aget v0, v0, v2
 
     goto :goto_0
 
-    :cond_1
-    move v1, v2
+    :cond_2
+    nop
+
+    :cond_3
+    move v0, v1
 
     :goto_0
+    const/high16 v3, -0x40800000    # -1.0f
+
+    invoke-direct {p0}, Lcom/android/server/am/Connor;->isNNReadyOutput()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_5
+
+    iget-object v4, p0, Lcom/android/server/am/Connor;->mPredictsNNConf:[F
+
+    aget v4, v4, v2
+
+    cmpl-float v4, v4, p1
+
+    if-ltz v4, :cond_4
+
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mPredictsNNConf:[F
+
+    aget v1, v1, v2
+
+    nop
+
+    :cond_4
+    move v3, v1
+
+    :cond_5
+    iget-boolean v1, p0, Lcom/android/server/am/Connor;->mIsDebugMode:Z
+
+    if-eqz v1, :cond_6
+
+    const-string v1, "Connor"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "top1ConfMM "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v5, " top1ConfNN "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v1, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_6
+    const/4 v1, 0x0
+
+    cmpl-float v4, v0, v1
+
+    if-lez v4, :cond_8
+
+    cmpl-float v4, v3, v1
+
+    if-lez v4, :cond_8
+
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
+
+    invoke-virtual {v1, p1}, Lcom/android/server/am/ConnorStatistic;->getTop1StatIdx(F)I
+
+    move-result v1
+
+    iget-object v4, p0, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
+
+    invoke-virtual {v4, v1}, Lcom/android/server/am/ConnorStatistic;->getHitRateOfMM1(I)F
+
+    move-result v4
+
+    iget-object v5, p0, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
+
+    invoke-virtual {v5, v1}, Lcom/android/server/am/ConnorStatistic;->getHitRateOfNN1(I)F
+
+    move-result v5
+
+    cmpl-float v4, v4, v5
+
+    if-ltz v4, :cond_7
+
+    iget-object v4, p0, Lcom/android/server/am/Connor;->mPredicts:[Ljava/lang/String;
+
+    aget-object v2, v4, v2
+
+    goto :goto_1
+
+    :cond_7
+    iget-object v4, p0, Lcom/android/server/am/Connor;->mPredictsNN:[Ljava/lang/String;
+
+    aget-object v2, v4, v2
+
+    :goto_1
+    monitor-exit p0
+
+    return-object v2
+
+    :cond_8
+    cmpg-float v4, v0, v1
+
+    if-gez v4, :cond_9
+
+    cmpg-float v1, v3, v1
+
+    if-gez v1, :cond_9
+
+    const-string v1, ""
+
+    monitor-exit p0
+
+    return-object v1
+
+    :cond_9
+    cmpl-float v1, v0, v3
+
+    if-lez v1, :cond_a
+
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mPredicts:[Ljava/lang/String;
+
+    aget-object v1, v1, v2
+
+    goto :goto_2
+
+    :cond_a
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mPredictsNN:[Ljava/lang/String;
+
+    aget-object v1, v1, v2
+
+    :goto_2
+    monitor-exit p0
+
+    return-object v1
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    :try_start_4
+    throw v0
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
+
+    :catchall_1
+    move-exception v1
+
+    :try_start_5
+    monitor-exit v0
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
+
+    :try_start_6
+    throw v1
+    :try_end_6
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_0
+
+    :catch_0
+    move-exception v0
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    const-string v1, ""
+
+    return-object v1
+.end method
+
+.method public getAggregateNext()[Ljava/lang/String;
+    .locals 9
+
+    iget-boolean v0, p0, Lcom/android/server/am/Connor;->mEnable:Z
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    return-object v1
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mLockMMDataReady:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-boolean v2, p0, Lcom/android/server/am/Connor;->mIsMMDataReady:Z
+
+    if-nez v2, :cond_1
+
+    monitor-exit v0
+
+    return-object v1
+
+    :cond_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
+
+    invoke-virtual {v0}, Lcom/android/server/am/ConnorStatistic;->getHitRateOfMM5()F
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
+
+    invoke-virtual {v1}, Lcom/android/server/am/ConnorStatistic;->getHitRateOfNN5()F
+
+    move-result v1
+
+    const/high16 v2, -0x40800000    # -1.0f
+
     cmpl-float v3, v0, v2
 
     if-eqz v3, :cond_3
@@ -3143,13 +3774,13 @@
 
     iget-object v2, p0, Lcom/android/server/am/Connor;->mPredicts:[Ljava/lang/String;
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_2
     iget-object v2, p0, Lcom/android/server/am/Connor;->mPredictsNN:[Ljava/lang/String;
 
-    :goto_1
-    return-object v2
+    :goto_0
+    goto :goto_1
 
     :cond_3
     invoke-direct {p0}, Lcom/android/server/am/Connor;->isNNReadyOutput()Z
@@ -3160,13 +3791,88 @@
 
     iget-object v2, p0, Lcom/android/server/am/Connor;->mPredictsNN:[Ljava/lang/String;
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_4
     iget-object v2, p0, Lcom/android/server/am/Connor;->mPredicts:[Ljava/lang/String;
 
+    :goto_1
+    if-eqz v2, :cond_7
+
+    new-instance v3, Ljava/util/ArrayList;
+
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+
+    iget-object v4, p0, Lcom/android/server/am/Connor;->mPackageSet:Ljava/util/HashSet;
+
+    monitor-enter v4
+
+    :try_start_1
+    array-length v5, v2
+
+    const/4 v6, 0x0
+
     :goto_2
+    if-ge v6, v5, :cond_6
+
+    aget-object v7, v2, v6
+
+    iget-object v8, p0, Lcom/android/server/am/Connor;->mPackageSet:Ljava/util/HashSet;
+
+    invoke-virtual {v8, v7}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_5
+
+    invoke-virtual {v3, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_5
+    add-int/lit8 v6, v6, 0x1
+
+    goto :goto_2
+
+    :cond_6
+    monitor-exit v4
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+
+    move-result v4
+
+    new-array v4, v4, [Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, [Ljava/lang/String;
+
+    return-object v4
+
+    :catchall_0
+    move-exception v5
+
+    :try_start_2
+    monitor-exit v4
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw v5
+
+    :cond_7
     return-object v2
+
+    :catchall_1
+    move-exception v1
+
+    :try_start_3
+    monitor-exit v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    throw v1
 .end method
 
 .method public declared-synchronized getCluster()Ljava/util/Map;
@@ -3201,15 +3907,61 @@
     throw v0
 .end method
 
-.method public declared-synchronized getNext()[Ljava/lang/String;
+.method public getCurrModelLoss()F
     .locals 1
+
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mCurrNN:Lcom/android/server/am/Connor$ModelInfo;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mCurrNN:Lcom/android/server/am/Connor$ModelInfo;
+
+    iget v0, v0, Lcom/android/server/am/Connor$ModelInfo;->mLoss:F
+
+    goto :goto_0
+
+    :cond_0
+    const/high16 v0, -0x40800000    # -1.0f
+
+    :goto_0
+    return v0
+.end method
+
+.method public getDebugMode()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/server/am/Connor;->mIsDebugMode:Z
+
+    return v0
+.end method
+
+.method public getNextMMConfPrev(I)[F
+    .locals 2
 
     monitor-enter p0
 
     :try_start_0
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mPredicts:[Ljava/lang/String;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mPredictsConfPrev:[F
+
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mPredictsConfPrev:[F
+
+    array-length v1, v1
+
+    if-lt v1, p1, :cond_0
+
+    move v1, p1
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mPredictsConfPrev:[F
+
+    array-length v1, v1
+
+    :goto_0
+    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([FI)[F
+
+    move-result-object v0
 
     monitor-exit p0
 
@@ -3219,19 +3971,41 @@
     move-exception v0
 
     monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
 
-.method public declared-synchronized getNext2()[Ljava/lang/String;
-    .locals 1
+.method public getNextMMPrev(I)[Ljava/lang/String;
+    .locals 2
 
     monitor-enter p0
 
     :try_start_0
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mPredicts2:[Ljava/lang/String;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mPredictsPrev:[Ljava/lang/String;
+
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mPredictsPrev:[Ljava/lang/String;
+
+    array-length v1, v1
+
+    if-lt v1, p1, :cond_0
+
+    move v1, p1
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mPredictsPrev:[Ljava/lang/String;
+
+    array-length v1, v1
+
+    :goto_0
+    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Ljava/lang/String;
 
     monitor-exit p0
 
@@ -3241,23 +4015,113 @@
     move-exception v0
 
     monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
 
-.method public getNextSnpe()[Ljava/lang/String;
-    .locals 1
+.method public getNextNNConfPrev(I)[F
+    .locals 2
 
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mPredictsNN:[Ljava/lang/String;
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mPredictsNNConfPrev:[F
+
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mPredictsNNConfPrev:[F
+
+    array-length v1, v1
+
+    if-lt v1, p1, :cond_0
+
+    move v1, p1
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mPredictsNNConfPrev:[F
+
+    array-length v1, v1
+
+    :goto_0
+    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([FI)[F
+
+    move-result-object v0
+
+    monitor-exit p0
 
     return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method
 
-.method public getNextSnpe2()[Ljava/lang/String;
+.method public getNextNNPrev(I)[Ljava/lang/String;
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mPredictsNNPrev:[Ljava/lang/String;
+
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mPredictsNNPrev:[Ljava/lang/String;
+
+    array-length v1, v1
+
+    if-lt v1, p1, :cond_0
+
+    move v1, p1
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mPredictsNNPrev:[Ljava/lang/String;
+
+    array-length v1, v1
+
+    :goto_0
+    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Ljava/lang/String;
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public getVersion(I)Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mPredictsNN2:[Ljava/lang/String;
+    const/4 v0, 0x1
 
+    if-ne p1, v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mMMVersion:Ljava/lang/String;
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mNNVersion:Ljava/lang/String;
+
+    :goto_0
     return-object v0
 .end method
 
@@ -3288,6 +4152,40 @@
     iget-boolean v1, p0, Lcom/android/server/am/Connor;->mEnable:Z
 
     if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
+
+    const-string/jumbo v2, "sensor"
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/hardware/SensorManager;
+
+    iput-object v1, p0, Lcom/android/server/am/Connor;->mSensorManager:Landroid/hardware/SensorManager;
+
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mSensorManager:Landroid/hardware/SensorManager;
+
+    const v2, 0x1fa263e
+
+    invoke-virtual {v1, v2, v0}, Landroid/hardware/SensorManager;->getDefaultSensor(IZ)Landroid/hardware/Sensor;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/android/server/am/Connor;->mCmcSensor:Landroid/hardware/Sensor;
+
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
+
+    invoke-static {v1}, Lnet/oneplus/odm/insight/PreloadApplicationEventCollector;->getInstance(Landroid/content/Context;)Lnet/oneplus/odm/insight/PreloadApplicationEventCollector;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/android/server/am/Connor;->mCollector:Lnet/oneplus/odm/insight/PreloadApplicationEventCollector;
 
     new-instance v1, Lcom/android/server/am/ConnorDbHelper;
 
@@ -3337,6 +4235,34 @@
 
     iput-object v1, p0, Lcom/android/server/am/Connor;->mOSTracker:Lnet/oneplus/odm/insight/tracker/OSTracker;
 
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mPackageManagerInt:Landroid/content/pm/PackageManagerInternal;
+
+    invoke-static {v1, p0}, Lcom/android/server/am/ConnorFilter;->getInstalledSet(Landroid/content/pm/PackageManagerInternal;Landroid/content/pm/PackageManagerInternal$PackageListObserver;)Ljava/util/HashSet;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/android/server/am/Connor;->mPackageSet:Ljava/util/HashSet;
+
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mPackageSet:Ljava/util/HashSet;
+
+    iget-object v2, p0, Lcom/android/server/am/Connor;->mPackageSet:Ljava/util/HashSet;
+
+    invoke-virtual {v2}, Ljava/util/HashSet;->size()I
+
+    move-result v2
+
+    new-array v2, v2, [Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/util/HashSet;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, [Ljava/lang/String;
+
+    invoke-static {v1}, Lcom/android/server/am/Connor;->nativePkgListUpdate([Ljava/lang/String;)V
+
     new-instance v1, Landroid/content/IntentFilter;
 
     invoke-direct {v1}, Landroid/content/IntentFilter;-><init>()V
@@ -3384,7 +4310,7 @@
 .end method
 
 .method protected modelCompare(Ljava/lang/String;Ljava/lang/String;)I
-    .locals 6
+    .locals 4
 
     invoke-direct {p0, p1}, Lcom/android/server/am/Connor;->parseModelName(Ljava/lang/String;)Lcom/android/server/am/Connor$ModelInfo;
 
@@ -3394,175 +4320,251 @@
 
     move-result-object v1
 
-    iget v2, v0, Lcom/android/server/am/Connor$ModelInfo;->mAcc:I
-
-    iget v3, v1, Lcom/android/server/am/Connor$ModelInfo;->mAcc:I
-
-    const/4 v4, -0x1
-
-    if-le v2, v3, :cond_0
-
-    return v4
-
-    :cond_0
-    iget v2, v0, Lcom/android/server/am/Connor$ModelInfo;->mAcc:I
-
-    iget v3, v1, Lcom/android/server/am/Connor$ModelInfo;->mAcc:I
-
-    const/4 v5, 0x1
-
-    if-ge v2, v3, :cond_1
-
-    return v5
-
-    :cond_1
     iget v2, v0, Lcom/android/server/am/Connor$ModelInfo;->mLoss:F
 
     iget v3, v1, Lcom/android/server/am/Connor$ModelInfo;->mLoss:F
 
     cmpl-float v2, v2, v3
 
-    if-lez v2, :cond_2
+    if-lez v2, :cond_0
 
-    return v5
+    const/4 v2, 0x1
 
-    :cond_2
+    return v2
+
+    :cond_0
     iget v2, v0, Lcom/android/server/am/Connor$ModelInfo;->mLoss:F
 
     iget v3, v1, Lcom/android/server/am/Connor$ModelInfo;->mLoss:F
 
     cmpg-float v2, v2, v3
 
-    if-gez v2, :cond_3
+    if-gez v2, :cond_1
 
-    return v4
+    const/4 v2, -0x1
 
-    :cond_3
+    return v2
+
+    :cond_1
     const/4 v2, 0x0
 
     return v2
 .end method
 
 .method public noteStartProc(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;)V
-    .locals 10
+    .locals 1
 
-    const-string v0, "activity"
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
 
-    invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1, p2}, Lcom/android/server/am/ConnorStatistic;->noteStartProc(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;)V
 
-    move-result v0
+    return-void
+.end method
 
-    if-nez v0, :cond_0
+.method public onAccuracyChanged(Landroid/hardware/Sensor;I)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onPackageAdded(Ljava/lang/String;)V
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mPackageSet:Ljava/util/HashSet;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mPackageSet:Ljava/util/HashSet;
+
+    invoke-virtual {v1, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mPackageSet:Ljava/util/HashSet;
+
+    iget-object v2, p0, Lcom/android/server/am/Connor;->mPackageSet:Ljava/util/HashSet;
+
+    invoke-virtual {v2}, Ljava/util/HashSet;->size()I
+
+    move-result v2
+
+    new-array v2, v2, [Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/util/HashSet;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, [Ljava/lang/String;
+
+    invoke-static {v1}, Lcom/android/server/am/Connor;->nativePkgListUpdate([Ljava/lang/String;)V
+
+    monitor-exit v0
 
     return-void
 
-    :cond_0
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mPredicts2:[Ljava/lang/String;
+    :catchall_0
+    move-exception v1
 
-    const/4 v1, 0x0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    array-length v2, v0
+    throw v1
+.end method
 
-    const/4 v3, 0x0
+.method public onPackageRemoved(Ljava/lang/String;)V
+    .locals 3
 
-    move v4, v1
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mPackageSet:Ljava/util/HashSet;
 
-    move v1, v3
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mPackageSet:Ljava/util/HashSet;
+
+    invoke-virtual {v1, p1}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mPackageSet:Ljava/util/HashSet;
+
+    iget-object v2, p0, Lcom/android/server/am/Connor;->mPackageSet:Ljava/util/HashSet;
+
+    invoke-virtual {v2}, Ljava/util/HashSet;->size()I
+
+    move-result v2
+
+    new-array v2, v2, [Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/util/HashSet;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, [Ljava/lang/String;
+
+    invoke-static {v1}, Lcom/android/server/am/Connor;->nativePkgListUpdate([Ljava/lang/String;)V
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public onSensorChanged(Landroid/hardware/SensorEvent;)V
+    .locals 6
+
+    iget-object v0, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
+
+    invoke-virtual {v0}, Landroid/hardware/Sensor;->getType()I
+
+    move-result v0
+
+    const v1, 0x1fa263e
+
+    if-ne v0, v1, :cond_2
+
+    iget v0, p1, Landroid/hardware/SensorEvent;->accuracy:I
+
+    const/4 v2, 0x3
+
+    if-ne v0, v2, :cond_2
+
+    iget-object v0, p1, Landroid/hardware/SensorEvent;->values:[F
+
+    if-eqz v0, :cond_2
+
+    const/4 v0, 0x0
+
+    const/4 v2, 0x0
+
+    move v3, v0
+
+    move v0, v2
 
     :goto_0
-    const/4 v5, 0x3
+    iget-object v4, p1, Landroid/hardware/SensorEvent;->values:[F
 
-    const-wide/16 v6, 0x1
+    array-length v4, v4
 
-    if-ge v1, v2, :cond_3
+    if-ge v0, v4, :cond_1
 
-    aget-object v8, v0, v1
+    iget-object v4, p1, Landroid/hardware/SensorEvent;->values:[F
 
-    iget-object v9, p1, Lcom/android/server/am/ProcessRecord;->pkgList:Landroid/util/ArrayMap;
+    aget v4, v4, v0
 
-    invoke-virtual {v9, v8}, Landroid/util/ArrayMap;->containsKey(Ljava/lang/Object;)Z
+    const/high16 v5, 0x3f800000    # 1.0f
 
-    move-result v9
+    cmpl-float v4, v4, v5
 
-    if-eqz v9, :cond_2
+    if-nez v4, :cond_0
 
-    if-ge v4, v5, :cond_1
+    const/4 v4, 0x1
 
-    iget-wide v1, p0, Lcom/android/server/am/Connor;->mSPHitMM3:J
-
-    add-long/2addr v1, v6
-
-    iput-wide v1, p0, Lcom/android/server/am/Connor;->mSPHitMM3:J
-
-    :cond_1
-    iget-wide v1, p0, Lcom/android/server/am/Connor;->mSPHitMM5:J
-
-    add-long/2addr v1, v6
-
-    iput-wide v1, p0, Lcom/android/server/am/Connor;->mSPHitMM5:J
+    shl-int/2addr v4, v0
 
     goto :goto_1
 
-    :cond_2
-    add-int/lit8 v4, v4, 0x1
+    :cond_0
+    move v4, v2
 
-    add-int/lit8 v1, v1, 0x1
+    :goto_1
+    or-int/2addr v3, v4
+
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    :cond_3
-    :goto_1
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mPredictsNN2:[Ljava/lang/String;
+    :cond_1
+    iput v3, p0, Lcom/android/server/am/Connor;->mCurrSensorState:I
 
-    const/4 v1, 0x0
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mCollector:Lnet/oneplus/odm/insight/PreloadApplicationEventCollector;
 
-    array-length v2, v0
+    iget v2, p0, Lcom/android/server/am/Connor;->mCurrSensorState:I
 
-    :goto_2
-    if-ge v3, v2, :cond_6
+    invoke-virtual {v0, v1, v2}, Lnet/oneplus/odm/insight/PreloadApplicationEventCollector;->collectSensorEvent(II)V
 
-    aget-object v4, v0, v3
+    iget-boolean v0, p0, Lcom/android/server/am/Connor;->mIsDebugMode:Z
 
-    iget-object v8, p1, Lcom/android/server/am/ProcessRecord;->pkgList:Landroid/util/ArrayMap;
+    if-eqz v0, :cond_2
 
-    invoke-virtual {v8, v4}, Landroid/util/ArrayMap;->containsKey(Ljava/lang/Object;)Z
+    const-string v0, "Connor"
 
-    move-result v8
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    if-eqz v8, :cond_5
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    if-ge v1, v5, :cond_4
+    const-string/jumbo v2, "onSensorChanged out: "
 
-    iget-wide v2, p0, Lcom/android/server/am/Connor;->mSPHitNN3:J
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    add-long/2addr v2, v6
+    iget v2, p0, Lcom/android/server/am/Connor;->mCurrSensorState:I
 
-    iput-wide v2, p0, Lcom/android/server/am/Connor;->mSPHitNN3:J
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    :cond_4
-    iget-wide v2, p0, Lcom/android/server/am/Connor;->mSPHitNN5:J
+    const-string v2, " values: "
 
-    add-long/2addr v2, v6
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iput-wide v2, p0, Lcom/android/server/am/Connor;->mSPHitNN5:J
+    iget-object v2, p1, Landroid/hardware/SensorEvent;->values:[F
 
-    goto :goto_3
+    invoke-static {v2}, Ljava/util/Arrays;->toString([F)Ljava/lang/String;
 
-    :cond_5
-    add-int/lit8 v1, v1, 0x1
+    move-result-object v2
 
-    add-int/lit8 v3, v3, 0x1
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_2
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    :cond_6
-    :goto_3
-    iget-wide v2, p0, Lcom/android/server/am/Connor;->mSPCount:J
+    move-result-object v1
 
-    add-long/2addr v2, v6
+    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    iput-wide v2, p0, Lcom/android/server/am/Connor;->mSPCount:J
-
+    :cond_2
     return-void
 .end method
 
@@ -3577,6 +4579,36 @@
     iget-object v1, p0, Lcom/android/server/am/Connor;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method registerCallback(Lcom/android/server/am/Connor$ConfCallbacks;F)V
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mCallbacksWithConf:Ljava/util/HashMap;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mCallbacksWithConf:Ljava/util/HashMap;
+
+    new-instance v2, Lcom/android/server/am/Connor$CallbackRecord;
+
+    invoke-direct {v2, p0, p2}, Lcom/android/server/am/Connor$CallbackRecord;-><init>(Lcom/android/server/am/Connor;F)V
+
+    invoke-virtual {v1, p1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     monitor-exit v0
 
@@ -3774,280 +4806,20 @@
     throw v3
 .end method
 
-.method public restoreFromFile()V
-    .locals 17
+.method public saveStatisticToDb(Landroid/content/ContentValues;)V
+    .locals 2
 
-    move-object/from16 v1, p0
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
 
-    new-instance v0, Ljava/io/File;
+    iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mBgHandler:Landroid/os/Handler;
 
-    const-string v2, "/data/anr/connor"
+    new-instance v1, Lcom/android/server/am/Connor$RecordStatistic;
 
-    invoke-direct {v0, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, p0, p1}, Lcom/android/server/am/Connor$RecordStatistic;-><init>(Lcom/android/server/am/Connor;Landroid/content/ContentValues;)V
 
-    move-object v2, v0
-
-    invoke-virtual {v2}, Ljava/io/File;->listFiles()[Ljava/io/File;
-
-    move-result-object v3
-
-    if-nez v3, :cond_0
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     return-void
-
-    :cond_0
-    invoke-static {v3}, Ljava/util/Arrays;->sort([Ljava/lang/Object;)V
-
-    new-instance v0, Landroid/content/ContentValues;
-
-    invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
-
-    move-object v4, v0
-
-    iget-object v0, v1, Lcom/android/server/am/Connor;->mSqlDb:Landroid/database/sqlite/SQLiteDatabase;
-
-    if-nez v0, :cond_1
-
-    iget-object v0, v1, Lcom/android/server/am/Connor;->mDbHelper:Lcom/android/server/am/ConnorDbHelper;
-
-    invoke-virtual {v0}, Lcom/android/server/am/ConnorDbHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-
-    iput-object v0, v1, Lcom/android/server/am/Connor;->mSqlDb:Landroid/database/sqlite/SQLiteDatabase;
-
-    :cond_1
-    const/4 v5, 0x0
-
-    :try_start_0
-    array-length v0, v3
-
-    const/4 v6, 0x0
-
-    move v7, v6
-
-    :goto_0
-    if-ge v7, v0, :cond_6
-
-    aget-object v8, v3, v7
-
-    iget-object v9, v1, Lcom/android/server/am/Connor;->mSqlDb:Landroid/database/sqlite/SQLiteDatabase;
-
-    invoke-virtual {v9}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
-
-    const-string v9, "Connor"
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v11, "restore file: "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v9, v10}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    new-instance v9, Ljava/io/FileReader;
-
-    invoke-direct {v9, v8}, Ljava/io/FileReader;-><init>(Ljava/io/File;)V
-
-    new-instance v10, Ljava/io/BufferedReader;
-
-    invoke-direct {v10, v9}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
-
-    :goto_1
-    invoke-virtual {v10}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
-
-    move-result-object v11
-
-    move-object v12, v11
-
-    if-eqz v11, :cond_5
-
-    const-string v11, "\\s"
-
-    invoke-virtual {v12, v11}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v11
-
-    const-string/jumbo v13, "not found"
-
-    array-length v14, v11
-
-    const/4 v15, 0x1
-
-    if-ne v14, v15, :cond_2
-
-    aget-object v14, v11, v6
-
-    move-object v13, v14
-
-    goto :goto_2
-
-    :cond_2
-    aget-object v14, v11, v15
-
-    move-object v13, v14
-
-    :goto_2
-    const-string v14, "connor_package_name"
-
-    invoke-virtual {v4, v14, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v14, "connor_is_home"
-
-    const-string v15, "com.android.systemui"
-
-    invoke-virtual {v15, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v15
-
-    if-nez v15, :cond_4
-
-    const-string/jumbo v15, "net.oneplus.launcher"
-
-    invoke-virtual {v15, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v15
-
-    if-eqz v15, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    move v15, v6
-
-    goto :goto_4
-
-    :cond_4
-    :goto_3
-    const/4 v15, 0x1
-
-    :goto_4
-    invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v15
-
-    invoke-virtual {v4, v14, v15}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    const-string v14, "connor_ts"
-
-    aget-object v15, v11, v6
-
-    move/from16 v16, v7
-
-    invoke-static {v15}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v6
-
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v14, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
-
-    iget-object v6, v1, Lcom/android/server/am/Connor;->mSqlDb:Landroid/database/sqlite/SQLiteDatabase;
-
-    const-string v7, "connor_history_table"
-
-    invoke-virtual {v6, v7, v5, v4}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
-
-    invoke-virtual {v4}, Landroid/content/ContentValues;->clear()V
-
-    nop
-
-    move/from16 v7, v16
-
-    const/4 v6, 0x0
-
-    goto :goto_1
-
-    :cond_5
-    move/from16 v16, v7
-
-    invoke-virtual {v10}, Ljava/io/BufferedReader;->close()V
-
-    iget-object v6, v1, Lcom/android/server/am/Connor;->mSqlDb:Landroid/database/sqlite/SQLiteDatabase;
-
-    invoke-virtual {v6}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
-
-    iget-object v6, v1, Lcom/android/server/am/Connor;->mSqlDb:Landroid/database/sqlite/SQLiteDatabase;
-
-    invoke-virtual {v6}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    add-int/lit8 v7, v16, 0x1
-
-    const/4 v6, 0x0
-
-    goto/16 :goto_0
-
-    :cond_6
-    iget-object v0, v1, Lcom/android/server/am/Connor;->mSqlDb:Landroid/database/sqlite/SQLiteDatabase;
-
-    if-eqz v0, :cond_7
-
-    :goto_5
-    iget-object v0, v1, Lcom/android/server/am/Connor;->mSqlDb:Landroid/database/sqlite/SQLiteDatabase;
-
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->close()V
-
-    iput-object v5, v1, Lcom/android/server/am/Connor;->mSqlDb:Landroid/database/sqlite/SQLiteDatabase;
-
-    goto :goto_6
-
-    :catchall_0
-    move-exception v0
-
-    goto :goto_7
-
-    :catch_0
-    move-exception v0
-
-    :try_start_1
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
-
-    iget-object v6, v1, Lcom/android/server/am/Connor;->mSqlDb:Landroid/database/sqlite/SQLiteDatabase;
-
-    invoke-virtual {v6}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    iget-object v0, v1, Lcom/android/server/am/Connor;->mSqlDb:Landroid/database/sqlite/SQLiteDatabase;
-
-    if-eqz v0, :cond_7
-
-    goto :goto_5
-
-    :cond_7
-    :goto_6
-    return-void
-
-    :goto_7
-    iget-object v6, v1, Lcom/android/server/am/Connor;->mSqlDb:Landroid/database/sqlite/SQLiteDatabase;
-
-    if-eqz v6, :cond_8
-
-    iget-object v6, v1, Lcom/android/server/am/Connor;->mSqlDb:Landroid/database/sqlite/SQLiteDatabase;
-
-    invoke-virtual {v6}, Landroid/database/sqlite/SQLiteDatabase;->close()V
-
-    iput-object v5, v1, Lcom/android/server/am/Connor;->mSqlDb:Landroid/database/sqlite/SQLiteDatabase;
-
-    :cond_8
-    throw v0
 .end method
 
 .method public setTraining(Z)V
@@ -4137,6 +4909,32 @@
     iget-object v1, p0, Lcom/android/server/am/Connor;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method unregisterCallback(Lcom/android/server/am/Connor$ConfCallbacks;)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mCallbacksWithConf:Ljava/util/HashMap;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mCallbacksWithConf:Ljava/util/HashMap;
+
+    invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     monitor-exit v0
 

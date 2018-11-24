@@ -37,6 +37,41 @@
 .method public run()V
     .locals 6
 
+    iget-object v0, p0, Lcom/android/server/DeviceIdleController$11;->this$0:Lcom/android/server/DeviceIdleController;
+
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$200(Lcom/android/server/DeviceIdleController;)Lcom/android/server/OnePlusStandbyAnalyzer;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/server/OnePlusStandbyAnalyzer;->ifDiagnosisAsNormal()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1500()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$2300()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const-string v0, "DeviceIdleController"
+
+    const-string v1, "[opbugreportlite] But diagnosis as normal, skip reporting. Bye~"
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    return-void
+
+    :cond_2
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -44,7 +79,7 @@
     :try_start_0
     iget-object v2, p0, Lcom/android/server/DeviceIdleController$11;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v2}, Lcom/android/server/DeviceIdleController;->access$3400(Lcom/android/server/DeviceIdleController;)Lcom/oem/os/IOemExService;
+    invoke-static {v2}, Lcom/android/server/DeviceIdleController;->access$3700(Lcom/android/server/DeviceIdleController;)Lcom/oem/os/IOemExService;
 
     move-result-object v2
 
@@ -58,19 +93,19 @@
 
     sub-long v0, v2, v0
 
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1300()Z
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1500()Z
 
     move-result v2
 
-    if-nez v2, :cond_0
+    if-nez v2, :cond_3
 
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$2100()Z
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$2300()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_4
 
-    :cond_0
+    :cond_3
     const-string v2, "DeviceIdleController"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -95,7 +130,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_1
+    :cond_4
     goto :goto_0
 
     :catch_0

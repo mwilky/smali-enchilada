@@ -256,6 +256,16 @@
     return-void
 .end method
 
+.method public setInOnePlusStandbyAnalyzer(Lcom/android/server/OnePlusStandbyAnalyzer;)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/OnePlusPowerController$LocalService;->this$0:Lcom/android/server/OnePlusPowerController;
+
+    invoke-static {v0, p1}, Lcom/android/server/OnePlusPowerController;->access$2002(Lcom/android/server/OnePlusPowerController;Lcom/android/server/OnePlusStandbyAnalyzer;)Lcom/android/server/OnePlusStandbyAnalyzer;
+
+    return-void
+.end method
+
 .method public shutdown()V
     .locals 2
 

@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 19
+    .locals 17
 
     move-object/from16 v1, p0
 
@@ -124,228 +124,107 @@
 
     move-result v5
 
-    if-eqz v5, :cond_3
+    if-eqz v5, :cond_2
 
-    const/4 v5, 0x0
+    const/4 v5, 0x3
 
-    invoke-interface {v2, v5}, Landroid/database/Cursor;->getInt(I)I
+    invoke-interface {v2, v5}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result v5
+    move-result-object v5
 
-    const/4 v6, 0x3
+    const/4 v6, 0x5
 
-    invoke-interface {v2, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+    invoke-interface {v2, v6}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v6
 
-    const/4 v7, 0x4
+    const/4 v7, 0x6
 
     invoke-interface {v2, v7}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v7
 
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move v13, v7
 
-    move-result-object v7
+    const/4 v7, 0x7
 
-    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
+    invoke-interface {v2, v7}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v7
 
-    const/4 v8, 0x5
+    move v14, v7
 
-    invoke-interface {v2, v8}, Landroid/database/Cursor;->getInt(I)I
+    const/16 v7, 0x8
 
-    move-result v8
+    invoke-interface {v2, v7}, Landroid/database/Cursor;->getInt(I)I
 
-    const/4 v9, 0x6
+    move-result v7
 
-    invoke-interface {v2, v9}, Landroid/database/Cursor;->getInt(I)I
+    move v15, v7
 
-    move-result v9
+    invoke-virtual {v0, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move v15, v9
+    move-result-object v7
 
-    const/4 v9, 0x7
+    check-cast v7, Lcom/android/server/am/Connor$MDMStatistic;
 
-    invoke-interface {v2, v9}, Landroid/database/Cursor;->getInt(I)I
+    move-object v12, v7
 
-    move-result v9
+    if-eqz v12, :cond_1
 
-    move/from16 v16, v9
+    iget v7, v12, Lcom/android/server/am/Connor$MDMStatistic;->feedCount:I
 
-    const/16 v9, 0x8
+    add-int/2addr v7, v6
 
-    invoke-interface {v2, v9}, Landroid/database/Cursor;->getInt(I)I
+    iput v7, v12, Lcom/android/server/am/Connor$MDMStatistic;->feedCount:I
 
-    move-result v9
+    iget v7, v12, Lcom/android/server/am/Connor$MDMStatistic;->feedHit:I
 
-    move/from16 v17, v9
+    add-int/2addr v7, v13
 
-    const-string v9, ""
+    iput v7, v12, Lcom/android/server/am/Connor$MDMStatistic;->feedHit:I
 
-    const/4 v10, 0x1
+    iget v7, v12, Lcom/android/server/am/Connor$MDMStatistic;->startProcCount:I
 
-    if-ne v6, v10, :cond_1
+    add-int/2addr v7, v14
 
-    new-instance v10, Ljava/lang/StringBuilder;
+    iput v7, v12, Lcom/android/server/am/Connor$MDMStatistic;->startProcCount:I
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    iget v7, v12, Lcom/android/server/am/Connor$MDMStatistic;->startProcHit:I
 
-    const-string v11, "MM_"
+    add-int/2addr v7, v15
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v11, "_"
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    move-object v9, v10
-
-    :goto_1
-    move-object v14, v9
-
-    goto :goto_2
-
-    :cond_1
-    invoke-interface {v2, v10}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v10
-
-    invoke-static {v10}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v10
-
-    const/4 v11, 0x2
-
-    invoke-interface {v2, v11}, Landroid/database/Cursor;->getFloat(I)F
-
-    move-result v11
-
-    invoke-static {v11}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
-
-    move-result-object v11
-
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v13, "NN_"
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v12, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v13, "_"
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v12, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v13, "_"
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v12, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v13, "_"
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v12, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    move-object v9, v12
+    iput v7, v12, Lcom/android/server/am/Connor$MDMStatistic;->startProcHit:I
 
     goto :goto_1
 
-    :goto_2
-    invoke-virtual {v0, v14}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    :cond_1
+    new-instance v11, Lcom/android/server/am/Connor$MDMStatistic;
 
-    move-result-object v9
+    iget-object v8, v1, Lcom/android/server/am/Connor$3;->this$0:Lcom/android/server/am/Connor;
 
-    check-cast v9, Lcom/android/server/am/Connor$MDMStatistic;
+    move-object v7, v11
 
-    move-object v13, v9
+    move v9, v6
 
-    if-eqz v13, :cond_2
+    move v10, v13
 
-    iget v9, v13, Lcom/android/server/am/Connor$MDMStatistic;->feedCount:I
+    move-object v3, v11
 
-    add-int/2addr v9, v8
+    move v11, v14
 
-    iput v9, v13, Lcom/android/server/am/Connor$MDMStatistic;->feedCount:I
-
-    iget v9, v13, Lcom/android/server/am/Connor$MDMStatistic;->feedHit:I
-
-    add-int/2addr v9, v15
-
-    iput v9, v13, Lcom/android/server/am/Connor$MDMStatistic;->feedHit:I
-
-    iget v9, v13, Lcom/android/server/am/Connor$MDMStatistic;->startProcCount:I
-
-    add-int v9, v9, v16
-
-    iput v9, v13, Lcom/android/server/am/Connor$MDMStatistic;->startProcCount:I
-
-    iget v9, v13, Lcom/android/server/am/Connor$MDMStatistic;->startProcHit:I
-
-    add-int v9, v9, v17
-
-    iput v9, v13, Lcom/android/server/am/Connor$MDMStatistic;->startProcHit:I
-
-    goto :goto_3
-
-    :cond_2
-    new-instance v12, Lcom/android/server/am/Connor$MDMStatistic;
-
-    iget-object v10, v1, Lcom/android/server/am/Connor$3;->this$0:Lcom/android/server/am/Connor;
-
-    move-object v9, v12
-
-    move v11, v8
-
-    move-object v3, v12
+    move-object v4, v12
 
     move v12, v15
 
-    move-object v4, v13
+    invoke-direct/range {v7 .. v12}, Lcom/android/server/am/Connor$MDMStatistic;-><init>(Lcom/android/server/am/Connor;IIII)V
 
-    move/from16 v13, v16
+    invoke-virtual {v0, v5, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-object/from16 v18, v4
+    :goto_1
+    goto :goto_0
 
-    move-object v4, v14
-
-    move/from16 v14, v17
-
-    invoke-direct/range {v9 .. v14}, Lcom/android/server/am/Connor$MDMStatistic;-><init>(Lcom/android/server/am/Connor;IIII)V
-
-    invoke-virtual {v0, v4, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :goto_3
-    goto/16 :goto_0
-
-    :cond_3
+    :cond_2
     new-instance v3, Ljava/util/HashMap;
 
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
@@ -358,12 +237,12 @@
 
     move-result-object v4
 
-    :goto_4
+    :goto_2
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_5
+    if-eqz v5, :cond_4
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -443,7 +322,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_4
+    if-eqz v7, :cond_3
 
     const-string v7, "Connor"
 
@@ -517,10 +396,74 @@
 
     invoke-static {v7, v8}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_4
-    goto/16 :goto_4
+    :cond_3
+    goto/16 :goto_2
 
-    :cond_5
+    :cond_4
+    invoke-virtual {v3}, Ljava/util/HashMap;->clear()V
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "op_aab_"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v5, v1, Lcom/android/server/am/Connor$3;->this$0:Lcom/android/server/am/Connor;
+
+    invoke-static {v5}, Lcom/android/server/am/Connor;->access$800(Lcom/android/server/am/Connor;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    const/4 v5, 0x0
+
+    invoke-static {v5}, Lcom/android/server/am/Connor;->nativeGetClusterAccu(I)[D
+
+    move-result-object v5
+
+    const/16 v6, 0x9
+
+    invoke-static {v5, v6}, Ljava/util/Arrays;->copyOf([DI)[D
+
+    move-result-object v5
+
+    invoke-static {v5}, Ljava/util/Arrays;->toString([D)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v4, "google_aab"
+
+    const/4 v5, 0x1
+
+    invoke-static {v5}, Lcom/android/server/am/Connor;->nativeGetClusterAccu(I)[D
+
+    move-result-object v5
+
+    invoke-static {v5}, Ljava/util/Arrays;->toString([D)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v4, v1, Lcom/android/server/am/Connor$3;->this$0:Lcom/android/server/am/Connor;
+
+    invoke-static {v4}, Lcom/android/server/am/Connor;->access$600(Lcom/android/server/am/Connor;)Lnet/oneplus/odm/insight/tracker/OSTracker;
+
+    move-result-object v4
+
+    const-string v5, "accuracy_statistic"
+
+    invoke-virtual {v4, v5, v3}, Lnet/oneplus/odm/insight/tracker/OSTracker;->onEvent(Ljava/lang/String;Ljava/util/Map;)V
+
     iget-object v4, v1, Lcom/android/server/am/Connor$3;->this$0:Lcom/android/server/am/Connor;
 
     invoke-static {v4}, Lcom/android/server/am/Connor;->access$000(Lcom/android/server/am/Connor;)Landroid/database/sqlite/SQLiteDatabase;
@@ -534,14 +477,14 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_5
 
-    goto :goto_5
+    goto :goto_3
 
     :catchall_0
     move-exception v0
 
-    goto :goto_6
+    goto :goto_4
 
     :catch_0
     move-exception v0
@@ -569,12 +512,12 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_5
 
-    :goto_5
+    :goto_3
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
-    :cond_6
+    :cond_5
     iget-object v0, v1, Lcom/android/server/am/Connor$3;->this$0:Lcom/android/server/am/Connor;
 
     invoke-static {v0}, Lcom/android/server/am/Connor;->access$500(Lcom/android/server/am/Connor;)Lcom/android/server/am/ActivityManagerService;
@@ -613,12 +556,12 @@
 
     return-void
 
-    :goto_6
-    if-eqz v2, :cond_7
+    :goto_4
+    if-eqz v2, :cond_6
 
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
-    :cond_7
+    :cond_6
     iget-object v3, v1, Lcom/android/server/am/Connor$3;->this$0:Lcom/android/server/am/Connor;
 
     invoke-static {v3}, Lcom/android/server/am/Connor;->access$500(Lcom/android/server/am/Connor;)Lcom/android/server/am/ActivityManagerService;

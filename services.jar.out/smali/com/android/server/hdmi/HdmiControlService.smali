@@ -2589,13 +2589,13 @@
 
     move-result-object v0
 
-    const-string v1, "hdmi_control_enabled"
+    const-string/jumbo v1, "hdmi_control_enabled"
 
-    const-string v2, "hdmi_control_auto_wakeup_enabled"
+    const-string/jumbo v2, "hdmi_control_auto_wakeup_enabled"
 
-    const-string v3, "hdmi_control_auto_device_off_enabled"
+    const-string/jumbo v3, "hdmi_control_auto_device_off_enabled"
 
-    const-string v4, "hdmi_system_audio_control_enabled"
+    const-string/jumbo v4, "hdmi_system_audio_control_enabled"
 
     const-string/jumbo v5, "mhl_input_switching_enabled"
 
@@ -4821,7 +4821,7 @@
 
     iput-boolean v0, p0, Lcom/android/server/hdmi/HdmiControlService;->mProhibitMode:Z
 
-    const-string v0, "hdmi_control_enabled"
+    const-string/jumbo v0, "hdmi_control_enabled"
 
     const/4 v1, 0x1
 
@@ -4891,7 +4891,7 @@
 
     iput-object v0, p0, Lcom/android/server/hdmi/HdmiControlService;->mMessageValidator:Lcom/android/server/hdmi/HdmiCecMessageValidator;
 
-    const-string v0, "hdmi_control"
+    const-string/jumbo v0, "hdmi_control"
 
     new-instance v2, Lcom/android/server/hdmi/HdmiControlService$BinderService;
 

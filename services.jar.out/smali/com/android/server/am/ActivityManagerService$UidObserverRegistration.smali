@@ -29,6 +29,8 @@
 
 .field mSlowDispatchCount:I
 
+.field final pid:I
+
 .field final pkg:Ljava/lang/String;
 
 .field final uid:I
@@ -85,6 +87,12 @@
     iput p3, p0, Lcom/android/server/am/ActivityManagerService$UidObserverRegistration;->which:I
 
     iput p4, p0, Lcom/android/server/am/ActivityManagerService$UidObserverRegistration;->cutpoint:I
+
+    invoke-static {}, Landroid/os/Binder;->getCallingPid()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/server/am/ActivityManagerService$UidObserverRegistration;->pid:I
 
     iget v0, p0, Lcom/android/server/am/ActivityManagerService$UidObserverRegistration;->cutpoint:I
 

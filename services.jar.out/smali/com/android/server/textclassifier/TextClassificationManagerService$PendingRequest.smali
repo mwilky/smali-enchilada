@@ -47,7 +47,7 @@
 
     check-cast v0, Lcom/android/internal/util/FunctionalUtils$ThrowingRunnable;
 
-    const-string v1, "handling pending request"
+    const-string/jumbo v1, "handling pending request"
 
     invoke-static {v0, v1}, Lcom/android/server/textclassifier/TextClassificationManagerService;->access$600(Lcom/android/internal/util/FunctionalUtils$ThrowingRunnable;Ljava/lang/String;)Ljava/lang/Runnable;
 

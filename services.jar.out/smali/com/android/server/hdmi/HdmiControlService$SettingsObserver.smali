@@ -55,7 +55,7 @@
     goto :goto_0
 
     :sswitch_0
-    const-string v3, "hdmi_control_auto_device_off_enabled"
+    const-string/jumbo v3, "hdmi_control_auto_device_off_enabled"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -68,7 +68,7 @@
     goto :goto_1
 
     :sswitch_1
-    const-string v3, "hdmi_control_auto_wakeup_enabled"
+    const-string/jumbo v3, "hdmi_control_auto_wakeup_enabled"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -107,7 +107,7 @@
     goto :goto_1
 
     :sswitch_4
-    const-string v3, "hdmi_system_audio_control_enabled"
+    const-string/jumbo v3, "hdmi_system_audio_control_enabled"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -120,7 +120,7 @@
     goto :goto_1
 
     :sswitch_5
-    const-string v3, "hdmi_control_enabled"
+    const-string/jumbo v3, "hdmi_control_enabled"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

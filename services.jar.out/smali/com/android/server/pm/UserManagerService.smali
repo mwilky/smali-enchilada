@@ -10753,7 +10753,7 @@
 .method public hasBaseUserRestriction(Ljava/lang/String;I)Z
     .locals 4
 
-    const-string v0, "hasBaseUserRestriction"
+    const-string/jumbo v0, "hasBaseUserRestriction"
 
     invoke-static {v0}, Lcom/android/server/pm/UserManagerService;->checkManageUsersPermission(Ljava/lang/String;)V
 
@@ -10882,7 +10882,7 @@
 .method public hasRestrictedProfiles()Z
     .locals 7
 
-    const-string v0, "hasRestrictedProfiles"
+    const-string/jumbo v0, "hasRestrictedProfiles"
 
     invoke-static {v0}, Lcom/android/server/pm/UserManagerService;->checkManageUsersPermission(Ljava/lang/String;)V
 

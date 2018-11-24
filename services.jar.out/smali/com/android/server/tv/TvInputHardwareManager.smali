@@ -2059,7 +2059,7 @@
 
     if-ne p1, v0, :cond_1
 
-    const-string v0, "hdmi_control"
+    const-string/jumbo v0, "hdmi_control"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 

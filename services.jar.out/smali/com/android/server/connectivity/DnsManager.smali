@@ -297,7 +297,7 @@
 
     if-eqz v1, :cond_1
 
-    const-string/jumbo v0, "opportunistic"
+    const-string/jumbo v0, "off"
 
     :cond_1
     return-object v0

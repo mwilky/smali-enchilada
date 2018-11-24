@@ -2778,7 +2778,7 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    const/high16 v3, 0x7fc00000    # NaNf
+    const/high16 v3, 0x7fc00000    # Float.NaN
 
     invoke-virtual {p0, v2, v3}, Landroid/content/res/TypedArray;->getFloat(IF)F
 

@@ -77,35 +77,45 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 13
+    .locals 18
 
     const-string v0, "/vendor/bin/hw/android.hardware.camera.provider@2.4-service"
 
-    const-string v1, "/system/bin/audioserver"
+    const-string v1, "/vendor/bin/hw/android.hardware.wifi@1.0-service"
 
-    const-string v2, "/system/bin/cameraserver"
+    const-string v2, "/vendor/bin/hw/hostapd"
 
-    const-string v3, "/system/bin/drmserver"
+    const-string v3, "/vendor/bin/hw/wpa_supplicant"
 
-    const-string v4, "/system/bin/mediadrmserver"
+    const-string v4, "/system/bin/netd"
 
-    const-string v5, "/system/bin/mediaserver"
+    const-string v5, "/system/bin/wificond"
 
-    const-string v6, "/system/bin/sdcard"
+    const-string v6, "/system/bin/audioserver"
 
-    const-string v7, "/system/bin/surfaceflinger"
+    const-string v7, "/system/bin/cameraserver"
 
-    const-string/jumbo v8, "media.extractor"
+    const-string v8, "/system/bin/drmserver"
 
-    const-string/jumbo v9, "media.metrics"
+    const-string v9, "/system/bin/mediadrmserver"
 
-    const-string/jumbo v10, "media.codec"
+    const-string v10, "/system/bin/mediaserver"
 
-    const-string v11, "com.android.bluetooth"
+    const-string v11, "/system/bin/sdcard"
 
-    const-string/jumbo v12, "statsd"
+    const-string v12, "/system/bin/surfaceflinger"
 
-    filled-new-array/range {v0 .. v12}, [Ljava/lang/String;
+    const-string/jumbo v13, "media.extractor"
+
+    const-string/jumbo v14, "media.metrics"
+
+    const-string/jumbo v15, "media.codec"
+
+    const-string v16, "com.android.bluetooth"
+
+    const-string/jumbo v17, "statsd"
+
+    filled-new-array/range {v0 .. v17}, [Ljava/lang/String;
 
     move-result-object v0
 

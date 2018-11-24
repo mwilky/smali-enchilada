@@ -132,7 +132,7 @@
 
     move-result-object v0
 
-    const v1, 0x107004e
+    const v1, 0x107004f
 
     invoke-static {p1, v1}, Lcom/android/server/connectivity/tethering/TetheringConfiguration;->getResourceStringArray(Landroid/content/Context;I)[Ljava/lang/String;
 
@@ -169,7 +169,7 @@
     goto :goto_0
 
     :cond_0
-    const v1, 0x107004f
+    const v1, 0x1070050
 
     invoke-static {p1, v1}, Lcom/android/server/connectivity/tethering/TetheringConfiguration;->getResourceStringArray(Landroid/content/Context;I)[Ljava/lang/String;
 
@@ -178,7 +178,7 @@
     iput-object v1, p0, Lcom/android/server/connectivity/tethering/TetheringConfiguration;->tetherableWifiRegexs:[Ljava/lang/String;
 
     :goto_0
-    const v1, 0x107004b
+    const v1, 0x107004c
 
     invoke-static {p1, v1}, Lcom/android/server/connectivity/tethering/TetheringConfiguration;->getResourceStringArray(Landroid/content/Context;I)[Ljava/lang/String;
 
@@ -498,7 +498,7 @@
 .method private static getDhcpRanges(Landroid/content/Context;)[Ljava/lang/String;
     .locals 2
 
-    const v0, 0x107004c
+    const v0, 0x107004d
 
     invoke-static {p0, v0}, Lcom/android/server/connectivity/tethering/TetheringConfiguration;->getResourceStringArray(Landroid/content/Context;I)[Ljava/lang/String;
 
@@ -603,7 +603,7 @@
 
     move-result-object v0
 
-    const v1, 0x107004d
+    const v1, 0x107004e
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getIntArray(I)[I
 

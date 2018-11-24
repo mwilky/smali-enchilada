@@ -40,7 +40,7 @@
     :try_start_0
     iget-object v0, p0, Lcom/android/server/am/Connor$4;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v0}, Lcom/android/server/am/Connor;->access$800(Lcom/android/server/am/Connor;)Z
+    invoke-static {v0}, Lcom/android/server/am/Connor;->access$900(Lcom/android/server/am/Connor;)Z
 
     move-result v0
 
@@ -56,7 +56,7 @@
 
     iget-object v0, p0, Lcom/android/server/am/Connor$4;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v0}, Lcom/android/server/am/Connor;->access$900(Lcom/android/server/am/Connor;)Z
+    invoke-static {v0}, Lcom/android/server/am/Connor;->access$1000(Lcom/android/server/am/Connor;)Z
 
     move-result v0
 
@@ -75,7 +75,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/Connor$4;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v0}, Lcom/android/server/am/Connor;->access$1000(Lcom/android/server/am/Connor;)V
+    invoke-static {v0}, Lcom/android/server/am/Connor;->access$1100(Lcom/android/server/am/Connor;)V
 
     iget-object v0, p0, Lcom/android/server/am/Connor$4;->this$0:Lcom/android/server/am/Connor;
 
@@ -86,7 +86,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/server/am/Connor$4;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v0}, Lcom/android/server/am/Connor;->access$1100(Lcom/android/server/am/Connor;)V
+    invoke-static {v0}, Lcom/android/server/am/Connor;->access$1200(Lcom/android/server/am/Connor;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

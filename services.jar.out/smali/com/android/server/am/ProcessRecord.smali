@@ -126,6 +126,8 @@
 
 .field foregroundServices:Z
 
+.field forkTime:J
+
 .field gids:[I
 
 .field hasAboveClient:Z
@@ -564,6 +566,10 @@
     iput-wide v1, p0, Lcom/android/server/am/ProcessRecord;->lastSkipTime:J
 
     iput v0, p0, Lcom/android/server/am/ProcessRecord;->permRequestCount:I
+
+    iget-wide v0, p0, Lcom/android/server/am/ProcessRecord;->nextPssTime:J
+
+    iput-wide v0, p0, Lcom/android/server/am/ProcessRecord;->forkTime:J
 
     return-void
 .end method
@@ -1317,7 +1323,7 @@
     :cond_e
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v2, "hasShownUi="
+    const-string/jumbo v2, "hasShownUi="
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -1365,7 +1371,7 @@
     :cond_10
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v2, "hasTopUi="
+    const-string/jumbo v2, "hasTopUi="
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -1525,7 +1531,7 @@
     :cond_1a
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v2, "hasClientActivities="
+    const-string/jumbo v2, "hasClientActivities="
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -1579,7 +1585,7 @@
 
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v2, "hasStartedServices="
+    const-string/jumbo v2, "hasStartedServices="
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 

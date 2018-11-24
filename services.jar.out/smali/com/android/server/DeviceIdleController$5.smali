@@ -54,7 +54,7 @@
 
     iget-object v2, p0, Lcom/android/server/DeviceIdleController$5;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v2}, Lcom/android/server/DeviceIdleController;->access$600(Lcom/android/server/DeviceIdleController;)Lcom/android/server/DeviceIdleController$Constants;
+    invoke-static {v2}, Lcom/android/server/DeviceIdleController;->access$800(Lcom/android/server/DeviceIdleController;)Lcom/android/server/DeviceIdleController$Constants;
 
     move-result-object v2
 
@@ -71,7 +71,7 @@
 
     iget-object v2, p0, Lcom/android/server/DeviceIdleController$5;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v2}, Lcom/android/server/DeviceIdleController;->access$600(Lcom/android/server/DeviceIdleController;)Lcom/android/server/DeviceIdleController$Constants;
+    invoke-static {v2}, Lcom/android/server/DeviceIdleController;->access$800(Lcom/android/server/DeviceIdleController;)Lcom/android/server/DeviceIdleController$Constants;
 
     move-result-object v2
 

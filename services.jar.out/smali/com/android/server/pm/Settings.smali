@@ -19320,7 +19320,7 @@
 
     move-result-object v18
 
-    const-string v3, "harmful-app-warning"
+    const-string/jumbo v3, "harmful-app-warning"
 
     invoke-interface {v0, v5, v3}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -20176,8 +20176,6 @@
 
     :goto_1f
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -24761,7 +24759,7 @@
 
     if-eqz v0, :cond_11
 
-    const-string v0, "harmful-app-warning"
+    const-string/jumbo v0, "harmful-app-warning"
 
     iget-object v10, v14, Landroid/content/pm/PackageUserState;->harmfulAppWarning:Ljava/lang/String;
 

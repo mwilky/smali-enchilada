@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/OnePlusStandbyAnalyzer;->calculateSipperDiff(Ljava/util/List;Ljava/util/List;)V
+    value = Lcom/android/server/OnePlusStandbyAnalyzer;->get1stTelephonyAbnormal(Ljava/util/List;)Lcom/android/server/OnePlusStandbyAnalyzer$TeleChgInfo;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,7 +20,7 @@
     value = {
         "Ljava/lang/Object;",
         "Ljava/util/Comparator<",
-        "Lcom/android/internal/os/BatterySipper;",
+        "Lcom/android/server/OnePlusStandbyAnalyzer$TeleChgInfo;",
         ">;"
     }
 .end annotation
@@ -43,14 +43,18 @@
 
 
 # virtual methods
-.method public compare(Lcom/android/internal/os/BatterySipper;Lcom/android/internal/os/BatterySipper;)I
+.method public compare(Lcom/android/server/OnePlusStandbyAnalyzer$TeleChgInfo;Lcom/android/server/OnePlusStandbyAnalyzer$TeleChgInfo;)I
     .locals 4
 
-    iget-wide v0, p2, Lcom/android/internal/os/BatterySipper;->totalPowerMah:D
+    iget v0, p2, Lcom/android/server/OnePlusStandbyAnalyzer$TeleChgInfo;->mTotalAbn:I
 
-    iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->totalPowerMah:D
+    int-to-long v0, v0
 
-    invoke-static {v0, v1, v2, v3}, Ljava/lang/Double;->compare(DD)I
+    iget v2, p1, Lcom/android/server/OnePlusStandbyAnalyzer$TeleChgInfo;->mTotalAbn:I
+
+    int-to-long v2, v2
+
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Long;->compare(JJ)I
 
     move-result v0
 
@@ -60,11 +64,11 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    check-cast p1, Lcom/android/internal/os/BatterySipper;
+    check-cast p1, Lcom/android/server/OnePlusStandbyAnalyzer$TeleChgInfo;
 
-    check-cast p2, Lcom/android/internal/os/BatterySipper;
+    check-cast p2, Lcom/android/server/OnePlusStandbyAnalyzer$TeleChgInfo;
 
-    invoke-virtual {p0, p1, p2}, Lcom/android/server/OnePlusStandbyAnalyzer$7;->compare(Lcom/android/internal/os/BatterySipper;Lcom/android/internal/os/BatterySipper;)I
+    invoke-virtual {p0, p1, p2}, Lcom/android/server/OnePlusStandbyAnalyzer$7;->compare(Lcom/android/server/OnePlusStandbyAnalyzer$TeleChgInfo;Lcom/android/server/OnePlusStandbyAnalyzer$TeleChgInfo;)I
 
     move-result p1
 

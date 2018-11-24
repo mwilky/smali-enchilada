@@ -4183,7 +4183,7 @@
 
     const-string v6, "ActivityManager"
 
-    const-string v7, "handleShowAnrUi: proc is null"
+    const-string/jumbo v7, "handleShowAnrUi: proc is null"
 
     invoke-static {v6, v7}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -4445,7 +4445,7 @@
 
     const-string v4, "ActivityManager"
 
-    const-string v5, "handleShowAppErrorUi: proc is null"
+    const-string/jumbo v5, "handleShowAppErrorUi: proc is null"
 
     invoke-static {v4, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 

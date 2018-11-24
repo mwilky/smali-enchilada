@@ -7637,7 +7637,7 @@
     if-ltz p10, :cond_11
 
     :try_start_10
-    const-string v8, "has_result"
+    const-string/jumbo v8, "has_result"
 
     const/4 v3, 0x1
 
@@ -8608,6 +8608,8 @@
     move-exception v0
 
     goto :goto_20
+
+    nop
 
     nop
 

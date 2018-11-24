@@ -119,7 +119,7 @@
 
     move-result-object v0
 
-    const-string v1, "haptic_feedback_enabled"
+    const-string/jumbo v1, "haptic_feedback_enabled"
 
     const/4 v2, 0x1
 

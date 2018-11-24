@@ -1035,7 +1035,7 @@
 
     move-result v2
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$2600()I
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$2700()I
 
     move-result v3
 
@@ -1279,7 +1279,7 @@
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController$IdleStats;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$4800(Lcom/android/server/OnePlusPowerController;)Ljava/time/LocalDateTime;
+    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$4900(Lcom/android/server/OnePlusPowerController;)Ljava/time/LocalDateTime;
 
     move-result-object v0
 
@@ -1287,7 +1287,7 @@
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController$IdleStats;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$4800(Lcom/android/server/OnePlusPowerController;)Ljava/time/LocalDateTime;
+    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$4900(Lcom/android/server/OnePlusPowerController;)Ljava/time/LocalDateTime;
 
     move-result-object v0
 
@@ -1345,7 +1345,7 @@
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController$IdleStats;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$4700(Lcom/android/server/OnePlusPowerController;)Ljava/time/LocalDateTime;
+    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$4800(Lcom/android/server/OnePlusPowerController;)Ljava/time/LocalDateTime;
 
     move-result-object v0
 
@@ -1353,7 +1353,7 @@
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController$IdleStats;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$4700(Lcom/android/server/OnePlusPowerController;)Ljava/time/LocalDateTime;
+    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$4800(Lcom/android/server/OnePlusPowerController;)Ljava/time/LocalDateTime;
 
     move-result-object v0
 
@@ -1604,7 +1604,7 @@
     nop
 
     :goto_2
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$4600()Z
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$4700()Z
 
     move-result v1
 
@@ -1701,7 +1701,7 @@
 
     iput-object p1, p0, Lcom/android/server/OnePlusPowerController$IdleStats;->mDeepSleepDuration:Ljava/time/Duration;
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$4600()Z
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$4700()Z
 
     move-result v0
 
@@ -1736,7 +1736,7 @@
 
     iput-object p1, p0, Lcom/android/server/OnePlusPowerController$IdleStats;->mDeepSleepStart:Ljava/time/LocalTime;
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$4600()Z
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$4700()Z
 
     move-result v0
 

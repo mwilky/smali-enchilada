@@ -2255,11 +2255,11 @@
 
     cmpl-float v2, v1, v2
 
-    if-nez v2, :cond_10
+    if-nez v2, :cond_11
 
     iget-boolean v2, p0, Lcom/android/server/display/AutomaticBrightnessController;->mbStartTimer:Z
 
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_11
 
     :cond_b
     iget-boolean v2, p0, Lcom/android/server/display/AutomaticBrightnessController;->mFirst_lux:Z
@@ -2343,6 +2343,13 @@
     :cond_f
     invoke-direct {p0, v3}, Lcom/android/server/display/AutomaticBrightnessController;->updateAutoBrightness(Z)V
 
+    iget-boolean v2, p0, Lcom/android/server/display/AutomaticBrightnessController;->mAmbientLuxValid:Z
+
+    if-nez v2, :cond_10
+
+    return-void
+
+    :cond_10
     invoke-direct {p0, p1, p2}, Lcom/android/server/display/AutomaticBrightnessController;->nextAmbientLightBrighteningTransition(J)J
 
     move-result-wide v4
@@ -2351,20 +2358,20 @@
 
     move-result-wide v6
 
-    :cond_10
+    :cond_11
     invoke-static {v6, v7, v4, v5}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v8
 
     cmp-long v2, v8, p1
 
-    if-lez v2, :cond_11
+    if-lez v2, :cond_12
 
     move-wide v10, v8
 
     goto :goto_3
 
-    :cond_11
+    :cond_12
     iget v2, p0, Lcom/android/server/display/AutomaticBrightnessController;->mNormalLightSensorRate:I
 
     int-to-long v10, v2
@@ -2376,7 +2383,7 @@
 
     sget-boolean v2, Lcom/android/server/display/AutomaticBrightnessController;->DEBUG_BACKLIGHT:Z
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_13
 
     const-string v2, "AutomaticBrightnessController"
 
@@ -2402,7 +2409,7 @@
 
     invoke-static {v2, v10}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_12
+    :cond_13
     iget-object v2, p0, Lcom/android/server/display/AutomaticBrightnessController;->mHandler:Lcom/android/server/display/AutomaticBrightnessController$AutomaticBrightnessHandler;
 
     invoke-virtual {v2, v3, v8, v9}, Lcom/android/server/display/AutomaticBrightnessController$AutomaticBrightnessHandler;->sendEmptyMessageAtTime(IJ)Z

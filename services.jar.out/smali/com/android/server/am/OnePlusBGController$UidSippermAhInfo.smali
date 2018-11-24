@@ -19,6 +19,8 @@
 
 .field private mBg_mAh:D
 
+.field private mBucketRanking:Lcom/android/server/am/OnePlusBGController$APP_BUCKET_RANKING;
+
 .field private mDayOfAbn_Handled_Count:I
 
 .field private mDayOfBg_mAh:D
@@ -49,6 +51,10 @@
     .locals 8
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    sget-object v0, Lcom/android/server/am/OnePlusBGController$APP_BUCKET_RANKING;->UNKNOWN:Lcom/android/server/am/OnePlusBGController$APP_BUCKET_RANKING;
+
+    iput-object v0, p0, Lcom/android/server/am/OnePlusBGController$UidSippermAhInfo;->mBucketRanking:Lcom/android/server/am/OnePlusBGController$APP_BUCKET_RANKING;
 
     const/4 v0, 0x0
 
@@ -117,7 +123,7 @@
 .method private isAudioActive(I)Z
     .locals 3
 
-    invoke-static {}, Lcom/android/server/am/OnePlusBGController;->access$2800()Landroid/media/AudioManager;
+    invoke-static {}, Lcom/android/server/am/OnePlusBGController;->access$2900()Landroid/media/AudioManager;
 
     move-result-object v0
 
@@ -141,7 +147,7 @@
 
     move-result-object v0
 
-    invoke-static {}, Lcom/android/server/am/OnePlusBGController;->access$2800()Landroid/media/AudioManager;
+    invoke-static {}, Lcom/android/server/am/OnePlusBGController;->access$2900()Landroid/media/AudioManager;
 
     move-result-object v1
 
@@ -693,7 +699,7 @@
 
     :cond_9
     :goto_1
-    invoke-static {}, Lcom/android/server/am/OnePlusBGController;->access$2900()Z
+    invoke-static {}, Lcom/android/server/am/OnePlusBGController;->access$3000()Z
 
     move-result v1
 
@@ -805,7 +811,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "# UidSippermAhInfo ["
+    const-string v5, "# UidmAhInfo ["
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -849,7 +855,15 @@
 
     invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    const-string v5, " %)] [AbnHandled_Count: "
+    const-string v5, " %)] [Rnk: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v5, p0, Lcom/android/server/am/OnePlusBGController$UidSippermAhInfo;->mBucketRanking:Lcom/android/server/am/OnePlusBGController$APP_BUCKET_RANKING;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v5, "] [Abn: "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -857,7 +871,7 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v5, "] [NeedRelief: "
+    const-string v5, "] [Relief: "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -865,7 +879,7 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v5, "][DayOfForceStoped: "
+    const-string v5, "][ForceStoped: "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -894,4 +908,12 @@
     move-result-object v4
 
     return-object v4
+.end method
+
+.method public updateBucketRanking(Lcom/android/server/am/OnePlusBGController$APP_BUCKET_RANKING;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/server/am/OnePlusBGController$UidSippermAhInfo;->mBucketRanking:Lcom/android/server/am/OnePlusBGController$APP_BUCKET_RANKING;
+
+    return-void
 .end method

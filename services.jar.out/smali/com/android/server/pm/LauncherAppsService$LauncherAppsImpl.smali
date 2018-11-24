@@ -1834,21 +1834,23 @@
 
     move-object v0, p0
 
-    move/from16 v9, p6
+    move-object v9, p1
 
-    invoke-virtual {v0, p1}, Lcom/android/server/pm/LauncherAppsService$LauncherAppsImpl;->verifyCallingPackage(Ljava/lang/String;)V
+    move/from16 v10, p6
+
+    invoke-virtual {v0, v9}, Lcom/android/server/pm/LauncherAppsService$LauncherAppsImpl;->verifyCallingPackage(Ljava/lang/String;)V
 
     const-string v1, "Cannot start activity"
 
-    invoke-direct {v0, v9, v1}, Lcom/android/server/pm/LauncherAppsService$LauncherAppsImpl;->canAccessProfile(ILjava/lang/String;)Z
+    invoke-direct {v0, v10, v1}, Lcom/android/server/pm/LauncherAppsService$LauncherAppsImpl;->canAccessProfile(ILjava/lang/String;)Z
 
     move-result v1
 
-    const/4 v10, 0x0
+    const/4 v11, 0x0
 
     if-nez v1, :cond_0
 
-    return v10
+    return v11
 
     :cond_0
     iget-object v1, v0, Lcom/android/server/pm/LauncherAppsService$LauncherAppsImpl;->mShortcutServiceInternal:Landroid/content/pm/ShortcutServiceInternal;
@@ -1857,13 +1859,13 @@
 
     move-result v2
 
-    move-object v3, p1
+    move-object v3, v9
 
     move-object v4, p2
 
     move-object v5, p3
 
-    move v6, v9
+    move v6, v10
 
     invoke-virtual/range {v1 .. v6}, Landroid/content/pm/ShortcutServiceInternal;->isPinnedByCaller(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Z
 
@@ -1873,26 +1875,26 @@
 
     const-string v1, "android"
 
-    move-object v11, p1
-
-    invoke-virtual {v1, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    if-eqz v9, :cond_3
+    if-eqz v10, :cond_2
 
     :cond_1
-    invoke-direct {v0, v11}, Lcom/android/server/pm/LauncherAppsService$LauncherAppsImpl;->ensureShortcutPermission(Ljava/lang/String;)V
+    const-string v1, "com.android.systemui"
 
-    goto :goto_0
+    invoke-virtual {v1, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    invoke-direct {v0, v9}, Lcom/android/server/pm/LauncherAppsService$LauncherAppsImpl;->ensureShortcutPermission(Ljava/lang/String;)V
 
     :cond_2
-    move-object v11, p1
-
-    :cond_3
-    :goto_0
     iget-object v1, v0, Lcom/android/server/pm/LauncherAppsService$LauncherAppsImpl;->mShortcutServiceInternal:Landroid/content/pm/ShortcutServiceInternal;
 
     invoke-direct {v0}, Lcom/android/server/pm/LauncherAppsService$LauncherAppsImpl;->getCallingUserId()I
@@ -1907,34 +1909,34 @@
 
     move-result v8
 
-    move-object v3, v11
+    move-object v3, v9
 
     move-object v4, p2
 
     move-object v5, p3
 
-    move v6, v9
+    move v6, v10
 
     invoke-virtual/range {v1 .. v8}, Landroid/content/pm/ShortcutServiceInternal;->createShortcutIntents(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;III)[Landroid/content/Intent;
 
     move-result-object v1
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_4
 
     array-length v2, v1
 
-    if-nez v2, :cond_4
+    if-nez v2, :cond_3
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_4
-    aget-object v2, v1, v10
+    :cond_3
+    aget-object v2, v1, v11
 
     const/high16 v3, 0x10000000
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    aget-object v2, v1, v10
+    aget-object v2, v1, v11
 
     move-object/from16 v3, p4
 
@@ -1944,21 +1946,21 @@
 
     move-object/from16 v4, p5
 
-    invoke-direct {v0, v1, v2, v4, v9}, Lcom/android/server/pm/LauncherAppsService$LauncherAppsImpl;->startShortcutIntentsAsPublisher([Landroid/content/Intent;Ljava/lang/String;Landroid/os/Bundle;I)Z
+    invoke-direct {v0, v1, v2, v4, v10}, Lcom/android/server/pm/LauncherAppsService$LauncherAppsImpl;->startShortcutIntentsAsPublisher([Landroid/content/Intent;Ljava/lang/String;Landroid/os/Bundle;I)Z
 
     move-result v5
 
     return v5
 
-    :cond_5
-    :goto_1
+    :cond_4
+    :goto_0
     move-object v2, p2
 
     move-object/from16 v3, p4
 
     move-object/from16 v4, p5
 
-    return v10
+    return v11
 .end method
 
 .method verifyCallingPackage(Ljava/lang/String;)V

@@ -194,17 +194,17 @@
     throw v0
 
     :pswitch_0
-    const v0, 0x1070058
-
-    goto :goto_2
-
-    :pswitch_1
     const v0, 0x1070059
 
     goto :goto_2
 
-    :pswitch_2
+    :pswitch_1
     const v0, 0x107005a
+
+    goto :goto_2
+
+    :pswitch_2
+    const v0, 0x107005b
 
     nop
 
@@ -456,17 +456,17 @@
     throw v0
 
     :pswitch_0
-    const v0, 0x1070068
-
-    goto :goto_2
-
-    :pswitch_1
     const v0, 0x1070069
 
     goto :goto_2
 
-    :pswitch_2
+    :pswitch_1
     const v0, 0x107006a
+
+    goto :goto_2
+
+    :pswitch_2
+    const v0, 0x107006b
 
     nop
 
@@ -682,17 +682,17 @@
     throw v0
 
     :pswitch_0
-    const v0, 0x1070071
-
-    goto :goto_2
-
-    :pswitch_1
     const v0, 0x1070072
 
     goto :goto_2
 
-    :pswitch_2
+    :pswitch_1
     const v0, 0x1070073
+
+    goto :goto_2
+
+    :pswitch_2
+    const v0, 0x1070074
 
     nop
 
@@ -831,17 +831,17 @@
     throw v0
 
     :pswitch_0
-    const v0, 0x1070074
-
-    goto :goto_2
-
-    :pswitch_1
     const v0, 0x1070075
 
     goto :goto_2
 
-    :pswitch_2
+    :pswitch_1
     const v0, 0x1070076
+
+    goto :goto_2
+
+    :pswitch_2
+    const v0, 0x1070077
 
     nop
 

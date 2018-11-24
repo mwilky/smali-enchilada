@@ -1018,7 +1018,7 @@
 .end method
 
 .method private sendNextBroadcast()V
-    .locals 5
+    .locals 6
 
     iget-object v0, p0, Lcom/android/server/power/Notifier;->mLock:Ljava/lang/Object;
 
@@ -1106,9 +1106,9 @@
     :goto_2
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v1
+    move-result-wide v4
 
-    iput-wide v1, p0, Lcom/android/server/power/Notifier;->mBroadcastStartTime:J
+    iput-wide v4, p0, Lcom/android/server/power/Notifier;->mBroadcastStartTime:J
 
     iget v1, p0, Lcom/android/server/power/Notifier;->mBroadcastedInteractiveState:I
 
@@ -1130,6 +1130,30 @@
     invoke-direct {p0}, Lcom/android/server/power/Notifier;->sendGoToSleepBroadcast()V
 
     :goto_3
+    invoke-static {}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->getInstance()Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_8
+
+    invoke-static {}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->getInstance()Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+
+    move-result-object v0
+
+    if-ne v1, v3, :cond_7
+
+    move v2, v3
+
+    nop
+
+    :cond_7
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->notifyScreenEvent(Ljava/lang/Boolean;)V
+
+    :cond_8
     return-void
 
     :catchall_0

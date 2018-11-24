@@ -79,14 +79,14 @@
 
     iget-object v0, p0, Lcom/android/server/BatteryService$BinderService;->this$0:Lcom/android/server/BatteryService;
 
-    invoke-static {v0, p1}, Lcom/android/server/BatteryService;->access$2300(Lcom/android/server/BatteryService;Ljava/io/FileDescriptor;)V
+    invoke-static {v0, p1}, Lcom/android/server/BatteryService;->access$2500(Lcom/android/server/BatteryService;Ljava/io/FileDescriptor;)V
 
     goto :goto_0
 
     :cond_1
     iget-object v0, p0, Lcom/android/server/BatteryService$BinderService;->this$0:Lcom/android/server/BatteryService;
 
-    invoke-static {v0, p1, p2, p3}, Lcom/android/server/BatteryService;->access$2400(Lcom/android/server/BatteryService;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+    invoke-static {v0, p1, p2, p3}, Lcom/android/server/BatteryService;->access$2600(Lcom/android/server/BatteryService;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
     :goto_0
     return-void

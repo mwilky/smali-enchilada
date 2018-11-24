@@ -30,7 +30,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$2300()I
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$2400()I
 
     move-result v0
 
@@ -50,7 +50,7 @@
 
     iput-object v0, p0, Lcom/android/server/OnePlusPowerController$KMeans;->mCenters:[[D
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$2300()I
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$2400()I
 
     move-result v0
 
@@ -105,7 +105,7 @@
     return v1
 .end method
 
-.method static synthetic access$3400(Lcom/android/server/OnePlusPowerController$KMeans;[[DIIII)V
+.method static synthetic access$3500(Lcom/android/server/OnePlusPowerController$KMeans;[[DIIII)V
     .locals 0
 
     invoke-direct/range {p0 .. p5}, Lcom/android/server/OnePlusPowerController$KMeans;->processKMeans([[DIIII)V
@@ -121,7 +121,7 @@
     move v1, v0
 
     :goto_0
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$2300()I
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$2400()I
 
     move-result v2
 
@@ -193,7 +193,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$3600()Z
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$3700()Z
 
     move-result v3
 
@@ -684,7 +684,7 @@
     goto :goto_3
 
     :cond_4
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$3600()Z
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$3700()Z
 
     move-result v10
 
@@ -777,7 +777,7 @@
 
     move-result-wide v13
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$3600()Z
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$3700()Z
 
     move-result v15
 
@@ -822,7 +822,7 @@
 
     move-result-wide v5
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$2900()I
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$3000()I
 
     move-result v7
 
@@ -834,7 +834,7 @@
 
     if-ltz v5, :cond_10
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$3600()Z
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$3700()Z
 
     move-result v5
 
@@ -883,7 +883,7 @@
     goto :goto_9
 
     :cond_a
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$3600()Z
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$3700()Z
 
     move-result v6
 
@@ -998,7 +998,7 @@
     goto :goto_b
 
     :cond_e
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$3600()Z
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$3700()Z
 
     move-result v6
 
@@ -1032,7 +1032,7 @@
     goto/16 :goto_8
 
     :cond_10
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$3600()Z
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$3700()Z
 
     move-result v5
 
@@ -1097,7 +1097,7 @@
 
     if-ltz p1, :cond_5
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$2300()I
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$2400()I
 
     move-result v2
 
@@ -1174,7 +1174,7 @@
 
     if-ltz p1, :cond_1
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$2300()I
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$2400()I
 
     move-result v0
 
@@ -1207,7 +1207,7 @@
 
     if-ltz p1, :cond_1
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$2300()I
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$2400()I
 
     move-result v0
 
@@ -1273,7 +1273,7 @@
 
     if-ltz p1, :cond_2
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$2300()I
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$2400()I
 
     move-result v1
 
@@ -1313,7 +1313,7 @@
 
     if-ltz p1, :cond_5
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$2300()I
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$2400()I
 
     move-result v2
 

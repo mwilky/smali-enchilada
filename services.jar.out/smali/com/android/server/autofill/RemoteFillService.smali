@@ -1336,7 +1336,7 @@
 
     move-result-object v1
 
-    const-string v2, "hasPendingRequest="
+    const-string/jumbo v2, "hasPendingRequest="
 
     invoke-virtual {v1, v2}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
 

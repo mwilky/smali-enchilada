@@ -66,7 +66,7 @@
 
     iget-object v1, p0, Lcom/android/server/OnePlusPowerController$4;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v1}, Lcom/android/server/OnePlusPowerController;->access$2000(Lcom/android/server/OnePlusPowerController;)Landroid/os/PowerManager;
+    invoke-static {v1}, Lcom/android/server/OnePlusPowerController;->access$2100(Lcom/android/server/OnePlusPowerController;)Landroid/os/PowerManager;
 
     move-result-object v1
 
@@ -91,7 +91,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/server/OnePlusPowerController$4;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v1}, Lcom/android/server/OnePlusPowerController;->access$2100(Lcom/android/server/OnePlusPowerController;)Landroid/os/PowerManagerInternal;
+    invoke-static {v1}, Lcom/android/server/OnePlusPowerController;->access$2200(Lcom/android/server/OnePlusPowerController;)Landroid/os/PowerManagerInternal;
 
     move-result-object v1
 
@@ -115,7 +115,7 @@
     :cond_2
     iget-object v1, p0, Lcom/android/server/OnePlusPowerController$4;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v1}, Lcom/android/server/OnePlusPowerController;->access$2000(Lcom/android/server/OnePlusPowerController;)Landroid/os/PowerManager;
+    invoke-static {v1}, Lcom/android/server/OnePlusPowerController;->access$2100(Lcom/android/server/OnePlusPowerController;)Landroid/os/PowerManager;
 
     move-result-object v1
 
@@ -127,7 +127,7 @@
 
     iget-object v1, p0, Lcom/android/server/OnePlusPowerController$4;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v1}, Lcom/android/server/OnePlusPowerController;->access$2100(Lcom/android/server/OnePlusPowerController;)Landroid/os/PowerManagerInternal;
+    invoke-static {v1}, Lcom/android/server/OnePlusPowerController;->access$2200(Lcom/android/server/OnePlusPowerController;)Landroid/os/PowerManagerInternal;
 
     move-result-object v1
 
@@ -164,7 +164,7 @@
 
     iget-object v1, p0, Lcom/android/server/OnePlusPowerController$4;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v1}, Lcom/android/server/OnePlusPowerController;->access$2000(Lcom/android/server/OnePlusPowerController;)Landroid/os/PowerManager;
+    invoke-static {v1}, Lcom/android/server/OnePlusPowerController;->access$2100(Lcom/android/server/OnePlusPowerController;)Landroid/os/PowerManager;
 
     move-result-object v1
 
@@ -189,7 +189,7 @@
     :cond_4
     iget-object v1, p0, Lcom/android/server/OnePlusPowerController$4;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v1}, Lcom/android/server/OnePlusPowerController;->access$2100(Lcom/android/server/OnePlusPowerController;)Landroid/os/PowerManagerInternal;
+    invoke-static {v1}, Lcom/android/server/OnePlusPowerController;->access$2200(Lcom/android/server/OnePlusPowerController;)Landroid/os/PowerManagerInternal;
 
     move-result-object v1
 
@@ -610,42 +610,42 @@
 
     if-lez v1, :cond_11
 
-    invoke-static {v1}, Lcom/android/server/OnePlusPowerController;->access$2202(I)I
+    invoke-static {v1}, Lcom/android/server/OnePlusPowerController;->access$2302(I)I
 
     :cond_11
     if-lez v2, :cond_12
 
-    invoke-static {v2}, Lcom/android/server/OnePlusPowerController;->access$2302(I)I
+    invoke-static {v2}, Lcom/android/server/OnePlusPowerController;->access$2402(I)I
 
     :cond_12
     if-lez v3, :cond_13
 
-    invoke-static {v3}, Lcom/android/server/OnePlusPowerController;->access$2402(I)I
+    invoke-static {v3}, Lcom/android/server/OnePlusPowerController;->access$2502(I)I
 
     :cond_13
     if-lez v5, :cond_14
 
-    invoke-static {v5}, Lcom/android/server/OnePlusPowerController;->access$2502(I)I
+    invoke-static {v5}, Lcom/android/server/OnePlusPowerController;->access$2602(I)I
 
     :cond_14
     if-lez v6, :cond_15
 
-    invoke-static {v6}, Lcom/android/server/OnePlusPowerController;->access$2602(I)I
+    invoke-static {v6}, Lcom/android/server/OnePlusPowerController;->access$2702(I)I
 
     :cond_15
     if-lez v7, :cond_16
 
-    invoke-static {v7}, Lcom/android/server/OnePlusPowerController;->access$2702(I)I
+    invoke-static {v7}, Lcom/android/server/OnePlusPowerController;->access$2802(I)I
 
     :cond_16
     if-lez v8, :cond_17
 
-    invoke-static {v8}, Lcom/android/server/OnePlusPowerController;->access$2802(I)I
+    invoke-static {v8}, Lcom/android/server/OnePlusPowerController;->access$2902(I)I
 
     :cond_17
     if-lez v4, :cond_19
 
-    invoke-static {v4}, Lcom/android/server/OnePlusPowerController;->access$2902(I)I
+    invoke-static {v4}, Lcom/android/server/OnePlusPowerController;->access$3002(I)I
 
     goto :goto_2
 

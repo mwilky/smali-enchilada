@@ -593,7 +593,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "handleUserSwitched, userId:"
+    const-string/jumbo v2, "handleUserSwitched, userId:"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -640,7 +640,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "handleWifiStateDisable, mWifiBoost:"
+    const-string/jumbo v2, "handleWifiStateDisable, mWifiBoost:"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -710,7 +710,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "handleWifiStateEnable, mWifiBoost:"
+    const-string/jumbo v3, "handleWifiStateEnable, mWifiBoost:"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -772,7 +772,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "handleWifiStateEnable mModeStatus:"
+    const-string/jumbo v3, "handleWifiStateEnable mModeStatus:"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

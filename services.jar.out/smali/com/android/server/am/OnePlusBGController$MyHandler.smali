@@ -29,6 +29,8 @@
 
 .field public static final MSG_RESET_KILLED_BUDGET:I = 0x101d6
 
+.field public static final MSG_UID_STATE_CHANGE:I = 0x101d8
+
 .field public static final MSG_UPDATE_TRAFFIC_WHEN_SOFF:I = 0x101d7
 
 
@@ -78,19 +80,34 @@
 
     const v1, 0x101d0
 
-    if-eq v0, v1, :cond_3
+    if-eq v0, v1, :cond_4
 
     const v1, 0x101d3
 
-    if-eq v0, v1, :cond_2
+    if-eq v0, v1, :cond_3
 
     const v1, 0x101d6
+
+    if-eq v0, v1, :cond_1
+
+    const v1, 0x101d8
 
     if-eq v0, v1, :cond_0
 
     goto/16 :goto_0
 
     :cond_0
+    iget-object v0, p0, Lcom/android/server/am/OnePlusBGController$MyHandler;->this$0:Lcom/android/server/am/OnePlusBGController;
+
+    iget v1, p1, Landroid/os/Message;->arg1:I
+
+    iget v2, p1, Landroid/os/Message;->arg2:I
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/server/am/OnePlusBGController;->handleOnUidStateChanged(II)V
+
+    goto/16 :goto_0
+
+    :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -119,13 +136,13 @@
 
     check-cast v0, Ljava/util/HashSet;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Ljava/util/HashSet;->size()I
 
     move-result v1
 
-    if-lez v1, :cond_1
+    if-lez v1, :cond_2
 
     new-instance v1, Ljava/util/ArrayList;
 
@@ -137,10 +154,10 @@
 
     invoke-static {v2, v1}, Lcom/android/server/am/OnePlusBGController;->access$200(Lcom/android/server/am/OnePlusBGController;Ljava/util/List;)V
 
-    :cond_1
+    :cond_2
     goto :goto_0
 
-    :cond_2
+    :cond_3
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -223,7 +240,7 @@
 
     goto :goto_0
 
-    :cond_3
+    :cond_4
     iget-object v0, p0, Lcom/android/server/am/OnePlusBGController$MyHandler;->this$0:Lcom/android/server/am/OnePlusBGController;
 
     invoke-virtual {v0}, Lcom/android/server/am/OnePlusBGController;->retrieveSensorHandle()V

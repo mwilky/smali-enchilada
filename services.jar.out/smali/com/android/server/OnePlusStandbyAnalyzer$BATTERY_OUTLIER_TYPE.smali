@@ -25,6 +25,8 @@
 # static fields
 .field private static final synthetic $VALUES:[Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
+.field public static final enum AOSD_VMIN_NO_INCREASE:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
 .field public static final enum DOZE_DISABLED:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
 .field public static final enum HIGH_UNACCOUNTED:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
@@ -37,7 +39,19 @@
 
 .field public static final enum NO_ENTER_DEEPIDLE:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
+.field public static final enum QXDM_TELEPHONY_DATACALL_ANOMALY:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+.field public static final enum QXDM_TELEPHONY_IMS_ANOMALY:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+.field public static final enum QXDM_TELEPHONY_NETWORK_ANOMALY:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
 .field public static final enum SINGAL_BAD:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+.field public static final enum TELEPHONY_DATACALL_ANOMALY:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+.field public static final enum TELEPHONY_IMS_ANOMALY:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+.field public static final enum TELEPHONY_NETWORK_ANOMALY:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
 .field public static final enum UNKNOWN:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
@@ -46,7 +60,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 11
+    .locals 17
 
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
@@ -138,7 +152,77 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->UNKNOWN:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
-    const/16 v0, 0x9
+    new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    const-string v1, "AOSD_VMIN_NO_INCREASE"
+
+    const/16 v11, 0x9
+
+    invoke-direct {v0, v1, v11}, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->AOSD_VMIN_NO_INCREASE:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    const-string v1, "TELEPHONY_NETWORK_ANOMALY"
+
+    const/16 v12, 0xa
+
+    invoke-direct {v0, v1, v12}, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->TELEPHONY_NETWORK_ANOMALY:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    const-string v1, "TELEPHONY_DATACALL_ANOMALY"
+
+    const/16 v13, 0xb
+
+    invoke-direct {v0, v1, v13}, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->TELEPHONY_DATACALL_ANOMALY:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    const-string v1, "TELEPHONY_IMS_ANOMALY"
+
+    const/16 v14, 0xc
+
+    invoke-direct {v0, v1, v14}, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->TELEPHONY_IMS_ANOMALY:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    const-string v1, "QXDM_TELEPHONY_NETWORK_ANOMALY"
+
+    const/16 v15, 0xd
+
+    invoke-direct {v0, v1, v15}, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->QXDM_TELEPHONY_NETWORK_ANOMALY:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    const-string v1, "QXDM_TELEPHONY_DATACALL_ANOMALY"
+
+    const/16 v15, 0xe
+
+    invoke-direct {v0, v1, v15}, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->QXDM_TELEPHONY_DATACALL_ANOMALY:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    const-string v1, "QXDM_TELEPHONY_IMS_ANOMALY"
+
+    const/16 v15, 0xf
+
+    invoke-direct {v0, v1, v15}, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->QXDM_TELEPHONY_IMS_ANOMALY:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    const/16 v0, 0x10
 
     new-array v0, v0, [Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
@@ -177,6 +261,40 @@
     sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->UNKNOWN:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
     aput-object v1, v0, v10
+
+    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->AOSD_VMIN_NO_INCREASE:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    aput-object v1, v0, v11
+
+    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->TELEPHONY_NETWORK_ANOMALY:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    aput-object v1, v0, v12
+
+    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->TELEPHONY_DATACALL_ANOMALY:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    aput-object v1, v0, v13
+
+    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->TELEPHONY_IMS_ANOMALY:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    aput-object v1, v0, v14
+
+    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->QXDM_TELEPHONY_NETWORK_ANOMALY:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    const/16 v2, 0xd
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->QXDM_TELEPHONY_DATACALL_ANOMALY:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    const/16 v2, 0xe
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->QXDM_TELEPHONY_IMS_ANOMALY:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
+
+    const/16 v2, 0xf
+
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->$VALUES:[Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 

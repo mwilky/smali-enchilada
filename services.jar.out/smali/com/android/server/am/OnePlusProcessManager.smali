@@ -6917,7 +6917,7 @@
 
     move-result v5
 
-    const-string v6, "handlePackageChange"
+    const-string/jumbo v6, "handlePackageChange"
 
     invoke-static {v5, v6}, Lcom/android/server/am/OnePlusProcessManager;->resumeProcessByUID_out(ILjava/lang/String;)V
 
@@ -7065,7 +7065,7 @@
 
     iget v6, v5, Landroid/content/pm/ApplicationInfo;->uid:I
 
-    const-string v7, "handlePackageChange"
+    const-string/jumbo v7, "handlePackageChange"
 
     invoke-static {v6, v7}, Lcom/android/server/am/OnePlusProcessManager;->resumeProcessByUID_out(ILjava/lang/String;)V
     :try_end_0
@@ -7158,7 +7158,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "handleSettingsChangedLocked # mBPMStatus="
+    const-string/jumbo v3, "handleSettingsChangedLocked # mBPMStatus="
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7304,7 +7304,7 @@
 
     move-result v6
 
-    const-string v7, "handleUidChange"
+    const-string/jumbo v7, "handleUidChange"
 
     invoke-static {v6, v7}, Lcom/android/server/am/OnePlusProcessManager;->resumeProcessByUID_out(ILjava/lang/String;)V
 
@@ -7399,7 +7399,7 @@
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "hanleBlackSensor  uid = "
+    const-string/jumbo v7, "hanleBlackSensor  uid = "
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

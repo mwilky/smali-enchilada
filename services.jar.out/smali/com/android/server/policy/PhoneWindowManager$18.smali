@@ -67,13 +67,13 @@
 
     move-result-wide v2
 
-    invoke-static {v1, v2, v3}, Lcom/android/server/policy/PhoneWindowManager;->access$4102(Lcom/android/server/policy/PhoneWindowManager;J)J
+    invoke-static {v1, v2, v3}, Lcom/android/server/policy/PhoneWindowManager;->access$4202(Lcom/android/server/policy/PhoneWindowManager;J)J
 
     iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$18;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iget v1, v1, Lcom/android/server/policy/PhoneWindowManager;->mLastSystemUiFlags:I
 
-    invoke-static {v1}, Lcom/android/server/policy/PhoneWindowManager;->access$4200(I)Z
+    invoke-static {v1}, Lcom/android/server/policy/PhoneWindowManager;->access$4300(I)Z
 
     move-result v1
 
@@ -87,7 +87,7 @@
 
     iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$18;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-static {v1}, Lcom/android/server/policy/PhoneWindowManager;->access$4300(Lcom/android/server/policy/PhoneWindowManager;)Lcom/android/server/policy/BarController;
+    invoke-static {v1}, Lcom/android/server/policy/PhoneWindowManager;->access$4400(Lcom/android/server/policy/PhoneWindowManager;)Lcom/android/server/policy/BarController;
 
     move-result-object v1
 

@@ -75,7 +75,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1300()Z
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1500()Z
 
     move-result v0
 
@@ -146,7 +146,7 @@
 
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$BinderService;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$600(Lcom/android/server/DeviceIdleController;)Lcom/android/server/DeviceIdleController$Constants;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$800(Lcom/android/server/DeviceIdleController;)Lcom/android/server/DeviceIdleController$Constants;
 
     move-result-object v0
 
@@ -177,7 +177,7 @@
 
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$BinderService;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$600(Lcom/android/server/DeviceIdleController;)Lcom/android/server/DeviceIdleController$Constants;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$800(Lcom/android/server/DeviceIdleController;)Lcom/android/server/DeviceIdleController$Constants;
 
     move-result-object v0
 
@@ -201,7 +201,7 @@
 .method public addPowerSaveWhitelistApp(Ljava/lang/String;)V
     .locals 3
 
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1300()Z
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1500()Z
 
     move-result v0
 
@@ -504,7 +504,7 @@
 .method public removePowerSaveWhitelistApp(Ljava/lang/String;)V
     .locals 3
 
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1300()Z
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1500()Z
 
     move-result v0
 
@@ -573,7 +573,7 @@
 .method public removeSystemPowerWhitelistApp(Ljava/lang/String;)V
     .locals 3
 
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1300()Z
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1500()Z
 
     move-result v0
 
@@ -642,7 +642,7 @@
 .method public restoreSystemPowerWhitelistApp(Ljava/lang/String;)V
     .locals 3
 
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1300()Z
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1500()Z
 
     move-result v0
 

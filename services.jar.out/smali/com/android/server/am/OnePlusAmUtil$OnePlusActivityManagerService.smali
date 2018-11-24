@@ -1029,5 +1029,9 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/am/OnePlusTemperatureMonitor;->initEnv(Landroid/content/Context;)V
 
+    iget-object v0, p0, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->getInstance(Landroid/content/Context;)Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+
     return-void
 .end method

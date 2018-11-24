@@ -665,7 +665,7 @@
 
     invoke-direct {v11, v12, v13}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    const v12, 0x506003f
+    const v12, 0x5060043
 
     invoke-virtual {v11, v12}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 

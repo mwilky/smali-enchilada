@@ -137,10 +137,10 @@
     return-object v0
 .end method
 
-.method public insert(Ljava/lang/String;IDDZ)V
-    .locals 11
+.method public insert(Ljava/lang/String;IDDDLcom/android/server/am/OnePlusBGController$APP_BUCKET_RANKING;Lcom/android/server/am/OnePlusBGController$DRAIN_TYPE;ZZ)V
+    .locals 16
 
-    move-object v1, p0
+    move-object/from16 v1, p0
 
     iget-object v2, v1, Lcom/android/server/am/OnePlusBGController$BGCAbnInfo;->mRecordList:Ljava/util/List;
 
@@ -151,17 +151,25 @@
 
     move-object v3, v0
 
-    move-object v4, p1
+    move-object/from16 v4, p1
 
-    move v5, p2
+    move/from16 v5, p2
 
-    move-wide v6, p3
+    move-wide/from16 v6, p3
 
     move-wide/from16 v8, p5
 
-    move/from16 v10, p7
+    move-wide/from16 v10, p7
 
-    invoke-direct/range {v3 .. v10}, Lcom/android/server/am/OnePlusBGController$UidmAh;-><init>(Ljava/lang/String;IDDZ)V
+    move-object/from16 v12, p9
+
+    move-object/from16 v13, p10
+
+    move/from16 v14, p11
+
+    move/from16 v15, p12
+
+    invoke-direct/range {v3 .. v15}, Lcom/android/server/am/OnePlusBGController$UidmAh;-><init>(Ljava/lang/String;IDDDLcom/android/server/am/OnePlusBGController$APP_BUCKET_RANKING;Lcom/android/server/am/OnePlusBGController$DRAIN_TYPE;ZZ)V
 
     iget-object v3, v1, Lcom/android/server/am/OnePlusBGController$BGCAbnInfo;->mRecordList:Ljava/util/List;
 

@@ -34,6 +34,8 @@
     .end annotation
 .end field
 
+.field private mCollector:Lnet/oneplus/odm/insight/PreloadApplicationEventCollector;
+
 .field private mHostClipboardMonitor:Lcom/android/server/clipboard/HostClipboardMonitor;
 
 .field private mHostMonitorThread:Ljava/lang/Thread;
@@ -147,6 +149,12 @@
 
     :goto_0
     iput-object v0, p0, Lcom/android/server/clipboard/ClipboardService;->mPermissionOwner:Landroid/os/IBinder;
+
+    invoke-static {p1}, Lnet/oneplus/odm/insight/PreloadApplicationEventCollector;->getInstance(Landroid/content/Context;)Lnet/oneplus/odm/insight/PreloadApplicationEventCollector;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/android/server/clipboard/ClipboardService;->mCollector:Lnet/oneplus/odm/insight/PreloadApplicationEventCollector;
 
     sget-boolean v1, Lcom/android/server/clipboard/ClipboardService;->IS_EMULATOR:Z
 
@@ -1335,6 +1343,10 @@
     invoke-virtual {v0, v1, v2}, Landroid/content/ClipDescription;->setTimestamp(J)V
 
     :cond_2
+    iget-object v0, p0, Lcom/android/server/clipboard/ClipboardService;->mCollector:Lnet/oneplus/odm/insight/PreloadApplicationEventCollector;
+
+    invoke-virtual {v0, p2}, Lnet/oneplus/odm/insight/PreloadApplicationEventCollector;->collectCopyEvent(Landroid/content/ClipData;)V
+
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0

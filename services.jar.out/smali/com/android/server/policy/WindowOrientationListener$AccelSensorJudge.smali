@@ -370,7 +370,7 @@
     goto :goto_0
 
     :cond_0
-    const/high16 v1, 0x7fc00000    # NaNf
+    const/high16 v1, 0x7fc00000    # Float.NaN
 
     :goto_0
     return v1

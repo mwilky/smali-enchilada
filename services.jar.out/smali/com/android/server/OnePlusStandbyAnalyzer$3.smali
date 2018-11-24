@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/OnePlusStandbyAnalyzer;->judgeRootCause()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/server/OnePlusStandbyAnalyzer;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,7 +20,7 @@
     value = {
         "Ljava/lang/Object;",
         "Ljava/util/Comparator<",
-        "Lcom/android/internal/os/BatterySipper;",
+        "Lcom/android/server/OnePlusStandbyAnalyzer$UidWakeupAlarmsInfo;",
         ">;"
     }
 .end annotation
@@ -43,14 +43,14 @@
 
 
 # virtual methods
-.method public compare(Lcom/android/internal/os/BatterySipper;Lcom/android/internal/os/BatterySipper;)I
-    .locals 4
+.method public compare(Lcom/android/server/OnePlusStandbyAnalyzer$UidWakeupAlarmsInfo;Lcom/android/server/OnePlusStandbyAnalyzer$UidWakeupAlarmsInfo;)I
+    .locals 2
 
-    iget-wide v0, p2, Lcom/android/internal/os/BatterySipper;->wakeLockTimeMs:J
+    iget v0, p2, Lcom/android/server/OnePlusStandbyAnalyzer$UidWakeupAlarmsInfo;->mCount:I
 
-    iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->wakeLockTimeMs:J
+    iget v1, p1, Lcom/android/server/OnePlusStandbyAnalyzer$UidWakeupAlarmsInfo;->mCount:I
 
-    invoke-static {v0, v1, v2, v3}, Ljava/lang/Long;->compare(JJ)I
+    invoke-static {v0, v1}, Ljava/lang/Integer;->compare(II)I
 
     move-result v0
 
@@ -60,11 +60,11 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    check-cast p1, Lcom/android/internal/os/BatterySipper;
+    check-cast p1, Lcom/android/server/OnePlusStandbyAnalyzer$UidWakeupAlarmsInfo;
 
-    check-cast p2, Lcom/android/internal/os/BatterySipper;
+    check-cast p2, Lcom/android/server/OnePlusStandbyAnalyzer$UidWakeupAlarmsInfo;
 
-    invoke-virtual {p0, p1, p2}, Lcom/android/server/OnePlusStandbyAnalyzer$3;->compare(Lcom/android/internal/os/BatterySipper;Lcom/android/internal/os/BatterySipper;)I
+    invoke-virtual {p0, p1, p2}, Lcom/android/server/OnePlusStandbyAnalyzer$3;->compare(Lcom/android/server/OnePlusStandbyAnalyzer$UidWakeupAlarmsInfo;Lcom/android/server/OnePlusStandbyAnalyzer$UidWakeupAlarmsInfo;)I
 
     move-result p1
 

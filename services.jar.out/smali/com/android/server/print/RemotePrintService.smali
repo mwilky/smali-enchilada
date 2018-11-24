@@ -1564,7 +1564,7 @@
 
     invoke-virtual {p1, v0, v2, v3, v1}, Lcom/android/internal/util/dump/DualDumpOutputStream;->write(Ljava/lang/String;JZ)V
 
-    const-string v0, "has_discovery_session"
+    const-string/jumbo v0, "has_discovery_session"
 
     iget-boolean v1, p0, Lcom/android/server/print/RemotePrintService;->mHasPrinterDiscoverySession:Z
 
@@ -1572,7 +1572,7 @@
 
     invoke-virtual {p1, v0, v2, v3, v1}, Lcom/android/internal/util/dump/DualDumpOutputStream;->write(Ljava/lang/String;JZ)V
 
-    const-string v0, "has_active_print_jobs"
+    const-string/jumbo v0, "has_active_print_jobs"
 
     iget-boolean v1, p0, Lcom/android/server/print/RemotePrintService;->mHasActivePrintJobs:Z
 

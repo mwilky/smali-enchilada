@@ -78,7 +78,7 @@
 
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$LocalService;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$500(Lcom/android/server/DeviceIdleController;)I
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$700(Lcom/android/server/DeviceIdleController;)I
 
     move-result v0
 
@@ -90,7 +90,7 @@
 
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$LocalService;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$600(Lcom/android/server/DeviceIdleController;)Lcom/android/server/DeviceIdleController$Constants;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$800(Lcom/android/server/DeviceIdleController;)Lcom/android/server/DeviceIdleController$Constants;
 
     move-result-object v0
 
@@ -116,7 +116,7 @@
 
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$LocalService;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$3000(Lcom/android/server/DeviceIdleController;)[I
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$3200(Lcom/android/server/DeviceIdleController;)[I
 
     move-result-object v0
 
@@ -128,7 +128,7 @@
 
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$LocalService;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2900(Lcom/android/server/DeviceIdleController;)[I
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$3100(Lcom/android/server/DeviceIdleController;)[I
 
     move-result-object v0
 
@@ -164,7 +164,7 @@
 
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$LocalService;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$500(Lcom/android/server/DeviceIdleController;)I
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$700(Lcom/android/server/DeviceIdleController;)I
 
     move-result v0
 
@@ -220,7 +220,13 @@
 .end method
 
 .method public setInBatteryStatsServiceInstance(Lcom/android/server/am/BatteryStatsService;)V
-    .locals 3
+    .locals 4
+
+    const-string v0, "DeviceIdleController"
+
+    const-string v1, "[1] Set in BatteryStatsService\'s reference to init OnePlusStandbyAnalyzer"
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$LocalService;->this$0:Lcom/android/server/DeviceIdleController;
 
@@ -228,7 +234,13 @@
 
     iget-object v2, p0, Lcom/android/server/DeviceIdleController$LocalService;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-direct {v1, p1, v2}, Lcom/android/server/OnePlusStandbyAnalyzer;-><init>(Lcom/android/server/am/BatteryStatsService;Lcom/android/server/DeviceIdleController;)V
+    iget-object v3, p0, Lcom/android/server/DeviceIdleController$LocalService;->this$0:Lcom/android/server/DeviceIdleController;
+
+    invoke-static {v3}, Lcom/android/server/DeviceIdleController;->access$3300(Lcom/android/server/DeviceIdleController;)Z
+
+    move-result v3
+
+    invoke-direct {v1, p1, v2, v3}, Lcom/android/server/OnePlusStandbyAnalyzer;-><init>(Lcom/android/server/am/BatteryStatsService;Lcom/android/server/DeviceIdleController;Z)V
 
     invoke-static {v0, v1}, Lcom/android/server/DeviceIdleController;->access$202(Lcom/android/server/DeviceIdleController;Lcom/android/server/OnePlusStandbyAnalyzer;)Lcom/android/server/OnePlusStandbyAnalyzer;
 

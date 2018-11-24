@@ -223,6 +223,8 @@
 
 .field SIMPLE_TIME_FORMAT:Ljava/time/format/DateTimeFormatter;
 
+.field private mActivityManager:Lcom/android/server/am/ActivityManagerService;
+
 .field private final mAlarmManager:Landroid/app/AlarmManager;
 
 .field private mAlarmManagerInternal:Lcom/android/server/AlarmManagerInternal;
@@ -299,6 +301,8 @@
 .field private mOPSMEnabled:I
 
 .field private final mOSTracker:Lnet/oneplus/odm/insight/tracker/OSTracker;
+
+.field private mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
 
 .field mOverHeatingDiagnosis:Lcom/android/server/OverHeatingDiagnosis;
 
@@ -858,7 +862,15 @@
     return v0
 .end method
 
-.method static synthetic access$2000(Lcom/android/server/OnePlusPowerController;)Landroid/os/PowerManager;
+.method static synthetic access$2002(Lcom/android/server/OnePlusPowerController;Lcom/android/server/OnePlusStandbyAnalyzer;)Lcom/android/server/OnePlusStandbyAnalyzer;
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/server/OnePlusPowerController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
+
+    return-object p1
+.end method
+
+.method static synthetic access$2100(Lcom/android/server/OnePlusPowerController;)Landroid/os/PowerManager;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mPowerManager:Landroid/os/PowerManager;
@@ -866,7 +878,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2100(Lcom/android/server/OnePlusPowerController;)Landroid/os/PowerManagerInternal;
+.method static synthetic access$2200(Lcom/android/server/OnePlusPowerController;)Landroid/os/PowerManagerInternal;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mLocalPowerManager:Landroid/os/PowerManagerInternal;
@@ -874,7 +886,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2202(I)I
+.method static synthetic access$2302(I)I
     .locals 0
 
     sput p0, Lcom/android/server/OnePlusPowerController;->mRandomSeed:I
@@ -882,7 +894,7 @@
     return p0
 .end method
 
-.method static synthetic access$2300()I
+.method static synthetic access$2400()I
     .locals 1
 
     sget v0, Lcom/android/server/OnePlusPowerController;->mNumCluster:I
@@ -890,7 +902,7 @@
     return v0
 .end method
 
-.method static synthetic access$2302(I)I
+.method static synthetic access$2402(I)I
     .locals 0
 
     sput p0, Lcom/android/server/OnePlusPowerController;->mNumCluster:I
@@ -898,7 +910,7 @@
     return p0
 .end method
 
-.method static synthetic access$2402(I)I
+.method static synthetic access$2502(I)I
     .locals 0
 
     sput p0, Lcom/android/server/OnePlusPowerController;->mMinRecordTime:I
@@ -906,7 +918,7 @@
     return p0
 .end method
 
-.method static synthetic access$2500()I
+.method static synthetic access$2600()I
     .locals 1
 
     sget v0, Lcom/android/server/OnePlusPowerController;->mMinIdleItems:I
@@ -914,7 +926,7 @@
     return v0
 .end method
 
-.method static synthetic access$2502(I)I
+.method static synthetic access$2602(I)I
     .locals 0
 
     sput p0, Lcom/android/server/OnePlusPowerController;->mMinIdleItems:I
@@ -922,7 +934,7 @@
     return p0
 .end method
 
-.method static synthetic access$2600()I
+.method static synthetic access$2700()I
     .locals 1
 
     sget v0, Lcom/android/server/OnePlusPowerController;->mMaxIdleItems:I
@@ -930,7 +942,7 @@
     return v0
 .end method
 
-.method static synthetic access$2602(I)I
+.method static synthetic access$2702(I)I
     .locals 0
 
     sput p0, Lcom/android/server/OnePlusPowerController;->mMaxIdleItems:I
@@ -938,7 +950,7 @@
     return p0
 .end method
 
-.method static synthetic access$2702(I)I
+.method static synthetic access$2802(I)I
     .locals 0
 
     sput p0, Lcom/android/server/OnePlusPowerController;->mMinIdleLength:I
@@ -946,26 +958,10 @@
     return p0
 .end method
 
-.method static synthetic access$2802(I)I
-    .locals 0
-
-    sput p0, Lcom/android/server/OnePlusPowerController;->mMaxIdleLength:I
-
-    return p0
-.end method
-
-.method static synthetic access$2900()I
-    .locals 1
-
-    sget v0, Lcom/android/server/OnePlusPowerController;->mTolerance:I
-
-    return v0
-.end method
-
 .method static synthetic access$2902(I)I
     .locals 0
 
-    sput p0, Lcom/android/server/OnePlusPowerController;->mTolerance:I
+    sput p0, Lcom/android/server/OnePlusPowerController;->mMaxIdleLength:I
 
     return p0
 .end method
@@ -978,12 +974,20 @@
     return v0
 .end method
 
-.method static synthetic access$3000(Lcom/android/server/OnePlusPowerController;Lorg/json/JSONArray;)V
+.method static synthetic access$3000()I
+    .locals 1
+
+    sget v0, Lcom/android/server/OnePlusPowerController;->mTolerance:I
+
+    return v0
+.end method
+
+.method static synthetic access$3002(I)I
     .locals 0
 
-    invoke-direct {p0, p1}, Lcom/android/server/OnePlusPowerController;->resolveConfigFromJSON(Lorg/json/JSONArray;)V
+    sput p0, Lcom/android/server/OnePlusPowerController;->mTolerance:I
 
-    return-void
+    return p0
 .end method
 
 .method static synthetic access$302(Lcom/android/server/OnePlusPowerController;Z)Z
@@ -994,7 +998,15 @@
     return p1
 .end method
 
-.method static synthetic access$3100(Lcom/android/server/OnePlusPowerController;)Landroid/content/Context;
+.method static synthetic access$3100(Lcom/android/server/OnePlusPowerController;Lorg/json/JSONArray;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/android/server/OnePlusPowerController;->resolveConfigFromJSON(Lorg/json/JSONArray;)V
+
+    return-void
+.end method
+
+.method static synthetic access$3200(Lcom/android/server/OnePlusPowerController;)Landroid/content/Context;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mContext:Landroid/content/Context;
@@ -1002,7 +1014,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3200(Lcom/android/server/OnePlusPowerController;)Landroid/telephony/SubscriptionManager;
+.method static synthetic access$3300(Lcom/android/server/OnePlusPowerController;)Landroid/telephony/SubscriptionManager;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mSubscriptionManager:Landroid/telephony/SubscriptionManager;
@@ -1010,7 +1022,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3300(Lcom/android/server/OnePlusPowerController;)Lcom/android/server/OnePlusPowerController$KMeans;
+.method static synthetic access$3400(Lcom/android/server/OnePlusPowerController;)Lcom/android/server/OnePlusPowerController$KMeans;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mKMeans:Lcom/android/server/OnePlusPowerController$KMeans;
@@ -1018,7 +1030,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3500()D
+.method static synthetic access$3600()D
     .locals 2
 
     sget-wide v0, Lcom/android/server/OnePlusPowerController;->mCoefVar:D
@@ -1026,7 +1038,7 @@
     return-wide v0
 .end method
 
-.method static synthetic access$3600()Z
+.method static synthetic access$3700()Z
     .locals 1
 
     sget-boolean v0, Lcom/android/server/OnePlusPowerController;->DEBUG_KMEANS:Z
@@ -1034,7 +1046,7 @@
     return v0
 .end method
 
-.method static synthetic access$3700()Z
+.method static synthetic access$3800()Z
     .locals 1
 
     sget-boolean v0, Lcom/android/server/OnePlusPowerController;->mShuttingDown:Z
@@ -1042,18 +1054,10 @@
     return v0
 .end method
 
-.method static synthetic access$3800(Lcom/android/server/OnePlusPowerController;)Landroid/app/AlarmManager$OnAlarmListener;
+.method static synthetic access$3900(Lcom/android/server/OnePlusPowerController;)Landroid/app/AlarmManager$OnAlarmListener;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mEarlyRestrictionAlarmListener:Landroid/app/AlarmManager$OnAlarmListener;
-
-    return-object v0
-.end method
-
-.method static synthetic access$3900(Lcom/android/server/OnePlusPowerController;)Landroid/app/AlarmManager;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mAlarmManager:Landroid/app/AlarmManager;
 
     return-object v0
 .end method
@@ -1068,7 +1072,15 @@
     return v0
 .end method
 
-.method static synthetic access$4000(Lcom/android/server/OnePlusPowerController;Ljava/time/LocalDateTime;)J
+.method static synthetic access$4000(Lcom/android/server/OnePlusPowerController;)Landroid/app/AlarmManager;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mAlarmManager:Landroid/app/AlarmManager;
+
+    return-object v0
+.end method
+
+.method static synthetic access$4100(Lcom/android/server/OnePlusPowerController;Ljava/time/LocalDateTime;)J
     .locals 2
 
     invoke-direct {p0, p1}, Lcom/android/server/OnePlusPowerController;->convertLocalDateTimeToUtcMillis(Ljava/time/LocalDateTime;)J
@@ -1078,7 +1090,7 @@
     return-wide v0
 .end method
 
-.method static synthetic access$4100(Lcom/android/server/OnePlusPowerController;)Landroid/app/Notification;
+.method static synthetic access$4200(Lcom/android/server/OnePlusPowerController;)Landroid/app/Notification;
     .locals 1
 
     invoke-direct {p0}, Lcom/android/server/OnePlusPowerController;->createNotification()Landroid/app/Notification;
@@ -1088,7 +1100,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$4200(Lcom/android/server/OnePlusPowerController;)Landroid/app/NotificationManager;
+.method static synthetic access$4300(Lcom/android/server/OnePlusPowerController;)Landroid/app/NotificationManager;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mNotificationManager:Landroid/app/NotificationManager;
@@ -1096,7 +1108,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$4300()Z
+.method static synthetic access$4400()Z
     .locals 1
 
     sget-boolean v0, Lcom/android/server/OnePlusPowerController;->mFirstChange:Z
@@ -1104,7 +1116,7 @@
     return v0
 .end method
 
-.method static synthetic access$4302(Z)Z
+.method static synthetic access$4402(Z)Z
     .locals 0
 
     sput-boolean p0, Lcom/android/server/OnePlusPowerController;->mFirstChange:Z
@@ -1112,7 +1124,7 @@
     return p0
 .end method
 
-.method static synthetic access$4400()I
+.method static synthetic access$4500()I
     .locals 1
 
     sget v0, Lcom/android/server/OnePlusPowerController;->mFirstMcc:I
@@ -1120,7 +1132,7 @@
     return v0
 .end method
 
-.method static synthetic access$4500()I
+.method static synthetic access$4600()I
     .locals 1
 
     sget v0, Lcom/android/server/OnePlusPowerController;->mFirstMnc:I
@@ -1128,7 +1140,7 @@
     return v0
 .end method
 
-.method static synthetic access$4600()Z
+.method static synthetic access$4700()Z
     .locals 1
 
     sget-boolean v0, Lcom/android/server/OnePlusPowerController;->DEBUG_IDLE_STATS:Z
@@ -1136,7 +1148,7 @@
     return v0
 .end method
 
-.method static synthetic access$4700(Lcom/android/server/OnePlusPowerController;)Ljava/time/LocalDateTime;
+.method static synthetic access$4800(Lcom/android/server/OnePlusPowerController;)Ljava/time/LocalDateTime;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mSleepStartOverridden:Ljava/time/LocalDateTime;
@@ -1144,7 +1156,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$4800(Lcom/android/server/OnePlusPowerController;)Ljava/time/LocalDateTime;
+.method static synthetic access$4900(Lcom/android/server/OnePlusPowerController;)Ljava/time/LocalDateTime;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mSleepEndOverridden:Ljava/time/LocalDateTime;
@@ -1521,7 +1533,7 @@
 
     invoke-direct {v7, v2, v8, v4}, Ljava/lang/String;-><init>([BII)V
 
-    invoke-virtual {p1, v7}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {p1, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -2673,6 +2685,113 @@
 
     :cond_a
     :goto_4
+    return-void
+.end method
+
+.method private enableDisableData(Z)V
+    .locals 8
+
+    iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
+
+    invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getPhoneCount()I
+
+    move-result v0
+
+    const-string v1, "OnePlusPowerController"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Phone count = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/android/server/OPLogger$Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v1, 0x0
+
+    move v2, v1
+
+    :goto_0
+    if-ge v2, v0, :cond_1
+
+    invoke-static {v2}, Landroid/telephony/SubscriptionManager;->getSubId(I)[I
+
+    move-result-object v3
+
+    if-eqz v3, :cond_0
+
+    array-length v4, v3
+
+    if-lez v4, :cond_0
+
+    aget v4, v3, v1
+
+    const-string v5, "OnePlusPowerController"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v7, "phoneId="
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v7, ", subId="
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Lcom/android/server/OPLogger$Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {v4}, Landroid/telephony/SubscriptionManager;->isValidSubscriptionId(I)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    const-string v5, "OnePlusPowerController"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v7, "setDataEnabled="
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Lcom/android/server/OPLogger$Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v5, p0, Lcom/android/server/OnePlusPowerController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
+
+    invoke-virtual {v5, v4, p1}, Landroid/telephony/TelephonyManager;->setDataEnabled(IZ)V
+
+    :cond_0
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_1
     return-void
 .end method
 
@@ -4307,6 +4426,208 @@
 
     invoke-direct {v1, v2, v0}, Lcom/android/server/OnePlusPowerController;->dumpDiagnosisRecords(Ljava/io/PrintWriter;Ljava/lang/String;)V
 
+    invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
+
+    const-string v0, "**** BGC ****"
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
+
+    if-eqz v0, :cond_6
+
+    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
+
+    sget-object v0, Lcom/android/server/am/ActivityManagerService;->mOpAms:Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;
+
+    if-eqz v0, :cond_6
+
+    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
+
+    sget-object v0, Lcom/android/server/am/ActivityManagerService;->mOpAms:Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;
+
+    invoke-virtual {v0}, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;->ifOHPDInited()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
+
+    sget-object v0, Lcom/android/server/am/ActivityManagerService;->mOpAms:Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;
+
+    invoke-virtual {v0}, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;->getOHPD()Lcom/android/server/am/OnePlusHighPowerDetector;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->getBGCInstance()Lcom/android/server/am/OnePlusBGController;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_6
+
+    invoke-virtual {v0, v2}, Lcom/android/server/am/OnePlusBGController;->dumpUidSippermAhStats(Ljava/io/PrintWriter;)V
+
+    :cond_6
+    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
+
+    if-eqz v0, :cond_7
+
+    invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
+
+    const-string v0, "**** Standby Diagnosis Config info ****"
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
+
+    invoke-virtual {v0}, Lcom/android/server/OnePlusStandbyAnalyzer;->genConfigForDump()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
+
+    const-string v0, "**** Standby Diagnosis info ****"
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
+
+    invoke-virtual {v0}, Lcom/android/server/OnePlusStandbyAnalyzer;->genDiagnosisInfoForDump()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
+
+    const-string v0, "**** Standby Diagnosis WL info ****"
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
+
+    invoke-virtual {v0}, Lcom/android/server/OnePlusStandbyAnalyzer;->genWLInfoForDump()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
+
+    const-string v0, "**** Standby Diagnosis KWL info ****"
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
+
+    invoke-virtual {v0}, Lcom/android/server/OnePlusStandbyAnalyzer;->genKWLInfoForDump()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
+
+    const-string v0, "**** Standby Diagnosis WR info ****"
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
+
+    invoke-virtual {v0}, Lcom/android/server/OnePlusStandbyAnalyzer;->genWRInfoForDump()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
+
+    const-string v0, "**** Standby Diagnosis WUA info ****"
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
+
+    invoke-virtual {v0}, Lcom/android/server/OnePlusStandbyAnalyzer;->genWUAInfoForDump()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
+
+    const-string v0, "**** Standby Diagnosis Wifi Wakeup info ****"
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
+
+    invoke-virtual {v0}, Lcom/android/server/OnePlusStandbyAnalyzer;->genWifiWakeupInfoForDump()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
+
+    const-string v0, "**** Standby Diagnosis pkt info ****"
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
+
+    invoke-virtual {v0}, Lcom/android/server/OnePlusStandbyAnalyzer;->genPktInfoForDump()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
+
+    const-string v0, "**** Standby Diagnosis Assist info (WL/KWL) ****"
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
+
+    invoke-virtual {v0}, Lcom/android/server/OnePlusStandbyAnalyzer;->genAssistInfoForDump()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
+
+    const-string v0, "**** Standby Diagnosis Assist RPM info ****"
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
+
+    invoke-virtual {v0}, Lcom/android/server/OnePlusStandbyAnalyzer;->genRPMInfoForDump()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
+
+    const-string v0, "**** Telephony Abnormal Counting Info ****"
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
+
+    invoke-virtual {v0}, Lcom/android/server/OnePlusStandbyAnalyzer;->genTeleChgInfoForDump()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    :cond_7
     monitor-exit p0
 
     return-void
@@ -6024,7 +6345,7 @@
 
     move-result-object v5
 
-    const v6, 0x107004e
+    const v6, 0x107004f
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -6063,7 +6384,7 @@
 
     move-result-object v1
 
-    const v5, 0x107004f
+    const v5, 0x1070050
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -6078,7 +6399,7 @@
 
     move-result-object v1
 
-    const v5, 0x107004b
+    const v5, 0x107004c
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -8509,9 +8830,7 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    iget-object v5, p0, Lcom/android/server/OnePlusPowerController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
-
-    invoke-virtual {v5, v2}, Landroid/telephony/TelephonyManager;->setDataEnabled(Z)V
+    invoke-direct {p0, v2}, Lcom/android/server/OnePlusPowerController;->enableDisableData(Z)V
 
     goto :goto_2a
 
@@ -8790,11 +9109,9 @@
 
     if-ne v0, v1, :cond_2
 
-    iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
+    iget-boolean v0, p0, Lcom/android/server/OnePlusPowerController;->mSavedDataState:Z
 
-    iget-boolean v1, p0, Lcom/android/server/OnePlusPowerController;->mSavedDataState:Z
-
-    invoke-virtual {v0, v1}, Landroid/telephony/TelephonyManager;->setDataEnabled(Z)V
+    invoke-direct {p0, v0}, Lcom/android/server/OnePlusPowerController;->enableDisableData(Z)V
 
     const-string v0, "OnePlusPowerController"
 
@@ -8837,9 +9154,7 @@
 
     if-ne v0, v2, :cond_0
 
-    iget-object v0, p0, Lcom/android/server/OnePlusPowerController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
-
-    invoke-virtual {v0, v1}, Landroid/telephony/TelephonyManager;->setDataEnabled(Z)V
+    invoke-direct {p0, v1}, Lcom/android/server/OnePlusPowerController;->enableDisableData(Z)V
 
     const-string v0, "OnePlusPowerController"
 
@@ -9233,6 +9548,14 @@
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_1
+    return-void
+.end method
+
+.method public setActivityManager(Lcom/android/server/am/ActivityManagerService;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/server/OnePlusPowerController;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
+
     return-void
 .end method
 

@@ -233,7 +233,7 @@
 
     if-ne v2, v0, :cond_0
 
-    const-string v2, "hash"
+    const-string/jumbo v2, "hash"
 
     invoke-interface {p1, v0, v1, v2}, Lorg/xmlpull/v1/XmlPullParser;->require(ILjava/lang/String;Ljava/lang/String;)V
 
@@ -245,7 +245,7 @@
 
     move-result-object v2
 
-    const-string v4, "hash"
+    const-string/jumbo v4, "hash"
 
     invoke-interface {p1, v3, v1, v4}, Lorg/xmlpull/v1/XmlPullParser;->require(ILjava/lang/String;Ljava/lang/String;)V
 

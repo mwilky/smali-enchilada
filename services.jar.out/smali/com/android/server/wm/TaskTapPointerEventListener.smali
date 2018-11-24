@@ -309,26 +309,41 @@
 
     :cond_c
     :goto_3
-    sget-boolean v1, Lcom/android/server/am/ActivityManagerService;->mIsPerfLockAcquired:Z
+    sget-boolean v1, Lcom/android/server/am/ActivityStackSupervisor;->mIsPerfBoostAcquired:Z
 
     const/4 v2, 0x0
-
-    if-eqz v1, :cond_d
-
-    sget-object v1, Lcom/android/server/am/ActivityManagerService;->mPerf:Landroid/util/BoostFramework;
-
-    invoke-virtual {v1}, Landroid/util/BoostFramework;->perfLockRelease()I
-
-    sput-boolean v2, Lcom/android/server/am/ActivityManagerService;->mIsPerfLockAcquired:Z
-
-    :cond_d
-    sget-boolean v1, Lcom/android/server/am/ActivityStackSupervisor;->mPerfSendTapHint:Z
 
     if-eqz v1, :cond_e
 
     iget-object v1, p0, Lcom/android/server/wm/TaskTapPointerEventListener;->mPerfObj:Landroid/util/BoostFramework;
 
     if-eqz v1, :cond_e
+
+    sget v1, Lcom/android/server/am/ActivityStackSupervisor;->mPerfHandle:I
+
+    if-lez v1, :cond_d
+
+    iget-object v1, p0, Lcom/android/server/wm/TaskTapPointerEventListener;->mPerfObj:Landroid/util/BoostFramework;
+
+    sget v3, Lcom/android/server/am/ActivityStackSupervisor;->mPerfHandle:I
+
+    invoke-virtual {v1, v3}, Landroid/util/BoostFramework;->perfLockReleaseHandler(I)I
+
+    const/4 v1, -0x1
+
+    sput v1, Lcom/android/server/am/ActivityStackSupervisor;->mPerfHandle:I
+
+    :cond_d
+    sput-boolean v2, Lcom/android/server/am/ActivityStackSupervisor;->mIsPerfBoostAcquired:Z
+
+    :cond_e
+    sget-boolean v1, Lcom/android/server/am/ActivityStackSupervisor;->mPerfSendTapHint:Z
+
+    if-eqz v1, :cond_f
+
+    iget-object v1, p0, Lcom/android/server/wm/TaskTapPointerEventListener;->mPerfObj:Landroid/util/BoostFramework;
+
+    if-eqz v1, :cond_f
 
     iget-object v1, p0, Lcom/android/server/wm/TaskTapPointerEventListener;->mPerfObj:Landroid/util/BoostFramework;
 
@@ -340,7 +355,7 @@
 
     sput-boolean v2, Lcom/android/server/am/ActivityStackSupervisor;->mPerfSendTapHint:Z
 
-    :cond_e
+    :cond_f
     return-void
 
     :catchall_0

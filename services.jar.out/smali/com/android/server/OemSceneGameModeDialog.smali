@@ -99,7 +99,9 @@
 
     iget-boolean v0, p0, Lcom/android/server/OemSceneGameModeDialog;->mAnimate:Z
 
-    if-eqz v0, :cond_0
+    const/16 v1, -0x61e8
+
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/android/server/OemSceneGameModeDialog;->mIconCheck1:Landroid/widget/ImageView;
 
@@ -109,15 +111,7 @@
 
     check-cast v0, Landroid/graphics/drawable/AnimationDrawable;
 
-    iget-object v1, p0, Lcom/android/server/OemSceneGameModeDialog;->mIconCheck2:Landroid/widget/ImageView;
-
-    invoke-virtual {v1}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/graphics/drawable/AnimationDrawable;
-
-    iget-object v2, p0, Lcom/android/server/OemSceneGameModeDialog;->mIconCheck3:Landroid/widget/ImageView;
+    iget-object v2, p0, Lcom/android/server/OemSceneGameModeDialog;->mIconCheck2:Landroid/widget/ImageView;
 
     invoke-virtual {v2}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
@@ -125,40 +119,82 @@
 
     check-cast v2, Landroid/graphics/drawable/AnimationDrawable;
 
+    iget-object v3, p0, Lcom/android/server/OemSceneGameModeDialog;->mIconCheck3:Landroid/widget/ImageView;
+
+    invoke-virtual {v3}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/graphics/drawable/AnimationDrawable;
+
+    invoke-static {}, Lcom/oneplus/custom/utils/OpCustomizeSettings;->getCustomType()Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
+
+    move-result-object v4
+
+    sget-object v5, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->MCL:Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
+
+    if-ne v4, v5, :cond_0
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/AnimationDrawable;->setTint(I)V
+
+    invoke-virtual {v2, v1}, Landroid/graphics/drawable/AnimationDrawable;->setTint(I)V
+
+    invoke-virtual {v3, v1}, Landroid/graphics/drawable/AnimationDrawable;->setTint(I)V
+
+    :cond_0
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimationDrawable;->start()V
 
-    new-instance v3, Lcom/android/server/OemSceneGameModeDialog$8;
+    new-instance v1, Lcom/android/server/OemSceneGameModeDialog$8;
 
-    invoke-direct {v3, p0, v1}, Lcom/android/server/OemSceneGameModeDialog$8;-><init>(Lcom/android/server/OemSceneGameModeDialog;Landroid/graphics/drawable/AnimationDrawable;)V
+    invoke-direct {v1, p0, v2}, Lcom/android/server/OemSceneGameModeDialog$8;-><init>(Lcom/android/server/OemSceneGameModeDialog;Landroid/graphics/drawable/AnimationDrawable;)V
 
     const-wide/16 v4, 0x1e0
 
-    invoke-virtual {p0, v3, v4, v5}, Lcom/android/server/OemSceneGameModeDialog;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {p0, v1, v4, v5}, Lcom/android/server/OemSceneGameModeDialog;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    new-instance v3, Lcom/android/server/OemSceneGameModeDialog$9;
+    new-instance v1, Lcom/android/server/OemSceneGameModeDialog$9;
 
-    invoke-direct {v3, p0, v2}, Lcom/android/server/OemSceneGameModeDialog$9;-><init>(Lcom/android/server/OemSceneGameModeDialog;Landroid/graphics/drawable/AnimationDrawable;)V
+    invoke-direct {v1, p0, v3}, Lcom/android/server/OemSceneGameModeDialog$9;-><init>(Lcom/android/server/OemSceneGameModeDialog;Landroid/graphics/drawable/AnimationDrawable;)V
 
     const-wide/16 v4, 0x3c0
 
-    invoke-virtual {p0, v3, v4, v5}, Lcom/android/server/OemSceneGameModeDialog;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {p0, v1, v4, v5}, Lcom/android/server/OemSceneGameModeDialog;->postDelayed(Ljava/lang/Runnable;J)Z
 
     goto :goto_0
 
-    :cond_0
-    iget-object v0, p0, Lcom/android/server/OemSceneGameModeDialog;->mIconCheck1:Landroid/widget/ImageView;
+    :cond_1
+    invoke-virtual {p0}, Lcom/android/server/OemSceneGameModeDialog;->getResources()Landroid/content/res/Resources;
 
-    const v1, 0x506002c
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+    const v2, 0x506002c
 
-    iget-object v0, p0, Lcom/android/server/OemSceneGameModeDialog;->mIconCheck2:Landroid/widget/ImageView;
+    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+    move-result-object v0
 
-    iget-object v0, p0, Lcom/android/server/OemSceneGameModeDialog;->mIconCheck3:Landroid/widget/ImageView;
+    invoke-static {}, Lcom/oneplus/custom/utils/OpCustomizeSettings;->getCustomType()Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+    move-result-object v2
+
+    sget-object v3, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->MCL:Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
+
+    if-ne v2, v3, :cond_2
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setTint(I)V
+
+    :cond_2
+    iget-object v1, p0, Lcom/android/server/OemSceneGameModeDialog;->mIconCheck1:Landroid/widget/ImageView;
+
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    iget-object v1, p0, Lcom/android/server/OemSceneGameModeDialog;->mIconCheck2:Landroid/widget/ImageView;
+
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    iget-object v1, p0, Lcom/android/server/OemSceneGameModeDialog;->mIconCheck3:Landroid/widget/ImageView;
+
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     :goto_0
     return-void
@@ -261,7 +297,7 @@
 .end method
 
 .method public updateView()V
-    .locals 7
+    .locals 9
 
     iget-object v0, p0, Lcom/android/server/OemSceneGameModeDialog;->mViewRoot:Landroid/widget/RelativeLayout;
 
@@ -524,5 +560,131 @@
 
     invoke-virtual {p0}, Lcom/android/server/OemSceneGameModeDialog;->updateNotifyType()V
 
+    invoke-static {}, Lcom/oneplus/custom/utils/OpCustomizeSettings;->getCustomType()Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->MCL:Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
+
+    if-ne v2, v3, :cond_4
+
+    iget-object v2, p0, Lcom/android/server/OemSceneGameModeDialog;->mViewRoot:Landroid/widget/RelativeLayout;
+
+    const v3, 0x5070001
+
+    invoke-virtual {v2, v3}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/server/OemSceneGameModeDialog;->mContext:Landroid/content/Context;
+
+    const-string/jumbo v5, "window"
+
+    invoke-virtual {v3, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/view/WindowManager;
+
+    invoke-interface {v3}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/view/Display;->getRotation()I
+
+    move-result v5
+
+    packed-switch v5, :pswitch_data_0
+
+    const-string v6, "OemSceneGameModeDialog"
+
+    const-string v7, "Error while checking rotation"
+
+    invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_3
+
+    :pswitch_0
+    invoke-virtual {p0}, Lcom/android/server/OemSceneGameModeDialog;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v6
+
+    const v7, 0x5060047
+
+    invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v6}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    goto :goto_3
+
+    :pswitch_1
+    invoke-virtual {p0}, Lcom/android/server/OemSceneGameModeDialog;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v6
+
+    const v7, 0x5060048
+
+    invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v6}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    nop
+
+    :goto_3
+    iget-object v6, p0, Lcom/android/server/OemSceneGameModeDialog;->mIncomingCallNotify:Landroid/widget/Switch;
+
+    const v7, 0x5060031
+
+    invoke-virtual {v6, v7}, Landroid/widget/Switch;->setThumbResource(I)V
+
+    iget-object v6, p0, Lcom/android/server/OemSceneGameModeDialog;->mIncomingCallNotify:Landroid/widget/Switch;
+
+    const v8, 0x5060033
+
+    invoke-virtual {v6, v8}, Landroid/widget/Switch;->setTrackResource(I)V
+
+    iget-object v6, p0, Lcom/android/server/OemSceneGameModeDialog;->mIncomingAutoOffHook:Landroid/widget/Switch;
+
+    invoke-virtual {v6, v7}, Landroid/widget/Switch;->setThumbResource(I)V
+
+    iget-object v6, p0, Lcom/android/server/OemSceneGameModeDialog;->mIncomingAutoOffHook:Landroid/widget/Switch;
+
+    invoke-virtual {v6, v8}, Landroid/widget/Switch;->setTrackResource(I)V
+
+    iget-object v6, p0, Lcom/android/server/OemSceneGameModeDialog;->mDontShowAgain:Landroid/widget/CheckBox;
+
+    invoke-virtual {p0}, Lcom/android/server/OemSceneGameModeDialog;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v7
+
+    const v8, 0x5040004
+
+    invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getColorStateList(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Landroid/widget/CheckBox;->setButtonTintList(Landroid/content/res/ColorStateList;)V
+
+    iget-object v6, p0, Lcom/android/server/OemSceneGameModeDialog;->mDismiss:Landroid/widget/TextView;
+
+    const/16 v7, -0x61e8
+
+    invoke-virtual {v6, v7}, Landroid/widget/TextView;->setTextColor(I)V
+
+    :cond_4
     return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

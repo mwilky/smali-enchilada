@@ -138,6 +138,27 @@
     const/16 v5, 0x1388
 
     :cond_1
+    invoke-static/range {p4 .. p4}, Ljava/lang/Math;->abs(F)F
+
+    move-result v6
+
+    invoke-static/range {p3 .. p3}, Ljava/lang/Math;->abs(F)F
+
+    move-result v7
+
+    cmpl-float v6, v6, v7
+
+    if-ltz v6, :cond_2
+
+    iget-object v6, v0, Lcom/android/server/policy/SystemGesturesPointerEventListener$FlingGestureDetector;->this$0:Lcom/android/server/policy/SystemGesturesPointerEventListener;
+
+    invoke-static {v6}, Lcom/android/server/policy/SystemGesturesPointerEventListener;->access$300(Lcom/android/server/policy/SystemGesturesPointerEventListener;)Lcom/android/server/policy/SystemGesturesPointerEventListener$Callbacks;
+
+    move-result-object v6
+
+    invoke-interface {v6, v5}, Lcom/android/server/policy/SystemGesturesPointerEventListener$Callbacks;->onVerticalFling(I)V
+
+    :cond_2
     iget-object v6, v0, Lcom/android/server/policy/SystemGesturesPointerEventListener$FlingGestureDetector;->this$0:Lcom/android/server/policy/SystemGesturesPointerEventListener;
 
     invoke-static {v6, v1, v2}, Lcom/android/server/policy/SystemGesturesPointerEventListener;->access$202(Lcom/android/server/policy/SystemGesturesPointerEventListener;J)J

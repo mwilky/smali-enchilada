@@ -49,7 +49,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController$5;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$3200(Lcom/android/server/OnePlusPowerController;)Landroid/telephony/SubscriptionManager;
+    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$3300(Lcom/android/server/OnePlusPowerController;)Landroid/telephony/SubscriptionManager;
 
     move-result-object v0
 
@@ -57,7 +57,7 @@
 
     move-result-object v0
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$4300()Z
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$4400()Z
 
     move-result v1
 
@@ -110,12 +110,12 @@
     invoke-virtual {v3, v4}, Lcom/android/server/OnePlusPowerController;->setMccMncValue(Landroid/telephony/SubscriptionInfo;)V
 
     :cond_1
-    invoke-static {v2}, Lcom/android/server/OnePlusPowerController;->access$4302(Z)Z
+    invoke-static {v2}, Lcom/android/server/OnePlusPowerController;->access$4402(Z)Z
 
     goto :goto_0
 
     :cond_2
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$4400()I
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$4500()I
 
     move-result v1
 
@@ -209,7 +209,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$4400()I
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$4500()I
 
     move-result v3
 
@@ -219,7 +219,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$4500()I
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$4600()I
 
     move-result v3
 

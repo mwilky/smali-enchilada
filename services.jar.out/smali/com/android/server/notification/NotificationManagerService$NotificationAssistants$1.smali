@@ -51,7 +51,7 @@
 
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService$NotificationAssistants$1;->val$sbnToPost:Landroid/service/notification/StatusBarNotification;
 
-    invoke-static {v0, v1, v2}, Lcom/android/server/notification/NotificationManagerService$NotificationAssistants;->access$9100(Lcom/android/server/notification/NotificationManagerService$NotificationAssistants;Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;Landroid/service/notification/StatusBarNotification;)V
+    invoke-static {v0, v1, v2}, Lcom/android/server/notification/NotificationManagerService$NotificationAssistants;->access$9200(Lcom/android/server/notification/NotificationManagerService$NotificationAssistants;Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;Landroid/service/notification/StatusBarNotification;)V
 
     return-void
 .end method

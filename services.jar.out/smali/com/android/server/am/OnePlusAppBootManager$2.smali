@@ -324,7 +324,7 @@
 
     const-wide/16 v2, 0x4e20
 
-    invoke-static {v1, v2, v3}, Lcom/android/server/am/OnePlusAppBootManager;->access$300(Lcom/android/server/am/OnePlusAppBootManager;J)V
+    invoke-static {v1, v2, v3}, Lcom/android/server/am/OnePlusAppBootManager;->access$400(Lcom/android/server/am/OnePlusAppBootManager;J)V
 
     return-void
 .end method

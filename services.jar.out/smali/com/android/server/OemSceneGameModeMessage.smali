@@ -93,13 +93,38 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
+    invoke-static {}, Lcom/oneplus/custom/utils/OpCustomizeSettings;->getCustomType()Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
+
+    move-result-object v3
+
+    sget-object v4, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->MCL:Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
+
+    if-ne v3, v4, :cond_0
+
+    iget-object v3, p0, Lcom/android/server/OemSceneGameModeMessage;->mBackground:Landroid/view/View;
+
+    const v4, 0x506003a
+
+    invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    iget-object v3, p0, Lcom/android/server/OemSceneGameModeMessage;->mMoreSettingsBtn:Landroid/widget/TextView;
+
+    const/16 v4, -0x61e8
+
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
+
+    :cond_0
     iget-object v3, p0, Lcom/android/server/OemSceneGameModeMessage;->mPanel:Lcom/android/server/OemSceneGameModePanel;
 
     invoke-virtual {v3}, Lcom/android/server/OemSceneGameModePanel;->isDocked()Z
 
     move-result v3
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_1
 
     iget-object v3, p0, Lcom/android/server/OemSceneGameModeMessage;->mMoreSettingsBtn:Landroid/widget/TextView;
 
@@ -113,6 +138,6 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
-    :cond_0
+    :cond_1
     return-void
 .end method

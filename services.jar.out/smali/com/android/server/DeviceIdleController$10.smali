@@ -43,11 +43,11 @@
 
 # virtual methods
 .method public run()V
-    .locals 5
+    .locals 8
 
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$10;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$3300(Lcom/android/server/DeviceIdleController;)Z
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$3600(Lcom/android/server/DeviceIdleController;)Z
 
     move-result v0
 
@@ -57,15 +57,15 @@
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lcom/android/server/DeviceIdleController;->access$3302(Lcom/android/server/DeviceIdleController;Z)Z
+    invoke-static {v0, v1}, Lcom/android/server/DeviceIdleController;->access$3602(Lcom/android/server/DeviceIdleController;Z)Z
 
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1300()Z
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1500()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$2100()Z
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$2300()Z
 
     move-result v0
 
@@ -108,17 +108,31 @@
 
     invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$200(Lcom/android/server/DeviceIdleController;)Lcom/android/server/OnePlusStandbyAnalyzer;
 
-    move-result-object v0
+    move-result-object v1
 
-    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;->END:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
+    sget-object v2, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;->END:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
 
-    sget-object v2, Lcom/android/server/OnePlusStandbyAnalyzer$STATISTIC_TYPE;->KWL_WR:Lcom/android/server/OnePlusStandbyAnalyzer$STATISTIC_TYPE;
+    sget-object v3, Lcom/android/server/OnePlusStandbyAnalyzer$STATISTIC_TYPE;->KWL_WR:Lcom/android/server/OnePlusStandbyAnalyzer$STATISTIC_TYPE;
 
-    iget v3, p0, Lcom/android/server/DeviceIdleController$10;->val$levelDrop:I
+    iget v4, p0, Lcom/android/server/DeviceIdleController$10;->val$levelDrop:I
 
-    iget v4, p0, Lcom/android/server/DeviceIdleController$10;->val$mA:F
+    iget v5, p0, Lcom/android/server/DeviceIdleController$10;->val$mA:F
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/server/OnePlusStandbyAnalyzer;->snapShot(Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;Lcom/android/server/OnePlusStandbyAnalyzer$STATISTIC_TYPE;IF)V
+    iget-object v0, p0, Lcom/android/server/DeviceIdleController$10;->this$0:Lcom/android/server/DeviceIdleController;
+
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$500(Lcom/android/server/DeviceIdleController;)I
+
+    move-result v0
+
+    int-to-float v6, v0
+
+    iget-object v0, p0, Lcom/android/server/DeviceIdleController$10;->this$0:Lcom/android/server/DeviceIdleController;
+
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$600(Lcom/android/server/DeviceIdleController;)Z
+
+    move-result v7
+
+    invoke-virtual/range {v1 .. v7}, Lcom/android/server/OnePlusStandbyAnalyzer;->snapShot(Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;Lcom/android/server/OnePlusStandbyAnalyzer$STATISTIC_TYPE;IFFZ)V
 
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$10;->this$0:Lcom/android/server/DeviceIdleController;
 

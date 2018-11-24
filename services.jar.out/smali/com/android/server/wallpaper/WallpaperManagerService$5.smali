@@ -43,7 +43,15 @@
 
     iget v1, v1, Lcom/android/server/wallpaper/WallpaperManagerService;->mCurrentUserId:I
 
-    invoke-static {v0, v1}, Lcom/android/server/wallpaper/WallpaperManagerService;->access$700(Lcom/android/server/wallpaper/WallpaperManagerService;I)V
+    invoke-static {v0, v1}, Lcom/android/server/wallpaper/WallpaperManagerService;->access$800(Lcom/android/server/wallpaper/WallpaperManagerService;I)V
+
+    iget-object v0, p0, Lcom/android/server/wallpaper/WallpaperManagerService$5;->this$0:Lcom/android/server/wallpaper/WallpaperManagerService;
+
+    iget-object v1, p0, Lcom/android/server/wallpaper/WallpaperManagerService$5;->this$0:Lcom/android/server/wallpaper/WallpaperManagerService;
+
+    iget v1, v1, Lcom/android/server/wallpaper/WallpaperManagerService;->mCurrentUserId:I
+
+    invoke-static {v0, v1}, Lcom/android/server/wallpaper/WallpaperManagerService;->access$600(Lcom/android/server/wallpaper/WallpaperManagerService;I)V
 
     return-void
 .end method

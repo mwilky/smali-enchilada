@@ -110,6 +110,10 @@
 
 .field private static final VIRTUAL_DISPLAY_BASE_NAME:Ljava/lang/String; = "ActivityViewVirtualDisplay"
 
+.field public static mIsPerfBoostAcquired:Z
+
+.field public static mPerfHandle:I
+
 .field public static mPerfSendTapHint:Z
 
 
@@ -362,6 +366,12 @@
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/server/am/ActivityStackSupervisor;->mPerfSendTapHint:Z
+
+    sput-boolean v0, Lcom/android/server/am/ActivityStackSupervisor;->mIsPerfBoostAcquired:Z
+
+    const/4 v0, -0x1
+
+    sput v0, Lcom/android/server/am/ActivityStackSupervisor;->mPerfHandle:I
 
     new-instance v0, Landroid/util/ArrayMap;
 
@@ -3231,7 +3241,7 @@
 
     const/4 v3, -0x1
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor;->mPerfBoost:Landroid/util/BoostFramework;
 
@@ -3249,6 +3259,47 @@
 
     invoke-virtual {v0, v1, v4, v3, v5}, Landroid/util/BoostFramework;->perfHint(ILjava/lang/String;II)I
 
+    invoke-virtual {p1}, Lcom/android/server/am/ActivityRecord;->isAppInfoGame()I
+
+    move-result v0
+
+    if-ne v0, v2, :cond_1
+
+    iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor;->mPerfBoost:Landroid/util/BoostFramework;
+
+    iget-object v4, p1, Lcom/android/server/am/ActivityRecord;->packageName:Ljava/lang/String;
+
+    const/4 v5, 0x4
+
+    invoke-virtual {v0, v1, v4, v3, v5}, Landroid/util/BoostFramework;->perfHint(ILjava/lang/String;II)I
+
+    move-result v0
+
+    sput v0, Lcom/android/server/am/ActivityStackSupervisor;->mPerfHandle:I
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor;->mPerfBoost:Landroid/util/BoostFramework;
+
+    iget-object v4, p1, Lcom/android/server/am/ActivityRecord;->packageName:Ljava/lang/String;
+
+    const/4 v5, 0x3
+
+    invoke-virtual {v0, v1, v4, v3, v5}, Landroid/util/BoostFramework;->perfHint(ILjava/lang/String;II)I
+
+    move-result v0
+
+    sput v0, Lcom/android/server/am/ActivityStackSupervisor;->mPerfHandle:I
+
+    :goto_0
+    sget v0, Lcom/android/server/am/ActivityStackSupervisor;->mPerfHandle:I
+
+    if-lez v0, :cond_2
+
+    sput-boolean v2, Lcom/android/server/am/ActivityStackSupervisor;->mIsPerfBoostAcquired:Z
+
+    :cond_2
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor;->mPerfBoost:Landroid/util/BoostFramework;
 
     iget-object v4, p1, Lcom/android/server/am/ActivityRecord;->packageName:Ljava/lang/String;
@@ -3299,10 +3350,10 @@
 
     invoke-virtual {v0, v3, v4, v5}, Lcom/android/server/am/OnePlusRamBoostManager;->notifyIOPrefetchStart(ILjava/lang/String;Ljava/lang/String;)V
 
-    :cond_1
+    :cond_3
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor;->mPerfBoost:Landroid/util/BoostFramework;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_5
 
     invoke-static {}, Lcom/android/server/am/OnePlusPerfManager;->getInstance()Lcom/android/server/am/OnePlusPerfManager;
 
@@ -3314,7 +3365,7 @@
 
     move-result v0
 
-    if-lez v0, :cond_2
+    if-lez v0, :cond_4
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -3346,16 +3397,16 @@
 
     invoke-virtual {v3, v1, v4, v0, v2}, Landroid/util/BoostFramework;->perfHint(ILjava/lang/String;II)I
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_2
+    :cond_4
     iget-object v4, p0, Lcom/android/server/am/ActivityStackSupervisor;->mPerfBoost:Landroid/util/BoostFramework;
 
     iget-object v5, p1, Lcom/android/server/am/ActivityRecord;->packageName:Ljava/lang/String;
 
     invoke-virtual {v4, v1, v5, v3, v2}, Landroid/util/BoostFramework;->perfHint(ILjava/lang/String;II)I
 
-    :goto_0
+    :goto_1
     invoke-static {}, Lcom/android/server/am/OnePlusPerfManager;->getInstance()Lcom/android/server/am/OnePlusPerfManager;
 
     move-result-object v1
@@ -3366,7 +3417,7 @@
 
     sput-boolean v2, Lcom/android/server/am/ActivityStackSupervisor;->mPerfSendTapHint:Z
 
-    :cond_3
+    :cond_5
     return-void
 .end method
 

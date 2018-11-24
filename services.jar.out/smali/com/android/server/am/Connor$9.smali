@@ -45,7 +45,11 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "_acc_"
+    iget-object v0, p0, Lcom/android/server/am/Connor$9;->this$0:Lcom/android/server/am/Connor;
+
+    invoke-static {v0}, Lcom/android/server/am/Connor;->access$2000(Lcom/android/server/am/Connor;)Ljava/lang/String;
+
+    move-result-object v0
 
     invoke-virtual {p2, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 

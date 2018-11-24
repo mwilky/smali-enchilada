@@ -391,7 +391,7 @@
 
     invoke-virtual {v1, v7, v6}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    const v7, 0x1070053
+    const v7, 0x1070054
 
     invoke-direct {v0, v7}, Lcom/android/server/VibratorService;->createEffectFromResource(I)Landroid/os/VibrationEffect;
 
@@ -505,6 +505,36 @@
 
     invoke-virtual {v2, v4, v3}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
+    const-string v2, "dumpling"
+
+    invoke-static {}, Landroid/util/OpFeatures;->getProductName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const-string v2, "cheeseburger"
+
+    invoke-static {}, Landroid/util/OpFeatures;->getProductName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    :cond_0
+    const-string v2, "/sys/class/timed_output/vibrator/vmax_mv"
+
+    iput-object v2, v0, Lcom/android/server/VibratorService;->VIBRATOR_INTENSITY_PATH:Ljava/lang/String;
+
+    :cond_1
     return-void
 .end method
 
@@ -2321,7 +2351,7 @@
 
     move-result-object v0
 
-    const-string v1, "haptic_feedback_intensity"
+    const-string/jumbo v1, "haptic_feedback_intensity"
 
     iget-object v2, p0, Lcom/android/server/VibratorService;->mVibrator:Landroid/os/Vibrator;
 
@@ -2951,7 +2981,7 @@
 
     move-result-object v0
 
-    const-string v3, "haptic_feedback_intensity"
+    const-string/jumbo v3, "haptic_feedback_intensity"
 
     invoke-static {v3}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 

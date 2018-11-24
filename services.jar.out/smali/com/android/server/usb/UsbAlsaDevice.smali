@@ -251,7 +251,7 @@
 
     invoke-virtual {p1, v2, v3, v4, v5}, Lcom/android/internal/util/dump/DualDumpOutputStream;->write(Ljava/lang/String;JLjava/lang/String;)V
 
-    const-string v2, "has_output"
+    const-string/jumbo v2, "has_output"
 
     const-wide v3, 0x10800000004L
 
@@ -259,7 +259,7 @@
 
     invoke-virtual {p1, v2, v3, v4, v5}, Lcom/android/internal/util/dump/DualDumpOutputStream;->write(Ljava/lang/String;JZ)V
 
-    const-string v2, "has_input"
+    const-string/jumbo v2, "has_input"
 
     const-wide v3, 0x10800000005L
 

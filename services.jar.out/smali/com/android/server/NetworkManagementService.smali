@@ -44,6 +44,8 @@
 
 .field private static final TAG:Ljava/lang/String; = "NetworkManagement"
 
+.field private static final VDBG_STALL:Z
+
 
 # instance fields
 .field private mActiveAlerts:Ljava/util/HashMap;
@@ -232,6 +234,16 @@
     move-result v0
 
     sput-boolean v0, Lcom/android/server/NetworkManagementService;->DBG:Z
+
+    const-string/jumbo v0, "persist.radio.dbg.opdatastall"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    sput-boolean v0, Lcom/android/server/NetworkManagementService;->VDBG_STALL:Z
 
     return-void
 .end method
@@ -4197,6 +4209,296 @@
 
 
 # virtual methods
+.method public OPgetDnsInfo()[I
+    .locals 13
+
+    const-string/jumbo v0, "vendor.oem.cellular.netId"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    const-string/jumbo v2, "vendor.oem.cellular.serverslength"
+
+    invoke-static {v2, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+
+    move-result v8
+
+    const-string/jumbo v2, "vendor.oem.cellular.domainslength"
+
+    invoke-static {v2, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+
+    move-result v1
+
+    const-string v2, "NetworkManagement"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "OP_DATA_STALL: OPgetDnsInfo() cellularNetId = "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v4, ", cellularServerslength = "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v4, ", cellularDomainslength = "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    new-array v9, v8, [Ljava/lang/String;
+
+    new-array v10, v1, [Ljava/lang/String;
+
+    const/4 v2, 0x4
+
+    new-array v11, v2, [I
+
+    mul-int/lit8 v2, v8, 0x7
+
+    new-array v12, v2, [I
+
+    if-eqz v0, :cond_7
+
+    if-eqz v8, :cond_7
+
+    :try_start_0
+    iget-object v2, p0, Lcom/android/server/NetworkManagementService;->mNetdService:Landroid/net/INetd;
+
+    move v3, v0
+
+    move-object v4, v9
+
+    move-object v5, v10
+
+    move-object v6, v11
+
+    move-object v7, v12
+
+    invoke-interface/range {v2 .. v7}, Landroid/net/INetd;->getResolverInfo(I[Ljava/lang/String;[Ljava/lang/String;[I[I)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v2
+
+    const-string v3, "NetworkManagement"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "OP_DATA_STALL: OPgetDnsInfo() e = "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v12, 0x0
+
+    :goto_0
+    const/4 v2, 0x0
+
+    const/4 v2, 0x0
+
+    :goto_1
+    array-length v3, v9
+
+    if-ge v2, v3, :cond_0
+
+    const-string v3, "NetworkManagement"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "OP_DATA_STALL: OPgetDnsInfo() resultServers["
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v5, "] = "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    aget-object v5, v9, v2
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_1
+
+    :cond_0
+    const/4 v2, 0x0
+
+    :goto_2
+    array-length v3, v10
+
+    if-ge v2, v3, :cond_2
+
+    sget-boolean v3, Lcom/android/server/NetworkManagementService;->VDBG_STALL:Z
+
+    if-eqz v3, :cond_1
+
+    const-string v3, "NetworkManagement"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "OP_DATA_STALL: OPgetDnsInfo() resultDomains["
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v5, "] = "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    aget-object v5, v10, v2
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_2
+
+    :cond_2
+    const/4 v2, 0x0
+
+    :goto_3
+    array-length v3, v11
+
+    if-ge v2, v3, :cond_4
+
+    sget-boolean v3, Lcom/android/server/NetworkManagementService;->VDBG_STALL:Z
+
+    if-eqz v3, :cond_3
+
+    const-string v3, "NetworkManagement"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "OP_DATA_STALL: OPgetDnsInfo() resultParams["
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v5, "] = "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    aget v5, v11, v2
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_3
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_3
+
+    :cond_4
+    const/4 v2, 0x0
+
+    :goto_4
+    array-length v3, v12
+
+    if-ge v2, v3, :cond_6
+
+    sget-boolean v3, Lcom/android/server/NetworkManagementService;->VDBG_STALL:Z
+
+    if-eqz v3, :cond_5
+
+    const-string v3, "NetworkManagement"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "OP_DATA_STALL: OPgetDnsInfo() resultStats["
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v5, "] = "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    aget v5, v12, v2
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_5
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_4
+
+    :cond_6
+    goto :goto_5
+
+    :cond_7
+    const/4 v12, 0x0
+
+    :goto_5
+    return-object v12
+.end method
+
 .method public addIdleTimer(Ljava/lang/String;II)V
     .locals 8
 
