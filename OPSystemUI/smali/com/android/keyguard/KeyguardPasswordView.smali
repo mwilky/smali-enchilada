@@ -188,12 +188,12 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f11033b
+    const v0, 0x7f11033c
 
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f110342
+    const v0, 0x7f110343
 
     :goto_0
     iget-object v1, p0, Lcom/android/keyguard/KeyguardPasswordView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
@@ -646,7 +646,7 @@
 .method protected getPasswordTextViewId()I
     .locals 1
 
-    const v0, 0x7f0a02f1
+    const v0, 0x7f0a02f9
 
     return v0
 .end method
@@ -654,19 +654,19 @@
 .method protected getPromptReasonStringRes(I)I
     .locals 1
 
-    const v0, 0x7f110351
+    const v0, 0x7f110352
 
     packed-switch p1, :pswitch_data_0
 
     return v0
 
     :pswitch_0
-    const v0, 0x7f110354
+    const v0, 0x7f110355
 
     return v0
 
     :pswitch_1
-    const v0, 0x7f11034a
+    const v0, 0x7f11034b
 
     return v0
 
@@ -674,7 +674,7 @@
     return v0
 
     :pswitch_3
-    const v0, 0x7f11034b
+    const v0, 0x7f11034c
 
     return v0
 
@@ -732,7 +732,7 @@
 
     if-ne v2, v3, :cond_0
 
-    const v2, 0x7f110367
+    const v2, 0x7f110368
 
     return v2
 
@@ -743,12 +743,12 @@
 
     if-ne v2, v3, :cond_1
 
-    const v2, 0x7f110368
+    const v2, 0x7f110369
 
     return v2
 
     :cond_1
-    const v2, 0x7f110362
+    const v2, 0x7f110363
 
     return v2
 .end method
@@ -916,7 +916,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSelected(Z)V
 
-    const v0, 0x7f0a03e4
+    const v0, 0x7f0a03ed
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPasswordView;->findViewById(I)Landroid/view/View;
 
@@ -932,7 +932,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a00a8
+    const v0, 0x7f0a00aa
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPasswordView;->findViewById(I)Landroid/view/View;
 

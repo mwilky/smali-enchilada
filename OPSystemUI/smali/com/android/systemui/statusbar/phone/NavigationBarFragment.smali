@@ -355,7 +355,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
-    const v1, 0x7f1103fc
+    const v1, 0x7f1103fd
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -410,7 +410,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0a0278
+    const v5, 0x7f0a027d
 
     const-string v6, "NavigationBar"
 
@@ -900,7 +900,7 @@
 
     const v0, 0x7f0a006f
 
-    const v1, 0x7f0a0190
+    const v1, 0x7f0a0194
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarFragment;->onLongPressNavigationButtons(Landroid/view/View;II)Z
 
@@ -918,7 +918,7 @@
 
     const v0, 0x7f0a006f
 
-    const v1, 0x7f0a033c
+    const v1, 0x7f0a0345
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarFragment;->onLongPressNavigationButtons(Landroid/view/View;II)Z
 
@@ -955,7 +955,7 @@
 
     move-result v7
 
-    const v8, 0x7f0a033c
+    const v8, 0x7f0a0345
 
     const/4 v9, 0x1
 

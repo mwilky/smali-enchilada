@@ -210,7 +210,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ReadModeTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f11050f
+    const v1, 0x7f110517
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -221,8 +221,6 @@
 
 .method protected handleClick()V
     .locals 3
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/ReadModeTile;->isColorCalibrationAvailable()Z
 
@@ -348,7 +346,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ReadModeTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f11050f
+    const v1, 0x7f110517
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -356,7 +354,7 @@
 
     iput-object v0, p1, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->label:Ljava/lang/CharSequence;
 
-    const v0, 0x7f08035e
+    const v0, 0x7f08037f
 
     invoke-static {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -370,12 +368,12 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x7f110511
+    const v1, 0x7f110519
 
     goto :goto_0
 
     :cond_1
-    const v1, 0x7f110510
+    const v1, 0x7f110518
 
     :goto_0
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;

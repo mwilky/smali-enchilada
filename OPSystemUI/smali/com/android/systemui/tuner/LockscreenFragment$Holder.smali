@@ -48,7 +48,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/tuner/LockscreenFragment$Holder;->title:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0136
+    const v0, 0x7f0a013a
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

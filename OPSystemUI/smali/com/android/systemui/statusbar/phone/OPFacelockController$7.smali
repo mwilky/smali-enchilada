@@ -47,7 +47,9 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->isShowingLiveWallpaper()Z
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->isShowingLiveWallpaper(Z)Z
 
     move-result v0
 

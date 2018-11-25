@@ -247,7 +247,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f07020a
+    const v2, 0x7f07020b
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -624,6 +624,24 @@
     return-void
 .end method
 
+.method private isTracing()Z
+    .locals 2
+
+    const-string/jumbo v0, "trace"
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->getTag()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method private setCircleRadius(FZZ)V
     .locals 11
 
@@ -685,11 +703,44 @@
     move v5, v3
 
     :goto_2
-    if-nez v5, :cond_6
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->isTracing()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_5
+
+    sget-object v6, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->TAG:Ljava/lang/String;
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "setCircleRadius: "
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const/4 v8, 0x7
+
+    invoke-static {v8}, Landroid/os/Debug;->getCallers(I)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_5
+    if-nez v5, :cond_7
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleAnimator:Landroid/animation/ValueAnimator;
 
-    if-nez v1, :cond_5
+    if-nez v1, :cond_6
 
     iput p1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleRadius:F
 
@@ -697,11 +748,11 @@
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->invalidate()V
 
-    if-eqz v4, :cond_9
+    if-eqz v4, :cond_a
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_a
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
 
@@ -711,10 +762,10 @@
 
     goto/16 :goto_4
 
-    :cond_5
+    :cond_6
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleWillBeHidden:Z
 
-    if-nez v1, :cond_9
+    if-nez v1, :cond_a
 
     iget v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mMinBackgroundRadius:I
 
@@ -756,7 +807,7 @@
 
     goto/16 :goto_4
 
-    :cond_6
+    :cond_7
     iget-object v2, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleAnimator:Landroid/animation/ValueAnimator;
 
     invoke-direct {p0, v2}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->cancelAnimator(Landroid/animation/Animator;)V
@@ -771,13 +822,13 @@
 
     cmpl-float v1, p1, v1
 
-    if-nez v1, :cond_7
+    if-nez v1, :cond_8
 
     sget-object v1, Lcom/android/systemui/Interpolators;->FAST_OUT_LINEAR_IN:Landroid/view/animation/Interpolator;
 
     goto :goto_3
 
-    :cond_7
+    :cond_8
     sget-object v1, Lcom/android/systemui/Interpolators;->LINEAR_OUT_SLOW_IN:Landroid/view/animation/Interpolator;
 
     :goto_3
@@ -785,7 +836,7 @@
 
     const-wide/16 v6, 0xfa
 
-    if-nez p2, :cond_8
+    if-nez p2, :cond_9
 
     iget v8, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleRadius:F
 
@@ -813,14 +864,14 @@
 
     move-result-wide v6
 
-    :cond_8
+    :cond_9
     invoke-virtual {v2, v6, v7}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
     invoke-virtual {v2}, Landroid/animation/ValueAnimator;->start()V
 
     iget-object v8, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
 
-    if-eqz v8, :cond_9
+    if-eqz v8, :cond_a
 
     iget-object v8, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
 
@@ -828,7 +879,7 @@
 
     move-result v8
 
-    if-nez v8, :cond_9
+    if-nez v8, :cond_a
 
     iget-object v8, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewView:Landroid/view/View;
 
@@ -886,7 +937,7 @@
 
     invoke-virtual {v3}, Landroid/animation/Animator;->start()V
 
-    :cond_9
+    :cond_a
     :goto_4
     return-void
 .end method
@@ -1318,7 +1369,7 @@
 .end method
 
 .method public instantFinishAnimation()V
-    .locals 3
+    .locals 4
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mPreviewClipper:Landroid/animation/Animator;
 
@@ -1347,6 +1398,33 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleRadius:F
 
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->isTracing()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->TAG:Ljava/lang/String;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, " instantFinishAnimation mCircleRadius:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v3, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleRadius:F
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0, v1}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setImageAlpha(FZ)V

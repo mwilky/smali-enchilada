@@ -63,13 +63,13 @@
 
     move-result v0
 
-    const v1, 0x7f080339
+    const v1, 0x7f08035a
 
     if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
 
-    const v2, 0x7f1104b6
+    const v2, 0x7f1104be
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/qs/QSDetailItems;->setEmptyState(II)V
 
@@ -141,7 +141,7 @@
 
     invoke-direct {v6}, Lcom/android/systemui/qs/QSDetailItems$Item;-><init>()V
 
-    const v7, 0x7f08033a
+    const v7, 0x7f08035b
 
     iput v7, v6, Lcom/android/systemui/qs/QSDetailItems$Item;->iconResId:I
 
@@ -163,7 +163,7 @@
 
     if-ne v7, v8, :cond_4
 
-    const v8, 0x7f080337
+    const v8, 0x7f080358
 
     iput v8, v6, Lcom/android/systemui/qs/QSDetailItems$Item;->iconResId:I
 
@@ -191,7 +191,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f1104d1
+    const v11, 0x7f1104d9
 
     new-array v12, v9, [Ljava/lang/Object;
 
@@ -218,7 +218,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f1104d0
+    const v11, 0x7f1104d8
 
     invoke-virtual {v10, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -238,7 +238,7 @@
     :cond_4
     if-ne v7, v9, :cond_5
 
-    const v8, 0x7f080338
+    const v8, 0x7f080359
 
     iput v8, v6, Lcom/android/systemui/qs/QSDetailItems$Item;->iconResId:I
 
@@ -248,7 +248,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f1104d2
+    const v9, 0x7f1104da
 
     invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -363,7 +363,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1104b7
+    const v1, 0x7f1104bf
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

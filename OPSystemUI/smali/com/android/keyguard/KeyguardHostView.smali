@@ -580,11 +580,11 @@
 .end method
 
 .method protected onFinishInflate()V
-    .locals 2
+    .locals 4
 
     nop
 
-    const v0, 0x7f0a01d9
+    const v0, 0x7f0a01de
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardHostView;->findViewById(I)Landroid/view/View;
 
@@ -618,7 +618,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardSecurityContainer;->showPrimarySecurityScreen(Z)V
 
-    const v0, 0x7f0a01da
+    const v0, 0x7f0a01df
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardHostView;->findViewById(I)Landroid/view/View;
 
@@ -626,6 +626,59 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardHostView;->mKeyguardSecurityNavigationSpace:Landroid/view/View;
 
+    invoke-static {}, Lcom/android/systemui/util/OPUtils;->isCustomFingerprint()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView;->mSecurityContainer:Lcom/android/keyguard/KeyguardSecurityContainer;
+
+    invoke-virtual {v0}, Lcom/android/keyguard/KeyguardSecurityContainer;->getCurrentSecuritySelection()Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->Password:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
+
+    if-eq v0, v1, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardHostView;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f0701bd
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v0
+
+    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardHostView;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f07021a
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v1
+
+    sub-int/2addr v0, v1
+
+    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardHostView;->getPaddingStart()I
+
+    move-result v1
+
+    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardHostView;->getPaddingEnd()I
+
+    move-result v2
+
+    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardHostView;->getPaddingBottom()I
+
+    move-result v3
+
+    invoke-virtual {p0, v1, v0, v2, v3}, Lcom/android/keyguard/KeyguardHostView;->setPaddingRelative(IIII)V
+
+    :cond_0
     return-void
 .end method
 

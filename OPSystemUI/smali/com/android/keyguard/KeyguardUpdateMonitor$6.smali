@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 20
+    .locals 19
 
     move-object/from16 v0, p0
 
@@ -83,7 +83,7 @@
 
     invoke-virtual {v3, v4}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     :cond_1
     const-string v3, "android.intent.action.BATTERY_CHANGED"
@@ -96,7 +96,7 @@
 
     const/4 v5, 0x0
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_6
 
     const-string v3, "status"
 
@@ -122,13 +122,13 @@
 
     invoke-virtual {v1, v7, v6}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    move-result v6
+    move-result v16
 
     const-string v7, "max_charging_current"
 
     invoke-virtual {v1, v7, v4}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    move-result v13
+    move-result v11
 
     const-string v7, "max_charging_voltage"
 
@@ -141,13 +141,13 @@
     const v7, 0x4c4b40
 
     :cond_2
-    move v11, v7
+    move v10, v7
 
-    if-lez v13, :cond_3
+    if-lez v11, :cond_3
 
-    div-int/lit16 v4, v13, 0x3e8
+    div-int/lit16 v4, v11, 0x3e8
 
-    div-int/lit16 v7, v11, 0x3e8
+    div-int/lit16 v7, v10, 0x3e8
 
     mul-int/2addr v4, v7
 
@@ -162,17 +162,36 @@
     :goto_1
     const-string v4, "fastcharge_status"
 
-    invoke-virtual {v1, v4, v5}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    invoke-virtual {v1, v4, v5}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v4
 
+    invoke-static {}, Lcom/android/systemui/util/OPUtils;->isSupportWarpCharging()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_4
+
+    move v13, v4
+
+    goto :goto_2
+
+    :cond_4
+    if-lez v4, :cond_5
+
+    move v13, v6
+
+    goto :goto_2
+
+    :cond_5
+    move v13, v5
+
+    :goto_2
     iget-object v5, v0, Lcom/android/keyguard/KeyguardUpdateMonitor$6;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-static {v5}, Lcom/android/keyguard/KeyguardUpdateMonitor;->access$3200(Lcom/android/keyguard/KeyguardUpdateMonitor;)Landroid/os/Handler;
 
     move-result-object v5
-
-    const/16 v10, 0x12e
 
     new-instance v9, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;
 
@@ -180,50 +199,44 @@
 
     move v8, v3
 
-    move/from16 v16, v3
-
-    move-object v3, v9
+    move-object v6, v9
 
     move v9, v15
 
-    move/from16 v17, v15
-
-    move v15, v10
+    move/from16 v17, v10
 
     move v10, v14
 
     move/from16 v18, v11
 
-    move v11, v6
+    move/from16 v11, v16
 
-    move/from16 v19, v13
+    invoke-direct/range {v7 .. v13}, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;-><init>(IIIIII)V
 
-    move v13, v4
+    const/16 v7, 0x12e
 
-    invoke-direct/range {v7 .. v13}, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;-><init>(IIIIIZ)V
-
-    invoke-virtual {v5, v15, v3}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v3
-
-    iget-object v5, v0, Lcom/android/keyguard/KeyguardUpdateMonitor$6;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
-
-    invoke-static {v5}, Lcom/android/keyguard/KeyguardUpdateMonitor;->access$3200(Lcom/android/keyguard/KeyguardUpdateMonitor;)Landroid/os/Handler;
+    invoke-virtual {v5, v7, v6}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v5
 
-    invoke-virtual {v5, v3}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+    iget-object v6, v0, Lcom/android/keyguard/KeyguardUpdateMonitor$6;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    goto/16 :goto_2
+    invoke-static {v6}, Lcom/android/keyguard/KeyguardUpdateMonitor;->access$3200(Lcom/android/keyguard/KeyguardUpdateMonitor;)Landroid/os/Handler;
 
-    :cond_4
+    move-result-object v6
+
+    invoke-virtual {v6, v5}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    goto/16 :goto_3
+
+    :cond_6
     const-string v3, "android.intent.action.SIM_STATE_CHANGED"
 
     invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_8
 
     const-string v3, "rebroadcastOnUnlock"
 
@@ -231,11 +244,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_7
 
     return-void
 
-    :cond_5
+    :cond_7
     invoke-static/range {p2 .. p2}, Lcom/android/keyguard/KeyguardUpdateMonitor$SimData;->fromIntent(Landroid/content/Intent;)Lcom/android/keyguard/KeyguardUpdateMonitor$SimData;
 
     move-result-object v3
@@ -306,16 +319,16 @@
 
     invoke-virtual {v4}, Landroid/os/Message;->sendToTarget()V
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
-    :cond_6
+    :cond_8
     const-string v3, "android.media.RINGER_MODE_CHANGED"
 
     invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_9
 
     iget-object v3, v0, Lcom/android/keyguard/KeyguardUpdateMonitor$6;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
@@ -343,16 +356,16 @@
 
     invoke-virtual {v3, v4}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
-    :cond_7
+    :cond_9
     const-string v3, "android.intent.action.PHONE_STATE"
 
     invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_a
 
     const-string v3, "state"
 
@@ -380,16 +393,16 @@
 
     invoke-virtual {v4, v5}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
-    :cond_8
+    :cond_a
     const-string v3, "android.intent.action.AIRPLANE_MODE"
 
     invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_9
+    if-eqz v3, :cond_b
 
     iget-object v3, v0, Lcom/android/keyguard/KeyguardUpdateMonitor$6;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
@@ -401,31 +414,31 @@
 
     invoke-virtual {v3, v4}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
-    :cond_9
+    :cond_b
     const-string v3, "android.intent.action.BOOT_COMPLETED"
 
     invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_a
+    if-eqz v3, :cond_c
 
     iget-object v3, v0, Lcom/android/keyguard/KeyguardUpdateMonitor$6;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-virtual {v3}, Lcom/android/keyguard/KeyguardUpdateMonitor;->dispatchBootCompleted()V
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
-    :cond_a
+    :cond_c
     const-string v3, "android.intent.action.SERVICE_STATE"
 
     invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_d
 
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
@@ -503,16 +516,16 @@
 
     invoke-virtual {v6, v7}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    goto :goto_2
+    goto :goto_3
 
-    :cond_b
+    :cond_d
     const-string v3, "android.intent.action.LOCALE_CHANGED"
 
     invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_c
+    if-eqz v3, :cond_e
 
     iget-object v3, v0, Lcom/android/keyguard/KeyguardUpdateMonitor$6;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
@@ -524,16 +537,16 @@
 
     invoke-virtual {v3, v4}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    goto :goto_2
+    goto :goto_3
 
-    :cond_c
+    :cond_e
     const-string v3, "android.app.action.DEVICE_POLICY_MANAGER_STATE_CHANGED"
 
     invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_d
+    if-eqz v3, :cond_f
 
     iget-object v3, v0, Lcom/android/keyguard/KeyguardUpdateMonitor$6;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
@@ -545,7 +558,7 @@
 
     invoke-virtual {v3, v4}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    :cond_d
-    :goto_2
+    :cond_f
+    :goto_3
     return-void
 .end method

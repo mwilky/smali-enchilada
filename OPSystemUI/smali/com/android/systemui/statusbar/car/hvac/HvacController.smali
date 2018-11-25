@@ -178,7 +178,7 @@
 
     move-result v1
 
-    const/high16 v2, 0x7fc00000    # NaNf
+    const/high16 v2, 0x7fc00000    # Float.NaN
 
     :try_start_0
     iget-object v3, p0, Lcom/android/systemui/statusbar/car/hvac/HvacController;->mHvacManager:Landroid/car/hardware/hvac/CarHvacManager;

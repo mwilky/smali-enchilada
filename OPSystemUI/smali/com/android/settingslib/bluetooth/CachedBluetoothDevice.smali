@@ -1864,9 +1864,7 @@
     :cond_1
     const-string v1, "persist.vendor.btstack.connect.peer_earbud"
 
-    const/4 v2, 0x1
-
-    invoke-static {v1, v2}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {v1, v0}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v1
 

@@ -13,6 +13,8 @@
 # instance fields
 .field private mContext:Landroid/content/Context;
 
+.field private final mDarkIconDispatcher:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
+
 .field private final mIconBlacklist:Landroid/util/ArraySet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -46,7 +48,7 @@
 
     move-result-object v0
 
-    const v1, 0x1070045
+    const v1, 0x1070046
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -119,6 +121,16 @@
     move-result-object v1
 
     invoke-virtual {v0, p0, v1}, Lcom/android/systemui/tuner/TunerService;->addTunable(Lcom/android/systemui/tuner/TunerService$Tunable;[Ljava/lang/String;)V
+
+    const-class v0, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
+
+    invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
+
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconControllerImpl;->mDarkIconDispatcher:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
 
     return-void
 .end method
@@ -639,6 +651,25 @@
     goto :goto_1
 
     :cond_4
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconControllerImpl;->mDarkIconDispatcher:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
+
+    if-eqz v2, :cond_5
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconControllerImpl;->mDarkIconDispatcher:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
+
+    invoke-interface {v2}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->getTraceView()Landroid/view/View;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_5
+
+    invoke-virtual {v2}, Landroid/view/View;->forceLayout()V
+
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconControllerImpl;->mDarkIconDispatcher:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
+
+    invoke-interface {v3}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->applyIconTint()V
+
+    :cond_5
     return-void
 .end method
 
@@ -822,7 +853,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f070618
+    const v2, 0x7f07061a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -34,7 +34,7 @@
 .method public getDrawable(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    const v0, 0x7f080337
+    const v0, 0x7f080358
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

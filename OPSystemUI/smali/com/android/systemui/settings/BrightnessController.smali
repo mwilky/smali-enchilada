@@ -810,12 +810,12 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f08033e
+    const v0, 0x7f08035f
 
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f08033c
+    const v0, 0x7f08035d
 
     :goto_0
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setImageResource(I)V
@@ -825,11 +825,11 @@
 
     iget-boolean v0, p0, Lcom/android/systemui/settings/BrightnessController;->mIsVrModeEnabled:Z
 
-    const v1, 0x7f080342
+    const v1, 0x7f080363
 
-    const v2, 0x7f080340
+    const v2, 0x7f080361
 
-    const v3, 0x7f080341
+    const v3, 0x7f080362
 
     if-eqz v0, :cond_4
 
@@ -1226,7 +1226,7 @@
 .method public setMirrorView(Landroid/view/View;)V
     .locals 1
 
-    const v0, 0x7f0a008c
+    const v0, 0x7f0a008e
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1236,7 +1236,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/settings/BrightnessController;->mMirrorIcon:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a008d
+    const v0, 0x7f0a008f
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

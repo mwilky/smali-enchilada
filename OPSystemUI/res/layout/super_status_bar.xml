@@ -12,8 +12,9 @@
     <include android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/status_bar_expanded" />
     <include layout="@layout/brightness_mirror" />
     <com.android.systemui.statusbar.ScrimView android:id="@id/scrim_in_front" android:layout_width="fill_parent" android:layout_height="fill_parent" android:importantForAccessibility="no" sysui:ignoreRightInset="true" />
-    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/op_warp_charging_animation_view" />
         <include android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/opfacelock_light_view" />
         <include android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/keyguard_prevent_mode" />
-    </LinearLayout>
+    </FrameLayout>
 </com.android.systemui.statusbar.phone.StatusBarWindowView>

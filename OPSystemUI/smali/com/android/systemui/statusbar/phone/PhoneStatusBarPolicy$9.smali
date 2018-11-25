@@ -37,7 +37,7 @@
 .method public run()V
     .locals 3
 
-    invoke-static {}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->access$1400()Z
+    invoke-static {}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->access$1600()Z
 
     move-result v0
 
@@ -58,7 +58,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy$9;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;
 
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->access$1500(Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->access$1700(Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;)Ljava/lang/String;
 
     move-result-object v1
 

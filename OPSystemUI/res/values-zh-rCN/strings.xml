@@ -735,6 +735,7 @@
     <string name="keyguard_plugged_in">%s • 正在充电</string>
     <string name="keyguard_plugged_in_charging_fast">%s • 正在快速充电</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • 正在慢速充电</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Warp 闪充</string>
     <string name="keyguard_plugged_in_dash_charging">Dash 闪充</string>
     <string name="keyguard_sim_error_message_short">SIM 卡无效。</string>
     <string name="keyguard_sim_locked_message">SIM 卡已锁定。</string>
@@ -993,6 +994,13 @@
     <string name="oem_unlock_enable_summary">允许解锁引导加载程序</string>
     <string name="okay">确定</string>
     <string name="oneplus_screen_features_not_available_toast">开启后，屏幕颜色模式等功能将无法使用</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">勿扰模式已搬家</string>
+    <string name="oneplus_threekey_navigation_next">下一步</string>
+    <string name="oneplus_threekey_navigation_silence">完全静音且不振动</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">全新三段式开关</string>
+    <string name="oneplus_threekey_navigation_sound">允许声音和振动</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">可在快捷设置里开启勿扰模式</string>
+    <string name="oneplus_threekey_navigation_vibration">仅提供振动</string>
     <string name="op_accessibility_quick_settings_page">第 %1$d 页，共 %2$d 页</string>
     <string name="op_earphone_connect">配对中...</string>
     <string name="op_earphone_connected_fail">配对失败，你可以检查耳机和手机蓝牙状态。</string>

@@ -189,7 +189,7 @@
 .method public init()V
     .locals 2
 
-    const v0, 0x7f0a0311
+    const v0, 0x7f0a0319
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/plugin/PreventModeView;->findViewById(I)Landroid/view/View;
 
@@ -199,7 +199,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/plugin/PreventModeView;->mInnerView:Landroid/widget/LinearLayout;
 
-    const v0, 0x7f0a0314
+    const v0, 0x7f0a031c
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/plugin/PreventModeView;->findViewById(I)Landroid/view/View;
 
@@ -209,7 +209,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/plugin/PreventModeView;->mTitle:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0312
+    const v0, 0x7f0a031a
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/plugin/PreventModeView;->findViewById(I)Landroid/view/View;
 
@@ -219,7 +219,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/plugin/PreventModeView;->mPhone:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a0315
+    const v0, 0x7f0a031d
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/plugin/PreventModeView;->findViewById(I)Landroid/view/View;
 
@@ -229,7 +229,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/plugin/PreventModeView;->mTitleCancel:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0316
+    const v0, 0x7f0a031e
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/plugin/PreventModeView;->findViewById(I)Landroid/view/View;
 
@@ -239,7 +239,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/plugin/PreventModeView;->mTag:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0317
+    const v0, 0x7f0a031f
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/plugin/PreventModeView;->findViewById(I)Landroid/view/View;
 
@@ -249,7 +249,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/plugin/PreventModeView;->mTag2:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0318
+    const v0, 0x7f0a0320
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/plugin/PreventModeView;->findViewById(I)Landroid/view/View;
 
@@ -259,7 +259,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/plugin/PreventModeView;->mTagNum1:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0319
+    const v0, 0x7f0a0321
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/plugin/PreventModeView;->findViewById(I)Landroid/view/View;
 
@@ -269,7 +269,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/plugin/PreventModeView;->mTagNum2:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0352
+    const v0, 0x7f0a035b
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/plugin/PreventModeView;->findViewById(I)Landroid/view/View;
 
@@ -297,7 +297,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/plugin/PreventModeView;->mPhone:Landroid/widget/ImageView;
 
-    const v1, 0x7f08054b
+    const v1, 0x7f08055f
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -311,25 +311,25 @@
 
     iget-object v0, p0, Lcom/android/systemui/plugin/PreventModeView;->mTitle:Landroid/widget/TextView;
 
-    const v1, 0x7f110494
+    const v1, 0x7f11049c
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
     iget-object v0, p0, Lcom/android/systemui/plugin/PreventModeView;->mTitleCancel:Landroid/widget/TextView;
 
-    const v1, 0x7f110495
+    const v1, 0x7f11049d
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
     iget-object v0, p0, Lcom/android/systemui/plugin/PreventModeView;->mTag:Landroid/widget/TextView;
 
-    const v1, 0x7f110496
+    const v1, 0x7f11049e
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
     iget-object v0, p0, Lcom/android/systemui/plugin/PreventModeView;->mTag2:Landroid/widget/TextView;
 
-    const v1, 0x7f110497
+    const v1, 0x7f11049f
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 

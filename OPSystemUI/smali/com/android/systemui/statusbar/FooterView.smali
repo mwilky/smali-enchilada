@@ -63,7 +63,7 @@
 .method protected findContentView()Landroid/view/View;
     .locals 1
 
-    const v0, 0x7f0a00cf
+    const v0, 0x7f0a00d3
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/FooterView;->findViewById(I)Landroid/view/View;
 
@@ -75,7 +75,7 @@
 .method protected findSecondaryView()Landroid/view/View;
     .locals 1
 
-    const v0, 0x7f0a0111
+    const v0, 0x7f0a0115
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/FooterView;->findViewById(I)Landroid/view/View;
 
@@ -187,7 +187,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/FooterView;->mManageButton:Lcom/android/systemui/statusbar/FooterViewButton;
 
-    const v1, 0x7f1103ae
+    const v1, 0x7f1103af
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/FooterViewButton;->setText(I)V
 
@@ -207,7 +207,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/FooterView;->mDismissButton:Lcom/android/systemui/statusbar/FooterViewButton;
 
-    const v0, 0x7f0a022b
+    const v0, 0x7f0a0230
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/FooterView;->findViewById(I)Landroid/view/View;
 

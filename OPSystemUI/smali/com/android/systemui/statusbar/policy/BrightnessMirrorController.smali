@@ -82,7 +82,7 @@
 
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v0, 0x7f0a008e
+    const v0, 0x7f0a0090
 
     invoke-virtual {p1, v0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -90,7 +90,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;->mBrightnessMirror:Landroid/view/View;
 
-    const v0, 0x7f0a029b
+    const v0, 0x7f0a02a0
 
     invoke-virtual {p1, v0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -136,7 +136,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120547
+    const v2, 0x7f120548
 
     invoke-direct {v0, v1, v2}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
@@ -478,7 +478,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f070577
+    const v2, 0x7f070579
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

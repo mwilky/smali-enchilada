@@ -1006,6 +1006,55 @@
 
     check-cast v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;
 
+    :try_start_0
+    invoke-static {}, Landroid/app/ActivityManager;->getService()Landroid/app/IActivityManager;
+
+    move-result-object v2
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v5, v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->mPackageName:Ljava/lang/String;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v5, "0"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-interface {v2, v4}, Landroid/app/IActivityManager;->addAppLockerPassedPackage(Ljava/lang/String;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v2
+
+    const-string v4, "QuickLaunch.QLRecyclerView"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "addAppLockerPassedPackage error "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_0
     iget-object v2, v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->mActionName:Ljava/lang/String;
 
     const-string v4, "OpenApp"
@@ -1075,7 +1124,7 @@
 
     invoke-virtual {v7, v8, v9, v10}, Lcom/android/systemui/fingerprint/QLHelper;->startApp(Ljava/lang/String;Landroid/app/ActivityOptions;I)Z
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_2
     iget-object v2, v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->mActionName:Ljava/lang/String;
@@ -1098,7 +1147,7 @@
 
     invoke-virtual {v2, v4, v5, v6, v3}, Lcom/android/systemui/fingerprint/QLHelper;->startShortcut(Ljava/lang/String;Ljava/lang/String;IZ)Z
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_3
     iget-object v2, v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->mActionName:Ljava/lang/String;
@@ -1120,7 +1169,7 @@
     invoke-virtual {v2, v3, v4}, Lcom/android/systemui/fingerprint/QLHelper;->startQuickPay(II)V
 
     :cond_4
-    :goto_0
+    :goto_1
     return-void
 .end method
 

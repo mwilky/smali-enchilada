@@ -49,7 +49,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d0191
+    const v3, 0x7f0d0195
 
     const/4 v4, 0x0
 
@@ -59,7 +59,7 @@
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/settings/BrightnessDialog;->setContentView(Landroid/view/View;)V
 
-    const v3, 0x7f0a008c
+    const v3, 0x7f0a008e
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/settings/BrightnessDialog;->findViewById(I)Landroid/view/View;
 
@@ -67,7 +67,7 @@
 
     check-cast v3, Landroid/widget/ImageView;
 
-    const v4, 0x7f0a0090
+    const v4, 0x7f0a0092
 
     invoke-virtual {p0, v4}, Lcom/android/systemui/settings/BrightnessDialog;->findViewById(I)Landroid/view/View;
 
@@ -75,7 +75,7 @@
 
     check-cast v4, Lcom/android/systemui/settings/ToggleSliderView;
 
-    const v5, 0x7f0a008d
+    const v5, 0x7f0a008f
 
     invoke-virtual {p0, v5}, Lcom/android/systemui/settings/BrightnessDialog;->findViewById(I)Landroid/view/View;
 

@@ -151,7 +151,7 @@
 
     if-ne p2, v0, :cond_1
 
-    const v0, 0x7f080450
+    const v0, 0x7f080464
 
     return v0
 
@@ -162,7 +162,7 @@
 
     if-ne p2, v0, :cond_2
 
-    const v0, 0x7f08085e
+    const v0, 0x7f080872
 
     return v0
 
@@ -180,7 +180,7 @@
 
     if-ne p2, v2, :cond_4
 
-    const v0, 0x7f08044e
+    const v0, 0x7f080462
 
     return v0
 
@@ -197,7 +197,7 @@
 
     if-nez v0, :cond_5
 
-    const v0, 0x7f08044a
+    const v0, 0x7f08045e
 
     return v0
 
@@ -218,7 +218,7 @@
     if-eqz p4, :cond_8
 
     :cond_7
-    const v0, 0x7f08044c
+    const v0, 0x7f080460
 
     return v0
 
@@ -242,7 +242,7 @@
     throw v0
 
     :pswitch_0
-    const v0, 0x7f080244
+    const v0, 0x7f080265
 
     goto :goto_1
 
@@ -251,18 +251,18 @@
 
     if-eqz p3, :cond_0
 
-    const v0, 0x7f080243
+    const v0, 0x7f080264
 
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f08044c
+    const v0, 0x7f080460
 
     :goto_0
     goto :goto_1
 
     :pswitch_2
-    const v0, 0x7f080242
+    const v0, 0x7f080263
 
     goto :goto_1
 
@@ -292,12 +292,12 @@
     return-object v0
 
     :cond_1
-    const v0, 0x7f080285
+    const v0, 0x7f0802a6
 
     goto :goto_1
 
     :pswitch_4
-    const v0, 0x7f080284
+    const v0, 0x7f0802a5
 
     nop
 
@@ -1060,7 +1060,7 @@
     move v1, v9
 
     :goto_6
-    const v2, 0x7f08044a
+    const v2, 0x7f08045e
 
     if-ne v0, v2, :cond_8
 
@@ -1076,7 +1076,7 @@
     goto :goto_8
 
     :cond_8
-    const v3, 0x7f08085e
+    const v3, 0x7f080872
 
     if-ne v0, v3, :cond_9
 
@@ -1141,7 +1141,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f070208
+    const v6, 0x7f070209
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1151,7 +1151,7 @@
 
     move-result-object v6
 
-    const v8, 0x7f070209
+    const v8, 0x7f07020a
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1183,7 +1183,7 @@
 
     move-result-object v8
 
-    const v2, 0x7f0701d1
+    const v2, 0x7f0701d2
 
     invoke-virtual {v8, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1243,7 +1243,7 @@
     invoke-virtual {v4}, Landroid/graphics/drawable/AnimatedVectorDrawable;->start()V
 
     :cond_12
-    const v2, 0x7f08044a
+    const v2, 0x7f08045e
 
     if-ne v0, v2, :cond_13
 

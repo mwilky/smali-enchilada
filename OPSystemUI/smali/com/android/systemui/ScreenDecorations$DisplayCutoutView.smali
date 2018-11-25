@@ -104,7 +104,7 @@
 
     iput-object p3, p0, Lcom/android/systemui/ScreenDecorations$DisplayCutoutView;->mVisibilityChangedListener:Ljava/lang/Runnable;
 
-    const v0, 0x7f0a0112
+    const v0, 0x7f0a0116
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/ScreenDecorations$DisplayCutoutView;->setId(I)V
 

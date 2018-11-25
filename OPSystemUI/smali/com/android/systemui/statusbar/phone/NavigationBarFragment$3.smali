@@ -53,7 +53,7 @@
 
     move-result-object v0
 
-    const-string v2, "systemui_navigation_bar_hided"
+    const-string/jumbo v2, "systemui_navigation_bar_hided"
 
     const/4 v3, 0x0
 
@@ -68,7 +68,7 @@
 
     move-result-object v0
 
-    const-string v2, "systemui_navigation_bar_hided"
+    const-string/jumbo v2, "systemui_navigation_bar_hided"
 
     invoke-static {v0, v2, v1}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 

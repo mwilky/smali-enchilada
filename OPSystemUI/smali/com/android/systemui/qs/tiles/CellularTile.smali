@@ -407,7 +407,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1104ce
+    const v1, 0x7f1104d6
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -418,8 +418,6 @@
 
 .method protected handleClick()V
     .locals 2
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/CellularTile;->getState()Lcom/android/systemui/plugins/qs/QSTile$State;
 
@@ -567,7 +565,7 @@
     :goto_1
     iput-boolean v2, p1, Lcom/android/systemui/plugins/qs/QSTile$SignalState;->activityOut:Z
 
-    const v2, 0x7f1103ba
+    const v2, 0x7f1103bb
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -613,7 +611,7 @@
 
     if-eqz v5, :cond_4
 
-    const v5, 0x7f08035a
+    const v5, 0x7f08037b
 
     invoke-static {v5}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -624,7 +622,7 @@
     goto :goto_3
 
     :cond_4
-    const v5, 0x7f080397
+    const v5, 0x7f0803b8
 
     invoke-static {v5}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 

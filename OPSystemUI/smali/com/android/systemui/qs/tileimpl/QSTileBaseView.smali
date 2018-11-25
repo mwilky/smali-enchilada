@@ -61,7 +61,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070579
+    const v1, 0x7f07057b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -83,7 +83,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f07057a
+    const v2, 0x7f07057c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -121,7 +121,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mBg:Landroid/widget/ImageView;
 
-    const v3, 0x7f080347
+    const v3, 0x7f080368
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -915,12 +915,12 @@
 
     if-eqz v0, :cond_2
 
-    const v2, 0x7f1105e8
+    const v2, 0x7f1105f0
 
     goto :goto_1
 
     :cond_2
-    const v2, 0x7f1105e7
+    const v2, 0x7f1105ef
 
     :goto_1
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -995,12 +995,12 @@
 
     if-eqz v0, :cond_2
 
-    const v3, 0x7f1105e8
+    const v3, 0x7f1105f0
 
     goto :goto_1
 
     :cond_2
-    const v3, 0x7f1105e7
+    const v3, 0x7f1105ef
 
     :goto_1
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;

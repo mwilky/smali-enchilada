@@ -57,7 +57,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070571
+    const v1, 0x7f070573
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -73,7 +73,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070570
+    const v1, 0x7f070572
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -277,24 +277,24 @@
 
     if-eqz p2, :cond_0
 
-    const v0, 0x7f080455
+    const v0, 0x7f080469
 
     return v0
 
     :cond_0
-    const v0, 0x7f080457
+    const v0, 0x7f08046b
 
     return v0
 
     :cond_1
     if-eqz p2, :cond_2
 
-    const v0, 0x7f080453
+    const v0, 0x7f080467
 
     return v0
 
     :cond_2
-    const v0, 0x7f080459
+    const v0, 0x7f08046d
 
     return v0
 
@@ -303,24 +303,24 @@
 
     if-eqz p2, :cond_4
 
-    const v0, 0x7f08045f
+    const v0, 0x7f080473
 
     return v0
 
     :cond_4
-    const v0, 0x7f08045d
+    const v0, 0x7f080471
 
     return v0
 
     :cond_5
     if-eqz p2, :cond_6
 
-    const v0, 0x7f080461
+    const v0, 0x7f080475
 
     return v0
 
     :cond_6
-    const v0, 0x7f08045b
+    const v0, 0x7f08046f
 
     return v0
 .end method
@@ -377,7 +377,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setTranslationX(F)V
 
-    const v4, 0x7f080452
+    const v4, 0x7f080466
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -756,7 +756,7 @@
 
     invoke-direct {v3, v4}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    const v4, 0x7f08045a
+    const v4, 0x7f08046e
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 

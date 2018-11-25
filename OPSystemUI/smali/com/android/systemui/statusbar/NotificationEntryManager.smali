@@ -3677,7 +3677,7 @@
     :goto_3
     invoke-virtual {p4, v5}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->setLegacy(Z)V
 
-    const v5, 0x7f0a019c
+    const v5, 0x7f0a01a0
 
     iget v6, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->targetSdk:I
 

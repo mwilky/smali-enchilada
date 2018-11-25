@@ -180,7 +180,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/QuickStepController;->mOverviewEventSender:Lcom/android/systemui/OverviewProxyService;
 
-    const v1, 0x7f070379
+    const v1, 0x7f07037a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -188,7 +188,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/QuickStepController;->mTrackThickness:I
 
-    const v1, 0x7f070378
+    const v1, 0x7f070379
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -196,7 +196,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/QuickStepController;->mTrackEndPadding:I
 
-    const v1, 0x7f08055a
+    const v1, 0x7f08056e
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

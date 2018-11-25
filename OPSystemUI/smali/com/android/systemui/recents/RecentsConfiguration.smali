@@ -61,7 +61,7 @@
 
     iput-boolean v2, p0, Lcom/android/systemui/recents/RecentsConfiguration;->fakeShadows:Z
 
-    const v2, 0x7f0b0081
+    const v2, 0x7f0b0082
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 

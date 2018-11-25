@@ -193,7 +193,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f110345
+    const v3, 0x7f110346
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -297,12 +297,12 @@
     :cond_4
     if-eqz p2, :cond_5
 
-    const v2, 0x7f11035b
+    const v2, 0x7f11035c
 
     goto :goto_3
 
     :cond_5
-    const v2, 0x7f110343
+    const v2, 0x7f110344
 
     :goto_3
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSimPinView;->getContext()Landroid/content/Context;
@@ -328,7 +328,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f11035a
+    const v4, 0x7f11035b
 
     new-array v1, v1, [Ljava/lang/Object;
 
@@ -389,7 +389,7 @@
 
     invoke-virtual {v2, v0}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
-    const v0, 0x7f110429
+    const v0, 0x7f11042a
 
     const/4 v3, 0x0
 
@@ -443,7 +443,7 @@
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPinView;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f11035d
+    const v2, 0x7f11035e
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -520,7 +520,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "subinfo change subId to "
+    const-string v4, "subInfo change subId to "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -599,7 +599,7 @@
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_1
-    const v2, 0x7f0a03b7
+    const v2, 0x7f0a03c0
 
     invoke-virtual {p0, v2}, Lcom/android/keyguard/KeyguardSimPinView;->findViewById(I)Landroid/view/View;
 
@@ -702,7 +702,7 @@
 
     if-ge v5, v8, :cond_5
 
-    const v8, 0x7f11035b
+    const v8, 0x7f11035c
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -737,7 +737,7 @@
     const-string v10, ""
 
     :goto_0
-    const v11, 0x7f11035c
+    const v11, 0x7f11035d
 
     new-array v12, v4, [Ljava/lang/Object;
 
@@ -757,7 +757,7 @@
     :goto_1
     iget-object v8, p0, Lcom/android/keyguard/KeyguardSimPinView;->mContext:Landroid/content/Context;
 
-    const v10, 0x7f11035e
+    const v10, 0x7f11035f
 
     new-array v12, v4, [Ljava/lang/Object;
 
@@ -791,7 +791,7 @@
 
     invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const v8, 0x7f11035a
+    const v8, 0x7f11035b
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -868,7 +868,7 @@
 .method protected getPasswordTextViewId()I
     .locals 1
 
-    const v0, 0x7f0a03b3
+    const v0, 0x7f0a03bc
 
     return v0
 .end method
@@ -974,7 +974,7 @@
     invoke-virtual {v0, v1}, Lcom/android/keyguard/EmergencyCarrierArea;->setCarrierTextVisible(Z)V
 
     :cond_0
-    const v0, 0x7f0a01dc
+    const v0, 0x7f0a01e1
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardSimPinView;->findViewById(I)Landroid/view/View;
 
@@ -1052,7 +1052,7 @@
 
     move-result v0
 
-    const v2, 0x7f0a01ce
+    const v2, 0x7f0a01d3
 
     invoke-virtual {p0, v2}, Lcom/android/keyguard/KeyguardSimPinView;->findViewById(I)Landroid/view/View;
 
@@ -1114,7 +1114,7 @@
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPinView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
 
-    const v2, 0x7f11033f
+    const v2, 0x7f110340
 
     invoke-interface {v1, v2}, Lcom/android/keyguard/SecurityMessageDisplay;->setMessage(I)V
 

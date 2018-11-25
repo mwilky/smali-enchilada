@@ -121,6 +121,21 @@
 
     iput-object v0, p0, Lcom/android/keyguard/EmergencyButton;->mEmergencyAffordanceManager:Lcom/android/internal/util/EmergencyAffordanceManager;
 
+    invoke-static {}, Lcom/android/systemui/util/OPUtils;->isCustomFingerprint()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/keyguard/EmergencyButton;->getPaintFlags()I
+
+    move-result v0
+
+    or-int/lit8 v0, v0, 0x8
+
+    invoke-virtual {p0, v0}, Lcom/android/keyguard/EmergencyButton;->setPaintFlags(I)V
+
+    :cond_0
     return-void
 .end method
 

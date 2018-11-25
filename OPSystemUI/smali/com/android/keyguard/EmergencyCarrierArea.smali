@@ -41,7 +41,7 @@
 
     invoke-super {p0}, Lcom/android/keyguard/AlphaOptimizedLinearLayout;->onFinishInflate()V
 
-    const v0, 0x7f0a00ad
+    const v0, 0x7f0a00af
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/EmergencyCarrierArea;->findViewById(I)Landroid/view/View;
 
@@ -51,7 +51,7 @@
 
     iput-object v0, p0, Lcom/android/keyguard/EmergencyCarrierArea;->mCarrierText:Lcom/android/keyguard/CarrierText;
 
-    const v0, 0x7f0a0125
+    const v0, 0x7f0a0129
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/EmergencyCarrierArea;->findViewById(I)Landroid/view/View;
 

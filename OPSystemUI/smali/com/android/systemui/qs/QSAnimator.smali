@@ -1511,7 +1511,7 @@
 .method public onTuningChanged(Ljava/lang/String;Ljava/lang/String;)V
     .locals 3
 
-    const-string v0, "sysui_qs_fancy_anim"
+    const-string/jumbo v0, "sysui_qs_fancy_anim"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1551,7 +1551,7 @@
     goto :goto_2
 
     :cond_2
-    const-string v0, "sysui_qs_move_whole_rows"
+    const-string/jumbo v0, "sysui_qs_move_whole_rows"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1581,7 +1581,7 @@
     goto :goto_2
 
     :cond_5
-    const-string v0, "sysui_qqs_count"
+    const-string/jumbo v0, "sysui_qqs_count"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1623,11 +1623,11 @@
 
     check-cast v0, Lcom/android/systemui/tuner/TunerService;
 
-    const-string v1, "sysui_qs_fancy_anim"
+    const-string/jumbo v1, "sysui_qs_fancy_anim"
 
-    const-string v2, "sysui_qs_move_whole_rows"
+    const-string/jumbo v2, "sysui_qs_move_whole_rows"
 
-    const-string v3, "sysui_qqs_count"
+    const-string/jumbo v3, "sysui_qqs_count"
 
     filled-new-array {v1, v2, v3}, [Ljava/lang/String;
 

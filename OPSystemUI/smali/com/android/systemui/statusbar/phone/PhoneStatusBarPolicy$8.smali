@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
+    .locals 5
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -42,7 +42,9 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    const/4 v2, 0x2
+
+    const/4 v3, 0x0
 
     sparse-switch v1, :sswitch_data_0
 
@@ -57,9 +59,9 @@
 
     if-eqz v1, :cond_0
 
-    move v1, v2
+    move v1, v3
 
-    goto :goto_1
+    goto/16 :goto_1
 
     :sswitch_1
     const-string v1, "android.intent.action.MANAGED_PROFILE_REMOVED"
@@ -109,11 +111,24 @@
 
     if-eqz v1, :cond_0
 
-    const/16 v1, 0x9
+    const/16 v1, 0xa
 
     goto :goto_1
 
     :sswitch_5
+    const-string v1, "android.bluetooth.headset.profile.action.CONNECTION_STATE_CHANGED"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/16 v1, 0x9
+
+    goto :goto_1
+
+    :sswitch_6
     const-string v1, "android.media.INTERNAL_RINGER_MODE_CHANGED_ACTION"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -126,7 +141,7 @@
 
     goto :goto_1
 
-    :sswitch_6
+    :sswitch_7
     const-string v1, "android.intent.action.SIM_STATE_CHANGED"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -135,11 +150,11 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x2
+    move v1, v2
 
     goto :goto_1
 
-    :sswitch_7
+    :sswitch_8
     const-string v1, "android.intent.action.MANAGED_PROFILE_AVAILABLE"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -152,7 +167,7 @@
 
     goto :goto_1
 
-    :sswitch_8
+    :sswitch_9
     const-string v1, "android.intent.action.MANAGED_PROFILE_UNAVAILABLE"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -165,7 +180,7 @@
 
     goto :goto_1
 
-    :sswitch_9
+    :sswitch_a
     const-string v1, "android.intent.action.HEADSET_PLUG"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -185,12 +200,41 @@
     :goto_1
     packed-switch v1, :pswitch_data_0
 
-    goto :goto_2
+    goto :goto_3
 
     :pswitch_0
+    const-string v1, "android.bluetooth.profile.extra.STATE"
+
+    invoke-virtual {p2, v1, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+
+    move-result v1
+
+    const-string v4, "oneplus.bluetooth.device.isopheadset"
+
+    invoke-virtual {p2, v4, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result v3
+
+    if-ne v1, v2, :cond_1
+
+    if-nez v3, :cond_1
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy$8;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;
+
+    invoke-static {v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->access$1300(Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;)V
+
+    goto :goto_2
+
+    :cond_1
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy$8;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;
+
+    invoke-static {v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->access$1400(Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;)V
+
+    :goto_2
+    :pswitch_1
     sget-boolean v1, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     const-string v1, "PhoneStatusBarPolicy"
 
@@ -198,75 +242,76 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_1
+    :cond_2
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy$8;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;
 
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->access$1300(Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;)V
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->access$1500(Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;)V
 
-    goto :goto_2
-
-    :pswitch_1
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy$8;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;
-
-    invoke-static {v1, p2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->access$1200(Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;Landroid/content/Intent;)V
-
-    goto :goto_2
+    goto :goto_3
 
     :pswitch_2
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy$8;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;
 
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->access$300(Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;)V
+    invoke-static {v1, p2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->access$1200(Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;Landroid/content/Intent;)V
 
-    goto :goto_2
+    goto :goto_3
 
     :pswitch_3
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy$8;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;
 
-    const-string v3, "android.telecom.intent.extra.CURRENT_TTY_MODE"
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->access$300(Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;)V
 
-    invoke-virtual {p2, v3, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    goto :goto_3
+
+    :pswitch_4
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy$8;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;
+
+    const-string v2, "android.telecom.intent.extra.CURRENT_TTY_MODE"
+
+    invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v2
 
     invoke-static {v1, v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->access$1100(Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;I)V
 
-    goto :goto_2
+    goto :goto_3
 
-    :pswitch_4
+    :pswitch_5
     const-string v1, "rebroadcastOnUnlock"
 
-    invoke-virtual {p2, v1, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    invoke-virtual {p2, v1, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
-    goto :goto_2
+    goto :goto_3
 
-    :cond_2
+    :cond_3
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy$8;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;
 
     invoke-static {v1, p2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->access$1000(Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;Landroid/content/Intent;)V
 
-    goto :goto_2
+    goto :goto_3
 
-    :pswitch_5
+    :pswitch_6
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy$8;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->access$000(Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;)V
 
     nop
 
-    :goto_2
+    :goto_3
     return-void
 
     :sswitch_data_0
     .sparse-switch
-        -0x63ecb970 -> :sswitch_9
-        -0x49d08e2b -> :sswitch_8
-        -0x33813a72 -> :sswitch_7
-        -0xdb21ee7 -> :sswitch_6
-        0x60418f4 -> :sswitch_5
+        -0x63ecb970 -> :sswitch_a
+        -0x49d08e2b -> :sswitch_9
+        -0x33813a72 -> :sswitch_8
+        -0xdb21ee7 -> :sswitch_7
+        0x60418f4 -> :sswitch_6
+        0x2083ec2d -> :sswitch_5
         0x2287d448 -> :sswitch_4
         0x34803185 -> :sswitch_3
         0x3eaa3ea6 -> :sswitch_2
@@ -276,15 +321,16 @@
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_5
+        :pswitch_6
+        :pswitch_6
         :pswitch_5
         :pswitch_4
         :pswitch_3
+        :pswitch_3
+        :pswitch_3
         :pswitch_2
         :pswitch_2
-        :pswitch_2
-        :pswitch_1
-        :pswitch_1
         :pswitch_0
+        :pswitch_1
     .end packed-switch
 .end method

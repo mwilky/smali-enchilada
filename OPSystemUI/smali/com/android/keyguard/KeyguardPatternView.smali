@@ -422,12 +422,12 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f11033b
+    const v0, 0x7f11033c
 
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f110347
+    const v0, 0x7f110348
 
     :goto_0
     iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView;->mSecurityMessageDisplay:Lcom/android/keyguard/KeyguardMessageArea;
@@ -510,7 +510,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f110358
+    const v4, 0x7f110359
 
     const/4 v5, 0x1
 
@@ -879,7 +879,7 @@
     :goto_0
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPatternView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    const v0, 0x7f0a0219
+    const v0, 0x7f0a021e
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPatternView;->findViewById(I)Landroid/view/View;
 
@@ -925,7 +925,7 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPatternView;->mSecurityMessageDisplay:Lcom/android/keyguard/KeyguardMessageArea;
 
-    const v0, 0x7f0a01db
+    const v0, 0x7f0a01e0
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPatternView;->findViewById(I)Landroid/view/View;
 
@@ -933,7 +933,7 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPatternView;->mEcaView:Landroid/view/View;
 
-    const v0, 0x7f0a00cc
+    const v0, 0x7f0a00d0
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPatternView;->findViewById(I)Landroid/view/View;
 
@@ -943,7 +943,7 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPatternView;->mContainer:Landroid/view/ViewGroup;
 
-    const v0, 0x7f0a014e
+    const v0, 0x7f0a0152
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPatternView;->findViewById(I)Landroid/view/View;
 
@@ -951,7 +951,7 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPatternView;->mFingerprintIcon:Landroid/view/View;
 
-    const v0, 0x7f0a0125
+    const v0, 0x7f0a0129
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPatternView;->findViewById(I)Landroid/view/View;
 
@@ -964,7 +964,7 @@
     invoke-virtual {v0, p0}, Lcom/android/keyguard/EmergencyButton;->setCallback(Lcom/android/keyguard/EmergencyButton$EmergencyButtonCallback;)V
 
     :cond_1
-    const v1, 0x7f0a00a8
+    const v1, 0x7f0a00aa
 
     invoke-virtual {p0, v1}, Lcom/android/keyguard/KeyguardPatternView;->findViewById(I)Landroid/view/View;
 
@@ -985,13 +985,37 @@
 .end method
 
 .method public onPause()V
-    .locals 4
+    .locals 5
 
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPatternView;->mCountdownTimer:Landroid/os/CountDownTimer;
 
     const/4 v1, 0x0
 
+    const/4 v2, 0x7
+
     if-eqz v0, :cond_0
+
+    const-string v0, "SecurityPatternView"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "onPause to cancel CountdownTimer, "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {v2}, Landroid/os/Debug;->getCallers(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPatternView;->mCountdownTimer:Landroid/os/CountDownTimer;
 
@@ -1006,23 +1030,21 @@
 
     const-string v0, "SecurityPatternView"
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "onPause to cancel, "
+    const-string v4, "onPause to cancel, "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v3, 0x7
+    invoke-static {v2}, Landroid/os/Debug;->getCallers(I)Ljava/lang/String;
 
-    invoke-static {v3}, Landroid/os/Debug;->getCallers(I)Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v3
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -1267,7 +1289,7 @@
 
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPatternView;->mSecurityMessageDisplay:Lcom/android/keyguard/KeyguardMessageArea;
 
-    const v1, 0x7f11033b
+    const v1, 0x7f11033c
 
     invoke-direct {p0, v1}, Lcom/android/keyguard/KeyguardPatternView;->getMessageWithCount(I)Ljava/lang/String;
 
@@ -1295,7 +1317,7 @@
     return-void
 
     :cond_1
-    const v0, 0x7f110352
+    const v0, 0x7f110353
 
     packed-switch p1, :pswitch_data_0
 
@@ -1308,7 +1330,7 @@
     :pswitch_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPatternView;->mSecurityMessageDisplay:Lcom/android/keyguard/KeyguardMessageArea;
 
-    const v1, 0x7f110354
+    const v1, 0x7f110355
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardMessageArea;->setMessage(I)V
 
@@ -1317,7 +1339,7 @@
     :pswitch_1
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPatternView;->mSecurityMessageDisplay:Lcom/android/keyguard/KeyguardMessageArea;
 
-    const v1, 0x7f11034a
+    const v1, 0x7f11034b
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardMessageArea;->setMessage(I)V
 
@@ -1333,7 +1355,7 @@
     :pswitch_3
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPatternView;->mSecurityMessageDisplay:Lcom/android/keyguard/KeyguardMessageArea;
 
-    const v1, 0x7f11034c
+    const v1, 0x7f11034d
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardMessageArea;->setMessage(I)V
 

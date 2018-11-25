@@ -33,7 +33,7 @@
     return-void
 .end method
 
-.method public onFastChargeChanged(Z)V
+.method public onFastChargeChanged(I)V
     .locals 0
 
     return-void

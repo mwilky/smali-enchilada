@@ -177,7 +177,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/ScreenDecorations;->mOverlay:Landroid/view/View;
 
-    const v1, 0x7f0a020d
+    const v1, 0x7f0a0212
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -187,7 +187,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/ScreenDecorations;->mOverlay:Landroid/view/View;
 
-    const v3, 0x7f0a0349
+    const v3, 0x7f0a0352
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -211,13 +211,13 @@
 
     check-cast v3, Landroid/widget/ImageView;
 
-    const v4, 0x5060038
+    const v4, 0x506003c
 
     invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    const v4, 0x5060037
+    const v4, 0x506003b
 
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -274,7 +274,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0d01ac
+    const v2, 0x7f0d01b0
 
     invoke-virtual {v0, v2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -402,7 +402,7 @@
 
     check-cast v2, Lcom/android/systemui/tuner/TunerService;
 
-    const-string v4, "sysui_rounded_size"
+    const-string/jumbo v4, "sysui_rounded_size"
 
     filled-new-array {v4}, [Ljava/lang/String;
 
@@ -474,13 +474,13 @@
     :goto_0
     if-eqz v1, :cond_1
 
-    const v2, 0x7f0a01cf
+    const v2, 0x7f0a01d4
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
-    const-string v3, "sysui_rounded_content_padding"
+    const-string/jumbo v3, "sysui_rounded_content_padding"
 
     const/4 v4, 0x2
 
@@ -494,7 +494,7 @@
 
     new-instance v4, Lcom/android/systemui/ScreenDecorations$TunablePaddingTagListener;
 
-    const v5, 0x7f0a03cd
+    const v5, 0x7f0a03d6
 
     invoke-direct {v4, p1, v5}, Lcom/android/systemui/ScreenDecorations$TunablePaddingTagListener;-><init>(II)V
 
@@ -504,7 +504,7 @@
 
     new-instance v4, Lcom/android/systemui/ScreenDecorations$TunablePaddingTagListener;
 
-    const v5, 0x7f0a0180
+    const v5, 0x7f0a0184
 
     invoke-direct {v4, p1, v5}, Lcom/android/systemui/ScreenDecorations$TunablePaddingTagListener;-><init>(II)V
 
@@ -571,7 +571,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/ScreenDecorations;->mOverlay:Landroid/view/View;
 
-    const v1, 0x7f0a020d
+    const v1, 0x7f0a0212
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -579,7 +579,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/ScreenDecorations;->mOverlay:Landroid/view/View;
 
-    const v3, 0x7f0a0349
+    const v3, 0x7f0a0352
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -708,7 +708,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0a0112
+    const v0, 0x7f0a0116
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -950,7 +950,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0705cc
+    const v1, 0x7f0705ce
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -964,7 +964,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0705ce
+    const v1, 0x7f0705d0
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -978,7 +978,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0705cd
+    const v1, 0x7f0705cf
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1022,7 +1022,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0705cb
+    const v1, 0x7f0705cd
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

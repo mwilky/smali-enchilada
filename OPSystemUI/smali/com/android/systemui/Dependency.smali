@@ -340,7 +340,7 @@
     return-void
 .end method
 
-.method static synthetic lambda$dump$61(Ljava/lang/Object;)Z
+.method static synthetic lambda$dump$62(Ljava/lang/Object;)Z
     .locals 1
 
     instance-of v0, p0, Lcom/android/systemui/Dumpable;
@@ -348,7 +348,7 @@
     return v0
 .end method
 
-.method static synthetic lambda$dump$62(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;Ljava/lang/Object;)V
+.method static synthetic lambda$dump$63(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;Ljava/lang/Object;)V
     .locals 1
 
     move-object v0, p3
@@ -360,7 +360,7 @@
     return-void
 .end method
 
-.method static synthetic lambda$onConfigurationChanged$63(Ljava/lang/Object;)Z
+.method static synthetic lambda$onConfigurationChanged$64(Ljava/lang/Object;)Z
     .locals 1
 
     instance-of v0, p0, Lcom/android/systemui/ConfigurationChangedReceiver;
@@ -368,7 +368,7 @@
     return v0
 .end method
 
-.method static synthetic lambda$onConfigurationChanged$64(Landroid/content/res/Configuration;Ljava/lang/Object;)V
+.method static synthetic lambda$onConfigurationChanged$65(Landroid/content/res/Configuration;Ljava/lang/Object;)V
     .locals 1
 
     move-object v0, p1
@@ -1208,6 +1208,18 @@
     return-object v0
 .end method
 
+.method public static synthetic lambda$start$61(Lcom/android/systemui/Dependency;)Ljava/lang/Object;
+    .locals 2
+
+    new-instance v0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;
+
+    iget-object v1, p0, Lcom/android/systemui/Dependency;->mContext:Landroid/content/Context;
+
+    invoke-direct {v0, v1}, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;-><init>(Landroid/content/Context;)V
+
+    return-object v0
+.end method
+
 .method public static synthetic lambda$start$7(Lcom/android/systemui/Dependency;)Ljava/lang/Object;
     .locals 3
 
@@ -1383,15 +1395,15 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/android/systemui/-$$Lambda$Dependency$wZtAwAINt8qJUysmzwIAdTRUK_8;->INSTANCE:Lcom/android/systemui/-$$Lambda$Dependency$wZtAwAINt8qJUysmzwIAdTRUK_8;
+    sget-object v1, Lcom/android/systemui/-$$Lambda$Dependency$NySUi6fkqc-gpV3As7yS9xzQLGs;->INSTANCE:Lcom/android/systemui/-$$Lambda$Dependency$NySUi6fkqc-gpV3As7yS9xzQLGs;
 
     invoke-interface {v0, v1}, Ljava/util/stream/Stream;->filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
 
     move-result-object v0
 
-    new-instance v1, Lcom/android/systemui/-$$Lambda$Dependency$8URXQaHa8I2TbdUhsIePIAeRKyM;
+    new-instance v1, Lcom/android/systemui/-$$Lambda$Dependency$1Oj9fGkoz2JD_MXRvNkn7sBfmSU;
 
-    invoke-direct {v1, p1, p2, p3}, Lcom/android/systemui/-$$Lambda$Dependency$8URXQaHa8I2TbdUhsIePIAeRKyM;-><init>(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+    invoke-direct {v1, p1, p2, p3}, Lcom/android/systemui/-$$Lambda$Dependency$1Oj9fGkoz2JD_MXRvNkn7sBfmSU;-><init>(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
     invoke-interface {v0, v1}, Ljava/util/stream/Stream;->forEach(Ljava/util/function/Consumer;)V
     :try_end_0
@@ -1465,15 +1477,15 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/android/systemui/-$$Lambda$Dependency$2urYPUjZQ-R5R46028v0w2yHw-M;->INSTANCE:Lcom/android/systemui/-$$Lambda$Dependency$2urYPUjZQ-R5R46028v0w2yHw-M;
+    sget-object v1, Lcom/android/systemui/-$$Lambda$Dependency$6mCZlbc6lFgfLDCwSrONrXphdOw;->INSTANCE:Lcom/android/systemui/-$$Lambda$Dependency$6mCZlbc6lFgfLDCwSrONrXphdOw;
 
     invoke-interface {v0, v1}, Ljava/util/stream/Stream;->filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
 
     move-result-object v0
 
-    new-instance v1, Lcom/android/systemui/-$$Lambda$Dependency$-tOLuG4qBloTUaaQz-aVKUNAo6o;
+    new-instance v1, Lcom/android/systemui/-$$Lambda$Dependency$A5sv7qh1B1leWEGLPGdGHeQ2GyI;
 
-    invoke-direct {v1, p1}, Lcom/android/systemui/-$$Lambda$Dependency$-tOLuG4qBloTUaaQz-aVKUNAo6o;-><init>(Landroid/content/res/Configuration;)V
+    invoke-direct {v1, p1}, Lcom/android/systemui/-$$Lambda$Dependency$A5sv7qh1B1leWEGLPGdGHeQ2GyI;-><init>(Landroid/content/res/Configuration;)V
 
     invoke-interface {v0, v1}, Ljava/util/stream/Stream;->forEach(Ljava/util/function/Consumer;)V
     :try_end_0
@@ -2097,6 +2109,16 @@
     const-class v1, Lcom/android/internal/statusbar/IStatusBarService;
 
     sget-object v2, Lcom/android/systemui/-$$Lambda$Dependency$oIkfyGksOHRHF9i4_9KrCvAJBJk;->INSTANCE:Lcom/android/systemui/-$$Lambda$Dependency$oIkfyGksOHRHF9i4_9KrCvAJBJk;
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, p0, Lcom/android/systemui/Dependency;->mProviders:Landroid/util/ArrayMap;
+
+    const-class v1, Lcom/android/systemui/statusbar/policy/ChargingAnimationController;
+
+    new-instance v2, Lcom/android/systemui/-$$Lambda$Dependency$Dp0qWTq2UOjf-_6AYk3D-p2KTzQ;
+
+    invoke-direct {v2, p0}, Lcom/android/systemui/-$$Lambda$Dependency$Dp0qWTq2UOjf-_6AYk3D-p2KTzQ;-><init>(Lcom/android/systemui/Dependency;)V
 
     invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

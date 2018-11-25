@@ -340,7 +340,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f110358
+    const v4, 0x7f110359
 
     const/4 v5, 0x1
 
@@ -380,7 +380,7 @@
 .method protected getWrongPasswordStringId()I
     .locals 1
 
-    const v0, 0x7f110362
+    const v0, 0x7f110363
 
     return v0
 .end method
@@ -551,7 +551,7 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
 
-    const v0, 0x7f0a01db
+    const v0, 0x7f0a01e0
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardAbsKeyInputView;->findViewById(I)Landroid/view/View;
 
@@ -573,7 +573,7 @@
 
     iput v0, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mMaxCountdownTimes:I
 
-    const v0, 0x7f0a0125
+    const v0, 0x7f0a0129
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardAbsKeyInputView;->findViewById(I)Landroid/view/View;
 
@@ -833,7 +833,7 @@
 
     iget-object v0, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
 
-    const v1, 0x7f11033b
+    const v1, 0x7f11033c
 
     invoke-interface {v0, v1}, Lcom/android/keyguard/SecurityMessageDisplay;->setMessage(I)V
 

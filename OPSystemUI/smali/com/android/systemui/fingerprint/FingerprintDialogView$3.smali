@@ -37,6 +37,30 @@
 .method public run()V
     .locals 3
 
+    const-string v0, "FingerprintDialogView"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "startDismiss: animatingAway="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$3;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
+
+    invoke-static {v2}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$400(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Z
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$3;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
     invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$400(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Z
@@ -62,7 +86,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$3;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    invoke-interface {v0, v2}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
+    invoke-interface {v0, v2}, Landroid/view/WindowManager;->removeViewImmediate(Landroid/view/View;)V
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$3;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 

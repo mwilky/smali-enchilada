@@ -97,7 +97,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/tuner/PowerNotificationControlsFragment$1;->this$0:Lcom/android/systemui/tuner/PowerNotificationControlsFragment;
 
-    const v3, 0x7f1105e8
+    const v3, 0x7f1105f0
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/tuner/PowerNotificationControlsFragment;->getString(I)Ljava/lang/String;
 
@@ -108,7 +108,7 @@
     :cond_1
     iget-object v2, p0, Lcom/android/systemui/tuner/PowerNotificationControlsFragment$1;->this$0:Lcom/android/systemui/tuner/PowerNotificationControlsFragment;
 
-    const v3, 0x7f1105e7
+    const v3, 0x7f1105ef
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/tuner/PowerNotificationControlsFragment;->getString(I)Ljava/lang/String;
 

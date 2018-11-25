@@ -25,4 +25,4 @@
 
 .field public static final column_card_default_column_span:I = 0x7f0b0011
 
-.field public static final speed_bump_lock_out_duration_ms:I = 0x7f0b008d
+.field public static final speed_bump_lock_out_duration_ms:I = 0x7f0b008e

@@ -386,13 +386,13 @@
 
     iget-object v0, p0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mDialog:Landroid/app/Dialog;
 
-    const v1, 0x7f0d0143
+    const v1, 0x7f0d0146
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setContentView(I)V
 
     iget-object v0, p0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mDialog:Landroid/app/Dialog;
 
-    const v1, 0x7f0a03fe
+    const v1, 0x7f0a0407
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -404,7 +404,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mDialog:Landroid/app/Dialog;
 
-    const v1, 0x7f0a03fd
+    const v1, 0x7f0a0406
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -416,7 +416,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mDialog:Landroid/app/Dialog;
 
-    const v1, 0x7f0a03ff
+    const v1, 0x7f0a0408
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -705,352 +705,433 @@
     goto :goto_0
 
     :pswitch_0
-    const v1, 0x7f0804e4
+    const v1, 0x7f0804f8
 
-    const v2, 0x7f110671
+    const v2, 0x7f110679
 
     goto :goto_0
 
     :pswitch_1
-    const v1, 0x7f0804e7
+    const v1, 0x7f0804fb
 
-    const v2, 0x7f110686
+    const v2, 0x7f11068e
 
     goto :goto_0
 
     :pswitch_2
-    const v1, 0x7f0804e6
+    const v1, 0x7f0804fa
 
-    const v2, 0x7f110672
+    const v2, 0x7f11067a
 
     nop
 
     :goto_0
-    iget v8, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mOrientationType:I
+    const v8, 0x7f0b0061
 
-    const v11, 0x7f07064a
+    invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getInteger(I)I
 
-    const v12, 0x7f07064c
+    move-result v8
 
-    const v13, 0x7f07064e
-
-    const/4 v15, 0x3
-
-    const/4 v9, 0x2
+    const/4 v9, 0x1
 
     const/4 v10, 0x1
 
-    const v14, 0x7f070648
+    if-ne v8, v10, :cond_2
 
-    packed-switch v8, :pswitch_data_1
+    const/4 v9, 0x0
+
+    goto :goto_1
+
+    :cond_2
+    if-nez v8, :cond_3
+
+    const/4 v9, 0x1
+
+    :cond_3
+    :goto_1
+    iget v11, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mOrientationType:I
+
+    const v14, 0x7f070653
+
+    const v15, 0x105019d
+
+    const v12, 0x7f070652
+
+    const/4 v13, 0x2
+
+    packed-switch v11, :pswitch_data_1
+
+    if-eqz v9, :cond_12
 
     const/16 v7, 0x35
+
+    goto/16 :goto_8
+
+    :pswitch_3
+    if-eqz v9, :cond_4
+
+    const/16 v7, 0x55
+
+    goto :goto_2
+
+    :cond_4
+    const/16 v7, 0x35
+
+    :goto_2
+    invoke-virtual {v4, v12}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v5
+
+    if-nez v9, :cond_5
+
+    invoke-virtual {v4, v15}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v11
+
+    add-int/2addr v5, v11
+
+    :cond_5
+    iget v11, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
+
+    if-ne v11, v10, :cond_6
 
     invoke-virtual {v4, v14}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v6
 
-    iget v8, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
+    goto :goto_3
 
-    if-ne v8, v10, :cond_b
+    :cond_6
+    iget v10, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
 
-    const v8, 0x7f07064d
+    if-ne v10, v13, :cond_7
 
-    invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    const v10, 0x7f07064f
+
+    invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v6
+
+    goto :goto_3
+
+    :cond_7
+    iget v10, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
+
+    const/4 v11, 0x3
+
+    if-ne v10, v11, :cond_8
+
+    const v10, 0x7f07064d
+
+    invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v6
+
+    :cond_8
+    :goto_3
+    const v3, 0x7f0801e5
+
+    goto/16 :goto_9
+
+    :pswitch_4
+    if-eqz v9, :cond_9
+
+    const/16 v7, 0x53
+
+    goto :goto_4
+
+    :cond_9
+    const/16 v7, 0x55
+
+    :goto_4
+    const v11, 0x7f070651
+
+    invoke-virtual {v4, v11}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v6
+
+    iget v11, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
+
+    if-ne v11, v10, :cond_a
+
+    const v10, 0x7f070650
+
+    invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v5
+
+    goto :goto_5
+
+    :cond_a
+    iget v10, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
+
+    if-ne v10, v13, :cond_b
+
+    const v10, 0x7f07064e
+
+    invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v5
+
+    goto :goto_5
+
+    :cond_b
+    iget v10, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
+
+    const/4 v11, 0x3
+
+    if-ne v10, v11, :cond_c
+
+    const v10, 0x7f07064c
+
+    invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v5
+
+    :cond_c
+    :goto_5
+    const v3, 0x7f0801e5
+
+    goto/16 :goto_9
+
+    :pswitch_5
+    if-eqz v9, :cond_d
+
+    const/16 v7, 0x33
+
+    goto :goto_6
+
+    :cond_d
+    const/16 v7, 0x53
+
+    :goto_6
+    invoke-virtual {v4, v12}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v5
+
+    if-eqz v9, :cond_e
+
+    invoke-virtual {v4, v15}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v11
+
+    add-int/2addr v5, v11
+
+    :cond_e
+    iget v11, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
+
+    if-ne v11, v10, :cond_f
+
+    invoke-virtual {v4, v14}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v6
+
+    goto :goto_7
+
+    :cond_f
+    iget v10, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
+
+    if-ne v10, v13, :cond_10
+
+    const v10, 0x7f07064f
+
+    invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v6
+
+    goto :goto_7
+
+    :cond_10
+    iget v10, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
+
+    const/4 v11, 0x3
+
+    if-ne v10, v11, :cond_11
+
+    const v10, 0x7f07064d
+
+    invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v6
+
+    :cond_11
+    :goto_7
+    const v3, 0x7f0801e5
+
+    goto :goto_9
+
+    :cond_12
+    const/16 v7, 0x33
+
+    :goto_8
+    const v11, 0x7f070651
+
+    invoke-virtual {v4, v11}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v6
+
+    iget v11, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
+
+    if-ne v11, v10, :cond_13
+
+    const v10, 0x7f070650
+
+    invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v5
 
     const v3, 0x7f0801e6
 
-    goto/16 :goto_4
+    goto :goto_9
 
-    :pswitch_3
-    const/16 v7, 0x55
+    :cond_13
+    iget v10, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
 
-    invoke-virtual {v4, v14}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    if-ne v10, v13, :cond_14
 
-    move-result v5
+    const v10, 0x7f07064e
 
-    iget v8, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
-
-    if-ne v8, v10, :cond_2
-
-    invoke-virtual {v4, v13}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v6
-
-    goto :goto_1
-
-    :cond_2
-    iget v8, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
-
-    if-ne v8, v9, :cond_3
-
-    invoke-virtual {v4, v12}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v6
-
-    goto :goto_1
-
-    :cond_3
-    iget v8, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
-
-    if-ne v8, v15, :cond_4
-
-    invoke-virtual {v4, v11}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v6
-
-    :cond_4
-    :goto_1
-    const v3, 0x7f0801e5
-
-    goto/16 :goto_4
-
-    :pswitch_4
-    const/16 v7, 0x53
-
-    invoke-virtual {v4, v14}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v6
-
-    iget v8, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
-
-    if-ne v8, v10, :cond_5
-
-    const v8, 0x7f07064d
-
-    invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v5
-
-    goto :goto_2
-
-    :cond_5
-    iget v8, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
-
-    if-ne v8, v9, :cond_6
-
-    const v8, 0x7f07064b
-
-    invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v5
-
-    goto :goto_2
-
-    :cond_6
-    iget v8, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
-
-    if-ne v8, v15, :cond_7
-
-    const v8, 0x7f070649
-
-    invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v5
-
-    :cond_7
-    :goto_2
-    const v3, 0x7f0801e5
-
-    goto :goto_4
-
-    :pswitch_5
-    const/16 v7, 0x33
-
-    invoke-virtual {v4, v14}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v8
-
-    const v14, 0x105019d
-
-    invoke-virtual {v4, v14}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v14
-
-    add-int v5, v8, v14
-
-    iget v8, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
-
-    if-ne v8, v10, :cond_8
-
-    invoke-virtual {v4, v13}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v6
-
-    goto :goto_3
-
-    :cond_8
-    iget v8, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
-
-    if-ne v8, v9, :cond_9
-
-    invoke-virtual {v4, v12}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v6
-
-    goto :goto_3
-
-    :cond_9
-    iget v8, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
-
-    if-ne v8, v15, :cond_a
-
-    invoke-virtual {v4, v11}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v6
-
-    :cond_a
-    :goto_3
-    const v3, 0x7f0801e5
-
-    goto :goto_4
-
-    :cond_b
-    iget v8, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
-
-    if-ne v8, v9, :cond_c
-
-    const v8, 0x7f07064b
-
-    invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v5
 
     const v3, 0x7f0801e5
 
-    goto :goto_4
+    goto :goto_9
 
-    :cond_c
-    iget v8, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
+    :cond_14
+    iget v10, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
 
-    if-ne v8, v15, :cond_d
+    const/4 v11, 0x3
 
-    const v8, 0x7f070649
+    if-ne v10, v11, :cond_15
 
-    invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    const v10, 0x7f07064c
+
+    invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v5
 
     const v3, 0x7f0801e4
 
-    :cond_d
-    :goto_4
-    const v8, 0x7f070477
+    :cond_15
+    :goto_9
+    const v10, 0x7f070478
 
-    invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v8
+    move-result v10
 
-    iget v9, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
+    iget v11, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
 
-    const/4 v10, -0x1
+    const/4 v12, -0x1
 
-    if-eq v9, v10, :cond_11
+    if-eq v11, v12, :cond_19
 
-    iget-object v9, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeyIcon:Landroid/widget/ImageView;
+    iget-object v11, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeyIcon:Landroid/widget/ImageView;
 
-    if-eqz v9, :cond_e
+    if-eqz v11, :cond_16
 
-    iget-object v9, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeyIcon:Landroid/widget/ImageView;
+    iget-object v11, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeyIcon:Landroid/widget/ImageView;
 
-    invoke-virtual {v9, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v11, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    :cond_e
-    iget-object v9, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeyText:Landroid/widget/TextView;
+    :cond_16
+    iget-object v11, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeyText:Landroid/widget/TextView;
 
-    if-eqz v9, :cond_f
+    if-eqz v11, :cond_17
 
-    iget-object v9, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeyText:Landroid/widget/TextView;
+    iget-object v11, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeyText:Landroid/widget/TextView;
 
     invoke-virtual {v4, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v12
 
-    invoke-virtual {v9, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v11, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    iget-object v9, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeyText:Landroid/widget/TextView;
+    iget-object v11, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeyText:Landroid/widget/TextView;
 
-    const/4 v10, 0x0
+    const/4 v12, 0x0
 
-    int-to-float v11, v8
+    int-to-float v13, v10
 
-    invoke-virtual {v9, v10, v11}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v11, v12, v13}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    :cond_f
-    iget-object v9, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mDialogView:Landroid/view/ViewGroup;
+    :cond_17
+    iget-object v11, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mDialogView:Landroid/view/ViewGroup;
 
-    if-eqz v9, :cond_10
+    if-eqz v11, :cond_18
 
-    iget-object v9, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mDialogView:Landroid/view/ViewGroup;
+    iget-object v11, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mDialogView:Landroid/view/ViewGroup;
 
     invoke-virtual {v4, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v10
+    move-result-object v12
 
-    invoke-virtual {v9, v10}, Landroid/view/ViewGroup;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v11, v12}, Landroid/view/ViewGroup;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    :cond_10
+    :cond_18
     iput v5, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mDialogPosition:I
 
-    :cond_11
-    const v9, 0x7f0704d9
+    :cond_19
+    const v11, 0x7f0704db
 
-    invoke-virtual {v4, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v4, v11}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v9
+    move-result v11
 
-    iget-object v10, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mWindowLayoutParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v12, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mWindowLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
-    iput v7, v10, Landroid/view/WindowManager$LayoutParams;->gravity:I
+    iput v7, v12, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    iget-object v10, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mWindowLayoutParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v12, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mWindowLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
-    sub-int v11, v5, v9
+    sub-int v13, v5, v11
 
-    iput v11, v10, Landroid/view/WindowManager$LayoutParams;->y:I
+    iput v13, v12, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    iget-object v10, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mWindowLayoutParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v12, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mWindowLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
-    sub-int v11, v6, v9
+    sub-int v13, v6, v11
 
-    iput v11, v10, Landroid/view/WindowManager$LayoutParams;->x:I
+    iput v13, v12, Landroid/view/WindowManager$LayoutParams;->x:I
 
-    iget-object v10, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mWindow:Landroid/view/Window;
+    iget-object v12, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mWindow:Landroid/view/Window;
 
-    iget-object v11, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mWindowLayoutParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v13, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mWindowLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
-    invoke-virtual {v10, v11}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+    invoke-virtual {v12, v13}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->rescheduleTimeoutH()V
 
-    sget-boolean v10, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->DEBUG:Z
+    sget-boolean v12, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->DEBUG:Z
 
-    if-eqz v10, :cond_12
+    if-eqz v12, :cond_1a
 
-    sget-object v10, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->TAG:Ljava/lang/String;
+    sget-object v12, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->TAG:Ljava/lang/String;
 
-    new-instance v11, Ljava/lang/StringBuilder;
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v12, "updateThreekeyLayout mThreeKeystate:"
+    const-string/jumbo v14, "updateThreekeyLayout mThreeKeystate:"
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v12, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
+    iget v14, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThreeKeystate:I
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v13
 
-    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_12
+    :cond_1a
     return-void
+
+    nop
 
     nop
 

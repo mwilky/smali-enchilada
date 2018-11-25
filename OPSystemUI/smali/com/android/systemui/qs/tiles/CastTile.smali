@@ -233,7 +233,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1104c5
+    const v1, 0x7f1104cd
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -245,8 +245,6 @@
 
 .method public static synthetic lambda$handleClick$0(Lcom/android/systemui/qs/tiles/CastTile;)V
     .locals 1
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     const/4 v0, 0x1
 
@@ -409,7 +407,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1104c6
+    const v1, 0x7f1104ce
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -533,7 +531,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1104c6
+    const v1, 0x7f1104ce
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -646,7 +644,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f1104d2
+    const v3, 0x7f1104da
 
     invoke-virtual {v0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -671,12 +669,12 @@
 
     if-eqz v0, :cond_5
 
-    const v0, 0x7f080346
+    const v0, 0x7f080367
 
     goto :goto_3
 
     :cond_5
-    const v0, 0x7f080345
+    const v0, 0x7f080366
 
     :goto_3
     invoke-static {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;

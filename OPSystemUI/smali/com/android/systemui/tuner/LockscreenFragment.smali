@@ -132,7 +132,7 @@
 .method private setSummary(Landroid/support/v7/preference/Preference;Ljava/lang/String;)V
     .locals 3
 
-    const v0, 0x7f1103a8
+    const v0, 0x7f1103a9
 
     if-nez p2, :cond_0
 
@@ -273,15 +273,15 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/tuner/LockscreenFragment;->addPreferencesFromResource(I)V
 
-    const-string v0, "sysui_keyguard_left"
+    const-string/jumbo v0, "sysui_keyguard_left"
 
-    const-string v1, "sysui_keyguard_left_unlock"
+    const-string/jumbo v1, "sysui_keyguard_left_unlock"
 
     invoke-direct {p0, v0, v1}, Lcom/android/systemui/tuner/LockscreenFragment;->setupGroup(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v0, "sysui_keyguard_right"
+    const-string/jumbo v0, "sysui_keyguard_right"
 
-    const-string v1, "sysui_keyguard_right_unlock"
+    const-string/jumbo v1, "sysui_keyguard_right_unlock"
 
     invoke-direct {p0, v0, v1}, Lcom/android/systemui/tuner/LockscreenFragment;->setupGroup(Ljava/lang/String;Ljava/lang/String;)V
 

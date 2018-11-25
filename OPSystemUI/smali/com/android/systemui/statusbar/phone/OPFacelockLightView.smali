@@ -139,16 +139,6 @@
 
     iput v2, v1, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
-    int-to-double v2, v0
-
-    const-wide v4, 0x3fc645a1cac08312L    # 0.174
-
-    mul-double/2addr v4, v2
-
-    double-to-int v2, v4
-
-    iput v2, v1, Landroid/widget/RelativeLayout$LayoutParams;->bottomMargin:I
-
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mInnerView:Landroid/widget/LinearLayout;
 
     invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -161,7 +151,7 @@
 .method public init()V
     .locals 3
 
-    const v0, 0x7f0a0143
+    const v0, 0x7f0a0147
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->findViewById(I)Landroid/view/View;
 
@@ -171,7 +161,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mInnerView:Landroid/widget/LinearLayout;
 
-    const v0, 0x7f0a0147
+    const v0, 0x7f0a014b
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->findViewById(I)Landroid/view/View;
 
@@ -197,7 +187,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mConfig:Landroid/content/res/Configuration;
 
-    const v1, 0x7f0a0141
+    const v1, 0x7f0a0145
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->findViewById(I)Landroid/view/View;
 
@@ -207,7 +197,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mClockView:Lcom/android/keyguard/clock/OPTextClock;
 
-    const v1, 0x7f0a0142
+    const v1, 0x7f0a0146
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->findViewById(I)Landroid/view/View;
 
@@ -225,7 +215,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mNotifyView:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0146
+    const v0, 0x7f0a014a
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->findViewById(I)Landroid/view/View;
 
@@ -235,7 +225,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->mButton:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0145
+    const v0, 0x7f0a0149
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/OPFacelockLightView;->findViewById(I)Landroid/view/View;
 

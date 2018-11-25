@@ -579,7 +579,7 @@
 
     move-object v2, v0
 
-    invoke-direct/range {v2 .. v8}, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;-><init>(IIIIIZ)V
+    invoke-direct/range {v2 .. v8}, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;-><init>(IIIIII)V
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor;->mBatteryStatus:Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;
 
@@ -3895,9 +3895,9 @@
     :cond_3
     if-eqz v0, :cond_4
 
-    iget-boolean v5, p2, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->fastCharge:Z
+    iget v5, p2, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->fastCharge:I
 
-    iget-boolean v6, p1, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->fastCharge:Z
+    iget v6, p1, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->fastCharge:I
 
     if-eq v5, v6, :cond_4
 
@@ -6871,9 +6871,9 @@
 
     iget-object v3, p0, Lcom/android/keyguard/KeyguardUpdateMonitor;->mBatteryStatus:Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;
 
-    iget-boolean v3, v3, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->fastCharge:Z
+    iget v3, v3, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->fastCharge:I
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v3, ", health="
 
@@ -9364,6 +9364,16 @@
     iget-boolean v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor;->mNeedsSlowUnlockTransition:Z
 
     return v0
+.end method
+
+.method public notifyBrightnessChange()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor;->mFingerprintDialogView:Lcom/android/systemui/fingerprint/FingerprintDialogView;
+
+    invoke-virtual {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->notifyBrightnessChange()V
+
+    return-void
 .end method
 
 .method public notifyFacelockStateChanged(I)V

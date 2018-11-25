@@ -93,7 +93,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/VPNTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1103a1
+    const v1, 0x7f1103a2
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -104,8 +104,6 @@
 
 .method protected handleClick()V
     .locals 3
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     const-class v0, Lcom/android/systemui/plugins/ActivityStarter;
 
@@ -159,7 +157,7 @@
 
     iput-boolean v0, p1, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->value:Z
 
-    const v0, 0x7f080369
+    const v0, 0x7f08038a
 
     invoke-static {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -169,7 +167,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/VPNTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1103a1
+    const v1, 0x7f1103a2
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

@@ -96,6 +96,7 @@
     <integer name="navigation_bar_deadzone_orientation">0</integer>
     <integer name="notification_panel_layout_gravity">0x00000031</integer>
     <integer name="one_finger_pop_duration_ms">10</integer>
+    <integer name="oneplus_config_threekey_type">0</integer>
     <integer name="oneplus_contorl_time_part1">30</integer>
     <integer name="oneplus_contorl_time_part2">45</integer>
     <integer name="oneplus_contorl_time_part3">75</integer>

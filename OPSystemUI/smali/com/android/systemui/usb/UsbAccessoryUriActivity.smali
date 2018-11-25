@@ -221,7 +221,7 @@
     if-nez v4, :cond_4
 
     :cond_3
-    const v4, 0x7f11060d
+    const v4, 0x7f110615
 
     invoke-virtual {p0, v4}, Lcom/android/systemui/usb/UsbAccessoryUriActivity;->getString(I)Ljava/lang/String;
 
@@ -230,7 +230,7 @@
     iput-object v4, v3, Lcom/android/internal/app/AlertController$AlertParams;->mTitle:Ljava/lang/CharSequence;
 
     :cond_4
-    const v4, 0x7f110647
+    const v4, 0x7f11064f
 
     const/4 v5, 0x1
 
@@ -248,7 +248,7 @@
 
     iput-object v4, v3, Lcom/android/internal/app/AlertController$AlertParams;->mMessage:Ljava/lang/CharSequence;
 
-    const v4, 0x7f110369
+    const v4, 0x7f11036a
 
     invoke-virtual {p0, v4}, Lcom/android/systemui/usb/UsbAccessoryUriActivity;->getString(I)Ljava/lang/String;
 

@@ -9,6 +9,8 @@
 # static fields
 .field private static final DEBUG:Z
 
+.field public static final SHOW_TRANSPARENT_ICON_VIEW:Z
+
 .field private static final VIBRATION_ATTRIBUTES:Landroid/media/AudioAttributes;
 
 
@@ -33,6 +35,8 @@
 
 .field private mIsEnableQL:Z
 
+.field private mIsFaceUnlocked:Z
+
 .field private mOnViewPressing:Z
 
 .field private mQLConfig:Ljava/lang/String;
@@ -51,6 +55,8 @@
 
 .field private mTransparentIconShowing:Z
 
+.field private mTransparentIconSize:I
+
 .field private mTransparentIconView:Landroid/view/View;
 
 .field private mWindowManager:Landroid/view/WindowManager;
@@ -63,6 +69,16 @@
     sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
     sput-boolean v0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->DEBUG:Z
+
+    const-string v0, "debug.show_transparent_icon_view"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    sput-boolean v0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->SHOW_TRANSPARENT_ICON_VIEW:Z
 
     new-instance v0, Landroid/media/AudioAttributes$Builder;
 
@@ -111,6 +127,8 @@
     iput-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mAuthenticatedPkg:Ljava/lang/String;
 
     iput-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mFingerOnScreen:Z
+
+    iput-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mIsFaceUnlocked:Z
 
     new-instance v0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$1;
 
@@ -239,20 +257,20 @@
     return p1
 .end method
 
-.method static synthetic access$1802(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Z)Z
-    .locals 0
-
-    iput-boolean p1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mFingerOnScreen:Z
-
-    return p1
-.end method
-
-.method static synthetic access$1900(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Z
+.method static synthetic access$1800(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mFpSensorPressing:Z
 
     return v0
+.end method
+
+.method static synthetic access$1902(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mOnViewPressing:Z
+
+    return p1
 .end method
 
 .method static synthetic access$200(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Ljava/lang/String;)V
@@ -263,15 +281,7 @@
     return-void
 .end method
 
-.method static synthetic access$2002(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Z)Z
-    .locals 0
-
-    iput-boolean p1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mOnViewPressing:Z
-
-    return p1
-.end method
-
-.method static synthetic access$2100(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Lcom/android/systemui/fingerprint/FingerprintDialogView;
+.method static synthetic access$2000(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Lcom/android/systemui/fingerprint/FingerprintDialogView;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mDialogView:Lcom/android/systemui/fingerprint/FingerprintDialogView;
@@ -279,7 +289,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2200(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Landroid/view/View;
+.method static synthetic access$2100(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Landroid/view/View;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconView:Landroid/view/View;
@@ -287,7 +297,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2300(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Landroid/view/WindowManager;
+.method static synthetic access$2200(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Landroid/view/WindowManager;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mWindowManager:Landroid/view/WindowManager;
@@ -295,7 +305,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2400(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Landroid/view/MotionEvent;)V
+.method static synthetic access$2300(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Landroid/view/MotionEvent;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->handleQLTouchEvent(Landroid/view/MotionEvent;)V
@@ -303,7 +313,7 @@
     return-void
 .end method
 
-.method static synthetic access$2500(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Z
+.method static synthetic access$2400(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mIsEnableQL:Z
@@ -311,7 +321,7 @@
     return v0
 .end method
 
-.method static synthetic access$2502(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Z)Z
+.method static synthetic access$2402(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mIsEnableQL:Z
@@ -319,7 +329,7 @@
     return p1
 .end method
 
-.method static synthetic access$2600(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Ljava/lang/String;
+.method static synthetic access$2500(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mQLConfig:Ljava/lang/String;
@@ -327,7 +337,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2602(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Ljava/lang/String;)Ljava/lang/String;
+.method static synthetic access$2502(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
     iput-object p1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mQLConfig:Ljava/lang/String;
@@ -396,9 +406,9 @@
 
     new-instance v6, Landroid/view/WindowManager$LayoutParams;
 
-    const/4 v1, -0x2
+    iget v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconSize:I
 
-    const/4 v2, -0x2
+    iget v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconSize:I
 
     const/16 v3, 0x901
 
@@ -430,7 +440,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f07049d
+    const v2, 0x7f0704a0
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -444,7 +454,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f07049e
+    const v2, 0x7f0704a1
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -554,7 +564,7 @@
 .end method
 
 .method private handleFingerprintAcquire(II)V
-    .locals 4
+    .locals 5
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mContext:Landroid/content/Context;
 
@@ -628,81 +638,102 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 v1, 0x6
+    const/4 v1, 0x1
 
-    if-ne p1, v1, :cond_0
+    const/4 v2, 0x6
+
+    const/4 v3, 0x0
+
+    if-ne p1, v2, :cond_1
 
     if-nez p2, :cond_0
 
-    iget-object v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mDialogView:Lcom/android/systemui/fingerprint/FingerprintDialogView;
+    move v4, v1
 
-    invoke-virtual {v2}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->removeTimeOutMessage()V
+    goto :goto_0
 
     :cond_0
-    const/4 v2, 0x1
+    move v4, v3
 
-    if-ne p1, v1, :cond_1
+    :goto_0
+    iput-boolean v4, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mFingerOnScreen:Z
 
-    if-nez p2, :cond_1
+    iget-boolean v4, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mFingerOnScreen:Z
 
-    iget-boolean v3, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mOnViewPressing:Z
+    if-nez v4, :cond_1
 
-    if-nez v3, :cond_1
+    iput-boolean v3, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mIsFaceUnlocked:Z
 
-    iget-boolean v3, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mDialogShowing:Z
+    :cond_1
+    if-ne p1, v2, :cond_2
 
-    if-eqz v3, :cond_1
+    if-nez p2, :cond_2
 
-    iput-boolean v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mFpSensorPressing:Z
+    iget-object v4, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mDialogView:Lcom/android/systemui/fingerprint/FingerprintDialogView;
+
+    invoke-virtual {v4}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->removeTimeOutMessage()V
+
+    :cond_2
+    if-ne p1, v2, :cond_3
+
+    if-nez p2, :cond_3
+
+    iget-boolean v4, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mOnViewPressing:Z
+
+    if-nez v4, :cond_3
+
+    iget-boolean v4, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mDialogShowing:Z
+
+    if-eqz v4, :cond_3
+
+    iput-boolean v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mFpSensorPressing:Z
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mDialogView:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
     invoke-virtual {v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->showFingerprintPressed()V
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_1
-    if-ne p1, v1, :cond_3
+    :cond_3
+    if-ne p1, v2, :cond_5
 
-    if-ne p2, v2, :cond_3
+    if-ne p2, v1, :cond_5
 
     iget-boolean v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mOnViewPressing:Z
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_5
 
     iget-boolean v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mFpSensorPressing:Z
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_5
 
-    const/4 v1, 0x0
+    invoke-virtual {p0, v3}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->updateTransparentIconLayoutParams(Z)V
 
-    invoke-virtual {p0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->updateTransparentIconLayoutParams(Z)V
+    iget-boolean v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconShowing:Z
 
-    iget-boolean v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconShowing:Z
+    if-eqz v1, :cond_4
 
-    if-eqz v2, :cond_2
+    iget-boolean v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mDialogShowing:Z
 
-    iget-boolean v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mDialogShowing:Z
+    if-nez v1, :cond_4
 
-    if-nez v2, :cond_2
+    iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mWindowManager:Landroid/view/WindowManager;
 
-    iget-object v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mWindowManager:Landroid/view/WindowManager;
+    iget-object v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconView:Landroid/view/View;
 
-    iget-object v3, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconView:Landroid/view/View;
+    invoke-interface {v1, v2}, Landroid/view/WindowManager;->removeViewImmediate(Landroid/view/View;)V
 
-    invoke-interface {v2, v3}, Landroid/view/WindowManager;->removeViewImmediate(Landroid/view/View;)V
+    iput-boolean v3, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconShowing:Z
 
-    iput-boolean v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconShowing:Z
-
-    :cond_2
-    iput-boolean v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mFpSensorPressing:Z
+    :cond_4
+    iput-boolean v3, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mFpSensorPressing:Z
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mDialogView:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
     invoke-virtual {v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->hideFingerprintPressed()V
 
-    :cond_3
-    :goto_0
+    :cond_5
+    :goto_1
     return-void
 .end method
 
@@ -760,9 +791,13 @@
 
     if-eqz v0, :cond_2
 
-    iget-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconShowing:Z
+    iget-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mFingerOnScreen:Z
 
     if-eqz v0, :cond_2
+
+    iget-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mIsFaceUnlocked:Z
+
+    if-nez v0, :cond_2
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mAuthenticatedPkg:Ljava/lang/String;
 
@@ -1782,7 +1817,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f0d0179
+    const v3, 0x7f0d017d
 
     const/4 v4, 0x0
 
@@ -1927,6 +1962,79 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
+    return-void
+.end method
+
+.method public onFaceUnlocked()V
+    .locals 3
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mIsFaceUnlocked:Z
+
+    sget-boolean v0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->DEBUG:Z
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "FingerprintDialogImpl"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "onFaceUnlocked mIsEnableQL "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mIsEnableQL:Z
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v2, " mTransparentIconShowing "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconShowing:Z
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    iget-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mIsEnableQL:Z
+
+    if-eqz v0, :cond_2
+
+    iget-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconShowing:Z
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mWindowManager:Landroid/view/WindowManager;
+
+    iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconView:Landroid/view/View;
+
+    invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeViewImmediate(Landroid/view/View;)V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconShowing:Z
+
+    :cond_1
+    iget-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mQLShowing:Z
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mQLRootView:Lcom/android/systemui/fingerprint/QLRootView;
+
+    if-eqz v0, :cond_2
+
+    invoke-direct {p0}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->hideQLView()V
+
+    :cond_2
     return-void
 .end method
 
@@ -2128,7 +2236,7 @@
 .end method
 
 .method public resetState()V
-    .locals 1
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -2136,6 +2244,13 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mOnViewPressing:Z
 
+    iget-boolean v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mFingerOnScreen:Z
+
+    if-nez v1, :cond_0
+
+    iput-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mIsFaceUnlocked:Z
+
+    :cond_0
     return-void
 .end method
 
@@ -2333,7 +2448,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0d012f
+    const v2, 0x7f0d0132
 
     invoke-virtual {v0, v2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -2349,11 +2464,42 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
+    sget-boolean v0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->SHOW_TRANSPARENT_ICON_VIEW:Z
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconView:Landroid/view/View;
+
+    const/high16 v1, -0x10000
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
+
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconView:Landroid/view/View;
+
+    const v1, 0x3e99999a    # 0.3f
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
+
+    :cond_2
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mDialogView:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconView:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->setTransparentIconView(Landroid/view/View;)V
+
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f0704a2
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconSize:I
 
     return-void
 .end method
@@ -2407,9 +2553,9 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, -0x2
+    iget v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconSize:I
 
-    const/4 v3, -0x2
+    iget v3, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconSize:I
 
     iget-object v4, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mContext:Landroid/content/Context;
 
@@ -2417,7 +2563,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f07049d
+    const v5, 0x7f0704a0
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2429,7 +2575,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f07049e
+    const v6, 0x7f0704a1
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

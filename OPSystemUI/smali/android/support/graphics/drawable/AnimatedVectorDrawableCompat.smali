@@ -716,7 +716,7 @@
     goto :goto_2
 
     :cond_4
-    const-string v4, "target"
+    const-string/jumbo v4, "target"
 
     invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

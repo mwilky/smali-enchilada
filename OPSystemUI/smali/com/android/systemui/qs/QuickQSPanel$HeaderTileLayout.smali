@@ -57,7 +57,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07057a
+    const v1, 0x7f07057c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -169,7 +169,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07057b
+    const v1, 0x7f07057d
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -248,7 +248,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07057b
+    const v1, 0x7f07057d
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -380,7 +380,7 @@
 
     iget-object v1, v1, Lcom/android/systemui/qs/QSPanel$TileRecord;->tileView:Lcom/android/systemui/plugins/qs/QSTileView;
 
-    const v2, 0x7f0a013a
+    const v2, 0x7f0a013e
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/plugins/qs/QSTileView;->setAccessibilityTraversalBefore(I)V
 

@@ -25,7 +25,7 @@
 
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;-><init>(Lcom/android/systemui/qs/QSHost;)V
 
-    const v0, 0x7f080279
+    const v0, 0x7f08029a
 
     invoke-static {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -116,7 +116,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1104ff
+    const v1, 0x7f110507
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -128,8 +128,6 @@
 .method protected handleClick()V
     .locals 3
 
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
-	
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mState:Lcom/android/systemui/plugins/qs/QSTile$State;
 
     check-cast v0, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;
@@ -142,7 +140,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f11043f
+    const v2, 0x7f110440
 
     invoke-static {v0, v2, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -261,7 +259,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f1104ff
+    const v3, 0x7f110507
 
     invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

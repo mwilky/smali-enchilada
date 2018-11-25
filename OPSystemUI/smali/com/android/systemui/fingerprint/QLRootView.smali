@@ -343,7 +343,7 @@
 .method protected onFinishInflate()V
     .locals 3
 
-    const v0, 0x7f0a019e
+    const v0, 0x7f0a01a2
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/QLRootView;->findViewById(I)Landroid/view/View;
 
@@ -353,7 +353,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLRecyclerView:Lcom/android/systemui/fingerprint/QLRecyclerView;
 
-    const v0, 0x7f0a00a7
+    const v0, 0x7f0a00a9
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/QLRootView;->findViewById(I)Landroid/view/View;
 
@@ -361,7 +361,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLCancelView:Landroid/view/View;
 
-    const v0, 0x7f0a0421
+    const v0, 0x7f0a042a
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/QLRootView;->findViewById(I)Landroid/view/View;
 
@@ -369,7 +369,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLTrackView:Landroid/view/View;
 
-    const v0, 0x7f0a0422
+    const v0, 0x7f0a042b
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/QLRootView;->findViewById(I)Landroid/view/View;
 
@@ -379,7 +379,7 @@
 
     invoke-direct {p0}, Lcom/android/systemui/fingerprint/QLRootView;->updateTrackBarVisibility()V
 
-    const v0, 0x7f0a01e4
+    const v0, 0x7f0a01e9
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/QLRootView;->findViewById(I)Landroid/view/View;
 
@@ -389,7 +389,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mLabel:Landroid/widget/TextView;
 
-    const v0, 0x7f0a018e
+    const v0, 0x7f0a0192
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/QLRootView;->findViewById(I)Landroid/view/View;
 
@@ -411,7 +411,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0704d1
+    const v1, 0x7f0704d3
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 

@@ -131,7 +131,7 @@
 .method public onTuningChanged(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    const-string v0, "sysui_nav_bar"
+    const-string/jumbo v0, "sysui_nav_bar"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

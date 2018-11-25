@@ -15,4 +15,4 @@
 
 
 # static fields
-.field public static final mtrl_chip_close_icon_content_description:I = 0x7f1103fb
+.field public static final mtrl_chip_close_icon_content_description:I = 0x7f1103fc

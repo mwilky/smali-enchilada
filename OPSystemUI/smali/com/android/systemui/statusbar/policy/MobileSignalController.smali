@@ -341,7 +341,7 @@
 
     iput-object v4, v6, Lcom/android/systemui/statusbar/policy/MobileSignalController;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
 
-    const v4, 0x7f1105c6
+    const v4, 0x7f1105ce
 
     invoke-virtual {v6, v4}, Lcom/android/systemui/statusbar/policy/MobileSignalController;->getStringIfExists(I)Ljava/lang/String;
 
@@ -3160,7 +3160,7 @@
 
     if-eqz v0, :cond_6
 
-    const v0, 0x7f08081b
+    const v0, 0x7f08082f
 
     return v0
 

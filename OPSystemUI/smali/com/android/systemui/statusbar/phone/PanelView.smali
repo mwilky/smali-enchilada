@@ -1186,10 +1186,6 @@
 
 .method private runPeekAnimation(JFZ)V
     .locals 5
-    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mStatusbarPeek:Z
-    
-    if-eqz v0, :cond_mw
 
     iput p3, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mPeekHeight:F
 
@@ -1197,7 +1193,6 @@
 
     if-eqz v0, :cond_0
 
-    :cond_mw
     return-void
 
     :cond_0
@@ -2953,7 +2948,7 @@
 
     iput v2, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mTouchSlop:I
 
-    const v2, 0x7f0701ff
+    const v2, 0x7f070200
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -2961,7 +2956,7 @@
 
     iput v2, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mHintDistance:F
 
-    const v2, 0x7f07067f
+    const v2, 0x7f070684
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2983,13 +2978,13 @@
 
     if-eqz v2, :cond_0
 
-    const v2, 0x7f0701f6
+    const v2, 0x7f0701f7
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
-    const v3, 0x7f0701f8
+    const v3, 0x7f0701f9
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

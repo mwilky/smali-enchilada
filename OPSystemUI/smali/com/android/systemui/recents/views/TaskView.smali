@@ -349,7 +349,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0705c4
+    const v2, 0x7f0705c6
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -676,7 +676,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f110542
+    const v1, 0x7f11054a
 
     const/4 v2, 0x1
 
@@ -781,7 +781,7 @@
 .method protected onFinishInflate()V
     .locals 2
 
-    const v0, 0x7f0a03ee
+    const v0, 0x7f0a03f7
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->findViewById(I)Landroid/view/View;
 
@@ -791,7 +791,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
-    const v0, 0x7f0a03ef
+    const v0, 0x7f0a03f8
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->findViewById(I)Landroid/view/View;
 
@@ -807,7 +807,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/TaskViewThumbnail;->updateClipToTaskBar(Landroid/view/View;)V
 
-    const v0, 0x7f0a021f
+    const v0, 0x7f0a0224
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->findViewById(I)Landroid/view/View;
 
@@ -1422,7 +1422,7 @@
 
     if-nez v1, :cond_1
 
-    const v1, 0x7f0a01a6
+    const v1, 0x7f0a01aa
 
     invoke-static {p0, v1}, Lcom/android/systemui/shared/recents/utilities/Utilities;->findViewStubById(Landroid/view/View;I)Landroid/view/ViewStub;
 

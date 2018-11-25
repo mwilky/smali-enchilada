@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final fastCharge:Z
+.field public final fastCharge:I
 
 .field public final health:I
 
@@ -29,7 +29,7 @@
 
 
 # direct methods
-.method public constructor <init>(IIIIIZ)V
+.method public constructor <init>(IIIIII)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 
     iput p5, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->maxChargingWattage:I
 
-    iput-boolean p6, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->fastCharge:Z
+    iput p6, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->fastCharge:I
 
     return-void
 .end method
@@ -52,30 +52,41 @@
 
 # virtual methods
 .method public final getChargingSpeed(II)I
-    .locals 1
+    .locals 3
 
-    iget-boolean v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->fastCharge:Z
+    iget v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->fastCharge:I
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x2
 
-    const/4 v0, 0x2
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_0
+
+    return v1
+
+    :cond_0
+    iget v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->fastCharge:I
+
+    if-ne v0, v1, :cond_1
+
+    const/4 v0, 0x3
 
     return v0
 
-    :cond_0
+    :cond_1
     iget v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->maxChargingWattage:I
 
-    if-gtz v0, :cond_1
+    if-gtz v0, :cond_2
 
-    const/4 v0, -0x1
+    const/4 v2, -0x1
 
     goto :goto_0
 
-    :cond_1
-    const/4 v0, 0x1
+    :cond_2
+    nop
 
     :goto_0
-    return v0
+    return v2
 .end method
 
 .method public isCharged()Z
@@ -219,9 +230,9 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-boolean v1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->fastCharge:Z
+    iget v1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->fastCharge:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

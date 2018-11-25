@@ -337,7 +337,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0a01a1
+    const v5, 0x7f0a01a5
 
     invoke-virtual {v3, v5, v4}, Landroid/widget/ImageView;->setTag(ILjava/lang/Object;)V
 

@@ -63,11 +63,11 @@
 
     sget-object v2, Lcom/android/systemui/statusbar/-$$Lambda$5MBgGbVXpg7XHgCv0UsDp2v7mps;->INSTANCE:Lcom/android/systemui/statusbar/-$$Lambda$5MBgGbVXpg7XHgCv0UsDp2v7mps;
 
-    const v3, 0x7f0a041b
+    const v3, 0x7f0a0424
 
-    const v4, 0x7f0a0419
+    const v4, 0x7f0a0422
 
-    const v5, 0x7f0a041a
+    const v5, 0x7f0a0423
 
     invoke-static/range {v0 .. v5}, Lcom/android/systemui/statusbar/notification/AnimatableProperty;->from(Ljava/lang/String;Ljava/util/function/BiConsumer;Ljava/util/function/Function;III)Lcom/android/systemui/statusbar/notification/AnimatableProperty;
 
@@ -81,11 +81,11 @@
 
     sget-object v3, Lcom/android/systemui/statusbar/-$$Lambda$CcOzLRI6prAuqo1UrMutjbjeKjw;->INSTANCE:Lcom/android/systemui/statusbar/-$$Lambda$CcOzLRI6prAuqo1UrMutjbjeKjw;
 
-    const v4, 0x7f0a0089
+    const v4, 0x7f0a008b
 
-    const v5, 0x7f0a0087
+    const v5, 0x7f0a0089
 
-    const v6, 0x7f0a0088
+    const v6, 0x7f0a008a
 
     invoke-static/range {v1 .. v6}, Lcom/android/systemui/statusbar/notification/AnimatableProperty;->from(Ljava/lang/String;Ljava/util/function/BiConsumer;Ljava/util/function/Function;III)Lcom/android/systemui/statusbar/notification/AnimatableProperty;
 
@@ -417,7 +417,7 @@
 
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/ExpandableOutlineView;->mShouldTranslateContents:Z
 
-    const v1, 0x7f0703ba
+    const v1, 0x7f0703bb
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 

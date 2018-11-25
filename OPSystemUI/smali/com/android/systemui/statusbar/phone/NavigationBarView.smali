@@ -431,7 +431,7 @@
 
     new-instance v1, Lcom/android/systemui/statusbar/phone/ButtonDispatcher;
 
-    const v2, 0x7f0a0190
+    const v2, 0x7f0a0194
 
     invoke-direct {v1, v2}, Lcom/android/systemui/statusbar/phone/ButtonDispatcher;-><init>(I)V
 
@@ -441,7 +441,7 @@
 
     new-instance v1, Lcom/android/systemui/statusbar/phone/ButtonDispatcher;
 
-    const v2, 0x7f0a033c
+    const v2, 0x7f0a0345
 
     invoke-direct {v1, v2}, Lcom/android/systemui/statusbar/phone/ButtonDispatcher;-><init>(I)V
 
@@ -451,7 +451,7 @@
 
     new-instance v1, Lcom/android/systemui/statusbar/phone/ButtonDispatcher;
 
-    const v2, 0x7f0a0239
+    const v2, 0x7f0a023e
 
     invoke-direct {v1, v2}, Lcom/android/systemui/statusbar/phone/ButtonDispatcher;-><init>(I)V
 
@@ -461,7 +461,7 @@
 
     new-instance v1, Lcom/android/systemui/statusbar/phone/ButtonDispatcher;
 
-    const v2, 0x7f0a01a2
+    const v2, 0x7f0a01a6
 
     invoke-direct {v1, v2}, Lcom/android/systemui/statusbar/phone/ButtonDispatcher;-><init>(I)V
 
@@ -481,7 +481,7 @@
 
     new-instance v1, Lcom/android/systemui/statusbar/phone/ButtonDispatcher;
 
-    const v2, 0x7f0a0356
+    const v2, 0x7f0a035f
 
     invoke-direct {v1, v2}, Lcom/android/systemui/statusbar/phone/ButtonDispatcher;-><init>(I)V
 
@@ -491,7 +491,7 @@
 
     new-instance v1, Lcom/android/systemui/statusbar/phone/ButtonDispatcher;
 
-    const v2, 0x7f0a023a
+    const v2, 0x7f0a023f
 
     invoke-direct {v1, v2}, Lcom/android/systemui/statusbar/phone/ButtonDispatcher;-><init>(I)V
 
@@ -517,7 +517,7 @@
 
     new-instance v1, Lcom/android/systemui/statusbar/phone/ButtonDispatcher;
 
-    const v2, 0x7f0a0273
+    const v2, 0x7f0a0278
 
     invoke-direct {v1, v2}, Lcom/android/systemui/statusbar/phone/ButtonDispatcher;-><init>(I)V
 
@@ -2267,7 +2267,7 @@
 
     if-eqz v4, :cond_1
 
-    const v4, 0x7f0803cc
+    const v4, 0x7f0803e6
 
     invoke-direct {p0, v2, v3, v4}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getDrawable(Landroid/content/Context;Landroid/content/Context;I)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
 
@@ -2276,7 +2276,7 @@
     goto :goto_0
 
     :cond_1
-    const v4, 0x7f0803cb
+    const v4, 0x7f0803e5
 
     invoke-direct {p0, v2, v3, v4}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getDrawable(Landroid/content/Context;Landroid/content/Context;I)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
 
@@ -2325,7 +2325,7 @@
 
     if-eqz v4, :cond_4
 
-    const v4, 0x7f0803dd
+    const v4, 0x7f0803f2
 
     invoke-direct {p0, v2, v3, v4}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getDrawable(Landroid/content/Context;Landroid/content/Context;I)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
 
@@ -2334,7 +2334,7 @@
     goto :goto_1
 
     :cond_4
-    const v4, 0x7f0803dc
+    const v4, 0x7f0803f1
 
     invoke-direct {p0, v2, v3, v4}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getDrawable(Landroid/content/Context;Landroid/content/Context;I)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
 
@@ -2347,7 +2347,7 @@
 
     if-eqz v4, :cond_5
 
-    const v4, 0x7f0803d8
+    const v4, 0x7f0803ee
 
     invoke-direct {p0, v2, v3, v4}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getDrawable(Landroid/content/Context;Landroid/content/Context;I)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
 
@@ -2356,7 +2356,7 @@
     goto :goto_2
 
     :cond_5
-    const v4, 0x7f0803d7
+    const v4, 0x7f0803ed
 
     invoke-direct {p0, v2, v3, v4}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getDrawable(Landroid/content/Context;Landroid/content/Context;I)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
 
@@ -2365,7 +2365,7 @@
     :goto_2
     iput-object v4, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mMenuIcon:Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
 
-    const v4, 0x7f0803ba
+    const v4, 0x7f0803db
 
     const/4 v5, 0x0
 
@@ -2375,7 +2375,7 @@
 
     iput-object v4, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mAccessibilityIcon:Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
 
-    const v4, 0x7f080274
+    const v4, 0x7f080295
 
     invoke-direct {p0, v2, v3, v4, v5}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getDrawable(Landroid/content/Context;Landroid/content/Context;IZ)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
 
@@ -2418,7 +2418,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0a0277
+    const v4, 0x7f0a027c
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2517,7 +2517,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mRotatedViews:[Landroid/view/View;
 
-    const v2, 0x7f0a0354
+    const v2, 0x7f0a035d
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->findViewById(I)Landroid/view/View;
 
@@ -2535,7 +2535,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mRotatedViews:[Landroid/view/View;
 
-    const v2, 0x7f0a0355
+    const v2, 0x7f0a035e
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->findViewById(I)Landroid/view/View;
 
@@ -3014,7 +3014,7 @@
 
     if-eqz v0, :cond_0
 
-    const v1, 0x7f0803c5
+    const v1, 0x7f0803e1
 
     invoke-direct {p0, p1, p2, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getDrawable(Landroid/content/Context;Landroid/content/Context;I)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
 
@@ -3023,7 +3023,7 @@
     goto :goto_0
 
     :cond_0
-    const v1, 0x7f0803c1
+    const v1, 0x7f0803df
 
     invoke-direct {p0, p1, p2, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getDrawable(Landroid/content/Context;Landroid/content/Context;I)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
 
@@ -3058,9 +3058,9 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0803bd
+    const v0, 0x7f0803dd
 
-    const v1, 0x7f0803c9
+    const v1, 0x7f0803e4
 
     invoke-direct {p0, p1, p2, v0, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->chooseNavigationIconDrawable(Landroid/content/Context;Landroid/content/Context;II)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
 
@@ -3071,9 +3071,9 @@
     return-object v0
 
     :cond_0
-    const v0, 0x7f0803bc
+    const v0, 0x7f0803dc
 
-    const v1, 0x7f0803c8
+    const v1, 0x7f0803e3
 
     invoke-direct {p0, p1, p2, v0, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->chooseNavigationIconDrawable(Landroid/content/Context;Landroid/content/Context;II)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
 
@@ -3186,7 +3186,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mButtonDispatchers:Landroid/util/SparseArray;
 
-    const v1, 0x7f0a0190
+    const v1, 0x7f0a0194
 
     invoke-virtual {v0, v1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
@@ -3206,7 +3206,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0803d2
+    const v2, 0x7f0803ea
 
     if-eqz v0, :cond_1
 
@@ -3225,7 +3225,7 @@
     goto :goto_0
 
     :cond_0
-    const v2, 0x7f0803cf
+    const v2, 0x7f0803e8
 
     invoke-direct {p0, p1, p2, v2, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getDrawable(Landroid/content/Context;Landroid/content/Context;IZ)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
 
@@ -3252,7 +3252,7 @@
     goto :goto_1
 
     :cond_2
-    const v2, 0x7f0803ce
+    const v2, 0x7f0803e7
 
     invoke-direct {p0, p1, p2, v2, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getDrawable(Landroid/content/Context;Landroid/content/Context;IZ)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
 
@@ -3269,7 +3269,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mButtonDispatchers:Landroid/util/SparseArray;
 
-    const v1, 0x7f0a01a2
+    const v1, 0x7f0a01a6
 
     invoke-virtual {v0, v1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
@@ -3297,7 +3297,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mButtonDispatchers:Landroid/util/SparseArray;
 
-    const v1, 0x7f0a0239
+    const v1, 0x7f0a023e
 
     invoke-virtual {v0, v1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
@@ -3313,7 +3313,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mButtonDispatchers:Landroid/util/SparseArray;
 
-    const v1, 0x7f0a0273
+    const v1, 0x7f0a0278
 
     invoke-virtual {v0, v1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
@@ -3329,7 +3329,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mButtonDispatchers:Landroid/util/SparseArray;
 
-    const v1, 0x7f0a033c
+    const v1, 0x7f0a0345
 
     invoke-virtual {v0, v1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
@@ -3345,7 +3345,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mButtonDispatchers:Landroid/util/SparseArray;
 
-    const v1, 0x7f0a0356
+    const v1, 0x7f0a035f
 
     invoke-virtual {v0, v1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
@@ -3760,7 +3760,7 @@
 .method public onFinishInflate()V
     .locals 4
 
-    const v0, 0x7f0a027a
+    const v0, 0x7f0a027f
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->findViewById(I)Landroid/view/View;
 
@@ -4942,7 +4942,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0803db
+    const v2, 0x7f0803f0
 
     invoke-direct {p0, v1, v2, v2}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getDrawable(Landroid/content/Context;II)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
 
@@ -4955,7 +4955,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0803da
+    const v2, 0x7f0803ef
 
     invoke-direct {p0, v1, v2, v2}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getDrawable(Landroid/content/Context;II)Lcom/android/systemui/statusbar/policy/KeyButtonDrawable;
 
@@ -5270,7 +5270,7 @@
 
     move-result-object v1
 
-    const v11, 0x7f0a0277
+    const v11, 0x7f0a027c
 
     invoke-virtual {v1, v11}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -5435,12 +5435,12 @@
 
     if-eqz v9, :cond_0
 
-    const v9, 0x7f0803e0
+    const v9, 0x7f0803f4
 
     goto :goto_0
 
     :cond_0
-    const v9, 0x7f0803df
+    const v9, 0x7f0803f3
 
     :goto_0
     invoke-direct {p0, v7, v9, v6, v5}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getDrawable(Landroid/content/Context;III)Lcom/android/systemui/statusbar/policy/TintedKeyButtonDrawable;

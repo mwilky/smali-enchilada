@@ -346,7 +346,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f110346
+    const v3, 0x7f110347
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -392,12 +392,12 @@
     :cond_2
     if-eqz p2, :cond_3
 
-    const v2, 0x7f110356
+    const v2, 0x7f110357
 
     goto :goto_1
 
     :cond_3
-    const v2, 0x7f110344
+    const v2, 0x7f110345
 
     :goto_1
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardSimPukView;->getContext()Landroid/content/Context;
@@ -423,7 +423,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f11035a
+    const v4, 0x7f11035b
 
     new-array v1, v1, [Ljava/lang/Object;
 
@@ -484,7 +484,7 @@
 
     invoke-virtual {v2, v0}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
-    const v0, 0x7f110429
+    const v0, 0x7f11042a
 
     const/4 v3, 0x0
 
@@ -538,7 +538,7 @@
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPukView;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f11035d
+    const v2, 0x7f11035e
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -664,7 +664,7 @@
 .method protected getPasswordTextViewId()I
     .locals 1
 
-    const v0, 0x7f0a0323
+    const v0, 0x7f0a032c
 
     return v0
 .end method
@@ -749,7 +749,7 @@
     invoke-virtual {v0, v1}, Lcom/android/keyguard/EmergencyCarrierArea;->setCarrierTextVisible(Z)V
 
     :cond_0
-    const v0, 0x7f0a01dc
+    const v0, 0x7f0a01e1
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardSimPukView;->findViewById(I)Landroid/view/View;
 

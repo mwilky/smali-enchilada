@@ -920,7 +920,7 @@
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f120547
+    const v0, 0x7f120548
 
     :goto_0
     invoke-virtual {p0}, Lcom/android/systemui/HardwareUiLayout;->getContext()Landroid/content/Context;
@@ -937,7 +937,7 @@
 
     move-result-object v2
 
-    const-string v3, "sysui_hwui_edge_bleed"
+    const-string/jumbo v3, "sysui_hwui_edge_bleed"
 
     const/4 v4, 0x0
 
@@ -965,7 +965,7 @@
 
     move-result-object v2
 
-    const-string v3, "sysui_hwui_rounded_divider"
+    const-string/jumbo v3, "sysui_hwui_rounded_divider"
 
     invoke-static {v2, v3, v4}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
@@ -1056,9 +1056,9 @@
 
     check-cast v0, Lcom/android/systemui/tuner/TunerService;
 
-    const-string v1, "sysui_hwui_edge_bleed"
+    const-string/jumbo v1, "sysui_hwui_edge_bleed"
 
-    const-string v2, "sysui_hwui_rounded_divider"
+    const-string/jumbo v2, "sysui_hwui_rounded_divider"
 
     filled-new-array {v1, v2}, [Ljava/lang/String;
 

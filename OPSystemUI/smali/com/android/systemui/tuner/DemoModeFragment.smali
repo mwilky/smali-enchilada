@@ -327,7 +327,7 @@
 
     invoke-virtual {v3, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    const-string v3, "sysui_tuner_demo_on"
+    const-string/jumbo v3, "sysui_tuner_demo_on"
 
     invoke-direct {p0, v3, v2}, Lcom/android/systemui/tuner/DemoModeFragment;->setGlobal(Ljava/lang/String;I)V
 
@@ -355,7 +355,7 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    const-string v1, "sysui_tuner_demo_on"
+    const-string/jumbo v1, "sysui_tuner_demo_on"
 
     const/4 v2, 0x0
 
@@ -375,7 +375,7 @@
 
     move-result-object v0
 
-    const-string v1, "sysui_demo_allowed"
+    const-string/jumbo v1, "sysui_demo_allowed"
 
     const/4 v2, 0x0
 
@@ -414,7 +414,7 @@
 
     move-result-object v0
 
-    const-string v1, "sysui_tuner_demo_on"
+    const-string/jumbo v1, "sysui_tuner_demo_on"
 
     const/4 v2, 0x0
 
@@ -471,7 +471,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/tuner/DemoModeFragment;->mOnSwitch:Landroid/support/v14/preference/SwitchPreference;
 
-    const v2, 0x7f11059b
+    const v2, 0x7f1105a3
 
     invoke-virtual {v1, v2}, Landroid/support/v14/preference/SwitchPreference;->setTitle(I)V
 
@@ -515,7 +515,7 @@
 
     move-result-object v3
 
-    const-string v4, "sysui_demo_allowed"
+    const-string/jumbo v4, "sysui_demo_allowed"
 
     invoke-static {v4}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -525,7 +525,7 @@
 
     invoke-virtual {v3, v4, v2, v5}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    const-string v4, "sysui_tuner_demo_on"
+    const-string/jumbo v4, "sysui_tuner_demo_on"
 
     invoke-static {v4}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -648,7 +648,7 @@
 
     invoke-static {v3, v4, v0}, Lcom/android/internal/logging/MetricsLogger;->action(Landroid/content/Context;IZ)V
 
-    const-string v3, "sysui_demo_allowed"
+    const-string/jumbo v3, "sysui_demo_allowed"
 
     if-eqz v0, :cond_2
 

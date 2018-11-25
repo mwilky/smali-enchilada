@@ -227,6 +227,25 @@
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     :goto_0
+    invoke-static {}, Lcom/android/systemui/util/OPUtils;->isCustomFingerprint()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    iget-object v0, p0, Lcom/android/systemui/settings/BrightnessController$BrightnessObserver;->this$0:Lcom/android/systemui/settings/BrightnessController;
+
+    invoke-static {v0}, Lcom/android/systemui/settings/BrightnessController;->access$000(Lcom/android/systemui/settings/BrightnessController;)Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->notifyBrightnessChange()V
+
+    :cond_6
     iget-object v0, p0, Lcom/android/systemui/settings/BrightnessController$BrightnessObserver;->this$0:Lcom/android/systemui/settings/BrightnessController;
 
     invoke-static {v0}, Lcom/android/systemui/settings/BrightnessController;->access$400(Lcom/android/systemui/settings/BrightnessController;)Ljava/util/ArrayList;
@@ -242,7 +261,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_7
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -254,7 +273,7 @@
 
     goto :goto_1
 
-    :cond_6
+    :cond_7
     return-void
 .end method
 

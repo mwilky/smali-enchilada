@@ -126,7 +126,7 @@
 .method public static findSecurityMessageDisplay(Landroid/view/View;)Lcom/android/keyguard/SecurityMessageDisplay;
     .locals 4
 
-    const v0, 0x7f0a01d4
+    const v0, 0x7f0a01d9
 
     invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

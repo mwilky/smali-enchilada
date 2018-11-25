@@ -378,7 +378,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f1103af
+    const v2, 0x7f1103b0
 
     invoke-static {v0, v2, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -396,7 +396,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    const v3, 0x7f0805ee
+    const v3, 0x7f080602
 
     invoke-virtual {v2, v3, v1, v1, v1}, Landroid/widget/TextView;->setCompoundDrawablesRelativeWithIntrinsicBounds(IIII)V
 
@@ -406,7 +406,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f070316
+    const v3, 0x7f070317
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

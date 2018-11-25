@@ -88,12 +88,12 @@
 
     iput v2, p0, Lcom/android/keyguard/KeyguardSimPukView$StateMachine;->state:I
 
-    const v0, 0x7f110355
+    const v0, 0x7f110356
 
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f110340
+    const v0, 0x7f110341
 
     goto :goto_0
 
@@ -114,12 +114,12 @@
 
     iput v3, p0, Lcom/android/keyguard/KeyguardSimPukView$StateMachine;->state:I
 
-    const v0, 0x7f11032f
+    const v0, 0x7f110330
 
     goto :goto_0
 
     :cond_2
-    const v0, 0x7f11033f
+    const v0, 0x7f110340
 
     goto :goto_0
 
@@ -140,7 +140,7 @@
 
     iput v1, p0, Lcom/android/keyguard/KeyguardSimPukView$StateMachine;->state:I
 
-    const v0, 0x7f11032a
+    const v0, 0x7f11032b
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPukView$StateMachine;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
@@ -151,7 +151,7 @@
     :cond_4
     iput v2, p0, Lcom/android/keyguard/KeyguardSimPukView$StateMachine;->state:I
 
-    const v0, 0x7f11033d
+    const v0, 0x7f11033e
 
     :cond_5
     :goto_0
@@ -202,7 +202,7 @@
 
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView$StateMachine;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
-    const v3, 0x7f0a03b7
+    const v3, 0x7f0a03c0
 
     invoke-virtual {v2, v3}, Lcom/android/keyguard/KeyguardSimPukView;->findViewById(I)Landroid/view/View;
 
@@ -278,7 +278,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f11035e
+    const v4, 0x7f11035f
 
     const/4 v5, 0x1
 
@@ -340,7 +340,7 @@
 
     if-ge v4, v8, :cond_0
 
-    const v8, 0x7f110356
+    const v8, 0x7f110357
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -373,7 +373,7 @@
     const-string v9, ""
 
     :goto_0
-    const v10, 0x7f110357
+    const v10, 0x7f110358
 
     new-array v11, v5, [Ljava/lang/Object;
 
@@ -449,7 +449,7 @@
 
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSimPukView$StateMachine;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
-    const v5, 0x7f0a01ce
+    const v5, 0x7f0a01d3
 
     invoke-virtual {v4, v5}, Lcom/android/keyguard/KeyguardSimPukView;->findViewById(I)Landroid/view/View;
 

@@ -769,7 +769,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_13
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController$BaseKeyguardCallback;->this$0:Lcom/android/systemui/statusbar/KeyguardIndicationController;
 
@@ -786,7 +786,7 @@
 
     const/4 v8, 0x4
 
-    if-eqz v5, :cond_10
+    if-eqz v5, :cond_11
 
     iget-object v7, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController$BaseKeyguardCallback;->this$0:Lcom/android/systemui/statusbar/KeyguardIndicationController;
 
@@ -800,8 +800,33 @@
 
     move-result v9
 
-    if-eq v7, v9, :cond_f
+    if-eq v7, v9, :cond_10
 
+    invoke-static {}, Lcom/android/systemui/util/OPUtils;->isSupportWarpCharging()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_e
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController$BaseKeyguardCallback;->this$0:Lcom/android/systemui/statusbar/KeyguardIndicationController;
+
+    invoke-static {v1}, Lcom/android/systemui/statusbar/KeyguardIndicationController;->access$000(Lcom/android/systemui/statusbar/KeyguardIndicationController;)Landroid/widget/TextView;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController$BaseKeyguardCallback;->this$0:Lcom/android/systemui/statusbar/KeyguardIndicationController;
+
+    invoke-static {v1}, Lcom/android/systemui/statusbar/KeyguardIndicationController;->access$000(Lcom/android/systemui/statusbar/KeyguardIndicationController;)Landroid/widget/TextView;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setVisibility(I)V
+
+    goto/16 :goto_7
+
+    :cond_e
     iget-object v7, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController$BaseKeyguardCallback;->this$0:Lcom/android/systemui/statusbar/KeyguardIndicationController;
 
     invoke-static {v7}, Lcom/android/systemui/statusbar/KeyguardIndicationController;->access$600(Lcom/android/systemui/statusbar/KeyguardIndicationController;)Landroid/widget/ImageView;
@@ -870,7 +895,7 @@
 
     invoke-static {v2, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-nez v1, :cond_e
+    if-nez v1, :cond_f
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController$BaseKeyguardCallback;->this$0:Lcom/android/systemui/statusbar/KeyguardIndicationController;
 
@@ -878,7 +903,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_f
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController$BaseKeyguardCallback;->this$0:Lcom/android/systemui/statusbar/KeyguardIndicationController;
 
@@ -904,11 +929,11 @@
 
     invoke-virtual/range {v7 .. v13}, Landroid/media/SoundPool;->play(IFFIIF)I
 
-    :cond_e
+    :cond_f
     goto :goto_7
 
-    :cond_f
-    if-nez v4, :cond_11
+    :cond_10
+    if-nez v4, :cond_12
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController$BaseKeyguardCallback;->this$0:Lcom/android/systemui/statusbar/KeyguardIndicationController;
 
@@ -916,7 +941,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_12
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController$BaseKeyguardCallback;->this$0:Lcom/android/systemui/statusbar/KeyguardIndicationController;
 
@@ -936,7 +961,7 @@
 
     goto :goto_7
 
-    :cond_10
+    :cond_11
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController$BaseKeyguardCallback;->this$0:Lcom/android/systemui/statusbar/KeyguardIndicationController;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/KeyguardIndicationController;->access$200(Lcom/android/systemui/statusbar/KeyguardIndicationController;)Landroid/os/Handler;
@@ -983,11 +1008,11 @@
 
     invoke-virtual {v1, v7}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    :cond_11
+    :cond_12
     :goto_7
     return-void
 
-    :cond_12
+    :cond_13
     :goto_8
     const-string v1, "KeyguardIndication"
 

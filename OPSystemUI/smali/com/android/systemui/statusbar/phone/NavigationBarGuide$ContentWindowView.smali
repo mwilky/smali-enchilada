@@ -228,7 +228,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/NavigationBarGuide$ContentWindowView;->mContentLayout:Landroid/view/ViewGroup;
 
-    const v4, 0x7f0a0275
+    const v4, 0x7f0a027a
 
     invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -246,7 +246,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f1103ff
+    const v7, 0x7f110400
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -266,7 +266,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f080324
+    const v8, 0x7f080345
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -299,7 +299,7 @@
     :cond_2
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NavigationBarGuide$ContentWindowView;->mContentLayout:Landroid/view/ViewGroup;
 
-    const v6, 0x7f0a02aa
+    const v6, 0x7f0a02af
 
     invoke-virtual {v5, v6}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -354,7 +354,7 @@
 
     move-result-object v2
 
-    const v7, 0x7f07036c
+    const v7, 0x7f07036d
 
     invoke-virtual {v2, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -364,7 +364,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f07036e
+    const v8, 0x7f07036f
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -378,7 +378,7 @@
 
     move-result-object v2
 
-    const v7, 0x7f07036d
+    const v7, 0x7f07036e
 
     invoke-virtual {v2, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -388,7 +388,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f07036f
+    const v8, 0x7f070370
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

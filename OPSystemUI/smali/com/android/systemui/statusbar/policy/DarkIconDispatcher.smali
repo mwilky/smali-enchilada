@@ -87,6 +87,16 @@
     :cond_0
     if-eqz v0, :cond_1
 
+    invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusBar;->isCameraNotchIgnoring()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    const v1, -0x333334
+
+    return v1
+
     :cond_1
     invoke-static {p0, p1}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->isInArea(Landroid/graphics/Rect;Landroid/view/View;)Z
 
@@ -208,6 +218,9 @@
 .method public abstract applyIconTint()V
 .end method
 
+.method public abstract getTraceView()Landroid/view/View;
+.end method
+
 .method public abstract getTransitionsController()Lcom/android/systemui/statusbar/phone/LightBarTransitionsController;
 .end method
 
@@ -218,7 +231,4 @@
 .end method
 
 .method public abstract setTraceView(Landroid/view/View;)V
-.end method
-
-.method public abstract updateViews()V
 .end method

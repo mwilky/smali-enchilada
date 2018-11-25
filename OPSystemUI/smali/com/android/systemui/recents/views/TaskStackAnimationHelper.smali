@@ -526,13 +526,13 @@
 
     move-result v9
 
-    const v10, 0x7f0705bb
+    const v10, 0x7f0705bd
 
     invoke-virtual {v3, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v10
 
-    const v11, 0x7f0705bc
+    const v11, 0x7f0705be
 
     invoke-virtual {v3, v11}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1014,13 +1014,13 @@
 
     iget-boolean v10, v10, Lcom/android/systemui/recents/RecentsConfiguration;->isLowRamDevice:Z
 
-    const v11, 0x7f0b0084
+    const v11, 0x7f0b0085
 
     invoke-virtual {v4, v11}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v11
 
-    const v12, 0x7f0b0083
+    const v12, 0x7f0b0084
 
     invoke-virtual {v4, v12}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1586,13 +1586,13 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b0085
+    const v1, 0x7f0b0086
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v1
 
-    const v2, 0x7f0705bb
+    const v2, 0x7f0705bd
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

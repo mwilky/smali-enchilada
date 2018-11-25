@@ -15,8 +15,8 @@
 
 
 # static fields
-.field public static final fastscroll_default_thickness:I = 0x7f0701cb
+.field public static final fastscroll_default_thickness:I = 0x7f0701cc
 
-.field public static final fastscroll_margin:I = 0x7f0701cc
+.field public static final fastscroll_margin:I = 0x7f0701cd
 
-.field public static final fastscroll_minimum_range:I = 0x7f0701cd
+.field public static final fastscroll_minimum_range:I = 0x7f0701ce

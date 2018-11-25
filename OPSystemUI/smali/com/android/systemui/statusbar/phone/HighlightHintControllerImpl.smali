@@ -423,7 +423,7 @@
 .method public showOvalLayout()Z
     .locals 1
 
-    sget-boolean v0, Lcom/android/systemui/statusbar/phone/HighlightHintView;->SHOW_OVAL_LAYOUT:Z
+    const/4 v0, 0x1
 
     return v0
 .end method

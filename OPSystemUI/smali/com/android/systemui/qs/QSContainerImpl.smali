@@ -360,7 +360,7 @@
 
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    const v0, 0x7f0a0336
+    const v0, 0x7f0a033f
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -370,7 +370,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
 
-    const v0, 0x7f0a0326
+    const v0, 0x7f0a032f
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -378,7 +378,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mQSDetail:Landroid/view/View;
 
-    const v0, 0x7f0a0180
+    const v0, 0x7f0a0184
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -388,7 +388,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mHeader:Lcom/android/systemui/qs/QuickStatusBarHeader;
 
-    const v0, 0x7f0a0325
+    const v0, 0x7f0a032e
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -398,7 +398,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mQSCustomizer:Lcom/android/systemui/qs/customize/QSCustomizer;
 
-    const v0, 0x7f0a032a
+    const v0, 0x7f0a0333
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -406,7 +406,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mQSFooter:Landroid/view/View;
 
-    const v0, 0x7f0a0333
+    const v0, 0x7f0a033c
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -414,7 +414,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mBackground:Landroid/view/View;
 
-    const v0, 0x7f0a0337
+    const v0, 0x7f0a0340
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -422,7 +422,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mStatusBarBackground:Landroid/view/View;
 
-    const v0, 0x7f0a0335
+    const v0, 0x7f0a033e
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -434,7 +434,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0703bc
+    const v1, 0x7f0703bd
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -137,7 +137,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d0152
+    const v3, 0x7f0d0156
 
     invoke-virtual {v2, v3, p3, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -317,7 +317,7 @@
 
     if-eqz v8, :cond_7
 
-    const v6, 0x7f080329
+    const v6, 0x7f08034a
 
     invoke-virtual {v7, v6}, Landroid/widget/ImageView;->setImageResource(I)V
 

@@ -41,7 +41,7 @@
 
 .field private mDemoMode:Z
 
-.field private mFastcharge:Z
+.field private mFastchargeType:I
 
 .field private final mHandler:Landroid/os/Handler;
 
@@ -114,7 +114,7 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->mHasReceivedBattery:Z
 
-    iput-boolean v0, p0, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->mFastcharge:Z
+    iput v0, p0, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->mFastchargeType:I
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->mShowPercent:Z
 
@@ -543,9 +543,9 @@
 
     invoke-interface {p1, v0}, Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;->onPowerSaveChanged(Z)V
 
-    iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->mFastcharge:Z
+    iget v0, p0, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->mFastchargeType:I
 
-    invoke-interface {p1, v0}, Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;->onFastChargeChanged(Z)V
+    invoke-interface {p1, v0}, Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;->onFastChargeChanged(I)V
 
     iget v0, p0, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->mBatteryStyle:I
 
@@ -808,13 +808,13 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v2, " Fastcharge:"
+    const-string v2, " mFastchargeType:"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-boolean v2, p0, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->mFastcharge:Z
+    iget v2, p0, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->mFastchargeType:I
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v2, " show:"
 
@@ -879,9 +879,9 @@
 
     check-cast v3, Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;
 
-    iget-boolean v4, p0, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->mFastcharge:Z
+    iget v4, p0, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->mFastchargeType:I
 
-    invoke-interface {v3, v4}, Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;->onFastChargeChanged(Z)V
+    invoke-interface {v3, v4}, Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;->onFastChargeChanged(I)V
 
     add-int/lit8 v2, v2, 0x1
 
@@ -935,7 +935,7 @@
 
     const/4 v3, 0x0
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_9
 
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->mTestmode:Z
 
@@ -1040,52 +1040,74 @@
     goto :goto_2
 
     :cond_4
-    move v2, v3
-
-    nop
-
-    :cond_5
-    :goto_2
-    iput-boolean v2, p0, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->mCharging:Z
-
-    const-string v2, "fastcharge_status"
-
-    invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
-
-    move-result v2
-
-    iput-boolean v2, p0, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->mFastcharge:Z
-
-    if-eqz v1, :cond_6
-
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->fireBatteryStylechange()V
-
-    :cond_6
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->fireBatteryLevelChanged()V
+    move v5, v3
 
     goto :goto_3
 
+    :cond_5
+    :goto_2
+    move v5, v2
+
+    :goto_3
+    iput-boolean v5, p0, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->mCharging:Z
+
+    const-string v5, "fastcharge_status"
+
+    invoke-virtual {p2, v5, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+
+    move-result v5
+
+    invoke-static {}, Lcom/android/systemui/util/OPUtils;->isSupportWarpCharging()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_6
+
+    move v2, v5
+
+    goto :goto_4
+
+    :cond_6
+    if-lez v5, :cond_7
+
+    goto :goto_4
+
     :cond_7
+    move v2, v3
+
+    :goto_4
+    iput v2, p0, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->mFastchargeType:I
+
+    if-eqz v1, :cond_8
+
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->fireBatteryStylechange()V
+
+    :cond_8
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->fireBatteryLevelChanged()V
+
+    goto :goto_5
+
+    :cond_9
     const-string v1, "android.os.action.POWER_SAVE_MODE_CHANGED"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_a
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->updatePowerSave()V
 
-    goto :goto_3
+    goto :goto_5
 
-    :cond_8
+    :cond_a
     const-string v1, "android.os.action.POWER_SAVE_MODE_CHANGING"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_b
 
     const-string v1, "mode"
 
@@ -1095,16 +1117,16 @@
 
     invoke-direct {p0, v1}, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->setPowerSave(Z)V
 
-    goto :goto_3
+    goto :goto_5
 
-    :cond_9
+    :cond_b
     const-string v1, "android.intent.action.BOOT_COMPLETED"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_c
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->mSettingObserver:Lcom/android/systemui/statusbar/policy/BatteryControllerImpl$SettingObserver;
 
@@ -1112,16 +1134,16 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl$SettingObserver;->update(Landroid/net/Uri;)V
 
-    goto :goto_3
+    goto :goto_5
 
-    :cond_a
+    :cond_c
     const-string v1, "com.android.systemui.BATTERY_LEVEL_TEST"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_d
 
     iput-boolean v2, p0, Lcom/android/systemui/statusbar/policy/BatteryControllerImpl;->mTestmode:Z
 
@@ -1133,8 +1155,8 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_b
-    :goto_3
+    :cond_d
+    :goto_5
     return-void
 .end method
 

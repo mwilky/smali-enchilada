@@ -232,7 +232,7 @@
     goto :goto_2
 
     :sswitch_2
-    const-string v11, "t"
+    const-string/jumbo v11, "t"
 
     invoke-virtual {v0, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -577,6 +577,8 @@
     iput-object v9, v1, Lcom/airbnb/lottie/value/Keyframe;->pathCp2:Landroid/graphics/PointF;
 
     return-object v1
+
+    nop
 
     :sswitch_data_0
     .sparse-switch

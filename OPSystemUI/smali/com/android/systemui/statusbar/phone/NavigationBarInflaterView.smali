@@ -173,7 +173,7 @@
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f11042b
+    const v0, 0x7f11042c
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -181,7 +181,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->NAVBAR_CONFIG:Ljava/lang/String;
 
-    const v0, 0x7f11042e
+    const v0, 0x7f11042f
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -189,7 +189,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->NAVBAR_CONFIG_RTL:Ljava/lang/String;
 
-    const v0, 0x7f11042c
+    const v0, 0x7f11042d
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -197,7 +197,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->NAVBAR_SWIPE_UP_CONFIG:Ljava/lang/String;
 
-    const v0, 0x7f11042d
+    const v0, 0x7f11042e
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -575,7 +575,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mRot0:Landroid/widget/FrameLayout;
 
-    const v1, 0x7f0a0277
+    const v1, 0x7f0a027c
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -669,7 +669,7 @@
 
     check-cast v2, Lcom/android/systemui/tuner/TunerService;
 
-    const-string v3, "sysui_nav_bar_left"
+    const-string/jumbo v3, "sysui_nav_bar_left"
 
     const-string v4, "space"
 
@@ -700,7 +700,7 @@
 
     check-cast v2, Lcom/android/systemui/tuner/TunerService;
 
-    const-string v3, "sysui_nav_bar_right"
+    const-string/jumbo v3, "sysui_nav_bar_right"
 
     const-string v4, "menu_ime"
 
@@ -825,7 +825,7 @@
 
     if-eqz v2, :cond_8
 
-    const v2, 0x7f0d0198
+    const v2, 0x7f0d019c
 
     invoke-virtual {p3, v2, p2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -834,7 +834,7 @@
     goto :goto_4
 
     :cond_8
-    const v2, 0x7f0d0197
+    const v2, 0x7f0d019b
 
     invoke-virtual {p3, v2, p2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -917,7 +917,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f070389
+    const v4, 0x7f07038a
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -940,7 +940,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f070388
+    const v4, 0x7f070389
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1287,7 +1287,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mRot0:Landroid/widget/FrameLayout;
 
-    const v2, 0x7f0a0354
+    const v2, 0x7f0a035d
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setId(I)V
 
@@ -1301,7 +1301,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0704d4
+    const v2, 0x7f0704d6
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1316,7 +1316,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0704d3
+    const v2, 0x7f0704d5
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1351,7 +1351,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mRot90:Landroid/widget/FrameLayout;
 
-    const v4, 0x7f0a0355
+    const v4, 0x7f0a035e
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setId(I)V
 
@@ -1381,7 +1381,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mRot0:Landroid/widget/FrameLayout;
 
-    const v1, 0x7f0a012d
+    const v1, 0x7f0a0131
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -1393,7 +1393,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mRot0:Landroid/widget/FrameLayout;
 
-    const v2, 0x7f0a00af
+    const v2, 0x7f0a00b1
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -1431,7 +1431,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mRot0:Landroid/widget/FrameLayout;
 
-    const v1, 0x7f0a012d
+    const v1, 0x7f0a0131
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -1441,7 +1441,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mRot0:Landroid/widget/FrameLayout;
 
-    const v2, 0x7f0a00af
+    const v2, 0x7f0a00b1
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -1739,7 +1739,7 @@
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mRot0:Landroid/widget/FrameLayout;
 
-    const v7, 0x7f0a012d
+    const v7, 0x7f0a0131
 
     invoke-virtual {v6, v7}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -1767,7 +1767,7 @@
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mRot0:Landroid/widget/FrameLayout;
 
-    const v8, 0x7f0a00af
+    const v8, 0x7f0a00b1
 
     invoke-virtual {v6, v8}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -1882,11 +1882,11 @@
 
     check-cast v0, Lcom/android/systemui/tuner/TunerService;
 
-    const-string v1, "sysui_nav_bar"
+    const-string/jumbo v1, "sysui_nav_bar"
 
-    const-string v2, "sysui_nav_bar_left"
+    const-string/jumbo v2, "sysui_nav_bar_left"
 
-    const-string v3, "sysui_nav_bar_right"
+    const-string/jumbo v3, "sysui_nav_bar_right"
 
     filled-new-array {v1, v2, v3}, [Ljava/lang/String;
 
@@ -2048,7 +2048,7 @@
 .method public onTuningChanged(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    const-string v0, "sysui_nav_bar"
+    const-string/jumbo v0, "sysui_nav_bar"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2083,7 +2083,7 @@
     goto :goto_1
 
     :cond_1
-    const-string v0, "sysui_nav_bar_left"
+    const-string/jumbo v0, "sysui_nav_bar_left"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2091,7 +2091,7 @@
 
     if-nez v0, :cond_2
 
-    const-string v0, "sysui_nav_bar_right"
+    const-string/jumbo v0, "sysui_nav_bar_right"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

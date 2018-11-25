@@ -62,7 +62,7 @@
 .method private bindButtons()V
     .locals 3
 
-    const v0, 0x7f0a03a6
+    const v0, 0x7f0a03af
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/AppOpsInfo;->findViewById(I)Landroid/view/View;
 
@@ -74,7 +74,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v1, 0x7f0a02aa
+    const v1, 0x7f0a02af
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/AppOpsInfo;->findViewById(I)Landroid/view/View;
 
@@ -150,7 +150,7 @@
     move-result-object v0
 
     :goto_0
-    const v1, 0x7f0a02fb
+    const v1, 0x7f0a0303
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/AppOpsInfo;->findViewById(I)Landroid/view/View;
 
@@ -160,7 +160,7 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    const v1, 0x7f0a02fc
+    const v1, 0x7f0a0304
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/AppOpsInfo;->findViewById(I)Landroid/view/View;
 
@@ -178,7 +178,7 @@
 .method private bindPrompt()V
     .locals 2
 
-    const v0, 0x7f0a0322
+    const v0, 0x7f0a032b
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/AppOpsInfo;->findViewById(I)Landroid/view/View;
 
@@ -568,7 +568,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/AppOpsInfo;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f11040d
+    const v4, 0x7f11040e
 
     new-array v2, v2, [Ljava/lang/Object;
 
@@ -591,7 +591,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/AppOpsInfo;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f11040c
+    const v4, 0x7f11040d
 
     new-array v2, v2, [Ljava/lang/Object;
 

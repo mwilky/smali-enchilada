@@ -267,7 +267,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f110419
+    const v1, 0x7f11041a
 
     const/4 v2, 0x1
 
@@ -356,7 +356,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f11041a
+    const v2, 0x7f11041b
 
     invoke-virtual {v0, v2, v1}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -387,7 +387,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0701e7
+    const v1, 0x7f0701e8
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -397,7 +397,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/notification/HybridGroupManager;->mOverflowNumberSize:F
 
-    const v1, 0x7f0701e8
+    const v1, 0x7f0701e9
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -407,7 +407,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/notification/HybridGroupManager;->mOverflowNumberSizeDark:F
 
-    const v1, 0x7f0701e6
+    const v1, 0x7f0701e7
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -417,7 +417,7 @@
 
     iget v1, p0, Lcom/android/systemui/statusbar/notification/HybridGroupManager;->mOverflowNumberPadding:I
 
-    const v2, 0x7f0701e5
+    const v2, 0x7f0701e6
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

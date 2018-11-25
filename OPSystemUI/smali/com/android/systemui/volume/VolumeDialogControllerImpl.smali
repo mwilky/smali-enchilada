@@ -167,7 +167,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105d9
+    const v2, 0x7f1105e1
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -183,7 +183,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105da
+    const v2, 0x7f1105e2
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -199,7 +199,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105db
+    const v2, 0x7f1105e3
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -215,7 +215,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105dc
+    const v2, 0x7f1105e4
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -231,7 +231,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105d8
+    const v2, 0x7f1105e0
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -247,7 +247,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105dd
+    const v2, 0x7f1105e5
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -263,7 +263,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105de
+    const v2, 0x7f1105e6
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -279,7 +279,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105df
+    const v2, 0x7f1105e7
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -295,7 +295,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105e0
+    const v2, 0x7f1105e8
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -311,7 +311,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105e1
+    const v2, 0x7f1105e9
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -327,7 +327,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105e2
+    const v2, 0x7f1105ea
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1438,7 +1438,33 @@
 .end method
 
 .method private onShowSafetyWarningW(I)V
-    .locals 1
+    .locals 3
+
+    sget-object v0, Lcom/android/systemui/volume/VolumeDialogControllerImpl;->TAG:Ljava/lang/String;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "onShowSafetyWarningW flags:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, " mShowSafetyWarning:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v2, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl;->mShowSafetyWarning:Z
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl;->mShowSafetyWarning:Z
 

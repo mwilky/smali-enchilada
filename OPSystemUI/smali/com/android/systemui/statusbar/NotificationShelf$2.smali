@@ -67,7 +67,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationShelf$2;->val$icon:Lcom/android/systemui/statusbar/StatusBarIconView;
 
-    const v1, 0x7f0a00d8
+    const v1, 0x7f0a00dc
 
     const/4 v2, 0x0
 

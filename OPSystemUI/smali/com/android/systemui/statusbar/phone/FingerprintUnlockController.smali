@@ -235,7 +235,7 @@
 .end method
 
 .method private calculateMode()I
-    .locals 6
+    .locals 7
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
@@ -291,6 +291,8 @@
 
     const/4 v3, 0x3
 
+    const/4 v4, 0x1
+
     if-nez v2, :cond_7
 
     iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsScreenOffUnlock:Z
@@ -311,7 +313,7 @@
     :cond_1
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
-    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->isShowingLiveWallpaper()Z
+    invoke-virtual {v2, v4}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->isShowingLiveWallpaper(Z)Z
 
     move-result v2
 
@@ -386,33 +388,33 @@
     :goto_0
     const-string v2, "FingerprintController"
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "unlockingAllowed = "
+    const-string/jumbo v6, "unlockingAllowed = "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v5, ", mUnlockMethodCache.isMethodSecure() = "
+    const-string v6, ", mUnlockMethodCache.isMethodSecure() = "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUnlockMethodCache:Lcom/android/systemui/statusbar/phone/UnlockMethodCache;
+    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUnlockMethodCache:Lcom/android/systemui/statusbar/phone/UnlockMethodCache;
 
-    invoke-virtual {v5}, Lcom/android/systemui/statusbar/phone/UnlockMethodCache;->isMethodSecure()Z
+    invoke-virtual {v6}, Lcom/android/systemui/statusbar/phone/UnlockMethodCache;->isMethodSecure()Z
 
-    move-result v5
+    move-result v6
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
@@ -444,9 +446,7 @@
 
     :cond_a
     :goto_1
-    const/4 v2, 0x1
-
-    return v2
+    return v4
 .end method
 
 .method private changePanelVisibilityByAlpha(IZ)V
@@ -882,7 +882,7 @@
 
     :cond_5
     :goto_1
-    const/4 v2, 0x4
+    const/4 v2, 0x5
 
     invoke-direct {p0, v3, v2}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->setFingerprintState(ZI)V
 
@@ -890,7 +890,7 @@
 .end method
 
 .method private onFingerprintUnlockStart()V
-    .locals 9
+    .locals 10
 
     invoke-static {}, Lcom/android/systemui/plugin/LSState;->getInstance()Lcom/android/systemui/plugin/LSState;
 
@@ -908,107 +908,107 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
-    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->isShowingLiveWallpaper()Z
+    const/4 v3, 0x1
+
+    invoke-virtual {v2, v3}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->isShowingLiveWallpaper(Z)Z
 
     move-result v2
 
-    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    invoke-virtual {v3}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isDreaming()Z
-
-    move-result v3
-
-    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPowerManager:Landroid/os/PowerManager;
-
-    invoke-virtual {v4}, Landroid/os/PowerManager;->isInteractive()Z
+    invoke-virtual {v4}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isDreaming()Z
 
     move-result v4
 
-    const-string v5, "FingerprintController"
+    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPowerManager:Landroid/os/PowerManager;
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    invoke-virtual {v5}, Landroid/os/PowerManager;->isInteractive()Z
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    move-result v5
 
-    const-string v7, "onFingerprintUnlockStart, "
+    const-string v6, "FingerprintController"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, " , dream:"
+    const-string v8, "onFingerprintUnlockStart, "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v7, " , live:"
+    const-string v8, " , dream:"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v7, ", interactive: "
+    const-string v8, " , live:"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v8, ", interactive: "
 
-    move-result-object v6
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const/4 v5, 0x0
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v6, 0x0
 
     if-nez v0, :cond_1
 
     if-nez v2, :cond_1
 
-    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
+    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
-    invoke-virtual {v6}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->isShowingAndNotOccluded()Z
+    invoke-virtual {v7}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->isShowingAndNotOccluded()Z
 
-    move-result v6
+    move-result v7
 
-    if-eqz v6, :cond_0
+    if-eqz v7, :cond_0
 
-    invoke-direct {p0, v5, v5}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->changePanelVisibilityByAlpha(IZ)V
+    invoke-direct {p0, v6, v6}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->changePanelVisibilityByAlpha(IZ)V
 
     :cond_0
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPowerManager:Landroid/os/PowerManager;
+    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPowerManager:Landroid/os/PowerManager;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v6
+    move-result-wide v7
 
-    const-string v8, "com.android.systemui:UnlockStart"
+    const-string v9, "com.android.systemui:UnlockStart"
 
-    invoke-virtual {v5, v6, v7, v8}, Landroid/os/PowerManager;->wakeUp(JLjava/lang/String;)V
+    invoke-virtual {v6, v7, v8, v9}, Landroid/os/PowerManager;->wakeUp(JLjava/lang/String;)V
 
-    const/4 v5, 0x1
-
-    iput-boolean v5, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsScreenOffUnlock:Z
+    iput-boolean v3, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsScreenOffUnlock:Z
 
     goto :goto_0
 
     :cond_1
     if-eqz v0, :cond_2
 
-    if-nez v4, :cond_2
+    if-nez v5, :cond_2
 
-    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
-    invoke-virtual {v6}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->isShowingAndNotOccluded()Z
+    invoke-virtual {v3}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->isShowingAndNotOccluded()Z
 
-    move-result v6
+    move-result v3
 
-    if-eqz v6, :cond_2
+    if-eqz v3, :cond_2
 
     if-nez v2, :cond_2
 
-    invoke-direct {p0, v5, v5}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->changePanelVisibilityByAlpha(IZ)V
+    invoke-direct {p0, v6, v6}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->changePanelVisibilityByAlpha(IZ)V
 
     :cond_2
     :goto_0
@@ -1632,11 +1632,25 @@
 
     invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    const/4 v1, 0x2
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->isBouncerShowing()Z
 
-    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->setFingerprintState(ZI)V
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x2
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x3
+
+    :goto_0
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v1, v0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->setFingerprintState(ZI)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
@@ -1644,7 +1658,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     iput p1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPendingAuthenticatedUserId:I
 
@@ -1652,7 +1666,7 @@
 
     return-void
 
-    :cond_0
+    :cond_1
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->calculateMode()I
 
     move-result v0
@@ -1911,37 +1925,31 @@
 .end method
 
 .method public shouldApplySpeedUpPolicy()Z
-    .locals 1
+    .locals 2
 
     invoke-static {}, Lcom/android/systemui/util/OPUtils;->isCustomFingerprint()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
-
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->isLauncherOnTop()Z
-
-    move-result v0
+    const/4 v1, 0x1
 
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->isShowingLiveWallpaper()Z
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->isShowingLiveWallpaper(Z)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
-
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     :goto_0
-    return v0
+    return v1
 .end method
 
 .method public startKeyguardFadingAway()V
@@ -1961,7 +1969,7 @@
 .end method
 
 .method public startWakeAndUnlock(I)V
-    .locals 10
+    .locals 9
 
     const-string v0, "FingerprintController"
 
@@ -2018,175 +2026,143 @@
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
-    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->isShowingLiveWallpaper()Z
+    invoke-virtual {v2, v4}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->isShowingLiveWallpaper(Z)Z
 
     move-result v2
 
     xor-int/2addr v2, v4
 
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->isLauncherOnTop()Z
+    const-string v5, "FingerprintController"
 
-    move-result v5
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v6, "FingerprintController"
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    const-string v7, "has wallpaper="
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v8, "has wallpaper="
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    const-string v8, ", launcherTop="
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-nez v0, :cond_2
 
-    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    const-string v5, "FingerprintController"
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v6, "fp wakelock: Authenticated, waking up..."
 
-    move-result-object v7
+    invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v5, "android.policy:FINGERPRINT"
 
-    if-nez v0, :cond_3
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v6, "FingerprintController"
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "fp wakelock: Authenticated, waking up..."
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    if-eqz v2, :cond_1
 
-    const-string v6, "android.policy:FINGERPRINT"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    if-eqz v5, :cond_1
-
-    const-string v8, ""
+    const-string v7, ""
 
     goto :goto_0
 
     :cond_1
-    const-string v8, "_NORMAL"
+    const-string v7, "_WALLPAPER"
 
     :goto_0
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    if-eqz v2, :cond_2
-
-    const-string v8, ""
-
-    goto :goto_1
-
-    :cond_2
-    const-string v8, "_WALLPAPER"
-
-    :goto_1
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPowerManager:Landroid/os/PowerManager;
+    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPowerManager:Landroid/os/PowerManager;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v8
+    move-result-wide v7
 
-    invoke-virtual {v7, v8, v9, v6}, Landroid/os/PowerManager;->wakeUp(JLjava/lang/String;)V
+    invoke-virtual {v6, v7, v8, v5}, Landroid/os/PowerManager;->wakeUp(JLjava/lang/String;)V
 
-    :cond_3
-    const-string v6, "release wake-and-unlock"
+    :cond_2
+    const-string v5, "release wake-and-unlock"
 
-    invoke-static {v6}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
+    invoke-static {v5}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->releaseFingerprintWakeLock()V
 
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsScreenOffUnlock:Z
 
-    const-string v6, "FingerprintController"
+    const-string v5, "FingerprintController"
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "onFingerprintAuthenticated: mMode = "
+    const-string v7, "onFingerprintAuthenticated: mMode = "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v8, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
+    iget v7, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget v6, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
+    iget v5, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
-    const/4 v7, 0x5
+    const/4 v6, 0x5
 
-    if-eq v6, v7, :cond_4
+    if-eq v5, v6, :cond_3
 
-    iget v6, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
+    iget v5, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
-    if-eq v6, v3, :cond_4
+    if-eq v5, v3, :cond_3
 
-    iget v6, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
+    iget v5, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
-    if-eq v6, v4, :cond_4
+    if-eq v5, v4, :cond_3
 
-    iget v6, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
+    iget v5, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
-    const/4 v7, 0x4
+    const/4 v6, 0x4
 
-    if-eq v6, v7, :cond_4
+    if-eq v5, v6, :cond_3
 
-    iget v6, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
+    iget v5, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
-    const/4 v7, 0x7
+    const/4 v6, 0x7
 
-    if-ne v6, v7, :cond_5
+    if-ne v5, v6, :cond_4
+
+    :cond_3
+    const-string v5, "lock_unlock_success"
+
+    const-string v6, "finger"
+
+    const-string v7, "1"
+
+    invoke-static {v5, v6, v7}, Lcom/android/systemui/util/MdmLogger;->log(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_4
-    const-string v6, "lock_unlock_success"
-
-    const-string v7, "finger"
-
-    const-string v8, "1"
-
-    invoke-static {v6, v7, v8}, Lcom/android/systemui/util/MdmLogger;->log(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_5
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
-    iget v6, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
+    iget v5, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
-    packed-switch v6, :pswitch_data_0
+    packed-switch v5, :pswitch_data_0
 
     :pswitch_0
-    goto/16 :goto_4
+    goto/16 :goto_3
 
     :pswitch_1
     const-string v3, "MODE_DISMISS"
@@ -2199,16 +2175,16 @@
 
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
-    goto/16 :goto_4
+    goto/16 :goto_3
 
     :pswitch_2
     invoke-static {}, Lcom/android/systemui/util/OPUtils;->isCustomFingerprint()Z
 
     move-result v1
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_5
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_5
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -2218,15 +2194,15 @@
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->onWakeAndUnlocking(Z)V
 
-    goto :goto_4
+    goto :goto_3
 
-    :cond_6
+    :cond_5
     :pswitch_3
     const-string v1, "MODE_UNLOCK or MODE_SHOW_BOUNCER"
 
     invoke-static {v1}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_6
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
@@ -2234,20 +2210,20 @@
 
     iput-boolean v4, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPendingShowBouncer:Z
 
-    goto :goto_2
+    goto :goto_1
 
-    :cond_7
+    :cond_6
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->showBouncer()V
 
-    :goto_2
+    :goto_1
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
-    goto :goto_4
+    goto :goto_3
 
     :pswitch_4
-    iget v6, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
+    iget v5, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
-    if-ne v6, v3, :cond_8
+    if-ne v5, v3, :cond_7
 
     const-string v3, "MODE_WAKE_AND_UNLOCK_PULSING"
 
@@ -2257,20 +2233,20 @@
 
     invoke-virtual {v3, v1, v4}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateMediaMetaData(ZZ)V
 
-    goto :goto_3
+    goto :goto_2
 
-    :cond_8
+    :cond_7
     iget v3, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
-    if-ne v3, v4, :cond_9
+    if-ne v3, v4, :cond_8
 
     const-string v3, "MODE_WAKE_AND_UNLOCK"
 
     invoke-static {v3}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    goto :goto_3
+    goto :goto_2
 
-    :cond_9
+    :cond_8
     const-string v3, "MODE_WAKE_AND_UNLOCK_FROM_DREAM"
 
     invoke-static {v3}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
@@ -2279,7 +2255,7 @@
 
     invoke-virtual {v3}, Lcom/android/keyguard/KeyguardUpdateMonitor;->awakenFromDream()V
 
-    :goto_3
+    :goto_2
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
     invoke-virtual {v3, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->setStatusBarFocusable(Z)V
@@ -2298,7 +2274,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_9
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -2308,12 +2284,12 @@
 
     invoke-virtual {v1, v4}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->setWakeAndUnlocking(Z)V
 
-    :cond_a
+    :cond_9
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
     nop
 
-    :goto_4
+    :goto_3
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->notifyFpAuthModeChanged()V

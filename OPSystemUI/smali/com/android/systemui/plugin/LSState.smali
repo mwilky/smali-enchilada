@@ -486,6 +486,16 @@
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/phone/StatusBar;->onWallpaperChange(Landroid/graphics/Bitmap;)V
 
+    const-class v0, Lcom/android/systemui/statusbar/policy/ChargingAnimationController;
+
+    invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/systemui/statusbar/policy/ChargingAnimationController;
+
+    invoke-interface {v0, p1}, Lcom/android/systemui/statusbar/policy/ChargingAnimationController;->onWallpaperChange(Landroid/graphics/Bitmap;)V
+
     return-void
 .end method
 

@@ -155,7 +155,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f08020d
+    const v0, 0x7f08022c
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -258,7 +258,7 @@
 
     if-eqz v0, :cond_3
 
-    const v0, 0x7f110658
+    const v0, 0x7f110660
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

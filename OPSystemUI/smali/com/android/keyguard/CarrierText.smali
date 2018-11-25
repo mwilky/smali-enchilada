@@ -333,7 +333,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f110327
+    const v3, 0x7f110328
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -352,7 +352,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f110329
+    const v3, 0x7f11032a
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -371,7 +371,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f110328
+    const v3, 0x7f110329
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1183,9 +1183,9 @@
 
     move-object/from16 v20, v6
 
-    const v3, 0x7f030044
+    const v3, 0x7f030045
 
-    const v6, 0x7f030035
+    const v6, 0x7f030036
 
     invoke-direct {v0, v9, v3, v6}, Lcom/android/keyguard/CarrierText;->getLocalString(Ljava/lang/String;II)Ljava/lang/String;
 
@@ -1542,9 +1542,9 @@
 
     if-eqz v19, :cond_12
 
-    const v10, 0x7f030044
+    const v10, 0x7f030045
 
-    const v11, 0x7f030035
+    const v11, 0x7f030036
 
     invoke-direct {v0, v7, v10, v11}, Lcom/android/keyguard/CarrierText;->getLocalString(Ljava/lang/String;II)Ljava/lang/String;
 
@@ -1569,9 +1569,9 @@
 
     if-eqz v19, :cond_13
 
-    const v10, 0x7f030044
+    const v10, 0x7f030045
 
-    const v11, 0x7f030035
+    const v11, 0x7f030036
 
     invoke-direct {v0, v9, v10, v11}, Lcom/android/keyguard/CarrierText;->getLocalString(Ljava/lang/String;II)Ljava/lang/String;
 

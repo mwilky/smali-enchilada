@@ -281,7 +281,7 @@
 
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/phone/NetworkSpeedControllerImpl;->mShow:Z
 
-    const v4, 0x7f0d01c9
+    const v4, 0x7f0d01cd
 
     invoke-interface {v1, v2, v4, v3}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->setText(Ljava/lang/String;IZ)V
 

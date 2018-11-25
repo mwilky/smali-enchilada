@@ -5584,7 +5584,7 @@
 .method public notifyScreenOffAuthenticate(ZI)V
     .locals 1
 
-    const/4 v0, 0x3
+    const/4 v0, 0x4
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->notifyScreenOffAuthenticate(ZII)V
 
@@ -5670,7 +5670,7 @@
 
     if-eq p2, v0, :cond_2
 
-    const/4 v0, 0x4
+    const/4 v0, 0x5
 
     if-ne p3, v0, :cond_2
 
@@ -6495,14 +6495,6 @@
     if-eqz v1, :cond_0
 
     if-eqz p1, :cond_0
-
-    iget-object v1, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->isShowingWallpaper()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
 
     iget-object v1, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 

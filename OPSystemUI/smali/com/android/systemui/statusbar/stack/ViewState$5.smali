@@ -42,19 +42,19 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0a0437
+    const v2, 0x7f0a0440
 
     invoke-virtual {v0, v2, v1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/ViewState$5;->val$child:Landroid/view/View;
 
-    const v2, 0x7f0a0436
+    const v2, 0x7f0a043f
 
     invoke-virtual {v0, v2, v1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/ViewState$5;->val$child:Landroid/view/View;
 
-    const v2, 0x7f0a0435
+    const v2, 0x7f0a043e
 
     invoke-virtual {v0, v2, v1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 

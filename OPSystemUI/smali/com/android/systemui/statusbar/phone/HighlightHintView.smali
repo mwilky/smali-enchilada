@@ -8,8 +8,6 @@
 
 
 # static fields
-.field public static final SHOW_OVAL_LAYOUT:Z
-
 .field private static TAG:Ljava/lang/String;
 
 .field public static TAG_KEYGUARD_STATUSBAR:I
@@ -51,12 +49,6 @@
 
     sput v0, Lcom/android/systemui/statusbar/phone/HighlightHintView;->TAG_KEYGUARD_STATUSBAR:I
 
-    invoke-static {}, Lcom/android/systemui/util/OPUtils;->isSupportCustomStatusBar()Z
-
-    move-result v0
-
-    sput-boolean v0, Lcom/android/systemui/statusbar/phone/HighlightHintView;->SHOW_OVAL_LAYOUT:Z
-
     return-void
 .end method
 
@@ -85,7 +77,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0701f3
+    const v1, 0x7f0701f4
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -93,18 +85,8 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/HighlightHintView;->mBgHeightMax:I
 
-    sget-boolean v0, Lcom/android/systemui/statusbar/phone/HighlightHintView;->SHOW_OVAL_LAYOUT:Z
-
-    if-eqz v0, :cond_0
-
     const v0, 0x7f0d0073
 
-    goto :goto_0
-
-    :cond_0
-    const v0, 0x7f0d0071
-
-    :goto_0
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v1
@@ -225,7 +207,7 @@
 
     move-result-object v1
 
-    const v8, 0x7f0701fb
+    const v8, 0x7f0701fc
 
     invoke-virtual {v1, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -284,7 +266,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_c
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/NotificationData;->getHighlightHintNotification()Landroid/service/notification/StatusBarNotification;
 
@@ -292,7 +274,7 @@
 
     if-nez v1, :cond_0
 
-    goto/16 :goto_6
+    goto/16 :goto_5
 
     :cond_0
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/NotificationData;->getHighlightHintNotification()Landroid/service/notification/StatusBarNotification;
@@ -375,7 +357,7 @@
 
     move-result-object v4
 
-    const v8, 0x7f07060e
+    const v8, 0x7f070610
 
     invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -538,13 +520,9 @@
 
     :cond_a
     :goto_3
-    sget-boolean v5, Lcom/android/systemui/statusbar/phone/HighlightHintView;->SHOW_OVAL_LAYOUT:Z
-
-    if-eqz v5, :cond_c
-
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/HighlightHintView;->mContainer:Landroid/view/ViewGroup;
 
-    if-eqz v5, :cond_d
+    if-eqz v5, :cond_b
 
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/HighlightHintView;->mContainer:Landroid/view/ViewGroup;
 
@@ -559,29 +537,22 @@
     sget-object v6, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v5, v2, v6}, Landroid/graphics/drawable/Drawable;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
-
-    :cond_b
-    goto :goto_4
-
-    :cond_c
-    invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/phone/HighlightHintView;->setBackgroundColor(I)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_d
-    :goto_4
-    goto :goto_5
+    :cond_b
+    goto :goto_4
 
     :catch_0
     move-exception v3
 
     invoke-virtual {v3}, Ljava/lang/Exception;->printStackTrace()V
 
-    :goto_5
+    :goto_4
     return-void
 
-    :cond_e
-    :goto_6
+    :cond_c
+    :goto_5
     return-void
 .end method
 
@@ -606,7 +577,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0701fa
+    const v2, 0x7f0701fb
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -620,7 +591,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0701f2
+    const v2, 0x7f0701f3
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -645,7 +616,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0701f7
+    const v3, 0x7f0701f8
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -759,7 +730,7 @@
 
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    const v0, 0x7f0a018a
+    const v0, 0x7f0a018e
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/HighlightHintView;->findViewById(I)Landroid/view/View;
 
@@ -769,7 +740,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/HighlightHintView;->mIconView:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a018b
+    const v0, 0x7f0a018f
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/HighlightHintView;->findViewById(I)Landroid/view/View;
 
@@ -779,7 +750,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/HighlightHintView;->mHint:Landroid/widget/TextView;
 
-    const v0, 0x7f0a018c
+    const v0, 0x7f0a0190
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/HighlightHintView;->findViewById(I)Landroid/view/View;
 
@@ -789,7 +760,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/HighlightHintView;->mChronometerContainer:Landroid/widget/FrameLayout;
 
-    const v0, 0x7f0a0188
+    const v0, 0x7f0a018c
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/HighlightHintView;->findViewById(I)Landroid/view/View;
 
@@ -828,10 +799,6 @@
 
 .method public onHighlightHintStateChange()V
     .locals 2
-
-    sget-boolean v0, Lcom/android/systemui/statusbar/phone/HighlightHintView;->SHOW_OVAL_LAYOUT:Z
-
-    if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/HighlightHintView;->getTag()Ljava/lang/Object;
 

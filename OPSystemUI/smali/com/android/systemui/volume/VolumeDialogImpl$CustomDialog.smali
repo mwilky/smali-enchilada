@@ -27,7 +27,7 @@
 
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;->this$0:Lcom/android/systemui/volume/VolumeDialogImpl;
 
-    const p1, 0x7f120547
+    const p1, 0x7f120548
 
     invoke-direct {p0, p2, p1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 

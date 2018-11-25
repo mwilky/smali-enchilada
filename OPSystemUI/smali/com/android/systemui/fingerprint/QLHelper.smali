@@ -247,7 +247,7 @@
     goto :goto_0
 
     :pswitch_0
-    const v2, 0x7f08020f
+    const v2, 0x7f08022e
 
     invoke-direct {p0, v1, v2}, Lcom/android/systemui/fingerprint/QLHelper;->getDrawable(Landroid/content/res/Resources;I)Landroid/graphics/drawable/Drawable;
 
@@ -256,7 +256,7 @@
     goto :goto_0
 
     :pswitch_1
-    const v2, 0x7f08020e
+    const v2, 0x7f08022d
 
     invoke-direct {p0, v1, v2}, Lcom/android/systemui/fingerprint/QLHelper;->getDrawable(Landroid/content/res/Resources;I)Landroid/graphics/drawable/Drawable;
 
@@ -265,7 +265,7 @@
     goto :goto_0
 
     :pswitch_2
-    const v2, 0x7f080405
+    const v2, 0x7f080419
 
     invoke-direct {p0, v1, v2}, Lcom/android/systemui/fingerprint/QLHelper;->getDrawable(Landroid/content/res/Resources;I)Landroid/graphics/drawable/Drawable;
 
@@ -274,7 +274,7 @@
     goto :goto_0
 
     :pswitch_3
-    const v2, 0x7f080404
+    const v2, 0x7f080418
 
     invoke-direct {p0, v1, v2}, Lcom/android/systemui/fingerprint/QLHelper;->getDrawable(Landroid/content/res/Resources;I)Landroid/graphics/drawable/Drawable;
 
@@ -627,7 +627,7 @@
 .end method
 
 .method private parseSettingData(Ljava/lang/String;)Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;
-    .locals 9
+    .locals 10
 
     const/4 v0, 0x0
 
@@ -650,73 +650,73 @@
 
     invoke-virtual {v1, p1}, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->setActionName(Ljava/lang/String;)V
 
-    goto/16 :goto_2
+    goto/16 :goto_4
 
     :cond_1
     const/4 v3, 0x4
 
-    new-array v3, v3, [Ljava/lang/String;
+    new-array v4, v3, [Ljava/lang/String;
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    invoke-virtual {p1, v4, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {p1, v5, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    aput-object v5, v3, v4
+    aput-object v6, v4, v5
 
-    add-int/lit8 v5, v2, 0x1
+    add-int/lit8 v6, v2, 0x1
 
-    invoke-virtual {p1, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {p1, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    const-string v6, ";"
+    const-string v7, ";"
 
-    const/4 v7, 0x3
+    const/4 v8, 0x3
 
-    invoke-virtual {v5, v6, v7}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+    invoke-virtual {v6, v7, v8}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    array-length v6, v5
+    array-length v7, v6
 
-    const/4 v8, 0x1
+    const/4 v9, 0x1
 
-    invoke-static {v5, v4, v3, v8, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v6, v5, v4, v9, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    aget-object v6, v3, v4
+    aget-object v7, v4, v5
 
-    invoke-virtual {v1, v6}, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->setActionName(Ljava/lang/String;)V
+    invoke-virtual {v1, v7}, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->setActionName(Ljava/lang/String;)V
 
-    aget-object v6, v3, v8
+    aget-object v7, v4, v9
 
-    invoke-virtual {v1, v6}, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->setPackage(Ljava/lang/String;)V
+    invoke-virtual {v1, v7}, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->setPackage(Ljava/lang/String;)V
 
-    iget-object v6, v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->mPackageName:Ljava/lang/String;
+    iget-object v7, v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->mPackageName:Ljava/lang/String;
 
-    invoke-direct {p0, v6}, Lcom/android/systemui/fingerprint/QLHelper;->isPackageAvailable(Ljava/lang/String;)Z
+    invoke-direct {p0, v7}, Lcom/android/systemui/fingerprint/QLHelper;->isPackageAvailable(Ljava/lang/String;)Z
 
-    move-result v6
+    move-result v7
 
-    if-nez v6, :cond_2
+    if-nez v7, :cond_2
 
     return-object v0
 
     :cond_2
     const-string v0, "OpenApp"
 
-    aget-object v6, v3, v4
+    aget-object v7, v4, v5
 
-    invoke-virtual {v0, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    const/4 v6, 0x2
+    const/4 v7, 0x2
 
     if-eqz v0, :cond_3
 
-    aget-object v0, v3, v6
+    aget-object v0, v4, v7
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->setUid(Ljava/lang/String;)V
 
@@ -736,24 +736,24 @@
 
     iput-object v0, v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->mLabel:Ljava/lang/String;
 
-    goto/16 :goto_2
+    goto/16 :goto_4
 
     :cond_3
     const-string v0, "OpenShortcut"
 
-    aget-object v8, v3, v4
+    aget-object v9, v4, v5
 
-    invoke-virtual {v0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_9
 
-    aget-object v0, v3, v6
+    aget-object v0, v4, v7
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->setShortcutId(Ljava/lang/String;)V
 
-    aget-object v0, v3, v7
+    aget-object v0, v4, v8
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->setUid(Ljava/lang/String;)V
 
@@ -766,19 +766,21 @@
     nop
 
     :goto_0
+    move v3, v5
+
     invoke-interface {v0}, Ljava/util/List;->size()I
 
-    move-result v6
+    move-result v5
 
-    if-ge v4, v6, :cond_8
+    if-ge v3, v5, :cond_8
 
-    invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v5
 
-    check-cast v6, Landroid/content/pm/ShortcutInfo;
+    check-cast v5, Landroid/content/pm/ShortcutInfo;
 
-    invoke-virtual {v6}, Landroid/content/pm/ShortcutInfo;->getId()Ljava/lang/String;
+    invoke-virtual {v5}, Landroid/content/pm/ShortcutInfo;->getId()Ljava/lang/String;
 
     move-result-object v7
 
@@ -790,7 +792,7 @@
 
     if-eqz v7, :cond_7
 
-    invoke-virtual {v6}, Landroid/content/pm/ShortcutInfo;->getIconResourceId()I
+    invoke-virtual {v5}, Landroid/content/pm/ShortcutInfo;->getIconResourceId()I
 
     move-result v7
 
@@ -800,7 +802,7 @@
 
     const/16 v8, 0x1e0
 
-    invoke-virtual {v7, v6, v8}, Landroid/content/pm/LauncherApps;->getShortcutIconDrawable(Landroid/content/pm/ShortcutInfo;I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v7, v5, v8}, Landroid/content/pm/LauncherApps;->getShortcutIconDrawable(Landroid/content/pm/ShortcutInfo;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v7
 
@@ -819,7 +821,7 @@
     iput-object v7, v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->mAppIcon:Landroid/graphics/drawable/Drawable;
 
     :cond_4
-    invoke-virtual {v6}, Landroid/content/pm/ShortcutInfo;->getLongLabel()Ljava/lang/CharSequence;
+    invoke-virtual {v5}, Landroid/content/pm/ShortcutInfo;->getLongLabel()Ljava/lang/CharSequence;
 
     move-result-object v7
 
@@ -829,7 +831,7 @@
 
     if-eqz v8, :cond_5
 
-    invoke-virtual {v6}, Landroid/content/pm/ShortcutInfo;->getShortLabel()Ljava/lang/CharSequence;
+    invoke-virtual {v5}, Landroid/content/pm/ShortcutInfo;->getShortLabel()Ljava/lang/CharSequence;
 
     move-result-object v7
 
@@ -840,7 +842,7 @@
 
     if-eqz v8, :cond_6
 
-    invoke-virtual {v6}, Landroid/content/pm/ShortcutInfo;->getId()Ljava/lang/String;
+    invoke-virtual {v5}, Landroid/content/pm/ShortcutInfo;->getId()Ljava/lang/String;
 
     move-result-object v7
 
@@ -852,23 +854,23 @@
     iput-object v8, v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->mLabel:Ljava/lang/String;
 
     :cond_7
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v5, v3, 0x1
 
     goto :goto_0
 
     :cond_8
-    goto :goto_2
+    goto/16 :goto_4
 
     :cond_9
     const-string v0, "OpenQuickPay"
 
-    aget-object v4, v3, v4
+    aget-object v5, v4, v5
 
-    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_d
 
     iget-object v0, v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->mPackageName:Ljava/lang/String;
 
@@ -876,9 +878,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_d
 
-    aget-object v0, v3, v6
+    aget-object v0, v4, v7
 
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -888,9 +890,9 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/QLHelper;->mPaymentApps:Ljava/util/ArrayList;
 
-    iget v4, v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->mPaymentWhich:I
+    iget v5, v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->mPaymentWhich:I
 
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -920,56 +922,82 @@
 
     move-result-object v0
 
-    const-string/jumbo v4, "zh"
+    const-string/jumbo v5, "zh"
 
-    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    iget v5, v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->mPaymentWhich:I
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    if-ne v5, v3, :cond_a
 
-    iget-object v6, v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->mPackageName:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/systemui/fingerprint/QLHelper;->mPaymentAppsName:Ljava/util/ArrayList;
 
-    invoke-direct {p0, v6}, Lcom/android/systemui/fingerprint/QLHelper;->getAppLabel(Ljava/lang/String;)Ljava/lang/String;
+    iget v5, v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->mPaymentWhich:I
 
-    move-result-object v6
+    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v3
 
-    if-eqz v0, :cond_a
+    check-cast v3, Ljava/lang/String;
 
-    const-string v6, ""
-
-    goto :goto_1
+    goto :goto_3
 
     :cond_a
-    const-string v6, " "
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    :goto_1
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v6, p0, Lcom/android/systemui/fingerprint/QLHelper;->mPaymentAppsName:Ljava/util/ArrayList;
+    iget-object v7, v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->mPackageName:Ljava/lang/String;
+
+    invoke-direct {p0, v7}, Lcom/android/systemui/fingerprint/QLHelper;->getAppLabel(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-nez v0, :cond_c
 
     iget v7, v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->mPaymentWhich:I
 
-    invoke-virtual {v6, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    if-ne v7, v3, :cond_b
 
-    move-result-object v6
-
-    check-cast v6, Ljava/lang/String;
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    iput-object v4, v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->mLabel:Ljava/lang/String;
+    goto :goto_1
 
     :cond_b
+    const-string v3, " "
+
+    goto :goto_2
+
+    :cond_c
+    :goto_1
+    const-string v3, ""
+
     :goto_2
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v3, p0, Lcom/android/systemui/fingerprint/QLHelper;->mPaymentAppsName:Ljava/util/ArrayList;
+
+    iget v7, v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->mPaymentWhich:I
+
+    invoke-virtual {v3, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    :goto_3
+    iput-object v3, v1, Lcom/android/systemui/fingerprint/QLAdapter$ActionInfo;->mLabel:Ljava/lang/String;
+
+    :cond_d
+    :goto_4
     return-object v1
 .end method
 

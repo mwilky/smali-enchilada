@@ -265,22 +265,22 @@
 
     :array_5
     .array-data 4
-        0x7f080463
-        0x7f080464
+        0x7f080477
+        0x7f080478
     .end array-data
 
     :array_6
     .array-data 4
-        0x7f080465
-        0x7f080466
+        0x7f080479
+        0x7f08047a
     .end array-data
 
     :array_7
     .array-data 4
-        0x7f080468
-        0x7f080469
-        0x7f08046a
-        0x7f08046b
+        0x7f08047c
+        0x7f08047d
+        0x7f08047e
+        0x7f08047f
     .end array-data
 
     :array_8
@@ -292,9 +292,9 @@
 
     :array_9
     .array-data 4
-        0x7f08046d
-        0x7f08046e
-        0x7f08046f
+        0x7f080481
+        0x7f080482
+        0x7f080483
     .end array-data
 .end method
 
@@ -2927,7 +2927,7 @@
     move v4, v2
 
     :goto_3
-    const v11, 0x7f070629
+    const v11, 0x7f07062c
 
     if-eqz v4, :cond_7
 
@@ -2939,7 +2939,7 @@
 
     invoke-direct {v12, v0, v13}, Lcom/android/systemui/egg/MLand$Star;-><init>(Lcom/android/systemui/egg/MLand;Landroid/content/Context;)V
 
-    const v13, 0x7f08084c
+    const v13, 0x7f080860
 
     invoke-virtual {v12, v13}, Lcom/android/systemui/egg/MLand$Star;->setBackgroundResource(I)V
 
@@ -3086,7 +3086,7 @@
 
     invoke-direct {v5, v0, v14}, Lcom/android/systemui/egg/MLand$Star;-><init>(Lcom/android/systemui/egg/MLand;Landroid/content/Context;)V
 
-    const v14, 0x7f08046c
+    const v14, 0x7f080480
 
     invoke-virtual {v5, v14}, Lcom/android/systemui/egg/MLand$Star;->setBackgroundResource(I)V
 
@@ -3667,7 +3667,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v4, 0x7f0a02fe
+    const v4, 0x7f0a0306
 
     invoke-virtual {v0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3677,7 +3677,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v3, 0x7f0a02ff
+    const v3, 0x7f0a0307
 
     invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3687,7 +3687,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v2, 0x7f0a02fd
+    const v2, 0x7f0a0305
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3742,7 +3742,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v2, 0x7f0a02fd
+    const v2, 0x7f0a0305
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3752,7 +3752,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v2, 0x7f0a02fe
+    const v2, 0x7f0a0306
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3760,7 +3760,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v3, 0x7f0a02ff
+    const v3, 0x7f0a0307
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

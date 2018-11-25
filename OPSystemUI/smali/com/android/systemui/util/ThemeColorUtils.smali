@@ -195,52 +195,12 @@
     .end packed-switch
 .end method
 
-.method private static getSpecialThemeAccentColor()Ljava/lang/String;
-    .locals 3
-
-    invoke-static {}, Lcom/oneplus/custom/utils/OpCustomizeSettings;->getCustomType()Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/android/systemui/util/ThemeColorUtils$1;->$SwitchMap$com$oneplus$custom$utils$OpCustomizeSettings$CUSTOM_TYPE:[I
-
-    invoke-virtual {v0}, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->ordinal()I
-
-    move-result v2
-
-    aget v1, v1, v2
-
-    packed-switch v1, :pswitch_data_0
-
-    const/4 v1, 0x0
-
-    return-object v1
-
-    :pswitch_0
-    const-string v1, "#FFFBC02D"
-
-    return-object v1
-
-    :pswitch_1
-    const-string v1, "#FFFF2837"
-
-    return-object v1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
 .method public static getThumbBackground()I
     .locals 2
 
     sget v0, Lcom/android/systemui/util/ThemeColorUtils;->sCurrentTheme:I
 
-    const v1, 0x7f080573
+    const v1, 0x7f080587
 
     packed-switch v0, :pswitch_data_0
 
@@ -253,7 +213,7 @@
     return v1
 
     :pswitch_2
-    const v0, 0x7f080574
+    const v0, 0x7f080588
 
     return v0
 
@@ -280,7 +240,7 @@
 
     if-ne v1, v2, :cond_0
 
-    const v1, 0x7f03004a
+    const v1, 0x7f03004b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -337,70 +297,38 @@
 .end method
 
 .method private static updateAccentColor(Landroid/content/Context;)V
-    .locals 3
+    .locals 4
 
-    const-string v0, "#FF2196F3"
+    const v0, 0x7f0603f6
 
-    sget v1, Lcom/android/systemui/util/ThemeColorUtils;->sCurrentTheme:I
+    invoke-static {p0, v0}, Lcom/android/systemui/util/OPUtils;->getThemeAccentColor(Landroid/content/Context;I)I
 
-    if-nez v1, :cond_0
+    move-result v0
 
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    sget-boolean v1, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
-    move-result-object v1
+    if-eqz v1, :cond_0
 
-    const-string v2, "oem_white_mode_accent_color"
+    const-string v1, "ThemeColorUtils"
 
-    invoke-static {v1, v2}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    if-nez v0, :cond_2
+    const-string/jumbo v3, "updateAccentColor accentColor "
 
-    const-string v0, "#FF2196F3"
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_1
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    sget v1, Lcom/android/systemui/util/ThemeColorUtils;->sCurrentTheme:I
-
-    const/4 v2, 0x1
-
-    if-ne v1, v2, :cond_2
-
-    sget-boolean v1, Lcom/android/systemui/util/ThemeColorUtils;->sSpecialTheme:Z
-
-    if-eqz v1, :cond_1
-
-    invoke-static {}, Lcom/android/systemui/util/ThemeColorUtils;->getSpecialThemeAccentColor()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string v2, "oem_black_mode_accent_color"
-
-    invoke-static {v1, v2}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_0
-    if-nez v0, :cond_2
-
-    const-string v0, "#FF42A5F5"
-
-    :cond_2
-    :goto_1
-    invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v1
-
-    sput v1, Lcom/android/systemui/util/ThemeColorUtils;->sAccentColor:I
+    sput v0, Lcom/android/systemui/util/ThemeColorUtils;->sAccentColor:I
 
     return-void
 .end method

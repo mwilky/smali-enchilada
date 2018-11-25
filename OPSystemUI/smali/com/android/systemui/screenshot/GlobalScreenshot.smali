@@ -105,7 +105,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/screenshot/GlobalScreenshot;->mScreenshotLayout:Landroid/view/View;
 
-    const v3, 0x7f0a0160
+    const v3, 0x7f0a0164
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -117,7 +117,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/screenshot/GlobalScreenshot;->mScreenshotLayout:Landroid/view/View;
 
-    const v3, 0x7f0a015f
+    const v3, 0x7f0a0163
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -129,7 +129,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/screenshot/GlobalScreenshot;->mScreenshotLayout:Landroid/view/View;
 
-    const v3, 0x7f0a0161
+    const v3, 0x7f0a0165
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -141,7 +141,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/screenshot/GlobalScreenshot;->mScreenshotLayout:Landroid/view/View;
 
-    const v3, 0x7f0a0162
+    const v3, 0x7f0a0166
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -255,7 +255,7 @@
 
     iput v2, p0, Lcom/android/systemui/screenshot/GlobalScreenshot;->mNotificationIconSize:I
 
-    const v2, 0x7f0701e1
+    const v2, 0x7f0701e2
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -281,7 +281,7 @@
 
     move v3, v2
 
-    const v4, 0x7f0703b7
+    const v4, 0x7f0703b8
 
     :try_start_0
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -307,7 +307,7 @@
     :cond_0
     iput v3, p0, Lcom/android/systemui/screenshot/GlobalScreenshot;->mPreviewWidth:I
 
-    const v4, 0x7f0703a8
+    const v4, 0x7f0703a9
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -603,7 +603,7 @@
 
     invoke-direct {v2, p0, v3}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    const v3, 0x7f110577
+    const v3, 0x7f11057f
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -625,7 +625,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f08058f
+    const v3, 0x7f0805a3
 
     invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -801,7 +801,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/screenshot/GlobalScreenshot;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f11057c
+    const v3, 0x7f110584
 
     invoke-static {v1, v3, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -928,7 +928,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/screenshot/GlobalScreenshot;->mNotificationManager:Landroid/app/NotificationManager;
 
-    const v5, 0x7f110578
+    const v5, 0x7f110580
 
     invoke-static {v3, v4, v5}, Lcom/android/systemui/screenshot/GlobalScreenshot;->notifyScreenshotError(Landroid/content/Context;Landroid/app/NotificationManager;I)V
 

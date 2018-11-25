@@ -4,10 +4,6 @@
 
 
 # instance fields
-.field private mDarkIconColor:I
-
-.field private mNotificationIconColor:I
-
 .field private mAbsoluteStartPadding:I
 
 .field private mCutOutBounds:Ljava/util/List;
@@ -111,7 +107,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0703bc
+    const v1, 0x7f0703bd
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -125,7 +121,7 @@
 
     add-int/2addr v1, v2
 
-    const v2, 0x7f0701ee
+    const v2, 0x7f0701ef
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -251,7 +247,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070577
+    const v1, 0x7f070579
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -401,19 +397,14 @@
 .end method
 
 .method public onDarkChanged(Landroid/graphics/Rect;FI)V
-    .locals 3
-    
-    float-to-int v2, p2
+    .locals 2
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;->mTextView:Landroid/widget/TextView;
 
-    iget v1, p0, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;->mDarkIconColor:I #dark color
+    invoke-static {p1, p0, p3}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->getTint(Landroid/graphics/Rect;Landroid/view/View;I)I
 
-    if-nez v2, :cond_0 #set to grey if dark intensity is 1
-    
-    iget v1, p0, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;->mNotificationIconColor:I #custom color
+    move-result v1
 
-    :cond_0
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
     return-void
@@ -424,7 +415,7 @@
 
     invoke-super {p0}, Lcom/android/keyguard/AlphaOptimizedLinearLayout;->onFinishInflate()V
 
-    const v0, 0x7f0a019d
+    const v0, 0x7f0a01a1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -432,7 +423,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;->mIconPlaceholder:Landroid/view/View;
 
-    const v0, 0x7f0a03f0
+    const v0, 0x7f0a03f9
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -441,12 +432,6 @@
     check-cast v0, Landroid/widget/TextView;
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;->mTextView:Landroid/widget/TextView;
-    
-    const/4 v0, 0x0
-    
-    int-to-float v0, v0
-    
-    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;->updateViews(F)V
 
     return-void
 .end method
@@ -730,43 +715,5 @@
 
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;->mPublicMode:Z
 
-    return-void
-.end method
-
-.method public readRenovateMods()V
-    .locals 1
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mNotificationIconColorOP:I
-    
-	iput v0, p0, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;->mNotificationIconColor:I
-	
-	sget v0, Lcom/android/mwilky/Renovate;->mDarkIconColor:I
-    
-	iput v0, p0, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;->mDarkIconColor:I
-	
-    return-void
-.end method
-
-.method public updateViews(F)V
-    .locals 3
-    
-    float-to-int v2, p1
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;->readRenovateMods()V
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;->mTextView:Landroid/widget/TextView;
-
-    iget v1, p0, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;->mDarkIconColor:I #dark color
-
-    if-nez v2, :cond_0 #set to grey if dark intensity is 1
-    
-    iget v1, p0, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;->mNotificationIconColor:I #custom color
-    
-    if-eqz v0, :cond_mw
-
-    :cond_0
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    :cond_mw
     return-void
 .end method

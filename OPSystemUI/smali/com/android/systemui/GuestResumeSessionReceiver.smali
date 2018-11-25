@@ -352,7 +352,7 @@
 
     move-result-object v3
 
-    const-string v4, "systemui.guest_has_logged_in"
+    const-string/jumbo v4, "systemui.guest_has_logged_in"
 
     const/4 v5, 0x0
 
@@ -375,7 +375,7 @@
     goto :goto_0
 
     :cond_2
-    const-string v5, "systemui.guest_has_logged_in"
+    const-string/jumbo v5, "systemui.guest_has_logged_in"
 
     const/4 v6, 0x1
 

@@ -38,7 +38,7 @@
 
     move-result-object v0
 
-    const-string v1, "sysui_force_enable_leak_reporting"
+    const-string/jumbo v1, "sysui_force_enable_leak_reporting"
 
     const/4 v2, 0x0
 

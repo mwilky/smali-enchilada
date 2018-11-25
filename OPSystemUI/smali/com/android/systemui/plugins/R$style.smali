@@ -2707,27 +2707,29 @@
 
 .field public static final oneplus_qs_theme_dark:I = 0x7f120541
 
-.field public static final owner_view:I = 0x7f120542
+.field public static final oneplus_qs_theme_light:I = 0x7f120542
 
-.field public static final prevent_view_title:I = 0x7f120543
+.field public static final owner_view:I = 0x7f120543
 
-.field public static final prevent_view_title_cancel:I = 0x7f120544
+.field public static final prevent_view_title:I = 0x7f120544
 
-.field public static final prevent_view_top_tag:I = 0x7f120545
+.field public static final prevent_view_title_cancel:I = 0x7f120545
 
-.field public static final qs_base:I = 0x7f120546
+.field public static final prevent_view_top_tag:I = 0x7f120546
 
-.field public static final qs_theme:I = 0x7f120547
+.field public static final qs_base:I = 0x7f120547
 
-.field public static final speedView_speed:I = 0x7f120548
+.field public static final qs_theme:I = 0x7f120548
 
-.field public static final speedView_unit:I = 0x7f120549
+.field public static final speedView_speed:I = 0x7f120549
 
-.field public static final systemui_theme_remote_input:I = 0x7f12054a
+.field public static final speedView_unit:I = 0x7f12054a
 
-.field public static final widget_big_thin:I = 0x7f12054b
+.field public static final systemui_theme_remote_input:I = 0x7f12054b
 
-.field public static final widget_label:I = 0x7f12054c
+.field public static final widget_big_thin:I = 0x7f12054c
+
+.field public static final widget_label:I = 0x7f12054d
 
 
 # direct methods

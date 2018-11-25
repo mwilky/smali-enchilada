@@ -83,38 +83,38 @@
 
     :array_0
     .array-data 4
-        0x7f080347
-        0x7f11062f
+        0x7f080368
+        0x7f110637
     .end array-data
 
     :array_1
     .array-data 4
-        0x7f08020c
-        0x7f11063d
+        0x7f08022b
+        0x7f110645
     .end array-data
 
     :array_2
     .array-data 4
-        0x7f08037a
-        0x7f11063a
+        0x7f08039b
+        0x7f110642
     .end array-data
 
     :array_3
     .array-data 4
-        0x7f080282
-        0x7f110637
+        0x7f0802a3
+        0x7f11063f
     .end array-data
 
     :array_4
     .array-data 4
-        0x7f08037c
-        0x7f11063e
+        0x7f08039d
+        0x7f110646
     .end array-data
 
     :array_5
     .array-data 4
-        0x7f080293
-        0x7f110639
+        0x7f0802b4
+        0x7f110641
     .end array-data
 .end method
 
@@ -285,7 +285,7 @@
 
     invoke-direct {v0, p0, p1}, Lcom/android/systemui/tuner/-$$Lambda$NavBarTuner$S2jLo9__CXt1xH-Y0l__zpA7S6Y;-><init>(Lcom/android/systemui/tuner/NavBarTuner;Landroid/support/v7/preference/ListPreference;)V
 
-    const-string v1, "sysui_nav_bar"
+    const-string/jumbo v1, "sysui_nav_bar"
 
     filled-new-array {v1}, [Ljava/lang/String;
 
@@ -615,7 +615,7 @@
 
     check-cast v1, Lcom/android/systemui/tuner/TunerService;
 
-    const-string v2, "sysui_nav_bar"
+    const-string/jumbo v2, "sysui_nav_bar"
 
     invoke-virtual {v1, v2, v0}, Lcom/android/systemui/tuner/TunerService;->setValue(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1081,7 +1081,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/systemui/tuner/NavBarTuner;->bindLayout(Landroid/support/v7/preference/ListPreference;)V
 
-    const-string v0, "sysui_nav_bar_left"
+    const-string/jumbo v0, "sysui_nav_bar_left"
 
     const-string v1, "space"
 
@@ -1089,7 +1089,7 @@
 
     invoke-direct {p0, v0, v1, v2}, Lcom/android/systemui/tuner/NavBarTuner;->bindButton(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v0, "sysui_nav_bar_right"
+    const-string/jumbo v0, "sysui_nav_bar_right"
 
     const-string v1, "menu_ime"
 

@@ -79,7 +79,7 @@
     goto :goto_2
 
     :pswitch_0
-    const-string v7, "t"
+    const-string/jumbo v7, "t"
 
     invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -399,6 +399,8 @@
     invoke-direct/range {v7 .. v16}, Lcom/airbnb/lottie/model/content/GradientFill;-><init>(Ljava/lang/String;Lcom/airbnb/lottie/model/content/GradientType;Landroid/graphics/Path$FillType;Lcom/airbnb/lottie/model/animatable/AnimatableGradientColorValue;Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;)V
 
     return-object v6
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x72

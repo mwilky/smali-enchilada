@@ -23,6 +23,6 @@
 
 .field public static final batterymeter_plus_points:I = 0x7f030009
 
-.field public static final wifi_status:I = 0x7f030135
+.field public static final wifi_status:I = 0x7f030136
 
-.field public static final wifi_status_with_ssid:I = 0x7f030136
+.field public static final wifi_status_with_ssid:I = 0x7f030137

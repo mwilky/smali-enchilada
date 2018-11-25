@@ -133,7 +133,7 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/car/CarFacetButton;->mUnselectedAlpha:F
 
-    const v0, 0x7f0a00aa
+    const v0, 0x7f0a00ac
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/car/CarFacetButton;->findViewById(I)Landroid/view/View;
 
@@ -185,7 +185,7 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/car/CarFacetButton;->mSelectedIconResourceId:I
 
-    const v0, 0x7f0a00ab
+    const v0, 0x7f0a00ad
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/car/CarFacetButton;->findViewById(I)Landroid/view/View;
 

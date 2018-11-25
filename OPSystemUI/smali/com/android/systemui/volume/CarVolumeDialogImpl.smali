@@ -140,7 +140,7 @@
 
     new-instance v0, Landroid/view/ContextThemeWrapper;
 
-    const v1, 0x7f120547
+    const v1, 0x7f120548
 
     invoke-direct {v0, p1, v1}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
@@ -737,7 +737,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/volume/CarVolumeDialogImpl;->mWindow:Landroid/view/Window;
 
-    const v3, 0x7f0a0464
+    const v3, 0x7f0a046d
 
     invoke-virtual {v2, v3}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 

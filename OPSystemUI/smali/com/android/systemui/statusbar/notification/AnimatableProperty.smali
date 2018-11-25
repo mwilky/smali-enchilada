@@ -15,11 +15,11 @@
 
     sget-object v0, Landroid/view/View;->X:Landroid/util/Property;
 
-    const v1, 0x7f0a0484
+    const v1, 0x7f0a0490
 
-    const v2, 0x7f0a0486
+    const v2, 0x7f0a0492
 
-    const v3, 0x7f0a0485
+    const v3, 0x7f0a0491
 
     invoke-static {v0, v1, v2, v3}, Lcom/android/systemui/statusbar/notification/AnimatableProperty;->from(Landroid/util/Property;III)Lcom/android/systemui/statusbar/notification/AnimatableProperty;
 
@@ -29,11 +29,11 @@
 
     sget-object v0, Landroid/view/View;->Y:Landroid/util/Property;
 
-    const v1, 0x7f0a0487
+    const v1, 0x7f0a0493
 
-    const v2, 0x7f0a0489
+    const v2, 0x7f0a0495
 
-    const v3, 0x7f0a0488
+    const v3, 0x7f0a0494
 
     invoke-static {v0, v1, v2, v3}, Lcom/android/systemui/statusbar/notification/AnimatableProperty;->from(Landroid/util/Property;III)Lcom/android/systemui/statusbar/notification/AnimatableProperty;
 

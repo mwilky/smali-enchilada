@@ -68,11 +68,11 @@
 
     invoke-direct {v2, v3, v3, v3, v3}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    const v3, 0x7f0a007e
+    const v3, 0x7f0a007f
 
     invoke-direct {p0, v3, v2, v1, v0}, Lcom/android/systemui/qs/car/CarStatusBarHeader;->applyDarkness(ILandroid/graphics/Rect;FI)V
 
-    const v4, 0x7f0a00be
+    const v4, 0x7f0a00c0
 
     invoke-direct {p0, v4, v2, v1, v0}, Lcom/android/systemui/qs/car/CarStatusBarHeader;->applyDarkness(ILandroid/graphics/Rect;FI)V
 

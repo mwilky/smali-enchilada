@@ -67,7 +67,7 @@
     move-result-object v0
 
     :cond_1
-    const-string v1, "sysui_rounded_content_padding"
+    const-string/jumbo v1, "sysui_rounded_content_padding"
 
     iget v2, p0, Lcom/android/systemui/ScreenDecorations$TunablePaddingTagListener;->mPadding:I
 

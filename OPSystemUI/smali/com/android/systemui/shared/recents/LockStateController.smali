@@ -298,18 +298,37 @@
 .method private getLockedListFromProvider(I)Z
     .locals 7
 
-    iget-object v0, p0, Lcom/android/systemui/shared/recents/LockStateController;->mContext:Landroid/content/Context;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    :try_start_0
+    iget-object v1, p0, Lcom/android/systemui/shared/recents/LockStateController;->mContext:Landroid/content/Context;
 
-    move-result-object v0
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    const-string v1, "com_oneplus_systemui_recent_task_locked_bk"
+    move-result-object v1
 
-    invoke-static {v0, v1, p1}, Landroid/provider/Settings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+    const-string v2, "com_oneplus_systemui_recent_task_locked_bk"
 
-    move-result-object v0
+    invoke-static {v1, v2, p1}, Landroid/provider/Settings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
+    move-result-object v1
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-object v0, v1
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v1
+
+    const-string v2, "LockStateController"
+
+    const-string/jumbo v3, "writeLockedListToProvider error : "
+
+    invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    :goto_0
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
@@ -346,7 +365,7 @@
 
     nop
 
-    :goto_0
+    :goto_1
     array-length v4, v2
 
     if-ge v1, v4, :cond_2
@@ -377,7 +396,7 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_2
     iget-object v1, p0, Lcom/android/systemui/shared/recents/LockStateController;->mSp:Landroid/content/SharedPreferences;
@@ -396,6 +415,7 @@
 
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
+    :try_start_1
     iget-object v4, p0, Lcom/android/systemui/shared/recents/LockStateController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -407,7 +427,21 @@
     const-string v6, "done"
 
     invoke-static {v4, v5, v6, p1}, Landroid/provider/Settings$System;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
+    goto :goto_2
+
+    :catch_1
+    move-exception v4
+
+    const-string v5, "LockStateController"
+
+    const-string/jumbo v6, "writeLockedListToProvider error : "
+
+    invoke-static {v5, v6, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    :goto_2
     return v3
 .end method
 

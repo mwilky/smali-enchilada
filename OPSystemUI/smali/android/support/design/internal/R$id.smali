@@ -15,16 +15,16 @@
 
 
 # static fields
-.field public static final design_menu_item_action_area_stub:I = 0x7f0a00fa
+.field public static final design_menu_item_action_area_stub:I = 0x7f0a00fe
 
-.field public static final design_menu_item_text:I = 0x7f0a00fb
+.field public static final design_menu_item_text:I = 0x7f0a00ff
 
-.field public static final icon:I = 0x7f0a0197
+.field public static final icon:I = 0x7f0a019b
 
-.field public static final largeLabel:I = 0x7f0a01ea
+.field public static final largeLabel:I = 0x7f0a01ef
 
-.field public static final smallLabel:I = 0x7f0a03b9
+.field public static final smallLabel:I = 0x7f0a03c2
 
-.field public static final snackbar_action:I = 0x7f0a03bb
+.field public static final snackbar_action:I = 0x7f0a03c4
 
-.field public static final snackbar_text:I = 0x7f0a03bc
+.field public static final snackbar_text:I = 0x7f0a03c5

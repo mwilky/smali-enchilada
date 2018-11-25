@@ -39,7 +39,7 @@
 
     new-instance v2, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
-    const v3, 0x7f110533
+    const v3, 0x7f11053b
 
     invoke-virtual {v0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -55,7 +55,7 @@
 
     new-instance v2, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
-    const v3, 0x7f110531
+    const v3, 0x7f110539
 
     invoke-virtual {v0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -71,7 +71,7 @@
 
     new-instance v2, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
-    const v3, 0x7f110532
+    const v3, 0x7f11053a
 
     invoke-virtual {v0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

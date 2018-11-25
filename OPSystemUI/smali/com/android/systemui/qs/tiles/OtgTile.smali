@@ -168,7 +168,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/OtgTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f11050d
+    const v1, 0x7f110515
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -179,8 +179,6 @@
 
 .method protected handleClick()V
     .locals 1
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/OtgTile;->isOtgEnabled()Z
 
@@ -257,7 +255,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f08035c
+    const v0, 0x7f08037d
 
     invoke-static {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -268,7 +266,7 @@
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f08035b
+    const v0, 0x7f08037c
 
     invoke-static {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -279,7 +277,7 @@
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/OtgTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f11050d
+    const v1, 0x7f110515
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

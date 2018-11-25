@@ -145,11 +145,11 @@
 
     check-cast v0, Lcom/android/systemui/tuner/TunerService;
 
-    const-string v1, "sysui_volume_down_silent"
+    const-string/jumbo v1, "sysui_volume_down_silent"
 
-    const-string v2, "sysui_volume_up_silent"
+    const-string/jumbo v2, "sysui_volume_up_silent"
 
-    const-string v3, "sysui_do_not_disturb"
+    const-string/jumbo v3, "sysui_do_not_disturb"
 
     filled-new-array {v1, v2, v3}, [Ljava/lang/String;
 
@@ -391,7 +391,7 @@
 .method public onTuningChanged(Ljava/lang/String;Ljava/lang/String;)V
     .locals 4
 
-    const-string v0, "sysui_volume_down_silent"
+    const-string/jumbo v0, "sysui_volume_down_silent"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -439,7 +439,7 @@
     goto :goto_3
 
     :cond_2
-    const-string v0, "sysui_volume_up_silent"
+    const-string/jumbo v0, "sysui_volume_up_silent"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -483,7 +483,7 @@
     goto :goto_3
 
     :cond_5
-    const-string v0, "sysui_do_not_disturb"
+    const-string/jumbo v0, "sysui_do_not_disturb"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

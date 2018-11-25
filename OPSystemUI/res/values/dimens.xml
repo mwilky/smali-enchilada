@@ -444,6 +444,7 @@
     <dimen name="edit_text_inset_bottom_material">7.0dip</dimen>
     <dimen name="edit_text_inset_horizontal_material">4.0dip</dimen>
     <dimen name="edit_text_inset_top_material">10.0dip</dimen>
+    <dimen name="emergency_button_margin_top">155.0px</dimen>
     <dimen name="fab_elevation">12.0dip</dimen>
     <dimen name="fab_margin">16.0dip</dimen>
     <dimen name="fab_press_translation_z">9.0dip</dimen>
@@ -1177,12 +1178,13 @@
     <dimen name="op_biometric_icon_flash_location_y">0.0px</dimen>
     <dimen name="op_biometric_icon_flash_width">0.0px</dimen>
     <dimen name="op_biometric_icon_height">0.0px</dimen>
-    <dimen name="op_biometric_icon_location_x">0.0px</dimen>
-    <dimen name="op_biometric_icon_location_y">0.0px</dimen>
     <dimen name="op_biometric_icon_normal_location_x">0.0px</dimen>
     <dimen name="op_biometric_icon_normal_location_y">0.0px</dimen>
     <dimen name="op_biometric_icon_normal_width">0.0px</dimen>
     <dimen name="op_biometric_icon_width">0.0px</dimen>
+    <dimen name="op_biometric_transparent_icon_location_x">0.0px</dimen>
+    <dimen name="op_biometric_transparent_icon_location_y">0.0px</dimen>
+    <dimen name="op_biometric_transparent_icon_size">0.0px</dimen>
     <dimen name="op_bottom_text_spacing_digital">-10.5px</dimen>
     <dimen name="op_date_owner_info_margin">10.0dip</dimen>
     <dimen name="op_design_snackbar_action_inline_max_width">128.0dip</dimen>
@@ -1256,7 +1258,7 @@
     <dimen name="op_volume_dialog_row_margin_bottom">47.0px</dimen>
     <dimen name="op_volume_dialog_row_padding_end">36.299988dip</dimen>
     <dimen name="op_volume_dialog_settings_container_height">157.0px</dimen>
-    <dimen name="op_volume_dialog_slider_height">470.0px</dimen>
+    <dimen name="op_volume_dialog_slider_height">422.0px</dimen>
     <dimen name="op_volume_dialog_slider_margin_bottom">5.0px</dimen>
     <dimen name="op_volume_dialog_slider_margin_top">5.0px</dimen>
     <dimen name="op_volume_dialog_slider_width">149.0px</dimen>
@@ -1562,6 +1564,7 @@
     <item type="dimen" name="status_bar_padding">@dimen/oneplus_contorl_layout_margin_left2</item>
     <item type="dimen" name="status_bar_padding_end">@dimen/status_bar_padding</item>
     <item type="dimen" name="status_bar_padding_start">@dimen/status_bar_padding</item>
+    <dimen name="status_bar_padding_top">0.0px</dimen>
     <dimen name="status_bar_wifi_signal_spacer_width">2.0dip</dimen>
     <dimen name="statusbar_mobile_type_overlap">10.5dip</dimen>
     <dimen name="statusbar_mobile_type_overlap_plus">11.0dip</dimen>
@@ -1606,6 +1609,8 @@
     <dimen name="three_key_middle_dialog_position">359.0px</dimen>
     <dimen name="three_key_middle_dialog_position_l">103.0dip</dimen>
     <dimen name="three_key_up_dialog_position">228.75998px</dimen>
+    <item type="dimen" name="three_key_up_dialog_position_deep">@dimen/three_key_down_dialog_padding_edge</item>
+    <item type="dimen" name="three_key_up_dialog_position_deep_land">@dimen/three_key_down_dialog_padding_edge</item>
     <dimen name="three_key_up_dialog_position_l">103.0dip</dimen>
     <dimen name="timepicker_am_top_padding">4.0dip</dimen>
     <dimen name="timepicker_ampm_horizontal_padding">16.0dip</dimen>

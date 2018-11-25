@@ -44,7 +44,7 @@
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2402(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
+    invoke-static {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2502(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
@@ -54,7 +54,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    invoke-static {v2}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2500(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Ljava/lang/Runnable;
+    invoke-static {v2}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2600(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Ljava/lang/Runnable;
 
     move-result-object v2
 
@@ -73,7 +73,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2600(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Z
+    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2700(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Z
 
     move-result v0
 
@@ -81,7 +81,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2000(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Z
+    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2100(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Z
 
     move-result v0
 
@@ -95,7 +95,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    invoke-static {v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2500(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Ljava/lang/Runnable;
+    invoke-static {v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2600(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Ljava/lang/Runnable;
 
     move-result-object v1
 
@@ -108,7 +108,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2402(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
+    invoke-static {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2502(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
 
     :cond_2
     :goto_0
@@ -162,7 +162,7 @@
 
     const/4 v1, 0x4
 
-    if-ne p1, v1, :cond_1
+    if-ne p1, v1, :cond_2
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
@@ -176,7 +176,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    invoke-static {v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2200(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2300(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -190,11 +190,11 @@
 
     iget-object v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    invoke-static {v2}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2200(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2300(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2300(Lcom/android/systemui/fingerprint/FingerprintDialogView;Ljava/lang/String;)Z
+    invoke-static {v1, v2}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2400(Lcom/android/systemui/fingerprint/FingerprintDialogView;Ljava/lang/String;)Z
 
     move-result v1
 
@@ -208,6 +208,23 @@
     invoke-virtual {v1, v2}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->updateFpDaemonStatus(I)V
 
     :cond_1
+    iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
+
+    invoke-static {v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$1100(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_2
+
+    iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
+
+    invoke-static {v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$1100(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->onFaceUnlocked()V
+
+    :cond_2
     return-void
 .end method
 
@@ -238,7 +255,7 @@
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2602(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
+    invoke-static {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2702(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
@@ -288,6 +305,10 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$1702(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
 
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
+
+    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$1800(Lcom/android/systemui/fingerprint/FingerprintDialogView;)V
+
     return-void
 .end method
 
@@ -296,7 +317,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$1800(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$1900(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
     move-result-object v0
 
@@ -341,7 +362,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    invoke-static {v0, p1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2002(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
+    invoke-static {v0, p1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2102(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
 
     const/4 v0, 0x0
 
@@ -393,7 +414,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    invoke-static {v1, v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2100(Lcom/android/systemui/fingerprint/FingerprintDialogView;I)V
+    invoke-static {v1, v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2200(Lcom/android/systemui/fingerprint/FingerprintDialogView;I)V
 
     goto :goto_0
 
@@ -402,7 +423,7 @@
 
     const/4 v2, 0x1
 
-    invoke-static {v1, v2}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2100(Lcom/android/systemui/fingerprint/FingerprintDialogView;I)V
+    invoke-static {v1, v2}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2200(Lcom/android/systemui/fingerprint/FingerprintDialogView;I)V
 
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
@@ -564,7 +585,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    invoke-static {v2}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$1900(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Landroid/os/PowerManager;
+    invoke-static {v2}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2000(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Landroid/os/PowerManager;
 
     move-result-object v2
 
@@ -588,7 +609,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$1900(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Landroid/os/PowerManager;
+    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2000(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Landroid/os/PowerManager;
 
     move-result-object v0
 
@@ -680,7 +701,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    invoke-static {v2}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$1800(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+    invoke-static {v2}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$1900(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
     move-result-object v2
 
@@ -718,7 +739,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$1800(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$1900(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
     move-result-object v0
 
@@ -842,7 +863,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2700(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;
+    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2800(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;
 
     move-result-object v0
 
@@ -850,7 +871,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$7;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2700(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;
+    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$2800(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;
 
     move-result-object v0
 

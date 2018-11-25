@@ -149,7 +149,7 @@
 
     invoke-super {p0, p1}, Landroid/support/v14/preference/PreferenceFragment;->onActivityCreated(Landroid/os/Bundle;)V
 
-    const-string v0, "sysui_keyguard_left"
+    const-string/jumbo v0, "sysui_keyguard_left"
 
     iget-object v1, p0, Lcom/android/systemui/tuner/ShortcutPicker;->mKey:Ljava/lang/String;
 
@@ -163,7 +163,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1103a9
+    const v1, 0x7f1103aa
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->setTitle(I)V
 
@@ -174,7 +174,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1103aa
+    const v1, 0x7f1103ab
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->setTitle(I)V
 
@@ -209,7 +209,7 @@
 
     invoke-direct {v3, v0}, Landroid/support/v7/preference/PreferenceCategory;-><init>(Landroid/content/Context;)V
 
-    const v4, 0x7f11063b
+    const v4, 0x7f110643
 
     invoke-virtual {v3, v4}, Landroid/support/v7/preference/PreferenceCategory;->setTitle(I)V
 
@@ -227,13 +227,13 @@
 
     iget-object v4, p0, Lcom/android/systemui/tuner/ShortcutPicker;->mNonePreference:Lcom/android/systemui/tuner/SelectablePreference;
 
-    const v5, 0x7f1103a8
+    const v5, 0x7f1103a9
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/tuner/SelectablePreference;->setTitle(I)V
 
     iget-object v4, p0, Lcom/android/systemui/tuner/ShortcutPicker;->mNonePreference:Lcom/android/systemui/tuner/SelectablePreference;
 
-    const v5, 0x7f08037b
+    const v5, 0x7f08039c
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/tuner/SelectablePreference;->setIcon(I)V
 

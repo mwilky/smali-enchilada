@@ -15,16 +15,16 @@
 
 
 # static fields
-.field public static final divider:I = 0x7f0a0113
+.field public static final divider:I = 0x7f0a0117
 
-.field public static final icon_frame:I = 0x7f0a0199
+.field public static final icon_frame:I = 0x7f0a019d
 
-.field public static final last_updated:I = 0x7f0a01eb
+.field public static final last_updated:I = 0x7f0a01f0
 
-.field public static final remote_input_progress:I = 0x7f0a0341
+.field public static final remote_input_progress:I = 0x7f0a034a
 
-.field public static final remote_input_send:I = 0x7f0a0342
+.field public static final remote_input_send:I = 0x7f0a034b
 
-.field public static final text_see_more:I = 0x7f0a03f8
+.field public static final text_see_more:I = 0x7f0a0401
 
-.field public static final text_see_more_count:I = 0x7f0a03f9
+.field public static final text_see_more_count:I = 0x7f0a0402

@@ -170,13 +170,13 @@
 
     cmp-long v5, v10, v12
 
-    const v10, 0x7f1104c8
+    const v10, 0x7f1104d0
 
-    const v11, 0x7f1104ca
+    const v11, 0x7f1104d2
 
     if-gtz v5, :cond_1
 
-    const v5, 0x7f1104cd
+    const v5, 0x7f1104d5
 
     iget-wide v12, v1, Lcom/android/settingslib/net/DataUsageController$DataUsageInfo;->limitLevel:J
 
@@ -215,7 +215,7 @@
     goto :goto_1
 
     :cond_1
-    const v5, 0x7f1104cc
+    const v5, 0x7f1104d4
 
     iget-wide v6, v1, Lcom/android/settingslib/net/DataUsageController$DataUsageInfo;->usageLevel:J
 
@@ -263,11 +263,11 @@
 
     :cond_2
     :goto_0
-    const v5, 0x7f1104c9
+    const v5, 0x7f1104d1
 
     iget-wide v12, v1, Lcom/android/settingslib/net/DataUsageController$DataUsageInfo;->usageLevel:J
 
-    const v6, 0x7f1104cb
+    const v6, 0x7f1104d3
 
     new-array v7, v8, [Ljava/lang/Object;
 
@@ -303,7 +303,7 @@
 
     invoke-virtual {v7, v5}, Landroid/widget/TextView;->setText(I)V
 
-    const v10, 0x7f0a044e
+    const v10, 0x7f0a0457
 
     invoke-virtual {v0, v10}, Lcom/android/systemui/qs/tiles/DataUsageDetailView;->findViewById(I)Landroid/view/View;
 
@@ -319,7 +319,7 @@
 
     invoke-virtual {v10, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const v11, 0x7f0a044a
+    const v11, 0x7f0a0453
 
     invoke-virtual {v0, v11}, Lcom/android/systemui/qs/tiles/DataUsageDetailView;->findViewById(I)Landroid/view/View;
 
@@ -347,7 +347,7 @@
 
     invoke-virtual/range {v17 .. v23}, Lcom/android/systemui/qs/DataUsageGraph;->setLevels(JJJ)V
 
-    const v2, 0x7f0a0449
+    const v2, 0x7f0a0452
 
     invoke-virtual {v0, v2}, Lcom/android/systemui/qs/tiles/DataUsageDetailView;->findViewById(I)Landroid/view/View;
 
@@ -359,7 +359,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const v3, 0x7f0a044d
+    const v3, 0x7f0a0456
 
     invoke-virtual {v0, v3}, Lcom/android/systemui/qs/tiles/DataUsageDetailView;->findViewById(I)Landroid/view/View;
 
@@ -371,7 +371,7 @@
 
     invoke-virtual {v3, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const v8, 0x7f0a044c
+    const v8, 0x7f0a0455
 
     invoke-virtual {v0, v8}, Lcom/android/systemui/qs/tiles/DataUsageDetailView;->findViewById(I)Landroid/view/View;
 
@@ -393,7 +393,7 @@
 
     invoke-virtual {v8, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const v14, 0x7f0a044b
+    const v14, 0x7f0a0454
 
     invoke-virtual {v0, v14}, Lcom/android/systemui/qs/tiles/DataUsageDetailView;->findViewById(I)Landroid/view/View;
 
@@ -472,31 +472,31 @@
 
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    const v0, 0x7f07053c
+    const v0, 0x7f07053e
 
     const v1, 0x1020016
 
     invoke-static {p0, v1, v0}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/view/View;II)V
 
-    const v1, 0x7f0a044e
+    const v1, 0x7f0a0457
 
-    const v2, 0x7f07053d
+    const v2, 0x7f07053f
 
     invoke-static {p0, v1, v2}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/view/View;II)V
 
-    const v1, 0x7f0a0449
+    const v1, 0x7f0a0452
 
     invoke-static {p0, v1, v0}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/view/View;II)V
 
-    const v1, 0x7f0a044c
+    const v1, 0x7f0a0455
 
     invoke-static {p0, v1, v0}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/view/View;II)V
 
-    const v1, 0x7f0a044d
+    const v1, 0x7f0a0456
 
     invoke-static {p0, v1, v0}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/view/View;II)V
 
-    const v1, 0x7f0a044b
+    const v1, 0x7f0a0454
 
     invoke-static {p0, v1, v0}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/view/View;II)V
 

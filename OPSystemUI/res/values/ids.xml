@@ -95,10 +95,12 @@
     <item type="id" name="background_container">false</item>
     <item type="id" name="background_imagein">false</item>
     <item type="id" name="background_imageout">false</item>
+    <item type="id" name="background_view">false</item>
     <item type="id" name="bar1">false</item>
     <item type="id" name="bar2">false</item>
     <item type="id" name="bar3">false</item>
     <item type="id" name="battery">false</item>
+    <item type="id" name="battery_level">false</item>
     <item type="id" name="battery_percentage_view">false</item>
     <item type="id" name="block">false</item>
     <item type="id" name="block_prompt">false</item>
@@ -161,6 +163,8 @@
     <item type="id" name="close_button">false</item>
     <item type="id" name="confirmation">false</item>
     <item type="id" name="confirmation_text">false</item>
+    <item type="id" name="connect">false</item>
+    <item type="id" name="connect_status">false</item>
     <item type="id" name="connected_device_network_signal">false</item>
     <item type="id" name="connected_device_signals">false</item>
     <item type="id" name="connected_device_signals_stub">false</item>
@@ -364,6 +368,7 @@
     <item type="id" name="incompatible_app_toast_stub">false</item>
     <item type="id" name="increment">false</item>
     <item type="id" name="info_field">false</item>
+    <item type="id" name="info_view">false</item>
     <item type="id" name="initial">false</item>
     <item type="id" name="inout_container">false</item>
     <item type="id" name="input_am_pm_parent">false</item>
@@ -600,6 +605,7 @@
     <item type="id" name="on">false</item>
     <item type="id" name="onboarding_fragment_root">false</item>
     <item type="id" name="onboarding_text">false</item>
+    <item type="id" name="op_aod_fp_indication_text">false</item>
     <item type="id" name="op_fingerprint_animation_view_1">false</item>
     <item type="id" name="op_fingerprint_animation_view_2">false</item>
     <item type="id" name="op_fingerprint_animation_view_3">false</item>
@@ -607,9 +613,11 @@
     <item type="id" name="op_fingerprint_animation_view_5">false</item>
     <item type="id" name="op_fingerprint_dim_view">false</item>
     <item type="id" name="op_fingerprint_icon">false</item>
+    <item type="id" name="op_fingerprint_icon_dim">false</item>
     <item type="id" name="op_fingerprint_icon_disable">false</item>
     <item type="id" name="op_fingerprint_icon_white">false</item>
     <item type="id" name="op_fingerprint_view">false</item>
+    <item type="id" name="op_headset">false</item>
     <item type="id" name="op_snackbar_action">false</item>
     <item type="id" name="op_snackbar_text">false</item>
     <item type="id" name="op_textinput_counter">false</item>
@@ -675,6 +683,7 @@
     <item type="id" name="prevent_view_top_tag_view2">false</item>
     <item type="id" name="preview_container">false</item>
     <item type="id" name="primary_icon">false</item>
+    <item type="id" name="progress_bar">false</item>
     <item type="id" name="progress_circular">false</item>
     <item type="id" name="progress_horizontal">false</item>
     <item type="id" name="progress_number">false</item>
@@ -981,6 +990,7 @@
     <item type="id" name="vpn_disclosures">false</item>
     <item type="id" name="vpn_subtitle">false</item>
     <item type="id" name="vpn_warning">false</item>
+    <item type="id" name="wallpaper_view">false</item>
     <item type="id" name="welcome">false</item>
     <item type="id" name="widget_icon">false</item>
     <item type="id" name="width">false</item>
@@ -997,6 +1007,8 @@
     <item type="id" name="wireless_charging_text_layout">false</item>
     <item type="id" name="wireless_charging_view">false</item>
     <item type="id" name="world">false</item>
+    <item type="id" name="wrap_charging_layout">false</item>
+    <item type="id" name="wrap_view">false</item>
     <item type="id" name="x_animator_tag">false</item>
     <item type="id" name="x_animator_tag_end_value">false</item>
     <item type="id" name="x_animator_tag_start_value">false</item>
@@ -1025,7 +1037,4 @@
     <item type="id" name="zzz_global_action_panel">false</item>
     <item type="id" name="zzz_global_action_view">false</item>
     <item type="id" name="zzz_global_action_view_bg">false</item>
-    <item type="id" name="clock_right">false</item>
-    <item type="id" name="battery_left">false</item>
-    <item type="id" name="battery_left_visible_tag">false</item>
 </resources>

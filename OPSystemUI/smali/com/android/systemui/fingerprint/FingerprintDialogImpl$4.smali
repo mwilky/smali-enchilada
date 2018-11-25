@@ -62,7 +62,7 @@
     move v2, v3
 
     :goto_0
-    invoke-static {v0, v2}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2502(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Z)Z
+    invoke-static {v0, v2}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2402(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Z)Z
 
     sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
@@ -80,7 +80,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$4;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
-    invoke-static {v2}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2500(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Z
+    invoke-static {v2}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2400(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Z
 
     move-result v2
 

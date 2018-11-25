@@ -331,17 +331,17 @@
     return v0
 
     :pswitch_1
-    const v0, 0x7f0a01de
+    const v0, 0x7f0a01e3
 
     return v0
 
     :pswitch_2
-    const v0, 0x7f0a01dd
+    const v0, 0x7f0a01e2
 
     return v0
 
     :pswitch_3
-    const v0, 0x7f0a01d5
+    const v0, 0x7f0a01da
 
     return v0
 
@@ -354,17 +354,17 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0a01d8
+    const v0, 0x7f0a01dd
 
     return v0
 
     :cond_0
-    const v0, 0x7f0a01d7
+    const v0, 0x7f0a01dc
 
     return v0
 
     :pswitch_5
-    const v0, 0x7f0a01d6
+    const v0, 0x7f0a01db
 
     return v0
 
@@ -588,7 +588,7 @@
     :pswitch_0
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f110331
+    const v5, 0x7f110332
 
     new-array v3, v3, [Ljava/lang/Object;
 
@@ -613,7 +613,7 @@
     :pswitch_1
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f110330
+    const v5, 0x7f110331
 
     new-array v3, v3, [Ljava/lang/Object;
 
@@ -638,7 +638,7 @@
     :pswitch_2
     iget-object v4, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f110333
+    const v5, 0x7f110334
 
     new-array v3, v3, [Ljava/lang/Object;
 
@@ -727,7 +727,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f110429
+    const v3, 0x7f11042a
 
     const/4 v4, 0x0
 
@@ -949,17 +949,17 @@
     goto :goto_0
 
     :pswitch_0
-    const v1, 0x7f11035f
+    const v1, 0x7f110360
 
     goto :goto_0
 
     :pswitch_1
-    const v1, 0x7f110361
+    const v1, 0x7f110362
 
     goto :goto_0
 
     :pswitch_2
-    const v1, 0x7f110360
+    const v1, 0x7f110361
 
     nop
 
@@ -1035,7 +1035,7 @@
     :pswitch_0
     iget-object v3, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f110335
+    const v4, 0x7f110336
 
     new-array v2, v2, [Ljava/lang/Object;
 
@@ -1054,7 +1054,7 @@
     :pswitch_1
     iget-object v3, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f110334
+    const v4, 0x7f110335
 
     new-array v2, v2, [Ljava/lang/Object;
 
@@ -1073,7 +1073,7 @@
     :pswitch_2
     iget-object v3, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f110336
+    const v4, 0x7f110337
 
     new-array v2, v2, [Ljava/lang/Object;
 
@@ -1192,7 +1192,7 @@
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    const v1, 0x7f0a014e
+    const v1, 0x7f0a0152
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1204,7 +1204,7 @@
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    const v1, 0x7f0a014f
+    const v1, 0x7f0a0153
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1269,6 +1269,14 @@
 
 # virtual methods
 .method public getCurrentSecurityMode()Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mCurrentSecuritySelection:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
+
+    return-object v0
+.end method
+
+.method public getCurrentSecuritySelection()Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
     .locals 1
 
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mCurrentSecuritySelection:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
@@ -1416,7 +1424,7 @@
 .method protected onFinishInflate()V
     .locals 2
 
-    const v0, 0x7f0a045a
+    const v0, 0x7f0a0463
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardSecurityContainer;->findViewById(I)Landroid/view/View;
 
@@ -1894,7 +1902,7 @@
 
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mSecurityIcon:Landroid/view/View;
 
-    const v1, 0x7f0a039c
+    const v1, 0x7f0a03a5
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2046,7 +2054,7 @@
     :goto_4
     move v6, v10
 
-    const v10, 0x7f080245
+    const v10, 0x7f080266
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setImageResource(I)V
 

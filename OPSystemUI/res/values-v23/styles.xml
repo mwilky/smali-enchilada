@@ -52,9 +52,18 @@
         <item name="darkIconTheme">@style/QSIconTheme</item>
         <item name="lightIconTheme">@style/QSIconTheme</item>
     </style>
+    <style name="oneplus_qs_theme_light" parent="@style/qs_base">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:tint">@color/oneplus_contorl_icon_color_active_light</item>
+        <item name="android:textColorTertiary">@color/oneplus_contorl_text_color_secondary_light</item>
+        <item name="android:colorControlNormal">#de000000</item>
+        <item name="android:colorPrimary">#ffe8e8e8</item>
+        <item name="android:colorBackgroundFloating">#fff2f2f2</item>
+        <item name="darkIconTheme">@style/QSIconTheme</item>
+        <item name="lightIconTheme">@style/QSIconTheme</item>
+    </style>
     <style name="qs_theme" parent="@style/qs_base">
         <item name="android:windowIsFloating">true</item>
-        <item name="android:tint">@color/oneplus_contorl_icon_color_accent_active_light</item>
         <item name="android:textColorTertiary">@color/oneplus_contorl_text_color_secondary_light</item>
         <item name="android:colorControlNormal">#de000000</item>
         <item name="android:colorPrimary">#ffe8e8e8</item>

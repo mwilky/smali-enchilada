@@ -935,7 +935,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0706b3
+    const v1, 0x7f0706b8
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -973,7 +973,7 @@
 
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
-    const v0, 0x7f0a0409
+    const v0, 0x7f0a0412
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardSliceView;->findViewById(I)Landroid/view/View;
 
@@ -983,7 +983,7 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardSliceView;->mTitle:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0357
+    const v0, 0x7f0a0360
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardSliceView;->findViewById(I)Landroid/view/View;
 

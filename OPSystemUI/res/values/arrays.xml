@@ -173,6 +173,7 @@
         <item>Qualcomm® aptX™ audio</item>
         <item>Qualcomm® aptX™ HD audio</item>
         <item>LDAC</item>
+        <item>Qualcomm® aptX™ Adaptive audio</item>
         <item>Enable Optional Codecs</item>
         <item>Disable Optional Codecs</item>
     </string-array>
@@ -183,6 +184,7 @@
         <item>Qualcomm® aptX™ audio</item>
         <item>Qualcomm® aptX™ HD audio</item>
         <item>LDAC</item>
+        <item>Qualcomm® aptX™ Adaptive audio</item>
         <item>Enable Optional Codecs</item>
         <item>Disable Optional Codecs</item>
     </string-array>
@@ -328,6 +330,36 @@
         <item>systrace</item>
         <item>error</item>
     </string-array>
+    <array name="fast_charging_start_animation1">
+        <item>@drawable/fast_charging_start_animation1_00</item>
+        <item>@drawable/fast_charging_start_animation1_01</item>
+        <item>@drawable/fast_charging_start_animation1_02</item>
+        <item>@drawable/fast_charging_start_animation1_03</item>
+        <item>@drawable/fast_charging_start_animation1_04</item>
+        <item>@drawable/fast_charging_start_animation1_05</item>
+        <item>@drawable/fast_charging_start_animation1_06</item>
+        <item>@drawable/fast_charging_start_animation1_07</item>
+        <item>@drawable/fast_charging_start_animation1_08</item>
+        <item>@drawable/fast_charging_start_animation1_09</item>
+        <item>@drawable/fast_charging_start_animation1_10</item>
+        <item>@drawable/fast_charging_start_animation1_11</item>
+        <item>@drawable/fast_charging_start_animation1_12</item>
+        <item>@drawable/fast_charging_start_animation1_13</item>
+        <item>@drawable/fast_charging_start_animation1_14</item>
+        <item>@drawable/fast_charging_start_animation1_15</item>
+        <item>@drawable/fast_charging_start_animation1_16</item>
+        <item>@drawable/fast_charging_start_animation1_17</item>
+        <item>@drawable/fast_charging_start_animation1_18</item>
+        <item>@drawable/fast_charging_start_animation1_19</item>
+        <item>@drawable/fast_charging_start_animation1_20</item>
+        <item>@drawable/fast_charging_start_animation1_21</item>
+        <item>@drawable/fast_charging_start_animation1_22</item>
+        <item>@drawable/fast_charging_start_animation1_23</item>
+        <item>@drawable/fast_charging_start_animation1_24</item>
+        <item>@drawable/fast_charging_start_animation1_25</item>
+        <item>@drawable/fast_charging_start_animation1_26</item>
+        <item>@drawable/fast_charging_start_animation1_27</item>
+    </array>
     <string-array name="hdcp_checking_summaries">
         <item>Never use HDCP checking</item>
         <item>Use HDCP checking for DRM content only</item>

@@ -141,7 +141,7 @@
     move v2, v1
 
     :goto_0
-    const v3, 0x7f0a00ce
+    const v3, 0x7f0a00d2
 
     if-ge v2, v0, :cond_1
 

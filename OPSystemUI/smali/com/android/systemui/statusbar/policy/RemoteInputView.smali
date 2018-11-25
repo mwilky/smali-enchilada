@@ -157,7 +157,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d01a8
+    const v1, 0x7f0d01ac
 
     const/4 v2, 0x0
 
@@ -950,7 +950,7 @@
 
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
-    const v0, 0x7f0a0341
+    const v0, 0x7f0a034a
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/policy/RemoteInputView;->findViewById(I)Landroid/view/View;
 
@@ -960,7 +960,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/RemoteInputView;->mProgressBar:Landroid/widget/ProgressBar;
 
-    const v0, 0x7f0a0342
+    const v0, 0x7f0a034b
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/policy/RemoteInputView;->findViewById(I)Landroid/view/View;
 

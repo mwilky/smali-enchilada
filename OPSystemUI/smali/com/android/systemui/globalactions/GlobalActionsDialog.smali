@@ -149,7 +149,7 @@
 
     new-instance v1, Landroid/view/ContextThemeWrapper;
 
-    const v2, 0x7f120547
+    const v2, 0x7f120548
 
     invoke-direct {v1, p1, v2}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
@@ -1908,7 +1908,7 @@
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f120547
+    const v0, 0x7f120542
 
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog;->mContext:Landroid/content/Context;

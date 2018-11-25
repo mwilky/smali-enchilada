@@ -56,7 +56,7 @@
 .method public onFinishInflate()V
     .locals 4
 
-    const v0, 0x7f0a0277
+    const v0, 0x7f0a027c
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/car/CarNavigationBarView;->findViewById(I)Landroid/view/View;
 
@@ -64,7 +64,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/car/CarNavigationBarView;->mNavButtons:Landroid/view/View;
 
-    const v0, 0x7f0a021e
+    const v0, 0x7f0a0223
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/car/CarNavigationBarView;->findViewById(I)Landroid/view/View;
 
@@ -72,7 +72,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/car/CarNavigationBarView;->mLockScreenButtons:Landroid/view/View;
 
-    const v0, 0x7f0a02a5
+    const v0, 0x7f0a02aa
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/car/CarNavigationBarView;->findViewById(I)Landroid/view/View;
 
@@ -95,7 +95,7 @@
     invoke-virtual {v0, v1}, Lcom/android/keyguard/AlphaOptimizedImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :cond_0
-    const v0, 0x7f0a03cc
+    const v0, 0x7f0a03d5
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/car/CarNavigationBarView;->findViewById(I)Landroid/view/View;
 
