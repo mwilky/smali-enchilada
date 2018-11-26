@@ -24,7 +24,7 @@
     <shortcode country="es" free="116\\d{3}|22791|222145|22189" premium="[23][57]\\d{3}|280\\d{2}|[79]9[57]\\d{3}" />
     <shortcode country="fi" free="116\\d{3}|14789" pattern="\\d{5,6}" premium="0600.*|0700.*|171(?:59|63)" />
     <shortcode country="fr" free="3\\d{4}|116\\d{3}|21101|20366" premium="[4-8]\\d{4}" />
-    <shortcode country="gb" free="116\\d{3}|2020|35890|61002|61202|887|83669|34664|40406|60174|7726|37726" pattern="\\d{4,6}" premium="[5-8]\\d{4}" />
+    <shortcode country="gb" free="116\\d{3}|2020|35890|61002|61202|887|83669|34664|40406|60174|7726|37726|88555|9017|9018" pattern="\\d{4,6}" premium="[5-8]\\d{4}" />
     <shortcode country="ge" pattern="\\d{4}" premium="801[234]|888[239]" />
     <shortcode country="gh" free="5041" pattern="\\d{4}" />
     <shortcode country="gr" free="116\\d{3}|12115" pattern="\\d{5}" premium="54\\d{3}|19[0-5]\\d{2}" />

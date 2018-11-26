@@ -301,6 +301,7 @@
     <string name="config_datause_iface">rmnet0</string>
     <string name="config_defaultAccessibilityService">com.google.android.marvin.talkback/.TalkBackService</string>
     <string name="config_defaultAssistantAccessPackage">com.google.android.ext.services</string>
+    <string name="config_defaultAssistantComponentName" />
     <string name="config_defaultAutofillService">com.google.android.gms/.autofill.service.AutofillService</string>
     <string name="config_defaultCellBroadcastReceiverPkg">com.android.cellbroadcastreceiver</string>
     <string name="config_defaultDndAccessPackages">com.android.camera2</string>
@@ -325,7 +326,7 @@
     <string name="config_feedbackIntentExtraKey" />
     <string name="config_feedbackIntentNameKey" />
     <string name="config_forceVoiceInteractionServicePackage" />
-    <string name="config_fusedLocationProviderPackageName">com.qualcomm.location</string>
+    <string name="config_fusedLocationProviderPackageName">com.android.location.fused</string>
     <string name="config_geocoderProviderPackageName">@null</string>
     <string name="config_geofenceProviderPackageName">@null</string>
     <string name="config_hardwareFlpPackageName">com.android.location.fused</string>
@@ -1857,26 +1858,26 @@ Do you want to close it?"</string>
     <item type="string" name="APKTOOL_DUMMY_119">false</item>
     <item type="string" name="APKTOOL_DUMMY_11a">false</item>
     <item type="string" name="APKTOOL_DUMMY_11b">false</item>
-    <item type="string" name="APKTOOL_DUMMY_20e">false</item>
-    <item type="string" name="APKTOOL_DUMMY_266">false</item>
-    <item type="string" name="APKTOOL_DUMMY_288">false</item>
-    <item type="string" name="APKTOOL_DUMMY_2bd">false</item>
-    <item type="string" name="APKTOOL_DUMMY_2f4">false</item>
-    <item type="string" name="APKTOOL_DUMMY_320">false</item>
+    <item type="string" name="APKTOOL_DUMMY_20f">false</item>
+    <item type="string" name="APKTOOL_DUMMY_267">false</item>
+    <item type="string" name="APKTOOL_DUMMY_289">false</item>
+    <item type="string" name="APKTOOL_DUMMY_2be">false</item>
+    <item type="string" name="APKTOOL_DUMMY_2f5">false</item>
     <item type="string" name="APKTOOL_DUMMY_321">false</item>
-    <item type="string" name="APKTOOL_DUMMY_430">false</item>
-    <item type="string" name="APKTOOL_DUMMY_438">false</item>
-    <item type="string" name="APKTOOL_DUMMY_479">false</item>
-    <item type="string" name="APKTOOL_DUMMY_49c">false</item>
-    <item type="string" name="APKTOOL_DUMMY_4a4">false</item>
-    <item type="string" name="APKTOOL_DUMMY_509">false</item>
-    <item type="string" name="APKTOOL_DUMMY_52c">false</item>
-    <item type="string" name="APKTOOL_DUMMY_534">false</item>
-    <item type="string" name="APKTOOL_DUMMY_57b">false</item>
-    <item type="string" name="APKTOOL_DUMMY_58c">false</item>
+    <item type="string" name="APKTOOL_DUMMY_322">false</item>
+    <item type="string" name="APKTOOL_DUMMY_431">false</item>
+    <item type="string" name="APKTOOL_DUMMY_439">false</item>
+    <item type="string" name="APKTOOL_DUMMY_47a">false</item>
+    <item type="string" name="APKTOOL_DUMMY_49d">false</item>
+    <item type="string" name="APKTOOL_DUMMY_4a5">false</item>
+    <item type="string" name="APKTOOL_DUMMY_50a">false</item>
+    <item type="string" name="APKTOOL_DUMMY_52d">false</item>
+    <item type="string" name="APKTOOL_DUMMY_535">false</item>
+    <item type="string" name="APKTOOL_DUMMY_57c">false</item>
     <item type="string" name="APKTOOL_DUMMY_58d">false</item>
     <item type="string" name="APKTOOL_DUMMY_58e">false</item>
     <item type="string" name="APKTOOL_DUMMY_58f">false</item>
     <item type="string" name="APKTOOL_DUMMY_590">false</item>
-    <item type="string" name="APKTOOL_DUMMY_593">false</item>
+    <item type="string" name="APKTOOL_DUMMY_591">false</item>
+    <item type="string" name="APKTOOL_DUMMY_594">false</item>
 </resources>
