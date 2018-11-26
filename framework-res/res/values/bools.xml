@@ -68,7 +68,7 @@
     <bool name="config_disableMenuKeyInLockScreen">false</bool>
     <bool name="config_disableTransitionAnimation">false</bool>
     <bool name="config_disableUsbPermissionDialogs">false</bool>
-    <bool name="config_displayBlanksAfterDoze">true</bool>
+    <bool name="config_displayBlanksAfterDoze">false</bool>
     <bool name="config_displayBrightnessBucketsInDoze">false</bool>
     <bool name="config_display_no_service_when_sim_unready">false</bool>
     <bool name="config_dontPreferApn">false</bool>

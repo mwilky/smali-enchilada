@@ -200,8 +200,8 @@
     <integer name="config_wifi_framework_soft_ap_timeout_delay">600000</integer>
     <integer name="config_wifi_framework_wifi_score_bad_link_speed_24">6</integer>
     <integer name="config_wifi_framework_wifi_score_bad_link_speed_5">12</integer>
-    <integer name="config_wifi_framework_wifi_score_bad_rssi_threshold_24GHz">-85</integer>
-    <integer name="config_wifi_framework_wifi_score_bad_rssi_threshold_5GHz">-82</integer>
+    <integer name="config_wifi_framework_wifi_score_bad_rssi_threshold_24GHz">-82</integer>
+    <integer name="config_wifi_framework_wifi_score_bad_rssi_threshold_5GHz">-79</integer>
     <integer name="config_wifi_framework_wifi_score_entry_rssi_threshold_24GHz">-85</integer>
     <integer name="config_wifi_framework_wifi_score_entry_rssi_threshold_5GHz">-82</integer>
     <integer name="config_wifi_framework_wifi_score_good_link_speed_24">24</integer>

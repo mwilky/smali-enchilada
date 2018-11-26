@@ -215,6 +215,8 @@
         <item>restart</item>
         <item>lockdown</item>
         <item>logout</item>
+        <item>recovery</item>
+        <item>bootloader</item>
         <item>bugreport</item>
         <item>screenshot</item>
     </string-array>
@@ -223,7 +225,7 @@
         <item>SUPL_PORT=7275</item>
         <item>SUPL_VER=0x20000</item>
         <item>SUPL_MODE=1</item>
-        <item>SUPL_ES=0</item>
+        <item>SUPL_ES=1</item>
         <item>LPP_PROFILE=2</item>
         <item>USE_EMERGENCY_PDN_FOR_EMERGENCY_SUPL=1</item>
         <item>A_GLONASS_POS_PROTOCOL_SELECT=0</item>
@@ -406,78 +408,7 @@
         <item>1000</item>
         <item>1023</item>
     </integer-array>
-    <integer-array name="config_screenBrightnessBacklight_alt">
-         <item>52</item>
-        <item>54</item>
-        <item>56</item>
-        <item>58</item>
-        <item>60</item>
-        <item>62</item>
-        <item>66</item>
-        <item>70</item>
-        <item>74</item>
-        <item>78</item>
-        <item>82</item>
-        <item>86</item>
-        <item>90</item>
-        <item>94</item>
-        <item>98</item>
-        <item>102</item>
-        <item>106</item>
-        <item>120</item>
-        <item>124</item>
-        <item>128</item>
-        <item>132</item>
-        <item>136</item>
-        <item>140</item>
-        <item>150</item>
-        <item>170</item>
-        <item>190</item>
-        <item>210</item>
-        <item>230</item>
-        <item>250</item>
-        <item>270</item>
-        <item>290</item>
-        <item>310</item>
-        <item>330</item>
-        <item>350</item>
-        <item>370</item>
-        <item>390</item>
-        <item>410</item>
-        <item>430</item>
-        <item>450</item>
-        <item>480</item>
-        <item>500</item>
-        <item>510</item>
-        <item>530</item>
-        <item>550</item>
-        <item>570</item>
-        <item>590</item>
-        <item>610</item>
-        <item>630</item>
-        <item>650</item>
-        <item>670</item>
-        <item>690</item>
-        <item>710</item>
-        <item>720</item>
-        <item>740</item>
-        <item>750</item>
-        <item>770</item>
-        <item>790</item>
-        <item>810</item>
-        <item>830</item>
-        <item>850</item>
-        <item>870</item>
-        <item>890</item>
-        <item>900</item>
-        <item>910</item>
-        <item>930</item>
-        <item>950</item>
-        <item>970</item>
-        <item>980</item>
-        <item>1000</item>
-        <item>1023</item>
-    </integer-array>
+    <array name="config_screenBrightnessBacklight_255" />
     <array name="config_screenBrightnessNits">
         <item>2.0482</item>
         <item>2.543</item>
