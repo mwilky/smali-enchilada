@@ -100,7 +100,7 @@
 
     nop
 
-    const v5, 0x7f1210fa
+    const v5, 0x7f1210ff
 
     invoke-virtual {p0, v5}, Lcom/android/settings/deviceinfo/StorageSettings$VolumeUnmountedFragment;->getText(I)Ljava/lang/CharSequence;
 
@@ -132,7 +132,7 @@
 
     invoke-direct {v5, p0, v3, v0}, Lcom/android/settings/deviceinfo/StorageSettings$VolumeUnmountedFragment$1;-><init>(Lcom/android/settings/deviceinfo/StorageSettings$VolumeUnmountedFragment;Landroid/os/storage/VolumeInfo;Landroid/content/Context;)V
 
-    const v6, 0x7f121115
+    const v6, 0x7f12111a
 
     invoke-virtual {v4, v6, v5}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

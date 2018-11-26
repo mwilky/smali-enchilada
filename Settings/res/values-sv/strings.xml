@@ -2727,7 +2727,7 @@ Risktip: Ansiktsupplåsning är mindre säkert än fingeravtryck och lösenord"<
     <string name="oneplus_font_style">Teckensnitt</string>
     <string name="oneplus_font_switch">Teckensnittsbyte</string>
     <string name="oneplus_force_factory_reset_summary">Lösenord för autostart har aktiverats. Intern lagring kommer att raderas</string>
-    <string name="oneplus_forum_award_summary">Denna gemenskap är ditt. Bara du kan definiera vår väg. Tillsammans definierar och förfinar vi den. Bryta vägen och skriva koder. Detta är för dig. Tack för att du drömmer med oss!</string>
+    <string name="oneplus_forum_award_summary">Denna gemenskap är er. Bara ni kan definiera vår väg. Tillsammans definierar och förfinar vi den. Bryta vägen och skriva koder. Detta är för dig. Tack för att du drömmer med oss!</string>
     <string name="oneplus_forum_award_title">Pris</string>
     <string name="oneplus_fullscreen_back_guide_summary">Svep upp från vänster eller höger sida på botten av skärmen</string>
     <string name="oneplus_fullscreen_back_guide_title">Bakåt</string>
@@ -2819,6 +2819,9 @@ Svep uppåt från botten av skärmen för att gå till startsidan."</string>
     <string name="oneplus_lock_buttons">Låsknappar</string>
     <string name="oneplus_lock_buttons_summary">Lås kapacitiva knappar när spelläge är aktiverat</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">Om du väljer att hoppa över inspelning av ansiktsdata rekommenderas du att aktivera en annan metod, som till exempel fingeravtryck eller en pin-kod för att skydda din enhet och personlig information. Du kan även ställa in ett lösenord på vissa appar. För att aktivera skyddet går du till \"Inställningar\" > \"Säkerhet &amp; låsskärm\".</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">Ställ in lösenord för att använda ansiktsupplåsning eller fingeravtryck</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">Ställ in mönster för att använda ansiktsupplåsning eller fingeravtryck</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">Ställ in pinkod för att använda ansiktsupplåsning eller fingeravtryck</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Försök igen</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">För många felaktiga försök!</string>
     <string name="oneplus_max_shortcuts_tips">Du kan lägga till upp till 6 genvägar</string>
@@ -5051,6 +5054,10 @@ Tryck på "<b>Tillbaka</b> om du vill ansluta till ett annat Wi-Fi-nätverk.</st
     <string name="wifi_tap_to_sign_in">Tryck här om du vill logga in på nätverket</string>
     <string name="wifi_tether_configure_ap_text">Konfigurera surfzon via Wi-Fi</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Efter 10 minuters inaktivitet</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Efter 15 minuters inaktivitet</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Efter 5 minuters inaktivitet</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Alltid på</string>
     <string name="wifi_tether_disabled_by_airplane">Det går inte att använda surfzoner eftersom flygplansläget är aktiverat</string>
     <string name="wifi_tether_enabled_subtext">%1$s är aktiv</string>
     <string name="wifi_tether_failed_subtext">Fel på mobil Wi-Fi-surfzon</string>

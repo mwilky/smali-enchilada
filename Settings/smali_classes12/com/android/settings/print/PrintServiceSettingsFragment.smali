@@ -283,13 +283,13 @@
 
     move-result v2
 
-    const v3, 0x7f0a0334
+    const v3, 0x7f0a0337
 
-    const v4, 0x7f0a0259
+    const v4, 0x7f0a025c
 
     const v5, 0x7f0d008a
 
-    const v6, 0x7f0a01b9
+    const v6, 0x7f0a01bc
 
     const/4 v7, 0x0
 
@@ -328,7 +328,7 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    const v4, 0x7f120e5b
+    const v4, 0x7f120e60
 
     invoke-virtual {p0, v4}, Lcom/android/settings/print/PrintServiceSettingsFragment;->getString(I)Ljava/lang/String;
 
@@ -369,7 +369,7 @@
 
     move-result v2
 
-    const v3, 0x7f0a01ba
+    const v3, 0x7f0a01bd
 
     if-eq v2, v3, :cond_2
 
@@ -446,7 +446,7 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    const v4, 0x7f120e52
+    const v4, 0x7f120e57
 
     invoke-virtual {p0, v4}, Lcom/android/settings/print/PrintServiceSettingsFragment;->getString(I)Ljava/lang/String;
 
@@ -658,7 +658,7 @@
 
     invoke-virtual {p2, v0, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 
-    const v0, 0x7f0a0430
+    const v0, 0x7f0a0433
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -682,7 +682,7 @@
     invoke-interface {p1, v0}, Landroid/view/Menu;->removeItem(I)V
 
     :goto_0
-    const v0, 0x7f0a0432
+    const v0, 0x7f0a0435
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -706,7 +706,7 @@
     invoke-interface {p1, v0}, Landroid/view/Menu;->removeItem(I)V
 
     :goto_1
-    const v0, 0x7f0a0431
+    const v0, 0x7f0a0434
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 

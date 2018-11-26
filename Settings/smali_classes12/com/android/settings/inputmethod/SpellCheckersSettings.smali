@@ -148,7 +148,7 @@
 
     if-nez p1, :cond_0
 
-    const v0, 0x7f1210b1
+    const v0, 0x7f1210b6
 
     invoke-virtual {p0, v0}, Lcom/android/settings/inputmethod/SpellCheckersSettings;->getString(I)Ljava/lang/String;
 
@@ -159,7 +159,7 @@
     :cond_0
     if-nez p2, :cond_1
 
-    const v0, 0x7f1212dd
+    const v0, 0x7f1212e2
 
     invoke-virtual {p0, v0}, Lcom/android/settings/inputmethod/SpellCheckersSettings;->getString(I)Ljava/lang/String;
 
@@ -231,7 +231,7 @@
     goto :goto_1
 
     :cond_1
-    const v2, 0x7f1210b1
+    const v2, 0x7f1210b6
 
     invoke-virtual {v0, v2}, Lcom/android/settings/inputmethod/SpellCheckerPreference;->setSummary(I)V
 
@@ -298,7 +298,7 @@
 
     invoke-direct {v3, v4}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v4, 0x7f120df4
+    const v4, 0x7f120df9
 
     invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -404,7 +404,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    const v1, 0x7f1210b4
+    const v1, 0x7f1210b9
 
     const/4 v2, 0x1
 
@@ -720,7 +720,7 @@
 
     iget-object v0, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
-    const v1, 0x7f1210b0
+    const v1, 0x7f1210b5
 
     invoke-virtual {v0, v1, v1}, Lcom/android/settings/widget/SwitchBar;->setSwitchBarText(II)V
 

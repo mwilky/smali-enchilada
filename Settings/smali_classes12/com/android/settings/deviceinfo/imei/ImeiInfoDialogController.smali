@@ -9,34 +9,34 @@
     .end annotation
 .end field
 
-.field static final ID_GSM_SETTINGS:I = 0x7f0a021f
+.field static final ID_GSM_SETTINGS:I = 0x7f0a0222
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 .end field
 
-.field static final ID_IMEI_SV_VALUE:I = 0x7f0a026c
+.field static final ID_IMEI_SV_VALUE:I = 0x7f0a026f
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 .end field
 
-.field static final ID_IMEI_VALUE:I = 0x7f0a026d
+.field static final ID_IMEI_VALUE:I = 0x7f0a0270
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 .end field
 
-.field static final ID_MEID_NUMBER_VALUE:I = 0x7f0a0332
+.field static final ID_MEID_NUMBER_VALUE:I = 0x7f0a0335
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 .end field
 
-.field private static final ID_MIN_NUMBER_LABEL:I = 0x7f0a0341
+.field private static final ID_MIN_NUMBER_LABEL:I = 0x7f0a0344
 
-.field static final ID_MIN_NUMBER_VALUE:I = 0x7f0a0342
+.field static final ID_MIN_NUMBER_VALUE:I = 0x7f0a0345
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 .end field
 
-.field static final ID_PRL_VERSION_VALUE:I = 0x7f0a043a
+.field static final ID_PRL_VERSION_VALUE:I = 0x7f0a043d
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 .end field
@@ -199,7 +199,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a0332
+    const v3, 0x7f0a0335
 
     invoke-virtual {v1, v3, v2}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->setText(ILjava/lang/CharSequence;)V
 
@@ -227,7 +227,7 @@
     const-string v2, ""
 
     :goto_0
-    const v3, 0x7f0a0342
+    const v3, 0x7f0a0345
 
     invoke-virtual {v1, v3, v2}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->setText(ILjava/lang/CharSequence;)V
 
@@ -241,9 +241,9 @@
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mDialog:Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
 
-    const v2, 0x7f0a0341
+    const v2, 0x7f0a0344
 
-    const v3, 0x7f1210dd
+    const v3, 0x7f1210e2
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -254,7 +254,7 @@
     :cond_1
     iget-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mDialog:Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
 
-    const v2, 0x7f0a043a
+    const v2, 0x7f0a043d
 
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->getCdmaPrlVersion()Ljava/lang/String;
 
@@ -274,7 +274,7 @@
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mDialog:Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
 
-    const v2, 0x7f0a026d
+    const v2, 0x7f0a0270
 
     iget-object v3, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
@@ -292,7 +292,7 @@
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mDialog:Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
 
-    const v2, 0x7f0a026c
+    const v2, 0x7f0a026f
 
     iget-object v3, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
@@ -313,7 +313,7 @@
     :cond_2
     iget-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mDialog:Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
 
-    const v2, 0x7f0a021f
+    const v2, 0x7f0a0222
 
     invoke-virtual {v1, v2}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->removeViewFromScreen(I)V
 
@@ -338,7 +338,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a026d
+    const v2, 0x7f0a0270
 
     invoke-virtual {v0, v2, v1}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->setText(ILjava/lang/CharSequence;)V
 
@@ -356,7 +356,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a026c
+    const v2, 0x7f0a026f
 
     invoke-virtual {v0, v2, v1}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->setText(ILjava/lang/CharSequence;)V
 

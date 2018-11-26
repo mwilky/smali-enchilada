@@ -104,7 +104,7 @@
 
     invoke-super {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;->initViews()V
 
-    const v0, 0x7f0a0183
+    const v0, 0x7f0a0186
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/SetupFingerprintEnrollFindSensor;->findViewById(I)Landroid/view/View;
 
@@ -231,7 +231,7 @@
 
     if-eqz v0, :cond_5
 
-    const v0, 0x7f0a03a7
+    const v0, 0x7f0a03aa
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/SetupFingerprintEnrollFindSensor;->findViewById(I)Landroid/view/View;
 

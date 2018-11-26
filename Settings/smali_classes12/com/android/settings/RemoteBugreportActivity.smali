@@ -43,7 +43,7 @@
 
     invoke-direct {v1, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f12101b
+    const v2, 0x7f121020
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -113,7 +113,7 @@
 
     invoke-direct {v2, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v3, 0x7f121018
+    const v3, 0x7f12101d
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -121,12 +121,12 @@
 
     if-ne v0, v1, :cond_3
 
-    const v1, 0x7f121016
+    const v1, 0x7f12101b
 
     goto :goto_1
 
     :cond_3
-    const v1, 0x7f121017
+    const v1, 0x7f12101c
 
     :goto_1
     invoke-virtual {v2, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
@@ -151,7 +151,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f121015
+    const v2, 0x7f12101a
 
     new-instance v3, Lcom/android/settings/RemoteBugreportActivity$3;
 

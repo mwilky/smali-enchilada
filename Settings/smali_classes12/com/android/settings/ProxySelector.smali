@@ -74,7 +74,7 @@
 .method private initView(Landroid/view/View;)V
     .locals 2
 
-    const v0, 0x7f0a0252
+    const v0, 0x7f0a0255
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -90,7 +90,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
-    const v0, 0x7f0a0422
+    const v0, 0x7f0a0425
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -112,7 +112,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
-    const v0, 0x7f0a01d7
+    const v0, 0x7f0a01da
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -160,7 +160,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a0175
+    const v0, 0x7f0a0178
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -238,27 +238,27 @@
     return v0
 
     :pswitch_0
-    const v0, 0x7f120e8a
+    const v0, 0x7f120e8f
 
     return v0
 
     :pswitch_1
-    const v0, 0x7f120e8c
+    const v0, 0x7f120e91
 
     return v0
 
     :pswitch_2
-    const v0, 0x7f120e89
+    const v0, 0x7f120e8e
 
     return v0
 
     :pswitch_3
-    const v0, 0x7f120e8b
+    const v0, 0x7f120e90
 
     return v0
 
     :pswitch_4
-    const v0, 0x7f120e88
+    const v0, 0x7f120e8d
 
     return v0
 
@@ -425,13 +425,13 @@
 
     invoke-direct {v5, v6}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v6, 0x7f120e86
+    const v6, 0x7f120e8b
 
     invoke-virtual {v5, v6}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v5
 
-    const v6, 0x7f120e87
+    const v6, 0x7f120e8c
 
     invoke-virtual {v5, v6, v0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -454,7 +454,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
 
-    const v0, 0x7f0d0224
+    const v0, 0x7f0d0227
 
     const/4 v1, 0x0
 
@@ -590,7 +590,7 @@
     goto :goto_1
 
     :cond_4
-    const v10, 0x7f120e94
+    const v10, 0x7f120e99
 
     invoke-virtual {v0, v10}, Landroid/app/Activity;->setTitle(I)V
 

@@ -413,7 +413,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->mSoftWareInfoView:Landroid/view/View;
 
-    const v1, 0x7f0a02f8
+    const v1, 0x7f0a02fb
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -423,7 +423,7 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->mSoftWareInfoView:Landroid/view/View;
 
-    const v2, 0x7f0a047e
+    const v2, 0x7f0a0481
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -433,7 +433,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->mSoftWareInfoView:Landroid/view/View;
 
-    const v3, 0x7f0a02fb
+    const v3, 0x7f0a02fe
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -443,7 +443,7 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->mSoftWareInfoView:Landroid/view/View;
 
-    const v4, 0x7f0a0482
+    const v4, 0x7f0a0485
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -453,7 +453,7 @@
 
     iget-object v4, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->mSoftWareInfoView:Landroid/view/View;
 
-    const v5, 0x7f0a02fa
+    const v5, 0x7f0a02fd
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -463,7 +463,7 @@
 
     iget-object v5, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->mSoftWareInfoView:Landroid/view/View;
 
-    const v6, 0x7f0a0481
+    const v6, 0x7f0a0484
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -473,7 +473,7 @@
 
     iget-object v6, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->mSoftWareInfoView:Landroid/view/View;
 
-    const v7, 0x7f0a02fd
+    const v7, 0x7f0a0300
 
     invoke-virtual {v6, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -481,7 +481,7 @@
 
     iget-object v7, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->mSoftWareInfoView:Landroid/view/View;
 
-    const v8, 0x7f0a0484
+    const v8, 0x7f0a0487
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -550,7 +550,7 @@
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f121022
+    const v2, 0x7f121027
 
     invoke-static {v0, v2, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 

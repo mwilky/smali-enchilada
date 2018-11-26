@@ -53,7 +53,7 @@
 
 .field private mContext:Landroid/content/Context;
 
-.field mOPAboutPhoneSoftWareController4:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+.field mOPAboutPhoneSoftWareController3:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
 .field mOPPreferenceDivider:Lcom/oneplus/settings/aboutphone/OPAboutPhoneDivider;
 
@@ -100,7 +100,7 @@
 
     check-cast v0, Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a0409
+    const v1, 0x7f0a040c
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -331,7 +331,7 @@
 
     check-cast v0, Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a040b
+    const v1, 0x7f0a040e
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -393,54 +393,11 @@
 
     invoke-virtual {v2, v4}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightImage(Landroid/graphics/drawable/Drawable;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
-    invoke-direct {p0}, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->isSupportRegulatoryLabels()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    const-string v4, "com.oneplus.intent.Verification"
-
-    invoke-virtual {v2, v4}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightIntentString(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+    invoke-direct {p0, v2}, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->showVerificationInfo(Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;)V
 
     iget-object v4, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f120eec
-
-    invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightTitle(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
-
-    goto :goto_0
-
-    :cond_0
-    invoke-direct {p0}, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->isSupportAuthenticationInformation()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    const-string v4, "com.oneplus.intent.OPAuthenticationInformationSettings"
-
-    invoke-virtual {v2, v4}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightIntentString(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
-
-    iget-object v4, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
-
-    const v5, 0x7f120a6e
-
-    invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightTitle(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
-
-    :cond_1
-    :goto_0
-    iget-object v4, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
-
-    const v5, 0x7f120c54
+    const v5, 0x7f120c56
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -454,7 +411,7 @@
 .end method
 
 .method private displaySoftWare2Preference()V
-    .locals 5
+    .locals 7
 
     nop
 
@@ -470,111 +427,7 @@
 
     check-cast v0, Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a040b
-
-    invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->getActivity()Landroid/app/Activity;
-
-    move-result-object v2
-
-    invoke-static {v2, p0, v1}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->newInstance(Landroid/app/Activity;Landroid/app/Fragment;Landroid/view/View;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
-
-    const v4, 0x7f12082b
-
-    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setLeftTitle(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
-
-    const-string v3, "com.oneplus.intent.LegalSettingsActivity"
-
-    invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setLeftIntentString(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
-
-    iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
-
-    const v4, 0x7f0803c7
-
-    invoke-virtual {v3, v4}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setLefImage(Landroid/graphics/drawable/Drawable;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
-
-    iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
-
-    const v4, 0x7f120b85
-
-    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setLeftSummary(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
-
-    iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
-
-    const v4, 0x7f08041e
-
-    invoke-virtual {v3, v4}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightImage(Landroid/graphics/drawable/Drawable;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
-
-    iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
-
-    const v4, 0x7f120550
-
-    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightTitle(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
-
-    iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
-
-    const v4, 0x7f120ce5
-
-    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightSummary(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
-
-    const-string v3, "com.oneplus.intent.MyDeviceInfoFragmentActivity"
-
-    invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightIntentString(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
-
-    invoke-virtual {v2}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->done()Landroid/view/View;
-
-    return-void
-.end method
-
-.method private displaySoftWare3Preference()V
-    .locals 7
-
-    nop
-
-    invoke-virtual {p0}, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->getPreferenceScreen()Landroid/support/v7/preference/PreferenceScreen;
-
-    move-result-object v0
-
-    const-string v1, "soft_view_3"
-
-    invoke-virtual {v0, v1}, Landroid/support/v7/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/settings/applications/LayoutPreference;
-
-    const v1, 0x7f0a040b
+    const v1, 0x7f0a040e
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -634,7 +487,7 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0803e2
+    const v5, 0x7f0803e3
 
     invoke-virtual {v3, v5}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -648,7 +501,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f120c11
+    const v5, 0x7f120c13
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -701,7 +554,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f120b73
+    const v5, 0x7f120b75
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -753,7 +606,7 @@
     return-void
 .end method
 
-.method private displaySoftWare4Preference()V
+.method private displaySoftWare3Preference()V
     .locals 7
 
     nop
@@ -762,7 +615,7 @@
 
     move-result-object v0
 
-    const-string v1, "soft_view_4"
+    const-string v1, "soft_view_3"
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
 
@@ -770,7 +623,7 @@
 
     check-cast v0, Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a040b
+    const v1, 0x7f0a040e
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -784,9 +637,9 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController4:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+    iput-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController3:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
-    iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController4:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+    iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController3:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
@@ -798,7 +651,7 @@
 
     invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setLefImage(Landroid/graphics/drawable/Drawable;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
-    iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController4:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+    iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController3:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
@@ -810,7 +663,7 @@
 
     invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setLeftTitle(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
-    iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController4:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+    iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController3:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
     invoke-static {}, Landroid/text/BidiFormatter;->getInstance()Landroid/text/BidiFormatter;
 
@@ -824,17 +677,17 @@
 
     invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setLeftSummary(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
-    iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController4:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+    iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController3:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
     const-string v3, "build.number"
 
     invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setLeftIntentString(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
-    iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController4:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+    iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController3:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0803dc
+    const v4, 0x7f0803dd
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -842,7 +695,7 @@
 
     invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightImage(Landroid/graphics/drawable/Drawable;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
-    iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController4:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+    iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController3:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
@@ -854,7 +707,7 @@
 
     invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightTitle(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
-    iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController4:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+    iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController3:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -882,13 +735,117 @@
 
     invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightSummary(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
-    iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController4:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+    iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController3:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightIntentString(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
-    iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController4:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+    iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController3:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+
+    invoke-virtual {v2}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->done()Landroid/view/View;
+
+    return-void
+.end method
+
+.method private displaySoftWare4Preference()V
+    .locals 5
+
+    nop
+
+    invoke-virtual {p0}, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->getPreferenceScreen()Landroid/support/v7/preference/PreferenceScreen;
+
+    move-result-object v0
+
+    const-string v1, "soft_view_4"
+
+    invoke-virtual {v0, v1}, Landroid/support/v7/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/settings/applications/LayoutPreference;
+
+    const v1, 0x7f0a040e
+
+    invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->getActivity()Landroid/app/Activity;
+
+    move-result-object v2
+
+    invoke-static {v2, p0, v1}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->newInstance(Landroid/app/Activity;Landroid/app/Fragment;Landroid/view/View;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
+
+    const v4, 0x7f12082b
+
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setLeftTitle(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+
+    const-string v3, "com.oneplus.intent.LegalSettingsActivity"
+
+    invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setLeftIntentString(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+
+    iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
+
+    const v4, 0x7f0803c8
+
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setLefImage(Landroid/graphics/drawable/Drawable;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+
+    iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
+
+    const v4, 0x7f120b87
+
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setLeftSummary(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+
+    iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
+
+    const v4, 0x7f08041e
+
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightImage(Landroid/graphics/drawable/Drawable;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+
+    iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
+
+    const v4, 0x7f120550
+
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightTitle(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+
+    iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
+
+    const v4, 0x7f120ce8
+
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightSummary(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+
+    const-string v3, "com.oneplus.intent.MyDeviceInfoFragmentActivity"
+
+    invoke-virtual {v2, v3}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightIntentString(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
     invoke-virtual {v2}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->done()Landroid/view/View;
 
@@ -900,7 +857,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->SoftWare5Preference:Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a040b
+    const v1, 0x7f0a040e
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -918,7 +875,7 @@
 
     move-result v2
 
-    const v3, 0x7f120b31
+    const v3, 0x7f120b33
 
     const v4, 0x7f08030f
 
@@ -937,7 +894,7 @@
     :cond_0
     iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0803ee
+    const v5, 0x7f0803ef
 
     invoke-virtual {v2, v5}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -947,7 +904,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f120c23
+    const v5, 0x7f120c25
 
     invoke-virtual {v2, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -957,7 +914,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f120c25
+    const v5, 0x7f120c27
 
     invoke-virtual {v2, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -987,7 +944,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f120b66
+    const v3, 0x7f120b68
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1021,7 +978,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f120bf8
+    const v3, 0x7f120bfa
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1071,7 +1028,7 @@
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->SoftWare5Preference:Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a040b
+    const v1, 0x7f0a040e
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -1087,7 +1044,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0803ee
+    const v3, 0x7f0803ef
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1097,7 +1054,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f120c23
+    const v3, 0x7f120c25
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1107,7 +1064,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f120c25
+    const v3, 0x7f120c27
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1407,7 +1364,7 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f120ddb
+    const v2, 0x7f120de0
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1676,7 +1633,7 @@
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v1, 0x7f120ba4
+    const v1, 0x7f120ba6
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->getString(I)Ljava/lang/String;
 
@@ -1686,30 +1643,6 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
-
-    const-string v1, "ONEPLUS A6000"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 v0, 0x1
-
-    :goto_1
     return v0
 .end method
 
@@ -1718,7 +1651,7 @@
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v1, 0x7f120ba5
+    const v1, 0x7f120ba7
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->getString(I)Ljava/lang/String;
 
@@ -1728,30 +1661,6 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
-
-    const-string v1, "ONEPLUS A6003"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 v0, 0x1
-
-    :goto_1
     return v0
 .end method
 
@@ -1856,6 +1765,139 @@
     const-string v8, "16GB"
 
     return-object v8
+.end method
+
+.method private showVerificationInfo(Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;)V
+    .locals 3
+
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const v1, 0x7f120ba6
+
+    invoke-virtual {p0, v1}, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    const v1, 0x7f120ef1
+
+    if-nez v0, :cond_2
+
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const-string v2, "ONEPLUS A6000"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const-string v2, "ONEPLUS A5010"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const-string v2, "ONEPLUS A5000"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const v2, 0x7f120ba7
+
+    invoke-virtual {p0, v2}, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const-string v2, "ONEPLUS A6003"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    :cond_1
+    const-string v0, "android.settings.SHOW_REGULATORY_INFO"
+
+    invoke-virtual {p1, v0}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightIntentString(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+
+    iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightTitle(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+
+    goto :goto_1
+
+    :cond_2
+    :goto_0
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isO2()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    const-string v0, "android.settings.SHOW_REGULATORY_INFO"
+
+    invoke-virtual {p1, v0}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightIntentString(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+
+    iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightTitle(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+
+    goto :goto_1
+
+    :cond_3
+    const-string v0, "com.oneplus.intent.OPAuthenticationInformationSettings"
+
+    invoke-virtual {p1, v0}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightIntentString(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+
+    iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
+
+    const v1, 0x7f120a6e
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->setRightTitle(Ljava/lang/String;)Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+
+    :cond_4
+    :goto_1
+    return-void
 .end method
 
 
@@ -1965,12 +2007,12 @@
 
     if-ne p2, v0, :cond_1
 
-    iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController4:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+    iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController3:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
     invoke-virtual {v0}, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->enableDevelopmentSettings()V
 
     :cond_1
-    iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController4:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
+    iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mOPAboutPhoneSoftWareController3:Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;
 
     const/4 v1, 0x0
 

@@ -2821,6 +2821,9 @@ Para ir para o ecrã inicial a qualquer momento, deslize para cima a partir do c
     <string name="oneplus_lock_buttons">Bloquear botões</string>
     <string name="oneplus_lock_buttons_summary">Bloquear botões capacitivos quando o modo de jogo é activado</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">Se optar por ignorar gravar os dados de rosto, recomendamos que ative um outro método, como impressão digital ou código PIN para proteger o seu dispositivo e informações pessoais. Também pode definir uma palavra-passe em determinadas aplicações. Para ativar a proteção, vá a \"Definições\" &amp;gt&amp;&amp;; \"Segurança e bloqueio de ecrã\".</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">Para utilizar o Desbloqueio Facial ou a impressão digital, defina uma palavra-passe</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">Para utilizar o Desbloqueio Facial ou a impressão digital, defina um padrão</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">Para utilizar o Desbloqueio Facial ou a impressão digital, defina um PIN</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Tente novamente</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">Demasiadas tentativas incorretas!</string>
     <string name="oneplus_max_shortcuts_tips">Pode adicionar até 6 atalhos</string>
@@ -5052,6 +5055,10 @@ Toque em "<b>Voltar</b> para conectar-se a outra rede Wi-Fi.</string>
     <string name="wifi_tap_to_sign_in">Toque aqui para fazer login na rede</string>
     <string name="wifi_tether_configure_ap_text">Configurar ponto de acesso Wi-Fi</string>
     <string name="wifi_tether_configure_ssid_default">Ponto de acesso Android</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Após 10 min. de inatividade</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Após 15 min. de inatividade</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Após 5 min. de inatividade</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Sempre ativado</string>
     <string name="wifi_tether_disabled_by_airplane">Indisponível porque o modo avião está ativado</string>
     <string name="wifi_tether_enabled_subtext">A rede %1$s está ativa</string>
     <string name="wifi_tether_failed_subtext">Erro de ponto de acesso Wi-Fi portátil</string>

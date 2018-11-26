@@ -40,7 +40,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lcom/android/settings/connecteddevice/AdvancedConnectedDeviceDashboardFragment;->access$000(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;)Ljava/util/List;
+    invoke-static {p1, v0, v0}, Lcom/android/settings/connecteddevice/AdvancedConnectedDeviceDashboardFragment;->access$000(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;Landroid/app/Fragment;)Ljava/util/List;
 
     move-result-object v0
 

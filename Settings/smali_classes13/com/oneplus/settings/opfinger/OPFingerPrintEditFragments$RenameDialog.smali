@@ -52,7 +52,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0d016e
+    const v2, 0x7f0d0171
 
     invoke-virtual {v0, v2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -60,7 +60,7 @@
 
     nop
 
-    const v2, 0x7f0a03e6
+    const v2, 0x7f0a03e9
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -92,7 +92,7 @@
 
     invoke-direct {v3, v4}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v4, 0x7f12132c
+    const v4, 0x7f121331
 
     invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 

@@ -19,7 +19,7 @@
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0d01ae
+    const v0, 0x7f0d01b1
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPScreenColorModeForSetupWizard;->setContentView(I)V
 
@@ -27,7 +27,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a035a
+    const v1, 0x7f0a035d
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/OPScreenColorModeForSetupWizard;->findViewById(I)Landroid/view/View;
 

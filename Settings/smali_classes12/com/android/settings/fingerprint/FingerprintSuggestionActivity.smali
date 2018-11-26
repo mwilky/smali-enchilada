@@ -138,7 +138,7 @@
 
     invoke-super {p0}, Lcom/android/settings/fingerprint/SetupFingerprintEnrollIntroduction;->initViews()V
 
-    const v0, 0x7f0a01ec
+    const v0, 0x7f0a01ef
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintSuggestionActivity;->findViewById(I)Landroid/view/View;
 
@@ -146,7 +146,7 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    const v1, 0x7f120fba
+    const v1, 0x7f120fbf
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
 

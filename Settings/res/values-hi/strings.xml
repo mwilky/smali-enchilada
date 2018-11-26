@@ -2727,7 +2727,7 @@
     <string name="oneplus_font_style">फ़ॉन्ट</string>
     <string name="oneplus_font_switch">फ़ॉन्ट स्विच</string>
     <string name="oneplus_force_factory_reset_summary">स्टार्टअप पर पासवर्ड सक्षम है, इसलिए आंतरिक स्टोरेज मिट जाएगा</string>
-    <string name="oneplus_forum_award_summary">यह समुदाय आपका है । केवल आप हमारे पाठ्यक्रम को परिभाषित कर सकते हैं। हम एक साथ परिभाषित और परिष्कृत करते हैं। ब्रेकिंग बिल्ड्स और लेखन कोड्स। यह आपके लिए है। हमारे साथ सपने देखने के लिए धन्यवाद।</string>
+    <string name="oneplus_forum_award_summary">यह Community आपकी है। केवल आप हमारे पाठ्यक्रम को परिभाषित कर सकते हैं। हम एक साथ परिभाषित और परिष्कृत करते हैं। ब्रेकिंग बिल्ड्स और लेखन कोड्स। यह आपके लिए है। हमारे साथ सपने देखने के लिए धन्यवाद।</string>
     <string name="oneplus_forum_award_title">पुरस्कार</string>
     <string name="oneplus_fullscreen_back_guide_summary">स्क्रीन के नीचे के बाएं या दाएं तरफ से ऊपर की ओर स्वाइप करें</string>
     <string name="oneplus_fullscreen_back_guide_title">वापस</string>
@@ -2819,6 +2819,9 @@
     <string name="oneplus_lock_buttons">लॉक बटन</string>
     <string name="oneplus_lock_buttons_summary">गेमिंग मोड ऑन रहने पर कैपेसिटिव बटन लॉक करें</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">यदि आप फ़ेस डेटा रिकॉर्डिंग को छोड़ना चुनते हैं, तो आपको सुझाव है कि आप किसी अन्य विधि को चालू कर लें, जैसेकि फिंगरप्रिंट या पिन, इससे आपकी डिवाइस और व्यक्तिगत जानकारी की रक्षा सुनिश्चित होगी। आप कुछ ऐप्स में पासवर्ड भी सेट कर सकते हैं। सुरक्षा को सक्षम करने के लिए, कृपया यहाँ जाएँ: \"सेटिंग\" > \"सुरक्षा &amp; लॉक स्क्रीन\".</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">फ़ेस अनलॉक या फिंगरप्रिंट का उपयोग करने के लिए, पासवर्ड सेट करें</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">फ़ेस अनलॉक या फिंगरप्रिंट का उपयोग करने के लिए, पैटर्न सेट करें</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">फ़ेस अनलॉक या फिंगरप्रिंट का उपयोग करने के लिए, PIN सेट करें</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">फिर कोशिश करें</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">बहुत अधिक गलत प्रयास!</string>
     <string name="oneplus_max_shortcuts_tips">आप अधिकतम 6 शॉर्टकट जोड़ सकते हैं</string>
@@ -5051,6 +5054,10 @@ UT इंटरफ़ेस: %5$s"</string>
     <string name="wifi_tap_to_sign_in">नेटवर्क में साइन इन करने के लिए टैप करें</string>
     <string name="wifi_tether_configure_ap_text">"वाई-फ़ाई  हॉटस्‍पॉट सेट करें"</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">निष्क्रियता के 10 मिनट बाद</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">निष्क्रियता के 15 मिनट बाद</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">निष्क्रियता के 5 मिनट बाद</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">हमेशा ऑन</string>
     <string name="wifi_tether_disabled_by_airplane">हॉटस्पॉट उपलब्ध नहीं है, क्योंकि हवाई जहाज़ मोड चालू है</string>
     <string name="wifi_tether_enabled_subtext">%1$s सक्रिय है</string>
     <string name="wifi_tether_failed_subtext">"पोर्टेबल वाई-फ़ाई  हॉटस्‍पॉट गड़बड़ी"</string>

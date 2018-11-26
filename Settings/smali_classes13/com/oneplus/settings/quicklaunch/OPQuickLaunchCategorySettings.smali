@@ -114,7 +114,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchCategorySettings;->mShortcutFragment:Lcom/oneplus/settings/quicklaunch/OPQuickLaunchShortCutFragment;
 
-    const v3, 0x7f0a03c7
+    const v3, 0x7f0a03ca
 
     if-nez v2, :cond_0
 
@@ -139,7 +139,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchCategorySettings;->mFragmentTitles:Ljava/util/List;
 
-    const v4, 0x7f120cd1
+    const v4, 0x7f120cd4
 
     invoke-virtual {p0, v4}, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchCategorySettings;->getString(I)Ljava/lang/String;
 
@@ -289,11 +289,11 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setSystemUiVisibility(I)V
 
     :cond_0
-    const v0, 0x7f0d01a7
+    const v0, 0x7f0d01aa
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchCategorySettings;->setContentView(I)V
 
-    const v0, 0x7f0a0592
+    const v0, 0x7f0a0595
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchCategorySettings;->findViewById(I)Landroid/view/View;
 
@@ -316,7 +316,7 @@
     invoke-virtual {v1, v2}, Landroid/app/ActionBar;->setHomeButtonEnabled(Z)V
 
     :cond_1
-    const v2, 0x7f0a03c7
+    const v2, 0x7f0a03ca
 
     invoke-virtual {p0, v2}, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchCategorySettings;->findViewById(I)Landroid/view/View;
 
@@ -326,7 +326,7 @@
 
     iput-object v2, p0, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchCategorySettings;->mViewPager:Landroid/support/v4/view/ViewPager;
 
-    const v2, 0x7f0a056e
+    const v2, 0x7f0a0571
 
     invoke-virtual {p0, v2}, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchCategorySettings;->findViewById(I)Landroid/view/View;
 

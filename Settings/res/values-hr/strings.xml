@@ -2819,6 +2819,9 @@ Za prijelaz na početni zaslon u bilo kojem trenutku, prijeđite prstom od sredi
     <string name="oneplus_lock_buttons">Zaključavanje gumba</string>
     <string name="oneplus_lock_buttons_summary">Zaključajte kapacitivne gumbe kada je uključen način igranja</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">Ako odaberete preskočiti snimanje podataka o licu, preporučujemo vam da omogućite drugi način, kao što je otisak prsta ili pin za zaštitu vašeg uređaja i osobnih podataka. Također možete postaviti lozinku na određene aplikacije. Da biste omogućili zaštitu, idite na \"Postavke\" > \"Sigurnost &amp; zaključavanje zaslona\".</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">Kako biste upotrebljavali otključavanje licem ili otiskom prsta, postavite lozinku</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">Kako biste upotrebljavali otključavanje licem ili otiskom prsta, postavite uzorak</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">Kako biste upotrebljavali otključavanje licem ili otiskom prsta, postavite PIN</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Pokušajte ponovno</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">Previše netočnih pokušaja!</string>
     <string name="oneplus_max_shortcuts_tips">Možete dodati do 6 prečaca</string>
@@ -5051,6 +5054,10 @@ Dodirnite "<b>Natrag</b> da biste se povezali s nekom drugom Wi‑Fi mrežom.</s
     <string name="wifi_tap_to_sign_in">Dodirnite ovdje da biste se prijavili na mrežu</string>
     <string name="wifi_tether_configure_ap_text">Postavljanje Wi-Fi žarišne točke</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Nakon 10 min neaktivnosti</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Nakon 15 min neaktivnosti</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Nakon 5 min neaktivnosti</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Uvijek uključeno</string>
     <string name="wifi_tether_disabled_by_airplane">Nije dostupno jer je uključen način rada u zrakoplovu</string>
     <string name="wifi_tether_enabled_subtext">%1$s je aktivan</string>
     <string name="wifi_tether_failed_subtext">Pogreška prijenosne Wi-Fi žarišne točke</string>

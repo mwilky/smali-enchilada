@@ -12,8 +12,6 @@
 
 .field private static final ONEPLUS_A6003:Ljava/lang/String; = "ONEPLUS A6003"
 
-.field private static final ONEPLUS_A6010:Ljava/lang/String; = "ONEPLUS A6010"
-
 
 # instance fields
 .field private mRegulatoryInfoImage:Landroid/widget/ImageView;
@@ -43,11 +41,11 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setDisplayHomeAsUpEnabled(Z)V
 
-    const v0, 0x7f0d01ab
+    const v0, 0x7f0d01ae
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->setContentView(I)V
 
-    const v0, 0x7f0a046b
+    const v0, 0x7f0a046e
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -69,7 +67,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->mRegulatoryInfoImage:Landroid/widget/ImageView;
 
-    const v1, 0x7f0803fd
+    const v1, 0x7f0803fe
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -88,11 +86,11 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->mRegulatoryInfoImage:Landroid/widget/ImageView;
 
-    const v1, 0x7f0803fe
+    const v1, 0x7f0803ff
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_1
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
@@ -107,7 +105,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->mRegulatoryInfoImage:Landroid/widget/ImageView;
 
-    const v1, 0x7f0803ff
+    const v1, 0x7f080400
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -126,7 +124,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->mRegulatoryInfoImage:Landroid/widget/ImageView;
 
-    const v1, 0x7f080400
+    const v1, 0x7f080401
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -135,7 +133,11 @@
     :cond_3
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const-string v1, "ONEPLUS A6010"
+    const v1, 0x7f120ba6
+
+    invoke-virtual {p0, v1}, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
@@ -145,7 +147,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->mRegulatoryInfoImage:Landroid/widget/ImageView;
 
-    const v1, 0x7f080401
+    const v1, 0x7f080402
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -154,7 +156,7 @@
     :cond_4
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v1, 0x7f120ba4
+    const v1, 0x7f120ba7
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->getString(I)Ljava/lang/String;
 
@@ -168,36 +170,13 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->mRegulatoryInfoImage:Landroid/widget/ImageView;
 
-    const v1, 0x7f080402
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    goto :goto_0
-
-    :cond_5
-    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
-
-    const v1, 0x7f120ba5
-
-    invoke-virtual {p0, v1}, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_6
-
-    iget-object v0, p0, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->mRegulatoryInfoImage:Landroid/widget/ImageView;
-
     const v1, 0x7f080403
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     goto :goto_0
 
-    :cond_6
+    :cond_5
     iget-object v0, p0, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->mRegulatoryInfoImage:Landroid/widget/ImageView;
 
     const v1, 0x7f080404
@@ -213,7 +192,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_6
 
     invoke-virtual {p0}, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->getWindow()Landroid/view/Window;
 
@@ -227,7 +206,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setSystemUiVisibility(I)V
 
-    :cond_7
+    :cond_6
     return-void
 .end method
 

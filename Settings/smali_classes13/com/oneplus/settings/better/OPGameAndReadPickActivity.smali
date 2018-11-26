@@ -102,7 +102,7 @@
 .method private initView()V
     .locals 5
 
-    const v0, 0x7f0a0396
+    const v0, 0x7f0a0399
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/better/OPGameAndReadPickActivity;->findViewById(I)Landroid/view/View;
 
@@ -116,9 +116,9 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/better/OPGameAndReadPickActivity;->mAppListView:Landroid/widget/ListView;
 
-    const v2, 0x7f0803cb
+    const v2, 0x7f0803cc
 
-    const v3, 0x7f0803c9
+    const v3, 0x7f0803ca
 
     const v4, 0x7f0702b0
 
@@ -142,7 +142,7 @@
 
     invoke-virtual {v0, p0}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    const v0, 0x7f0a030d
+    const v0, 0x7f0a0310
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/better/OPGameAndReadPickActivity;->findViewById(I)Landroid/view/View;
 
@@ -180,7 +180,7 @@
 
     invoke-super {p0, p1}, Lcom/oneplus/settings/BaseActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0d0177
+    const v0, 0x7f0d017a
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/better/OPGameAndReadPickActivity;->setContentView(I)V
 
@@ -214,7 +214,7 @@
 
     if-ne v1, v2, :cond_0
 
-    const v1, 0x7f120b47
+    const v1, 0x7f120b49
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/better/OPGameAndReadPickActivity;->getString(I)Ljava/lang/String;
 
@@ -231,7 +231,7 @@
 
     if-ne v1, v2, :cond_1
 
-    const v1, 0x7f120c47
+    const v1, 0x7f120c49
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/better/OPGameAndReadPickActivity;->getString(I)Ljava/lang/String;
 

@@ -1497,7 +1497,7 @@
 
     iput-object v0, v1, Lcom/android/settings/DeviceAdminAdd;->mAdminDescription:Landroid/widget/TextView;
 
-    const v0, 0x7f0a043b
+    const v0, 0x7f0a043e
 
     invoke-virtual {v1, v0}, Lcom/android/settings/DeviceAdminAdd;->findViewById(I)Landroid/view/View;
 
@@ -1609,7 +1609,7 @@
 
     invoke-virtual {v6, v9}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v6, 0x7f0a05b3
+    const v6, 0x7f0a05b6
 
     invoke-virtual {v1, v6}, Lcom/android/settings/DeviceAdminAdd;->findViewById(I)Landroid/view/View;
 
@@ -1643,7 +1643,7 @@
 
     iput-object v6, v1, Lcom/android/settings/DeviceAdminAdd;->mActionButton:Landroid/widget/Button;
 
-    const v6, 0x7f0a0476
+    const v6, 0x7f0a0479
 
     invoke-virtual {v1, v6}, Lcom/android/settings/DeviceAdminAdd;->findViewById(I)Landroid/view/View;
 
@@ -1968,7 +1968,7 @@
 .method updateInterface()V
     .locals 10
 
-    const v0, 0x7f0a0477
+    const v0, 0x7f0a047a
 
     invoke-virtual {p0, v0}, Lcom/android/settings/DeviceAdminAdd;->findViewById(I)Landroid/view/View;
 
@@ -2134,7 +2134,7 @@
 
     iget-object v6, p0, Lcom/android/settings/DeviceAdminAdd;->mActionButton:Landroid/widget/Button;
 
-    const v7, 0x7f120ef2
+    const v7, 0x7f120ef7
 
     invoke-virtual {v6, v7}, Landroid/widget/Button;->setText(I)V
 
@@ -2174,7 +2174,7 @@
     goto/16 :goto_5
 
     :cond_4
-    const v0, 0x7f120ef1
+    const v0, 0x7f120ef6
 
     if-nez v3, :cond_7
 
@@ -2241,7 +2241,7 @@
 
     iget-object v0, p0, Lcom/android/settings/DeviceAdminAdd;->mActionButton:Landroid/widget/Button;
 
-    const v4, 0x7f120ef0
+    const v4, 0x7f120ef5
 
     invoke-virtual {v0, v4}, Landroid/widget/Button;->setText(I)V
 
@@ -2360,7 +2360,7 @@
 
     if-eqz v0, :cond_b
 
-    const v0, 0x7f120e7e
+    const v0, 0x7f120e83
 
     invoke-virtual {p0, v0}, Lcom/android/settings/DeviceAdminAdd;->getText(I)Ljava/lang/CharSequence;
 

@@ -32,7 +32,7 @@
 .method protected getSecondTargetResId()I
     .locals 1
 
-    const v0, 0x7f0d0210
+    const v0, 0x7f0d0213
 
     return v0
 .end method
@@ -42,7 +42,7 @@
 
     invoke-super {p0, p1}, Lcom/android/settingslib/RestrictedPreference;->onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
 
-    const v0, 0x7f0a04d5
+    const v0, 0x7f0a04d8
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -84,7 +84,7 @@
 
     move-result v0
 
-    const v1, 0x7f0a04d5
+    const v1, 0x7f0a04d8
 
     if-ne v0, v1, :cond_0
 

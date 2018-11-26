@@ -146,7 +146,7 @@
 
     iget-object v4, v0, Lcom/android/settings/applications/ProcStatsData;->mContext:Landroid/content/Context;
 
-    const v7, 0x7f120e71
+    const v7, 0x7f120e76
 
     invoke-virtual {v4, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -223,7 +223,7 @@
 
     iget-object v4, v0, Lcom/android/settings/applications/ProcStatsData;->mContext:Landroid/content/Context;
 
-    const v7, 0x7f120e6f
+    const v7, 0x7f120e74
 
     invoke-virtual {v4, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -286,7 +286,7 @@
 
     iget-object v4, v0, Lcom/android/settings/applications/ProcStatsData;->mContext:Landroid/content/Context;
 
-    const v7, 0x7f120e6e
+    const v7, 0x7f120e73
 
     invoke-virtual {v4, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -581,7 +581,7 @@
 
     move-wide/from16 v27, v1
 
-    const v1, 0x7f120e72
+    const v1, 0x7f120e77
 
     invoke-virtual {v15, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

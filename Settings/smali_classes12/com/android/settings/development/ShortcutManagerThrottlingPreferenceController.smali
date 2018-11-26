@@ -74,7 +74,7 @@
 
     iget-object v0, p0, Lcom/android/settings/development/ShortcutManagerThrottlingPreferenceController;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f120f08
+    const v1, 0x7f120f0d
 
     const/4 v2, 0x0
 

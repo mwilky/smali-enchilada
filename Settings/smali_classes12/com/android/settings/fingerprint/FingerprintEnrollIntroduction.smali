@@ -157,7 +157,7 @@
 .method protected getNextButton()Landroid/widget/Button;
     .locals 1
 
-    const v0, 0x7f0a01f0
+    const v0, 0x7f0a01f3
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
 
@@ -173,7 +173,7 @@
 
     invoke-super {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollBase;->initViews()V
 
-    const v0, 0x7f0a0183
+    const v0, 0x7f0a0186
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
 
@@ -185,7 +185,7 @@
 
     if-eqz v1, :cond_0
 
-    const v1, 0x7f120fc0
+    const v1, 0x7f120fc5
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -372,7 +372,7 @@
 
     move-result v0
 
-    const v1, 0x7f0a01ec
+    const v1, 0x7f0a01ef
 
     if-ne v0, v1, :cond_0
 
@@ -499,11 +499,11 @@
 
     if-eqz v0, :cond_2
 
-    const v0, 0x7f0d016b
+    const v0, 0x7f0d016d
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->setContentView(I)V
 
-    const v0, 0x7f0a03b5
+    const v0, 0x7f0a03b8
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
 
@@ -550,37 +550,50 @@
     goto :goto_2
 
     :cond_2
+    invoke-static {p0}, Lcom/oneplus/settings/utils/OPUtils;->isSurportBackFingerprint(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
     const v0, 0x7f0d009d
+
+    invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->setContentView(I)V
+
+    goto :goto_2
+
+    :cond_3
+    const v0, 0x7f0d016e
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->setContentView(I)V
 
     :goto_2
     iget-boolean v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mFingerprintUnlockDisabledByAdmin:Z
 
-    const v2, 0x7f120fc1
-
-    if-eqz v0, :cond_3
-
-    const v0, 0x7f120fc2
-
-    invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->setHeaderText(I)V
-
-    goto :goto_3
-
-    :cond_3
-    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportCustomFingerprint()Z
-
-    move-result v0
+    const v2, 0x7f120fc6
 
     if-eqz v0, :cond_4
 
-    const v0, 0x7f120b1a
+    const v0, 0x7f120fc7
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->setHeaderText(I)V
 
     goto :goto_3
 
     :cond_4
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportCustomFingerprint()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    const v0, 0x7f120b1c
+
+    invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->setHeaderText(I)V
+
+    goto :goto_3
+
+    :cond_5
     invoke-virtual {p0, v2}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->setHeaderText(I)V
 
     :goto_3
@@ -588,14 +601,14 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setDisplayHomeAsUpEnabled(Z)V
 
     invoke-virtual {v0, v2}, Landroid/app/ActionBar;->setTitle(I)V
 
-    :cond_5
-    const v1, 0x7f0a01ec
+    :cond_6
+    const v1, 0x7f0a01ef
 
     invoke-virtual {p0, v1}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
 
@@ -605,7 +618,7 @@
 
     invoke-virtual {v1, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v2, 0x7f0a0211
+    const v2, 0x7f0a0214
 
     invoke-virtual {p0, v2}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
 
@@ -619,7 +632,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v3, 0x7f0a01d3
+    const v3, 0x7f0a01d6
 
     invoke-virtual {p0, v3}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
 

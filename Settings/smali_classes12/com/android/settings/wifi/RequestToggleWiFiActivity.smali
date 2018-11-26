@@ -217,7 +217,7 @@
 
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
-    const v1, 0x7f121507
+    const v1, 0x7f12150c
 
     invoke-virtual {p0, v1}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->getString(I)Ljava/lang/String;
 
@@ -254,7 +254,7 @@
 
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
-    const v3, 0x7f1213e3
+    const v3, 0x7f1213e8
 
     new-array v2, v2, [Ljava/lang/Object;
 
@@ -297,7 +297,7 @@
 
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
-    const v1, 0x7f1214fb
+    const v1, 0x7f121500
 
     invoke-virtual {p0, v1}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->getString(I)Ljava/lang/String;
 
@@ -334,7 +334,7 @@
 
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
-    const v3, 0x7f1213e4
+    const v3, 0x7f1213e9
 
     new-array v2, v2, [Ljava/lang/Object;
 

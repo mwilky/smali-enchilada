@@ -2819,6 +2819,9 @@ Voit siirtyä aloitusnäyttöön milloin vain pyyhkäisemällä näytön alareun
     <string name="oneplus_lock_buttons">Lukitse näppäimet</string>
     <string name="oneplus_lock_buttons_summary">Lukitse hipaisupainikkeet, kun pelitila on käytössä</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">Jos valitset kasvotietojen tallennuksen ohittamisen, sinua kehotetaan ottamaan käyttöön toinen menetelmä, kuten sormenjälki tai PIN-koodi, laitteen ja omien tietojen suojaamiseksi. Joissakin sovelluksissa voidaan myös asettaa salasana. Suojauksen käyttöönottamiseksi pitää valita ”Asetukset” > ”Suojaus ja näytön lukitus”.</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">Jotta voit avata lukituksen kasvojentunnistuksella tai sormenjäljellä, määritä salasana</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">Jotta voit avata lukituksen kasvojentunnistuksella tai sormenjäljellä, määritä kuvio</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">Jotta voit avata lukituksen kasvojentunnistuksella tai sormenjäljellä, määritä PIN</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Yritä uudelleen</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">Liian monta virheellistä yritystä!</string>
     <string name="oneplus_max_shortcuts_tips">Voit lisätä enintään 6 pikakuvaketta</string>
@@ -5051,6 +5054,10 @@ Muodosta yhteys toiseen Wi-Fi-verkkoon valitsemalla "<b>Takaisin</b>.</string>
     <string name="wifi_tap_to_sign_in">Napauta tästä kirjautuaksesi verkkoon</string>
     <string name="wifi_tether_configure_ap_text">Luo Wi-Fi-hotspot</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">10 min käyttämättömyyden jälkeen</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">15 min käyttämättömyyden jälkeen</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">5 min käyttämättömyyden jälkeen</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Aina päällä</string>
     <string name="wifi_tether_disabled_by_airplane">Ei käytettävissä, koska lentokonetila on päällä</string>
     <string name="wifi_tether_enabled_subtext">%1$s on aktiivinen</string>
     <string name="wifi_tether_failed_subtext">Kannettavan Wi-Fi-hotspotin virhe</string>

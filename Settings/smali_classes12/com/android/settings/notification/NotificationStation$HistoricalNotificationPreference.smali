@@ -66,7 +66,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0a0259
+    const v0, 0x7f0a025c
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -87,7 +87,7 @@
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f0a0419
+    const v0, 0x7f0a041c
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -102,7 +102,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     :cond_1
-    const v0, 0x7f0a0587
+    const v0, 0x7f0a058a
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -116,7 +116,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/DateTimeView;->setTime(J)V
 
-    const v0, 0x7f0a0588
+    const v0, 0x7f0a058b
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -130,7 +130,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const v0, 0x7f0a041a
+    const v0, 0x7f0a041d
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -144,7 +144,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const v0, 0x7f0a01df
+    const v0, 0x7f0a01e2
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

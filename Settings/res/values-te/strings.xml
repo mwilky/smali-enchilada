@@ -2819,6 +2819,9 @@
     <string name="oneplus_lock_buttons">బటన్‌లు లాక్ చేయి</string>
     <string name="oneplus_lock_buttons_summary">గేమింగ్ మోడ్ ఆన్ చేయబడినప్పుడుక్యాపిటివ్ బటన్‌లు లాక్ చేయండి</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">ఫేస్ డేటాను రికార్డింగ్ చేయడాన్ని స్కిప్ చేయాలని మీరు ఎంచుకున్నట్లయితే, మీ పరికరాన్ని మరియు వ్యక్తిగత సమాచారాన్ని సంరక్షించడం కొరకు వేలిముద్ర లేదా పిన్ వంటి మరో విధానాన్ని ప్రారంభించాలని మీకు సిఫారసు చేయబడుతుంది. మీరు కొన్ని యాప్‌లపై పాస్‌వర్డ్‌ని కూడా సెట్ చేయవచ్చు, సంరక్షణను ప్రారంభించడం కొరకు, దయచేసి \"సెట్టింగ్‌లు\" > \"సెక్యూరిటీ &amp; లాక్ స్క్రీన్\"కు వెళ్లండి</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">ముఖ అన్‌లాక్ లేదా వేలిముద్రను ఉపయోగించడానికి, పాస్‌వర్డ్ సెట్ చేయండి</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">ముఖ అన్‌లాక్ లేదా వేలిముద్రను ఉపయోగించడానికి, నమూనాను సెట్ చేయండి</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">ముఖ అన్‌లాక్ లేదా వేలిముద్రను ఉపయోగించడానికి, PIN సెట్ చేయండి</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">తిరిగి ప్రయత్నించండి</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">అనేక తప్పు ప్రయత్నాలు!</string>
     <string name="oneplus_max_shortcuts_tips">మీరు 6 సత్వరమార్గాలను జోడించవచ్చు</string>
@@ -5051,6 +5054,10 @@ UT ఇంటర్‌ఫేస్: %5$s"</string>
     <string name="wifi_tap_to_sign_in">నెట్‌వర్క్‌కి సైన్ ఇన్ చేయడానికి ఇక్కడ నొక్కండి</string>
     <string name="wifi_tether_configure_ap_text">Wi‑Fi హాట్‌స్పాట్‌ను సెటప్ చేయండి</string>
     <string name="wifi_tether_configure_ssid_default">Android హాట్‌స్పాట్</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">10 నిమిషాల నిష్క్రియం తర్వాత</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">15 నిమిషాల నిష్క్రియం తర్వాత</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">5 నిమిషాల నిష్క్రియం తర్వాత</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">ఎల్లప్పుడూ ఆన్</string>
     <string name="wifi_tether_disabled_by_airplane">విమానం మోడ్ ఆన్ చేయబడింది కనుక అందుబాటులో లేదు</string>
     <string name="wifi_tether_enabled_subtext">%1$s సక్రియంగా ఉంది</string>
     <string name="wifi_tether_failed_subtext">పోర్టబుల్ Wi‑Fi హాట్‌స్పాట్ ఎర్రర్</string>

@@ -200,7 +200,7 @@
 
     invoke-direct {v1}, Lcom/android/settings/DeviceAdminSettings$ViewHolder;-><init>()V
 
-    const v2, 0x7f0a0259
+    const v2, 0x7f0a025c
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -210,7 +210,7 @@
 
     iput-object v2, v1, Lcom/android/settings/DeviceAdminSettings$ViewHolder;->icon:Landroid/widget/ImageView;
 
-    const v2, 0x7f0a0350
+    const v2, 0x7f0a0353
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -230,7 +230,7 @@
 
     iput-object v2, v1, Lcom/android/settings/DeviceAdminSettings$ViewHolder;->checkbox:Landroid/widget/Switch;
 
-    const v2, 0x7f0a0181
+    const v2, 0x7f0a0184
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

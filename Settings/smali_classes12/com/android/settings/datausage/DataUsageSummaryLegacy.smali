@@ -893,7 +893,7 @@
     :cond_a
     if-eqz v4, :cond_b
 
-    const v6, 0x7f121410
+    const v6, 0x7f121415
 
     goto :goto_3
 
@@ -942,7 +942,7 @@
 
     move-result v0
 
-    const v1, 0x7f0a0165
+    const v1, 0x7f0a0168
 
     if-eq v0, v1, :cond_0
 

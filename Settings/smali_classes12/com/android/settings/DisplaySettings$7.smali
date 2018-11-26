@@ -63,7 +63,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/android/settings/DisplaySettings;->access$1200(Landroid/content/res/Resources;)Z
+    invoke-static {v1}, Lcom/android/settings/DisplaySettings;->access$1300(Landroid/content/res/Resources;)Z
 
     move-result v1
 
@@ -74,7 +74,7 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_1
-    invoke-static {p1}, Lcom/android/settings/DisplaySettings;->access$1300(Landroid/content/Context;)Z
+    invoke-static {p1}, Lcom/android/settings/DisplaySettings;->access$1400(Landroid/content/Context;)Z
 
     move-result v1
 
@@ -122,7 +122,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/android/settings/DisplaySettings;->access$1400(Landroid/content/res/Resources;)Z
+    invoke-static {v1}, Lcom/android/settings/DisplaySettings;->access$1500(Landroid/content/res/Resources;)Z
 
     move-result v1
 
@@ -137,7 +137,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/android/settings/DisplaySettings;->access$1500(Landroid/content/res/Resources;)Z
+    invoke-static {v1}, Lcom/android/settings/DisplaySettings;->access$1600(Landroid/content/res/Resources;)Z
 
     move-result v1
 
@@ -152,7 +152,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/android/settings/DisplaySettings;->access$1600(Landroid/content/res/Resources;)Z
+    invoke-static {v1}, Lcom/android/settings/DisplaySettings;->access$1700(Landroid/content/res/Resources;)Z
 
     move-result v1
 
@@ -163,7 +163,7 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_7
-    invoke-static {p1}, Lcom/android/settings/DisplaySettings;->access$1700(Landroid/content/Context;)Z
+    invoke-static {p1}, Lcom/android/settings/DisplaySettings;->access$1800(Landroid/content/Context;)Z
 
     move-result v1
 
@@ -178,7 +178,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-static {}, Lcom/android/settings/DisplaySettings;->access$1800()Z
+    invoke-static {}, Lcom/android/settings/DisplaySettings;->access$1900()Z
 
     move-result v1
 
@@ -200,7 +200,7 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_a
-    invoke-static {}, Lcom/android/settings/DisplaySettings;->access$400()Z
+    invoke-static {}, Lcom/android/settings/DisplaySettings;->access$500()Z
 
     move-result v1
 

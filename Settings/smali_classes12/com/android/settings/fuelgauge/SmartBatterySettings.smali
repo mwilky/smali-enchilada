@@ -159,7 +159,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f12108e
+    const v1, 0x7f121093
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/widget/FooterPreference;->setTitle(I)V
 

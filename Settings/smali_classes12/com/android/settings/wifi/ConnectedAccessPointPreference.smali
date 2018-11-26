@@ -15,13 +15,15 @@
 
 
 # instance fields
+.field private final mFragment:Landroid/app/Fragment;
+
 .field private mIsCaptivePortal:Z
 
 .field private mOnGearClickListener:Lcom/android/settings/wifi/ConnectedAccessPointPreference$OnGearClickListener;
 
 
 # direct methods
-.method public constructor <init>(Lcom/android/settingslib/wifi/AccessPoint;Landroid/content/Context;Lcom/android/settingslib/wifi/AccessPointPreference$UserBadgeCache;IZ)V
+.method public constructor <init>(Lcom/android/settingslib/wifi/AccessPoint;Landroid/content/Context;Lcom/android/settingslib/wifi/AccessPointPreference$UserBadgeCache;IZLandroid/app/Fragment;)V
     .locals 0
     .param p4    # I
         .annotation build Landroid/support/annotation/DrawableRes;
@@ -29,6 +31,8 @@
     .end param
 
     invoke-direct/range {p0 .. p5}, Lcom/android/settingslib/wifi/AccessPointPreference;-><init>(Lcom/android/settingslib/wifi/AccessPoint;Landroid/content/Context;Lcom/android/settingslib/wifi/AccessPointPreference$UserBadgeCache;IZ)V
+
+    iput-object p6, p0, Lcom/android/settings/wifi/ConnectedAccessPointPreference;->mFragment:Landroid/app/Fragment;
 
     return-void
 .end method
@@ -38,7 +42,7 @@
 .method protected getWidgetLayoutResourceId()I
     .locals 1
 
-    const v0, 0x7f0d0212
+    const v0, 0x7f0d0215
 
     return v0
 .end method
@@ -48,7 +52,7 @@
 
     invoke-super {p0, p1}, Lcom/android/settingslib/wifi/AccessPointPreference;->onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
 
-    const v0, 0x7f0a04d5
+    const v0, 0x7f0a04d8
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -56,7 +60,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v1, 0x7f0a04d6
+    const v1, 0x7f0a04d9
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -92,6 +96,27 @@
     :goto_1
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
+    iget-object v2, p0, Lcom/android/settings/wifi/ConnectedAccessPointPreference;->mFragment:Landroid/app/Fragment;
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p1, Landroid/support/v7/preference/PreferenceViewHolder;->itemView:Landroid/view/View;
+
+    iget-object v3, p0, Lcom/android/settings/wifi/ConnectedAccessPointPreference;->mFragment:Landroid/app/Fragment;
+
+    invoke-virtual {v2, v3}, Landroid/view/View;->setOnCreateContextMenuListener(Landroid/view/View$OnCreateContextMenuListener;)V
+
+    iget-object v2, p1, Landroid/support/v7/preference/PreferenceViewHolder;->itemView:Landroid/view/View;
+
+    invoke-virtual {v2, p0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+    iget-object v2, p1, Landroid/support/v7/preference/PreferenceViewHolder;->itemView:Landroid/view/View;
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v2, v3}, Landroid/view/View;->setLongClickable(Z)V
+
+    :cond_2
     return-void
 .end method
 
@@ -102,7 +127,7 @@
 
     move-result v0
 
-    const v1, 0x7f0a04d5
+    const v1, 0x7f0a04d8
 
     if-ne v0, v1, :cond_0
 
@@ -131,7 +156,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f12150c
+    const v0, 0x7f121511
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/ConnectedAccessPointPreference;->setSummary(I)V
 

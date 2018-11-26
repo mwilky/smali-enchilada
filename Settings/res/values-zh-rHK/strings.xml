@@ -2572,6 +2572,7 @@
     <string name="oneplus_colorful_mode_title">彩色主題</string>
     <string name="oneplus_compatibility_mode_summary">全屏應用無法使用凹形區域</string>
     <string name="oneplus_compatibility_mode_title">兼容模式</string>
+    <string name="oneplus_condition_night_mode_title">「夜間模式」已開啟</string>
     <string name="oneplus_connected_device_count">已有%1$s個設備連入</string>
     <string name="oneplus_connected_device_management_title">連入設備管理</string>
     <string name="oneplus_connected_devices_dashboard_summary">NFC、投射、打印</string>
@@ -2632,6 +2633,7 @@
     <string name="oneplus_earphone_mode">耳機模式</string>
     <string name="oneplus_emergency_rescue_settings">緊急救援</string>
     <string name="oneplus_emergency_rescue_settings_summary">連續按多次電源鍵快速進行呼救</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">需要先修改緊急救援的電源鍵設定</string>
     <string name="oneplus_enroll_fingerprint_tips_title">指紋錄入提示</string>
     <string name="oneplus_enter_your_fingerprint">· 錄入您的指紋</string>
     <string name="oneplus_experience_improvement_programs">體驗改進計劃</string>
@@ -2656,6 +2658,7 @@
     <string name="oneplus_finger_input_error_tips">指紋錄入錯誤，請返回重試</string>
     <string name="oneplus_finger_input_fail_tips">錄入失敗，請調整姿勢重新錄入</string>
     <string name="oneplus_fingerprint">指紋</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">指紋特征重複，請稍微移動手指，錄入不同部位的指紋</string>
     <string name="oneplus_fingerprint_animation_effect_title">指紋動畫效果</string>
     <string name="oneplus_fingerprint_bind_save_list">指紋綁定記錄保存</string>
     <string name="oneplus_fingerprint_check_oneplus_account">指紋驗證一加帳號</string>
@@ -2750,7 +2753,7 @@
     <string name="oneplus_hide_notch_display_summary">所有應用都不能使用凹形區域</string>
     <string name="oneplus_hide_notch_display_title">隱藏凹形區域</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">在指紋圖案出現在熒幕下方時，只需將手指稍微用力按壓在指紋識別區域，即可使用指紋功能：解鎖您的手機、授權購物交易或登入應用程式。</string>
-    <string name="oneplus_hydrogen_version">Hydrogen OS 版本</string>
+    <string name="oneplus_hydrogen_version">H₂OS 版本</string>
     <string name="oneplus_incoming_call_vibrate_intensity">來電震動</string>
     <string name="oneplus_incoming_call_vibrate_mode">來電震動節奏</string>
     <string name="oneplus_init_finger_input">正在初始化指紋</string>
@@ -2778,6 +2781,9 @@
     <string name="oneplus_lock_buttons_summary">遊戲模式開啟時遮罩螢幕下方的三個按鍵</string>
     <string name="oneplus_lock_notification">螢幕鎖定通知</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">如果您選擇跳過錄入人臉數據，為使您的手機變得安全，保護您的個人信息，建議您選擇指紋、圖案、數字密碼、複雜密碼等螢幕開啟方式；您也可以對開啟某個應用進行密碼設定。設置路徑為：設置－安全和螢幕鎖定，選擇您希望的安全和鎖屏方式。</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">如要使用人臉解鎖或指紋，請設定複雜密碼</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">如要使用人臉解鎖或指紋，請設定解鎖圖案</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">如要使用人臉解鎖或指紋，請設定 PIN</string>
     <string name="oneplus_lockpassword_confirm_passwords_dont_match">密碼不符。</string>
     <string name="oneplus_lockpassword_confirm_pins_dont_match">數位密碼不符</string>
     <string name="oneplus_lockpassword_confirm_your_password_header">確認密碼</string>
@@ -3057,6 +3063,7 @@
     <string name="oneplus_settings_lab_feature_boost_summary">通過學習你的使用習慣，Smart Boost 可以更好的發揮一加手機大容量記憶體的效能優勢，提升遊戲和應用的啟動載入等資料讀取效能，讓你快人一等。</string>
     <string name="oneplus_settings_lab_feature_boost_title">Smart Boost 載入加速</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· 設置備用的螢幕解鎖方式</string>
+    <string name="oneplus_share_this_wifi">擴展Wi-Fi覆蓋範圍</string>
     <string name="oneplus_share_wifi_title">Wi-Fi分享</string>
     <string name="oneplus_shielding_notification">完全屏蔽</string>
     <string name="oneplus_shielding_notification_summary">通知將被完全屏蔽（來電、鬧鐘除外）</string>
@@ -5068,6 +5075,10 @@ PIN 碼可能不正確。"</string>
     <string name="wifi_tap_to_sign_in">輕按這裡即可登入網絡</string>
     <string name="wifi_tether_configure_ap_text">設定 Wi-Fi 熱點</string>
     <string name="wifi_tether_configure_ssid_default">Android 熱點</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">無設備連入10分鐘後</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">無設備連入15分鐘後</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">無設備連入5分鐘後</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">始終保持開啟狀態</string>
     <string name="wifi_tether_disabled_by_airplane">由於飛行模式已開啟，因此無法使用</string>
     <string name="wifi_tether_enabled_subtext">%1$s 使用中</string>
     <string name="wifi_tether_failed_subtext">可攜式 Wi-Fi 熱點發生錯誤</string>

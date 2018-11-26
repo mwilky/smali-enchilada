@@ -114,13 +114,13 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/laboratory/OPLabPluginListAdapter;->mInflate:Landroid/view/LayoutInflater;
 
-    const v3, 0x7f0d0180
+    const v3, 0x7f0d0183
 
     invoke-virtual {v2, v3, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object p2
 
-    const v1, 0x7f0a01e3
+    const v1, 0x7f0a01e6
 
     invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

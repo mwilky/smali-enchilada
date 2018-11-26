@@ -407,7 +407,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0300c9
+    const v2, 0x7f0300cb
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -446,6 +446,21 @@
     :cond_0
     invoke-direct {p0}, Lcom/android/settings/widget/HotspotApBandSelectionPreference;->updatePositiveButton()V
 
+    return-void
+.end method
+
+.method protected onClick()V
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/android/settings/widget/HotspotApBandSelectionPreference;->isDialogOpen()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-super {p0}, Lcom/android/settingslib/CustomDialogPreference;->onClick()V
+
+    :cond_0
     return-void
 .end method
 

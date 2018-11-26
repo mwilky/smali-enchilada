@@ -148,7 +148,7 @@
 
     invoke-super {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->initViews()V
 
-    const v0, 0x7f0a0183
+    const v0, 0x7f0a0186
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/SetupFingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
 
@@ -174,14 +174,14 @@
 
     if-eqz v1, :cond_0
 
-    const v1, 0x7f120b72
+    const v1, 0x7f120b74
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
     goto :goto_0
 
     :cond_0
-    const v1, 0x7f120fbe
+    const v1, 0x7f120fc3
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -190,11 +190,11 @@
 
     move-result-object v1
 
-    const v2, 0x7f120fbd
+    const v2, 0x7f120fc2
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(I)V
 
-    const v2, 0x7f0a01ec
+    const v2, 0x7f0a01ef
 
     invoke-virtual {p0, v2}, Lcom/android/settings/fingerprint/SetupFingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
 
@@ -204,11 +204,11 @@
 
     invoke-virtual {v2, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v3, 0x7f120fbb
+    const v3, 0x7f120fc0
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setText(I)V
 
-    const v3, 0x7f0a0211
+    const v3, 0x7f0a0214
 
     invoke-virtual {p0, v3}, Lcom/android/settings/fingerprint/SetupFingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
 
@@ -512,7 +512,7 @@
 
     move-result v0
 
-    const v1, 0x7f0a01ec
+    const v1, 0x7f0a01ef
 
     if-ne v0, v1, :cond_0
 
@@ -572,15 +572,15 @@
 
     if-eqz v0, :cond_3
 
-    const v0, 0x7f0d01c5
+    const v0, 0x7f0d01c8
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/SetupFingerprintEnrollIntroduction;->setContentView(I)V
 
-    const v0, 0x7f120b1a
+    const v0, 0x7f120b1c
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/SetupFingerprintEnrollIntroduction;->setHeaderText(I)V
 
-    const v0, 0x7f0a03b5
+    const v0, 0x7f0a03b8
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/SetupFingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
 

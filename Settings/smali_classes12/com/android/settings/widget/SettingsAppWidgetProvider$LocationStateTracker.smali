@@ -84,7 +84,7 @@
 .method public getButtonId()I
     .locals 1
 
-    const v0, 0x7f0a0271
+    const v0, 0x7f0a0274
 
     return v0
 .end method
@@ -130,7 +130,7 @@
 .method public getIndicatorId()I
     .locals 1
 
-    const v0, 0x7f0a027b
+    const v0, 0x7f0a027e
 
     return v0
 .end method

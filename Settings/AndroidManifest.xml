@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:androidprv="http://schemas.android.com/apk/prv/res/android" android:compileSdkVersion="28" android:compileSdkVersionCodename="9" android:sharedUserId="android.uid.system" coreApp="true" package="com.android.settings" platformBuildVersionCode="28" platformBuildVersionName="0.0.1.181024221608.555cb6c">
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:androidprv="http://schemas.android.com/apk/prv/res/android" android:compileSdkVersion="28" android:compileSdkVersionCodename="9" android:sharedUserId="android.uid.system" coreApp="true" package="com.android.settings" platformBuildVersionCode="28" platformBuildVersionName="0.0.1.181115181407.4acccea">
     <original-package android:name="com.android.settings"/>
     <protected-broadcast android:name="com.android.settings.POWER_OP_ON"/>
     <protected-broadcast android:name="com.android.settings.action.REQUEST_POWER_OFF"/>
@@ -1780,7 +1780,7 @@
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.android.settings.applications.manageapplications.ManageApplications"/>
         </activity>
-        <activity android:label="@string/write_settings_title" android:name="com.android.settings.Settings$AppWriteSettingsActivity" android:parentActivityName="com.android.settings.Settings" android:screenOrientation="portrait" android:taskAffinity="com.android.settings">
+        <activity android:label="@string/write_settings_title" android:name="com.android.settings.Settings$AppWriteSettingsActivity" android:screenOrientation="portrait" android:taskAffinity="com.android.settings">
             <intent-filter android:priority="1">
                 <action android:name="android.settings.action.MANAGE_WRITE_SETTINGS"/>
                 <category android:name="android.intent.category.DEFAULT"/>

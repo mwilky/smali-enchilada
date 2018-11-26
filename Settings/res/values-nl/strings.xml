@@ -2819,6 +2819,9 @@ Om op elk moment naar het Home-scherm te gaan, veeg omhoog vanaf de onderste cen
     <string name="oneplus_lock_buttons">Knoppen Vergrendelen</string>
     <string name="oneplus_lock_buttons_summary">Capacitieve knoppen vergrendelen wanneer Spelmodus ingeschakeld is</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">Indien u kiest voor het overslaan van de opname van gezichtsgegevens, wordt u voorgesteld om een andere methode te activeren, zoals vingerafdruk of pin, om uw toestel en persoonlijke informatie te beschermen. U kunt een een wachtwoord instellen in bepaalde apps. Ga naar \"Instellingen\" > \"Beveiliging &amp; Schermvergrendeling\" om de bescherming in te schakelen.</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">Stel een wachtwoord in om Gezichtsontgrendeling of vingerafdruk te gebruiken</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">Stel een patroon in om Gezichtsontgrendeling of vingerafdruk te gebruiken</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">Stel een PIN-code in om Gezichtsontgrendeling of vingerafdruk te gebruiken</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Probeer opnieuw</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">Te veel onjuiste pogingen!</string>
     <string name="oneplus_max_shortcuts_tips">U kunt maximaal 6 snelkoppelingen toevoegen</string>
@@ -5051,6 +5054,10 @@ Tik op "<b>Vorige</b> om verbinding te maken met een ander wifi-netwerk.</string
     <string name="wifi_tap_to_sign_in">Tik hier om in te loggen bij het netwerk</string>
     <string name="wifi_tether_configure_ap_text">Wifi-hotspot instellen</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Na 10 minuten van inactiviteit</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Na 15 minuten van inactiviteit</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Na 5 minuten van inactiviteit</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Altijd aan</string>
     <string name="wifi_tether_disabled_by_airplane">Niet beschikbaar omdat de vliegtuigmodus is ingeschakeld</string>
     <string name="wifi_tether_enabled_subtext">%1$s is actief</string>
     <string name="wifi_tether_failed_subtext">Fout met draagbare wifi-hotspot</string>

@@ -438,6 +438,9 @@
     <string name="oneplus_lock_buttons">ਲੌਕ ਬਟਨ</string>
     <string name="oneplus_lock_buttons_summary">"ਗੇਮਿੰਗ ਮੋਡ ਚਾਲੂ ਹੋਣ 'ਤੇ ਕਪੈਸਿਟਿਵ ਬਟਨ ਲੌਕ ਕਰੋ"</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">"ਜੇਕਰ ਤੁਸੀਂ ਚਿਹਰਾ ਡੇਟਾ ਨੂੰ ਰਿਕਾਰਡ ਕਰਨਾ ਛੱਡਣਾ ਚੁਣਦੇ ਹੋ, ਤਾਂ ਤੁਹਾਨੂੰ ਆਪਣੇ ਡਿਵਾਈਸ ਅਤੇ ਨਿੱਜੀ ਜਾਣਕਾਰੀ ਦੀ ਰੱਖਿਆ ਲਈ ਕਿਸੇ ਹੋਰ ਵਿਧੀ, ਜਿਵੇਂ ਫਿੰਗਰਪ੍ਰਿੰਟ ਜਾਂ ਪਿੰਨ, ਨੂੰ ਸਮਰੱਥ ਬਣਾਉਣ ਦਾ ਸੁਝਾਅ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ। ਤੁਸੀਂ ਕੁਝ ਐਪਾਂ 'ਤੇ ਪਾਸਵਰਡ ਵੀ ਸੈੱਟ ਕਰ ਸਕਦੇ ਹੋ। ਰੱਖਿਆ ਨੂੰ ਸਮਰੱਥ ਬਣਾਉਣ ਲਈ, ਕਿਰਪਾ ਕਰਕੇ \"ਸੈਟਿੰਗਾਂ\" > \"ਸੁਰੱਖਿਆ &amp; ਸਕ੍ਰੀਨ ਲੌਕ ਕਰੋ\" 'ਤੇ ਜਾਓ"</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">ਚਿਹਰਾ ਅਨਲੌਕ ਜਾਂ ਫਿੰਗਰਪ੍ਰਿੰਟ ਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ, ਪਾਸਵਰਡ ਸੈੱਟ ਕਰੋ</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">ਚਿਹਰਾ ਅਨਲੌਕ ਜਾਂ ਫਿੰਗਰਪ੍ਰਿੰਟ ਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ, ਪੈਟਰਨ ਸੈੱਟ ਕਰੋ</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">ਚਿਹਰਾ ਅਨਲੌਕ ਜਾਂ ਫਿੰਗਰਪ੍ਰਿੰਟ ਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ, PIN ਸੈੱਟ ਕਰੋ</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">ਮੁੜ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">ਬਹੁਤ ਸਾਰੀਆਂ ਗਲਤ ਕੋਸ਼ਿਸ਼ਾਂ!</string>
     <string name="oneplus_max_shortcuts_tips">ਤੁਸੀਂ 6 ਤੱਕ ਸ਼ੌਰਟਕੱਟਾਂ ਨੂੰ ਜੋੜ ਸਕਦੇ ਹੋ</string>
@@ -963,6 +966,10 @@
     <string name="wifi_setting_frequency_band_error">ਫ੍ਰੀਕਵੈਂਸੀ ਬੈਂਡ ਸੈੱਟ ਕਰਨ ਦੌਰਾਨ ਕੋਈ ਸਮੱਸਿਆ ਆਈ ਸੀ।</string>
     <string name="wifi_setting_frequency_band_summary">ਕਾਰਵਾਈ ਦੀ ਫ੍ਰੀਕਵੈਂਸੀ ਰੇਂਜ ਨਿਰਧਾਰਤ ਕਰੋ</string>
     <string name="wifi_setting_frequency_band_title">Wi‑Fi ਫ੍ਰੀਕਵੈਂਸੀ ਬੈਂਡ</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">10 ਮਿੰਟ ਦੀ ਅਕਿਰਿਆਸ਼ੀਲਤਾ ਤੋਂ ਬਾਅਦ</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">15 ਮਿੰਟ ਦੀ ਅਕਿਰਿਆਸ਼ੀਲਤਾ ਤੋਂ ਬਾਅਦ</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">5 ਮਿੰਟ ਦੀ ਅਕਿਰਿਆਸ਼ੀਲਤਾ ਤੋਂ ਬਾਅਦ</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">ਹਮੇਸ਼ਾ ਚਾਲੂ</string>
     <string name="wifi_wapi_as_cert">AS ਪ੍ਰਮਾਣਪੱਤਰ</string>
     <string name="wifi_wapi_cert_cancel_button">ਰੱਦ ਕਰੋ</string>
     <string name="wifi_wapi_cert_create_subdir">ਇੱਕ ਡਾਇਰੈਕਟਰੀ ਬਣਾਓ</string>

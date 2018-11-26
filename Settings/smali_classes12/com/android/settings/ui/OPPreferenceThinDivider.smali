@@ -43,7 +43,7 @@
 
     iput-object p1, p0, Lcom/android/settings/ui/OPPreferenceThinDivider;->mContext:Landroid/content/Context;
 
-    const v0, 0x7f0d019e
+    const v0, 0x7f0d01a1
 
     invoke-virtual {p0, v0}, Lcom/android/settings/ui/OPPreferenceThinDivider;->setLayoutResource(I)V
 

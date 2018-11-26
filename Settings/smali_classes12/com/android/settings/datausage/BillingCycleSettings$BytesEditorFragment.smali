@@ -292,7 +292,7 @@
 
     iget-object v5, p0, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->mView:Landroid/view/View;
 
-    const v6, 0x7f0a04f2
+    const v6, 0x7f0a04f5
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -420,7 +420,7 @@
 
     iget-object v4, p0, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->mView:Landroid/view/View;
 
-    const v5, 0x7f0a04f2
+    const v5, 0x7f0a04f5
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

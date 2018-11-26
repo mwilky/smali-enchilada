@@ -2819,6 +2819,9 @@ Pentru a accesa ecranul principal în orice moment, glosați cu degetul în sus 
     <string name="oneplus_lock_buttons">Blocare butoane</string>
     <string name="oneplus_lock_buttons_summary">Blocați butoanele capacitive când modul Jocuri este activat</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">Dacă selectați să ignorați înregistrarea datelor feței, vi se sugerează să activați altă metodă, cum ar fi amprenta sau PIN-ul pentru a proteja dispozitivul și informațiile personale. Puteți, de asemenea, să setați o parolă la anumite aplicații. Pentru a activa protecția, accesați „Setări” și „Securitate și blocare ecran”.</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">Setați o parolă pentru a utiliza Deblocare facială sau amprenta</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">Setați un model pentru a utiliza Deblocare facială sau amprenta</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">Setați un PIN pentru a utiliza Deblocare facială sau amprenta</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Încercați din nou</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">Prea multe încercări incorecte!</string>
     <string name="oneplus_max_shortcuts_tips">Puteți să adăugați până la 6 comenzi rapide</string>
@@ -5051,6 +5054,10 @@ Atingeți "<b>Înapoi</b> pentru a vă conecta la o altă rețea Wi-Fi.</string>
     <string name="wifi_tap_to_sign_in">Atingeți aici pentru a vă conecta la rețea</string>
     <string name="wifi_tether_configure_ap_text">Configurați hotspotul Wi-Fi</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">După 10 min. de inactivitate</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">După 15 min. de inactivitate</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">După 5 min. de inactivitate</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Întotdeauna activat</string>
     <string name="wifi_tether_disabled_by_airplane">Indisponibil pentru că este activat modul avion</string>
     <string name="wifi_tether_enabled_subtext">%1$s este activ</string>
     <string name="wifi_tether_failed_subtext">Eroare de hotspot Wi-Fi portabil</string>

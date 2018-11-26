@@ -377,7 +377,7 @@
 
     invoke-super {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->initViews()V
 
-    const v0, 0x7f0a0183
+    const v0, 0x7f0a0186
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->findViewById(I)Landroid/view/View;
 
@@ -385,7 +385,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f120fbf
+    const v1, 0x7f120fc4
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -399,31 +399,31 @@
 
     if-eqz v2, :cond_0
 
-    const v2, 0x7f120d13
+    const v2, 0x7f120d16
 
     invoke-virtual {p0, v2}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->setHeaderText(I)V
 
-    const v2, 0x7f120d12
+    const v2, 0x7f120d15
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(I)V
 
     goto :goto_0
 
     :cond_0
-    const v2, 0x7f120afe
+    const v2, 0x7f120b00
 
     invoke-virtual {p0, v2}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->setHeaderText(I)V
 
-    const v2, 0x7f120afd
+    const v2, 0x7f120aff
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(I)V
 
     :goto_0
-    const v2, 0x7f120aff
+    const v2, 0x7f120b01
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(I)V
 
-    const v2, 0x7f0a01ec
+    const v2, 0x7f0a01ef
 
     invoke-virtual {p0, v2}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->findViewById(I)Landroid/view/View;
 
@@ -433,11 +433,11 @@
 
     invoke-virtual {v2, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v3, 0x7f120fbb
+    const v3, 0x7f120fc0
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setText(I)V
 
-    const v3, 0x7f0a0211
+    const v3, 0x7f0a0214
 
     invoke-virtual {p0, v3}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->findViewById(I)Landroid/view/View;
 
@@ -897,7 +897,7 @@
     iput-boolean v0, p0, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->mAlreadyHadLockScreenSetup:Z
 
     :goto_0
-    const v0, 0x7f0d0164
+    const v0, 0x7f0d0166
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->setContentView(I)V
 

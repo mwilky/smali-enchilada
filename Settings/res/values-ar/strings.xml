@@ -2819,6 +2819,9 @@
     <string name="oneplus_lock_buttons">قفل الأزرار</string>
     <string name="oneplus_lock_buttons_summary">قفل الأزرار السعوية عندما يكون وضع الألعاب قيد التشغيل</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">إذا حددت تخطي بيانات تسجيل الوجه، سيتم الاقتراح عليك بتمكين طريقة أخرى مثل بصمة الإصبع أو رقم تعريف شخصي لحماية جهازك ومعلوماتك الشخصية. يمكنك أيضًا تحديد كلمة مرور على تطبيقات معينة. لتمكين الحماية، يرجى الذهاب إلى \";الإعدادات\"; &amp;;gt; \";الأمان وشاشة القفل\";.</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">لاستخدام ميزة إلغاء القفل بالوجه أو بصمة الإصبع، قم بتعيين كلمة مرور</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">لاستخدام ميزة القفل بالوجه أو بصمة الإصبع، قم بتعيين نقش</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">لاستخدام ميزة القفل بالوجه أو بصمة الإصبع، قم بتعيين PIN</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">حاول مرة أخرى</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">عدد كبير للغاية من المحاولات غير الصحيحة!</string>
     <string name="oneplus_max_shortcuts_tips">يمكنك إضافة ما يصل إلى 6 اختصارات</string>
@@ -5051,6 +5054,10 @@
     <string name="wifi_tap_to_sign_in">انقر هنا لتسجيل الدخول إلى الشبكة.</string>
     <string name="wifi_tether_configure_ap_text">‏إعداد نقطة اتصال Wi-Fi</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">بعد 10 دقائق من عدم النشاط</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">بعد 15 دقيقة من عدم النشاط</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">بعد 5 دقائق من عدم النشاط</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">تشغيل دائمًا</string>
     <string name="wifi_tether_disabled_by_airplane">غير متاح نظرًا لتشغيل وضع الطائرة.</string>
     <string name="wifi_tether_enabled_subtext">%1$s نشطة</string>
     <string name="wifi_tether_failed_subtext">‏خطأ في نقطة اتصال Wi-Fi المحمولة</string>

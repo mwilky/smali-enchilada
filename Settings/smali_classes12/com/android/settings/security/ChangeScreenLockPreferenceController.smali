@@ -434,7 +434,7 @@
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f121278
+    const v0, 0x7f12127d
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -442,7 +442,7 @@
 
     :cond_1
     :goto_0
-    const v0, 0x7f121279
+    const v0, 0x7f12127e
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -486,21 +486,21 @@
     goto :goto_1
 
     :cond_3
-    const v0, 0x7f12127a
+    const v0, 0x7f12127f
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
     goto :goto_1
 
     :cond_4
-    const v0, 0x7f12127c
+    const v0, 0x7f121281
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
     goto :goto_1
 
     :cond_5
-    const v0, 0x7f12127b
+    const v0, 0x7f121280
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 

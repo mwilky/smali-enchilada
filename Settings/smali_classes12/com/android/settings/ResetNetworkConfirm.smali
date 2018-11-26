@@ -141,7 +141,7 @@
 
     iget-object v0, p0, Lcom/android/settings/ResetNetworkConfirm;->mContentView:Landroid/view/View;
 
-    const v1, 0x7f0a01da
+    const v1, 0x7f0a01dd
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -273,7 +273,7 @@
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f120f01
+    const v0, 0x7f120f06
 
     invoke-static {p1, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -431,7 +431,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f120c5b
+    const v4, 0x7f120c5d
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -439,7 +439,7 @@
 
     invoke-virtual {v1, v3}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    const v1, 0x7f0d0230
+    const v1, 0x7f0d0233
 
     invoke-virtual {p1, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 

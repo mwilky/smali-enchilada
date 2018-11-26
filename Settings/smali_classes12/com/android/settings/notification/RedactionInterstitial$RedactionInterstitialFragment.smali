@@ -128,7 +128,7 @@
     move v1, v2
 
     :goto_2
-    const v2, 0x7f0a024b
+    const v2, 0x7f0a024e
 
     if-eqz v3, :cond_4
 
@@ -142,7 +142,7 @@
 
     if-nez v4, :cond_3
 
-    const v2, 0x7f0a04e5
+    const v2, 0x7f0a04e8
 
     goto :goto_3
 
@@ -155,7 +155,7 @@
 
     if-nez v4, :cond_4
 
-    const v2, 0x7f0a0467
+    const v2, 0x7f0a046a
 
     :cond_4
     :goto_3
@@ -183,7 +183,7 @@
 
     const/4 v1, 0x1
 
-    const v2, 0x7f0a04e5
+    const v2, 0x7f0a04e8
 
     if-ne p2, v2, :cond_0
 
@@ -195,7 +195,7 @@
     move v2, v0
 
     :goto_0
-    const v3, 0x7f0a024b
+    const v3, 0x7f0a024e
 
     if-eq p2, v3, :cond_1
 
@@ -235,14 +235,52 @@
 
     if-eqz v3, :cond_3
 
+    move v6, v1
+
+    goto :goto_3
+
+    :cond_3
+    move v6, v0
+
+    :goto_3
+    iget v7, p0, Lcom/android/settings/notification/RedactionInterstitial$RedactionInterstitialFragment;->mUserId:I
+
+    invoke-static {v4, v5, v6, v7}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
+
+    invoke-virtual {p0}, Lcom/android/settings/notification/RedactionInterstitial$RedactionInterstitialFragment;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v4
+
+    const-string v5, "lock_screen_allow_private_notifications"
+
+    if-eqz v2, :cond_4
+
+    move v6, v1
+
+    goto :goto_4
+
+    :cond_4
+    move v6, v0
+
+    :goto_4
+    const/16 v7, 0x3e7
+
+    invoke-static {v4, v5, v6, v7}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
+
+    invoke-virtual {p0}, Lcom/android/settings/notification/RedactionInterstitial$RedactionInterstitialFragment;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v4
+
+    const-string v5, "lock_screen_show_notifications"
+
+    if-eqz v3, :cond_5
+
     move v0, v1
 
     nop
 
-    :cond_3
-    iget v1, p0, Lcom/android/settings/notification/RedactionInterstitial$RedactionInterstitialFragment;->mUserId:I
-
-    invoke-static {v4, v5, v0, v1}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
+    :cond_5
+    invoke-static {v4, v5, v0, v7}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
     return-void
 .end method
@@ -254,7 +292,7 @@
 
     move-result v0
 
-    const v1, 0x7f0a0468
+    const v1, 0x7f0a046b
 
     if-ne v0, v1, :cond_0
 
@@ -289,7 +327,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
 
-    const v0, 0x7f0d0229
+    const v0, 0x7f0d022c
 
     const/4 v1, 0x0
 
@@ -327,7 +365,7 @@
 
     invoke-super {p0, p1, p2}, Lcom/android/settings/SettingsPreferenceFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 
-    const v0, 0x7f0a0460
+    const v0, 0x7f0a0463
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -337,7 +375,7 @@
 
     iput-object v0, p0, Lcom/android/settings/notification/RedactionInterstitial$RedactionInterstitialFragment;->mRadioGroup:Landroid/widget/RadioGroup;
 
-    const v0, 0x7f0a04e5
+    const v0, 0x7f0a04e8
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -349,7 +387,7 @@
 
     nop
 
-    const v0, 0x7f0a0467
+    const v0, 0x7f0a046a
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -403,7 +441,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0a0334
+    const v0, 0x7f0a0337
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -427,7 +465,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/RestrictedRadioButton;->setText(I)V
 
-    const v0, 0x7f0a024b
+    const v0, 0x7f0a024e
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -440,7 +478,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setVisibility(I)V
 
     :cond_0
-    const v0, 0x7f0a0468
+    const v0, 0x7f0a046b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

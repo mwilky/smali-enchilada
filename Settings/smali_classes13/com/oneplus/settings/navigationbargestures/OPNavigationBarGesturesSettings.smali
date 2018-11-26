@@ -554,8 +554,15 @@
     invoke-virtual {v3, v2}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
 
     iget-object v3, p0, Lcom/oneplus/settings/navigationbargestures/OPNavigationBarGesturesSettings;->mCustomization:Landroid/support/v7/preference/Preference;
-	
-    invoke-virtual {v3, v2}, Landroid/support/v7/preference/Preference;->setEnabled(Z)V
+
+    if-eq v0, v4, :cond_3
+
+    move v1, v2
+
+    nop
+
+    :cond_3
+    invoke-virtual {v3, v1}, Landroid/support/v7/preference/Preference;->setEnabled(Z)V
 
     :goto_2
     return-void
@@ -672,7 +679,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/navigationbargestures/OPNavigationBarGesturesSettings;->mAlwaysShowNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
-    const v1, 0x7f120b2b
+    const v1, 0x7f120b2d
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/navigationbargestures/OPNavigationBarGesturesSettings;->getString(I)Ljava/lang/String;
 

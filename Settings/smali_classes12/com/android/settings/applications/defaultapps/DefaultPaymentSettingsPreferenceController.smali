@@ -7,6 +7,8 @@
 
 
 # instance fields
+.field private mFragment:Landroid/app/Fragment;
+
 .field private final mNfcAdapter:Landroid/nfc/NfcAdapter;
 
 .field private final mPackageManager:Landroid/content/pm/PackageManager;
@@ -105,6 +107,14 @@
     return v0
 .end method
 
+.method public setFragment(Landroid/app/Fragment;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/settings/applications/defaultapps/DefaultPaymentSettingsPreferenceController;->mFragment:Landroid/app/Fragment;
+
+    return-void
+.end method
+
 .method public updateState(Landroid/support/v7/preference/Preference;)V
     .locals 4
 
@@ -123,6 +133,16 @@
     invoke-direct {v0, v1}, Lcom/android/settings/nfc/PaymentBackend;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/settings/applications/defaultapps/DefaultPaymentSettingsPreferenceController;->mPaymentBackend:Lcom/android/settings/nfc/PaymentBackend;
+
+    iget-object v0, p0, Lcom/android/settings/applications/defaultapps/DefaultPaymentSettingsPreferenceController;->mFragment:Landroid/app/Fragment;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/settings/applications/defaultapps/DefaultPaymentSettingsPreferenceController;->mPaymentBackend:Lcom/android/settings/nfc/PaymentBackend;
+
+    iget-object v1, p0, Lcom/android/settings/applications/defaultapps/DefaultPaymentSettingsPreferenceController;->mFragment:Landroid/app/Fragment;
+
+    invoke-virtual {v0, v1}, Lcom/android/settings/nfc/PaymentBackend;->setFragment(Landroid/app/Fragment;)V
 
     goto :goto_0
 

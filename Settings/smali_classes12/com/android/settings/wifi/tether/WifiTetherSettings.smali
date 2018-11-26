@@ -17,6 +17,8 @@
 # static fields
 .field private static final KEY_WIFI_TETHER_AUTO_OFF:Ljava/lang/String; = "wifi_tether_auto_turn_off"
 
+.field private static final MSG_WHAT_START_TETHER:I = 0x1
+
 .field public static final SEARCH_INDEX_DATA_PROVIDER:Lcom/android/settings/search/Indexable$SearchIndexProvider;
 
 .field private static final TAG:Ljava/lang/String; = "WifiTetherSettings"
@@ -29,7 +31,11 @@
 
 .field private mConnectedDeviceManagerController:Lcom/android/settings/wifi/tether/OPWifiTetherDeviceManagerController;
 
+.field private mHandler:Landroid/os/Handler;
+
 .field private mOPApBandPreferenceController:Lcom/oneplus/settings/wifi/tether/OPWifiTetherApBandPreferenceController;
+
+.field private mOPWifiTetherCustomAutoTurnOffPreferenceController:Lcom/android/settings/wifi/tether/OPWifiTetherCustomAutoTurnOffPreferenceController;
 
 .field private mPasswordPreferenceController:Lcom/android/settings/wifi/tether/WifiTetherPasswordPreferenceController;
 
@@ -67,9 +73,9 @@
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    new-instance v0, Lcom/android/settings/wifi/tether/WifiTetherSettings$1;
+    new-instance v0, Lcom/android/settings/wifi/tether/WifiTetherSettings$3;
 
-    invoke-direct {v0}, Lcom/android/settings/wifi/tether/WifiTetherSettings$1;-><init>()V
+    invoke-direct {v0}, Lcom/android/settings/wifi/tether/WifiTetherSettings$3;-><init>()V
 
     sput-object v0, Lcom/android/settings/wifi/tether/WifiTetherSettings;->SEARCH_INDEX_DATA_PROVIDER:Lcom/android/settings/search/Indexable$SearchIndexProvider;
 
@@ -83,13 +89,19 @@
 
     invoke-direct {p0, v0}, Lcom/android/settings/dashboard/RestrictedDashboardFragment;-><init>(Ljava/lang/String;)V
 
+    new-instance v0, Lcom/android/settings/wifi/tether/WifiTetherSettings$1;
+
+    invoke-direct {v0, p0}, Lcom/android/settings/wifi/tether/WifiTetherSettings$1;-><init>(Lcom/android/settings/wifi/tether/WifiTetherSettings;)V
+
+    iput-object v0, p0, Lcom/android/settings/wifi/tether/WifiTetherSettings;->mHandler:Landroid/os/Handler;
+
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/settings/wifi/tether/WifiTetherSettings;)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/android/settings/wifi/tether/WifiTetherSettings;->updateDisplayWithNewConfig()V
+    invoke-direct {p0}, Lcom/android/settings/wifi/tether/WifiTetherSettings;->startTether()V
 
     return-void
 .end method
@@ -110,15 +122,39 @@
     return v0
 .end method
 
-.method static synthetic access$300(Lcom/android/settings/wifi/tether/WifiTetherSettings;)V
+.method static synthetic access$202(Lcom/android/settings/wifi/tether/WifiTetherSettings;Z)Z
     .locals 0
 
-    invoke-direct {p0}, Lcom/android/settings/wifi/tether/WifiTetherSettings;->startTether()V
+    iput-boolean p1, p0, Lcom/android/settings/wifi/tether/WifiTetherSettings;->mRestartWifiApAfterConfigChange:Z
+
+    return p1
+.end method
+
+.method static synthetic access$300(Lcom/android/settings/wifi/tether/WifiTetherSettings;)Lcom/android/settings/wifi/tether/WifiTetherSwitchBarController;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/settings/wifi/tether/WifiTetherSettings;->mSwitchBarController:Lcom/android/settings/wifi/tether/WifiTetherSwitchBarController;
+
+    return-object v0
+.end method
+
+.method static synthetic access$400(Lcom/android/settings/wifi/tether/WifiTetherSettings;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/settings/wifi/tether/WifiTetherSettings;->updateDisplayWithNewConfig()V
 
     return-void
 .end method
 
-.method static synthetic access$400(Lcom/android/settings/wifi/tether/WifiTetherSettings;)Lcom/android/settings/wifi/tether/OPWifiTetherDeviceManagerController;
+.method static synthetic access$500(Lcom/android/settings/wifi/tether/WifiTetherSettings;)Landroid/os/Handler;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/settings/wifi/tether/WifiTetherSettings;->mHandler:Landroid/os/Handler;
+
+    return-object v0
+.end method
+
+.method static synthetic access$600(Lcom/android/settings/wifi/tether/WifiTetherSettings;)Lcom/android/settings/wifi/tether/OPWifiTetherDeviceManagerController;
     .locals 1
 
     iget-object v0, p0, Lcom/android/settings/wifi/tether/WifiTetherSettings;->mConnectedDeviceManagerController:Lcom/android/settings/wifi/tether/OPWifiTetherDeviceManagerController;
@@ -246,7 +282,13 @@
 .end method
 
 .method private startTether()V
-    .locals 1
+    .locals 2
+
+    const-string v0, "WifiTetherSettings"
+
+    const-string v1, "startTether"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     const/4 v0, 0x0
 
@@ -360,6 +402,12 @@
 
     iput-object v1, p0, Lcom/android/settings/wifi/tether/WifiTetherSettings;->mConnectedDeviceManagerController:Lcom/android/settings/wifi/tether/OPWifiTetherDeviceManagerController;
 
+    new-instance v1, Lcom/android/settings/wifi/tether/OPWifiTetherCustomAutoTurnOffPreferenceController;
+
+    invoke-direct {v1, p1}, Lcom/android/settings/wifi/tether/OPWifiTetherCustomAutoTurnOffPreferenceController;-><init>(Landroid/content/Context;)V
+
+    iput-object v1, p0, Lcom/android/settings/wifi/tether/WifiTetherSettings;->mOPWifiTetherCustomAutoTurnOffPreferenceController:Lcom/android/settings/wifi/tether/OPWifiTetherCustomAutoTurnOffPreferenceController;
+
     iget-object v1, p0, Lcom/android/settings/wifi/tether/WifiTetherSettings;->mSSIDPreferenceController:Lcom/android/settings/wifi/tether/WifiTetherSSIDPreferenceController;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -381,6 +429,10 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     iget-object v1, p0, Lcom/android/settings/wifi/tether/WifiTetherSettings;->mConnectedDeviceManagerController:Lcom/android/settings/wifi/tether/OPWifiTetherDeviceManagerController;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/android/settings/wifi/tether/WifiTetherSettings;->mOPWifiTetherCustomAutoTurnOffPreferenceController:Lcom/android/settings/wifi/tether/OPWifiTetherCustomAutoTurnOffPreferenceController;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -503,7 +555,7 @@
 .end method
 
 .method public onStop()V
-    .locals 2
+    .locals 3
 
     invoke-super {p0}, Lcom/android/settings/dashboard/RestrictedDashboardFragment;->onStop()V
 
@@ -518,11 +570,17 @@
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
     :cond_0
+    iget-object v1, p0, Lcom/android/settings/wifi/tether/WifiTetherSettings;->mHandler:Landroid/os/Handler;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->removeMessages(I)V
+
     return-void
 .end method
 
 .method public onTetherConfigUpdated()V
-    .locals 3
+    .locals 5
 
     invoke-direct {p0}, Lcom/android/settings/wifi/tether/WifiTetherSettings;->buildNewConfig()Landroid/net/wifi/WifiConfiguration;
 
@@ -536,34 +594,15 @@
 
     invoke-virtual {v1, v2}, Lcom/android/settings/wifi/tether/WifiTetherPasswordPreferenceController;->updateVisibility(I)V
 
-    iget-object v1, p0, Lcom/android/settings/wifi/tether/WifiTetherSettings;->mWifiManager:Landroid/net/wifi/WifiManager;
+    iget-object v1, p0, Lcom/android/settings/wifi/tether/WifiTetherSettings;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {v1}, Landroid/net/wifi/WifiManager;->getWifiApState()I
+    new-instance v2, Lcom/android/settings/wifi/tether/WifiTetherSettings$2;
 
-    move-result v1
+    invoke-direct {v2, p0, v0}, Lcom/android/settings/wifi/tether/WifiTetherSettings$2;-><init>(Lcom/android/settings/wifi/tether/WifiTetherSettings;Landroid/net/wifi/WifiConfiguration;)V
 
-    const/16 v2, 0xd
+    const-wide/16 v3, 0x64
 
-    if-ne v1, v2, :cond_0
-
-    const-string v1, "TetheringSettings"
-
-    const-string v2, "Wifi AP config changed while enabled, stop and restart"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Lcom/android/settings/wifi/tether/WifiTetherSettings;->mRestartWifiApAfterConfigChange:Z
-
-    iget-object v1, p0, Lcom/android/settings/wifi/tether/WifiTetherSettings;->mSwitchBarController:Lcom/android/settings/wifi/tether/WifiTetherSwitchBarController;
-
-    invoke-virtual {v1}, Lcom/android/settings/wifi/tether/WifiTetherSwitchBarController;->stopTether()V
-
-    :cond_0
-    iget-object v1, p0, Lcom/android/settings/wifi/tether/WifiTetherSettings;->mWifiManager:Landroid/net/wifi/WifiManager;
-
-    invoke-virtual {v1, v0}, Landroid/net/wifi/WifiManager;->setWifiApConfiguration(Landroid/net/wifi/WifiConfiguration;)Z
+    invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     return-void
 .end method

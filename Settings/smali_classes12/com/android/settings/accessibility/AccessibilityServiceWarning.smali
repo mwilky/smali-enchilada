@@ -121,7 +121,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0a01bf
+    const v4, 0x7f0a01c2
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -498,7 +498,7 @@
 
     move-result-object v0
 
-    const v3, 0x7f1211fd
+    const v3, 0x7f121202
 
     invoke-static {v0, v3, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 

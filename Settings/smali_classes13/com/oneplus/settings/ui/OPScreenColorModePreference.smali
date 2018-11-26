@@ -12,7 +12,7 @@
 
 
 # static fields
-.field private static final layoutResId:I = 0x7f0d01af
+.field private static final layoutResId:I = 0x7f0d01b2
 
 
 # instance fields
@@ -115,7 +115,7 @@
 .method private initView(Landroid/content/Context;)V
     .locals 1
 
-    const v0, 0x7f0d01af
+    const v0, 0x7f0d01b2
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/ui/OPScreenColorModePreference;->setLayoutResource(I)V
 
@@ -131,7 +131,7 @@
 
     invoke-super {p0, p1}, Landroid/support/v7/preference/Preference;->onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
 
-    const v0, 0x7f0a05ee
+    const v0, 0x7f0a05f1
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -149,7 +149,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
 
-    const v0, 0x7f0a03f1
+    const v0, 0x7f0a03f4
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -159,7 +159,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/ui/OPScreenColorModePreference;->mPage0:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a03f2
+    const v0, 0x7f0a03f5
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -169,7 +169,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/ui/OPScreenColorModePreference;->mPage1:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a03f3
+    const v0, 0x7f0a03f6
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -187,19 +187,19 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0d01b1
+    const v2, 0x7f0d01b4
 
     invoke-virtual {v0, v2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v2
 
-    const v3, 0x7f0d01b3
+    const v3, 0x7f0d01b6
 
     invoke-virtual {v0, v3, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v3
 
-    const v4, 0x7f0d01b2
+    const v4, 0x7f0d01b5
 
     invoke-virtual {v0, v4, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 

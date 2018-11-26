@@ -281,7 +281,7 @@
 .end method
 
 .method private displayRecentApps(Landroid/content/Context;Ljava/util/List;)V
-    .locals 18
+    .locals 20
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -292,52 +292,52 @@
         }
     .end annotation
 
-    move-object/from16 v0, p0
+    move-object/from16 v1, p0
 
-    iget-object v1, v0, Lcom/android/settings/applications/RecentAppsPreferenceController;->mCategory:Landroid/support/v7/preference/PreferenceCategory;
+    iget-object v0, v1, Lcom/android/settings/applications/RecentAppsPreferenceController;->mCategory:Landroid/support/v7/preference/PreferenceCategory;
 
-    const v2, 0x7f120ee7
+    const v2, 0x7f120eec
 
-    invoke-virtual {v1, v2}, Landroid/support/v7/preference/PreferenceCategory;->setTitle(I)V
+    invoke-virtual {v0, v2}, Landroid/support/v7/preference/PreferenceCategory;->setTitle(I)V
 
-    iget-object v1, v0, Lcom/android/settings/applications/RecentAppsPreferenceController;->mDivider:Landroid/support/v7/preference/Preference;
+    iget-object v0, v1, Lcom/android/settings/applications/RecentAppsPreferenceController;->mDivider:Landroid/support/v7/preference/Preference;
 
     const/4 v2, 0x1
 
-    invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setVisible(Z)V
+    invoke-virtual {v0, v2}, Landroid/support/v7/preference/Preference;->setVisible(Z)V
 
-    iget-object v1, v0, Lcom/android/settings/applications/RecentAppsPreferenceController;->mSeeAllPref:Landroid/support/v7/preference/Preference;
+    iget-object v0, v1, Lcom/android/settings/applications/RecentAppsPreferenceController;->mSeeAllPref:Landroid/support/v7/preference/Preference;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v2}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    iget-object v1, v0, Lcom/android/settings/applications/RecentAppsPreferenceController;->mSeeAllPref:Landroid/support/v7/preference/Preference;
+    iget-object v0, v1, Lcom/android/settings/applications/RecentAppsPreferenceController;->mSeeAllPref:Landroid/support/v7/preference/Preference;
 
     const v2, 0x7f080181
 
-    invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setIcon(I)V
+    invoke-virtual {v0, v2}, Landroid/support/v7/preference/Preference;->setIcon(I)V
 
-    new-instance v1, Landroid/util/ArrayMap;
+    new-instance v0, Landroid/util/ArrayMap;
 
-    invoke-direct {v1}, Landroid/util/ArrayMap;-><init>()V
+    invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
-    iget-object v2, v0, Lcom/android/settings/applications/RecentAppsPreferenceController;->mCategory:Landroid/support/v7/preference/PreferenceCategory;
+    move-object v2, v0
 
-    invoke-virtual {v2}, Landroid/support/v7/preference/PreferenceCategory;->getPreferenceCount()I
+    iget-object v0, v1, Lcom/android/settings/applications/RecentAppsPreferenceController;->mCategory:Landroid/support/v7/preference/PreferenceCategory;
 
-    move-result v2
+    invoke-virtual {v0}, Landroid/support/v7/preference/PreferenceCategory;->getPreferenceCount()I
 
-    const/4 v3, 0x0
+    move-result v3
 
-    move v4, v3
+    const/4 v0, 0x0
 
     :goto_0
-    if-ge v4, v2, :cond_1
+    if-ge v0, v3, :cond_1
 
-    iget-object v5, v0, Lcom/android/settings/applications/RecentAppsPreferenceController;->mCategory:Landroid/support/v7/preference/PreferenceCategory;
+    iget-object v5, v1, Lcom/android/settings/applications/RecentAppsPreferenceController;->mCategory:Landroid/support/v7/preference/PreferenceCategory;
 
-    invoke-virtual {v5, v4}, Landroid/support/v7/preference/PreferenceCategory;->getPreference(I)Landroid/support/v7/preference/Preference;
+    invoke-virtual {v5, v0}, Landroid/support/v7/preference/PreferenceCategory;->getPreference(I)Landroid/support/v7/preference/Preference;
 
     move-result-object v5
 
@@ -353,55 +353,63 @@
 
     if-nez v7, :cond_0
 
-    invoke-interface {v1, v6, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v2, v6, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_1
     invoke-interface/range {p2 .. p2}, Ljava/util/List;->size()I
 
-    move-result v4
+    move-result v5
 
-    move v5, v3
+    const/4 v0, 0x0
 
     :goto_1
-    if-ge v5, v4, :cond_5
+    move v6, v0
 
-    move-object/from16 v6, p2
+    if-ge v6, v5, :cond_5
 
-    invoke-interface {v6, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-object/from16 v7, p2
 
-    move-result-object v7
+    invoke-interface {v7, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    check-cast v7, Landroid/app/usage/UsageStats;
+    move-result-object v0
 
-    invoke-virtual {v7}, Landroid/app/usage/UsageStats;->getPackageName()Ljava/lang/String;
+    move-object v8, v0
 
-    move-result-object v8
+    check-cast v8, Landroid/app/usage/UsageStats;
 
-    iget-object v9, v0, Lcom/android/settings/applications/RecentAppsPreferenceController;->mApplicationsState:Lcom/android/settingslib/applications/ApplicationsState;
-
-    iget v10, v0, Lcom/android/settings/applications/RecentAppsPreferenceController;->mUserId:I
-
-    invoke-virtual {v9, v8, v10}, Lcom/android/settingslib/applications/ApplicationsState;->getEntry(Ljava/lang/String;I)Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
+    invoke-virtual {v8}, Landroid/app/usage/UsageStats;->getPackageName()Ljava/lang/String;
 
     move-result-object v9
 
-    if-nez v9, :cond_2
+    iget-object v0, v1, Lcom/android/settings/applications/RecentAppsPreferenceController;->mApplicationsState:Lcom/android/settingslib/applications/ApplicationsState;
+
+    iget v10, v1, Lcom/android/settings/applications/RecentAppsPreferenceController;->mUserId:I
+
+    invoke-virtual {v0, v9, v10}, Lcom/android/settingslib/applications/ApplicationsState;->getEntry(Ljava/lang/String;I)Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
+
+    move-result-object v10
+
+    if-nez v10, :cond_2
 
     nop
 
     move-object/from16 v13, p1
 
-    goto :goto_3
+    move/from16 v19, v5
+
+    const/4 v15, 0x0
+
+    goto :goto_4
 
     :cond_2
-    const/4 v10, 0x1
+    const/4 v0, 0x1
 
-    invoke-interface {v1, v8}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v2, v9}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v11
 
@@ -417,7 +425,7 @@
 
     move-object v11, v12
 
-    const/4 v10, 0x0
+    const/4 v0, 0x0
 
     goto :goto_2
 
@@ -425,93 +433,130 @@
     move-object/from16 v13, p1
 
     :goto_2
-    invoke-virtual {v11, v8}, Landroid/support/v7/preference/Preference;->setKey(Ljava/lang/String;)V
+    move v12, v0
 
-    iget-object v12, v9, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->label:Ljava/lang/String;
+    invoke-virtual {v11, v9}, Landroid/support/v7/preference/Preference;->setKey(Ljava/lang/String;)V
 
-    invoke-virtual {v11, v12}, Landroid/support/v7/preference/Preference;->setTitle(Ljava/lang/CharSequence;)V
+    :try_start_0
+    iget-object v0, v1, Lcom/android/settings/applications/RecentAppsPreferenceController;->mPm:Landroid/content/pm/PackageManager;
 
-    iget-object v12, v0, Lcom/android/settings/applications/RecentAppsPreferenceController;->mIconDrawableFactory:Landroid/util/IconDrawableFactory;
+    iget-object v14, v1, Lcom/android/settings/applications/RecentAppsPreferenceController;->mPm:Landroid/content/pm/PackageManager;
 
-    iget-object v14, v9, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
+    const/16 v15, 0x80
 
-    invoke-virtual {v12, v14}, Landroid/util/IconDrawableFactory;->getBadgedIcon(Landroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v14, v9, v15}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
 
-    move-result-object v12
+    move-result-object v14
 
-    invoke-virtual {v11, v12}, Landroid/support/v7/preference/Preference;->setIcon(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v14}, Landroid/content/pm/PackageManager;->getApplicationLabel(Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
 
-    iget-object v12, v0, Lcom/android/settings/applications/RecentAppsPreferenceController;->mContext:Landroid/content/Context;
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v0
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_3
+
+    :catch_0
+    move-exception v0
+
+    iget-object v0, v10, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->label:Ljava/lang/String;
+
+    :goto_3
+    invoke-virtual {v11, v0}, Landroid/support/v7/preference/Preference;->setTitle(Ljava/lang/CharSequence;)V
+
+    iget-object v14, v1, Lcom/android/settings/applications/RecentAppsPreferenceController;->mIconDrawableFactory:Landroid/util/IconDrawableFactory;
+
+    iget-object v15, v10, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
+
+    invoke-virtual {v14, v15}, Landroid/util/IconDrawableFactory;->getBadgedIcon(Landroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v14
+
+    invoke-virtual {v11, v14}, Landroid/support/v7/preference/Preference;->setIcon(Landroid/graphics/drawable/Drawable;)V
+
+    iget-object v14, v1, Lcom/android/settings/applications/RecentAppsPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v14
+    move-result-wide v15
 
-    invoke-virtual {v7}, Landroid/app/usage/UsageStats;->getLastTimeUsed()J
+    invoke-virtual {v8}, Landroid/app/usage/UsageStats;->getLastTimeUsed()J
 
-    move-result-wide v16
+    move-result-wide v17
 
-    sub-long v14, v14, v16
+    move/from16 v19, v5
 
-    long-to-double v14, v14
+    sub-long v4, v15, v17
 
-    invoke-static {v12, v14, v15, v3}, Lcom/android/settingslib/utils/StringUtil;->formatRelativeTime(Landroid/content/Context;DZ)Ljava/lang/CharSequence;
+    long-to-double v4, v4
 
-    move-result-object v12
+    const/4 v15, 0x0
 
-    invoke-virtual {v11, v12}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+    invoke-static {v14, v4, v5, v15}, Lcom/android/settingslib/utils/StringUtil;->formatRelativeTime(Landroid/content/Context;DZ)Ljava/lang/CharSequence;
 
-    invoke-virtual {v11, v5}, Landroid/support/v7/preference/Preference;->setOrder(I)V
+    move-result-object v4
 
-    new-instance v12, Lcom/android/settings/applications/-$$Lambda$RecentAppsPreferenceController$benLpqwf0HURWhX82bB7mmwJ8Oo;
+    invoke-virtual {v11, v4}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    invoke-direct {v12, v0, v8, v9}, Lcom/android/settings/applications/-$$Lambda$RecentAppsPreferenceController$benLpqwf0HURWhX82bB7mmwJ8Oo;-><init>(Lcom/android/settings/applications/RecentAppsPreferenceController;Ljava/lang/String;Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)V
+    invoke-virtual {v11, v6}, Landroid/support/v7/preference/Preference;->setOrder(I)V
 
-    invoke-virtual {v11, v12}, Landroid/support/v7/preference/Preference;->setOnPreferenceClickListener(Landroid/support/v7/preference/Preference$OnPreferenceClickListener;)V
+    new-instance v4, Lcom/android/settings/applications/-$$Lambda$RecentAppsPreferenceController$benLpqwf0HURWhX82bB7mmwJ8Oo;
 
-    if-nez v10, :cond_4
+    invoke-direct {v4, v1, v9, v10}, Lcom/android/settings/applications/-$$Lambda$RecentAppsPreferenceController$benLpqwf0HURWhX82bB7mmwJ8Oo;-><init>(Lcom/android/settings/applications/RecentAppsPreferenceController;Ljava/lang/String;Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)V
 
-    iget-object v12, v0, Lcom/android/settings/applications/RecentAppsPreferenceController;->mCategory:Landroid/support/v7/preference/PreferenceCategory;
+    invoke-virtual {v11, v4}, Landroid/support/v7/preference/Preference;->setOnPreferenceClickListener(Landroid/support/v7/preference/Preference$OnPreferenceClickListener;)V
 
-    invoke-virtual {v12, v11}, Landroid/support/v7/preference/PreferenceCategory;->addPreference(Landroid/support/v7/preference/Preference;)Z
+    if-nez v12, :cond_4
+
+    iget-object v4, v1, Lcom/android/settings/applications/RecentAppsPreferenceController;->mCategory:Landroid/support/v7/preference/PreferenceCategory;
+
+    invoke-virtual {v4, v11}, Landroid/support/v7/preference/PreferenceCategory;->addPreference(Landroid/support/v7/preference/Preference;)Z
 
     :cond_4
-    :goto_3
-    add-int/lit8 v5, v5, 0x1
+    :goto_4
+    add-int/lit8 v0, v6, 0x1
 
-    goto :goto_1
+    move/from16 v5, v19
+
+    goto/16 :goto_1
 
     :cond_5
     move-object/from16 v13, p1
 
-    move-object/from16 v6, p2
+    move-object/from16 v7, p2
 
-    invoke-interface {v1}, Ljava/util/Map;->values()Ljava/util/Collection;
+    move/from16 v19, v5
 
-    move-result-object v3
+    invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
 
-    invoke-interface {v3}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    move-result-object v0
 
-    move-result-object v3
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    :goto_4
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    move-result-object v0
 
-    move-result v5
+    :goto_5
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    if-eqz v5, :cond_6
+    move-result v4
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    if-eqz v4, :cond_6
 
-    move-result-object v5
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    check-cast v5, Landroid/support/v7/preference/Preference;
+    move-result-object v4
 
-    iget-object v7, v0, Lcom/android/settings/applications/RecentAppsPreferenceController;->mCategory:Landroid/support/v7/preference/PreferenceCategory;
+    check-cast v4, Landroid/support/v7/preference/Preference;
 
-    invoke-virtual {v7, v5}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
+    iget-object v5, v1, Lcom/android/settings/applications/RecentAppsPreferenceController;->mCategory:Landroid/support/v7/preference/PreferenceCategory;
 
-    goto :goto_4
+    invoke-virtual {v5, v4}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
+
+    goto :goto_5
 
     :cond_6
     return-void

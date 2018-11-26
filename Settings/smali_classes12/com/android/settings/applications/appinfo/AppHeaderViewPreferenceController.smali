@@ -137,7 +137,7 @@
 
     iget-object v2, p0, Lcom/android/settings/applications/appinfo/AppHeaderViewPreferenceController;->mHeader:Lcom/android/settings/applications/LayoutPreference;
 
-    const v3, 0x7f0a01c3
+    const v3, 0x7f0a01c6
 
     invoke-virtual {v2, v3}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 

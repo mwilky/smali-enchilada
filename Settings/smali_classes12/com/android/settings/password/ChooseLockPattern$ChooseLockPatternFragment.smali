@@ -899,7 +899,7 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x7f0a0546
+    const v1, 0x7f0a0549
 
     invoke-virtual {v0, v1}, Lcom/android/setupwizardlib/GlifLayout;->findViewById(I)Landroid/view/View;
 
@@ -1079,7 +1079,7 @@
 
     invoke-super {p0, p1, p2}, Lcom/android/settings/core/InstrumentedFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 
-    const v0, 0x7f0a054b
+    const v0, 0x7f0a054e
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1089,7 +1089,7 @@
 
     iput-object v0, p0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment;->mTitleText:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0240
+    const v0, 0x7f0a0243
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1107,7 +1107,7 @@
 
     iput-object v0, p0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment;->mDefaultHeaderColorList:Landroid/content/res/ColorStateList;
 
-    const v0, 0x7f0a0334
+    const v0, 0x7f0a0337
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1117,7 +1117,7 @@
 
     iput-object v0, p0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment;->mMessageText:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0311
+    const v0, 0x7f0a0314
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1153,7 +1153,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/LockPatternView;->setFadePattern(Z)V
 
-    const v0, 0x7f0a01ff
+    const v0, 0x7f0a0202
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1163,7 +1163,7 @@
 
     iput-object v0, p0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment;->mFooterText:Landroid/widget/TextView;
 
-    const v0, 0x7f0a01fd
+    const v0, 0x7f0a0200
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1173,7 +1173,7 @@
 
     iput-object v0, p0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment;->mFooterLeftButton:Landroid/widget/TextView;
 
-    const v0, 0x7f0a01fe
+    const v0, 0x7f0a0201
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1183,7 +1183,7 @@
 
     iput-object v0, p0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment;->mFooterRightButton:Landroid/widget/TextView;
 
-    const v0, 0x7f0a04a4
+    const v0, 0x7f0a04a7
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1203,7 +1203,7 @@
 
     nop
 
-    const v0, 0x7f0a0594
+    const v0, 0x7f0a0597
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1277,7 +1277,7 @@
 
     const/16 v5, 0x37
 
-    const v6, 0x7f121276
+    const v6, 0x7f12127b
 
     invoke-virtual {p0, v6}, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment;->getString(I)Ljava/lang/String;
 

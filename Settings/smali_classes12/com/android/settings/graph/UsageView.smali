@@ -21,11 +21,11 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d02cb
+    const v1, 0x7f0d02ce
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const v0, 0x7f0a05ba
+    const v0, 0x7f0a05bd
 
     invoke-virtual {p0, v0}, Lcom/android/settings/graph/UsageView;->findViewById(I)Landroid/view/View;
 
@@ -39,7 +39,7 @@
 
     new-array v1, v0, [Landroid/widget/TextView;
 
-    const v2, 0x7f0a02c1
+    const v2, 0x7f0a02c4
 
     invoke-virtual {p0, v2}, Lcom/android/settings/graph/UsageView;->findViewById(I)Landroid/view/View;
 
@@ -51,7 +51,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0a02c6
+    const v2, 0x7f0a02c9
 
     invoke-virtual {p0, v2}, Lcom/android/settings/graph/UsageView;->findViewById(I)Landroid/view/View;
 
@@ -63,7 +63,7 @@
 
     aput-object v2, v1, v4
 
-    const v2, 0x7f0a02c9
+    const v2, 0x7f0a02cc
 
     invoke-virtual {p0, v2}, Lcom/android/settings/graph/UsageView;->findViewById(I)Landroid/view/View;
 
@@ -79,7 +79,7 @@
 
     new-array v1, v5, [Landroid/widget/TextView;
 
-    const v2, 0x7f0a02c8
+    const v2, 0x7f0a02cb
 
     invoke-virtual {p0, v2}, Lcom/android/settings/graph/UsageView;->findViewById(I)Landroid/view/View;
 
@@ -89,7 +89,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0a02c2
+    const v2, 0x7f0a02c5
 
     invoke-virtual {p0, v2}, Lcom/android/settings/graph/UsageView;->findViewById(I)Landroid/view/View;
 
@@ -195,7 +195,7 @@
 
     if-ne v0, v2, :cond_4
 
-    const v5, 0x7f0a0218
+    const v5, 0x7f0a021b
 
     invoke-virtual {p0, v5}, Lcom/android/settings/graph/UsageView;->findViewById(I)Landroid/view/View;
 
@@ -203,7 +203,7 @@
 
     check-cast v5, Landroid/widget/LinearLayout;
 
-    const v6, 0x7f0a02c4
+    const v6, 0x7f0a02c7
 
     invoke-virtual {p0, v6}, Lcom/android/settings/graph/UsageView;->findViewById(I)Landroid/view/View;
 
@@ -420,11 +420,11 @@
 .method public setSideLabelWeights(FF)V
     .locals 1
 
-    const v0, 0x7f0a0502
+    const v0, 0x7f0a0505
 
     invoke-direct {p0, v0, p1}, Lcom/android/settings/graph/UsageView;->setWeight(IF)V
 
-    const v0, 0x7f0a0503
+    const v0, 0x7f0a0506
 
     invoke-direct {p0, v0, p2}, Lcom/android/settings/graph/UsageView;->setWeight(IF)V
 

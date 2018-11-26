@@ -41,7 +41,7 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/ringtone/OPLocalRingtonePickerActivity$3;->this$0:Lcom/oneplus/settings/ringtone/OPLocalRingtonePickerActivity;
 
-    const v2, 0x7f120b0a
+    const v2, 0x7f120b0c
 
     invoke-virtual {v1, v2}, Lcom/oneplus/settings/ringtone/OPLocalRingtonePickerActivity;->getString(I)Ljava/lang/String;
 

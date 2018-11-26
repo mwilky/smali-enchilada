@@ -144,24 +144,6 @@
 
     invoke-static {v1, v2, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    iget-object v1, p0, Lcom/android/settings/wifi/OPNetworkAutoChangePreferenceController;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string v2, "captive_portal_detection_enabled"
-
-    move-object v3, p1
-
-    check-cast v3, Landroid/support/v14/preference/SwitchPreference;
-
-    invoke-virtual {v3}, Landroid/support/v14/preference/SwitchPreference;->isChecked()Z
-
-    move-result v3
-
-    invoke-static {v1, v2, v3}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
-
     :cond_2
     return v0
 .end method

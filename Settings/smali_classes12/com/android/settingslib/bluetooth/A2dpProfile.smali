@@ -402,7 +402,7 @@
 
     if-eq v1, v2, :cond_0
 
-    goto :goto_5
+    goto/16 :goto_5
 
     :cond_0
     const/4 v1, 0x0
@@ -480,21 +480,26 @@
     goto :goto_4
 
     :pswitch_1
-    const/4 v7, 0x4
+    const/4 v7, 0x6
 
     goto :goto_4
 
     :pswitch_2
-    const/4 v7, 0x3
+    const/4 v7, 0x4
 
     goto :goto_4
 
     :pswitch_3
-    const/4 v7, 0x2
+    const/4 v7, 0x3
 
     goto :goto_4
 
     :pswitch_4
+    const/4 v7, 0x2
+
+    goto :goto_4
+
+    :pswitch_5
     const/4 v7, 0x1
 
     nop
@@ -549,10 +554,9 @@
 
     return-object v1
 
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_5
         :pswitch_4
         :pswitch_3
         :pswitch_2

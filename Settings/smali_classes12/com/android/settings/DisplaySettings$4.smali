@@ -88,7 +88,7 @@
 
     iget-object v1, p0, Lcom/android/settings/DisplaySettings$4;->this$0:Lcom/android/settings/DisplaySettings;
 
-    invoke-static {v1}, Lcom/android/settings/DisplaySettings;->access$300(Lcom/android/settings/DisplaySettings;)Landroid/support/v7/preference/Preference;
+    invoke-static {v1}, Lcom/android/settings/DisplaySettings;->access$200(Lcom/android/settings/DisplaySettings;)Landroid/support/v7/preference/Preference;
 
     move-result-object v1
 
@@ -96,7 +96,7 @@
 
     iget-object v1, p0, Lcom/android/settings/DisplaySettings$4;->this$0:Lcom/android/settings/DisplaySettings;
 
-    invoke-static {v1}, Lcom/android/settings/DisplaySettings;->access$300(Lcom/android/settings/DisplaySettings;)Landroid/support/v7/preference/Preference;
+    invoke-static {v1}, Lcom/android/settings/DisplaySettings;->access$200(Lcom/android/settings/DisplaySettings;)Landroid/support/v7/preference/Preference;
 
     move-result-object v1
 
@@ -106,7 +106,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f120c76
+    const v4, 0x7f120c78
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -119,7 +119,7 @@
     :cond_2
     if-eqz v2, :cond_3
 
-    invoke-static {}, Lcom/android/settings/DisplaySettings;->access$400()Z
+    invoke-static {}, Lcom/android/settings/DisplaySettings;->access$500()Z
 
     move-result v4
 
@@ -127,7 +127,7 @@
 
     iget-object v1, p0, Lcom/android/settings/DisplaySettings$4;->this$0:Lcom/android/settings/DisplaySettings;
 
-    invoke-static {v1}, Lcom/android/settings/DisplaySettings;->access$300(Lcom/android/settings/DisplaySettings;)Landroid/support/v7/preference/Preference;
+    invoke-static {v1}, Lcom/android/settings/DisplaySettings;->access$200(Lcom/android/settings/DisplaySettings;)Landroid/support/v7/preference/Preference;
 
     move-result-object v1
 
@@ -135,7 +135,7 @@
 
     iget-object v1, p0, Lcom/android/settings/DisplaySettings$4;->this$0:Lcom/android/settings/DisplaySettings;
 
-    invoke-static {v1}, Lcom/android/settings/DisplaySettings;->access$300(Lcom/android/settings/DisplaySettings;)Landroid/support/v7/preference/Preference;
+    invoke-static {v1}, Lcom/android/settings/DisplaySettings;->access$200(Lcom/android/settings/DisplaySettings;)Landroid/support/v7/preference/Preference;
 
     move-result-object v1
 
@@ -145,7 +145,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f120c73
+    const v4, 0x7f120c75
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -158,11 +158,11 @@
     :cond_3
     iget-object v3, p0, Lcom/android/settings/DisplaySettings$4;->this$0:Lcom/android/settings/DisplaySettings;
 
-    invoke-static {v3}, Lcom/android/settings/DisplaySettings;->access$500(Lcom/android/settings/DisplaySettings;)V
+    invoke-static {v3}, Lcom/android/settings/DisplaySettings;->access$600(Lcom/android/settings/DisplaySettings;)V
 
     iget-object v3, p0, Lcom/android/settings/DisplaySettings$4;->this$0:Lcom/android/settings/DisplaySettings;
 
-    invoke-static {v3}, Lcom/android/settings/DisplaySettings;->access$300(Lcom/android/settings/DisplaySettings;)Landroid/support/v7/preference/Preference;
+    invoke-static {v3}, Lcom/android/settings/DisplaySettings;->access$200(Lcom/android/settings/DisplaySettings;)Landroid/support/v7/preference/Preference;
 
     move-result-object v3
 

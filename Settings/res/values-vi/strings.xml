@@ -2819,6 +2819,9 @@ Bạn có thể tắt chúng bằng cách bật lại thanh điều hướng tro
     <string name="oneplus_lock_buttons">Khóa Nút</string>
     <string name="oneplus_lock_buttons_summary">Khóa các nút điện dung khi chế độ Chơi Game được bật</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">Nếu bạn chọn bỏ qua việc ghi lại dữ liệu gương mặt, bạn nên bật một phương thức khác ví dụ như vân tay hoặc mã pin để bảo vệ thiết bị và thông tin riêng tư của mình. Bạn cũng có thể thiết lập một mật khẩu trên các ứng dụng nhất định. Để bật tính năng bảo vệ, vui lòng vào \"Cài đặt\" > \"Bảo mật &amp; màn hình khóa\".</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">Để sử dụng tính năng Mở khóa bằng Gương mặt hoặc vân tay, hãy đặt mật khẩu</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">Để sử dụng tính năng Mở khóa bằng Gương mặt hoặc vân tay, trước hết hãy đặt mẫu hình</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">Để sử dụng tính năng Mở khóa bằng Gương mặt hoặc vân tay, hãy đặt mã PIN</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Thử lại</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">Quá nhiều lượt thử không đúng!</string>
     <string name="oneplus_max_shortcuts_tips">Bạn có thể thêm tối đa 6 lối tắt</string>
@@ -5049,6 +5052,10 @@ Nhấn vào "<b>Quay lại</b> để kết nối với mạng Wi‑Fi khác.</st
     <string name="wifi_tap_to_sign_in">Nhấn vào đây để đăng nhập vào mạng</string>
     <string name="wifi_tether_configure_ap_text">Thiết lập điểm phát sóng Wi‑Fi</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Sau khi không hoạt động 10 phút</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Sau khi không hoạt động 15 phút</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Sau khi không hoạt động 5 phút</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Luôn bật</string>
     <string name="wifi_tether_disabled_by_airplane">Không sử dụng được vì chế độ trên máy bay đang bật</string>
     <string name="wifi_tether_enabled_subtext">%1$s đang hiện hoạt</string>
     <string name="wifi_tether_failed_subtext">Lỗi điểm phát sóng Wi‑Fi di động</string>

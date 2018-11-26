@@ -2819,6 +2819,9 @@ Von der Mitte des unteren Bildschirmrands nach oben wischen, um jederzeit zum St
     <string name="oneplus_lock_buttons">Tastensperre</string>
     <string name="oneplus_lock_buttons_summary">Kapazitive Tasten bei aktiviertem Spielmodus sperren</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">Wenn Sie die Aufnahme von Gesichtsdaten überspringen, empfiehlt es sich, für den Geräteschutz und den Schutz Ihrer persönlichen Informationen eine andere Methode zu aktivieren z. B. Fingerabdrücke oder eine PIN. Außerdem können Sie Passwörter für einzelne Apps festlegen. Aktivieren Sie den Schutz unter \"Einstellungen\" > \"Sicherheit &amp; Bildschirmsperre\".</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">Passwort zur Verwendung der Gesichtserkennung oder des Fingerabdrucks festlegen</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">Muster zur Verwendung der Gesichtserkennung oder des Fingerabdrucks festlegen</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">PIN zur Verwendung der Gesichtserkennung oder des Fingerabdrucks festlegen</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Erneut versuchen</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">Zu viele Fehlversuche!</string>
     <string name="oneplus_max_shortcuts_tips">Sie können bis zu 6 Verknüpfungen hinzufügen</string>
@@ -5051,6 +5054,10 @@ Tippe auf "<b>Zurück</b>, um dich mit einem anderen WLAN zu verbinden.</string>
     <string name="wifi_tap_to_sign_in">Tippe hier, um dich im Netzwerk anzumelden</string>
     <string name="wifi_tether_configure_ap_text">WLAN-Hotspot einrichten</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Nach 10 Minuten Inaktivität</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Nach 15 Minuten Inaktivität</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Nach 5 Minuten Inaktivität</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Immer an</string>
     <string name="wifi_tether_disabled_by_airplane">Nicht verfügbar, da der Flugmodus aktiviert ist</string>
     <string name="wifi_tether_enabled_subtext">%1$s ist aktiviert</string>
     <string name="wifi_tether_failed_subtext">Fehler beim mobilen WLAN-Hotspot</string>

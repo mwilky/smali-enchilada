@@ -341,7 +341,7 @@
 
     const-string v12, "uninstall failure"
 
-    const v13, 0x7f12124d
+    const v13, 0x7f121252
 
     invoke-virtual {v2, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -593,7 +593,7 @@
 
     invoke-direct {v1, v2, v13}, Lcom/oneplus/settings/packageuninstaller/OPUninstallFinish;->addDeviceManagerButton(Landroid/content/Context;Landroid/app/Notification$Builder;)V
 
-    const v3, 0x7f12124a
+    const v3, 0x7f12124f
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -632,7 +632,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const v3, 0x7f12124b
+    const v3, 0x7f121250
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -832,7 +832,7 @@
     :cond_b
     if-nez v12, :cond_c
 
-    const v3, 0x7f121243
+    const v3, 0x7f121248
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -845,7 +845,7 @@
     :cond_c
     if-eqz v9, :cond_d
 
-    const v3, 0x7f12123d
+    const v3, 0x7f121242
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -856,7 +856,7 @@
     goto :goto_a
 
     :cond_d
-    const v3, 0x7f121244
+    const v3, 0x7f121249
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -867,7 +867,7 @@
     nop
 
     :goto_a
-    const v0, 0x7f121249
+    const v0, 0x7f12124e
 
     const/4 v3, 0x1
 
@@ -906,7 +906,7 @@
 
     invoke-direct {v1, v2, v0}, Lcom/oneplus/settings/packageuninstaller/OPUninstallFinish;->notifyPackageRemoved(Landroid/content/Context;Ljava/lang/String;)V
 
-    const v0, 0x7f121247
+    const v0, 0x7f12124c
 
     const/4 v3, 0x1
 

@@ -438,6 +438,9 @@ Untuk pergi ke skrin utama pada bila-bila masa, leret ke atas dari pinggir tenga
     <string name="oneplus_lock_buttons">Butang Kunci</string>
     <string name="oneplus_lock_buttons_summary">Kunci butang kapasitif apabila mod Permainan dihidupkan</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">Jika anda memilih untuk melangkau merakam data muka, disyorkan untuk membolehkan kaedah lain seperti cap jari atau pin untuk melindungi peranti dan maklumat peribadi anda. Anda juga boleh menetapkan kata laluan pada aplikasi tertentu. Untuk mendayakan perlindungan, sila pergi ke \"Tetapan\" > \"Keselamatan &amp; skrin kunci\".</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">Untuk menggunakan Buka Kunci Muka atau cap jari, tetapkan kata laluan</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">Untuk menggunakan Buka Kunci Muka atau cap jari, tetapkan corak</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">Untuk menggunakan Buka Kunci Muka atau cap jari, tetapkan PIN</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Cuba lagi</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">Terlalu banyak percubaan yang salah!</string>
     <string name="oneplus_max_shortcuts_tips">Anda boleh tambah sehingga 6 pintasan</string>
@@ -963,6 +966,10 @@ Nota: Buka Kunci Muka mungkin kurang selamat berbanding cap jari, PIN atau pilih
     <string name="wifi_setting_frequency_band_error">Terdapat masalah menetapkan jalur frekuensi.</string>
     <string name="wifi_setting_frequency_band_summary">Tetapkan julat frekuensi operasi</string>
     <string name="wifi_setting_frequency_band_title">Wi‑Fi jalur frekuensi</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Selepas tidak aktif selama 10 minit</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Selepas tidak aktif selama 15 minit</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Selepas tidak aktif selama 5 minit</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Sentiasa dihidupkan</string>
     <string name="wifi_wapi_as_cert">Sijil AS</string>
     <string name="wifi_wapi_cert_cancel_button">Batal</string>
     <string name="wifi_wapi_cert_create_subdir">Cipta direktori</string>

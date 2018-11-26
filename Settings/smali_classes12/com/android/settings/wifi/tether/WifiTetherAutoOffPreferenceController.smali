@@ -18,11 +18,33 @@
 
 # virtual methods
 .method public getAvailabilityStatus()I
-    .locals 1
+    .locals 3
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
-    return v0
+    new-array v0, v0, [I
+
+    const/4 v1, 0x0
+
+    const/16 v2, 0x54
+
+    aput v2, v0, v1
+
+    invoke-static {v0}, Landroid/util/OpFeatures;->isSupport([I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v1, 0x2
+
+    goto :goto_0
+
+    :cond_0
+    nop
+
+    :goto_0
+    return v1
 .end method
 
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z

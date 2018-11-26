@@ -2,6 +2,19 @@
 .super Lcom/android/settingslib/core/AbstractPreferenceController;
 .source "WifiWakeupPreferenceController.java"
 
+# interfaces
+.implements Lcom/android/settingslib/core/lifecycle/LifecycleObserver;
+.implements Lcom/android/settingslib/core/lifecycle/events/OnResume;
+.implements Lcom/android/settingslib/core/lifecycle/events/OnPause;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/android/settings/wifi/WifiWakeupPreferenceController$SettingObserver;
+    }
+.end annotation
+
 
 # static fields
 .field private static final KEY_ENABLE_WIFI_WAKEUP:Ljava/lang/String; = "enable_wifi_wakeup"
@@ -12,6 +25,8 @@
 # instance fields
 .field private final mFragment:Landroid/app/Fragment;
 
+.field private mLifecycle:Lcom/android/settingslib/core/lifecycle/Lifecycle;
+
 .field mLocationManager:Landroid/location/LocationManager;
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
@@ -21,6 +36,8 @@
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 .end field
+
+.field private mSettingObserver:Lcom/android/settings/wifi/WifiWakeupPreferenceController$SettingObserver;
 
 
 # direct methods
@@ -40,6 +57,30 @@
     check-cast v0, Landroid/location/LocationManager;
 
     iput-object v0, p0, Lcom/android/settings/wifi/WifiWakeupPreferenceController;->mLocationManager:Landroid/location/LocationManager;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Lcom/android/settings/dashboard/DashboardFragment;Lcom/android/settingslib/core/lifecycle/Lifecycle;)V
+    .locals 1
+
+    invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
+
+    iput-object p2, p0, Lcom/android/settings/wifi/WifiWakeupPreferenceController;->mFragment:Landroid/app/Fragment;
+
+    const-string v0, "location"
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/location/LocationManager;
+
+    iput-object v0, p0, Lcom/android/settings/wifi/WifiWakeupPreferenceController;->mLocationManager:Landroid/location/LocationManager;
+
+    invoke-virtual {p3, p0}, Lcom/android/settingslib/core/lifecycle/Lifecycle;->addObserver(Landroid/arch/lifecycle/LifecycleObserver;)V
+
+    iput-object p3, p0, Lcom/android/settings/wifi/WifiWakeupPreferenceController;->mLifecycle:Lcom/android/settingslib/core/lifecycle/Lifecycle;
 
     return-void
 .end method
@@ -151,7 +192,7 @@
 
 # virtual methods
 .method public displayPreference(Landroid/support/v7/preference/PreferenceScreen;)V
-    .locals 1
+    .locals 2
 
     invoke-super {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;->displayPreference(Landroid/support/v7/preference/PreferenceScreen;)V
 
@@ -165,6 +206,19 @@
 
     iput-object v0, p0, Lcom/android/settings/wifi/WifiWakeupPreferenceController;->mPreference:Landroid/support/v14/preference/SwitchPreference;
 
+    iget-object v0, p0, Lcom/android/settings/wifi/WifiWakeupPreferenceController;->mLifecycle:Lcom/android/settingslib/core/lifecycle/Lifecycle;
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Lcom/android/settings/wifi/WifiWakeupPreferenceController$SettingObserver;
+
+    iget-object v1, p0, Lcom/android/settings/wifi/WifiWakeupPreferenceController;->mPreference:Landroid/support/v14/preference/SwitchPreference;
+
+    invoke-direct {v0, p0, v1}, Lcom/android/settings/wifi/WifiWakeupPreferenceController$SettingObserver;-><init>(Lcom/android/settings/wifi/WifiWakeupPreferenceController;Landroid/support/v7/preference/Preference;)V
+
+    iput-object v0, p0, Lcom/android/settings/wifi/WifiWakeupPreferenceController;->mSettingObserver:Lcom/android/settings/wifi/WifiWakeupPreferenceController$SettingObserver;
+
+    :cond_0
     iget-object v0, p0, Lcom/android/settings/wifi/WifiWakeupPreferenceController;->mPreference:Landroid/support/v14/preference/SwitchPreference;
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiWakeupPreferenceController;->updateState(Landroid/support/v7/preference/Preference;)V
@@ -187,7 +241,7 @@
 
     iget-object v1, p0, Lcom/android/settings/wifi/WifiWakeupPreferenceController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f12151d
+    const v2, 0x7f121526
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -336,6 +390,52 @@
     return-void
 .end method
 
+.method public onPause()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/settings/wifi/WifiWakeupPreferenceController;->mSettingObserver:Lcom/android/settings/wifi/WifiWakeupPreferenceController$SettingObserver;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/settings/wifi/WifiWakeupPreferenceController;->mSettingObserver:Lcom/android/settings/wifi/WifiWakeupPreferenceController$SettingObserver;
+
+    iget-object v1, p0, Lcom/android/settings/wifi/WifiWakeupPreferenceController;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/settings/wifi/WifiWakeupPreferenceController$SettingObserver;->register(Landroid/content/ContentResolver;Z)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public onResume()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/settings/wifi/WifiWakeupPreferenceController;->mSettingObserver:Lcom/android/settings/wifi/WifiWakeupPreferenceController$SettingObserver;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/settings/wifi/WifiWakeupPreferenceController;->mSettingObserver:Lcom/android/settings/wifi/WifiWakeupPreferenceController$SettingObserver;
+
+    iget-object v1, p0, Lcom/android/settings/wifi/WifiWakeupPreferenceController;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/settings/wifi/WifiWakeupPreferenceController$SettingObserver;->register(Landroid/content/ContentResolver;Z)V
+
+    :cond_0
+    return-void
+.end method
+
 .method public updateState(Landroid/support/v7/preference/Preference;)V
     .locals 2
 
@@ -397,7 +497,7 @@
     goto :goto_1
 
     :cond_2
-    const v1, 0x7f12151c
+    const v1, 0x7f121525
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 

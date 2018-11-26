@@ -38,7 +38,7 @@
 
     iput-wide v0, p0, Lcom/android/settings/deviceinfo/storage/StorageSummaryDonutPreference;->mPercent:D
 
-    const v0, 0x7f0d0266
+    const v0, 0x7f0d0269
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/storage/StorageSummaryDonutPreference;->setLayoutResource(I)V
 
@@ -62,7 +62,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setClickable(Z)V
 
-    const v0, 0x7f0a01aa
+    const v0, 0x7f0a01ad
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -77,7 +77,7 @@
     invoke-virtual {v0, v1, v2}, Lcom/android/settings/widget/DonutView;->setPercentage(D)V
 
     :cond_0
-    const v1, 0x7f0a0180
+    const v1, 0x7f0a0183
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -98,7 +98,7 @@
 
     if-eqz p1, :cond_1
 
-    const v0, 0x7f0a0180
+    const v0, 0x7f0a0183
 
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 

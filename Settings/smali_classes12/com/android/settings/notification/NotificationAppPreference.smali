@@ -91,7 +91,7 @@
 .method protected getSecondTargetResId()I
     .locals 1
 
-    const v0, 0x7f0d0214
+    const v0, 0x7f0d0217
 
     return v0
 .end method
@@ -146,7 +146,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :cond_0
-    const v1, 0x7f0a0556
+    const v1, 0x7f0a0559
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

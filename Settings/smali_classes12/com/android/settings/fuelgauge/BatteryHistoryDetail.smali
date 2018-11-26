@@ -173,7 +173,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const v1, 0x7f0a01d6
+    const v1, 0x7f0a01d9
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -197,7 +197,7 @@
 
     const v2, 0x7f120243
 
-    const v3, 0x7f0a049e
+    const v3, 0x7f0a04a1
 
     invoke-direct {p0, v1, v2, v3}, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->bindData(Lcom/android/settings/fuelgauge/BatteryActiveView$BatteryActiveProvider;II)V
 
@@ -205,7 +205,7 @@
 
     const v2, 0x7f12023f
 
-    const v3, 0x7f0a0217
+    const v3, 0x7f0a021a
 
     invoke-direct {p0, v1, v2, v3}, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->bindData(Lcom/android/settings/fuelgauge/BatteryActiveView$BatteryActiveProvider;II)V
 
@@ -213,7 +213,7 @@
 
     const v2, 0x7f12023e
 
-    const v3, 0x7f0a01fb
+    const v3, 0x7f0a01fe
 
     invoke-direct {p0, v1, v2, v3}, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->bindData(Lcom/android/settings/fuelgauge/BatteryActiveView$BatteryActiveProvider;II)V
 
@@ -229,7 +229,7 @@
 
     const v2, 0x7f120245
 
-    const v3, 0x7f0a05f7
+    const v3, 0x7f0a05fa
 
     invoke-direct {p0, v1, v2, v3}, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->bindData(Lcom/android/settings/fuelgauge/BatteryActiveView$BatteryActiveProvider;II)V
 

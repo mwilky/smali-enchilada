@@ -119,7 +119,7 @@
 
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeRuleSettingsBase;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1215dc
+    const v1, 0x7f1215e5
 
     const/4 v2, 0x0
 
@@ -348,6 +348,35 @@
 .end method
 
 .method protected abstract onCreateInternal()V
+.end method
+
+.method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
+    .locals 2
+
+    invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
+
+    move-result v0
+
+    const v1, 0x102002c
+
+    if-ne v0, v1, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/settings/notification/ZenModeRuleSettingsBase;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Activity;->finish()V
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    invoke-super {p0, p1}, Lcom/android/settings/notification/ZenModeSettingsBase;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public onResume()V

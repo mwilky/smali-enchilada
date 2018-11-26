@@ -6,7 +6,7 @@
         <TextView android:textColor="@color/settings_accent_color" android:id="@id/functional_terms" android:paddingTop="@dimen/oneplus_contorl_layout_margin_top2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/oneplus_functional_terms" />
         <com.android.setupwizardlib.view.RichTextView android:id="@id/error_text" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/SuwDescription.Glif" />
         <com.android.setupwizardlib.view.FillContentLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
-            <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="36.0dip" android:src="@drawable/op_setup_fingerprint_guide" android:contentDescription="@null" style="@style/SuwContentIllustration" />
+            <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/op_setup_fingerprint_guide" android:contentDescription="@null" style="@style/SuwContentIllustration" />
         </com.android.setupwizardlib.view.FillContentLayout>
         <com.airbnb.lottie.LottieAnimationView android:layout_gravity="center" android:visibility="gone" android:layout_width="450.0px" android:layout_height="638.0px" app:lottie_autoPlay="true" app:lottie_fileName="op_setup_fingerprint_guide.json" app:lottie_loop="false" />
     </LinearLayout>

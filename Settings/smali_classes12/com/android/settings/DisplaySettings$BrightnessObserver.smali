@@ -99,7 +99,7 @@
 
     iget-object v0, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->this$0:Lcom/android/settings/DisplaySettings;
 
-    invoke-static {v0}, Lcom/android/settings/DisplaySettings;->access$700(Lcom/android/settings/DisplaySettings;)V
+    invoke-static {v0}, Lcom/android/settings/DisplaySettings;->access$800(Lcom/android/settings/DisplaySettings;)V
 
     goto :goto_1
 
@@ -133,7 +133,7 @@
 
     iget-object v0, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->this$0:Lcom/android/settings/DisplaySettings;
 
-    invoke-static {v0}, Lcom/android/settings/DisplaySettings;->access$200(Lcom/android/settings/DisplaySettings;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/settings/DisplaySettings;->access$400(Lcom/android/settings/DisplaySettings;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -151,7 +151,7 @@
 
     iget-object v1, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->this$0:Lcom/android/settings/DisplaySettings;
 
-    invoke-static {v1}, Lcom/android/settings/DisplaySettings;->access$900(Lcom/android/settings/DisplaySettings;)Lcom/android/settings/TimeoutListPreference;
+    invoke-static {v1}, Lcom/android/settings/DisplaySettings;->access$1000(Lcom/android/settings/DisplaySettings;)Lcom/android/settings/TimeoutListPreference;
 
     move-result-object v1
 
@@ -165,7 +165,7 @@
 
     int-to-long v2, v0
 
-    invoke-static {v1, v2, v3}, Lcom/android/settings/DisplaySettings;->access$1000(Lcom/android/settings/DisplaySettings;J)V
+    invoke-static {v1, v2, v3}, Lcom/android/settings/DisplaySettings;->access$1100(Lcom/android/settings/DisplaySettings;J)V
 
     goto :goto_1
 
@@ -173,7 +173,7 @@
     :goto_0
     iget-object v0, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->this$0:Lcom/android/settings/DisplaySettings;
 
-    invoke-static {v0}, Lcom/android/settings/DisplaySettings;->access$800(Lcom/android/settings/DisplaySettings;)V
+    invoke-static {v0}, Lcom/android/settings/DisplaySettings;->access$900(Lcom/android/settings/DisplaySettings;)V
 
     :cond_4
     :goto_1
@@ -185,7 +185,7 @@
 
     iget-object v0, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->this$0:Lcom/android/settings/DisplaySettings;
 
-    invoke-static {v0}, Lcom/android/settings/DisplaySettings;->access$200(Lcom/android/settings/DisplaySettings;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/settings/DisplaySettings;->access$400(Lcom/android/settings/DisplaySettings;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -223,7 +223,7 @@
 
     iget-object v0, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->this$0:Lcom/android/settings/DisplaySettings;
 
-    invoke-static {v0}, Lcom/android/settings/DisplaySettings;->access$200(Lcom/android/settings/DisplaySettings;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/settings/DisplaySettings;->access$400(Lcom/android/settings/DisplaySettings;)Landroid/content/Context;
 
     move-result-object v0
 

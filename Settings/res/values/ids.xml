@@ -306,6 +306,9 @@
     <item type="id" name="current_time">false</item>
     <item type="id" name="custom">false</item>
     <item type="id" name="customPanel">false</item>
+    <item type="id" name="custom_fingerprint_anim_style_0">false</item>
+    <item type="id" name="custom_fingerprint_anim_style_0_button">false</item>
+    <item type="id" name="custom_fingerprint_anim_style_0_title">false</item>
     <item type="id" name="custom_fingerprint_anim_style_1">false</item>
     <item type="id" name="custom_fingerprint_anim_style_1_button">false</item>
     <item type="id" name="custom_fingerprint_anim_style_1_title">false</item>

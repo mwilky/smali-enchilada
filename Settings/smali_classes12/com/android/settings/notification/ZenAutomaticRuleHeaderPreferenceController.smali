@@ -233,7 +233,7 @@
 
     iget-object v1, p0, Lcom/android/settings/notification/ZenAutomaticRuleHeaderPreferenceController;->mController:Lcom/android/settings/widget/EntityHeaderController;
 
-    const v2, 0x7f0a01c3
+    const v2, 0x7f0a01c6
 
     if-nez v1, :cond_1
 

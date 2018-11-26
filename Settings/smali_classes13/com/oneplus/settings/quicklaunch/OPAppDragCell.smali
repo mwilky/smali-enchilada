@@ -57,7 +57,7 @@
 
     invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
 
-    const v0, 0x7f0a02bf
+    const v0, 0x7f0a02c2
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/quicklaunch/OPAppDragCell;->findViewById(I)Landroid/view/View;
 
@@ -67,7 +67,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/quicklaunch/OPAppDragCell;->mLabel:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0458
+    const v0, 0x7f0a045b
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/quicklaunch/OPAppDragCell;->findViewById(I)Landroid/view/View;
 
@@ -77,7 +77,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/quicklaunch/OPAppDragCell;->mAppIcon:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a04f9
+    const v0, 0x7f0a04fc
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/quicklaunch/OPAppDragCell;->findViewById(I)Landroid/view/View;
 
@@ -97,7 +97,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/quicklaunch/OPAppDragCell;->mCheckbox:Landroid/widget/CheckBox;
 
-    const v0, 0x7f0a01ab
+    const v0, 0x7f0a01ae
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/quicklaunch/OPAppDragCell;->findViewById(I)Landroid/view/View;
 
@@ -107,7 +107,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/quicklaunch/OPAppDragCell;->mDragHandle:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a017a
+    const v0, 0x7f0a017d
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/quicklaunch/OPAppDragCell;->findViewById(I)Landroid/view/View;
 

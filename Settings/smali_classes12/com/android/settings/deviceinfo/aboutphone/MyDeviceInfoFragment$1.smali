@@ -106,7 +106,7 @@
 
     sget-object v2, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v3, 0x7f120ba5
+    const v3, 0x7f120ba7
 
     invoke-virtual {p1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

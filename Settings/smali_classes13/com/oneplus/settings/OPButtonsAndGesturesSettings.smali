@@ -22,6 +22,12 @@
 
 .field private static final KEY_CAMERA_DOUBLE_TAP_POWER_GESTURE:Ljava/lang/String; = "camera_double_tap_power_gesture"
 
+.field private static final ONEPLUS_EMERGENCY_TAP_POWER_GESTURE_FIVE_TIMES:I = 0x5
+
+.field private static final ONEPLUS_EMERGENCY_TAP_POWER_GESTURE_NO_TIMES:I = -0x1
+
+.field private static final ONEPLUS_EMERGENCY_TAP_POWER_GESTURE_THREE_TIMES:I = 0x3
+
 .field public static final SEARCH_INDEX_DATA_PROVIDER:Lcom/android/settings/search/BaseSearchIndexProvider;
 
 .field public static final SUMMARY_PROVIDER_FACTORY:Lcom/android/settings/dashboard/SummaryLoader$SummaryProviderFactory;
@@ -135,7 +141,7 @@
 .end method
 
 .method private loadPreferenceScreen()V
-    .locals 5
+    .locals 6
 
     invoke-virtual {p0}, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -161,56 +167,91 @@
     move v0, v2
 
     :goto_0
+    invoke-virtual {p0}, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v3
+
+    const-string v4, "oneplus_emergency_tap_power_gesture_times"
+
+    const/4 v5, -0x1
+
+    invoke-static {v3, v4, v5}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v3
+
+    if-ne v3, v5, :cond_2
+
     if-eqz v0, :cond_1
 
-    const-string v3, "camera_double_tap_power_gesture"
-
-    invoke-virtual {p0, v3}, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->removePreference(Ljava/lang/String;)Z
+    const/4 v3, 0x3
 
     goto :goto_1
 
     :cond_1
-    invoke-virtual {p0}, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->getPreferenceScreen()Landroid/support/v7/preference/PreferenceScreen;
+    const/4 v3, 0x5
 
-    move-result-object v3
+    :cond_2
+    :goto_1
+    const/4 v4, 0x3
+
+    if-ne v3, v4, :cond_3
 
     iget-object v4, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mCameraDoubleTapPowerGesturePreference:Landroid/support/v14/preference/SwitchPreference;
 
-    invoke-virtual {v3, v4}, Landroid/support/v7/preference/PreferenceScreen;->addPreference(Landroid/support/v7/preference/Preference;)Z
+    invoke-virtual {v4, v2}, Landroid/support/v14/preference/SwitchPreference;->setEnabled(Z)V
 
-    :goto_1
-    iget-object v3, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mCameraDoubleTapPowerGesturePreference:Landroid/support/v14/preference/SwitchPreference;
+    iget-object v4, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mCameraDoubleTapPowerGesturePreference:Landroid/support/v14/preference/SwitchPreference;
 
-    if-eqz v3, :cond_3
+    const v5, 0x7f120af8
+
+    invoke-virtual {v4, v5}, Landroid/support/v14/preference/SwitchPreference;->setSummary(I)V
+
+    goto :goto_2
+
+    :cond_3
+    iget-object v4, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mCameraDoubleTapPowerGesturePreference:Landroid/support/v14/preference/SwitchPreference;
+
+    invoke-virtual {v4, v1}, Landroid/support/v14/preference/SwitchPreference;->setEnabled(Z)V
+
+    iget-object v4, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mCameraDoubleTapPowerGesturePreference:Landroid/support/v14/preference/SwitchPreference;
+
+    const v5, 0x7f120386
+
+    invoke-virtual {v4, v5}, Landroid/support/v14/preference/SwitchPreference;->setSummary(I)V
+
+    :goto_2
+    iget-object v4, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mCameraDoubleTapPowerGesturePreference:Landroid/support/v14/preference/SwitchPreference;
+
+    if-eqz v4, :cond_5
 
     nop
 
     invoke-virtual {p0}, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v3
+    move-result-object v4
 
-    const-string v4, "camera_double_tap_power_gesture_disabled"
+    const-string v5, "camera_double_tap_power_gesture_disabled"
 
-    invoke-static {v3, v4, v2}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v4, v5, v2}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
-    move-result v3
+    move-result v4
 
-    iget-object v4, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mCameraDoubleTapPowerGesturePreference:Landroid/support/v14/preference/SwitchPreference;
+    iget-object v5, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mCameraDoubleTapPowerGesturePreference:Landroid/support/v14/preference/SwitchPreference;
 
-    if-nez v3, :cond_2
+    if-nez v4, :cond_4
 
-    goto :goto_2
+    goto :goto_3
 
-    :cond_2
+    :cond_4
     move v1, v2
 
-    :goto_2
-    invoke-virtual {v4, v1}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
+    :goto_3
+    invoke-virtual {v5, v1}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
 
-    :cond_3
+    :cond_5
     iget-object v1, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mFingerprintGestureLongpressCamera:Landroid/support/v14/preference/SwitchPreference;
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_6
 
     iget-object v1, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mFingerprintGestureLongpressCamera:Landroid/support/v14/preference/SwitchPreference;
 
@@ -222,10 +263,10 @@
 
     invoke-virtual {v1, v2}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
 
-    :cond_4
+    :cond_6
     iget-object v1, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mFingerprintGestureSwipeDownUp:Landroid/support/v14/preference/SwitchPreference;
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_7
 
     iget-object v1, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mFingerprintGestureSwipeDownUp:Landroid/support/v14/preference/SwitchPreference;
 
@@ -237,7 +278,7 @@
 
     invoke-virtual {v1, v2}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
 
-    :cond_5
+    :cond_7
     return-void
 .end method
 

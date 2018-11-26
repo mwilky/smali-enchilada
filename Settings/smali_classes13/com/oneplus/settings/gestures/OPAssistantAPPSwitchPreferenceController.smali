@@ -351,7 +351,9 @@
 
     iget-object v7, p0, Lcom/oneplus/settings/gestures/OPAssistantAPPSwitchPreferenceController;->mPm:Lcom/android/settingslib/wrapper/PackageManagerWrapper;
 
-    const/4 v8, -0x2
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result v8
 
     iget-object v9, v3, Lcom/oneplus/settings/gestures/OPAssistantAPPSwitchPreferenceController$Info;->component:Landroid/content/ComponentName;
 
@@ -380,7 +382,9 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/gestures/OPAssistantAPPSwitchPreferenceController;->mPm:Lcom/android/settingslib/wrapper/PackageManagerWrapper;
 
-    const/4 v4, -0x2
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result v4
 
     invoke-direct {v1, v2, v3, v4, v0}, Lcom/android/settingslib/applications/DefaultAppInfo;-><init>(Landroid/content/Context;Lcom/android/settingslib/wrapper/PackageManagerWrapper;ILandroid/content/ComponentName;)V
 
@@ -459,7 +463,7 @@
 
     invoke-direct {v2, v3}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v3, 0x7f120bd0
+    const v3, 0x7f120bd2
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -501,7 +505,7 @@
 
     invoke-direct {v2, v3}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v3, 0x7f120d03
+    const v3, 0x7f120d06
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -565,7 +569,9 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/gestures/OPAssistantAPPSwitchPreferenceController;->mAssistUtils:Lcom/android/internal/app/AssistUtils;
 
-    const/4 v1, -0x2
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result v1
 
     invoke-virtual {v0, v1}, Lcom/android/internal/app/AssistUtils;->getAssistComponentForUser(I)Landroid/content/ComponentName;
 

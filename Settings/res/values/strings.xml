@@ -2842,6 +2842,7 @@ Battery saver turns off automatically when your device is charging."</string>
     <string name="oneplus_colorful_mode_title">Colorful</string>
     <string name="oneplus_compatibility_mode_summary">Fullscreen apps cannot use the notch area</string>
     <string name="oneplus_compatibility_mode_title">Compatibility mode</string>
+    <string name="oneplus_condition_night_mode_title">Night mode is on</string>
     <string name="oneplus_connected_device_count">There is %1$s device connected</string>
     <string name="oneplus_connected_device_management_title">Connected device manager</string>
     <string name="oneplus_connected_devices_count">There are %1$s devices connected</string>
@@ -2918,6 +2919,7 @@ Battery saver turns off automatically when your device is charging."</string>
     <string name="oneplus_earphone_mode">Earphone mode</string>
     <string name="oneplus_emergency_rescue_settings">Emergency rescue</string>
     <string name="oneplus_emergency_rescue_settings_summary">Automatically call for help by quickly pressing the power button</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">Available after modifying the POWER BUTTON settings of Emergency Rescue</string>
     <string name="oneplus_enroll_fingerprint_tips_summary" />
     <string name="oneplus_enroll_fingerprint_tips_title">Fingerprint setup prompt</string>
     <string name="oneplus_enter_your_fingerprint">· Enroll your fingerprint</string>
@@ -2946,7 +2948,7 @@ Risk tip: Face Unlock is less secure than fingerprint and password"</string>
     <string name="oneplus_fingerprint_acquired_imager_dirty" />
     <string name="oneplus_fingerprint_acquired_partial" />
     <string name="oneplus_fingerprint_acquired_too_fast" />
-    <string name="oneplus_fingerprint_acquired_too_similar" />
+    <string name="oneplus_fingerprint_acquired_too_similar">Similar fingerprint detected. Please move your finger slightly to enter the fingerprint of different parts.</string>
     <string name="oneplus_fingerprint_animation_effect_title">Fingerprint animation effect</string>
     <string name="oneplus_fingerprint_bind_save_list">Fingerprint bind list</string>
     <string name="oneplus_fingerprint_check_oneplus_account">Check oneplus account</string>
@@ -3047,7 +3049,7 @@ To go to the home screen at any time, swipe up from the bottom center edge of th
     <string name="oneplus_hide_notch_display_title">Hide the notch area</string>
     <string name="oneplus_how_to_use_fingerprint_summary" />
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">When the fingerprint pattern appears at the bottom of the screen, simply press with your finger on the fingerprint identification area to use the fingerprint function: wake and unlock your phone, authorize purchases, or sign in to apps.</string>
-    <string name="oneplus_hydrogen_version">Hydrogen OS version</string>
+    <string name="oneplus_hydrogen_version">H₂OS version</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Incoming call</string>
     <string name="oneplus_incoming_call_vibrate_mode">Incoming call vibration pattern</string>
     <string name="oneplus_india_sar_title">India SAR</string>
@@ -3076,6 +3078,9 @@ To go to the home screen at any time, swipe up from the bottom center edge of th
     <string name="oneplus_lock_buttons_summary">Lock capacitive buttons when Gaming mode is turned on</string>
     <string name="oneplus_lock_notification">lock notification</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">If you select to skip recording face data, you are suggested to enable another method such as fingerprint or pin to protect your device and personal information. You can also set a password on certain apps. To enable the protection, please go to Settings > Security &amp; lock screen.</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">To use Face Unlock or fingerprint, set password</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">To use Face Unlock or fingerprint, set pattern</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">To use Face Unlock or fingerprint, set PIN</string>
     <string name="oneplus_lockpassword_confirm_passwords_dont_match">@string/lockpassword_confirm_passwords_dont_match</string>
     <string name="oneplus_lockpassword_confirm_pins_dont_match">@string/lockpassword_confirm_pins_dont_match</string>
     <string name="oneplus_lockpassword_confirm_your_password_header">@string/lockpassword_confirm_your_password_header</string>
@@ -3389,6 +3394,7 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
     <string name="oneplus_settings_lab_feature_boost_summary" />
     <string name="oneplus_settings_lab_feature_boost_title" />
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Set up an alternate way to unlock screen</string>
+    <string name="oneplus_share_this_wifi">Extend Wi-Fi coverage</string>
     <string name="oneplus_share_wifi_title">Wi-Fi Sharing</string>
     <string name="oneplus_shielding_notification">Block</string>
     <string name="oneplus_shielding_notification_summary">Notifications will be blocked (except for calls and alarms)</string>
@@ -3648,6 +3654,8 @@ Just bring the devices together (typically back to back) and then touch your scr
     <string name="op_testing_battery_info">Battery information</string>
     <string name="op_theme_2__cannot_change_color_accent">The Avengers theme can only use the system color theme</string>
     <string name="op_theme_2__title">The Avengers</string>
+    <string name="op_theme_3_cannot_change_color_accent" />
+    <string name="op_theme_3_title" />
     <string name="op_theme_mode_title">Theme</string>
     <string name="op_user_manual_settings">User Manual</string>
     <string name="op_volume">Volume</string>
@@ -5644,6 +5652,10 @@ Tap "<b>Back</b> to connect to a different Wi‑Fi network.</string>
     <string name="wifi_tap_to_sign_in">Tap here to sign in to network</string>
     <string name="wifi_tether_configure_ap_text">Set up Wi‑Fi hotspot</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">After 10 min of inactivity</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">After 15 min of inactivity</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">After 5 min of inactivity</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Always stays on</string>
     <string name="wifi_tether_disabled_by_airplane">Unavailable because airplane mode is turned on</string>
     <string name="wifi_tether_enabled_subtext">%1$s is active</string>
     <string name="wifi_tether_failed_subtext">Portable Wi‑Fi hotspot error</string>
@@ -5954,25 +5966,15 @@ Update settings to:
     <item type="string" name="APKTOOL_DUMMY_a63">false</item>
     <item type="string" name="APKTOOL_DUMMY_a64">false</item>
     <item type="string" name="APKTOOL_DUMMY_a96">false</item>
-    <item type="string" name="APKTOOL_DUMMY_ac7">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b90">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b91">false</item>
+    <item type="string" name="APKTOOL_DUMMY_ac8">false</item>
     <item type="string" name="APKTOOL_DUMMY_b92">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b93">false</item>
     <item type="string" name="APKTOOL_DUMMY_b94">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b95">false</item>
-    <item type="string" name="APKTOOL_DUMMY_bb4">false</item>
-    <item type="string" name="APKTOOL_DUMMY_bb5">false</item>
-    <item type="string" name="APKTOOL_DUMMY_bf6">false</item>
-    <item type="string" name="APKTOOL_DUMMY_bf7">false</item>
-    <item type="string" name="APKTOOL_DUMMY_cfc">false</item>
-    <item type="string" name="APKTOOL_DUMMY_cfd">false</item>
-    <item type="string" name="APKTOOL_DUMMY_124c">false</item>
-    <string name="hardware_keys_action_kill">Kill foreground app</string>
-    <string name="hardware_keys_action_screenshot">Full screenshot</string>
-    <string name="hardware_keys_action_screenshot2">Croppable screenshot</string>
-    <string name="hardware_keys_action_app">Launch custom app (select app in RiCE)</string>
-    <string name="hardware_keys_action_previous_app">Switch to previous app</string>
-    <string name="hardware_keys_action_default_double_recents">Nothing (Switch to previous app)</string>
-    <string name="oneplus_search_keyword_fingerprint_key">fingerprint</string>
+    <item type="string" name="APKTOOL_DUMMY_b96">false</item>
+    <item type="string" name="APKTOOL_DUMMY_bb6">false</item>
+    <item type="string" name="APKTOOL_DUMMY_bb7">false</item>
+    <item type="string" name="APKTOOL_DUMMY_bf8">false</item>
+    <item type="string" name="APKTOOL_DUMMY_bf9">false</item>
+    <item type="string" name="APKTOOL_DUMMY_cff">false</item>
+    <item type="string" name="APKTOOL_DUMMY_d00">false</item>
+    <item type="string" name="APKTOOL_DUMMY_1251">false</item>
 </resources>

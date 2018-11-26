@@ -582,7 +582,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setDisplayShowTitleEnabled(Z)V
 
-    const v1, 0x7f0d01c9
+    const v1, 0x7f0d01cc
 
     const/4 v2, 0x0
 
@@ -590,7 +590,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a0262
+    const v2, 0x7f0a0265
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -610,7 +610,7 @@
 
     new-instance v4, Landroid/widget/ArrayAdapter;
 
-    const v5, 0x7f0d01c8
+    const v5, 0x7f0d01cb
 
     const v6, 0x1020014
 
@@ -1307,7 +1307,7 @@
     :cond_0
     invoke-super {p0, p1}, Lcom/oneplus/settings/ringtone/OPRingtoneBaseActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0d0199
+    const v0, 0x7f0d019c
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/ringtone/OPLocalRingtonePickerActivity;->setContentView(I)V
 
@@ -1319,7 +1319,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/ringtone/OPLocalRingtonePickerActivity;->mListView:Landroid/widget/ListView;
 
-    const v0, 0x7f0a025f
+    const v0, 0x7f0a0262
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/ringtone/OPLocalRingtonePickerActivity;->findViewById(I)Landroid/view/View;
 
@@ -1329,7 +1329,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/ringtone/OPLocalRingtonePickerActivity;->mNofileView:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0261
+    const v0, 0x7f0a0264
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/ringtone/OPLocalRingtonePickerActivity;->findViewById(I)Landroid/view/View;
 

@@ -194,7 +194,7 @@
 
     move-object v0, v2
 
-    const v2, 0x7f0a03fc
+    const v2, 0x7f0a03ff
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -204,7 +204,7 @@
 
     iput-object v2, v0, Lcom/oneplus/settings/quicklaunch/OPApplicationListAdapter$ItemViewHolder;->parent:Landroid/widget/RelativeLayout;
 
-    const v2, 0x7f0a05a6
+    const v2, 0x7f0a05a9
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -224,7 +224,7 @@
 
     iput-object v2, v0, Lcom/oneplus/settings/quicklaunch/OPApplicationListAdapter$ItemViewHolder;->appIconIv:Landroid/widget/ImageView;
 
-    const v2, 0x7f0a0350
+    const v2, 0x7f0a0353
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -234,7 +234,7 @@
 
     iput-object v2, v0, Lcom/oneplus/settings/quicklaunch/OPApplicationListAdapter$ItemViewHolder;->appNameTv:Landroid/widget/TextView;
 
-    const v2, 0x7f0a0530
+    const v2, 0x7f0a0533
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -252,7 +252,7 @@
 
     iput-object v2, v0, Lcom/oneplus/settings/quicklaunch/OPApplicationListAdapter$ItemViewHolder;->bottomLine:Landroid/view/View;
 
-    const v2, 0x7f0a021c
+    const v2, 0x7f0a021f
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -286,7 +286,7 @@
     :goto_0
     const/4 v2, 0x0
 
-    const v3, 0x7f120c10
+    const v3, 0x7f120c12
 
     const/16 v4, 0x44
 
@@ -312,7 +312,7 @@
 
     iget-object v3, v0, Lcom/oneplus/settings/quicklaunch/OPApplicationListAdapter$ItemViewHolder;->titleTv:Landroid/widget/TextView;
 
-    const v4, 0x7f120c53
+    const v4, 0x7f120c55
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 

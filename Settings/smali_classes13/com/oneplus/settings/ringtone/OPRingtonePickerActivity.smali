@@ -683,7 +683,7 @@
 
     iget-object v4, v0, Lcom/oneplus/settings/ringtone/OPRingtoneManager$ResultRing;->title:Ljava/lang/String;
 
-    const v5, 0x7f120bd4
+    const v5, 0x7f120bd6
 
     if-eqz v4, :cond_3
 
@@ -972,7 +972,7 @@
 
     move-result v2
 
-    const v4, 0x7f120bd1
+    const v4, 0x7f120bd3
 
     const/4 v5, 0x0
 
@@ -1315,7 +1315,7 @@
 
     const/4 v2, 0x0
 
-    const v3, 0x7f120bd1
+    const v3, 0x7f120bd3
 
     const/4 v4, 0x0
 

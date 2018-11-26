@@ -99,9 +99,9 @@
 .end method
 
 .method private initViews()V
-    .locals 11
+    .locals 15
 
-    const v0, 0x7f0d01a5
+    const v0, 0x7f0d01a8
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/product/ProductInfoActivity;->setContentView(I)V
 
@@ -115,6 +115,47 @@
 
     move-result-object v0
 
+    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const v2, 0x7f120ba6
+
+    invoke-virtual {p0, v2}, Lcom/oneplus/settings/product/ProductInfoActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    const v3, 0x7f0a026b
+
+    const/4 v4, 0x0
+
+    const v5, 0x7f0d01a7
+
+    const/4 v6, 0x0
+
+    if-nez v1, :cond_1
+
+    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const v7, 0x7f120ba7
+
+    invoke-virtual {p0, v7}, Lcom/oneplus/settings/product/ProductInfoActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v1, v7}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
     invoke-virtual {p0}, Lcom/oneplus/settings/product/ProductInfoActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
@@ -123,157 +164,212 @@
 
     move-result v1
 
-    const/4 v2, 0x0
-
-    move v3, v2
+    move v7, v6
 
     :goto_0
-    const/16 v4, 0x12
+    const/16 v8, 0x12
 
-    if-ge v3, v4, :cond_0
+    if-ge v7, v8, :cond_2
 
-    const v4, 0x7f0d01a4
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v0, v4, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object v4
-
-    const v5, 0x7f0a0268
-
-    invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/widget/ImageView;
-
-    const/4 v6, 0x0
-
-    invoke-virtual {p0}, Lcom/oneplus/settings/product/ProductInfoActivity;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v7
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "product_info_"
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v9, v3, 0x1
-
-    const/4 v10, 0x2
-
-    invoke-static {v9, v10}, Lcom/oneplus/settings/product/ProductInfoActivity;->autoGenericCode(II)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v5, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v8
 
-    const-string v9, "drawable"
+    invoke-virtual {v8, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v9
+
+    check-cast v9, Landroid/widget/ImageView;
+
+    const/4 v10, 0x0
+
+    invoke-virtual {p0}, Lcom/oneplus/settings/product/ProductInfoActivity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v11
+
+    new-instance v12, Ljava/lang/StringBuilder;
+
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v13, "product_info_"
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v13, v7, 0x1
+
+    invoke-static {v13, v2}, Lcom/oneplus/settings/product/ProductInfoActivity;->autoGenericCode(II)Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    const-string v13, "drawable"
 
     invoke-virtual {p0}, Lcom/oneplus/settings/product/ProductInfoActivity;->getPackageName()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v14
 
-    invoke-virtual {v7, v8, v9, v10}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v11, v12, v13, v14}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v6
+    move-result v10
 
-    invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v9, v10}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    iget-object v7, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mViews:Ljava/util/List;
+    iget-object v11, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mViews:Ljava/util/List;
 
-    invoke-interface {v7, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v11, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     goto :goto_0
 
-    :cond_0
-    const v3, 0x7f0a0320
+    :cond_1
+    :goto_1
+    move v1, v6
 
-    invoke-virtual {p0, v3}, Lcom/oneplus/settings/product/ProductInfoActivity;->findViewById(I)Landroid/view/View;
+    :goto_2
+    const/16 v7, 0xb
 
-    move-result-object v3
+    if-ge v1, v7, :cond_2
 
-    check-cast v3, Landroid/support/v4/view/ViewPager;
+    invoke-virtual {v0, v5, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    iput-object v3, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mViewPager:Landroid/support/v4/view/ViewPager;
+    move-result-object v7
 
-    const v3, 0x7f0a057c
+    invoke-virtual {v7, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    invoke-virtual {p0, v3}, Lcom/oneplus/settings/product/ProductInfoActivity;->findViewById(I)Landroid/view/View;
+    move-result-object v8
 
-    move-result-object v3
+    check-cast v8, Landroid/widget/ImageView;
 
-    check-cast v3, Landroid/widget/TextView;
+    const/4 v9, 0x0
 
-    iput-object v3, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mCountTextView:Landroid/widget/TextView;
+    invoke-virtual {p0}, Lcom/oneplus/settings/product/ProductInfoActivity;->getResources()Landroid/content/res/Resources;
 
-    iget-object v3, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mCountTextView:Landroid/widget/TextView;
+    move-result-object v10
 
-    const/4 v4, 0x4
+    new-instance v11, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-instance v3, Lcom/oneplus/settings/product/NovicePagerAdapter;
+    const-string v12, "product_info_6x_"
 
-    iget-object v4, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mViews:Ljava/util/List;
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v3, v4}, Lcom/oneplus/settings/product/NovicePagerAdapter;-><init>(Ljava/util/List;)V
+    add-int/lit8 v12, v1, 0x1
 
-    iput-object v3, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mPagerAdapter:Lcom/oneplus/settings/product/NovicePagerAdapter;
+    invoke-static {v12, v2}, Lcom/oneplus/settings/product/ProductInfoActivity;->autoGenericCode(II)Ljava/lang/String;
 
-    iget-object v3, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mViewPager:Landroid/support/v4/view/ViewPager;
+    move-result-object v12
 
-    iget-object v4, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mPagerAdapter:Lcom/oneplus/settings/product/NovicePagerAdapter;
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Landroid/support/v4/view/ViewPager;->setAdapter(Landroid/support/v4/view/PagerAdapter;)V
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iget-object v3, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mViewPager:Landroid/support/v4/view/ViewPager;
+    move-result-object v11
 
-    invoke-virtual {v3, v2}, Landroid/support/v4/view/ViewPager;->setCurrentItem(I)V
+    const-string v12, "drawable"
 
-    iget-object v2, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mViewPager:Landroid/support/v4/view/ViewPager;
+    invoke-virtual {p0}, Lcom/oneplus/settings/product/ProductInfoActivity;->getPackageName()Ljava/lang/String;
 
-    iget-object v3, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+    move-result-object v13
 
-    invoke-virtual {v2, v3}, Landroid/support/v4/view/ViewPager;->setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
+    invoke-virtual {v10, v11, v12, v13}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v9
+
+    invoke-virtual {v8, v9}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    iget-object v10, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mViews:Ljava/util/List;
+
+    invoke-interface {v10, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_2
+
+    :cond_2
+    const v1, 0x7f0a0323
+
+    invoke-virtual {p0, v1}, Lcom/oneplus/settings/product/ProductInfoActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/support/v4/view/ViewPager;
+
+    iput-object v1, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mViewPager:Landroid/support/v4/view/ViewPager;
+
+    const v1, 0x7f0a057f
+
+    invoke-virtual {p0, v1}, Lcom/oneplus/settings/product/ProductInfoActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/TextView;
+
+    iput-object v1, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mCountTextView:Landroid/widget/TextView;
+
+    iget-object v1, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mCountTextView:Landroid/widget/TextView;
+
+    const/4 v2, 0x4
+
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
+
+    new-instance v1, Lcom/oneplus/settings/product/NovicePagerAdapter;
+
+    iget-object v2, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mViews:Ljava/util/List;
+
+    invoke-direct {v1, v2}, Lcom/oneplus/settings/product/NovicePagerAdapter;-><init>(Ljava/util/List;)V
+
+    iput-object v1, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mPagerAdapter:Lcom/oneplus/settings/product/NovicePagerAdapter;
+
+    iget-object v1, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mViewPager:Landroid/support/v4/view/ViewPager;
 
     iget-object v2, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mPagerAdapter:Lcom/oneplus/settings/product/NovicePagerAdapter;
 
-    invoke-virtual {v2}, Lcom/oneplus/settings/product/NovicePagerAdapter;->getCount()I
+    invoke-virtual {v1, v2}, Landroid/support/v4/view/ViewPager;->setAdapter(Landroid/support/v4/view/PagerAdapter;)V
 
-    move-result v2
+    iget-object v1, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mViewPager:Landroid/support/v4/view/ViewPager;
 
-    sput v2, Lcom/oneplus/settings/product/ProductInfoActivity;->count:I
+    invoke-virtual {v1, v6}, Landroid/support/v4/view/ViewPager;->setCurrentItem(I)V
 
-    iget-object v2, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mCountTextView:Landroid/widget/TextView;
+    iget-object v1, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mViewPager:Landroid/support/v4/view/ViewPager;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    iget-object v2, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v1, v2}, Landroid/support/v4/view/ViewPager;->setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
 
-    const-string v4, "1/"
+    iget-object v1, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mPagerAdapter:Lcom/oneplus/settings/product/NovicePagerAdapter;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Lcom/oneplus/settings/product/NovicePagerAdapter;->getCount()I
 
-    sget v4, Lcom/oneplus/settings/product/ProductInfoActivity;->count:I
+    move-result v1
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    sput v1, Lcom/oneplus/settings/product/ProductInfoActivity;->count:I
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v1, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mCountTextView:Landroid/widget/TextView;
 
-    move-result-object v3
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "1/"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget v3, Lcom/oneplus/settings/product/ProductInfoActivity;->count:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     return-void
 .end method
@@ -323,6 +419,34 @@
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const v1, 0x7f120ba6
+
+    invoke-virtual {p0, v1}, Lcom/oneplus/settings/product/ProductInfoActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const v1, 0x7f120ba7
+
+    invoke-virtual {p0, v1}, Lcom/oneplus/settings/product/ProductInfoActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
     invoke-virtual {p0}, Lcom/oneplus/settings/product/ProductInfoActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -335,6 +459,7 @@
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/product/ProductInfoActivity;->setRequestedOrientation(I)V
 
+    :cond_0
     :try_start_0
     invoke-direct {p0}, Lcom/oneplus/settings/product/ProductInfoActivity;->initViews()V
     :try_end_0

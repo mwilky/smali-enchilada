@@ -2819,6 +2819,9 @@
     <string name="oneplus_lock_buttons">ล็อคปุ่ม</string>
     <string name="oneplus_lock_buttons_summary">ล็อคปุ่มสัมผัสไว้เวลาที่ โหมดกำลังเล่นเกม เปิดอยู่</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">หากคุณเลือกที่จะข้ามข้อมูลการบันทึกใบหน้าไป ขอแนะนำให้คุณเปิดใช้งานวิธีการอื่น เช่น ลายนิ้วมือหรือ PIN เพื่อปกป้องเครื่องและข้อมูลส่วนตัวของคุณ คุณยังสามารถตั้งค่ารหัสผ่านในบางแอปได้ด้วย ในการเปิดใช้งานการป้องกัน ให้ไปที่ \"การตั้งค่า\" > \"ความปลอดภัยและการล็อคหน้าจอ\"</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">ตั้งค่ารหัสผ่านเพื่อใช้การปลดล็อคด้วยใบหน้า หรือลายนิ้วมือ</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">ตั้งค่ารูปแบบเพื่อใช้การปลดล็อคด้วยใบหน้า หรือลายนิ้วมือ</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">ตั้งค่า PIN เพื่อใช้การปลดล็อคด้วยใบหน้า หรือลายนิ้วมือ</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">ลองอีกครั้ง</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">ลองผิดหลายครั้งเกินไป!</string>
     <string name="oneplus_max_shortcuts_tips">คุณสามารถเพิ่มทางลัดได้สูงสุด 6 รายการ</string>
@@ -5051,6 +5054,10 @@ PIN อาจไม่ถูกต้อง"</string>
     <string name="wifi_tap_to_sign_in">แตะที่นี่เพื่อลงชื่อเข้าใช้เครือข่าย</string>
     <string name="wifi_tether_configure_ap_text">ตั้งค่า WiFi ฮอตสปอต</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">หลังจากไม่ได้ใช้งานเป็นเวลา 10 นาที</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">หลังจากไม่ได้ใช้งานเป็นเวลา 15 นาที</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">หลังจากไม่ได้ใช้งานเป็นเวลา 5 นาที</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">เปิดอยู่เสมอ</string>
     <string name="wifi_tether_disabled_by_airplane">ใช้งานไม่ได้เพราะโหมดบนเครื่องบินเปิดอยู่</string>
     <string name="wifi_tether_enabled_subtext">%1$s ใช้งานอยู่</string>
     <string name="wifi_tether_failed_subtext">ข้อผิดพลาดของ WiFi ฮอตสปอตแบบพกพา</string>

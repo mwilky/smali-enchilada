@@ -114,7 +114,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f120409
+    const v1, 0x7f120aaa
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -213,15 +213,84 @@
 .end method
 
 .method public refreshState()V
-    .locals 1
+    .locals 5
 
-    iget-object v0, p0, Lcom/android/settings/dashboard/conditional/NightDisplayCondition;->mController:Lcom/android/internal/app/ColorDisplayController;
+    iget-object v0, p0, Lcom/android/settings/dashboard/conditional/NightDisplayCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
-    invoke-virtual {v0}, Lcom/android/internal/app/ColorDisplayController;->isActivated()Z
+    invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "accessibility_display_daltonizer_enabled"
+
+    const/16 v2, 0xc
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lcom/android/settings/dashboard/conditional/NightDisplayCondition;->setActive(Z)V
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_0
+
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_0
+    move v0, v1
+
+    :goto_0
+    iget-object v3, p0, Lcom/android/settings/dashboard/conditional/NightDisplayCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
+
+    invoke-virtual {v3}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v3
+
+    const-string v4, "accessibility_display_inversion_enabled"
+
+    invoke-static {v3, v4, v1}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v3
+
+    if-ne v3, v2, :cond_1
+
+    move v3, v2
+
+    goto :goto_1
+
+    :cond_1
+    move v3, v1
+
+    :goto_1
+    iget-object v4, p0, Lcom/android/settings/dashboard/conditional/NightDisplayCondition;->mController:Lcom/android/internal/app/ColorDisplayController;
+
+    invoke-virtual {v4}, Lcom/android/internal/app/ColorDisplayController;->isActivated()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    if-nez v0, :cond_2
+
+    if-nez v3, :cond_2
+
+    move v1, v2
+
+    nop
+
+    :cond_2
+    invoke-virtual {p0, v1}, Lcom/android/settings/dashboard/conditional/NightDisplayCondition;->setActive(Z)V
 
     return-void
 .end method

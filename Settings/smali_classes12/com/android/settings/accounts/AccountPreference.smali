@@ -246,7 +246,7 @@
 
     packed-switch p1, :pswitch_data_0
 
-    const v0, 0x7f1211a4
+    const v0, 0x7f1211a9
 
     const-string v1, "AccountPreference"
 
@@ -269,22 +269,22 @@
     goto :goto_0
 
     :pswitch_0
-    const v0, 0x7f1211a7
+    const v0, 0x7f1211ac
 
     goto :goto_0
 
     :pswitch_1
-    const v0, 0x7f1211a4
+    const v0, 0x7f1211a9
 
     goto :goto_0
 
     :pswitch_2
-    const v0, 0x7f1211a2
+    const v0, 0x7f1211a7
 
     goto :goto_0
 
     :pswitch_3
-    const v0, 0x7f1211a3
+    const v0, 0x7f1211a8
 
     nop
 

@@ -153,6 +153,8 @@
 
     move-result-object v1
 
+    if-eqz v1, :cond_1
+
     invoke-virtual {p0}, Lcom/android/settings/FallbackHome;->getPackageName()Ljava/lang/String;
 
     move-result-object v3

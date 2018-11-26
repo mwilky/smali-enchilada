@@ -2819,6 +2819,9 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="oneplus_lock_buttons">ലോക്ക് ബട്ടണുകള്‍</string>
     <string name="oneplus_lock_buttons_summary">ഗെയിമിങ്ങ് മോഡ് ഓണാക്കുമ്പോള്‍ കപ്പാസിറ്റേറ്റിവ് ബട്ടണുകള്‍ ലോക്ക് ചെയ്യുക</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">ഫേസ് ഡാറ്റ റെക്കോഡ് ചെയ്യുന്നത് ഒഴിവാക്കാന്‍ നിങ്ങള്‍ തിരഞ്ഞെടുത്താല്‍, വിരലടയാളം അല്ലെങ്കില്‍ പിന്‍ പോലുള്ള മറ്റൊരു രീതി നിങ്ങളുടെ ഡിവൈസും വ്യക്തിഗത വിവരവും സംരക്ഷിക്കാനായി പ്രാപ്തമാക്കുന്നതിന് നിര്‍ദ്ദേശിക്കുന്നു. പ്രത്യക ആപ്പുകളില്‍ നിങ്ങള്‍ക്ക് പാസ്‍വേഡുകളും സജ്ജീകരിക്കാം. സംരക്ഷണം പ്രാപ്തമാക്കാന്‍ ദയവായി \"ക്രമീകരണങ്ങള്‍\" > \"സുരക്ഷ &amp; ലോക്ക് സക്രീന്‍ എന്നതിലേക്ക് പോകുക\".</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">ഫേസ് അൺലോക്കോ ഫിംഗർപ്രിൻ്റോ ഉപയോഗിക്കാൻ പാസ്‌വേഡ് സജ്ജമാക്കുക</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">ഫേസ് അൺലോക്കോ ഫിംഗർപ്രിൻ്റോ ഉപയോഗിക്കാൻ പാറ്റേൺ സജ്ജമാക്കുക</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">ഫേസ് അൺലോക്കോ ഫിംഗർപ്രിൻ്റോ ഉപയോഗിക്കാൻ പിൻ സജ്ജമാക്കുക</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">വീണ്ടും ശ്രമിക്കുക</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">തെറ്റായ നിരവധി ശ്രമങ്ങള്‍!</string>
     <string name="oneplus_max_shortcuts_tips">നിങ്ങൾക്ക് 6 കുറുക്കുവഴികൾ വരെ ചേർക്കാം</string>
@@ -5050,6 +5053,10 @@ UT ഇന്റര്‍ഫേസ്: %5$s"</string>
     <string name="wifi_tap_to_sign_in">നെറ്റ്‌വർക്കിലേക്ക് സൈൻ ഇൻ ചെയ്യാൻ ഇവിടെ ടാപ്പ് ചെയ്യുക</string>
     <string name="wifi_tether_configure_ap_text">വൈഫൈ ഹോട്ട്‌സ്പോട്ട് സജ്ജീകരിക്കുക</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">10 മിനിറ്റ് നിഷ്ക്രിയത്വത്തിനുശേഷം</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">15 മിനിറ്റ് നിഷ്ക്രിയത്വത്തിനുശേഷം</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">5 മിനിറ്റ് നിഷ്ക്രിയത്വത്തിനുശേഷം</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">എല്ലായ്‍പ്പോഴും ഓണ്‍</string>
     <string name="wifi_tether_disabled_by_airplane">ഫ്ലൈറ്റ് മോഡ് ഓണായതിനാൽ ലഭ്യമല്ല</string>
     <string name="wifi_tether_enabled_subtext">%1$s സജീവമാണ്</string>
     <string name="wifi_tether_failed_subtext">പോർട്ടബിൾ വൈഫൈ ഹോട്ട്‌സ്പോട്ട് പിശക്</string>

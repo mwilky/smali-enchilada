@@ -52,7 +52,7 @@
 
     invoke-direct {p0, p1}, Lcom/android/settings/widget/SeekBarPreference;-><init>(Landroid/content/Context;)V
 
-    const v0, 0x7f0d020d
+    const v0, 0x7f0d0210
 
     invoke-virtual {p0, v0}, Lcom/android/settings/notification/VolumeSeekBarPreference;->setLayoutResource(I)V
 
@@ -74,7 +74,7 @@
 
     invoke-direct {p0, p1, p2}, Lcom/android/settings/widget/SeekBarPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    const v0, 0x7f0d020d
+    const v0, 0x7f0d0210
 
     invoke-virtual {p0, v0}, Lcom/android/settings/notification/VolumeSeekBarPreference;->setLayoutResource(I)V
 
@@ -96,7 +96,7 @@
 
     invoke-direct {p0, p1, p2, p3}, Lcom/android/settings/widget/SeekBarPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const v0, 0x7f0d020d
+    const v0, 0x7f0d0210
 
     invoke-virtual {p0, v0}, Lcom/android/settings/notification/VolumeSeekBarPreference;->setLayoutResource(I)V
 
@@ -118,7 +118,7 @@
 
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/settings/widget/SeekBarPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    const v0, 0x7f0d020d
+    const v0, 0x7f0d0210
 
     invoke-virtual {p0, v0}, Lcom/android/settings/notification/VolumeSeekBarPreference;->setLayoutResource(I)V
 
@@ -301,9 +301,13 @@
 
     iget-object v0, p0, Lcom/android/settings/notification/VolumeSeekBarPreference;->mIconView:Landroid/widget/ImageView;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_3
 
-    return-void
+    iget-boolean v0, p0, Lcom/android/settings/notification/VolumeSeekBarPreference;->mStopped:Z
+
+    if-eqz v0, :cond_0
+
+    goto :goto_1
 
     :cond_0
     iget v0, p0, Lcom/android/settings/notification/VolumeSeekBarPreference;->mIconResId:I
@@ -345,6 +349,10 @@
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     :goto_0
+    return-void
+
+    :cond_3
+    :goto_1
     return-void
 .end method
 
@@ -436,6 +444,10 @@
 
     if-eqz v0, :cond_0
 
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/android/settings/notification/VolumeSeekBarPreference;->mStopped:Z
+
     invoke-direct {p0}, Lcom/android/settings/notification/VolumeSeekBarPreference;->init()V
 
     :cond_0
@@ -480,7 +492,7 @@
 
     iput-object v0, p0, Lcom/android/settings/notification/VolumeSeekBarPreference;->mIconView:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a0536
+    const v0, 0x7f0a0539
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

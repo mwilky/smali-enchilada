@@ -822,7 +822,7 @@
 
     invoke-super {p0}, Lcom/android/settings/widget/ChartView;->onFinishInflate()V
 
-    const v0, 0x7f0a0219
+    const v0, 0x7f0a021c
 
     invoke-virtual {p0, v0}, Lcom/android/settings/widget/ChartDataUsageView;->findViewById(I)Landroid/view/View;
 
@@ -832,7 +832,7 @@
 
     iput-object v0, p0, Lcom/android/settings/widget/ChartDataUsageView;->mGrid:Lcom/android/settings/widget/ChartGridView;
 
-    const v0, 0x7f0a04cf
+    const v0, 0x7f0a04d2
 
     invoke-virtual {p0, v0}, Lcom/android/settings/widget/ChartDataUsageView;->findViewById(I)Landroid/view/View;
 
@@ -842,7 +842,7 @@
 
     iput-object v0, p0, Lcom/android/settings/widget/ChartDataUsageView;->mSeries:Lcom/android/settings/widget/ChartNetworkSeriesView;
 
-    const v0, 0x7f0a0184
+    const v0, 0x7f0a0187
 
     invoke-virtual {p0, v0}, Lcom/android/settings/widget/ChartDataUsageView;->findViewById(I)Landroid/view/View;
 
@@ -858,7 +858,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/widget/ChartNetworkSeriesView;->setVisibility(I)V
 
-    const v0, 0x7f0a0554
+    const v0, 0x7f0a0557
 
     invoke-virtual {p0, v0}, Lcom/android/settings/widget/ChartDataUsageView;->findViewById(I)Landroid/view/View;
 
@@ -868,7 +868,7 @@
 
     iput-object v0, p0, Lcom/android/settings/widget/ChartDataUsageView;->mSweepLimit:Lcom/android/settings/widget/ChartSweepView;
 
-    const v0, 0x7f0a0555
+    const v0, 0x7f0a0558
 
     invoke-virtual {p0, v0}, Lcom/android/settings/widget/ChartDataUsageView;->findViewById(I)Landroid/view/View;
 

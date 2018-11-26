@@ -233,7 +233,7 @@
 .end method
 
 .method public isWhitelisted(Ljava/lang/String;)Z
-    .locals 5
+    .locals 6
 
     iget-object v0, p0, Lcom/android/settingslib/fuelgauge/PowerWhitelistBackend;->mWhitelistedApps:Landroid/util/ArraySet;
 
@@ -303,6 +303,25 @@
     return v1
 
     :cond_3
+    iget-object v4, p0, Lcom/android/settingslib/fuelgauge/PowerWhitelistBackend;->mAppContext:Landroid/content/Context;
+
+    const-class v5, Landroid/app/admin/DevicePolicyManager;
+
+    invoke-virtual {v4, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/app/admin/DevicePolicyManager;
+
+    invoke-virtual {v4, p1}, Landroid/app/admin/DevicePolicyManager;->packageHasActiveAdmins(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_4
+
+    return v1
+
+    :cond_4
     return v2
 .end method
 

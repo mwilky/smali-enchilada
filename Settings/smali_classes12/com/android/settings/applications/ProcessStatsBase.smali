@@ -434,7 +434,7 @@
 
     iget-object v0, p0, Lcom/android/settings/applications/ProcessStatsBase;->mSpinnerHeader:Landroid/view/ViewGroup;
 
-    const v1, 0x7f0a01e8
+    const v1, 0x7f0a01eb
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

@@ -2806,7 +2806,7 @@
     <string name="oneplus_laboratory_community_rating">평가</string>
     <string name="oneplus_laboratory_community_rating_already_feedback">한 번만 피드백을 주실 수 있습니다.</string>
     <string name="oneplus_laboratory_community_rating_feedback">피드백을 보내주셔서 감사합니다.</string>
-    <string name="oneplus_laboratory_community_rating_summary">사용자를 위한 새롭고 흥미로운 기능을 제공하고 사용자의 피드백을 들을 때 항상 적극적으로 최선을 다하고 있습니다. 사용자 경험 향상을 위해 보다 적극적으로 더욱 열심히 노력하겠습니다. 따라서 이러한 기능에 대한 의견을 알려주시기 바랍니다. 항상 세심히 귀를 기울이겠습니다.</string>
+    <string name="oneplus_laboratory_community_rating_summary">저희는 사용자를 위한 새롭고 흥미로운 기능을 제공하고 사용자의 피드백을 들을 때 항상 적극적으로 최선을 다하고 있습니다. 사용자 경험 향상을 위해 보다 적극적으로 더욱 열심히 노력하겠습니다. 그러므로 이러한 기능에 대한 의견을 알려주시기 바랍니다. 항상 의견에 귀를 기울이겠습니다.</string>
     <string name="oneplus_laboratory_description">설명</string>
     <string name="oneplus_led_support">펄스 알림 조명 허용</string>
     <string name="oneplus_legal_notices">법적 고지 사항</string>
@@ -2819,6 +2819,9 @@
     <string name="oneplus_lock_buttons">버튼 잠그기</string>
     <string name="oneplus_lock_buttons_summary">게임 모드가 켜져 있는 경우 용량 버튼 잠금</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">얼굴 데이터 기록을 건너뛰도록 선택하면, 지문 또는 PIN과 같은 다른 방법을 사용하여 장치 및 개인 정보를 보호하라는 메시지가 표시됩니다. 또한 특정 앱에서 암호를 설정할 수도 있습니다. 보호 기능을 활성화하려면 \"설정\" > \"보안 및 잠금 화면\"으로 이동하세요.</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">얼굴 잠금 해제 또는 지문을 사용하려면 비밀번호를 설정하세요</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">얼굴 잠금 해제 또는 지문을 사용하려면 패턴을 설정하세요</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">얼굴 잠금 해제 또는 지문을 사용하려면 PIN을 설정하세요</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">다시 시도</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">너무 많이 잘못 시도했습니다!</string>
     <string name="oneplus_max_shortcuts_tips">바로 가기를 최대 6개까지 추가할 수 있습니다</string>
@@ -3168,7 +3171,7 @@
     <string name="op_not_disturb">방해 금지 기본 설정</string>
     <string name="op_not_disturb_summary">알람을 제외하고 통화 및 알림이 음소거되고 진동이 꺼집니다.</string>
     <string name="op_oneplus_roaming_summary">글로벌 인터넷 액세스 서비스 제공</string>
-    <string name="op_oneplus_roaming_title">Oneplus 로밍</string>
+    <string name="op_oneplus_roaming_title">OnePlus 로밍</string>
     <string name="op_primary_charm_purple_label">진보라</string>
     <string name="op_primary_dark_green_label">다크 그린</string>
     <string name="op_primary_default_label">파랑</string>
@@ -5051,6 +5054,10 @@ Google 동기화는 사용자가 어디에서든지 연락처, 일정 등에 액
     <string name="wifi_tap_to_sign_in">네트워크에 로그인하려면 여기를 탭하세요.</string>
     <string name="wifi_tether_configure_ap_text">Wi-Fi 핫스팟 설정</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">비활성 상태 10분 후</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">비활성 상태 15분 후</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">비활성 상태 5분 후</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">항상 켜기</string>
     <string name="wifi_tether_disabled_by_airplane">비행기 모드가 사용 설정되어 있기 때문에 사용할 수 없습니다.</string>
     <string name="wifi_tether_enabled_subtext">%1$s이(가) 활성화됨</string>
     <string name="wifi_tether_failed_subtext">휴대용 Wi-Fi 핫스팟 오류</string>

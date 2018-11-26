@@ -438,6 +438,9 @@
     <string name="oneplus_lock_buttons">பூட்டு பொத்தான்கள்</string>
     <string name="oneplus_lock_buttons_summary">கேமிங் பயன்முறை ஆன் ஆக இருக்கையில், கெபாசிட்டிவ் பொத்தான்களை லாக் செய்யவும்</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">முகத்தரவு பதிதலை நீங்கள் தவிர்க்க தேர்வுசெய்தால், உங்களுடைய சாதனம் மற்றும் தனிப்பட்ட தகவலைப் பாதுகாக்க, கைரேகை அல்லது பின் போன்ற மற்றொரு முறையை செயல்படுத்துமாறு நீங்கள் பரிந்துரைக்கப்படுகிறீர்கள். குறிப்பிட்ட செயலிகளில் ஒரு கடவுச்சொல்லையும் அமைக்கலாம். பாதுகாப்பை செயல்படுத்த, \"அமைப்புகள்\" > \"பாதுகாப்பு &amp; பூட்டுத்திரை\" என்பதற்குச் செல்லவும்.</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">முகப் பூட்டுநீக்கல் அல்லது கைரேகையைப் பயன்படுத்த, கடவுச்சொல்லை அமைக்கவும்</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">முகப் பூட்டுநீக்கல் அல்லது கைரேகையைப் பயன்படுத்த, பேட்டர்னை அமைக்கவும்</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">முகப் பூட்டுநீக்கல் அல்லது கைரேகையைப் பயன்படுத்த, PIN-ஐ அமைக்கவும்</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">மீண்டும் முயல்க</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">அதிகப்படியான தவறான முயற்சிகள்!</string>
     <string name="oneplus_max_shortcuts_tips">6 குறுக்குவழிகள் வரை நீங்கள் சேர்க்கலாம்</string>
@@ -963,6 +966,10 @@
     <string name="wifi_setting_frequency_band_error">ஃப்ரீகுவன்ஸி பேண்டை அமைப்பதில் ஒரு சிக்கல் இருந்தது.</string>
     <string name="wifi_setting_frequency_band_summary">செயல்பாட்டின் ஃப்ரீகுவன்ஸி வரம்பை குறிப்பிடவும்</string>
     <string name="wifi_setting_frequency_band_title">Wi‑Fi ஃப்ரீகுவன்ஸி பேண்டு</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">10 நிமிடம் செயலற்ற நிலையில் இருந்தப் பிறகு</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">15 நிமிடம் செயலற்ற நிலையில் இருந்தப் பிறகு</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">5 நிமிடம் செயலற்ற நிலையில் இருந்தப் பிறகு</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">எப்பொழுதும் ஆன்</string>
     <string name="wifi_wapi_as_cert">AS சான்றிதழ்</string>
     <string name="wifi_wapi_cert_cancel_button">இரத்துசெய்க</string>
     <string name="wifi_wapi_cert_create_subdir">டைரக்டரியை உருவாக்குக</string>

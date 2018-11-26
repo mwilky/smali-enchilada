@@ -415,7 +415,7 @@
 
     const/4 v0, 0x0
 
-    const v1, 0x7f121470
+    const v1, 0x7f121475
 
     invoke-interface {p1, v0, v0, v0, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -471,7 +471,7 @@
 
     move-result v0
 
-    const v1, 0x7f0a037f
+    const v1, 0x7f0a0382
 
     if-ne v0, v1, :cond_0
 
@@ -578,7 +578,7 @@
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPColorPickerActivity;->setContentView(I)V
 
-    const v0, 0x7f0a0381
+    const v0, 0x7f0a0384
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPColorPickerActivity;->findViewById(I)Landroid/view/View;
 
@@ -588,7 +588,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/OPColorPickerActivity;->mPreviewText:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0385
+    const v0, 0x7f0a0388
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPColorPickerActivity;->findViewById(I)Landroid/view/View;
 
@@ -604,7 +604,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Switch;->setChecked(Z)V
 
-    const v0, 0x7f0a0384
+    const v0, 0x7f0a0387
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPColorPickerActivity;->findViewById(I)Landroid/view/View;
 
@@ -628,7 +628,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/SeekBar;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    const v0, 0x7f0a0382
+    const v0, 0x7f0a0385
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPColorPickerActivity;->findViewById(I)Landroid/view/View;
 
@@ -638,7 +638,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/OPColorPickerActivity;->mPreviewAutoBrightness:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a037f
+    const v0, 0x7f0a0382
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPColorPickerActivity;->findViewById(I)Landroid/view/View;
 
@@ -656,7 +656,7 @@
 
     invoke-virtual {v0, p0}, Landroid/widget/EditText;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a0380
+    const v0, 0x7f0a0383
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPColorPickerActivity;->findViewById(I)Landroid/view/View;
 
@@ -807,13 +807,13 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0d016e
+    const v2, 0x7f0d0171
 
     invoke-virtual {v0, v2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
 
-    const v2, 0x7f0a03e6
+    const v2, 0x7f0a03e9
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -864,7 +864,7 @@
 
     invoke-direct {v2, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v3, 0x7f120d78
+    const v3, 0x7f120d7b
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 

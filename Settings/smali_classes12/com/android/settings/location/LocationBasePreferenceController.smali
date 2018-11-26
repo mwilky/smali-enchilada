@@ -181,13 +181,27 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    iget-object v1, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v1, v1, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-static {v1}, Landroid/os/UserHandle;->getUserId(I)I
+
+    move-result v1
+
+    const/16 v2, 0x3e7
+
+    if-ne v1, v2, :cond_0
+
     iget-object v3, p0, Lcom/android/settings/location/LocationBasePreferenceController;->mContext:Landroid/content/Context;
 
-    sget-object v5, Landroid/os/UserHandle;->CURRENT:Landroid/os/UserHandle;
+    new-instance v5, Landroid/os/UserHandle;
 
-    iget-object v7, p0, Lcom/android/settings/location/LocationBasePreferenceController;->mCheckKillProcessesReceiver:Landroid/content/BroadcastReceiver;
+    invoke-direct {v5, v2}, Landroid/os/UserHandle;-><init>(I)V
 
     const/4 v6, 0x0
+
+    iget-object v7, p0, Lcom/android/settings/location/LocationBasePreferenceController;->mCheckKillProcessesReceiver:Landroid/content/BroadcastReceiver;
 
     const/4 v8, 0x0
 
@@ -201,6 +215,30 @@
 
     invoke-virtual/range {v3 .. v11}, Landroid/content/Context;->sendOrderedBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;Landroid/content/BroadcastReceiver;Landroid/os/Handler;ILjava/lang/String;Landroid/os/Bundle;)V
 
+    goto :goto_0
+
+    :cond_0
+    iget-object v3, p0, Lcom/android/settings/location/LocationBasePreferenceController;->mContext:Landroid/content/Context;
+
+    sget-object v5, Landroid/os/UserHandle;->CURRENT:Landroid/os/UserHandle;
+
+    const/4 v6, 0x0
+
+    iget-object v7, p0, Lcom/android/settings/location/LocationBasePreferenceController;->mCheckKillProcessesReceiver:Landroid/content/BroadcastReceiver;
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    move-object v4, v0
+
+    invoke-virtual/range {v3 .. v11}, Landroid/content/Context;->sendOrderedBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;Landroid/content/BroadcastReceiver;Landroid/os/Handler;ILjava/lang/String;Landroid/os/Bundle;)V
+
+    :goto_0
     return-void
 .end method
 

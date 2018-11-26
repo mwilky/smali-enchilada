@@ -257,6 +257,7 @@
         <item>Qualcomm® aptX™ audio</item>
         <item>Qualcomm® aptX™ HD audio</item>
         <item>LDAC</item>
+        <item>Qualcomm® aptX™ Adaptive audio</item>
         <item>Enable Optional Codecs</item>
         <item>Disable Optional Codecs</item>
     </string-array>
@@ -267,6 +268,7 @@
         <item>Qualcomm® aptX™ audio</item>
         <item>Qualcomm® aptX™ HD audio</item>
         <item>LDAC</item>
+        <item>Qualcomm® aptX™ Adaptive audio</item>
         <item>Enable Optional Codecs</item>
         <item>Disable Optional Codecs</item>
     </string-array>

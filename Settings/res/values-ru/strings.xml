@@ -2819,6 +2819,9 @@
     <string name="oneplus_lock_buttons">Заблокировать кнопки</string>
     <string name="oneplus_lock_buttons_summary">Блокировать сенсорные кнопки, когда включен игровой режим</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">Если вы не хотите записывать данные о лице, включите другой способ авторизации, например, по отпечатку пальца или PIN-коду, чтобы защитить устройство и персональную информацию. В некоторых приложениях можно также задать пароль. Для включения защиты перейдите в раздел \"Настройки\" > \"Безопасность и экран блокировки\".</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">Установите пароль, чтобы использовать разблокировку распознаванием лица или отпечаток пальца</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">Установите узор, чтобы использовать разблокировку распознаванием лица или отпечаток пальца</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">Установите PIN, чтобы использовать разблокировку распознаванием лица или отпечаток пальца</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Попробуйте еще раз</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">Слишком много неверных попыток!</string>
     <string name="oneplus_max_shortcuts_tips">Вы можете добавить до 6 ярлыков</string>
@@ -5051,6 +5054,10 @@ UT-интерфейс: %5$s"</string>
     <string name="wifi_tap_to_sign_in">Нажмите, чтобы войти в сеть.</string>
     <string name="wifi_tether_configure_ap_text">Настройка точки доступа Wi-Fi</string>
     <string name="wifi_tether_configure_ssid_default">Хот-спот Android</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Через 10 минут бездействия</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Через 15 минут бездействия</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Через 5 минут бездействия</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Всегда вкл.</string>
     <string name="wifi_tether_disabled_by_airplane">Функция недоступна, так как включен режим полета</string>
     <string name="wifi_tether_enabled_subtext">Сеть %1$s активна</string>
     <string name="wifi_tether_failed_subtext">Ошибка подключения к точке доступа</string>

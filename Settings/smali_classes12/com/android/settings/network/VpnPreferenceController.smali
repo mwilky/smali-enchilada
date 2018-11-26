@@ -189,7 +189,7 @@
 
     iget-object v0, p0, Lcom/android/settings/network/VpnPreferenceController;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f12142d
+    const v1, 0x7f121432
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -450,7 +450,7 @@
 
     iget-object v4, p0, Lcom/android/settings/network/VpnPreferenceController;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f12136f
+    const v5, 0x7f121374
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

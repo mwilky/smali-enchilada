@@ -227,7 +227,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0300e1
+    const v1, 0x7f0300e3
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -839,7 +839,7 @@
 
     iget-object v2, p0, Lcom/android/settings/wifi/details/WifiDetailPreferenceController;->mFragment:Landroid/app/Fragment;
 
-    const v3, 0x7f0a01c3
+    const v3, 0x7f0a01c6
 
     invoke-virtual {v0, v3}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -851,7 +851,7 @@
 
     iput-object v1, p0, Lcom/android/settings/wifi/details/WifiDetailPreferenceController;->mEntityHeaderController:Lcom/android/settings/widget/EntityHeaderController;
 
-    const v1, 0x7f0a01c5
+    const v1, 0x7f0a01c8
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -1044,7 +1044,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f1213e9
+    const v4, 0x7f1213ee
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1067,7 +1067,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f1213ea
+    const v4, 0x7f1213ef
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1495,7 +1495,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f1214f3
+    const v2, 0x7f1214f8
 
     invoke-virtual {v0, v2}, Lcom/android/settings/widget/ActionButtonPreference;->setButton2Text(I)Lcom/android/settings/widget/ActionButtonPreference;
 

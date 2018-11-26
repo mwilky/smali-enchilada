@@ -105,7 +105,7 @@
 
     iget-object v2, v0, Lcom/android/settings/sim/SimPreferenceDialog;->mDialogLayout:Landroid/view/View;
 
-    const v3, 0x7f0a04ef
+    const v3, 0x7f0a04f2
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -125,7 +125,7 @@
 
     iget-object v3, v0, Lcom/android/settings/sim/SimPreferenceDialog;->mDialogLayout:Landroid/view/View;
 
-    const v4, 0x7f0a0506
+    const v4, 0x7f0a0509
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -139,7 +139,7 @@
 
     iget-object v6, v0, Lcom/android/settings/sim/SimPreferenceDialog;->mColorStrings:[Ljava/lang/String;
 
-    const v7, 0x7f0d024e
+    const v7, 0x7f0d0251
 
     invoke-direct {v4, v0, v5, v7, v6}, Lcom/android/settings/sim/SimPreferenceDialog$SelectColorAdapter;-><init>(Lcom/android/settings/sim/SimPreferenceDialog;Landroid/content/Context;I[Ljava/lang/String;)V
 
@@ -203,7 +203,7 @@
 
     iget-object v7, v0, Lcom/android/settings/sim/SimPreferenceDialog;->mDialogLayout:Landroid/view/View;
 
-    const v8, 0x7f0a0370
+    const v8, 0x7f0a0373
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -287,7 +287,7 @@
 
     iget-object v10, v0, Lcom/android/settings/sim/SimPreferenceDialog;->mBuilder:Landroid/app/AlertDialog$Builder;
 
-    const v12, 0x7f12104f
+    const v12, 0x7f121054
 
     invoke-virtual {v1, v12}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -407,7 +407,7 @@
 
     move-result-object v1
 
-    const v2, 0x107006d
+    const v2, 0x107006e
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getIntArray(I)[I
 
@@ -485,7 +485,7 @@
 
     iget-object v1, p0, Lcom/android/settings/sim/SimPreferenceDialog;->mDialogLayout:Landroid/view/View;
 
-    const v2, 0x7f0a0506
+    const v2, 0x7f0a0509
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -499,7 +499,7 @@
 
     iget-object v2, p0, Lcom/android/settings/sim/SimPreferenceDialog;->mDialogLayout:Landroid/view/View;
 
-    const v3, 0x7f0a04ef
+    const v3, 0x7f0a04f2
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -531,7 +531,7 @@
 
     iget-object v0, p0, Lcom/android/settings/sim/SimPreferenceDialog;->mDialogLayout:Landroid/view/View;
 
-    const v1, 0x7f0a04ef
+    const v1, 0x7f0a04f2
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

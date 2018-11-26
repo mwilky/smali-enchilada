@@ -446,7 +446,7 @@
 
     if-nez v1, :cond_4
 
-    const v2, 0x7f1212db
+    const v2, 0x7f1212e0
 
     invoke-virtual {v0, v2}, Landroid/support/v14/preference/SwitchPreference;->setSummary(I)V
 
@@ -455,14 +455,14 @@
     :cond_4
     if-nez v4, :cond_5
 
-    const v2, 0x7f1212da
+    const v2, 0x7f1212df
 
     invoke-virtual {v0, v2}, Landroid/support/v14/preference/SwitchPreference;->setSummary(I)V
 
     goto :goto_2
 
     :cond_5
-    const v2, 0x7f1212d9
+    const v2, 0x7f1212de
 
     invoke-virtual {v0, v2}, Landroid/support/v14/preference/SwitchPreference;->setSummary(I)V
 

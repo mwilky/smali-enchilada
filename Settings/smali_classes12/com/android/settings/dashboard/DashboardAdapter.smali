@@ -47,6 +47,8 @@
 # instance fields
 .field private final mCache:Lcom/android/settingslib/utils/IconCache;
 
+.field private mConditionAdapter:Lcom/android/settings/dashboard/conditional/ConditionAdapter;
+
 .field private final mContext:Landroid/content/Context;
 
 .field mDashboardData:Lcom/android/settings/dashboard/DashboardData;
@@ -546,6 +548,10 @@
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 
+    iget-object v0, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mConditionAdapter:Lcom/android/settings/dashboard/conditional/ConditionAdapter;
+
+    if-nez v0, :cond_0
+
     new-instance v0, Lcom/android/settings/dashboard/conditional/ConditionAdapter;
 
     iget-object v1, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
@@ -566,23 +572,30 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/android/settings/dashboard/conditional/ConditionAdapter;-><init>(Landroid/content/Context;Ljava/util/List;Z)V
 
+    iput-object v0, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mConditionAdapter:Lcom/android/settings/dashboard/conditional/ConditionAdapter;
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mConditionAdapter:Lcom/android/settings/dashboard/conditional/ConditionAdapter;
+
     iget-object v1, p1, Lcom/android/settings/dashboard/DashboardAdapter$ConditionContainerHolder;->data:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/dashboard/conditional/ConditionAdapter;->addDismissHandling(Landroid/support/v7/widget/RecyclerView;)V
 
-    iget-object v1, p1, Lcom/android/settings/dashboard/DashboardAdapter$ConditionContainerHolder;->data:Landroid/support/v7/widget/RecyclerView;
+    iget-object v0, p1, Lcom/android/settings/dashboard/DashboardAdapter$ConditionContainerHolder;->data:Landroid/support/v7/widget/RecyclerView;
 
-    invoke-virtual {v1, v0}, Landroid/support/v7/widget/RecyclerView;->setAdapter(Landroid/support/v7/widget/RecyclerView$Adapter;)V
+    iget-object v1, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mConditionAdapter:Lcom/android/settings/dashboard/conditional/ConditionAdapter;
 
-    iget-object v1, p1, Lcom/android/settings/dashboard/DashboardAdapter$ConditionContainerHolder;->data:Landroid/support/v7/widget/RecyclerView;
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setAdapter(Landroid/support/v7/widget/RecyclerView$Adapter;)V
 
-    new-instance v2, Landroid/support/v7/widget/LinearLayoutManager;
+    iget-object v0, p1, Lcom/android/settings/dashboard/DashboardAdapter$ConditionContainerHolder;->data:Landroid/support/v7/widget/RecyclerView;
 
-    iget-object v3, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
+    new-instance v1, Landroid/support/v7/widget/LinearLayoutManager;
 
-    invoke-direct {v2, v3}, Landroid/support/v7/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
+    iget-object v2, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v1, v2}, Landroid/support/v7/widget/RecyclerView;->setLayoutManager(Landroid/support/v7/widget/RecyclerView$LayoutManager;)V
+    invoke-direct {v1, v2}, Landroid/support/v7/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setLayoutManager(Landroid/support/v7/widget/RecyclerView$LayoutManager;)V
 
     return-void
 .end method
@@ -883,7 +896,7 @@
 
     iget-object v4, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f1211b7
+    const v5, 0x7f1211bc
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -939,11 +952,11 @@
 
     if-eq v0, v1, :cond_2
 
-    const v1, 0x7f0d01b5
+    const v1, 0x7f0d01b8
 
     if-eq v0, v1, :cond_1
 
-    const v1, 0x7f0d0270
+    const v1, 0x7f0d0273
 
     if-eq v0, v1, :cond_0
 
@@ -1089,7 +1102,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d01b5
+    const v1, 0x7f0d01b8
 
     if-ne p2, v1, :cond_0
 
@@ -1122,7 +1135,7 @@
     return-object v1
 
     :cond_2
-    const v1, 0x7f0d0270
+    const v1, 0x7f0d0273
 
     if-ne p2, v1, :cond_3
 
@@ -1279,6 +1292,21 @@
 
     iput-object v1, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mDashboardData:Lcom/android/settings/dashboard/DashboardData;
 
+    iget-object v1, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mConditionAdapter:Lcom/android/settings/dashboard/conditional/ConditionAdapter;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mConditionAdapter:Lcom/android/settings/dashboard/conditional/ConditionAdapter;
+
+    iget-object v2, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mDashboardData:Lcom/android/settings/dashboard/DashboardData;
+
+    invoke-virtual {v2}, Lcom/android/settings/dashboard/DashboardData;->getConditionsToShow()Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lcom/android/settings/dashboard/conditional/ConditionAdapter;->setConditions(Ljava/util/List;)V
+
+    :cond_0
     invoke-virtual {p0, v0}, Lcom/android/settings/dashboard/DashboardAdapter;->notifyDashboardDataChanged(Lcom/android/settings/dashboard/DashboardData;)V
 
     return-void

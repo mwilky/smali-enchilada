@@ -98,7 +98,7 @@
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 2
 
-    const v0, 0x7f0d02d4
+    const v0, 0x7f0d02d7
 
     invoke-virtual {p0, v0}, Lcom/android/settings/users/RestrictedProfileSettings;->setPinnedHeaderView(I)Landroid/view/View;
 
@@ -136,7 +136,7 @@
 
     iget-object v0, p0, Lcom/android/settings/users/RestrictedProfileSettings;->mHeaderView:Landroid/view/View;
 
-    const v1, 0x7f0a0178
+    const v1, 0x7f0a017b
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -236,7 +236,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f120e7d
+    const v5, 0x7f120e82
 
     iget-object v7, p0, Lcom/android/settings/users/RestrictedProfileSettings;->mUser:Landroid/os/UserHandle;
 

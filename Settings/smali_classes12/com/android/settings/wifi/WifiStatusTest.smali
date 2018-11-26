@@ -829,7 +829,7 @@
     goto :goto_0
 
     :pswitch_0
-    const v0, 0x7f121501
+    const v0, 0x7f121506
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->getString(I)Ljava/lang/String;
 
@@ -838,7 +838,7 @@
     goto :goto_0
 
     :pswitch_1
-    const v0, 0x7f1214fe
+    const v0, 0x7f121503
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->getString(I)Ljava/lang/String;
 
@@ -847,7 +847,7 @@
     goto :goto_0
 
     :pswitch_2
-    const v0, 0x7f1214ff
+    const v0, 0x7f121504
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->getString(I)Ljava/lang/String;
 
@@ -856,7 +856,7 @@
     goto :goto_0
 
     :pswitch_3
-    const v0, 0x7f1214fc
+    const v0, 0x7f121501
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->getString(I)Ljava/lang/String;
 
@@ -865,7 +865,7 @@
     goto :goto_0
 
     :pswitch_4
-    const v0, 0x7f1214fd
+    const v0, 0x7f121502
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->getString(I)Ljava/lang/String;
 
@@ -903,7 +903,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120eb7
+    const v2, 0x7f120ebc
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1013,11 +1013,11 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/settings/wifi/WifiStatusTest;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    const v0, 0x7f0d02eb
+    const v0, 0x7f0d02ee
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->setContentView(I)V
 
-    const v0, 0x7f0a05b7
+    const v0, 0x7f0a05ba
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->findViewById(I)Landroid/view/View;
 
@@ -1033,7 +1033,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a0600
+    const v0, 0x7f0a0603
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->findViewById(I)Landroid/view/View;
 
@@ -1043,7 +1043,7 @@
 
     iput-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest;->mWifiState:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0354
+    const v0, 0x7f0a0357
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->findViewById(I)Landroid/view/View;
 
@@ -1053,7 +1053,7 @@
 
     iput-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest;->mNetworkState:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0535
+    const v0, 0x7f0a0538
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->findViewById(I)Landroid/view/View;
 
@@ -1063,7 +1063,7 @@
 
     iput-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest;->mSupplicantState:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0492
+    const v0, 0x7f0a0495
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->findViewById(I)Landroid/view/View;
 
@@ -1083,7 +1083,7 @@
 
     iput-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest;->mBSSID:Landroid/widget/TextView;
 
-    const v0, 0x7f0a050b
+    const v0, 0x7f0a050e
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->findViewById(I)Landroid/view/View;
 
@@ -1093,7 +1093,7 @@
 
     iput-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest;->mSSID:Landroid/widget/TextView;
 
-    const v0, 0x7f0a024a
+    const v0, 0x7f0a024d
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->findViewById(I)Landroid/view/View;
 
@@ -1103,7 +1103,7 @@
 
     iput-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest;->mHiddenSSID:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0295
+    const v0, 0x7f0a0298
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->findViewById(I)Landroid/view/View;
 
@@ -1113,7 +1113,7 @@
 
     iput-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest;->mIPAddr:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0319
+    const v0, 0x7f0a031c
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->findViewById(I)Landroid/view/View;
 
@@ -1123,7 +1123,7 @@
 
     iput-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest;->mMACAddr:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0355
+    const v0, 0x7f0a0358
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->findViewById(I)Landroid/view/View;
 
@@ -1133,7 +1133,7 @@
 
     iput-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest;->mNetworkId:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0303
+    const v0, 0x7f0a0306
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->findViewById(I)Landroid/view/View;
 
@@ -1143,7 +1143,7 @@
 
     iput-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest;->mLinkSpeed:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0497
+    const v0, 0x7f0a049a
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->findViewById(I)Landroid/view/View;
 
@@ -1153,7 +1153,7 @@
 
     iput-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest;->mScanList:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0413
+    const v0, 0x7f0a0416
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->findViewById(I)Landroid/view/View;
 
@@ -1163,7 +1163,7 @@
 
     iput-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest;->mPingHostname:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0256
+    const v0, 0x7f0a0259
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->findViewById(I)Landroid/view/View;
 
@@ -1173,7 +1173,7 @@
 
     iput-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest;->mHttpClientTest:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0416
+    const v0, 0x7f0a0419
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->findViewById(I)Landroid/view/View;
 

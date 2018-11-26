@@ -2819,6 +2819,9 @@ For at gå til startskærmbilledet, kan du stryge op fra skærmenkantens nederst
     <string name="oneplus_lock_buttons">Lås knapper</string>
     <string name="oneplus_lock_buttons_summary">Lås kapacitive knapper, når spilletilstand er aktiveret</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">Hvis du fravælger registrering af ansigtsdata, anbefales det at du aktiverer en anden metode såsom fingeraftryk eller pinkode for at beskytte din enhed og personlige oplysninger. Du kan også angive en adgangskode til visse apps. Hvis du vil aktivere denne beskyttelse, skal du gå til \"Indstillinger\" > \"Sikkerhed &amp; Låseskærm\".</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">For at bruge oplåsning med ansigt eller fingeraftryk, indstil adgangskode</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">For at bruge oplåsning med ansigt eller fingeraftryk, indstil mønster</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">For at bruge oplåsning med ansigt eller fingeraftryk, indstil PIN-kode</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Prøv igen</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">For mange forkerte forsøg!</string>
     <string name="oneplus_max_shortcuts_tips">Du kan tilføje op til 6 genveje</string>
@@ -5051,6 +5054,10 @@ Tryk på "<b>Tilbage</b> for at oprette forbindelse til et andet Wi-Fi-netværk.
     <string name="wifi_tap_to_sign_in">Tryk her for at logge ind på netværket</string>
     <string name="wifi_tether_configure_ap_text">Konfiguration af Wi-Fi-hotspot</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Efter 10 minutters inaktivitet</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Efter 15 minutters inaktivitet</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Efter 5 minutters inaktivitet</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Altid slået til</string>
     <string name="wifi_tether_disabled_by_airplane">Utilgængelig, fordi flytilstand er aktiveret</string>
     <string name="wifi_tether_enabled_subtext">%1$s er aktivt</string>
     <string name="wifi_tether_failed_subtext">Fejl ved mobilt Wi-Fi-hotspot</string>

@@ -470,7 +470,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120e32
+    const v2, 0x7f120e37
 
     const/4 v3, 0x2
 
@@ -569,7 +569,7 @@
     :cond_0
     if-nez p2, :cond_1
 
-    const v1, 0x7f12119d
+    const v1, 0x7f1211a2
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -578,7 +578,7 @@
     return-object v1
 
     :cond_1
-    const v1, 0x7f12119c
+    const v1, 0x7f1211a1
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -745,7 +745,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f120c77
+    const v1, 0x7f120c79
 
     const/4 v2, 0x1
 
@@ -1787,12 +1787,12 @@
 
     if-eqz v0, :cond_1
 
-    const v2, 0x7f12119d
+    const v2, 0x7f1211a2
 
     goto :goto_0
 
     :cond_1
-    const v2, 0x7f12119c
+    const v2, 0x7f1211a1
 
     :goto_0
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setSummary(I)V
@@ -2720,7 +2720,7 @@
 
     iget-object v2, p0, Lcom/android/settings/accessibility/AccessibilitySettings;->mToggleInversionPreference:Landroid/support/v14/preference/SwitchPreference;
 
-    const v3, 0x7f12118a
+    const v3, 0x7f12118f
 
     invoke-virtual {v2, v3}, Landroid/support/v14/preference/SwitchPreference;->setSummary(I)V
 

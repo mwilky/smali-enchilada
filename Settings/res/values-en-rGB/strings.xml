@@ -2819,6 +2819,9 @@ To go to the home screen at any time, swipe up from the bottom center edge of th
     <string name="oneplus_lock_buttons">Lock Buttons</string>
     <string name="oneplus_lock_buttons_summary">Lock capacitive buttons when Gaming mode is turned on</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">If you choose to skip recording face data, you are advised to enable another method such as fingerprint or PIN to protect your device and personal information. You can also set a password on certain apps. To enable protection, please go to \"Settings\" > \"Security &amp; lock screen\".</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">To use Face Unlock or fingerprint, set a password</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">To use Face Unlock or fingerprint, set a pattern</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">To use Face Unlock or fingerprint, set a PIN</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Try again</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">Too many incorrect attempts!</string>
     <string name="oneplus_max_shortcuts_tips">You can add up to 6 shortcuts</string>
@@ -5049,6 +5052,10 @@ Tap "<b>Back</b> to connect to a different Wi‑Fi network.</string>
     <string name="wifi_tap_to_sign_in">Tap here to sign in to network</string>
     <string name="wifi_tether_configure_ap_text">Set up Wi‑Fi hotspot</string>
     <string name="wifi_tether_configure_ssid_default">Android Hotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">After 10 minutes of inactivity</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">After 15 minutes of inactivity</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">After 5 minutes of inactivity</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Always on</string>
     <string name="wifi_tether_disabled_by_airplane">Unavailable because aeroplane mode is turned on</string>
     <string name="wifi_tether_enabled_subtext">%1$s is active</string>
     <string name="wifi_tether_failed_subtext">Portable Wi‑Fi hotspot error</string>

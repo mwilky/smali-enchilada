@@ -36,7 +36,7 @@
 
     iput-object v0, p0, Lcom/android/settings/dashboard/DashboardAdapter$ConditionHeaderHolder;->icons:Landroid/widget/LinearLayout;
 
-    const v0, 0x7f0a01dc
+    const v0, 0x7f0a01df
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

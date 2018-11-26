@@ -9,7 +9,7 @@
         <PreferenceScreen android:icon="@drawable/op_ic_settings_night_mode" android:title="@string/oneplus_night_mode_enabled_op" android:key="oneplus_night_mode" android:fragment="com.oneplus.settings.better.OPNightMode" settings:keywords="@string/oneplus_search_keyword_night_mode" />
         <PreferenceScreen android:icon="@drawable/op_ic_settings_reading_mode" android:title="@string/oneplus_reading_mode" android:key="oneplus_reading_mode" android:fragment="com.oneplus.settings.better.OPReadingMode" settings:keywords="@string/oneplus_search_keyword_read_mode" />
         <PreferenceScreen android:icon="@drawable/op_ic_settings_screen_color_mode" android:title="@string/oneplus_screen_color_mode_title" android:key="screen_color_mode" android:fragment="com.oneplus.settings.better.OPScreenColorMode" settings:keywords="@string/oneplus_search_keyword_screen_color_mode" />
-        <SwitchPreference android:title="@string/oneplus_video_enhancer" android:key="video_enhancer" android:summary="@string/oneplus_video_enhancer_summary" />
+        <SwitchPreference android:icon="@drawable/op_ic_settings_video_enhancer" android:title="@string/oneplus_video_enhancer" android:key="video_enhancer" android:summary="@string/oneplus_video_enhancer_summary" />
         <PreferenceScreen android:icon="@drawable/op_ic_settings_notch_display_guide" android:title="@string/oneplus_notch_display_title" android:key="oneplus_notch_display_guide" settings:keywords="@string/oneplus_search_keyword_notch_display">
             <intent android:action="com.oneplus.settings.action.NOTCHDISPLAYGUIDE" />
         </PreferenceScreen>

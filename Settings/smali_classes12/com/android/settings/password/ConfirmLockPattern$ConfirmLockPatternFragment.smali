@@ -1008,7 +1008,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a0240
+    const v3, 0x7f0a0243
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1018,7 +1018,7 @@
 
     iput-object v3, v0, Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment;->mHeaderTextView:Landroid/widget/TextView;
 
-    const v3, 0x7f0a0311
+    const v3, 0x7f0a0314
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1028,7 +1028,7 @@
 
     iput-object v3, v0, Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment;->mLockPatternView:Lcom/android/internal/widget/LockPatternView;
 
-    const v3, 0x7f0a0185
+    const v3, 0x7f0a0188
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1038,7 +1038,7 @@
 
     iput-object v3, v0, Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment;->mDetailsTextView:Landroid/widget/TextView;
 
-    const v3, 0x7f0a01d1
+    const v3, 0x7f0a01d4
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1048,7 +1048,7 @@
 
     iput-object v3, v0, Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment;->mErrorTextView:Landroid/widget/TextView;
 
-    const v3, 0x7f0a02f5
+    const v3, 0x7f0a02f8
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1056,7 +1056,7 @@
 
     iput-object v3, v0, Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment;->mLeftSpacerLandscape:Landroid/view/View;
 
-    const v3, 0x7f0a047b
+    const v3, 0x7f0a047e
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1064,7 +1064,7 @@
 
     iput-object v3, v0, Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment;->mRightSpacerLandscape:Landroid/view/View;
 
-    const v3, 0x7f0a0594
+    const v3, 0x7f0a0597
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

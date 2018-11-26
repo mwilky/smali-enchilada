@@ -54,7 +54,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setDisplayHomeAsUpEnabled(Z)V
 
-    const v0, 0x7f0a035b
+    const v0, 0x7f0a035e
 
     invoke-virtual {p0, v0}, Lcom/android/settings/nfc/HowItWorks;->findViewById(I)Landroid/view/View;
 

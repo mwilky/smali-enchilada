@@ -86,7 +86,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d0189
+    const v2, 0x7f0d018c
 
     const/4 v3, 0x0
 
@@ -104,7 +104,7 @@
 
     iput-object v1, v0, Lcom/oneplus/settings/ringtone/OPLocalRingtoneAdapter$HoldView;->mTitle:Landroid/widget/TextView;
 
-    const v1, 0x7f0a025e
+    const v1, 0x7f0a0261
 
     invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

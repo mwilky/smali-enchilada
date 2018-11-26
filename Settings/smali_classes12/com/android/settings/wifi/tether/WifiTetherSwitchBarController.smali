@@ -633,6 +633,12 @@
 .method startTether()V
     .locals 5
 
+    const-string v0, "WifiTetherSwitchBarController"
+
+    const-string v1, "startTether"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     iget-object v0, p0, Lcom/android/settings/wifi/tether/WifiTetherSwitchBarController;->mSwitchBar:Lcom/android/settings/widget/SwitchWidgetController;
 
     const/4 v1, 0x0

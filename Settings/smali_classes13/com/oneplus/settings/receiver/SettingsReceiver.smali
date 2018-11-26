@@ -464,6 +464,8 @@
 
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForGestureAndButton()V
 
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForAssistantAPP()V
+
     sget-object v3, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
 
     invoke-virtual {v3}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
@@ -604,7 +606,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f120c0f
+    const v7, 0x7f120c11
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

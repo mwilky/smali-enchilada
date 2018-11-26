@@ -2819,6 +2819,9 @@ Para ir a la pantalla de inicio en cualquier momento, desliza hacia arriba desde
     <string name="oneplus_lock_buttons">Bloquear botones</string>
     <string name="oneplus_lock_buttons_summary">Bloquear los botones capacitivos cuando está activado el modo juego</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">Si optas por omitir el registro de los datos faciales, te aconsejamos que actives otro método como la huella digital o el pin para proteger tu dispositivo y tu información personal. También puedes establecer una contraseña en algunas aplicaciones. Para activar la protección, ve a \"Ajustes\" > \"Seguridad&amp; bloqueo de la pantalla\".</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">Para utilizar Desbloqueo facial o la huella digital, establece una contraseña</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">Para utilizar Desbloqueo facial o la huella digital, establece un patrón</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">Para utilizar Desbloqueo facial o la huella digital, establece PIN</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Prueba de nuevo</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">¡Demasiados intentos incorrectos!</string>
     <string name="oneplus_max_shortcuts_tips">Puedes añadir hasta 6 accesos directos</string>
@@ -5051,6 +5054,10 @@ Toca "<b>Atrás</b> para conectarte a otra red Wi-Fi.</string>
     <string name="wifi_tap_to_sign_in">Toca para iniciar sesión en la red</string>
     <string name="wifi_tether_configure_ap_text">Configurar punto de acceso Wi-Fi</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Después de 10 minutos de inactividad</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Después de 15 minutos de inactividad</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Después de 5 minutos de inactividad</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Siempre activado</string>
     <string name="wifi_tether_disabled_by_airplane">No está disponible porque el modo avión está activado</string>
     <string name="wifi_tether_enabled_subtext">%1$s está activa</string>
     <string name="wifi_tether_failed_subtext">Error del punto de acceso Wi-Fi</string>

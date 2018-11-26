@@ -168,7 +168,7 @@
 
     const/4 v2, 0x2
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
     iget-object v0, p0, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchSettings;->mActivity:Lcom/android/settings/SettingsActivity;
 
@@ -245,6 +245,8 @@
 
     move-result-object v0
 
+    if-eqz v0, :cond_1
+
     iget-object v3, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v3, v3, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -283,6 +285,8 @@
     invoke-static {v0, v3}, Lcom/oneplus/settings/utils/OPUtils;->getResolveInfoByPackageName(Landroid/content/Context;Ljava/lang/String;)Landroid/content/pm/ResolveInfo;
 
     move-result-object v0
+
+    if-eqz v0, :cond_2
 
     iget-object v3, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
@@ -323,6 +327,8 @@
 
     move-result-object v0
 
+    if-eqz v0, :cond_3
+
     iget-object v3, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v3, v3, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -362,6 +368,8 @@
 
     move-result-object v0
 
+    if-eqz v0, :cond_4
+
     iget-object v3, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v3, v3, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -383,82 +391,76 @@
     invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_4
-    iget-object v0, p0, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchSettings;->mDefaultQuickLaunchAppList:Ljava/util/List;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v0
+    iget-object v3, p0, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchSettings;->mDefaultQuickLaunchAppList:Ljava/util/List;
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_b
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    check-cast v3, Lcom/oneplus/settings/better/OPAppModel;
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    move-result v4
 
-    iget-object v5, p0, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchSettings;->mActivity:Lcom/android/settings/SettingsActivity;
+    if-eqz v4, :cond_8
 
-    invoke-static {v5}, Lcom/oneplus/settings/utils/OPUtils;->getAllQuickLaunchStrings(Landroid/content/Context;)Ljava/lang/String;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/oneplus/settings/better/OPAppModel;
+
+    invoke-static {v4}, Lcom/oneplus/settings/utils/OPUtils;->getQuickPayAppString(Lcom/oneplus/settings/better/OPAppModel;)Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {v3}, Lcom/oneplus/settings/utils/OPUtils;->getQuickPayAppString(Lcom/oneplus/settings/better/OPAppModel;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v3}, Lcom/oneplus/settings/better/OPAppModel;->getType()I
+    invoke-virtual {v4}, Lcom/oneplus/settings/better/OPAppModel;->getType()I
 
     move-result v6
 
     if-nez v6, :cond_5
 
-    invoke-static {v3}, Lcom/oneplus/settings/utils/OPUtils;->getQuickLaunchAppString(Lcom/oneplus/settings/better/OPAppModel;)Ljava/lang/String;
+    invoke-static {v4}, Lcom/oneplus/settings/utils/OPUtils;->getQuickLaunchAppString(Lcom/oneplus/settings/better/OPAppModel;)Ljava/lang/String;
 
     move-result-object v5
 
     goto :goto_1
 
     :cond_5
-    invoke-virtual {v3}, Lcom/oneplus/settings/better/OPAppModel;->getType()I
+    invoke-virtual {v4}, Lcom/oneplus/settings/better/OPAppModel;->getType()I
 
     move-result v6
 
     if-ne v6, v1, :cond_6
 
-    invoke-static {v3}, Lcom/oneplus/settings/utils/OPUtils;->getQuickLaunchShortcutsString(Lcom/oneplus/settings/better/OPAppModel;)Ljava/lang/String;
+    invoke-static {v4}, Lcom/oneplus/settings/utils/OPUtils;->getQuickLaunchShortcutsString(Lcom/oneplus/settings/better/OPAppModel;)Ljava/lang/String;
 
     move-result-object v5
 
     goto :goto_1
 
     :cond_6
-    invoke-virtual {v3}, Lcom/oneplus/settings/better/OPAppModel;->getType()I
+    invoke-virtual {v4}, Lcom/oneplus/settings/better/OPAppModel;->getType()I
 
     move-result v6
 
     if-ne v6, v2, :cond_7
 
-    invoke-static {v3}, Lcom/oneplus/settings/utils/OPUtils;->getQuickPayAppString(Lcom/oneplus/settings/better/OPAppModel;)Ljava/lang/String;
+    invoke-static {v4}, Lcom/oneplus/settings/utils/OPUtils;->getQuickPayAppString(Lcom/oneplus/settings/better/OPAppModel;)Ljava/lang/String;
 
     move-result-object v5
 
     :cond_7
     :goto_1
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v6, p0, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchSettings;->mActivity:Lcom/android/settings/SettingsActivity;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v7
 
@@ -467,6 +469,9 @@
     goto :goto_0
 
     :cond_8
+    goto/16 :goto_3
+
+    :cond_9
     iget-object v0, p0, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchSettings;->mActivity:Lcom/android/settings/SettingsActivity;
 
     const-string v3, "com.tencent.mm"
@@ -475,7 +480,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_a
 
     new-instance v0, Lcom/oneplus/settings/better/OPAppModel;
 
@@ -543,7 +548,7 @@
 
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_9
+    :cond_a
     iget-object v0, p0, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchSettings;->mActivity:Lcom/android/settings/SettingsActivity;
 
     const-string v1, "com.eg.android.AlipayGphone"
@@ -552,7 +557,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_b
 
     new-instance v0, Lcom/oneplus/settings/better/OPAppModel;
 
@@ -620,45 +625,39 @@
 
     invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_a
-    iget-object v0, p0, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchSettings;->mDefaultQuickLaunchAppList:Ljava/util/List;
+    :cond_b
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v0
+    iget-object v1, p0, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchSettings;->mDefaultQuickLaunchAppList:Ljava/util/List;
 
-    :goto_2
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_b
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    check-cast v1, Lcom/oneplus/settings/better/OPAppModel;
+    :goto_2
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    move-result v2
 
-    iget-object v3, p0, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchSettings;->mActivity:Lcom/android/settings/SettingsActivity;
+    if-eqz v2, :cond_c
 
-    invoke-static {v3}, Lcom/oneplus/settings/utils/OPUtils;->getAllQuickLaunchStrings(Landroid/content/Context;)Ljava/lang/String;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/oneplus/settings/better/OPAppModel;
+
+    invoke-static {v2}, Lcom/oneplus/settings/utils/OPUtils;->getQuickPayAppString(Lcom/oneplus/settings/better/OPAppModel;)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {v1}, Lcom/oneplus/settings/utils/OPUtils;->getQuickPayAppString(Lcom/oneplus/settings/better/OPAppModel;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v4, p0, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchSettings;->mActivity:Lcom/android/settings/SettingsActivity;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
 
@@ -666,7 +665,8 @@
 
     goto :goto_2
 
-    :cond_b
+    :cond_c
+    :goto_3
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForQuickLaunch()V
 
     return-void
@@ -699,14 +699,6 @@
     move v0, v2
 
     if-nez v0, :cond_1
-
-    iget-object v2, p0, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchSettings;->mActivity:Lcom/android/settings/SettingsActivity;
-
-    invoke-static {v2}, Lcom/oneplus/settings/utils/OPUtils;->getQuickLaunchAppCount(Landroid/content/Context;)I
-
-    move-result v2
-
-    if-nez v2, :cond_1
 
     invoke-direct {p0}, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchSettings;->createDefaultData()V
 
@@ -822,14 +814,14 @@
 
     :array_0
     .array-data 4
+        0x7f120c32
         0x7f120c30
-        0x7f120c2e
     .end array-data
 
     :array_1
     .array-data 4
+        0x7f120c31
         0x7f120c2f
-        0x7f120c2d
     .end array-data
 .end method
 

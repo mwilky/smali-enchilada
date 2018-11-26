@@ -2819,6 +2819,9 @@ Poteze lahko izklopite tako, da v nastavitvah omogočite vrstico za krmarjenje."
     <string name="oneplus_lock_buttons">Zaklep gumbov</string>
     <string name="oneplus_lock_buttons_summary">Zakleni kapacitivne tipke, ko je aktiviran igralni način</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">Če boste preskočili postopek zajemanja podatkov obraza, boste morali izbrati drug način identifikacije, na primer prstni odtis ali kodo PIN za zaščito naprave in osebnih podatkov. Za določene aplikacije lahko nastavite dodatno geslo. Če želite omogočiti zaščito, pojdite na Nastavitve -> Varnost in zaklepanje zaslona.</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">Za uporabo odklepanja z obrazom ali prstni odtis nastavite geslo</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">Za uporabo odklepanja z obrazom ali prstni odtis nastavite vzorec</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">Za uporabo odklepanja z obrazom ali prstni odtis nastavite PIN</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Poskusite znova</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">Preveč nepravilnih poskusov.</string>
     <string name="oneplus_max_shortcuts_tips">Dodate lahko do 6 bližnjic</string>
@@ -5051,6 +5054,10 @@ To lahko povzroči varnostno tveganje, ker bo telefon redno oddajal svoj signal,
     <string name="wifi_tap_to_sign_in">Dotaknite se tukaj, da se prijavite v omrežje</string>
     <string name="wifi_tether_configure_ap_text">Nastavitev dostopne točke Wi-Fi</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Po 10 minutah nedejavnosti</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Po 15 minutah nedejavnosti</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Po 5 minutah nedejavnosti</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Vedno prikazano</string>
     <string name="wifi_tether_disabled_by_airplane">Ni na voljo, ker je vklopljen način za letalo</string>
     <string name="wifi_tether_enabled_subtext">Povezava %1$s je aktivna</string>
     <string name="wifi_tether_failed_subtext">Napaka prenosne dostopne točke Wi-Fi</string>

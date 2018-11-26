@@ -82,7 +82,7 @@
 
     if-nez v1, :cond_1
 
-    const v1, 0x7f120f01
+    const v1, 0x7f120f06
 
     const/4 v2, 0x0
 

@@ -429,6 +429,7 @@
         <item>Qualcomm® aptX™ audio</item>
         <item>Qualcomm® aptX™ HD audio</item>
         <item>LDAC</item>
+        <item>Qualcomm® aptX™ Adaptive audio</item>
         <item>Enable Optional Codecs</item>
         <item>Disable Optional Codecs</item>
     </string-array>
@@ -439,6 +440,7 @@
         <item>Qualcomm® aptX™ audio</item>
         <item>Qualcomm® aptX™ HD audio</item>
         <item>LDAC</item>
+        <item>Qualcomm® aptX™ Adaptive audio</item>
         <item>Enable Optional Codecs</item>
         <item>Disable Optional Codecs</item>
     </string-array>
@@ -798,10 +800,6 @@
         <item>@string/hardware_keys_action_shelf</item>
         <item>@string/hardware_keys_action_notification_center</item>
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
-        <item>@string/hardware_keys_action_kill</item>
-        <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_app</item>
-        <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
     <string-array name="hardware_keys_action_entries_nogms">
         <item>@string/hardware_keys_action_nothing</item>
@@ -813,10 +811,6 @@
         <item>@string/hardware_keys_action_shelf</item>
         <item>@string/hardware_keys_action_notification_center</item>
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
-        <item>@string/hardware_keys_action_kill</item>
-        <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_app</item>
-        <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
     <string-array name="hardware_keys_action_entries_nogms_quickpay">
         <item>@string/hardware_keys_action_nothing</item>
@@ -829,10 +823,6 @@
         <item>@string/hardware_keys_action_notification_center</item>
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
         <item>@string/oneplus_quickpay</item>
-        <item>@string/hardware_keys_action_kill</item>
-        <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_app</item>
-        <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
     <string-array name="hardware_keys_action_entries_quickpay">
         <item>@string/hardware_keys_action_nothing</item>
@@ -847,10 +837,6 @@
         <item>@string/hardware_keys_action_notification_center</item>
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
         <item>@string/oneplus_quickpay</item>
-        <item>@string/hardware_keys_action_kill</item>
-        <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_app</item>
-        <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
     <string-array name="hardware_keys_action_values">
         <item>0</item>
@@ -864,11 +850,6 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
     </string-array>
     <string-array name="hardware_keys_action_values_nogms">
         <item>0</item>
@@ -880,11 +861,6 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
     </string-array>
     <string-array name="hardware_keys_action_values_nogms_quickpay">
         <item>0</item>
@@ -897,11 +873,6 @@
         <item>9</item>
         <item>10</item>
         <item>11</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
     </string-array>
     <string-array name="hardware_keys_action_values_quickpay">
         <item>0</item>
@@ -916,11 +887,6 @@
         <item>9</item>
         <item>10</item>
         <item>11</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
     </string-array>
     <string-array name="hdcp_checking_summaries">
         <item>Never use HDCP checking</item>
@@ -1016,10 +982,6 @@
         <item>@string/hardware_keys_action_shelf</item>
         <item>@string/hardware_keys_action_notification_center</item>
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
-        <item>@string/hardware_keys_action_kill</item>
-        <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_app</item>
-        <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
     <string-array name="navigation_bar_keys_action_entries_nogms">
         <item>@string/hardware_keys_action_nothing</item>
@@ -1028,10 +990,6 @@
         <item>@string/hardware_keys_action_shelf</item>
         <item>@string/hardware_keys_action_notification_center</item>
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
-        <item>@string/hardware_keys_action_kill</item>
-        <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_app</item>
-        <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
     <string-array name="navigation_bar_keys_action_entries_nogms_quickpay">
         <item>@string/hardware_keys_action_nothing</item>
@@ -1040,10 +998,6 @@
         <item>@string/hardware_keys_action_shelf</item>
         <item>@string/hardware_keys_action_notification_center</item>
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
-        <item>@string/hardware_keys_action_kill</item>
-        <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_app</item>
-        <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
     <string-array name="navigation_bar_keys_action_entries_quickpay">
         <item>@string/hardware_keys_action_nothing</item>
@@ -1054,10 +1008,6 @@
         <item>@string/hardware_keys_action_shelf</item>
         <item>@string/hardware_keys_action_notification_center</item>
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
-        <item>@string/hardware_keys_action_kill</item>
-        <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_app</item>
-        <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
     <string-array name="navigation_bar_keys_action_values">
         <item>0</item>
@@ -1068,10 +1018,6 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
     </string-array>
     <string-array name="navigation_bar_keys_action_values_nogms">
         <item>0</item>
@@ -1080,10 +1026,6 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
     </string-array>
     <string-array name="navigation_bar_keys_action_values_nogms_quickpay">
         <item>0</item>
@@ -1092,10 +1034,6 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
     </string-array>
     <string-array name="navigation_bar_keys_action_values_quickpay">
         <item>0</item>
@@ -1106,37 +1044,6 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-    </string-array>
-    <string-array name="navigation_bar_keys_recents_action_entries">
-        <item>@string/hardware_keys_action_default_double_recents</item>
-        <item>@string/hardware_keys_action_menu</item>
-        <item>@string/hardware_keys_action_assist</item>
-        <item>@string/hardware_keys_action_turn_off_screen</item>
-        <item>@string/hardware_keys_action_voice_search</item>
-        <item>@string/hardware_keys_action_shelf</item>
-        <item>@string/hardware_keys_action_notification_center</item>
-        <item>@string/oneplus_hardware_keys_action_split_screen</item>
-        <item>@string/hardware_keys_action_kill</item>
-        <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_app</item>
-    </string-array>
-    <string-array name="navigation_bar_keys_recents_action_values">
-        <item>0</item>
-        <item>1</item>
-        <item>3</item>
-        <item>4</item>
-        <item>6</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
     </string-array>
     <string-array name="oneplus_battery_style_entries">
         <item>@string/battery_bar</item>
@@ -1625,6 +1532,18 @@
         <item>@string/op_light_mode_title</item>
         <item>@string/op_dark_mode_title</item>
         <item>@string/op_theme_2__title</item>
+    </string-array>
+    <string-array name="oneplus_theme_3_entries">
+        <item>@string/oneplus_colorful_mode_title</item>
+        <item>@string/op_light_mode_title</item>
+        <item>@string/op_dark_mode_title</item>
+        <item>@string/op_theme_3_title</item>
+    </string-array>
+    <string-array name="oneplus_theme_3_values">
+        <item>2</item>
+        <item>0</item>
+        <item>1</item>
+        <item>3</item>
     </string-array>
     <string-array name="oneplus_theme_mode_entries">
         <item>@string/oneplus_colorful_mode_title</item>
@@ -2270,6 +2189,18 @@
         <item>Unsuccessful</item>
         <item>Blocked</item>
         <item>Temporarily avoiding poor connection</item>
+    </string-array>
+    <string-array name="wifi_tether_custom_auto_turn_off_summary">
+        <item>@string/wifi_tether_custom_auto_turn_off_5_min_summary</item>
+        <item>@string/wifi_tether_custom_auto_turn_off_10_min_summary</item>
+        <item>@string/wifi_tether_custom_auto_turn_off_15_min_summary</item>
+        <item>@string/wifi_tether_custom_auto_turn_off_always_summary</item>
+    </string-array>
+    <string-array name="wifi_tether_custom_auto_turn_off_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>0</item>
     </string-array>
     <string-array name="wifi_tether_security">
         <item>@string/wifi_security_wpa2</item>

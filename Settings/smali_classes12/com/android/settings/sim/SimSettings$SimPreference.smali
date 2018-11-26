@@ -96,7 +96,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12104f
+    const v2, 0x7f121054
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -209,7 +209,7 @@
     goto :goto_1
 
     :cond_1
-    const v1, 0x7f121085
+    const v1, 0x7f12108a
 
     invoke-virtual {p0, v1}, Lcom/android/settings/sim/SimSettings$SimPreference;->setSummary(I)V
 

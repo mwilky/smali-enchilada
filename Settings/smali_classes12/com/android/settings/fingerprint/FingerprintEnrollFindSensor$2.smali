@@ -84,6 +84,14 @@
 
     move-result-object v0
 
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor$2;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;
+
+    invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;->access$100(Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;)Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
+
+    move-result-object v0
+
     invoke-virtual {v0}, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;->cancelEnrollment()Z
 
     move-result v0

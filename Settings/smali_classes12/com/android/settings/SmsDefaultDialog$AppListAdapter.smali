@@ -349,7 +349,7 @@
 
     iget v5, p0, Lcom/android/settings/SmsDefaultDialog$AppListAdapter;->mSelectedIndex:I
 
-    const v6, 0x7f0a0177
+    const v6, 0x7f0a017a
 
     if-ne p1, v5, :cond_0
 

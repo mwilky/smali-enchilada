@@ -2817,6 +2817,9 @@
     <string name="oneplus_lock_buttons">دکمه‌های قفل</string>
     <string name="oneplus_lock_buttons_summary">قفل کردن دکمه های خازنی هنگام روشن بودن حالت بازی</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">در صورت صرف نظر کردن از ضبط اطلاعات چهره، به شما پیشنهاد استفاده از سایر روش ها مانند اثر انگشت یا پین برای محافظت از دستگاه و اطلاعات شخصیتان ارائه می‌ شود. همچنین می توانید برای برنامه های خاصی رمز عبور قرار دهید. برای فعال کردن محافظت، لطفاً به \"تنظیمات\" >\"امنیت &amp; قفل صفحه نمایش\" بروید.</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">برای استفاده از قفل‌گشای تشخیص چهره یا اثر انگشت، گذرواژه تعیین کنید</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">برای استفاده از قفل‌گشای تشخیص چهره یا اثر انگشت، الگو تعیین کنید</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">برای استفاده از قفل‌گشای تشخیص چهره یا اثر انگشت، پین‌کد تعیین کنید</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">مجدداً سعی کنید</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">تلاش‌های نادرست بیش از حد!</string>
     <string name="oneplus_max_shortcuts_tips">می‌توانید حداکثر ۶ میان‌بر اضافه کنید</string>
@@ -5049,6 +5052,10 @@
     <string name="wifi_tap_to_sign_in">برای ورود به سیستم شبکه، اینجا ضربه بزنید</string>
     <string name="wifi_tether_configure_ap_text">‏تنظیم نقطه اتصال Wi-Fi</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">پس از 10 دقیقه عدم فعالیت</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">پس از 15 دقیقه عدم فعالیت</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">پس از 5 دقیقه عدم فعالیت</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">همیشه روشن</string>
     <string name="wifi_tether_disabled_by_airplane">دردسترس نیست، زیرا حالت هواپیما روشن است</string>
     <string name="wifi_tether_enabled_subtext">%1$s فعال است</string>
     <string name="wifi_tether_failed_subtext">‏خطای نقطه اتصال قابل حمل Wi-Fi</string>

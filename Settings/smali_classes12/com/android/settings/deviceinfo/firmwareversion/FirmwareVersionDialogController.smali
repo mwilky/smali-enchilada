@@ -11,12 +11,12 @@
 
 .field private static final DELAY_TIMER_MILLIS:I = 0x1f4
 
-.field static final FIRMWARE_VERSION_LABEL_ID:I = 0x7f0a01f6
+.field static final FIRMWARE_VERSION_LABEL_ID:I = 0x7f0a01f9
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 .end field
 
-.field static final FIRMWARE_VERSION_VALUE_ID:I = 0x7f0a01f7
+.field static final FIRMWARE_VERSION_VALUE_ID:I = 0x7f0a01fa
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 .end field
@@ -78,13 +78,13 @@
 
     iget-object v0, p0, Lcom/android/settings/deviceinfo/firmwareversion/FirmwareVersionDialogController;->mDialog:Lcom/android/settings/deviceinfo/firmwareversion/FirmwareVersionDialogFragment;
 
-    const v1, 0x7f0a01f6
+    const v1, 0x7f0a01f9
 
     invoke-virtual {v0, v1, p0}, Lcom/android/settings/deviceinfo/firmwareversion/FirmwareVersionDialogFragment;->registerClickListener(ILandroid/view/View$OnClickListener;)V
 
     iget-object v0, p0, Lcom/android/settings/deviceinfo/firmwareversion/FirmwareVersionDialogController;->mDialog:Lcom/android/settings/deviceinfo/firmwareversion/FirmwareVersionDialogFragment;
 
-    const v1, 0x7f0a01f7
+    const v1, 0x7f0a01fa
 
     invoke-virtual {v0, v1, p0}, Lcom/android/settings/deviceinfo/firmwareversion/FirmwareVersionDialogFragment;->registerClickListener(ILandroid/view/View$OnClickListener;)V
 
@@ -128,7 +128,7 @@
 
     sget-object v1, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;
 
-    const v2, 0x7f0a01f7
+    const v2, 0x7f0a01fa
 
     invoke-virtual {v0, v2, v1}, Lcom/android/settings/deviceinfo/firmwareversion/FirmwareVersionDialogFragment;->setText(ILjava/lang/CharSequence;)V
 

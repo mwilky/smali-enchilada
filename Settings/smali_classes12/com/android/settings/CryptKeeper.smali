@@ -301,7 +301,7 @@
 .method private beginAttempt()V
     .locals 2
 
-    const v0, 0x7f0a0514
+    const v0, 0x7f0a0517
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -339,7 +339,7 @@
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/LockPatternView;->setEnabled(Z)V
 
     :cond_1
-    const v0, 0x7f0a0514
+    const v0, 0x7f0a0517
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -446,7 +446,7 @@
     invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
     :cond_0
-    const v0, 0x7f0a043f
+    const v0, 0x7f0a0442
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -579,7 +579,7 @@
     goto/16 :goto_2
 
     :cond_1
-    const v0, 0x7f0a0514
+    const v0, 0x7f0a0517
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -1029,7 +1029,7 @@
 .method private passwordEntryInit()V
     .locals 6
 
-    const v0, 0x7f0a03ff
+    const v0, 0x7f0a0402
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -1064,7 +1064,7 @@
     invoke-virtual {v0, p0}, Lcom/android/settings/widget/ImeAwareEditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
     :cond_0
-    const v0, 0x7f0a0311
+    const v0, 0x7f0a0314
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -1095,7 +1095,7 @@
 
     if-nez v0, :cond_2
 
-    const v0, 0x7f0a01b8
+    const v0, 0x7f0a01bb
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -1114,7 +1114,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     :cond_2
-    const v0, 0x7f0a055a
+    const v0, 0x7f0a055d
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -1437,7 +1437,7 @@
 .method private showFactoryReset(Z)V
     .locals 5
 
-    const v0, 0x7f0a01bb
+    const v0, 0x7f0a01be
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -1447,7 +1447,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    const v0, 0x7f0a01e1
+    const v0, 0x7f0a01e4
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -1465,9 +1465,9 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v2, 0x7f0a0514
+    const v2, 0x7f0a0517
 
-    const v3, 0x7f0a0588
+    const v3, 0x7f0a058b
 
     if-eqz p1, :cond_0
 
@@ -1558,7 +1558,7 @@
 .method private updateEmergencyCallButtonState()V
     .locals 2
 
-    const v0, 0x7f0a01b8
+    const v0, 0x7f0a01bb
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -1764,7 +1764,7 @@
     move-exception v5
 
     :goto_2
-    const v5, 0x7f0a0514
+    const v5, 0x7f0a0517
 
     invoke-virtual {p0, v5}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 

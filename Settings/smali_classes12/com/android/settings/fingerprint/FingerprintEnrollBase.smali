@@ -196,7 +196,7 @@
 .method protected getLayout()Lcom/android/setupwizardlib/GlifLayout;
     .locals 1
 
-    const v0, 0x7f0a04dc
+    const v0, 0x7f0a04df
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollBase;->findViewById(I)Landroid/view/View;
 
@@ -210,7 +210,7 @@
 .method protected getNextButton()Landroid/widget/Button;
     .locals 1
 
-    const v0, 0x7f0a035a
+    const v0, 0x7f0a035d
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollBase;->findViewById(I)Landroid/view/View;
 

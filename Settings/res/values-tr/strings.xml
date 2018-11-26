@@ -2818,6 +2818,9 @@ Ekrana gitmek için, parmağınızı ekranın alt orta köşesinden yukarıya do
     <string name="oneplus_lock_buttons">Kilit Düğmeleri</string>
     <string name="oneplus_lock_buttons_summary">Oyun modu etkinleştirildiğinde kapasitif tuşlar kilitlenir</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">Yüz tanıma kaydını atlamanız durumunda, cihazınızın ve kişisel bilgilerinizin güvenliği için parmak izi veya PIN kodu gibi başka bir yöntemi etkinleştirmeniz önerilir. Ayrıca, belirli uygulamalar için de şifre belirleyebilirsiniz. Korumayı etkinleştirmek için lütfen \"Ayarlar\" > \"Güvenlik ve kilit ekranı\" seçeneklerine gidin.</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">Ekran Kilidini veya parmak izini kullanmak için, parola belirleyin</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">Ekran Kilidini veya parmak izini kullanmak için, desen belirleyin</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">Ekran Kilidini veya parmak izini kullanmak için, PIN belirleyin</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Tekrar dene</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">Çok fazla hatalı deneme!</string>
     <string name="oneplus_max_shortcuts_tips">En fazla 6 kısayol ekleyebilirsiniz</string>
@@ -5050,6 +5053,10 @@ Farklı bir Kablosuz ağa bağlanmak için "<b>Geri</b>"'ye dokunun."</string>
     <string name="wifi_tap_to_sign_in">Ağda oturum açmak için buraya dokunun</string>
     <string name="wifi_tether_configure_ap_text">Kablosuz hotspot kurulumu yap</string>
     <string name="wifi_tether_configure_ssid_default">Android Ortak Erişim Noktası</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">10 dak. etkinlik olmadığında</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">15 dak. etkinlik olmadığında</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">5 dak. etkinlik olmadığında</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Her zaman açık</string>
     <string name="wifi_tether_disabled_by_airplane">Uçak modu açık olduğundan kullanılamıyor</string>
     <string name="wifi_tether_enabled_subtext">%1$s etkin durumda</string>
     <string name="wifi_tether_failed_subtext">Taşınabilir Kablosuz hotspot</string>

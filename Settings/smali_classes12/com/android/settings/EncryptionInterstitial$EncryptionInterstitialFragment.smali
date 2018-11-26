@@ -207,7 +207,7 @@
 
     invoke-super {p0, p1, p2}, Lcom/android/settings/core/InstrumentedFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 
-    const v0, 0x7f0a01bd
+    const v0, 0x7f0a01c0
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -215,7 +215,7 @@
 
     iput-object v0, p0, Lcom/android/settings/EncryptionInterstitial$EncryptionInterstitialFragment;->mRequirePasswordToDecrypt:Landroid/view/View;
 
-    const v0, 0x7f0a01bc
+    const v0, 0x7f0a01bf
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -323,7 +323,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0a01be
+    const v4, 0x7f0a01c1
 
     invoke-virtual {v3, v4}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 

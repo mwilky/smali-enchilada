@@ -379,7 +379,7 @@
 
     iget-object v0, p0, Lcom/android/settings/security/CryptKeeperSettings;->mContentView:Landroid/view/View;
 
-    const v1, 0x7f0a0284
+    const v1, 0x7f0a0287
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -403,7 +403,7 @@
 
     iget-object v0, p0, Lcom/android/settings/security/CryptKeeperSettings;->mContentView:Landroid/view/View;
 
-    const v1, 0x7f0a05ea
+    const v1, 0x7f0a05ed
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -413,7 +413,7 @@
 
     iget-object v0, p0, Lcom/android/settings/security/CryptKeeperSettings;->mContentView:Landroid/view/View;
 
-    const v1, 0x7f0a05e9
+    const v1, 0x7f0a05ec
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

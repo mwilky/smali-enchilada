@@ -47,7 +47,7 @@
 .method private initialize(Landroid/util/AttributeSet;Ljava/lang/String;)V
     .locals 2
 
-    const v0, 0x7f0d0232
+    const v0, 0x7f0d0235
 
     invoke-virtual {p0, v0}, Lcom/android/settings/widget/RestrictedAppPreference;->setWidgetLayoutResource(I)V
 
@@ -152,7 +152,7 @@
 
     invoke-virtual {v0, p1}, Lcom/android/settingslib/RestrictedPreferenceHelper;->onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
 
-    const v0, 0x7f0a0477
+    const v0, 0x7f0a047a
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

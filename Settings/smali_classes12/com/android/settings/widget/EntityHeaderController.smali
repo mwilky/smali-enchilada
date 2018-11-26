@@ -110,7 +110,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d0250
+    const v1, 0x7f0d0253
 
     const/4 v2, 0x0
 
@@ -353,7 +353,7 @@
 
     iget-object v0, p0, Lcom/android/settings/widget/EntityHeaderController;->mHeader:Landroid/view/View;
 
-    const v1, 0x7f0a01c4
+    const v1, 0x7f0a01c7
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -413,7 +413,7 @@
 
     iget-object v0, p0, Lcom/android/settings/widget/EntityHeaderController;->mHeader:Landroid/view/View;
 
-    const v1, 0x7f0a01c5
+    const v1, 0x7f0a01c8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -432,19 +432,19 @@
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
     :cond_0
-    const v1, 0x7f0a01c9
+    const v1, 0x7f0a01cc
 
     iget-object v2, p0, Lcom/android/settings/widget/EntityHeaderController;->mLabel:Ljava/lang/CharSequence;
 
     invoke-direct {p0, v1, v2}, Lcom/android/settings/widget/EntityHeaderController;->setText(ILjava/lang/CharSequence;)V
 
-    const v1, 0x7f0a01c8
+    const v1, 0x7f0a01cb
 
     iget-object v2, p0, Lcom/android/settings/widget/EntityHeaderController;->mSummary:Ljava/lang/CharSequence;
 
     invoke-direct {p0, v1, v2}, Lcom/android/settings/widget/EntityHeaderController;->setText(ILjava/lang/CharSequence;)V
 
-    const v1, 0x7f0a01c7
+    const v1, 0x7f0a01ca
 
     iget-object v2, p0, Lcom/android/settings/widget/EntityHeaderController;->mSecondSummary:Ljava/lang/CharSequence;
 
@@ -454,7 +454,7 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x7f0a028f
+    const v1, 0x7f0a0292
 
     iget-object v2, p0, Lcom/android/settings/widget/EntityHeaderController;->mHeader:Landroid/view/View;
 

@@ -438,6 +438,9 @@
     <string name="oneplus_lock_buttons">लॉक बटणे</string>
     <string name="oneplus_lock_buttons_summary">गेमिंग मोड चालू केला असेल तेव्हा कपॅसिटिव्ह बटणे लॉक करा</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">आपण फेस डेटा रेकॉर्ड करण्याचे वगळल्यास, आपल्याला आपल्या साधनाचे आणि वैयक्तिक माहितीचे रक्षण करण्यासाठी दुसरी पद्धत जसे की बोटाचा ठसा किंवा पिन सक्षम करण्याचे सुचविले जात आहे. आपण काही अॅप्सवर पासवर्ड देखील सेट करू शकता. संरक्षण सक्षम करण्यासाठी, कृपया \"सेटिंग्स\">\"सुरक्षितता &amp; लॉक स्क्रीन\" वर जा</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">चेहरा अनलॉक किंवा फिंगरप्रिंट वापरण्यासाठी, संकेतशब्द सेट करा</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">चेहरा अनलॉक किंवा फिंगरप्रिंट वापरण्यासाठी, नमुना सेट करा</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">चेहरा अनलॉक किंवा फिंगरप्रिंट वापरण्यासाठी, PIN सेट करा</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">पुन्हा प्रयत्न करा</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">खूप जास्त चुकीचे प्रयत्न!</string>
     <string name="oneplus_max_shortcuts_tips">आपण जास्तीत जास्त 6 शॉर्टकट्स जोडू शकता</string>
@@ -963,6 +966,10 @@
     <string name="wifi_setting_frequency_band_error">फ्रिक्वेन्सी बॅंड सेट करताना समस्या आली.</string>
     <string name="wifi_setting_frequency_band_summary">कार्याची फ्रिक्वेन्सी रेंज नमूद करा</string>
     <string name="wifi_setting_frequency_band_title">वाय‑फाय फ्रिक्वेन्सी बॅंड</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">निष्क्रियतेच्या 10 मिनिटानंतर</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">निष्क्रियतेच्या 15 मिनिटानंतर</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">निष्क्रियतेचा 5 मिनिटानंतर</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">कायम चालू</string>
     <string name="wifi_wapi_as_cert">एएस प्रमाणपत्र</string>
     <string name="wifi_wapi_cert_cancel_button">रद्द करा</string>
     <string name="wifi_wapi_cert_create_subdir">एक डिरेक्टरी बनवा</string>

@@ -252,17 +252,17 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f12120e
+    const v0, 0x7f121213
 
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f12120c
+    const v0, 0x7f121211
 
     goto :goto_0
 
     :cond_1
-    const v0, 0x7f121210
+    const v0, 0x7f121215
 
     :goto_0
     return v0
@@ -571,7 +571,7 @@
 
     invoke-direct {v2, v4}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v4, 0x7f12120f
+    const v4, 0x7f121214
 
     invoke-virtual {v2, v4}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -847,7 +847,7 @@
 
     if-eqz v3, :cond_2
 
-    const v3, 0x7f121213
+    const v3, 0x7f121218
 
     goto :goto_1
 

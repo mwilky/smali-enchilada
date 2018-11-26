@@ -6288,7 +6288,7 @@
 
     if-eqz v2, :cond_6
 
-    const/high16 v2, 0x7fc00000    # NaNf
+    const/high16 v2, 0x7fc00000    # Float.NaN
 
     invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 

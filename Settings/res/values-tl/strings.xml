@@ -2819,6 +2819,9 @@ Upang pumunta sa home screen kahit anu mang oras, i-swipe pataas mula sa ibabang
     <string name="oneplus_lock_buttons">Mga Buton sa Lock</string>
     <string name="oneplus_lock_buttons_summary">I-lock ang capacitive na mga button kapag bukas ang mode ng Gaming</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">Kung pinili mong laktawan ang pagtatala ng mga face data, iminungkahi na paganahin mo ang ibang pamamaraan tulad ng fingerprint o pin para protektahan ang iyong device at personal na impormasyon. Maaari ka ring mag-set ng password sa ilang apps. Upang paganahin ang proteksyon, mangyaring pumunta sa \"Settings\" > \"Security &amp; lock screen\".</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">Para magamit ang Pag-unlock Gamit ang Mukha o fingerprint, mag-set ng password</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">Para magamit ang Pag-unlock Gamit ang Mukha o fingerprint, mag-set ng pattern</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">Para magamit ang Pag-unlock Gamit ang Mukha o fingerprint, mag-set ng PIN</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Subuking muli</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">Masyadong maraming hindi wastong pagtatangka!</string>
     <string name="oneplus_max_shortcuts_tips">Maaari kang magdagdag ng hanggang 6 na shortcut</string>
@@ -5049,6 +5052,10 @@ I-tap ang "<b>Bumalik</b> upang kumonekta sa ibang Wi‑Fi network.</string>
     <string name="wifi_tap_to_sign_in">Mag-tap dito para mag-sign in sa network</string>
     <string name="wifi_tether_configure_ap_text">I-set up ang Wi-Fi hotspot</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Pagkalipas ng 10 minuto na walang aktibidad</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Pagkalipas ng 15 minuto na walang aktibidad</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Pagkalipas ng 5 minuto na walang aktibidad</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Palaging naka-on</string>
     <string name="wifi_tether_disabled_by_airplane">Hindi available dahil naka-on ang airplane mode</string>
     <string name="wifi_tether_enabled_subtext">Aktibo ang %1$s</string>
     <string name="wifi_tether_failed_subtext">Error sa portable na Wi-Fi hotspot</string>

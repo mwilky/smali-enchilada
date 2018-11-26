@@ -135,7 +135,7 @@
 
     if-nez v1, :cond_0
 
-    const v1, 0x7f0a049c
+    const v1, 0x7f0a049f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -158,7 +158,7 @@
 
     if-nez v1, :cond_1
 
-    const v1, 0x7f0a04f3
+    const v1, 0x7f0a04f6
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -177,7 +177,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :cond_1
-    const v1, 0x7f0a0334
+    const v1, 0x7f0a0337
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

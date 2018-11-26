@@ -145,7 +145,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120f0e
+    const v2, 0x7f120f13
 
     invoke-virtual {v1, v2}, Lcom/android/settings/core/SubSettingLauncher;->setTitle(I)Lcom/android/settings/core/SubSettingLauncher;
 
@@ -350,7 +350,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120f0d
+    const v2, 0x7f120f12
 
     invoke-virtual {v1, v2}, Lcom/android/settingslib/widget/FooterPreference;->setTitle(I)V
 

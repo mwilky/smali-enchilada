@@ -150,7 +150,7 @@
 
     iget-object v8, p0, Lcom/android/settings/notification/OPZenModeTurnOnSettings;->mContext:Landroid/content/Context;
 
-    const v9, 0x7f1215ee
+    const v9, 0x7f1215f7
 
     new-array v10, v6, [Ljava/lang/Object;
 
@@ -168,7 +168,7 @@
 
     iget-object v5, p0, Lcom/android/settings/notification/OPZenModeTurnOnSettings;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f1215f0
+    const v6, 0x7f1215f9
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -203,7 +203,7 @@
 
     iget-object v8, p0, Lcom/android/settings/notification/OPZenModeTurnOnSettings;->mContext:Landroid/content/Context;
 
-    const v9, 0x7f1215ef
+    const v9, 0x7f1215f8
 
     new-array v10, v6, [Ljava/lang/Object;
 
@@ -252,7 +252,7 @@
 
     move-result v8
 
-    const v9, 0x7f1215ed
+    const v9, 0x7f1215f6
 
     if-nez v8, :cond_4
 

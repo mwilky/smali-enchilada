@@ -92,7 +92,7 @@
 
     const-wide/16 v6, 0x4
 
-    const v8, 0x7f1212bd
+    const v8, 0x7f1212c2
 
     packed-switch p2, :pswitch_data_0
 
@@ -103,7 +103,7 @@
 
     if-nez v6, :cond_0
 
-    const v0, 0x7f1212be
+    const v0, 0x7f1212c3
 
     return v0
 
@@ -112,7 +112,7 @@
 
     if-nez v4, :cond_1
 
-    const v0, 0x7f1212c3
+    const v0, 0x7f1212c8
 
     return v0
 
@@ -121,7 +121,7 @@
 
     if-nez v2, :cond_2
 
-    const v0, 0x7f1212c0
+    const v0, 0x7f1212c5
 
     return v0
 
@@ -130,7 +130,7 @@
 
     if-nez v0, :cond_3
 
-    const v0, 0x7f1212bb
+    const v0, 0x7f1212c0
 
     return v0
 
@@ -142,7 +142,7 @@
 
     if-nez v6, :cond_4
 
-    const v0, 0x7f1212bf
+    const v0, 0x7f1212c4
 
     return v0
 
@@ -151,7 +151,7 @@
 
     if-nez v4, :cond_5
 
-    const v0, 0x7f1212c4
+    const v0, 0x7f1212c9
 
     return v0
 
@@ -160,7 +160,7 @@
 
     if-nez v2, :cond_6
 
-    const v0, 0x7f1212c1
+    const v0, 0x7f1212c6
 
     return v0
 
@@ -169,12 +169,12 @@
 
     if-nez v0, :cond_7
 
-    const v0, 0x7f1212bc
+    const v0, 0x7f1212c1
 
     return v0
 
     :cond_7
-    const v0, 0x7f1212c2
+    const v0, 0x7f1212c7
 
     return v0
 
@@ -290,7 +290,7 @@
 
     iget-object v0, p0, Lcom/android/settings/connecteddevice/usb/ConnectedUsbDeviceUpdater;->mUsbPreference:Landroid/support/v7/preference/Preference;
 
-    const v1, 0x7f1212b7
+    const v1, 0x7f1212bc
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setTitle(I)V
 

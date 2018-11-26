@@ -2819,6 +2819,9 @@ Ak chcete kedykoľvek prejsť na úvodnú obrazovku, potiahnite prstom nahor od 
     <string name="oneplus_lock_buttons">Tlačidlá uzamknutia</string>
     <string name="oneplus_lock_buttons_summary">Zámknúť kapacitívné tlačidlá, keď je zapnutý režim Hra</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">Ak sa rozhodnete vynechať záznam údajov tváre, odporúčame, aby ste na ochranu svojho zariadenia a osobných údajov vybrali inú metódu, napríklad odtlačky prstov alebo PIN kód. Ochranu zapnite voľbou „Nastavenia“ > „Zabezpečenie a zámok obrazovky“.</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">Na použitie funkcie Odomknúť tvárou alebo odtlačku prsta, nastavte najprv heslo</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">Na použitie funkcie Odomknúť tvárou alebo odtlačku prsta, nastavte najprv vzor</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">Na použitie funkcie Odomknúť tvárou alebo odtlačku prsta, nastavte najprv kód PIN</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Skúste to znova</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">Príliš veľa nesprávnych pokusov!</string>
     <string name="oneplus_max_shortcuts_tips">Pridať môžete až 6 skratiek</string>
@@ -5051,6 +5054,10 @@ Ak sa chcete pripojiť k inej sieti Wi‑Fi, klepnite na možnosť "<b>Späť</
     <string name="wifi_tap_to_sign_in">Klepnite tu a prihláste sa tak do siete</string>
     <string name="wifi_tether_configure_ap_text">Nastaviť hotspot Wi‑Fi</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Po 10 min. nečinnosti</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Po 15 min. nečinnosti</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Po 5 min. nečinnosti</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Vždy zapnuté</string>
     <string name="wifi_tether_disabled_by_airplane">Nie je k dispozícii, pretože je zapnutý režim v lietadle</string>
     <string name="wifi_tether_enabled_subtext">Sieť %1$s je aktívna</string>
     <string name="wifi_tether_failed_subtext">Chyba hotspotu siete Wi‑Fi</string>

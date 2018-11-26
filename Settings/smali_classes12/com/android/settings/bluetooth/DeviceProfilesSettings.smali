@@ -542,7 +542,7 @@
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings;->mRootView:Landroid/view/View;
 
-    const v1, 0x7f0a0350
+    const v1, 0x7f0a0353
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1034,7 +1034,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings;->mRootView:Landroid/view/View;
 
-    const v1, 0x7f0a0350
+    const v1, 0x7f0a0353
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1202,7 +1202,7 @@
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings;->mRootView:Landroid/view/View;
 
-    const v1, 0x7f0a043e
+    const v1, 0x7f0a0441
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1214,7 +1214,7 @@
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings;->mRootView:Landroid/view/View;
 
-    const v1, 0x7f0a043d
+    const v1, 0x7f0a0440
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1226,7 +1226,7 @@
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings;->mRootView:Landroid/view/View;
 
-    const v1, 0x7f0a0350
+    const v1, 0x7f0a0353
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

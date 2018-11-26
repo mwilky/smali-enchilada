@@ -2819,6 +2819,9 @@ Pour vous rendre à tout moment sur l'écran d'accueil, balayez vers le haut dep
     <string name="oneplus_lock_buttons">Verrouiller les boutons</string>
     <string name="oneplus_lock_buttons_summary">Verrouiller les boutons capacitifs quand le mode En jeu est activé</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">"Si vous choisissez de passer l'enregistrement des données faciales, il est conseillé d'activer une autre méthode de protection de votre appareil et de vos données personnelles, comme l'empreinte digitale ou le code pin. Vous pouvez aussi définir un mot de passe sur certaines applications. Pour activer la protection, veuillez vous rendre dans \"Paramètres\" > \"Sécurité &amp; écran de verrouillage\"."</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">"Pour utiliser l'option de déverrouillage par reconnaissance faciale ou l'empreinte digitale, veuillez définir un mot de passe"</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">"Pour utiliser l'option de déverrouillage par reconnaissance faciale ou l'empreinte digitale, veuillez définir un motif"</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">"Pour utiliser l'option de déverrouillage par reconnaissance faciale ou l'empreinte digitale, veuillez définir un code PIN"</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Réessayer</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">Trop de tentatives infructueuses !</string>
     <string name="oneplus_max_shortcuts_tips">"Vous pouvez ajouter jusqu'à 6 raccourcis"</string>
@@ -5051,6 +5054,10 @@ Appuyez sur "<b>Précédent</b> pour vous connecter à un autre réseau Wi-Fi.</
     <string name="wifi_tap_to_sign_in">Appuyez ici pour vous connecter au réseau</string>
     <string name="wifi_tether_configure_ap_text">"Configurer le point d'accès Wi-Fi"</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">"Après 10 min d'activité"</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">"Après 15 min d'activité"</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">"Après 5 min d'activité"</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Toujours activé</string>
     <string name="wifi_tether_disabled_by_airplane">Indisponible, car le mode Avion est activé</string>
     <string name="wifi_tether_enabled_subtext">%1$s est actif</string>
     <string name="wifi_tether_failed_subtext">"Erreur liée au point d'accès Wi-Fi mobile."</string>

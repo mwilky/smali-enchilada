@@ -912,7 +912,7 @@
 .end method
 
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
-    .locals 9
+    .locals 10
 
     invoke-virtual {p1}, Landroid/support/v7/preference/Preference;->getKey()Ljava/lang/String;
 
@@ -987,7 +987,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_b
 
     move-object v1, p2
 
@@ -1060,21 +1060,62 @@
 
     if-eqz v4, :cond_8
 
-    move v3, v2
+    move v8, v2
 
     goto :goto_4
 
     :cond_8
     nop
 
+    move v8, v3
+
     :goto_4
-    invoke-static {v6, v7, v3}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v6, v7, v8}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    iget-object v6, p0, Lcom/android/settings/notification/LockScreenNotificationPreferenceController;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v6}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v6
+
+    const-string v7, "lock_screen_allow_private_notifications"
+
+    if-eqz v5, :cond_9
+
+    move v8, v2
+
+    goto :goto_5
+
+    :cond_9
+    move v8, v3
+
+    :goto_5
+    const/16 v9, 0x3e7
+
+    invoke-static {v6, v7, v8, v9}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
+
+    iget-object v6, p0, Lcom/android/settings/notification/LockScreenNotificationPreferenceController;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v6}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v6
+
+    const-string v7, "lock_screen_show_notifications"
+
+    if-eqz v4, :cond_a
+
+    move v3, v2
+
+    nop
+
+    :cond_a
+    invoke-static {v6, v7, v3, v9}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
     iput v1, p0, Lcom/android/settings/notification/LockScreenNotificationPreferenceController;->mLockscreenSelectedValue:I
 
     return v2
 
-    :cond_9
+    :cond_b
     return v3
 .end method
 

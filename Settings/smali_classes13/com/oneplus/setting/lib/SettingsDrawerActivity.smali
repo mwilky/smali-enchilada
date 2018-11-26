@@ -204,7 +204,7 @@
     invoke-virtual {p0, v5}, Lcom/oneplus/setting/lib/SettingsDrawerActivity;->requestWindowFeature(I)Z
 
     :cond_0
-    const v5, 0x7f0d01c4
+    const v5, 0x7f0d01c7
 
     invoke-super {p0, v5}, Landroid/app/Activity;->setContentView(I)V
 

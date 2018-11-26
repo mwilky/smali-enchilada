@@ -222,7 +222,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120d24
+    const v3, 0x7f120d27
 
     invoke-virtual {v2, v3}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -253,7 +253,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120d25
+    const v3, 0x7f120d28
 
     invoke-virtual {v2, v3}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -276,7 +276,7 @@
 
     move-result v2
 
-    const v3, 0x7f120d23
+    const v3, 0x7f120d26
 
     if-nez v2, :cond_5
 
@@ -295,7 +295,7 @@
     :cond_3
     sget-object v2, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v4, 0x7f120ba4
+    const v4, 0x7f120ba6
 
     invoke-virtual {v0, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -309,7 +309,7 @@
 
     sget-object v2, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v4, 0x7f120ba5
+    const v4, 0x7f120ba7
 
     invoke-virtual {v0, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -380,7 +380,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120d27
+    const v3, 0x7f120d2a
 
     invoke-virtual {v2, v3}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -405,7 +405,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120d26
+    const v3, 0x7f120d29
 
     invoke-virtual {v2, v3}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 

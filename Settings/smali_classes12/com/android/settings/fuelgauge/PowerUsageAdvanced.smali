@@ -259,7 +259,7 @@
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f12101f
+    const v0, 0x7f121024
 
     :goto_0
     const/4 v1, 0x0
@@ -329,7 +329,7 @@
     goto :goto_0
 
     :cond_1
-    const v0, 0x7f12101f
+    const v0, 0x7f121024
 
     :goto_0
     invoke-interface {p1, v0}, Landroid/view/MenuItem;->setTitle(I)Landroid/view/MenuItem;

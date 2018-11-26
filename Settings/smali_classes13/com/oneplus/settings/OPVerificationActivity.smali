@@ -45,15 +45,15 @@
 
     move-result-object v0
 
-    const v1, 0x7f120eec
+    const v1, 0x7f120ef1
 
     invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setTitle(I)V
 
-    const v0, 0x7f0d01ab
+    const v0, 0x7f0d01ae
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPVerificationActivity;->setContentView(I)V
 
-    const v0, 0x7f0a046b
+    const v0, 0x7f0a046e
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPVerificationActivity;->findViewById(I)Landroid/view/View;
 
@@ -75,7 +75,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/OPVerificationActivity;->mRegulatoryInfoImage:Landroid/widget/ImageView;
 
-    const v1, 0x7f0803fd
+    const v1, 0x7f0803fe
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -94,7 +94,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/OPVerificationActivity;->mRegulatoryInfoImage:Landroid/widget/ImageView;
 
-    const v1, 0x7f0803fe
+    const v1, 0x7f0803ff
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -113,7 +113,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/OPVerificationActivity;->mRegulatoryInfoImage:Landroid/widget/ImageView;
 
-    const v1, 0x7f0803ff
+    const v1, 0x7f080400
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -132,7 +132,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/OPVerificationActivity;->mRegulatoryInfoImage:Landroid/widget/ImageView;
 
-    const v1, 0x7f080400
+    const v1, 0x7f080401
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -141,7 +141,7 @@
     :cond_3
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v1, 0x7f120ba4
+    const v1, 0x7f120ba6
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/OPVerificationActivity;->getString(I)Ljava/lang/String;
 
@@ -155,7 +155,7 @@
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v1, 0x7f120ba5
+    const v1, 0x7f120ba7
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/OPVerificationActivity;->getString(I)Ljava/lang/String;
 

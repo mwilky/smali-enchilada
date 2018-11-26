@@ -37,7 +37,7 @@
 .method private initViews(Landroid/content/Context;)V
     .locals 1
 
-    const v0, 0x7f0d0194
+    const v0, 0x7f0d0197
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/ui/OPPreferenceDivider2;->setLayoutResource(I)V
 

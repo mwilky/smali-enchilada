@@ -2819,6 +2819,9 @@ Per andare alla schermata home in qualsiasi momento, scorri verso l'alto dal bor
     <string name="oneplus_lock_buttons">Pulsanti di blocco</string>
     <string name="oneplus_lock_buttons_summary">Blocca i tasti capacitivi quando la Modalità di gioco è attiva</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">Se scegli di saltare la registrazione dei dati facciali, ti suggeriamo di attivare un metodo alternativo, ad esempio impronta digitale o pin, per proteggere il tuo dispositivo e le tue informazioni personali. Puoi anche impostare una password su alcune applicazioni. Per abilitare la protezione, vai su \"Impostazioni\" > \"Sicurezza e blocco schermo\".</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">"Impostare una password per utilizzare Face Unlock o l'impronta digitale"</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">"Impostare una sequenza per utilizzare Face Unlock o l'impronta digitale"</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">"Impostare un PIN per utilizzare Face Unlock o l'impronta digitale"</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Riprova</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">Troppi tentativi errati!</string>
     <string name="oneplus_max_shortcuts_tips">È possibile aggiungere un massimo di 6 collegamenti</string>
@@ -5051,6 +5054,10 @@ Tocca "<b>Indietro</b>" per connetterti a un'altra rete Wi‑Fi."</string>
     <string name="wifi_tap_to_sign_in">Tocca qui per accedere alla rete</string>
     <string name="wifi_tether_configure_ap_text">Configura hotspot Wi‑Fi</string>
     <string name="wifi_tether_configure_ssid_default">HotspotAndroid</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Dopo 10 min di inattività</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Dopo 15 min di inattività</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Dopo 5 min di inattività</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Sempre attivo</string>
     <string name="wifi_tether_disabled_by_airplane">Non disponibile perché è attiva la modalità aereo</string>
     <string name="wifi_tether_enabled_subtext">%1$s è attivo</string>
     <string name="wifi_tether_failed_subtext">Errore hotspot Wi‑Fi portatile</string>

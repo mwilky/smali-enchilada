@@ -388,15 +388,23 @@
     return-void
 .end method
 
-.method static synthetic access$100(Lcom/android/settings/DisplaySettings;)V
-    .locals 0
+.method static synthetic access$100(Lcom/android/settings/DisplaySettings;)Landroid/support/v7/preference/Preference;
+    .locals 1
 
-    invoke-direct {p0}, Lcom/android/settings/DisplaySettings;->disableEntryForAccessibilityDisplayDaltonizerAndInversion()V
+    iget-object v0, p0, Lcom/android/settings/DisplaySettings;->mNightModePreference:Landroid/support/v7/preference/Preference;
 
-    return-void
+    return-object v0
 .end method
 
-.method static synthetic access$1000(Lcom/android/settings/DisplaySettings;J)V
+.method static synthetic access$1000(Lcom/android/settings/DisplaySettings;)Lcom/android/settings/TimeoutListPreference;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/settings/DisplaySettings;->mScreenTimeoutPreference:Lcom/android/settings/TimeoutListPreference;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1100(Lcom/android/settings/DisplaySettings;J)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/android/settings/DisplaySettings;->updateTimeoutPreferenceDescription(J)V
@@ -404,7 +412,7 @@
     return-void
 .end method
 
-.method static synthetic access$1200(Landroid/content/res/Resources;)Z
+.method static synthetic access$1300(Landroid/content/res/Resources;)Z
     .locals 1
 
     invoke-static {p0}, Lcom/android/settings/DisplaySettings;->isAutomaticBrightnessAvailable(Landroid/content/res/Resources;)Z
@@ -414,7 +422,7 @@
     return v0
 .end method
 
-.method static synthetic access$1300(Landroid/content/Context;)Z
+.method static synthetic access$1400(Landroid/content/Context;)Z
     .locals 1
 
     invoke-static {p0}, Lcom/android/settings/DisplaySettings;->isDozeAvailable(Landroid/content/Context;)Z
@@ -424,7 +432,7 @@
     return v0
 .end method
 
-.method static synthetic access$1400(Landroid/content/res/Resources;)Z
+.method static synthetic access$1500(Landroid/content/res/Resources;)Z
     .locals 1
 
     invoke-static {p0}, Lcom/android/settings/DisplaySettings;->isTapToWakeAvailable(Landroid/content/res/Resources;)Z
@@ -434,7 +442,7 @@
     return v0
 .end method
 
-.method static synthetic access$1500(Landroid/content/res/Resources;)Z
+.method static synthetic access$1600(Landroid/content/res/Resources;)Z
     .locals 1
 
     invoke-static {p0}, Lcom/android/settings/DisplaySettings;->isCameraGestureAvailable(Landroid/content/res/Resources;)Z
@@ -444,7 +452,7 @@
     return v0
 .end method
 
-.method static synthetic access$1600(Landroid/content/res/Resources;)Z
+.method static synthetic access$1700(Landroid/content/res/Resources;)Z
     .locals 1
 
     invoke-static {p0}, Lcom/android/settings/DisplaySettings;->isCameraDoubleTapPowerGestureAvailable(Landroid/content/res/Resources;)Z
@@ -454,7 +462,7 @@
     return v0
 .end method
 
-.method static synthetic access$1700(Landroid/content/Context;)Z
+.method static synthetic access$1800(Landroid/content/Context;)Z
     .locals 1
 
     invoke-static {p0}, Lcom/android/settings/DisplaySettings;->isVrDisplayModeAvailable(Landroid/content/Context;)Z
@@ -464,7 +472,7 @@
     return v0
 .end method
 
-.method static synthetic access$1800()Z
+.method static synthetic access$1900()Z
     .locals 1
 
     invoke-static {}, Lcom/android/settings/DisplaySettings;->isOnePlusLaunchrSupportSetWallpaper()Z
@@ -474,15 +482,7 @@
     return v0
 .end method
 
-.method static synthetic access$200(Lcom/android/settings/DisplaySettings;)Landroid/content/Context;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/settings/DisplaySettings;->mContext:Landroid/content/Context;
-
-    return-object v0
-.end method
-
-.method static synthetic access$300(Lcom/android/settings/DisplaySettings;)Landroid/support/v7/preference/Preference;
+.method static synthetic access$200(Lcom/android/settings/DisplaySettings;)Landroid/support/v7/preference/Preference;
     .locals 1
 
     iget-object v0, p0, Lcom/android/settings/DisplaySettings;->mScreenColorModePreference:Landroid/support/v7/preference/Preference;
@@ -490,7 +490,23 @@
     return-object v0
 .end method
 
-.method static synthetic access$400()Z
+.method static synthetic access$300(Lcom/android/settings/DisplaySettings;)Landroid/support/v7/preference/Preference;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/settings/DisplaySettings;->mReadingModePreference:Landroid/support/v7/preference/Preference;
+
+    return-object v0
+.end method
+
+.method static synthetic access$400(Lcom/android/settings/DisplaySettings;)Landroid/content/Context;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/settings/DisplaySettings;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$500()Z
     .locals 1
 
     sget-boolean v0, Lcom/android/settings/DisplaySettings;->isSupportReadingMode:Z
@@ -498,7 +514,7 @@
     return v0
 .end method
 
-.method static synthetic access$500(Lcom/android/settings/DisplaySettings;)V
+.method static synthetic access$600(Lcom/android/settings/DisplaySettings;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/settings/DisplaySettings;->updateScreenColorModePreference()V
@@ -506,7 +522,7 @@
     return-void
 .end method
 
-.method static synthetic access$600(Lcom/android/settings/DisplaySettings;)V
+.method static synthetic access$700(Lcom/android/settings/DisplaySettings;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/settings/DisplaySettings;->updateLockScreenRotation()V
@@ -514,7 +530,7 @@
     return-void
 .end method
 
-.method static synthetic access$700(Lcom/android/settings/DisplaySettings;)V
+.method static synthetic access$800(Lcom/android/settings/DisplaySettings;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/settings/DisplaySettings;->updateMode()V
@@ -522,20 +538,12 @@
     return-void
 .end method
 
-.method static synthetic access$800(Lcom/android/settings/DisplaySettings;)V
+.method static synthetic access$900(Lcom/android/settings/DisplaySettings;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/settings/DisplaySettings;->updateSlider()V
 
     return-void
-.end method
-
-.method static synthetic access$900(Lcom/android/settings/DisplaySettings;)Lcom/android/settings/TimeoutListPreference;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/settings/DisplaySettings;->mScreenTimeoutPreference:Lcom/android/settings/TimeoutListPreference;
-
-    return-object v0
 .end method
 
 .method private static allowAllRotations(Landroid/content/Context;)Z
@@ -712,6 +720,45 @@
     :cond_1
     :goto_0
     return-void
+.end method
+
+.method private getAccentColor()Ljava/lang/String;
+    .locals 3
+
+    invoke-virtual {p0}, Lcom/android/settings/DisplaySettings;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "oneplus_accent_color"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-direct {p0}, Lcom/android/settings/DisplaySettings;->getColorIndex()I
+
+    move-result v1
+
+    iget-object v2, p0, Lcom/android/settings/DisplaySettings;->mColors:[Ljava/lang/String;
+
+    aget-object v0, v2, v1
+
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v1
+
+    return-object v1
 .end method
 
 .method private getColorIndex()I
@@ -1148,33 +1195,33 @@
 
     :array_0
     .array-data 4
-        0x7f120d9b
-        0x7f120da1
-        0x7f120da7
-        0x7f120da4
-        0x7f120d97
-        0x7f120dac
-        0x7f120daf
         0x7f120d9e
-        0x7f120da8
-        0x7f120da9
-        0x7f120d98
+        0x7f120da4
+        0x7f120daa
+        0x7f120da7
+        0x7f120d9a
+        0x7f120daf
+        0x7f120db2
+        0x7f120da1
+        0x7f120dab
+        0x7f120dac
+        0x7f120d9b
         0x7f12047a
     .end array-data
 
     :array_1
     .array-data 4
-        0x7f120d99
-        0x7f120d9f
-        0x7f120da5
-        0x7f120da2
-        0x7f120d95
-        0x7f120daa
-        0x7f120dad
         0x7f120d9c
+        0x7f120da2
         0x7f120da8
-        0x7f120da9
+        0x7f120da5
         0x7f120d98
+        0x7f120dad
+        0x7f120db0
+        0x7f120d9f
+        0x7f120dab
+        0x7f120dac
+        0x7f120d9b
         0x7f12047a
     .end array-data
 .end method
@@ -2152,6 +2199,12 @@
 .method private updateScreenColorModePreference()V
     .locals 4
 
+    invoke-virtual {p0}, Lcom/android/settings/DisplaySettings;->isAdded()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
     iget-object v0, p0, Lcom/android/settings/DisplaySettings;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -2160,15 +2213,15 @@
 
     const-string v1, "screen_color_mode_settings_value"
 
-    const/4 v2, 0x1
+    const/4 v2, -0x2
 
-    const/4 v3, -0x2
+    const/4 v3, 0x1
 
-    invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+    invoke-static {v0, v1, v3, v2}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v0
 
-    if-ne v2, v0, :cond_0
+    if-ne v3, v0, :cond_0
 
     iget-object v1, p0, Lcom/android/settings/DisplaySettings;->mScreenColorModePreference:Landroid/support/v7/preference/Preference;
 
@@ -2176,7 +2229,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120c71
+    const v3, 0x7f120c73
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2197,7 +2250,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120c6f
+    const v3, 0x7f120c71
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2218,7 +2271,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120c72
+    const v3, 0x7f120c74
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2239,7 +2292,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120c70
+    const v3, 0x7f120c72
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2281,7 +2334,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120c74
+    const v3, 0x7f120c76
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2453,7 +2506,7 @@
 .end method
 
 .method private updateState()V
-    .locals 8
+    .locals 7
 
     invoke-direct {p0}, Lcom/android/settings/DisplaySettings;->updateFontSizeSummary()V
 
@@ -2667,17 +2720,13 @@
 
     if-eqz v3, :cond_c
 
-    invoke-direct {p0}, Lcom/android/settings/DisplaySettings;->getColorIndex()I
+    iget-object v3, p0, Lcom/android/settings/DisplaySettings;->mAccentColorPreference:Lcom/oneplus/settings/ui/ColorPickerPreference;
 
-    move-result v3
+    invoke-direct {p0}, Lcom/android/settings/DisplaySettings;->getAccentColor()Ljava/lang/String;
 
-    iget-object v4, p0, Lcom/android/settings/DisplaySettings;->mAccentColorPreference:Lcom/oneplus/settings/ui/ColorPickerPreference;
+    move-result-object v4
 
-    iget-object v5, p0, Lcom/android/settings/DisplaySettings;->mColors:[Ljava/lang/String;
-
-    aget-object v5, v5, v3
-
-    invoke-virtual {v4, v5}, Lcom/oneplus/settings/ui/ColorPickerPreference;->setColor(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Lcom/oneplus/settings/ui/ColorPickerPreference;->setColor(Ljava/lang/String;)V
 
     goto :goto_6
 
@@ -2743,17 +2792,17 @@
     :cond_e
     iget-object v0, p0, Lcom/android/settings/DisplaySettings;->mScreenColorModePreference:Landroid/support/v7/preference/Preference;
 
-    const/4 v3, -0x2
-
     if-eqz v0, :cond_13
 
     invoke-virtual {p0}, Lcom/android/settings/DisplaySettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string v4, "night_display_activated"
+    const-string v3, "night_display_activated"
 
-    invoke-static {v0, v4, v2, v3}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+    const/4 v4, -0x2
+
+    invoke-static {v0, v3, v2, v4}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v0
 
@@ -2769,120 +2818,106 @@
     :goto_7
     invoke-virtual {p0}, Lcom/android/settings/DisplaySettings;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v4
+    move-result-object v3
 
     const-string v5, "reading_mode_status"
 
-    invoke-static {v4, v5, v2, v3}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+    invoke-static {v3, v5, v2, v4}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_10
+    if-eqz v3, :cond_10
 
-    move v4, v1
+    move v3, v1
 
     goto :goto_8
 
     :cond_10
-    move v4, v2
+    move v3, v2
 
     :goto_8
     if-eqz v0, :cond_11
 
-    iget-object v5, p0, Lcom/android/settings/DisplaySettings;->mScreenColorModePreference:Landroid/support/v7/preference/Preference;
+    iget-object v4, p0, Lcom/android/settings/DisplaySettings;->mScreenColorModePreference:Landroid/support/v7/preference/Preference;
 
-    invoke-virtual {v5, v2}, Landroid/support/v7/preference/Preference;->setEnabled(Z)V
+    invoke-virtual {v4, v2}, Landroid/support/v7/preference/Preference;->setEnabled(Z)V
 
-    iget-object v5, p0, Lcom/android/settings/DisplaySettings;->mScreenColorModePreference:Landroid/support/v7/preference/Preference;
+    iget-object v4, p0, Lcom/android/settings/DisplaySettings;->mScreenColorModePreference:Landroid/support/v7/preference/Preference;
 
     invoke-virtual {p0}, Lcom/android/settings/DisplaySettings;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v6
+    move-result-object v5
 
-    const v7, 0x7f120c76
+    const v6, 0x7f120c78
 
-    invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v5, v6}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+    invoke-virtual {v4, v5}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
     goto :goto_9
 
     :cond_11
+    if-eqz v3, :cond_12
+
+    sget-boolean v4, Lcom/android/settings/DisplaySettings;->isSupportReadingMode:Z
+
     if-eqz v4, :cond_12
 
-    sget-boolean v5, Lcom/android/settings/DisplaySettings;->isSupportReadingMode:Z
+    iget-object v4, p0, Lcom/android/settings/DisplaySettings;->mScreenColorModePreference:Landroid/support/v7/preference/Preference;
 
-    if-eqz v5, :cond_12
+    invoke-virtual {v4, v2}, Landroid/support/v7/preference/Preference;->setEnabled(Z)V
 
-    iget-object v5, p0, Lcom/android/settings/DisplaySettings;->mScreenColorModePreference:Landroid/support/v7/preference/Preference;
-
-    invoke-virtual {v5, v2}, Landroid/support/v7/preference/Preference;->setEnabled(Z)V
-
-    iget-object v5, p0, Lcom/android/settings/DisplaySettings;->mScreenColorModePreference:Landroid/support/v7/preference/Preference;
+    iget-object v4, p0, Lcom/android/settings/DisplaySettings;->mScreenColorModePreference:Landroid/support/v7/preference/Preference;
 
     invoke-virtual {p0}, Lcom/android/settings/DisplaySettings;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v6
+    move-result-object v5
 
-    const v7, 0x7f120c73
+    const v6, 0x7f120c75
 
-    invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v5, v6}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+    invoke-virtual {v4, v5}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
     goto :goto_9
 
     :cond_12
     invoke-direct {p0}, Lcom/android/settings/DisplaySettings;->updateScreenColorModePreference()V
 
-    iget-object v5, p0, Lcom/android/settings/DisplaySettings;->mScreenColorModePreference:Landroid/support/v7/preference/Preference;
+    iget-object v4, p0, Lcom/android/settings/DisplaySettings;->mScreenColorModePreference:Landroid/support/v7/preference/Preference;
 
-    invoke-virtual {v5, v1}, Landroid/support/v7/preference/Preference;->setEnabled(Z)V
+    invoke-virtual {v4, v1}, Landroid/support/v7/preference/Preference;->setEnabled(Z)V
 
     :cond_13
     :goto_9
     iget-object v0, p0, Lcom/android/settings/DisplaySettings;->mVideoEnhancerPreference:Landroid/support/v14/preference/SwitchPreference;
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_14
 
-    invoke-virtual {p0}, Lcom/android/settings/DisplaySettings;->getContentResolver()Landroid/content/ContentResolver;
+    const-string v0, "persist.sys.oem.vendor.media.vpp.enable"
 
-    move-result-object v0
-
-    const-string v4, "video_enhancer"
-
-    invoke-static {v0, v4, v2, v3}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+    invoke-static {v0, v2}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
     iget-object v3, p0, Lcom/android/settings/DisplaySettings;->mVideoEnhancerPreference:Landroid/support/v14/preference/SwitchPreference;
 
-    if-eqz v0, :cond_14
-
-    move v4, v1
-
-    goto :goto_a
+    invoke-virtual {v3, v0}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
 
     :cond_14
-    move v4, v2
-
-    :goto_a
-    invoke-virtual {v3, v4}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
-
-    :cond_15
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportScreenCutting()Z
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_16
 
     iget-object v0, p0, Lcom/android/settings/DisplaySettings;->mNotchModeAppPreference:Landroid/support/v7/preference/Preference;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_16
 
     invoke-virtual {p0}, Lcom/android/settings/DisplaySettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -2896,17 +2931,17 @@
 
     iget-object v3, p0, Lcom/android/settings/DisplaySettings;->mNotchModeAppPreference:Landroid/support/v7/preference/Preference;
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_15
 
-    goto :goto_b
+    goto :goto_a
 
-    :cond_16
+    :cond_15
     move v1, v2
 
-    :goto_b
+    :goto_a
     invoke-virtual {v3, v1}, Landroid/support/v7/preference/Preference;->setEnabled(Z)V
 
-    :cond_17
+    :cond_16
     return-void
 .end method
 
@@ -3070,7 +3105,7 @@
 
     move-result-object v3
 
-    const v6, 0x7f120f58
+    const v6, 0x7f120f5d
 
     const/4 v7, 0x1
 
@@ -3456,7 +3491,7 @@
 
     iget-object v3, p0, Lcom/android/settings/DisplaySettings;->mDozePreference:Landroid/support/v7/preference/Preference;
 
-    const v4, 0x7f120b68
+    const v4, 0x7f120b6a
 
     invoke-virtual {v3, v4}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -3654,7 +3689,7 @@
 
     move-result-object v3
 
-    const v6, 0x7f030093
+    const v6, 0x7f030095
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -3664,7 +3699,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f030094
+    const v7, 0x7f030096
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -3721,7 +3756,50 @@
 
     invoke-virtual {v7, v6}, Landroid/support/v7/preference/ListPreference;->setEntryValues([Ljava/lang/CharSequence;)V
 
+    goto :goto_5
+
     :cond_8
+    sget-object v3, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->MCL:Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
+
+    invoke-static {}, Lcom/oneplus/custom/utils/OpCustomizeSettings;->getCustomType()Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
+
+    move-result-object v6
+
+    invoke-virtual {v3, v6}, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_9
+
+    invoke-virtual {p0}, Lcom/android/settings/DisplaySettings;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    const v6, 0x7f030092
+
+    invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p0}, Lcom/android/settings/DisplaySettings;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v6
+
+    const v7, 0x7f030093
+
+    invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
+
+    move-result-object v6
+
+    iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mThemeModePreference:Landroid/support/v7/preference/ListPreference;
+
+    invoke-virtual {v7, v3}, Landroid/support/v7/preference/ListPreference;->setEntries([Ljava/lang/CharSequence;)V
+
+    iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mThemeModePreference:Landroid/support/v7/preference/ListPreference;
+
+    invoke-virtual {v7, v6}, Landroid/support/v7/preference/ListPreference;->setEntryValues([Ljava/lang/CharSequence;)V
+
+    :cond_9
     :goto_5
     invoke-virtual {p0}, Lcom/android/settings/DisplaySettings;->getActivity()Landroid/app/Activity;
 
@@ -3753,9 +3831,9 @@
 
     move-result v6
 
-    if-ne v3, v4, :cond_9
+    if-ne v3, v4, :cond_a
 
-    if-ne v6, v4, :cond_9
+    if-ne v6, v4, :cond_a
 
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mThemeModePreference:Landroid/support/v7/preference/ListPreference;
 
@@ -3769,7 +3847,7 @@
 
     goto :goto_6
 
-    :cond_9
+    :cond_a
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mThemeModePreference:Landroid/support/v7/preference/ListPreference;
 
     invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -3803,22 +3881,22 @@
 
     move-result v7
 
-    if-eqz v7, :cond_a
+    if-eqz v7, :cond_b
 
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isGuestMode()Z
 
     move-result v7
 
-    if-eqz v7, :cond_b
+    if-eqz v7, :cond_c
 
-    :cond_a
+    :cond_b
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mCustomRootPreference:Landroid/support/v7/preference/PreferenceCategory;
 
     iget-object v8, p0, Lcom/android/settings/DisplaySettings;->mThemeModePreference:Landroid/support/v7/preference/ListPreference;
 
     invoke-virtual {v7, v8}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
-    :cond_b
+    :cond_c
     const-string v7, "toggle_lock_screen_rotation_preference"
 
     invoke-virtual {p0, v7}, Lcom/android/settings/DisplaySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -3837,13 +3915,13 @@
 
     move-result v7
 
-    if-nez v7, :cond_c
+    if-nez v7, :cond_d
 
     const-string v7, "toggle_lock_screen_rotation_preference"
 
     invoke-virtual {p0, v7}, Lcom/android/settings/DisplaySettings;->removePreference(Ljava/lang/String;)Z
 
-    :cond_c
+    :cond_d
     const-string v7, "back_topic_theme"
 
     invoke-virtual {p0, v7}, Lcom/android/settings/DisplaySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -3860,7 +3938,7 @@
 
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mBacktopThemePreference:Landroid/support/v14/preference/SwitchPreference;
 
-    if-eqz v7, :cond_d
+    if-eqz v7, :cond_e
 
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mCustomRootPreference:Landroid/support/v7/preference/PreferenceCategory;
 
@@ -3868,7 +3946,7 @@
 
     invoke-virtual {v7, v8}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
-    :cond_d
+    :cond_e
     invoke-virtual {p0}, Lcom/android/settings/DisplaySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v7
@@ -3903,13 +3981,13 @@
 
     iget v8, p0, Lcom/android/settings/DisplaySettings;->mNotifyLightEnable:I
 
-    if-nez v8, :cond_e
+    if-nez v8, :cond_f
 
     move v4, v5
 
     nop
 
-    :cond_e
+    :cond_f
     invoke-virtual {v7, v4}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
 
     const-string v4, "lockguard_wallpaper_settings"
@@ -3928,7 +4006,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_f
+    if-nez v4, :cond_10
 
     iget-object v4, p0, Lcom/android/settings/DisplaySettings;->mCustomRootPreference:Landroid/support/v7/preference/PreferenceCategory;
 
@@ -3936,7 +4014,7 @@
 
     invoke-virtual {v4, v7}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
-    :cond_f
+    :cond_10
     invoke-virtual {p0}, Lcom/android/settings/DisplaySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v4
@@ -4101,7 +4179,7 @@
 
     const v8, 0x7f060333
 
-    if-eqz v7, :cond_10
+    if-eqz v7, :cond_11
 
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mAccentColorPreference:Lcom/oneplus/settings/ui/ColorPickerPreference;
 
@@ -4121,7 +4199,7 @@
 
     goto :goto_7
 
-    :cond_10
+    :cond_11
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mContext:Landroid/content/Context;
 
     invoke-virtual {v7}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -4132,7 +4210,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_11
+    if-eqz v7, :cond_12
 
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mAccentColorPreference:Lcom/oneplus/settings/ui/ColorPickerPreference;
 
@@ -4154,7 +4232,7 @@
 
     goto :goto_7
 
-    :cond_11
+    :cond_12
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mAccentColorPreference:Lcom/oneplus/settings/ui/ColorPickerPreference;
 
     invoke-virtual {v2, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -4176,15 +4254,15 @@
 
     move-result v7
 
-    if-nez v7, :cond_12
+    if-nez v7, :cond_13
 
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportCustomBlinkLight()Z
 
     move-result v7
 
-    if-nez v7, :cond_13
+    if-nez v7, :cond_14
 
-    :cond_12
+    :cond_13
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mCustomRootPreference:Landroid/support/v7/preference/PreferenceCategory;
 
     iget-object v8, p0, Lcom/android/settings/DisplaySettings;->mNotifyLightPreference:Landroid/support/v14/preference/SwitchPreference;
@@ -4197,7 +4275,7 @@
 
     invoke-virtual {v7, v8}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
-    :cond_13
+    :cond_14
     const-string v7, "screen_color_mode"
 
     invoke-virtual {p0, v7}, Lcom/android/settings/DisplaySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -4238,11 +4316,11 @@
 
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mReadingModePreference:Landroid/support/v7/preference/Preference;
 
-    if-eqz v7, :cond_14
+    if-eqz v7, :cond_15
 
     sget-boolean v7, Lcom/android/settings/DisplaySettings;->isSupportReadingMode:Z
 
-    if-nez v7, :cond_14
+    if-nez v7, :cond_15
 
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mScreenBrightnessRootPreference:Landroid/support/v7/preference/PreferenceCategory;
 
@@ -4250,20 +4328,20 @@
 
     invoke-virtual {v7, v8}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
-    :cond_14
+    :cond_15
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isGuestMode()Z
 
     move-result v7
 
-    if-eqz v7, :cond_15
+    if-eqz v7, :cond_16
 
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mScreenBrightnessRootPreference:Landroid/support/v7/preference/PreferenceCategory;
 
-    if-eqz v7, :cond_15
+    if-eqz v7, :cond_16
 
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mScreenColorModePreference:Landroid/support/v7/preference/Preference;
 
-    if-eqz v7, :cond_15
+    if-eqz v7, :cond_16
 
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mScreenBrightnessRootPreference:Landroid/support/v7/preference/PreferenceCategory;
 
@@ -4271,7 +4349,7 @@
 
     invoke-virtual {v7, v8}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
-    :cond_15
+    :cond_16
     const-string v7, "video_enhancer"
 
     invoke-virtual {p0, v7}, Lcom/android/settings/DisplaySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -4284,22 +4362,22 @@
 
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mVideoEnhancerPreference:Landroid/support/v14/preference/SwitchPreference;
 
-    if-eqz v7, :cond_16
+    if-eqz v7, :cond_17
 
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mVideoEnhancerPreference:Landroid/support/v14/preference/SwitchPreference;
 
     invoke-virtual {v7, p0}, Landroid/support/v14/preference/SwitchPreference;->setOnPreferenceChangeListener(Landroid/support/v7/preference/Preference$OnPreferenceChangeListener;)V
 
-    :cond_16
+    :cond_17
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportVideoEnhancer()Z
 
     move-result v7
 
-    if-nez v7, :cond_17
+    if-nez v7, :cond_18
 
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mVideoEnhancerPreference:Landroid/support/v14/preference/SwitchPreference;
 
-    if-eqz v7, :cond_17
+    if-eqz v7, :cond_18
 
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mScreenBrightnessRootPreference:Landroid/support/v7/preference/PreferenceCategory;
 
@@ -4307,7 +4385,7 @@
 
     invoke-virtual {v7, v8}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
-    :cond_17
+    :cond_18
     const-string v7, "display_size_adaption"
 
     invoke-virtual {p0, v7}, Lcom/android/settings/DisplaySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -4344,7 +4422,7 @@
 
     move-result v7
 
-    if-nez v7, :cond_18
+    if-nez v7, :cond_19
 
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mScreenBrightnessRootPreference:Landroid/support/v7/preference/PreferenceCategory;
 
@@ -4362,7 +4440,7 @@
 
     move-result v7
 
-    if-nez v7, :cond_19
+    if-nez v7, :cond_1a
 
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mCustomRootPreference:Landroid/support/v7/preference/PreferenceCategory;
 
@@ -4372,43 +4450,43 @@
 
     goto :goto_8
 
-    :cond_18
+    :cond_19
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mCustomRootPreference:Landroid/support/v7/preference/PreferenceCategory;
 
     iget-object v8, p0, Lcom/android/settings/DisplaySettings;->mDisplaySizeAdaptionPreference:Landroid/support/v7/preference/Preference;
 
     invoke-virtual {v7, v8}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
-    :cond_19
+    :cond_1a
     :goto_8
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isGuestMode()Z
 
     move-result v7
 
-    if-eqz v7, :cond_1a
+    if-eqz v7, :cond_1b
 
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mNotchModePreference:Landroid/support/v7/preference/Preference;
 
-    if-eqz v7, :cond_1a
+    if-eqz v7, :cond_1b
 
     iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mNotchModePreference:Landroid/support/v7/preference/Preference;
 
     invoke-virtual {v7, v5}, Landroid/support/v7/preference/Preference;->setVisible(Z)V
 
-    :cond_1a
+    :cond_1b
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportFontStyleSetting()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_1b
-
-    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isGuestMode()Z
 
     move-result v5
 
     if-eqz v5, :cond_1c
 
-    :cond_1b
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isGuestMode()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1d
+
+    :cond_1c
     iget-object v5, p0, Lcom/android/settings/DisplaySettings;->mCustomRootPreference:Landroid/support/v7/preference/PreferenceCategory;
 
     const-string v7, "font_style_settings"
@@ -4419,38 +4497,38 @@
 
     invoke-virtual {v5, v7}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
-    :cond_1c
+    :cond_1d
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isGuestMode()Z
 
     move-result v5
 
-    if-eqz v5, :cond_1d
+    if-eqz v5, :cond_1e
 
     const-string v5, "header_category_custom"
 
     invoke-virtual {p0, v5}, Lcom/android/settings/DisplaySettings;->removePreference(Ljava/lang/String;)Z
 
-    :cond_1d
+    :cond_1e
     iget-object v5, p0, Lcom/android/settings/DisplaySettings;->mSliderAnimator:Landroid/animation/ValueAnimator;
 
-    if-eqz v5, :cond_1e
+    if-eqz v5, :cond_1f
 
     iget-object v5, p0, Lcom/android/settings/DisplaySettings;->mSliderAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v5}, Landroid/animation/ValueAnimator;->cancel()V
 
-    :cond_1e
+    :cond_1f
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v5
 
-    if-eqz v5, :cond_1f
+    if-eqz v5, :cond_20
 
     const-string v5, "status_bar_custom"
 
     invoke-virtual {p0, v5}, Lcom/android/settings/DisplaySettings;->removePreference(Ljava/lang/String;)Z
 
-    :cond_1f
+    :cond_20
     return-void
 .end method
 
@@ -5154,7 +5232,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_15
 
     move-object v1, p2
 
@@ -5164,31 +5242,35 @@
 
     move-result v1
 
-    invoke-virtual {p0}, Lcom/android/settings/DisplaySettings;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v3
-
-    const-string v4, "video_enhancer"
-
-    const/4 v5, -0x2
-
-    invoke-static {v3, v4, v1, v5}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
-
     const-string v3, "persist.sys.oem.vendor.media.vpp.enable"
 
     if-eqz v1, :cond_13
 
-    const-string v4, "1"
+    const-string v4, "true"
 
     goto :goto_8
 
     :cond_13
-    const-string v4, "0"
+    const-string v4, "false"
 
     :goto_8
     invoke-static {v3, v4}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
+    const-string v3, "video_enhancer"
+
+    if-eqz v1, :cond_14
+
+    const-string v4, "1"
+
+    goto :goto_9
+
     :cond_14
+    const-string v4, "0"
+
+    :goto_9
+    invoke-static {v3, v4}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_15
     return v2
 .end method
 

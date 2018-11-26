@@ -171,7 +171,7 @@
 
     nop
 
-    const v8, 0x7f12113c
+    const v8, 0x7f121141
 
     invoke-virtual {p0, v8}, Lcom/android/settings/deviceinfo/StorageWizardFormatConfirm;->getText(I)Ljava/lang/CharSequence;
 
@@ -195,7 +195,7 @@
 
     nop
 
-    const v8, 0x7f12113b
+    const v8, 0x7f121140
 
     invoke-virtual {p0, v8}, Lcom/android/settings/deviceinfo/StorageWizardFormatConfirm;->getText(I)Ljava/lang/CharSequence;
 
@@ -239,7 +239,7 @@
 
     nop
 
-    const v8, 0x7f12113a
+    const v8, 0x7f12113f
 
     invoke-virtual {p0, v8}, Lcom/android/settings/deviceinfo/StorageWizardFormatConfirm;->getText(I)Ljava/lang/CharSequence;
 

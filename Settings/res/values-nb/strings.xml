@@ -2819,6 +2819,9 @@ For å gå til hjemskjermen når du måtte ønske det, sveip oppover fra midten 
     <string name="oneplus_lock_buttons">Låseknapper</string>
     <string name="oneplus_lock_buttons_summary">Lås kapasitivtaster når spillmodus er aktivert</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">Hvis du velger å hoppe over opptak av ansiktsdata, får du forslag om å aktivere en annen metode, som fingeravtrykk eller pin-kode, for å beskytte enheten og personlig informasjon. I visse programmer kan du også lage et passord. For å aktivere beskyttelsen, gå til \"Innstillinger\" og \"Sikkerhet og låsskjerm\".</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">Angi passord hvis du bruker ansiktsloppåsing eller fingeravtrykk</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">Angi mønster hvis du bruker ansiktslopplåsing eller fingeravtrykk</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">Angi PIN-kode hvis du bruker ansiktslopplåsing eller fingeravtrykk</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Forsøk igjen</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">For mange uriktige forsøk!</string>
     <string name="oneplus_max_shortcuts_tips">Du kan legge til opptil 6 snarveier</string>
@@ -3168,7 +3171,7 @@ Merk: Ansiktsgjenkjenning kan være mindre sikkert enn fingeravtrykk, PIN eller 
     <string name="op_not_disturb">Ikke forstyrr-innstillinger</string>
     <string name="op_not_disturb_summary">Demp anrop og varslinger, og skru av vibrasjon, bortsett fra alarmer</string>
     <string name="op_oneplus_roaming_summary">Gi globale internettjenester</string>
-    <string name="op_oneplus_roaming_title">Oneplus Roaming</string>
+    <string name="op_oneplus_roaming_title">OnePlus Roaming</string>
     <string name="op_primary_charm_purple_label">Mørk lilla</string>
     <string name="op_primary_dark_green_label">Mørk grønn</string>
     <string name="op_primary_default_label">Blå</string>
@@ -5049,6 +5052,10 @@ Trykk på "<b>Tilbake</b> for å koble til et annet Wi-Fi-nettverk.</string>
     <string name="wifi_tap_to_sign_in">Trykk her for å logge på nettverket</string>
     <string name="wifi_tether_configure_ap_text">Konfigurer Wi-Fi-sone</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Etter 10 minutter uten aktivitet</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Etter 15 minutter uten aktivitet</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Etter 5 minutter uten aktivitet</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Alltid på</string>
     <string name="wifi_tether_disabled_by_airplane">Utilgjengelig fordi flymodus er slått på</string>
     <string name="wifi_tether_enabled_subtext">%1$s er aktiv</string>
     <string name="wifi_tether_failed_subtext">Feil med flyttbar Wi-Fi-sone</string>

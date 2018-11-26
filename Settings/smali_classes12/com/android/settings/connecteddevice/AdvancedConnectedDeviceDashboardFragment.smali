@@ -32,23 +32,24 @@
     return-void
 .end method
 
-.method static synthetic access$000(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;)Ljava/util/List;
+.method static synthetic access$000(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;Landroid/app/Fragment;)Ljava/util/List;
     .locals 1
 
-    invoke-static {p0, p1}, Lcom/android/settings/connecteddevice/AdvancedConnectedDeviceDashboardFragment;->buildControllers(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;)Ljava/util/List;
+    invoke-static {p0, p1, p2}, Lcom/android/settings/connecteddevice/AdvancedConnectedDeviceDashboardFragment;->buildControllers(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;Landroid/app/Fragment;)Ljava/util/List;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method private static buildControllers(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;)Ljava/util/List;
-    .locals 2
+.method private static buildControllers(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;Landroid/app/Fragment;)Ljava/util/List;
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/content/Context;",
             "Lcom/android/settingslib/core/lifecycle/Lifecycle;",
+            "Landroid/app/Fragment;",
             ")",
             "Ljava/util/List<",
             "Lcom/android/settingslib/core/AbstractPreferenceController;",
@@ -76,18 +77,23 @@
 
     invoke-direct {v1, p0}, Lcom/android/settings/applications/defaultapps/DefaultPaymentSettingsPreferenceController;-><init>(Landroid/content/Context;)V
 
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    if-eqz p2, :cond_0
 
-    new-instance v1, Lcom/android/settings/print/PrintSettingPreferenceController;
-
-    invoke-direct {v1, p0}, Lcom/android/settings/print/PrintSettingPreferenceController;-><init>(Landroid/content/Context;)V
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1, v1}, Lcom/android/settingslib/core/lifecycle/Lifecycle;->addObserver(Landroid/arch/lifecycle/LifecycleObserver;)V
+    invoke-virtual {v1, p2}, Lcom/android/settings/applications/defaultapps/DefaultPaymentSettingsPreferenceController;->setFragment(Landroid/app/Fragment;)V
 
     :cond_0
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    new-instance v2, Lcom/android/settings/print/PrintSettingPreferenceController;
+
+    invoke-direct {v2, p0}, Lcom/android/settings/print/PrintSettingPreferenceController;-><init>(Landroid/content/Context;)V
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p1, v2}, Lcom/android/settingslib/core/lifecycle/Lifecycle;->addObserver(Landroid/arch/lifecycle/LifecycleObserver;)V
+
+    :cond_1
+    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     return-object v0
 .end method
@@ -111,7 +117,7 @@
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/android/settings/connecteddevice/AdvancedConnectedDeviceDashboardFragment;->buildControllers(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;)Ljava/util/List;
+    invoke-static {p1, v0, p0}, Lcom/android/settings/connecteddevice/AdvancedConnectedDeviceDashboardFragment;->buildControllers(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;Landroid/app/Fragment;)Ljava/util/List;
 
     move-result-object v0
 

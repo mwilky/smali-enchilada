@@ -47,7 +47,7 @@
 .end method
 
 .method public static isHotspotPasswordValid(Ljava/lang/String;)Z
-    .locals 3
+    .locals 4
 
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -60,19 +60,23 @@
     return v1
 
     :cond_0
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
     invoke-virtual {p0}, Ljava/lang/String;->getBytes()[B
 
-    move-result-object v0
+    move-result-object v2
 
-    array-length v0, v0
+    array-length v2, v2
 
-    const/16 v2, 0x8
+    const/16 v3, 0x8
 
-    if-lt v0, v2, :cond_1
+    if-lt v0, v3, :cond_1
 
-    const/16 v2, 0x3f
+    const/16 v3, 0x3f
 
-    if-gt v0, v2, :cond_1
+    if-gt v2, v3, :cond_1
 
     const/4 v1, 0x1
 

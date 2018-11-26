@@ -110,6 +110,8 @@
 
 .field public static final ONEPLUS_ACCENT_DEFAULT_COLOR:Ljava/lang/String; = "#2196F3"
 
+.field public static final ONEPLUS_ACCENT_MCL_COLOR:Ljava/lang/String; = "#FF9E31"
+
 .field public static final ONEPLUS_ACCENT_RED_COLOR:Ljava/lang/String; = "#FF0000"
 
 .field public static final ONEPLUS_ACCENT_SW_COLOR:Ljava/lang/String; = "#FF2837"

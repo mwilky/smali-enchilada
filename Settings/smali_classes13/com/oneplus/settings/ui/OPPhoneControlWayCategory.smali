@@ -83,7 +83,7 @@
 
     invoke-direct {p0, p1}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;)V
 
-    const v0, 0x7f0d0191
+    const v0, 0x7f0d0194
 
     iput v0, p0, Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;->mLayoutResId:I
 
@@ -103,7 +103,7 @@
 
     invoke-direct {p0, p1, p2}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    const v0, 0x7f0d0191
+    const v0, 0x7f0d0194
 
     iput v0, p0, Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;->mLayoutResId:I
 
@@ -123,7 +123,7 @@
 
     invoke-direct {p0, p1, p2, p3}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const v0, 0x7f0d0191
+    const v0, 0x7f0d0194
 
     iput v0, p0, Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;->mLayoutResId:I
 
@@ -253,7 +253,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d0175
+    const v2, 0x7f0d0178
 
     const/4 v3, 0x0
 
@@ -261,7 +261,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0a020f
+    const v5, 0x7f0a0212
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -269,11 +269,11 @@
 
     check-cast v6, Landroid/widget/TextView;
 
-    const v7, 0x7f120b3d
+    const v7, 0x7f120b3f
 
     invoke-virtual {v6, v7}, Landroid/widget/TextView;->setText(I)V
 
-    const v7, 0x7f0a020e
+    const v7, 0x7f0a0211
 
     invoke-virtual {v4, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -281,11 +281,11 @@
 
     check-cast v8, Landroid/widget/TextView;
 
-    const v9, 0x7f120b3c
+    const v9, 0x7f120b3e
 
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->setText(I)V
 
-    const v9, 0x7f0a020d
+    const v9, 0x7f0a0210
 
     invoke-virtual {v4, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -339,7 +339,7 @@
 
     check-cast v12, Landroid/widget/TextView;
 
-    const v13, 0x7f120b45
+    const v13, 0x7f120b47
 
     invoke-virtual {v12, v13}, Landroid/widget/TextView;->setText(I)V
 
@@ -349,7 +349,7 @@
 
     check-cast v13, Landroid/widget/TextView;
 
-    const v14, 0x7f120b44
+    const v14, 0x7f120b46
 
     invoke-virtual {v13, v14}, Landroid/widget/TextView;->setText(I)V
 
@@ -403,7 +403,7 @@
 
     check-cast v15, Landroid/widget/TextView;
 
-    const v5, 0x7f120b34
+    const v5, 0x7f120b36
 
     invoke-virtual {v15, v5}, Landroid/widget/TextView;->setText(I)V
 
@@ -413,7 +413,7 @@
 
     check-cast v5, Landroid/widget/TextView;
 
-    const v7, 0x7f120b33
+    const v7, 0x7f120b35
 
     invoke-virtual {v5, v7}, Landroid/widget/TextView;->setText(I)V
 
@@ -461,7 +461,7 @@
 
     move-result-object v2
 
-    const v7, 0x7f0a020f
+    const v7, 0x7f0a0212
 
     invoke-virtual {v2, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -471,11 +471,11 @@
 
     check-cast v7, Landroid/widget/TextView;
 
-    const v9, 0x7f120b43
+    const v9, 0x7f120b45
 
     invoke-virtual {v7, v9}, Landroid/widget/TextView;->setText(I)V
 
-    const v9, 0x7f0a020e
+    const v9, 0x7f0a0211
 
     invoke-virtual {v2, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -485,11 +485,11 @@
 
     check-cast v9, Landroid/widget/TextView;
 
-    const v3, 0x7f120b42
+    const v3, 0x7f120b44
 
     invoke-virtual {v9, v3}, Landroid/widget/TextView;->setText(I)V
 
-    const v3, 0x7f0a020d
+    const v3, 0x7f0a0210
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -535,7 +535,7 @@
 
     invoke-virtual {v3}, Lcom/airbnb/lottie/LottieAnimationView;->playAnimation()V
 
-    const v3, 0x7f0d0176
+    const v3, 0x7f0d0179
 
     const/4 v11, 0x0
 
@@ -543,7 +543,7 @@
 
     move-result-object v3
 
-    const v11, 0x7f0a020f
+    const v11, 0x7f0a0212
 
     invoke-virtual {v3, v11}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -553,11 +553,11 @@
 
     move-object/from16 v17, v1
 
-    const v1, 0x7f120b3f
+    const v1, 0x7f120b41
 
     invoke-virtual {v11, v1}, Landroid/widget/TextView;->setText(I)V
 
-    const v1, 0x7f0a020e
+    const v1, 0x7f0a0211
 
     invoke-virtual {v3, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -567,11 +567,11 @@
 
     move-object/from16 v18, v5
 
-    const v5, 0x7f120b3e
+    const v5, 0x7f120b40
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setText(I)V
 
-    const v5, 0x7f0a020d
+    const v5, 0x7f0a0210
 
     invoke-virtual {v3, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -686,7 +686,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0803e4
+    const v1, 0x7f0803e5
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -700,7 +700,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0803e3
+    const v1, 0x7f0803e4
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -808,7 +808,7 @@
     invoke-virtual {v0, v1}, Lcom/airbnb/lottie/LottieAnimationView;->setAnimation(Ljava/lang/String;)V
 
     :goto_0
-    const v0, 0x7f0a024c
+    const v0, 0x7f0a024f
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -852,7 +852,7 @@
 
     invoke-virtual {v0}, Lcom/airbnb/lottie/LottieAnimationView;->playAnimation()V
 
-    const v0, 0x7f0a03f1
+    const v0, 0x7f0a03f4
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -862,7 +862,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;->mPage0:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a03f2
+    const v0, 0x7f0a03f5
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -872,7 +872,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;->mPage1:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a03f3
+    const v0, 0x7f0a03f6
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -882,7 +882,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;->mPage2:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a03f4
+    const v0, 0x7f0a03f7
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -892,7 +892,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;->mPage3:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a03f5
+    const v0, 0x7f0a03f8
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -945,7 +945,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
     :cond_2
-    const v0, 0x7f0a0214
+    const v0, 0x7f0a0217
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -953,7 +953,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;->mViewPagerContainer:Landroid/view/View;
 
-    const v0, 0x7f0a0213
+    const v0, 0x7f0a0216
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

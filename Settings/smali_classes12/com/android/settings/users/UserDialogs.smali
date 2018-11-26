@@ -19,13 +19,13 @@
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f12130f
+    const v1, 0x7f121314
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    const v1, 0x7f12130e
+    const v1, 0x7f121313
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -59,13 +59,13 @@
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f121311
+    const v1, 0x7f121316
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    const v1, 0x7f121310
+    const v1, 0x7f121315
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -111,7 +111,7 @@
 
     invoke-direct {v2, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v3, 0x7f1212f8
+    const v3, 0x7f1212fd
 
     invoke-virtual {v2, v3, p2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -131,7 +131,7 @@
 
     if-eqz v3, :cond_1
 
-    const v3, 0x7f12154a
+    const v3, 0x7f121553
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -146,7 +146,7 @@
     goto :goto_0
 
     :cond_0
-    const v4, 0x7f121549
+    const v4, 0x7f121552
 
     invoke-virtual {v2, v4}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -160,11 +160,11 @@
 
     if-ne v3, p1, :cond_2
 
-    const v3, 0x7f1212f1
+    const v3, 0x7f1212f6
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    const v3, 0x7f1212f0
+    const v3, 0x7f1212f5
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -177,22 +177,22 @@
 
     if-eqz v3, :cond_3
 
-    const v3, 0x7f121329
+    const v3, 0x7f12132e
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    const v3, 0x7f121328
+    const v3, 0x7f12132d
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
     goto :goto_1
 
     :cond_3
-    const v3, 0x7f1212f2
+    const v3, 0x7f1212f7
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    const v3, 0x7f1212ef
+    const v3, 0x7f1212f4
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -236,7 +236,7 @@
 
     move-result-object v2
 
-    const v4, 0x7f0a017d
+    const v4, 0x7f0a0180
 
     invoke-virtual {v2, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -272,7 +272,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0a017c
+    const v8, 0x7f0a017f
 
     invoke-virtual {v2, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

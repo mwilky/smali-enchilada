@@ -91,22 +91,22 @@
 
     packed-switch p0, :pswitch_data_0
 
-    const v0, 0x7f120f79
+    const v0, 0x7f120f7e
 
     return v0
 
     :pswitch_0
-    const v0, 0x7f120f77
+    const v0, 0x7f120f7c
 
     return v0
 
     :pswitch_1
-    const v0, 0x7f120f76
+    const v0, 0x7f120f7b
 
     return v0
 
     :pswitch_2
-    const v0, 0x7f120f7b
+    const v0, 0x7f120f80
 
     return v0
 
@@ -278,7 +278,7 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f120f7a
+    const v0, 0x7f120f7f
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

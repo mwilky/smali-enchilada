@@ -229,12 +229,12 @@
 
     if-nez v4, :cond_2
 
-    const v6, 0x7f0a01f8
+    const v6, 0x7f0a01fb
 
     goto :goto_2
 
     :cond_2
-    const v6, 0x7f0a04b5
+    const v6, 0x7f0a04b8
 
     :goto_2
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -297,7 +297,7 @@
     :cond_5
     iget-object v3, p2, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;->itemView:Landroid/view/View;
 
-    const v4, 0x7f0a019d
+    const v4, 0x7f0a01a0
 
     xor-int/lit8 v5, p3, 0x1
 
@@ -541,4 +541,20 @@
     invoke-direct {v0, v1}, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;-><init>(Landroid/view/View;)V
 
     return-object v0
+.end method
+
+.method public setConditions(Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lcom/android/settings/dashboard/conditional/Condition;",
+            ">;)V"
+        }
+    .end annotation
+
+    iput-object p1, p0, Lcom/android/settings/dashboard/conditional/ConditionAdapter;->mConditions:Ljava/util/List;
+
+    return-void
 .end method

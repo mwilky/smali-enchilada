@@ -694,7 +694,7 @@
 .end method
 
 .method recordCanBeBlocked(Landroid/content/Context;Landroid/content/pm/PackageManager;Landroid/content/pm/PackageInfo;Lcom/android/settings/notification/NotificationBackend$AppRow;)V
-    .locals 2
+    .locals 6
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -716,9 +716,39 @@
 
     move-result-object v0
 
-    iget-object v1, p3, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    invoke-static {v0, p4, v1}, Lcom/android/settings/notification/NotificationBackend;->markAppRowWithBlockables([Ljava/lang/String;Lcom/android/settings/notification/NotificationBackend$AppRow;Ljava/lang/String;)V
+    move-result-object v1
+
+    const v2, 0x502000f
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
+
+    move-result-object v1
+
+    array-length v2, v0
+
+    array-length v3, v1
+
+    add-int/2addr v2, v3
+
+    invoke-static {v0, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, [Ljava/lang/String;
+
+    array-length v3, v0
+
+    array-length v4, v1
+
+    const/4 v5, 0x0
+
+    invoke-static {v1, v5, v2, v3, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    iget-object v3, p3, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
+
+    invoke-static {v2, p4, v3}, Lcom/android/settings/notification/NotificationBackend;->markAppRowWithBlockables([Ljava/lang/String;Lcom/android/settings/notification/NotificationBackend$AppRow;Ljava/lang/String;)V
 
     return-void
 .end method

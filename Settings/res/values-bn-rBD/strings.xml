@@ -438,6 +438,9 @@
     <string name="oneplus_lock_buttons">লক বোতাম</string>
     <string name="oneplus_lock_buttons_summary">গেমিং মোড চালু থাকার সময় ক্যাপাসিটিভ বোতাম লক করুন</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">যদি আপনি ফেস ডেটা রেকর্ড করা এড়ানো নির্বাচন করেন তাহলে আপনাকে আপনার ডিভাইস ও ব্যক্তিগত তথ্য সুরক্ষা করার জন্য আরেকটি পদ্ধতি সক্ষম করার জন্য প্রস্তাব দেওয়া হচ্ছে যেমন আঙুলের ছাপ বা পিন। এছাড়াও নির্দিষ্ট কিছু অ্যাপে একটি পাসওয়ার্ড সেট করতে হবে। সুরক্ষা সক্ষম করতে, অনুগ্রহ করে \"সেটিংস\" > \"সুরক্ষা &amp; লক স্ক্রীন\" এ যান</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">ফেস আনলক অথবা ফিঙ্গারপ্রিন্ট ব্যবহার করতে, পাসওয়ার্ড সেট করুন</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">ফেস আনলক অথবা ফিঙ্গারপ্রিন্ট ব্যবহার করতে, প্যাটার্ন সেট করুন</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">ফেস আনলক অথবা ফিঙ্গারপ্রিন্ট ব্যবহার করতে, পিন সেট করুন</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">আবার চেষ্টা করুন</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">অনেকবার ভুল প্রচেষ্টা করা হয়েছে!</string>
     <string name="oneplus_max_shortcuts_tips">আপনি 6টি পর্যন্ত শর্টকাট যোগ করতে পারবেন</string>
@@ -963,6 +966,10 @@
     <string name="wifi_setting_frequency_band_error">ফ্রিকোয়েন্সি ব্যান্ড সেট করার সময় সমস্যা হয়েছে।</string>
     <string name="wifi_setting_frequency_band_summary">অপারেশনের ফ্রিকোয়েন্সি সীমা নির্দিষ্ট করুন</string>
     <string name="wifi_setting_frequency_band_title">Wi‑Fi ফ্রিকোয়েন্সি ব্যান্ড</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">10 মিনিট নিষ্ক্রিয় থাকার পরে</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">15 মিনিট নিষ্ক্রিয় থাকার পরে</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">5 মিনিট নিষ্ক্রিয় থাকার পরে</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">সবসময় চালু</string>
     <string name="wifi_wapi_as_cert">AS সার্টিফিকেট</string>
     <string name="wifi_wapi_cert_cancel_button">বাতিল করুন</string>
     <string name="wifi_wapi_cert_create_subdir">ডিরেক্টরি তৈরি করুন</string>

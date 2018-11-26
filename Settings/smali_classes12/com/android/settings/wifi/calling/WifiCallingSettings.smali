@@ -169,7 +169,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 4
 
-    const v0, 0x7f0d02df
+    const v0, 0x7f0d02e2
 
     const/4 v1, 0x0
 
@@ -177,7 +177,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a04f8
+    const v1, 0x7f0a04fb
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -187,7 +187,7 @@
 
     iput-object v1, p0, Lcom/android/settings/wifi/calling/WifiCallingSettings;->mTabLayout:Lcom/android/settings/widget/SlidingTabLayout;
 
-    const v1, 0x7f0a05dd
+    const v1, 0x7f0a05e0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -51,7 +51,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/settings/SmsDefaultDialog;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
-    const v3, 0x7f121094
+    const v3, 0x7f121099
 
     invoke-virtual {p0, v3}, Lcom/android/settings/SmsDefaultDialog;->getString(I)Ljava/lang/String;
 
@@ -106,7 +106,7 @@
     :cond_1
     if-eqz v3, :cond_2
 
-    const v6, 0x7f121093
+    const v6, 0x7f121098
 
     const/4 v7, 0x2
 
@@ -135,7 +135,7 @@
     goto :goto_0
 
     :cond_2
-    const v6, 0x7f121095
+    const v6, 0x7f12109a
 
     new-array v7, v4, [Ljava/lang/Object;
 
@@ -154,7 +154,7 @@
     iput-object v2, v1, Lcom/android/internal/app/AlertController$AlertParams;->mMessage:Ljava/lang/CharSequence;
 
     :goto_0
-    const v2, 0x7f12155e
+    const v2, 0x7f121567
 
     invoke-virtual {p0, v2}, Lcom/android/settings/SmsDefaultDialog;->getString(I)Ljava/lang/String;
 

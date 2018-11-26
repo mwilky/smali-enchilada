@@ -2817,6 +2817,9 @@ Battery נכבה אוטומטית כאשר המכשיר במצב טעינה."</s
     <string name="oneplus_lock_buttons">נעל לחצנים</string>
     <string name="oneplus_lock_buttons_summary">נעילת לחצני קיבול כאשר מצב משחק מופעל</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">אם בחרת לדלג על תיעוד נתוני פנים, מומלץ לאפשר שיטה אחרת כמו טביעת אצבע או קוד כדי להגן על המכשיר ועל הנתונים האישיים שלך. באפשרותך גם להגדיר סיסמה עבור יישומים מסוימים. על מנת לאפשר את אמצעי ההגנה, לך ל\";הגדרות\"; &amp;;gt; \";אבטחה &amp;;amp; מסך נעילה\".</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">"כדי להשתמש באפשרויות 'שחרור נעילה באמצעות זיהוי פנים' או 'טביעת אצבע', הגדר סיסמה"</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">"כדי להשתמש באפשרויות 'שחרור נעילה באמצעות זיהוי פנים' או 'טביעת אצבע', הגדר תבנית"</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">"כדי להשתמש באפשרויות 'שחרור נעילה באמצעות זיהוי פנים' או 'טביעת אצבע', הגדר PIN"</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">נסה שוב</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">יותר מדי נסיונות שגויים!</string>
     <string name="oneplus_max_shortcuts_tips">באפשרותך להוסיף עד שישה קיצורי דרך</string>
@@ -5047,6 +5050,10 @@ Voice over Wi-Fi:‏ %3$s
     <string name="wifi_tap_to_sign_in">יש להקיש כאן כדי להיכנס לרשת</string>
     <string name="wifi_tether_configure_ap_text">‏הגדר נקודה לשיתוף אינטרנט דרך Wi-Fi</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">לאחר 10 דקות ללא פעילות</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">לאחר 15 דקות ללא פעילות</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">לאחר 5 דקות ללא פעילות</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">פועל תמיד</string>
     <string name="wifi_tether_disabled_by_airplane">"לא זמין, מפני ש'מצב טיסה' מופעל"</string>
     <string name="wifi_tether_enabled_subtext">%1$s פעיל</string>
     <string name="wifi_tether_failed_subtext">‏שגיאה בנקודה ניידת לשיתוף אינטרנט ב-Wi-Fi</string>

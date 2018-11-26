@@ -93,9 +93,9 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a0347
+    const v3, 0x7f0a034a
 
-    const v4, 0x7f0a0348
+    const v4, 0x7f0a034b
 
     invoke-virtual {p0, v1, v3, v4, v2}, Lcom/android/settings/deviceinfo/HardwareInfoDialogFragment;->setText(Landroid/view/View;IILjava/lang/String;)V
 
@@ -103,9 +103,9 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a04cd
+    const v3, 0x7f0a04d0
 
-    const v4, 0x7f0a04ce
+    const v4, 0x7f0a04d1
 
     invoke-virtual {p0, v1, v3, v4, v2}, Lcom/android/settings/deviceinfo/HardwareInfoDialogFragment;->setText(Landroid/view/View;IILjava/lang/String;)V
 
@@ -115,9 +115,9 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a023d
+    const v3, 0x7f0a0240
 
-    const v4, 0x7f0a023e
+    const v4, 0x7f0a0241
 
     invoke-virtual {p0, v1, v3, v4, v2}, Lcom/android/settings/deviceinfo/HardwareInfoDialogFragment;->setText(Landroid/view/View;IILjava/lang/String;)V
 

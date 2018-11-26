@@ -112,7 +112,7 @@
 
     iget-object v0, p0, Lcom/android/settings/fuelgauge/BatteryHeaderPreferenceController;->mBatteryLayoutPref:Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a0531
+    const v1, 0x7f0a0534
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -124,7 +124,7 @@
 
     iget-object v0, p0, Lcom/android/settings/fuelgauge/BatteryHeaderPreferenceController;->mBatteryLayoutPref:Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a0532
+    const v1, 0x7f0a0535
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 

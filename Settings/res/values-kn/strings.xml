@@ -2819,6 +2819,9 @@
     <string name="oneplus_lock_buttons">ಲಾಕ್ ಬಟನ್‌ಗಳು</string>
     <string name="oneplus_lock_buttons_summary">ಗೇಮಿಂಗ್ ಮೋಡ್ ಟರ್ನ್ ಆನ್ ಆಗಿರುವಾಗ ಕೆಪ್ಯಾಸಿಟಿವ್ ಬಟನ್‌ಗಳನ್ನು ಲಾಕ್ ಮಾಡಿ</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">ನೀವು ರೆಕಾರ್ಡಿಂಗ್ ಫೇಸ್ ಡೇಟಾ ಆಯ್ಕೆಮಾಡಿದರೆ, ನಿಮಗೆ ಬೆರಳುಮುದ್ರೆಯಂತಹ ಮತ್ತೊಂದು ವಿಧಾನ ಸಕ್ರಿಯಗೊಳಿಸಲು ಅಥವಾ ನಿಮ್ಮ ಸಾಧನ ಮತ್ತು ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯನ್ನು ರಕ್ಷಿಸಲು ಪಿನ್ ಮಾಡುವುದಕ್ಕಾಗಿ ಸಲಹೆ ಮಾಡಲಾಗಿದೆ. ನೀವು ನಿರ್ದಿಷ್ಟ ಆಪ್‌ಗಳಲ್ಲಿ ಪಾಸ್‌ವರ್ಡನ್ನೂ ಸೆಟ್ ಮಾಡಬಹುದು. ರಕ್ಷಣೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲು, ದಯವಿಟ್ಟು \"ಸೆಟ್ಟಿಂಗ್ಸ್\" > \"ಭದ್ರತೆ &amp; ಲಾಕ್ ಸ್ಕ್ರೀನ್\" ಗೆ ಹೋಗಿ</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">ಫೇಸ್ ಅನ್‌ಲಾಕ್ ಅಥವಾ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಬಳಸಲು, ಪಾಸ್‌ವರ್ಡ್ ಹೊಂದಿಸಿ</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">ಫೇಸ್ ಅನ್‌ಲಾಕ್ ಅಥವಾ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಬಳಸಲು, ನಮೂನೆಯನ್ನು ಹೊಂದಿಸಿ</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">ಫೇಸ್ ಅನ್‌ಲಾಕ್ ಅಥವಾ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಬಳಸಲು, PIN ಹೊಂದಿಸಿ</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">ಮತ್ತೊಮ್ಮೆ ಪ್ರಯತ್ನಿಸಿ</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">ಹಲವಾರು ತಪ್ಪಾದ ಪ್ರಯತ್ನಗಳು!</string>
     <string name="oneplus_max_shortcuts_tips">ನೀವು ಸುಮಾರು 6 ಶಾರ್ಟ್‌ಕಟ್‌ಗಳನ್ನು ಸೇರಿಸಬಹುದು</string>
@@ -5051,6 +5054,10 @@ UT ಇಂಟರ್ಫೇಸ್: %5$s"</string>
     <string name="wifi_tap_to_sign_in">ನೆಟ್‌ವರ್ಕ್‌ಗೆ ಸೈನ್ ಇನ್ ಮಾಡಲು ಇಲ್ಲಿ ಟ್ಯಾಪ್ ಮಾಡಿ</string>
     <string name="wifi_tether_configure_ap_text">ವೈ-ಫೈ ಹಾಟ್‌ಸ್ಪಾಟ್‌ ಹೊಂದಿಸಿ</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">10 ನಿಮಿಷದಷ್ಟು ನಿಷ್ಕ್ರಿಯತೆಯ ನಂತರ</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">15 ನಿಮಿಷದಷ್ಟು ನಿಷ್ಕ್ರಿಯತೆಯ ನಂತರ</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">5 ನಿಮಿಷದಷ್ಟು ನಿಷ್ಕ್ರಿಯತೆಯ ನಂತರ</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">ಯಾವಾಗಲೂ ಆನ್</string>
     <string name="wifi_tether_disabled_by_airplane">ಏರ್‌ಪ್ಲೇನ್ ಮೋಡ್ ಆನ್ ಆಗಿರುವುದರಿಂದ ಲಭ್ಯವಿರುವುದಿಲ್ಲ</string>
     <string name="wifi_tether_enabled_subtext">%1$s ಸಕ್ರಿಯವಾಗಿದೆ</string>
     <string name="wifi_tether_failed_subtext">ಪೋರ್ಟಬಲ್ ವೈ-ಫೈ ಹಾಟ್‌ಸ್ಪಾಟ್ ದೋಷ ಎದುರಾಗಿದೆ</string>

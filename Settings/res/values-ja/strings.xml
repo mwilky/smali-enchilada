@@ -2817,6 +2817,9 @@ T馬などの動物はいないようでした。荷物は小さな緑色の手�
     <string name="oneplus_lock_buttons">ボタンをロック</string>
     <string name="oneplus_lock_buttons_summary">ゲームモードがオンになっている場合に静電ボタンをロックします</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">顔データの記録を省略した場合、お使いのデバイスや個人情報を保護するため、指紋認証や PIN などの別の方法を有効化することをお勧めします。特定のアプリにパスワードを設定することもできます。保護を有効にするには、\"設定\" > \"セキュリティとロック画面\" へ移動してください。</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">顔認証や指紋を使用するには、パスワードを設定してください</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">顔認証や指紋を使用するには、パターンを設定してください</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">顔認証や指紋を使用するには、PIN を設定してください</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">もう一度やり直してください</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">不正なロック解除試行が多すぎます！</string>
     <string name="oneplus_max_shortcuts_tips">最大6つのショートカットを追加できます</string>
@@ -5049,6 +5052,10 @@ PINが正しくない可能性があります。"</string>
     <string name="wifi_tap_to_sign_in">ここをタップしてネットワークにログイン</string>
     <string name="wifi_tether_configure_ap_text">Wi-Fiアクセスポイントをセットアップ</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">10 分間操作が行われなかった場合</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">15 分間操作が行われなかった場合</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">5 分間操作が行われなかった場合</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">常にオン</string>
     <string name="wifi_tether_disabled_by_airplane">機内モードがオンなのでご利用になれません</string>
     <string name="wifi_tether_enabled_subtext">%1$s はアクティブです</string>
     <string name="wifi_tether_failed_subtext">ポータブルWi-Fiアクセスポイントエラー</string>

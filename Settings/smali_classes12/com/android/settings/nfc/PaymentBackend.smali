@@ -18,6 +18,8 @@
 
 
 # instance fields
+.field private fragment:Landroid/app/Fragment;
+
 .field private final mAdapter:Landroid/nfc/NfcAdapter;
 
 .field private mAppInfos:Ljava/util/ArrayList;
@@ -313,17 +315,41 @@
 
     move-result-object v1
 
+    iget-object v2, p0, Lcom/android/settings/nfc/PaymentBackend;->fragment:Landroid/app/Fragment;
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, p0, Lcom/android/settings/nfc/PaymentBackend;->fragment:Landroid/app/Fragment;
+
+    invoke-virtual {v2}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Lcom/android/settings/nfc/PaymentBackend;->fragment:Landroid/app/Fragment;
+
+    invoke-virtual {v2}, Landroid/app/Fragment;->isAdded()Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    :cond_0
+    return-void
+
+    :cond_1
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_2
 
     invoke-virtual {p0}, Lcom/android/settings/nfc/PaymentBackend;->makeCallbacks()V
 
     return-void
 
-    :cond_0
+    :cond_2
     invoke-virtual {p0}, Lcom/android/settings/nfc/PaymentBackend;->getDefaultPaymentApp()Landroid/content/ComponentName;
 
     move-result-object v3
@@ -339,7 +365,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_4
+    if-eqz v6, :cond_6
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -359,7 +385,7 @@
 
     iget-object v8, v7, Lcom/android/settings/nfc/PaymentBackend$PaymentAppInfo;->label:Ljava/lang/CharSequence;
 
-    if-nez v8, :cond_1
+    if-nez v8, :cond_3
 
     invoke-virtual {v6, v0}, Landroid/nfc/cardemulation/ApduServiceInfo;->loadAppLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
@@ -367,7 +393,7 @@
 
     iput-object v8, v7, Lcom/android/settings/nfc/PaymentBackend$PaymentAppInfo;->label:Ljava/lang/CharSequence;
 
-    :cond_1
+    :cond_3
     invoke-virtual {v6}, Landroid/nfc/cardemulation/ApduServiceInfo;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v8
@@ -380,11 +406,11 @@
 
     iget-boolean v8, v7, Lcom/android/settings/nfc/PaymentBackend$PaymentAppInfo;->isDefault:Z
 
-    if-eqz v8, :cond_2
+    if-eqz v8, :cond_4
 
     move-object v4, v7
 
-    :cond_2
+    :cond_4
     invoke-virtual {v6}, Landroid/nfc/cardemulation/ApduServiceInfo;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v8
@@ -395,7 +421,7 @@
 
     move-result-object v8
 
-    if-eqz v8, :cond_3
+    if-eqz v8, :cond_5
 
     new-instance v9, Landroid/content/ComponentName;
 
@@ -411,7 +437,7 @@
 
     goto :goto_1
 
-    :cond_3
+    :cond_5
     const/4 v9, 0x0
 
     iput-object v9, v7, Lcom/android/settings/nfc/PaymentBackend$PaymentAppInfo;->settingsComponent:Landroid/content/ComponentName;
@@ -433,7 +459,7 @@
 
     goto :goto_0
 
-    :cond_4
+    :cond_6
     iput-object v2, p0, Lcom/android/settings/nfc/PaymentBackend;->mAppInfos:Ljava/util/ArrayList;
 
     iput-object v4, p0, Lcom/android/settings/nfc/PaymentBackend;->mDefaultAppInfo:Lcom/android/settings/nfc/PaymentBackend$PaymentAppInfo;
@@ -497,6 +523,14 @@
     nop
 
     invoke-static {v0, v1, p1}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    return-void
+.end method
+
+.method public setFragment(Landroid/app/Fragment;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/settings/nfc/PaymentBackend;->fragment:Landroid/app/Fragment;
 
     return-void
 .end method

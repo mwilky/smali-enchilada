@@ -1623,7 +1623,7 @@
 .end method
 
 .method public static getResolveInfoByPackageName(Landroid/content/Context;Ljava/lang/String;)Landroid/content/pm/ResolveInfo;
-    .locals 5
+    .locals 6
 
     const/4 v0, 0x0
 
@@ -1651,6 +1651,14 @@
 
     move-result-object v4
 
+    if-eqz v4, :cond_0
+
+    invoke-interface {v4}, Ljava/util/List;->size()I
+
+    move-result v5
+
+    if-lez v5, :cond_0
+
     invoke-interface {v4, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -1659,6 +1667,7 @@
 
     check-cast v0, Landroid/content/pm/ResolveInfo;
 
+    :cond_0
     return-object v0
 .end method
 
@@ -4724,7 +4733,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_9
+    if-nez v5, :cond_c
 
     const-string v5, ","
 
@@ -4739,7 +4748,7 @@
     :goto_0
     array-length v8, v5
 
-    if-ge v7, v8, :cond_9
+    if-ge v7, v8, :cond_c
 
     aget-object v8, v5, v7
 
@@ -4751,7 +4760,7 @@
 
     const/4 v9, 0x1
 
-    if-eqz v8, :cond_1
+    if-eqz v8, :cond_2
 
     aget-object v8, v5, v7
 
@@ -4781,27 +4790,15 @@
 
     move-result v11
 
+    if-eqz v11, :cond_1
+
+    invoke-static {v0, v10}, Lcom/oneplus/settings/utils/OPUtils;->getResolveInfoByPackageName(Landroid/content/Context;Ljava/lang/String;)Landroid/content/pm/ResolveInfo;
+
+    move-result-object v11
+
     if-nez v11, :cond_0
 
-    aget-object v11, v5, v7
-
-    invoke-virtual {v4, v11}, Ljava/lang/StringBuilder;->indexOf(Ljava/lang/String;)I
-
-    move-result v11
-
-    aget-object v12, v5, v7
-
-    invoke-virtual {v12}, Ljava/lang/String;->length()I
-
-    move-result v12
-
-    add-int/2addr v12, v11
-
-    add-int/2addr v12, v9
-
-    invoke-virtual {v4, v11, v12}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
-
-    goto/16 :goto_3
+    goto :goto_1
 
     :cond_0
     aget-object v9, v8, v9
@@ -4852,9 +4849,31 @@
 
     invoke-interface {v2, v11}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_3
+    goto/16 :goto_6
 
     :cond_1
+    :goto_1
+    aget-object v11, v5, v7
+
+    invoke-virtual {v4, v11}, Ljava/lang/StringBuilder;->indexOf(Ljava/lang/String;)I
+
+    move-result v11
+
+    aget-object v12, v5, v7
+
+    invoke-virtual {v12}, Ljava/lang/String;->length()I
+
+    move-result v12
+
+    add-int/2addr v12, v11
+
+    add-int/2addr v12, v9
+
+    invoke-virtual {v4, v11, v12}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
+
+    goto/16 :goto_6
+
+    :cond_2
     aget-object v8, v5, v7
 
     const-string v10, "OpenShortcut:"
@@ -4865,7 +4884,7 @@
 
     const/4 v10, 0x2
 
-    if-eqz v8, :cond_4
+    if-eqz v8, :cond_6
 
     aget-object v8, v5, v7
 
@@ -4895,29 +4914,17 @@
 
     move-result v12
 
-    if-nez v12, :cond_2
+    if-eqz v12, :cond_5
 
-    aget-object v10, v5, v7
+    invoke-static {v0, v11}, Lcom/oneplus/settings/utils/OPUtils;->getResolveInfoByPackageName(Landroid/content/Context;Ljava/lang/String;)Landroid/content/pm/ResolveInfo;
 
-    invoke-virtual {v4, v10}, Ljava/lang/StringBuilder;->indexOf(Ljava/lang/String;)I
+    move-result-object v12
 
-    move-result v10
+    if-nez v12, :cond_3
 
-    aget-object v12, v5, v7
+    goto :goto_2
 
-    invoke-virtual {v12}, Ljava/lang/String;->length()I
-
-    move-result v12
-
-    add-int/2addr v12, v10
-
-    add-int/2addr v12, v9
-
-    invoke-virtual {v4, v10, v12}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
-
-    goto/16 :goto_3
-
-    :cond_2
+    :cond_3
     aget-object v12, v8, v9
 
     aget-object v10, v8, v10
@@ -4934,7 +4941,7 @@
 
     move-result-object v19
 
-    if-nez v19, :cond_3
+    if-nez v19, :cond_4
 
     new-instance v20, Lcom/oneplus/settings/better/OPAppModel;
 
@@ -4962,16 +4969,38 @@
 
     move-object/from16 v19, v20
 
-    :cond_3
+    :cond_4
     move-object/from16 v13, v19
 
     invoke-virtual {v13, v9}, Lcom/oneplus/settings/better/OPAppModel;->setType(I)V
 
     invoke-interface {v2, v13}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_3
+    goto/16 :goto_6
 
-    :cond_4
+    :cond_5
+    :goto_2
+    aget-object v10, v5, v7
+
+    invoke-virtual {v4, v10}, Ljava/lang/StringBuilder;->indexOf(Ljava/lang/String;)I
+
+    move-result v10
+
+    aget-object v12, v5, v7
+
+    invoke-virtual {v12}, Ljava/lang/String;->length()I
+
+    move-result v12
+
+    add-int/2addr v12, v10
+
+    add-int/2addr v12, v9
+
+    invoke-virtual {v4, v10, v12}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
+
+    goto/16 :goto_6
+
+    :cond_6
     aget-object v8, v5, v7
 
     const-string v11, "OpenQuickPay:"
@@ -4980,7 +5009,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_8
+    if-eqz v8, :cond_b
 
     aget-object v8, v5, v7
 
@@ -5010,29 +5039,17 @@
 
     move-result v12
 
-    if-nez v12, :cond_5
+    if-eqz v12, :cond_a
 
-    aget-object v10, v5, v7
+    invoke-static {v0, v11}, Lcom/oneplus/settings/utils/OPUtils;->getResolveInfoByPackageName(Landroid/content/Context;Ljava/lang/String;)Landroid/content/pm/ResolveInfo;
 
-    invoke-virtual {v4, v10}, Ljava/lang/StringBuilder;->indexOf(Ljava/lang/String;)I
+    move-result-object v12
 
-    move-result v10
+    if-nez v12, :cond_7
 
-    aget-object v12, v5, v7
+    goto :goto_5
 
-    invoke-virtual {v12}, Ljava/lang/String;->length()I
-
-    move-result v12
-
-    add-int/2addr v12, v10
-
-    add-int/2addr v12, v9
-
-    invoke-virtual {v4, v10, v12}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
-
-    goto :goto_3
-
-    :cond_5
+    :cond_7
     aget-object v9, v8, v9
 
     invoke-static {v9}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
@@ -5057,16 +5074,16 @@
 
     const/4 v15, 0x4
 
-    if-le v12, v15, :cond_6
+    if-le v12, v15, :cond_8
 
     move v13, v15
 
-    goto :goto_1
+    goto :goto_3
 
-    :cond_6
+    :cond_8
     move v13, v12
 
-    :goto_1
+    :goto_3
     aget-object v16, v19, v13
 
     const/16 v17, 0x0
@@ -5085,7 +5102,7 @@
 
     invoke-direct/range {v13 .. v18}, Lcom/oneplus/settings/better/OPAppModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IZ)V
 
-    if-ne v12, v6, :cond_7
+    if-ne v12, v6, :cond_9
 
     invoke-static {v0, v11}, Lcom/oneplus/settings/utils/OPUtils;->getAppIcon(Landroid/content/Context;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
@@ -5093,29 +5110,53 @@
 
     invoke-virtual {v13, v6}, Lcom/oneplus/settings/better/OPAppModel;->setAppIcon(Landroid/graphics/drawable/Drawable;)V
 
-    goto :goto_2
+    goto :goto_4
 
-    :cond_7
+    :cond_9
     invoke-static {v0, v12}, Lcom/oneplus/settings/utils/OPUtils;->getQuickPayIconByType(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v6
 
     invoke-virtual {v13, v6}, Lcom/oneplus/settings/better/OPAppModel;->setAppIcon(Landroid/graphics/drawable/Drawable;)V
 
-    :goto_2
+    :goto_4
     invoke-virtual {v13, v10}, Lcom/oneplus/settings/better/OPAppModel;->setType(I)V
 
     invoke-interface {v2, v13}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_8
-    :goto_3
+    goto :goto_6
+
+    :cond_a
+    :goto_5
+    aget-object v6, v5, v7
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->indexOf(Ljava/lang/String;)I
+
+    move-result v6
+
+    aget-object v10, v5, v7
+
+    invoke-virtual {v10}, Ljava/lang/String;->length()I
+
+    move-result v10
+
+    add-int/2addr v10, v6
+
+    add-int/2addr v10, v9
+
+    invoke-virtual {v4, v6, v10}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
+
+    nop
+
+    :cond_b
+    :goto_6
     add-int/lit8 v7, v7, 0x1
 
     const/4 v6, 0x0
 
     goto/16 :goto_0
 
-    :cond_9
+    :cond_c
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
@@ -5768,6 +5809,52 @@
     move-result-object v2
 
     invoke-static {v1, p0, v2}, Lcom/oneplus/settings/utils/OPUtils;->sendGoogleTracker(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForAssistantAPP()V
+    .locals 3
+
+    sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v0}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "quick_turn_on_voice_assistant"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    move v1, v2
+
+    :goto_0
+    move v0, v1
+
+    const-string v1, "quick_turn_on_voice_assistant"
+
+    if-eqz v0, :cond_1
+
+    const-string v2, "on"
+
+    goto :goto_1
+
+    :cond_1
+    const-string v2, "off"
+
+    :goto_1
+    invoke-static {v1, v2}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

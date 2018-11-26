@@ -670,7 +670,7 @@
 
     if-ne v2, v4, :cond_4
 
-    const v2, 0x7f120cdb
+    const v2, 0x7f120cde
 
     invoke-virtual {p0, v2}, Lcom/oneplus/settings/ringtone/OPRingtoneBaseActivity;->getString(I)Ljava/lang/String;
 
@@ -685,7 +685,7 @@
 
     if-ne v2, v5, :cond_5
 
-    const v2, 0x7f120cdc
+    const v2, 0x7f120cdf
 
     invoke-virtual {p0, v2}, Lcom/oneplus/settings/ringtone/OPRingtoneBaseActivity;->getString(I)Ljava/lang/String;
 

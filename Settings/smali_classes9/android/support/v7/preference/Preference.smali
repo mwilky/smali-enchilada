@@ -2283,7 +2283,7 @@
     return v0
 
     :cond_0
-    const/high16 v0, 0x7fc00000    # NaNf
+    const/high16 v0, 0x7fc00000    # Float.NaN
 
     invoke-virtual {p0, v0}, Landroid/support/v7/preference/Preference;->getPersistedFloat(F)F
 

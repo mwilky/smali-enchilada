@@ -2819,6 +2819,9 @@ Ha bármikor a kezdőképernyőre kíván lépni, legyintsen felfelé a képerny
     <string name="oneplus_lock_buttons">Zárolás gombok</string>
     <string name="oneplus_lock_buttons_summary">Bekapcsolt Játék módban zárja le a kapacitív gombokat</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">Ha kiválasztja az arcrözgítés adatainak kihagyását, azt tanácsoljuk, hogy eszköze és személyes adatai védelmére engedélyezzen egy más módszert, például ujjlenyomat vagy PIN-kód használatát. Egyes alkalmazásokhoz jelszót is beállíthat. A védelem engedélyezéséhez válassza a „Beállítások” > „Biztonság és képernyőzár” elemet.</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">Az arcképes azonosítás vagy az ujjlenyomat használatához állítson be egy jelszót</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">Az arcképes azonosítás vagy az ujjlenyomat használatához állítson be egy mintát</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">Az arcképes azonosítás vagy az ujjlenyomat használatához állítson be egy PIN-kódot</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Próbálja újra</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">Túl sok hibás próbálkozás!</string>
     <string name="oneplus_max_shortcuts_tips">Legfeljebb 6 parancsikont adhat hozzá</string>
@@ -3168,7 +3171,7 @@ Megjegyzés: A zár feloldása arcfelismeréssel kevésbé biztonságos, mint az
     <string name="op_not_disturb">A Ne zavarjanak mód beállításai</string>
     <string name="op_not_disturb_summary">Hívások és értesítések némítása, valamint rezgések kikapcsolása a riasztások kivételével</string>
     <string name="op_oneplus_roaming_summary">Globális internet-hozzáférési szolgáltatások nyújtása</string>
-    <string name="op_oneplus_roaming_title">Oneplus barangolás</string>
+    <string name="op_oneplus_roaming_title">OnePlus barangolás</string>
     <string name="op_primary_charm_purple_label">Sötétlila</string>
     <string name="op_primary_dark_green_label">Sötétzöld</string>
     <string name="op_primary_default_label">Kék</string>
@@ -5051,6 +5054,10 @@ Koppintson a "<b>Vissza</b> lehetőségre egy másik Wi-Fi-hálózathoz való cs
     <string name="wifi_tap_to_sign_in">Koppintson ide a hálózatba való bejelentkezéshez</string>
     <string name="wifi_tether_configure_ap_text">Wifi-hotspot beállítása</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">10 perc inaktivitás után</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">15 perc inaktivitás után</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">5 perc inaktivitás után</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Mindig legyen bekapcsolva</string>
     <string name="wifi_tether_disabled_by_airplane">Nem áll rendelkezésre, mert be van kapcsolva a Repülős üzemmód</string>
     <string name="wifi_tether_enabled_subtext">%1$s aktív</string>
     <string name="wifi_tether_failed_subtext">A hordozható wifi-hotspot kapcsolatos hiba</string>

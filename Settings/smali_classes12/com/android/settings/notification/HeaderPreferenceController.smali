@@ -286,7 +286,7 @@
 
     iget-object v3, p0, Lcom/android/settings/notification/HeaderPreferenceController;->mFragment:Landroid/support/v14/preference/PreferenceFragment;
 
-    const v4, 0x7f0a01c3
+    const v4, 0x7f0a01c6
 
     invoke-virtual {v1, v4}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 

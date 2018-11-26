@@ -368,19 +368,19 @@
 
     iget-object v3, p0, Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub;->mButtonWfcMode:Landroid/support/v7/preference/ListPreference;
 
-    const v4, 0x7f0300ce
+    const v4, 0x7f0300d0
 
     invoke-virtual {v3, v4}, Landroid/support/v7/preference/ListPreference;->setEntries(I)V
 
     iget-object v3, p0, Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub;->mButtonWfcMode:Landroid/support/v7/preference/ListPreference;
 
-    const v4, 0x7f0300d0
+    const v4, 0x7f0300d2
 
     invoke-virtual {v3, v4}, Landroid/support/v7/preference/ListPreference;->setEntryValues(I)V
 
     iget-object v3, p0, Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub;->mButtonWfcRoamingMode:Landroid/support/v7/preference/ListPreference;
 
-    const v5, 0x7f0300cd
+    const v5, 0x7f0300cf
 
     invoke-virtual {v3, v5}, Landroid/support/v7/preference/ListPreference;->setEntries(I)V
 
@@ -717,7 +717,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v2, 0x7f1213ee
+    const v2, 0x7f1213f3
 
     invoke-virtual {v0, v2}, Lcom/android/settings/SettingsActivity;->getString(I)Ljava/lang/String;
 
@@ -725,7 +725,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const v2, 0x7f1213ef
+    const v2, 0x7f1213f4
 
     invoke-virtual {v0, v2}, Lcom/android/settings/SettingsActivity;->getString(I)Ljava/lang/String;
 
@@ -745,7 +745,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a0557
+    const v3, 0x7f0a055a
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -947,13 +947,13 @@
 
     const/4 v0, 0x0
 
-    const v1, 0x7f0d02de
+    const v1, 0x7f0d02e1
 
     invoke-virtual {p1, v1, p2, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v1
 
-    const v2, 0x7f0a0426
+    const v2, 0x7f0a0429
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

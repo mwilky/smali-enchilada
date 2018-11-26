@@ -2819,6 +2819,9 @@ Aby w każdej chwili przejść do ekranu domowego, przesuń palcem w górę od �
     <string name="oneplus_lock_buttons">Przyciski blokady</string>
     <string name="oneplus_lock_buttons_summary">Zablokuj przyciski pojemnościowe, gdy włączony jest tryb gry</string>
     <string name="oneplus_lock_screen_intro_skip_dialog_text">Jeśli postanowisz pominąć rejestrację danych twarzy, zalecamy włączyć inną metodę ochrony dane osobowe, taką jak odcisk palca lub Pin. Można też ustawić hasło na niektórych aplikacjach. Aby włączyć zabezpieczenia, przejdź do \"Ustawień\" > \"Bezpieczeństwo i ekran blokady\".</string>
+    <string name="oneplus_lockpassword_choose_your_password_header_for_fingerprint">Aby skorzystać z funkcji odblokowywania twarzą lub odciskiem palca, ustaw hasło</string>
+    <string name="oneplus_lockpassword_choose_your_pattern_header_for_fingerprint">Aby skorzystać z funkcji odblokowywania twarzą lub odciskiem palca, ustaw wzór</string>
+    <string name="oneplus_lockpassword_choose_your_pin_header_for_fingerprint">Aby skorzystać z funkcji odblokowywania twarzą lub odciskiem palca, ustaw kod PIN</string>
     <string name="oneplus_lockpattern_need_to_unlock_wrong">Spróbuj ponownie</string>
     <string name="oneplus_lockpattern_too_many_failed_confirmation_attempts_header">Zbyt dużo nieprawidłowych prób!</string>
     <string name="oneplus_max_shortcuts_tips">Możesz dodać maksymalnie 6 skrótów</string>
@@ -5051,6 +5054,10 @@ Dotknij przycisku "<b>Wróć</b>, by połączyć się z inną siecią Wi-Fi.</st
     <string name="wifi_tap_to_sign_in">Kliknij tutaj, by zalogować się w sieci</string>
     <string name="wifi_tether_configure_ap_text">Skonfiguruj hotspot Wi-Fi</string>
     <string name="wifi_tether_configure_ssid_default">Punkt dostępu Android</string>
+    <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Po 10 min. bezczynności</string>
+    <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Po 15 min. bezczynności</string>
+    <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Po 5 min. bezczynności</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Zawsze wł.</string>
     <string name="wifi_tether_disabled_by_airplane">Brak dostępu z powodu włączenia trybu samolotowego</string>
     <string name="wifi_tether_enabled_subtext">Sieć %1$s jest aktywna</string>
     <string name="wifi_tether_failed_subtext">Błąd przenośnego hotspotu Wi-Fi</string>

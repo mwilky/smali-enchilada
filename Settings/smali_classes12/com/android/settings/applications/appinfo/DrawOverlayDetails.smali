@@ -415,7 +415,83 @@
 .end method
 
 .method protected refreshUi()Z
-    .locals 6
+    .locals 5
+
+    iget-object v0, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mPackageInfo:Landroid/content/pm/PackageInfo;
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mAppEntry:Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mAppEntry:Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
+
+    iget-object v0, v0, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
+
+    if-eqz v0, :cond_0
+
+    :try_start_0
+    iget-object v0, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mPm:Landroid/content/pm/PackageManager;
+
+    iget-object v1, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mAppEntry:Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
+
+    iget-object v1, v1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v1, v1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    const v2, 0x8001200
+
+    iget v3, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mUserId:I
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/pm/PackageManager;->getPackageInfoAsUser(Ljava/lang/String;II)Landroid/content/pm/PackageInfo;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mPackageInfo:Landroid/content/pm/PackageInfo;
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    sget-object v1, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->TAG:Ljava/lang/String;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Exception when retrieving package:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v3, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mAppEntry:Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
+
+    iget-object v3, v3, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v3, v3, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    :cond_0
+    :goto_0
+    iget-object v0, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mPackageInfo:Landroid/content/pm/PackageInfo;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mPackageInfo:Landroid/content/pm/PackageInfo;
+
+    iget-object v0, v0, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mOverlayBridge:Lcom/android/settings/applications/AppStateOverlayBridge;
 
@@ -433,53 +509,59 @@
 
     iput-object v0, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mOverlayState:Lcom/android/settings/applications/AppStateOverlayBridge$OverlayState;
 
+    :cond_1
+    iget-object v0, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mOverlayState:Lcom/android/settings/applications/AppStateOverlayBridge$OverlayState;
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_3
+
     iget-object v0, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mOverlayState:Lcom/android/settings/applications/AppStateOverlayBridge$OverlayState;
 
     invoke-virtual {v0}, Lcom/android/settings/applications/AppStateOverlayBridge$OverlayState;->isPermissible()Z
 
     move-result v0
 
-    iget-object v1, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mSwitchPref:Landroid/support/v14/preference/SwitchPreference;
+    iget-object v2, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mSwitchPref:Landroid/support/v14/preference/SwitchPreference;
 
-    invoke-virtual {v1, v0}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
+    invoke-virtual {v2, v0}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
 
-    iget-object v1, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mSwitchPref:Landroid/support/v14/preference/SwitchPreference;
+    iget-object v2, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mSwitchPref:Landroid/support/v14/preference/SwitchPreference;
 
-    iget-object v2, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mOverlayState:Lcom/android/settings/applications/AppStateOverlayBridge$OverlayState;
+    iget-object v3, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mOverlayState:Lcom/android/settings/applications/AppStateOverlayBridge$OverlayState;
 
-    iget-boolean v2, v2, Lcom/android/settings/applications/AppStateOverlayBridge$OverlayState;->permissionDeclared:Z
+    iget-boolean v3, v3, Lcom/android/settings/applications/AppStateOverlayBridge$OverlayState;->permissionDeclared:Z
 
-    const/4 v3, 0x1
+    if-eqz v3, :cond_2
 
-    if-eqz v2, :cond_0
+    iget-object v3, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mOverlayState:Lcom/android/settings/applications/AppStateOverlayBridge$OverlayState;
 
-    iget-object v2, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mOverlayState:Lcom/android/settings/applications/AppStateOverlayBridge$OverlayState;
+    iget-boolean v3, v3, Lcom/android/settings/applications/AppStateOverlayBridge$OverlayState;->controlEnabled:Z
 
-    iget-boolean v2, v2, Lcom/android/settings/applications/AppStateOverlayBridge$OverlayState;->controlEnabled:Z
+    if-eqz v3, :cond_2
 
-    if-eqz v2, :cond_0
+    move v3, v1
 
-    move v2, v3
+    goto :goto_1
 
-    goto :goto_0
+    :cond_2
+    const/4 v3, 0x0
 
-    :cond_0
-    const/4 v2, 0x0
+    :goto_1
+    invoke-virtual {v2, v3}, Landroid/support/v14/preference/SwitchPreference;->setEnabled(Z)V
 
-    :goto_0
-    invoke-virtual {v1, v2}, Landroid/support/v14/preference/SwitchPreference;->setEnabled(Z)V
-
-    iget-object v1, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mPm:Landroid/content/pm/PackageManager;
+    :cond_3
+    iget-object v0, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mPm:Landroid/content/pm/PackageManager;
 
     iget-object v2, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mSettingsIntent:Landroid/content/Intent;
 
-    const/16 v4, 0x80
+    const/16 v3, 0x80
 
-    iget v5, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mUserId:I
+    iget v4, p0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;->mUserId:I
 
-    invoke-virtual {v1, v2, v4, v5}, Landroid/content/pm/PackageManager;->resolveActivityAsUser(Landroid/content/Intent;II)Landroid/content/pm/ResolveInfo;
+    invoke-virtual {v0, v2, v3, v4}, Landroid/content/pm/PackageManager;->resolveActivityAsUser(Landroid/content/Intent;II)Landroid/content/pm/ResolveInfo;
 
-    move-result-object v1
+    move-result-object v0
 
-    return v3
+    return v1
 .end method

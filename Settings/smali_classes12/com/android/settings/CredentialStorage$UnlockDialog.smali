@@ -132,7 +132,7 @@
     move-result-object v1
 
     :goto_1
-    const v4, 0x7f0a024e
+    const v4, 0x7f0a0251
 
     invoke-virtual {v0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -142,7 +142,7 @@
 
     invoke-virtual {v4, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const v4, 0x7f0a037a
+    const v4, 0x7f0a037d
 
     invoke-virtual {v0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -160,7 +160,7 @@
 
     invoke-virtual {v4, p0}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    const v4, 0x7f0a01d0
+    const v4, 0x7f0a01d3
 
     invoke-virtual {v0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

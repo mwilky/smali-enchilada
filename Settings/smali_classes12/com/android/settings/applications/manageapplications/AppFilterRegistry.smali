@@ -175,7 +175,7 @@
 
     const/4 v3, 0x6
 
-    const v5, 0x7f12109c
+    const v5, 0x7f1210a1
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/settings/applications/manageapplications/AppFilterItem;-><init>(Lcom/android/settingslib/applications/ApplicationsState$AppFilter;II)V
 
@@ -189,7 +189,7 @@
 
     const/4 v3, 0x7
 
-    const v5, 0x7f12109b
+    const v5, 0x7f1210a0
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/settings/applications/manageapplications/AppFilterItem;-><init>(Lcom/android/settingslib/applications/ApplicationsState$AppFilter;II)V
 
@@ -325,8 +325,20 @@
 
     new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportScreenCutting()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    sget-object v2, Lcom/oneplus/settings/displaysizeadaption/DisplaySizeAdaptionBridge;->FILTER_APP_FULL_SCREEN:Lcom/android/settingslib/applications/ApplicationsState$AppFilter;
+
+    goto :goto_0
+
+    :cond_0
     sget-object v2, Lcom/oneplus/settings/displaysizeadaption/DisplaySizeAdaptionBridge;->FILTER_APP_DEFAULT:Lcom/android/settingslib/applications/ApplicationsState$AppFilter;
 
+    :goto_0
     const/16 v3, 0x11
 
     const v5, 0x7f120a4c
@@ -339,31 +351,43 @@
 
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
-    new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
+    const/16 v1, 0x12
 
-    sget-object v2, Lcom/oneplus/settings/displaysizeadaption/DisplaySizeAdaptionBridge;->FILTER_APP_FULL_SCREEN:Lcom/android/settingslib/applications/ApplicationsState$AppFilter;
+    new-instance v2, Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportScreenCutting()Z
 
     move-result v3
 
-    if-nez v3, :cond_0
+    if-nez v3, :cond_1
 
-    const v3, 0x7f120a4b
+    sget-object v3, Lcom/oneplus/settings/displaysizeadaption/DisplaySizeAdaptionBridge;->FILTER_APP_ORIGINAL_SIZE:Lcom/android/settingslib/applications/ApplicationsState$AppFilter;
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_0
-    const v3, 0x7f120c71
+    :cond_1
+    sget-object v3, Lcom/oneplus/settings/displaysizeadaption/DisplaySizeAdaptionBridge;->FILTER_APP_FULL_SCREEN:Lcom/android/settingslib/applications/ApplicationsState$AppFilter;
 
-    :goto_0
+    :goto_1
     const/16 v5, 0x12
 
-    invoke-direct {v1, v2, v5, v3}, Lcom/android/settings/applications/manageapplications/AppFilterItem;-><init>(Lcom/android/settingslib/applications/ApplicationsState$AppFilter;II)V
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportScreenCutting()Z
 
-    const/16 v2, 0x12
+    move-result v6
 
-    aput-object v1, v0, v2
+    if-nez v6, :cond_2
+
+    const v6, 0x7f120a4b
+
+    goto :goto_2
+
+    :cond_2
+    const v6, 0x7f120c73
+
+    :goto_2
+    invoke-direct {v2, v3, v5, v6}, Lcom/android/settings/applications/manageapplications/AppFilterItem;-><init>(Lcom/android/settingslib/applications/ApplicationsState$AppFilter;II)V
+
+    aput-object v2, v0, v1
 
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 

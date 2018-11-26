@@ -23,7 +23,7 @@
 .method private showErrorAndFinish()V
     .locals 2
 
-    const v0, 0x7f121002
+    const v0, 0x7f121007
 
     const/4 v1, 0x1
 
@@ -124,7 +124,7 @@
 
     const-string v4, "android.intent.extra.TITLE"
 
-    const v5, 0x7f121001
+    const v5, 0x7f121006
 
     invoke-virtual {p0, v5}, Lcom/android/settings/ManualDisplayActivity;->getString(I)Ljava/lang/String;
 

@@ -469,7 +469,7 @@
 .method protected onFinishInflate()V
     .locals 1
 
-    const v0, 0x7f0a0336
+    const v0, 0x7f0a0339
 
     invoke-virtual {p0, v0}, Lcom/android/settings/display/ConversationMessageView;->findViewById(I)Landroid/view/View;
 
@@ -479,7 +479,7 @@
 
     iput-object v0, p0, Lcom/android/settings/display/ConversationMessageView;->mMessageBubble:Landroid/widget/LinearLayout;
 
-    const v0, 0x7f0a033a
+    const v0, 0x7f0a033d
 
     invoke-virtual {p0, v0}, Lcom/android/settings/display/ConversationMessageView;->findViewById(I)Landroid/view/View;
 
@@ -489,7 +489,7 @@
 
     iput-object v0, p0, Lcom/android/settings/display/ConversationMessageView;->mMessageTextAndInfoView:Landroid/view/ViewGroup;
 
-    const v0, 0x7f0a0339
+    const v0, 0x7f0a033c
 
     invoke-virtual {p0, v0}, Lcom/android/settings/display/ConversationMessageView;->findViewById(I)Landroid/view/View;
 
@@ -499,7 +499,7 @@
 
     iput-object v0, p0, Lcom/android/settings/display/ConversationMessageView;->mMessageTextView:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0338
+    const v0, 0x7f0a033b
 
     invoke-virtual {p0, v0}, Lcom/android/settings/display/ConversationMessageView;->findViewById(I)Landroid/view/View;
 
