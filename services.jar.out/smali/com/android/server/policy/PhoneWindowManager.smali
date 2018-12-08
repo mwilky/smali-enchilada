@@ -22,6 +22,10 @@
 
 
 # static fields
+.field public static mAllowCustomNavBarHeight:Z
+
+.field public static mCustomNavBarHeight:I
+
 .field public static mDoublePressHomeCustomApp:Ljava/lang/String;
 
 .field public static mLongPressHomeCustomApp:Ljava/lang/String;
@@ -3954,7 +3958,16 @@
 
 .method private getNavigationBarHeight(II)I
     .locals 1
-
+    
+    sget-boolean v0, Lcom/android/server/policy/PhoneWindowManager;->mAllowCustomNavBarHeight:Z
+    
+    if-eqz v0, :cond_0
+    
+    sget v0, Lcom/android/server/policy/PhoneWindowManager;->mCustomNavBarHeight:I
+    
+	return v0
+    
+    :cond_0
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mNavigationBarHeightForRotationDefault:[I
 
     aget v0, v0, p1
@@ -3964,7 +3977,16 @@
 
 .method private getNavigationBarWidth(II)I
     .locals 1
-
+    
+    sget-boolean v0, Lcom/android/server/policy/PhoneWindowManager;->mAllowCustomNavBarHeight:Z
+    
+    if-eqz v0, :cond_0
+    
+    sget v0, Lcom/android/server/policy/PhoneWindowManager;->mCustomNavBarHeight:I
+    
+	return v0
+	
+	:cond_0
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mNavigationBarWidthForRotationDefault:[I
 
     aget v0, v0, p1
@@ -31707,6 +31729,10 @@
 .method public updateSettings()V
     .locals 14
     
+    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->allowNavBarHeightTweak()V
+    
+    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->getNavBarHeightTweak()V
+    
     invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->setCustomApp()V
 
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
@@ -32564,4 +32590,48 @@
     sput-object v1, Lcom/android/server/policy/PhoneWindowManager;->mLongPressFingerprintCustomApp:Ljava/lang/String;
    
    return-void   
+.end method
+
+.method public allowNavBarHeightTweak()V
+    .locals 2
+
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string/jumbo p0, "tweaks_custom_navbar_height"
+
+    const/4 v0, 0x0
+
+    invoke-static {v1, p0, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+    
+    sput-boolean v0, Lcom/android/server/policy/PhoneWindowManager;->mAllowCustomNavBarHeight:Z
+
+    return-void
+.end method
+
+.method public getNavBarHeightTweak()V
+    .locals 2
+
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string/jumbo p0, "tweaks_navbar_height"
+
+    const v0, 0x82
+
+    invoke-static {v1, p0, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+    
+    sput v0, Lcom/android/server/policy/PhoneWindowManager;->mCustomNavBarHeight:I
+
+    return-void
 .end method
