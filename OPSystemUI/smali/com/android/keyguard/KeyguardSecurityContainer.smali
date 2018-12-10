@@ -1424,7 +1424,7 @@
 .method protected onFinishInflate()V
     .locals 2
 
-    const v0, 0x7f0a0463
+    const v0, 0x7f0a0475
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardSecurityContainer;->findViewById(I)Landroid/view/View;
 
@@ -1902,7 +1902,7 @@
 
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mSecurityIcon:Landroid/view/View;
 
-    const v1, 0x7f0a03a5
+    const v1, 0x7f0a03a6
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1991,7 +1991,7 @@
 
     const/4 v6, 0x1
 
-    const v7, 0x7f0801ed
+    const v7, 0x7f0801f0
 
     invoke-virtual {v0, v7}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2054,7 +2054,7 @@
     :goto_4
     move v6, v10
 
-    const v10, 0x7f080266
+    const v10, 0x7f080269
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setImageResource(I)V
 

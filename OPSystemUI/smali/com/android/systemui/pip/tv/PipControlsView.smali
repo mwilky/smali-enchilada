@@ -165,7 +165,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/pip/tv/PipControlsView;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f0d01df
+    const v1, 0x7f0d01e5
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -358,7 +358,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/pip/tv/PipControlsView;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    const v3, 0x7f0d01e0
+    const v3, 0x7f0d01e6
 
     invoke-virtual {v0, v3, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -544,7 +544,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/pip/tv/PipControlsView;->mPlayPauseButtonView:Lcom/android/systemui/pip/tv/PipControlButtonView;
 
-    const v4, 0x7f08034e
+    const v4, 0x7f080351
 
     invoke-virtual {v3, v4}, Lcom/android/systemui/pip/tv/PipControlButtonView;->setImageResource(I)V
 
@@ -559,7 +559,7 @@
     :cond_8
     iget-object v3, p0, Lcom/android/systemui/pip/tv/PipControlsView;->mPlayPauseButtonView:Lcom/android/systemui/pip/tv/PipControlButtonView;
 
-    const v4, 0x7f080351
+    const v4, 0x7f080354
 
     invoke-virtual {v3, v4}, Lcom/android/systemui/pip/tv/PipControlButtonView;->setImageResource(I)V
 

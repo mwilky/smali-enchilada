@@ -170,7 +170,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d019e
+    const v3, 0x7f0d01a4
 
     invoke-virtual {v2, v3, p0, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -201,12 +201,12 @@
 
     if-eqz v3, :cond_1
 
-    const v3, 0x7f0d01a1
+    const v3, 0x7f0d01a7
 
     goto :goto_0
 
     :cond_1
-    const v3, 0x7f0d01a4
+    const v3, 0x7f0d01aa
 
     :goto_0
     invoke-virtual {v2, v3, p0, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;

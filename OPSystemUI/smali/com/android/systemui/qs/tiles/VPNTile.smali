@@ -104,8 +104,6 @@
 
 .method protected handleClick()V
     .locals 3
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     const-class v0, Lcom/android/systemui/plugins/ActivityStarter;
 
@@ -159,7 +157,7 @@
 
     iput-boolean v0, p1, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->value:Z
 
-    const v0, 0x7f08038a
+    const v0, 0x7f08038d
 
     invoke-static {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 

@@ -999,7 +999,7 @@
     <string name="oneplus_threekey_navigation_silence">完全静音且不振动</string>
     <string name="oneplus_threekey_navigation_slider_has_changed">全新三段式开关</string>
     <string name="oneplus_threekey_navigation_sound">允许声音和振动</string>
-    <string name="oneplus_threekey_navigation_turned_on_here">可在快捷设置里开启勿扰模式</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">可在下拉菜单里打开勿扰模式</string>
     <string name="oneplus_threekey_navigation_vibration">仅提供振动</string>
     <string name="op_accessibility_quick_settings_page">第 %1$d 页，共 %2$d 页</string>
     <string name="op_earphone_connect">配对中...</string>

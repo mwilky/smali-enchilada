@@ -25,10 +25,10 @@
 
 .field public static final save_scale_type:I = 0x7f0a036e
 
-.field public static final transition_current_scene:I = 0x7f0a0433
+.field public static final transition_current_scene:I = 0x7f0a0445
 
-.field public static final transition_layout_save:I = 0x7f0a0434
+.field public static final transition_layout_save:I = 0x7f0a0446
 
-.field public static final transition_position:I = 0x7f0a0435
+.field public static final transition_position:I = 0x7f0a0447
 
-.field public static final transition_transform:I = 0x7f0a0437
+.field public static final transition_transform:I = 0x7f0a0449

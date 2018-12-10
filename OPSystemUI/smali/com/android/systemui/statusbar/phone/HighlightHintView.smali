@@ -77,7 +77,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0701f4
+    const v1, 0x7f0701f7
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -207,7 +207,7 @@
 
     move-result-object v1
 
-    const v8, 0x7f0701fc
+    const v8, 0x7f0701ff
 
     invoke-virtual {v1, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -357,7 +357,7 @@
 
     move-result-object v4
 
-    const v8, 0x7f070610
+    const v8, 0x7f070619
 
     invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -577,7 +577,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0701fb
+    const v2, 0x7f0701fe
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -591,7 +591,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0701f3
+    const v2, 0x7f0701f6
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -616,7 +616,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0701f8
+    const v3, 0x7f0701fb
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

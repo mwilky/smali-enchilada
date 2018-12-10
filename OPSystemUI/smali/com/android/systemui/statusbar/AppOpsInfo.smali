@@ -62,7 +62,7 @@
 .method private bindButtons()V
     .locals 3
 
-    const v0, 0x7f0a03af
+    const v0, 0x7f0a03b0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/AppOpsInfo;->findViewById(I)Landroid/view/View;
 

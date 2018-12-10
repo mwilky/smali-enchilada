@@ -14,6 +14,8 @@
 
 .field private mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
 
+.field private mBouncerShow:Z
+
 .field private final mCallbacks:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -33,6 +35,8 @@
 .field private mHandler:Landroid/os/Handler;
 
 .field private mOPWarpChargingView:Lcom/android/systemui/statusbar/phone/OPWarpChargingView;
+
+.field private mPreventViewShow:Z
 
 .field private mScreenLifecycle:Lcom/android/systemui/keyguard/ScreenLifecycle;
 
@@ -70,6 +74,10 @@
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mWarpFastCharging:Z
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mFastCharging:Z
+
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mBouncerShow:Z
+
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mPreventViewShow:Z
 
     new-instance v1, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl$1;
 
@@ -175,6 +183,30 @@
     return p1
 .end method
 
+.method static synthetic access$400(Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mBouncerShow:Z
+
+    return v0
+.end method
+
+.method static synthetic access$402(Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mBouncerShow:Z
+
+    return p1
+.end method
+
+.method static synthetic access$502(Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mPreventViewShow:Z
+
+    return p1
+.end method
+
 .method private genOPWarpChargingView()Lcom/android/systemui/statusbar/phone/OPWarpChargingView;
     .locals 2
 
@@ -190,7 +222,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a048c
+    const v1, 0x7f0a049e
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -213,7 +245,7 @@
 .method static synthetic lambda$animationEnd$1(ILcom/android/systemui/statusbar/policy/ChargingAnimationController$ChargingStateChangeCallback;)V
     .locals 0
 
-    invoke-interface {p1, p0}, Lcom/android/systemui/statusbar/policy/ChargingAnimationController$ChargingStateChangeCallback;->onAnimationEnd(I)V
+    invoke-interface {p1, p0}, Lcom/android/systemui/statusbar/policy/ChargingAnimationController$ChargingStateChangeCallback;->onWarpCharingAnimationEnd(I)V
 
     return-void
 .end method
@@ -221,7 +253,76 @@
 .method static synthetic lambda$animationStart$0(ILcom/android/systemui/statusbar/policy/ChargingAnimationController$ChargingStateChangeCallback;)V
     .locals 0
 
-    invoke-interface {p1, p0}, Lcom/android/systemui/statusbar/policy/ChargingAnimationController$ChargingStateChangeCallback;->onAnimationStart(I)V
+    invoke-interface {p1, p0}, Lcom/android/systemui/statusbar/policy/ChargingAnimationController$ChargingStateChangeCallback;->onWarpCharingAnimationStart(I)V
+
+    return-void
+.end method
+
+.method private updateScrim()V
+    .locals 5
+
+    invoke-static {}, Lcom/android/systemui/plugin/LSState;->getInstance()Lcom/android/systemui/plugin/LSState;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/systemui/plugin/LSState;->getPhoneStatusBar()Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mContext:Landroid/content/Context;
+
+    if-eqz v1, :cond_2
+
+    if-nez v0, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v2, "updateScrim"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mWallpaper:Landroid/graphics/Bitmap;
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->geScrimtColor()I
+
+    move-result v1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x0
+
+    :goto_0
+    iget-object v2, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mOPWarpChargingView:Lcom/android/systemui/statusbar/phone/OPWarpChargingView;
+
+    invoke-virtual {v2, v1}, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->updaetScrimColor(I)V
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mOPWarpChargingView:Lcom/android/systemui/statusbar/phone/OPWarpChargingView;
+
+    iget-object v3, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mContext:Landroid/content/Context;
+
+    const v4, 0x7f040463
+
+    invoke-static {v3, v4}, Lcom/android/settingslib/Utils;->getColorAttr(Landroid/content/Context;I)I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->updateColors(I)V
+
+    return-void
+
+    :cond_2
+    :goto_1
+    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->TAG:Ljava/lang/String;
+
+    const-string v2, "can\'t updateScrim"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 .end method
@@ -448,6 +549,16 @@
     if-eqz v1, :cond_4
 
     if-eqz v0, :cond_4
+
+    iget-boolean v1, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mBouncerShow:Z
+
+    if-nez v1, :cond_4
+
+    iget-boolean v1, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mPreventViewShow:Z
+
+    if-nez v1, :cond_4
+
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->updateScrim()V
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mOPWarpChargingView:Lcom/android/systemui/statusbar/phone/OPWarpChargingView;
 

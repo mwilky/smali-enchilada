@@ -59,14 +59,14 @@
 
 .field public static final row_content:I = 0x7f0a0366
 
-.field public static final search_orb:I = 0x7f0a039f
+.field public static final search_orb:I = 0x7f0a03a0
 
-.field public static final title:I = 0x7f0a0412
+.field public static final title:I = 0x7f0a0424
 
-.field public static final title_badge:I = 0x7f0a0414
+.field public static final title_badge:I = 0x7f0a0426
 
-.field public static final title_orb:I = 0x7f0a0416
+.field public static final title_orb:I = 0x7f0a0428
 
-.field public static final title_text:I = 0x7f0a0418
+.field public static final title_text:I = 0x7f0a042a
 
-.field public static final transitionPosition:I = 0x7f0a0432
+.field public static final transitionPosition:I = 0x7f0a0444

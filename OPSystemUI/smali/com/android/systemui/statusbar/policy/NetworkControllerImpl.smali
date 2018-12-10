@@ -1065,7 +1065,7 @@
 
     if-nez v5, :cond_3
 
-    const v5, 0x7f0805ff
+    const v5, 0x7f080603
 
     aput v5, v0, v3
 
@@ -1107,7 +1107,7 @@
     goto :goto_2
 
     :cond_4
-    const v5, 0x7f0805fb
+    const v5, 0x7f0805ff
 
     aput v5, v0, v3
 
@@ -1153,7 +1153,7 @@
 
     if-lez v5, :cond_7
 
-    const v5, 0x7f080845
+    const v5, 0x7f080849
 
     aput v5, v0, v3
 
@@ -1206,7 +1206,7 @@
 
     if-lez v5, :cond_9
 
-    const v5, 0x7f080849
+    const v5, 0x7f08084d
 
     aput v5, v0, v7
 
@@ -1566,7 +1566,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0805a5
+    const v4, 0x7f0805a9
 
     const v5, 0x7f11004a
 
@@ -2157,7 +2157,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0805a5
+    const v3, 0x7f0805a9
 
     const v4, 0x7f11004a
 
@@ -2437,7 +2437,7 @@
 
     new-instance v8, Lcom/android/systemui/statusbar/policy/NetworkController$IconState;
 
-    const v9, 0x7f0805a5
+    const v9, 0x7f0805a9
 
     const v10, 0x7f11004a
 

@@ -62,7 +62,7 @@
 
     if-nez v0, :cond_0
 
-    const v2, 0x7f08082f
+    const v2, 0x7f080833
 
     invoke-direct {p0, v2}, Lcom/android/systemui/statusbar/car/ConnectedDeviceSignalController;->setNetworkSignalIcon(I)V
 

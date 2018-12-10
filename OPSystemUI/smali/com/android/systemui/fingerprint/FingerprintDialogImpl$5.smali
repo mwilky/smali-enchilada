@@ -50,9 +50,11 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2502(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2702(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Ljava/lang/String;)Ljava/lang/String;
 
-    sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
+    invoke-static {}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$1600()Z
+
+    move-result v0
 
     if-eqz v0, :cond_0
 
@@ -68,7 +70,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$5;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
-    invoke-static {v2}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2500(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2700(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -91,7 +93,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$5;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
-    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2500(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2700(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -105,7 +107,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$5;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
-    invoke-static {v1}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2500(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2700(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Ljava/lang/String;
 
     move-result-object v1
 

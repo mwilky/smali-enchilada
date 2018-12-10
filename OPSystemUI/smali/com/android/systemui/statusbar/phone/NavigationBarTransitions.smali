@@ -29,7 +29,7 @@
 .method public constructor <init>(Lcom/android/systemui/statusbar/phone/NavigationBarView;)V
     .locals 4
 
-    const v0, 0x7f080499
+    const v0, 0x7f08049d
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/statusbar/phone/BarTransitions;-><init>(Landroid/view/View;I)V
 

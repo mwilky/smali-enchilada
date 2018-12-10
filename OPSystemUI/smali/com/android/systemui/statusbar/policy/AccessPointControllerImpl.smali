@@ -61,11 +61,11 @@
 
     :array_0
     .array-data 4
-        0x7f080394
-        0x7f080395
-        0x7f080396
         0x7f080397
         0x7f080398
+        0x7f080399
+        0x7f08039a
+        0x7f08039b
     .end array-data
 .end method
 

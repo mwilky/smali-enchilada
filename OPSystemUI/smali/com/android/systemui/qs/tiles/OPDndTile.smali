@@ -61,7 +61,7 @@
 
     nop
 
-    const v0, 0x7f080370
+    const v0, 0x7f080373
 
     invoke-static {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -79,7 +79,7 @@
 
     nop
 
-    const v0, 0x7f08036f
+    const v0, 0x7f080372
 
     invoke-static {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -203,8 +203,6 @@
 
 .method protected handleClick()V
     .locals 3
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/OPDndTile;->TAG:Ljava/lang/String;
 

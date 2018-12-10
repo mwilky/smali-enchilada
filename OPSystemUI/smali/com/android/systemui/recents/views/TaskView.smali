@@ -349,7 +349,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0705c6
+    const v2, 0x7f0705cf
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -781,7 +781,7 @@
 .method protected onFinishInflate()V
     .locals 2
 
-    const v0, 0x7f0a03f7
+    const v0, 0x7f0a03f9
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->findViewById(I)Landroid/view/View;
 
@@ -791,7 +791,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
-    const v0, 0x7f0a03f8
+    const v0, 0x7f0a03fa
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->findViewById(I)Landroid/view/View;
 

@@ -1362,7 +1362,7 @@
     :goto_0
     invoke-virtual {p0, v2}, Lcom/android/systemui/recents/RecentsActivity;->setTheme(I)V
 
-    const v2, 0x7f0d019d
+    const v2, 0x7f0d01a3
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/recents/RecentsActivity;->setContentView(I)V
 

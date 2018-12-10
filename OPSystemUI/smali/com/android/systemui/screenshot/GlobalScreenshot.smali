@@ -255,7 +255,7 @@
 
     iput v2, p0, Lcom/android/systemui/screenshot/GlobalScreenshot;->mNotificationIconSize:I
 
-    const v2, 0x7f0701e2
+    const v2, 0x7f0701e5
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -281,7 +281,7 @@
 
     move v3, v2
 
-    const v4, 0x7f0703b8
+    const v4, 0x7f0703bb
 
     :try_start_0
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -307,7 +307,7 @@
     :cond_0
     iput v3, p0, Lcom/android/systemui/screenshot/GlobalScreenshot;->mPreviewWidth:I
 
-    const v4, 0x7f0703a9
+    const v4, 0x7f0703ac
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -625,7 +625,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0805a3
+    const v3, 0x7f0805a7
 
     invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 

@@ -32,63 +32,11 @@
 
 # virtual methods
 .method public onOrientationChanged(I)V
-    .locals 5
+    .locals 1
 
-    invoke-static {}, Landroid/hardware/display/DisplayManagerGlobal;->getInstance()Landroid/hardware/display/DisplayManagerGlobal;
+    iget-object v0, p0, Lcom/android/systemui/volume/OPThreekeyDialogImpl$1;->this$0:Lcom/android/systemui/volume/OPThreekeyDialogImpl;
 
-    move-result-object v0
+    invoke-static {v0}, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->access$000(Lcom/android/systemui/volume/OPThreekeyDialogImpl;)V
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/hardware/display/DisplayManagerGlobal;->getRealDisplay(I)Landroid/view/Display;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    invoke-virtual {v0}, Landroid/view/Display;->getRotation()I
-
-    move-result v1
-
-    iget-object v2, p0, Lcom/android/systemui/volume/OPThreekeyDialogImpl$1;->this$0:Lcom/android/systemui/volume/OPThreekeyDialogImpl;
-
-    invoke-static {v2}, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->access$000(Lcom/android/systemui/volume/OPThreekeyDialogImpl;)I
-
-    move-result v2
-
-    if-eq v1, v2, :cond_1
-
-    invoke-static {}, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->access$100()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Orientype to "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget-object v2, p0, Lcom/android/systemui/volume/OPThreekeyDialogImpl$1;->this$0:Lcom/android/systemui/volume/OPThreekeyDialogImpl;
-
-    invoke-static {v2, v1}, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->access$002(Lcom/android/systemui/volume/OPThreekeyDialogImpl;I)I
-
-    iget-object v2, p0, Lcom/android/systemui/volume/OPThreekeyDialogImpl$1;->this$0:Lcom/android/systemui/volume/OPThreekeyDialogImpl;
-
-    invoke-static {v2}, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->access$200(Lcom/android/systemui/volume/OPThreekeyDialogImpl;)V
-
-    :cond_1
     return-void
 .end method

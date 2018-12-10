@@ -904,7 +904,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070397
+    const v1, 0x7f07039a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -914,7 +914,7 @@
 
     nop
 
-    const v1, 0x7f070398
+    const v1, 0x7f07039b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -922,7 +922,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;->mIncreasedPaddingBetweenElements:I
 
-    const v1, 0x7f0703ae
+    const v1, 0x7f0703b1
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -930,7 +930,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;->mCollapsedSize:I
 
-    const v1, 0x7f070618
+    const v1, 0x7f070621
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -948,7 +948,7 @@
 
     iget v1, p0, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;->mStatusBarHeight:I
 
-    const v2, 0x7f0701ee
+    const v2, 0x7f0701f1
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -960,7 +960,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;->mHeadsUpInset:F
 
-    const v1, 0x7f0701ed
+    const v1, 0x7f0701f0
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

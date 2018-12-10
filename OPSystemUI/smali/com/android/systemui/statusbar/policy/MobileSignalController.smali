@@ -3160,7 +3160,7 @@
 
     if-eqz v0, :cond_6
 
-    const v0, 0x7f08082f
+    const v0, 0x7f080833
 
     return v0
 

@@ -49,7 +49,7 @@
 
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    invoke-static {v0, v1}, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->access$500(Lcom/android/systemui/volume/OPThreekeyDialogImpl;I)V
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->access$300(Lcom/android/systemui/volume/OPThreekeyDialogImpl;I)V
 
     goto :goto_0
 
@@ -65,7 +65,7 @@
 
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    invoke-static {v0, v1}, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->access$400(Lcom/android/systemui/volume/OPThreekeyDialogImpl;I)V
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->access$200(Lcom/android/systemui/volume/OPThreekeyDialogImpl;I)V
 
     goto :goto_0
 
@@ -74,7 +74,7 @@
 
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    invoke-static {v0, v1}, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->access$300(Lcom/android/systemui/volume/OPThreekeyDialogImpl;I)V
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->access$100(Lcom/android/systemui/volume/OPThreekeyDialogImpl;I)V
 
     nop
 

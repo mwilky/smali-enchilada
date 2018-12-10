@@ -695,7 +695,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0704bb
+    const v3, 0x7f0704c2
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -759,7 +759,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0704bb
+    const v3, 0x7f0704c2
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -885,16 +885,22 @@
     goto :goto_4
 
     :pswitch_0
-    if-eqz v0, :cond_3
-
-    nop
-
-    :cond_3
     const v5, 0x7f110326
 
     goto :goto_4
 
     :pswitch_1
+    invoke-static {}, Lcom/android/systemui/util/OPUtils;->isSupportWarpCharging()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_3
+
+    const v5, 0x7f110326
+
+    goto :goto_4
+
+    :cond_3
     if-eqz v0, :cond_4
 
     const v5, 0x7f11030b
@@ -1025,8 +1031,6 @@
     move-result-object v4
 
     return-object v4
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x2
@@ -1214,12 +1218,12 @@
 
     if-eqz v0, :cond_1
 
-    const v3, 0x7f0704bc
+    const v3, 0x7f0704c3
 
     goto :goto_0
 
     :cond_1
-    const v3, 0x7f070213
+    const v3, 0x7f070216
 
     :goto_0
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -2219,32 +2223,7 @@
     iget-object v5, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mChargingInfo:Landroid/widget/TextView;
 
     invoke-virtual {v5, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/KeyguardIndicationController;->setViewsVisibility()V
 
     :cond_7
-    return-void
-.end method
-
-.method public setViewsVisibility()V
-    .locals 4
-
-    .prologue    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideLockscreenClock:Z
-    
-    iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mChargingInfo:Landroid/widget/TextView;
-    
-    if-nez v0, :cond_hide
-    
-    const v2, 0x0
-    
-    goto :goto_vis    
-    
-    :cond_hide
-    const v2, 0x8
-    
-    :goto_vis
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
-    
     return-void
 .end method

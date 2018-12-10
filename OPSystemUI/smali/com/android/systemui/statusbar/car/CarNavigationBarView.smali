@@ -95,7 +95,7 @@
     invoke-virtual {v0, v1}, Lcom/android/keyguard/AlphaOptimizedImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :cond_0
-    const v0, 0x7f0a03d5
+    const v0, 0x7f0a03d7
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/car/CarNavigationBarView;->findViewById(I)Landroid/view/View;
 

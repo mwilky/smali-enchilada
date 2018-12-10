@@ -17,10 +17,6 @@
 .end annotation
 
 
-# static fields
-.field private static mListener:Lcom/android/systemui/fragments/FragmentHostManager$FragmentListener;
-
-
 # instance fields
 .field private mAccessibilityFeedbackEnabled:Z
 
@@ -108,16 +104,6 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    sput-object v0, Lcom/android/systemui/statusbar/phone/NavigationBarFragment;->mListener:Lcom/android/systemui/fragments/FragmentHostManager$FragmentListener;
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 3
 
@@ -423,8 +409,6 @@
     const-string v4, "NavigationBar"
 
     invoke-virtual {v2, v4, p1}, Lcom/android/systemui/fragments/FragmentHostManager;->addTagListener(Ljava/lang/String;Lcom/android/systemui/fragments/FragmentHostManager$FragmentListener;)Lcom/android/systemui/fragments/FragmentHostManager;
-
-    sput-object p1, Lcom/android/systemui/statusbar/phone/NavigationBarFragment;->mListener:Lcom/android/systemui/fragments/FragmentHostManager$FragmentListener;
 
     return-object v1
 .end method
@@ -2504,7 +2488,7 @@
 .end method
 
 .method public onDestroy()V
-    .locals 3
+    .locals 2
 
     invoke-super {p0}, Landroid/app/Fragment;->onDestroy()V
 
@@ -2557,31 +2541,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/shared/system/ActivityManagerWrapper;->unregisterTaskStackListener(Lcom/android/systemui/shared/system/TaskStackChangeListener;)V
 
-    sget-object v0, Lcom/android/systemui/statusbar/phone/NavigationBarFragment;->mListener:Lcom/android/systemui/fragments/FragmentHostManager$FragmentListener;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarFragment;->mNavigationBarView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
-
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getRootView()Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/systemui/fragments/FragmentHostManager;->get(Landroid/view/View;)Lcom/android/systemui/fragments/FragmentHostManager;
-
-    move-result-object v0
-
-    const-string v1, "NavigationBar"
-
-    sget-object v2, Lcom/android/systemui/statusbar/phone/NavigationBarFragment;->mListener:Lcom/android/systemui/fragments/FragmentHostManager$FragmentListener;
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/fragments/FragmentHostManager;->removeTagListener(Ljava/lang/String;Lcom/android/systemui/fragments/FragmentHostManager$FragmentListener;)V
-
-    const/4 v1, 0x0
-
-    sput-object v1, Lcom/android/systemui/statusbar/phone/NavigationBarFragment;->mListener:Lcom/android/systemui/fragments/FragmentHostManager$FragmentListener;
-
-    :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarFragment;->mRotationLockController:Lcom/android/systemui/statusbar/policy/RotationLockController;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarFragment;->mRotationLockCallback:Lcom/android/systemui/statusbar/policy/RotationLockController$RotationLockControllerCallback;
@@ -2594,6 +2553,19 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/OverviewProxyService;->removeCallback(Lcom/android/systemui/OverviewProxyService$OverviewProxyListener;)V
 
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NavigationBarFragment;->getBarTransitions()Lcom/android/systemui/statusbar/phone/BarTransitions;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NavigationBarFragment;->getBarTransitions()Lcom/android/systemui/statusbar/phone/BarTransitions;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/BarTransitions;->destroy()V
+
+    :cond_0
     return-void
 
     :catch_0

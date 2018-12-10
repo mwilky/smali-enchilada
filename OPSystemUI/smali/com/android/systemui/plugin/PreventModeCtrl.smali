@@ -495,19 +495,88 @@
 
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
 
+    invoke-direct {p0}, Lcom/android/systemui/plugin/PreventModeCtrl;->updateScrim()V
+
     return-void
 
     :cond_5
     :goto_0
     return-void
 
-    nop
-
     :array_0
     .array-data 4
         0x0
         0x3f800000    # 1.0f
     .end array-data
+.end method
+
+.method private updateScrim()V
+    .locals 5
+
+    invoke-static {}, Lcom/android/systemui/plugin/LSState;->getInstance()Lcom/android/systemui/plugin/LSState;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/systemui/plugin/LSState;->getPhoneStatusBar()Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/systemui/plugin/PreventModeCtrl;->mContext:Landroid/content/Context;
+
+    if-eqz v1, :cond_2
+
+    if-nez v0, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    const-string v1, "PreventModeCtrl"
+
+    const-string/jumbo v2, "updateScrim"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    sget-boolean v1, Lcom/android/systemui/plugin/PreventModeCtrl;->mPreventModeNoBackground:Z
+
+    if-nez v1, :cond_1
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->geScrimtColor()I
+
+    move-result v1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x0
+
+    :goto_0
+    iget-object v2, p0, Lcom/android/systemui/plugin/PreventModeCtrl;->mPMView:Lcom/android/systemui/plugin/PreventModeView;
+
+    invoke-virtual {v2, v1}, Lcom/android/systemui/plugin/PreventModeView;->updaetScrimColor(I)V
+
+    iget-object v2, p0, Lcom/android/systemui/plugin/PreventModeCtrl;->mPMView:Lcom/android/systemui/plugin/PreventModeView;
+
+    iget-object v3, p0, Lcom/android/systemui/plugin/PreventModeCtrl;->mContext:Landroid/content/Context;
+
+    const v4, 0x7f040463
+
+    invoke-static {v3, v4}, Lcom/android/settingslib/Utils;->getColorAttr(Landroid/content/Context;I)I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Lcom/android/systemui/plugin/PreventModeView;->updateColors(I)V
+
+    return-void
+
+    :cond_2
+    :goto_1
+    const-string v1, "PreventModeCtrl"
+
+    const-string v2, "can\'t updateScrim"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
 .end method
 
 
@@ -958,6 +1027,8 @@
 
     sput-boolean v2, Lcom/android/systemui/plugin/PreventModeCtrl;->mPreventModeNoBackground:Z
 
+    sput-boolean v2, Lcom/android/systemui/plugin/PreventModeCtrl;->mPreventModeActive:Z
+
     invoke-static {}, Lcom/android/systemui/plugin/LSState;->getInstance()Lcom/android/systemui/plugin/LSState;
 
     move-result-object v3
@@ -977,12 +1048,10 @@
     move-result-object v3
 
     invoke-virtual {v3, v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->notifyPreventModeChange(Z)V
-
-    :cond_1
-    sput-boolean v2, Lcom/android/systemui/plugin/PreventModeCtrl;->mPreventModeActive:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    :cond_1
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto :goto_0

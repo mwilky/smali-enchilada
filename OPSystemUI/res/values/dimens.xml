@@ -473,6 +473,9 @@
     <dimen name="fix_oneplus_contorl_layout_margin_right2">46.0px</dimen>
     <dimen name="fix_oneplus_contorl_layout_margin_top1">23.0px</dimen>
     <dimen name="fix_oneplus_contorl_layout_margin_top2">46.0px</dimen>
+    <dimen name="fix_oneplus_contorl_text_size_button">31.5px</dimen>
+    <dimen name="fix_oneplus_contorl_text_size_subheading">44.625px</dimen>
+    <dimen name="fix_three_key_down_dialog_padding_edge">21.0px</dimen>
     <dimen name="floating_window_margin_bottom">32.0dip</dimen>
     <dimen name="floating_window_margin_left">16.0dip</dimen>
     <dimen name="floating_window_margin_right">16.0dip</dimen>
@@ -1020,7 +1023,9 @@
     <dimen name="oneplus_contorl_layout_margin_bottom4">24.0dip</dimen>
     <dimen name="oneplus_contorl_layout_margin_bottom5">12.0dip</dimen>
     <dimen name="oneplus_contorl_layout_margin_left1">9.0dip</dimen>
+    <dimen name="oneplus_contorl_layout_margin_left1_px">23.625px</dimen>
     <dimen name="oneplus_contorl_layout_margin_left2">18.0dip</dimen>
+    <dimen name="oneplus_contorl_layout_margin_left2_px">47.25px</dimen>
     <dimen name="oneplus_contorl_layout_margin_left3">24.0dip</dimen>
     <dimen name="oneplus_contorl_layout_margin_left4">64.0dip</dimen>
     <dimen name="oneplus_contorl_layout_margin_left5">27.0dip</dimen>
@@ -1028,6 +1033,7 @@
     <dimen name="oneplus_contorl_layout_margin_left7">10.0dip</dimen>
     <dimen name="oneplus_contorl_layout_margin_left8">13.0dip</dimen>
     <dimen name="oneplus_contorl_layout_margin_right1">9.0dip</dimen>
+    <dimen name="oneplus_contorl_layout_margin_right1_px">23.625px</dimen>
     <dimen name="oneplus_contorl_layout_margin_right2">18.0dip</dimen>
     <dimen name="oneplus_contorl_layout_margin_right3">24.0dip</dimen>
     <dimen name="oneplus_contorl_layout_margin_right4">27.0dip</dimen>
@@ -1036,6 +1042,7 @@
     <dimen name="oneplus_contorl_layout_margin_right7">13.0dip</dimen>
     <dimen name="oneplus_contorl_layout_margin_right8">22.0dip</dimen>
     <dimen name="oneplus_contorl_layout_margin_top1">8.0dip</dimen>
+    <dimen name="oneplus_contorl_layout_margin_top1_px">21.0px</dimen>
     <dimen name="oneplus_contorl_layout_margin_top2">18.0dip</dimen>
     <dimen name="oneplus_contorl_layout_margin_top3">27.0dip</dimen>
     <dimen name="oneplus_contorl_layout_margin_top4">24.0dip</dimen>
@@ -1241,7 +1248,9 @@
     <item type="dimen" name="op_tabs_padding_start">@dimen/oneplus_contorl_layout_margin_left2</item>
     <dimen name="op_text_size_menu_material">16.0sp</dimen>
     <dimen name="op_threekey_dialog_elevation">2.0dip</dimen>
-    <dimen name="op_threekey_dialog_padding">5.0dip</dimen>
+    <dimen name="op_threekey_dialog_padding">14.0px</dimen>
+    <dimen name="op_threekey_dialog_triangle_long">189.0px</dimen>
+    <dimen name="op_threekey_dialog_triangle_short">63.0px</dimen>
     <dimen name="op_volume_button_size">124.0px</dimen>
     <dimen name="op_volume_dialog_content_padding_bottom">46.0px</dimen>
     <dimen name="op_volume_dialog_content_padding_top">34.0px</dimen>
@@ -1604,14 +1613,14 @@
     <dimen name="text_size_title_material_toolbar">20.0dip</dimen>
     <dimen name="text_subhead">13.0sp</dimen>
     <dimen name="three_key_down_dialog_padding_edge">8.0dip</dimen>
-    <dimen name="three_key_down_dialog_position">486.0px</dimen>
-    <dimen name="three_key_down_dialog_position_l">103.0dip</dimen>
-    <dimen name="three_key_middle_dialog_position">359.0px</dimen>
-    <dimen name="three_key_middle_dialog_position_l">103.0dip</dimen>
-    <dimen name="three_key_up_dialog_position">228.75998px</dimen>
-    <item type="dimen" name="three_key_up_dialog_position_deep">@dimen/three_key_down_dialog_padding_edge</item>
-    <item type="dimen" name="three_key_up_dialog_position_deep_land">@dimen/three_key_down_dialog_padding_edge</item>
-    <dimen name="three_key_up_dialog_position_l">103.0dip</dimen>
+    <dimen name="three_key_down_dialog_position">423.0px</dimen>
+    <dimen name="three_key_down_dialog_position_l">270.375px</dimen>
+    <dimen name="three_key_middle_dialog_position">296.0px</dimen>
+    <dimen name="three_key_middle_dialog_position_l">270.375px</dimen>
+    <dimen name="three_key_up_dialog_position">165.0px</dimen>
+    <item type="dimen" name="three_key_up_dialog_position_deep">@dimen/fix_three_key_down_dialog_padding_edge</item>
+    <item type="dimen" name="three_key_up_dialog_position_deep_land">@dimen/fix_three_key_down_dialog_padding_edge</item>
+    <dimen name="three_key_up_dialog_position_l">270.375px</dimen>
     <dimen name="timepicker_am_top_padding">4.0dip</dimen>
     <dimen name="timepicker_ampm_horizontal_padding">16.0dip</dimen>
     <dimen name="timepicker_ampm_label_size">16.0dip</dimen>

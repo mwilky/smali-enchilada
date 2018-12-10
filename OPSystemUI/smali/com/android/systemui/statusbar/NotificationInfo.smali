@@ -141,7 +141,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const v4, 0x7f0a0449
+    const v4, 0x7f0a045b
 
     invoke-virtual {p0, v4}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 

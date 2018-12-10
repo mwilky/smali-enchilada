@@ -361,7 +361,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLCancelView:Landroid/view/View;
 
-    const v0, 0x7f0a042a
+    const v0, 0x7f0a043c
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/QLRootView;->findViewById(I)Landroid/view/View;
 
@@ -369,7 +369,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLTrackView:Landroid/view/View;
 
-    const v0, 0x7f0a042b
+    const v0, 0x7f0a043d
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/QLRootView;->findViewById(I)Landroid/view/View;
 
@@ -411,7 +411,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0704d3
+    const v1, 0x7f0704da
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 

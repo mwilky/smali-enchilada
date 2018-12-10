@@ -6077,7 +6077,7 @@
     <style name="oneplus_contorl_text_style_menu" parent="@style/oneplus_contorl_text_style_body2" />
     <style name="oneplus_contorl_text_style_subheading" parent="@style/oneplus_contorl_text_style_base">
         <item name="android:textSize">@dimen/oneplus_contorl_text_size_subheading</item>
-        <item name="android:fontFamily">@string/oneplus_contorl_font_family_button</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_subheading</item>
     </style>
     <style name="oneplus_contorl_text_style_subtitle" parent="@style/oneplus_contorl_text_style_base">
         <item name="android:textSize">@dimen/oneplus_contorl_text_size_subtitle</item>

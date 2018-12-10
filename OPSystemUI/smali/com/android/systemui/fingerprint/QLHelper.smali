@@ -247,7 +247,7 @@
     goto :goto_0
 
     :pswitch_0
-    const v2, 0x7f08022e
+    const v2, 0x7f080231
 
     invoke-direct {p0, v1, v2}, Lcom/android/systemui/fingerprint/QLHelper;->getDrawable(Landroid/content/res/Resources;I)Landroid/graphics/drawable/Drawable;
 
@@ -256,7 +256,7 @@
     goto :goto_0
 
     :pswitch_1
-    const v2, 0x7f08022d
+    const v2, 0x7f080230
 
     invoke-direct {p0, v1, v2}, Lcom/android/systemui/fingerprint/QLHelper;->getDrawable(Landroid/content/res/Resources;I)Landroid/graphics/drawable/Drawable;
 
@@ -265,7 +265,7 @@
     goto :goto_0
 
     :pswitch_2
-    const v2, 0x7f080419
+    const v2, 0x7f08041d
 
     invoke-direct {p0, v1, v2}, Lcom/android/systemui/fingerprint/QLHelper;->getDrawable(Landroid/content/res/Resources;I)Landroid/graphics/drawable/Drawable;
 
@@ -274,7 +274,7 @@
     goto :goto_0
 
     :pswitch_3
-    const v2, 0x7f080418
+    const v2, 0x7f08041c
 
     invoke-direct {p0, v1, v2}, Lcom/android/systemui/fingerprint/QLHelper;->getDrawable(Landroid/content/res/Resources;I)Landroid/graphics/drawable/Drawable;
 
@@ -1705,7 +1705,7 @@
     :cond_5
     iget-object v2, p0, Lcom/android/systemui/fingerprint/QLHelper;->mContext:Landroid/content/Context;
 
-    const v3, 0x50c0068
+    const v3, 0x50c0070
 
     invoke-static {v2, v3, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 

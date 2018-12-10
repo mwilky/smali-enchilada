@@ -40,6 +40,8 @@
 
 .field private mPlugin:Z
 
+.field private mScrim:Landroid/view/View;
+
 .field mStartAnimationAssets1:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -633,7 +635,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->mBatteryLevel:Landroid/widget/TextView;
 
-    const v0, 0x7f0a048f
+    const v0, 0x7f0a04a1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->findViewById(I)Landroid/view/View;
 
@@ -653,7 +655,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->mBackgroundView:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a0478
+    const v0, 0x7f0a048a
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->findViewById(I)Landroid/view/View;
 
@@ -676,6 +678,14 @@
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->mInfoView:Landroid/view/View;
+
+    const v0, 0x7f0a0390
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->mScrim:Landroid/view/View;
 
     return-void
 .end method
@@ -904,5 +914,44 @@
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
     :cond_0
+    return-void
+.end method
+
+.method public updaetScrimColor(I)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->mScrim:Landroid/view/View;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->mScrim:Landroid/view/View;
+
+    invoke-virtual {v0, p1}, Landroid/view/View;->setBackgroundColor(I)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public updateColors(I)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->mBatteryLevel:Landroid/widget/TextView;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->mBatteryLevel:Landroid/widget/TextView;
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(I)V
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->mWrapview:Landroid/widget/ImageView;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->mWrapview:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setColorFilter(I)V
+
+    :cond_1
     return-void
 .end method

@@ -29,10 +29,10 @@
 
 .field public static final design_textinput_caption_translate_y:I = 0x7f07019a
 
-.field public static final mtrl_textinput_box_bottom_offset:I = 0x7f070352
+.field public static final mtrl_textinput_box_bottom_offset:I = 0x7f070355
 
-.field public static final mtrl_textinput_box_label_cutout_padding:I = 0x7f070355
+.field public static final mtrl_textinput_box_label_cutout_padding:I = 0x7f070358
 
-.field public static final mtrl_textinput_box_stroke_width_default:I = 0x7f070359
+.field public static final mtrl_textinput_box_stroke_width_default:I = 0x7f07035c
 
-.field public static final mtrl_textinput_box_stroke_width_focused:I = 0x7f07035a
+.field public static final mtrl_textinput_box_stroke_width_focused:I = 0x7f07035d

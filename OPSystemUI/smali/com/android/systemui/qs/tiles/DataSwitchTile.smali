@@ -187,8 +187,6 @@
 
 .method public static synthetic lambda$handleClick$0(Lcom/android/systemui/qs/tiles/DataSwitchTile;)V
     .locals 1
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile;->mSubscriptionManager:Landroid/telephony/SubscriptionManager;
 
@@ -755,7 +753,7 @@
 
     const/4 v3, 0x1
 
-    const v4, 0x7f08036a
+    const v4, 0x7f08036d
 
     packed-switch v2, :pswitch_data_0
 
@@ -772,12 +770,12 @@
     :pswitch_0
     if-eqz v1, :cond_2
 
-    const v2, 0x7f080369
+    const v2, 0x7f08036c
 
     goto :goto_2
 
     :cond_2
-    const v2, 0x7f08036b
+    const v2, 0x7f08036e
 
     :goto_2
     invoke-static {v2}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
@@ -796,7 +794,7 @@
     goto :goto_3
 
     :cond_3
-    const v4, 0x7f08036c
+    const v4, 0x7f08036f
 
     :goto_3
     invoke-static {v4}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;

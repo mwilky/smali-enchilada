@@ -161,20 +161,6 @@
 .method private initRoundCornerView()V
     .locals 5
 
-    iget-object v0, p0, Lcom/android/systemui/ScreenDecorations;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x5030001
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/android/systemui/ScreenDecorations;->mHasRoundedCorner:Z
-
     iget-object v0, p0, Lcom/android/systemui/ScreenDecorations;->mOverlay:Landroid/view/View;
 
     const v1, 0x7f0a0212
@@ -274,7 +260,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0d01b0
+    const v2, 0x7f0d01b6
 
     invoke-virtual {v0, v2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -494,7 +480,7 @@
 
     new-instance v4, Lcom/android/systemui/ScreenDecorations$TunablePaddingTagListener;
 
-    const v5, 0x7f0a03d6
+    const v5, 0x7f0a03d8
 
     invoke-direct {v4, p1, v5}, Lcom/android/systemui/ScreenDecorations$TunablePaddingTagListener;-><init>(II)V
 
@@ -950,7 +936,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0705ce
+    const v1, 0x7f0705d7
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -964,7 +950,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0705d0
+    const v1, 0x7f0705d9
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -978,13 +964,27 @@
 
     move-result-object v0
 
-    const v1, 0x7f0705cf
+    const v1, 0x7f0705d8
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v0
 
     iput v0, p0, Lcom/android/systemui/ScreenDecorations;->mRoundedDefaultBottom:I
+
+    iget-object v0, p0, Lcom/android/systemui/ScreenDecorations;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x5030001
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/android/systemui/ScreenDecorations;->mHasRoundedCorner:Z
 
     iget-object v0, p0, Lcom/android/systemui/ScreenDecorations;->mContext:Landroid/content/Context;
 
@@ -1022,7 +1022,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0705cd
+    const v1, 0x7f0705d6
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

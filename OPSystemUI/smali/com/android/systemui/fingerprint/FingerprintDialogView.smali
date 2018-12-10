@@ -601,7 +601,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mLayout:Landroid/view/ViewGroup;
 
-    const v1, 0x7f0a03c9
+    const v1, 0x7f0a03cb
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -948,7 +948,7 @@
 
     if-ne p2, v0, :cond_0
 
-    const v0, 0x7f080211
+    const v0, 0x7f080214
 
     :goto_0
     goto :goto_1
@@ -960,7 +960,7 @@
 
     if-ne p2, v1, :cond_1
 
-    const v0, 0x7f080211
+    const v0, 0x7f080214
 
     goto :goto_0
 
@@ -969,7 +969,7 @@
 
     if-ne p2, v0, :cond_2
 
-    const v0, 0x7f080210
+    const v0, 0x7f080213
 
     goto :goto_0
 
@@ -980,7 +980,7 @@
 
     if-ne p2, v0, :cond_3
 
-    const v0, 0x7f080210
+    const v0, 0x7f080213
 
     goto :goto_0
 
@@ -1286,41 +1286,6 @@
     .locals 4
 
     :try_start_0
-    const-string v0, "FingerprintDialogView"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "set aod mode: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v2, ", current : "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mAodMode:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mAodMode:I
-
-    if-ne v0, p1, :cond_0
-
-    return-void
-
-    :cond_0
-    iput p1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mAodMode:I
-
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mDaemon:Lvendor/oneplus/hardware/display/V1_0/IOneplusDisplay;
 
     const/16 v1, 0x8
@@ -1505,6 +1470,151 @@
 .end method
 
 .method public static synthetic lambda$setDisplayPressMode$5(Lcom/android/systemui/fingerprint/FingerprintDialogView;I)V
+    .locals 4
+
+    :try_start_0
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mDaemon:Lvendor/oneplus/hardware/display/V1_0/IOneplusDisplay;
+
+    const/16 v1, 0x9
+
+    invoke-interface {v0, v1, p1}, Lvendor/oneplus/hardware/display/V1_0/IOneplusDisplay;->setMode(II)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "FingerprintDialogView"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Exception e = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_0
+    return-void
+.end method
+
+.method private resetState()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mDialogImpl:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
+
+    invoke-virtual {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->resetState()V
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->updateDimViewVisibility(Z)V
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->updateIconVisibility(Z)V
+
+    invoke-virtual {p0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->stopAnimation()V
+
+    return-void
+.end method
+
+.method private setDismissesDialog(Landroid/view/View;)V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setClickable(Z)V
+
+    new-instance v0, Lcom/android/systemui/fingerprint/-$$Lambda$FingerprintDialogView$B8knj9fNUARFy_4W9AAQmquxejk;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/fingerprint/-$$Lambda$FingerprintDialogView$B8knj9fNUARFy_4W9AAQmquxejk;-><init>(Lcom/android/systemui/fingerprint/FingerprintDialogView;)V
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+
+    return-void
+.end method
+
+.method private setDisplayAodMode(I)V
+    .locals 3
+
+    invoke-static {}, Lcom/android/systemui/util/OPUtils;->isCustomFingerprint()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    const-string v0, "FingerprintDialogView"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "set aod mode: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, ", current : "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mAodMode:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mAodMode:I
+
+    if-ne v0, p1, :cond_1
+
+    return-void
+
+    :cond_1
+    iput p1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mAodMode:I
+
+    new-instance v0, Lcom/android/systemui/fingerprint/-$$Lambda$FingerprintDialogView$iinQwULtuAjE9o2W9MjvSm6d430;
+
+    invoke-direct {v0, p0, p1}, Lcom/android/systemui/fingerprint/-$$Lambda$FingerprintDialogView$iinQwULtuAjE9o2W9MjvSm6d430;-><init>(Lcom/android/systemui/fingerprint/FingerprintDialogView;I)V
+
+    invoke-static {v0}, Lcom/android/settingslib/utils/ThreadUtils;->postOnBackgroundThread(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method private setDisplayHideAod(I)V
+    .locals 1
+
+    new-instance v0, Lcom/android/systemui/fingerprint/-$$Lambda$FingerprintDialogView$-Yy718xw-H-3ufypLW2C4h3xjN0;
+
+    invoke-direct {v0, p0, p1}, Lcom/android/systemui/fingerprint/-$$Lambda$FingerprintDialogView$-Yy718xw-H-3ufypLW2C4h3xjN0;-><init>(Lcom/android/systemui/fingerprint/FingerprintDialogView;I)V
+
+    invoke-static {v0}, Lcom/android/settingslib/utils/ThreadUtils;->postOnBackgroundThread(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method private setDisplayPressMode(I)V
     .locals 5
 
     const/4 v0, 0x1
@@ -1519,7 +1629,6 @@
     const/4 v1, 0x0
 
     :goto_0
-    :try_start_0
     iget-boolean v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mShowingPressed:Z
 
     if-ne v2, v1, :cond_1
@@ -1566,115 +1675,6 @@
     return-void
 
     :cond_2
-    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mDaemon:Lvendor/oneplus/hardware/display/V1_0/IOneplusDisplay;
-
-    const/16 v2, 0x9
-
-    invoke-interface {v0, v2, p1}, Lvendor/oneplus/hardware/display/V1_0/IOneplusDisplay;->setMode(II)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_1
-
-    :catch_0
-    move-exception v0
-
-    const-string v1, "FingerprintDialogView"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Exception e = "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :goto_1
-    return-void
-.end method
-
-.method private resetState()V
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mDialogImpl:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
-
-    invoke-virtual {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->resetState()V
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->updateDimViewVisibility(Z)V
-
-    invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->updateIconVisibility(Z)V
-
-    invoke-virtual {p0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->stopAnimation()V
-
-    return-void
-.end method
-
-.method private setDismissesDialog(Landroid/view/View;)V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->setClickable(Z)V
-
-    new-instance v0, Lcom/android/systemui/fingerprint/-$$Lambda$FingerprintDialogView$B8knj9fNUARFy_4W9AAQmquxejk;
-
-    invoke-direct {v0, p0}, Lcom/android/systemui/fingerprint/-$$Lambda$FingerprintDialogView$B8knj9fNUARFy_4W9AAQmquxejk;-><init>(Lcom/android/systemui/fingerprint/FingerprintDialogView;)V
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
-
-    return-void
-.end method
-
-.method private setDisplayAodMode(I)V
-    .locals 1
-
-    invoke-static {}, Lcom/android/systemui/util/OPUtils;->isCustomFingerprint()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    new-instance v0, Lcom/android/systemui/fingerprint/-$$Lambda$FingerprintDialogView$iinQwULtuAjE9o2W9MjvSm6d430;
-
-    invoke-direct {v0, p0, p1}, Lcom/android/systemui/fingerprint/-$$Lambda$FingerprintDialogView$iinQwULtuAjE9o2W9MjvSm6d430;-><init>(Lcom/android/systemui/fingerprint/FingerprintDialogView;I)V
-
-    invoke-static {v0}, Lcom/android/settingslib/utils/ThreadUtils;->postOnBackgroundThread(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method private setDisplayHideAod(I)V
-    .locals 1
-
-    new-instance v0, Lcom/android/systemui/fingerprint/-$$Lambda$FingerprintDialogView$-Yy718xw-H-3ufypLW2C4h3xjN0;
-
-    invoke-direct {v0, p0, p1}, Lcom/android/systemui/fingerprint/-$$Lambda$FingerprintDialogView$-Yy718xw-H-3ufypLW2C4h3xjN0;-><init>(Lcom/android/systemui/fingerprint/FingerprintDialogView;I)V
-
-    invoke-static {v0}, Lcom/android/settingslib/utils/ThreadUtils;->postOnBackgroundThread(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method private setDisplayPressMode(I)V
-    .locals 1
-
     new-instance v0, Lcom/android/systemui/fingerprint/-$$Lambda$FingerprintDialogView$wc2kvQqJCIIcRwCbOYrLUK2Vd0w;
 
     invoke-direct {v0, p0, p1}, Lcom/android/systemui/fingerprint/-$$Lambda$FingerprintDialogView$wc2kvQqJCIIcRwCbOYrLUK2Vd0w;-><init>(Lcom/android/systemui/fingerprint/FingerprintDialogView;I)V
@@ -2000,17 +2000,51 @@
 .method private updateFPIndicationText()V
     .locals 5
 
-    invoke-virtual {p0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->getSecurityMode()Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
+    const-string v0, "FingerprintDialogView"
 
-    move-result-object v0
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mSecurityMode:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    if-ne v1, v0, :cond_0
+    const-string/jumbo v2, "updateFPIndicationText: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    invoke-virtual {v2}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isFingerprintLockout()Z
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isFingerprintLockout()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mAodIndicationTextView:Landroid/widget/TextView;
+
+    const v1, 0x104023d
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
     return-void
 
     :cond_0
+    invoke-virtual {p0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->getSecurityMode()Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
+
+    move-result-object v0
+
     iput-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mSecurityMode:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     const/4 v1, 0x0
@@ -2629,7 +2663,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mLayout:Landroid/view/ViewGroup;
 
-    const v1, 0x7f0a0412
+    const v1, 0x7f0a0424
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -2639,7 +2673,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mLayout:Landroid/view/ViewGroup;
 
-    const v2, 0x7f0a03e4
+    const v2, 0x7f0a03e6
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -3311,7 +3345,7 @@
 .end method
 
 .method public showFingerprintPressed()V
-    .locals 3
+    .locals 4
 
     iget-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mShowDefaultDialog:Z
 
@@ -3352,48 +3386,50 @@
 
     move-result v0
 
+    const/4 v1, 0x1
+
     if-nez v0, :cond_3
 
     const-string v0, "FingerprintDialogView"
 
-    const-string v1, "fp is disabled currently"
+    const-string v2, "fp is disabled currently"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iput-boolean v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mShowingPressed:Z
 
     return-void
 
     :cond_3
     const-string v0, "FingerprintDialogView"
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "showFingerprintPressed = true, owner:"
+    const-string v3, "showFingerprintPressed = true, owner:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mOwnerString:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mOwnerString:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, ", done:"
+    const-string v3, ", done:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-boolean v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mIsKeyguardDone:Z
+    iget-boolean v3, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mIsKeyguardDone:Z
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mDialogImpl:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
-
-    const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->updateTransparentIconLayoutParams(Z)V
 
@@ -4013,52 +4049,48 @@
 
     if-eqz v15, :cond_9
 
-    iget-object v14, v0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mIconNormal:Lcom/android/systemui/fingerprint/CircleImageView;
+    iget-object v15, v0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mIconNormal:Lcom/android/systemui/fingerprint/CircleImageView;
 
-    const/4 v15, 0x4
+    invoke-virtual {v15, v14}, Lcom/android/systemui/fingerprint/CircleImageView;->setVisibility(I)V
 
-    invoke-virtual {v14, v15}, Lcom/android/systemui/fingerprint/CircleImageView;->setVisibility(I)V
+    iget-object v15, v0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mIconDim:Lcom/android/systemui/fingerprint/CircleImageView;
 
-    iget-object v14, v0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mIconDim:Lcom/android/systemui/fingerprint/CircleImageView;
+    invoke-virtual {v15, v14}, Lcom/android/systemui/fingerprint/CircleImageView;->setVisibility(I)V
 
-    invoke-virtual {v14, v15}, Lcom/android/systemui/fingerprint/CircleImageView;->setVisibility(I)V
+    iget-object v15, v0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mIconDisable:Lcom/android/systemui/fingerprint/CircleImageView;
 
-    iget-object v14, v0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mIconDisable:Lcom/android/systemui/fingerprint/CircleImageView;
+    invoke-virtual {v15, v14}, Lcom/android/systemui/fingerprint/CircleImageView;->setVisibility(I)V
 
-    invoke-virtual {v14, v15}, Lcom/android/systemui/fingerprint/CircleImageView;->setVisibility(I)V
+    iget-object v15, v0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mAodIndicationTextView:Landroid/widget/TextView;
 
-    iget-object v14, v0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mAodIndicationTextView:Landroid/widget/TextView;
-
-    invoke-virtual {v14, v15}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v15, v14}, Landroid/widget/TextView;->setVisibility(I)V
 
     const-string v3, "4"
 
     goto/16 :goto_3
 
     :cond_9
-    const/4 v15, 0x4
+    iget-object v15, v0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    iget-object v14, v0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+    invoke-virtual {v15}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isFingerprintLockout()Z
 
-    invoke-virtual {v14}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isFingerprintLockout()Z
+    move-result v15
 
-    move-result v14
+    if-eqz v15, :cond_b
 
-    if-eqz v14, :cond_b
+    iget-object v15, v0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mIconNormal:Lcom/android/systemui/fingerprint/CircleImageView;
 
-    iget-object v14, v0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mIconNormal:Lcom/android/systemui/fingerprint/CircleImageView;
+    invoke-virtual {v15, v14}, Lcom/android/systemui/fingerprint/CircleImageView;->setVisibility(I)V
 
-    invoke-virtual {v14, v15}, Lcom/android/systemui/fingerprint/CircleImageView;->setVisibility(I)V
+    iget-object v15, v0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mIconDim:Lcom/android/systemui/fingerprint/CircleImageView;
 
-    iget-object v14, v0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mIconDim:Lcom/android/systemui/fingerprint/CircleImageView;
+    invoke-virtual {v15, v14}, Lcom/android/systemui/fingerprint/CircleImageView;->setVisibility(I)V
 
-    invoke-virtual {v14, v15}, Lcom/android/systemui/fingerprint/CircleImageView;->setVisibility(I)V
+    iget-object v15, v0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mIconDisable:Lcom/android/systemui/fingerprint/CircleImageView;
 
-    iget-object v14, v0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mIconDisable:Lcom/android/systemui/fingerprint/CircleImageView;
+    const/4 v14, 0x0
 
-    const/4 v15, 0x0
-
-    invoke-virtual {v14, v15}, Lcom/android/systemui/fingerprint/CircleImageView;->setVisibility(I)V
+    invoke-virtual {v15, v14}, Lcom/android/systemui/fingerprint/CircleImageView;->setVisibility(I)V
 
     iget-object v14, v0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mAodIndicationTextView:Landroid/widget/TextView;
 
@@ -4161,12 +4193,6 @@
 
     invoke-virtual {v14, v15}, Lcom/android/systemui/fingerprint/CircleImageView;->setVisibility(I)V
 
-    iget-object v14, v0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mDialogImpl:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
-
-    const/16 v15, 0x8
-
-    invoke-virtual {v14, v15}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->updateTransparentIconVisibility(I)V
-
     const-string v3, "7"
 
     goto/16 :goto_3
@@ -4222,12 +4248,6 @@
     iget-object v14, v0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mAodIndicationTextView:Landroid/widget/TextView;
 
     invoke-virtual {v14, v15}, Landroid/widget/TextView;->setVisibility(I)V
-
-    iget-object v14, v0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mDialogImpl:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
-
-    const/16 v15, 0x8
-
-    invoke-virtual {v14, v15}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->updateTransparentIconVisibility(I)V
 
     const-string v3, "8-0"
 

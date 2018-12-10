@@ -21,7 +21,7 @@
 .method public constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;)V
     .locals 3
 
-    const v0, 0x7f08085e
+    const v0, 0x7f080862
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/statusbar/phone/BarTransitions;-><init>(Landroid/view/View;I)V
 
@@ -39,7 +39,7 @@
 
     const/4 v1, 0x1
 
-    const v2, 0x7f070619
+    const v2, 0x7f070622
 
     invoke-virtual {v0, v2, v1, v1}, Landroid/content/res/Resources;->getFraction(III)F
 
@@ -269,7 +269,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v1, 0x7f0a03db
+    const v1, 0x7f0a03dd
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -279,7 +279,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v1, 0x7f0a03d5
+    const v1, 0x7f0a03d7
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 

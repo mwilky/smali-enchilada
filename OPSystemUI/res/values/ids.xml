@@ -783,6 +783,7 @@
     <item type="id" name="scrim_alpha_start">false</item>
     <item type="id" name="scrim_behind">false</item>
     <item type="id" name="scrim_in_front">false</item>
+    <item type="id" name="scrim_view">false</item>
     <item type="id" name="scrollIndicatorDown">false</item>
     <item type="id" name="scrollIndicatorUp">false</item>
     <item type="id" name="scrollView">false</item>
@@ -818,6 +819,7 @@
     <item type="id" name="shadow_alpha_animator_end_value_tag">false</item>
     <item type="id" name="shadow_alpha_animator_start_value_tag">false</item>
     <item type="id" name="shadow_alpha_animator_tag">false</item>
+    <item type="id" name="shape_id">false</item>
     <item type="id" name="shelf_menu_anchor_anchor">false</item>
     <item type="id" name="shortcut">false</item>
     <item type="id" name="signal_cluster">false</item>
@@ -886,7 +888,23 @@
     <item type="id" name="textinput_helper_text">false</item>
     <item type="id" name="threekey_icon">false</item>
     <item type="id" name="threekey_layout">false</item>
+    <item type="id" name="threekey_navigation">false</item>
+    <item type="id" name="threekey_navigation_first">false</item>
+    <item type="id" name="threekey_navigation_full_blue_dialog">false</item>
+    <item type="id" name="threekey_navigation_gotit_text">false</item>
+    <item type="id" name="threekey_navigation_next_row">false</item>
+    <item type="id" name="threekey_navigation_next_text">false</item>
+    <item type="id" name="threekey_navigation_right_triangle_row">false</item>
+    <item type="id" name="threekey_navigation_ring_row">false</item>
+    <item type="id" name="threekey_navigation_silent_icon">false</item>
+    <item type="id" name="threekey_navigation_silent_row">false</item>
+    <item type="id" name="threekey_navigation_silent_text">false</item>
+    <item type="id" name="threekey_navigation_triangle_icon">false</item>
+    <item type="id" name="threekey_navigation_vibrate_row">false</item>
     <item type="id" name="threekey_text">false</item>
+    <item type="id" name="threekey_vurtual_ring">false</item>
+    <item type="id" name="threekey_vurtual_silent">false</item>
+    <item type="id" name="threekey_vurtual_vibrate">false</item>
     <item type="id" name="thumbs_row">false</item>
     <item type="id" name="tile_label">false</item>
     <item type="id" name="tile_page">false</item>
@@ -1037,7 +1055,4 @@
     <item type="id" name="zzz_global_action_panel">false</item>
     <item type="id" name="zzz_global_action_view">false</item>
     <item type="id" name="zzz_global_action_view_bg">false</item>
-    <item type="id" name="clock_right">false</item>
-    <item type="id" name="battery_left">false</item>
-    <item type="id" name="battery_left_visible_tag">false</item>
 </resources>

@@ -1151,7 +1151,7 @@
     iput-boolean v1, p0, Lcom/android/systemui/qs/external/TileLifecycleManager;->mIsBound:Z
 
     :goto_0
-    goto :goto_1
+    goto :goto_2
 
     :cond_3
     iput v1, p0, Lcom/android/systemui/qs/external/TileLifecycleManager;->mBindTryCount:I
@@ -1164,14 +1164,29 @@
 
     if-eqz v0, :cond_4
 
+    :try_start_1
     iget-object v0, p0, Lcom/android/systemui/qs/external/TileLifecycleManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p0}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
+    :try_end_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
 
+    goto :goto_1
+
+    :catch_1
+    move-exception v0
+
+    const-string v2, "TileLifecycleManager"
+
+    const-string v3, "Service not registered while trying to unbind, skip silently"
+
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    :goto_1
     iput-boolean v1, p0, Lcom/android/systemui/qs/external/TileLifecycleManager;->mIsBound:Z
 
     :cond_4
-    :goto_1
+    :goto_2
     return-void
 .end method
 

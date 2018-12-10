@@ -25,6 +25,6 @@
 
 .field public static final remote_input_send:I = 0x7f0a034b
 
-.field public static final text_see_more:I = 0x7f0a0401
+.field public static final text_see_more:I = 0x7f0a0403
 
-.field public static final text_see_more_count:I = 0x7f0a0402
+.field public static final text_see_more_count:I = 0x7f0a0404

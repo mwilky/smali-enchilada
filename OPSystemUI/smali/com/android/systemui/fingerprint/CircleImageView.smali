@@ -1206,62 +1206,38 @@
 .end method
 
 .method private initPosition(Landroid/content/Context;)V
-    .locals 4
+    .locals 3
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f07049c
+    const v1, 0x7f0704a4
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v0
 
+    iget v1, p0, Lcom/android/systemui/fingerprint/CircleImageView;->mType:I
+
+    iget v2, p0, Lcom/android/systemui/fingerprint/CircleImageView;->TYPE_HIGH_LIGHT:I
+
+    if-ne v1, v2, :cond_0
+
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    const v2, 0x7f07049d
+    const v2, 0x7f0704a0
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v1
-
-    iget v2, p0, Lcom/android/systemui/fingerprint/CircleImageView;->mType:I
-
-    iget v3, p0, Lcom/android/systemui/fingerprint/CircleImageView;->TYPE_HIGH_LIGHT:I
-
-    if-ne v2, v3, :cond_0
-
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    const v3, 0x7f070498
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
     move-result v0
 
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    const v3, 0x7f070499
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v1
-
     :cond_0
-    int-to-float v2, v0
+    int-to-float v1, v0
 
-    invoke-virtual {p0, v2}, Lcom/android/systemui/fingerprint/CircleImageView;->setX(F)V
-
-    int-to-float v2, v1
-
-    invoke-virtual {p0, v2}, Lcom/android/systemui/fingerprint/CircleImageView;->setY(F)V
+    invoke-virtual {p0, v1}, Lcom/android/systemui/fingerprint/CircleImageView;->setY(F)V
 
     return-void
 .end method
@@ -1460,7 +1436,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f07049a
+    const v2, 0x7f0704a1
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -1481,7 +1457,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f07049e
+    const v2, 0x7f0704a5
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 

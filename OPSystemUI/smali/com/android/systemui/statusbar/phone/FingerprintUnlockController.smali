@@ -2135,24 +2135,24 @@
 
     iget v5, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
-    const/4 v6, 0x4
+    const/4 v7, 0x4
 
-    if-eq v5, v6, :cond_3
+    if-eq v5, v7, :cond_3
 
     iget v5, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
-    const/4 v6, 0x7
+    const/4 v7, 0x7
 
-    if-ne v5, v6, :cond_4
+    if-ne v5, v7, :cond_4
 
     :cond_3
     const-string v5, "lock_unlock_success"
 
-    const-string v6, "finger"
+    const-string v7, "finger"
 
-    const-string v7, "1"
+    const-string v8, "1"
 
-    invoke-static {v5, v6, v7}, Lcom/android/systemui/util/MdmLogger;->log(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v5, v7, v8}, Lcom/android/systemui/util/MdmLogger;->log(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_4
     invoke-static {}, Landroid/os/Trace;->endSection()V
@@ -2194,7 +2194,7 @@
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->onWakeAndUnlocking(Z)V
 
-    goto :goto_3
+    goto/16 :goto_3
 
     :cond_5
     :pswitch_3
@@ -2213,6 +2213,33 @@
     goto :goto_1
 
     :cond_6
+    iget v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
+
+    if-ne v1, v6, :cond_7
+
+    if-eqz v0, :cond_7
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+
+    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->isOccluded()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_7
+
+    const-string v1, "FingerprintController"
+
+    const-string v3, "MODE_UNLOCK, and keyguard is occluded. Direct unlock without animation."
+
+    invoke-static {v1, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
+
+    invoke-virtual {v1}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->keyguardDone()V
+
+    goto :goto_1
+
+    :cond_7
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->showBouncer()V
 
     :goto_1
@@ -2223,7 +2250,7 @@
     :pswitch_4
     iget v5, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
-    if-ne v5, v3, :cond_7
+    if-ne v5, v3, :cond_8
 
     const-string v3, "MODE_WAKE_AND_UNLOCK_PULSING"
 
@@ -2235,10 +2262,10 @@
 
     goto :goto_2
 
-    :cond_7
+    :cond_8
     iget v3, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
-    if-ne v3, v4, :cond_8
+    if-ne v3, v4, :cond_9
 
     const-string v3, "MODE_WAKE_AND_UNLOCK"
 
@@ -2246,7 +2273,7 @@
 
     goto :goto_2
 
-    :cond_8
+    :cond_9
     const-string v3, "MODE_WAKE_AND_UNLOCK_FROM_DREAM"
 
     invoke-static {v3}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
@@ -2274,7 +2301,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_a
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -2284,7 +2311,7 @@
 
     invoke-virtual {v1, v4}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->setWakeAndUnlocking(Z)V
 
-    :cond_9
+    :cond_a
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
     nop

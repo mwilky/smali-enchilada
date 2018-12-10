@@ -1301,7 +1301,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0705c1
+    const v1, 0x7f0705ca
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -3293,7 +3293,7 @@
 
     iput v1, p0, Lcom/android/systemui/recents/views/TaskStackLayoutAlgorithm;->mFocusState:I
 
-    const v1, 0x7f0705b4
+    const v1, 0x7f0705bd
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -3303,7 +3303,7 @@
 
     nop
 
-    const v1, 0x7f0705a3
+    const v1, 0x7f0705ac
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -3311,7 +3311,7 @@
 
     iput v1, p0, Lcom/android/systemui/recents/views/TaskStackLayoutAlgorithm;->mFocusedBottomPeekHeight:I
 
-    const v1, 0x7f0705b6
+    const v1, 0x7f0705bf
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -3319,7 +3319,7 @@
 
     iput v1, p0, Lcom/android/systemui/recents/views/TaskStackLayoutAlgorithm;->mMinTranslationZ:I
 
-    const v1, 0x7f0705b5
+    const v1, 0x7f0705be
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -3327,19 +3327,19 @@
 
     iput v1, p0, Lcom/android/systemui/recents/views/TaskStackLayoutAlgorithm;->mMaxTranslationZ:I
 
-    const v3, 0x7f0705a9
+    const v3, 0x7f0705b2
 
-    const v4, 0x7f0705a8
+    const v4, 0x7f0705b1
 
-    const v5, 0x7f0705aa
+    const v5, 0x7f0705b3
 
-    const v6, 0x7f0705aa
+    const v6, 0x7f0705b3
 
-    const v7, 0x7f0705aa
+    const v7, 0x7f0705b3
 
-    const v8, 0x7f0705aa
+    const v8, 0x7f0705b3
 
-    const v9, 0x7f0705aa
+    const v9, 0x7f0705b3
 
     move-object v2, p1
 
@@ -3349,19 +3349,19 @@
 
     iput v1, p0, Lcom/android/systemui/recents/views/TaskStackLayoutAlgorithm;->mBaseInitialTopOffset:I
 
-    const v3, 0x7f0705a5
+    const v3, 0x7f0705ae
 
-    const v4, 0x7f0705a4
+    const v4, 0x7f0705ad
 
-    const v5, 0x7f0705a7
+    const v5, 0x7f0705b0
 
-    const v6, 0x7f0705a7
+    const v6, 0x7f0705b0
 
-    const v7, 0x7f0705a7
+    const v7, 0x7f0705b0
 
-    const v8, 0x7f0705a7
+    const v8, 0x7f0705b0
 
-    const v9, 0x7f0705a7
+    const v9, 0x7f0705b0
 
     invoke-static/range {v2 .. v9}, Lcom/android/systemui/recents/views/TaskStackLayoutAlgorithm;->getDimensionForDevice(Landroid/content/Context;IIIIIII)I
 
@@ -3377,7 +3377,7 @@
 
     invoke-virtual {v1, p1}, Lcom/android/systemui/recents/views/lowram/TaskStackLowRamLayoutAlgorithm;->reloadOnConfigurationChange(Landroid/content/Context;)V
 
-    const v1, 0x7f0705ab
+    const v1, 0x7f0705b4
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -3385,11 +3385,11 @@
 
     iput v1, p0, Lcom/android/systemui/recents/views/TaskStackLayoutAlgorithm;->mMinMargin:I
 
-    const v1, 0x7f0705b2
+    const v1, 0x7f0705bb
 
-    const v2, 0x7f0705b1
+    const v2, 0x7f0705ba
 
-    const v3, 0x7f0705b3
+    const v3, 0x7f0705bc
 
     invoke-static {p1, v2, v1, v3, v1}, Lcom/android/systemui/recents/views/TaskStackLayoutAlgorithm;->getDimensionForDevice(Landroid/content/Context;IIII)I
 
@@ -3397,11 +3397,11 @@
 
     iput v1, p0, Lcom/android/systemui/recents/views/TaskStackLayoutAlgorithm;->mBaseTopMargin:I
 
-    const v1, 0x7f0705ad
+    const v1, 0x7f0705b6
 
-    const v2, 0x7f0705ac
+    const v2, 0x7f0705b5
 
-    const v3, 0x7f0705af
+    const v3, 0x7f0705b8
 
     invoke-static {p1, v2, v1, v3, v1}, Lcom/android/systemui/recents/views/TaskStackLayoutAlgorithm;->getDimensionForDevice(Landroid/content/Context;IIII)I
 
@@ -3409,7 +3409,7 @@
 
     iput v1, p0, Lcom/android/systemui/recents/views/TaskStackLayoutAlgorithm;->mBaseSideMargin:I
 
-    const v1, 0x7f0705a2
+    const v1, 0x7f0705ab
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -3419,19 +3419,19 @@
 
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackLayoutAlgorithm;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0705c1
+    const v3, 0x7f0705ca
 
-    const v4, 0x7f0705c1
+    const v4, 0x7f0705ca
 
-    const v5, 0x7f0705c1
+    const v5, 0x7f0705ca
 
-    const v6, 0x7f0705c2
+    const v6, 0x7f0705cb
 
-    const v7, 0x7f0705c1
+    const v7, 0x7f0705ca
 
-    const v8, 0x7f0705c2
+    const v8, 0x7f0705cb
 
-    const v9, 0x7f0705a0
+    const v9, 0x7f0705a9
 
     invoke-static/range {v2 .. v9}, Lcom/android/systemui/recents/views/TaskStackLayoutAlgorithm;->getDimensionForDevice(Landroid/content/Context;IIIIIII)I
 

@@ -31,7 +31,7 @@
 
     nop
 
-    const v0, 0x7f0803a7
+    const v0, 0x7f0803aa
 
     invoke-static {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -157,8 +157,6 @@
 
 .method public handleClick()V
     .locals 4
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mState:Lcom/android/systemui/plugins/qs/QSTile$State;
 

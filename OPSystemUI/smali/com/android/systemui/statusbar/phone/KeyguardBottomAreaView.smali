@@ -1024,19 +1024,6 @@
     return-void
 
     :cond_0
-    sget-boolean v1, Lcom/android/mwilky/Renovate;->mHideLockscreenShortcuts:Z
-    
-    if-eqz v1, :cond_stock
-    
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mRightAffordanceView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
-    
-    const/16 v0, 0x8
-	
-    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setVisibility(I)V
-    
-    return-void
-    
-    :cond_stock
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mRightAffordanceView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mDozing:Z
@@ -1083,20 +1070,7 @@
 
 .method private updateLeftAffordanceIcon()V
     .locals 4
-    
-    sget-boolean v1, Lcom/android/mwilky/Renovate;->mHideLockscreenShortcuts:Z
-    
-    if-eqz v1, :cond_stock
-    
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLeftAffordanceView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
-    
-    const/16 v0, 0x8
-	
-    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setVisibility(I)V
-    
-    return-void
-    
-    :cond_stock
+
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLeftButton:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton;
 
     invoke-interface {v0}, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton;->getIcon()Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
@@ -1222,20 +1196,7 @@
 
 .method private updateRightAffordanceIcon()V
     .locals 4
-    
-    sget-boolean v1, Lcom/android/mwilky/Renovate;->mHideLockscreenShortcuts:Z
-    
-    if-eqz v1, :cond_stock
-    
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mRightAffordanceView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
-    
-    const/16 v0, 0x8
-	
-    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setVisibility(I)V
-    
-    return-void
-    
-    :cond_stock
+
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mRightButton:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton;
 
     invoke-interface {v0}, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton;->getIcon()Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
@@ -1993,7 +1954,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070213
+    const v1, 0x7f070216
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2005,7 +1966,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070214
+    const v1, 0x7f070217
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2078,7 +2039,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f07020d
+    const v3, 0x7f070210
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2090,7 +2051,7 @@
 
     move-result-object v2
 
-    const v4, 0x7f070208
+    const v4, 0x7f07020b
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2336,7 +2297,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070213
+    const v1, 0x7f070216
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2348,7 +2309,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070214
+    const v1, 0x7f070217
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2657,7 +2618,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f070214
+    const v2, 0x7f070217
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

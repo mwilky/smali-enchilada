@@ -15,13 +15,13 @@
 
 
 # virtual methods
-.method public onAnimationEnd(I)V
+.method public onWarpCharingAnimationEnd(I)V
     .locals 0
 
     return-void
 .end method
 
-.method public onAnimationStart(I)V
+.method public onWarpCharingAnimationStart(I)V
     .locals 0
 
     return-void

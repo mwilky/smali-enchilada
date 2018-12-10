@@ -114,6 +114,17 @@
     :cond_0
     iget-object v4, v0, Lcom/android/systemui/qs/QSDetailClipper;->mDetail:Landroid/view/View;
 
+    invoke-virtual {v4}, Landroid/view/View;->isAttachedToWindow()Z
+
+    move-result v4
+
+    if-nez v4, :cond_1
+
+    return-void
+
+    :cond_1
+    iget-object v4, v0, Lcom/android/systemui/qs/QSDetailClipper;->mDetail:Landroid/view/View;
+
     invoke-virtual {v4}, Landroid/view/View;->getWidth()I
 
     move-result v4
@@ -124,11 +135,11 @@
 
     move-result v5
 
-    if-lez v4, :cond_1
+    if-lez v4, :cond_2
 
-    if-gtz v5, :cond_2
+    if-gtz v5, :cond_3
 
-    :cond_1
+    :cond_2
     new-instance v6, Landroid/util/DisplayMetrics;
 
     invoke-direct {v6}, Landroid/util/DisplayMetrics;-><init>()V
@@ -145,22 +156,22 @@
 
     iget v5, v6, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    :cond_2
+    :cond_3
     sub-int v6, v4, v1
 
     sub-int v7, v5, v2
 
     const/4 v8, 0x0
 
-    if-ltz v1, :cond_3
+    if-ltz v1, :cond_4
 
-    if-ltz v6, :cond_3
+    if-ltz v6, :cond_4
 
-    if-ltz v2, :cond_3
+    if-ltz v2, :cond_4
 
-    if-gez v7, :cond_4
+    if-gez v7, :cond_5
 
-    :cond_3
+    :cond_4
     invoke-static/range {p1 .. p1}, Ljava/lang/Math;->abs(I)I
 
     move-result v8
@@ -189,7 +200,7 @@
 
     move-result v8
 
-    :cond_4
+    :cond_5
     mul-int v9, v1, v1
 
     mul-int v10, v2, v2
@@ -280,7 +291,7 @@
 
     double-to-int v9, v10
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_6
 
     iget-object v10, v0, Lcom/android/systemui/qs/QSDetailClipper;->mDetail:Landroid/view/View;
 
@@ -296,7 +307,7 @@
 
     goto :goto_0
 
-    :cond_5
+    :cond_6
     iget-object v10, v0, Lcom/android/systemui/qs/QSDetailClipper;->mDetail:Landroid/view/View;
 
     int-to-float v11, v9
@@ -328,14 +339,14 @@
 
     invoke-virtual {v10, v11, v12}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_7
 
     iget-object v10, v0, Lcom/android/systemui/qs/QSDetailClipper;->mAnimator:Landroid/animation/Animator;
 
     invoke-virtual {v10, v3}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    :cond_6
-    if-eqz p3, :cond_7
+    :cond_7
+    if-eqz p3, :cond_8
 
     iget-object v10, v0, Lcom/android/systemui/qs/QSDetailClipper;->mBackground:Landroid/graphics/drawable/TransitionDrawable;
 
@@ -363,7 +374,7 @@
 
     goto :goto_1
 
-    :cond_7
+    :cond_8
     iget-object v10, v0, Lcom/android/systemui/qs/QSDetailClipper;->mAnimator:Landroid/animation/Animator;
 
     iget-object v11, v0, Lcom/android/systemui/qs/QSDetailClipper;->mGoneOnEnd:Landroid/animation/AnimatorListenerAdapter;

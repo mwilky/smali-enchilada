@@ -67,7 +67,7 @@
 
     invoke-virtual {p3, p0}, Lcom/android/systemui/statusbar/NotificationData$Entry;->setInflationTask(Lcom/android/systemui/statusbar/InflationTask;)V
 
-    const v1, 0x7f0d01d1
+    const v1, 0x7f0d01d7
 
     invoke-virtual {v0, v1, p2, p0}, Landroid/support/v4/view/AsyncLayoutInflater;->inflate(ILandroid/view/ViewGroup;Landroid/support/v4/view/AsyncLayoutInflater$OnInflateFinishedListener;)V
 

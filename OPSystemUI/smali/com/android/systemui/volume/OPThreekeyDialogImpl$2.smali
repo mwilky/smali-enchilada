@@ -47,7 +47,11 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->access$600(Lcom/android/systemui/volume/OPThreekeyDialogImpl;Z)V
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->access$400(Lcom/android/systemui/volume/OPThreekeyDialogImpl;Z)V
+
+    iget-object v0, p0, Lcom/android/systemui/volume/OPThreekeyDialogImpl$2;->this$0:Lcom/android/systemui/volume/OPThreekeyDialogImpl;
+
+    invoke-static {v0}, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->access$500(Lcom/android/systemui/volume/OPThreekeyDialogImpl;)V
 
     return-void
 .end method

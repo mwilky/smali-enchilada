@@ -135,7 +135,7 @@
     if-eqz v0, :cond_1
 
     :cond_0
-    const v0, 0x7f080608
+    const v0, 0x7f08060c
 
     iput v0, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mMobileStrengthId:I
 
@@ -570,7 +570,7 @@
     :goto_2
     iget v3, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mLastMobileStrengthId:I
 
-    const v5, 0x7f080608
+    const v5, 0x7f08060c
 
     if-eq v3, v5, :cond_9
 
@@ -761,7 +761,7 @@
 
     iget v0, p0, Lcom/android/systemui/statusbar/SignalClusterView$PhoneState;->mLastMobileStrengthId:I
 
-    const v1, 0x7f080608
+    const v1, 0x7f08060c
 
     if-ne v0, v1, :cond_0
 

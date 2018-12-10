@@ -951,7 +951,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSFooterImpl;->mPageIndicator:Lcom/android/systemui/qs/PageIndicator;
 
-    const v0, 0x7f0a03b0
+    const v0, 0x7f0a03b1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSFooterImpl;->findViewById(I)Landroid/view/View;
 
@@ -961,7 +961,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSFooterImpl;->mSettingsButton:Lcom/android/systemui/statusbar/phone/SettingsButton;
 
-    const v0, 0x7f0a03b1
+    const v0, 0x7f0a03b2
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSFooterImpl;->findViewById(I)Landroid/view/View;
 

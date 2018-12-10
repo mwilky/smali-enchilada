@@ -2275,7 +2275,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyboardShortcuts;->mSpecialCharacterDrawables:Landroid/util/SparseArray;
 
-    const v1, 0x7f08029b
+    const v1, 0x7f08029e
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2285,7 +2285,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyboardShortcuts;->mSpecialCharacterDrawables:Landroid/util/SparseArray;
 
-    const v1, 0x7f08029d
+    const v1, 0x7f0802a0
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2295,7 +2295,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyboardShortcuts;->mSpecialCharacterDrawables:Landroid/util/SparseArray;
 
-    const v1, 0x7f0802a1
+    const v1, 0x7f0802a4
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2305,7 +2305,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyboardShortcuts;->mSpecialCharacterDrawables:Landroid/util/SparseArray;
 
-    const v1, 0x7f0802a0
+    const v1, 0x7f0802a3
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2315,7 +2315,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyboardShortcuts;->mSpecialCharacterDrawables:Landroid/util/SparseArray;
 
-    const v1, 0x7f08029c
+    const v1, 0x7f08029f
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2325,7 +2325,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyboardShortcuts;->mSpecialCharacterDrawables:Landroid/util/SparseArray;
 
-    const v1, 0x7f08029e
+    const v1, 0x7f0802a1
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2335,7 +2335,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyboardShortcuts;->mModifierDrawables:Landroid/util/SparseArray;
 
-    const v1, 0x7f08029f
+    const v1, 0x7f0802a2
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

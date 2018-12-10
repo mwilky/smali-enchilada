@@ -215,7 +215,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/policy/DeadZone;->mDecay:I
 
-    const v1, 0x7f07037f
+    const v1, 0x7f070382
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -223,7 +223,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/policy/DeadZone;->mSizeMin:I
 
-    const v1, 0x7f070380
+    const v1, 0x7f070383
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -514,7 +514,7 @@
 
     invoke-direct {v9}, Lcom/android/systemui/volume/OutputChooserLayout$Item;-><init>()V
 
-    const v10, 0x7f08035b
+    const v10, 0x7f08035e
 
     iput v10, v9, Lcom/android/systemui/volume/OutputChooserLayout$Item;->iconResId:I
 
@@ -540,7 +540,7 @@
 
     if-ne v10, v11, :cond_4
 
-    const v13, 0x7f080358
+    const v13, 0x7f08035b
 
     iput v13, v9, Lcom/android/systemui/volume/OutputChooserLayout$Item;->iconResId:I
 
@@ -664,7 +664,7 @@
     :cond_4
     if-ne v10, v12, :cond_5
 
-    const v8, 0x7f080359
+    const v8, 0x7f08035c
 
     iput v8, v9, Lcom/android/systemui/volume/OutputChooserLayout$Item;->iconResId:I
 
@@ -729,7 +729,7 @@
 
     iput-object v1, v0, Lcom/android/systemui/volume/OutputChooserLayout$Item;->line1:Ljava/lang/CharSequence;
 
-    const v1, 0x7f08034b
+    const v1, 0x7f08034e
 
     iput v1, v0, Lcom/android/systemui/volume/OutputChooserLayout$Item;->iconResId:I
 
@@ -744,7 +744,7 @@
 
     iput-object v1, v0, Lcom/android/systemui/volume/OutputChooserLayout$Item;->line1:Ljava/lang/CharSequence;
 
-    const v1, 0x7f08034c
+    const v1, 0x7f08034f
 
     iput v1, v0, Lcom/android/systemui/volume/OutputChooserLayout$Item;->iconResId:I
 
@@ -781,7 +781,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0704ca
+    const v1, 0x7f0704d1
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1398,9 +1398,43 @@
 
     invoke-virtual {p0, v1, v2}, Lcom/android/systemui/volume/OutputChooserDialog;->isStreamFromOutputDevice(II)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
+
+    sget-object v0, Lcom/android/systemui/volume/OutputChooserDialog;->TAG:Ljava/lang/String;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "StreamFrom output DEVICE_OUT_ALL_A2DP:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v3, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mProfileManager:Lcom/android/settingslib/bluetooth/LocalBluetoothProfileManager;
+
+    invoke-virtual {v3}, Lcom/android/settingslib/bluetooth/LocalBluetoothProfileManager;->getA2dpProfile()Lcom/android/settingslib/bluetooth/A2dpProfile;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/android/settingslib/bluetooth/A2dpProfile;->getActiveDevice()Landroid/bluetooth/BluetoothDevice;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v3, " type:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mProfileManager:Lcom/android/settingslib/bluetooth/LocalBluetoothProfileManager;
 
@@ -1415,15 +1449,49 @@
     return-object v0
 
     :cond_1
-    const/4 v1, 0x0
+    const/16 v1, 0x70
 
-    const/16 v2, 0x70
+    const/4 v2, 0x0
 
-    invoke-virtual {p0, v1, v2}, Lcom/android/systemui/volume/OutputChooserDialog;->isStreamFromOutputDevice(II)Z
+    invoke-virtual {p0, v2, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->isStreamFromOutputDevice(II)Z
 
     move-result v1
 
     if-eqz v1, :cond_2
+
+    sget-object v0, Lcom/android/systemui/volume/OutputChooserDialog;->TAG:Ljava/lang/String;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "StreamFrom output DEVICE_OUT_ALL_SCO:"
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v3, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mProfileManager:Lcom/android/settingslib/bluetooth/LocalBluetoothProfileManager;
+
+    invoke-virtual {v3}, Lcom/android/settingslib/bluetooth/LocalBluetoothProfileManager;->getHeadsetProfile()Lcom/android/settingslib/bluetooth/HeadsetProfile;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/android/settingslib/bluetooth/HeadsetProfile;->getActiveDevice()Landroid/bluetooth/BluetoothDevice;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v3, " type:"
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mProfileManager:Lcom/android/settingslib/bluetooth/LocalBluetoothProfileManager;
 
@@ -1483,12 +1551,42 @@
 
     if-eqz v4, :cond_3
 
+    sget-object v0, Lcom/android/systemui/volume/OutputChooserDialog;->TAG:Ljava/lang/String;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "StreamFrom output DEVICE_OUT_HEARING_AID:"
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v4, " type:"
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
     return-object v3
 
     :cond_3
     goto :goto_0
 
     :cond_4
+    sget-object v1, Lcom/android/systemui/volume/OutputChooserDialog;->TAG:Ljava/lang/String;
+
+    const-string v2, "no active device"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
     return-object v0
 .end method
 
@@ -1617,7 +1715,7 @@
 
     invoke-super {p0, p1}, Landroid/app/Dialog;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0d0155
+    const v0, 0x7f0d015b
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/OutputChooserDialog;->setContentView(I)V
 
@@ -1649,7 +1747,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f080244
+    const v2, 0x7f080247
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1659,7 +1757,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0803f5
+    const v2, 0x7f0803f9
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1669,7 +1767,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0803b5
+    const v2, 0x7f0803b8
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1679,7 +1777,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0803b6
+    const v2, 0x7f0803b9
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2192,7 +2290,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mSecondaryTextColor:I
 
-    const v1, 0x7f080878
+    const v1, 0x7f08087c
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBgDrawable:I
 
@@ -2231,7 +2329,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mSecondaryTextColor:I
 
-    const v1, 0x7f080877
+    const v1, 0x7f08087b
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBgDrawable:I
 

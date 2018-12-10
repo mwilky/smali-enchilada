@@ -63,7 +63,7 @@
 
     move-result v0
 
-    const v1, 0x7f08035a
+    const v1, 0x7f08035d
 
     if-eqz v0, :cond_1
 
@@ -141,7 +141,7 @@
 
     invoke-direct {v6}, Lcom/android/systemui/qs/QSDetailItems$Item;-><init>()V
 
-    const v7, 0x7f08035b
+    const v7, 0x7f08035e
 
     iput v7, v6, Lcom/android/systemui/qs/QSDetailItems$Item;->iconResId:I
 
@@ -163,7 +163,7 @@
 
     if-ne v7, v8, :cond_4
 
-    const v8, 0x7f080358
+    const v8, 0x7f08035b
 
     iput v8, v6, Lcom/android/systemui/qs/QSDetailItems$Item;->iconResId:I
 
@@ -238,7 +238,7 @@
     :cond_4
     if-ne v7, v9, :cond_5
 
-    const v8, 0x7f080359
+    const v8, 0x7f08035c
 
     iput v8, v6, Lcom/android/systemui/qs/QSDetailItems$Item;->iconResId:I
 

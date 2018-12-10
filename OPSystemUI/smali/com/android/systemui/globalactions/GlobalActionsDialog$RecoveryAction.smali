@@ -24,9 +24,9 @@
 
     iput-object p1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$RecoveryAction;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
-    const p1, 0x7f08039a
+    const p1, 0x7f08039d
 
-    const v0, 0x50c0064
+    const v0, 0x50c006c
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog$SinglePressAction;-><init>(II)V
 

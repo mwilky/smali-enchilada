@@ -1820,7 +1820,7 @@
 .end method
 
 .method onBondingStateChanged(I)V
-    .locals 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -1847,7 +1847,7 @@
 
     const/16 v1, 0xc
 
-    if-ne p1, v1, :cond_4
+    if-ne p1, v1, :cond_2
 
     iget-object v1, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mDevice:Landroid/bluetooth/BluetoothDevice;
 
@@ -1862,67 +1862,17 @@
     goto :goto_0
 
     :cond_1
-    const-string v1, "persist.vendor.btstack.connect.peer_earbud"
-
-    invoke-static {v1, v0}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    const-string v1, "CachedBluetoothDevice"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Initiating connection to"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v3, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mDevice:Landroid/bluetooth/BluetoothDevice;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     iget-object v1, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mDevice:Landroid/bluetooth/BluetoothDevice;
 
     invoke-virtual {v1}, Landroid/bluetooth/BluetoothDevice;->isBondingInitiatedLocally()Z
 
     move-result v1
 
-    if-nez v1, :cond_2
+    if-eqz v1, :cond_2
 
-    iget-object v1, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mDevice:Landroid/bluetooth/BluetoothDevice;
-
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothDevice;->isTwsPlusDevice()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
+    invoke-virtual {p0, v0}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->connect(Z)V
 
     :cond_2
-    invoke-virtual {p0, v0}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->connect(Z)V
-
-    goto :goto_0
-
-    :cond_3
-    iget-object v1, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mDevice:Landroid/bluetooth/BluetoothDevice;
-
-    invoke-virtual {v1}, Landroid/bluetooth/BluetoothDevice;->isBondingInitiatedLocally()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    invoke-virtual {p0, v0}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->connect(Z)V
-
-    :cond_4
     :goto_0
     return-void
 .end method

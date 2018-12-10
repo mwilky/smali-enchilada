@@ -19,10 +19,6 @@
 .end annotation
 
 
-# static fields
-.field private static final OP_DEBUG:Z
-
-
 # instance fields
 .field protected mBarService:Lcom/android/internal/statusbar/IStatusBarService;
 
@@ -119,16 +115,6 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    sget-boolean v0, Lcom/android/systemui/util/OPUtils;->DEBUG_ONEPLUS:Z
-
-    sput-boolean v0, Lcom/android/systemui/statusbar/NotificationEntryManager;->OP_DEBUG:Z
-
-    return-void
-.end method
-
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
 
@@ -779,6 +765,12 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    const-string v5, ", reason:"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
@@ -786,11 +778,11 @@
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_3
-    if-nez v0, :cond_c
+    if-nez v0, :cond_b
 
     iget-object v3, v2, Landroid/app/Notification;->fullScreenIntent:Landroid/app/PendingIntent;
 
-    if-eqz v3, :cond_c
+    if-eqz v3, :cond_b
 
     iget-object v3, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Landroid/service/notification/StatusBarNotification;
 
@@ -803,10 +795,6 @@
     move-result v4
 
     if-eqz v4, :cond_5
-
-    sget-boolean v1, Lcom/android/systemui/statusbar/NotificationEntryManager;->OP_DEBUG:Z
-
-    if-eqz v1, :cond_c
 
     const-string v1, "NotificationEntryMgr"
 
@@ -855,10 +843,6 @@
 
     if-ge v4, v5, :cond_7
 
-    sget-boolean v1, Lcom/android/systemui/statusbar/NotificationEntryManager;->OP_DEBUG:Z
-
-    if-eqz v1, :cond_c
-
     const-string v1, "NotificationEntryMgr"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -897,10 +881,6 @@
 
     :cond_7
     if-ne p2, v1, :cond_9
-
-    sget-boolean v1, Lcom/android/systemui/statusbar/NotificationEntryManager;->OP_DEBUG:Z
-
-    if-eqz v1, :cond_c
 
     const-string v1, "NotificationEntryMgr"
 
@@ -947,10 +927,6 @@
 
     invoke-virtual {v4}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->awakenDreamsAsync()V
 
-    sget-boolean v4, Lcom/android/systemui/statusbar/NotificationEntryManager;->OP_DEBUG:Z
-
-    if-eqz v4, :cond_b
-
     const-string v4, "NotificationEntryMgr"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -979,7 +955,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_b
     const v4, 0x8ca2
 
     :try_start_0
@@ -1004,7 +979,7 @@
     :catch_0
     move-exception v1
 
-    :cond_c
+    :cond_b
     :goto_5
     return-void
 .end method
@@ -2897,7 +2872,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_c
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationEntryManager;->mPresenter:Lcom/android/systemui/statusbar/NotificationPresenter;
 
@@ -2915,10 +2890,6 @@
     invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/NotificationData;->shouldFilterOut(Lcom/android/systemui/statusbar/NotificationData$Entry;)Z
 
     move-result v0
-
-    if-eqz v0, :cond_2
-
-    sget-boolean v0, Lcom/android/systemui/statusbar/NotificationEntryManager;->OP_DEBUG:Z
 
     if-eqz v0, :cond_1
 
@@ -2944,17 +2915,16 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_1
     return v1
 
-    :cond_2
+    :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationEntryManager;->mPowerManager:Landroid/os/PowerManager;
 
     invoke-virtual {v0}, Landroid/os/PowerManager;->isScreenOn()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationEntryManager;->mSystemServicesProxy:Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
@@ -2962,17 +2932,17 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     const/4 v0, 0x1
 
     goto :goto_0
 
-    :cond_3
+    :cond_2
     move v0, v1
 
     :goto_0
-    if-nez v0, :cond_5
+    if-nez v0, :cond_3
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationEntryManager;->mPresenter:Lcom/android/systemui/statusbar/NotificationPresenter;
 
@@ -2980,11 +2950,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_5
-
-    sget-boolean v2, Lcom/android/systemui/statusbar/NotificationEntryManager;->OP_DEBUG:Z
-
-    if-eqz v2, :cond_4
+    if-nez v2, :cond_3
 
     const-string v2, "NotificationEntryMgr"
 
@@ -3008,17 +2974,16 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_4
     return v1
 
-    :cond_5
+    :cond_3
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationEntryManager;->mPresenter:Lcom/android/systemui/statusbar/NotificationPresenter;
 
     invoke-interface {v2}, Lcom/android/systemui/statusbar/NotificationPresenter;->isDozing()Z
 
     move-result v2
 
-    if-nez v2, :cond_7
+    if-nez v2, :cond_4
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationEntryManager;->mNotificationData:Lcom/android/systemui/statusbar/NotificationData;
 
@@ -3026,11 +2991,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_7
-
-    sget-boolean v2, Lcom/android/systemui/statusbar/NotificationEntryManager;->OP_DEBUG:Z
-
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_4
 
     const-string v2, "NotificationEntryMgr"
 
@@ -3054,17 +3015,16 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_6
     return v1
 
-    :cond_7
+    :cond_4
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationEntryManager;->mPresenter:Lcom/android/systemui/statusbar/NotificationPresenter;
 
     invoke-interface {v2}, Lcom/android/systemui/statusbar/NotificationPresenter;->isDozing()Z
 
     move-result v2
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_5
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationEntryManager;->mNotificationData:Lcom/android/systemui/statusbar/NotificationData;
 
@@ -3072,11 +3032,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_9
-
-    sget-boolean v2, Lcom/android/systemui/statusbar/NotificationEntryManager;->OP_DEBUG:Z
-
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_5
 
     const-string v2, "NotificationEntryMgr"
 
@@ -3100,19 +3056,14 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_8
     return v1
 
-    :cond_9
+    :cond_5
     invoke-virtual {p1}, Lcom/android/systemui/statusbar/NotificationData$Entry;->hasJustLaunchedFullScreenIntent()Z
 
     move-result v2
 
-    if-eqz v2, :cond_b
-
-    sget-boolean v2, Lcom/android/systemui/statusbar/NotificationEntryManager;->OP_DEBUG:Z
-
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_6
 
     const-string v2, "NotificationEntryMgr"
 
@@ -3136,19 +3087,14 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_a
     return v1
 
-    :cond_b
+    :cond_6
     invoke-virtual {p0, p2}, Lcom/android/systemui/statusbar/NotificationEntryManager;->isSnoozedPackage(Landroid/service/notification/StatusBarNotification;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_d
-
-    sget-boolean v2, Lcom/android/systemui/statusbar/NotificationEntryManager;->OP_DEBUG:Z
-
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_7
 
     const-string v2, "NotificationEntryMgr"
 
@@ -3172,23 +3118,22 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_c
     return v1
 
-    :cond_d
+    :cond_7
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationEntryManager;->mPresenter:Lcom/android/systemui/statusbar/NotificationPresenter;
 
     invoke-interface {v2}, Lcom/android/systemui/statusbar/NotificationPresenter;->isDozing()Z
 
     move-result v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_8
 
     const/4 v2, 0x3
 
     goto :goto_1
 
-    :cond_e
+    :cond_8
     const/4 v2, 0x4
 
     :goto_1
@@ -3202,11 +3147,7 @@
 
     move-result v3
 
-    if-ge v3, v2, :cond_10
-
-    sget-boolean v3, Lcom/android/systemui/statusbar/NotificationEntryManager;->OP_DEBUG:Z
-
-    if-eqz v3, :cond_f
+    if-ge v3, v2, :cond_9
 
     const-string v3, "NotificationEntryMgr"
 
@@ -3230,15 +3171,14 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_f
     return v1
 
-    :cond_10
+    :cond_9
     invoke-virtual {p2}, Landroid/service/notification/StatusBarNotification;->isGroup()Z
 
     move-result v3
 
-    if-eqz v3, :cond_12
+    if-eqz v3, :cond_a
 
     invoke-virtual {p2}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
 
@@ -3248,11 +3188,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_12
-
-    sget-boolean v3, Lcom/android/systemui/statusbar/NotificationEntryManager;->OP_DEBUG:Z
-
-    if-eqz v3, :cond_11
+    if-eqz v3, :cond_a
 
     const-string v3, "NotificationEntryMgr"
 
@@ -3260,21 +3196,20 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_11
     return v1
 
-    :cond_12
+    :cond_a
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationEntryManager;->mCallback:Lcom/android/systemui/statusbar/NotificationEntryManager$Callback;
 
     invoke-interface {v3, p1, p2}, Lcom/android/systemui/statusbar/NotificationEntryManager$Callback;->shouldPeek(Lcom/android/systemui/statusbar/NotificationData$Entry;Landroid/service/notification/StatusBarNotification;)Z
 
     move-result v3
 
-    if-nez v3, :cond_13
+    if-nez v3, :cond_b
 
     return v1
 
-    :cond_13
+    :cond_b
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationEntryManager;->mOPNotifyController:Lcom/oneplus/notification/OPNotificationController;
 
     invoke-virtual {v1, p2}, Lcom/oneplus/notification/OPNotificationController;->shouldPeek(Landroid/service/notification/StatusBarNotification;)I
@@ -3283,19 +3218,14 @@
 
     return v1
 
-    :cond_14
+    :cond_c
     :goto_2
-    sget-boolean v0, Lcom/android/systemui/statusbar/NotificationEntryManager;->OP_DEBUG:Z
-
-    if-eqz v0, :cond_15
-
     const-string v0, "NotificationEntryMgr"
 
     const-string v2, "No peeking: no huns or vr mode"
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_15
     return v1
 .end method
 

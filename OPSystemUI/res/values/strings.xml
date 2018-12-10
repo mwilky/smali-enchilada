@@ -1132,12 +1132,12 @@ You're also connected to a VPN, which can monitor your network activity."</strin
     <string name="oneplus_screen_zoom_summary_minimum">Minimum</string>
     <string name="oneplus_screen_zoom_summary_small">Small</string>
     <string name="oneplus_screen_zoom_summary_very_large">Larger</string>
-    <string name="oneplus_threekey_navigation_disturb_changed">"'Do Not Disturb' has changed too"</string>
-    <string name="oneplus_threekey_navigation_next">Next</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">"'Do Not Disturb' has changed!"</string>
+    <string name="oneplus_threekey_navigation_next">NEXT</string>
     <string name="oneplus_threekey_navigation_silence">Total silence</string>
     <string name="oneplus_threekey_navigation_slider_has_changed">Alert Slider has changed!</string>
     <string name="oneplus_threekey_navigation_sound">All sounds allowed</string>
-    <string name="oneplus_threekey_navigation_turned_on_here">It can be turned on here</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">It can be turned on by the toggle above</string>
     <string name="oneplus_threekey_navigation_vibration">Vibration only</string>
     <string name="op_accessibility_quick_settings_page">Page %1$d of %2$d</string>
     <string name="op_appbar_scrolling_view_behavior">com.oneplus.lib.design.widget.AppBarLayout$ScrollingViewBehavior</string>

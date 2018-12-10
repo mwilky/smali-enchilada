@@ -478,7 +478,7 @@
 .method private static getViewStateFromChild(Landroid/view/View;)Lcom/android/systemui/statusbar/phone/StatusIconContainer$StatusIconState;
     .locals 1
 
-    const v0, 0x7f0a03dc
+    const v0, 0x7f0a03de
 
     invoke-virtual {p0, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
@@ -552,7 +552,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0704fc
+    const v1, 0x7f070505
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -564,7 +564,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0704fb
+    const v1, 0x7f070504
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -964,7 +964,7 @@
 
     iput-boolean v1, v0, Lcom/android/systemui/statusbar/phone/StatusIconContainer$StatusIconState;->justAdded:Z
 
-    const v1, 0x7f0a03dc
+    const v1, 0x7f0a03de
 
     invoke-virtual {p1, v1, v0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -976,7 +976,7 @@
 
     invoke-super {p0, p1}, Lcom/android/keyguard/AlphaOptimizedLinearLayout;->onViewRemoved(Landroid/view/View;)V
 
-    const v0, 0x7f0a03dc
+    const v0, 0x7f0a03de
 
     const/4 v1, 0x0
 

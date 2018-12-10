@@ -825,7 +825,7 @@
 
     if-eqz v2, :cond_8
 
-    const v2, 0x7f0d019c
+    const v2, 0x7f0d01a2
 
     invoke-virtual {p3, v2, p2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -834,7 +834,7 @@
     goto :goto_4
 
     :cond_8
-    const v2, 0x7f0d019b
+    const v2, 0x7f0d01a1
 
     invoke-virtual {p3, v2, p2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -917,7 +917,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f07038a
+    const v4, 0x7f07038d
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -940,7 +940,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f070389
+    const v4, 0x7f07038c
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1301,7 +1301,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0704d6
+    const v2, 0x7f0704dd
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1316,7 +1316,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0704d5
+    const v2, 0x7f0704dc
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

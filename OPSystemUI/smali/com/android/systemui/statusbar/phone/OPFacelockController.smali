@@ -3487,6 +3487,14 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
+    const-string v2, ", pending:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mPendingFacelockWhenBouncer:Z
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -3499,7 +3507,7 @@
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mBoundToService:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->canLaunchFacelock()Z
 
@@ -3510,6 +3518,17 @@
     goto :goto_0
 
     :cond_0
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mPendingFacelockWhenBouncer:Z
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x3
+
+    const/4 v1, -0x1
+
+    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->updateRecognizedState(II)V
+
+    :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x2
@@ -3528,7 +3547,7 @@
 
     return-void
 
-    :cond_1
+    :cond_2
     :goto_0
     return-void
 .end method
@@ -3998,24 +4017,12 @@
     :cond_1
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mBoundToService:Z
 
-    if-eqz v0, :cond_3
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->canLaunchFacelock()Z
-
-    move-result v0
-
     if-nez v0, :cond_2
 
-    goto :goto_1
+    return-void
 
     :cond_2
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mPendingFacelockWhenBouncer:Z
-
-    const/4 v0, 0x3
-
-    const/4 v1, -0x1
-
-    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->updateRecognizedState(II)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mHandler:Landroid/os/Handler;
 
@@ -4023,14 +4030,10 @@
 
     invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/OPFacelockController$5;-><init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
 
-    const-wide/16 v2, 0x12c
+    const-wide/16 v2, 0x1f4
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     :goto_0
-    return-void
-
-    :cond_3
-    :goto_1
     return-void
 .end method

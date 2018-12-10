@@ -268,8 +268,6 @@
 
 .method public static synthetic lambda$handleClick$0(Lcom/android/systemui/qs/tiles/WifiTile;)V
     .locals 1
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     iget-boolean v0, p0, Lcom/android/systemui/qs/tiles/WifiTile;->mExpectDisabled:Z
 
@@ -846,7 +844,7 @@
 
     if-eqz v10, :cond_10
 
-    const v14, 0x7f0803ab
+    const v14, 0x7f0803ae
 
     invoke-static {v14}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -873,7 +871,7 @@
 
     iput v6, v1, Lcom/android/systemui/plugins/qs/QSTile$SignalState;->state:I
 
-    const v14, 0x7f080392
+    const v14, 0x7f080395
 
     invoke-static {v14}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -913,7 +911,7 @@
     :cond_12
     if-eqz v8, :cond_13
 
-    const v14, 0x7f080393
+    const v14, 0x7f080396
 
     invoke-static {v14}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -930,7 +928,7 @@
     goto :goto_a
 
     :cond_13
-    const v14, 0x7f080399
+    const v14, 0x7f08039c
 
     invoke-static {v14}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 

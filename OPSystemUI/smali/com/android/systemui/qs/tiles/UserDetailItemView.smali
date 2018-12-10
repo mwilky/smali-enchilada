@@ -23,7 +23,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    const v0, 0x7f0d0193
+    const v0, 0x7f0d0199
 
     sput v0, Lcom/android/systemui/qs/tiles/UserDetailItemView;->layoutResId:I
 
@@ -245,7 +245,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/UserDetailItemView;->mName:Landroid/widget/TextView;
 
-    const v1, 0x7f070553
+    const v1, 0x7f07055c
 
     invoke-static {v0, v1}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/widget/TextView;I)V
 
@@ -255,7 +255,7 @@
 .method protected onFinishInflate()V
     .locals 1
 
-    const v0, 0x7f0a045c
+    const v0, 0x7f0a046e
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/tiles/UserDetailItemView;->findViewById(I)Landroid/view/View;
 
@@ -265,7 +265,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/UserDetailItemView;->mAvatar:Lcom/android/systemui/statusbar/phone/UserAvatarView;
 
-    const v0, 0x7f0a045b
+    const v0, 0x7f0a046d
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/tiles/UserDetailItemView;->findViewById(I)Landroid/view/View;
 

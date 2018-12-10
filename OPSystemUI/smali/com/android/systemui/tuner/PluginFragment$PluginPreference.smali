@@ -81,7 +81,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/tuner/PluginFragment$PluginPreference;->setChecked(Z)V
 
-    const v0, 0x7f0d01dc
+    const v0, 0x7f0d01e2
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/tuner/PluginFragment$PluginPreference;->setWidgetLayoutResource(I)V
 
@@ -247,7 +247,7 @@
 
     invoke-super {p0, p1}, Landroid/support/v14/preference/SwitchPreference;->onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
 
-    const v0, 0x7f0a03af
+    const v0, 0x7f0a03b0
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

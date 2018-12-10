@@ -14,7 +14,6 @@
 .implements Lcom/android/systemui/statusbar/policy/ConfigurationController$ConfigurationListener;
 .implements Lcom/android/systemui/statusbar/policy/OnHeadsUpChangedListener;
 .implements Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;
-.implements Lcom/android/wubydax/GearContentObserver$OnContentChangedListener;
 
 
 # annotations
@@ -192,6 +191,8 @@
 .field private mIconPolicy:Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;
 
 .field private mInteractingWindows:I
+
+.field private mIsInMultiWindow:Z
 
 .field private mIsKeyguard:Z
 
@@ -748,6 +749,8 @@
     iput v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNavigationBarColor:I
 
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->isLaunchDial:Z
+
+    iput-boolean v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mIsInMultiWindow:Z
 
     new-instance v2, Lcom/android/systemui/statusbar/phone/StatusBar$8;
 
@@ -1709,7 +1712,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setPriority(I)Landroid/app/Notification$Builder;
 
-    const v1, 0x7f08022b
+    const v1, 0x7f08022e
 
     invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->constructDemoHighLightNotification(Landroid/app/Notification$Builder;I)V
 
@@ -1922,7 +1925,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d01ce
+    const v1, 0x7f0d01d4
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStackScroller:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
@@ -1967,7 +1970,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d01d0
+    const v1, 0x7f0d01d6
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStackScroller:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
@@ -2035,7 +2038,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStackScroller:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
-    const v2, 0x7f0d01d2
+    const v2, 0x7f0d01d8
 
     const/4 v3, 0x0
 
@@ -6019,45 +6022,45 @@
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mShowNavBar:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mButtonLock:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNavigationBarView:Landroid/view/View;
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_0
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->createNavigationBar()V
 
     goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNavigationBarView:Landroid/view/View;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_1
-
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mWindowManager:Landroid/view/WindowManager;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNavigationBarView:Landroid/view/View;
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNavigationBarView:Landroid/view/View;
 
-    invoke-interface {v0, v2}, Landroid/view/WindowManager;->removeViewImmediate(Landroid/view/View;)V
+    invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    iput-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNavigationBarView:Landroid/view/View;
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    goto :goto_0
 
     :cond_1
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNavigationBar:Lcom/android/systemui/statusbar/phone/NavigationBarFragment;
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNavigationBarView:Landroid/view/View;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNavigationBar:Lcom/android/systemui/statusbar/phone/NavigationBarFragment;
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mWindowManager:Landroid/view/WindowManager;
 
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/NavigationBarFragment;->onDestroy()V
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNavigationBarView:Landroid/view/View;
 
-    iput-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNavigationBar:Lcom/android/systemui/statusbar/phone/NavigationBarFragment;
+    invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeViewImmediate(Landroid/view/View;)V
 
     :cond_2
     :goto_0
@@ -9462,6 +9465,18 @@
     return-void
 .end method
 
+.method public geScrimtColor()I
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mScrimController:Lcom/android/systemui/statusbar/phone/ScrimController;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/ScrimController;->getBackgroundColor()I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method protected getActivityOptions(Landroid/view/RemoteAnimationAdapter;)Landroid/os/Bundle;
     .locals 2
 
@@ -10546,7 +10561,7 @@
 .method protected inflateStatusBarWindow(Landroid/content/Context;)V
     .locals 2
 
-    const v0, 0x7f0d01d5
+    const v0, 0x7f0d01db
 
     const/4 v1, 0x0
 
@@ -10954,6 +10969,14 @@
     const/4 v0, 0x1
 
     :goto_1
+    return v0
+.end method
+
+.method public isInMultiWindow()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mIsInMultiWindow:Z
+
     return v0
 .end method
 
@@ -11782,7 +11805,7 @@
 
     const-string v2, "CollapsedStatusBarFragment"
 
-    const v3, 0x7f0a03d7
+    const v3, 0x7f0a03d9
 
     invoke-virtual {v0, v3, v1, v2}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;Ljava/lang/String;)Landroid/app/FragmentTransaction;
 
@@ -12016,7 +12039,7 @@
 
     iget-object v0, v7, Lcom/android/systemui/statusbar/phone/StatusBar;->mScreenDecorUp:Landroid/widget/ImageView;
 
-    const v1, 0x7f08059a
+    const v1, 0x7f08059e
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -12454,10 +12477,6 @@
     goto :goto_1
 
     :cond_7
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->registerObserver()V
-    
     new-instance v1, Landroid/content/IntentFilter;
 
     invoke-direct {v1}, Landroid/content/IntentFilter;-><init>()V
@@ -12875,6 +12894,15 @@
     invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->setPreventModeActive(Z)V
 
     :cond_4
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+
+    if-eqz v0, :cond_5
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->notifyBarPanelExpansionChanged()V
+
+    :cond_5
     return-void
 .end method
 
@@ -14712,9 +14740,13 @@
 .end method
 
 .method public onWallpaperChange(Landroid/graphics/Bitmap;)V
-    .locals 2
+    .locals 4
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
 
     if-eqz v0, :cond_1
 
@@ -14722,26 +14754,51 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v1, 0x1
+    move v3, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v3, v1
 
     :goto_0
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->setLockscreenWallpaper(Z)V
+    invoke-virtual {v0, v3}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->setLockscreenWallpaper(Z)V
 
     goto :goto_1
 
     :cond_1
     const-string v0, "StatusBar"
 
+    const-string v3, "mStatusBarWindowManager is null"
+
+    invoke-static {v0, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_1
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+
+    if-eqz p1, :cond_2
+
+    move v1, v2
+
+    nop
+
+    :cond_2
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->setLockscreenWallpaper(Z)V
+
+    goto :goto_2
+
+    :cond_3
+    const-string v0, "StatusBar"
+
     const-string v1, "mStatusBarWindowManager is null"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_1
+    :goto_2
     return-void
 .end method
 
@@ -16049,16 +16106,21 @@
 
     if-eq v4, v5, :cond_3
 
-    move v1, v2
+    move v5, v2
 
-    nop
+    goto :goto_0
 
     :cond_3
-    if-eqz v1, :cond_4
+    move v5, v1
 
-    iget v2, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarMode:I
+    :goto_0
+    move v3, v5
 
-    if-eq v4, v2, :cond_4
+    if-eqz v3, :cond_4
+
+    iget v5, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarMode:I
+
+    if-eq v4, v5, :cond_4
 
     iput v4, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarMode:I
 
@@ -16067,36 +16129,51 @@
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->touchAutoHide()V
 
     :cond_4
-    const/high16 v2, 0x20000000
+    const/high16 v5, 0x20000000
 
-    and-int/2addr v2, p1
+    and-int/2addr v5, p1
 
-    if-eqz v2, :cond_5
+    if-eqz v5, :cond_5
 
-    iget v2, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mSystemUiVisibility:I
+    iget v5, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mSystemUiVisibility:I
 
-    const v3, -0x20000001
+    const v6, -0x20000001
 
-    and-int/2addr v2, v3
+    and-int/2addr v5, v6
 
-    iput v2, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mSystemUiVisibility:I
+    iput v5, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mSystemUiVisibility:I
 
     :cond_5
-    iget v2, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mSystemUiVisibility:I
+    iget v5, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mSystemUiVisibility:I
 
-    invoke-direct {v0, v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->notifyUiVisibilityChanged(I)V
-
-    move v13, v1
-
-    goto :goto_0
+    invoke-direct {v0, v5}, Lcom/android/systemui/statusbar/phone/StatusBar;->notifyUiVisibilityChanged(I)V
 
     :cond_6
     move v13, v3
 
-    :goto_0
+    invoke-virtual/range {p5 .. p5}, Landroid/graphics/Rect;->isEmpty()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_7
+
+    invoke-virtual/range {p6 .. p6}, Landroid/graphics/Rect;->isEmpty()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_7
+
+    goto :goto_1
+
+    :cond_7
+    move v1, v2
+
+    :goto_1
+    iput-boolean v1, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mIsInMultiWindow:Z
+
     iget-object v1, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mLightBarController:Lcom/android/systemui/statusbar/phone/LightBarController;
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_8
 
     iget-object v1, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mLightBarController:Lcom/android/systemui/statusbar/phone/LightBarController;
 
@@ -16116,7 +16193,7 @@
 
     invoke-virtual/range {v1 .. v8}, Lcom/android/systemui/statusbar/phone/LightBarController;->onSystemUiVisibilityChanged(IIILandroid/graphics/Rect;Landroid/graphics/Rect;ZI)V
 
-    :cond_7
+    :cond_8
     return-void
 .end method
 
@@ -16922,44 +16999,6 @@
     .locals 21
 
     move-object/from16 v8, p0
-    
-    move-object/from16 v0, p0
-    
-    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setSmartPulldown(Landroid/content/Context;)V
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsTileLayout(Landroid/content/Context;)V
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarIconColors(Landroid/content/Context;)V
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setLockscreenStatusbarVisibility(Landroid/content/Context;)V
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->scrambleKeypad(Landroid/content/Context;)V
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->hideLockscreenViews(Landroid/content/Context;)V
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQuickQsPulldown(Landroid/content/Context;)V
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setDoubleTapStatusbarSleep(Landroid/content/Context;)V
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setLockQsInLockscreen(Landroid/content/Context;)V
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarViews(Landroid/content/Context;)V
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsVibration(Landroid/content/Context;)V
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setExpandedNotifications(Landroid/content/Context;)V
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setClockSeconds(Landroid/content/Context;)V
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarPeek(Landroid/content/Context;)V
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsAnimationValues(Landroid/content/Context;)V
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setHideLockscreenAlbumArt(Landroid/content/Context;)V
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setLockscreenShortcuts(Landroid/content/Context;)V
 
     const-class v0, Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
 
@@ -19207,10 +19246,6 @@
     const/4 v7, 0x0
 
     if-eqz v5, :cond_4
-    
-    sget-boolean v8, Lcom/android/mwilky/Renovate;->mHideLockscreenAlbumArt:Z
-    
-    if-nez v8, :cond_4
 
     const-string v8, "android.media.metadata.ART"
 
@@ -20846,1259 +20881,5 @@
     invoke-virtual {v1}, Lcom/android/systemui/classifier/FalsingManager;->onScreenOnFromTouch()V
 
     :cond_0
-    return-void
-.end method
-
-.method public onContentChanged(Ljava/lang/String;)V
-    .locals 1
-    
-    const-string v0, "tweaks_quick_qs_buttons"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_qqsrow
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsTileLayout(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateQuickQsView()V
-
-    :cond_qqsrow
-    const-string v0, "tweaks_qs_rows"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_qsrows
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsTileLayout(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateQsTileView()V
-
-    :cond_qsrows
-    const-string v0, "tweaks_qs_rows_landscape"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_qsrowsl
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsTileLayout(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateQsTileView()V
-
-    :cond_qsrowsl
-    const-string v0, "tweaks_qs_columns"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_qscols
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsTileLayout(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateQsTileView()V
-
-    :cond_qscols
-    const-string v0, "tweaks_clock_position"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_clockpos
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarViews(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateClockView()V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateBatteryView()V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateLockscreenStatusbarViews()V
-
-    :cond_clockpos
-    const-string v0, "tweaks_swap_battery_position"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_swapbat
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarViews(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateClockView()V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateBatteryView()V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateLockscreenStatusbarViews()V
-
-    :cond_swapbat
-    const-string v0, "tweaks_clock_onclick"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_clockonclick
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setClockOnClick(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateClockView()V
-    
-    :cond_clockonclick
-    const-string v0, "tweaks_qs_pulldown"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_qspull
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQuickQsPulldown(Landroid/content/Context;)V
-    
-    :cond_qspull
-    const-string v0, "tweaks_smart_pulldown"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_smartpull
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setSmartPulldown(Landroid/content/Context;)V
-    
-    :cond_smartpull
-    const-string v0, "tweaks_double_tap_sleep"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_dtsleep
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setDoubleTapStatusbarSleep(Landroid/content/Context;)V
-    
-    :cond_dtsleep
-    const-string v0, "tweaks_qs_lock"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_qslockblock
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setLockQsInLockscreen(Landroid/content/Context;)V
-    
-    :cond_qslockblock
-    const-string v0, "tweaks_scramble_pin"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_pin
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->scrambleKeypad(Landroid/content/Context;)V
-
-    :cond_pin
-    const-string v0, "tweaks_clock_seconds"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_clocksec
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setClockSeconds(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateClockView()V
-
-    :cond_clocksec
-    const-string v0, "tweaks_hide_lockscreen_clock"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_lockclock
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->hideLockscreenViews(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateLockscreenViews()V
-    
-    :cond_lockclock
-    const-string v0, "tweaks_qs_vibration"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_qsv
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsVibration(Landroid/content/Context;)V
-    
-    :cond_qsv
-    const-string v0, "tweaks_pulldown_blur"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_pulldownblur
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarBlur(Landroid/content/Context;)V
-    
-    :cond_pulldownblur
-    const-string v0, "tweaks_statusbar_clock_color"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_clockcol
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarIconColors(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
-
-    :cond_clockcol
-    const-string v0, "tweaks_statusbar_battery_percent_color"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_batterypercentcolor
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarIconColors(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
-
-    :cond_batterypercentcolor
-    const-string v0, "tweaks_battery_color"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_batteryiconcolor
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarIconColors(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
-
-    :cond_batteryiconcolor
-    const-string v0, "tweaks_notification_icon_color"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_ni
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarIconColors(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
-
-    :cond_ni
-    const-string v0, "tweaks_dark_icon_color"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_dark
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarIconColors(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
-    
-    :cond_dark
-    const-string v0, "tweaks_bluetooth_icon_color"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_bt
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarIconColors(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
-
-    :cond_bt
-    const-string v0, "tweaks_volume_icon_color"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_v
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarIconColors(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
-
-    :cond_v
-    const-string v0, "tweaks_location_icon_color"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_location
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarIconColors(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
-
-    :cond_location
-    const-string v0, "tweaks_powersaver_icon_color"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_ps
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarIconColors(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
-
-    :cond_ps
-    const-string v0, "tweaks_mobile_type_color"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_data
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarIconColors(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
-
-    :cond_data
-    const-string v0, "tweaks_mobile_signal_color"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_signal
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarIconColors(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
-
-    :cond_signal
-    const-string v0, "tweaks_wifi_signal_color"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_wifi
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarIconColors(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
-
-    :cond_wifi
-    const-string v0, "tweaks_wifi_activity_color"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_wifia
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarIconColors(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
-
-    :cond_wifia
-    const-string v0, "tweaks_global_statusbar_icon_color"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_gs
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarIconColors(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
-
-    :cond_gs
-    const-string v0, "tweaks_statusbar_icon_color"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_oc
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarIconColors(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
-
-    :cond_oc
-    const-string v0, "tweaks_carrier_text_color"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_cc
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarIconColors(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateLockscreenStatusbarViews()V
-
-    :cond_cc
-    const-string v0, "tweaks_netspeed_color"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_nsc
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarIconColors(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
-
-    :cond_nsc
-    const-string v0, "tweaks_extended_theming"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_et
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationBuilderColors()V
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setExtendedTheming(Landroid/content/Context;)V
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setNotifBackgroundColorForTheme(Landroid/content/Context;)V
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->getAccentColor(Landroid/content/Context;)V
-    
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationsOnDensityOrFontScaleChanged()V
-
-    :cond_et
-    #const-string v0, "oem_black_mode"
-    
-    #invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    #move-result v0
-
-    #if-eqz v0, :cond_obm
-
-    #invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationBuilderColors()V
-
-    #iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->setExtendedTheming(Landroid/content/Context;)V
-    
-    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->setNotifBackgroundColorForTheme(Landroid/content/Context;)V
-    
-    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->getAccentColor(Landroid/content/Context;)V
-    
-    #invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationsOnDensityOrFontScaleChanged()V
-
-    #:cond_obm
-    #const-string v0, "oem_white_mode_accent_color"
-    
-    #invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    #move-result v0
-
-    #if-eqz v0, :cond_owma
-
-    #invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationBuilderColors()V
-
-    #iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->setExtendedTheming(Landroid/content/Context;)V
-    
-    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->setNotifBackgroundColorForTheme(Landroid/content/Context;)V
-    
-    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->getAccentColor(Landroid/content/Context;)V
-    
-    #invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationsOnDensityOrFontScaleChanged()V
-
-    #:cond_owma
-    #const-string v0, "oem_black_mode_accent_color"
-    
-    #invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    #move-result v0
-
-    #if-eqz v0, :cond_obma
-
-    #invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationBuilderColors()V
-
-    #iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->setExtendedTheming(Landroid/content/Context;)V
-    
-    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->setNotifBackgroundColorForTheme(Landroid/content/Context;)V
-    
-    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->getAccentColor(Landroid/content/Context;)V
-    
-    #invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationsOnDensityOrFontScaleChanged()V
-
-    #:cond_obma
-    #const-string v0, "oem_special_theme"
-    
-    #invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    #move-result v0
-
-    #if-eqz v0, :cond_ost
-
-    #invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationBuilderColors()V
-
-    #iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->setExtendedTheming(Landroid/content/Context;)V
-    
-    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->setNotifBackgroundColorForTheme(Landroid/content/Context;)V
-    
-    #invoke-static {v0}, Lcom/android/mwilky/Renovate;->getAccentColor(Landroid/content/Context;)V
-    
-    #invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationsOnDensityOrFontScaleChanged()V
-
-    #:cond_ost
-    const-string v0, "tweaks_hide_lockscreen_statusbar"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_lsb
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setLockscreenStatusbarVisibility(Landroid/content/Context;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateLockscreenStatusbarViews()V
-
-    :cond_lsb
-    const-string v0, "tweaks_hide_lockscreen_album_art"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_lsa
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setHideLockscreenAlbumArt(Landroid/content/Context;)V
-
-    :cond_lsa
-    const-string v0, "tweaks_expanded_notifications"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_en
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setExpandedNotifications(Landroid/content/Context;)V
-
-    :cond_en
-    const-string v0, "tweaks_statusbar_peek"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_sp
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarPeek(Landroid/content/Context;)V
-
-    :cond_sp
-    const-string v0, "tweaks_qstile_animation_style"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_as
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsAnimationValues(Landroid/content/Context;)V
-
-    :cond_as
-    const-string v0, "tweaks_qstile_animation_duration"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_ad
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsAnimationValues(Landroid/content/Context;)V
-
-    :cond_ad
-    const-string v0, "tweaks_qstile_animation_interpolator"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_ai
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsAnimationValues(Landroid/content/Context;)V
-
-    :cond_ai
-    const-string v0, "tweaks_hide_lockscreen_shortcuts"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_lss
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setLockscreenShortcuts(Landroid/content/Context;)V
-
-    :cond_lss
-	return-void
-.end method
-
-.method registerObserver()V
-    .locals 7
-
-    new-instance v3, Ljava/util/ArrayList;
-
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
-    
-    const-string v4, "tweaks_statusbar_clock_color"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_netspeed_color"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_carrier_text_color"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_statusbar_icon_color"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_wifi_signal_color"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_wifi_activity_color"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_mobile_type_color"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_mobile_signal_color"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_notification_icon_color"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v4, "tweaks_statusbar_battery_percent_color"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_battery_color"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_bluetooth_icon_color"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-     const-string v4, "tweaks_volume_icon_color"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-     const-string v4, "tweaks_location_icon_color"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_dark_icon_color"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_clock_position"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_swap_battery_position"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_scramble_pin"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_qs_rows"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_qs_columns"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_quick_qs_buttons"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_hide_brightness_slider"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_qs_pulldown"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_smart_pulldown"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_double_tap_sleep"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_qs_lock"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_pulldown_blur"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_notification_title_text_color"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_notification_summary_text_color"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_clock_onclick"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_hide_lockscreen_clock"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_clock_seconds"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_qs_vibration"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_global_statusbar_icon_color"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_extended_theming"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "oem_black_mode"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    #const-string v4, "oem_black_mode_accent_color"
-
-    #invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    #const-string v4, "oem_white_mode_accent_color"
-
-    #invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    #const-string v4, "oem_special_theme"
-
-    #invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_hide_lockscreen_statusbar"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_hide_lockscreen_album_art"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_expanded_notifications"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_statusbar_peek"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_qstile_animation_style"
-    
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_qstile_animation_duration"
-    
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_qstile_animation_interpolator"
-    
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_hide_lockscreen_shortcuts"
-    
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    new-instance v1, Lcom/android/wubydax/GearContentObserver;
-
-    new-instance v4, Landroid/os/Handler;
-
-    invoke-direct {v4}, Landroid/os/Handler;-><init>()V
-
-    invoke-direct {v1, v4, p0}, Lcom/android/wubydax/GearContentObserver;-><init>(Landroid/os/Handler;Lcom/android/wubydax/GearContentObserver$OnContentChangedListener;)V
-
-    invoke-static {}, Lcom/android/systemui/SystemUIApplication;->getContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v4
-
-    :goto_0
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_0
-
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    invoke-static {v2}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v5
-
-    const/4 v6, 0x0
-
-    invoke-virtual {v0, v5, v6, v1}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method updateQuickQsView()V
-    .locals 2
-    
-    const-string v0, "header"
-
-    const-string v1, "id"
-
-    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v1
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/systemui/qs/QuickStatusBarHeader;
-    
-    iget-object v0, v0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mHeaderQsPanel:Lcom/android/systemui/qs/QuickQSPanel;
-    
-    invoke-virtual {v0}, Lcom/android/systemui/qs/QuickQSPanel;->readRenovateMods()V
-    
-    invoke-virtual {v0}, Lcom/android/systemui/qs/QuickQSPanel;->updateTiles()V
-
-    return-void
-.end method
-
-.method public updateQsTileView()V
-    .locals 2
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
-
-    invoke-virtual {v1}, Lcom/android/systemui/qs/QSPanel;->getTileLayout()Lcom/android/systemui/qs/QSPanel$QSTileLayout;
-
-    move-result-object v0
-
-    instance-of v1, v0, Lcom/android/systemui/qs/PagedTileLayout;
-
-    if-eqz v1, :cond_exit
-
-    check-cast v0, Lcom/android/systemui/qs/PagedTileLayout;
-    
-    invoke-virtual {v0}, Lcom/android/systemui/qs/PagedTileLayout;->updateTileLayout()V
-
-    :cond_exit
-    return-void
-.end method
-
-.method updateStatusbarIconViews()V
-	.locals 1
-
-	const-class v0, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
-
-    invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
-
-    invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->updateViews()V
-	
-	invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateHeadsUpView()V
-	
-	invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateQuickStatusbarHeaderIconColors()V
-	
-	iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mKeyguardStatusBar:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
-	
-	invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->onThemeChanged()V
-	
-	iget-object v0, v0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mBatteryView:Lcom/android/systemui/BatteryMeterView;
-	
-	invoke-virtual {v0}, Lcom/android/systemui/BatteryMeterView;->updateLockscreenColors()V
-    
-    return-void    
-.end method
-
-.method updateHeadsUpView()V
-	.locals 2
-
-	iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mHeadsUpAppearanceController:Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;
-	
-	iget-object v0, v0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mHeadsUpStatusBarView:Lcom/android/systemui/statusbar/HeadsUpStatusBarView;
-	
-	const/4 v1, 0x0
-	
-	int-to-float v1, v1
-	
-	invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;->updateViews(F)V
-	
-	return-void    
-.end method
-
-.method updateQuickStatusbarHeaderIconColors()V
-    .locals 2
-    
-    const-string v0, "header"
-
-    const-string v1, "id"
-
-    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v1
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/systemui/qs/QuickStatusBarHeader;
-    
-    invoke-virtual {v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->setIconColors()V
-
-    return-void
-.end method
-
-
-.method updateLockscreenStatusbarViews()V
-	.locals 1
-	
-	iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mKeyguardStatusBar:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
-	
-	invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->setCarrierTextColor()V
-	
-	invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
-	
-	invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->setClockPosition()V
-	
-	invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->setBatteryPosition()V
-    
-    return-void
-.end method
-
-.method updateNotificationBuilderColors()V
-	.locals 3
-
-	new-instance v0, Landroid/app/Notification$Builder;
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-
-    sget-object v2, Lcom/android/systemui/util/NotificationChannels;->GENERAL:Ljava/lang/String;
-
-    invoke-direct {v0, v1, v2}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
-    
-    iget-object v1, v0, Landroid/app/Notification$Builder;->mContext:Landroid/content/Context;
-    
-    invoke-static {v1}, Landroid/app/Notification$Builder;->isExtendedTheming(Landroid/content/Context;)V
-    
-    invoke-static {v1}, Landroid/app/Notification$Builder;->getAccentColor(Landroid/content/Context;)V
-    
-    invoke-virtual {v0}, Landroid/app/Notification$Builder;->ensureColors()V
-    
-    invoke-static {v1}, Landroid/app/Notification$Builder;->setNotifBackgroundColorForTheme(Landroid/content/Context;)V
-
-	return-void
-.end method
-
-.method updateLockscreenViews()V
-    .locals 2
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
-
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->updateLockscreenViews()V
-
-    return-void
-.end method
-
-.method updateClockView()V
-    .locals 2
-    
-    const-string v0, "clock"
-
-    const-string v1, "id"
-
-    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v1
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-    
-    if-eqz v0, :cond_right
-
-    check-cast v0, Lcom/android/systemui/statusbar/policy/Clock;
-    
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClockVisibility()V
-    
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->updateShowSeconds()V
-    
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->setTag()V
-    
-    :cond_right
-    const-string v0, "clock_right"
-
-    const-string v1, "id"
-
-    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v1
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-    
-    if-eqz v0, :cond_exit
-
-    check-cast v0, Lcom/android/systemui/statusbar/policy/ClockRight;
-    
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/ClockRight;->updateClockVisibility()V
-    
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->updateShowSeconds()V
-    
-    :cond_exit
-	const-string v0, "header"
-
-    const-string v1, "id"
-
-    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v1
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/systemui/qs/QuickStatusBarHeader;
-    
-    invoke-virtual {v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->setClockPosition()V
-    
-    return-void
-.end method
-
-.method updateBatteryView()V
-    .locals 2
-    
-    const-string v0, "battery"
-
-    const-string v1, "id"
-
-    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v1
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-    
-    if-eqz v0, :cond_left
-
-    check-cast v0, Lcom/android/systemui/BatteryMeterView;
-    
-    invoke-virtual {v0}, Lcom/android/systemui/BatteryMeterView;->batteryPosition()V
-    
-    :cond_left
-    const-string v0, "battery_left"
-
-    const-string v1, "id"
-
-    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v1
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-    
-    if-eqz v0, :cond_exit
-
-    check-cast v0, Lcom/android/systemui/BatteryMeterViewLeft;
-    
-    invoke-virtual {v0}, Lcom/android/systemui/BatteryMeterViewLeft;->batteryPosition()V
-    
-    :cond_exit
-    const-string v0, "header"
-
-    const-string v1, "id"
-
-    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v1
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/systemui/qs/QuickStatusBarHeader;
-    
-    invoke-virtual {v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->setBatteryPosition()V
-    
     return-void
 .end method

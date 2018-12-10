@@ -870,24 +870,47 @@
 .end method
 
 .method public onBluetoothStateChanged(I)V
-    .locals 2
+    .locals 3
 
+    sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "BluetoothController"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "onBluetoothStateChanged bluetoothState "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
     const/16 v0, 0xc
 
-    if-eq p1, v0, :cond_1
+    if-eq p1, v0, :cond_2
 
     const/16 v0, 0xb
 
-    if-ne p1, v0, :cond_0
+    if-ne p1, v0, :cond_1
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     const/4 v0, 0x0
 
     goto :goto_1
 
-    :cond_1
+    :cond_2
     :goto_0
     const/4 v0, 0x1
 

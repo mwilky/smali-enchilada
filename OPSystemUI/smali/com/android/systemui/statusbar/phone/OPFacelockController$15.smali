@@ -65,6 +65,18 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
+    const-string v2, " mIsKeyguardShowing: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$15;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
+
+    invoke-static {v2}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$3600(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Z
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -75,6 +87,14 @@
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$15;->val$show:Z
 
     const/4 v1, 0x0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$15;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
+
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$3600(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Z
+
+    move-result v0
 
     if-eqz v0, :cond_1
 

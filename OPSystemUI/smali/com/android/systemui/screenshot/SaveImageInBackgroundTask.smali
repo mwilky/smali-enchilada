@@ -317,7 +317,7 @@
 
     move-result-object v4
 
-    const v6, 0x7f0805a2
+    const v6, 0x7f0805a6
 
     invoke-virtual {v4, v6}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -373,7 +373,7 @@
 
     move-result-object v4
 
-    const v6, 0x7f0805a2
+    const v6, 0x7f0805a6
 
     invoke-virtual {v4, v6}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -735,7 +735,7 @@
 
     move-object/from16 v16, v0
 
-    const v0, 0x7f0803a0
+    const v0, 0x7f0803a3
 
     invoke-direct {v15, v0, v14, v13}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
@@ -803,7 +803,7 @@
 
     move-wide/from16 v19, v6
 
-    const v6, 0x7f08039f
+    const v6, 0x7f0803a2
 
     invoke-direct {v2, v6, v15, v0}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
@@ -849,7 +849,7 @@
 
     move-object/from16 v21, v0
 
-    const v0, 0x7f08039e
+    const v0, 0x7f0803a1
 
     invoke-direct {v7, v0, v15, v6}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
 

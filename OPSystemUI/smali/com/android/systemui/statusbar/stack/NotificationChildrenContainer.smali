@@ -784,7 +784,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070394
+    const v1, 0x7f070397
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -792,7 +792,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer;->mChildPadding:I
 
-    const v1, 0x7f070391
+    const v1, 0x7f070394
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -800,7 +800,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer;->mDividerHeight:I
 
-    const v1, 0x7f070396
+    const v1, 0x7f070399
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getFloat(I)F
 
@@ -808,7 +808,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer;->mDividerAlpha:F
 
-    const v1, 0x7f070392
+    const v1, 0x7f070395
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -816,7 +816,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer;->mNotificationHeaderMargin:I
 
-    const v1, 0x7f070393
+    const v1, 0x7f070396
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

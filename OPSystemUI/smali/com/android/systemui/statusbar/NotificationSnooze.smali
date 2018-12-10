@@ -1065,7 +1065,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0705fe
+    const v1, 0x7f070607
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1081,7 +1081,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a03c7
+    const v0, 0x7f0a03c9
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/NotificationSnooze;->findViewById(I)Landroid/view/View;
 
@@ -1091,7 +1091,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/NotificationSnooze;->mSelectedOptionText:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0449
+    const v0, 0x7f0a045b
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/NotificationSnooze;->findViewById(I)Landroid/view/View;
 
@@ -1129,7 +1129,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    const v0, 0x7f0a03c8
+    const v0, 0x7f0a03ca
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/NotificationSnooze;->findViewById(I)Landroid/view/View;
 

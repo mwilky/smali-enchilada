@@ -147,7 +147,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/car/CarQSFooter;->mMultiUserAvatar:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a045b
+    const v0, 0x7f0a046d
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/car/CarQSFooter;->findViewById(I)Landroid/view/View;
 
@@ -175,7 +175,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/MultiUserSwitch;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a03b0
+    const v0, 0x7f0a03b1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/car/CarQSFooter;->findViewById(I)Landroid/view/View;
 

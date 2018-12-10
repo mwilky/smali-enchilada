@@ -265,22 +265,22 @@
 
     :array_5
     .array-data 4
-        0x7f080477
-        0x7f080478
+        0x7f08047b
+        0x7f08047c
     .end array-data
 
     :array_6
     .array-data 4
-        0x7f080479
-        0x7f08047a
+        0x7f08047d
+        0x7f08047e
     .end array-data
 
     :array_7
     .array-data 4
-        0x7f08047c
-        0x7f08047d
-        0x7f08047e
-        0x7f08047f
+        0x7f080480
+        0x7f080481
+        0x7f080482
+        0x7f080483
     .end array-data
 
     :array_8
@@ -292,9 +292,9 @@
 
     :array_9
     .array-data 4
-        0x7f080481
-        0x7f080482
-        0x7f080483
+        0x7f080485
+        0x7f080486
+        0x7f080487
     .end array-data
 .end method
 
@@ -2927,7 +2927,7 @@
     move v4, v2
 
     :goto_3
-    const v11, 0x7f07062c
+    const v11, 0x7f070635
 
     if-eqz v4, :cond_7
 
@@ -2939,7 +2939,7 @@
 
     invoke-direct {v12, v0, v13}, Lcom/android/systemui/egg/MLand$Star;-><init>(Lcom/android/systemui/egg/MLand;Landroid/content/Context;)V
 
-    const v13, 0x7f080860
+    const v13, 0x7f080864
 
     invoke-virtual {v12, v13}, Lcom/android/systemui/egg/MLand$Star;->setBackgroundResource(I)V
 
@@ -3086,7 +3086,7 @@
 
     invoke-direct {v5, v0, v14}, Lcom/android/systemui/egg/MLand$Star;-><init>(Lcom/android/systemui/egg/MLand;Landroid/content/Context;)V
 
-    const v14, 0x7f080480
+    const v14, 0x7f080484
 
     invoke-virtual {v5, v14}, Lcom/android/systemui/egg/MLand$Star;->setBackgroundResource(I)V
 

@@ -63,11 +63,11 @@
 
     sget-object v2, Lcom/android/systemui/statusbar/-$$Lambda$5MBgGbVXpg7XHgCv0UsDp2v7mps;->INSTANCE:Lcom/android/systemui/statusbar/-$$Lambda$5MBgGbVXpg7XHgCv0UsDp2v7mps;
 
-    const v3, 0x7f0a0424
+    const v3, 0x7f0a0436
 
-    const v4, 0x7f0a0422
+    const v4, 0x7f0a0434
 
-    const v5, 0x7f0a0423
+    const v5, 0x7f0a0435
 
     invoke-static/range {v0 .. v5}, Lcom/android/systemui/statusbar/notification/AnimatableProperty;->from(Ljava/lang/String;Ljava/util/function/BiConsumer;Ljava/util/function/Function;III)Lcom/android/systemui/statusbar/notification/AnimatableProperty;
 
@@ -417,7 +417,7 @@
 
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/ExpandableOutlineView;->mShouldTranslateContents:Z
 
-    const v1, 0x7f0703bb
+    const v1, 0x7f0703be
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 

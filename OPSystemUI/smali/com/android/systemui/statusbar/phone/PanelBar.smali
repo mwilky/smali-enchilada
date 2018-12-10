@@ -47,26 +47,59 @@
 .end method
 
 .method private updateVisibility()V
-    .locals 2
+    .locals 3
 
+    sget-boolean v0, Lcom/android/systemui/util/OPUtils;->DEBUG_ONEPLUS:Z
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/android/systemui/statusbar/phone/PanelBar;->TAG:Ljava/lang/String;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, " updateVisibility mExpanded:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/PanelBar;->mExpanded:Z
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v2, " mBouncerShowing:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/PanelBar;->mBouncerShowing:Z
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelBar;->mPanel:Lcom/android/systemui/statusbar/phone/PanelView;
 
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/PanelBar;->mExpanded:Z
 
-    if-nez v1, :cond_1
+    if-nez v1, :cond_2
 
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/PanelBar;->mBouncerShowing:Z
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     const/4 v1, 0x4
 
     goto :goto_1
 
-    :cond_1
+    :cond_2
     :goto_0
     const/4 v1, 0x0
 

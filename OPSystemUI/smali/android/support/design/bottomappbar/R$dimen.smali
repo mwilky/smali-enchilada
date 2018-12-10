@@ -15,4 +15,4 @@
 
 
 # static fields
-.field public static final mtrl_bottomappbar_fabOffsetEndMode:I = 0x7f07032d
+.field public static final mtrl_bottomappbar_fabOffsetEndMode:I = 0x7f070330

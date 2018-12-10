@@ -8,15 +8,13 @@
 
 
 # instance fields
-.field public mWifiIconColor:I
-
-.field public mDarkIconColor:I
-
 .field private mAirplaneSpacer:Landroid/view/View;
 
 .field private mDarkContext:Landroid/view/ContextThemeWrapper;
 
 .field private mDarkIntensity:F
+
+.field private mDirty:Z
 
 .field private mDotView:Lcom/android/systemui/statusbar/StatusBarIconView;
 
@@ -24,11 +22,15 @@
 
 .field private mLightContext:Landroid/view/ContextThemeWrapper;
 
+.field private mRect:Landroid/graphics/Rect;
+
 .field private mSignalSpacer:Landroid/view/View;
 
 .field private mSlot:Ljava/lang/String;
 
 .field private mState:Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$WifiIconState;
+
+.field private mTint:I
 
 .field private mVisibleState:I
 
@@ -59,6 +61,10 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mVisibleState:I
 
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDirty:Z
+
     return-void
 .end method
 
@@ -78,6 +84,10 @@
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mVisibleState:I
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDirty:Z
 
     return-void
 .end method
@@ -99,6 +109,10 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mVisibleState:I
 
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDirty:Z
+
     return-void
 .end method
 
@@ -119,6 +133,65 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mVisibleState:I
 
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDirty:Z
+
+    return-void
+.end method
+
+.method private applyColors()V
+    .locals 5
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mRect:Landroid/graphics/Rect;
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mRect:Landroid/graphics/Rect;
+
+    iget v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkIntensity:F
+
+    iget v2, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mTint:I
+
+    iput v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkIntensity:F
+
+    iget-object v3, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIcon:Landroid/widget/ImageView;
+
+    invoke-static {v0, p0, v2}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->getTint(Landroid/graphics/Rect;Landroid/view/View;I)I
+
+    move-result v4
+
+    invoke-static {v4}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
+
+    iget-object v3, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiActivity:Landroid/widget/ImageView;
+
+    invoke-static {v0, p0, v2}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->getTint(Landroid/graphics/Rect;Landroid/view/View;I)I
+
+    move-result v4
+
+    invoke-static {v4}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
+
+    iget-object v3, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDotView:Lcom/android/systemui/statusbar/StatusBarIconView;
+
+    invoke-virtual {v3, v2}, Lcom/android/systemui/statusbar/StatusBarIconView;->setDecorColor(I)V
+
+    iget-object v3, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDotView:Lcom/android/systemui/statusbar/StatusBarIconView;
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v3, v2, v4}, Lcom/android/systemui/statusbar/StatusBarIconView;->setIconColor(IZ)V
+
     return-void
 .end method
 
@@ -129,7 +202,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d01d4
+    const v1, 0x7f0d01da
 
     const/4 v2, 0x0
 
@@ -167,22 +240,22 @@
     :cond_1
     packed-switch v0, :pswitch_data_0
 
-    const v1, 0x7f08082e
+    const v1, 0x7f080832
 
     return v1
 
     :pswitch_0
-    const v1, 0x7f08082d
+    const v1, 0x7f080831
 
     return v1
 
     :pswitch_1
-    const v1, 0x7f080838
+    const v1, 0x7f08083c
 
     return v1
 
     :pswitch_2
-    const v1, 0x7f08082c
+    const v1, 0x7f080830
 
     return v1
 
@@ -229,7 +302,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkContext:Landroid/view/ContextThemeWrapper;
 
-    const v2, 0x7f0a047f
+    const v2, 0x7f0a0491
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarWifiView;->findViewById(I)Landroid/view/View;
 
@@ -239,7 +312,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiGroup:Landroid/widget/LinearLayout;
 
-    const v2, 0x7f0a0483
+    const v2, 0x7f0a0495
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarWifiView;->findViewById(I)Landroid/view/View;
 
@@ -249,7 +322,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIcon:Landroid/widget/ImageView;
 
-    const v2, 0x7f0a0481
+    const v2, 0x7f0a0493
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarWifiView;->findViewById(I)Landroid/view/View;
 
@@ -259,7 +332,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiActivity:Landroid/widget/ImageView;
 
-    const v2, 0x7f0a0485
+    const v2, 0x7f0a0497
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarWifiView;->findViewById(I)Landroid/view/View;
 
@@ -267,7 +340,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mSignalSpacer:Landroid/view/View;
 
-    const v2, 0x7f0a047d
+    const v2, 0x7f0a048f
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarWifiView;->findViewById(I)Landroid/view/View;
 
@@ -284,12 +357,6 @@
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mInoutContainer:Landroid/view/View;
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/StatusBarWifiView;->initDotView()V
-    
-    const/4 v0, 0x0
-    
-    int-to-float v0, v0
-
-    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/StatusBarWifiView;->updateViews(F)V
 
     return-void
 .end method
@@ -321,7 +388,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07061e
+    const v1, 0x7f070627
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -357,25 +424,13 @@
 
     if-ltz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mLightContext:Landroid/view/ContextThemeWrapper;
+    iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIcon:Landroid/widget/ImageView;
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkContext:Landroid/view/ContextThemeWrapper;
+    iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mState:Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$WifiIconState;
 
-    iget-object v2, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mState:Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$WifiIconState;
+    iget v1, v1, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$WifiIconState;->resId:I
 
-    iget v2, v2, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$WifiIconState;->resId:I
-
-    invoke-static {v0, v1, v2}, Lcom/android/systemui/statusbar/NeutralGoodDrawable;->create(Landroid/content/Context;Landroid/content/Context;I)Lcom/android/systemui/statusbar/NeutralGoodDrawable;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkIntensity:F
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/NeutralGoodDrawable;->setDarkIntensity(F)V
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIcon:Landroid/widget/ImageView;
-
-    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mState:Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$WifiIconState;
@@ -509,23 +564,11 @@
 
     if-ltz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mLightContext:Landroid/view/ContextThemeWrapper;
+    iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIcon:Landroid/widget/ImageView;
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkContext:Landroid/view/ContextThemeWrapper;
+    iget v1, p1, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$WifiIconState;->resId:I
 
-    iget v2, p1, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$WifiIconState;->resId:I
-
-    invoke-static {v0, v1, v2}, Lcom/android/systemui/statusbar/NeutralGoodDrawable;->create(Landroid/content/Context;Landroid/content/Context;I)Lcom/android/systemui/statusbar/NeutralGoodDrawable;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkIntensity:F
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/NeutralGoodDrawable;->setDarkIntensity(F)V
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIcon:Landroid/widget/ImageView;
-
-    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     :cond_0
     iget-boolean v0, p1, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$WifiIconState;->activityIn:Z
@@ -775,62 +818,55 @@
 .end method
 
 .method public onDarkChanged(Landroid/graphics/Rect;FI)V
-    .locals 4
-    
-    float-to-int v2, p2
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mRect:Landroid/graphics/Rect;
 
     iput p2, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkIntensity:F
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIcon:Landroid/widget/ImageView;
-    
-    invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusBar;->isCameraNotchIgnoring()Z
+    iput p3, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mTint:I
 
-    move-result v3
-    
-    if-nez v3, :cond_notch
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/StatusBarWifiView;->applyColors()V
 
-    iget v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkIconColor:I #dark color
+    return-void
+.end method
 
-    if-nez v2, :cond_0 #set to grey if dark intensity is 1
-    
-    :cond_notch
-    iget v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIconColor:I #custom color
+.method protected onLayout(ZIIII)V
+    .locals 1
+
+    invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
+
+    invoke-static {}, Lcom/android/systemui/plugin/LSState;->getInstance()Lcom/android/systemui/plugin/LSState;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/systemui/plugin/LSState;->getPhoneStatusBar()Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->isInMultiWindow()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDirty:Z
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/StatusBarWifiView;->getWidth()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/StatusBarWifiView;->applyColors()V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDirty:Z
 
     :cond_0
-    invoke-static {v1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v1
-    
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiActivity:Landroid/widget/ImageView;
-    
-    if-nez v3, :cond_notch2
-
-    iget v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkIconColor:I #dark color
-
-    if-nez v2, :cond_01 #set to grey if dark intensity is 1
-    
-    :cond_notch2
-    iget v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIconColor:I #custom color
-
-    :cond_01
-    invoke-static {v1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v1
-    
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDotView:Lcom/android/systemui/statusbar/StatusBarIconView;
-
-    invoke-virtual {v0, p3}, Lcom/android/systemui/statusbar/StatusBarIconView;->setDecorColor(I)V
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDotView:Lcom/android/systemui/statusbar/StatusBarIconView;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p3, v1}, Lcom/android/systemui/statusbar/StatusBarIconView;->setIconColor(IZ)V
-
     return-void
 .end method
 
@@ -871,6 +907,44 @@
 
     invoke-virtual {v1, p1}, Lcom/android/systemui/statusbar/StatusBarIconView;->setDecorColor(I)V
 
+    return-void
+.end method
+
+.method public setVisibility(I)V
+    .locals 1
+
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    invoke-static {}, Lcom/android/systemui/plugin/LSState;->getInstance()Lcom/android/systemui/plugin/LSState;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/systemui/plugin/LSState;->getPhoneStatusBar()Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->isInMultiWindow()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    if-nez p1, :cond_1
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/StatusBarWifiView;->getWidth()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/StatusBarWifiView;->applyColors()V
+
+    :cond_0
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDirty:Z
+
+    :cond_1
     return-void
 .end method
 
@@ -968,70 +1042,4 @@
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public updateViews(F)V
-	.locals 3
-	
-	float-to-int v2, p1
-	
-	invoke-virtual {p0}, Lcom/android/systemui/statusbar/StatusBarWifiView;->readRenovateMods()V
-	
-	iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIcon:Landroid/widget/ImageView;
-
-    iget v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkIconColor:I #dark color
-
-    if-nez v2, :cond_0 #set to grey if dark intensity is 1
-    
-    iget v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIconColor:I #custom color
-
-    :cond_0
-    invoke-static {v1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v1
-    
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiActivity:Landroid/widget/ImageView;
-
-    iget v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkIconColor:I #dark color
-
-    if-nez v2, :cond_01 #set to grey if dark intensity is 1
-    
-    iget v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIconColor:I #custom color
-
-    :cond_01
-    invoke-static {v1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v1
-    
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
-	
-	return-void
-.end method
-
-.method public readRenovateMods()V
-    .locals 1
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mWifiIconColorOP:I
-    
-	iput v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIconColor:I
-	
-	sget v0, Lcom/android/mwilky/Renovate;->mDarkIconColor:I
-    
-	iput v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkIconColor:I
-	
-    return-void
-.end method
-
-.method public getLockscreenIconColors()I
-    .locals 2
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mSlot:Ljava/lang/String;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->getStatusbarColorFromSlotNameOP(Ljava/lang/String;)I
-    
-    move-result v0
-
-    return v0
 .end method

@@ -102,7 +102,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d0182
+    const v1, 0x7f0d0188
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -162,7 +162,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f080371
+    const v5, 0x7f080374
 
     invoke-virtual {v3, v5, v4}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
@@ -190,7 +190,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f080372
+    const v5, 0x7f080375
 
     invoke-virtual {v3, v5, v4}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
@@ -218,7 +218,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/qs/customize/QSCustomizer;->mLightBarController:Lcom/android/systemui/statusbar/phone/LightBarController;
 
-    const v1, 0x7f0a0450
+    const v1, 0x7f0a0462
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -240,7 +240,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/qs/customize/QSCustomizer;->mUpperPages:Lcom/android/systemui/qs/customize/QSEditViewPager;
 
-    const v3, 0x7f0a044f
+    const v3, 0x7f0a0461
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -1274,7 +1274,7 @@
 
     invoke-virtual {v9, v2}, Lcom/android/systemui/qs/customize/QSEditViewPager;->setBackgroundColor(I)V
 
-    const v9, 0x7f0a041b
+    const v9, 0x7f0a042d
 
     invoke-virtual {p0, v9}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -1282,7 +1282,7 @@
 
     invoke-virtual {v9, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    const v9, 0x7f0a0451
+    const v9, 0x7f0a0463
 
     invoke-virtual {p0, v9}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -1304,7 +1304,7 @@
 
     invoke-virtual {v0, v9}, Landroid/widget/ImageButton;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
-    const v9, 0x7f08058b
+    const v9, 0x7f08058f
 
     invoke-virtual {v0, v9}, Landroid/widget/ImageButton;->setBackgroundResource(I)V
 

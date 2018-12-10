@@ -23,8 +23,8 @@
 
 .field public static final largeLabel:I = 0x7f0a01ef
 
-.field public static final smallLabel:I = 0x7f0a03c2
+.field public static final smallLabel:I = 0x7f0a03c4
 
-.field public static final snackbar_action:I = 0x7f0a03c4
+.field public static final snackbar_action:I = 0x7f0a03c6
 
-.field public static final snackbar_text:I = 0x7f0a03c5
+.field public static final snackbar_text:I = 0x7f0a03c7

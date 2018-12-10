@@ -55,9 +55,9 @@
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/ExpandableIndicator;->mIsDefaultDirection:Z
 
-    const v1, 0x7f080406
+    const v1, 0x7f08040a
 
-    const v2, 0x7f080403
+    const v2, 0x7f080407
 
     if-eqz v0, :cond_1
 

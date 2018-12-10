@@ -61,7 +61,7 @@
 .end method
 
 .method private hasCustomizedShutdownAnim()Z
-    .locals 3
+    .locals 4
 
     const/4 v0, 0x1
 
@@ -76,6 +76,24 @@
     invoke-static {v0}, Landroid/util/OpFeatures;->isSupport([I)Z
 
     move-result v0
+
+    const-string v1, "GlobalActionsImpl"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "hasCusShutdownAnim="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return v0
 .end method

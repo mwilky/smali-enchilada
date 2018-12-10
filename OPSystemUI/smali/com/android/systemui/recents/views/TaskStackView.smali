@@ -453,7 +453,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0705a1
+    const v0, 0x7f0705aa
 
     invoke-virtual {v4, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -462,7 +462,7 @@
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f0705c5
+    const v0, 0x7f0705ce
 
     invoke-virtual {v4, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -471,7 +471,7 @@
     :goto_0
     iput v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTaskCornerRadiusPx:I
 
-    const v0, 0x7f070596
+    const v0, 0x7f07059f
 
     invoke-virtual {v4, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2530,7 +2530,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mInflater:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f0d019f
+    const v2, 0x7f0d01a5
 
     invoke-virtual {v0, v2, p0, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -2543,7 +2543,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mInflater:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f0d01a5
+    const v2, 0x7f0d01ab
 
     invoke-virtual {v0, v2, p0, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

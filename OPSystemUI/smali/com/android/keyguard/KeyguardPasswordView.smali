@@ -916,7 +916,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSelected(Z)V
 
-    const v0, 0x7f0a03ed
+    const v0, 0x7f0a03ef
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPasswordView;->findViewById(I)Landroid/view/View;
 
