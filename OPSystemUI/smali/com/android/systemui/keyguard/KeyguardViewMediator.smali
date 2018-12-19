@@ -6365,7 +6365,7 @@
 
     invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    const-string v0, "sys.debug.systemui.mes"
+    const-string/jumbo v0, "sys.debug.systemui.mes"
 
     const/4 v1, 0x0
 

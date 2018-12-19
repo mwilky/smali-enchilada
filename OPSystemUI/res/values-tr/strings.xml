@@ -746,6 +746,7 @@ sessiz"</string>
     <string name="keyguard_plugged_in">%s • Şarj oluyor</string>
     <string name="keyguard_plugged_in_charging_fast">%s • Hızlı şarj oluyor</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • Yavaş şarj oluyor</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Warp Şarj</string>
     <string name="keyguard_sim_error_message_short">Geçersiz Kart.</string>
     <string name="keyguard_sim_locked_message">SIM kart kilitli.</string>
     <string name="keyguard_sim_puk_locked_message">SIM kart PUK kilidi devrede.</string>
@@ -1010,6 +1011,14 @@ Ayrıca, ağ etkinliğinizi izleyebilen bir VPN'ye de bağlısınız."</string>
     <string name="ok">TAMAM</string>
     <string name="okay">TAMAM</string>
     <string name="oneplus_laboratory_added_toast">Tebrikler! OnePlus Laboratuvar Ayarlara eklendi</string>
+    <string name="oneplus_screen_features_not_available_toast">Açık durumdayken, ekran ayarlama gibi özellikler kullanılamaz</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">"'Rahatsız Etmeyin' de değişti"</string>
+    <string name="oneplus_threekey_navigation_next">İleri</string>
+    <string name="oneplus_threekey_navigation_silence">Tam sessizlik</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">Uyarı Kaydırıcı değişti!</string>
+    <string name="oneplus_threekey_navigation_sound">Tüm seslere izin var</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">Buradan açılabilir</string>
+    <string name="oneplus_threekey_navigation_vibration">Sadece titreşim</string>
     <string name="op_earphone_connect">Eşleştiriliyor...</string>
     <string name="op_earphone_connected_fail">Eşleştirme başarısız. Kulaklık ve Bluetooth durumunu kontrol edebilirsiniz.</string>
     <string name="op_earphone_connected_success">Eşleştirildi. Daha fazla ayar için dokunun.</string>

@@ -7353,7 +7353,7 @@
 
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    const-string v2, "sys.debug.systemui.pin"
+    const-string/jumbo v2, "sys.debug.systemui.pin"
 
     invoke-static {v2, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
 

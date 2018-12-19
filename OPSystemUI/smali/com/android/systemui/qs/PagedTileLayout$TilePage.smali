@@ -17,8 +17,6 @@
 # instance fields
 .field private mMaxRows:I
 
-.field public mQsRows:I
-
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -42,7 +40,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b0078
+    const v1, 0x7f0b007a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -53,8 +51,6 @@
     invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v0
-    
-    iget v0, p0, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->mQsRows:I
 
     return v0
 .end method
@@ -91,9 +87,7 @@
 
 .method public updateResources()Z
     .locals 5
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->readRenovateMods()V
-    
+
     invoke-direct {p0}, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->getRows()I
 
     move-result v0
@@ -121,8 +115,6 @@
     invoke-virtual {p0}, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->requestLayout()V
 
     :cond_1
-    invoke-super {p0}, Lcom/android/systemui/qs/TileLayout;->readRenovateMods()V
-    
     invoke-super {p0}, Lcom/android/systemui/qs/TileLayout;->updateResources()Z
 
     move-result v4
@@ -142,14 +134,4 @@
 
     :goto_2
     return v2
-.end method
-
-.method public readRenovateMods()V
-    .locals 1
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mQsRows:I
-    
-    iput v0, p0, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->mQsRows:I
-	
-    return-void
 .end method

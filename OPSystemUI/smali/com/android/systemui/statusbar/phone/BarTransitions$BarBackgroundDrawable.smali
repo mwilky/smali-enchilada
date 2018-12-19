@@ -98,7 +98,7 @@
 
     if-eqz v1, :cond_0
 
-    const v1, 0x7f060364
+    const v1, 0x7f060365
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getColor(I)I
 
@@ -106,7 +106,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;->mOpaque:I
 
-    const v1, 0x7f060365
+    const v1, 0x7f060366
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getColor(I)I
 
@@ -117,7 +117,7 @@
     goto :goto_0
 
     :cond_0
-    const v1, 0x7f060469
+    const v1, 0x7f06046a
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getColor(I)I
 
@@ -134,7 +134,7 @@
     iput v1, p0, Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;->mSemiTransparent:I
 
     :goto_0
-    const v1, 0x7f06046a
+    const v1, 0x7f06046b
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getColor(I)I
 

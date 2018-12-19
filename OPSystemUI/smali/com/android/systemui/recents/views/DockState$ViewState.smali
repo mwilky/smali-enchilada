@@ -502,7 +502,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/DockState$ViewState;->mHintTextPaint:Landroid/graphics/Paint;
 
-    const v2, 0x7f07059e
+    const v2, 0x7f0705a5
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

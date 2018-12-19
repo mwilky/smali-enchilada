@@ -746,6 +746,7 @@
     <string name="keyguard_plugged_in">%s • चार्ज हो रहा है</string>
     <string name="keyguard_plugged_in_charging_fast">%s • तेज़ चार्ज हो रहा है</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • धीरे चार्ज हो रहा है</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • वार्प चार्जिंग</string>
     <string name="keyguard_sim_error_message_short">गलत कार्ड.</string>
     <string name="keyguard_sim_locked_message">SIM कार्ड लॉक किया हुआ है.</string>
     <string name="keyguard_sim_puk_locked_message">SIM कार्ड को PUK के ज़रिए लॉक किया हुआ है.</string>
@@ -1010,6 +1011,14 @@
     <string name="ok">ठीक है</string>
     <string name="okay">ठीक है</string>
     <string name="oneplus_laboratory_added_toast">बधाई! OnePlus लैबोरेट्री को सेटिंग्स में जोड़ा गया है</string>
+    <string name="oneplus_screen_features_not_available_toast">चालू होने पर, स्क्रीन कैलिब्रेशन जैसी सुविधाएं उपलब्ध नहीं होंगी</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">परेशान न करें को इसमें बदल दिया गया है</string>
+    <string name="oneplus_threekey_navigation_next">अगला</string>
+    <string name="oneplus_threekey_navigation_silence">कुल मौन</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">चेतावनी स्लाइडर बदल गया है!</string>
+    <string name="oneplus_threekey_navigation_sound">सभी ध्वनियों की अनुमति है</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">इसे यहां चालू किया जा सकता है</string>
+    <string name="oneplus_threekey_navigation_vibration">केवल कंपन</string>
     <string name="op_earphone_connect">जोड़ा जा रहा है...</string>
     <string name="op_earphone_connected_fail">जुड़ने में विफल। आप हेडसेट और ब्लूटूथ स्थिति की जांच कर सकते हैं ।</string>
     <string name="op_earphone_connected_success">जुड़ गया। अधिक सेट करने के लिए टैप करें।</string>

@@ -746,6 +746,7 @@
     <string name="keyguard_plugged_in">%s • ಚಾರ್ಜ್‌ ಮಾಡಲಾಗುತ್ತಿದೆ</string>
     <string name="keyguard_plugged_in_charging_fast">%s • ವೇಗವಾಗಿ ಚಾರ್ಜ್‌ಮಾಡಲಾಗುತ್ತಿದೆ</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • ನಿಧಾನವಾಗಿ ಚಾರ್ಜ್ ಮಾಡಲಾಗುತ್ತಿದೆ</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Warp ಚಾರ್ಜಿಂಗ್</string>
     <string name="keyguard_sim_error_message_short">ಅಮಾನ್ಯ ಕಾರ್ಡ್.</string>
     <string name="keyguard_sim_locked_message">ಸಿಮ್‌ ಕಾರ್ಡ್ ಲಾಕ್ ಆಗಿದೆ.</string>
     <string name="keyguard_sim_puk_locked_message">ಸಿಮ್‌ ಕಾರ್ಡ್ PUK-ಲಾಕ್ ಆಗಿದೆ.</string>
@@ -1010,6 +1011,14 @@
     <string name="ok">ಓಕೆ</string>
     <string name="okay">ಸರಿ</string>
     <string name="oneplus_laboratory_added_toast">ಅಭಿನಂದನೆಗಳು! OnePlus ಲ್ಯಾಬೊರೇಟರಿಯನ್ನು ಸೆಟ್ಟಿಂಗ್ಸ್‌ಗೆ ಸೇರಿಸಲಾಗಿದೆ</string>
+    <string name="oneplus_screen_features_not_available_toast">ಆನ್ ಆಗಿರುವಾಗ, ಪರದೆ ಮಾಪನದಂತಹ ವೈಶಿಷ್ಟ್ಯಗಳು ಲಭ್ಯವಿರುವುದಿಲ್ಲ</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">"'ಅಡಚಣೆ ಮಾಡಬೇಡಿ' ಮೋಡ್ ಕೂಡ ಬದಲಾಗಿದೆ"</string>
+    <string name="oneplus_threekey_navigation_next">ಮುಂದೆ</string>
+    <string name="oneplus_threekey_navigation_silence">ಪೂರ್ಣ ನಿಶ್ಯಬ್ಧ</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">ಎಚ್ಚರಿಕೆ ಸ್ಲೈಡರ್ ಬದಲಾಗಿದೆ!</string>
+    <string name="oneplus_threekey_navigation_sound">ಎಲ್ಲಾ ಧ್ವನಿಗಳನ್ನು ಅನುಮತಿಸಲಾಗಿದೆ</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">ಅದನ್ನು ಇಲ್ಲಿ ಆನ್ ಮಾಡಬಹುದಾಗಿದೆ</string>
+    <string name="oneplus_threekey_navigation_vibration">ಕಂಪನ ಮಾತ್ರ</string>
     <string name="op_earphone_connect">ಜೋಡಿ ಮಾಡಲಾಗುತ್ತಿದೆ...</string>
     <string name="op_earphone_connected_fail">ಜೋಡಿ ಮಾಡಲು ವಿಫಲಗೊಂಡಿದೆ. ನೀವು ಹೆಡ್‌ಸೆಟ್ ಮತ್ತು ಬ್ಲೂಟೂತ್ ಸ್ಥಿತಿಯನ್ನು ಪರೀಕ್ಷಿಸಬಹುದು.</string>
     <string name="op_earphone_connected_success">ಜೋಡಿ ಮಾಡಲಾಗಿದೆ. ಇನ್ನಷ್ಟು ಸೆಟ್ ಮಾಡಲು ಟ್ಯಾಪ್ ಮಾಡಿ.</string>

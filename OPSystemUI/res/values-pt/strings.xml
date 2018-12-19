@@ -537,7 +537,7 @@ Se retomar o uso de dados, o serviço poderá ser cobrado."</string>
     <string name="drag_to_add_tiles">Arrastar para adicionar mosaicos</string>
     <string name="drag_to_remove_disabled">É preciso haver pelo menos seis blocos</string>
     <string name="drag_to_remove_tiles">Arraste aqui para remover</string>
-    <string name="edit_mode_hint">Arraste as peças para reorganizar. Toque para ocultar or mostrar.</string>
+    <string name="edit_mode_hint">Arraste as peças para reorganizar. Toque para ocultar ou mostrar.</string>
     <string name="empty_shade_text">Sem notificações</string>
     <string name="enable_adb">Depuração USB</string>
     <string name="enable_adb_summary">Modo de depuração quando o USB estiver conectado</string>
@@ -745,6 +745,7 @@ Entre em contato com seu provedor de serviços sem fio para receber outro cartã
     <string name="keyguard_plugged_in">%s • Carregando</string>
     <string name="keyguard_plugged_in_charging_fast">%s • Carregando rapidamente</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • Carregando lentamente</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Carregamento Warp</string>
     <string name="keyguard_sim_error_message_short">Cartão inválido.</string>
     <string name="keyguard_sim_locked_message">O cartão SIM está bloqueado.</string>
     <string name="keyguard_sim_puk_locked_message">O cartão SIM está bloqueado pelo PUK.</string>
@@ -1009,6 +1010,14 @@ Você também está conectado a uma VPN, que pode monitorar sua atividade de red
     <string name="ok">OK</string>
     <string name="okay">Ok</string>
     <string name="oneplus_laboratory_added_toast">Parabéns! O laboratório OnePlus foi adicionado às Definições</string>
+    <string name="oneplus_screen_features_not_available_toast">Quando ativada, funcionalidades como a calibração do ecrã não estarão disponíveis</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">\"Não incomodar\" também foi alterado</string>
+    <string name="oneplus_threekey_navigation_next">Seguinte</string>
+    <string name="oneplus_threekey_navigation_silence">Silêncio total</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">O controlo de deslize de alerta foi alterado!</string>
+    <string name="oneplus_threekey_navigation_sound">Todos os sons permitidos</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">Pode ser ativado aqui</string>
+    <string name="oneplus_threekey_navigation_vibration">Apenas vibração</string>
     <string name="op_earphone_connect">A emparelhar...</string>
     <string name="op_earphone_connected_fail">Falha ao emparelhar. Pode verificar o estado dos auriculares e Bluetooth.</string>
     <string name="op_earphone_connected_success">Emparelhado. Tocar para conf. mais.</string>

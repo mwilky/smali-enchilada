@@ -38,6 +38,7 @@
     <string name="interruption_level_music">இசை</string>
     <string name="keyguard_fingerprint_unlock">பூட்டுநீக்க கைரேகையைப் பயன்படுத்தவும்</string>
     <string name="keyguard_indication_charging_time_fast_vooc">(முழுமையாவதற்கு %s நேரம் உள்ளது)</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Warp சார்ஜிங்</string>
     <string name="kg_at_least_four_points">குறைந்தது 4 புள்ளிகளைச் சேர்க்க வரையவும்</string>
     <string name="kg_first_unlock_instructions">உங்கள் ஃபோன் மறுதொடக்கம் செய்யப்பட்டது, கடவுச்சொல்/களவடிவத்தைப் பயன்படுத்திப் பூட்டுநீக்க வேண்டும். அனைத்து அம்சங்கள் மற்றும் தரவைப் பயன்படுத்த, பூட்டுநீக்கவும்.</string>
     <string name="kg_remaining_attempts">மீதமுள்ள முயற்சிகள்: %d</string>
@@ -58,6 +59,14 @@
     <string name="notification_title_disable_button">HW பொத்தான்கள் பூட்டப்பட்டுள்ளன</string>
     <string name="ok">சரி</string>
     <string name="oneplus_laboratory_added_toast">வாழ்த்துக்கள்! OnePlus ஆய்வகம் அமைப்புகளில் சேர்க்கப்பட்டுள்ளது</string>
+    <string name="oneplus_screen_features_not_available_toast">இதை ஆன் செய்தால், திரை மதிப்பாராய்வு போன்ற அம்சங்கள் கிடைக்காது</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">"'தொந்தரவு செய்யாதீர்' செயல்பாடும் மாறிவிட்டது"</string>
+    <string name="oneplus_threekey_navigation_next">அடுத்து</string>
+    <string name="oneplus_threekey_navigation_silence">முழு நிசப்தம்</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">விழிப்பூட்டல் ஸ்லைடர் மாறிவிட்டது!</string>
+    <string name="oneplus_threekey_navigation_sound">அனைத்து ஒலிகளும் அனுமதிக்கப்பட்டுள்ளன</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">இதை இங்கு ஆன் செய்ய முடியும்</string>
+    <string name="oneplus_threekey_navigation_vibration">அதிர்வு மட்டும்</string>
     <string name="op_earphone_connect">இணைக்கிறது...</string>
     <string name="op_earphone_connected_fail">இணைக்க முடியவில்லை. நீங்கள் ஹெட்செட் மற்றும் ப்ளூடூத் நிலையை சரிபார்க்கலாம்.</string>
     <string name="op_earphone_connected_success">இணைக்கப்பட்டது. மேலும் அமைப்பதற்குத் தட்டவும்.</string>

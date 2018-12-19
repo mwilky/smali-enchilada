@@ -33,5 +33,8 @@
 .method public abstract init()V
 .end method
 
+.method public abstract isAnimationStarted()Z
+.end method
+
 .method public abstract onWallpaperChange(Landroid/graphics/Bitmap;)V
 .end method

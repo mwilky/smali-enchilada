@@ -937,7 +937,7 @@
     return-object v0
 .end method
 
-.method public getTileLayout()Lcom/android/systemui/qs/QSPanel$QSTileLayout;
+.method getTileLayout()Lcom/android/systemui/qs/QSPanel$QSTileLayout;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mTileLayout:Lcom/android/systemui/qs/QSPanel$QSTileLayout;
@@ -2062,13 +2062,13 @@
 
     move-result-object v0
 
-    const v1, 0x7f070581
+    const v1, 0x7f070588
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v1
 
-    const v2, 0x7f070580
+    const v2, 0x7f070587
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

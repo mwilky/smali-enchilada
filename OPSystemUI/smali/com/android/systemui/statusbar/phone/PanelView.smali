@@ -4,7 +4,6 @@
 
 # interfaces
 .implements Landroid/view/GestureDetector$OnDoubleTapListener;
-.implements Lcom/android/systemui/statusbar/policy/ChargingAnimationController$ChargingStateChangeCallback;
 
 
 # static fields
@@ -66,8 +65,6 @@
 .field private mGestureWaitForTouchSlop:Z
 
 .field private mHasLayoutedSinceDown:Z
-
-.field private mHasLockscreenWallpaper:Z
 
 .field protected mHeadsUpManager:Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone;
 
@@ -159,8 +156,6 @@
 
 .field private mViewName:Ljava/lang/String;
 
-.field private mWarpCharingAnimationStart:Z
-
 
 # direct methods
 .method static constructor <clinit>()V
@@ -205,12 +200,6 @@
     const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mNextCollapseSpeedUpFactor:F
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mWarpCharingAnimationStart:Z
-
-    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mHasLockscreenWallpaper:Z
 
     new-instance v0, Lcom/android/systemui/statusbar/phone/PanelView$3;
 
@@ -826,7 +815,7 @@
 
     const-string v8, "lock_unlock_success"
 
-    const-string v9, "swipe"
+    const-string/jumbo v9, "swipe"
 
     const-string v10, "1"
 
@@ -2967,7 +2956,7 @@
 
     iput v2, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mHintDistance:F
 
-    const v2, 0x7f07068d
+    const v2, 0x7f070694
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -3016,7 +3005,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mBar:Lcom/android/systemui/statusbar/phone/PanelBar;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mBar:Lcom/android/systemui/statusbar/phone/PanelBar;
 
@@ -3028,71 +3017,48 @@
 
     cmpl-float v2, v2, v3
 
-    if-gtz v2, :cond_0
+    if-gtz v2, :cond_1
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mPeekAnimator:Landroid/animation/ObjectAnimator;
 
-    if-nez v2, :cond_0
+    if-nez v2, :cond_1
 
     iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mInstantExpanding:Z
 
-    if-nez v2, :cond_0
+    if-nez v2, :cond_1
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PanelView;->isPanelVisibleBecauseOfHeadsUp()Z
 
     move-result v2
 
-    if-nez v2, :cond_0
+    if-nez v2, :cond_1
 
     iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mTracking:Z
 
-    if-nez v2, :cond_0
+    if-nez v2, :cond_1
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mHeightAnimator:Landroid/animation/ValueAnimator;
 
-    if-eqz v2, :cond_1
-
-    :cond_0
-    iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mHasLockscreenWallpaper:Z
-
-    if-nez v2, :cond_2
-
-    iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mWarpCharingAnimationStart:Z
-
-    if-nez v2, :cond_1
-
-    invoke-static {}, Lcom/android/systemui/plugin/LSState;->getInstance()Lcom/android/systemui/plugin/LSState;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/android/systemui/plugin/LSState;->getPreventModeCtrl()Lcom/android/systemui/plugin/PreventModeCtrl;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/android/systemui/plugin/PreventModeCtrl;->isPreventModeActive()Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
+    if-eqz v2, :cond_0
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     const/4 v2, 0x0
 
     goto :goto_1
 
-    :cond_2
+    :cond_1
     :goto_0
     const/4 v2, 0x1
 
     :goto_1
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/phone/PanelBar;->panelExpansionChanged(FZ)V
 
-    :cond_3
+    :cond_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mExpansionListener:Ljava/util/function/BiConsumer;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mExpansionListener:Ljava/util/function/BiConsumer;
 
@@ -3110,7 +3076,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/function/BiConsumer;->accept(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    :cond_4
+    :cond_3
     return-void
 .end method
 
@@ -3152,16 +3118,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mViewName:Ljava/lang/String;
 
-    const-class v0, Lcom/android/systemui/statusbar/policy/ChargingAnimationController;
-
-    invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/systemui/statusbar/policy/ChargingAnimationController;
-
-    invoke-interface {v0, p0}, Lcom/android/systemui/statusbar/policy/ChargingAnimationController;->addCallback(Ljava/lang/Object;)V
-
     return-void
 .end method
 
@@ -3197,19 +3153,9 @@
 .end method
 
 .method protected onDetachedFromWindow()V
-    .locals 1
+    .locals 0
 
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
-
-    const-class v0, Lcom/android/systemui/statusbar/policy/ChargingAnimationController;
-
-    invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/systemui/statusbar/policy/ChargingAnimationController;
-
-    invoke-interface {v0, p0}, Lcom/android/systemui/statusbar/policy/ChargingAnimationController;->removeCallback(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -4460,42 +4406,6 @@
     return-void
 .end method
 
-.method public onWarpCharingAnimationEnd(I)V
-    .locals 2
-
-    sget-object v0, Lcom/android/systemui/statusbar/phone/PanelView;->TAG:Ljava/lang/String;
-
-    const-string v1, " onWarpCharingAnimationEnd:"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mWarpCharingAnimationStart:Z
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PanelView;->notifyBarPanelExpansionChanged()V
-
-    return-void
-.end method
-
-.method public onWarpCharingAnimationStart(I)V
-    .locals 2
-
-    sget-object v0, Lcom/android/systemui/statusbar/phone/PanelView;->TAG:Ljava/lang/String;
-
-    const-string v1, " onWarpCharingAnimationStart:"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mWarpCharingAnimationStart:Z
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PanelView;->notifyBarPanelExpansionChanged()V
-
-    return-void
-.end method
-
 .method protected requestPanelHeightUpdate()V
     .locals 2
 
@@ -4822,34 +4732,6 @@
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mLaunchingNotification:Z
-
-    return-void
-.end method
-
-.method public setLockscreenWallpaper(Z)V
-    .locals 3
-
-    const-string v0, "StatusBarWindowManager"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "LockscreenWP: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mHasLockscreenWallpaper:Z
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PanelView;->notifyBarPanelExpansionChanged()V
 
     return-void
 .end method

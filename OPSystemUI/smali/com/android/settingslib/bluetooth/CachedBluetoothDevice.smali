@@ -1449,6 +1449,8 @@
 
     check-cast v2, Lcom/android/settingslib/bluetooth/LocalBluetoothProfile;
 
+    if-eqz v2, :cond_0
+
     invoke-virtual {p0, v2}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->getProfileConnectionState(Lcom/android/settingslib/bluetooth/LocalBluetoothProfile;)I
 
     move-result v3

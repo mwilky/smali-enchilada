@@ -784,7 +784,7 @@
     nop
 
     :goto_0
-    const v8, 0x7f0b0061
+    const v8, 0x7f0b0063
 
     invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -809,9 +809,9 @@
     :goto_1
     iget v11, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mOrientationType:I
 
-    const v14, 0x7f07065c
+    const v14, 0x7f070663
 
-    const v15, 0x7f07065b
+    const v15, 0x7f070662
 
     const/4 v12, 0x2
 
@@ -864,7 +864,7 @@
 
     if-ne v10, v12, :cond_7
 
-    const v10, 0x7f070658
+    const v10, 0x7f07065f
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -879,7 +879,7 @@
 
     if-ne v10, v11, :cond_8
 
-    const v10, 0x7f070656
+    const v10, 0x7f07065d
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -902,7 +902,7 @@
     const/16 v7, 0x55
 
     :goto_4
-    const v11, 0x7f07065a
+    const v11, 0x7f070661
 
     invoke-virtual {v4, v11}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -912,7 +912,7 @@
 
     if-ne v11, v10, :cond_a
 
-    const v10, 0x7f070659
+    const v10, 0x7f070660
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -934,7 +934,7 @@
 
     if-ne v10, v12, :cond_b
 
-    const v10, 0x7f070657
+    const v10, 0x7f07065e
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -955,7 +955,7 @@
 
     if-ne v10, v11, :cond_c
 
-    const v10, 0x7f070655
+    const v10, 0x7f07065c
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1014,7 +1014,7 @@
 
     if-ne v10, v12, :cond_10
 
-    const v10, 0x7f070658
+    const v10, 0x7f07065f
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1029,7 +1029,7 @@
 
     if-ne v10, v11, :cond_11
 
-    const v10, 0x7f070656
+    const v10, 0x7f07065d
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1045,7 +1045,7 @@
     const/16 v7, 0x33
 
     :goto_9
-    const v11, 0x7f07065a
+    const v11, 0x7f070661
 
     invoke-virtual {v4, v11}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1055,7 +1055,7 @@
 
     if-ne v11, v10, :cond_13
 
-    const v10, 0x7f070659
+    const v10, 0x7f070660
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1076,7 +1076,7 @@
 
     if-ne v10, v12, :cond_14
 
-    const v10, 0x7f070657
+    const v10, 0x7f07065e
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1099,7 +1099,7 @@
 
     if-ne v10, v11, :cond_15
 
-    const v10, 0x7f070655
+    const v10, 0x7f07065c
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1159,7 +1159,7 @@
     iput v5, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mDialogPosition:I
 
     :cond_19
-    const v10, 0x7f0704e2
+    const v10, 0x7f0704e9
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1254,7 +1254,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThemeIconColor:I
 
-    const v1, 0x7f06032c
+    const v1, 0x7f06032d
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1262,7 +1262,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThemeTextColor:I
 
-    const v1, 0x7f060311
+    const v1, 0x7f060312
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1277,7 +1277,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThemeIconColor:I
 
-    const v1, 0x7f06032a
+    const v1, 0x7f06032b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1285,7 +1285,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mThemeTextColor:I
 
-    const v1, 0x7f06030f
+    const v1, 0x7f060310
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1403,6 +1403,16 @@
     invoke-interface {v1, v2, v3}, Lcom/android/systemui/plugins/VolumeDialogController;->addCallback(Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;)V
 
     invoke-direct {p0}, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->initDialog()V
+
+    sget-object v1, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->TAG:Ljava/lang/String;
+
+    const-string v2, "in OPThreekeyDialog init mOPThreekeyNavigationDialog.getInstance"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v1, p0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mContext:Landroid/content/Context;
+
+    invoke-static {v1}, Lcom/android/systemui/volume/OPThreekeyNavigationDialog;->getInstance(Landroid/content/Context;)Lcom/android/systemui/volume/OPThreekeyNavigationDialog;
 
     return-void
 .end method

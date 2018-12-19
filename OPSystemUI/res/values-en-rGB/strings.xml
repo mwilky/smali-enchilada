@@ -746,6 +746,7 @@ only"</string>
     <string name="keyguard_plugged_in">%s • Charging</string>
     <string name="keyguard_plugged_in_charging_fast">%s • Charging rapidly</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • Charging slowly</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Warp Charging</string>
     <string name="keyguard_sim_error_message_short">Invalid card.</string>
     <string name="keyguard_sim_locked_message">SIM card is locked.</string>
     <string name="keyguard_sim_puk_locked_message">SIM card is PUK-locked.</string>
@@ -1010,6 +1011,14 @@ You're also connected to a VPN, which can monitor your network activity."</strin
     <string name="ok">OK</string>
     <string name="okay">OK</string>
     <string name="oneplus_laboratory_added_toast">Congrats! OnePlus laboratory has been added to Settings</string>
+    <string name="oneplus_screen_features_not_available_toast">When turned on, features such as screen calibration will not be available</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">"'Do Not Disturb' has changed too"</string>
+    <string name="oneplus_threekey_navigation_next">Next</string>
+    <string name="oneplus_threekey_navigation_silence">Total silence</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">Alert Slider has changed!</string>
+    <string name="oneplus_threekey_navigation_sound">All sounds allowed</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">It can be turned on here</string>
+    <string name="oneplus_threekey_navigation_vibration">Vibration only</string>
     <string name="op_earphone_connect">Pairing...</string>
     <string name="op_earphone_connected_fail">Failed to pair. Please check the headset and Bluetooth status.</string>
     <string name="op_earphone_connected_success">Paired. Tap to set more.</string>

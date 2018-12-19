@@ -746,6 +746,7 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="keyguard_plugged_in">%s • ചാർജ് ചെയ്യുന്നു</string>
     <string name="keyguard_plugged_in_charging_fast">%s • വേഗത്തിൽ ചാർജ് ചെയ്യുന്നു</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • പതുക്കെ ചാർജ് ചെയ്യുന്നു</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Warp ചാർജിംഗ്</string>
     <string name="keyguard_sim_error_message_short">അസാധുവായ കാർഡ്.</string>
     <string name="keyguard_sim_locked_message">സിം കാർഡ് ലോക്കുചെയ്‌തു.</string>
     <string name="keyguard_sim_puk_locked_message">സിം കാർഡ് PUK-ലോക്ക് ചെയ്‌തതാണ്.</string>
@@ -1010,6 +1011,14 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="ok">ശരി</string>
     <string name="okay">ശരി</string>
     <string name="oneplus_laboratory_added_toast">അഭിനന്ദനങ്ങള്‍! OnePlus ലബോറട്ടറി ക്രമീകരണങ്ങളിലേക്ക് ചേര്‍ത്തു</string>
+    <string name="oneplus_screen_features_not_available_toast">ഓണായിരിക്കുമ്പോൾ, സ്‌ക്രീൻ കാലിബ്രേഷൻ പോലുള്ള ഫീച്ചറുകൾ ലഭ്യമായിരിക്കില്ല</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">"'ശല്യപ്പെടുത്തരുത്' എന്നതും മാറിയിരിക്കുന്നു"</string>
+    <string name="oneplus_threekey_navigation_next">അടുത്തത്</string>
+    <string name="oneplus_threekey_navigation_silence">പൂർണ്ണ നിശബ്ദത</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">മുന്നറിയിപ്പ് സ്ലൈഡർ മാറ്റി!</string>
+    <string name="oneplus_threekey_navigation_sound">എല്ലാ ശബ്ദവും അനുവദനീയമാണ്</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">അത് ഇവിടെ ഓണാക്കാം</string>
+    <string name="oneplus_threekey_navigation_vibration">വൈബ്രേഷൻ മാത്രം</string>
     <string name="op_earphone_connect">ജോടിയാക്കുന്നു...</string>
     <string name="op_earphone_connected_fail">ജോടിയാക്കുന്നതിൽ പരാജയപ്പെട്ടു. ഹെഡ്‌സെറ്റ്, Bluetooth സ്റ്റാറ്റസ് നിങ്ങൾക്ക് പരിശോധിക്കാം.</string>
     <string name="op_earphone_connected_success">ജോടിയാക്കി. കൂടുതൽ ക്രമീകരിക്കാൻ ടാപ്പുചെയ്യുക.</string>

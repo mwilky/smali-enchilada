@@ -245,7 +245,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/UserDetailItemView;->mName:Landroid/widget/TextView;
 
-    const v1, 0x7f07055c
+    const v1, 0x7f070563
 
     invoke-static {v0, v1}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/widget/TextView;I)V
 
@@ -346,7 +346,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0604ae
+    const v3, 0x7f0604af
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 

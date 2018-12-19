@@ -1167,9 +1167,15 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/CircleImageView;->paint:Landroid/graphics/Paint;
 
-    const-string v1, "#00FF00"
+    iget-object v1, p0, Lcom/android/systemui/fingerprint/CircleImageView;->mContext:Landroid/content/Context;
 
-    invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f0601b8
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
     move-result v1
 
@@ -1600,7 +1606,7 @@
 
     div-float/2addr v1, v2
 
-    const-string v2, "sys.fod.icon.dim"
+    const-string/jumbo v2, "sys.fod.icon.dim"
 
     const/16 v3, 0x46
 

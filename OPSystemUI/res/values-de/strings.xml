@@ -744,6 +744,7 @@ wichtige"</string>
     <string name="keyguard_plugged_in">%s • Wird geladen</string>
     <string name="keyguard_plugged_in_charging_fast">%s • Wird schnell geladen</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • Wird langsam geladen</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Warp-Aufladen</string>
     <string name="keyguard_sim_error_message_short">Ungültige Karte.</string>
     <string name="keyguard_sim_locked_message">SIM-Karte ist gesperrt.</string>
     <string name="keyguard_sim_puk_locked_message">PUK-Sperre auf SIM-Karte.</string>
@@ -1008,6 +1009,14 @@ Außerdem bist du mit einem VPN verbunden, das deine Netzwerkaktivitäten erfass
     <string name="ok">OK</string>
     <string name="okay">OK</string>
     <string name="oneplus_laboratory_added_toast">Gratulation! OnePlus Labor wurde zu den Einstellungen hinzugefügt</string>
+    <string name="oneplus_screen_features_not_available_toast">Funktionen wie Bildschirmkalibrierung sind nach dem Einschalten nicht verfügbar</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">"'Bitte nicht stören' ist auch geändert"</string>
+    <string name="oneplus_threekey_navigation_next">Weiter</string>
+    <string name="oneplus_threekey_navigation_silence">Totale Stille</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">Der Alarm-Schieberegler ist geändert!</string>
+    <string name="oneplus_threekey_navigation_sound">Alle Töne zugelassen</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">Sie kann hier eingeschaltet werden</string>
+    <string name="oneplus_threekey_navigation_vibration">Nur Vibration</string>
     <string name="op_earphone_connect">Kopplung läuft...</string>
     <string name="op_earphone_connected_fail">Koppeln fehlgeschlagen. Sie können den Headset- und Bluetooth-Status überprüfen.</string>
     <string name="op_earphone_connected_success">Gekoppelt. Tippen, um weitere einzustellen.</string>

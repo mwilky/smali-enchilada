@@ -33,8 +33,8 @@
 
 .field public static final design_fab_stroke_top_outer_color:I = 0x7f06018f
 
-.field public static final mtrl_textinput_default_box_stroke_color:I = 0x7f0602d4
+.field public static final mtrl_textinput_default_box_stroke_color:I = 0x7f0602d5
 
-.field public static final mtrl_textinput_disabled_color:I = 0x7f0602d5
+.field public static final mtrl_textinput_disabled_color:I = 0x7f0602d6
 
-.field public static final mtrl_textinput_hovered_box_stroke_color:I = 0x7f0602d7
+.field public static final mtrl_textinput_hovered_box_stroke_color:I = 0x7f0602d8

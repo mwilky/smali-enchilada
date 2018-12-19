@@ -472,7 +472,7 @@
 
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    const v0, 0x7f070547
+    const v0, 0x7f07054e
 
     const v1, 0x1020016
 
@@ -480,7 +480,7 @@
 
     const v1, 0x7f0a0469
 
-    const v2, 0x7f070548
+    const v2, 0x7f07054f
 
     invoke-static {p0, v1, v2}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/view/View;II)V
 

@@ -746,6 +746,7 @@
     <string name="keyguard_plugged_in">%s • جارٍ الشحن</string>
     <string name="keyguard_plugged_in_charging_fast">%s • جارٍ الشحن سريعًا</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • جارٍ الشحن ببطء</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • التواء الشحن</string>
     <string name="keyguard_sim_error_message_short">بطاقة غير صالحة.</string>
     <string name="keyguard_sim_locked_message">‏شريحة SIM مؤمّنة.</string>
     <string name="keyguard_sim_puk_locked_message">‏شريحة SIM مؤمّنة برمز PUK.</string>
@@ -1010,6 +1011,14 @@
     <string name="ok">موافق</string>
     <string name="okay">موافق</string>
     <string name="oneplus_laboratory_added_toast">تهانينا! تمت إضافة OnePlus إلى الإعدادات</string>
+    <string name="oneplus_screen_features_not_available_toast">عند التشغيل، لن تتوفر ميزات مثل ميزة معايرة الشاشة</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">’وضع عدم الإزعاج‘ تم تغييره أيضاً</string>
+    <string name="oneplus_threekey_navigation_next">التالي</string>
+    <string name="oneplus_threekey_navigation_silence">صمت تام</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">تم تغيير شريط تمرير التنبيهات!</string>
+    <string name="oneplus_threekey_navigation_sound">جميع الأصوات مسموح بها</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">يمكن تشغيله هنا</string>
+    <string name="oneplus_threekey_navigation_vibration">اهتزاز فقط</string>
     <string name="op_earphone_connect">جارِ الاقتران...</string>
     <string name="op_earphone_connected_fail">فشل الاقتران. يمكنك التحقق من حالة سماعة الرأس والبلوتوث.</string>
     <string name="op_earphone_connected_success">مقترن. اضغط لتعيين المزيد.</string>

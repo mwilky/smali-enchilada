@@ -21,9 +21,9 @@
 
 .field private mFastOutLinearInInterpolator:Landroid/view/animation/Interpolator;
 
-.field mImm:Landroid/view/inputmethod/InputMethodManager;
+.field private mHideNavigationBar:Z
 
-.field private mIsGestureEnabled:Z
+.field mImm:Landroid/view/inputmethod/InputMethodManager;
 
 .field private mIsResume:Z
 
@@ -74,7 +74,7 @@
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/keyguard/KeyguardPasswordView;->mIsGestureEnabled:Z
+    iput-boolean v0, p0, Lcom/android/keyguard/KeyguardPasswordView;->mHideNavigationBar:Z
 
     iput-boolean v0, p0, Lcom/android/keyguard/KeyguardPasswordView;->mIsResume:Z
 
@@ -446,11 +446,11 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v5, " gesture:"
+    const-string v5, " hideNavigationBar:"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-boolean v5, p0, Lcom/android/keyguard/KeyguardPasswordView;->mIsGestureEnabled:Z
+    iget-boolean v5, p0, Lcom/android/keyguard/KeyguardPasswordView;->mHideNavigationBar:Z
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -700,7 +700,7 @@
 
     move-result-object v0
 
-    const v1, 0x10402d5
+    const v1, 0x10402d6
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -959,9 +959,7 @@
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardPasswordView;->displayDefaultSecurityMessage()V
 
-    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardPasswordView;->getContext()Landroid/content/Context;
-
-    move-result-object v2
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPasswordView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -975,15 +973,34 @@
 
     const/4 v3, 0x3
 
-    if-ne v2, v3, :cond_1
+    const/4 v4, 0x0
+
+    if-eq v2, v3, :cond_2
+
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPasswordView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    const-string v3, "buttons_show_on_screen_navkeys"
+
+    invoke-static {v2, v3, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v2
+
+    if-nez v2, :cond_1
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v4
 
+    nop
+
+    :cond_2
     :goto_0
-    iput-boolean v1, p0, Lcom/android/keyguard/KeyguardPasswordView;->mIsGestureEnabled:Z
+    iput-boolean v1, p0, Lcom/android/keyguard/KeyguardPasswordView;->mHideNavigationBar:Z
 
     return-void
 .end method
@@ -1233,7 +1250,7 @@
 
     if-nez v1, :cond_0
 
-    iget-boolean v1, p0, Lcom/android/keyguard/KeyguardPasswordView;->mIsGestureEnabled:Z
+    iget-boolean v1, p0, Lcom/android/keyguard/KeyguardPasswordView;->mHideNavigationBar:Z
 
     if-eqz v1, :cond_0
 
@@ -1263,7 +1280,7 @@
 
     if-nez v1, :cond_2
 
-    iget-boolean v1, p0, Lcom/android/keyguard/KeyguardPasswordView;->mIsGestureEnabled:Z
+    iget-boolean v1, p0, Lcom/android/keyguard/KeyguardPasswordView;->mHideNavigationBar:Z
 
     if-eqz v1, :cond_2
 

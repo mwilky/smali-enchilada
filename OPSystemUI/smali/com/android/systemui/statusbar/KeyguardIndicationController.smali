@@ -695,7 +695,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0704c2
+    const v3, 0x7f0704c9
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -759,7 +759,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0704c2
+    const v3, 0x7f0704c9
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -890,9 +890,7 @@
     goto :goto_4
 
     :pswitch_1
-    invoke-static {}, Lcom/android/systemui/util/OPUtils;->isSupportWarpCharging()Z
-
-    move-result v5
+    sget-boolean v5, Lcom/android/systemui/util/OPUtils;->SUPPORT_WARP_CHARGING:Z
 
     if-eqz v5, :cond_3
 
@@ -1218,7 +1216,7 @@
 
     if-eqz v0, :cond_1
 
-    const v3, 0x7f0704c3
+    const v3, 0x7f0704ca
 
     goto :goto_0
 
@@ -1752,7 +1750,7 @@
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mContext:Landroid/content/Context;
 
-    const v8, 0x104023c
+    const v8, 0x104023d
 
     invoke-virtual {v6, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2107,7 +2105,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mTextView:Lcom/android/systemui/statusbar/phone/KeyguardIndicationTextView;
 
-    const v5, 0x104034f
+    const v5, 0x1040350
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/KeyguardIndicationTextView;->switchIndication(I)V
 

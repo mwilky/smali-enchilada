@@ -1090,7 +1090,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/QuickStepController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0603fc
+    const v2, 0x7f0603fd
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getColor(I)I
 
@@ -1100,7 +1100,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/QuickStepController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0603fb
+    const v2, 0x7f0603fc
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getColor(I)I
 

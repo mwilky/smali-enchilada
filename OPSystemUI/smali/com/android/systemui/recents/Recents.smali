@@ -2221,7 +2221,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/recents/Recents;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f060406
+    const v2, 0x7f060407
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getColor(I)I
 
@@ -2229,7 +2229,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/recents/Recents;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f06040a
+    const v3, 0x7f06040b
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getColor(I)I
 
@@ -2273,7 +2273,7 @@
 
     move-result v6
 
-    const v7, 0x7f0b0082
+    const v7, 0x7f0b0084
 
     invoke-virtual {v0, v7}, Landroid/content/res/Resources;->getInteger(I)I
 

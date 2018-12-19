@@ -125,7 +125,7 @@
 
     nop
 
-    const v2, 0x7f0602ba
+    const v2, 0x7f0602bb
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getColor(I)I
 
@@ -165,7 +165,7 @@
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/BatteryMeterView;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
-    const v3, 0x104063c
+    const v3, 0x104063d
 
     invoke-virtual {p1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -191,7 +191,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f070617
+    const v5, 0x7f07061e
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -201,7 +201,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f070616
+    const v6, 0x7f07061d
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -393,7 +393,7 @@
 
     const/4 v2, 0x1
 
-    const v3, 0x7f070626
+    const v3, 0x7f07062d
 
     invoke-virtual {v0, v3, v1, v2}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 
@@ -401,7 +401,7 @@
 
     move-result v3
 
-    const v4, 0x7f070616
+    const v4, 0x7f07061d
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -416,7 +416,7 @@
     goto :goto_0
 
     :cond_0
-    const v2, 0x7f070617
+    const v2, 0x7f07061e
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -23,7 +23,7 @@
 
 .field private final mHandler:Landroid/os/Handler;
 
-.field public mHeaderQsPanel:Lcom/android/systemui/qs/QuickQSPanel;
+.field protected mHeaderQsPanel:Lcom/android/systemui/qs/QuickQSPanel;
 
 .field private mHeaderTextContainerAlphaAnimator:Lcom/android/systemui/qs/TouchAnimator;
 
@@ -668,7 +668,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f070577
+    const v2, 0x7f07057e
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -721,7 +721,7 @@
     goto :goto_0
 
     :cond_0
-    const v2, 0x7f07059d
+    const v2, 0x7f0705a4
 
     :goto_0
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1322,7 +1322,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f070588
+    const v3, 0x7f07058f
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -2927,7 +2927,7 @@
     move v4, v2
 
     :goto_3
-    const v11, 0x7f070635
+    const v11, 0x7f07063c
 
     if-eqz v4, :cond_7
 

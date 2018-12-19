@@ -252,7 +252,7 @@
 
     const-string v1, "quick_user"
 
-    const-string v2, "switch"
+    const-string/jumbo v2, "switch"
 
     const-string v3, "1"
 

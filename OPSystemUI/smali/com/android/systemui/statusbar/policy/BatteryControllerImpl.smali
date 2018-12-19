@@ -1057,9 +1057,7 @@
 
     move-result v5
 
-    invoke-static {}, Lcom/android/systemui/util/OPUtils;->isSupportWarpCharging()Z
-
-    move-result v6
+    sget-boolean v6, Lcom/android/systemui/util/OPUtils;->SUPPORT_WARP_CHARGING:Z
 
     if-eqz v6, :cond_6
 

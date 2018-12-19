@@ -745,6 +745,7 @@ prioritní"</string>
     <string name="keyguard_plugged_in">%s • Nabíjení</string>
     <string name="keyguard_plugged_in_charging_fast">%s • Rychlé nabíjení</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • Pomalé nabíjení</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Warp nabíjení</string>
     <string name="keyguard_sim_error_message_short">Neplatná karta.</string>
     <string name="keyguard_sim_locked_message">SIM karta je zablokována.</string>
     <string name="keyguard_sim_puk_locked_message">SIM karta je zablokována pomocí kódu PUK.</string>
@@ -1009,6 +1010,14 @@ Jste také připojeni k síti VPN, která může sledovat vaši aktivitu v sí
     <string name="ok">OK</string>
     <string name="okay">OK</string>
     <string name="oneplus_laboratory_added_toast">Gratulujeme! OnePlus laboratoř byla přidána do nastavení</string>
+    <string name="oneplus_screen_features_not_available_toast">Po zapnutí nebudou k dispozici funkce, jako např. kalibrace obrazovky</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">„Nerušit“ se také změnilo</string>
+    <string name="oneplus_threekey_navigation_next">Další</string>
+    <string name="oneplus_threekey_navigation_silence">Naprosté ticho</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">Posuvník varování se změnil!</string>
+    <string name="oneplus_threekey_navigation_sound">Jsou povoleny všechny zvuky</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">Můžete to zapnout zde</string>
+    <string name="oneplus_threekey_navigation_vibration">Pouze vibrace</string>
     <string name="op_earphone_connect">Párování...</string>
     <string name="op_earphone_connected_fail">Párování se nezdařilo. Můžete zkontrolovat náhlavní soupravu a stav Bluetooth.</string>
     <string name="op_earphone_connected_success">Spárováno. Klepnutím nastavte další.</string>

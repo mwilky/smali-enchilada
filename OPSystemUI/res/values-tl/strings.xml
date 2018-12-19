@@ -746,6 +746,7 @@ lang"</string>
     <string name="keyguard_plugged_in">%s • Nagcha-charge</string>
     <string name="keyguard_plugged_in_charging_fast">%s • Mabilis na nagcha-charge</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • Mabagal na nagcha-charge</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Warp Charging</string>
     <string name="keyguard_sim_error_message_short">Di-wasto ang Card.</string>
     <string name="keyguard_sim_locked_message">Naka-lock ang SIM card.</string>
     <string name="keyguard_sim_puk_locked_message">Naka-PUK-lock ang SIM card.</string>
@@ -1010,6 +1011,14 @@ Nakakonekta ka rin sa isang VPN, na may kakayahang subaybayan ang iyong aktibida
     <string name="ok">OK</string>
     <string name="okay">OK</string>
     <string name="oneplus_laboratory_added_toast">Tagumpay! Ang laboratoryo ng OnePlus ay naidagdag sa mga Setting</string>
+    <string name="oneplus_screen_features_not_available_toast">Kapag naka-on, hindi magiging available ang mga feature na gaya ng pag-calibrate ng screen</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">"Nagbago rin ang 'Huwag Istorbohin'"</string>
+    <string name="oneplus_threekey_navigation_next">Susunod</string>
+    <string name="oneplus_threekey_navigation_silence">Kumpletong katahimikan</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">Nagbago ang Alert Slider!</string>
+    <string name="oneplus_threekey_navigation_sound">Pinapayagan ang lahat ng tunog</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">Maaari itong i-on dito</string>
+    <string name="oneplus_threekey_navigation_vibration">Pag-vibrate lang</string>
     <string name="op_earphone_connect">Pinapares...</string>
     <string name="op_earphone_connected_fail">Hindi napares. Maaari mong tingnan ang status ng headset at Bluetooth.</string>
     <string name="op_earphone_connected_success">Napares na. I-tap para magtakda pa.</string>

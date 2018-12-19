@@ -399,6 +399,20 @@
 
     if-eqz v0, :cond_1
 
+    const-class v0, Lcom/oneplus/scene/OPSceneModeObserver;
+
+    invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/oneplus/scene/OPSceneModeObserver;
+
+    invoke-virtual {v0}, Lcom/oneplus/scene/OPSceneModeObserver;->isBreathModeEnabled()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mClockView:Landroid/view/View;
 
     invoke-static {v0, v4, v5, v2}, Lcom/android/systemui/statusbar/CrossFadeHelper;->fadeIn(Landroid/view/View;JI)V

@@ -39,7 +39,7 @@
 
     const/4 v1, 0x1
 
-    const v2, 0x7f070622
+    const v2, 0x7f070629
 
     invoke-virtual {v0, v2, v1, v1}, Landroid/content/res/Resources;->getFraction(III)F
 

@@ -440,7 +440,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f07063a
+    const v4, 0x7f070641
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -723,7 +723,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f07063a
+    const v2, 0x7f070641
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -753,7 +753,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f070638
+    const v5, 0x7f07063f
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -825,7 +825,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f07061f
+    const v2, 0x7f070626
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1015,7 +1015,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07062d
+    const v1, 0x7f070634
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1150,7 +1150,7 @@
     goto :goto_0
 
     :cond_0
-    const v2, 0x7f06027d
+    const v2, 0x7f06027e
 
     :goto_0
     invoke-static {v1, v2}, Lcom/android/settingslib/Utils;->getDefaultColor(Landroid/content/Context;I)I
@@ -1318,5 +1318,31 @@
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateSystemIconsLayoutParams()V
 
     :goto_0
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mSystemIconsContainer:Landroid/view/View;
+
+    const-class v1, Lcom/oneplus/scene/OPSceneModeObserver;
+
+    invoke-static {v1}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/oneplus/scene/OPSceneModeObserver;
+
+    invoke-virtual {v1}, Lcom/oneplus/scene/OPSceneModeObserver;->isBreathModeEnabled()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    const/4 v1, 0x4
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v1, 0x0
+
+    :goto_1
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
     return-void
 .end method

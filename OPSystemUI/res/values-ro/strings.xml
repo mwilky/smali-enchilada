@@ -745,6 +745,7 @@ cu prioritate"</string>
     <string name="keyguard_plugged_in">%s • Se încarcă</string>
     <string name="keyguard_plugged_in_charging_fast">%s • Se încarcă rapid</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • Se încarcă lent</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Încărcare rapidă Warp</string>
     <string name="keyguard_sim_error_message_short">Card nevalid</string>
     <string name="keyguard_sim_locked_message">Cardul SIM este blocat.</string>
     <string name="keyguard_sim_puk_locked_message">Cardul SIM este blocat cu codul PUK.</string>
@@ -1009,6 +1010,14 @@ De asemenea, sunteți conectat(ă) la o rețea VPN care vă poate monitoriza act
     <string name="ok">OK</string>
     <string name="okay">OK</string>
     <string name="oneplus_laboratory_added_toast">Felicitări! Laboratorul OnePlus a fost adăugat în Setări</string>
+    <string name="oneplus_screen_features_not_available_toast">Când sunt activate, caracteristicile precum calibrarea ecranului nu vor fi disponibile</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">S-a schimbat și „Nu deranjați”</string>
+    <string name="oneplus_threekey_navigation_next">Următorul</string>
+    <string name="oneplus_threekey_navigation_silence">Silențios total</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">Cursorul de alertă s-a schimbat!</string>
+    <string name="oneplus_threekey_navigation_sound">Toate sunetele permise</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">Poate fi activată aici</string>
+    <string name="oneplus_threekey_navigation_vibration">Doar vibrații</string>
     <string name="op_earphone_connect">Se asociază...</string>
     <string name="op_earphone_connected_fail">Asocierea nu a reușit. Puteți verifica starea căștilor și a Bluetooth.</string>
     <string name="op_earphone_connected_success">Asociat. Apăsați pentru a seta mai multe.</string>

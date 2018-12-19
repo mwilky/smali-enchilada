@@ -41,7 +41,7 @@
 
     const/4 v2, 0x0
 
-    const v3, 0x7f0602bd
+    const v3, 0x7f0602be
 
     invoke-virtual {v1, v3, v2}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 
@@ -53,7 +53,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0602bc
+    const v4, 0x7f0602bd
 
     invoke-virtual {v3, v4, v2}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 

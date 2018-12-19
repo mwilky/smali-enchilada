@@ -409,8 +409,24 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_1
 
+    :cond_0
+    const-class v0, Lcom/oneplus/scene/OPSceneModeObserver;
+
+    invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/oneplus/scene/OPSceneModeObserver;
+
+    invoke-virtual {v0}, Lcom/oneplus/scene/OPSceneModeObserver;->isBreathModeEnabled()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    :cond_1
     or-int/2addr p1, v2
 
     or-int/2addr p1, v1
@@ -419,14 +435,14 @@
 
     or-int/2addr p1, v0
 
-    :cond_0
+    :cond_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_4
 
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/EncryptionHelper;->IS_DATA_ENCRYPTED:Z
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_4
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
@@ -434,22 +450,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_3
 
     or-int/2addr p1, v2
 
-    :cond_1
+    :cond_3
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/NetworkController;->isRadioOn()Z
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_4
 
     or-int/2addr p1, v1
 
-    :cond_2
+    :cond_4
     return p1
 .end method
 

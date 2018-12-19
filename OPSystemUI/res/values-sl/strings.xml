@@ -743,6 +743,7 @@ prednostno"</string>
     <string name="keyguard_plugged_in">%s • polnjenje</string>
     <string name="keyguard_plugged_in_charging_fast">%s • hitro polnjenje</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • počasno polnjenje</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Polnjenje Warp</string>
     <string name="keyguard_sim_error_message_short">Neveljavna kartica</string>
     <string name="keyguard_sim_locked_message">Kartica SIM je zaklenjena.</string>
     <string name="keyguard_sim_puk_locked_message">Kartica SIM je zaklenjena s kodo PUK.</string>
@@ -1007,6 +1008,14 @@ Povezani ste tudi z omrežjem VPN, ki lahko nadzira vašo omrežno dejavnost."</
     <string name="ok">V redu</string>
     <string name="okay">V redu</string>
     <string name="oneplus_laboratory_added_toast">Čestitke, OnePlus Laboratory je dodan v meni Nastavitve</string>
+    <string name="oneplus_screen_features_not_available_toast">Ko je vklopljeno, funkcije, kot so umerjanje zaslona, ne bodo na voljo</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">Funkcija \"Ne moti\" je bila tudi spremenjena</string>
+    <string name="oneplus_threekey_navigation_next">Naprej</string>
+    <string name="oneplus_threekey_navigation_silence">Tiho</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">Drsnik z opozorili je bil spremenjen!</string>
+    <string name="oneplus_threekey_navigation_sound">Dovoljeni vsi zvoki</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">Funkcijo lahko vklopite tukaj</string>
+    <string name="oneplus_threekey_navigation_vibration">Samo vibriranje</string>
     <string name="op_earphone_connect">Seznanjanje ...</string>
     <string name="op_earphone_connected_fail">Sezanitev ni uspela. Preverite lahko slušalke in status Bluetooth.</string>
     <string name="op_earphone_connected_success">Seznanjeno. Tapnite za več nastavitev.</string>

@@ -313,7 +313,7 @@
 
     iput v5, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mMobileDataIconStartPadding:I
 
-    const v5, 0x7f0705ed
+    const v5, 0x7f0705f4
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -321,7 +321,7 @@
 
     iput v5, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mSecondaryTelephonyPadding:I
 
-    const v5, 0x7f0705f8
+    const v5, 0x7f0705ff
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -341,7 +341,7 @@
 
     invoke-direct {v5}, Landroid/util/TypedValue;-><init>()V
 
-    const v6, 0x7f070626
+    const v6, 0x7f07062d
 
     invoke-virtual {v4, v6, v5, v2}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 

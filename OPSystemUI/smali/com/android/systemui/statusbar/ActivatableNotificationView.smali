@@ -217,7 +217,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->setClipToPadding(Z)V
 
-    const v0, 0x7f0602e3
+    const v0, 0x7f0602e4
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getColor(I)I
 
@@ -225,7 +225,7 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mNormalColor:I
 
-    const v0, 0x7f0602e8
+    const v0, 0x7f0602e9
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getColor(I)I
 
@@ -233,7 +233,7 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mTintedRippleColor:I
 
-    const v0, 0x7f0602e9
+    const v0, 0x7f0602ea
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getColor(I)I
 
@@ -407,7 +407,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0602e4
+    const v1, 0x7f0602e5
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getColor(I)I
 
@@ -2090,7 +2090,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0602e5
+    const v1, 0x7f0602e6
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getColor(I)I
 

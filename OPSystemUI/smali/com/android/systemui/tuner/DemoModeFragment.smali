@@ -32,7 +32,7 @@
 
     const-string/jumbo v4, "zen"
 
-    const-string v5, "sync"
+    const-string/jumbo v5, "sync"
 
     const-string/jumbo v6, "tty"
 

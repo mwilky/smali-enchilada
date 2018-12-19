@@ -746,6 +746,7 @@ Contacta amb el teu proveïdor de serveis sense fil per obtenir-ne una altra."</
     <string name="keyguard_plugged_in">"%s • S'està carregant"</string>
     <string name="keyguard_plugged_in_charging_fast">"%s • S'està carregant ràpidament"</string>
     <string name="keyguard_plugged_in_charging_slowly">"%s • S'està carregant lentament"</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Càrrega Warp</string>
     <string name="keyguard_sim_error_message_short">La targeta no és vàlida.</string>
     <string name="keyguard_sim_locked_message">La targeta SIM està bloquejada.</string>
     <string name="keyguard_sim_puk_locked_message">La targeta SIM està bloquejada pel PUK.</string>
@@ -1010,6 +1011,14 @@ A més, estàs connectat a una VPN, que també pot supervisar la teva activitat 
     <string name="ok">"D'ACORD"</string>
     <string name="okay">"D'acord"</string>
     <string name="oneplus_laboratory_added_toast">"L'enhorabona! El Laboratori OnePlus s'ha afegit als paràmetres"</string>
+    <string name="oneplus_screen_features_not_available_toast">"Quan s'activa, funcions com ara la calibració de pantalla no estaran disponibles"</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">\"No molesteu\" també ha canviat</string>
+    <string name="oneplus_threekey_navigation_next">Següent</string>
+    <string name="oneplus_threekey_navigation_silence">Silenci total</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">"El lliscador d'avís ha canviat!"</string>
+    <string name="oneplus_threekey_navigation_sound">Tots els sons permesos</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">Es pot activar aquí</string>
+    <string name="oneplus_threekey_navigation_vibration">Només vibració</string>
     <string name="op_earphone_connect">"S'estan aparellant..."</string>
     <string name="op_earphone_connected_fail">"No s'han pogut aparellar. Podeu comprovar l'estat dels auriculars i del Bluetooth."</string>
     <string name="op_earphone_connected_success">"S'han aparellat. Toqueu per seguir configurant."</string>

@@ -121,7 +121,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SmartReplyView;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0705fe
+    const v1, 0x7f070605
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/notification/NotificationUtils;->getFontScaledHeight(Landroid/content/Context;I)I
 
@@ -129,7 +129,7 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/policy/SmartReplyView;->mHeightUpperLimit:I
 
-    const v0, 0x7f060450
+    const v0, 0x7f060451
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getColor(I)I
 
@@ -143,7 +143,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SmartReplyView;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f060452
+    const v1, 0x7f060453
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getColor(I)I
 
@@ -153,7 +153,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SmartReplyView;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f060453
+    const v1, 0x7f060454
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getColor(I)I
 
@@ -163,7 +163,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SmartReplyView;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f060451
+    const v1, 0x7f060452
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getColor(I)I
 
@@ -173,7 +173,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SmartReplyView;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0602e9
+    const v1, 0x7f0602ea
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getColor(I)I
 

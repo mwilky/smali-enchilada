@@ -745,6 +745,7 @@ con prioridad"</string>
     <string name="keyguard_plugged_in">%s • Cargando</string>
     <string name="keyguard_plugged_in_charging_fast">%s • Cargando rápidamente</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • Cargando lentamente</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Carga Warp</string>
     <string name="keyguard_sim_error_message_short">Tarjeta no válida.</string>
     <string name="keyguard_sim_locked_message">La tarjeta SIM está bloqueada.</string>
     <string name="keyguard_sim_puk_locked_message">La tarjeta SIM está bloqueada con el código PUK.</string>
@@ -1009,6 +1010,14 @@ También estás conectado a una red VPN, que puede supervisar tu actividad de re
     <string name="ok">Aceptar</string>
     <string name="okay">Aceptar</string>
     <string name="oneplus_laboratory_added_toast">¡Felicidades! El Laboratorio OnePlus se ha añadido a los ajustes</string>
+    <string name="oneplus_screen_features_not_available_toast">Al activar esta opción, las funciones como la calibración de pantalla no estarán disponibles</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">No molestar ha cambiado también</string>
+    <string name="oneplus_threekey_navigation_next">Siguiente</string>
+    <string name="oneplus_threekey_navigation_silence">Silencio total</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">¡Alert Slider ha cambiado!</string>
+    <string name="oneplus_threekey_navigation_sound">Permitir todos los sonidos</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">Se puede activar aquí</string>
+    <string name="oneplus_threekey_navigation_vibration">Solo vibración</string>
     <string name="op_earphone_connect">Emparejando...</string>
     <string name="op_earphone_connected_fail">Error al emparejar. Puedes comprobar el estado de los auriculares y del Bluetooth.</string>
     <string name="op_earphone_connected_success">Emparejado. Toca para establecer más ajustes.</string>

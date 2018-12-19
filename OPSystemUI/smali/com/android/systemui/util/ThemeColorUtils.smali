@@ -299,7 +299,7 @@
 .method private static updateAccentColor(Landroid/content/Context;)V
     .locals 4
 
-    const v0, 0x7f0603f6
+    const v0, 0x7f0603f7
 
     invoke-static {p0, v0}, Lcom/android/systemui/util/OPUtils;->getThemeAccentColor(Landroid/content/Context;I)I
 

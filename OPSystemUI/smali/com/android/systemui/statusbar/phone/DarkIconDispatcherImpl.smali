@@ -127,7 +127,7 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/DarkIconDispatcherImpl;->mDarkModeIconColorSingleTone:I
 
-    const v0, 0x7f06027d
+    const v0, 0x7f06027e
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getColor(I)I
 

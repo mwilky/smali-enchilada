@@ -743,6 +743,7 @@
     <string name="keyguard_plugged_in">Идет зарядка (%s)</string>
     <string name="keyguard_plugged_in_charging_fast">Идет быстрая зарядка (%s)</string>
     <string name="keyguard_plugged_in_charging_slowly">Идет медленная зарядка (%s)</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Зарядка Warp</string>
     <string name="keyguard_sim_error_message_short">Ошибка SIM-карты.</string>
     <string name="keyguard_sim_locked_message">SIM-карта заблокирована.</string>
     <string name="keyguard_sim_puk_locked_message">SIM-карта заблокирована с помощью PUK-кода.</string>
@@ -1007,6 +1008,14 @@
     <string name="ok">OK</string>
     <string name="okay">ОК</string>
     <string name="oneplus_laboratory_added_toast">Поздравляем! Лаборатория OnePlus добавлена в Настройки</string>
+    <string name="oneplus_screen_features_not_available_toast">При включенной функции, такие функции как калибровка экрана не будут доступны</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">Режим \"Не беспокоить\" также был изменен</string>
+    <string name="oneplus_threekey_navigation_next">Далее</string>
+    <string name="oneplus_threekey_navigation_silence">Полная тишина</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">Изменился переключатель сигналов!</string>
+    <string name="oneplus_threekey_navigation_sound">Все звуки разрешены</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">Это можно включить здесь</string>
+    <string name="oneplus_threekey_navigation_vibration">Только вибрация</string>
     <string name="op_earphone_connect">Сопряжение...</string>
     <string name="op_earphone_connected_fail">Не удалось выполнить сопряжение. Проверьте состояние гарнитуры и Bluetooth.</string>
     <string name="op_earphone_connected_success">Сопряжено. Нажмите для настройки.</string>

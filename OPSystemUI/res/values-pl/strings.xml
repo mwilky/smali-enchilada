@@ -746,6 +746,7 @@ priorytetowe"</string>
     <string name="keyguard_plugged_in">%s • Ładowanie</string>
     <string name="keyguard_plugged_in_charging_fast">%s • Szybkie ładowanie</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • Wolne ładowanie</string>
+    <string name="keyguard_plugged_in_charging_warp">%s •ładowanie Warp</string>
     <string name="keyguard_sim_error_message_short">Nieprawidłowa karta.</string>
     <string name="keyguard_sim_locked_message">Karta SIM jest zablokowana.</string>
     <string name="keyguard_sim_puk_locked_message">Karta SIM jest zablokowana kodem PUK.</string>
@@ -1010,6 +1011,14 @@ Aby dowiedzieć się więcej, skontaktuj się z administratorem.
     <string name="ok">OK</string>
     <string name="okay">OK</string>
     <string name="oneplus_laboratory_added_toast">Gratulacje! Laboratorium OnePlus dodano do Ustawień</string>
+    <string name="oneplus_screen_features_not_available_toast">Gdy opcja jest włączona, funkcje takie jak kalibracja ekranu będą niedostępne</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">Tryb „Nie przeszkadzać” też się zmienił</string>
+    <string name="oneplus_threekey_navigation_next">Dalej</string>
+    <string name="oneplus_threekey_navigation_silence">Całkowita cisza</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">Zmienił się suwak powiadomień!</string>
+    <string name="oneplus_threekey_navigation_sound">Zezwalaj na wszystkie dźwięki</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">Możesz go wyłączyć tutaj</string>
+    <string name="oneplus_threekey_navigation_vibration">Tylko wibracje</string>
     <string name="op_earphone_connect">Parowanie...</string>
     <string name="op_earphone_connected_fail">Nie udało się sparować. Możesz sprawdzić status słuchawek i Bluetooth.</string>
     <string name="op_earphone_connected_success">Sparowano. Dotknij, aby ustawić więcej.</string>

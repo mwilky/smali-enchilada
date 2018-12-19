@@ -746,6 +746,7 @@ tắt tiếng"</string>
     <string name="keyguard_plugged_in">%s • Đang sạc</string>
     <string name="keyguard_plugged_in_charging_fast">%s • Đang sạc nhanh</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • Đang sạc chậm</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Sạc Warp</string>
     <string name="keyguard_sim_error_message_short">Thẻ không hợp lệ.</string>
     <string name="keyguard_sim_locked_message">Thẻ SIM đã bị khóa.</string>
     <string name="keyguard_sim_puk_locked_message">Thẻ SIM đã bị khóa bằng mã PUK.</string>
@@ -1010,6 +1011,14 @@ Bạn cũng được kết nối với VPN. Dịch vụ này có thể giám sá
     <string name="ok">OK</string>
     <string name="okay">OK</string>
     <string name="oneplus_laboratory_added_toast">Chúc mừng! Phòng thí nghiệm OnePlus đã được thêm vào Thiết lập</string>
+    <string name="oneplus_screen_features_not_available_toast">Khi bật, các tính năng như hiệu chuẩn màn hình sẽ không sử dụng được</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">"'Không làm phiền' cũng đã thay đổi"</string>
+    <string name="oneplus_threekey_navigation_next">Tiếp theo</string>
+    <string name="oneplus_threekey_navigation_silence">Tất cả im lặng</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">Thanh trượt Cảnh báo đã thay đổi!</string>
+    <string name="oneplus_threekey_navigation_sound">Cho phép tất cả âm thanh</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">Nó có thể được bật tại đây</string>
+    <string name="oneplus_threekey_navigation_vibration">Chỉ rung</string>
     <string name="op_earphone_connect">Đang ghép nối...</string>
     <string name="op_earphone_connected_fail">Ghép nối thất bại. Bạn có thể kiểm tra tai nghe và trạng thái Bluetooth.</string>
     <string name="op_earphone_connected_success">Đã ghép nối. Chạm để cài đặt thêm.</string>

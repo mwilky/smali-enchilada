@@ -746,6 +746,7 @@
     <string name="keyguard_plugged_in">%s • درحال شارژ شدن</string>
     <string name="keyguard_plugged_in_charging_fast">%s • درحال شارژ سریع</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • درحال شارژ آهسته</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • شارژ Warp</string>
     <string name="keyguard_sim_error_message_short">کارت نامعتبر</string>
     <string name="keyguard_sim_locked_message">سیم‌کارت قفل شد.</string>
     <string name="keyguard_sim_puk_locked_message">‏سیم‌کارت با PUK قفل شده است.</string>
@@ -1010,6 +1011,14 @@
     <string name="ok">تأیید</string>
     <string name="okay">تأیید</string>
     <string name="oneplus_laboratory_added_toast">تبریک! آزمایشگاه OnePlus به تنظیمات اضافه شده است</string>
+    <string name="oneplus_screen_features_not_available_toast">در صورت روشن بودن، قابلیت‌هایی مانند کالیبراسیون صفحۀ نمایش در دسترس نخواهد بود</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">«بدون مزاحمت» نیز تغییر کرده است</string>
+    <string name="oneplus_threekey_navigation_next">بعدی</string>
+    <string name="oneplus_threekey_navigation_silence">کل مدت سکوت</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">لغزندۀ هشدار تغییر کرده است!</string>
+    <string name="oneplus_threekey_navigation_sound">همۀ صداها مجاز باشند</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">از اینجا می‌تواند روشن شود</string>
+    <string name="oneplus_threekey_navigation_vibration">تنها لرزش</string>
     <string name="op_earphone_connect">در حال جفت‌سازی...</string>
     <string name="op_earphone_connected_fail">جفت نشد. می‌توانید وضعیت هدست و بلوتوث را بررسی کنید.</string>
     <string name="op_earphone_connected_success">جفت شد. برای تنظیم بیشتر، ضربه بزنید.</string>

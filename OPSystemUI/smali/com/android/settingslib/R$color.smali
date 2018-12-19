@@ -23,10 +23,10 @@
 
 .field public static final dark_mode_icon_color_dual_tone_fill:I = 0x7f060151
 
-.field public static final light_mode_icon_color_dual_tone_background:I = 0x7f06027b
+.field public static final light_mode_icon_color_dual_tone_background:I = 0x7f06027c
 
-.field public static final light_mode_icon_color_dual_tone_fill:I = 0x7f06027c
+.field public static final light_mode_icon_color_dual_tone_fill:I = 0x7f06027d
 
-.field public static final meter_background_color:I = 0x7f0602ba
+.field public static final meter_background_color:I = 0x7f0602bb
 
-.field public static final meter_consumed_color:I = 0x7f0602bb
+.field public static final meter_consumed_color:I = 0x7f0602bc

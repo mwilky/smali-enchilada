@@ -598,7 +598,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/DndTile;->mContext:Landroid/content/Context;
 
-    const v3, 0x10401ec
+    const v3, 0x10401ed
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

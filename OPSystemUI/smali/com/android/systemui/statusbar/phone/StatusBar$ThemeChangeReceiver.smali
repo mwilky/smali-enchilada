@@ -74,7 +74,7 @@
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0603f6
+    const v2, 0x7f0603f7
 
     invoke-static {v1, v2}, Lcom/android/systemui/util/OPUtils;->getThemeAccentColor(Landroid/content/Context;I)I
 

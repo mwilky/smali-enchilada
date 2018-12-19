@@ -663,7 +663,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f060437
+    const v4, 0x7f060438
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getColor(I)I
 

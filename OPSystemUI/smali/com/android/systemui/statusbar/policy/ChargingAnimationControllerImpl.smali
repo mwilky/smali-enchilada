@@ -7,10 +7,16 @@
 .implements Lcom/android/systemui/statusbar/policy/ChargingAnimationController;
 
 
+# static fields
+.field private static mPreventModeNoBackground:Z
+
+
 # instance fields
 .field private TAG:Ljava/lang/String;
 
 .field private isKeyguardShowing:Z
+
+.field private mAnimationStarted:Z
 
 .field private mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
 
@@ -50,6 +56,16 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    sput-boolean v0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mPreventModeNoBackground:Z
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
 
@@ -131,9 +147,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
 
-    invoke-static {}, Lcom/android/systemui/util/OPUtils;->isSupportWarpCharging()Z
-
-    move-result v0
+    sget-boolean v0, Lcom/android/systemui/util/OPUtils;->SUPPORT_WARP_CHARGING:Z
 
     if-eqz v0, :cond_0
 
@@ -366,30 +380,82 @@
 .end method
 
 .method public animationEnd(I)V
-    .locals 2
+    .locals 5
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mCallbacks:Ljava/util/ArrayList;
+    const/4 v0, 0x0
 
-    new-instance v1, Lcom/android/systemui/statusbar/policy/-$$Lambda$ChargingAnimationControllerImpl$ubwqtOBHP7dTmXUVWRic8CF4Avk;
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mAnimationStarted:Z
 
-    invoke-direct {v1, p1}, Lcom/android/systemui/statusbar/policy/-$$Lambda$ChargingAnimationControllerImpl$ubwqtOBHP7dTmXUVWRic8CF4Avk;-><init>(I)V
+    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mCallbacks:Ljava/util/ArrayList;
 
-    invoke-static {v0, v1}, Lcom/android/systemui/util/OPUtils;->safeForeach(Ljava/util/List;Ljava/util/function/Consumer;)V
+    new-instance v2, Lcom/android/systemui/statusbar/policy/-$$Lambda$ChargingAnimationControllerImpl$ubwqtOBHP7dTmXUVWRic8CF4Avk;
 
+    invoke-direct {v2, p1}, Lcom/android/systemui/statusbar/policy/-$$Lambda$ChargingAnimationControllerImpl$ubwqtOBHP7dTmXUVWRic8CF4Avk;-><init>(I)V
+
+    invoke-static {v1, v2}, Lcom/android/systemui/util/OPUtils;->safeForeach(Ljava/util/List;Ljava/util/function/Consumer;)V
+
+    sget-boolean v1, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mPreventModeNoBackground:Z
+
+    if-eqz v1, :cond_0
+
+    invoke-static {}, Lcom/android/systemui/plugin/LSState;->getInstance()Lcom/android/systemui/plugin/LSState;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/android/systemui/plugin/LSState;->getPhoneStatusBar()Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    move-result-object v1
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    const/4 v3, 0x1
+
+    const/4 v4, -0x1
+
+    invoke-virtual {v1, v2, v3, v4}, Lcom/android/systemui/statusbar/phone/StatusBar;->setPanelViewAlpha(FZI)V
+
+    sput-boolean v0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mPreventModeNoBackground:Z
+
+    :cond_0
     return-void
 .end method
 
 .method public animationStart(I)V
-    .locals 2
+    .locals 4
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mCallbacks:Ljava/util/ArrayList;
+    const/4 v0, 0x1
 
-    new-instance v1, Lcom/android/systemui/statusbar/policy/-$$Lambda$ChargingAnimationControllerImpl$RUKKNHHFbHtQKYG3xoU3USKAFA4;
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mAnimationStarted:Z
 
-    invoke-direct {v1, p1}, Lcom/android/systemui/statusbar/policy/-$$Lambda$ChargingAnimationControllerImpl$RUKKNHHFbHtQKYG3xoU3USKAFA4;-><init>(I)V
+    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mCallbacks:Ljava/util/ArrayList;
 
-    invoke-static {v0, v1}, Lcom/android/systemui/util/OPUtils;->safeForeach(Ljava/util/List;Ljava/util/function/Consumer;)V
+    new-instance v2, Lcom/android/systemui/statusbar/policy/-$$Lambda$ChargingAnimationControllerImpl$RUKKNHHFbHtQKYG3xoU3USKAFA4;
 
+    invoke-direct {v2, p1}, Lcom/android/systemui/statusbar/policy/-$$Lambda$ChargingAnimationControllerImpl$RUKKNHHFbHtQKYG3xoU3USKAFA4;-><init>(I)V
+
+    invoke-static {v1, v2}, Lcom/android/systemui/util/OPUtils;->safeForeach(Ljava/util/List;Ljava/util/function/Consumer;)V
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mWallpaper:Landroid/graphics/Bitmap;
+
+    if-nez v1, :cond_0
+
+    sput-boolean v0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mPreventModeNoBackground:Z
+
+    invoke-static {}, Lcom/android/systemui/plugin/LSState;->getInstance()Lcom/android/systemui/plugin/LSState;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/android/systemui/plugin/LSState;->getPhoneStatusBar()Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    const/4 v3, -0x1
+
+    invoke-virtual {v1, v2, v0, v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->setPanelViewAlpha(FZI)V
+
+    :cond_0
     return-void
 .end method
 
@@ -420,6 +486,14 @@
 
     :cond_0
     return-void
+.end method
+
+.method public isAnimationStarted()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mAnimationStarted:Z
+
+    return v0
 .end method
 
 .method public onBatteryLevelChanged(IZZ)V

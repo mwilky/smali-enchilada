@@ -1103,7 +1103,7 @@
 .method public onDensityOrFontScaleChanged()V
     .locals 2
 
-    const v0, 0x7f070619
+    const v0, 0x7f070620
 
     invoke-static {p0, v0}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/widget/TextView;I)V
 
@@ -1113,7 +1113,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070618
+    const v1, 0x7f07061f
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

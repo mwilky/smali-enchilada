@@ -403,6 +403,7 @@
     <color name="fingerprint_dialog_fingerprint_color">#ff008577</color>
     <color name="fingerprint_dialog_text_dark_color">#dd000000</color>
     <color name="fingerprint_dialog_text_light_color">#89000000</color>
+    <color name="fingerprint_highlight_color">#ff00ff00</color>
     <color name="font_ab_title">@color/font_ab_title_light</color>
     <color name="font_ab_title_dark">#ddffffff</color>
     <color name="font_ab_title_light">#ddffffff</color>

@@ -746,6 +746,7 @@ tärkeät"</string>
     <string name="keyguard_plugged_in">%s • Ladataan</string>
     <string name="keyguard_plugged_in_charging_fast">%s • Ladataan nopeasti</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • Ladataan hitaasti</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Warp Charge -lataus</string>
     <string name="keyguard_sim_error_message_short">Virheellinen kortti</string>
     <string name="keyguard_sim_locked_message">SIM-kortti on lukittu.</string>
     <string name="keyguard_sim_puk_locked_message">SIM-kortti on PUK-lukittu.</string>
@@ -1010,6 +1011,14 @@ Olet myös yhteydessä VPN:ään, joka voi valvoa toimintaasi verkossa."</string
     <string name="ok">OK</string>
     <string name="okay">OK</string>
     <string name="oneplus_laboratory_added_toast">Onnittelut! OnePlus-laboratorio on lisätty asetuksiin</string>
+    <string name="oneplus_screen_features_not_available_toast">Kun tämä on käytössä, sellaiset ominaisuudet kuin näytön kalibrointi eivät ole käytettävissä</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">\"Älä häiritse\" on myös muuttunut</string>
+    <string name="oneplus_threekey_navigation_next">Seuraava</string>
+    <string name="oneplus_threekey_navigation_silence">Täydellinen hiljaisuus</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">Hälytysliukusäädin on muuttunut!</string>
+    <string name="oneplus_threekey_navigation_sound">Kaikki äänet sallitaan</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">Se voidaan kytkeä päälle täällä</string>
+    <string name="oneplus_threekey_navigation_vibration">Vain värinä</string>
     <string name="op_earphone_connect">Muodostetaan laiteparia...</string>
     <string name="op_earphone_connected_fail">Laiteparin muodostus epäonnistui. Voit tarkistaa kuulokkeet ja Bluetoothin tilan.</string>
     <string name="op_earphone_connected_success">Laitepari muodostettu. Määritä enemmän napauttamalla.</string>

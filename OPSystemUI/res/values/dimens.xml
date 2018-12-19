@@ -1212,6 +1212,13 @@
     <dimen name="op_dialog_picker_background_inset">9.0dip</dimen>
     <item type="dimen" name="op_disabled_alpha_material_dark">0.3</item>
     <item type="dimen" name="op_disabled_alpha_material_light">0.26</item>
+    <dimen name="op_global_actions_item_icon_size">60.0px</dimen>
+    <dimen name="op_global_actions_item_min_size">230.0px</dimen>
+    <dimen name="op_global_actions_item_side_padding">10.0px</dimen>
+    <dimen name="op_global_actions_menu_side_padding">30.0px</dimen>
+    <dimen name="op_global_actions_text_padding_top">25.0px</dimen>
+    <dimen name="op_global_actions_text_size">35.0px</dimen>
+    <dimen name="op_global_actions_translation_z">22.5px</dimen>
     <item type="dimen" name="op_highlight_alpha_material_dark">0.2</item>
     <item type="dimen" name="op_highlight_alpha_material_light">0.12</item>
     <dimen name="op_keyguard_clock_YRegular">470.0px</dimen>

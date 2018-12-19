@@ -38,6 +38,7 @@
     <string name="interruption_level_music">ਸੰਗੀਤ</string>
     <string name="keyguard_fingerprint_unlock">ਅਨਲੌਕ ਕਰਨ ਲਈ ਫਿੰਗਰਪ੍ਰਿੰਟ ਵਰਤੋ</string>
     <string name="keyguard_indication_charging_time_fast_vooc">(%s ਪੂਰਾ ਹੋਣ ਤੱਕ)</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Warp ਚਾਰਜਿੰਗ</string>
     <string name="kg_at_least_four_points">ਘੱਟੋ-ਘੱਟ 4 ਅੰਕ ਸ਼ਾਮਲ ਕਰਨ ਲਈ ਉਲੀਕੋ</string>
     <string name="kg_first_unlock_instructions">ਤੁਹਾਡੇ ਫੋਨ ਨੂੰ ਮੁੜ ਚਾਲੂ ਕੀਤਾ ਗਿਆ ਸੀ ਅਤੇ ਤੁਹਾਡੇ ਪਾਸਵਰਡ/ਪੈਟਰਨ ਰਾਹੀਂ ਅਨਲੌਕ ਕੀਤੇ ਜਾਣ ਦੀ ਲੋੜ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਾਰੀਆਂ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਅਤੇ ਡੇਟਾ ਲਈ ਅਨਲੌਕ ਕਰੋ।</string>
     <string name="kg_remaining_attempts">ਬਾਕੀ ਬਚੀਆਂ ਕੋਸ਼ਿਸ਼ਾਂ: %d</string>
@@ -58,6 +59,14 @@
     <string name="notification_title_disable_button">HW ਬਟਨ ਲੌਕ ਹਨ</string>
     <string name="ok">ਠੀਕ ਹੈ</string>
     <string name="oneplus_laboratory_added_toast">ਵਧਾਈਆਂ! OnePlus ਲੈਬੋਰੇਟਰੀ ਨੂੰ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਜੋੜ ਦਿੱਤਾ ਗਿਆ ਹੈ</string>
+    <string name="oneplus_screen_features_not_available_toast">"ਚਾਲੂ ਕੀਤੇ ਹੋਣ 'ਤੇ, ਸਕ੍ਰੀਨ ਕੈਲੀਬ੍ਰੇਸ਼ਨ ਵਰਗੀਆਂ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਉਪਲਬਧ ਨਹੀਂ ਹੋਣਗੀਆਂ"</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">"'ਪਰੇਸ਼ਾਨ ਨਾ ਕਰੋ' ਨੂੰ ਵੀ ਬਦਲ ਦਿੱਤਾ ਗਿਆ ਹੈ"</string>
+    <string name="oneplus_threekey_navigation_next">ਅੱਗੇ</string>
+    <string name="oneplus_threekey_navigation_silence">ਪੂਰੀ ਤਰ੍ਹਾਂ ਸ਼ਾਂਤ</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">ਚਿਤਾਵਨੀ ਸਲਾਈਡ ਨੂੰ ਬਦਲ ਦਿੱਤਾ ਗਿਆ ਹੈ!</string>
+    <string name="oneplus_threekey_navigation_sound">ਸਾਰੀਆਂ ਧੁਨੀਆਂ ਦੀ ਇਜਾਜ਼ਤ ਹੈ</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">ਇਸ ਨੂੰ ਇੱਥੇ ਚਾਲੂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ</string>
+    <string name="oneplus_threekey_navigation_vibration">ਸਿਰਫ਼ ਕੰਪਨ</string>
     <string name="op_earphone_connect">ਜੋੜਿਆ ਜਾ ਰਿਹਾ ਹੈ...</string>
     <string name="op_earphone_connected_fail">ਜੋੜਣਾ ਅਸਫ਼ਲ ਰਿਹਾ। ਤੁਸੀਂ ਹੈੱਡਸੈੱਟ ਅਤੇ ਬਲੂਟੁੱਥ ਸਥਿਤੀ ਦੀ ਜਾਂਚ ਕਰ ਸਕਦੇ ਹੋ।</string>
     <string name="op_earphone_connected_success">ਜੋੜਿਆ ਗਿਆ। ਹੋਰ ਸੈੱਟ ਕਰਨ ਲਈ ਟੈਪ ਕਰੋ।</string>

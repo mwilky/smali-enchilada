@@ -120,7 +120,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager;->mHeadsUpNotificationDecay:I
 
-    const v1, 0x7f0b0094
+    const v1, 0x7f0b0096
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 

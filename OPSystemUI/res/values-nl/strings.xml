@@ -746,6 +746,7 @@ prioriteit"</string>
     <string name="keyguard_plugged_in">%s • Opladen</string>
     <string name="keyguard_plugged_in_charging_fast">%s • Snel opladen</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • Langzaam opladen</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Warp laden</string>
     <string name="keyguard_sim_error_message_short">Ongeldige kaart.</string>
     <string name="keyguard_sim_locked_message">Simkaart is vergrendeld.</string>
     <string name="keyguard_sim_puk_locked_message">Simkaart is vergrendeld met pukcode.</string>
@@ -1010,6 +1011,14 @@ Je bent ook verbonden met een VPN, waarmee je netwerkactiviteit kan worden gecon
     <string name="ok">OK</string>
     <string name="okay">OK</string>
     <string name="oneplus_laboratory_added_toast">Proficiat! OnePlus laboratorium werd toegevoegd aan Instellingen</string>
+    <string name="oneplus_screen_features_not_available_toast">Als deze zijn ingeschakeld, zijn functies zoals schermkalibratie niet beschikbaar</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">"'Niet storen' is ook gewijzigd"</string>
+    <string name="oneplus_threekey_navigation_next">Volgende</string>
+    <string name="oneplus_threekey_navigation_silence">Totale stilte</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">Schuifregelaar meldingen is gewijzigd!</string>
+    <string name="oneplus_threekey_navigation_sound">Alle geluiden toegestaan</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">Kan hier worden ingeschakeld</string>
+    <string name="oneplus_threekey_navigation_vibration">Alleen vibreren</string>
     <string name="op_earphone_connect">Bezig met koppelen...</string>
     <string name="op_earphone_connected_fail">Koppelen mislukt. Contoleer de hoofdtelefoon en Bluetooth-status.</string>
     <string name="op_earphone_connected_success">Gekoppeld, tik voor meer instellingen.</string>

@@ -746,6 +746,7 @@ Ta kontakt med leverandøren av trådløstjenesten for å få et nytt SIM-kort."
     <string name="keyguard_plugged_in">%s • Lader</string>
     <string name="keyguard_plugged_in_charging_fast">%s • Lader raskt</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • Lader sakte</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Warp-lading</string>
     <string name="keyguard_sim_error_message_short">Ugyldig kort.</string>
     <string name="keyguard_sim_locked_message">SIM-kortet er låst.</string>
     <string name="keyguard_sim_puk_locked_message">SIM-kortet er PUK-låst.</string>
@@ -1010,6 +1011,14 @@ Du er også tilkoblet en VPN som kan overvåke nettverksaktiviteten din."</strin
     <string name="ok">OK</string>
     <string name="okay">OK</string>
     <string name="oneplus_laboratory_added_toast">Gratulerer! OnePlus-laboratorium er lagt til Innstillinger</string>
+    <string name="oneplus_screen_features_not_available_toast">Når slått på, vil funksjoner som skjermkalibrering ikke være tilgjengelig</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">\"Ikke forstyrr\" er også endret</string>
+    <string name="oneplus_threekey_navigation_next">Neste</string>
+    <string name="oneplus_threekey_navigation_silence">Total stillhet</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">Varslingsglidebryteren er endret!</string>
+    <string name="oneplus_threekey_navigation_sound">Alle lyder tillatt</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">Kan slåes på her</string>
+    <string name="oneplus_threekey_navigation_vibration">Kun vibrasjon</string>
     <string name="op_earphone_connect">Sammenkobling...</string>
     <string name="op_earphone_connected_fail">Ikke sammenkobling. Du kan kontrollere hodesettet og Bluetooth-status.</string>
     <string name="op_earphone_connected_success">Paret. Trykk for å angi flere.</string>

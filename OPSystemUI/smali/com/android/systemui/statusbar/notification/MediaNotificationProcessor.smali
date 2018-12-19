@@ -828,7 +828,7 @@
 
     iget-object v2, v0, Lcom/android/systemui/statusbar/notification/MediaNotificationProcessor;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0602e3
+    const v5, 0x7f0602e4
 
     invoke-virtual {v2, v5}, Landroid/content/Context;->getColor(I)I
 

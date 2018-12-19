@@ -746,6 +746,7 @@
     <string name="keyguard_plugged_in">%s • กำลังชาร์จ</string>
     <string name="keyguard_plugged_in_charging_fast">%s • กำลังชาร์จอย่างเร็ว</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • กำลังชาร์จอย่างช้าๆ</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • การชาร์จด้วย Warp</string>
     <string name="keyguard_sim_error_message_short">การ์ดไม่ถูกต้อง</string>
     <string name="keyguard_sim_locked_message">ซิมการ์ดถูกล็อก</string>
     <string name="keyguard_sim_puk_locked_message">ซิมการ์ดถูกล็อกด้วย PUK</string>
@@ -1010,6 +1011,14 @@
     <string name="ok">ตกลง</string>
     <string name="okay">ตกลง</string>
     <string name="oneplus_laboratory_added_toast">ขอแสดงความยินดี! ห้องปฏิบัติการ OnePlus ถูกเพิ่มเข้าไปยังการตั้งค่าแล้ว</string>
+    <string name="oneplus_screen_features_not_available_toast">เมื่อเปิด ฟีเจอร์ต่าง ๆ เช่น การปรับเทียบหน้าจอจะไม่สามารถใช้งานได้</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">"'ห้ามรบกวน' ถูกเปลี่ยนแปลงเช่นเดียวกัน"</string>
+    <string name="oneplus_threekey_navigation_next">ถัด​ไป</string>
+    <string name="oneplus_threekey_navigation_silence">เงียบสนิท</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">แถบเลื่อนการเตือนมีการเปลี่ยนแปลง!</string>
+    <string name="oneplus_threekey_navigation_sound">อนุญาตทุกเสียง</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">สามารถเปิดได้ที่นี่</string>
+    <string name="oneplus_threekey_navigation_vibration">สั่นเท่านั้น</string>
     <string name="op_earphone_connect">กำลังจับคู่...</string>
     <string name="op_earphone_connected_fail">ไม่สามารถจับคู่ได้ คุณสามารถตรวจสอบชุดหูฟังและสถานะบลูทูธได้</string>
     <string name="op_earphone_connected_success">จับคู่แล้ว แตะการตั้งค่าเพิ่มเติม</string>

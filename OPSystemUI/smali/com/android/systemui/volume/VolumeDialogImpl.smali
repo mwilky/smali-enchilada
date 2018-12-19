@@ -300,7 +300,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mDeviceProvisionedController:Lcom/android/systemui/statusbar/policy/DeviceProvisionedController;
 
-    const v0, 0x7f0603f6
+    const v0, 0x7f0603f7
 
     const v1, 0x42ffffff    # 127.99999f
 
@@ -691,7 +691,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorDialogRowContainerBackground:I
 
-    const v1, 0x7f06032f
+    const v1, 0x7f060330
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -699,7 +699,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorText:I
 
-    const v1, 0x7f060397
+    const v1, 0x7f060398
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -719,7 +719,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorSeekbarBackgroundDrawable:I
 
-    const v1, 0x7f060348
+    const v1, 0x7f060349
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -747,7 +747,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorDialogRowContainerBackground:I
 
-    const v1, 0x7f06032d
+    const v1, 0x7f06032e
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -755,7 +755,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorText:I
 
-    const v1, 0x7f060396
+    const v1, 0x7f060397
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -775,7 +775,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorSeekbarBackgroundDrawable:I
 
-    const v1, 0x7f060347
+    const v1, 0x7f060348
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -971,7 +971,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorDialogRowContainerBackground:I
 
-    const v1, 0x7f06032f
+    const v1, 0x7f060330
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -979,7 +979,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorText:I
 
-    const v1, 0x7f060397
+    const v1, 0x7f060398
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -999,7 +999,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorSeekbarBackgroundDrawable:I
 
-    const v1, 0x7f060348
+    const v1, 0x7f060349
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1430,7 +1430,7 @@
 
     invoke-virtual {v1, v3, v3}, Landroid/view/Window;->setLayout(II)V
 
-    const v1, 0x7f0603f6
+    const v1, 0x7f0603f7
 
     const v3, 0x42ffffff    # 127.99999f
 
@@ -3050,7 +3050,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0704ee
+    const v7, 0x7f0704f5
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -3070,7 +3070,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0704ed
+    const v8, 0x7f0704f4
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -3095,7 +3095,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0704ec
+    const v9, 0x7f0704f3
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -3115,7 +3115,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0704ef
+    const v10, 0x7f0704f6
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 

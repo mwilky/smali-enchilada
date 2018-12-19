@@ -129,7 +129,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0602f4
+    const v4, 0x7f0602f5
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getColor(I)I
 
@@ -449,7 +449,7 @@
 
     iget-object v7, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f0602f4
+    const v8, 0x7f0602f5
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getColor(I)I
 
@@ -1185,53 +1185,88 @@
 
     move-object/from16 v1, p3
 
-    move-object/from16 v2, p2
+    move-object/from16 v2, p4
 
-    iput-object v2, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mINotificationManager:Landroid/app/INotificationManager;
+    move-object/from16 v3, p6
 
-    const-class v3, Lcom/android/internal/logging/MetricsLogger;
+    if-nez v2, :cond_1
 
-    invoke-static {v3}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
+    const-string v4, "InfoGuts"
 
-    move-result-object v3
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    check-cast v3, Lcom/android/internal/logging/MetricsLogger;
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    iput-object v3, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mMetricsLogger:Lcom/android/internal/logging/MetricsLogger;
+    const-string v6, "bindNotification gets null notificationChannel key: "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-nez v3, :cond_0
+
+    const-string v6, "null"
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual/range {p6 .. p6}, Landroid/service/notification/StatusBarNotification;->getKey()Ljava/lang/String;
+
+    move-result-object v6
+
+    :goto_0
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_1
+    move-object/from16 v4, p2
+
+    iput-object v4, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mINotificationManager:Landroid/app/INotificationManager;
+
+    const-class v5, Lcom/android/internal/logging/MetricsLogger;
+
+    invoke-static {v5}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/android/internal/logging/MetricsLogger;
+
+    iput-object v5, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mMetricsLogger:Lcom/android/internal/logging/MetricsLogger;
 
     iput-object v1, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mPackageName:Ljava/lang/String;
 
-    move/from16 v3, p5
+    move/from16 v5, p5
 
-    iput v3, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mNumUniqueChannelsInRow:I
+    iput v5, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mNumUniqueChannelsInRow:I
 
-    move-object/from16 v4, p6
+    iput-object v3, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mSbn:Landroid/service/notification/StatusBarNotification;
 
-    iput-object v4, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mSbn:Landroid/service/notification/StatusBarNotification;
+    move-object/from16 v6, p1
 
-    move-object/from16 v5, p1
+    iput-object v6, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mPm:Landroid/content/pm/PackageManager;
 
-    iput-object v5, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mPm:Landroid/content/pm/PackageManager;
+    move-object/from16 v7, p9
 
-    move-object/from16 v6, p9
+    iput-object v7, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mAppSettingsClickListener:Lcom/android/systemui/statusbar/NotificationInfo$OnAppSettingsClickListener;
 
-    iput-object v6, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mAppSettingsClickListener:Lcom/android/systemui/statusbar/NotificationInfo$OnAppSettingsClickListener;
+    iget-object v8, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mPackageName:Ljava/lang/String;
 
-    iget-object v7, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mPackageName:Ljava/lang/String;
+    iput-object v8, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mAppName:Ljava/lang/String;
 
-    iput-object v7, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mAppName:Ljava/lang/String;
+    move-object/from16 v8, p7
 
-    move-object/from16 v7, p7
+    iput-object v8, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mCheckSaveListener:Lcom/android/systemui/statusbar/NotificationInfo$CheckSaveListener;
 
-    iput-object v7, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mCheckSaveListener:Lcom/android/systemui/statusbar/NotificationInfo$CheckSaveListener;
+    move-object/from16 v9, p8
 
-    move-object/from16 v8, p8
+    iput-object v9, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mOnSettingsClickListener:Lcom/android/systemui/statusbar/NotificationInfo$OnSettingsClickListener;
 
-    iput-object v8, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mOnSettingsClickListener:Lcom/android/systemui/statusbar/NotificationInfo$OnSettingsClickListener;
-
-    move-object/from16 v9, p4
-
-    iput-object v9, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mSingleNotificationChannel:Landroid/app/NotificationChannel;
+    iput-object v2, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mSingleNotificationChannel:Landroid/app/NotificationChannel;
 
     iget-object v10, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mSingleNotificationChannel:Landroid/app/NotificationChannel;
 
@@ -1263,16 +1298,16 @@
 
     const/4 v13, 0x0
 
-    if-eqz v12, :cond_0
+    if-eqz v12, :cond_2
 
     const/4 v12, 0x1
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_0
+    :cond_2
     move v12, v13
 
-    :goto_0
+    :goto_1
     iput-boolean v12, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mIsForeground:Z
 
     move/from16 v12, p11
@@ -1297,13 +1332,13 @@
 
     iget v15, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mNumUniqueChannelsInRow:I
 
-    if-eqz v15, :cond_2
+    if-eqz v15, :cond_4
 
     iget v15, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mNumUniqueChannelsInRow:I
 
     const/4 v13, 0x1
 
-    if-ne v15, v13, :cond_1
+    if-ne v15, v13, :cond_3
 
     iget-object v15, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mSingleNotificationChannel:Landroid/app/NotificationChannel;
 
@@ -1317,18 +1352,18 @@
 
     move-result v13
 
-    if-eqz v13, :cond_1
+    if-eqz v13, :cond_3
 
     const/4 v13, 0x1
 
-    if-ne v14, v13, :cond_1
+    if-ne v14, v13, :cond_3
 
-    goto :goto_1
+    goto :goto_2
 
-    :cond_1
+    :cond_3
     const/4 v13, 0x0
 
-    :goto_1
+    :goto_2
     iput-boolean v13, v0, Lcom/android/systemui/statusbar/NotificationInfo;->mIsSingleDefaultChannel:Z
 
     invoke-direct/range {p0 .. p0}, Lcom/android/systemui/statusbar/NotificationInfo;->bindHeader()V
@@ -1339,7 +1374,7 @@
 
     return-void
 
-    :cond_2
+    :cond_4
     new-instance v13, Ljava/lang/IllegalArgumentException;
 
     const-string v15, "bindNotification requires at least one channel"

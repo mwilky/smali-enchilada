@@ -453,7 +453,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0705aa
+    const v0, 0x7f0705b1
 
     invoke-virtual {v4, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -462,7 +462,7 @@
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f0705ce
+    const v0, 0x7f0705d5
 
     invoke-virtual {v4, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -471,7 +471,7 @@
     :goto_0
     iput v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTaskCornerRadiusPx:I
 
-    const v0, 0x7f07059f
+    const v0, 0x7f0705a6
 
     invoke-virtual {v4, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -542,7 +542,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0b0083
+    const v2, 0x7f0b0085
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getInteger(I)I
 

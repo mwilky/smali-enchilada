@@ -173,6 +173,8 @@
 
 .field private mNotificationsHeaderCollideDistance:I
 
+.field protected mOPNotifController:Lcom/oneplus/notification/OPNotificationController;
+
 .field private mOldLayoutDirection:I
 
 .field private mOnlyAffordanceInThisMotion:Z
@@ -562,6 +564,16 @@
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->setPanelAlpha(IZ)Z
+
+    const-class v0, Lcom/oneplus/notification/OPNotificationController;
+
+    invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/oneplus/notification/OPNotificationController;
+
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mOPNotifController:Lcom/oneplus/notification/OPNotificationController;
 
     return-void
 .end method
@@ -2218,49 +2230,7 @@
 
 .method private isOpenQsEvent(Landroid/view/MotionEvent;)Z
     .locals 7
-    
-    const/4 v2, 0x2
 
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    const/4 v5, 0x5
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mSmartPulldown:I
-
-    if-eqz v0, :cond_stock
-    
-    const v1, 0x1
-    
-    if-eq v0, v1, :cond_clearnotif
-    
-    const v1, 0x2
-    
-    if-eq v0, v1, :cond_anynotif
-    
-    :cond_anynotif
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
-    
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->hasActiveNotifications()Z
-    
-    move-result v0
-    
-    if-eqz v0, :cond_6
-    
-    goto :goto_stock
-    
-    :cond_clearnotif
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
-    
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->hasActiveClearableNotifications()Z
-    
-    move-result v0
-    
-    if-eqz v0, :cond_6
-    
-    :goto_stock
-    :cond_stock
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
     move-result v0
@@ -2268,7 +2238,15 @@
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v1
-    
+
+    const/4 v2, 0x2
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x5
+
     if-ne v1, v5, :cond_0
 
     if-ne v0, v2, :cond_0
@@ -6810,7 +6788,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070583
+    const v1, 0x7f07058a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -6836,7 +6814,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07068e
+    const v1, 0x7f070695
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -6856,7 +6834,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07056a
+    const v1, 0x7f070571
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -6904,7 +6882,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07057a
+    const v1, 0x7f070581
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -8730,13 +8708,24 @@
     goto/16 :goto_0
 
     :cond_0
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mOPNotifController:Lcom/oneplus/notification/OPNotificationController;
+
+    invoke-virtual {v0}, Lcom/oneplus/notification/OPNotificationController;->isPanelDisabledInBrickMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    return v1
+
+    :cond_1
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->initDownStates(Landroid/view/MotionEvent;)V
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mListenForHeadsUp:Z
 
     const/4 v2, 0x1
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHeadsUpTouchHelper:Lcom/android/systemui/statusbar/phone/HeadsUpTouchHelper;
 
@@ -8744,7 +8733,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHeadsUpTouchHelper:Lcom/android/systemui/statusbar/phone/HeadsUpTouchHelper;
 
@@ -8752,7 +8741,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iput-boolean v2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mIsExpansionFromHeadsUp:Z
 
@@ -8766,21 +8755,21 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/internal/logging/MetricsLogger;->count(Landroid/content/Context;Ljava/lang/String;I)V
 
-    :cond_1
+    :cond_2
     const/4 v0, 0x0
 
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mIsExpanding:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHintAnimationRunning:Z
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
-    :cond_2
+    :cond_3
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsExpanded:Z
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_4
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -8788,11 +8777,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mDozing:Z
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_4
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mAffordanceHelper:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;
 
@@ -8802,14 +8791,14 @@
 
     or-int/2addr v0, v1
 
-    :cond_3
+    :cond_4
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mOnlyAffordanceInThisMotion:Z
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_5
 
     return v2
 
-    :cond_4
+    :cond_5
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHeadsUpTouchHelper:Lcom/android/systemui/statusbar/phone/HeadsUpTouchHelper;
 
     invoke-virtual {v1, p1}, Lcom/android/systemui/statusbar/phone/HeadsUpTouchHelper;->onTouchEvent(Landroid/view/MotionEvent;)Z
@@ -8818,23 +8807,6 @@
 
     or-int/2addr v0, v1
 
-    const-class v1, Lcom/android/systemui/statusbar/phone/HighlightHintController;
-
-    invoke-static {v1}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/systemui/statusbar/phone/HighlightHintController;
-
-    invoke-interface {v1}, Lcom/android/systemui/statusbar/phone/HighlightHintController;->isHighLightHintShow()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->onHightlightHintIntercept(Landroid/view/MotionEvent;)Z
-
-    :cond_5
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHeadsUpTouchHelper:Lcom/android/systemui/statusbar/phone/HeadsUpTouchHelper;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/HeadsUpTouchHelper;->isTrackingHeadsUp()Z
@@ -10257,7 +10229,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070582
+    const v1, 0x7f070589
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

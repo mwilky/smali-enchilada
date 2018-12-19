@@ -38,6 +38,7 @@
     <string name="interruption_level_music">સંગીત</string>
     <string name="keyguard_fingerprint_unlock">અનલૉક કરવા માટે ફિંગરપ્રિન્ટનો ઉપયોગ કરો</string>
     <string name="keyguard_indication_charging_time_fast_vooc">(%s પૂર્ણ થવા સુધી)</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Warp ચાર્જિંગ</string>
     <string name="kg_at_least_four_points">ઓછામાં ઓછા 4 અંકનો સમાવેશ કરી ડ્રો કરો</string>
     <string name="kg_first_unlock_instructions">તમારો ફોન પુનઃપ્રારંભ કરાયો હતો અને તમારા પાસવર્ડ/પૅટર્નનો ઉપયોગ કરીને અનલૉક કરવાની જરૂર છે. કૃપા કરીને તમામ સુવિધાઓ અને ડેટા માટે અનલૉક કરો.</string>
     <string name="kg_remaining_attempts">બાકી પ્રયાસો: %d</string>
@@ -58,6 +59,14 @@
     <string name="notification_title_disable_button">HW બટન લોક છે</string>
     <string name="ok">ઓકે</string>
     <string name="oneplus_laboratory_added_toast">અભિનંદન! OnePlus લેબોરેટરી સેટિંગ્સ માટે ઉમેરાઈ ગયેલ છે</string>
+    <string name="oneplus_screen_features_not_available_toast">ચાલુ હોય ત્યારે, સ્ક્રીન કૅલિબ્રેશન જેવી સુવિધાઓ ઉપલબ્ધ હશે નહીં</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">"'ખલેલ પહોંચાડશો નહીં' પણ બદલાયું છે"</string>
+    <string name="oneplus_threekey_navigation_next">આગલું</string>
+    <string name="oneplus_threekey_navigation_silence">સંંપૂર્ણ શાંતિ</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">ચેતવણી સ્લાઇડર બદલાયું છે!</string>
+    <string name="oneplus_threekey_navigation_sound">તમામ ધ્વનિઓને મંજૂરી છે</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">તેને અહીં ચાલુ કરી શકાય છે</string>
+    <string name="oneplus_threekey_navigation_vibration">ફક્ત વાઇબ્રેશન</string>
     <string name="op_earphone_connect">જોડી કરી રહ્યું છે...</string>
     <string name="op_earphone_connected_fail">જોડી કરવામાં નિષ્ફળ. તમે હેડસેટ અને બ્લુટૂથ સ્ટેટસને તપાસી શકો છો.</string>
     <string name="op_earphone_connected_success">જોડી કરી. વધુ સેટ કરવા માટે ટૅપ કરો.</string>

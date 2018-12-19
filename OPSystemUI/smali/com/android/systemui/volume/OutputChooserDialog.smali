@@ -781,7 +781,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0704d1
+    const v1, 0x7f0704d8
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -2258,7 +2258,7 @@
 
     if-eq p1, v1, :cond_0
 
-    const v1, 0x7f060317
+    const v1, 0x7f060318
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2266,7 +2266,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mIconColor:I
 
-    const v1, 0x7f06031d
+    const v1, 0x7f06031e
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2274,7 +2274,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mEmytyIconColor:I
 
-    const v1, 0x7f06032c
+    const v1, 0x7f06032d
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2282,7 +2282,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mPrimaryTextColor:I
 
-    const v1, 0x7f06032f
+    const v1, 0x7f060330
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2297,7 +2297,7 @@
     goto :goto_0
 
     :cond_0
-    const v1, 0x7f060315
+    const v1, 0x7f060316
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2305,7 +2305,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mIconColor:I
 
-    const v1, 0x7f06031b
+    const v1, 0x7f06031c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2313,7 +2313,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mEmytyIconColor:I
 
-    const v1, 0x7f06032a
+    const v1, 0x7f06032b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2321,7 +2321,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mPrimaryTextColor:I
 
-    const v1, 0x7f06032d
+    const v1, 0x7f06032e
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 

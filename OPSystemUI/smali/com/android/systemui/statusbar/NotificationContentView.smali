@@ -373,7 +373,7 @@
     :cond_3
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationContentView;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f060432
+    const v4, 0x7f060433
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getColor(I)I
 
@@ -381,7 +381,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationContentView;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f06042f
+    const v5, 0x7f060430
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getColor(I)I
 

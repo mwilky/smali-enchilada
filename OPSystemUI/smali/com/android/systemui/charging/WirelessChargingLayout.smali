@@ -97,7 +97,7 @@
 
     move-result-object v5
 
-    const v8, 0x7f0b00a0
+    const v8, 0x7f0b00a2
 
     invoke-virtual {v5, v8}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -109,7 +109,7 @@
 
     move-result-object v5
 
-    const v10, 0x7f0b009f
+    const v10, 0x7f0b00a1
 
     invoke-virtual {v5, v10}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -121,7 +121,7 @@
 
     move-result-object v5
 
-    const v12, 0x7f0706cd
+    const v12, 0x7f0706d4
 
     invoke-virtual {v5, v12}, Landroid/content/res/Resources;->getFloat(I)F
 
@@ -131,7 +131,7 @@
 
     move-result-object v12
 
-    const v13, 0x7f0706cc
+    const v13, 0x7f0706d3
 
     invoke-virtual {v12, v13}, Landroid/content/res/Resources;->getFloat(I)F
 
@@ -169,7 +169,7 @@
 
     move-result-object v0
 
-    const v13, 0x7f0b009e
+    const v13, 0x7f0b00a0
 
     invoke-virtual {v0, v13}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -199,7 +199,7 @@
 
     move-result-object v13
 
-    const v14, 0x7f0b009d
+    const v14, 0x7f0b009f
 
     invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -213,7 +213,7 @@
 
     move-result-object v13
 
-    const v14, 0x7f0b009c
+    const v14, 0x7f0b009e
 
     invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getInteger(I)I
 

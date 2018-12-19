@@ -746,6 +746,7 @@
     <string name="keyguard_plugged_in">%s • בטעינה</string>
     <string name="keyguard_plugged_in_charging_fast">%s • בטעינה מהירה</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • בטעינה איטית</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • טעינת Warp</string>
     <string name="keyguard_sim_error_message_short">כרטיס לא חוקי.</string>
     <string name="keyguard_sim_locked_message">‏כרטיס ה-SIM נעול.</string>
     <string name="keyguard_sim_puk_locked_message">‏כרטיס ה-SIM נעול באמצעות PUK.</string>
@@ -1010,6 +1011,14 @@
     <string name="ok">אישור</string>
     <string name="okay">אישור</string>
     <string name="oneplus_laboratory_added_toast">ברכות! מעבדת OnePlus נוספה להגדרות</string>
+    <string name="oneplus_screen_features_not_available_toast">בעת הפעלת אפשרות זאת, תכונות כגון כיול מסך לא יהיו זמינות</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">"גם ההגדרה עבור 'נא לא להפריע' השתנתה"</string>
+    <string name="oneplus_threekey_navigation_next">הבא</string>
+    <string name="oneplus_threekey_navigation_silence">שקט מוחלט</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">מחוון ההתראה השתנה!</string>
+    <string name="oneplus_threekey_navigation_sound">כל הצלילים מותרים</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">אפשר להפעיל תכונה זו כאן</string>
+    <string name="oneplus_threekey_navigation_vibration">רטט בלבד</string>
     <string name="op_earphone_connect">משייך...</string>
     <string name="op_earphone_connected_fail">השיוך נכשל. באפשרותך לבדוק את מצב האוזניות וה-Bluetooth.</string>
     <string name="op_earphone_connected_success">השיוך בוצע. הקש כדי להגדיר עוד.</string>

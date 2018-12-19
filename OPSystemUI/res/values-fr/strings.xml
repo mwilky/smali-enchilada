@@ -745,6 +745,7 @@ Veuillez contacter votre opérateur de téléphonie mobile pour en obtenir une a
     <string name="keyguard_plugged_in">%s • Rechargement…</string>
     <string name="keyguard_plugged_in_charging_fast">%s • Rechargement rapide…</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • Rechargement lent…</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Warp Charge</string>
     <string name="keyguard_sim_error_message_short">Carte non valide.</string>
     <string name="keyguard_sim_locked_message">La carte SIM est verrouillée.</string>
     <string name="keyguard_sim_puk_locked_message">La carte SIM est verrouillée par clé PUK.</string>
@@ -1009,6 +1010,14 @@ Vous êtes également connecté à un VPN qui peut contrôler votre activité su
     <string name="ok">OK</string>
     <string name="okay">OK</string>
     <string name="oneplus_laboratory_added_toast">Félicitations ! Le Laboratoire OnePlus a été ajouté aux Paramètres</string>
+    <string name="oneplus_screen_features_not_available_toast">"Lorsqu'elles sont activées, les fonctionnalités telles que le calibrage de l'écran ne seront pas disponibles"</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">« Ne pas déranger » a également changé</string>
+    <string name="oneplus_threekey_navigation_next">Suivant</string>
+    <string name="oneplus_threekey_navigation_silence">Silence total</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">"Le curseur d'alerte a été modifié !"</string>
+    <string name="oneplus_threekey_navigation_sound">Tous les sons autorisés</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">"L'activation est disponible ici"</string>
+    <string name="oneplus_threekey_navigation_vibration">Vibration uniquement</string>
     <string name="op_earphone_connect">Association en cours…</string>
     <string name="op_earphone_connected_fail">"Association échouée. Vous pouvez vérifier le casque et l'état Bluetooth."</string>
     <string name="op_earphone_connected_success">"Associé. Appuyer pour d'autres paramètres."</string>

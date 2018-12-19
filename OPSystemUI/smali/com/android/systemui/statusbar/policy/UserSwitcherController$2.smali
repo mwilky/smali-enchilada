@@ -36,7 +36,7 @@
 
     const-string v0, "UserSwitcherController"
 
-    const-string v1, "switchTo:createGuest:START"
+    const-string/jumbo v1, "switchTo:createGuest:START"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -64,7 +64,7 @@
 
     const-string v1, "UserSwitcherController"
 
-    const-string v2, "switchTo:createGuest:END"
+    const-string/jumbo v2, "switchTo:createGuest:END"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 

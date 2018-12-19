@@ -524,7 +524,7 @@
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     :cond_0
-    const v0, 0x7f060364
+    const v0, 0x7f060365
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getColor(I)I
 
@@ -532,7 +532,7 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->COLOR_BACKGROUND_LIGHT:I
 
-    const v0, 0x7f060363
+    const v0, 0x7f060364
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getColor(I)I
 
@@ -540,7 +540,7 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->COLOR_BACKGROUND_DARK:I
 
-    const v0, 0x7f060365
+    const v0, 0x7f060366
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getColor(I)I
 
@@ -548,7 +548,7 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->COLOR_BACKGROUND_TRANSPARENT:I
 
-    const v0, 0x7f060367
+    const v0, 0x7f060368
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getColor(I)I
 
@@ -556,7 +556,7 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->COLOR_KEY_LIGHT:I
 
-    const v0, 0x7f060366
+    const v0, 0x7f060367
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getColor(I)I
 
@@ -564,7 +564,7 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->COLOR_KEY_DARK:I
 
-    const v0, 0x7f060368
+    const v0, 0x7f060369
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getColor(I)I
 

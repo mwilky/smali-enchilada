@@ -340,7 +340,7 @@
     return-void
 .end method
 
-.method static synthetic lambda$dump$62(Ljava/lang/Object;)Z
+.method static synthetic lambda$dump$63(Ljava/lang/Object;)Z
     .locals 1
 
     instance-of v0, p0, Lcom/android/systemui/Dumpable;
@@ -348,7 +348,7 @@
     return v0
 .end method
 
-.method static synthetic lambda$dump$63(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;Ljava/lang/Object;)V
+.method static synthetic lambda$dump$64(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;Ljava/lang/Object;)V
     .locals 1
 
     move-object v0, p3
@@ -360,7 +360,7 @@
     return-void
 .end method
 
-.method static synthetic lambda$onConfigurationChanged$64(Ljava/lang/Object;)Z
+.method static synthetic lambda$onConfigurationChanged$65(Ljava/lang/Object;)Z
     .locals 1
 
     instance-of v0, p0, Lcom/android/systemui/ConfigurationChangedReceiver;
@@ -368,7 +368,7 @@
     return v0
 .end method
 
-.method static synthetic lambda$onConfigurationChanged$65(Landroid/content/res/Configuration;Ljava/lang/Object;)V
+.method static synthetic lambda$onConfigurationChanged$66(Landroid/content/res/Configuration;Ljava/lang/Object;)V
     .locals 1
 
     move-object v0, p1
@@ -1220,6 +1220,18 @@
     return-object v0
 .end method
 
+.method public static synthetic lambda$start$62(Lcom/android/systemui/Dependency;)Ljava/lang/Object;
+    .locals 2
+
+    new-instance v0, Lcom/oneplus/scene/OPSceneModeObserver;
+
+    iget-object v1, p0, Lcom/android/systemui/Dependency;->mContext:Landroid/content/Context;
+
+    invoke-direct {v0, v1}, Lcom/oneplus/scene/OPSceneModeObserver;-><init>(Landroid/content/Context;)V
+
+    return-object v0
+.end method
+
 .method public static synthetic lambda$start$7(Lcom/android/systemui/Dependency;)Ljava/lang/Object;
     .locals 3
 
@@ -1395,15 +1407,15 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/android/systemui/-$$Lambda$Dependency$NySUi6fkqc-gpV3As7yS9xzQLGs;->INSTANCE:Lcom/android/systemui/-$$Lambda$Dependency$NySUi6fkqc-gpV3As7yS9xzQLGs;
+    sget-object v1, Lcom/android/systemui/-$$Lambda$Dependency$XCwznIiHcX3g3rwY-mrA4qIQSK0;->INSTANCE:Lcom/android/systemui/-$$Lambda$Dependency$XCwznIiHcX3g3rwY-mrA4qIQSK0;
 
     invoke-interface {v0, v1}, Ljava/util/stream/Stream;->filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
 
     move-result-object v0
 
-    new-instance v1, Lcom/android/systemui/-$$Lambda$Dependency$1Oj9fGkoz2JD_MXRvNkn7sBfmSU;
+    new-instance v1, Lcom/android/systemui/-$$Lambda$Dependency$WnWS57gf3WrSnVlO5O6npvVM2Q4;
 
-    invoke-direct {v1, p1, p2, p3}, Lcom/android/systemui/-$$Lambda$Dependency$1Oj9fGkoz2JD_MXRvNkn7sBfmSU;-><init>(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+    invoke-direct {v1, p1, p2, p3}, Lcom/android/systemui/-$$Lambda$Dependency$WnWS57gf3WrSnVlO5O6npvVM2Q4;-><init>(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
     invoke-interface {v0, v1}, Ljava/util/stream/Stream;->forEach(Ljava/util/function/Consumer;)V
     :try_end_0
@@ -1477,15 +1489,15 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/android/systemui/-$$Lambda$Dependency$6mCZlbc6lFgfLDCwSrONrXphdOw;->INSTANCE:Lcom/android/systemui/-$$Lambda$Dependency$6mCZlbc6lFgfLDCwSrONrXphdOw;
+    sget-object v1, Lcom/android/systemui/-$$Lambda$Dependency$iGzAwFWmOywN2rkAb5NlhHAYwFI;->INSTANCE:Lcom/android/systemui/-$$Lambda$Dependency$iGzAwFWmOywN2rkAb5NlhHAYwFI;
 
     invoke-interface {v0, v1}, Ljava/util/stream/Stream;->filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
 
     move-result-object v0
 
-    new-instance v1, Lcom/android/systemui/-$$Lambda$Dependency$A5sv7qh1B1leWEGLPGdGHeQ2GyI;
+    new-instance v1, Lcom/android/systemui/-$$Lambda$Dependency$D2-sED-tCq4TSs5t8td9cZaXV1A;
 
-    invoke-direct {v1, p1}, Lcom/android/systemui/-$$Lambda$Dependency$A5sv7qh1B1leWEGLPGdGHeQ2GyI;-><init>(Landroid/content/res/Configuration;)V
+    invoke-direct {v1, p1}, Lcom/android/systemui/-$$Lambda$Dependency$D2-sED-tCq4TSs5t8td9cZaXV1A;-><init>(Landroid/content/res/Configuration;)V
 
     invoke-interface {v0, v1}, Ljava/util/stream/Stream;->forEach(Ljava/util/function/Consumer;)V
     :try_end_0
@@ -2119,6 +2131,16 @@
     new-instance v2, Lcom/android/systemui/-$$Lambda$Dependency$Dp0qWTq2UOjf-_6AYk3D-p2KTzQ;
 
     invoke-direct {v2, p0}, Lcom/android/systemui/-$$Lambda$Dependency$Dp0qWTq2UOjf-_6AYk3D-p2KTzQ;-><init>(Lcom/android/systemui/Dependency;)V
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, p0, Lcom/android/systemui/Dependency;->mProviders:Landroid/util/ArrayMap;
+
+    const-class v1, Lcom/oneplus/scene/OPSceneModeObserver;
+
+    new-instance v2, Lcom/android/systemui/-$$Lambda$Dependency$oQNm-Qk2u3Uq-Fl6qwqAUE8fd3o;
+
+    invoke-direct {v2, p0}, Lcom/android/systemui/-$$Lambda$Dependency$oQNm-Qk2u3Uq-Fl6qwqAUE8fd3o;-><init>(Lcom/android/systemui/Dependency;)V
 
     invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

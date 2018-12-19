@@ -61,7 +61,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07058b
+    const v1, 0x7f070592
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -69,7 +69,7 @@
 
     iput v1, p0, Lcom/android/systemui/qs/tileimpl/QSIconViewImpl;->mIconSizePx:I
 
-    const v1, 0x7f070592
+    const v1, 0x7f070599
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -273,7 +273,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0603f4
+    const v1, 0x7f0603f5
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getColor(I)I
 

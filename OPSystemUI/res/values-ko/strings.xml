@@ -743,6 +743,7 @@
     <string name="keyguard_plugged_in">%s • 충전 중</string>
     <string name="keyguard_plugged_in_charging_fast">%s • 고속 충전 중</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • 저속 충전 중</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Warp 충전 중</string>
     <string name="keyguard_sim_error_message_short">유효하지 않은 카드</string>
     <string name="keyguard_sim_locked_message">SIM 카드가 잠겨 있습니다.</string>
     <string name="keyguard_sim_puk_locked_message">SIM 카드가 PUK로 잠겨 있습니다.</string>
@@ -1007,6 +1008,14 @@
     <string name="ok">확인</string>
     <string name="okay">확인</string>
     <string name="oneplus_laboratory_added_toast">축하합니다! OnePlus 실험실이 설정에 추가되었습니다.</string>
+    <string name="oneplus_screen_features_not_available_toast">켜진 경우 화면 조정과 같은 기능을 사용할 수 없습니다</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">"'방해 금지'도 변경되었습니다"</string>
+    <string name="oneplus_threekey_navigation_next">다음</string>
+    <string name="oneplus_threekey_navigation_silence">전체 무음</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">알림 슬라이더가 변경되었습니다!</string>
+    <string name="oneplus_threekey_navigation_sound">모든 소리 허용</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">여기서 켤 수 있습니다</string>
+    <string name="oneplus_threekey_navigation_vibration">진동만</string>
     <string name="op_earphone_connect">연결 중...</string>
     <string name="op_earphone_connected_fail">연결하지 못했습니다. 헤드셋 및 Bluetooth 상태를 확인하세요.</string>
     <string name="op_earphone_connected_success">연결되었습니다. 더 연결하려면 탭하세요.</string>

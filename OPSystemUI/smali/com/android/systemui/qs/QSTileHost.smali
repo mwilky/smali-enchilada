@@ -363,26 +363,60 @@
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, p2
+    move-object/from16 v1, p1
 
-    invoke-interface/range {p1 .. p1}, Ljava/util/List;->size()I
+    move-object/from16 v2, p2
 
-    move-result v2
+    if-eqz v1, :cond_1
 
-    invoke-interface/range {p2 .. p2}, Ljava/util/List;->size()I
+    invoke-interface/range {p1 .. p2}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    const/4 v4, 0x0
+    if-eqz v3, :cond_1
 
-    move v5, v4
+    sget-boolean v3, Lcom/android/systemui/qs/QSTileHost;->DEBUG:Z
+
+    if-eqz v3, :cond_0
+
+    const-string v3, "QSTileHost"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "changeTiles: no change skip. tiles="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    return-void
+
+    :cond_1
+    invoke-interface/range {p1 .. p1}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    invoke-interface/range {p2 .. p2}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    const/4 v5, 0x0
+
+    move v6, v5
 
     :goto_0
-    if-ge v5, v2, :cond_2
+    if-ge v6, v3, :cond_4
 
-    move-object/from16 v6, p1
-
-    invoke-interface {v6, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
@@ -394,16 +428,16 @@
 
     move-result v8
 
-    if-nez v8, :cond_0
+    if-nez v8, :cond_2
 
     goto :goto_1
 
-    :cond_0
-    invoke-interface {v1, v7}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    :cond_2
+    invoke-interface {v2, v7}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-nez v8, :cond_1
+    if-nez v8, :cond_3
 
     invoke-static {v7}, Lcom/android/systemui/qs/external/CustomTile;->getComponentFromSpec(Ljava/lang/String;)Landroid/content/ComponentName;
 
@@ -453,55 +487,53 @@
 
     iget-object v11, v0, Lcom/android/systemui/qs/QSTileHost;->mContext:Landroid/content/Context;
 
-    invoke-static {v11, v8, v4}, Lcom/android/systemui/qs/external/TileLifecycleManager;->setTileAdded(Landroid/content/Context;Landroid/content/ComponentName;Z)V
+    invoke-static {v11, v8, v5}, Lcom/android/systemui/qs/external/TileLifecycleManager;->setTileAdded(Landroid/content/Context;Landroid/content/ComponentName;Z)V
 
     invoke-virtual {v10}, Lcom/android/systemui/qs/external/TileLifecycleManager;->flushMessagesAndUnbind()V
 
-    :cond_1
+    :cond_3
     :goto_1
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    :cond_2
-    move-object/from16 v6, p1
+    :cond_4
+    sget-boolean v5, Lcom/android/systemui/qs/QSTileHost;->DEBUG:Z
 
-    sget-boolean v4, Lcom/android/systemui/qs/QSTileHost;->DEBUG:Z
+    if-eqz v5, :cond_5
 
-    if-eqz v4, :cond_3
+    const-string v5, "QSTileHost"
 
-    const-string v4, "QSTileHost"
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v7, "saveCurrentTiles "
 
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_5
+    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/qs/QSTileHost;->getContext()Landroid/content/Context;
 
     move-result-object v5
 
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v5}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    :cond_3
-    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/qs/QSTileHost;->getContext()Landroid/content/Context;
+    move-result-object v5
 
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v4
-
-    const-string/jumbo v5, "sysui_qs_tiles"
+    const-string/jumbo v6, "sysui_qs_tiles"
 
     const-string v7, ","
 
-    invoke-static {v7, v1}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
+    invoke-static {v7, v2}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
 
     move-result-object v7
 
@@ -509,7 +541,7 @@
 
     move-result v8
 
-    invoke-static {v4, v5, v7, v8}, Landroid/provider/Settings$Secure;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
+    invoke-static {v5, v6, v7, v8}, Landroid/provider/Settings$Secure;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
     return-void
 .end method

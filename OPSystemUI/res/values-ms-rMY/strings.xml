@@ -38,6 +38,7 @@
     <string name="interruption_level_music">Muzik</string>
     <string name="keyguard_fingerprint_unlock">Gunakan cap jari untuk membuka kunci</string>
     <string name="keyguard_indication_charging_time_fast_vooc">(%s sehingga penuh)</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Pengecasan Warp</string>
     <string name="kg_at_least_four_points">Melukis untuk termasuk sekurang-kurangnya 4 titik</string>
     <string name="kg_first_unlock_instructions">Telefon anda dimulakan semula dan perlu dibuka kunci menggunakan kata laluan/corak anda. Sila buka kunci untuk semua ciri dan data.</string>
     <string name="kg_remaining_attempts">Baki percubaan: %d</string>
@@ -58,6 +59,14 @@
     <string name="notification_title_disable_button">BUTANG HW DIKUNCI</string>
     <string name="ok">OK</string>
     <string name="oneplus_laboratory_added_toast">Tahniah! Makmal OnePlus telah ditambah kepada Tetapan</string>
+    <string name="oneplus_screen_features_not_available_toast">Apabila dihidupkan, ciri-ciri seperti kalibrasi skrin tidak akan tersedia</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">"'Jangan Ganggu' telah berubah juga"</string>
+    <string name="oneplus_threekey_navigation_next">Seterusnya</string>
+    <string name="oneplus_threekey_navigation_silence">Senyap sepenuhnya</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">Peluncur Amaran telah berubah!</string>
+    <string name="oneplus_threekey_navigation_sound">Semua bunyi dibenarkan</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">Boleh dihidupkan di sini</string>
+    <string name="oneplus_threekey_navigation_vibration">Getaran sahaja</string>
     <string name="op_earphone_connect">Memasangkan...</string>
     <string name="op_earphone_connected_fail">Gagal untuk Dipasangkan. Anda boleh periksa set kepala dan status Bluetooth.</string>
     <string name="op_earphone_connected_success">Berpasangan. Ketik untuk menyediakan lagi.</string>

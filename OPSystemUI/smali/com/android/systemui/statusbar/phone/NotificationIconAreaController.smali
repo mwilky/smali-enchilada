@@ -6,6 +6,10 @@
 .implements Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
 
 
+# static fields
+.field private static final CLOSED_BETA:Z
+
+
 # instance fields
 .field private mContext:Landroid/content/Context;
 
@@ -35,6 +39,18 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    invoke-static {}, Lcom/android/systemui/util/OPUtils;->isClosedBeta()Z
+
+    move-result v0
+
+    sput-boolean v0, Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;->CLOSED_BETA:Z
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;Lcom/android/systemui/statusbar/phone/StatusBar;)V
     .locals 1
 
@@ -192,7 +208,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;->mIconSize:I
 
-    const v1, 0x7f070625
+    const v1, 0x7f07062c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -635,11 +651,39 @@
 
     const/4 v1, 0x0
 
+    sget-boolean v2, Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;->CLOSED_BETA:Z
+
+    if-eqz v2, :cond_0
+
+    if-nez v0, :cond_0
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;->mContext:Landroid/content/Context;
+
+    invoke-static {v2}, Lcom/android/systemui/util/OPUtils;->isGlobalROM(Landroid/content/Context;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    :cond_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;->mNotificationColorUtil:Lcom/android/internal/util/NotificationColorUtil;
 
     invoke-static {p1, v2}, Lcom/android/systemui/statusbar/notification/NotificationUtils;->isGrayscale(Landroid/widget/ImageView;Lcom/android/internal/util/NotificationColorUtil;)Z
 
     move-result v2
+
+    if-eqz v2, :cond_2
+
+    :cond_1
+    const/4 v2, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v2, 0x0
+
+    :goto_0
+    if-eqz v2, :cond_3
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;->mTintArea:Landroid/graphics/Rect;
 
@@ -647,14 +691,12 @@
 
     invoke-static {v3, p1, v4}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->getTint(Landroid/graphics/Rect;Landroid/view/View;I)I
 
-    move-result v3
+    move-result v1
 
-    if-eqz v2, :cond_0
-
-    move v1, v3
-
-    :cond_0
+    :cond_3
     invoke-virtual {p1, v1}, Lcom/android/systemui/statusbar/StatusBarIconView;->setStaticDrawableColor(I)V
+
+    iget v3, p0, Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;->mIconTint:I
 
     invoke-virtual {p1, v3}, Lcom/android/systemui/statusbar/StatusBarIconView;->setDecorColor(I)V
 

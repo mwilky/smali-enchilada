@@ -210,7 +210,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f070509
+    const v6, 0x7f070510
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -232,7 +232,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f070507
+    const v6, 0x7f07050e
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -274,7 +274,7 @@
 
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextViewForPin;->mDrawPaint:Landroid/graphics/Paint;
 
-    const v4, 0x1040158
+    const v4, 0x1040159
 
     invoke-virtual {p1, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

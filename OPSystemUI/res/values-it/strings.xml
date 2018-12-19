@@ -745,6 +745,7 @@ priorità"</string>
     <string name="keyguard_plugged_in">%s • In carica</string>
     <string name="keyguard_plugged_in_charging_fast">%s • Ricarica veloce</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • Ricarica lenta</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • carica Warp</string>
     <string name="keyguard_sim_error_message_short">Scheda non valida.</string>
     <string name="keyguard_sim_locked_message">La SIM è bloccata.</string>
     <string name="keyguard_sim_puk_locked_message">La SIM è bloccata tramite PUK.</string>
@@ -1009,6 +1010,14 @@ Sei inoltre connesso a una VPN, da cui è possibile monitorare la tua attività 
     <string name="ok">OK</string>
     <string name="okay">OK</string>
     <string name="oneplus_laboratory_added_toast">Congratulazioni! OnePlus Laboratory è stato aggiunto alle Impostazioni</string>
+    <string name="oneplus_screen_features_not_available_toast">Una volta acceso, alcune funzioni come quella di calibrazione dello schermo non saranno disponibili</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">"Anche la funzione 'Non disturbare' è cambiata"</string>
+    <string name="oneplus_threekey_navigation_next">Avanti</string>
+    <string name="oneplus_threekey_navigation_silence">Silenzio totale</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">Il dispositivo di scorrimento degli avvisi è cambiato!</string>
+    <string name="oneplus_threekey_navigation_sound">Tutti i suoni ammessi</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">Può essere attivata qui</string>
+    <string name="oneplus_threekey_navigation_vibration">Solo vibrazione</string>
     <string name="op_earphone_connect">Associazione in corso...</string>
     <string name="op_earphone_connected_fail">Associazione non riuscita. Controllare lo stato degli auricolari e del Bluetooth.</string>
     <string name="op_earphone_connected_success">Associazione riuscita. Tocca per altre impostazioni.</string>

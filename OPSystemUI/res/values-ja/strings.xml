@@ -745,6 +745,7 @@
     <string name="keyguard_plugged_in">%s • 充電中</string>
     <string name="keyguard_plugged_in_charging_fast">%s • 急速充電中</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • 低速充電中</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Warp チャージ</string>
     <string name="keyguard_sim_error_message_short">無効なカードです。</string>
     <string name="keyguard_sim_locked_message">SIM カードはロックされています。</string>
     <string name="keyguard_sim_puk_locked_message">SIM カードは PUK でロックされています。</string>
@@ -1009,6 +1010,14 @@
     <string name="ok">OK</string>
     <string name="okay">OK</string>
     <string name="oneplus_laboratory_added_toast">おめでとうございます！OnePlus 研究所が設定に追加されました</string>
+    <string name="oneplus_screen_features_not_available_toast">これをオンにすると、画面のキャリブレーションなどの機能が利用できなくなります</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">「おやすみモード」も変更されました</string>
+    <string name="oneplus_threekey_navigation_next">次へ</string>
+    <string name="oneplus_threekey_navigation_silence">完全にミュート</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">3 段トグルスライダーが変更されました！</string>
+    <string name="oneplus_threekey_navigation_sound">すべての音を許可</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">ここでオンにできます</string>
+    <string name="oneplus_threekey_navigation_vibration">バイブのみ</string>
     <string name="op_earphone_connect">ペア設定しています...</string>
     <string name="op_earphone_connected_fail">ペア設定に失敗しました。ヘッドセットと Bluetooth のステータスを確認してみてください。</string>
     <string name="op_earphone_connected_success">ペア設定が完了しました。さらにペア設定を行うにはタップしてください。</string>

@@ -746,6 +746,7 @@ Másik SIM-kártya beszerzése érdekében, kérjük, forduljon vezeték nélkü
     <string name="keyguard_plugged_in">%s • Töltés</string>
     <string name="keyguard_plugged_in_charging_fast">%s • Gyors töltés</string>
     <string name="keyguard_plugged_in_charging_slowly">%s • Lassú töltés</string>
+    <string name="keyguard_plugged_in_charging_warp">%s • Warp Töltés</string>
     <string name="keyguard_sim_error_message_short">Érvénytelen kártya.</string>
     <string name="keyguard_sim_locked_message">A SIM-kártya zárolva van.</string>
     <string name="keyguard_sim_puk_locked_message">A SIM-kártya PUK-kóddal van zárolva.</string>
@@ -974,7 +975,7 @@ VPN-hez is kapcsolódik, amely szintén figyelheti hálózati tevékenységét."
     <string name="nav_bar_layout">Elrendezés</string>
     <string name="no_application">Semmi</string>
     <string name="no_auto_saver_action">Nem</string>
-    <string name="non_op_earphone_notification_content">A Oneplus új funkciókat biztosít a fejhallgatójának. Kattintson az értesítésre, és próbálja ki.</string>
+    <string name="non_op_earphone_notification_content">A OnePlus új funkciókat biztosít a fejhallgatójának. Kattintson az értesítésre, és próbálja ki.</string>
     <string name="non_op_earphone_notification_title">Tippek</string>
     <string name="notification_app_settings">Személyre szabás</string>
     <string name="notification_appops_ok">OK</string>
@@ -1010,6 +1011,14 @@ VPN-hez is kapcsolódik, amely szintén figyelheti hálózati tevékenységét."
     <string name="ok">OK</string>
     <string name="okay">OK</string>
     <string name="oneplus_laboratory_added_toast">Gratulálunk! Az OnePlus laboratórium bekerült a Beállításokba</string>
+    <string name="oneplus_screen_features_not_available_toast">Bekapcsolt állapotban olyan funkciók, mint a képernyő-kalibrálás, nem lesznek elérhetők</string>
+    <string name="oneplus_threekey_navigation_disturb_changed">A \"Ne zavarj\" mód is megváltozott</string>
+    <string name="oneplus_threekey_navigation_next">Következő</string>
+    <string name="oneplus_threekey_navigation_silence">Teljes csend</string>
+    <string name="oneplus_threekey_navigation_slider_has_changed">A Riasztási csúszka megváltozott!</string>
+    <string name="oneplus_threekey_navigation_sound">Minden hang bekapcsolva</string>
+    <string name="oneplus_threekey_navigation_turned_on_here">Itt kapcsolható be</string>
+    <string name="oneplus_threekey_navigation_vibration">Csak rezgés</string>
     <string name="op_earphone_connect">Párosítás...</string>
     <string name="op_earphone_connected_fail">Sikertelen párosítás. Ellenőrizze a fejhallgatót és a Bluetooth-állapotát.</string>
     <string name="op_earphone_connected_success">Párosítva. Koppintson a további beállításokért.</string>

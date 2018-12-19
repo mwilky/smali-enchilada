@@ -713,15 +713,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1200(Lcom/android/systemui/fingerprint/FingerprintDialogView;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->resetState()V
-
-    return-void
-.end method
-
-.method static synthetic access$1300(Lcom/android/systemui/fingerprint/FingerprintDialogView;I)V
+.method static synthetic access$1200(Lcom/android/systemui/fingerprint/FingerprintDialogView;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->setDisplayAodMode(I)V
@@ -729,7 +721,7 @@
     return-void
 .end method
 
-.method static synthetic access$1400(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Lcom/android/systemui/fingerprint/CircleImageView;
+.method static synthetic access$1300(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Lcom/android/systemui/fingerprint/CircleImageView;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mIconDisable:Lcom/android/systemui/fingerprint/CircleImageView;
@@ -737,7 +729,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1502(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
+.method static synthetic access$1402(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mGoingToSleep:Z
@@ -745,7 +737,7 @@
     return p1
 .end method
 
-.method static synthetic access$1602(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
+.method static synthetic access$1502(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mFaceUnlocked:Z
@@ -753,7 +745,7 @@
     return p1
 .end method
 
-.method static synthetic access$1702(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
+.method static synthetic access$1602(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mDeviceInteractive:Z
@@ -761,7 +753,7 @@
     return p1
 .end method
 
-.method static synthetic access$1800(Lcom/android/systemui/fingerprint/FingerprintDialogView;)V
+.method static synthetic access$1700(Lcom/android/systemui/fingerprint/FingerprintDialogView;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->updateFPIndicationText()V
@@ -769,10 +761,18 @@
     return-void
 .end method
 
-.method static synthetic access$1900(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+.method static synthetic access$1800(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1900(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Landroid/os/PowerManager;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mPm:Landroid/os/PowerManager;
 
     return-object v0
 .end method
@@ -785,15 +785,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2000(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Landroid/os/PowerManager;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mPm:Landroid/os/PowerManager;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2100(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Z
+.method static synthetic access$2000(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mShowingKeyguard:Z
@@ -801,7 +793,7 @@
     return v0
 .end method
 
-.method static synthetic access$2102(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
+.method static synthetic access$2002(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mShowingKeyguard:Z
@@ -809,7 +801,7 @@
     return p1
 .end method
 
-.method static synthetic access$2200(Lcom/android/systemui/fingerprint/FingerprintDialogView;I)V
+.method static synthetic access$2100(Lcom/android/systemui/fingerprint/FingerprintDialogView;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->setDisplayHideAod(I)V
@@ -817,7 +809,7 @@
     return-void
 .end method
 
-.method static synthetic access$2300(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Ljava/lang/String;
+.method static synthetic access$2200(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mOwnerString:Ljava/lang/String;
@@ -825,7 +817,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2400(Lcom/android/systemui/fingerprint/FingerprintDialogView;Ljava/lang/String;)Z
+.method static synthetic access$2300(Lcom/android/systemui/fingerprint/FingerprintDialogView;Ljava/lang/String;)Z
     .locals 1
 
     invoke-direct {p0, p1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->isKeyguard(Ljava/lang/String;)Z
@@ -835,7 +827,7 @@
     return v0
 .end method
 
-.method static synthetic access$2502(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
+.method static synthetic access$2402(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mScreenOffAuthenticating:Z
@@ -843,7 +835,7 @@
     return p1
 .end method
 
-.method static synthetic access$2600(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Ljava/lang/Runnable;
+.method static synthetic access$2500(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Ljava/lang/Runnable;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mUpdateIconRunnable:Ljava/lang/Runnable;
@@ -851,7 +843,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2700(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Z
+.method static synthetic access$2600(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mIsKeyguardDone:Z
@@ -859,7 +851,7 @@
     return v0
 .end method
 
-.method static synthetic access$2702(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
+.method static synthetic access$2602(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mIsKeyguardDone:Z
@@ -867,7 +859,7 @@
     return p1
 .end method
 
-.method static synthetic access$2800(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;
+.method static synthetic access$2700(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mFpAnimationCtrl:Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;
@@ -1359,9 +1351,13 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mDimOnWindow:Z
 
-    const-string v1, "FingerPrintMode"
+    iget v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mAodMode:I
 
     const/4 v2, 0x2
+
+    if-eq v1, v2, :cond_1
+
+    const-string v1, "FingerPrintMode"
 
     invoke-static {v1, v2, v0}, Lcom/oneplus/oimc/OIMCManager;->notifyModeChange(Ljava/lang/String;II)V
 
@@ -1376,6 +1372,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    :cond_1
     :goto_0
     goto :goto_1
 
@@ -1509,24 +1506,6 @@
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_0
-    return-void
-.end method
-
-.method private resetState()V
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mDialogImpl:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
-
-    invoke-virtual {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->resetState()V
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->updateDimViewVisibility(Z)V
-
-    invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->updateIconVisibility(Z)V
-
-    invoke-virtual {p0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->stopAnimation()V
-
     return-void
 .end method
 
@@ -2034,7 +2013,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mAodIndicationTextView:Landroid/widget/TextView;
 
-    const v1, 0x104023d
+    const v1, 0x104023e
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -2943,7 +2922,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-direct {p0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->resetState()V
+    invoke-virtual {p0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->resetState()V
 
     const/4 v0, 0x0
 
@@ -3091,6 +3070,24 @@
     iget v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mTextColor:I
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+
+    return-void
+.end method
+
+.method protected resetState()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mDialogImpl:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
+
+    invoke-virtual {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->resetState()V
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->updateDimViewVisibility(Z)V
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->updateIconVisibility(Z)V
+
+    invoke-virtual {p0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->stopAnimation()V
 
     return-void
 .end method

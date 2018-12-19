@@ -2450,7 +2450,7 @@
     :cond_0
     iget-object v13, v0, Lcom/android/systemui/statusbar/KeyboardShortcuts;->mContext:Landroid/content/Context;
 
-    const v14, 0x7f060244
+    const v14, 0x7f060245
 
     invoke-virtual {v13, v14}, Landroid/content/Context;->getColor(I)I
 
