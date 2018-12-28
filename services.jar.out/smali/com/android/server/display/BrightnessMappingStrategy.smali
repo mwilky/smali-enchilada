@@ -142,7 +142,7 @@
     
     if-eqz v11, :cond_stock
     
-    const v6, 0x107007a
+    const v6, 0x107007b
     
     goto :goto_skip
     
