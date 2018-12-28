@@ -358,7 +358,7 @@
 
     move-result v0
 
-    const v1, 0x10401be
+    const v1, 0x10401bf
 
     if-eqz v0, :cond_0
 
@@ -2625,7 +2625,7 @@
     goto :goto_3
 
     :cond_6
-    const-string v9, "groups"
+    const-string/jumbo v9, "groups"
 
     invoke-virtual {v6, v9, v8}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
     :try_end_2
@@ -3789,7 +3789,7 @@
 
     move-result-object v5
 
-    const v6, 0x10401be
+    const v6, 0x10401bf
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -4238,7 +4238,7 @@
 
     const/4 v12, 0x1
 
-    if-eq v2, v12, :cond_e
+    if-eq v2, v12, :cond_f
 
     invoke-interface/range {p1 .. p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
@@ -4259,7 +4259,7 @@
     return-void
 
     :cond_2
-    if-ne v11, v10, :cond_d
+    if-ne v11, v10, :cond_e
 
     const-string/jumbo v0, "package"
 
@@ -4267,7 +4267,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_e
 
     const-string/jumbo v0, "uid"
 
@@ -4289,7 +4289,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_d
 
     const/4 v5, 0x0
 
@@ -4420,7 +4420,7 @@
 
     move v11, v0
 
-    if-eq v0, v12, :cond_b
+    if-eq v0, v12, :cond_c
 
     const/4 v3, 0x3
 
@@ -4430,16 +4430,16 @@
 
     move-result v0
 
-    if-le v0, v2, :cond_b
+    if-le v0, v2, :cond_c
 
     :cond_4
-    if-eq v11, v3, :cond_a
+    if-eq v11, v3, :cond_b
 
     const/4 v0, 0x4
 
     if-ne v11, v0, :cond_5
 
-    goto :goto_5
+    goto/16 :goto_5
 
     :cond_5
     invoke-interface/range {p1 .. p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
@@ -4497,7 +4497,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_9
+    if-eqz v4, :cond_a
 
     const-string/jumbo v4, "id"
 
@@ -4517,42 +4517,73 @@
 
     move-result v7
 
+    const-string v14, "com.android.dialer"
+
+    iget-object v3, v1, Lcom/android/server/notification/RankingHelper$Record;->pkg:Ljava/lang/String;
+
+    invoke-virtual {v14, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_8
+
+    const-string/jumbo v3, "phone_incoming_call"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_8
+
+    const/4 v3, 0x5
+
+    if-ge v7, v3, :cond_8
+
+    const/4 v7, 0x5
+
+    const-string v3, "RankingHelper"
+
+    const-string v14, "Fix channel importance of incoming call to IMPORTANCE_MAX."
+
+    invoke-static {v3, v14}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_8
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v14
+    move-result v3
 
-    if-nez v14, :cond_9
+    if-nez v3, :cond_a
 
     invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v14
+    move-result v3
 
-    if-nez v14, :cond_9
+    if-nez v3, :cond_a
 
-    new-instance v14, Landroid/app/NotificationChannel;
+    new-instance v3, Landroid/app/NotificationChannel;
 
-    invoke-direct {v14, v4, v6, v7}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
+    invoke-direct {v3, v4, v6, v7}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
 
-    if-eqz p2, :cond_8
+    if-eqz p2, :cond_9
 
-    iget-object v3, v8, Lcom/android/server/notification/RankingHelper;->mContext:Landroid/content/Context;
+    iget-object v14, v8, Lcom/android/server/notification/RankingHelper;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v14, v9, v3}, Landroid/app/NotificationChannel;->populateFromXmlForRestore(Lorg/xmlpull/v1/XmlPullParser;Landroid/content/Context;)V
+    invoke-virtual {v3, v9, v14}, Landroid/app/NotificationChannel;->populateFromXmlForRestore(Lorg/xmlpull/v1/XmlPullParser;Landroid/content/Context;)V
 
     goto :goto_4
 
-    :cond_8
-    invoke-virtual {v14, v9}, Landroid/app/NotificationChannel;->populateFromXml(Lorg/xmlpull/v1/XmlPullParser;)V
+    :cond_9
+    invoke-virtual {v3, v9}, Landroid/app/NotificationChannel;->populateFromXml(Lorg/xmlpull/v1/XmlPullParser;)V
 
     :goto_4
-    iget-object v3, v1, Lcom/android/server/notification/RankingHelper$Record;->channels:Landroid/util/ArrayMap;
+    iget-object v14, v1, Lcom/android/server/notification/RankingHelper$Record;->channels:Landroid/util/ArrayMap;
 
-    invoke-virtual {v3, v4, v14}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_9
-    goto :goto_6
+    invoke-virtual {v14, v4, v3}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_a
+    goto :goto_6
+
+    :cond_b
     :goto_5
     const/4 v5, 0x0
 
@@ -4561,7 +4592,7 @@
 
     goto/16 :goto_2
 
-    :cond_b
+    :cond_c
     :try_start_1
     invoke-direct {v8, v1}, Lcom/android/server/notification/RankingHelper;->deleteDefaultChannelIfNeeded(Lcom/android/server/notification/RankingHelper$Record;)V
     :try_end_1
@@ -4592,13 +4623,13 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_c
+    :cond_d
     :goto_7
     move v0, v11
 
     goto :goto_8
 
-    :cond_d
+    :cond_e
     move v0, v11
 
     :goto_8
@@ -4608,7 +4639,7 @@
 
     goto/16 :goto_0
 
-    :cond_e
+    :cond_f
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v2, "Failed to reach END_DOCUMENT"
@@ -4859,7 +4890,7 @@
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v10, "gsk="
+    const-string/jumbo v10, "gsk="
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5422,7 +5453,7 @@
 .end method
 
 .method public writeXml(Lorg/xmlpull/v1/XmlSerializer;Z)V
-    .locals 11
+    .locals 12
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -5673,29 +5704,33 @@
 
     move-result-object v9
 
-    check-cast v9, Landroid/app/NotificationChannel;
+    instance-of v10, v9, Landroid/app/NotificationChannel;
 
-    if-nez v9, :cond_8
+    if-nez v10, :cond_8
 
     goto :goto_4
 
     :cond_8
+    move-object v10, v9
+
+    check-cast v10, Landroid/app/NotificationChannel;
+
     if-eqz p2, :cond_9
 
-    invoke-virtual {v9}, Landroid/app/NotificationChannel;->isDeleted()Z
+    invoke-virtual {v10}, Landroid/app/NotificationChannel;->isDeleted()Z
 
-    move-result v10
+    move-result v11
 
-    if-nez v10, :cond_a
+    if-nez v11, :cond_a
 
-    iget-object v10, p0, Lcom/android/server/notification/RankingHelper;->mContext:Landroid/content/Context;
+    iget-object v11, p0, Lcom/android/server/notification/RankingHelper;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v9, p1, v10}, Landroid/app/NotificationChannel;->writeXmlForBackup(Lorg/xmlpull/v1/XmlSerializer;Landroid/content/Context;)V
+    invoke-virtual {v10, p1, v11}, Landroid/app/NotificationChannel;->writeXmlForBackup(Lorg/xmlpull/v1/XmlSerializer;Landroid/content/Context;)V
 
     goto :goto_5
 
     :cond_9
-    invoke-virtual {v9, p1}, Landroid/app/NotificationChannel;->writeXml(Lorg/xmlpull/v1/XmlSerializer;)V
+    invoke-virtual {v10, p1}, Landroid/app/NotificationChannel;->writeXml(Lorg/xmlpull/v1/XmlSerializer;)V
 
     :cond_a
     :goto_5

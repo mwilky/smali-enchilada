@@ -58,7 +58,7 @@
 
     iput p2, p0, Lcom/android/server/OnePlusStandbyAnalyzer$PacketInfo;->mUid:I
 
-    sget-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$14;->$SwitchMap$com$android$server$OnePlusStandbyAnalyzer$SNAPSHOT_TYPE:[I
+    sget-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$13;->$SwitchMap$com$android$server$OnePlusStandbyAnalyzer$SNAPSHOT_TYPE:[I
 
     iget-object v1, p0, Lcom/android/server/OnePlusStandbyAnalyzer$PacketInfo;->mType:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
 
@@ -380,7 +380,7 @@
 
     aget-object v5, v1, v4
 
-    sget-object v6, Lcom/android/server/OnePlusStandbyAnalyzer$14;->$SwitchMap$com$android$server$OnePlusStandbyAnalyzer$PACKET_TYPE:[I
+    sget-object v6, Lcom/android/server/OnePlusStandbyAnalyzer$13;->$SwitchMap$com$android$server$OnePlusStandbyAnalyzer$PACKET_TYPE:[I
 
     invoke-virtual {v5}, Lcom/android/server/OnePlusStandbyAnalyzer$PACKET_TYPE;->ordinal()I
 

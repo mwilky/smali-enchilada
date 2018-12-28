@@ -705,21 +705,17 @@
 
     sget-object v11, Lcom/android/server/am/OnePlusBGController$APP_BUCKET_RANKING;->GENERAL:Lcom/android/server/am/OnePlusBGController$APP_BUCKET_RANKING;
 
-    if-eqz v13, :cond_4
-
-    iget v12, v0, Lcom/android/server/am/OnePlusBGController;->mBg_HighCriteria:F
-
-    goto :goto_2
+    if-eqz v13, :cond_5
 
     :cond_4
-    if-eqz v15, :cond_5
-
-    iget v12, v0, Lcom/android/server/am/OnePlusBGController;->mBg_GeneCriteria_For_Notorious:F
+    iget v12, v0, Lcom/android/server/am/OnePlusBGController;->mBg_GeneCriteria:F
 
     goto :goto_2
 
     :cond_5
-    iget v12, v0, Lcom/android/server/am/OnePlusBGController;->mBg_GeneCriteria:F
+    if-eqz v15, :cond_4
+
+    iget v12, v0, Lcom/android/server/am/OnePlusBGController;->mBg_GeneCriteria_For_Notorious:F
 
     :goto_2
     move v10, v12
@@ -737,21 +733,17 @@
 
     sget-object v11, Lcom/android/server/am/OnePlusBGController$APP_BUCKET_RANKING;->LOW:Lcom/android/server/am/OnePlusBGController$APP_BUCKET_RANKING;
 
-    if-eqz v13, :cond_7
-
-    iget v12, v0, Lcom/android/server/am/OnePlusBGController;->mBg_HighCriteria:F
-
-    goto :goto_3
+    if-eqz v13, :cond_8
 
     :cond_7
-    if-eqz v15, :cond_8
-
-    iget v12, v0, Lcom/android/server/am/OnePlusBGController;->mBg_LowCriteria_For_Notorious:F
+    iget v12, v0, Lcom/android/server/am/OnePlusBGController;->mBg_LowCriteria:F
 
     goto :goto_3
 
     :cond_8
-    iget v12, v0, Lcom/android/server/am/OnePlusBGController;->mBg_LowCriteria:F
+    if-eqz v15, :cond_7
+
+    iget v12, v0, Lcom/android/server/am/OnePlusBGController;->mBg_LowCriteria_For_Notorious:F
 
     :goto_3
     move v10, v12
@@ -2452,7 +2444,7 @@
 
     sget-object v1, Lcom/android/server/am/OnePlusBGController;->mAudioManager:Landroid/media/AudioManager;
 
-    const-string v2, "get_uid"
+    const-string/jumbo v2, "get_uid"
 
     invoke-virtual {v1, v2}, Landroid/media/AudioManager;->getParameters(Ljava/lang/String;)Ljava/lang/String;
 
@@ -2889,7 +2881,7 @@
 
     sget-object v1, Lcom/android/server/am/OnePlusBGController;->mAudioManager:Landroid/media/AudioManager;
 
-    const-string v2, "get_uid"
+    const-string/jumbo v2, "get_uid"
 
     invoke-virtual {v1, v2}, Landroid/media/AudioManager;->getParameters(Ljava/lang/String;)Ljava/lang/String;
 

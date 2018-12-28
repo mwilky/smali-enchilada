@@ -103,7 +103,7 @@
 
     move-result-object v2
 
-    const-string v3, "got accessory start"
+    const-string/jumbo v3, "got accessory start"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 

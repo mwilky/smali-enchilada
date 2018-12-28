@@ -45,7 +45,7 @@
 
     iget v1, p0, Lcom/android/server/am/OnePlusProcessManager$5;->val$uid:I
 
-    invoke-static {v0, v1}, Lcom/android/server/am/OnePlusProcessManager;->access$1500(Lcom/android/server/am/OnePlusProcessManager;I)Ljava/lang/String;
+    invoke-static {v0, v1}, Lcom/android/server/am/OnePlusProcessManager;->access$900(Lcom/android/server/am/OnePlusProcessManager;I)Ljava/lang/String;
 
     move-result-object v0
 

@@ -3983,11 +3983,44 @@
 .method preloadWallapepr(Landroid/graphics/Bitmap;)V
     .locals 3
 
-    if-nez p1, :cond_0
+    sget-boolean v0, Lcom/android/server/policy/OemGestureButton;->mLauncherGesture:Z
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/server/policy/OemGestureButton;->mWallpaperBitmap_0:Landroid/graphics/Bitmap;
+
+    if-eqz v0, :cond_1
+
+    sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "OemGestureButton"
+
+    const-string/jumbo v1, "preloadWallapepr: skip preload for GB2.0"
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/android/server/policy/OemGestureButton;->mWallpaperBitmap_0:Landroid/graphics/Bitmap;
+
+    iput-object v0, p0, Lcom/android/server/policy/OemGestureButton;->mPreLoadWallpaperBitmap:Landroid/graphics/Bitmap;
+
+    iput-object v0, p0, Lcom/android/server/policy/OemGestureButton;->mPreLoadWallpaperBitmap_0:Landroid/graphics/Bitmap;
+
+    iput-object v0, p0, Lcom/android/server/policy/OemGestureButton;->mIgnoreNotchWallpaperBitmap_0:Landroid/graphics/Bitmap;
+
+    :cond_1
+    return-void
+
+    :cond_2
+    if-nez p1, :cond_3
 
     return-void
 
-    :cond_0
+    :cond_3
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     const/4 v1, 0x0
@@ -4014,11 +4047,44 @@
 .method preloadWallapepr(Lcom/android/server/policy/WindowManagerPolicy$WindowState;Landroid/view/WindowManager$LayoutParams;)V
     .locals 3
 
+    sget-boolean v0, Lcom/android/server/policy/OemGestureButton;->mLauncherGesture:Z
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/server/policy/OemGestureButton;->mWallpaperBitmap_0:Landroid/graphics/Bitmap;
+
+    if-eqz v0, :cond_1
+
+    sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "OemGestureButton"
+
+    const-string/jumbo v1, "preloadWallapepr1: skip preload for GB2.0"
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/android/server/policy/OemGestureButton;->mWallpaperBitmap_0:Landroid/graphics/Bitmap;
+
+    iput-object v0, p0, Lcom/android/server/policy/OemGestureButton;->mPreLoadWallpaperBitmap:Landroid/graphics/Bitmap;
+
+    iput-object v0, p0, Lcom/android/server/policy/OemGestureButton;->mPreLoadWallpaperBitmap_0:Landroid/graphics/Bitmap;
+
+    iput-object v0, p0, Lcom/android/server/policy/OemGestureButton;->mIgnoreNotchWallpaperBitmap_0:Landroid/graphics/Bitmap;
+
+    :cond_1
+    return-void
+
+    :cond_2
     iget-object v0, p0, Lcom/android/server/policy/OemGestureButton;->mPwm:Lcom/android/server/policy/PhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mFocusedWindow:Lcom/android/server/policy/WindowManagerPolicy$WindowState;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_4
 
     invoke-interface {v0}, Lcom/android/server/policy/WindowManagerPolicy$WindowState;->getAttrs()Landroid/view/WindowManager$LayoutParams;
 
@@ -4028,46 +4094,46 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_4
 
     sget-object v1, Lcom/android/server/policy/OemGestureButton;->mFocusWin:Lcom/android/server/policy/WindowManagerPolicy$WindowState;
 
-    if-ne v1, v0, :cond_0
+    if-ne v1, v0, :cond_3
 
     iget-object v1, p0, Lcom/android/server/policy/OemGestureButton;->mPreLoadWallpaperBitmap:Landroid/graphics/Bitmap;
 
-    if-nez v1, :cond_1
+    if-nez v1, :cond_4
 
-    :cond_0
+    :cond_3
     iget v1, p2, Landroid/view/WindowManager$LayoutParams;->type:I
 
     const/16 v2, 0x7dd
 
-    if-ne v1, v2, :cond_1
+    if-ne v1, v2, :cond_4
 
     invoke-interface {v0}, Lcom/android/server/policy/WindowManagerPolicy$WindowState;->getAppToken()Landroid/view/IApplicationToken;
 
     move-result-object v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_4
 
     invoke-interface {v0}, Lcom/android/server/policy/WindowManagerPolicy$WindowState;->isActivityTypeHome()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_4
 
     invoke-interface {p1}, Lcom/android/server/policy/WindowManagerPolicy$WindowState;->getShown()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_4
 
     invoke-interface {v0}, Lcom/android/server/policy/WindowManagerPolicy$WindowState;->getShown()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_4
 
     iget-object v1, p0, Lcom/android/server/policy/OemGestureButton;->mPwm:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -4077,7 +4143,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_1
+    if-nez v1, :cond_4
 
     sput-object v0, Lcom/android/server/policy/OemGestureButton;->mFocusWin:Lcom/android/server/policy/WindowManagerPolicy$WindowState;
 
@@ -4089,7 +4155,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/policy/OemGestureButton$OemGestureButtonHandler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_1
+    :cond_4
     return-void
 .end method
 

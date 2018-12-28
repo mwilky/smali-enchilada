@@ -5087,7 +5087,7 @@
 
     invoke-static {v0}, Lcom/android/server/SystemServer;->traceBeginAndSlog(Ljava/lang/String;)V
 
-    const-string v0, "graphicsstats"
+    const-string/jumbo v0, "graphicsstats"
 
     new-instance v5, Lcom/android/server/GraphicsStatsService;
 

@@ -2656,7 +2656,7 @@
     invoke-static {v0, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    if-eqz v9, :cond_b
+    if-eqz v9, :cond_c
 
     if-nez v10, :cond_1
 
@@ -2753,6 +2753,41 @@
     return-void
 
     :cond_6
+    invoke-static {}, Lcom/android/server/preload/PreloadUtils;->getInstance()Lcom/android/server/preload/PreloadUtils;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v9}, Lcom/android/server/preload/PreloadUtils;->isPreload(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7
+
+    const-string v0, "OneplusAppPreload"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Cancel Toast for "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, " due to is in preload"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_7
     iget-object v0, v1, Lcom/android/server/notification/NotificationManagerService$11;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     iget-object v15, v0, Lcom/android/server/notification/NotificationManagerService;->mToastQueue:Ljava/util/ArrayList;
@@ -2778,7 +2813,7 @@
 
     move-wide v5, v3
 
-    if-nez v13, :cond_7
+    if-nez v13, :cond_8
 
     :try_start_1
     iget-object v0, v1, Lcom/android/server/notification/NotificationManagerService$11;->this$0:Lcom/android/server/notification/NotificationManagerService;
@@ -2804,7 +2839,7 @@
 
     goto/16 :goto_7
 
-    :cond_7
+    :cond_8
     :try_start_2
     iget-object v0, v1, Lcom/android/server/notification/NotificationManagerService$11;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -2817,7 +2852,7 @@
     :goto_3
     move v4, v0
 
-    if-ltz v4, :cond_8
+    if-ltz v4, :cond_9
 
     :try_start_3
     iget-object v0, v1, Lcom/android/server/notification/NotificationManagerService$11;->this$0:Lcom/android/server/notification/NotificationManagerService;
@@ -2865,7 +2900,7 @@
 
     goto :goto_6
 
-    :cond_8
+    :cond_9
     :try_start_6
     new-instance v0, Landroid/os/Binder;
 
@@ -2879,7 +2914,7 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
-    if-eqz v3, :cond_9
+    if-eqz v3, :cond_a
 
     :try_start_7
     iget-object v3, v1, Lcom/android/server/notification/NotificationManagerService$11;->this$0:Lcom/android/server/notification/NotificationManagerService;
@@ -2896,7 +2931,7 @@
 
     goto :goto_5
 
-    :cond_9
+    :cond_a
     :try_start_8
     iget-object v3, v1, Lcom/android/server/notification/NotificationManagerService$11;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -2963,7 +2998,7 @@
 
     invoke-virtual {v0, v11}, Lcom/android/server/notification/NotificationManagerService;->keepProcessAliveIfNeededLocked(I)V
 
-    if-nez v4, :cond_a
+    if-nez v4, :cond_b
 
     iget-object v0, v1, Lcom/android/server/notification/NotificationManagerService$11;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -2971,7 +3006,7 @@
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_1
 
-    :cond_a
+    :cond_b
     :try_start_a
     invoke-static {v13, v14}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
@@ -3021,7 +3056,7 @@
 
     goto :goto_8
 
-    :cond_b
+    :cond_c
     :goto_9
     const-string v0, "NotificationService"
 

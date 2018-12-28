@@ -2285,10 +2285,6 @@
 
     if-nez v0, :cond_5
 
-    iget-boolean v0, v1, Lcom/android/server/BatteryService;->mIsInitted:Z
-
-    if-eqz v0, :cond_5
-
     invoke-static {}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->getInstance()Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
 
     move-result-object v0
@@ -2314,10 +2310,6 @@
 
     if-eqz v0, :cond_6
 
-    iget-boolean v0, v1, Lcom/android/server/BatteryService;->mIsInitted:Z
-
-    if-eqz v0, :cond_6
-
     invoke-static {}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->getInstance()Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
 
     move-result-object v0
@@ -2332,9 +2324,8 @@
 
     invoke-virtual {v0, v10, v11, v12}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->notifyPlugEvent(Ljava/lang/Boolean;IZ)V
 
-    goto :goto_3
-
     :cond_6
+    :goto_3
     iget-boolean v0, v1, Lcom/android/server/BatteryService;->mFastChargeStatus:Z
 
     if-eqz v0, :cond_7
@@ -2343,26 +2334,15 @@
 
     if-nez v0, :cond_7
 
-    iget-boolean v0, v1, Lcom/android/server/BatteryService;->mIsInitted:Z
-
-    if-eqz v0, :cond_7
-
     invoke-static {}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->getInstance()Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
 
     move-result-object v0
 
-    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iget-boolean v10, v1, Lcom/android/server/BatteryService;->mFastChargeStatus:Z
 
-    move-result-object v10
-
-    iget v11, v1, Lcom/android/server/BatteryService;->mPlugType:I
-
-    iget-boolean v12, v1, Lcom/android/server/BatteryService;->mFastChargeStatus:Z
-
-    invoke-virtual {v0, v10, v11, v12}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->notifyPlugEvent(Ljava/lang/Boolean;IZ)V
+    invoke-virtual {v0, v10}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->notifyFastChargeEvent(Z)V
 
     :cond_7
-    :goto_3
     iget-object v0, v1, Lcom/android/server/BatteryService;->rl:Lcom/android/server/am/OnePlusPowerConsumptionStatistic$ResetParamListener;
 
     if-nez v0, :cond_8
@@ -2933,6 +2913,12 @@
     aput-object v6, v5, v7
 
     invoke-static {v0, v5}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    iget-object v0, v1, Lcom/android/server/BatteryService;->mHealthInfo:Landroid/hardware/health/V1_0/HealthInfo;
+
+    iget v0, v0, Landroid/hardware/health/V1_0/HealthInfo;->batteryLevel:I
+
+    invoke-static {v0}, Lcom/android/server/preload/OneplusAppPreload;->setBatteryLevel(I)V
 
     :cond_12
     iget-boolean v0, v1, Lcom/android/server/BatteryService;->mBatteryLevelCritical:Z

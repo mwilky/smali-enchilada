@@ -1691,6 +1691,16 @@
 
     if-le v0, p3, :cond_4
 
+    invoke-static {}, Lcom/android/server/preload/PreloadUtils;->getInstance()Lcom/android/server/preload/PreloadUtils;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Lcom/android/server/preload/PreloadUtils;->isPreload(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
     iput p3, p1, Lcom/android/server/usage/AppIdleHistory$AppUsageHistory;->currentBucket:I
 
     sget-boolean v0, Lcom/android/server/usage/AppIdleHistory;->DEBUG:Z

@@ -786,6 +786,9 @@
     return-void
 .end method
 
+.method public abstract setFingerprintEnabled(Z)V
+.end method
+
 .method public abstract setInitialDisplaySize(Landroid/view/Display;III)V
 .end method
 

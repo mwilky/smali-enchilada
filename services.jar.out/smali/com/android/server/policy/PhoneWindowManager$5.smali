@@ -1,5 +1,5 @@
 .class Lcom/android/server/policy/PhoneWindowManager$5;
-.super Landroid/service/vr/IPersistentVrStateCallbacks$Stub;
+.super Landroid/os/UEventObserver;
 .source "PhoneWindowManager.java"
 
 
@@ -24,19 +24,40 @@
 
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$5;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-direct {p0}, Landroid/service/vr/IPersistentVrStateCallbacks$Stub;-><init>()V
+    invoke-direct {p0}, Landroid/os/UEventObserver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onPersistentVrStateChanged(Z)V
-    .locals 1
+.method public onUEvent(Landroid/os/UEventObserver$UEvent;)V
+    .locals 3
+
+    const-string/jumbo v0, "status"
+
+    invoke-virtual {p1, v0}, Landroid/os/UEventObserver$UEvent;->get(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$5;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-static {v0, p1}, Lcom/android/server/policy/PhoneWindowManager;->access$3102(Lcom/android/server/policy/PhoneWindowManager;Z)Z
+    const-string v1, "connected"
 
+    const-string/jumbo v2, "status"
+
+    invoke-virtual {p1, v2}, Landroid/os/UEventObserver$UEvent;->get(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/android/server/policy/PhoneWindowManager;->setHdmiPlugged(Z)V
+
+    :cond_0
     return-void
 .end method

@@ -1,11 +1,11 @@
-.class Lcom/android/server/policy/PhoneWindowManager$21$1;
+.class Lcom/android/server/policy/PhoneWindowManager$22$1;
 .super Landroid/app/ProgressDialog;
 .source "PhoneWindowManager.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/policy/PhoneWindowManager$21;->run()V
+    value = Lcom/android/server/policy/PhoneWindowManager$22;->run()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,14 +15,14 @@
 
 
 # instance fields
-.field final synthetic this$1:Lcom/android/server/policy/PhoneWindowManager$21;
+.field final synthetic this$1:Lcom/android/server/policy/PhoneWindowManager$22;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/policy/PhoneWindowManager$21;Landroid/content/Context;I)V
+.method constructor <init>(Lcom/android/server/policy/PhoneWindowManager$22;Landroid/content/Context;I)V
     .locals 0
 
-    iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$21$1;->this$1:Lcom/android/server/policy/PhoneWindowManager$21;
+    iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$22$1;->this$1:Lcom/android/server/policy/PhoneWindowManager$22;
 
     invoke-direct {p0, p2, p3}, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;I)V
 

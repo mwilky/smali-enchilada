@@ -39,7 +39,7 @@
 
     iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager$AppBootConfigUpdater;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
-    invoke-static {v0, p1}, Lcom/android/server/am/OnePlusAppBootManager;->access$2100(Lcom/android/server/am/OnePlusAppBootManager;Lorg/json/JSONArray;)V
+    invoke-static {v0, p1}, Lcom/android/server/am/OnePlusAppBootManager;->access$2300(Lcom/android/server/am/OnePlusAppBootManager;Lorg/json/JSONArray;)V
 
     return-void
 .end method

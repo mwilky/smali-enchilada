@@ -1,6 +1,9 @@
 .class Lcom/android/server/policy/PhoneWindowManager$19;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "PhoneWindowManager.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -24,68 +27,83 @@
 
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 6
+.method public run()V
+    .locals 4
 
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mWindowManagerFuncs:Lcom/android/server/policy/WindowManagerPolicy$WindowManagerFuncs;
+
+    invoke-interface {v0}, Lcom/android/server/policy/WindowManagerPolicy$WindowManagerFuncs;->getWindowManagerLock()Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string/jumbo v1, "org.codeaurora.intent.action.WIFI_DISPLAY_VIDEO"
+    monitor-enter v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :try_start_0
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    const-string/jumbo v1, "state"
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p2, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {v1}, Lcom/android/server/policy/PhoneWindowManager;->isUserSetupComplete()Z
 
     move-result v1
 
-    const/4 v3, 0x1
+    if-nez v1, :cond_0
 
-    if-ne v1, v3, :cond_0
+    monitor-exit v0
 
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    invoke-static {v2, v3}, Lcom/android/server/policy/PhoneWindowManager;->access$4502(Lcom/android/server/policy/PhoneWindowManager;Z)Z
-
-    goto :goto_0
+    return-void
 
     :cond_0
-    iget-object v4, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-static {v4, v2}, Lcom/android/server/policy/PhoneWindowManager;->access$4502(Lcom/android/server/policy/PhoneWindowManager;Z)Z
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    :goto_0
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+    move-result-wide v2
 
-    const-string/jumbo v4, "wfd_UIBC_rot"
+    invoke-static {v1, v2, v3}, Lcom/android/server/policy/PhoneWindowManager;->access$4202(Lcom/android/server/policy/PhoneWindowManager;J)J
 
-    const/4 v5, -0x1
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-virtual {p2, v4, v5}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    iget v1, v1, Lcom/android/server/policy/PhoneWindowManager;->mLastSystemUiFlags:I
 
-    move-result v4
+    invoke-static {v1}, Lcom/android/server/policy/PhoneWindowManager;->access$4300(I)Z
 
-    invoke-static {v2, v4}, Lcom/android/server/policy/PhoneWindowManager;->access$4602(Lcom/android/server/policy/PhoneWindowManager;I)I
+    move-result v1
 
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+    if-nez v1, :cond_1
 
-    invoke-virtual {v2, v3}, Lcom/android/server/policy/PhoneWindowManager;->updateRotation(Z)V
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    iget-boolean v1, v1, Lcom/android/server/policy/PhoneWindowManager;->mIsNeedToHideNavBar:Z
+
+    if-nez v1, :cond_1
+
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    invoke-static {v1}, Lcom/android/server/policy/PhoneWindowManager;->access$4400(Lcom/android/server/policy/PhoneWindowManager;)Lcom/android/server/policy/BarController;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/android/server/policy/BarController;->showTransient()V
 
     :cond_1
+    monitor-exit v0
+
     return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method

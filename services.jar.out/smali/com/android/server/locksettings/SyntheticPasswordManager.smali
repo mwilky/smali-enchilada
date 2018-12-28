@@ -1237,7 +1237,7 @@
 .method private loadSyntheticPasswordHandle(I)[B
     .locals 3
 
-    const-string v0, "handle"
+    const-string/jumbo v0, "handle"
 
     const-wide/16 v1, 0x0
 
@@ -1462,7 +1462,7 @@
 .method private saveSyntheticPasswordHandle([BI)V
     .locals 6
 
-    const-string v1, "handle"
+    const-string/jumbo v1, "handle"
 
     const-wide/16 v3, 0x0
 
@@ -2366,7 +2366,7 @@
 .method public clearSidForUser(I)V
     .locals 3
 
-    const-string v0, "handle"
+    const-string/jumbo v0, "handle"
 
     const-wide/16 v1, 0x0
 
@@ -2984,7 +2984,7 @@
 .method public hasSidForUser(I)Z
     .locals 3
 
-    const-string v0, "handle"
+    const-string/jumbo v0, "handle"
 
     const-wide/16 v1, 0x0
 

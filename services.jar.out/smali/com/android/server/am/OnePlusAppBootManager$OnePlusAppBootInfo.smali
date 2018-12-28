@@ -45,11 +45,11 @@
 
 .field public static final PKG_FLAG_SPECIAL_DEPENDENCY_APP:I = 0x40
 
-.field public static final PKG_FLAG_SPECIAL_HIDE_LAUNCHER_APP:I = 0x200
-
 .field public static final PKG_FLAG_SPECIAL_INPUT_METHOD_APP:I = 0x100
 
 .field public static final PKG_FLAG_SPECIAL_LAUNCHER_APP:I = 0x80
+
+.field public static final PKG_FLAG_SPECIAL_SANDBOX_APP:I = 0x200
 
 .field public static final PKG_FLAG_SPECIAL_TTS_APP:I = 0x2000
 
@@ -196,7 +196,7 @@
     return-void
 .end method
 
-.method static synthetic access$1400(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;)I
+.method static synthetic access$1500(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;)I
     .locals 1
 
     iget v0, p0, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->mPkgFlag:I
@@ -204,7 +204,7 @@
     return v0
 .end method
 
-.method static synthetic access$1402(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;I)I
+.method static synthetic access$1502(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;I)I
     .locals 0
 
     iput p1, p0, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->mPkgFlag:I
@@ -212,7 +212,7 @@
     return p1
 .end method
 
-.method static synthetic access$1502(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;I)I
+.method static synthetic access$1602(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;I)I
     .locals 0
 
     iput p1, p0, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->mBootFlag:I
@@ -220,7 +220,7 @@
     return p1
 .end method
 
-.method static synthetic access$2700(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;)Ljava/lang/String;
+.method static synthetic access$2900(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;)Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->mPkgName:Ljava/lang/String;

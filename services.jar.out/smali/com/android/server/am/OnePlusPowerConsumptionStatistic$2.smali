@@ -62,9 +62,9 @@
     :cond_1
     iget-object v0, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$2;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
 
-    invoke-static {v0}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$100(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)Lcom/android/server/am/OnePlusPowerConsumptionStatistic$BaseTimer;
+    invoke-static {v0}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$100(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)Z
 
-    move-result-object v0
+    move-result v0
 
     if-nez v0, :cond_2
 
@@ -103,7 +103,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_e
 
     const-string v1, "code"
 
@@ -145,7 +145,7 @@
 
     invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$700(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :cond_3
     const-string/jumbo v2, "persist"
@@ -179,7 +179,7 @@
 
     invoke-static {v3, v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$900(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;Lcom/android/server/am/OnePlusPowerConsumptionStatistic$StatisticalData;)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :cond_5
     const-string v2, "calculate"
@@ -196,7 +196,7 @@
 
     invoke-static {v2, v3}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$800(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;Ljava/lang/String;)Lcom/android/server/am/OnePlusPowerConsumptionStatistic$StatisticalData;
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :cond_6
     const-string/jumbo v2, "report"
@@ -219,7 +219,128 @@
 
     invoke-static {v3, v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1000(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;Z)V
 
+    goto/16 :goto_0
+
     :cond_7
+    const-string v2, "calculatePower"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_8
+
+    iget-object v2, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$2;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+
+    const-string v3, "cmd_calculatePower"
+
+    invoke-static {v2, v3}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1100(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_8
+    const-string v2, "dumpAppForeground"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_9
+
+    iget-object v2, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$2;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+
+    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1200(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)V
+
+    goto :goto_0
+
+    :cond_9
+    const-string v2, "dumpPowerConsumptionList"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_a
+
+    iget-object v2, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$2;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+
+    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1300(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)V
+
+    goto :goto_0
+
+    :cond_a
+    const-string v2, "generatePowerConsumptionData"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_b
+
+    iget-object v2, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$2;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+
+    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1400(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)V
+
+    iget-object v2, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$2;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+
+    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1300(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)V
+
+    goto :goto_0
+
+    :cond_b
+    const-string v2, "generateSortListAndSystemList"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_c
+
+    iget-object v2, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$2;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+
+    iget-object v3, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$2;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+
+    const-string v4, "cmd generateSortListAndSystemList"
+
+    invoke-static {v3, v4}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$800(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;Ljava/lang/String;)Lcom/android/server/am/OnePlusPowerConsumptionStatistic$StatisticalData;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1500(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;Lcom/android/server/am/OnePlusPowerConsumptionStatistic$StatisticalData;)V
+
+    goto :goto_0
+
+    :cond_c
+    const-string v2, "dumpBaseEventList"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_d
+
+    iget-object v2, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$2;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+
+    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1600(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)V
+
+    goto :goto_0
+
+    :cond_d
+    const-string v2, "calculateKernelWakeLocks"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_e
+
+    iget-object v2, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$2;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+
+    const-string v3, "calculateKernelWakeLocks"
+
+    invoke-static {v2, v3}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1700(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;Ljava/lang/String;)Ljava/util/HashMap;
+
+    :cond_e
     :goto_0
     return-void
 .end method

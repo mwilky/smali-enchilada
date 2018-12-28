@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/DeviceIdleController;->ifReportLocked(IJ)V
+    value = Lcom/android/server/DeviceIdleController;->ifReportLocked(IJ)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -43,29 +43,29 @@
 
 # virtual methods
 .method public run()V
-    .locals 8
+    .locals 10
 
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$10;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$3600(Lcom/android/server/DeviceIdleController;)Z
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$3800(Lcom/android/server/DeviceIdleController;)Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_4
 
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$10;->this$0:Lcom/android/server/DeviceIdleController;
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lcom/android/server/DeviceIdleController;->access$3602(Lcom/android/server/DeviceIdleController;Z)Z
+    invoke-static {v0, v1}, Lcom/android/server/DeviceIdleController;->access$3802(Lcom/android/server/DeviceIdleController;Z)Z
 
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1500()Z
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1700()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$2300()Z
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$2500()Z
 
     move-result v0
 
@@ -96,17 +96,13 @@
 
     :cond_1
     :try_start_0
-    iget-object v0, p0, Lcom/android/server/DeviceIdleController$10;->this$0:Lcom/android/server/DeviceIdleController;
-
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$200(Lcom/android/server/DeviceIdleController;)Lcom/android/server/OnePlusStandbyAnalyzer;
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$200()Lcom/android/server/OnePlusStandbyAnalyzer;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
-    iget-object v0, p0, Lcom/android/server/DeviceIdleController$10;->this$0:Lcom/android/server/DeviceIdleController;
-
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$200(Lcom/android/server/DeviceIdleController;)Lcom/android/server/OnePlusStandbyAnalyzer;
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$200()Lcom/android/server/OnePlusStandbyAnalyzer;
 
     move-result-object v1
 
@@ -130,13 +126,35 @@
 
     invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$600(Lcom/android/server/DeviceIdleController;)Z
 
-    move-result v7
+    move-result v0
 
-    invoke-virtual/range {v1 .. v7}, Lcom/android/server/OnePlusStandbyAnalyzer;->snapShot(Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;Lcom/android/server/OnePlusStandbyAnalyzer$STATISTIC_TYPE;IFFZ)V
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$10;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$200(Lcom/android/server/DeviceIdleController;)Lcom/android/server/OnePlusStandbyAnalyzer;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$700(Lcom/android/server/DeviceIdleController;)J
+
+    move-result-wide v7
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v0, p0, Lcom/android/server/DeviceIdleController$10;->this$0:Lcom/android/server/DeviceIdleController;
+
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$800(Lcom/android/server/DeviceIdleController;)J
+
+    move-result-wide v7
+
+    :goto_0
+    iget-object v0, p0, Lcom/android/server/DeviceIdleController$10;->this$0:Lcom/android/server/DeviceIdleController;
+
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$600(Lcom/android/server/DeviceIdleController;)Z
+
+    move-result v9
+
+    invoke-virtual/range {v1 .. v9}, Lcom/android/server/OnePlusStandbyAnalyzer;->snapShot(Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;Lcom/android/server/OnePlusStandbyAnalyzer$STATISTIC_TYPE;IFFJZ)V
+
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$200()Lcom/android/server/OnePlusStandbyAnalyzer;
 
     move-result-object v0
 
@@ -148,8 +166,8 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_2
-    goto :goto_0
+    :cond_3
+    goto :goto_1
 
     :catch_0
     move-exception v0
@@ -162,7 +180,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "got exception while snapshot of end:"
+    const-string/jumbo v3, "got exception while snapshot of end:"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -174,7 +192,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_3
-    :goto_0
+    :cond_4
+    :goto_1
     return-void
 .end method

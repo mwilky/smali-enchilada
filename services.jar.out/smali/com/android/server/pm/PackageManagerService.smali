@@ -1701,7 +1701,7 @@
 
     move-result-object v1
 
-    const v2, 0x5020011
+    const v2, 0x5020012
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -9652,7 +9652,7 @@
 
     move-result-object v0
 
-    const v1, 0x10401bd
+    const v1, 0x10401be
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -28257,7 +28257,7 @@
 
     move-result-object v2
 
-    const v4, 0x1040170
+    const v4, 0x1040171
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -29603,7 +29603,7 @@
 
     move-result-object v2
 
-    const v4, 0x1040170
+    const v4, 0x1040171
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -43830,7 +43830,7 @@
 
     move-result-object v12
 
-    const-string v2, "grant"
+    const-string/jumbo v2, "grant"
 
     invoke-virtual {v12, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -49002,7 +49002,7 @@
 .end method
 
 .method private removeAbnormalDozeWhiteList()V
-    .locals 10
+    .locals 8
 
     const-string v0, "deviceidle"
 
@@ -49014,7 +49014,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_2
 
     :try_start_0
     invoke-interface {v0}, Landroid/os/IDeviceIdleController;->getUserPowerWhitelist()[Ljava/lang/String;
@@ -49025,83 +49025,58 @@
 
     const/4 v3, 0x0
 
-    move v4, v3
-
     :goto_0
-    if-ge v4, v2, :cond_3
+    if-ge v3, v2, :cond_1
 
-    aget-object v5, v1, v4
+    aget-object v4, v1, v3
 
-    invoke-static {p0}, Lcom/android/server/am/OnePlusAppBootManager;->getInstance(Lcom/android/server/pm/PackageManagerService;)Lcom/android/server/am/OnePlusAppBootManager;
+    iget-object v5, p0, Lcom/android/server/pm/PackageManagerService;->mOemDeviceIdleWhiteList:Ljava/util/List;
+
+    invoke-interface {v5, v4}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_0
+
+    invoke-static {v4}, Lcom/android/server/am/OnePlusAppControlModeService;->isSetted(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_0
+
+    invoke-interface {v0, v4}, Landroid/os/IDeviceIdleController;->removePowerSaveWhitelistApp(Ljava/lang/String;)V
+
+    const-string v5, "PackageManager"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "[OnlineConfig] remove "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v7, "from DozeWhitelist complete"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6
 
-    invoke-virtual {v6, v5}, Lcom/android/server/am/OnePlusAppBootManager;->getAppBootMode(Ljava/lang/String;)I
-
-    move-result v6
-
-    const/4 v7, 0x1
-
-    if-ne v7, v6, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    move v7, v3
-
-    :goto_1
-    move v6, v7
-
-    iget-object v7, p0, Lcom/android/server/pm/PackageManagerService;->mOemDeviceIdleWhiteList:Ljava/util/List;
-
-    invoke-interface {v7, v5}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_2
-
-    if-eqz v6, :cond_1
-
-    invoke-static {v5}, Lcom/android/server/am/OnePlusAppBootManager;->isAppContianSpecialFlag(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_2
-
-    :cond_1
-    invoke-interface {v0, v5}, Landroid/os/IDeviceIdleController;->removePowerSaveWhitelistApp(Ljava/lang/String;)V
-
-    const-string v7, "PackageManager"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "[OnlineConfig] remove "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v9, "from DozeWhitelist complete"
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_2
-    add-int/lit8 v4, v4, 0x1
+    :cond_0
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    :cond_3
-    goto :goto_2
+    :cond_1
+    goto :goto_1
 
     :catch_0
     move-exception v1
@@ -49112,8 +49087,8 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_4
-    :goto_2
+    :cond_2
+    :goto_1
     return-void
 .end method
 
@@ -53652,7 +53627,7 @@
 .end method
 
 .method private resolveDozeWhitelistConfigFromJSON(Lorg/json/JSONArray;)V
-    .locals 8
+    .locals 9
 
     if-nez p1, :cond_0
 
@@ -53699,7 +53674,7 @@
 
     monitor-enter v4
     :try_end_0
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     :try_start_1
     iget-object v5, p0, Lcom/android/server/pm/PackageManagerService;->mOemDeviceIdleWhiteList:Ljava/util/List;
@@ -53715,6 +53690,28 @@
 
     if-ge v5, v6, :cond_2
 
+    const-string v6, "PackageManager"
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "[OnlineConfig] DozeWhitelist pkg:"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v5}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
     iget-object v6, p0, Lcom/android/server/pm/PackageManagerService;->mOemDeviceIdleWhiteList:Ljava/util/List;
 
     invoke-virtual {v3, v5}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
@@ -53727,11 +53724,11 @@
 
     move-result-object v6
 
-    invoke-static {v6}, Lcom/android/server/am/OnePlusAppBootManager;->isNotAppUserSetted(Ljava/lang/String;)Z
+    invoke-static {v6}, Lcom/android/server/am/OnePlusAppControlModeService;->isSetted(Ljava/lang/String;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-nez v6, :cond_1
 
     invoke-virtual {v3, v5}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
 
@@ -53772,7 +53769,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_2
-    .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     goto :goto_3
 
@@ -53789,7 +53786,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object v3
 
@@ -58164,7 +58161,7 @@
 
     if-nez v7, :cond_1
 
-    const-string v15, "grant"
+    const-string/jumbo v15, "grant"
 
     invoke-interface {v1, v3, v15}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -58273,7 +58270,7 @@
     :cond_a
     if-eqz v7, :cond_b
 
-    const-string v0, "grant"
+    const-string/jumbo v0, "grant"
 
     invoke-interface {v1, v3, v0}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -82091,7 +82088,7 @@
 
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService;->mContext:Landroid/content/Context;
 
-    const v1, 0x1040142
+    const v1, 0x1040143
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -82373,7 +82370,7 @@
 .method public grantDefaultPermissionsToActiveLuiApp(Ljava/lang/String;I)V
     .locals 4
 
-    const-string v0, "grantDefaultPermissionsToActiveLuiApp"
+    const-string/jumbo v0, "grantDefaultPermissionsToActiveLuiApp"
 
     invoke-static {v0}, Lcom/android/server/pm/PackageManagerService;->enforceSystemOrPhoneCaller(Ljava/lang/String;)V
 
@@ -82424,7 +82421,7 @@
 .method public grantDefaultPermissionsToEnabledCarrierApps([Ljava/lang/String;I)V
     .locals 4
 
-    const-string v0, "grantPermissionsToEnabledCarrierApps"
+    const-string/jumbo v0, "grantPermissionsToEnabledCarrierApps"
 
     invoke-static {v0}, Lcom/android/server/pm/PackageManagerService;->enforceSystemOrPhoneCaller(Ljava/lang/String;)V
 
@@ -82475,7 +82472,7 @@
 .method public grantDefaultPermissionsToEnabledImsServices([Ljava/lang/String;I)V
     .locals 4
 
-    const-string v0, "grantDefaultPermissionsToEnabledImsServices"
+    const-string/jumbo v0, "grantDefaultPermissionsToEnabledImsServices"
 
     invoke-static {v0}, Lcom/android/server/pm/PackageManagerService;->enforceSystemOrPhoneCaller(Ljava/lang/String;)V
 
@@ -82526,7 +82523,7 @@
 .method public grantDefaultPermissionsToEnabledTelephonyDataServices([Ljava/lang/String;I)V
     .locals 2
 
-    const-string v0, "grantDefaultPermissionsToEnabledTelephonyDataServices"
+    const-string/jumbo v0, "grantDefaultPermissionsToEnabledTelephonyDataServices"
 
     invoke-static {v0}, Lcom/android/server/pm/PackageManagerService;->enforceSystemOrPhoneCaller(Ljava/lang/String;)V
 

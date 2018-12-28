@@ -177,7 +177,7 @@
 
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
-    const-string v1, "gsm"
+    const-string/jumbo v1, "gsm"
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -641,7 +641,7 @@
 
     sget-object v0, Lcom/android/server/storage/FileCollector;->EXTENSION_MAP:Ljava/util/Map;
 
-    const-string v1, "gif"
+    const-string/jumbo v1, "gif"
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 

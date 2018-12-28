@@ -216,7 +216,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    const-string v3, "gsm.serial"
+    const-string/jumbo v3, "gsm.serial"
 
     invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 

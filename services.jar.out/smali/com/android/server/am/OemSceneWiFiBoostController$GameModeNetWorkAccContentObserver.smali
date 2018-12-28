@@ -40,7 +40,7 @@
 
     iget-object v1, p0, Lcom/android/server/am/OemSceneWiFiBoostController$GameModeNetWorkAccContentObserver;->this$0:Lcom/android/server/am/OemSceneWiFiBoostController;
 
-    invoke-static {v1}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$300(Lcom/android/server/am/OemSceneWiFiBoostController;)Landroid/content/ContentResolver;
+    invoke-static {v1}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$400(Lcom/android/server/am/OemSceneWiFiBoostController;)Landroid/content/ContentResolver;
 
     move-result-object v1
 
@@ -54,7 +54,7 @@
 
     move-result v1
 
-    invoke-static {v0, v1}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$400(Lcom/android/server/am/OemSceneWiFiBoostController;I)Z
+    invoke-static {v0, v1}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$500(Lcom/android/server/am/OemSceneWiFiBoostController;I)Z
 
     move-result v0
 
@@ -65,11 +65,11 @@
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/OemSceneWiFiBoostController$GameModeNetWorkAccContentObserver;->this$0:Lcom/android/server/am/OemSceneWiFiBoostController;
 
-    invoke-static {v0}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$500(Lcom/android/server/am/OemSceneWiFiBoostController;)I
+    invoke-static {v0}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$600(Lcom/android/server/am/OemSceneWiFiBoostController;)I
 
     move-result v0
 
-    invoke-static {}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$100()Z
+    invoke-static {}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$200()Z
 
     move-result v1
 
@@ -104,7 +104,7 @@
 
     iget-object v1, p0, Lcom/android/server/am/OemSceneWiFiBoostController$GameModeNetWorkAccContentObserver;->this$0:Lcom/android/server/am/OemSceneWiFiBoostController;
 
-    invoke-static {v1}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$200(Lcom/android/server/am/OemSceneWiFiBoostController;)Landroid/os/Handler;
+    invoke-static {v1}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$300(Lcom/android/server/am/OemSceneWiFiBoostController;)Landroid/os/Handler;
 
     move-result-object v1
 

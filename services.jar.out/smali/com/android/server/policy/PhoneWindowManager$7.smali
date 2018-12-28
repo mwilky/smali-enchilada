@@ -3,7 +3,7 @@
 .source "PhoneWindowManager.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/android/server/policy/BarController$OnBarVisibilityChangedListener;
 
 
 # annotations
@@ -34,26 +34,25 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 3
+.method public onBarVisibilityChanged(Z)V
+    .locals 2
 
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$7;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    const/4 v1, 0x1
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mAccessibilityManager:Landroid/view/accessibility/AccessibilityManager;
 
-    iput-boolean v1, v0, Lcom/android/server/policy/PhoneWindowManager;->mEndCallKeyHandled:Z
+    invoke-virtual {v0, p1}, Landroid/view/accessibility/AccessibilityManager;->notifyAccessibilityButtonVisibilityChanged(Z)V
 
-    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$7;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+    sget-boolean v0, Landroid/os/Build;->AUTO_TEST_ONEPLUS:Z
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_0
 
-    const/4 v2, 0x0
+    const-string v0, "WindowManager"
 
-    invoke-virtual {v0, v2, v1, v1}, Lcom/android/server/policy/PhoneWindowManager;->performHapticFeedbackLw(Lcom/android/server/policy/WindowManagerPolicy$WindowState;IZ)Z
+    const-string v1, "[Accessibility] onBarVisibilityChanged"
 
-    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$7;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v0}, Lcom/android/server/policy/PhoneWindowManager;->showGlobalActionsInternal()V
-
+    :cond_0
     return-void
 .end method

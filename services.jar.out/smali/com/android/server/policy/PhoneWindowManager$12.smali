@@ -1,11 +1,14 @@
 .class Lcom/android/server/policy/PhoneWindowManager$12;
-.super Lcom/android/internal/policy/KeyguardDismissCallback;
+.super Ljava/lang/Object;
 .source "PhoneWindowManager.java"
+
+# interfaces
+.implements Lcom/android/server/policy/keyguard/KeyguardStateMonitor$StateCallback;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/policy/PhoneWindowManager;->launchHomeFromHotKey(ZZ)V
+    value = Lcom/android/server/policy/PhoneWindowManager;->init(Landroid/content/Context;Landroid/view/IWindowManager;Lcom/android/server/policy/WindowManagerPolicy$WindowManagerFuncs;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,55 +20,94 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-.field final synthetic val$awakenFromDreams:Z
-
 
 # direct methods
-.method constructor <init>(Lcom/android/server/policy/PhoneWindowManager;Z)V
+.method constructor <init>(Lcom/android/server/policy/PhoneWindowManager;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$12;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    iput-boolean p2, p0, Lcom/android/server/policy/PhoneWindowManager$12;->val$awakenFromDreams:Z
-
-    invoke-direct {p0}, Lcom/android/internal/policy/KeyguardDismissCallback;-><init>()V
-
-    return-void
-.end method
-
-.method public static synthetic lambda$onDismissSucceeded$0(Lcom/android/server/policy/PhoneWindowManager$12;Z)V
-    .locals 2
-
-    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$12;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1, p1}, Lcom/android/server/policy/PhoneWindowManager;->startDockOrHome(ZZ)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onDismissSucceeded()V
+.method public onKeyguardFingerprintChanged(III)V
     .locals 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
+
+    const-string v0, "WindowManager"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "onKeyguardFingerprintChanged, "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, ", "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, ", "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$12;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mHandler:Landroid/os/Handler;
 
-    iget-boolean v1, p0, Lcom/android/server/policy/PhoneWindowManager$12;->val$awakenFromDreams:Z
+    const/16 v1, 0x65
 
-    new-instance v2, Lcom/android/server/policy/-$$Lambda$PhoneWindowManager$12$I1_9Lvn7T3yzR54mpocYrb9Pc3I;
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    invoke-direct {v2, p0, v1}, Lcom/android/server/policy/-$$Lambda$PhoneWindowManager$12$I1_9Lvn7T3yzR54mpocYrb9Pc3I;-><init>(Lcom/android/server/policy/PhoneWindowManager$12;Z)V
+    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$12;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {v0, v1, p1, p2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+
+    return-void
+.end method
+
+.method public onShowingChanged()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$12;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mWindowManagerFuncs:Lcom/android/server/policy/WindowManagerPolicy$WindowManagerFuncs;
+
+    invoke-interface {v0}, Lcom/android/server/policy/WindowManagerPolicy$WindowManagerFuncs;->onKeyguardShowingAndNotOccludedChanged()V
+
+    return-void
+.end method
+
+.method public onTrustedChanged()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$12;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mWindowManagerFuncs:Lcom/android/server/policy/WindowManagerPolicy$WindowManagerFuncs;
+
+    invoke-interface {v0}, Lcom/android/server/policy/WindowManagerPolicy$WindowManagerFuncs;->notifyKeyguardTrustedChanged()V
 
     return-void
 .end method

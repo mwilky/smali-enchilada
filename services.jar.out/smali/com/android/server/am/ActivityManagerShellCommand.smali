@@ -3305,7 +3305,7 @@
 
     const-string v1, "android.permission.DUMP"
 
-    const-string v2, "getUidState()"
+    const-string/jumbo v2, "getUidState()"
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/am/ActivityManagerService;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 

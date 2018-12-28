@@ -3,12 +3,12 @@
 .source "PhoneWindowManager.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/android/server/policy/WindowManagerPolicy$OnKeyguardExitResult;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/server/policy/PhoneWindowManager;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/server/policy/PhoneWindowManager;->launchHomeFromHotKey(ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,12 +20,16 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/policy/PhoneWindowManager;
 
+.field final synthetic val$awakenFromDreams:Z
+
 
 # direct methods
-.method constructor <init>(Lcom/android/server/policy/PhoneWindowManager;)V
+.method constructor <init>(Lcom/android/server/policy/PhoneWindowManager;Z)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$14;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    iput-boolean p2, p0, Lcom/android/server/policy/PhoneWindowManager$14;->val$awakenFromDreams:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -34,47 +38,19 @@
 
 
 # virtual methods
-.method public run()V
+.method public onKeyguardExitResult(Z)V
     .locals 3
 
-    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$14;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mWindowManagerFuncs:Lcom/android/server/policy/WindowManagerPolicy$WindowManagerFuncs;
-
-    invoke-interface {v0}, Lcom/android/server/policy/WindowManagerPolicy$WindowManagerFuncs;->getWindowManagerLock()Ljava/lang/Object;
-
-    move-result-object v0
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$14;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget v2, v1, Lcom/android/server/policy/PhoneWindowManager;->mForceClearedSystemUiFlags:I
-
-    and-int/lit8 v2, v2, -0x3
-
-    iput v2, v1, Lcom/android/server/policy/PhoneWindowManager;->mForceClearedSystemUiFlags:I
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$14;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mWindowManagerFuncs:Lcom/android/server/policy/WindowManagerPolicy$WindowManagerFuncs;
+    const/4 v1, 0x1
 
-    invoke-interface {v0}, Lcom/android/server/policy/WindowManagerPolicy$WindowManagerFuncs;->reevaluateStatusBarVisibility()V
+    iget-boolean v2, p0, Lcom/android/server/policy/PhoneWindowManager$14;->val$awakenFromDreams:Z
 
+    invoke-virtual {v0, v1, v2}, Lcom/android/server/policy/PhoneWindowManager;->startDockOrHome(ZZ)V
+
+    :cond_0
     return-void
-
-    :catchall_0
-    move-exception v1
-
-    :try_start_1
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v1
 .end method

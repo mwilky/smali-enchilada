@@ -48,7 +48,7 @@
     :try_start_0
     iget-object v2, p0, Lcom/android/server/am/Connor$5;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v2, v0}, Lcom/android/server/am/Connor;->access$1302(Lcom/android/server/am/Connor;Ljava/util/Map;)Ljava/util/Map;
+    invoke-static {v2, v0}, Lcom/android/server/am/Connor;->access$1402(Lcom/android/server/am/Connor;Ljava/util/Map;)Ljava/util/Map;
 
     monitor-exit v1
     :try_end_0
@@ -56,7 +56,7 @@
 
     iget-object v1, p0, Lcom/android/server/am/Connor$5;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v1}, Lcom/android/server/am/Connor;->access$1400(Lcom/android/server/am/Connor;)Landroid/app/usage/UsageStatsManager;
+    invoke-static {v1}, Lcom/android/server/am/Connor;->access$1500(Lcom/android/server/am/Connor;)Landroid/app/usage/UsageStatsManager;
 
     move-result-object v1
 
@@ -80,7 +80,7 @@
 
     check-cast v2, Landroid/app/usage/UsageStatsManager;
 
-    invoke-static {v1, v2}, Lcom/android/server/am/Connor;->access$1402(Lcom/android/server/am/Connor;Landroid/app/usage/UsageStatsManager;)Landroid/app/usage/UsageStatsManager;
+    invoke-static {v1, v2}, Lcom/android/server/am/Connor;->access$1502(Lcom/android/server/am/Connor;Landroid/app/usage/UsageStatsManager;)Landroid/app/usage/UsageStatsManager;
 
     :cond_0
     :try_start_1
@@ -102,7 +102,7 @@
 
     iget-object v3, p0, Lcom/android/server/am/Connor$5;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v3}, Lcom/android/server/am/Connor;->access$1300(Lcom/android/server/am/Connor;)Ljava/util/Map;
+    invoke-static {v3}, Lcom/android/server/am/Connor;->access$1400(Lcom/android/server/am/Connor;)Ljava/util/Map;
 
     move-result-object v3
 
@@ -129,7 +129,7 @@
 
     iget-object v5, p0, Lcom/android/server/am/Connor$5;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v5}, Lcom/android/server/am/Connor;->access$1300(Lcom/android/server/am/Connor;)Ljava/util/Map;
+    invoke-static {v5}, Lcom/android/server/am/Connor;->access$1400(Lcom/android/server/am/Connor;)Ljava/util/Map;
 
     move-result-object v5
 
@@ -156,7 +156,7 @@
 
     iget-object v9, p0, Lcom/android/server/am/Connor$5;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v9, v4}, Lcom/android/server/am/Connor;->access$1500(Lcom/android/server/am/Connor;Ljava/lang/String;)I
+    invoke-static {v9, v4}, Lcom/android/server/am/Connor;->access$1600(Lcom/android/server/am/Connor;Ljava/lang/String;)I
 
     move-result v9
 
@@ -195,7 +195,7 @@
 
     iget-object v2, p0, Lcom/android/server/am/Connor$5;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v2}, Lcom/android/server/am/Connor;->access$1600(Lcom/android/server/am/Connor;)Ljava/lang/Runnable;
+    invoke-static {v2}, Lcom/android/server/am/Connor;->access$1700(Lcom/android/server/am/Connor;)Ljava/lang/Runnable;
 
     move-result-object v2
 

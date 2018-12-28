@@ -31,6 +31,8 @@
 
 .field public static final enum NA_NOCULPRIT:Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;
 
+.field public static final enum NA_RPM:Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;
+
 .field public static final enum NA_SBD:Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;
 
 .field public static final enum NA_WR:Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;
@@ -40,7 +42,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .locals 9
 
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;
 
@@ -94,15 +96,25 @@
 
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;
 
-    const-string v1, "NA_NOCULPRIT"
+    const-string v1, "NA_RPM"
 
     const/4 v7, 0x5
 
     invoke-direct {v0, v1, v7}, Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;-><init>(Ljava/lang/String;I)V
 
+    sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;->NA_RPM:Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;
+
+    new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;
+
+    const-string v1, "NA_NOCULPRIT"
+
+    const/4 v8, 0x6
+
+    invoke-direct {v0, v1, v8}, Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;-><init>(Ljava/lang/String;I)V
+
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;->NA_NOCULPRIT:Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;
 
-    const/4 v0, 0x6
+    const/4 v0, 0x7
 
     new-array v0, v0, [Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;
 
@@ -126,9 +138,13 @@
 
     aput-object v1, v0, v6
 
-    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;->NA_NOCULPRIT:Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;
+    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;->NA_RPM:Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;
 
     aput-object v1, v0, v7
+
+    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;->NA_NOCULPRIT:Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;
+
+    aput-object v1, v0, v8
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;->$VALUES:[Lcom/android/server/OnePlusStandbyAnalyzer$MDM_FIXED_TYPE;
 

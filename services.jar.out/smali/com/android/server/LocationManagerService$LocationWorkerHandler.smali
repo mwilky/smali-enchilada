@@ -63,7 +63,7 @@
     const/4 v1, 0x0
 
     :goto_0
-    invoke-static {v0, v2, v1}, Lcom/android/server/LocationManagerService;->access$2300(Lcom/android/server/LocationManagerService;Landroid/location/Location;Z)V
+    invoke-static {v0, v2, v1}, Lcom/android/server/LocationManagerService;->access$2600(Lcom/android/server/LocationManagerService;Landroid/location/Location;Z)V
 
     :goto_1
     return-void

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/OnePlusStandbyAnalyzer;->calculateSipperDiff(Ljava/util/List;Ljava/util/List;)V
+    value = Lcom/android/server/OnePlusStandbyAnalyzer;->getCoalescedUsageList(Ljava/util/List;)Ljava/util/List;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,15 +26,9 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lcom/android/server/OnePlusStandbyAnalyzer;
-
-
 # direct methods
-.method constructor <init>(Lcom/android/server/OnePlusStandbyAnalyzer;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lcom/android/server/OnePlusStandbyAnalyzer$12;->this$0:Lcom/android/server/OnePlusStandbyAnalyzer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

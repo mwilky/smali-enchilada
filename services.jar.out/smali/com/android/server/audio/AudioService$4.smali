@@ -43,7 +43,7 @@
 
     iget-object v0, p0, Lcom/android/server/audio/AudioService$4;->this$0:Lcom/android/server/audio/AudioService;
 
-    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$12600(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$VolumeController;
+    invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$12800(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/AudioService$VolumeController;
 
     move-result-object v0
 

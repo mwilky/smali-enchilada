@@ -1031,7 +1031,7 @@
 
     if-nez v2, :cond_c
 
-    const-string v2, "handle low power scene start"
+    const-string/jumbo v2, "handle low power scene start"
 
     invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionDetector;->myLog(Ljava/lang/String;)V
 
@@ -1050,7 +1050,7 @@
     invoke-static {v0}, Lcom/android/server/am/OnePlusPowerConsumptionDetector;->access$1502(Z)Z
 
     :cond_b
-    const-string v0, "handle low power scene end"
+    const-string/jumbo v0, "handle low power scene end"
 
     invoke-static {v0}, Lcom/android/server/am/OnePlusPowerConsumptionDetector;->myLog(Ljava/lang/String;)V
 

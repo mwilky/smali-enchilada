@@ -78,32 +78,12 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1400(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1900(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method static synthetic access$3600(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;J)Z
-    .locals 1
-
-    invoke-direct {p0, p1, p2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;->startTiming(J)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method static synthetic access$3800(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;)Z
-    .locals 1
-
-    invoke-direct {p0}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;->startTiming()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method static synthetic access$3900(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;)Z
+.method static synthetic access$4900(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;)Z
     .locals 1
 
     invoke-direct {p0}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;->pauseTiming()Z
@@ -113,7 +93,27 @@
     return v0
 .end method
 
-.method static synthetic access$4900(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;)V
+.method static synthetic access$5000(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;J)Z
+    .locals 1
+
+    invoke-direct {p0, p1, p2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;->startTiming(J)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic access$5300(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;)Z
+    .locals 1
+
+    invoke-direct {p0}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;->startTiming()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic access$6500(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;->resetTime()V
@@ -121,7 +121,7 @@
     return-void
 .end method
 
-.method static synthetic access$5300(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;J)J
+.method static synthetic access$6900(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;J)J
     .locals 2
 
     invoke-direct {p0, p1, p2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;->getCumulativeTime(J)J
@@ -251,11 +251,7 @@
 
     iget-object v1, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
 
-    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$100(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)Lcom/android/server/am/OnePlusPowerConsumptionStatistic$BaseTimer;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$BaseTimer;->access$1800(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$BaseTimer;)J
+    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$2700(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)J
 
     move-result-wide v1
 
@@ -303,7 +299,7 @@
 
     move-result-object v5
 
-    invoke-static {v5}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1400(Ljava/lang/String;)V
+    invoke-static {v5}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1900(Ljava/lang/String;)V
 
     monitor-exit v0
 
@@ -334,7 +330,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1400(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1900(Ljava/lang/String;)V
 
     iget-wide v1, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;->cumulativeTime:J
 
@@ -408,7 +404,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1400(Ljava/lang/String;)V
+    invoke-static {v3}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1900(Ljava/lang/String;)V
 
     monitor-exit v0
 
@@ -459,7 +455,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1400(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1900(Ljava/lang/String;)V
 
     iget-wide v1, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;->cumulativeTime:J
 
@@ -500,11 +496,7 @@
 
     iget-object v1, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
 
-    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$100(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)Lcom/android/server/am/OnePlusPowerConsumptionStatistic$BaseTimer;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$BaseTimer;->access$1800(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$BaseTimer;)J
+    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$2700(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)J
 
     move-result-wide v1
 
@@ -562,7 +554,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1400(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1900(Ljava/lang/String;)V
 
     const/4 v1, 0x1
 
@@ -616,7 +608,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1400(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1900(Ljava/lang/String;)V
 
     monitor-exit v0
 
@@ -657,11 +649,7 @@
 
     iget-object v2, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificTimer;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
 
-    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$100(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)Lcom/android/server/am/OnePlusPowerConsumptionStatistic$BaseTimer;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$BaseTimer;->access$1800(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$BaseTimer;)J
+    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$2700(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)J
 
     move-result-wide v2
 
@@ -699,7 +687,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1400(Ljava/lang/String;)V
+    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1900(Ljava/lang/String;)V
 
     monitor-exit v0
 
@@ -772,7 +760,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1400(Ljava/lang/String;)V
+    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1900(Ljava/lang/String;)V
 
     monitor-exit v0
 

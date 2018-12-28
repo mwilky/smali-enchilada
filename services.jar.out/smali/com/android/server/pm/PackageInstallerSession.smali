@@ -4125,7 +4125,7 @@
     goto :goto_0
 
     :cond_2
-    const-string v2, "granted-runtime-permission"
+    const-string/jumbo v2, "granted-runtime-permission"
 
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
@@ -5405,7 +5405,7 @@
 
     aget-object v2, p1, v1
 
-    const-string v3, "granted-runtime-permission"
+    const-string/jumbo v3, "granted-runtime-permission"
 
     const/4 v4, 0x0
 
@@ -5415,7 +5415,7 @@
 
     invoke-static {p0, v3, v2}, Lcom/android/internal/util/XmlUtils;->writeStringAttribute(Lorg/xmlpull/v1/XmlSerializer;Ljava/lang/String;Ljava/lang/CharSequence;)V
 
-    const-string v3, "granted-runtime-permission"
+    const-string/jumbo v3, "granted-runtime-permission"
 
     invoke-interface {p0, v4, v3}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 

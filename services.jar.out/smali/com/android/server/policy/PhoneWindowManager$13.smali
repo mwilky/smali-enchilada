@@ -1,9 +1,6 @@
 .class Lcom/android/server/policy/PhoneWindowManager$13;
-.super Ljava/lang/Object;
+.super Lcom/android/internal/policy/KeyguardDismissCallback;
 .source "PhoneWindowManager.java"
-
-# interfaces
-.implements Lcom/android/server/policy/WindowManagerPolicy$OnKeyguardExitResult;
 
 
 # annotations
@@ -31,26 +28,44 @@
 
     iput-boolean p2, p0, Lcom/android/server/policy/PhoneWindowManager$13;->val$awakenFromDreams:Z
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/android/internal/policy/KeyguardDismissCallback;-><init>()V
+
+    return-void
+.end method
+
+.method public static synthetic lambda$onDismissSucceeded$0(Lcom/android/server/policy/PhoneWindowManager$13;Z)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$13;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1, p1}, Lcom/android/server/policy/PhoneWindowManager;->startDockOrHome(ZZ)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onKeyguardExitResult(Z)V
+.method public onDismissSucceeded()V
     .locals 3
-
-    if-eqz p1, :cond_0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$13;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    const/4 v1, 0x1
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mHandler:Landroid/os/Handler;
 
-    iget-boolean v2, p0, Lcom/android/server/policy/PhoneWindowManager$13;->val$awakenFromDreams:Z
+    iget-boolean v1, p0, Lcom/android/server/policy/PhoneWindowManager$13;->val$awakenFromDreams:Z
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/server/policy/PhoneWindowManager;->startDockOrHome(ZZ)V
+    new-instance v2, Lcom/android/server/policy/-$$Lambda$PhoneWindowManager$13$bQb5F46Hw0aJj_XF2e1CT6OdEQQ;
 
-    :cond_0
+    invoke-direct {v2, p0, v1}, Lcom/android/server/policy/-$$Lambda$PhoneWindowManager$13$bQb5F46Hw0aJj_XF2e1CT6OdEQQ;-><init>(Lcom/android/server/policy/PhoneWindowManager$13;Z)V
+
+    invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
     return-void
 .end method

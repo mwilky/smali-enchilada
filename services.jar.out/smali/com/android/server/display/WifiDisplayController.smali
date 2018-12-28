@@ -2098,7 +2098,7 @@
     :cond_0
     const-string v0, "WifiDisplayController"
 
-    const-string v2, "handle the preexisting p2p connection status"
+    const-string/jumbo v2, "handle the preexisting p2p connection status"
 
     invoke-static {v0, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 

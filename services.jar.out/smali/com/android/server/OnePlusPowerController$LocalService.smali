@@ -34,7 +34,7 @@
 .method public isAggressive()Z
     .locals 1
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$700()Z
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$1100()Z
 
     move-result v0
 
@@ -56,7 +56,7 @@
 .method public isInDeepSleep()Z
     .locals 1
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$1600()Z
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$1800()Z
 
     move-result v0
 
@@ -66,7 +66,7 @@
 .method public isInSleep()Z
     .locals 2
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$1300()I
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$500()I
 
     move-result v0
 
@@ -102,7 +102,7 @@
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController$LocalService;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$1500(Lcom/android/server/OnePlusPowerController;)Z
+    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$1700(Lcom/android/server/OnePlusPowerController;)Z
 
     move-result v0
 
@@ -119,7 +119,7 @@
 .method public setDozeState(I)V
     .locals 8
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$1100()Z
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$1400()Z
 
     move-result v0
 
@@ -146,11 +146,11 @@
     :cond_0
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController$LocalService;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v0, p1}, Lcom/android/server/OnePlusPowerController;->access$1702(Lcom/android/server/OnePlusPowerController;I)I
+    invoke-static {v0, p1}, Lcom/android/server/OnePlusPowerController;->access$702(Lcom/android/server/OnePlusPowerController;I)I
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController$LocalService;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$900(Lcom/android/server/OnePlusPowerController;)I
+    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$600(Lcom/android/server/OnePlusPowerController;)I
 
     move-result v0
 
@@ -158,7 +158,7 @@
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController$LocalService;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$1700(Lcom/android/server/OnePlusPowerController;)I
+    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$700(Lcom/android/server/OnePlusPowerController;)I
 
     move-result v0
 
@@ -168,7 +168,7 @@
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController$LocalService;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$1400(Lcom/android/server/OnePlusPowerController;)Lcom/android/server/OnePlusPowerController$IdleStats;
+    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$1600(Lcom/android/server/OnePlusPowerController;)Lcom/android/server/OnePlusPowerController$IdleStats;
 
     move-result-object v0
 
@@ -178,7 +178,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$1300()I
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$500()I
 
     move-result v1
 
@@ -198,7 +198,7 @@
 
     move-result-wide v4
 
-    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$1800()I
+    invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$1900()I
 
     move-result v6
 
@@ -210,7 +210,7 @@
 
     iget-object v4, p0, Lcom/android/server/OnePlusPowerController$LocalService;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v4}, Lcom/android/server/OnePlusPowerController;->access$1900(Lcom/android/server/OnePlusPowerController;)Lcom/android/server/OnePlusPowerController$MyHandler;
+    invoke-static {v4}, Lcom/android/server/OnePlusPowerController;->access$800(Lcom/android/server/OnePlusPowerController;)Lcom/android/server/OnePlusPowerController$MyHandler;
 
     move-result-object v4
 
@@ -226,7 +226,7 @@
     :cond_2
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController$LocalService;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$1700(Lcom/android/server/OnePlusPowerController;)I
+    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$700(Lcom/android/server/OnePlusPowerController;)I
 
     move-result v0
 
@@ -239,7 +239,7 @@
     :cond_3
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController$LocalService;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$1900(Lcom/android/server/OnePlusPowerController;)Lcom/android/server/OnePlusPowerController$MyHandler;
+    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$800(Lcom/android/server/OnePlusPowerController;)Lcom/android/server/OnePlusPowerController$MyHandler;
 
     move-result-object v0
 
@@ -271,7 +271,7 @@
 
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController$LocalService;->this$0:Lcom/android/server/OnePlusPowerController;
 
-    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$1400(Lcom/android/server/OnePlusPowerController;)Lcom/android/server/OnePlusPowerController$IdleStats;
+    invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$1600(Lcom/android/server/OnePlusPowerController;)Lcom/android/server/OnePlusPowerController$IdleStats;
 
     move-result-object v0
 

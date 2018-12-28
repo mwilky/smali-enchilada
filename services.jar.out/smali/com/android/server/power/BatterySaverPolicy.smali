@@ -1675,7 +1675,7 @@
 
     move-result v1
 
-    const-string v4, "gps_mode"
+    const-string/jumbo v4, "gps_mode"
 
     invoke-virtual {v0, v4, v1}, Landroid/util/KeyValueListParser;->getInt(Ljava/lang/String;I)I
 

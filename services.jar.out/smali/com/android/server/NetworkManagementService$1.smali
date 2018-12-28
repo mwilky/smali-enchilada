@@ -39,7 +39,7 @@
 
     iget-object v0, p0, Lcom/android/server/NetworkManagementService$1;->this$0:Lcom/android/server/NetworkManagementService;
 
-    const-string v1, "globalAlert"
+    const-string/jumbo v1, "globalAlert"
 
     const/4 v2, 0x0
 

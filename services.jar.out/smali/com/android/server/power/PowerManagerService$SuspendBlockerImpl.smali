@@ -80,7 +80,7 @@
 
     if-ne v0, v1, :cond_1
 
-    invoke-static {}, Lcom/android/server/power/PowerManagerService;->access$3800()Z
+    invoke-static {}, Lcom/android/server/power/PowerManagerService;->access$4000()Z
 
     move-result v0
 
@@ -121,7 +121,7 @@
 
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$SuspendBlockerImpl;->mName:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$3900(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$4100(Ljava/lang/String;)V
 
     :cond_1
     monitor-exit p0
@@ -181,7 +181,7 @@
 
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService$SuspendBlockerImpl;->mName:Ljava/lang/String;
 
-    invoke-static {v1}, Lcom/android/server/power/PowerManagerService;->access$3700(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/android/server/power/PowerManagerService;->access$3900(Ljava/lang/String;)V
 
     const-wide/32 v1, 0x20000
 
@@ -224,7 +224,7 @@
 
     if-nez v0, :cond_1
 
-    invoke-static {}, Lcom/android/server/power/PowerManagerService;->access$3800()Z
+    invoke-static {}, Lcom/android/server/power/PowerManagerService;->access$4000()Z
 
     move-result v0
 
@@ -257,7 +257,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$SuspendBlockerImpl;->mName:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$3700(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$3900(Ljava/lang/String;)V
 
     const-wide/32 v2, 0x20000
 

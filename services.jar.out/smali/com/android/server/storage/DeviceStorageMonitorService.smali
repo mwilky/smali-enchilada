@@ -798,7 +798,7 @@
 
     invoke-virtual {v13, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    const v3, 0x104035e
+    const v3, 0x104035f
 
     invoke-virtual {v9, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -810,7 +810,7 @@
 
     move-result v3
 
-    const v4, 0x104035c
+    const v4, 0x104035d
 
     if-eqz v3, :cond_1
 
@@ -823,7 +823,7 @@
     goto :goto_0
 
     :cond_0
-    const v4, 0x104035d
+    const v4, 0x104035e
 
     :goto_0
     invoke-virtual {v9, v4}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
@@ -1444,7 +1444,7 @@
 
     const-string v5, "devicestoragemonitor.tv"
 
-    const v6, 0x10401ca
+    const v6, 0x10401cb
 
     invoke-virtual {v0, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

@@ -27,18 +27,16 @@
 
 .field public static final enum CALCULATE:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
 
-.field public static final enum CHECK_QXDM_IF_READY:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
-
 .field public static final enum END:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
 
-.field public static final enum START:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
+.field public static final enum MIDDLE_CHECK:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
 
-.field public static final enum STOP_QXDM_RECORDING:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
+.field public static final enum START:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 7
+    .locals 6
 
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
 
@@ -52,11 +50,21 @@
 
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
 
-    const-string v1, "END"
+    const-string v1, "MIDDLE_CHECK"
 
     const/4 v3, 0x1
 
     invoke-direct {v0, v1, v3}, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;->MIDDLE_CHECK:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
+
+    new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
+
+    const-string v1, "END"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v0, v1, v4}, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;->END:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
 
@@ -64,33 +72,13 @@
 
     const-string v1, "CALCULATE"
 
-    const/4 v4, 0x2
-
-    invoke-direct {v0, v1, v4}, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;->CALCULATE:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
-
-    new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
-
-    const-string v1, "CHECK_QXDM_IF_READY"
-
     const/4 v5, 0x3
 
     invoke-direct {v0, v1, v5}, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;->CHECK_QXDM_IF_READY:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
+    sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;->CALCULATE:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
 
-    new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
-
-    const-string v1, "STOP_QXDM_RECORDING"
-
-    const/4 v6, 0x4
-
-    invoke-direct {v0, v1, v6}, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;->STOP_QXDM_RECORDING:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
-
-    const/4 v0, 0x5
+    const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
 
@@ -98,21 +86,17 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;->END:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
+    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;->MIDDLE_CHECK:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;->CALCULATE:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
+    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;->END:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;->CHECK_QXDM_IF_READY:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
+    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;->CALCULATE:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
 
     aput-object v1, v0, v5
-
-    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;->STOP_QXDM_RECORDING:Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
-
-    aput-object v1, v0, v6
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;->$VALUES:[Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
 

@@ -63,7 +63,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "got exception on enteringDeepIdleLocked():"
+    const-string/jumbo v5, "got exception on enteringDeepIdleLocked():"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -82,13 +82,13 @@
 
     sub-long/2addr v2, v0
 
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1500()Z
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1700()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$2300()Z
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$2500()Z
 
     move-result v0
 

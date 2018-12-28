@@ -62,9 +62,9 @@
     :cond_1
     iget-object v0, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$1;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
 
-    invoke-static {v0}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$100(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)Lcom/android/server/am/OnePlusPowerConsumptionStatistic$BaseTimer;
+    invoke-static {v0}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$100(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)Z
 
-    move-result-object v0
+    move-result v0
 
     if-nez v0, :cond_2
 

@@ -325,7 +325,7 @@
     goto :goto_0
 
     :cond_6
-    const-string v6, "granted"
+    const-string/jumbo v6, "granted"
 
     invoke-interface {p1, v4, v6}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -474,7 +474,7 @@
 
     const-string/jumbo v4, "true"
 
-    const-string v5, "granted"
+    const-string/jumbo v5, "granted"
 
     invoke-interface {p1, v3, v5}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -960,7 +960,7 @@
 
     invoke-interface {p1, v3, v2, v4}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v2, "granted"
+    const-string/jumbo v2, "granted"
 
     invoke-virtual {v1}, Lcom/android/server/pm/permission/PermissionsState$PermissionState;->isGranted()Z
 
@@ -1502,7 +1502,7 @@
 
     if-eqz v4, :cond_7
 
-    const-string v4, "granted"
+    const-string/jumbo v4, "granted"
 
     const-string/jumbo v7, "true"
 

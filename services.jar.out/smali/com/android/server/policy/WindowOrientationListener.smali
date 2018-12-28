@@ -26,6 +26,8 @@
 # instance fields
 .field private mCurrentRotation:I
 
+.field private mDPCSensor:Landroid/hardware/Sensor;
+
 .field private mEnabled:Z
 
 .field private mFlatState:I
@@ -73,7 +75,7 @@
 .end method
 
 .method private constructor <init>(Landroid/content/Context;Landroid/os/Handler;I)V
-    .locals 7
+    .locals 11
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -81,104 +83,211 @@
 
     iput v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mFlatState:I
 
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Lcom/android/server/policy/WindowOrientationListener;->mDPCSensor:Landroid/hardware/Sensor;
+
     const/4 v1, -0x1
 
     iput v1, p0, Lcom/android/server/policy/WindowOrientationListener;->mCurrentRotation:I
 
-    new-instance v1, Ljava/lang/Object;
+    new-instance v2, Ljava/lang/Object;
 
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
 
-    iput-object v1, p0, Lcom/android/server/policy/WindowOrientationListener;->mLock:Ljava/lang/Object;
+    iput-object v2, p0, Lcom/android/server/policy/WindowOrientationListener;->mLock:Ljava/lang/Object;
 
     iput-object p2, p0, Lcom/android/server/policy/WindowOrientationListener;->mHandler:Landroid/os/Handler;
 
-    const-string/jumbo v1, "sensor"
+    const-string/jumbo v2, "sensor"
 
-    invoke-virtual {p1, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Landroid/hardware/SensorManager;
+    check-cast v2, Landroid/hardware/SensorManager;
 
-    iput-object v1, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensorManager:Landroid/hardware/SensorManager;
+    iput-object v2, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensorManager:Landroid/hardware/SensorManager;
 
     iput p3, p0, Lcom/android/server/policy/WindowOrientationListener;->mRate:I
 
-    iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensorManager:Landroid/hardware/SensorManager;
+    iget-object v2, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensorManager:Landroid/hardware/SensorManager;
 
-    const/16 v2, 0x1b
+    const/16 v3, 0x1b
 
-    invoke-virtual {v1, v2}, Landroid/hardware/SensorManager;->getSensorList(I)Ljava/util/List;
+    invoke-virtual {v2, v3}, Landroid/hardware/SensorManager;->getSensorList(I)Ljava/util/List;
 
-    move-result-object v1
-
-    const/4 v2, 0x0
+    move-result-object v2
 
     const/4 v3, 0x0
 
-    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    const/4 v4, 0x0
 
-    move-result-object v4
-
-    :goto_0
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_1
-
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
 
-    check-cast v5, Landroid/hardware/Sensor;
-
-    invoke-virtual {v5}, Landroid/hardware/Sensor;->isWakeUpSensor()Z
+    :goto_0
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
-    if-eqz v6, :cond_0
+    if-eqz v6, :cond_1
 
-    move-object v2, v5
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Landroid/hardware/Sensor;
+
+    invoke-virtual {v6}, Landroid/hardware/Sensor;->isWakeUpSensor()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_0
+
+    move-object v3, v6
 
     goto :goto_1
 
     :cond_0
-    move-object v3, v5
+    move-object v4, v6
 
     :goto_1
     goto :goto_0
 
     :cond_1
-    if-eqz v2, :cond_2
+    if-eqz v3, :cond_2
 
-    iput-object v2, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
+    iput-object v3, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
 
     goto :goto_2
 
     :cond_2
-    iput-object v3, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
+    iput-object v4, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
 
     :goto_2
-    iget-object v4, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
+    iget-object v5, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
 
-    if-eqz v4, :cond_3
+    if-eqz v5, :cond_9
 
-    new-instance v4, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;
+    const-string v5, ""
 
-    invoke-direct {v4, p0}, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;-><init>(Lcom/android/server/policy/WindowOrientationListener;)V
+    invoke-static {}, Landroid/util/OpFeatures;->getProductName()Ljava/lang/String;
 
-    iput-object v4, p0, Lcom/android/server/policy/WindowOrientationListener;->mOrientationJudge:Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;
+    move-result-object v6
+
+    const-string v7, "cheeseburger"
+
+    invoke-virtual {v7, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_3
+
+    const-string v7, "dumpling"
+
+    invoke-virtual {v7, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_4
 
     :cond_3
-    iget-object v4, p0, Lcom/android/server/policy/WindowOrientationListener;->mOrientationJudge:Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;
+    iput v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mFlatState:I
 
-    if-nez v4, :cond_4
+    const-string v5, "com.qti.sensor.dpc"
 
-    iget-object v4, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensorManager:Landroid/hardware/SensorManager;
+    :cond_4
+    const-string v7, ""
 
-    invoke-virtual {v4, v0}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
+    invoke-virtual {v7, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_8
+
+    iget-object v7, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensorManager:Landroid/hardware/SensorManager;
+
+    invoke-virtual {v7, v1}, Landroid/hardware/SensorManager;->getSensorList(I)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v7
+
+    :goto_3
+    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v8
+
+    if-eqz v8, :cond_8
+
+    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Landroid/hardware/Sensor;
+
+    invoke-virtual {v8}, Landroid/hardware/Sensor;->getStringType()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v5, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_5
+
+    iput-object v8, p0, Lcom/android/server/policy/WindowOrientationListener;->mDPCSensor:Landroid/hardware/Sensor;
+
+    goto :goto_5
+
+    :cond_5
+    sget-boolean v9, Lcom/android/server/policy/WindowOrientationListener;->LOG:Z
+
+    if-eqz v9, :cond_7
+
+    iget-object v9, p0, Lcom/android/server/policy/WindowOrientationListener;->mDPCSensor:Landroid/hardware/Sensor;
+
+    if-eqz v9, :cond_6
+
+    const-string v9, "WindowOrientationListener"
+
+    const-string v10, "DPC sensor found!"
+
+    invoke-static {v9, v10}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_4
+
+    :cond_6
+    const-string v9, "WindowOrientationListener"
+
+    const-string v10, "DPC sensor NOT found!!"
+
+    invoke-static {v9, v10}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_7
+    :goto_4
+    goto :goto_3
+
+    :cond_8
+    :goto_5
+    new-instance v1, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;
+
+    invoke-direct {v1, p0}, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;-><init>(Lcom/android/server/policy/WindowOrientationListener;)V
+
+    iput-object v1, p0, Lcom/android/server/policy/WindowOrientationListener;->mOrientationJudge:Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;
+
+    :cond_9
+    iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener;->mOrientationJudge:Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;
+
+    if-nez v1, :cond_a
+
+    iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensorManager:Landroid/hardware/SensorManager;
+
+    invoke-virtual {v1, v0}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
 
     move-result-object v0
 
@@ -186,7 +295,7 @@
 
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_a
 
     new-instance v0, Lcom/android/server/policy/WindowOrientationListener$AccelSensorJudge;
 
@@ -194,7 +303,7 @@
 
     iput-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mOrientationJudge:Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;
 
-    :cond_4
+    :cond_a
     return-void
 .end method
 
@@ -222,7 +331,15 @@
     return v0
 .end method
 
-.method static synthetic access$300(Lcom/android/server/policy/WindowOrientationListener;)I
+.method static synthetic access$300(Lcom/android/server/policy/WindowOrientationListener;)Landroid/hardware/Sensor;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mDPCSensor:Landroid/hardware/Sensor;
+
+    return-object v0
+.end method
+
+.method static synthetic access$400(Lcom/android/server/policy/WindowOrientationListener;)I
     .locals 1
 
     iget v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mFlatState:I
@@ -230,7 +347,7 @@
     return v0
 .end method
 
-.method static synthetic access$400(Lcom/android/server/policy/WindowOrientationListener;)Landroid/os/Handler;
+.method static synthetic access$500(Lcom/android/server/policy/WindowOrientationListener;)Landroid/os/Handler;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener;->mHandler:Landroid/os/Handler;
@@ -624,6 +741,33 @@
 
     invoke-virtual {v1, v3, v4, v5, v6}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;ILandroid/os/Handler;)Z
 
+    iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener;->mDPCSensor:Landroid/hardware/Sensor;
+
+    if-eqz v1, :cond_4
+
+    iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener;->mSensorManager:Landroid/hardware/SensorManager;
+
+    iget-object v3, p0, Lcom/android/server/policy/WindowOrientationListener;->mOrientationJudge:Lcom/android/server/policy/WindowOrientationListener$OrientationJudge;
+
+    iget-object v4, p0, Lcom/android/server/policy/WindowOrientationListener;->mDPCSensor:Landroid/hardware/Sensor;
+
+    iget v5, p0, Lcom/android/server/policy/WindowOrientationListener;->mRate:I
+
+    iget-object v6, p0, Lcom/android/server/policy/WindowOrientationListener;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {v1, v3, v4, v5, v6}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;ILandroid/os/Handler;)Z
+
+    sget-boolean v1, Lcom/android/server/policy/WindowOrientationListener;->LOG:Z
+
+    if-eqz v1, :cond_4
+
+    const-string v1, "WindowOrientationListener"
+
+    const-string v3, "DPC sensor registered!"
+
+    invoke-static {v1, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_4
     :goto_0
     iput-boolean v2, p0, Lcom/android/server/policy/WindowOrientationListener;->mEnabled:Z
 

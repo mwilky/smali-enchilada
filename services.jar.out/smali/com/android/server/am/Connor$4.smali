@@ -44,15 +44,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcom/android/server/am/Connor$4;->this$0:Lcom/android/server/am/Connor;
-
-    invoke-static {v0}, Lcom/android/server/am/Connor;->access$700(Lcom/android/server/am/Connor;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/android/server/am/Connor$4;->this$0:Lcom/android/server/am/Connor;
 
@@ -60,9 +52,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    const/16 v0, 0x44
+    iget-object v0, p0, Lcom/android/server/am/Connor$4;->this$0:Lcom/android/server/am/Connor;
+
+    invoke-static {v0}, Lcom/android/server/am/Connor;->access$1100(Lcom/android/server/am/Connor;)I
+
+    move-result v0
 
     invoke-static {v0}, Lcom/android/server/am/Connor;->nativeGetSysTemp(I)I
 
@@ -70,12 +66,11 @@
 
     const v1, 0x9858
 
-    if-ge v0, v1, :cond_1
+    if-ge v0, v1, :cond_0
 
-    :cond_0
     iget-object v0, p0, Lcom/android/server/am/Connor$4;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v0}, Lcom/android/server/am/Connor;->access$1100(Lcom/android/server/am/Connor;)V
+    invoke-static {v0}, Lcom/android/server/am/Connor;->access$1200(Lcom/android/server/am/Connor;)V
 
     iget-object v0, p0, Lcom/android/server/am/Connor$4;->this$0:Lcom/android/server/am/Connor;
 
@@ -83,14 +78,14 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/am/Connor;->setTraining(Z)V
 
-    :cond_1
+    :cond_0
     iget-object v0, p0, Lcom/android/server/am/Connor$4;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v0}, Lcom/android/server/am/Connor;->access$1200(Lcom/android/server/am/Connor;)V
+    invoke-static {v0}, Lcom/android/server/am/Connor;->access$1300(Lcom/android/server/am/Connor;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_2
+    :cond_1
     goto :goto_0
 
     :catch_0

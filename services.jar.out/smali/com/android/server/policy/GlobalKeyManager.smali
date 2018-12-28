@@ -68,7 +68,7 @@
 
     move-object v1, v2
 
-    const-string v2, "global_keys"
+    const-string/jumbo v2, "global_keys"
 
     invoke-static {v1, v2}, Lcom/android/internal/util/XmlUtils;->beginDocument(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)V
 
@@ -184,7 +184,7 @@
 
     const-string v2, "GlobalKeyManager"
 
-    const-string v3, "global keys file not found"
+    const-string/jumbo v3, "global keys file not found"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     :try_end_1

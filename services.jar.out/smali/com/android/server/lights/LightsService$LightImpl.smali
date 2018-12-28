@@ -184,42 +184,53 @@
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_6
+    iget v0, p0, Lcom/android/server/lights/LightsService$LightImpl;->mId:I
+
+    invoke-static {v0, p2, p5}, Lcom/android/server/OemSceneLightsController;->canSetLights(III)Z
+
+    move-result v0
+
+    if-nez v0, :cond_7
+
+    return-void
+
+    :cond_7
     iget-boolean v0, p0, Lcom/android/server/lights/LightsService$LightImpl;->mInitialized:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_8
 
     iget v0, p0, Lcom/android/server/lights/LightsService$LightImpl;->mColor:I
 
-    if-ne p1, v0, :cond_7
+    if-ne p1, v0, :cond_8
 
     iget v0, p0, Lcom/android/server/lights/LightsService$LightImpl;->mMode:I
 
-    if-ne p2, v0, :cond_7
+    if-ne p2, v0, :cond_8
 
     iget v0, p0, Lcom/android/server/lights/LightsService$LightImpl;->mOnMS:I
 
-    if-ne p3, v0, :cond_7
+    if-ne p3, v0, :cond_8
 
     iget v0, p0, Lcom/android/server/lights/LightsService$LightImpl;->mOffMS:I
 
-    if-ne p4, v0, :cond_7
+    if-ne p4, v0, :cond_8
 
     iget v0, p0, Lcom/android/server/lights/LightsService$LightImpl;->mBrightnessMode:I
 
-    if-eq v0, p5, :cond_a
+    if-eq v0, p5, :cond_b
 
-    :cond_7
+    :cond_8
     sget-boolean v0, Lcom/android/server/lights/LightsService;->DEBUG:Z
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_9
 
     invoke-static {}, Lcom/android/server/lights/LightsService;->access$200()Z
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_a
 
-    :cond_8
+    :cond_9
     const-string v0, "LightsService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -256,7 +267,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_9
+    :cond_a
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/lights/LightsService$LightImpl;->mInitialized:Z
@@ -330,7 +341,7 @@
 
     nop
 
-    :cond_a
+    :cond_b
     return-void
 
     :catchall_0

@@ -1642,7 +1642,11 @@
 
     packed-switch v3, :pswitch_data_0
 
-    if-nez v3, :cond_3
+    if-eqz v3, :cond_5
+
+    const/4 v4, 0x6
+
+    if-ne v3, v4, :cond_3
 
     goto :goto_0
 
@@ -1690,8 +1694,11 @@
 
     nop
 
+    :cond_5
     :goto_0
     return-void
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x3

@@ -8618,7 +8618,7 @@
 
     move-result-object v9
 
-    if-eqz v9, :cond_29
+    if-eqz v9, :cond_2a
 
     const/4 v1, 0x0
 
@@ -9827,7 +9827,7 @@
     :try_start_19
     iget-object v0, v9, Lcom/android/server/am/ServiceRecord;->app:Lcom/android/server/am/ProcessRecord;
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_28
 
     iget-object v0, v8, Lcom/android/server/am/AppBindRecord;->intent:Lcom/android/server/am/IntentBindRecord;
 
@@ -9835,7 +9835,7 @@
     :try_end_19
     .catchall {:try_start_19 .. :try_end_19} :catchall_6
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_28
 
     move-object/from16 v1, v41
 
@@ -9875,15 +9875,44 @@
     invoke-static {v0, v2}, Lcom/android/server/am/OnePlusProcessManager;->resumeProcessByUID_out(ILjava/lang/String;)V
 
     :cond_25
+    iget-object v0, v1, Lcom/android/server/am/ConnectionRecord;->binding:Lcom/android/server/am/AppBindRecord;
+
+    const/16 v2, 0x251c
+
+    if-eqz v0, :cond_26
+
+    iget-object v0, v1, Lcom/android/server/am/ConnectionRecord;->binding:Lcom/android/server/am/AppBindRecord;
+
+    iget-object v0, v0, Lcom/android/server/am/AppBindRecord;->client:Lcom/android/server/am/ProcessRecord;
+
+    if-eqz v0, :cond_26
+
+    iget-object v0, v1, Lcom/android/server/am/ConnectionRecord;->binding:Lcom/android/server/am/AppBindRecord;
+
+    iget-object v0, v0, Lcom/android/server/am/AppBindRecord;->client:Lcom/android/server/am/ProcessRecord;
+
+    iget v0, v0, Lcom/android/server/am/ProcessRecord;->uid:I
+
+    iget-object v3, v1, Lcom/android/server/am/ConnectionRecord;->binding:Lcom/android/server/am/AppBindRecord;
+
+    iget-object v3, v3, Lcom/android/server/am/AppBindRecord;->client:Lcom/android/server/am/ProcessRecord;
+
+    iget v3, v3, Lcom/android/server/am/ProcessRecord;->pid:I
+
+    invoke-static {v2, v0, v3}, Lcom/android/server/am/OnePlusProcessManager;->checkTimeoutBegin(III)V
+
+    :cond_26
     iget-object v0, v1, Lcom/android/server/am/ConnectionRecord;->conn:Landroid/app/IServiceConnection;
 
-    iget-object v2, v9, Lcom/android/server/am/ServiceRecord;->name:Landroid/content/ComponentName;
+    iget-object v3, v9, Lcom/android/server/am/ServiceRecord;->name:Landroid/content/ComponentName;
 
-    iget-object v3, v8, Lcom/android/server/am/AppBindRecord;->intent:Lcom/android/server/am/IntentBindRecord;
+    iget-object v4, v8, Lcom/android/server/am/AppBindRecord;->intent:Lcom/android/server/am/IntentBindRecord;
 
-    iget-object v3, v3, Lcom/android/server/am/IntentBindRecord;->binder:Landroid/os/IBinder;
+    iget-object v4, v4, Lcom/android/server/am/IntentBindRecord;->binder:Landroid/os/IBinder;
 
-    invoke-interface {v0, v2, v3, v13}, Landroid/app/IServiceConnection;->connected(Landroid/content/ComponentName;Landroid/os/IBinder;Z)V
+    invoke-interface {v0, v3, v4, v13}, Landroid/app/IServiceConnection;->connected(Landroid/content/ComponentName;Landroid/os/IBinder;Z)V
+
+    invoke-static {v2}, Lcom/android/server/am/OnePlusProcessManager;->checkTimeoutEnd(I)V
     :try_end_1a
     .catch Ljava/lang/Exception; {:try_start_1a .. :try_end_1a} :catch_0
     .catchall {:try_start_1a .. :try_end_1a} :catchall_3
@@ -9953,13 +9982,13 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v2, :cond_26
+    if-ne v0, v2, :cond_27
 
     iget-object v0, v8, Lcom/android/server/am/AppBindRecord;->intent:Lcom/android/server/am/IntentBindRecord;
 
     iget-boolean v0, v0, Lcom/android/server/am/IntentBindRecord;->doRebind:Z
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_27
 
     iget-object v0, v8, Lcom/android/server/am/AppBindRecord;->intent:Lcom/android/server/am/IntentBindRecord;
     :try_end_1b
@@ -9974,12 +10003,12 @@
 
     goto :goto_f
 
-    :cond_26
+    :cond_27
     move/from16 v2, v28
 
     goto :goto_f
 
-    :cond_27
+    :cond_28
     move/from16 v2, v28
 
     move-object/from16 v1, v41
@@ -9988,13 +10017,13 @@
 
     iget-boolean v0, v0, Lcom/android/server/am/IntentBindRecord;->requested:Z
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_29
 
     iget-object v0, v8, Lcom/android/server/am/AppBindRecord;->intent:Lcom/android/server/am/IntentBindRecord;
 
     invoke-direct {v12, v9, v0, v2, v13}, Lcom/android/server/am/ActiveServices;->requestServiceBindingLocked(Lcom/android/server/am/ServiceRecord;Lcom/android/server/am/IntentBindRecord;ZZ)Z
 
-    :cond_28
+    :cond_29
     :goto_f
     iget v0, v9, Lcom/android/server/am/ServiceRecord;->userId:I
 
@@ -10081,7 +10110,7 @@
 
     throw v0
 
-    :cond_29
+    :cond_2a
     move-object/from16 v40, v9
 
     new-instance v1, Ljava/lang/SecurityException;

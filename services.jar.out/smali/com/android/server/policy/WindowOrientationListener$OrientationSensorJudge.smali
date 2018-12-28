@@ -61,7 +61,7 @@
     return-void
 .end method
 
-.method static synthetic access$502(Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;Z)Z
+.method static synthetic access$602(Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->mRotationEvaluationScheduled:Z
@@ -179,7 +179,7 @@
 
     iget-object v4, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->this$0:Lcom/android/server/policy/WindowOrientationListener;
 
-    invoke-static {v4}, Lcom/android/server/policy/WindowOrientationListener;->access$400(Lcom/android/server/policy/WindowOrientationListener;)Landroid/os/Handler;
+    invoke-static {v4}, Lcom/android/server/policy/WindowOrientationListener;->access$500(Lcom/android/server/policy/WindowOrientationListener;)Landroid/os/Handler;
 
     move-result-object v4
 
@@ -223,7 +223,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->this$0:Lcom/android/server/policy/WindowOrientationListener;
 
-    invoke-static {v0}, Lcom/android/server/policy/WindowOrientationListener;->access$400(Lcom/android/server/policy/WindowOrientationListener;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/server/policy/WindowOrientationListener;->access$500(Lcom/android/server/policy/WindowOrientationListener;)Landroid/os/Handler;
 
     move-result-object v0
 
@@ -373,7 +373,7 @@
 
     iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->this$0:Lcom/android/server/policy/WindowOrientationListener;
 
-    invoke-static {v1}, Lcom/android/server/policy/WindowOrientationListener;->access$300(Lcom/android/server/policy/WindowOrientationListener;)I
+    invoke-static {v1}, Lcom/android/server/policy/WindowOrientationListener;->access$400(Lcom/android/server/policy/WindowOrientationListener;)I
 
     move-result v1
 
@@ -463,7 +463,7 @@
 .end method
 
 .method public onSensorChanged(Landroid/hardware/SensorEvent;)V
-    .locals 7
+    .locals 5
 
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->this$0:Lcom/android/server/policy/WindowOrientationListener;
 
@@ -531,15 +531,23 @@
     invoke-static {v1, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
+    iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->this$0:Lcom/android/server/policy/WindowOrientationListener;
+
+    invoke-static {v1}, Lcom/android/server/policy/WindowOrientationListener;->access$300(Lcom/android/server/policy/WindowOrientationListener;)Landroid/hardware/Sensor;
+
+    move-result-object v1
+
+    const/16 v3, 0x1b
+
+    if-nez v1, :cond_4
+
     iget-object v1, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
 
     invoke-virtual {v1}, Landroid/hardware/Sensor;->getType()I
 
     move-result v1
 
-    const/16 v3, 0x1b
-
-    if-ne v1, v3, :cond_6
+    if-ne v1, v3, :cond_4
 
     iget-object v1, p1, Landroid/hardware/SensorEvent;->values:[F
 
@@ -585,100 +593,142 @@
     :cond_3
     iput v4, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->mDPCState:I
 
-    :goto_1
-    nop
+    goto :goto_1
 
+    :cond_4
+    iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->this$0:Lcom/android/server/policy/WindowOrientationListener;
+
+    invoke-static {v1}, Lcom/android/server/policy/WindowOrientationListener;->access$300(Lcom/android/server/policy/WindowOrientationListener;)Landroid/hardware/Sensor;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_5
+
+    iget-object v1, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
+
+    invoke-virtual {v1}, Landroid/hardware/Sensor;->getType()I
+
+    move-result v1
+
+    if-ne v1, v3, :cond_5
+
+    iget-object v1, p1, Landroid/hardware/SensorEvent;->values:[F
+
+    aget v1, v1, v2
+
+    float-to-int v1, v1
+
+    iput v1, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->mDesiredRotation:I
+
+    goto :goto_1
+
+    :cond_5
+    iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->this$0:Lcom/android/server/policy/WindowOrientationListener;
+
+    invoke-static {v1}, Lcom/android/server/policy/WindowOrientationListener;->access$300(Lcom/android/server/policy/WindowOrientationListener;)Landroid/hardware/Sensor;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_8
+
+    iget-object v1, p1, Landroid/hardware/SensorEvent;->values:[F
+
+    aget v1, v1, v2
+
+    float-to-int v1, v1
+
+    iput v1, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->mDPCState:I
+
+    :goto_1
     invoke-virtual {p0}, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->evaluateRotationChangeLocked()I
 
-    move-result v2
+    move-result v1
 
     invoke-static {}, Lcom/android/server/policy/WindowOrientationListener;->access$100()Z
 
+    move-result v2
+
+    if-eqz v2, :cond_6
+
+    const-string v2, "WindowOrientationListener"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Result: currentRotation="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v4, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->this$0:Lcom/android/server/policy/WindowOrientationListener;
+
+    invoke-static {v4}, Lcom/android/server/policy/WindowOrientationListener;->access$200(Lcom/android/server/policy/WindowOrientationListener;)I
+
     move-result v4
 
-    if-eqz v4, :cond_4
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v4, "WindowOrientationListener"
+    const-string v4, ", mProposedRotation="
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    iget v4, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->mProposedRotation:I
 
-    const-string v6, "Result: currentRotation="
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v4, ", mDesiredRotation="
 
-    iget-object v6, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->this$0:Lcom/android/server/policy/WindowOrientationListener;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v6}, Lcom/android/server/policy/WindowOrientationListener;->access$200(Lcom/android/server/policy/WindowOrientationListener;)I
+    iget v4, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->mDesiredRotation:I
 
-    move-result v6
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v4, ", newRotation="
 
-    const-string v6, ", mProposedRotation="
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget v6, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->mProposedRotation:I
+    const-string v4, ", mDPCState="
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v6, ", mDesiredRotation="
+    iget v4, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->mDPCState:I
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget v6, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->mDesiredRotation:I
+    const-string v4, ", mTouching="
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v6, ", newRotation="
+    iget-boolean v4, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->mTouching:Z
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string v6, ", mDPCState="
+    move-result-object v3
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2, v3}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget v6, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->mDPCState:I
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v6, ", mTouching="
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v6, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->mTouching:Z
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_4
+    :cond_6
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move v0, v2
+    move v0, v1
 
-    move v2, v3
+    if-ltz v0, :cond_7
 
-    if-ltz v0, :cond_5
+    iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->this$0:Lcom/android/server/policy/WindowOrientationListener;
 
-    iget-object v3, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->this$0:Lcom/android/server/policy/WindowOrientationListener;
+    invoke-virtual {v1, v0}, Lcom/android/server/policy/WindowOrientationListener;->onProposedRotationChanged(I)V
 
-    invoke-virtual {v3, v0}, Lcom/android/server/policy/WindowOrientationListener;->onProposedRotationChanged(I)V
-
-    :cond_5
+    :cond_7
     return-void
 
-    :cond_6
+    :cond_8
     :try_start_1
     const-string v1, "WindowOrientationListener"
 

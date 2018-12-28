@@ -129,7 +129,7 @@
 
     new-instance v1, Ljava/io/File;
 
-    const-string v2, "graphicsstats"
+    const-string/jumbo v2, "graphicsstats"
 
     invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 

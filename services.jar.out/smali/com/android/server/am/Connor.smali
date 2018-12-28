@@ -65,7 +65,7 @@
 
 .field private static final HOME_PACKGES:[Ljava/lang/String;
 
-.field private static final MAX_PREDICT:I = 0xa
+.field private static final MAX_PREDICT:I = 0x10
 
 .field private static final MDM_STATISTIC_TAG:Ljava/lang/String; = "accuracy_statistic"
 
@@ -103,6 +103,8 @@
     .end annotation
 .end field
 
+.field private mAwake:Z
+
 .field private final mCallbacks:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -136,8 +138,6 @@
     .end annotation
 .end field
 
-.field mCmcSensor:Landroid/hardware/Sensor;
-
 .field private mCollector:Lnet/oneplus/odm/insight/PreloadApplicationEventCollector;
 
 .field private mCurModel:Ljava/lang/String;
@@ -165,6 +165,8 @@
 .field private mIsMMDataReady:Z
 
 .field private mIsScreenOff:Z
+
+.field private final mLockAwake:Ljava/lang/Object;
 
 .field private final mLockMMDataReady:Ljava/lang/Object;
 
@@ -234,11 +236,11 @@
 
 .field private mRunTrainingCheck:Ljava/lang/Runnable;
 
-.field mSensorManager:Landroid/hardware/SensorManager;
-
 .field private mSqlDb:Landroid/database/sqlite/SQLiteDatabase;
 
 .field private mStatistic:Lcom/android/server/am/ConnorStatistic;
+
+.field private mThermalZoneId:I
 
 .field private mUstManager:Landroid/app/usage/UsageStatsManager;
 
@@ -317,6 +319,10 @@
 
     iput-object v2, p0, Lcom/android/server/am/Connor;->mLockMMDataReady:Ljava/lang/Object;
 
+    const/16 v2, 0x44
+
+    iput v2, p0, Lcom/android/server/am/Connor;->mThermalZoneId:I
+
     iput-boolean v1, p0, Lcom/android/server/am/Connor;->mIsDebugMode:Z
 
     new-instance v2, Ljava/util/LinkedList;
@@ -346,6 +352,16 @@
     const-string v2, ""
 
     iput-object v2, p0, Lcom/android/server/am/Connor;->mCurModel:Ljava/lang/String;
+
+    new-instance v2, Ljava/lang/Object;
+
+    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
+
+    iput-object v2, p0, Lcom/android/server/am/Connor;->mLockAwake:Ljava/lang/Object;
+
+    const/4 v2, 0x1
+
+    iput-boolean v2, p0, Lcom/android/server/am/Connor;->mAwake:Z
 
     new-instance v2, Lcom/android/server/am/ConnorStatistic;
 
@@ -377,7 +393,7 @@
 
     iput-object v2, p0, Lcom/android/server/am/Connor;->mPredictsPrev:[Ljava/lang/String;
 
-    const/16 v2, 0xa
+    const/16 v2, 0x10
 
     new-array v3, v2, [F
 
@@ -431,21 +447,19 @@
 
     iput-object v0, p0, Lcom/android/server/am/Connor;->mAABVersion:Ljava/lang/String;
 
-    new-instance v2, Ljava/util/HashMap;
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v2, p0, Lcom/android/server/am/Connor;->mClusterPredicts:Ljava/util/Map;
+    iput-object v0, p0, Lcom/android/server/am/Connor;->mClusterPredicts:Ljava/util/Map;
 
-    sget-object v2, Lcom/android/server/am/Connor;->HOME_PACKGES:[Ljava/lang/String;
+    sget-object v0, Lcom/android/server/am/Connor;->HOME_PACKGES:[Ljava/lang/String;
 
-    invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
-    move-result-object v2
+    move-result-object v0
 
-    iput-object v2, p0, Lcom/android/server/am/Connor;->mHomePkgList:Ljava/util/List;
-
-    iput-object v0, p0, Lcom/android/server/am/Connor;->mCmcSensor:Landroid/hardware/Sensor;
+    iput-object v0, p0, Lcom/android/server/am/Connor;->mHomePkgList:Ljava/util/List;
 
     iput v1, p0, Lcom/android/server/am/Connor;->mCurrSensorState:I
 
@@ -588,7 +602,15 @@
     return v0
 .end method
 
-.method static synthetic access$1100(Lcom/android/server/am/Connor;)V
+.method static synthetic access$1100(Lcom/android/server/am/Connor;)I
+    .locals 1
+
+    iget v0, p0, Lcom/android/server/am/Connor;->mThermalZoneId:I
+
+    return v0
+.end method
+
+.method static synthetic access$1200(Lcom/android/server/am/Connor;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/am/Connor;->resetModelCheck()V
@@ -596,7 +618,7 @@
     return-void
 .end method
 
-.method static synthetic access$1200(Lcom/android/server/am/Connor;)V
+.method static synthetic access$1300(Lcom/android/server/am/Connor;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/am/Connor;->triggerTraining()V
@@ -604,7 +626,7 @@
     return-void
 .end method
 
-.method static synthetic access$1300(Lcom/android/server/am/Connor;)Ljava/util/Map;
+.method static synthetic access$1400(Lcom/android/server/am/Connor;)Ljava/util/Map;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/am/Connor;->mClusterPredicts:Ljava/util/Map;
@@ -612,7 +634,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1302(Lcom/android/server/am/Connor;Ljava/util/Map;)Ljava/util/Map;
+.method static synthetic access$1402(Lcom/android/server/am/Connor;Ljava/util/Map;)Ljava/util/Map;
     .locals 0
 
     iput-object p1, p0, Lcom/android/server/am/Connor;->mClusterPredicts:Ljava/util/Map;
@@ -620,7 +642,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$1400(Lcom/android/server/am/Connor;)Landroid/app/usage/UsageStatsManager;
+.method static synthetic access$1500(Lcom/android/server/am/Connor;)Landroid/app/usage/UsageStatsManager;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/am/Connor;->mUstManager:Landroid/app/usage/UsageStatsManager;
@@ -628,7 +650,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1402(Lcom/android/server/am/Connor;Landroid/app/usage/UsageStatsManager;)Landroid/app/usage/UsageStatsManager;
+.method static synthetic access$1502(Lcom/android/server/am/Connor;Landroid/app/usage/UsageStatsManager;)Landroid/app/usage/UsageStatsManager;
     .locals 0
 
     iput-object p1, p0, Lcom/android/server/am/Connor;->mUstManager:Landroid/app/usage/UsageStatsManager;
@@ -636,7 +658,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$1500(Lcom/android/server/am/Connor;Ljava/lang/String;)I
+.method static synthetic access$1600(Lcom/android/server/am/Connor;Ljava/lang/String;)I
     .locals 1
 
     invoke-direct {p0, p1}, Lcom/android/server/am/Connor;->String2BucketInt(Ljava/lang/String;)I
@@ -646,7 +668,7 @@
     return v0
 .end method
 
-.method static synthetic access$1600(Lcom/android/server/am/Connor;)Ljava/lang/Runnable;
+.method static synthetic access$1700(Lcom/android/server/am/Connor;)Ljava/lang/Runnable;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/am/Connor;->mRunBucketPredict:Ljava/lang/Runnable;
@@ -654,7 +676,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1700(Lcom/android/server/am/Connor;Z)V
+.method static synthetic access$1800(Lcom/android/server/am/Connor;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/am/Connor;->setScreen(Z)V
@@ -662,7 +684,7 @@
     return-void
 .end method
 
-.method static synthetic access$1800(Lcom/android/server/am/Connor;)Ljava/lang/Runnable;
+.method static synthetic access$1900(Lcom/android/server/am/Connor;)Ljava/lang/Runnable;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/am/Connor;->mReportStatistic:Ljava/lang/Runnable;
@@ -670,7 +692,15 @@
     return-object v0
 .end method
 
-.method static synthetic access$1900(Lcom/android/server/am/Connor;)V
+.method static synthetic access$200(Lcom/android/server/am/Connor;)Ljava/util/LinkedList;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mQueueCv:Ljava/util/LinkedList;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2000(Lcom/android/server/am/Connor;)V
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -683,15 +713,7 @@
     return-void
 .end method
 
-.method static synthetic access$200(Lcom/android/server/am/Connor;)Ljava/util/LinkedList;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mQueueCv:Ljava/util/LinkedList;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2000(Lcom/android/server/am/Connor;)Ljava/lang/String;
+.method static synthetic access$2100(Lcom/android/server/am/Connor;)Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/am/Connor;->mNNVersion:Ljava/lang/String;
@@ -699,7 +721,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2100(Lcom/android/server/am/Connor;)Ljava/util/ArrayList;
+.method static synthetic access$2200(Lcom/android/server/am/Connor;)Ljava/util/ArrayList;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/am/Connor;->mCallbacks:Ljava/util/ArrayList;
@@ -707,7 +729,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2200(Lcom/android/server/am/Connor;)Ljava/util/HashMap;
+.method static synthetic access$2300(Lcom/android/server/am/Connor;)Ljava/util/HashMap;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/am/Connor;->mCallbacksWithConf:Ljava/util/HashMap;
@@ -715,7 +737,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2300(Lcom/android/server/am/Connor;)Ljava/lang/Object;
+.method static synthetic access$2400(Lcom/android/server/am/Connor;)Ljava/lang/Object;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/am/Connor;->mLockMMDataReady:Ljava/lang/Object;
@@ -723,7 +745,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2402(Lcom/android/server/am/Connor;Z)Z
+.method static synthetic access$2502(Lcom/android/server/am/Connor;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/am/Connor;->mIsMMDataReady:Z
@@ -731,7 +753,7 @@
     return p1
 .end method
 
-.method static synthetic access$2500(Lcom/android/server/am/Connor;)Lcom/android/server/am/ConnorStatistic;
+.method static synthetic access$2600(Lcom/android/server/am/Connor;)Lcom/android/server/am/ConnorStatistic;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
@@ -2061,18 +2083,8 @@
 
     iget-object v1, p0, Lcom/android/server/am/Connor;->mRunTrainingCheck:Ljava/lang/Runnable;
 
-    iget-boolean v2, p0, Lcom/android/server/am/Connor;->mIsDebugMode:Z
-
-    if-eqz v2, :cond_0
-
-    const-wide/16 v2, 0x4e20
-
-    goto :goto_0
-
-    :cond_0
     const-wide/32 v2, 0x493e0
 
-    :goto_0
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     return-void
@@ -2273,7 +2285,7 @@
 
     const-string v6, "Connor"
 
-    const-string v7, "got exception when apply_model"
+    const-string/jumbo v7, "got exception when apply_model"
 
     invoke-static {v6, v7}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -3039,49 +3051,90 @@
     return-void
 
     :cond_0
-    iget-object v0, p0, Lcom/android/server/am/Connor;->mLockMMDataReady:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mLockAwake:Ljava/lang/Object;
 
     monitor-enter v0
 
     :try_start_0
-    iget-boolean v1, p0, Lcom/android/server/am/Connor;->mIsMMDataReady:Z
+    iget-boolean v1, p0, Lcom/android/server/am/Connor;->mAwake:Z
 
-    if-nez v1, :cond_1
+    if-nez v1, :cond_2
 
-    monitor-exit v0
+    iget-boolean v1, p0, Lcom/android/server/am/Connor;->mIsDebugMode:Z
 
-    return-void
+    if-eqz v1, :cond_1
+
+    const-string v1, "Connor"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "drop feed of "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_1
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_3
-
-    if-nez p1, :cond_2
 
     return-void
 
     :cond_2
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_4
+
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mLockMMDataReady:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_1
+    iget-boolean v0, p0, Lcom/android/server/am/Connor;->mIsMMDataReady:Z
+
+    if-nez v0, :cond_3
+
+    monitor-exit v1
+
+    return-void
+
+    :cond_3
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_3
+
+    if-nez p1, :cond_4
+
+    return-void
+
+    :cond_4
     iget-object v0, p0, Lcom/android/server/am/Connor;->mPrev:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_5
 
     return-void
 
-    :cond_3
+    :cond_5
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v1
+    move-result-wide v2
 
     const/4 v0, 0x0
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
-    if-nez p2, :cond_5
+    if-nez p2, :cond_7
 
     iget-object v4, p0, Lcom/android/server/am/Connor;->mHomePkgList:Ljava/util/List;
 
@@ -3089,30 +3142,30 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_6
 
     goto :goto_0
 
-    :cond_4
+    :cond_6
     move v4, v0
 
     goto :goto_1
 
-    :cond_5
+    :cond_7
     :goto_0
-    move v4, v3
+    move v4, v1
 
     :goto_1
     monitor-enter p0
 
-    :try_start_1
+    :try_start_2
     iget-object v5, p0, Lcom/android/server/am/Connor;->mAvailCv:Ljava/util/LinkedList;
 
     invoke-virtual {v5}, Ljava/util/LinkedList;->size()I
 
     move-result v5
 
-    if-nez v5, :cond_6
+    if-nez v5, :cond_8
 
     new-instance v5, Landroid/content/ContentValues;
 
@@ -3120,7 +3173,7 @@
 
     goto :goto_2
 
-    :cond_6
+    :cond_8
     iget-object v5, p0, Lcom/android/server/am/Connor;->mAvailCv:Ljava/util/LinkedList;
 
     invoke-virtual {v5}, Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;
@@ -3136,13 +3189,13 @@
 
     const-string v6, "connor_is_home"
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_9
 
-    move v7, v3
+    move v7, v1
 
     goto :goto_3
 
-    :cond_7
+    :cond_9
     move v7, v0
 
     :goto_3
@@ -3154,7 +3207,7 @@
 
     const-string v6, "connor_ts"
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v7
 
@@ -3165,8 +3218,8 @@
     invoke-virtual {v6, v5}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
 
     monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_2
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     iget-object v6, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
 
@@ -3176,11 +3229,11 @@
 
     invoke-virtual {v6, v7}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    if-nez v4, :cond_9
+    if-nez v4, :cond_b
 
     iget-boolean v6, p0, Lcom/android/server/am/Connor;->mIsDebugMode:Z
 
-    if-eqz v6, :cond_8
+    if-eqz v6, :cond_a
 
     const-string v6, "Connor"
 
@@ -3200,7 +3253,7 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_8
+    :cond_a
     iget-object v6, p0, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
 
     iget-object v7, p0, Lcom/android/server/am/Connor;->mPredicts:[Ljava/lang/String;
@@ -3215,7 +3268,7 @@
 
     move-result v6
 
-    if-lez v6, :cond_9
+    if-lez v6, :cond_b
 
     iget-object v6, p0, Lcom/android/server/am/Connor;->mStatistic:Lcom/android/server/am/ConnorStatistic;
 
@@ -3225,13 +3278,13 @@
 
     invoke-virtual {v6, p1, v7, v8}, Lcom/android/server/am/ConnorStatistic;->isBingoNN(Ljava/lang/String;[Ljava/lang/String;[F)Z
 
-    :cond_9
+    :cond_b
     iput-object p1, p0, Lcom/android/server/am/Connor;->mPrev:Ljava/lang/String;
 
     monitor-enter p0
 
-    :try_start_2
-    invoke-static {v1, v2, p1, v4}, Lcom/android/server/am/Connor;->nativeFeed(JLjava/lang/String;Z)V
+    :try_start_3
+    invoke-static {v2, v3, p1, v4}, Lcom/android/server/am/Connor;->nativeFeed(JLjava/lang/String;Z)V
 
     iget-object v6, p0, Lcom/android/server/am/Connor;->mPredicts:[Ljava/lang/String;
 
@@ -3241,7 +3294,7 @@
 
     iput-object v6, p0, Lcom/android/server/am/Connor;->mPredictsConfPrev:[F
 
-    const/16 v6, 0xa
+    const/16 v6, 0x10
 
     invoke-static {v6}, Lcom/android/server/am/Connor;->nativePredict(I)[Ljava/lang/String;
 
@@ -3259,7 +3312,7 @@
 
     array-length v8, v8
 
-    if-eq v7, v8, :cond_a
+    if-eq v7, v8, :cond_c
 
     array-length v7, v6
 
@@ -3267,7 +3320,7 @@
 
     goto :goto_4
 
-    :cond_a
+    :cond_c
     iget-object v7, p0, Lcom/android/server/am/Connor;->mPredictsConf:[F
 
     :goto_4
@@ -3276,7 +3329,7 @@
     :goto_5
     array-length v8, v6
 
-    if-ge v0, v8, :cond_b
+    if-ge v0, v8, :cond_d
 
     aget-wide v8, v6, v0
 
@@ -3288,12 +3341,12 @@
 
     goto :goto_5
 
-    :cond_b
+    :cond_d
     iput-object v7, p0, Lcom/android/server/am/Connor;->mPredictsConf:[F
 
     monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     iget-object v0, p0, Lcom/android/server/am/Connor;->mPrevApps:Ljava/util/LinkedList;
 
@@ -3303,7 +3356,7 @@
 
     const/4 v6, 0x3
 
-    if-ne v0, v6, :cond_c
+    if-ne v0, v6, :cond_e
 
     iget-object v0, p0, Lcom/android/server/am/Connor;->mPrevApps:Ljava/util/LinkedList;
 
@@ -3315,13 +3368,13 @@
 
     goto :goto_6
 
-    :cond_c
+    :cond_e
     new-instance v0, Lcom/android/server/am/ConnorData;
 
     invoke-direct {v0}, Lcom/android/server/am/ConnorData;-><init>()V
 
     :goto_6
-    invoke-virtual {v0, p1, v1, v2}, Lcom/android/server/am/ConnorData;->setData(Ljava/lang/String;J)V
+    invoke-virtual {v0, p1, v2, v3}, Lcom/android/server/am/ConnorData;->setData(Ljava/lang/String;J)V
 
     iget-object v7, p0, Lcom/android/server/am/Connor;->mPrevApps:Ljava/util/LinkedList;
 
@@ -3333,7 +3386,7 @@
 
     move-result v7
 
-    if-ne v7, v6, :cond_e
+    if-ne v7, v6, :cond_10
 
     iget-object v7, p0, Lcom/android/server/am/Connor;->mCurModel:Ljava/lang/String;
 
@@ -3341,7 +3394,7 @@
 
     move-result v7
 
-    if-lez v7, :cond_e
+    if-lez v7, :cond_10
 
     new-array v7, v6, [Ljava/lang/String;
 
@@ -3353,16 +3406,16 @@
 
     move-result v8
 
-    sub-int/2addr v8, v3
+    sub-int/2addr v8, v1
 
     :goto_7
-    move v3, v8
+    move v1, v8
 
-    if-ltz v3, :cond_d
+    if-ltz v1, :cond_f
 
     iget-object v8, p0, Lcom/android/server/am/Connor;->mPrevApps:Ljava/util/LinkedList;
 
-    invoke-virtual {v8, v3}, Ljava/util/LinkedList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v8, v1}, Ljava/util/LinkedList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
@@ -3374,11 +3427,11 @@
 
     move-result-object v8
 
-    aput-object v8, v7, v3
+    aput-object v8, v7, v1
 
     iget-object v8, p0, Lcom/android/server/am/Connor;->mPrevApps:Ljava/util/LinkedList;
 
-    invoke-virtual {v8, v3}, Ljava/util/LinkedList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v8, v1}, Ljava/util/LinkedList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
@@ -3386,50 +3439,50 @@
 
     iget-wide v8, v8, Lcom/android/server/am/ConnorData;->mTimeStamp:J
 
-    aput-wide v8, v6, v3
+    aput-wide v8, v6, v1
 
-    add-int/lit8 v8, v3, -0x1
+    add-int/lit8 v8, v1, -0x1
 
     goto :goto_7
 
-    :cond_d
+    :cond_f
     monitor-enter p0
 
-    :try_start_3
-    iget-object v3, p0, Lcom/android/server/am/Connor;->mPredictsNN:[Ljava/lang/String;
+    :try_start_4
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mPredictsNN:[Ljava/lang/String;
 
-    iput-object v3, p0, Lcom/android/server/am/Connor;->mPredictsNNPrev:[Ljava/lang/String;
+    iput-object v1, p0, Lcom/android/server/am/Connor;->mPredictsNNPrev:[Ljava/lang/String;
 
-    iget-object v3, p0, Lcom/android/server/am/Connor;->mPredictsNNConf:[F
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mPredictsNNConf:[F
 
-    iput-object v3, p0, Lcom/android/server/am/Connor;->mPredictsNNConfPrev:[F
+    iput-object v1, p0, Lcom/android/server/am/Connor;->mPredictsNNConfPrev:[F
 
     invoke-static {v7, v6}, Lcom/android/server/am/Connor;->nativeNNPredict([Ljava/lang/String;[J)[Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    iput-object v3, p0, Lcom/android/server/am/Connor;->mPredictsNN:[Ljava/lang/String;
+    iput-object v1, p0, Lcom/android/server/am/Connor;->mPredictsNN:[Ljava/lang/String;
 
     invoke-static {}, Lcom/android/server/am/Connor;->nativeNNPredictConf()[F
 
-    move-result-object v3
+    move-result-object v1
 
-    iput-object v3, p0, Lcom/android/server/am/Connor;->mPredictsNNConf:[F
+    iput-object v1, p0, Lcom/android/server/am/Connor;->mPredictsNNConf:[F
 
     monitor-exit p0
 
     goto :goto_8
 
     :catchall_0
-    move-exception v3
+    move-exception v1
 
     monitor-exit p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    throw v3
+    throw v1
 
-    :cond_e
+    :cond_10
     :goto_8
     invoke-direct {p0}, Lcom/android/server/am/Connor;->notifyPredictListener()V
 
@@ -3438,30 +3491,40 @@
     :catchall_1
     move-exception v0
 
-    :try_start_4
+    :try_start_5
     monitor-exit p0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     throw v0
 
     :catchall_2
     move-exception v0
 
-    :try_start_5
+    :try_start_6
     monitor-exit p0
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_2
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
     throw v0
 
     :catchall_3
+    move-exception v0
+
+    :try_start_7
+    monitor-exit v1
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_3
+
+    throw v0
+
+    :catchall_4
     move-exception v1
 
-    :try_start_6
+    :try_start_8
     monitor-exit v0
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_3
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_4
 
     throw v1
 .end method
@@ -4126,7 +4189,7 @@
 .end method
 
 .method public init()V
-    .locals 5
+    .locals 6
 
     const/4 v0, 0x0
 
@@ -4137,9 +4200,11 @@
 
     move-result v1
 
+    const/4 v2, 0x1
+
     if-nez v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
@@ -4151,31 +4216,51 @@
 
     iget-boolean v1, p0, Lcom/android/server/am/Connor;->mEnable:Z
 
+    if-eqz v1, :cond_2
+
+    const-string/jumbo v1, "msmnile"
+
+    const-string/jumbo v3, "ro.board.platform"
+
+    invoke-static {v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
+    const/16 v1, 0x45
 
-    iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
+    goto :goto_1
 
-    const-string/jumbo v2, "sensor"
+    :cond_1
+    const/16 v1, 0x44
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    :goto_1
+    iput v1, p0, Lcom/android/server/am/Connor;->mThermalZoneId:I
 
-    move-result-object v1
+    const-string v1, "Connor"
 
-    check-cast v1, Landroid/hardware/SensorManager;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    iput-object v1, p0, Lcom/android/server/am/Connor;->mSensorManager:Landroid/hardware/SensorManager;
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, Lcom/android/server/am/Connor;->mSensorManager:Landroid/hardware/SensorManager;
+    const-string/jumbo v4, "mThermalZoneId "
 
-    const v2, 0x1fa263e
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2, v0}, Landroid/hardware/SensorManager;->getDefaultSensor(IZ)Landroid/hardware/Sensor;
+    iget v4, p0, Lcom/android/server/am/Connor;->mThermalZoneId:I
 
-    move-result-object v1
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iput-object v1, p0, Lcom/android/server/am/Connor;->mCmcSensor:Landroid/hardware/Sensor;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v1, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v1, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
 
@@ -4186,54 +4271,6 @@
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/server/am/Connor;->mCollector:Lnet/oneplus/odm/insight/PreloadApplicationEventCollector;
-
-    new-instance v1, Lcom/android/server/am/ConnorDbHelper;
-
-    iget-object v2, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
-
-    iget-object v2, v2, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
-
-    const-string v3, "/data/connor_training/connor.db"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v1, v2, v3, v4}, Lcom/android/server/am/ConnorDbHelper;-><init>(Landroid/content/Context;Ljava/lang/String;I)V
-
-    iput-object v1, p0, Lcom/android/server/am/Connor;->mDbHelper:Lcom/android/server/am/ConnorDbHelper;
-
-    iget-object v1, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
-
-    iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mBgHandler:Landroid/os/Handler;
-
-    iget-object v2, p0, Lcom/android/server/am/Connor;->mRestoreMM:Ljava/lang/Runnable;
-
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    iget-object v1, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
-
-    iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mBgHandler:Landroid/os/Handler;
-
-    iget-object v2, p0, Lcom/android/server/am/Connor;->mRunBucketPredict:Ljava/lang/Runnable;
-
-    const-wide/32 v3, 0x36ee80
-
-    invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    invoke-direct {p0}, Lcom/android/server/am/Connor;->copyPrototxtFiles()V
-
-    invoke-direct {p0}, Lcom/android/server/am/Connor;->initNN()V
-
-    new-instance v1, Lnet/oneplus/odm/insight/tracker/OSTracker;
-
-    iget-object v2, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
-
-    iget-object v2, v2, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
-
-    const-string v3, "RHJ2VVOOTS"
-
-    invoke-direct {v1, v2, v3}, Lnet/oneplus/odm/insight/tracker/OSTracker;-><init>(Landroid/content/Context;Ljava/lang/String;)V
-
-    iput-object v1, p0, Lcom/android/server/am/Connor;->mOSTracker:Lnet/oneplus/odm/insight/tracker/OSTracker;
 
     iget-object v1, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
 
@@ -4247,15 +4284,15 @@
 
     iget-object v1, p0, Lcom/android/server/am/Connor;->mPackageSet:Ljava/util/HashSet;
 
-    iget-object v2, p0, Lcom/android/server/am/Connor;->mPackageSet:Ljava/util/HashSet;
+    iget-object v3, p0, Lcom/android/server/am/Connor;->mPackageSet:Ljava/util/HashSet;
 
-    invoke-virtual {v2}, Ljava/util/HashSet;->size()I
+    invoke-virtual {v3}, Ljava/util/HashSet;->size()I
 
-    move-result v2
+    move-result v3
 
-    new-array v2, v2, [Ljava/lang/String;
+    new-array v3, v3, [Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/util/HashSet;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-virtual {v1, v3}, Ljava/util/HashSet;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v1
 
@@ -4263,40 +4300,84 @@
 
     invoke-static {v1}, Lcom/android/server/am/Connor;->nativePkgListUpdate([Ljava/lang/String;)V
 
+    new-instance v1, Lcom/android/server/am/ConnorDbHelper;
+
+    iget-object v3, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v3, v3, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
+
+    const-string v4, "/data/connor_training/connor.db"
+
+    const/4 v5, 0x2
+
+    invoke-direct {v1, v3, v4, v5}, Lcom/android/server/am/ConnorDbHelper;-><init>(Landroid/content/Context;Ljava/lang/String;I)V
+
+    iput-object v1, p0, Lcom/android/server/am/Connor;->mDbHelper:Lcom/android/server/am/ConnorDbHelper;
+
+    iget-object v1, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mBgHandler:Landroid/os/Handler;
+
+    iget-object v3, p0, Lcom/android/server/am/Connor;->mRestoreMM:Ljava/lang/Runnable;
+
+    invoke-virtual {v1, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    invoke-direct {p0}, Lcom/android/server/am/Connor;->copyPrototxtFiles()V
+
+    invoke-direct {p0}, Lcom/android/server/am/Connor;->initNN()V
+
+    new-instance v1, Lnet/oneplus/odm/insight/tracker/OSTracker;
+
+    iget-object v3, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v3, v3, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
+
+    const-string v4, "RHJ2VVOOTS"
+
+    invoke-direct {v1, v3, v4}, Lnet/oneplus/odm/insight/tracker/OSTracker;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+
+    iput-object v1, p0, Lcom/android/server/am/Connor;->mOSTracker:Lnet/oneplus/odm/insight/tracker/OSTracker;
+
     new-instance v1, Landroid/content/IntentFilter;
 
     invoke-direct {v1}, Landroid/content/IntentFilter;-><init>()V
 
-    const-string v2, "android.intent.action.SCREEN_ON"
+    const-string v3, "android.intent.action.SCREEN_ON"
 
-    invoke-virtual {v1, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    invoke-virtual {v1, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    const-string v2, "android.intent.action.SCREEN_OFF"
+    const-string v3, "android.intent.action.SCREEN_OFF"
 
-    invoke-virtual {v1, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    invoke-virtual {v1, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    const-string v2, "android.intent.action.ACTION_POWER_DISCONNECTED"
+    const-string v3, "android.intent.action.ACTION_POWER_DISCONNECTED"
 
-    invoke-virtual {v1, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    invoke-virtual {v1, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    const-string/jumbo v2, "net.oneplus.powercontroller.intent.SLEEP_CHANGED"
+    const-string/jumbo v3, "net.oneplus.powercontroller.intent.SLEEP_CHANGED"
 
-    invoke-virtual {v1, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    invoke-virtual {v1, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    iget-object v2, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
+    iget-object v3, p0, Lcom/android/server/am/Connor;->mAm:Lcom/android/server/am/ActivityManagerService;
 
-    iget-object v2, v2, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
+    iget-object v3, v3, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
 
-    new-instance v3, Lcom/android/server/am/Connor$6;
+    new-instance v4, Lcom/android/server/am/Connor$6;
 
-    invoke-direct {v3, p0}, Lcom/android/server/am/Connor$6;-><init>(Lcom/android/server/am/Connor;)V
+    invoke-direct {v4, p0}, Lcom/android/server/am/Connor$6;-><init>(Lcom/android/server/am/Connor;)V
 
-    invoke-virtual {v2, v3, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    invoke-virtual {v3, v4, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+
+    :cond_2
+    iput-boolean v2, p0, Lcom/android/server/am/Connor;->mIsDebugMode:Z
+
+    const/16 v1, 0x1111
+
+    invoke-static {v1}, Lcom/android/server/am/Connor;->nativeMMSetDebugFlag(I)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_1
-    goto :goto_1
+    goto :goto_2
 
     :catch_0
     move-exception v1
@@ -4305,7 +4386,7 @@
 
     iput-boolean v0, p0, Lcom/android/server/am/Connor;->mEnable:Z
 
-    :goto_1
+    :goto_2
     return-void
 .end method
 
@@ -4566,6 +4647,30 @@
 
     :cond_2
     return-void
+.end method
+
+.method public onWakefulnessChanged(Z)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/server/am/Connor;->mLockAwake:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iput-boolean p1, p0, Lcom/android/server/am/Connor;->mAwake:Z
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method
 
 .method registerCallback(Lcom/android/server/am/Connor$Callbacks;)V

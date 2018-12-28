@@ -1514,7 +1514,7 @@
 
     iget-object v1, p0, Lcom/android/server/wm/StackWindowController;->mContainer:Lcom/android/server/wm/WindowContainer;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Lcom/android/server/wm/StackWindowController;->mRoot:Lcom/android/server/wm/RootWindowContainer;
 
@@ -1522,8 +1522,21 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
+    iget-object v2, p0, Lcom/android/server/wm/StackWindowController;->mContainer:Lcom/android/server/wm/WindowContainer;
+
+    check-cast v2, Lcom/android/server/wm/TaskStack;
+
+    invoke-virtual {v2}, Lcom/android/server/wm/TaskStack;->inPreloadWindowingMode()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    const/4 p3, 0x0
+
+    :cond_0
     iget-object v2, p0, Lcom/android/server/wm/StackWindowController;->mContainer:Lcom/android/server/wm/WindowContainer;
 
     check-cast v2, Lcom/android/server/wm/TaskStack;
@@ -1540,7 +1553,7 @@
 
     return-void
 
-    :cond_0
+    :cond_1
     :try_start_1
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
@@ -1570,7 +1583,7 @@
 
     throw v2
 
-    :cond_1
+    :cond_2
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;

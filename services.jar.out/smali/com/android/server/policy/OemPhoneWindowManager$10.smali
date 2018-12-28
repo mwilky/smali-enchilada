@@ -323,7 +323,7 @@
 
     move-object v6, v1
 
-    const v0, 0x50c0069
+    const v0, 0x50c0071
 
     invoke-virtual {v6, v0}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 

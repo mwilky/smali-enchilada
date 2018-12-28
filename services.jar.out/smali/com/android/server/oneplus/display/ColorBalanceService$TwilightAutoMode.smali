@@ -120,7 +120,7 @@
 
     move-result-object v13
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_1
 
     invoke-virtual/range {p1 .. p1}, Landroid/location/Location;->getLongitude()D
 
@@ -144,19 +144,13 @@
 
     const/16 v15, 0xbb8
 
-    if-eq v8, v15, :cond_1
+    if-ne v8, v15, :cond_0
 
-    :cond_0
-    if-nez v7, :cond_2
-
-    if-nez v8, :cond_2
-
-    :cond_1
     const/4 v15, 0x1
 
     goto :goto_0
 
-    :cond_2
+    :cond_0
     move v15, v6
 
     :goto_0
@@ -180,21 +174,21 @@
 
     invoke-static {v15, v6}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_3
+    :cond_1
     const/4 v6, -0x2
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_3
 
-    if-eqz v5, :cond_4
+    if-eqz v5, :cond_2
 
     goto :goto_1
 
-    :cond_4
+    :cond_2
     move v14, v7
 
     goto :goto_2
 
-    :cond_5
+    :cond_3
     :goto_1
     iget-object v14, v0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
@@ -234,9 +228,9 @@
 
     move-result v8
 
-    if-eqz v14, :cond_6
+    if-eqz v14, :cond_4
 
-    if-eqz v8, :cond_6
+    if-eqz v8, :cond_4
 
     const-string v7, "ColorBalanceService"
 
@@ -260,19 +254,19 @@
 
     move-result-object v13
 
-    :cond_6
+    :cond_4
     :goto_2
     const-wide/32 v6, 0x3dcc500
 
     const-wide/32 v20, 0x1499700
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_6
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_5
 
     goto :goto_3
 
-    :cond_7
+    :cond_5
     move/from16 v24, v8
 
     move-object/from16 v22, v13
@@ -281,13 +275,13 @@
 
     goto :goto_5
 
-    :cond_8
+    :cond_6
     :goto_3
     invoke-virtual {v13}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v15
 
-    if-nez v15, :cond_a
+    if-nez v15, :cond_8
 
     invoke-virtual {v4}, Ljava/util/Calendar;->getTimeInMillis()J
 
@@ -305,7 +299,7 @@
 
     cmp-long v17, v2, v13
 
-    if-gez v17, :cond_9
+    if-gez v17, :cond_7
 
     move/from16 v24, v8
 
@@ -315,7 +309,7 @@
 
     goto :goto_4
 
-    :cond_9
+    :cond_7
     move/from16 v24, v8
 
     new-instance v8, Lcom/android/server/twilight/TwilightState;
@@ -353,7 +347,7 @@
 
     return-object v8
 
-    :cond_a
+    :cond_8
     move/from16 v24, v8
 
     move-object/from16 v22, v13
@@ -465,7 +459,7 @@
 
     move-result v9
 
-    if-eq v7, v9, :cond_b
+    if-eq v7, v9, :cond_9
 
     const/4 v6, 0x1
 
@@ -480,10 +474,10 @@
 
     goto :goto_7
 
-    :cond_b
+    :cond_9
     cmp-long v7, v0, v2
 
-    if-gez v7, :cond_c
+    if-gez v7, :cond_a
 
     const/4 v7, 0x1
 
@@ -501,7 +495,7 @@
 
     cmp-long v6, v14, v2
 
-    if-gez v6, :cond_d
+    if-gez v6, :cond_b
 
     const/4 v6, 0x1
 
@@ -513,10 +507,10 @@
 
     goto :goto_6
 
-    :cond_c
+    :cond_a
     cmp-long v7, v14, v2
 
-    if-lez v7, :cond_d
+    if-lez v7, :cond_b
 
     const/4 v7, -0x1
 
@@ -536,7 +530,7 @@
 
     cmp-long v6, v0, v2
 
-    if-lez v6, :cond_d
+    if-lez v6, :cond_b
 
     const/4 v6, 0x1
 
@@ -548,7 +542,7 @@
 
     goto :goto_6
 
-    :cond_d
+    :cond_b
     :goto_7
     new-instance v6, Lcom/android/server/twilight/TwilightState;
 
@@ -572,7 +566,7 @@
 
     invoke-static {v7, v9}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-eqz v29, :cond_f
+    if-eqz v29, :cond_d
 
     invoke-virtual {v4}, Ljava/util/Calendar;->getTimeInMillis()J
 
@@ -594,7 +588,7 @@
 
     cmp-long v7, v2, v14
 
-    if-gez v7, :cond_e
+    if-gez v7, :cond_c
 
     new-instance v7, Lcom/android/server/twilight/TwilightState;
 
@@ -604,7 +598,7 @@
 
     goto :goto_8
 
-    :cond_e
+    :cond_c
     new-instance v7, Lcom/android/server/twilight/TwilightState;
 
     invoke-direct {v7, v0, v1, v4, v5}, Lcom/android/server/twilight/TwilightState;-><init>(JJ)V
@@ -634,7 +628,7 @@
 
     goto :goto_9
 
-    :cond_f
+    :cond_d
     move-wide/from16 v35, v0
 
     move-object/from16 v37, v4
@@ -1054,7 +1048,7 @@
 .method public onLocationChanged(Landroid/location/Location;)V
     .locals 12
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_3
 
     const/4 v0, 0x0
 
@@ -1084,25 +1078,19 @@
 
     const/16 v3, 0xbb8
 
-    if-eq v2, v3, :cond_1
+    if-ne v2, v3, :cond_0
 
-    :cond_0
-    if-nez v1, :cond_2
-
-    if-nez v2, :cond_2
-
-    :cond_1
     move v3, v5
 
     goto :goto_0
 
-    :cond_2
+    :cond_0
     move v3, v4
 
     :goto_0
     move v0, v3
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_1
 
     const-string v3, "ColorBalanceService"
 
@@ -1134,14 +1122,14 @@
 
     goto :goto_1
 
-    :cond_3
+    :cond_1
     iget-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mIsGetLocation:Ljava/lang/Boolean;
 
     invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v3
 
-    if-nez v3, :cond_4
+    if-nez v3, :cond_2
 
     const-string v3, "ColorBalanceService"
 
@@ -1171,7 +1159,7 @@
 
     iput-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mIsGetLocation:Ljava/lang/Boolean;
 
-    :cond_4
+    :cond_2
     :goto_1
     const-string v3, "ColorBalanceService"
 
@@ -1223,7 +1211,7 @@
 
     invoke-direct {p0, v3}, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->updateTwilightState(Ljava/lang/Boolean;)V
 
-    :cond_5
+    :cond_3
     return-void
 .end method
 

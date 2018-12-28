@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;,
         Lcom/android/server/OnePlusUtil$OnePlusTouchWinJudge;
     }
 .end annotation

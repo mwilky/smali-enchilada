@@ -20,7 +20,7 @@
     value = {
         "Ljava/lang/Object;",
         "Ljava/util/Comparator<",
-        "Lcom/android/server/OnePlusStandbyAnalyzer$PartialWakeLockInfo;",
+        "Lcom/android/server/OnePlusStandbyAnalyzer$KernelWakelockInfo;",
         ">;"
     }
 .end annotation
@@ -43,12 +43,12 @@
 
 
 # virtual methods
-.method public compare(Lcom/android/server/OnePlusStandbyAnalyzer$PartialWakeLockInfo;Lcom/android/server/OnePlusStandbyAnalyzer$PartialWakeLockInfo;)I
+.method public compare(Lcom/android/server/OnePlusStandbyAnalyzer$KernelWakelockInfo;Lcom/android/server/OnePlusStandbyAnalyzer$KernelWakelockInfo;)I
     .locals 4
 
-    iget-wide v0, p1, Lcom/android/server/OnePlusStandbyAnalyzer$PartialWakeLockInfo;->mHolding:J
+    iget-wide v0, p1, Lcom/android/server/OnePlusStandbyAnalyzer$KernelWakelockInfo;->mHolding:J
 
-    iget-wide v2, p2, Lcom/android/server/OnePlusStandbyAnalyzer$PartialWakeLockInfo;->mHolding:J
+    iget-wide v2, p2, Lcom/android/server/OnePlusStandbyAnalyzer$KernelWakelockInfo;->mHolding:J
 
     cmp-long v0, v0, v2
 
@@ -59,9 +59,9 @@
     return v0
 
     :cond_0
-    iget-wide v0, p1, Lcom/android/server/OnePlusStandbyAnalyzer$PartialWakeLockInfo;->mHolding:J
+    iget-wide v0, p1, Lcom/android/server/OnePlusStandbyAnalyzer$KernelWakelockInfo;->mHolding:J
 
-    iget-wide v2, p2, Lcom/android/server/OnePlusStandbyAnalyzer$PartialWakeLockInfo;->mHolding:J
+    iget-wide v2, p2, Lcom/android/server/OnePlusStandbyAnalyzer$KernelWakelockInfo;->mHolding:J
 
     cmp-long v0, v0, v2
 
@@ -80,11 +80,11 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    check-cast p1, Lcom/android/server/OnePlusStandbyAnalyzer$PartialWakeLockInfo;
+    check-cast p1, Lcom/android/server/OnePlusStandbyAnalyzer$KernelWakelockInfo;
 
-    check-cast p2, Lcom/android/server/OnePlusStandbyAnalyzer$PartialWakeLockInfo;
+    check-cast p2, Lcom/android/server/OnePlusStandbyAnalyzer$KernelWakelockInfo;
 
-    invoke-virtual {p0, p1, p2}, Lcom/android/server/OnePlusStandbyAnalyzer$10;->compare(Lcom/android/server/OnePlusStandbyAnalyzer$PartialWakeLockInfo;Lcom/android/server/OnePlusStandbyAnalyzer$PartialWakeLockInfo;)I
+    invoke-virtual {p0, p1, p2}, Lcom/android/server/OnePlusStandbyAnalyzer$10;->compare(Lcom/android/server/OnePlusStandbyAnalyzer$KernelWakelockInfo;Lcom/android/server/OnePlusStandbyAnalyzer$KernelWakelockInfo;)I
 
     move-result p1
 

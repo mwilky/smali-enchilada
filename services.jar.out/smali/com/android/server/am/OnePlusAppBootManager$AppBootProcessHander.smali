@@ -66,7 +66,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$2500(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;
+    invoke-static {v0, v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$2700(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;
 
     sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
@@ -99,7 +99,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$2600(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$2800(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)V
 
     sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
@@ -132,7 +132,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$2500(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;
+    invoke-static {v0, v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$2700(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;
 
     sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
@@ -181,7 +181,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "handleMessage # msg="
+    const-string/jumbo v1, "handleMessage # msg="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -207,20 +207,20 @@
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
-    invoke-static {v0}, Lcom/android/server/am/OnePlusAppBootManager;->access$2300(Lcom/android/server/am/OnePlusAppBootManager;)V
+    invoke-static {v0}, Lcom/android/server/am/OnePlusAppBootManager;->access$2500(Lcom/android/server/am/OnePlusAppBootManager;)V
 
-    goto :goto_1
+    goto/16 :goto_1
 
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
-    invoke-static {v0}, Lcom/android/server/am/OnePlusAppBootManager;->access$2300(Lcom/android/server/am/OnePlusAppBootManager;)V
+    invoke-static {v0}, Lcom/android/server/am/OnePlusAppBootManager;->access$2500(Lcom/android/server/am/OnePlusAppBootManager;)V
 
     iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     const-wide/32 v1, 0x5265c00
 
-    invoke-static {v0, v1, v2}, Lcom/android/server/am/OnePlusAppBootManager;->access$2400(Lcom/android/server/am/OnePlusAppBootManager;J)V
+    invoke-static {v0, v1, v2}, Lcom/android/server/am/OnePlusAppBootManager;->access$2600(Lcom/android/server/am/OnePlusAppBootManager;J)V
 
     goto :goto_1
 
@@ -239,7 +239,7 @@
     const/4 v1, 0x0
 
     :goto_0
-    invoke-static {v0, v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$2200(Lcom/android/server/am/OnePlusAppBootManager;Z)V
+    invoke-static {v0, v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$2400(Lcom/android/server/am/OnePlusAppBootManager;Z)V
 
     goto :goto_1
 
@@ -248,11 +248,11 @@
 
     iget-object v1, p0, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
-    invoke-static {v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$1900(Lcom/android/server/am/OnePlusAppBootManager;)Landroid/content/Context;
+    invoke-static {v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$2100(Lcom/android/server/am/OnePlusAppBootManager;)Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-static {}, Lcom/android/server/am/OnePlusAppBootManager;->access$2000()Ljava/lang/String;
+    invoke-static {}, Lcom/android/server/am/OnePlusAppBootManager;->access$2200()Ljava/lang/String;
 
     move-result-object v2
 
@@ -264,7 +264,7 @@
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Lcom/android/server/am/OnePlusAppBootManager;->access$2100(Lcom/android/server/am/OnePlusAppBootManager;Lorg/json/JSONArray;)V
+    invoke-static {v1, v2}, Lcom/android/server/am/OnePlusAppBootManager;->access$2300(Lcom/android/server/am/OnePlusAppBootManager;Lorg/json/JSONArray;)V
 
     goto :goto_1
 
@@ -275,7 +275,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$1800(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$2000(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)I
 
     move-result v0
 
@@ -314,13 +314,25 @@
     :pswitch_5
     iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
-    invoke-static {}, Lcom/android/server/am/OnePlusAppBootManager;->access$1700()Ljava/util/HashMap;
+    invoke-static {}, Lcom/android/server/am/OnePlusAppBootManager;->access$1800()Ljava/util/HashMap;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/android/server/am/OnePlusAppBootManager;->writeXml_appboot(Ljava/util/HashMap;)I
 
-    nop
+    invoke-static {}, Lcom/android/server/am/OnePlusAppBootManager;->access$1900()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
+
+    invoke-static {v0}, Lcom/android/server/am/OnePlusAppBootManager;->access$1100(Lcom/android/server/am/OnePlusAppBootManager;)Lcom/android/server/am/OnePlusAppBootRecorder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/server/am/OnePlusAppBootRecorder;->writeXml_Record()V
 
     :cond_2
     :goto_1

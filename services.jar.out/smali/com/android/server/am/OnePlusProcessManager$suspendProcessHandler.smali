@@ -49,7 +49,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_15
 
     invoke-static {}, Lcom/android/server/am/OnePlusProcessManager;->access$300()Z
 
@@ -295,6 +295,53 @@
     move-result-object v1
 
     :cond_9
+    invoke-static {}, Lcom/android/server/preload/PreloadUtils;->getInstance()Lcom/android/server/preload/PreloadUtils;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Lcom/android/server/preload/PreloadUtils;->isPreloadUid(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_a
+
+    if-nez v1, :cond_a
+
+    const-string v2, "OnePlusProcessManager"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "Uid : "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v7, " is preload but suspendRelateUids is null"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v2, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {}, Lcom/android/server/preload/AbnormalMonitor;->getInstance()Lcom/android/server/preload/AbnormalMonitor;
+
+    move-result-object v2
+
+    iget-object v6, p0, Lcom/android/server/am/OnePlusProcessManager$suspendProcessHandler;->this$0:Lcom/android/server/am/OnePlusProcessManager;
+
+    invoke-static {v6, v0}, Lcom/android/server/am/OnePlusProcessManager;->access$900(Lcom/android/server/am/OnePlusProcessManager;I)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v6}, Lcom/android/server/preload/AbnormalMonitor;->addBlackAppDirectly(Ljava/lang/String;)V
+
+    :cond_a
     iget-object v2, p0, Lcom/android/server/am/OnePlusProcessManager$suspendProcessHandler;->this$0:Lcom/android/server/am/OnePlusProcessManager;
 
     invoke-static {v2}, Lcom/android/server/am/OnePlusProcessManager;->access$700(Lcom/android/server/am/OnePlusProcessManager;)D
@@ -305,13 +352,13 @@
 
     const/4 v6, 0x0
 
-    if-nez v2, :cond_a
+    if-nez v2, :cond_b
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_b
 
     iget-object v2, p0, Lcom/android/server/am/OnePlusProcessManager$suspendProcessHandler;->this$0:Lcom/android/server/am/OnePlusProcessManager;
 
-    invoke-static {v2, v0}, Lcom/android/server/am/OnePlusProcessManager;->access$900(Lcom/android/server/am/OnePlusProcessManager;I)Z
+    invoke-static {v2, v0}, Lcom/android/server/am/OnePlusProcessManager;->access$1000(Lcom/android/server/am/OnePlusProcessManager;I)Z
 
     move-result v2
 
@@ -332,7 +379,7 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_12
 
     move v3, v6
 
@@ -341,7 +388,7 @@
 
     move-result v7
 
-    if-ge v3, v7, :cond_10
+    if-ge v3, v7, :cond_12
 
     iget-object v7, p0, Lcom/android/server/am/OnePlusProcessManager$suspendProcessHandler;->this$0:Lcom/android/server/am/OnePlusProcessManager;
 
@@ -355,7 +402,7 @@
 
     move-result v8
 
-    invoke-static {v7, v8}, Lcom/android/server/am/OnePlusProcessManager;->access$900(Lcom/android/server/am/OnePlusProcessManager;I)Z
+    invoke-static {v7, v8}, Lcom/android/server/am/OnePlusProcessManager;->access$1000(Lcom/android/server/am/OnePlusProcessManager;I)Z
 
     add-int/lit8 v3, v3, 0x1
 
@@ -371,26 +418,26 @@
 
     throw v3
 
-    :cond_a
+    :cond_b
     iget-object v2, p0, Lcom/android/server/am/OnePlusProcessManager$suspendProcessHandler;->this$0:Lcom/android/server/am/OnePlusProcessManager;
 
-    invoke-static {v2, v0}, Lcom/android/server/am/OnePlusProcessManager;->access$1000(Lcom/android/server/am/OnePlusProcessManager;I)J
+    invoke-static {v2, v0}, Lcom/android/server/am/OnePlusProcessManager;->access$1100(Lcom/android/server/am/OnePlusProcessManager;I)J
 
     move-result-wide v7
 
     iget-object v2, p0, Lcom/android/server/am/OnePlusProcessManager$suspendProcessHandler;->this$0:Lcom/android/server/am/OnePlusProcessManager;
 
-    invoke-static {v2}, Lcom/android/server/am/OnePlusProcessManager;->access$1100(Lcom/android/server/am/OnePlusProcessManager;)D
+    invoke-static {v2}, Lcom/android/server/am/OnePlusProcessManager;->access$1200(Lcom/android/server/am/OnePlusProcessManager;)D
 
     move-result-wide v9
 
     cmpl-double v2, v4, v9
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_d
 
     sget-boolean v2, Lcom/android/server/am/OnePlusProcessManager;->DEBUG_ONEPLUS:Z
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_c
 
     const-string v2, "OnePlusProcessManager"
 
@@ -398,7 +445,7 @@
 
     invoke-static {v2, v9}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_b
+    :cond_c
     sget-object v2, Lcom/android/server/am/OnePlusProcessManager;->mAdjustUids:Ljava/util/HashSet;
 
     monitor-enter v2
@@ -438,23 +485,6 @@
 
     throw v6
 
-    :cond_c
-    iget-object v2, p0, Lcom/android/server/am/OnePlusProcessManager$suspendProcessHandler;->this$0:Lcom/android/server/am/OnePlusProcessManager;
-
-    invoke-static {v2}, Lcom/android/server/am/OnePlusProcessManager;->access$1200(Lcom/android/server/am/OnePlusProcessManager;)D
-
-    move-result-wide v9
-
-    cmpl-double v2, v4, v9
-
-    if-nez v2, :cond_d
-
-    const-wide/16 v9, 0x5
-
-    mul-long/2addr v7, v9
-
-    goto :goto_1
-
     :cond_d
     iget-object v2, p0, Lcom/android/server/am/OnePlusProcessManager$suspendProcessHandler;->this$0:Lcom/android/server/am/OnePlusProcessManager;
 
@@ -464,11 +494,28 @@
 
     cmpl-double v2, v4, v9
 
-    if-lez v2, :cond_e
+    if-nez v2, :cond_e
+
+    const-wide/16 v9, 0x5
+
+    mul-long/2addr v7, v9
+
+    goto :goto_1
+
+    :cond_e
+    iget-object v2, p0, Lcom/android/server/am/OnePlusProcessManager$suspendProcessHandler;->this$0:Lcom/android/server/am/OnePlusProcessManager;
+
+    invoke-static {v2}, Lcom/android/server/am/OnePlusProcessManager;->access$1400(Lcom/android/server/am/OnePlusProcessManager;)D
+
+    move-result-wide v9
+
+    cmpl-double v2, v4, v9
+
+    if-lez v2, :cond_f
 
     iget-object v2, p0, Lcom/android/server/am/OnePlusProcessManager$suspendProcessHandler;->this$0:Lcom/android/server/am/OnePlusProcessManager;
 
-    invoke-static {v2}, Lcom/android/server/am/OnePlusProcessManager;->access$1300(Lcom/android/server/am/OnePlusProcessManager;)D
+    invoke-static {v2}, Lcom/android/server/am/OnePlusProcessManager;->access$1400(Lcom/android/server/am/OnePlusProcessManager;)D
 
     move-result-wide v9
 
@@ -486,12 +533,12 @@
 
     goto :goto_1
 
-    :cond_e
-    invoke-static {}, Lcom/android/server/am/OnePlusProcessManager;->access$1400()Z
+    :cond_f
+    invoke-static {}, Lcom/android/server/am/OnePlusProcessManager;->access$1500()Z
 
     move-result v2
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_10
 
     iget-object v2, p0, Lcom/android/server/am/OnePlusProcessManager$suspendProcessHandler;->this$0:Lcom/android/server/am/OnePlusProcessManager;
 
@@ -505,7 +552,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_f
+    if-nez v2, :cond_10
 
     iget-object v2, p0, Lcom/android/server/am/OnePlusProcessManager$suspendProcessHandler;->this$0:Lcom/android/server/am/OnePlusProcessManager;
 
@@ -519,11 +566,11 @@
 
     iget-object v2, p0, Lcom/android/server/am/OnePlusProcessManager$suspendProcessHandler;->this$0:Lcom/android/server/am/OnePlusProcessManager;
 
-    invoke-static {v2, v0}, Lcom/android/server/am/OnePlusProcessManager;->access$1500(Lcom/android/server/am/OnePlusProcessManager;I)Ljava/lang/String;
+    invoke-static {v2, v0}, Lcom/android/server/am/OnePlusProcessManager;->access$900(Lcom/android/server/am/OnePlusProcessManager;I)Ljava/lang/String;
 
     move-result-object v2
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_10
 
     :try_start_a
     iget-object v9, p0, Lcom/android/server/am/OnePlusProcessManager$suspendProcessHandler;->this$0:Lcom/android/server/am/OnePlusProcessManager;
@@ -541,8 +588,39 @@
     :catch_0
     move-exception v9
 
-    :cond_f
+    :cond_10
     :goto_1
+    invoke-static {}, Lcom/android/server/preload/PreloadUtils;->getInstance()Lcom/android/server/preload/PreloadUtils;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Lcom/android/server/preload/PreloadUtils;->isPreloadUid(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_11
+
+    const-string v2, "AppPreload"
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "Set suspend delay to 1 min due to uid is preload : "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v2, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-wide/32 v7, 0xea60
+
+    :cond_11
     iget-object v2, p0, Lcom/android/server/am/OnePlusProcessManager$suspendProcessHandler;->this$0:Lcom/android/server/am/OnePlusProcessManager;
 
     invoke-static {v2, v0, v7, v8}, Lcom/android/server/am/OnePlusProcessManager;->access$1600(Lcom/android/server/am/OnePlusProcessManager;IJ)V
@@ -588,8 +666,8 @@
 
     move v2, v3
 
-    :cond_10
-    if-eqz v2, :cond_11
+    :cond_12
+    if-eqz v2, :cond_13
 
     sget-object v3, Lcom/android/server/am/OnePlusProcessManager;->mAdjustUids:Ljava/util/HashSet;
 
@@ -628,13 +706,13 @@
 
     throw v6
 
-    :cond_11
+    :cond_13
     :goto_2
     sput v6, Lcom/android/server/am/OnePlusProcessManager;->mPendingUid:I
 
     sget-boolean v3, Lcom/android/server/am/OnePlusProcessManager;->DEBUG:Z
 
-    if-eqz v3, :cond_12
+    if-eqz v3, :cond_14
 
     const-string v3, "OnePlusProcessManager"
 
@@ -642,7 +720,7 @@
 
     invoke-static {v3, v6}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_12
+    :cond_14
     return-void
 
     :catchall_4
@@ -675,7 +753,7 @@
 
     throw v2
 
-    :cond_13
+    :cond_15
     :goto_3
     return-void
 .end method

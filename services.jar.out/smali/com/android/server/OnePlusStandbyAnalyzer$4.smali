@@ -20,7 +20,7 @@
     value = {
         "Ljava/lang/Object;",
         "Ljava/util/Comparator<",
-        "Lcom/android/server/OnePlusStandbyAnalyzer$PacketInfo;",
+        "Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;",
         ">;"
     }
 .end annotation
@@ -43,36 +43,16 @@
 
 
 # virtual methods
-.method public compare(Lcom/android/server/OnePlusStandbyAnalyzer$PacketInfo;Lcom/android/server/OnePlusStandbyAnalyzer$PacketInfo;)I
-    .locals 4
+.method public compare(Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;)I
+    .locals 2
 
-    iget-wide v0, p1, Lcom/android/server/OnePlusStandbyAnalyzer$PacketInfo;->mTotalDiff:J
+    iget v0, p2, Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;->mCount:I
 
-    iget-wide v2, p2, Lcom/android/server/OnePlusStandbyAnalyzer$PacketInfo;->mTotalDiff:J
+    iget v1, p1, Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;->mCount:I
 
-    cmp-long v0, v0, v2
+    invoke-static {v0, v1}, Ljava/lang/Integer;->compare(II)I
 
-    if-gez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_0
-    iget-wide v0, p1, Lcom/android/server/OnePlusStandbyAnalyzer$PacketInfo;->mTotalDiff:J
-
-    iget-wide v2, p2, Lcom/android/server/OnePlusStandbyAnalyzer$PacketInfo;->mTotalDiff:J
-
-    cmp-long v0, v0, v2
-
-    if-lez v0, :cond_1
-
-    const/4 v0, -0x1
-
-    return v0
-
-    :cond_1
-    const/4 v0, 0x0
+    move-result v0
 
     return v0
 .end method
@@ -80,11 +60,11 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    check-cast p1, Lcom/android/server/OnePlusStandbyAnalyzer$PacketInfo;
+    check-cast p1, Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;
 
-    check-cast p2, Lcom/android/server/OnePlusStandbyAnalyzer$PacketInfo;
+    check-cast p2, Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;
 
-    invoke-virtual {p0, p1, p2}, Lcom/android/server/OnePlusStandbyAnalyzer$4;->compare(Lcom/android/server/OnePlusStandbyAnalyzer$PacketInfo;Lcom/android/server/OnePlusStandbyAnalyzer$PacketInfo;)I
+    invoke-virtual {p0, p1, p2}, Lcom/android/server/OnePlusStandbyAnalyzer$4;->compare(Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;)I
 
     move-result p1
 

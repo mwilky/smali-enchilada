@@ -39,10 +39,12 @@
 
 .field public static final enum POWER_HOME:Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
+.field public static final enum VOLUME_SWITCH:Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
+
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 9
+    .locals 10
 
     new-instance v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
@@ -106,15 +108,25 @@
 
     new-instance v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
-    const-string v1, "BASE"
+    const-string v1, "VOLUME_SWITCH"
 
     const/4 v8, 0x6
 
     invoke-direct {v0, v1, v8}, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;-><init>(Ljava/lang/String;I)V
 
+    sput-object v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;->VOLUME_SWITCH:Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
+
+    new-instance v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
+
+    const-string v1, "BASE"
+
+    const/4 v9, 0x7
+
+    invoke-direct {v0, v1, v9}, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;-><init>(Ljava/lang/String;I)V
+
     sput-object v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;->BASE:Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
-    const/4 v0, 0x7
+    const/16 v0, 0x8
 
     new-array v0, v0, [Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
@@ -142,9 +154,13 @@
 
     aput-object v1, v0, v7
 
-    sget-object v1, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;->BASE:Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
+    sget-object v1, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;->VOLUME_SWITCH:Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
     aput-object v1, v0, v8
+
+    sget-object v1, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;->BASE:Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
+
+    aput-object v1, v0, v9
 
     sput-object v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;->$VALUES:[Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 

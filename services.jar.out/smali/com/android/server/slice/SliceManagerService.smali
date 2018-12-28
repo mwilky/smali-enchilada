@@ -2007,7 +2007,8 @@
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Landroid/os/RemoteException;
+            Landroid/os/RemoteException;,
+            Ljava/lang/IllegalStateException;
         }
     .end annotation
 

@@ -19,6 +19,8 @@
 
 .field private static final VDBG:Z = false
 
+.field public static sArpNudState:S
+
 
 # instance fields
 .field private final mConsumer:Landroid/net/ip/IpNeighborMonitor$NeighborEventConsumer;
@@ -37,6 +39,10 @@
     move-result-object v0
 
     sput-object v0, Landroid/net/ip/IpNeighborMonitor;->TAG:Ljava/lang/String;
+
+    const/4 v0, 0x0
+
+    sput-short v0, Landroid/net/ip/IpNeighborMonitor;->sArpNudState:S
 
     return-void
 .end method
@@ -390,6 +396,21 @@
 
     move-result-object v1
 
+    sget-short v2, Landroid/net/ip/IpNeighborMonitor;->sArpNudState:S
+
+    const/4 v3, 0x0
+
+    const/16 v4, 0x80
+
+    if-ne v2, v4, :cond_0
+
+    instance-of v2, p1, Ljava/net/Inet4Address;
+
+    if-eqz v2, :cond_0
+
+    return v3
+
+    :cond_0
     :try_start_0
     sget v2, Landroid/system/OsConstants;->NETLINK_ROUTE:I
 
@@ -399,9 +420,7 @@
 
     nop
 
-    const/4 v2, 0x0
-
-    return v2
+    return v3
 
     :catch_0
     move-exception v2

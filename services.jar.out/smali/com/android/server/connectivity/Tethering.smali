@@ -165,7 +165,7 @@
 
     move-result-object v0
 
-    const v1, 0x104017f
+    const v1, 0x1040180
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -446,20 +446,20 @@
     return-object v0
 .end method
 
-.method static synthetic access$1800(Lcom/android/server/connectivity/Tethering;)Landroid/os/INetworkManagementService;
+.method static synthetic access$1800(Lcom/android/server/connectivity/Tethering;)Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/connectivity/Tethering;->mCallerPkg:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1900(Lcom/android/server/connectivity/Tethering;)Landroid/os/INetworkManagementService;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering;->mNMService:Landroid/os/INetworkManagementService;
 
     return-object v0
-.end method
-
-.method static synthetic access$1900(Lcom/android/server/connectivity/Tethering;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/android/server/connectivity/Tethering;->maybeUpdateConfiguration()V
-
-    return-void
 .end method
 
 .method static synthetic access$200(Lcom/android/server/connectivity/Tethering;I)V
@@ -470,7 +470,15 @@
     return-void
 .end method
 
-.method static synthetic access$2000(Lcom/android/server/connectivity/Tethering;)Lcom/android/server/connectivity/tethering/UpstreamNetworkMonitor;
+.method static synthetic access$2000(Lcom/android/server/connectivity/Tethering;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/server/connectivity/Tethering;->maybeUpdateConfiguration()V
+
+    return-void
+.end method
+
+.method static synthetic access$2100(Lcom/android/server/connectivity/Tethering;)Lcom/android/server/connectivity/tethering/UpstreamNetworkMonitor;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering;->mUpstreamNetworkMonitor:Lcom/android/server/connectivity/tethering/UpstreamNetworkMonitor;
@@ -478,7 +486,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2100(Lcom/android/server/connectivity/Tethering;Landroid/net/NetworkState;)Z
+.method static synthetic access$2200(Lcom/android/server/connectivity/Tethering;Landroid/net/NetworkState;)Z
     .locals 1
 
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/Tethering;->pertainsToCurrentUpstream(Landroid/net/NetworkState;)Z
@@ -488,7 +496,7 @@
     return v0
 .end method
 
-.method static synthetic access$2200(Lcom/android/server/connectivity/Tethering;)Landroid/net/util/InterfaceSet;
+.method static synthetic access$2300(Lcom/android/server/connectivity/Tethering;)Landroid/net/util/InterfaceSet;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering;->mCurrentUpstreamIfaceSet:Landroid/net/util/InterfaceSet;
@@ -496,7 +504,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2202(Lcom/android/server/connectivity/Tethering;Landroid/net/util/InterfaceSet;)Landroid/net/util/InterfaceSet;
+.method static synthetic access$2302(Lcom/android/server/connectivity/Tethering;Landroid/net/util/InterfaceSet;)Landroid/net/util/InterfaceSet;
     .locals 0
 
     iput-object p1, p0, Lcom/android/server/connectivity/Tethering;->mCurrentUpstreamIfaceSet:Landroid/net/util/InterfaceSet;
@@ -504,7 +512,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$2300(Lcom/android/server/connectivity/Tethering;)Ljava/util/HashSet;
+.method static synthetic access$2400(Lcom/android/server/connectivity/Tethering;)Ljava/util/HashSet;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering;->mForwardedDownstreams:Ljava/util/HashSet;
@@ -512,7 +520,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2400(Lcom/android/server/connectivity/Tethering;)Landroid/net/wifi/WifiManager;
+.method static synthetic access$2500(Lcom/android/server/connectivity/Tethering;)Landroid/net/wifi/WifiManager;
     .locals 1
 
     invoke-direct {p0}, Lcom/android/server/connectivity/Tethering;->getWifiManager()Landroid/net/wifi/WifiManager;
@@ -522,7 +530,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2500()Ljava/lang/String;
+.method static synthetic access$2600()Ljava/lang/String;
     .locals 1
 
     sget-object v0, Lcom/android/server/connectivity/Tethering;->TAG:Ljava/lang/String;
@@ -530,7 +538,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2600(Lcom/android/server/connectivity/Tethering;)Lcom/android/server/connectivity/tethering/SimChangeListener;
+.method static synthetic access$2700(Lcom/android/server/connectivity/Tethering;)Lcom/android/server/connectivity/tethering/SimChangeListener;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering;->mSimChange:Lcom/android/server/connectivity/tethering/SimChangeListener;
@@ -538,7 +546,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2700(Lcom/android/server/connectivity/Tethering;)Z
+.method static synthetic access$2800(Lcom/android/server/connectivity/Tethering;)Z
     .locals 1
 
     invoke-direct {p0}, Lcom/android/server/connectivity/Tethering;->upstreamWanted()Z
@@ -556,7 +564,7 @@
     return-void
 .end method
 
-.method static synthetic access$3200(Lcom/android/server/connectivity/Tethering;)Lcom/android/server/connectivity/tethering/OffloadController;
+.method static synthetic access$3300(Lcom/android/server/connectivity/Tethering;)Lcom/android/server/connectivity/tethering/OffloadController;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering;->mOffloadController:Lcom/android/server/connectivity/tethering/OffloadController;
@@ -564,7 +572,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3300(Lcom/android/server/connectivity/Tethering;Ljava/lang/String;Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;II)V
+.method static synthetic access$3400(Lcom/android/server/connectivity/Tethering;Ljava/lang/String;Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;II)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/server/connectivity/Tethering;->notifyInterfaceStateChange(Ljava/lang/String;Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;II)V
@@ -572,7 +580,7 @@
     return-void
 .end method
 
-.method static synthetic access$3400(Lcom/android/server/connectivity/Tethering;Ljava/lang/String;Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;Landroid/net/LinkProperties;)V
+.method static synthetic access$3500(Lcom/android/server/connectivity/Tethering;Ljava/lang/String;Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;Landroid/net/LinkProperties;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/connectivity/Tethering;->notifyLinkPropertiesChanged(Ljava/lang/String;Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;Landroid/net/LinkProperties;)V
@@ -1837,7 +1845,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "got notification from stale iface "
+    const-string/jumbo v4, "got notification from stale iface "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3058,19 +3066,44 @@
 .method private upstreamWanted()Z
     .locals 2
 
+    iget-object v0, p0, Lcom/android/server/connectivity/Tethering;->mCallerPkg:Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/server/connectivity/Tethering;->mCallerPkg:Ljava/lang/String;
+
+    const-string v1, "com.oneplus.filemanager"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/android/server/connectivity/Tethering;->TAG:Ljava/lang/String;
+
+    const-string v1, "filemanager enable tether, ignore upstreamWanted"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_0
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering;->mForwardedDownstreams:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     const/4 v0, 0x1
 
     return v0
 
-    :cond_0
+    :cond_1
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering;->mPublicSync:Ljava/lang/Object;
 
     monitor-enter v0
@@ -4191,7 +4224,7 @@
 
     if-ne v2, v12, :cond_4
 
-    const v12, 0x50c004d
+    const v12, 0x50c0055
 
     invoke-virtual {v10, v12}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -4200,7 +4233,7 @@
     goto :goto_2
 
     :cond_4
-    const v12, 0x104067a
+    const v12, 0x104067b
 
     invoke-virtual {v10, v12}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -4213,7 +4246,7 @@
 
     if-nez v7, :cond_5
 
-    const v7, 0x1040678
+    const v7, 0x1040679
 
     invoke-virtual {v10, v7}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -4226,7 +4259,7 @@
 
     if-ne v7, v0, :cond_6
 
-    const v7, 0x1040679
+    const v7, 0x104067a
 
     invoke-virtual {v10, v7}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -4253,7 +4286,7 @@
     goto :goto_3
 
     :cond_6
-    const v7, 0x1040677
+    const v7, 0x1040678
 
     invoke-virtual {v10, v7}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -4280,7 +4313,7 @@
     goto :goto_3
 
     :cond_7
-    const v7, 0x1040676
+    const v7, 0x1040677
 
     invoke-virtual {v10, v7}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -4290,13 +4323,13 @@
     goto :goto_4
 
     :cond_8
-    const v7, 0x10401d0
+    const v7, 0x10401d1
 
     invoke-virtual {v10, v7}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v12
 
-    const v7, 0x10401cf
+    const v7, 0x10401d0
 
     invoke-virtual {v10, v7}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

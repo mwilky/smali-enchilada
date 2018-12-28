@@ -111,6 +111,26 @@
     .end annotation
 .end field
 
+.field private mBlackHighUsageList:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private mBlackIopList:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private mContext:Landroid/content/Context;
 
 .field private mHighUsagePkgList:Ljava/util/ArrayList;
@@ -216,6 +236,18 @@
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mHighUsagePkgList:Ljava/util/ArrayList;
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v1, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mBlackHighUsageList:Ljava/util/ArrayList;
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v1, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mBlackIopList:Ljava/util/ArrayList;
 
     new-instance v1, Ljava/util/HashMap;
 
@@ -1011,6 +1043,42 @@
 
     const/4 v0, 0x0
 
+    iget-object v1, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mBlackHighUsageList:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    sget-boolean v1, Lcom/android/server/am/OnePlusRamBoostManager;->DEBUG:Z
+
+    if-eqz v1, :cond_0
+
+    const-string v1, "OnePlusSmartBoostManager"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "getHotCountFromHighList # blacklist has "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    const-string v1, "0"
+
+    return-object v1
+
+    :cond_1
     iget-object v1, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mHighUsagePkgList:Ljava/util/ArrayList;
 
     monitor-enter v1
@@ -1026,7 +1094,7 @@
 
     sget-boolean v2, Lcom/android/server/am/OnePlusRamBoostManager;->DEBUG:Z
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_2
 
     const-string v2, "OnePlusSmartBoostManager"
 
@@ -1052,16 +1120,16 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_0
-    if-ltz v0, :cond_2
+    :cond_2
+    if-ltz v0, :cond_4
 
     const/16 v2, 0x384
 
-    if-lt v0, v2, :cond_1
+    if-lt v0, v2, :cond_3
 
     goto :goto_0
 
-    :cond_1
+    :cond_3
     sub-int/2addr v2, v0
 
     invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -1072,7 +1140,7 @@
 
     return-object v2
 
-    :cond_2
+    :cond_4
     :goto_0
     const-string v2, "0"
 
@@ -1649,7 +1717,7 @@
 
     move-result v2
 
-    if-ge v1, v2, :cond_c
+    if-ge v1, v2, :cond_14
 
     invoke-virtual {p1, v1}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
@@ -1951,13 +2019,291 @@
 
     move-result-object v3
 
+    const-string v4, "blackhigh"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_d
+
+    iget-object v3, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mBlackHighUsageList:Ljava/util/ArrayList;
+
+    monitor-enter v3
+    :try_end_c
+    .catch Lorg/json/JSONException; {:try_start_c .. :try_end_c} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_c} :catch_0
+
+    :try_start_d
+    iget-object v4, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mBlackHighUsageList:Ljava/util/ArrayList;
+
+    invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
+
+    sget-boolean v4, Lcom/android/server/am/OnePlusRamBoostManager;->DEBUG:Z
+
+    if-eqz v4, :cond_a
+
+    const-string v4, "OnePlusSmartBoostManager"
+
+    const-string v5, "[OnlineConfig] clear mBlackHighUsageList"
+
+    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_a
+    monitor-exit v3
+    :try_end_d
+    .catchall {:try_start_d .. :try_end_d} :catchall_5
+
+    :try_start_e
+    const-string/jumbo v3, "value"
+
+    invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+
+    move-result-object v3
+
+    move v4, v0
+
+    :goto_5
+    invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
+
+    move-result v5
+
+    if-ge v4, v5, :cond_d
+
+    invoke-virtual {v3, v4}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
+
+    move-result-object v5
+
+    const-string/jumbo v6, "name"
+
+    invoke-virtual {v5, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    if-eqz v6, :cond_c
+
+    iget-object v7, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mBlackHighUsageList:Ljava/util/ArrayList;
+
+    monitor-enter v7
+    :try_end_e
+    .catch Lorg/json/JSONException; {:try_start_e .. :try_end_e} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_e .. :try_end_e} :catch_0
+
+    :try_start_f
+    iget-object v8, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mBlackHighUsageList:Ljava/util/ArrayList;
+
+    invoke-virtual {v8, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    sget-boolean v8, Lcom/android/server/am/OnePlusRamBoostManager;->DEBUG:Z
+
+    if-eqz v8, :cond_b
+
+    const-string v8, "OnePlusSmartBoostManager"
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "[OnlineConfig] add black high-usage pkg: "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_b
+    monitor-exit v7
+
+    goto :goto_6
+
+    :catchall_4
+    move-exception v0
+
+    monitor-exit v7
+    :try_end_f
+    .catchall {:try_start_f .. :try_end_f} :catchall_4
+
+    :try_start_10
+    throw v0
+    :try_end_10
+    .catch Lorg/json/JSONException; {:try_start_10 .. :try_end_10} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_10} :catch_0
+
+    :cond_c
+    :goto_6
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_5
+
+    :catchall_5
+    move-exception v0
+
+    :try_start_11
+    monitor-exit v3
+    :try_end_11
+    .catchall {:try_start_11 .. :try_end_11} :catchall_5
+
+    :try_start_12
+    throw v0
+
+    :cond_d
+    const-string/jumbo v3, "name"
+
+    invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "blackiop"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_11
+
+    iget-object v3, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mBlackIopList:Ljava/util/ArrayList;
+
+    monitor-enter v3
+    :try_end_12
+    .catch Lorg/json/JSONException; {:try_start_12 .. :try_end_12} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_12} :catch_0
+
+    :try_start_13
+    iget-object v4, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mBlackIopList:Ljava/util/ArrayList;
+
+    invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
+
+    sget-boolean v4, Lcom/android/server/am/OnePlusRamBoostManager;->DEBUG:Z
+
+    if-eqz v4, :cond_e
+
+    const-string v4, "OnePlusSmartBoostManager"
+
+    const-string v5, "[OnlineConfig] clear mBlackIopList"
+
+    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_e
+    monitor-exit v3
+    :try_end_13
+    .catchall {:try_start_13 .. :try_end_13} :catchall_7
+
+    :try_start_14
+    const-string/jumbo v3, "value"
+
+    invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+
+    move-result-object v3
+
+    move v4, v0
+
+    :goto_7
+    invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
+
+    move-result v5
+
+    if-ge v4, v5, :cond_11
+
+    invoke-virtual {v3, v4}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
+
+    move-result-object v5
+
+    const-string/jumbo v6, "name"
+
+    invoke-virtual {v5, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    if-eqz v6, :cond_10
+
+    iget-object v7, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mBlackIopList:Ljava/util/ArrayList;
+
+    monitor-enter v7
+    :try_end_14
+    .catch Lorg/json/JSONException; {:try_start_14 .. :try_end_14} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_14 .. :try_end_14} :catch_0
+
+    :try_start_15
+    iget-object v8, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mBlackIopList:Ljava/util/ArrayList;
+
+    invoke-virtual {v8, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    sget-boolean v8, Lcom/android/server/am/OnePlusRamBoostManager;->DEBUG:Z
+
+    if-eqz v8, :cond_f
+
+    const-string v8, "OnePlusSmartBoostManager"
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "[OnlineConfig] add black iop pkg: "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_f
+    monitor-exit v7
+
+    goto :goto_8
+
+    :catchall_6
+    move-exception v0
+
+    monitor-exit v7
+    :try_end_15
+    .catchall {:try_start_15 .. :try_end_15} :catchall_6
+
+    :try_start_16
+    throw v0
+    :try_end_16
+    .catch Lorg/json/JSONException; {:try_start_16 .. :try_end_16} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_16 .. :try_end_16} :catch_0
+
+    :cond_10
+    :goto_8
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_7
+
+    :catchall_7
+    move-exception v0
+
+    :try_start_17
+    monitor-exit v3
+    :try_end_17
+    .catchall {:try_start_17 .. :try_end_17} :catchall_7
+
+    :try_start_18
+    throw v0
+
+    :cond_11
+    const-string/jumbo v3, "name"
+
+    invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
     const-string/jumbo v4, "switch"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_a
+    if-eqz v3, :cond_12
 
     const-string/jumbo v3, "value"
 
@@ -1987,7 +2333,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_a
+    :cond_12
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -2000,7 +2346,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_13
 
     const-string/jumbo v3, "value"
 
@@ -2030,12 +2376,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_b
+    :cond_13
     add-int/lit8 v1, v1, 0x1
 
     goto/16 :goto_0
 
-    :cond_c
+    :cond_14
     invoke-direct {p0, v0}, Lcom/android/server/am/OnePlusRamBoostManager;->updateSwitch(Z)V
 
     const-string v0, "OnePlusSmartBoostManager"
@@ -2043,11 +2389,11 @@
     const-string v1, "[OnlineConfig] smartboost updated complete"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_c
-    .catch Lorg/json/JSONException; {:try_start_c .. :try_end_c} :catch_1
-    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_c} :catch_0
+    :try_end_18
+    .catch Lorg/json/JSONException; {:try_start_18 .. :try_end_18} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_18 .. :try_end_18} :catch_0
 
-    goto :goto_5
+    goto :goto_9
 
     :catch_0
     move-exception v0
@@ -2074,7 +2420,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_6
+    goto :goto_a
 
     :catch_1
     move-exception v0
@@ -2101,10 +2447,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_5
+    :goto_9
     nop
 
-    :goto_6
+    :goto_a
     return-void
 .end method
 
@@ -3242,6 +3588,40 @@
     return-void
 
     :cond_0
+    iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mBlackIopList:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p2}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    sget-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->DEBUG:Z
+
+    if-eqz v0, :cond_1
+
+    const-string v0, "OnePlusSmartBoostManager"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "notifyIOPrefetchStart # iop black pkg: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    return-void
+
+    :cond_2
     iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mRamBoostHandler:Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;
 
     const/16 v1, 0x8

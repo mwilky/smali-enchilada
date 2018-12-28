@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/OnePlusStandbyAnalyzer;->get1stTelephonyAbnormal(Ljava/util/List;)Lcom/android/server/OnePlusStandbyAnalyzer$TeleChgInfo;
+    value = Lcom/android/server/OnePlusStandbyAnalyzer;->calculateDiff()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,7 +20,7 @@
     value = {
         "Ljava/lang/Object;",
         "Ljava/util/Comparator<",
-        "Lcom/android/server/OnePlusStandbyAnalyzer$TeleChgInfo;",
+        "Lcom/android/server/OnePlusStandbyAnalyzer$WakeupReasonInfo;",
         ">;"
     }
 .end annotation
@@ -43,18 +43,14 @@
 
 
 # virtual methods
-.method public compare(Lcom/android/server/OnePlusStandbyAnalyzer$TeleChgInfo;Lcom/android/server/OnePlusStandbyAnalyzer$TeleChgInfo;)I
-    .locals 4
+.method public compare(Lcom/android/server/OnePlusStandbyAnalyzer$WakeupReasonInfo;Lcom/android/server/OnePlusStandbyAnalyzer$WakeupReasonInfo;)I
+    .locals 2
 
-    iget v0, p2, Lcom/android/server/OnePlusStandbyAnalyzer$TeleChgInfo;->mTotalAbn:I
+    iget v0, p2, Lcom/android/server/OnePlusStandbyAnalyzer$WakeupReasonInfo;->mCount:I
 
-    int-to-long v0, v0
+    iget v1, p1, Lcom/android/server/OnePlusStandbyAnalyzer$WakeupReasonInfo;->mCount:I
 
-    iget v2, p1, Lcom/android/server/OnePlusStandbyAnalyzer$TeleChgInfo;->mTotalAbn:I
-
-    int-to-long v2, v2
-
-    invoke-static {v0, v1, v2, v3}, Ljava/lang/Long;->compare(JJ)I
+    invoke-static {v0, v1}, Ljava/lang/Integer;->compare(II)I
 
     move-result v0
 
@@ -64,11 +60,11 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    check-cast p1, Lcom/android/server/OnePlusStandbyAnalyzer$TeleChgInfo;
+    check-cast p1, Lcom/android/server/OnePlusStandbyAnalyzer$WakeupReasonInfo;
 
-    check-cast p2, Lcom/android/server/OnePlusStandbyAnalyzer$TeleChgInfo;
+    check-cast p2, Lcom/android/server/OnePlusStandbyAnalyzer$WakeupReasonInfo;
 
-    invoke-virtual {p0, p1, p2}, Lcom/android/server/OnePlusStandbyAnalyzer$7;->compare(Lcom/android/server/OnePlusStandbyAnalyzer$TeleChgInfo;Lcom/android/server/OnePlusStandbyAnalyzer$TeleChgInfo;)I
+    invoke-virtual {p0, p1, p2}, Lcom/android/server/OnePlusStandbyAnalyzer$7;->compare(Lcom/android/server/OnePlusStandbyAnalyzer$WakeupReasonInfo;Lcom/android/server/OnePlusStandbyAnalyzer$WakeupReasonInfo;)I
 
     move-result p1
 

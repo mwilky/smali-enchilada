@@ -34,6 +34,18 @@
 
 
 # virtual methods
+.method public getPlugState()I
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/BatteryService$10;->this$0:Lcom/android/server/BatteryService;
+
+    invoke-static {v0}, Lcom/android/server/BatteryService;->access$1600(Lcom/android/server/BatteryService;)I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public resetParamForOPCS()Z
     .locals 6
 
@@ -51,6 +63,12 @@
     const/4 v2, 0x0
 
     invoke-static {v1, v2}, Lcom/android/server/BatteryService;->access$1502(Lcom/android/server/BatteryService;Z)Z
+
+    invoke-static {}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->getInstance()Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_1
 
     iget-object v1, p0, Lcom/android/server/BatteryService$10;->this$0:Lcom/android/server/BatteryService;
 
@@ -93,6 +111,7 @@
 
     invoke-static {v1, v2}, Lcom/android/server/BatteryService;->access$1502(Lcom/android/server/BatteryService;Z)Z
 
+    :cond_1
     iget-object v1, p0, Lcom/android/server/BatteryService$10;->this$0:Lcom/android/server/BatteryService;
 
     invoke-static {v1}, Lcom/android/server/BatteryService;->access$1500(Lcom/android/server/BatteryService;)Z

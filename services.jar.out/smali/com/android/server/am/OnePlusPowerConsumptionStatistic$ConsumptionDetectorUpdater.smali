@@ -39,7 +39,7 @@
 
     iget-object v0, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$ConsumptionDetectorUpdater;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
 
-    invoke-static {v0, p1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1200(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;Lorg/json/JSONArray;)V
+    invoke-static {v0, p1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$2100(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;Lorg/json/JSONArray;)V
 
     return-void
 .end method

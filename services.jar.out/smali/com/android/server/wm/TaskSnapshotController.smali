@@ -1023,6 +1023,12 @@
     :goto_2
     new-instance v20, Landroid/app/ActivityManager$TaskSnapshot;
 
+    invoke-virtual {v2}, Lcom/android/server/wm/AppWindowToken;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v8
+
+    iget v10, v8, Landroid/content/res/Configuration;->orientation:I
+
     invoke-direct {v0, v4}, Lcom/android/server/wm/TaskSnapshotController;->getInsets(Lcom/android/server/wm/WindowState;)Landroid/graphics/Rect;
 
     move-result-object v11
@@ -1057,8 +1063,6 @@
     move-object/from16 v8, v20
 
     move-object v9, v14
-
-    move v10, v13
 
     move v12, v7
 

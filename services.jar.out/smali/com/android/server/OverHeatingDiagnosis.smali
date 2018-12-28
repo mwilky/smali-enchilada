@@ -31,9 +31,9 @@
 
 .field static final CRITICAL_CPU_USAGE:I = 0x28
 
-.field static final CRITICAL_FOREGROUND_DURATION:J = 0xea60L
+.field static final CRITICAL_FOREGROUND_DURATION:J = 0x3e8L
 
-.field static final CRITICAL_TEMPERATURE:I = 0x27
+.field static final CRITICAL_TEMPERATURE:I = 0x26
 
 .field static final CRITICAL_TOTAL_CPU_USAGE:I = 0xc8
 
@@ -311,17 +311,17 @@
 
     iput-wide v2, p0, Lcom/android/server/OverHeatingDiagnosis;->mMonitorFrequency:J
 
-    const/4 v4, 0x3
+    const/4 v2, 0x3
 
-    iput v4, p0, Lcom/android/server/OverHeatingDiagnosis;->mMonitorNum:I
+    iput v2, p0, Lcom/android/server/OverHeatingDiagnosis;->mMonitorNum:I
 
-    const/16 v4, 0x23
+    const/16 v2, 0x23
 
-    iput v4, p0, Lcom/android/server/OverHeatingDiagnosis;->mMonitorTemp:I
+    iput v2, p0, Lcom/android/server/OverHeatingDiagnosis;->mMonitorTemp:I
 
-    const-string v4, "/sys/class/thermal/thermal_zone27/temp"
+    const-string v2, "/sys/class/thermal/thermal_zone27/temp"
 
-    iput-object v4, p0, Lcom/android/server/OverHeatingDiagnosis;->mThermalZonePath:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/server/OverHeatingDiagnosis;->mThermalZonePath:Ljava/lang/String;
 
     iput v0, p0, Lcom/android/server/OverHeatingDiagnosis;->mThermalZonePrecision:I
 
@@ -329,17 +329,19 @@
 
     iput v0, p0, Lcom/android/server/OverHeatingDiagnosis;->mCriticalCpu:I
 
-    const/16 v4, 0xc8
+    const/16 v2, 0xc8
 
-    iput v4, p0, Lcom/android/server/OverHeatingDiagnosis;->mCriticalTotalCpu:I
+    iput v2, p0, Lcom/android/server/OverHeatingDiagnosis;->mCriticalTotalCpu:I
 
-    const/16 v4, 0x27
+    const/16 v2, 0x26
 
-    iput v4, p0, Lcom/android/server/OverHeatingDiagnosis;->mCriticalTemp:I
+    iput v2, p0, Lcom/android/server/OverHeatingDiagnosis;->mCriticalTemp:I
 
-    const/16 v4, 0x2c
+    const/16 v2, 0x2c
 
-    iput v4, p0, Lcom/android/server/OverHeatingDiagnosis;->mCriticalChargingTemp:I
+    iput v2, p0, Lcom/android/server/OverHeatingDiagnosis;->mCriticalChargingTemp:I
+
+    const-wide/16 v2, 0x3e8
 
     iput-wide v2, p0, Lcom/android/server/OverHeatingDiagnosis;->mCriticalForeground:J
 
@@ -1427,6 +1429,12 @@
 
     move-wide/from16 v16, v5
 
+    move/from16 v18, v3
+
+    move/from16 v19, v4
+
+    move-wide/from16 v3, v16
+
     const/4 v5, 0x0
 
     :goto_0
@@ -1448,21 +1456,19 @@
 
     invoke-virtual {v6}, Lcom/android/server/OverHeatingDiagnosis$CameraStat;->getUseTime()J
 
-    move-result-wide v18
+    move-result-wide v16
 
-    add-long v16, v16, v18
+    add-long v3, v3, v16
 
     move/from16 v20, v2
 
     const-string v2, "OverHeatingDiagnosis"
 
-    move/from16 v21, v3
+    move-wide/from16 v21, v3
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    move/from16 v22, v4
 
     const-string v4, "Camera "
 
@@ -1500,9 +1506,7 @@
 
     move/from16 v2, v20
 
-    move/from16 v3, v21
-
-    move/from16 v4, v22
+    move-wide/from16 v3, v21
 
     move-wide/from16 v10, p5
 
@@ -1511,113 +1515,109 @@
     :cond_0
     move/from16 v20, v2
 
-    move/from16 v21, v3
-
-    move/from16 v22, v4
-
     const-string v2, "OverHeatingDiagnosis"
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "Charging time: "
+    const-string v6, "Charging time: "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v4, v7, Lcom/android/server/OverHeatingDiagnosis;->mChargingTimer:Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;
+    iget-object v6, v7, Lcom/android/server/OverHeatingDiagnosis;->mChargingTimer:Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;
 
-    invoke-virtual {v4}, Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;->getTime()J
+    invoke-virtual {v6}, Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;->getTime()J
 
-    move-result-wide v4
+    move-result-wide v10
 
-    invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v10, v11}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v5
 
-    invoke-static {v2, v3}, Lcom/android/server/OPLogger$Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v5}, Lcom/android/server/OPLogger$Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v2, v7, Lcom/android/server/OverHeatingDiagnosis;->mChargingTimer:Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;
 
     invoke-virtual {v2}, Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;->getTime()J
 
-    move-result-wide v2
+    move-result-wide v5
 
-    iget-wide v4, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalCharging:J
+    iget-wide v10, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalCharging:J
 
-    cmp-long v2, v2, v4
+    cmp-long v2, v5, v10
 
     if-ltz v2, :cond_1
 
     const-string v2, "OverHeatingDiagnosis"
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "Critical temp is "
+    const-string v6, "Critical temp is "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v4, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalChargingTemp:I
+    iget v6, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalChargingTemp:I
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v5
 
-    invoke-static {v2, v3}, Lcom/android/server/OPLogger$Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v5}, Lcom/android/server/OPLogger$Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iget v2, v7, Lcom/android/server/OverHeatingDiagnosis;->mMaxMonitorTemp:I
 
-    iget v3, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalChargingTemp:I
+    iget v5, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalChargingTemp:I
 
-    if-lt v2, v3, :cond_2
+    if-lt v2, v5, :cond_2
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     :goto_1
-    move/from16 v21, v3
+    move/from16 v18, v2
 
     goto :goto_2
 
     :cond_1
     const-string v2, "OverHeatingDiagnosis"
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "Critical temp is "
+    const-string v6, "Critical temp is "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v4, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalTemp:I
+    iget v6, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalTemp:I
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v5
 
-    invoke-static {v2, v3}, Lcom/android/server/OPLogger$Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v5}, Lcom/android/server/OPLogger$Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iget v2, v7, Lcom/android/server/OverHeatingDiagnosis;->mMaxMonitorTemp:I
 
-    iget v3, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalTemp:I
+    iget v5, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalTemp:I
 
-    if-lt v2, v3, :cond_2
+    if-lt v2, v5, :cond_2
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     goto :goto_1
 
     :cond_2
     :goto_2
-    if-nez v21, :cond_4
+    if-nez v18, :cond_4
 
     iget-boolean v2, v7, Lcom/android/server/OverHeatingDiagnosis;->mMonitorForced:Z
 
@@ -1626,6 +1626,8 @@
     goto :goto_3
 
     :cond_3
+    move-wide/from16 v21, v3
+
     const/4 v8, 0x0
 
     move-wide/from16 v10, p5
@@ -1636,9 +1638,9 @@
     :goto_3
     iget v2, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalCpu:I
 
-    int-to-long v2, v2
+    int-to-long v5, v2
 
-    cmp-long v2, v0, v2
+    cmp-long v2, v0, v5
 
     if-ltz v2, :cond_8
 
@@ -1653,9 +1655,9 @@
     goto :goto_4
 
     :cond_5
-    iget-wide v2, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalForeground:J
+    iget-wide v5, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalForeground:J
 
-    cmp-long v2, v12, v2
+    cmp-long v2, v12, v5
 
     if-gez v2, :cond_7
 
@@ -1663,9 +1665,35 @@
 
     invoke-virtual {v15, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-wide v2, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalForeground:J
+    const-string v2, "OverHeatingDiagnosis"
 
-    cmp-long v2, v16, v2
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v6, "totalCameraTime is "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v6, ", mCriticalForeground is "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v10, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalForeground:J
+
+    invoke-virtual {v5, v10, v11}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v2, v5}, Lcom/android/server/OPLogger$Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-wide v5, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalForeground:J
+
+    cmp-long v2, v3, v5
 
     if-lez v2, :cond_6
 
@@ -1687,15 +1715,15 @@
     const/4 v2, 0x0
 
     :goto_5
-    const/16 v3, 0x19
+    const/16 v5, 0x19
 
     invoke-virtual {v15, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-wide/from16 v18, v0
+    move-wide/from16 v16, v0
 
     move/from16 v20, v2
 
-    move/from16 v22, v3
+    move/from16 v19, v5
 
     :goto_6
     move-wide/from16 v10, p5
@@ -1703,9 +1731,9 @@
     goto :goto_9
 
     :cond_8
-    iget-wide v2, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalForeground:J
+    iget-wide v5, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalForeground:J
 
-    cmp-long v2, v16, v2
+    cmp-long v2, v3, v5
 
     if-lez v2, :cond_a
 
@@ -1730,24 +1758,24 @@
     goto :goto_7
 
     :goto_8
-    const/4 v3, 0x0
+    const/4 v5, 0x0
 
-    move-wide/from16 v18, v0
+    move-wide/from16 v16, v0
 
-    move/from16 v22, v2
+    move/from16 v19, v2
 
-    move/from16 v20, v3
+    move/from16 v20, v5
 
     goto :goto_6
 
     :cond_a
     iget v2, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalTotalCpu:I
 
-    int-to-long v2, v2
+    int-to-long v5, v2
 
     move-wide/from16 v10, p5
 
-    cmp-long v2, v10, v2
+    cmp-long v2, v10, v5
 
     if-ltz v2, :cond_b
 
@@ -1755,28 +1783,38 @@
 
     move-wide v0, v10
 
-    const-string v3, "fg:total_cpu_load"
+    const-string v5, "fg:total_cpu_load"
 
-    invoke-virtual {v15, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v15, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-wide/from16 v18, v0
+    move-wide/from16 v16, v0
 
-    move/from16 v22, v2
+    move/from16 v19, v2
 
     goto :goto_9
 
     :cond_b
     const/4 v2, 0x0
 
-    const-string/jumbo v3, "unknown"
+    const-string/jumbo v5, "unknown"
 
-    invoke-virtual {v15, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v15, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-wide/from16 v18, v0
+    move-wide/from16 v16, v0
 
     move/from16 v20, v2
 
     :goto_9
+    if-eqz v14, :cond_c
+
+    const-string v0, ""
+
+    invoke-virtual {v14, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_c
+
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1793,6 +1831,7 @@
 
     invoke-virtual {v15, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    :cond_c
     invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -1801,9 +1840,11 @@
 
     move-object v0, v7
 
-    move/from16 v1, v22
+    move/from16 v1, v19
 
-    move-wide/from16 v3, v18
+    move-wide/from16 v21, v3
+
+    move-wide/from16 v3, v16
 
     const/4 v8, 0x0
 
@@ -1811,7 +1852,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/server/OverHeatingDiagnosis;->reportAbnormalHeating(ILjava/lang/String;JIZ)V
 
-    move-wide/from16 v0, v18
+    move-wide/from16 v0, v16
 
     :goto_a
     iget-object v2, v7, Lcom/android/server/OverHeatingDiagnosis;->mBatteryHistory:Ljava/util/ArrayList;
@@ -2664,7 +2705,7 @@
 .end method
 
 .method monitorEndLocked()V
-    .locals 28
+    .locals 27
 
     move-object/from16 v10, p0
 
@@ -2883,7 +2924,7 @@
 
     float-to-int v15, v1
 
-    if-lez v14, :cond_6
+    if-lez v14, :cond_7
 
     const/4 v1, 0x0
 
@@ -2891,19 +2932,19 @@
 
     invoke-virtual {v2, v0}, Lcom/android/internal/os/ProcessCpuTracker;->getWorkingStats(I)Lcom/android/internal/os/ProcessCpuTracker$Stats;
 
-    move-result-object v9
+    move-result-object v7
 
-    if-eqz v9, :cond_6
+    if-eqz v7, :cond_7
 
-    iget-wide v0, v9, Lcom/android/internal/os/ProcessCpuTracker$Stats;->rel_uptime:J
+    iget-wide v0, v7, Lcom/android/internal/os/ProcessCpuTracker$Stats;->rel_uptime:J
 
-    iget v2, v9, Lcom/android/internal/os/ProcessCpuTracker$Stats;->rel_utime:I
+    iget v2, v7, Lcom/android/internal/os/ProcessCpuTracker$Stats;->rel_utime:I
 
-    iget v3, v9, Lcom/android/internal/os/ProcessCpuTracker$Stats;->rel_stime:I
+    iget v3, v7, Lcom/android/internal/os/ProcessCpuTracker$Stats;->rel_stime:I
 
     add-int/2addr v2, v3
 
-    int-to-long v7, v2
+    int-to-long v5, v2
 
     const-string v2, "OverHeatingDiagnosis"
 
@@ -2915,7 +2956,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v4, v9, Lcom/android/internal/os/ProcessCpuTracker$Stats;->name:Ljava/lang/String;
+    iget-object v4, v7, Lcom/android/internal/os/ProcessCpuTracker$Stats;->name:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2923,7 +2964,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v4, v9, Lcom/android/internal/os/ProcessCpuTracker$Stats;->uid:I
+    iget v4, v7, Lcom/android/internal/os/ProcessCpuTracker$Stats;->uid:I
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -2931,7 +2972,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v4, v9, Lcom/android/internal/os/ProcessCpuTracker$Stats;->pid:I
+    iget v4, v7, Lcom/android/internal/os/ProcessCpuTracker$Stats;->pid:I
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -2939,7 +2980,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v7, v8, v0, v1}, Lcom/android/server/OverHeatingDiagnosis;->generateRatio(JJ)Ljava/lang/String;
+    invoke-virtual {v10, v5, v6, v0, v1}, Lcom/android/server/OverHeatingDiagnosis;->generateRatio(JJ)Ljava/lang/String;
 
     move-result-object v4
 
@@ -2955,13 +2996,13 @@
 
     invoke-static {v2, v3}, Lcom/android/server/OPLogger$Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget v5, v9, Lcom/android/internal/os/ProcessCpuTracker$Stats;->uid:I
+    iget v8, v7, Lcom/android/internal/os/ProcessCpuTracker$Stats;->uid:I
 
     const-wide/16 v2, 0x0
 
     iget-object v4, v10, Lcom/android/server/OverHeatingDiagnosis;->mUidStateStats:Landroid/util/SparseArray;
 
-    invoke-virtual {v4, v5}, Landroid/util/SparseArray;->indexOfKey(I)I
+    invoke-virtual {v4, v8}, Landroid/util/SparseArray;->indexOfKey(I)I
 
     move-result v4
 
@@ -2969,7 +3010,7 @@
 
     iget-object v4, v10, Lcom/android/server/OverHeatingDiagnosis;->mUidStateStats:Landroid/util/SparseArray;
 
-    invoke-virtual {v4, v5}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+    invoke-virtual {v4, v8}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -2995,7 +3036,7 @@
 
     const-wide/16 v0, 0x3e8
 
-    mul-long/2addr v0, v7
+    mul-long/2addr v0, v5
 
     div-long v0, v0, v18
 
@@ -3003,15 +3044,15 @@
 
     div-long v20, v0, v2
 
-    iget-object v0, v9, Lcom/android/internal/os/ProcessCpuTracker$Stats;->name:Ljava/lang/String;
+    iget-object v0, v7, Lcom/android/internal/os/ProcessCpuTracker$Stats;->name:Ljava/lang/String;
 
-    invoke-static {v5}, Landroid/os/UserHandle;->isApp(I)Z
+    invoke-static {v8}, Landroid/os/UserHandle;->isApp(I)Z
 
     move-result v1
 
     if-eqz v1, :cond_5
 
-    invoke-direct {v10, v5}, Lcom/android/server/OverHeatingDiagnosis;->getPackageNameForUid(I)Ljava/lang/String;
+    invoke-direct {v10, v8}, Lcom/android/server/OverHeatingDiagnosis;->getPackageNameForUid(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -3026,41 +3067,54 @@
     move-object v0, v1
 
     :cond_5
-    move-object v6, v0
+    move-object v3, v0
 
-    invoke-direct {v10, v6}, Lcom/android/server/OverHeatingDiagnosis;->getPackageVersion(Ljava/lang/String;)Ljava/lang/String;
+    const/16 v0, 0x3e8
 
-    move-result-object v22
+    if-ne v8, v0, :cond_6
 
-    int-to-long v3, v15
+    const-string v0, ""
+
+    :goto_2
+    move-object v9, v0
+
+    goto :goto_3
+
+    :cond_6
+    invoke-direct {v10, v3}, Lcom/android/server/OverHeatingDiagnosis;->getPackageVersion(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_2
+
+    :goto_3
+    int-to-long v1, v15
 
     move-object v0, v10
 
-    move v1, v5
+    move-wide/from16 v22, v1
 
-    move-object v2, v6
+    move v1, v8
 
-    move-wide/from16 v23, v3
+    move-object v2, v3
+
+    move-object/from16 v24, v3
 
     move-wide/from16 v3, v20
 
-    move/from16 v25, v5
+    move-wide/from16 v25, v5
 
-    move-object/from16 v26, v6
+    move-wide/from16 v5, v22
 
-    move-wide/from16 v5, v23
+    move-object/from16 v22, v7
 
-    move-wide/from16 v23, v7
+    move/from16 v23, v8
 
     move-wide/from16 v7, v16
 
-    move-object/from16 v27, v9
-
-    move-object/from16 v9, v22
-
     invoke-virtual/range {v0 .. v9}, Lcom/android/server/OverHeatingDiagnosis;->arbitrate(ILjava/lang/String;JJJLjava/lang/String;)V
 
-    :cond_6
+    :cond_7
     return-void
 .end method
 

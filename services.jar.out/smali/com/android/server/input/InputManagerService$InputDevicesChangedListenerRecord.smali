@@ -66,7 +66,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
+
+    invoke-static {}, Lcom/android/server/preload/PreloadUtils;->getInstance()Lcom/android/server/preload/PreloadUtils;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/android/server/input/InputManagerService$InputDevicesChangedListenerRecord;->mUid:I
+
+    invoke-virtual {v0, v1}, Lcom/android/server/preload/PreloadUtils;->isPreloadUid(I)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
 
     iget v0, p0, Lcom/android/server/input/InputManagerService$InputDevicesChangedListenerRecord;->mUid:I
 
@@ -74,7 +86,31 @@
 
     invoke-static {v0, v1}, Lcom/android/server/am/OnePlusProcessManager;->resumeProcessByUID_out(ILjava/lang/String;)V
 
+    goto :goto_0
+
     :cond_0
+    const-string v0, "AppPreload"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Don\'t resume preload uid : "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v2, p0, Lcom/android/server/input/InputManagerService$InputDevicesChangedListenerRecord;->mUid:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    :goto_0
     iget v0, p0, Lcom/android/server/input/InputManagerService$InputDevicesChangedListenerRecord;->mUid:I
 
     iget v1, p0, Lcom/android/server/input/InputManagerService$InputDevicesChangedListenerRecord;->mPid:I
@@ -91,7 +127,7 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    goto :goto_1
 
     :catch_0
     move-exception v0
@@ -122,6 +158,6 @@
 
     invoke-virtual {p0}, Lcom/android/server/input/InputManagerService$InputDevicesChangedListenerRecord;->binderDied()V
 
-    :goto_0
+    :goto_1
     return-void
 .end method

@@ -11153,7 +11153,7 @@
     move v13, v12
 
     :goto_0
-    if-ge v13, v4, :cond_7
+    if-ge v13, v4, :cond_8
 
     invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -11163,7 +11163,7 @@
 
     iget-object v14, v15, Lcom/android/server/pm/PackageSetting;->pkg:Landroid/content/pm/PackageParser$Package;
 
-    if-eqz v14, :cond_6
+    if-eqz v14, :cond_7
 
     iget-object v14, v15, Lcom/android/server/pm/PackageSetting;->pkg:Landroid/content/pm/PackageParser$Package;
 
@@ -11181,9 +11181,24 @@
     goto/16 :goto_5
 
     :cond_0
+    if-eqz v11, :cond_1
+
+    iget-object v14, v15, Lcom/android/server/pm/PackageSetting;->name:Ljava/lang/String;
+
+    invoke-static {v14}, Landroid/os/OnePlusParallelAppUtils;->isOnlyInOwner(Ljava/lang/String;)Z
+
+    move-result v14
+
+    if-eqz v14, :cond_1
+
+    invoke-virtual {v15, v12, v11}, Lcom/android/server/pm/PackageSetting;->setInstalled(ZI)V
+
+    goto :goto_1
+
+    :cond_1
     const/16 v14, 0x3e7
 
-    if-ne v11, v14, :cond_1
+    if-ne v11, v14, :cond_2
 
     iget-object v14, v15, Lcom/android/server/pm/PackageSetting;->name:Ljava/lang/String;
 
@@ -11191,18 +11206,18 @@
 
     move-result v14
 
-    if-nez v14, :cond_1
+    if-nez v14, :cond_2
 
     invoke-virtual {v15, v12, v11}, Lcom/android/server/pm/PackageSetting;->setInstalled(ZI)V
 
     goto :goto_1
 
-    :cond_1
+    :cond_2
     invoke-virtual {v15}, Lcom/android/server/pm/PackageSetting;->isSystem()Z
 
     move-result v14
 
-    if-nez v14, :cond_3
+    if-nez v14, :cond_4
 
     iget-object v14, v15, Lcom/android/server/pm/PackageSetting;->codePathString:Ljava/lang/String;
 
@@ -11210,7 +11225,7 @@
 
     move-result v14
 
-    if-nez v14, :cond_3
+    if-nez v14, :cond_4
 
     iget-object v14, v15, Lcom/android/server/pm/PackageSetting;->name:Ljava/lang/String;
 
@@ -11218,16 +11233,16 @@
 
     move-result v14
 
-    if-eqz v14, :cond_2
+    if-eqz v14, :cond_3
 
     goto :goto_2
 
-    :cond_2
+    :cond_3
     move-object/from16 v12, p4
 
     goto :goto_3
 
-    :cond_3
+    :cond_4
     :goto_2
     iget-object v14, v15, Lcom/android/server/pm/PackageSetting;->name:Ljava/lang/String;
     :try_end_0
@@ -11240,13 +11255,13 @@
 
     move-result v14
 
-    if-nez v14, :cond_4
+    if-nez v14, :cond_5
 
     const/16 v16, 0x1
 
     goto :goto_4
 
-    :cond_4
+    :cond_5
     :goto_3
     const/16 v16, 0x0
 
@@ -11255,11 +11270,11 @@
 
     invoke-virtual {v15, v14, v11}, Lcom/android/server/pm/PackageSetting;->setInstalled(ZI)V
 
-    if-nez v14, :cond_5
+    if-nez v14, :cond_6
 
     invoke-virtual {v1, v15}, Lcom/android/server/pm/Settings;->writeKernelMappingLPr(Lcom/android/server/pm/PackageSetting;)V
 
-    :cond_5
+    :cond_6
     move-object/from16 v17, v0
 
     iget-object v0, v15, Lcom/android/server/pm/PackageSetting;->volumeUuid:Ljava/lang/String;
@@ -11292,7 +11307,7 @@
 
     goto :goto_5
 
-    :cond_6
+    :cond_7
     move-object/from16 v12, p4
 
     move-object/from16 v17, v0
@@ -11306,7 +11321,7 @@
 
     goto/16 :goto_0
 
-    :cond_7
+    :cond_8
     move-object/from16 v12, p4
 
     monitor-exit v3
@@ -11330,11 +11345,11 @@
     :goto_6
     move v9, v0
 
-    if-ge v9, v10, :cond_9
+    if-ge v9, v10, :cond_a
 
     aget-object v0, v14, v9
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_9
 
     nop
 
@@ -11344,7 +11359,7 @@
 
     goto :goto_8
 
-    :cond_8
+    :cond_9
     const/4 v0, 0x3
 
     move/from16 v19, v0
@@ -11409,7 +11424,7 @@
 
     goto :goto_6
 
-    :cond_9
+    :cond_a
     move/from16 v22, v10
 
     iget-object v4, v1, Lcom/android/server/pm/Settings;->mPackages:Landroid/util/ArrayMap;
@@ -11435,7 +11450,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_b
 
     new-instance v0, Landroid/os/UserHandle;
 
@@ -11445,7 +11460,7 @@
 
     invoke-virtual {v2, v0, v3}, Lcom/android/server/pm/PackageManagerService;->setGMSEnabledSetting(Landroid/os/UserHandle;I)V
 
-    :cond_a
+    :cond_b
     return-void
 
     :catchall_0
@@ -11600,7 +11615,7 @@
 
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v0, "gids="
+    const-string/jumbo v0, "gids="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -12081,7 +12096,7 @@
     goto :goto_b
 
     :cond_a
-    const-string v3, "ha"
+    const-string/jumbo v3, "ha"
 
     :goto_b
     invoke-virtual {v7, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -17155,7 +17170,7 @@
     goto :goto_0
 
     :cond_3
-    const-string v7, "granted"
+    const-string/jumbo v7, "granted"
 
     invoke-interface {p1, v5, v7}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -25081,7 +25096,7 @@
 
     invoke-interface {p1, v1, v3, v4}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v3, "granted"
+    const-string/jumbo v3, "granted"
 
     invoke-virtual {v2}, Lcom/android/server/pm/permission/PermissionsState$PermissionState;->isGranted()Z
 

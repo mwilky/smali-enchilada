@@ -1154,7 +1154,7 @@
 
     move-result-object v0
 
-    const v1, 0x1040728
+    const v1, 0x1040729
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1168,7 +1168,7 @@
 
     move-result-object v0
 
-    const v1, 0x1040727
+    const v1, 0x1040728
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2936,15 +2936,6 @@
 
     move v1, v0
 
-    iget-boolean v2, p0, Lcom/android/server/notification/ZenModeHelper;->mVibrateFlag:Z
-
-    if-eqz v2, :cond_1
-
-    invoke-direct {p0, v0}, Lcom/android/server/notification/ZenModeHelper;->applyOnePlusZenToRingerMode(I)V
-
-    return-void
-
-    :cond_1
     iget v2, p0, Lcom/android/server/notification/ZenModeHelper;->mZenMode:I
 
     packed-switch v2, :pswitch_data_0
@@ -2952,7 +2943,7 @@
     goto :goto_0
 
     :pswitch_0
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -2968,7 +2959,7 @@
     goto :goto_0
 
     :pswitch_2
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1
 
     invoke-direct {p0}, Lcom/android/server/notification/ZenModeHelper;->getPreviousRingerModeSetting()I
 
@@ -2978,11 +2969,11 @@
 
     invoke-direct {p0, v2}, Lcom/android/server/notification/ZenModeHelper;->setPreviousRingerModeSetting(Ljava/lang/Integer;)V
 
-    :cond_2
+    :cond_1
     :goto_0
     const/4 v2, -0x1
 
-    if-eq v1, v2, :cond_3
+    if-eq v1, v2, :cond_2
 
     iget-object v2, p0, Lcom/android/server/notification/ZenModeHelper;->mAudioManager:Landroid/media/AudioManagerInternal;
 
@@ -2990,7 +2981,7 @@
 
     invoke-virtual {v2, v1, v3}, Landroid/media/AudioManagerInternal;->setRingerModeInternal(ILjava/lang/String;)V
 
-    :cond_3
+    :cond_2
     return-void
 
     nop
@@ -3130,7 +3121,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040269
+    const v3, 0x104026a
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3138,9 +3129,9 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    const v1, 0x1040732
+    const v1, 0x1040733
 
-    const v2, 0x1040731
+    const v2, 0x1040732
 
     const v3, 0x1080502
 
@@ -3158,9 +3149,9 @@
 
     if-eqz v4, :cond_0
 
-    const v1, 0x1040734
+    const v1, 0x1040735
 
-    const v2, 0x1040733
+    const v2, 0x1040734
 
     const v3, 0x1080348
 

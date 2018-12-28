@@ -1,9 +1,6 @@
 .class Lcom/android/server/policy/PhoneWindowManager$6;
-.super Ljava/lang/Object;
+.super Landroid/service/vr/IPersistentVrStateCallbacks$Stub;
 .source "PhoneWindowManager.java"
-
-# interfaces
-.implements Lcom/android/server/policy/BarController$OnBarVisibilityChangedListener;
 
 
 # annotations
@@ -27,21 +24,19 @@
 
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$6;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/service/vr/IPersistentVrStateCallbacks$Stub;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onBarVisibilityChanged(Z)V
+.method public onPersistentVrStateChanged(Z)V
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$6;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mAccessibilityManager:Landroid/view/accessibility/AccessibilityManager;
-
-    invoke-virtual {v0, p1}, Landroid/view/accessibility/AccessibilityManager;->notifyAccessibilityButtonVisibilityChanged(Z)V
+    invoke-static {v0, p1}, Lcom/android/server/policy/PhoneWindowManager;->access$3102(Lcom/android/server/policy/PhoneWindowManager;Z)Z
 
     return-void
 .end method

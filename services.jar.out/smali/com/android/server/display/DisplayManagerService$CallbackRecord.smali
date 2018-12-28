@@ -99,30 +99,68 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
+
+    const/4 v1, 0x0
 
     if-nez p3, :cond_0
 
-    iget v1, p0, Lcom/android/server/display/DisplayManagerService$CallbackRecord;->mUid:I
+    iget v2, p0, Lcom/android/server/display/DisplayManagerService$CallbackRecord;->mUid:I
 
-    invoke-static {v1}, Lcom/android/server/am/OnePlusProcessManager;->isDeliverDisplayChange(I)Z
+    invoke-static {v2}, Lcom/android/server/am/OnePlusProcessManager;->isDeliverDisplayChange(I)Z
 
-    move-result v1
+    move-result v2
 
-    if-nez v1, :cond_0
+    if-nez v2, :cond_0
 
-    const/4 v0, 0x0
-
-    return v0
+    return v1
 
     :cond_0
+    invoke-static {}, Lcom/android/server/preload/PreloadUtils;->getInstance()Lcom/android/server/preload/PreloadUtils;
+
+    move-result-object v2
+
+    iget v3, p0, Lcom/android/server/display/DisplayManagerService$CallbackRecord;->mUid:I
+
+    invoke-virtual {v2, v3}, Lcom/android/server/preload/PreloadUtils;->isPreloadUid(I)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
     iget v1, p0, Lcom/android/server/display/DisplayManagerService$CallbackRecord;->mUid:I
 
     const-string/jumbo v2, "notifyDisplayEventAsync"
 
     invoke-static {v1, v2, v0}, Lcom/android/server/am/OnePlusProcessManager;->resumeProcessByUID_out_Delay(ILjava/lang/String;I)V
 
+    goto :goto_0
+
     :cond_1
+    const-string v2, "AppPreload"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Don\'t resume preload uid : "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v4, p0, Lcom/android/server/display/DisplayManagerService$CallbackRecord;->mUid:I
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return v1
+
+    :cond_2
+    :goto_0
     iget v1, p0, Lcom/android/server/display/DisplayManagerService$CallbackRecord;->mUid:I
 
     iget v2, p0, Lcom/android/server/display/DisplayManagerService$CallbackRecord;->mPid:I

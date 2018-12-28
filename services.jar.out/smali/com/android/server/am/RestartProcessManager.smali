@@ -2264,39 +2264,6 @@
     return-object v0
 .end method
 
-.method private hasWarmUp()Z
-    .locals 4
-
-    sget-boolean v0, Lcom/android/server/am/RestartProcessManager;->sHasWarmUp:Z
-
-    if-nez v0, :cond_0
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    sget-wide v2, Lcom/android/server/am/RestartProcessManager;->sStartWarmUpTime:J
-
-    sub-long/2addr v0, v2
-
-    sget-wide v2, Lcom/android/server/am/RestartProcessManager;->WARM_UP_TIME:J
-
-    cmp-long v0, v0, v2
-
-    if-gez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x1
-
-    sput-boolean v0, Lcom/android/server/am/RestartProcessManager;->sHasWarmUp:Z
-
-    return v0
-.end method
-
 .method private initCluster()V
     .locals 3
 
@@ -5830,6 +5797,26 @@
     return-void
 .end method
 
+.method public getAllLaunchablePackages()Ljava/util/Set;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    sget-object v0, Lcom/android/server/am/RestartProcessManager;->sAllPackagesInfo:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public getGeneralUsedPackageList(Z)Ljava/util/ArrayList;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -5841,7 +5828,7 @@
         }
     .end annotation
 
-    invoke-direct {p0}, Lcom/android/server/am/RestartProcessManager;->hasWarmUp()Z
+    invoke-virtual {p0}, Lcom/android/server/am/RestartProcessManager;->hasWarmUp()Z
 
     move-result v0
 
@@ -5896,7 +5883,7 @@
         }
     .end annotation
 
-    invoke-direct {p0}, Lcom/android/server/am/RestartProcessManager;->hasWarmUp()Z
+    invoke-virtual {p0}, Lcom/android/server/am/RestartProcessManager;->hasWarmUp()Z
 
     move-result v0
 
@@ -5951,7 +5938,7 @@
         }
     .end annotation
 
-    invoke-direct {p0}, Lcom/android/server/am/RestartProcessManager;->hasWarmUp()Z
+    invoke-virtual {p0}, Lcom/android/server/am/RestartProcessManager;->hasWarmUp()Z
 
     move-result v0
 
@@ -6188,6 +6175,39 @@
     return-void
 .end method
 
+.method public hasWarmUp()Z
+    .locals 4
+
+    sget-boolean v0, Lcom/android/server/am/RestartProcessManager;->sHasWarmUp:Z
+
+    if-nez v0, :cond_0
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    sget-wide v2, Lcom/android/server/am/RestartProcessManager;->sStartWarmUpTime:J
+
+    sub-long/2addr v0, v2
+
+    sget-wide v2, Lcom/android/server/am/RestartProcessManager;->WARM_UP_TIME:J
+
+    cmp-long v0, v0, v2
+
+    if-gez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x1
+
+    sput-boolean v0, Lcom/android/server/am/RestartProcessManager;->sHasWarmUp:Z
+
+    return v0
+.end method
+
 .method public initialAllPackage(Ljava/util/ArrayList;)V
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
@@ -6281,43 +6301,60 @@
 .method public isHighUsedPackages(Ljava/lang/String;)Z
     .locals 2
 
-    invoke-direct {p0}, Lcom/android/server/am/RestartProcessManager;->hasWarmUp()Z
+    invoke-virtual {p0}, Lcom/android/server/am/RestartProcessManager;->hasWarmUp()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
-
-    sget-boolean v0, Lcom/android/server/am/RestartProcessManager;->sEnableModule:Z
-
-    if-eqz v0, :cond_2
-
-    sget-boolean v0, Lcom/android/server/am/RestartProcessManager;->sEnableAllModule:Z
+    const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    goto :goto_0
+    return v1
 
     :cond_0
-    const/4 v0, 0x0
+    sget-boolean v0, Lcom/android/server/am/RestartProcessManager;->sEnableModule:Z
 
-    invoke-virtual {p0, v0}, Lcom/android/server/am/RestartProcessManager;->getHighUsedPackageList(Z)Ljava/util/ArrayList;
+    if-eqz v0, :cond_3
 
-    move-result-object v1
+    sget-boolean v0, Lcom/android/server/am/RestartProcessManager;->sEnableAllModule:Z
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
-    return v0
+    goto :goto_0
 
     :cond_1
-    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v1}, Lcom/android/server/am/RestartProcessManager;->getHighUsedPackageList(Z)Ljava/util/ArrayList;
 
-    move-result v0
+    move-result-object v0
 
-    return v0
+    if-nez v0, :cond_2
+
+    return v1
 
     :cond_2
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    return v1
+
+    :cond_3
     :goto_0
     const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public isLaunchablePackage(Ljava/lang/String;)Z
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/android/server/am/RestartProcessManager;->getAllLaunchablePackages()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
 
     return v0
 .end method

@@ -285,6 +285,14 @@
     .end annotation
 .end method
 
+.method public abstract resolveFlushCacheForNet(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract setIPv6AddrGenMode(Ljava/lang/String;I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

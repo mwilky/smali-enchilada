@@ -31,6 +31,10 @@
 
 .field private static final DBG:Z = true
 
+.field private static final DEFAULT_DNS_PORT:I = 0x15b3
+
+.field private static final DEFAULT_HTTP_PORT:I = 0x162e
+
 .field private static final DEFAULT_LINGER_DELAY_MS:I = 0x7530
 
 .field private static final DEFAULT_TCP_BUFFER_SIZES:Ljava/lang/String; = "4096,87380,110208,4096,16384,110208"
@@ -139,6 +143,8 @@
 
 .field private static final VDBG_STALL:Z
 
+.field private static final WIFI_HOST_IFACE_ADDR:Ljava/lang/String; = "192.168.43.1"
+
 .field private static mDefaultUrlBlacklist:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -229,6 +235,8 @@
 .field private mKeepaliveTracker:Lcom/android/server/connectivity/KeepaliveTracker;
 
 .field private mKeyStore:Landroid/security/KeyStore;
+
+.field private mLastStartTetherCaller:Ljava/lang/String;
 
 .field private mLastWakeLockAcquireTimestamp:J
 
@@ -642,6 +650,8 @@
     iput-boolean v3, v1, Lcom/android/server/ConnectivityService;->notShowAgain:Z
 
     iput-object v0, v1, Lcom/android/server/ConnectivityService;->mDialog:Landroid/app/AlertDialog;
+
+    iput-object v0, v1, Lcom/android/server/ConnectivityService;->mLastStartTetherCaller:Ljava/lang/String;
 
     new-instance v5, Ljava/util/ArrayDeque;
 
@@ -6268,7 +6278,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "handleLingerComplete for "
+    const-string/jumbo v1, "handleLingerComplete for "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -8082,7 +8092,7 @@
 
     move-result-object v1
 
-    const v2, 0x5020008
+    const v2, 0x5020009
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -8558,13 +8568,13 @@
 
     move-result-object v0
 
-    const-string v1, "global_http_proxy_host"
+    const-string/jumbo v1, "global_http_proxy_host"
 
     invoke-static {v0, v1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v2, "global_http_proxy_port"
+    const-string/jumbo v2, "global_http_proxy_port"
 
     const/4 v3, 0x0
 
@@ -8572,13 +8582,13 @@
 
     move-result v2
 
-    const-string v3, "global_http_proxy_exclusion_list"
+    const-string/jumbo v3, "global_http_proxy_exclusion_list"
 
     invoke-static {v0, v3}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    const-string v4, "global_proxy_pac_url"
+    const-string/jumbo v4, "global_proxy_pac_url"
 
     invoke-static {v0, v4}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
@@ -12551,7 +12561,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "OP_DATA_STALL: updateLinkProperties() set vendor.oem.cellular.netId = "
+    const-string v4, "OP_DATA_STALL: updateLinkProperties() set sys.radio.cellular.netId = "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -12563,7 +12573,7 @@
 
     invoke-static {v3}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
 
-    const-string/jumbo v3, "vendor.oem.cellular.netId"
+    const-string/jumbo v3, "sys.radio.cellular.netId"
 
     invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -12611,7 +12621,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "OP_DATA_STALL: updateLinkProperties() set vendor.oem.cellular.serverslength = "
+    const-string v4, "OP_DATA_STALL: updateLinkProperties() set sys.radio.cellular.serverslength = "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -12625,7 +12635,7 @@
 
     invoke-static {v3}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
 
-    const-string/jumbo v3, "vendor.oem.cellular.serverslength"
+    const-string/jumbo v3, "sys.radio.cellular.serverslength"
 
     array-length v4, v1
 
@@ -12697,7 +12707,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "OP_DATA_STALL: updateLinkProperties() set vendor.oem.cellular.domainslength = "
+    const-string v4, "OP_DATA_STALL: updateLinkProperties() set sys.radio.cellular.domainslength = "
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -12711,7 +12721,7 @@
 
     invoke-static {v2}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
 
-    const-string/jumbo v2, "vendor.oem.cellular.domainslength"
+    const-string/jumbo v2, "sys.radio.cellular.domainslength"
 
     array-length v4, v3
 
@@ -12757,19 +12767,19 @@
 
     invoke-static {v1}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
 
-    const-string/jumbo v1, "vendor.oem.cellular.netId"
+    const-string/jumbo v1, "sys.radio.cellular.netId"
 
     const-string v2, "0"
 
     invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string/jumbo v1, "vendor.oem.cellular.serverslength"
+    const-string/jumbo v1, "sys.radio.cellular.serverslength"
 
     const-string v2, "0"
 
     invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string/jumbo v1, "vendor.oem.cellular.domainslength"
+    const-string/jumbo v1, "sys.radio.cellular.domainslength"
 
     const-string v2, "0"
 
@@ -14147,8 +14157,13 @@
 
     move-result v2
 
-    if-nez v2, :cond_2
+    if-eqz v2, :cond_2
 
+    iget-object v2, p1, Lcom/android/server/connectivity/NetworkAgentInfo;->clatd:Lcom/android/server/connectivity/Nat464Xlat;
+
+    if-eqz v2, :cond_3
+
+    :cond_2
     monitor-enter p1
 
     :try_start_0
@@ -14164,7 +14179,12 @@
 
     invoke-virtual {p0, p1, v2}, Lcom/android/server/ConnectivityService;->notifyNetworkCallbacks(Lcom/android/server/connectivity/NetworkAgentInfo;I)V
 
-    goto :goto_1
+    :cond_3
+    iget-object v2, p0, Lcom/android/server/ConnectivityService;->mKeepaliveTracker:Lcom/android/server/connectivity/KeepaliveTracker;
+
+    invoke-virtual {v2, p1}, Lcom/android/server/connectivity/KeepaliveTracker;->handleCheckKeepalivesStillValid(Lcom/android/server/connectivity/NetworkAgentInfo;)V
+
+    return-void
 
     :catchall_0
     move-exception v2
@@ -14175,14 +14195,6 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v2
-
-    :cond_2
-    :goto_1
-    iget-object v2, p0, Lcom/android/server/ConnectivityService;->mKeepaliveTracker:Lcom/android/server/connectivity/KeepaliveTracker;
-
-    invoke-virtual {v2, p1}, Lcom/android/server/connectivity/KeepaliveTracker;->handleCheckKeepalivesStillValid(Lcom/android/server/connectivity/NetworkAgentInfo;)V
-
-    return-void
 .end method
 
 .method private updateMtu(Landroid/net/LinkProperties;Landroid/net/LinkProperties;)V
@@ -17004,7 +17016,7 @@
 
     move-result-object v1
 
-    const v2, 0x10403e3
+    const v2, 0x10403e4
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -19819,19 +19831,19 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     :try_start_1
-    const-string v8, "global_http_proxy_host"
+    const-string/jumbo v8, "global_http_proxy_host"
 
     invoke-static {v5, v8, v1}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    const-string v8, "global_http_proxy_port"
+    const-string/jumbo v8, "global_http_proxy_port"
 
     invoke-static {v5, v8, v2}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    const-string v8, "global_http_proxy_exclusion_list"
+    const-string/jumbo v8, "global_http_proxy_exclusion_list"
 
     invoke-static {v5, v8, v3}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    const-string v8, "global_proxy_pac_url"
+    const-string/jumbo v8, "global_proxy_pac_url"
 
     invoke-static {v5, v8, v4}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
     :try_end_1
@@ -20190,6 +20202,8 @@
     return-void
 
     :cond_0
+    iput-object p4, p0, Lcom/android/server/ConnectivityService;->mLastStartTetherCaller:Ljava/lang/String;
+
     sget-object v0, Lcom/android/server/ConnectivityService;->mProject:Ljava/lang/String;
 
     if-eqz v0, :cond_3
@@ -20309,37 +20323,101 @@
 .end method
 
 .method public stopTethering(ILjava/lang/String;)V
-    .locals 2
+    .locals 5
 
     iget-object v0, p0, Lcom/android/server/ConnectivityService;->mContext:Landroid/content/Context;
 
     invoke-static {v0, p2}, Landroid/net/ConnectivityManager;->enforceTetherChangePermission(Landroid/content/Context;Ljava/lang/String;)V
 
-    sget-object v0, Lcom/android/server/ConnectivityService;->mProject:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/server/ConnectivityService;->mLastStartTetherCaller:Ljava/lang/String;
+
+    const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/android/server/ConnectivityService;->mProject:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/server/ConnectivityService;->mLastStartTetherCaller:Ljava/lang/String;
 
-    const-string v1, "18811"
+    const-string v2, "com.oneplus.filemanager"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    if-nez p1, :cond_0
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/ConnectivityService;->mNetd:Landroid/os/INetworkManagementService;
+
+    const-string/jumbo v2, "udp"
+
+    const-string v3, "53"
+
+    const-string v4, "192.168.43.1:5555"
+
+    invoke-interface {v0, v1, v2, v3, v4}, Landroid/os/INetworkManagementService;->setPortForwardRules(ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/android/server/ConnectivityService;->mNetd:Landroid/os/INetworkManagementService;
+
+    const-string/jumbo v2, "tcp"
+
+    const-string v3, "80"
+
+    const-string v4, "192.168.43.1:5678"
+
+    invoke-interface {v0, v1, v2, v3, v4}, Landroid/os/INetworkManagementService;->setPortForwardRules(ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/android/server/ConnectivityService;->mLastStartTetherCaller:Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Exception setPortForwardRules:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/android/server/ConnectivityService;->loge(Ljava/lang/String;)V
+
+    :cond_0
+    :goto_0
+    sget-object v0, Lcom/android/server/ConnectivityService;->mProject:Ljava/lang/String;
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lcom/android/server/ConnectivityService;->mProject:Ljava/lang/String;
+
+    const-string v2, "18811"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    if-nez p1, :cond_1
 
     invoke-direct {p0}, Lcom/android/server/ConnectivityService;->getWifiManager()Landroid/net/wifi/WifiManager;
 
     move-result-object v0
 
-    const/4 v1, 0x0
-
     invoke-virtual {v0, p1, v1}, Landroid/net/wifi/WifiManager;->setTetherState(IZ)V
 
-    :cond_0
+    :cond_1
     iget-object v0, p0, Lcom/android/server/ConnectivityService;->mTethering:Lcom/android/server/connectivity/Tethering;
 
     invoke-virtual {v0, p1}, Lcom/android/server/connectivity/Tethering;->stopTethering(I)V

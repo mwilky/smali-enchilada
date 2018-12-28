@@ -18,12 +18,18 @@
 # instance fields
 .field private mContext:Landroid/content/Context;
 
+.field private opams:Lcom/android/server/am/OnePlusAppControlModeService;
+
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 0
+    .locals 1
 
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/oneplus/server/OnePlusService;->opams:Lcom/android/server/am/OnePlusAppControlModeService;
 
     iput-object p1, p0, Lcom/oneplus/server/OnePlusService;->mContext:Landroid/content/Context;
 
@@ -41,8 +47,21 @@
 
 # virtual methods
 .method public onBootPhase(I)V
-    .locals 0
+    .locals 1
 
+    const/16 v0, 0x3e8
+
+    if-ne p1, v0, :cond_0
+
+    iget-object v0, p0, Lcom/oneplus/server/OnePlusService;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/android/server/am/OnePlusAppControlModeService;->getInstance(Landroid/content/Context;)Lcom/android/server/am/OnePlusAppControlModeService;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/oneplus/server/OnePlusService;->opams:Lcom/android/server/am/OnePlusAppControlModeService;
+
+    :cond_0
     return-void
 .end method
 

@@ -31,6 +31,8 @@
 
 .field public static final enum NETWORK_STATE:Lcom/android/server/OnePlusStandbyAnalyzer$TELEPHONY_TYPE;
 
+.field public static final enum RAT_STATE:Lcom/android/server/OnePlusStandbyAnalyzer$TELEPHONY_TYPE;
+
 
 # instance fields
 .field private value:I
@@ -38,7 +40,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 7
 
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$TELEPHONY_TYPE;
 
@@ -72,7 +74,17 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$TELEPHONY_TYPE;->IMS_STATE:Lcom/android/server/OnePlusStandbyAnalyzer$TELEPHONY_TYPE;
 
-    new-array v0, v5, [Lcom/android/server/OnePlusStandbyAnalyzer$TELEPHONY_TYPE;
+    new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$TELEPHONY_TYPE;
+
+    const-string v1, "RAT_STATE"
+
+    const/4 v6, 0x4
+
+    invoke-direct {v0, v1, v5, v6}, Lcom/android/server/OnePlusStandbyAnalyzer$TELEPHONY_TYPE;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$TELEPHONY_TYPE;->RAT_STATE:Lcom/android/server/OnePlusStandbyAnalyzer$TELEPHONY_TYPE;
+
+    new-array v0, v6, [Lcom/android/server/OnePlusStandbyAnalyzer$TELEPHONY_TYPE;
 
     sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$TELEPHONY_TYPE;->NETWORK_STATE:Lcom/android/server/OnePlusStandbyAnalyzer$TELEPHONY_TYPE;
 
@@ -85,6 +97,10 @@
     sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$TELEPHONY_TYPE;->IMS_STATE:Lcom/android/server/OnePlusStandbyAnalyzer$TELEPHONY_TYPE;
 
     aput-object v1, v0, v4
+
+    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$TELEPHONY_TYPE;->RAT_STATE:Lcom/android/server/OnePlusStandbyAnalyzer$TELEPHONY_TYPE;
+
+    aput-object v1, v0, v5
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$TELEPHONY_TYPE;->$VALUES:[Lcom/android/server/OnePlusStandbyAnalyzer$TELEPHONY_TYPE;
 
@@ -152,7 +168,7 @@
 
     const/4 v0, 0x0
 
-    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$14;->$SwitchMap$com$android$server$OnePlusStandbyAnalyzer$TELEPHONY_TYPE:[I
+    sget-object v1, Lcom/android/server/OnePlusStandbyAnalyzer$13;->$SwitchMap$com$android$server$OnePlusStandbyAnalyzer$TELEPHONY_TYPE:[I
 
     invoke-virtual {p0}, Lcom/android/server/OnePlusStandbyAnalyzer$TELEPHONY_TYPE;->ordinal()I
 
@@ -162,60 +178,74 @@
 
     packed-switch v1, :pswitch_data_0
 
-    goto :goto_3
+    goto :goto_4
 
     :pswitch_0
     if-eqz p1, :cond_0
 
-    const-string v1, "QXDM_TELEPHONY_IMS_ANOMALY"
+    const-string v1, "QXDM_TELEPHONY_RAT_ANOMALY"
 
     goto :goto_0
 
     :cond_0
-    const-string v1, "TELEPHONY_IMS_ANOMALY"
+    const-string v1, "TELEPHONY_RAT_ANOMALY"
 
     :goto_0
     move-object v0, v1
 
-    goto :goto_3
+    goto :goto_4
 
     :pswitch_1
     if-eqz p1, :cond_1
 
-    const-string v1, "QXDM_TELEPHONY_DATACALL_ANOMALY"
+    const-string v1, "QXDM_TELEPHONY_IMS_ANOMALY"
 
     goto :goto_1
 
     :cond_1
-    const-string v1, "TELEPHONY_DATACALL_ANOMALY"
+    const-string v1, "TELEPHONY_IMS_ANOMALY"
 
     :goto_1
     move-object v0, v1
 
-    goto :goto_3
+    goto :goto_4
 
     :pswitch_2
     if-eqz p1, :cond_2
 
-    const-string v1, "QXDM_TELEPHONY_NETWORK_ANOMALY"
+    const-string v1, "QXDM_TELEPHONY_DATACALL_ANOMALY"
 
     goto :goto_2
 
     :cond_2
-    const-string v1, "TELEPHONY_NETWORK_ANOMALY"
+    const-string v1, "TELEPHONY_DATACALL_ANOMALY"
 
     :goto_2
     move-object v0, v1
 
-    nop
+    goto :goto_4
+
+    :pswitch_3
+    if-eqz p1, :cond_3
+
+    const-string v1, "QXDM_TELEPHONY_NETWORK_ANOMALY"
+
+    goto :goto_3
+
+    :cond_3
+    const-string v1, "TELEPHONY_NETWORK_ANOMALY"
 
     :goto_3
-    return-object v0
+    move-object v0, v1
 
     nop
+
+    :goto_4
+    return-object v0
 
     :pswitch_data_0
     .packed-switch 0x1
+        :pswitch_3
         :pswitch_2
         :pswitch_1
         :pswitch_0

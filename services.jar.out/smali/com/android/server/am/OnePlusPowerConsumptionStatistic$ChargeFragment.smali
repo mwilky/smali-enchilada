@@ -141,7 +141,7 @@
     return-void
 .end method
 
-.method static synthetic access$5700(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$ChargeFragment;)V
+.method static synthetic access$7500(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$ChargeFragment;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$ChargeFragment;->clear()V
@@ -149,7 +149,7 @@
     return-void
 .end method
 
-.method static synthetic access$5900(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$ChargeFragment;I)Ljava/lang/String;
+.method static synthetic access$9100(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$ChargeFragment;I)Ljava/lang/String;
     .locals 1
 
     invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$ChargeFragment;->toMDM(I)Ljava/lang/String;

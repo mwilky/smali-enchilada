@@ -10,6 +10,7 @@
         Lcom/android/server/AlarmManagerService$DeliveryTracker;,
         Lcom/android/server/AlarmManagerService$AppStandbyTracker;,
         Lcom/android/server/AlarmManagerService$UidObserver;,
+        Lcom/android/server/AlarmManagerService$AppKillReceiver;,
         Lcom/android/server/AlarmManagerService$UninstallReceiver;,
         Lcom/android/server/AlarmManagerService$InteractiveStateReceiver;,
         Lcom/android/server/AlarmManagerService$ClockReceiver;,
@@ -208,6 +209,8 @@
         }
     .end annotation
 .end field
+
+.field private mAppKillReceiver:Lcom/android/server/AlarmManagerService$AppKillReceiver;
 
 .field mAppOps:Landroid/app/AppOpsManager;
 
@@ -10447,7 +10450,7 @@
 
     move-result-object v6
 
-    const v7, 0x502000d
+    const v7, 0x502000e
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -10515,7 +10518,7 @@
 
     move-result-object v6
 
-    const v7, 0x5020009
+    const v7, 0x502000a
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -10602,6 +10605,12 @@
     invoke-direct {v3, p0}, Lcom/android/server/AlarmManagerService$UninstallReceiver;-><init>(Lcom/android/server/AlarmManagerService;)V
 
     iput-object v3, p0, Lcom/android/server/AlarmManagerService;->mUninstallReceiver:Lcom/android/server/AlarmManagerService$UninstallReceiver;
+
+    new-instance v3, Lcom/android/server/AlarmManagerService$AppKillReceiver;
+
+    invoke-direct {v3, p0}, Lcom/android/server/AlarmManagerService$AppKillReceiver;-><init>(Lcom/android/server/AlarmManagerService;)V
+
+    iput-object v3, p0, Lcom/android/server/AlarmManagerService;->mAppKillReceiver:Lcom/android/server/AlarmManagerService$AppKillReceiver;
 
     iget-wide v6, p0, Lcom/android/server/AlarmManagerService;->mNativeData:J
 

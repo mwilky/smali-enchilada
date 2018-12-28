@@ -305,325 +305,332 @@
 .end method
 
 .method convertToAligned(Lcom/android/server/AlarmManagerService$Alarm;Z)J
-    .locals 13
+    .locals 17
 
-    iget v0, p1, Lcom/android/server/AlarmManagerService$Alarm;->type:I
+    move-object/from16 v1, p0
+
+    move-object/from16 v2, p1
+
+    iget v3, v2, Lcom/android/server/AlarmManagerService$Alarm;->type:I
 
     if-eqz p2, :cond_0
 
-    iget-wide v1, p1, Lcom/android/server/AlarmManagerService$Alarm;->origWhen:J
+    iget-wide v4, v2, Lcom/android/server/AlarmManagerService$Alarm;->origWhen:J
 
     goto :goto_0
 
     :cond_0
-    iget-wide v1, p1, Lcom/android/server/AlarmManagerService$Alarm;->when:J
+    iget-wide v4, v2, Lcom/android/server/AlarmManagerService$Alarm;->when:J
 
     :goto_0
-    iget-boolean v3, p0, Lcom/android/server/AlarmManagerService$Alignment;->mAlignmentEnabled:Z
+    iget-boolean v0, v1, Lcom/android/server/AlarmManagerService$Alignment;->mAlignmentEnabled:Z
 
-    if-nez v3, :cond_1
+    if-nez v0, :cond_1
 
-    iget-boolean v3, p0, Lcom/android/server/AlarmManagerService$Alignment;->mAlignmentEnabledOverride:Z
+    iget-boolean v0, v1, Lcom/android/server/AlarmManagerService$Alignment;->mAlignmentEnabledOverride:Z
 
-    if-nez v3, :cond_1
+    if-nez v0, :cond_1
 
-    return-wide v1
+    return-wide v4
 
     :cond_1
-    iget-boolean v3, p0, Lcom/android/server/AlarmManagerService$Alignment;->mAlignmentActive:Z
+    iget-boolean v0, v1, Lcom/android/server/AlarmManagerService$Alignment;->mAlignmentActive:Z
 
-    if-nez v3, :cond_2
+    if-nez v0, :cond_2
 
-    iget-boolean v3, p0, Lcom/android/server/AlarmManagerService$Alignment;->mAlignmentActiveOverride:Z
+    iget-boolean v0, v1, Lcom/android/server/AlarmManagerService$Alignment;->mAlignmentActiveOverride:Z
 
-    if-nez v3, :cond_2
+    if-nez v0, :cond_2
 
-    return-wide v1
+    return-wide v4
 
     :cond_2
-    const/4 v3, 0x0
+    const/4 v6, 0x0
 
-    iget-object v4, p1, Lcom/android/server/AlarmManagerService$Alarm;->operation:Landroid/app/PendingIntent;
+    iget-object v0, v2, Lcom/android/server/AlarmManagerService$Alarm;->operation:Landroid/app/PendingIntent;
 
-    if-eqz v4, :cond_3
+    if-eqz v0, :cond_3
 
-    iget-object v4, p1, Lcom/android/server/AlarmManagerService$Alarm;->statsTag:Ljava/lang/String;
+    iget-object v0, v2, Lcom/android/server/AlarmManagerService$Alarm;->statsTag:Ljava/lang/String;
 
     goto :goto_1
 
     :cond_3
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "<listener>:"
+    const-string v7, "<listener>:"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v5, p1, Lcom/android/server/AlarmManagerService$Alarm;->listenerTag:Ljava/lang/String;
+    iget-object v7, v2, Lcom/android/server/AlarmManagerService$Alarm;->listenerTag:Ljava/lang/String;
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
     :goto_1
-    const-string v5, ":"
+    move-object v7, v0
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    const-string v0, ":"
 
-    move-result-object v5
+    invoke-virtual {v7, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    invoke-static {v5}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    move-result-object v0
 
-    move-result-object v5
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
-    const/4 v6, 0x0
+    move-result-object v0
 
-    invoke-interface {v5, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    const/4 v8, 0x0
 
-    move-result-object v5
+    invoke-interface {v0, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    check-cast v5, Ljava/lang/String;
+    move-result-object v0
 
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
+    check-cast v0, Ljava/lang/String;
 
-    move-result v5
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    const/4 v7, 0x1
+    move-result v0
 
-    add-int/2addr v5, v7
+    const/4 v9, 0x1
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    add-int/2addr v0, v9
 
-    move-result-object v5
+    invoke-virtual {v7, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    iget-object v8, p0, Lcom/android/server/AlarmManagerService$Alignment;->mAlarmSpecialList:Ljava/util/HashMap;
+    move-result-object v10
 
-    monitor-enter v8
+    iget-object v11, v1, Lcom/android/server/AlarmManagerService$Alignment;->mAlarmSpecialList:Ljava/util/HashMap;
+
+    monitor-enter v11
 
     :try_start_0
-    iget-object v9, p1, Lcom/android/server/AlarmManagerService$Alarm;->packageName:Ljava/lang/String;
+    iget-object v0, v2, Lcom/android/server/AlarmManagerService$Alarm;->packageName:Ljava/lang/String;
 
-    iget-object v10, p0, Lcom/android/server/AlarmManagerService$Alignment;->mAlarmSpecialList:Ljava/util/HashMap;
+    iget-object v12, v1, Lcom/android/server/AlarmManagerService$Alignment;->mAlarmSpecialList:Ljava/util/HashMap;
 
-    invoke-virtual {p0, v5, v9, v10}, Lcom/android/server/AlarmManagerService$Alignment;->checkActionMap(Ljava/lang/String;Ljava/lang/String;Ljava/util/HashMap;)Z
+    invoke-virtual {v1, v10, v0, v12}, Lcom/android/server/AlarmManagerService$Alignment;->checkActionMap(Ljava/lang/String;Ljava/lang/String;Ljava/util/HashMap;)Z
 
-    move-result v9
+    move-result v0
 
-    if-eqz v9, :cond_4
+    if-eqz v0, :cond_4
 
-    const/4 v3, 0x1
+    const/4 v0, 0x1
+
+    move v6, v0
 
     :cond_4
-    monitor-exit v8
+    monitor-exit v11
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
-    iget-object v8, p0, Lcom/android/server/AlarmManagerService$Alignment;->this$0:Lcom/android/server/AlarmManagerService;
+    iget-object v0, v1, Lcom/android/server/AlarmManagerService$Alignment;->this$0:Lcom/android/server/AlarmManagerService;
 
-    invoke-static {v8}, Lcom/android/server/AlarmManagerService;->access$000(Lcom/android/server/AlarmManagerService;)Lcom/android/server/AppStateTracker;
+    invoke-static {v0}, Lcom/android/server/AlarmManagerService;->access$000(Lcom/android/server/AlarmManagerService;)Lcom/android/server/AppStateTracker;
 
-    move-result-object v8
+    move-result-object v0
 
-    iget v9, p1, Lcom/android/server/AlarmManagerService$Alarm;->uid:I
+    iget v11, v2, Lcom/android/server/AlarmManagerService$Alarm;->uid:I
 
-    invoke-virtual {v8, v9}, Lcom/android/server/AppStateTracker;->isUidPowerSaveWhitelisted(I)Z
+    invoke-virtual {v0, v11}, Lcom/android/server/AppStateTracker;->isUidPowerSaveWhitelisted(I)Z
 
-    move-result v8
+    move-result v12
 
-    iget v9, p1, Lcom/android/server/AlarmManagerService$Alarm;->uid:I
+    iget v0, v2, Lcom/android/server/AlarmManagerService$Alarm;->uid:I
 
-    invoke-static {v9}, Landroid/os/UserHandle;->getAppId(I)I
+    invoke-static {v0}, Landroid/os/UserHandle;->getAppId(I)I
 
-    move-result v9
+    move-result v0
 
-    const/16 v10, 0x2710
+    const/16 v11, 0x2710
 
-    if-lt v9, v10, :cond_f
+    if-lt v0, v11, :cond_5
 
-    if-eqz v8, :cond_5
-
-    if-nez v3, :cond_5
-
-    goto/16 :goto_6
+    if-eqz v12, :cond_6
 
     :cond_5
-    iget-object v9, p0, Lcom/android/server/AlarmManagerService$Alignment;->mAlarmWhitelist:Ljava/util/HashMap;
+    if-nez v6, :cond_6
 
-    monitor-enter v9
-
-    :try_start_1
-    iget-object v10, p1, Lcom/android/server/AlarmManagerService$Alarm;->packageName:Ljava/lang/String;
-
-    iget-object v11, p0, Lcom/android/server/AlarmManagerService$Alignment;->mAlarmWhitelist:Ljava/util/HashMap;
-
-    invoke-virtual {p0, v5, v10, v11}, Lcom/android/server/AlarmManagerService$Alignment;->checkActionMap(Ljava/lang/String;Ljava/lang/String;Ljava/util/HashMap;)Z
-
-    move-result v10
-
-    if-eqz v10, :cond_6
-
-    monitor-exit v9
-
-    return-wide v1
+    return-wide v4
 
     :cond_6
-    monitor-exit v9
+    iget-object v13, v1, Lcom/android/server/AlarmManagerService$Alignment;->mAlarmWhitelist:Ljava/util/HashMap;
+
+    monitor-enter v13
+
+    :try_start_1
+    iget-object v0, v2, Lcom/android/server/AlarmManagerService$Alarm;->packageName:Ljava/lang/String;
+
+    iget-object v11, v1, Lcom/android/server/AlarmManagerService$Alignment;->mAlarmWhitelist:Ljava/util/HashMap;
+
+    invoke-virtual {v1, v10, v0, v11}, Lcom/android/server/AlarmManagerService$Alignment;->checkActionMap(Ljava/lang/String;Ljava/lang/String;Ljava/util/HashMap;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7
+
+    monitor-exit v13
+
+    return-wide v4
+
+    :cond_7
+    monitor-exit v13
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    iget-wide v9, p1, Lcom/android/server/AlarmManagerService$Alarm;->windowLength:J
+    iget-wide v13, v2, Lcom/android/server/AlarmManagerService$Alarm;->windowLength:J
 
-    const-wide/16 v11, 0x0
+    const-wide/16 v15, 0x0
 
-    cmp-long v9, v9, v11
+    cmp-long v0, v13, v15
 
-    if-eqz v9, :cond_7
+    if-eqz v0, :cond_8
 
-    iget v9, p1, Lcom/android/server/AlarmManagerService$Alarm;->flags:I
+    iget v0, v2, Lcom/android/server/AlarmManagerService$Alarm;->flags:I
 
-    and-int/2addr v9, v7
+    and-int/2addr v0, v9
 
-    if-eqz v9, :cond_9
+    if-eqz v0, :cond_a
 
-    :cond_7
-    iget-object v10, p0, Lcom/android/server/AlarmManagerService$Alignment;->mAlarmBlacklist:Ljava/util/HashMap;
+    :cond_8
+    iget-object v11, v1, Lcom/android/server/AlarmManagerService$Alignment;->mAlarmBlacklist:Ljava/util/HashMap;
 
-    monitor-enter v10
+    monitor-enter v11
 
-    if-nez v3, :cond_8
+    if-nez v6, :cond_9
 
     :try_start_2
-    const-string v9, "black_action"
+    const-string v0, "black_action"
 
-    iget-object v11, p0, Lcom/android/server/AlarmManagerService$Alignment;->mAlarmBlacklist:Ljava/util/HashMap;
+    iget-object v13, v1, Lcom/android/server/AlarmManagerService$Alignment;->mAlarmBlacklist:Ljava/util/HashMap;
 
-    invoke-virtual {p0, v5, v9, v11}, Lcom/android/server/AlarmManagerService$Alignment;->checkActionMap(Ljava/lang/String;Ljava/lang/String;Ljava/util/HashMap;)Z
+    invoke-virtual {v1, v10, v0, v13}, Lcom/android/server/AlarmManagerService$Alignment;->checkActionMap(Ljava/lang/String;Ljava/lang/String;Ljava/util/HashMap;)Z
 
-    move-result v9
+    move-result v0
 
-    if-nez v9, :cond_8
+    if-nez v0, :cond_9
 
-    iget-object v9, p1, Lcom/android/server/AlarmManagerService$Alarm;->packageName:Ljava/lang/String;
+    iget-object v0, v2, Lcom/android/server/AlarmManagerService$Alarm;->packageName:Ljava/lang/String;
 
-    iget-object v11, p0, Lcom/android/server/AlarmManagerService$Alignment;->mAlarmBlacklist:Ljava/util/HashMap;
+    iget-object v13, v1, Lcom/android/server/AlarmManagerService$Alignment;->mAlarmBlacklist:Ljava/util/HashMap;
 
-    invoke-virtual {p0, v5, v9, v11}, Lcom/android/server/AlarmManagerService$Alignment;->checkActionMap(Ljava/lang/String;Ljava/lang/String;Ljava/util/HashMap;)Z
+    invoke-virtual {v1, v10, v0, v13}, Lcom/android/server/AlarmManagerService$Alignment;->checkActionMap(Ljava/lang/String;Ljava/lang/String;Ljava/util/HashMap;)Z
 
-    move-result v9
+    move-result v0
 
-    if-nez v9, :cond_8
+    if-nez v0, :cond_9
 
-    monitor-exit v10
+    monitor-exit v11
 
-    return-wide v1
+    return-wide v4
 
     :catchall_0
-    move-exception v6
+    move-exception v0
 
     goto :goto_5
 
-    :cond_8
-    monitor-exit v10
+    :cond_9
+    monitor-exit v11
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    :cond_9
-    sget-boolean v9, Lcom/android/server/AlarmManagerService;->DEBUG_ALARM_ALIGNMENT:Z
-
-    if-eqz v9, :cond_a
-
-    const-string v9, "Before alignment: "
-
-    invoke-virtual {p0, p1, v9, v1, v2}, Lcom/android/server/AlarmManagerService$Alignment;->dumpAlarmInfo(Lcom/android/server/AlarmManagerService$Alarm;Ljava/lang/String;J)V
-
     :cond_a
-    if-eq v0, v7, :cond_c
+    sget-boolean v0, Lcom/android/server/AlarmManagerService;->DEBUG_ALARM_ALIGNMENT:Z
 
-    if-nez v0, :cond_b
+    if-eqz v0, :cond_b
+
+    const-string v0, "Before alignment: "
+
+    invoke-virtual {v1, v2, v0, v4, v5}, Lcom/android/server/AlarmManagerService$Alignment;->dumpAlarmInfo(Lcom/android/server/AlarmManagerService$Alarm;Ljava/lang/String;J)V
+
+    :cond_b
+    if-eq v3, v9, :cond_d
+
+    if-nez v3, :cond_c
 
     goto :goto_2
 
-    :cond_b
+    :cond_c
     goto :goto_3
 
-    :cond_c
+    :cond_d
     :goto_2
-    move v6, v7
+    move v8, v9
 
     :goto_3
-    if-eqz v6, :cond_d
+    move v0, v8
 
-    invoke-virtual {p0, v1, v2}, Lcom/android/server/AlarmManagerService$Alignment;->calculateAlignedTime(J)J
+    if-eqz v0, :cond_e
 
-    move-result-wide v9
+    invoke-virtual {v1, v4, v5}, Lcom/android/server/AlarmManagerService$Alignment;->calculateAlignedTime(J)J
+
+    move-result-wide v8
 
     goto :goto_4
 
-    :cond_d
+    :cond_e
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v9
+    move-result-wide v8
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v11
+    move-result-wide v13
 
-    sub-long/2addr v9, v11
+    sub-long/2addr v8, v13
 
-    add-long/2addr v1, v9
+    add-long/2addr v4, v8
 
-    invoke-virtual {p0, v1, v2}, Lcom/android/server/AlarmManagerService$Alignment;->calculateAlignedTime(J)J
+    invoke-virtual {v1, v4, v5}, Lcom/android/server/AlarmManagerService$Alignment;->calculateAlignedTime(J)J
 
-    move-result-wide v11
+    move-result-wide v13
 
-    sub-long v9, v11, v9
+    sub-long v8, v13, v8
 
     :goto_4
-    sget-boolean v7, Lcom/android/server/AlarmManagerService;->DEBUG_ALARM_ALIGNMENT:Z
+    sget-boolean v11, Lcom/android/server/AlarmManagerService;->DEBUG_ALARM_ALIGNMENT:Z
 
-    if-eqz v7, :cond_e
+    if-eqz v11, :cond_f
 
-    const-string v7, "After alignment: "
+    const-string v11, "After alignment: "
 
-    invoke-virtual {p0, p1, v7, v9, v10}, Lcom/android/server/AlarmManagerService$Alignment;->dumpAlarmInfo(Lcom/android/server/AlarmManagerService$Alarm;Ljava/lang/String;J)V
+    invoke-virtual {v1, v2, v11, v8, v9}, Lcom/android/server/AlarmManagerService$Alignment;->dumpAlarmInfo(Lcom/android/server/AlarmManagerService$Alarm;Ljava/lang/String;J)V
 
-    :cond_e
-    return-wide v9
+    :cond_f
+    return-wide v8
 
     :goto_5
     :try_start_3
-    monitor-exit v10
+    monitor-exit v11
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    throw v6
+    throw v0
 
     :catchall_1
-    move-exception v6
+    move-exception v0
 
     :try_start_4
-    monitor-exit v9
+    monitor-exit v13
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    throw v6
-
-    :cond_f
-    :goto_6
-    return-wide v1
+    throw v0
 
     :catchall_2
-    move-exception v6
+    move-exception v0
 
     :try_start_5
-    monitor-exit v8
+    monitor-exit v11
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
-    throw v6
+    throw v0
 .end method
 
 .method dump(Ljava/io/PrintWriter;)V

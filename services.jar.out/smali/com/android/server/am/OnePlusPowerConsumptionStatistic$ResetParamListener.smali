@@ -15,5 +15,8 @@
 
 
 # virtual methods
+.method public abstract getPlugState()I
+.end method
+
 .method public abstract resetParamForOPCS()Z
 .end method

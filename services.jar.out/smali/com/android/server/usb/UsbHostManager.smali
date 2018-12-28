@@ -240,7 +240,7 @@
     :cond_0
     sget-boolean v1, Lcom/android/server/usb/UsbHostManager;->OTG_AUTO_SHUTDOWN_ENABLE:Z
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
     iget-object v1, p0, Lcom/android/server/usb/UsbHostManager;->mContext:Landroid/content/Context;
 
@@ -346,15 +346,24 @@
 
     move-result v4
 
-    if-eqz v4, :cond_3
+    if-nez v4, :cond_3
 
+    const-string/jumbo v4, "msmnile"
+
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_4
+
+    :cond_3
     iget-object v4, p0, Lcom/android/server/usb/UsbHostManager;->mOTGUEventObserver:Landroid/os/UEventObserver;
 
     const-string v5, "DEVPATH=/devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.0.auto/usb2"
 
     invoke-virtual {v4, v5}, Landroid/os/UEventObserver;->startObserving(Ljava/lang/String;)V
 
-    :cond_3
+    :cond_4
     :goto_0
     return-void
 .end method
@@ -1568,7 +1577,7 @@
     :try_start_0
     sget-boolean v1, Lcom/android/server/usb/UsbHostManager;->OTG_AUTO_SHUTDOWN_ENABLE:Z
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_5
 
     iget-object v1, p0, Lcom/android/server/usb/UsbHostManager;->mContext:Landroid/content/Context;
 
@@ -1586,7 +1595,7 @@
 
     const/4 v2, 0x1
 
-    if-ne v1, v2, :cond_4
+    if-ne v1, v2, :cond_5
 
     const/4 v3, 0x0
 
@@ -1642,8 +1651,17 @@
 
     move-result v5
 
-    if-eqz v5, :cond_2
+    if-nez v5, :cond_2
 
+    const-string/jumbo v5, "msmnile"
+
+    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_3
+
+    :cond_2
     new-instance v5, Ljava/io/File;
 
     const-string v6, "/sys/devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.0.auto/usb2"
@@ -1652,15 +1670,15 @@
 
     move-object v3, v5
 
-    :cond_2
+    :cond_3
     :goto_0
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_5
 
     invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
     move-result v5
 
-    if-eqz v5, :cond_3
+    if-eqz v5, :cond_4
 
     sget-object v5, Lcom/android/server/usb/UsbHostManager;->TAG:Ljava/lang/String;
 
@@ -1672,7 +1690,7 @@
 
     goto :goto_1
 
-    :cond_3
+    :cond_4
     sget-object v2, Lcom/android/server/usb/UsbHostManager;->TAG:Ljava/lang/String;
 
     const-string v5, "System ready and otg turn on, resetAlarmTrigger..."
@@ -1681,7 +1699,7 @@
 
     invoke-direct {p0}, Lcom/android/server/usb/UsbHostManager;->resetAlarmTrigger()V
 
-    :cond_4
+    :cond_5
     :goto_1
     new-instance v1, Lcom/android/server/usb/-$$Lambda$UsbHostManager$XT3F5aQci4H6VWSBYBQQNSzpnvs;
 

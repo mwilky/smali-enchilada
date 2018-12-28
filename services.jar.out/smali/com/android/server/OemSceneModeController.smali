@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/server/OemSceneModeController$BreathModeContentObserver;,
         Lcom/android/server/OemSceneModeController$GameModeBatterySaverContentObserver;,
         Lcom/android/server/OemSceneModeController$GameModeAutoContentObserver;,
         Lcom/android/server/OemSceneModeController$GameModeManualContentObserver;,
@@ -32,6 +33,8 @@
 
 .field public static final MODE_READING:I = 0x0
 
+.field private static final MSG_BREATH_MODE_CHANGED:I = 0x8
+
 .field private static final MSG_GAME_AUTO_CHANGED:I = 0x3
 
 .field private static final MSG_GAME_BATTERY_SAVER_CHANGED:I = 0xb
@@ -52,6 +55,12 @@
 
 .field private static final NOTIFY_TAG:Ljava/lang/String; = "SceneModeController"
 
+.field private static final PROP_BRICK_MODE_DISABLE_BLACKSCREEN_GESTRUE:Ljava/lang/String; = "persist.sys.brickmode.disableblackgesture"
+
+.field private static final PROP_BRICK_MODE_DISABLE_GESTURE:Ljava/lang/String; = "persist.sys.brickmode.disablegesture"
+
+.field private static final PROP_BRICK_MODE_DISABLE_NFC:Ljava/lang/String; = "persist.sys.brickmode.disablenfc"
+
 .field private static final PROP_GAME_MODE_SCALE_DEUBG_KEY:Ljava/lang/String; = "persist.sys.gamemodescale.debug"
 
 .field public static final SWITCHER_PASSIVE:I = 0x1
@@ -61,6 +70,8 @@
 .field private static final TAG:Ljava/lang/String; = "OemSceneModeController"
 
 .field public static final TOAST_WINDOW_TIMEOUT:I = 0x7d0
+
+.field private static final URI_BREATH_MODE:Landroid/net/Uri;
 
 .field private static final URI_GAME_AUTO:Landroid/net/Uri;
 
@@ -94,13 +105,21 @@
 
 
 # instance fields
+.field private IS_GESTURE_BUTTON_ENABLED:Z
+
 .field private mAm:Landroid/app/ActivityManager;
+
+.field private mBreathModeObserver:Lcom/android/server/OemSceneModeController$BreathModeContentObserver;
+
+.field private mBreathModeStatus:Z
 
 .field final mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
 .field private mContext:Landroid/content/Context;
 
 .field private mCurProcessName:Ljava/lang/String;
+
+.field private mDisableGestureButton:Z
 
 .field private mFlinger:Landroid/os/IBinder;
 
@@ -223,6 +242,14 @@
 
     sput-object v0, Lcom/android/server/OemSceneModeController;->URI_GAME_MODE_BATTERY_SAVER:Landroid/net/Uri;
 
+    const-string/jumbo v0, "op_breath_mode_status"
+
+    invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/android/server/OemSceneModeController;->URI_BREATH_MODE:Landroid/net/Uri;
+
     return-void
 .end method
 
@@ -244,6 +271,24 @@
     iput-boolean v0, p0, Lcom/android/server/OemSceneModeController;->mGameModeManual:Z
 
     iput-boolean v0, p0, Lcom/android/server/OemSceneModeController;->mGameModeStatus:Z
+
+    iput-boolean v0, p0, Lcom/android/server/OemSceneModeController;->mBreathModeStatus:Z
+
+    const-string/jumbo v1, "true"
+
+    const-string/jumbo v2, "persist.sys.brickmode.disablegesture"
+
+    const-string v3, "false"
+
+    invoke-static {v2, v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    iput-boolean v1, p0, Lcom/android/server/OemSceneModeController;->mDisableGestureButton:Z
 
     iput-boolean v0, p0, Lcom/android/server/OemSceneModeController;->mIsMonitoringProactiveProvider:Z
 
@@ -278,6 +323,8 @@
     iput-object v4, p0, Lcom/android/server/OemSceneModeController;->mSaveParam:Ljava/lang/String;
 
     iput-boolean v0, p0, Lcom/android/server/OemSceneModeController;->mPowerSaverFeature:Z
+
+    iput-boolean v0, p0, Lcom/android/server/OemSceneModeController;->IS_GESTURE_BUTTON_ENABLED:Z
 
     iput-object v2, p0, Lcom/android/server/OemSceneModeController;->mGamingModeMsgView:Landroid/view/View;
 
@@ -315,9 +362,21 @@
 
     iput-object v2, p0, Lcom/android/server/OemSceneModeController;->mAm:Landroid/app/ActivityManager;
 
+    new-array v2, v1, [I
+
+    const/16 v4, 0x43
+
+    aput v4, v2, v0
+
+    invoke-static {v2}, Landroid/util/OpFeatures;->isSupport([I)Z
+
+    move-result v2
+
+    iput-boolean v2, p0, Lcom/android/server/OemSceneModeController;->mPowerSaverFeature:Z
+
     new-array v1, v1, [I
 
-    const/16 v2, 0x43
+    const/16 v2, 0x34
 
     aput v2, v1, v0
 
@@ -325,7 +384,7 @@
 
     move-result v1
 
-    iput-boolean v1, p0, Lcom/android/server/OemSceneModeController;->mPowerSaverFeature:Z
+    iput-boolean v1, p0, Lcom/android/server/OemSceneModeController;->IS_GESTURE_BUTTON_ENABLED:Z
 
     new-instance v1, Lcom/android/server/OemSceneModeController$ReadModeManualContentObserver;
 
@@ -366,6 +425,16 @@
     invoke-direct {v1, p0, v2, v4}, Lcom/android/server/OemSceneModeController$GameModeAutoContentObserver;-><init>(Lcom/android/server/OemSceneModeController;Landroid/content/Context;Landroid/os/Handler;)V
 
     iput-object v1, p0, Lcom/android/server/OemSceneModeController;->mGameModeAutoObserver:Lcom/android/server/OemSceneModeController$GameModeAutoContentObserver;
+
+    new-instance v1, Lcom/android/server/OemSceneModeController$BreathModeContentObserver;
+
+    iget-object v2, p0, Lcom/android/server/OemSceneModeController;->mContext:Landroid/content/Context;
+
+    iget-object v4, p0, Lcom/android/server/OemSceneModeController;->mHandler:Landroid/os/Handler;
+
+    invoke-direct {v1, p0, v2, v4}, Lcom/android/server/OemSceneModeController$BreathModeContentObserver;-><init>(Lcom/android/server/OemSceneModeController;Landroid/content/Context;Landroid/os/Handler;)V
+
+    iput-object v1, p0, Lcom/android/server/OemSceneModeController;->mBreathModeObserver:Lcom/android/server/OemSceneModeController$BreathModeContentObserver;
 
     new-instance v1, Landroid/content/IntentFilter;
 
@@ -410,6 +479,14 @@
     sget-object v4, Lcom/android/server/OemSceneModeController;->URI_GAME_AUTO:Landroid/net/Uri;
 
     iget-object v5, p0, Lcom/android/server/OemSceneModeController;->mGameModeAutoObserver:Lcom/android/server/OemSceneModeController$GameModeAutoContentObserver;
+
+    invoke-virtual {v2, v4, v0, v5, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
+
+    iget-object v2, p0, Lcom/android/server/OemSceneModeController;->mResolver:Landroid/content/ContentResolver;
+
+    sget-object v4, Lcom/android/server/OemSceneModeController;->URI_BREATH_MODE:Landroid/net/Uri;
+
+    iget-object v5, p0, Lcom/android/server/OemSceneModeController;->mBreathModeObserver:Lcom/android/server/OemSceneModeController$BreathModeContentObserver;
 
     invoke-virtual {v2, v4, v0, v5, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
@@ -586,6 +663,242 @@
 
     invoke-direct {p0}, Lcom/android/server/OemSceneModeController;->handleGameAutoChanged()V
 
+    return-void
+.end method
+
+.method private disableBlackScreenGesture()V
+    .locals 5
+
+    iget-object v0, p0, Lcom/android/server/OemSceneModeController;->mResolver:Landroid/content/ContentResolver;
+
+    const-string/jumbo v1, "oem_acc_blackscreen_gestrue_enable"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    const-string/jumbo v1, "persist.sys.brickmode.disableblackgesture"
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v1, v3}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v1, p0, Lcom/android/server/OemSceneModeController;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string/jumbo v3, "oem_acc_blackscreen_gestrue_enable"
+
+    const/4 v4, -0x2
+
+    invoke-static {v1, v3, v2, v4}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
+
+    sget-boolean v1, Lcom/android/server/OemSceneModeController;->DBG:Z
+
+    if-eqz v1, :cond_0
+
+    const-string v1, "OemSceneModeController"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "[scene] brick mode disable black screen gesture: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    return-void
+.end method
+
+.method private disableNfc()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/server/OemSceneModeController;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Landroid/nfc/NfcAdapter;->getDefaultAdapter(Landroid/content/Context;)Landroid/nfc/NfcAdapter;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Landroid/nfc/NfcAdapter;->isEnabled()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const-string/jumbo v1, "persist.sys.brickmode.disablenfc"
+
+    const-string/jumbo v2, "true"
+
+    invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Landroid/nfc/NfcAdapter;->disable()Z
+
+    return-void
+
+    :cond_1
+    :goto_0
+    sget-boolean v1, Lcom/android/server/OemSceneModeController;->DBG:Z
+
+    if-eqz v1, :cond_2
+
+    const-string v1, "OemSceneModeController"
+
+    const-string/jumbo v2, "nfcAdapter is disable already."
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_2
+    return-void
+.end method
+
+.method private enableBlackScreenGesture()V
+    .locals 5
+
+    const-string/jumbo v0, "persist.sys.brickmode.disableblackgesture"
+
+    const-string v1, "0"
+
+    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "persist.sys.brickmode.disableblackgesture"
+
+    const-string v2, "0"
+
+    invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v1, "0"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v1, p0, Lcom/android/server/OemSceneModeController;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "oem_acc_blackscreen_gestrue_enable"
+
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v3
+
+    const/4 v4, -0x2
+
+    invoke-static {v1, v2, v3, v4}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
+
+    sget-boolean v1, Lcom/android/server/OemSceneModeController;->DBG:Z
+
+    if-eqz v1, :cond_1
+
+    const-string v1, "OemSceneModeController"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "[scene] brick mode enable black screen gesture: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    return-void
+.end method
+
+.method private enableNfc()V
+    .locals 3
+
+    const-string/jumbo v0, "true"
+
+    const-string/jumbo v1, "persist.sys.brickmode.disablenfc"
+
+    const-string v2, "false"
+
+    invoke-static {v1, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/server/OemSceneModeController;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Landroid/nfc/NfcAdapter;->getDefaultAdapter(Landroid/content/Context;)Landroid/nfc/NfcAdapter;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    const-string v1, "OemSceneModeController"
+
+    const-string/jumbo v2, "nfcAdapter is null!"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_0
+    invoke-virtual {v0}, Landroid/nfc/NfcAdapter;->isEnabled()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    const-string v1, "OemSceneModeController"
+
+    const-string/jumbo v2, "nfcAdapter is enable already!"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    const-string/jumbo v1, "persist.sys.brickmode.disablenfc"
+
+    const-string v2, "false"
+
+    invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Landroid/nfc/NfcAdapter;->enable()Z
+
+    :cond_2
     return-void
 .end method
 
@@ -1013,6 +1326,28 @@
     :cond_17
     :goto_7
     return-void
+.end method
+
+.method private getBreathModeStatus()Z
+    .locals 4
+
+    const-string v0, "1"
+
+    iget-object v1, p0, Lcom/android/server/OemSceneModeController;->mResolver:Landroid/content/ContentResolver;
+
+    const-string/jumbo v2, "op_breath_mode_status"
+
+    const/4 v3, -0x2
+
+    invoke-static {v1, v2, v3}, Landroid/provider/Settings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method private getFgApp(Landroid/app/ActivityManager;)I
@@ -1936,6 +2271,117 @@
     return v0
 .end method
 
+.method private notifyBreathMode(Z)V
+    .locals 5
+
+    iget-boolean v0, p0, Lcom/android/server/OemSceneModeController;->IS_GESTURE_BUTTON_ENABLED:Z
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, -0x2
+
+    const/4 v1, 0x3
+
+    const/4 v2, 0x0
+
+    if-eqz p1, :cond_0
+
+    iget-object v3, p0, Lcom/android/server/OemSceneModeController;->mResolver:Landroid/content/ContentResolver;
+
+    const-string/jumbo v4, "op_navigation_bar_type"
+
+    invoke-static {v3, v4, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v3
+
+    if-ne v3, v1, :cond_0
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lcom/android/server/OemSceneModeController;->mDisableGestureButton:Z
+
+    const-string/jumbo v1, "persist.sys.brickmode.disablegesture"
+
+    const-string/jumbo v3, "true"
+
+    invoke-static {v1, v3}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v1, p0, Lcom/android/server/OemSceneModeController;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string/jumbo v3, "op_navigation_bar_type"
+
+    invoke-static {v1, v3, v2, v0}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
+
+    sget-boolean v0, Lcom/android/server/OemSceneModeController;->DBG:Z
+
+    if-eqz v0, :cond_1
+
+    const-string v0, "OemSceneModeController"
+
+    const-string v1, "[scene] disable gesture button by brick mode!"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    iget-boolean v3, p0, Lcom/android/server/OemSceneModeController;->mDisableGestureButton:Z
+
+    if-eqz v3, :cond_1
+
+    iput-boolean v2, p0, Lcom/android/server/OemSceneModeController;->mDisableGestureButton:Z
+
+    const-string/jumbo v2, "persist.sys.brickmode.disablegesture"
+
+    const-string v3, "false"
+
+    invoke-static {v2, v3}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v2, p0, Lcom/android/server/OemSceneModeController;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "op_navigation_bar_type"
+
+    invoke-static {v2, v3, v1, v0}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
+
+    sget-boolean v0, Lcom/android/server/OemSceneModeController;->DBG:Z
+
+    if-eqz v0, :cond_1
+
+    const-string v0, "OemSceneModeController"
+
+    const-string v1, "[scene] resume gesture button by brick mode!"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    :goto_0
+    if-eqz p1, :cond_2
+
+    invoke-direct {p0}, Lcom/android/server/OemSceneModeController;->disableNfc()V
+
+    invoke-direct {p0}, Lcom/android/server/OemSceneModeController;->disableBlackScreenGesture()V
+
+    goto :goto_1
+
+    :cond_2
+    invoke-direct {p0}, Lcom/android/server/OemSceneModeController;->enableNfc()V
+
+    invoke-direct {p0}, Lcom/android/server/OemSceneModeController;->enableBlackScreenGesture()V
+
+    :goto_1
+    return-void
+.end method
+
 .method private notifyGameMode(Z)V
     .locals 8
 
@@ -2243,6 +2689,53 @@
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
+.end method
+
+.method private setBreathModeStatus(Z)Z
+    .locals 4
+
+    iget-object v0, p0, Lcom/android/server/OemSceneModeController;->mResolver:Landroid/content/ContentResolver;
+
+    const-string/jumbo v1, "op_breath_mode_status"
+
+    if-eqz p1, :cond_0
+
+    const-string v2, "1"
+
+    goto :goto_0
+
+    :cond_0
+    const-string v2, "0"
+
+    :goto_0
+    const/4 v3, -0x2
+
+    invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$Secure;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
+
+    sget-boolean v0, Lcom/android/server/OemSceneModeController;->DBG:Z
+
+    if-eqz v0, :cond_1
+
+    const-string v0, "OemSceneModeController"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "[breathMode] setBreathModeStatus, status: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    return p1
 .end method
 
 .method private setGameModeAuto(Z)V
@@ -2582,6 +3075,28 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    const-string v2, "[scene] Breath Mode: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v2, p0, Lcom/android/server/OemSceneModeController;->mBreathModeStatus:Z
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v2, "\n"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     const-string v2, "[scene] -----------"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -2668,6 +3183,63 @@
 
 
 # virtual methods
+.method public handleBreathModeChanged()V
+    .locals 3
+
+    invoke-direct {p0}, Lcom/android/server/OemSceneModeController;->getBreathModeStatus()Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/android/server/OemSceneModeController;->mBreathModeStatus:Z
+
+    sget-boolean v0, Lcom/android/server/OemSceneModeController;->DBG:Z
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "OemSceneModeController"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "[breathMode] handleBreathModeChanged, mBreathModeStatus:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v2, p0, Lcom/android/server/OemSceneModeController;->mBreathModeStatus:Z
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    const-string v0, "BrickMode"
+
+    iget-boolean v1, p0, Lcom/android/server/OemSceneModeController;->mBreathModeStatus:Z
+
+    if-eqz v1, :cond_1
+
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x2
+
+    :goto_0
+    invoke-virtual {p0, v0, v1}, Lcom/android/server/OemSceneModeController;->updateOimcStatus(Ljava/lang/String;I)V
+
+    iget-boolean v0, p0, Lcom/android/server/OemSceneModeController;->mBreathModeStatus:Z
+
+    invoke-direct {p0, v0}, Lcom/android/server/OemSceneModeController;->notifyBreathMode(Z)V
+
+    return-void
+.end method
+
 .method public handleStartMonitor()V
     .locals 3
 
@@ -2936,6 +3508,12 @@
     iget-object v0, p0, Lcom/android/server/OemSceneModeController;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x3
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    iget-object v0, p0, Lcom/android/server/OemSceneModeController;->mHandler:Landroid/os/Handler;
+
+    const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 

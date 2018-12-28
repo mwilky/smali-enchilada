@@ -2942,7 +2942,7 @@
     :catchall_0
     move-exception v0
 
-    goto/16 :goto_b
+    goto/16 :goto_c
 
     :cond_0
     const-string v4, "NetworkManagement"
@@ -3404,12 +3404,27 @@
     move-result v10
 
     invoke-virtual {p0, v9, v10}, Lcom/android/server/NetworkManagementService;->setUidCleartextNetworkPolicy(II)V
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_8
 
     :cond_d
+    :try_start_7
+    iget-object v7, p0, Lcom/android/server/NetworkManagementService;->mNetdService:Landroid/net/INetd;
+
+    if-eqz v7, :cond_f
+
+    iget-object v7, p0, Lcom/android/server/NetworkManagementService;->mNetdService:Landroid/net/INetd;
+
+    invoke-interface {v7}, Landroid/net/INetd;->isAlive()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_f
+
     iget-boolean v7, p0, Lcom/android/server/NetworkManagementService;->mFirewallEnabled:Z
 
     invoke-virtual {p0, v7}, Lcom/android/server/NetworkManagementService;->setFirewallEnabled(Z)V
@@ -3452,6 +3467,9 @@
     if-eqz v10, :cond_e
 
     invoke-virtual {p0, v9, v3}, Lcom/android/server/NetworkManagementService;->setFirewallChainEnabled(IZ)V
+    :try_end_7
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_2
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
     :cond_e
     add-int/lit8 v0, v0, 0x1
@@ -3459,47 +3477,72 @@
     goto :goto_9
 
     :cond_f
-    monitor-exit v2
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
-
-    iget-boolean v0, p0, Lcom/android/server/NetworkManagementService;->mBandwidthControlEnabled:Z
-
-    if-eqz v0, :cond_10
-
-    :try_start_7
-    invoke-direct {p0}, Lcom/android/server/NetworkManagementService;->getBatteryStats()Lcom/android/internal/app/IBatteryStats;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/android/internal/app/IBatteryStats;->noteNetworkStatsEnabled()V
-    :try_end_7
-    .catch Landroid/os/RemoteException; {:try_start_7 .. :try_end_7} :catch_2
-
     goto :goto_a
 
     :catch_2
     move-exception v0
 
-    :cond_10
+    :try_start_8
+    const-string v3, "NetworkManagement"
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "Error set/sync firewall :"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v3, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
     :goto_a
+    monitor-exit v2
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_0
+
+    iget-boolean v0, p0, Lcom/android/server/NetworkManagementService;->mBandwidthControlEnabled:Z
+
+    if-eqz v0, :cond_10
+
+    :try_start_9
+    invoke-direct {p0}, Lcom/android/server/NetworkManagementService;->getBatteryStats()Lcom/android/internal/app/IBatteryStats;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/android/internal/app/IBatteryStats;->noteNetworkStatsEnabled()V
+    :try_end_9
+    .catch Landroid/os/RemoteException; {:try_start_9 .. :try_end_9} :catch_3
+
+    goto :goto_b
+
+    :catch_3
+    move-exception v0
+
+    :cond_10
+    :goto_b
     return-void
 
     :catchall_1
     move-exception v0
 
-    :try_start_8
+    :try_start_a
     monitor-exit v7
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_1
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_1
 
-    :try_start_9
+    :try_start_b
     throw v0
 
-    :goto_b
+    :goto_c
     monitor-exit v2
-    :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_0
+    :try_end_b
+    .catchall {:try_start_b .. :try_end_b} :catchall_0
 
     throw v0
 
@@ -4212,7 +4255,7 @@
 .method public OPgetDnsInfo()[I
     .locals 13
 
-    const-string/jumbo v0, "vendor.oem.cellular.netId"
+    const-string/jumbo v0, "sys.radio.cellular.netId"
 
     const/4 v1, 0x0
 
@@ -4220,13 +4263,13 @@
 
     move-result v0
 
-    const-string/jumbo v2, "vendor.oem.cellular.serverslength"
+    const-string/jumbo v2, "sys.radio.cellular.serverslength"
 
     invoke-static {v2, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
 
     move-result v8
 
-    const-string/jumbo v2, "vendor.oem.cellular.domainslength"
+    const-string/jumbo v2, "sys.radio.cellular.domainslength"
 
     invoke-static {v2, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
 
@@ -6318,7 +6361,7 @@
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    const-string v3, "getcfg"
+    const-string/jumbo v3, "getcfg"
 
     const/4 v4, 0x0
 

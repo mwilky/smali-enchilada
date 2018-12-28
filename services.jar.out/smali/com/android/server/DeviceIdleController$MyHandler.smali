@@ -38,7 +38,7 @@
 
     move-object/from16 v2, p1
 
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1500()Z
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1700()Z
 
     move-result v0
 
@@ -50,7 +50,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "handleMessage("
+    const-string/jumbo v4, "handleMessage("
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -104,7 +104,7 @@
 
     iget-object v4, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v4}, Lcom/android/server/DeviceIdleController;->access$2700(Lcom/android/server/DeviceIdleController;)Lcom/android/server/net/NetworkPolicyManagerInternal;
+    invoke-static {v4}, Lcom/android/server/DeviceIdleController;->access$2900(Lcom/android/server/DeviceIdleController;)Lcom/android/server/net/NetworkPolicyManagerInternal;
 
     move-result-object v4
 
@@ -134,7 +134,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2600(Lcom/android/server/DeviceIdleController;)Landroid/os/RemoteCallbackList;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2800(Lcom/android/server/DeviceIdleController;)Landroid/os/RemoteCallbackList;
 
     move-result-object v0
 
@@ -154,7 +154,7 @@
     :try_start_0
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2600(Lcom/android/server/DeviceIdleController;)Landroid/os/RemoteCallbackList;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2800(Lcom/android/server/DeviceIdleController;)Landroid/os/RemoteCallbackList;
 
     move-result-object v0
 
@@ -176,7 +176,7 @@
 
     iget-object v5, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v5}, Lcom/android/server/DeviceIdleController;->access$2600(Lcom/android/server/DeviceIdleController;)Landroid/os/RemoteCallbackList;
+    invoke-static {v5}, Lcom/android/server/DeviceIdleController;->access$2800(Lcom/android/server/DeviceIdleController;)Landroid/os/RemoteCallbackList;
 
     move-result-object v5
 
@@ -195,7 +195,7 @@
     :cond_3
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2600(Lcom/android/server/DeviceIdleController;)Landroid/os/RemoteCallbackList;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2800(Lcom/android/server/DeviceIdleController;)Landroid/os/RemoteCallbackList;
 
     move-result-object v0
 
@@ -237,13 +237,13 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1400(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1600(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
 
     move-result-object v0
 
     iget-object v5, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v5}, Lcom/android/server/DeviceIdleController;->access$700(Lcom/android/server/DeviceIdleController;)I
+    invoke-static {v5}, Lcom/android/server/DeviceIdleController;->access$900(Lcom/android/server/DeviceIdleController;)I
 
     move-result v5
 
@@ -251,7 +251,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1400(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1600(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
 
     move-result-object v0
 
@@ -261,7 +261,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1400(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1600(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
 
     move-result-object v0
 
@@ -274,7 +274,7 @@
     :try_start_1
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1700(Lcom/android/server/DeviceIdleController;)Landroid/net/INetworkPolicyManager;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1900(Lcom/android/server/DeviceIdleController;)Landroid/net/INetworkPolicyManager;
 
     move-result-object v0
 
@@ -282,7 +282,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1800(Lcom/android/server/DeviceIdleController;)Lcom/android/internal/app/IBatteryStats;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2000(Lcom/android/server/DeviceIdleController;)Lcom/android/internal/app/IBatteryStats;
 
     move-result-object v0
 
@@ -300,7 +300,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1600(Lcom/android/server/DeviceIdleController;)Lcom/android/server/lights/Light;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1800(Lcom/android/server/DeviceIdleController;)Lcom/android/server/lights/Light;
 
     move-result-object v0
 
@@ -308,7 +308,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1600(Lcom/android/server/DeviceIdleController;)Lcom/android/server/lights/Light;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1800(Lcom/android/server/DeviceIdleController;)Lcom/android/server/lights/Light;
 
     move-result-object v0
 
@@ -323,7 +323,7 @@
 
     iget-object v8, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v8}, Lcom/android/server/DeviceIdleController;->access$1900(Lcom/android/server/DeviceIdleController;)Landroid/content/Intent;
+    invoke-static {v8}, Lcom/android/server/DeviceIdleController;->access$2100(Lcom/android/server/DeviceIdleController;)Landroid/content/Intent;
 
     move-result-object v8
 
@@ -348,7 +348,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2000(Lcom/android/server/DeviceIdleController;)Landroid/content/Intent;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2200(Lcom/android/server/DeviceIdleController;)Landroid/content/Intent;
 
     move-result-object v0
 
@@ -364,7 +364,7 @@
 
     iget-object v6, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v6}, Lcom/android/server/DeviceIdleController;->access$2000(Lcom/android/server/DeviceIdleController;)Landroid/content/Intent;
+    invoke-static {v6}, Lcom/android/server/DeviceIdleController;->access$2200(Lcom/android/server/DeviceIdleController;)Landroid/content/Intent;
 
     move-result-object v6
 
@@ -384,13 +384,13 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1400(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1600(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
 
     move-result-object v0
 
     iget-object v7, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v7}, Lcom/android/server/DeviceIdleController;->access$700(Lcom/android/server/DeviceIdleController;)I
+    invoke-static {v7}, Lcom/android/server/DeviceIdleController;->access$900(Lcom/android/server/DeviceIdleController;)I
 
     move-result v7
 
@@ -398,7 +398,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1400(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1600(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
 
     move-result-object v0
 
@@ -408,7 +408,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1400(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1600(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
 
     move-result-object v0
 
@@ -421,7 +421,7 @@
     :try_start_2
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1700(Lcom/android/server/DeviceIdleController;)Landroid/net/INetworkPolicyManager;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1900(Lcom/android/server/DeviceIdleController;)Landroid/net/INetworkPolicyManager;
 
     move-result-object v0
 
@@ -429,7 +429,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1800(Lcom/android/server/DeviceIdleController;)Lcom/android/internal/app/IBatteryStats;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2000(Lcom/android/server/DeviceIdleController;)Lcom/android/internal/app/IBatteryStats;
 
     move-result-object v0
 
@@ -461,7 +461,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1600(Lcom/android/server/DeviceIdleController;)Lcom/android/server/lights/Light;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1800(Lcom/android/server/DeviceIdleController;)Lcom/android/server/lights/Light;
 
     move-result-object v0
 
@@ -469,7 +469,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1600(Lcom/android/server/DeviceIdleController;)Lcom/android/server/lights/Light;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1800(Lcom/android/server/DeviceIdleController;)Lcom/android/server/lights/Light;
 
     move-result-object v0
 
@@ -488,7 +488,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1900(Lcom/android/server/DeviceIdleController;)Landroid/content/Intent;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2100(Lcom/android/server/DeviceIdleController;)Landroid/content/Intent;
 
     move-result-object v10
 
@@ -498,7 +498,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2500(Lcom/android/server/DeviceIdleController;)Landroid/content/BroadcastReceiver;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2700(Lcom/android/server/DeviceIdleController;)Landroid/content/BroadcastReceiver;
 
     move-result-object v13
 
@@ -521,7 +521,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2000(Lcom/android/server/DeviceIdleController;)Landroid/content/Intent;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2200(Lcom/android/server/DeviceIdleController;)Landroid/content/Intent;
 
     move-result-object v0
 
@@ -537,7 +537,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2000(Lcom/android/server/DeviceIdleController;)Landroid/content/Intent;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2200(Lcom/android/server/DeviceIdleController;)Landroid/content/Intent;
 
     move-result-object v10
 
@@ -547,7 +547,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2500(Lcom/android/server/DeviceIdleController;)Landroid/content/BroadcastReceiver;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2700(Lcom/android/server/DeviceIdleController;)Landroid/content/BroadcastReceiver;
 
     move-result-object v13
 
@@ -575,13 +575,13 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1400(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1600(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
 
     move-result-object v0
 
     iget-object v7, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v7}, Lcom/android/server/DeviceIdleController;->access$700(Lcom/android/server/DeviceIdleController;)I
+    invoke-static {v7}, Lcom/android/server/DeviceIdleController;->access$900(Lcom/android/server/DeviceIdleController;)I
 
     move-result v7
 
@@ -595,7 +595,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1400(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1600(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
 
     move-result-object v0
 
@@ -605,7 +605,7 @@
 
     iget-object v8, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v8}, Lcom/android/server/DeviceIdleController;->access$1400(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
+    invoke-static {v8}, Lcom/android/server/DeviceIdleController;->access$1600(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
 
     move-result-object v8
 
@@ -625,7 +625,7 @@
 
     iget-object v3, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v3}, Lcom/android/server/DeviceIdleController;->access$1600(Lcom/android/server/DeviceIdleController;)Lcom/android/server/lights/Light;
+    invoke-static {v3}, Lcom/android/server/DeviceIdleController;->access$1800(Lcom/android/server/DeviceIdleController;)Lcom/android/server/lights/Light;
 
     move-result-object v3
 
@@ -633,16 +633,14 @@
 
     iget-object v3, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v3}, Lcom/android/server/DeviceIdleController;->access$1600(Lcom/android/server/DeviceIdleController;)Lcom/android/server/lights/Light;
+    invoke-static {v3}, Lcom/android/server/DeviceIdleController;->access$1800(Lcom/android/server/DeviceIdleController;)Lcom/android/server/lights/Light;
 
     move-result-object v3
 
     invoke-virtual {v3, v5}, Lcom/android/server/lights/Light;->setIdleMode(Z)V
 
     :cond_b
-    iget-object v3, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
-
-    invoke-static {v3}, Lcom/android/server/DeviceIdleController;->access$200(Lcom/android/server/DeviceIdleController;)Lcom/android/server/OnePlusStandbyAnalyzer;
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$200()Lcom/android/server/OnePlusStandbyAnalyzer;
 
     move-result-object v3
 
@@ -653,7 +651,7 @@
     :cond_c
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1400(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1600(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
 
     move-result-object v0
 
@@ -663,7 +661,7 @@
 
     iget-object v3, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v3}, Lcom/android/server/DeviceIdleController;->access$1400(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
+    invoke-static {v3}, Lcom/android/server/DeviceIdleController;->access$1600(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManagerInternal;
 
     move-result-object v3
 
@@ -679,7 +677,7 @@
     :try_start_3
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1700(Lcom/android/server/DeviceIdleController;)Landroid/net/INetworkPolicyManager;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1900(Lcom/android/server/DeviceIdleController;)Landroid/net/INetworkPolicyManager;
 
     move-result-object v0
 
@@ -687,7 +685,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1800(Lcom/android/server/DeviceIdleController;)Lcom/android/internal/app/IBatteryStats;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2000(Lcom/android/server/DeviceIdleController;)Lcom/android/internal/app/IBatteryStats;
 
     move-result-object v0
 
@@ -719,7 +717,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$1900(Lcom/android/server/DeviceIdleController;)Landroid/content/Intent;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2100(Lcom/android/server/DeviceIdleController;)Landroid/content/Intent;
 
     move-result-object v0
 
@@ -737,7 +735,7 @@
 
     iget-object v4, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v4}, Lcom/android/server/DeviceIdleController;->access$1900(Lcom/android/server/DeviceIdleController;)Landroid/content/Intent;
+    invoke-static {v4}, Lcom/android/server/DeviceIdleController;->access$2100(Lcom/android/server/DeviceIdleController;)Landroid/content/Intent;
 
     move-result-object v4
 
@@ -764,7 +762,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2000(Lcom/android/server/DeviceIdleController;)Landroid/content/Intent;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2200(Lcom/android/server/DeviceIdleController;)Landroid/content/Intent;
 
     move-result-object v0
 
@@ -780,7 +778,7 @@
 
     iget-object v4, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v4}, Lcom/android/server/DeviceIdleController;->access$2000(Lcom/android/server/DeviceIdleController;)Landroid/content/Intent;
+    invoke-static {v4}, Lcom/android/server/DeviceIdleController;->access$2200(Lcom/android/server/DeviceIdleController;)Landroid/content/Intent;
 
     move-result-object v4
 
@@ -790,7 +788,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2100(Lcom/android/server/DeviceIdleController;)Z
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2300(Lcom/android/server/DeviceIdleController;)Z
 
     move-result v0
 
@@ -798,7 +796,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0, v5}, Lcom/android/server/DeviceIdleController;->access$2102(Lcom/android/server/DeviceIdleController;Z)Z
+    invoke-static {v0, v5}, Lcom/android/server/DeviceIdleController;->access$2302(Lcom/android/server/DeviceIdleController;Z)Z
 
     const-string v0, "DeviceIdleController"
 
@@ -812,7 +810,7 @@
 
     iget-object v5, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v5}, Lcom/android/server/DeviceIdleController;->access$2200(Lcom/android/server/DeviceIdleController;)J
+    invoke-static {v5}, Lcom/android/server/DeviceIdleController;->access$2400(Lcom/android/server/DeviceIdleController;)J
 
     move-result-wide v7
 
@@ -840,7 +838,7 @@
 
     iget-object v4, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v4}, Lcom/android/server/DeviceIdleController;->access$2200(Lcom/android/server/DeviceIdleController;)J
+    invoke-static {v4}, Lcom/android/server/DeviceIdleController;->access$2400(Lcom/android/server/DeviceIdleController;)J
 
     move-result-wide v4
 
@@ -851,7 +849,7 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2400(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2600(Lcom/android/server/DeviceIdleController;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v0
 
@@ -869,15 +867,13 @@
     :cond_10
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2800(Lcom/android/server/DeviceIdleController;)Lcom/android/server/OnePlusPowerController$LocalService;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$3000(Lcom/android/server/DeviceIdleController;)Lcom/android/server/OnePlusPowerController$LocalService;
 
     move-result-object v0
 
     if-eqz v0, :cond_11
 
-    iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
-
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$200(Lcom/android/server/DeviceIdleController;)Lcom/android/server/OnePlusStandbyAnalyzer;
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$200()Lcom/android/server/OnePlusStandbyAnalyzer;
 
     move-result-object v0
 
@@ -891,13 +887,11 @@
 
     iget-object v0, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$2800(Lcom/android/server/DeviceIdleController;)Lcom/android/server/OnePlusPowerController$LocalService;
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$3000(Lcom/android/server/DeviceIdleController;)Lcom/android/server/OnePlusPowerController$LocalService;
 
     move-result-object v0
 
-    iget-object v3, v1, Lcom/android/server/DeviceIdleController$MyHandler;->this$0:Lcom/android/server/DeviceIdleController;
-
-    invoke-static {v3}, Lcom/android/server/DeviceIdleController;->access$200(Lcom/android/server/DeviceIdleController;)Lcom/android/server/OnePlusStandbyAnalyzer;
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$200()Lcom/android/server/OnePlusStandbyAnalyzer;
 
     move-result-object v3
 
@@ -913,7 +907,7 @@
     invoke-static {v0, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_a
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1500()Z
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1700()Z
 
     move-result v0
 
@@ -934,7 +928,7 @@
 
     move-result-object v3
 
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$2900()Ljava/lang/String;
+    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$3100()Ljava/lang/String;
 
     move-result-object v4
 
@@ -946,12 +940,10 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Lcom/android/server/DeviceIdleController;->access$3000(Lcom/android/server/DeviceIdleController;Lorg/json/JSONArray;)V
+    invoke-static {v3, v4}, Lcom/android/server/DeviceIdleController;->access$3200(Lcom/android/server/DeviceIdleController;Lorg/json/JSONArray;)V
 
     :goto_b
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

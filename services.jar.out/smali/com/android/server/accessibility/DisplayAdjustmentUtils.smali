@@ -114,6 +114,12 @@
 
     if-eqz v5, :cond_0
 
+    const-string/jumbo v5, "persist.vendor.color.matrix"
+
+    const-string v6, "2"
+
+    invoke-static {v5, v6}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
     const-string v5, "accessibility_display_daltonizer"
 
     const/16 v6, 0xc
@@ -192,6 +198,12 @@
 
     :cond_0
     move v4, v5
+
+    const-string/jumbo v5, "persist.vendor.color.matrix"
+
+    const-string v6, "2"
+
+    invoke-static {v5, v6}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
     const/16 v5, 0x12c
 

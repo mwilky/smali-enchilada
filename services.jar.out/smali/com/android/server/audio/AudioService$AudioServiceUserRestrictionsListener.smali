@@ -61,7 +61,7 @@
 
     iget-object v2, p0, Lcom/android/server/audio/AudioService$AudioServiceUserRestrictionsListener;->this$0:Lcom/android/server/audio/AudioService;
 
-    invoke-static {v2, v1, p1}, Lcom/android/server/audio/AudioService;->access$11900(Lcom/android/server/audio/AudioService;ZI)V
+    invoke-static {v2, v1, p1}, Lcom/android/server/audio/AudioService;->access$12100(Lcom/android/server/audio/AudioService;ZI)V
 
     :cond_0
     const-string/jumbo v0, "no_adjust_volume"
@@ -125,7 +125,7 @@
 
     iget-object v3, p0, Lcom/android/server/audio/AudioService$AudioServiceUserRestrictionsListener;->this$0:Lcom/android/server/audio/AudioService;
 
-    invoke-static {v3, v1, v2, p1}, Lcom/android/server/audio/AudioService;->access$12000(Lcom/android/server/audio/AudioService;ZII)V
+    invoke-static {v3, v1, v2, p1}, Lcom/android/server/audio/AudioService;->access$12200(Lcom/android/server/audio/AudioService;ZII)V
 
     :cond_5
     return-void

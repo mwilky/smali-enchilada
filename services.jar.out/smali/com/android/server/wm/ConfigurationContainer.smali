@@ -626,6 +626,32 @@
     return v0
 .end method
 
+.method public inPreloadWindowingMode()Z
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/server/wm/ConfigurationContainer;->mFullConfiguration:Landroid/content/res/Configuration;
+
+    iget-object v0, v0, Landroid/content/res/Configuration;->windowConfiguration:Landroid/app/WindowConfiguration;
+
+    invoke-virtual {v0}, Landroid/app/WindowConfiguration;->getWindowingMode()I
+
+    move-result v0
+
+    const/4 v1, 0x6
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
 .method public inSplitScreenPrimaryWindowingMode()Z
     .locals 2
 

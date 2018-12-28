@@ -1905,16 +1905,20 @@
 
     :try_start_22
     iget-object v4, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mPipes:[Landroid/os/ParcelFileDescriptor;
-
-    const/4 v5, 0x1
-
-    aget-object v4, v4, v5
     :try_end_22
     .catch Ljava/io/IOException; {:try_start_22 .. :try_end_22} :catch_1d
 
     if-eqz v4, :cond_19
 
     :try_start_23
+    iget-object v4, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mPipes:[Landroid/os/ParcelFileDescriptor;
+
+    const/4 v5, 0x1
+
+    aget-object v4, v4, v5
+
+    if-eqz v4, :cond_19
+
     new-instance v4, Ljava/io/FileOutputStream;
 
     iget-object v7, v1, Lcom/android/server/backup/restore/FullRestoreEngine;->mPipes:[Landroid/os/ParcelFileDescriptor;

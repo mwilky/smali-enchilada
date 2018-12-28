@@ -5487,7 +5487,7 @@
     nop
 
     :goto_1
-    if-ge v3, v6, :cond_f
+    if-ge v3, v6, :cond_11
 
     iget-object v8, v0, Lcom/android/server/am/RecentTasks;->mTasks:Ljava/util/ArrayList;
 
@@ -5501,7 +5501,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_c
+    if-eqz v9, :cond_e
 
     add-int/lit8 v7, v7, 0x1
 
@@ -5509,7 +5509,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_c
+    if-eqz v9, :cond_e
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
@@ -5536,7 +5536,7 @@
 
     sget-boolean v9, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RECENTS:Z
 
-    if-eqz v9, :cond_d
+    if-eqz v9, :cond_f
 
     const-string v9, "ActivityManager"
 
@@ -5565,7 +5565,7 @@
 
     sget-boolean v9, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RECENTS:Z
 
-    if-eqz v9, :cond_d
+    if-eqz v9, :cond_f
 
     const-string v9, "ActivityManager"
 
@@ -5606,7 +5606,7 @@
 
     and-int/2addr v9, v11
 
-    if-nez v9, :cond_d
+    if-nez v9, :cond_f
 
     :cond_5
     if-nez p3, :cond_6
@@ -5625,7 +5625,7 @@
 
     sget-boolean v11, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RECENTS:Z
 
-    if-eqz v11, :cond_e
+    if-eqz v11, :cond_10
 
     const-string v11, "ActivityManager"
 
@@ -5651,54 +5651,78 @@
     move/from16 v12, p6
 
     :cond_7
-    iget-boolean v11, v8, Lcom/android/server/am/TaskRecord;->autoRemoveRecents:Z
-
-    if-eqz v11, :cond_8
-
-    invoke-virtual {v8}, Lcom/android/server/am/TaskRecord;->getTopActivity()Lcom/android/server/am/ActivityRecord;
+    invoke-virtual {v8}, Lcom/android/server/am/TaskRecord;->getStack()Lcom/android/server/am/ActivityStack;
 
     move-result-object v11
 
-    if-nez v11, :cond_8
+    if-eqz v11, :cond_8
 
-    sget-boolean v11, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RECENTS:Z
+    invoke-virtual {v11}, Lcom/android/server/am/ActivityStack;->getWindowingMode()I
 
-    if-eqz v11, :cond_e
+    move-result v13
 
-    const-string v11, "ActivityManager"
+    const/4 v14, 0x6
 
-    new-instance v13, Ljava/lang/StringBuilder;
+    if-ne v13, v14, :cond_8
 
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+    goto/16 :goto_3
 
-    const-string v14, "Skipping, auto-remove without activity: "
+    :cond_8
+    iget-boolean v13, v8, Lcom/android/server/am/TaskRecord;->inPreload:Z
 
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v13, :cond_9
 
-    invoke-virtual {v13, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    goto/16 :goto_3
 
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :cond_9
+    iget-boolean v13, v8, Lcom/android/server/am/TaskRecord;->autoRemoveRecents:Z
+
+    if-eqz v13, :cond_a
+
+    invoke-virtual {v8}, Lcom/android/server/am/TaskRecord;->getTopActivity()Lcom/android/server/am/ActivityRecord;
 
     move-result-object v13
 
-    invoke-static {v11, v13}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    if-nez v13, :cond_a
+
+    sget-boolean v13, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RECENTS:Z
+
+    if-eqz v13, :cond_10
+
+    const-string v13, "ActivityManager"
+
+    new-instance v14, Ljava/lang/StringBuilder;
+
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Skipping, auto-remove without activity: "
+
+    invoke-virtual {v14, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v14, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v13, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_3
 
-    :cond_8
-    and-int/lit8 v11, p2, 0x2
+    :cond_a
+    and-int/lit8 v1, p2, 0x2
 
-    if-eqz v11, :cond_9
+    if-eqz v1, :cond_b
 
-    iget-boolean v11, v8, Lcom/android/server/am/TaskRecord;->isAvailable:Z
+    iget-boolean v1, v8, Lcom/android/server/am/TaskRecord;->isAvailable:Z
 
-    if-nez v11, :cond_9
+    if-nez v1, :cond_b
 
-    sget-boolean v11, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RECENTS:Z
+    sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RECENTS:Z
 
-    if-eqz v11, :cond_e
+    if-eqz v1, :cond_10
 
-    const-string v11, "ActivityManager"
+    const-string v1, "ActivityManager"
 
     new-instance v13, Ljava/lang/StringBuilder;
 
@@ -5714,20 +5738,20 @@
 
     move-result-object v13
 
-    invoke-static {v11, v13}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v13}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_3
 
-    :cond_9
-    iget-boolean v11, v8, Lcom/android/server/am/TaskRecord;->mUserSetupComplete:Z
+    :cond_b
+    iget-boolean v1, v8, Lcom/android/server/am/TaskRecord;->mUserSetupComplete:Z
 
-    if-nez v11, :cond_a
+    if-nez v1, :cond_c
 
-    sget-boolean v11, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RECENTS:Z
+    sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RECENTS:Z
 
-    if-eqz v11, :cond_e
+    if-eqz v1, :cond_10
 
-    const-string v11, "ActivityManager"
+    const-string v1, "ActivityManager"
 
     new-instance v13, Ljava/lang/StringBuilder;
 
@@ -5743,18 +5767,18 @@
 
     move-result-object v13
 
-    invoke-static {v11, v13}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v13}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_3
 
-    :cond_a
+    :cond_c
     invoke-virtual {v0, v8}, Lcom/android/server/am/RecentTasks;->createRecentTaskInfo(Lcom/android/server/am/TaskRecord;)Landroid/app/ActivityManager$RecentTaskInfo;
 
-    move-result-object v11
+    move-result-object v1
 
-    if-nez p4, :cond_b
+    if-nez p4, :cond_d
 
-    iget-object v14, v11, Landroid/app/ActivityManager$RecentTaskInfo;->baseIntent:Landroid/content/Intent;
+    iget-object v14, v1, Landroid/app/ActivityManager$RecentTaskInfo;->baseIntent:Landroid/content/Intent;
 
     const/4 v15, 0x0
 
@@ -5764,27 +5788,29 @@
 
     invoke-virtual {v14, v0}, Landroid/content/Intent;->replaceExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 
-    :cond_b
-    invoke-virtual {v5, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :cond_d
+    invoke-virtual {v5, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_3
 
-    :cond_c
+    :cond_e
     move/from16 v10, p1
 
-    :cond_d
+    :cond_f
     :goto_2
     move/from16 v12, p6
 
-    :cond_e
+    :cond_10
     :goto_3
     add-int/lit8 v3, v3, 0x1
 
     move-object/from16 v0, p0
 
+    move/from16 v1, p5
+
     goto/16 :goto_1
 
-    :cond_f
+    :cond_11
     move/from16 v10, p1
 
     move/from16 v12, p6
@@ -6131,7 +6157,7 @@
 .method loadRecentsComponent(Landroid/content/res/Resources;)V
     .locals 6
 
-    const v0, 0x1040174
+    const v0, 0x1040175
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

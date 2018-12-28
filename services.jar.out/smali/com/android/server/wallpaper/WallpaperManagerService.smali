@@ -207,7 +207,7 @@
 
     move-result-object v0
 
-    const v1, 0x10402a9
+    const v1, 0x10402aa
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -5314,7 +5314,7 @@
 
     const-string v0, "android.intent.extra.client_label"
 
-    const v11, 0x10406d5
+    const v11, 0x10406d6
 
     invoke-virtual {v10, v0, v11}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
@@ -6585,7 +6585,7 @@
 
     const/4 v13, 0x1
 
-    const-string v14, "getWallpaper"
+    const-string/jumbo v14, "getWallpaper"
 
     const/4 v15, 0x0
 
@@ -6788,7 +6788,7 @@
 
     const/4 v6, 0x1
 
-    const-string v7, "getWallpaperColors"
+    const-string/jumbo v7, "getWallpaperColors"
 
     const/4 v8, 0x0
 
@@ -6911,7 +6911,7 @@
 
     move-result v1
 
-    const-string v5, "getWallpaperIdForUser"
+    const-string/jumbo v5, "getWallpaperIdForUser"
 
     const/4 v3, 0x0
 
@@ -7003,7 +7003,7 @@
 
     move-result v1
 
-    const-string v5, "getWallpaperInfo"
+    const-string/jumbo v5, "getWallpaperInfo"
 
     const/4 v3, 0x0
 

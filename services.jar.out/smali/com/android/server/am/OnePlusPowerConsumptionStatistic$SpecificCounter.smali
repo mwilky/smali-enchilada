@@ -51,7 +51,7 @@
     return-void
 .end method
 
-.method static synthetic access$4400(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificCounter;)V
+.method static synthetic access$5900(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificCounter;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificCounter;->countAdd()V
@@ -59,7 +59,7 @@
     return-void
 .end method
 
-.method static synthetic access$4800(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificCounter;)V
+.method static synthetic access$6300(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificCounter;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificCounter;->clear()V
@@ -67,7 +67,7 @@
     return-void
 .end method
 
-.method static synthetic access$5200(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificCounter;)I
+.method static synthetic access$6800(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificCounter;)I
     .locals 1
 
     invoke-direct {p0}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificCounter;->getCumulativeCount()I
@@ -109,7 +109,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1400(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1900(Ljava/lang/String;)V
 
     const/4 v1, 0x0
 
@@ -167,7 +167,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1400(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1900(Ljava/lang/String;)V
 
     monitor-exit v0
 
@@ -221,7 +221,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1400(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1900(Ljava/lang/String;)V
 
     monitor-exit v0
 
@@ -319,7 +319,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1400(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1900(Ljava/lang/String;)V
 
     iget v1, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$SpecificCounter;->cumulativeCount:I
 

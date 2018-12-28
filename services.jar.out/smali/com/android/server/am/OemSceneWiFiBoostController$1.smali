@@ -47,7 +47,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v1, v2}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$1000(Lcom/android/server/am/OemSceneWiFiBoostController;Ljava/lang/String;Ljava/lang/Boolean;)V
+    invoke-static {v0, v1, v2}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$1200(Lcom/android/server/am/OemSceneWiFiBoostController;Ljava/lang/String;Ljava/lang/Boolean;)V
 
     return-void
 .end method

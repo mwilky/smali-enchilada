@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public enter()V
-    .locals 6
+    .locals 7
 
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor$CaptivePortalState;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
 
@@ -81,87 +81,98 @@
 
     move-result-object v0
 
+    const v1, 0x8200b
+
     if-nez v0, :cond_1
 
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor$CaptivePortalState;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
 
-    new-instance v1, Lcom/android/server/connectivity/NetworkMonitor$CustomIntentReceiver;
+    new-instance v2, Lcom/android/server/connectivity/NetworkMonitor$CustomIntentReceiver;
 
-    iget-object v2, p0, Lcom/android/server/connectivity/NetworkMonitor$CaptivePortalState;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
+    iget-object v3, p0, Lcom/android/server/connectivity/NetworkMonitor$CaptivePortalState;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
 
-    const-string v3, "android.net.netmon.launchCaptivePortalApp"
+    const-string v4, "android.net.netmon.launchCaptivePortalApp"
 
-    new-instance v4, Ljava/util/Random;
+    new-instance v5, Ljava/util/Random;
 
-    invoke-direct {v4}, Ljava/util/Random;-><init>()V
+    invoke-direct {v5}, Ljava/util/Random;-><init>()V
 
-    invoke-virtual {v4}, Ljava/util/Random;->nextInt()I
+    invoke-virtual {v5}, Ljava/util/Random;->nextInt()I
 
-    move-result v4
+    move-result v5
 
-    const v5, 0x8200b
+    invoke-direct {v2, v3, v4, v5, v1}, Lcom/android/server/connectivity/NetworkMonitor$CustomIntentReceiver;-><init>(Lcom/android/server/connectivity/NetworkMonitor;Ljava/lang/String;II)V
 
-    invoke-direct {v1, v2, v3, v4, v5}, Lcom/android/server/connectivity/NetworkMonitor$CustomIntentReceiver;-><init>(Lcom/android/server/connectivity/NetworkMonitor;Ljava/lang/String;II)V
-
-    invoke-static {v0, v1}, Lcom/android/server/connectivity/NetworkMonitor;->access$1002(Lcom/android/server/connectivity/NetworkMonitor;Lcom/android/server/connectivity/NetworkMonitor$CustomIntentReceiver;)Lcom/android/server/connectivity/NetworkMonitor$CustomIntentReceiver;
+    invoke-static {v0, v2}, Lcom/android/server/connectivity/NetworkMonitor;->access$1002(Lcom/android/server/connectivity/NetworkMonitor;Lcom/android/server/connectivity/NetworkMonitor$CustomIntentReceiver;)Lcom/android/server/connectivity/NetworkMonitor$CustomIntentReceiver;
 
     :cond_1
     invoke-static {}, Lcom/android/server/connectivity/NetworkMonitor;->access$600()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "CaptivePortalState : EVENT_PROVISIONING_NOTIFICATION"
+    const-string v2, "CaptivePortalState : EVENT_PROVISIONING_NOTIFICATION"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor$CaptivePortalState;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
 
-    const v1, 0x8200a
+    const v2, 0x8200a
 
-    const/4 v2, 0x1
-
-    iget-object v3, p0, Lcom/android/server/connectivity/NetworkMonitor$CaptivePortalState;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
-
-    invoke-static {v3}, Lcom/android/server/connectivity/NetworkMonitor;->access$2300(Lcom/android/server/connectivity/NetworkMonitor;)I
-
-    move-result v3
+    const/4 v3, 0x1
 
     iget-object v4, p0, Lcom/android/server/connectivity/NetworkMonitor$CaptivePortalState;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
 
-    invoke-static {v4}, Lcom/android/server/connectivity/NetworkMonitor;->access$1000(Lcom/android/server/connectivity/NetworkMonitor;)Lcom/android/server/connectivity/NetworkMonitor$CustomIntentReceiver;
+    invoke-static {v4}, Lcom/android/server/connectivity/NetworkMonitor;->access$2300(Lcom/android/server/connectivity/NetworkMonitor;)I
 
-    move-result-object v4
+    move-result v4
 
-    invoke-virtual {v4}, Lcom/android/server/connectivity/NetworkMonitor$CustomIntentReceiver;->getPendingIntent()Landroid/app/PendingIntent;
+    iget-object v5, p0, Lcom/android/server/connectivity/NetworkMonitor$CaptivePortalState;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
 
-    move-result-object v4
+    invoke-static {v5}, Lcom/android/server/connectivity/NetworkMonitor;->access$1000(Lcom/android/server/connectivity/NetworkMonitor;)Lcom/android/server/connectivity/NetworkMonitor$CustomIntentReceiver;
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/server/connectivity/NetworkMonitor;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/android/server/connectivity/NetworkMonitor$CustomIntentReceiver;->getPendingIntent()Landroid/app/PendingIntent;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v2, v3, v4, v5}, Lcom/android/server/connectivity/NetworkMonitor;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/server/connectivity/NetworkMonitor$CaptivePortalState;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
+    iget-object v2, p0, Lcom/android/server/connectivity/NetworkMonitor$CaptivePortalState;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
 
-    invoke-static {v1}, Lcom/android/server/connectivity/NetworkMonitor;->access$2400(Lcom/android/server/connectivity/NetworkMonitor;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/server/connectivity/NetworkMonitor;->access$2400(Lcom/android/server/connectivity/NetworkMonitor;)Landroid/os/Handler;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v2, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    iget-object v1, p0, Lcom/android/server/connectivity/NetworkMonitor$CaptivePortalState;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
+    iget-object v2, p0, Lcom/android/server/connectivity/NetworkMonitor$CaptivePortalState;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
 
-    const v2, 0x8200c
+    const v3, 0x8200c
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    const-wide/32 v4, 0x927c0
+    const-wide/32 v5, 0x927c0
 
-    invoke-virtual {v1, v2, v3, v4, v5}, Lcom/android/server/connectivity/NetworkMonitor;->sendMessageDelayed(IIJ)V
+    invoke-virtual {v2, v3, v4, v5, v6}, Lcom/android/server/connectivity/NetworkMonitor;->sendMessageDelayed(IIJ)V
 
-    iget-object v1, p0, Lcom/android/server/connectivity/NetworkMonitor$CaptivePortalState;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
+    iget-object v2, p0, Lcom/android/server/connectivity/NetworkMonitor$CaptivePortalState;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
 
-    invoke-static {v1}, Lcom/android/server/connectivity/NetworkMonitor;->access$2508(Lcom/android/server/connectivity/NetworkMonitor;)I
+    invoke-static {v2}, Lcom/android/server/connectivity/NetworkMonitor;->access$2508(Lcom/android/server/connectivity/NetworkMonitor;)I
 
+    invoke-static {}, Lcom/android/server/connectivity/NetworkMonitor;->access$3300()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lcom/android/server/connectivity/NetworkMonitor$CaptivePortalState;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
+
+    invoke-virtual {v2, v1}, Lcom/android/server/connectivity/NetworkMonitor;->sendMessage(I)V
+
+    :cond_2
     return-void
 .end method
 
@@ -172,7 +183,7 @@
 
     const v1, 0x8200c
 
-    invoke-static {v0, v1}, Lcom/android/server/connectivity/NetworkMonitor;->access$3500(Lcom/android/server/connectivity/NetworkMonitor;I)V
+    invoke-static {v0, v1}, Lcom/android/server/connectivity/NetworkMonitor;->access$4500(Lcom/android/server/connectivity/NetworkMonitor;I)V
 
     return-void
 .end method

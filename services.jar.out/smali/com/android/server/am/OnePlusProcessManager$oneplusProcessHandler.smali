@@ -72,7 +72,7 @@
 
     iget v1, p1, Landroid/os/Message;->arg2:I
 
-    const-string v2, "DISPATCH_APP_VISIBILITY_TIMEOUT"
+    const-string v2, "BIND_SERVICE_LOCKED_TIMEOUT"
 
     invoke-static {v0, v1, v2}, Lcom/android/server/am/OnePlusProcessManager;->access$3000(IILjava/lang/String;)V
 
@@ -83,7 +83,7 @@
 
     iget v1, p1, Landroid/os/Message;->arg2:I
 
-    const-string v2, "DISPLAY_EVENT_TIMEOUT"
+    const-string v2, "DISPATCH_RESIZED_TIMEOUT"
 
     invoke-static {v0, v1, v2}, Lcom/android/server/am/OnePlusProcessManager;->access$3000(IILjava/lang/String;)V
 
@@ -94,7 +94,7 @@
 
     iget v1, p1, Landroid/os/Message;->arg2:I
 
-    const-string v2, "INPUT_DEVICES_CHANGE_TIMEOUT"
+    const-string v2, "DISPATCH_APP_VISIBILITY_TIMEOUT"
 
     invoke-static {v0, v1, v2}, Lcom/android/server/am/OnePlusProcessManager;->access$3000(IILjava/lang/String;)V
 
@@ -105,7 +105,7 @@
 
     iget v1, p1, Landroid/os/Message;->arg2:I
 
-    const-string v2, "PUBLISH_SERVICE_TIMEOUT"
+    const-string v2, "DISPLAY_EVENT_TIMEOUT"
 
     invoke-static {v0, v1, v2}, Lcom/android/server/am/OnePlusProcessManager;->access$3000(IILjava/lang/String;)V
 
@@ -114,13 +114,35 @@
     :sswitch_4
     iget v0, p1, Landroid/os/Message;->arg1:I
 
+    iget v1, p1, Landroid/os/Message;->arg2:I
+
+    const-string v2, "INPUT_DEVICES_CHANGE_TIMEOUT"
+
+    invoke-static {v0, v1, v2}, Lcom/android/server/am/OnePlusProcessManager;->access$3000(IILjava/lang/String;)V
+
+    goto/16 :goto_1
+
+    :sswitch_5
+    iget v0, p1, Landroid/os/Message;->arg1:I
+
+    iget v1, p1, Landroid/os/Message;->arg2:I
+
+    const-string v2, "PUBLISH_SERVICE_TIMEOUT"
+
+    invoke-static {v0, v1, v2}, Lcom/android/server/am/OnePlusProcessManager;->access$3000(IILjava/lang/String;)V
+
+    goto/16 :goto_1
+
+    :sswitch_6
+    iget v0, p1, Landroid/os/Message;->arg1:I
+
     iget-object v1, p0, Lcom/android/server/am/OnePlusProcessManager$oneplusProcessHandler;->this$0:Lcom/android/server/am/OnePlusProcessManager;
 
     invoke-static {v1, v0}, Lcom/android/server/am/OnePlusProcessManager;->access$2900(Lcom/android/server/am/OnePlusProcessManager;I)V
 
     goto/16 :goto_1
 
-    :sswitch_5
+    :sswitch_7
     invoke-static {}, Lcom/android/server/am/OnePlusProcessManager;->access$2700()Lcom/android/server/am/OnePlusProcessManager;
 
     move-result-object v0
@@ -137,7 +159,7 @@
 
     goto/16 :goto_1
 
-    :sswitch_6
+    :sswitch_8
     iget v0, p1, Landroid/os/Message;->arg1:I
 
     iget-object v1, p0, Lcom/android/server/am/OnePlusProcessManager$oneplusProcessHandler;->this$0:Lcom/android/server/am/OnePlusProcessManager;
@@ -189,7 +211,7 @@
 
     goto/16 :goto_1
 
-    :sswitch_7
+    :sswitch_9
     iget v0, p1, Landroid/os/Message;->arg1:I
 
     iget v1, p1, Landroid/os/Message;->arg2:I
@@ -216,7 +238,7 @@
 
     goto/16 :goto_1
 
-    :sswitch_8
+    :sswitch_a
     iget v0, p1, Landroid/os/Message;->arg1:I
 
     iget v2, p1, Landroid/os/Message;->arg2:I
@@ -225,7 +247,7 @@
 
     goto/16 :goto_1
 
-    :sswitch_9
+    :sswitch_b
     iget-object v0, p0, Lcom/android/server/am/OnePlusProcessManager$oneplusProcessHandler;->this$0:Lcom/android/server/am/OnePlusProcessManager;
 
     invoke-virtual {v0}, Lcom/android/server/am/OnePlusProcessManager;->loadNPMConfigFiles()V
@@ -252,7 +274,7 @@
 
     goto/16 :goto_1
 
-    :sswitch_a
+    :sswitch_c
     iget-object v0, p0, Lcom/android/server/am/OnePlusProcessManager$oneplusProcessHandler;->this$0:Lcom/android/server/am/OnePlusProcessManager;
 
     new-instance v1, Lcom/android/server/am/OnePlusProcessManager$FileObserverPolicy;
@@ -275,7 +297,7 @@
 
     goto/16 :goto_1
 
-    :sswitch_b
+    :sswitch_d
     iget-object v0, p0, Lcom/android/server/am/OnePlusProcessManager$oneplusProcessHandler;->this$0:Lcom/android/server/am/OnePlusProcessManager;
 
     const-string v1, "/data/data_bpm/brd.xml"
@@ -312,7 +334,7 @@
 
     goto/16 :goto_1
 
-    :sswitch_c
+    :sswitch_e
     invoke-static {}, Lcom/android/server/am/OnePlusProcessManager;->access$200()Z
 
     move-result v0
@@ -454,18 +476,20 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x64 -> :sswitch_c
-        0x66 -> :sswitch_b
-        0x6f -> :sswitch_a
-        0x70 -> :sswitch_9
-        0x72 -> :sswitch_8
-        0x73 -> :sswitch_7
-        0x74 -> :sswitch_6
-        0x76 -> :sswitch_5
-        0x77 -> :sswitch_4
-        0x2328 -> :sswitch_3
-        0x238c -> :sswitch_2
-        0x23f0 -> :sswitch_1
-        0x2454 -> :sswitch_0
+        0x64 -> :sswitch_e
+        0x66 -> :sswitch_d
+        0x6f -> :sswitch_c
+        0x70 -> :sswitch_b
+        0x72 -> :sswitch_a
+        0x73 -> :sswitch_9
+        0x74 -> :sswitch_8
+        0x76 -> :sswitch_7
+        0x77 -> :sswitch_6
+        0x2328 -> :sswitch_5
+        0x238c -> :sswitch_4
+        0x23f0 -> :sswitch_3
+        0x2454 -> :sswitch_2
+        0x24b8 -> :sswitch_1
+        0x251c -> :sswitch_0
     .end sparse-switch
 .end method

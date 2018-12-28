@@ -515,11 +515,7 @@
 
     invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    const-string v1, "GnssLocationProvider"
-
-    const/4 v2, 0x4
-
-    invoke-static {v1, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {}, Lcom/android/server/location/GnssLocationProvider;->access$900()Z
 
     move-result v1
 
@@ -571,8 +567,6 @@
 
     :cond_2
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x2

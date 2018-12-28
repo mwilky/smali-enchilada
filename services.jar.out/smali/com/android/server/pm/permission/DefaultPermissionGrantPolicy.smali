@@ -1985,7 +1985,7 @@
 
     move-object/from16 v36, v5
 
-    const/4 v5, 0x1
+    const/4 v5, 0x0
 
     invoke-direct {v1, v4, v0, v5, v2}, Lcom/android/server/pm/permission/DefaultPermissionGrantPolicy;->grantRuntimePermissions(Landroid/content/pm/PackageParser$Package;Ljava/util/Set;ZI)V
 
@@ -2015,7 +2015,7 @@
 
     move-object/from16 v37, v4
 
-    const/4 v4, 0x1
+    const/4 v4, 0x0
 
     invoke-direct {v1, v5, v0, v4, v2}, Lcom/android/server/pm/permission/DefaultPermissionGrantPolicy;->grantRuntimePermissions(Landroid/content/pm/PackageParser$Package;Ljava/util/Set;ZI)V
 

@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/OnePlusStandbyAnalyzer;->calculateDiff()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/server/OnePlusStandbyAnalyzer;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,7 +20,7 @@
     value = {
         "Ljava/lang/Object;",
         "Ljava/util/Comparator<",
-        "Lcom/android/server/OnePlusStandbyAnalyzer$WakeupReasonInfo;",
+        "Lcom/android/server/OnePlusStandbyAnalyzer$AudioInfo;",
         ">;"
     }
 .end annotation
@@ -43,16 +43,36 @@
 
 
 # virtual methods
-.method public compare(Lcom/android/server/OnePlusStandbyAnalyzer$WakeupReasonInfo;Lcom/android/server/OnePlusStandbyAnalyzer$WakeupReasonInfo;)I
-    .locals 2
+.method public compare(Lcom/android/server/OnePlusStandbyAnalyzer$AudioInfo;Lcom/android/server/OnePlusStandbyAnalyzer$AudioInfo;)I
+    .locals 4
 
-    iget v0, p2, Lcom/android/server/OnePlusStandbyAnalyzer$WakeupReasonInfo;->mCount:I
+    iget-wide v0, p1, Lcom/android/server/OnePlusStandbyAnalyzer$AudioInfo;->mPlaying:J
 
-    iget v1, p1, Lcom/android/server/OnePlusStandbyAnalyzer$WakeupReasonInfo;->mCount:I
+    iget-wide v2, p2, Lcom/android/server/OnePlusStandbyAnalyzer$AudioInfo;->mPlaying:J
 
-    invoke-static {v0, v1}, Ljava/lang/Integer;->compare(II)I
+    cmp-long v0, v0, v2
 
-    move-result v0
+    if-gez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    iget-wide v0, p1, Lcom/android/server/OnePlusStandbyAnalyzer$AudioInfo;->mPlaying:J
+
+    iget-wide v2, p2, Lcom/android/server/OnePlusStandbyAnalyzer$AudioInfo;->mPlaying:J
+
+    cmp-long v0, v0, v2
+
+    if-lez v0, :cond_1
+
+    const/4 v0, -0x1
+
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
 
     return v0
 .end method
@@ -60,11 +80,11 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    check-cast p1, Lcom/android/server/OnePlusStandbyAnalyzer$WakeupReasonInfo;
+    check-cast p1, Lcom/android/server/OnePlusStandbyAnalyzer$AudioInfo;
 
-    check-cast p2, Lcom/android/server/OnePlusStandbyAnalyzer$WakeupReasonInfo;
+    check-cast p2, Lcom/android/server/OnePlusStandbyAnalyzer$AudioInfo;
 
-    invoke-virtual {p0, p1, p2}, Lcom/android/server/OnePlusStandbyAnalyzer$8;->compare(Lcom/android/server/OnePlusStandbyAnalyzer$WakeupReasonInfo;Lcom/android/server/OnePlusStandbyAnalyzer$WakeupReasonInfo;)I
+    invoke-virtual {p0, p1, p2}, Lcom/android/server/OnePlusStandbyAnalyzer$8;->compare(Lcom/android/server/OnePlusStandbyAnalyzer$AudioInfo;Lcom/android/server/OnePlusStandbyAnalyzer$AudioInfo;)I
 
     move-result p1
 

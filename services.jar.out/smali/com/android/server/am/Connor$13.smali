@@ -62,7 +62,7 @@
     :goto_0
     iget-object v2, p0, Lcom/android/server/am/Connor$13;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v2}, Lcom/android/server/am/Connor;->access$2300(Lcom/android/server/am/Connor;)Ljava/lang/Object;
+    invoke-static {v2}, Lcom/android/server/am/Connor;->access$2400(Lcom/android/server/am/Connor;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -73,7 +73,7 @@
 
     const/4 v4, 0x1
 
-    invoke-static {v3, v4}, Lcom/android/server/am/Connor;->access$2402(Lcom/android/server/am/Connor;Z)Z
+    invoke-static {v3, v4}, Lcom/android/server/am/Connor;->access$2502(Lcom/android/server/am/Connor;Z)Z
 
     monitor-exit v2
     :try_end_1
@@ -81,7 +81,7 @@
 
     iget-object v2, p0, Lcom/android/server/am/Connor$13;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v2}, Lcom/android/server/am/Connor;->access$2500(Lcom/android/server/am/Connor;)Lcom/android/server/am/ConnorStatistic;
+    invoke-static {v2}, Lcom/android/server/am/Connor;->access$2600(Lcom/android/server/am/Connor;)Lcom/android/server/am/ConnorStatistic;
 
     move-result-object v2
 

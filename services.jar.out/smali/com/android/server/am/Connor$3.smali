@@ -440,7 +440,7 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v4, "google_aab"
+    const-string/jumbo v4, "google_aab"
 
     const/4 v5, 0x1
 

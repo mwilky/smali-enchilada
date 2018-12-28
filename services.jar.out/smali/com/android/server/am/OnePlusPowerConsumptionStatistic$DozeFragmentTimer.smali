@@ -53,7 +53,7 @@
     return-void
 .end method
 
-.method static synthetic access$4600(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;)Z
+.method static synthetic access$6100(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;)Z
     .locals 1
 
     invoke-direct {p0}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;->startTiming()Z
@@ -63,7 +63,7 @@
     return v0
 .end method
 
-.method static synthetic access$4700(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;Ljava/lang/String;)Z
+.method static synthetic access$6200(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;Ljava/lang/String;)Z
     .locals 1
 
     invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;->stopTiming(Ljava/lang/String;)Z
@@ -73,7 +73,7 @@
     return v0
 .end method
 
-.method static synthetic access$5000(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;)V
+.method static synthetic access$6600(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;->clear()V
@@ -81,7 +81,7 @@
     return-void
 .end method
 
-.method static synthetic access$5400(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;)Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragment;
+.method static synthetic access$7000(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;)Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragment;
     .locals 1
 
     invoke-direct {p0}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;->getCacheDozeFragment()Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragment;
@@ -101,7 +101,7 @@
     :try_start_0
     iget-object v1, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;->fragment:Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragment;
 
-    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragment;->access$5600(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragment;)V
+    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragment;->access$7400(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragment;)V
 
     const/4 v1, 0x0
 
@@ -109,7 +109,7 @@
 
     const-string v1, "DozeFragmentTimer clear"
 
-    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1400(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1900(Ljava/lang/String;)V
 
     monitor-exit v0
 
@@ -163,11 +163,7 @@
 
     iget-object v2, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
 
-    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$100(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)Lcom/android/server/am/OnePlusPowerConsumptionStatistic$BaseTimer;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$BaseTimer;->access$1800(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$BaseTimer;)J
+    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$2700(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)J
 
     move-result-wide v2
 
@@ -183,7 +179,7 @@
 
     iget-object v2, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
 
-    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$2200(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)I
+    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$3100(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)I
 
     move-result v2
 
@@ -257,7 +253,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1400(Ljava/lang/String;)V
+    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1900(Ljava/lang/String;)V
 
     monitor-exit v0
 
@@ -266,7 +262,7 @@
     :cond_0
     const-string v1, "DozeFragmentTimer getCacheDozeFragment not Timing , return null"
 
-    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1400(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1900(Ljava/lang/String;)V
 
     const/4 v1, 0x0
 
@@ -309,17 +305,13 @@
 
     iget-object v2, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;->fragment:Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragment;
 
-    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragment;->access$5600(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragment;)V
+    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragment;->access$7400(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragment;)V
 
     iget-object v2, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;->fragment:Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragment;
 
     iget-object v3, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
 
-    invoke-static {v3}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$100(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)Lcom/android/server/am/OnePlusPowerConsumptionStatistic$BaseTimer;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$BaseTimer;->access$1800(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$BaseTimer;)J
+    invoke-static {v3}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$2700(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)J
 
     move-result-wide v3
 
@@ -337,7 +329,7 @@
 
     iget-object v3, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
 
-    invoke-static {v3}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$2200(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)I
+    invoke-static {v3}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$3100(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)I
 
     move-result v3
 
@@ -381,7 +373,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1400(Ljava/lang/String;)V
+    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1900(Ljava/lang/String;)V
 
     monitor-exit v0
 
@@ -422,11 +414,7 @@
 
     iget-object v2, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
 
-    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$100(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)Lcom/android/server/am/OnePlusPowerConsumptionStatistic$BaseTimer;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$BaseTimer;->access$1800(Lcom/android/server/am/OnePlusPowerConsumptionStatistic$BaseTimer;)J
+    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$2700(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)J
 
     move-result-wide v2
 
@@ -450,7 +438,7 @@
 
     iget-object v2, p0, Lcom/android/server/am/OnePlusPowerConsumptionStatistic$DozeFragmentTimer;->this$0:Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
 
-    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$2200(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)I
+    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$3100(Lcom/android/server/am/OnePlusPowerConsumptionStatistic;)I
 
     move-result v2
 
@@ -522,7 +510,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1400(Ljava/lang/String;)V
+    invoke-static {v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->access$1900(Ljava/lang/String;)V
 
     const/4 v2, 0x1
 

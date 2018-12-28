@@ -1120,40 +1120,40 @@
 
     invoke-static {v0, v3}, Landroid/util/EventLog;->writeEvent(II)I
 
+    invoke-static {}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->getInstance()Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_7
+
+    invoke-static {}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->getInstance()Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+
+    move-result-object v0
+
     if-ne v1, v3, :cond_6
-
-    invoke-direct {p0}, Lcom/android/server/power/Notifier;->sendWakeUpBroadcast()V
-
-    goto :goto_3
-
-    :cond_6
-    invoke-direct {p0}, Lcom/android/server/power/Notifier;->sendGoToSleepBroadcast()V
-
-    :goto_3
-    invoke-static {}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->getInstance()Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_8
-
-    invoke-static {}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->getInstance()Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
-
-    move-result-object v0
-
-    if-ne v1, v3, :cond_7
 
     move v2, v3
 
     nop
 
-    :cond_7
+    :cond_6
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->notifyScreenEvent(Ljava/lang/Boolean;)V
 
+    :cond_7
+    if-ne v1, v3, :cond_8
+
+    invoke-direct {p0}, Lcom/android/server/power/Notifier;->sendWakeUpBroadcast()V
+
+    goto :goto_3
+
     :cond_8
+    invoke-direct {p0}, Lcom/android/server/power/Notifier;->sendGoToSleepBroadcast()V
+
+    :goto_3
     return-void
 
     :catchall_0

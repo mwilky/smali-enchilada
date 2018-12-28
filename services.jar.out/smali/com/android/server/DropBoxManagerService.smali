@@ -1409,7 +1409,7 @@
 
 # virtual methods
 .method public add(Landroid/os/DropBoxManager$Entry;)V
-    .locals 40
+    .locals 38
 
     move-object/from16 v1, p0
 
@@ -1440,7 +1440,7 @@
 
     and-int/lit8 v8, v0, 0x1
 
-    if-nez v8, :cond_1b
+    if-nez v8, :cond_1a
 
     invoke-direct/range {p0 .. p0}, Lcom/android/server/DropBoxManagerService;->init()V
 
@@ -1703,19 +1703,19 @@
 
     move-wide v10, v14
 
-    move-wide/from16 v38, v10
+    move-wide/from16 v36, v10
 
     move-wide/from16 v10, v16
 
     goto :goto_4
 
     :cond_8
-    move-wide/from16 v38, v10
+    move-wide/from16 v36, v10
 
     move-wide/from16 v10, v17
 
     :goto_4
-    move-wide/from16 v16, v38
+    move-wide/from16 v16, v36
 
     invoke-virtual {v3, v12}, Ljava/io/InputStream;->read([B)I
 
@@ -1802,7 +1802,7 @@
     :cond_a
     move-object/from16 v24, v8
 
-    if-gtz v13, :cond_1a
+    if-gtz v13, :cond_19
 
     :goto_6
     iget-object v0, v1, Lcom/android/server/DropBoxManagerService;->mFrameworkEventCollector:Lnet/oneplus/odm/insight/FrameworkEventCollector;
@@ -1889,6 +1889,8 @@
 
     invoke-virtual {v0, v8}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
+    if-eqz v7, :cond_15
+
     new-instance v0, Ljava/io/File;
 
     const-string v8, "/data/system/dropbox"
@@ -1910,11 +1912,11 @@
     :goto_7
     move v11, v0
 
-    if-eqz v8, :cond_16
+    if-eqz v8, :cond_15
 
     array-length v0, v8
 
-    if-ge v11, v0, :cond_16
+    if-ge v11, v0, :cond_15
 
     aget-object v0, v8, v11
 
@@ -2081,47 +2083,15 @@
 
     if-eqz v0, :cond_14
 
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    move-object/from16 v34, v0
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    move-object/from16 v35, v6
-
-    const-string v6, "/data/system/dropbox/"
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    aget-object v6, v8, v11
-
-    invoke-virtual {v6}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    move-object/from16 v6, v34
-
-    invoke-virtual {v6, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
     const-string v0, "DropBoxManagerService"
 
-    move-object/from16 v36, v6
+    move-object/from16 v34, v6
 
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v37, v10
+    move-object/from16 v35, v10
 
     const-string v10, "file :: /data/system/dropbox/"
 
@@ -2140,8 +2110,6 @@
     move-result-object v6
 
     invoke-static {v0, v6}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    if-eqz v7, :cond_15
 
     const-string/jumbo v0, "wtf"
 
@@ -2253,9 +2221,8 @@
     throw v0
 
     :cond_14
-    move-object/from16 v37, v10
+    move-object/from16 v35, v10
 
-    :cond_15
     :goto_c
     add-int/lit8 v0, v11, 0x1
 
@@ -2263,11 +2230,11 @@
 
     move-object/from16 v12, v31
 
-    move-object/from16 v10, v37
+    move-object/from16 v10, v35
 
     goto/16 :goto_7
 
-    :cond_16
+    :cond_15
     move-object/from16 v29, v6
 
     move-object/from16 v31, v12
@@ -2278,7 +2245,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_16
 
     const-string/jumbo v0, "watchdog"
 
@@ -2286,31 +2253,31 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_17
 
-    :cond_17
+    :cond_16
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/DropBoxManagerService;->copyTransactionLog()V
     :try_end_a
     .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_1
     .catchall {:try_start_a .. :try_end_a} :catchall_0
 
-    :cond_18
+    :cond_17
     invoke-static {v9}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     invoke-static {v3}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/DropBoxManager$Entry;->close()V
 
-    if-eqz v2, :cond_19
+    if-eqz v2, :cond_18
 
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
-    :cond_19
+    :cond_18
     move-object v4, v9
 
     goto :goto_e
 
-    :cond_1a
+    :cond_19
     move-wide/from16 v27, v10
 
     move-wide/from16 v10, v16
@@ -2321,7 +2288,7 @@
 
     goto/16 :goto_3
 
-    :cond_1b
+    :cond_1a
     move-object/from16 v16, v2
 
     :try_start_b
@@ -2392,11 +2359,11 @@
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/DropBoxManager$Entry;->close()V
 
-    if-eqz v2, :cond_1c
+    if-eqz v2, :cond_1b
 
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
-    :cond_1c
+    :cond_1b
     :goto_e
     return-void
 
@@ -2412,11 +2379,11 @@
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/DropBoxManager$Entry;->close()V
 
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_1c
 
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
-    :cond_1d
+    :cond_1c
     throw v0
 .end method
 

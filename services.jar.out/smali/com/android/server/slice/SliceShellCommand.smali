@@ -127,7 +127,7 @@
 
     move-result-object v5
 
-    const-string v6, "get_permissions"
+    const-string/jumbo v6, "get_permissions"
 
     const/4 v7, 0x0
 

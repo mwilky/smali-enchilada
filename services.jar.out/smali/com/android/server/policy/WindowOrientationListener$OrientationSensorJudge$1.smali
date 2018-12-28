@@ -52,7 +52,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static {v1, v2}, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->access$502(Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;Z)Z
+    invoke-static {v1, v2}, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->access$602(Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;Z)Z
 
     iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge$1;->this$1:Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;
 

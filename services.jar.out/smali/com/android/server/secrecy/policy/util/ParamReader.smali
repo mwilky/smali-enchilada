@@ -194,7 +194,7 @@
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "getUpgradeTime P~ result = "
+    const-string/jumbo v7, "getUpgradeTime P~ result = "
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

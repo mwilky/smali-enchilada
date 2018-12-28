@@ -74,7 +74,7 @@
 
     move-result-object v0
 
-    const-string v1, "handle"
+    const-string/jumbo v1, "handle"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
 
@@ -115,7 +115,7 @@
 
     move-result-object v0
 
-    const-string v1, "handle"
+    const-string/jumbo v1, "handle"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
 
@@ -187,7 +187,7 @@
 
     move-result-object v0
 
-    const-string v1, "handle"
+    const-string/jumbo v1, "handle"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
 
@@ -957,8 +957,6 @@
     :cond_10
     :goto_7
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1
