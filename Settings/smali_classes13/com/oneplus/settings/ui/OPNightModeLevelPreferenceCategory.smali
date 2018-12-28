@@ -61,7 +61,7 @@
 
     iput-object p1, p0, Lcom/oneplus/settings/ui/OPNightModeLevelPreferenceCategory;->mContext:Landroid/content/Context;
 
-    const v0, 0x7f0d0190
+    const v0, 0x7f0d018f
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/ui/OPNightModeLevelPreferenceCategory;->setLayoutResource(I)V
 

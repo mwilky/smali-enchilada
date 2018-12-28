@@ -425,7 +425,7 @@
     goto :goto_1
 
     :cond_1
-    const v1, 0x7f120dd8
+    const v1, 0x7f120ddd
 
     :goto_1
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V

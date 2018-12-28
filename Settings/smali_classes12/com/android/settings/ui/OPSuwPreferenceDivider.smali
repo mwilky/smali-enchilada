@@ -57,14 +57,14 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0d01cd
+    const v0, 0x7f0d01cc
 
     invoke-virtual {p0, v0}, Lcom/android/settings/ui/OPSuwPreferenceDivider;->setLayoutResource(I)V
 
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f0d014f
+    const v0, 0x7f0d014e
 
     invoke-virtual {p0, v0}, Lcom/android/settings/ui/OPSuwPreferenceDivider;->setLayoutResource(I)V
 

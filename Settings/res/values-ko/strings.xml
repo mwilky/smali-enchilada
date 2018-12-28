@@ -2616,6 +2616,7 @@
     <string name="oneplus_broadcat_wifi_name">브로드캐스트 네트워크 이름(SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">버튼 및 제스처</string>
     <string name="oneplus_buttons_dashboard_summary">알림 슬라이더, 탐색, 제스처</string>
+    <string name="oneplus_buttons_settings">버튼 설정</string>
     <string name="oneplus_buttons_settings_summary">탐색 제스처</string>
     <string name="oneplus_call_information_broadcast">발신자 번호 말하기</string>
     <string name="oneplus_call_information_broadcast_summary">이어폰을 통해 발신자 번호를 음성으로 안내합니다.</string>
@@ -2630,6 +2631,7 @@
     <string name="oneplus_colorful_mode_title">컬러풀</string>
     <string name="oneplus_compatibility_mode_summary">전체 화면 앱이 노치 영역을 사용할 수 없습니다.</string>
     <string name="oneplus_compatibility_mode_title">호환성 모드</string>
+    <string name="oneplus_condition_night_mode_title">야간 모드가 켜졌습니다.</string>
     <string name="oneplus_connected_device_count">%1$s개의 연결된 장치가 있습니다.</string>
     <string name="oneplus_connected_device_management_title">연결된 장치 관리자</string>
     <string name="oneplus_connected_devices_count">%1$s개의 연결된 장치가 있습니다.</string>
@@ -2642,6 +2644,9 @@
     <string name="oneplus_data_usage_control_title">데이터 사용량 제어</string>
     <string name="oneplus_deep_clear_way">딥 지우기</string>
     <string name="oneplus_deep_clear_way_summary">백그라운드 프로세스를 지웁니다. 일부 앱은 작동을 멈출 수 있고 사용자는 알림을 받지 못합니다.</string>
+    <string name="oneplus_deep_optimization">딥 최적화</string>
+    <string name="oneplus_deep_optimization_summary">딥 최적화를 끄면 전력 소비가 크게 증가하여 정상적인 사용에 영향을 미칩니다.</string>
+    <string name="oneplus_deep_optimization_title">딥 최적화를 끄시겠습니까?</string>
     <string name="oneplus_default_launcher">기본 시작 관리자</string>
     <string name="oneplus_delete_fingerprint_list">지문 삭제하기</string>
     <string name="oneplus_deleted_fingerprint_list">지문 삭제 완료</string>
@@ -2682,6 +2687,7 @@
     <string name="oneplus_earphone_mode">이어폰 모드</string>
     <string name="oneplus_emergency_rescue_settings">긴급 구조</string>
     <string name="oneplus_emergency_rescue_settings_summary">전원 버튼을 빠르게 눌러 자동으로 도움을 청합니다.</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">긴급 구조의 전원 버튼 설정을 수정한 후 사용 가능</string>
     <string name="oneplus_enroll_fingerprint_tips_title">지문 설정 프롬프트</string>
     <string name="oneplus_enter_your_fingerprint">· 지문 등록</string>
     <string name="oneplus_experience_improvement_programs">경험 개선 프로그램</string>
@@ -2795,7 +2801,7 @@
     <string name="oneplus_hide_notch_display_summary">모든 앱이 노치 영역을 사용할 수 없습니다.</string>
     <string name="oneplus_hide_notch_display_title">노치 영역 숨기기</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">지문 패턴이 화면 하단에 나타나면 지문 인식 영역에서 손가락을 누르기만 하면 됩니다. 이를 통해 휴대폰 슬립 모드 해제 및 잠금 해제, 구매 승인 또는 앱 로그인과 같은 지문 기능을 사용할 수 있습니다.</string>
-    <string name="oneplus_hydrogen_version">Hydrogen OS 버전</string>
+    <string name="oneplus_hydrogen_version">H₂OS 버전</string>
     <string name="oneplus_incoming_call_vibrate_intensity">수신 전화</string>
     <string name="oneplus_incoming_call_vibrate_mode">수신 전화 진동 패턴</string>
     <string name="oneplus_init_finger_input">지문 초기화하는 중</string>
@@ -3050,6 +3056,7 @@
     <string name="oneplus_setting_ringtone">벨소리 설정</string>
     <string name="oneplus_setting_sim_ringtone_switch">각 SIM 카드에 대한 벨소리 설정</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· 화면을 잠금 해제하는 대체 방법 설정</string>
+    <string name="oneplus_share_this_wifi">Wi-Fi 범위 확장</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi 공유</string>
     <string name="oneplus_shielding_notification">차단</string>
     <string name="oneplus_shielding_notification_summary">알림이 차단됩니다(전화 및 알람 제외).</string>
@@ -3125,6 +3132,11 @@
     <string name="oneplus_weak_text_reminding">텍스트 전용</string>
     <string name="oneplus_weak_text_reminding_summary">앱이 헤즈업 알림을 표시하도록 허용합니다.</string>
     <string name="oneplus_wifi_ap_error">SIM 카드를 삽입하세요.</string>
+    <string name="oneplus_wifi_hidden_network_warning">"라우터에서 SSID 브로드캐스트를 사용하지 않는 경우 숨겨진 네트워크에 연결하려면 \"예\"를 선택해야 합니다.
+
+그러면 휴대폰이 네트워크를 찾기 위해 정기적으로 신호를 브로드캐스트하기 때문에 보안 위험이 발생할 수 있습니다.
+
+네트워크를 숨김으로 설정해도 라우터 설정은 변경되지 않습니다."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">IPv6을 비활성화하면 특정 Wi-Fi 라우터 관련 호환성 문제를 방지할 수 있습니다.</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6 지원</string>
     <string name="oneplus_wifi_list">Wi‑Fi 목록</string>

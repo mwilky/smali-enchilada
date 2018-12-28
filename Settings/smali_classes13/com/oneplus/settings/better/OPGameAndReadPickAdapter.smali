@@ -180,7 +180,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/better/OPGameAndReadPickAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v3, 0x7f0d017b
+    const v3, 0x7f0d017a
 
     const/4 v4, 0x0
 
@@ -284,7 +284,7 @@
     check-cast v0, Lcom/oneplus/settings/better/OPGameAndReadPickAdapter$ItemViewHolder;
 
     :goto_0
-    const v2, 0x7f120c12
+    const v2, 0x7f120c16
 
     const/16 v3, 0x44
 
@@ -312,7 +312,7 @@
 
     iget-object v2, v0, Lcom/oneplus/settings/better/OPGameAndReadPickAdapter$ItemViewHolder;->titleTv:Landroid/widget/TextView;
 
-    const v3, 0x7f120c55
+    const v3, 0x7f120c59
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(I)V
 

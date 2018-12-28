@@ -137,7 +137,7 @@
 .method public static getSlice(Landroid/content/Context;)Landroidx/slice/Slice;
     .locals 9
 
-    const v0, 0x7f08022e
+    const v0, 0x7f080249
 
     invoke-static {p0, v0}, Landroid/support/v4/graphics/drawable/IconCompat;->createWithResource(Landroid/content/Context;I)Landroid/support/v4/graphics/drawable/IconCompat;
 

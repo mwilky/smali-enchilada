@@ -91,10 +91,10 @@
 
     :array_0
     .array-data 4
+        0x7f040321
+        0x7f040320
         0x7f04031f
         0x7f04031e
-        0x7f04031d
-        0x7f04031c
     .end array-data
 .end method
 
@@ -147,7 +147,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d02b6
+    const v1, 0x7f0d02b5
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -251,9 +251,9 @@
 
     invoke-virtual {p0, v4}, Lcom/android/settings/widget/SwitchBar;->setBackgroundColor(I)V
 
-    const v4, 0x7f1211a2
+    const v4, 0x7f1211a7
 
-    const v5, 0x7f1211a1
+    const v5, 0x7f1211a6
 
     invoke-virtual {p0, v4, v5}, Lcom/android/settings/widget/SwitchBar;->setSwitchBarText(II)V
 

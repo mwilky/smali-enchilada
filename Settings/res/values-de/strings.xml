@@ -2616,6 +2616,7 @@ Der Akku-Schoner wird beim Aufladen des Geräts automatisch deaktiviert."</strin
     <string name="oneplus_broadcat_wifi_name">Broadcast Network Name (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Tasten &amp; Gesten</string>
     <string name="oneplus_buttons_dashboard_summary">Alarm-Schieberegler, Navigation, Gesten</string>
+    <string name="oneplus_buttons_settings">Schaltflächen-Einstellungen</string>
     <string name="oneplus_buttons_settings_summary">Navigationsgeste</string>
     <string name="oneplus_call_information_broadcast">Anrufer-ID sprechen</string>
     <string name="oneplus_call_information_broadcast_summary">Die eingehende Anrufer-ID über Kopfhörer sprechen</string>
@@ -2630,10 +2631,11 @@ Der Akku-Schoner wird beim Aufladen des Geräts automatisch deaktiviert."</strin
     <string name="oneplus_colorful_mode_title">Farbig</string>
     <string name="oneplus_compatibility_mode_summary">Vollbild-Apps können den Notch-Bereich nicht verwenden</string>
     <string name="oneplus_compatibility_mode_title">Kompatibilitäts-Modus</string>
+    <string name="oneplus_condition_night_mode_title">Nacht-Modus ist aktiviert</string>
     <string name="oneplus_connected_device_count">Es ist %1$s Gerät verbunden</string>
     <string name="oneplus_connected_device_management_title">Verbundener Gerätemanager</string>
     <string name="oneplus_connected_devices_count">Es sind %1$s Geräte verbunden</string>
-    <string name="oneplus_connected_devices_dashboard_summary">NFC, Aufnahme (Cast), Drucken</string>
+    <string name="oneplus_connected_devices_dashboard_summary">NFC, Streamen, Drucken</string>
     <string name="oneplus_connected_devices_dashboard_title">Bluetooth- &amp; Geräteverbindung</string>
     <string name="oneplus_cpu">CPU</string>
     <string name="oneplus_custom_time">Benutzerdefinierter Zeitrahmen</string>
@@ -2642,6 +2644,9 @@ Der Akku-Schoner wird beim Aufladen des Geräts automatisch deaktiviert."</strin
     <string name="oneplus_data_usage_control_title">Kontrolle der Datennutzung</string>
     <string name="oneplus_deep_clear_way">Tiefenbereinigung</string>
     <string name="oneplus_deep_clear_way_summary">Bereinigt Hintergrundprozesse, was möglicherweise dazu führt, dass einige Apps nicht mehr funktionieren und Sie keine Benachrichtigungen erhalten</string>
+    <string name="oneplus_deep_optimization">Deep Optimization</string>
+    <string name="oneplus_deep_optimization_summary">Wenn Sie Deep Optimization ausschalten, nimmt der Stromverbrauch stark zu. Dies wirkt sich auf Ihre normale Nutzung aus.</string>
+    <string name="oneplus_deep_optimization_title">Deep Optimization ausschalten?</string>
     <string name="oneplus_default_launcher">Standard-Launcher</string>
     <string name="oneplus_delete_fingerprint_list">Fingerabdruck löschen</string>
     <string name="oneplus_deleted_fingerprint_list">Fingerabdruck gelöscht</string>
@@ -2682,6 +2687,7 @@ Der Akku-Schoner wird beim Aufladen des Geräts automatisch deaktiviert."</strin
     <string name="oneplus_earphone_mode">Kopfhörer-Modus</string>
     <string name="oneplus_emergency_rescue_settings">Notfallrettung</string>
     <string name="oneplus_emergency_rescue_settings_summary">Durch schnelles Drücken der Einschalt-/Ausschalttaste automatisch um Hilfe rufen</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">Nach Änderung der Einstellungen für EIN-/AUSSCHALTTASTE der Notfallrettung verfügbar</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Hinweis zum Einrichten des Fingerabdrucks</string>
     <string name="oneplus_enter_your_fingerprint">· Ihren Fingerabdruck registrieren</string>
     <string name="oneplus_experience_improvement_programs">Programme zur Verbesserung der Benutzerfreundlichkeit</string>
@@ -2795,7 +2801,7 @@ Von der Mitte des unteren Bildschirmrands nach oben wischen, um jederzeit zum St
     <string name="oneplus_hide_notch_display_summary">Alle Apps können den Notch-Bereich nicht verwenden</string>
     <string name="oneplus_hide_notch_display_title">Notch-Bereich ausblenden</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Wenn das Fingerabdruckmuster unten auf dem Bildschirm angezeigt wird, drücken Sie einfach mit dem Finger auf den Identifikationsbereich für den Fingerabdruck, um die Fingerabdruckfunktion zu verwenden: Aufwecken und Entsperren Ihres Telefons, Genehmigen von Käufen oder Anmelden bei Apps.</string>
-    <string name="oneplus_hydrogen_version">Hydrogen OS-Version</string>
+    <string name="oneplus_hydrogen_version">H₂OS-Version</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Eingehender Anruf</string>
     <string name="oneplus_incoming_call_vibrate_mode">Vibrationsmuster für eingehenden Anruf</string>
     <string name="oneplus_init_finger_input">Initialisierung von Fingerabdruck</string>
@@ -3036,7 +3042,7 @@ Von der Mitte des unteren Bildschirmrands nach oben wischen, um jederzeit zum St
     <string name="oneplus_search_keyword_user_experience">Benachrichtigungen, Erfahrung, Programm, Verbesserung</string>
     <string name="oneplus_search_keyword_wallpaper_settings">Bildschirmhintergrund, Sperrbildschirm</string>
     <string name="oneplus_search_keyword_wifi_direct">direkt, P2P, Verbindung</string>
-    <string name="oneplus_search_keyword_wifi_display_settings_screen">Aufnahme (Cast)</string>
+    <string name="oneplus_search_keyword_wifi_display_settings_screen">Streamen</string>
     <string name="oneplus_security_dashboard_summary">Fingerabdruck, Entsperren durch Gesichtserkennung (Face Unlock), Standort</string>
     <string name="oneplus_security_dashboard_summary_no_faceunlock">Fingerabdruck, Standort</string>
     <string name="oneplus_security_lock_settings_summary">Entsperreinstellungen, Standortdienst, App Locker</string>
@@ -3050,6 +3056,7 @@ Von der Mitte des unteren Bildschirmrands nach oben wischen, um jederzeit zum St
     <string name="oneplus_setting_ringtone">Ton festlegen</string>
     <string name="oneplus_setting_sim_ringtone_switch">Klingelton für jede SIM-Karte festlegen</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· eine alternative Möglichkeit zum Entsperren des Bildschirms einrichten</string>
+    <string name="oneplus_share_this_wifi">Wi-Fi-Abdeckung erweitern</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi-Sharing</string>
     <string name="oneplus_shielding_notification">Blockieren</string>
     <string name="oneplus_shielding_notification_summary">Benachrichtigungen werden blockiert (ausgenommen Anrufe und Alarme)</string>
@@ -3125,6 +3132,11 @@ Hinweis: Die Gesichtsentsperrung ist möglicherweise unsicherer als Fingerabdruc
     <string name="oneplus_weak_text_reminding">Nur Text</string>
     <string name="oneplus_weak_text_reminding_summary">Apps Heads-Up-Benachrichtigungen anzeigen lassen</string>
     <string name="oneplus_wifi_ap_error">Legen Sie eine SIM-Karte ein</string>
+    <string name="oneplus_wifi_hidden_network_warning">"Wenn der SSID-Broadcast Ihres Routers deaktiviert ist, sollten Sie \"Ja\" auswählen, um eine Verbindung zum verborgenen Netzwerk herzustellen.
+
+Dies kann ein Sicherheitsrisiko darstellen, weil Ihr Telefon sein Signal regelmäßig zur Suche des Netzwerks sendet.
+
+Wird das Netzwerk als verborgen eingestellt, ändern sich die Einstellungen Ihres Routers nicht."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">Das Deaktivieren von IPv6 kann Kompatibilitätsprobleme mit bestimmten WLAN-Routern vermeiden.</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6-Unterstützung</string>
     <string name="oneplus_wifi_list">Wi‑Fi-Liste</string>

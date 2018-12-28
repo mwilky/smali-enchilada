@@ -295,7 +295,7 @@
 
     if-eqz v1, :cond_0
 
-    const v1, 0x7f0d0276
+    const v1, 0x7f0d0275
 
     return v1
 
@@ -306,12 +306,12 @@
 
     if-ne v1, v2, :cond_1
 
-    const v1, 0x7f0d0274
+    const v1, 0x7f0d0273
 
     return v1
 
     :cond_1
-    const v1, 0x7f0d0275
+    const v1, 0x7f0d0274
 
     return v1
 .end method
@@ -499,7 +499,7 @@
 
     iget-object v7, p0, Lcom/android/settings/dashboard/suggestions/SuggestionAdapter;->mContext:Landroid/content/Context;
 
-    const v8, 0x1040157
+    const v8, 0x1040158
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

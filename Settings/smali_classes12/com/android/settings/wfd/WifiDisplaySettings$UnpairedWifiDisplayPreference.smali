@@ -39,7 +39,7 @@
 
     invoke-virtual {p0, p1}, Lcom/android/settings/wfd/WifiDisplaySettings$UnpairedWifiDisplayPreference;->setTitle(Ljava/lang/CharSequence;)V
 
-    const p1, 0x104071a
+    const p1, 0x104071b
 
     invoke-virtual {p0, p1}, Lcom/android/settings/wfd/WifiDisplaySettings$UnpairedWifiDisplayPreference;->setSummary(I)V
 
@@ -66,7 +66,7 @@
 
     invoke-virtual {p0, p1}, Lcom/android/settings/wfd/WifiDisplaySettings$UnpairedWifiDisplayPreference;->setOrder(I)V
 
-    const p1, 0x7f121434
+    const p1, 0x7f121439
 
     invoke-virtual {p0, p1}, Lcom/android/settings/wfd/WifiDisplaySettings$UnpairedWifiDisplayPreference;->setSummary(I)V
 

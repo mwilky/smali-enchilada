@@ -438,9 +438,9 @@
 
     new-instance v0, Ljava/lang/Thread;
 
-    new-instance v1, Lcom/oneplus/settings/utils/OPUtils$3;
+    new-instance v1, Lcom/oneplus/settings/utils/OPUtils$4;
 
-    invoke-direct {v1, p0}, Lcom/oneplus/settings/utils/OPUtils$3;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, p0}, Lcom/oneplus/settings/utils/OPUtils$4;-><init>(Landroid/content/Context;)V
 
     invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
@@ -480,9 +480,9 @@
 
     new-instance v0, Ljava/lang/Thread;
 
-    new-instance v1, Lcom/oneplus/settings/utils/OPUtils$2;
+    new-instance v1, Lcom/oneplus/settings/utils/OPUtils$3;
 
-    invoke-direct {v1, p0}, Lcom/oneplus/settings/utils/OPUtils$2;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, p0}, Lcom/oneplus/settings/utils/OPUtils$3;-><init>(Landroid/content/Context;)V
 
     invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
@@ -496,9 +496,9 @@
 
     new-instance v0, Ljava/lang/Thread;
 
-    new-instance v1, Lcom/oneplus/settings/utils/OPUtils$4;
+    new-instance v1, Lcom/oneplus/settings/utils/OPUtils$5;
 
-    invoke-direct {v1, p0}, Lcom/oneplus/settings/utils/OPUtils$4;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, p0}, Lcom/oneplus/settings/utils/OPUtils$5;-><init>(Landroid/content/Context;)V
 
     invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
@@ -1580,29 +1580,29 @@
 .method public static getQuickPayIconByType(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
     .locals 2
 
-    const v0, 0x7f08043d
+    const v0, 0x7f080433
 
     packed-switch p1, :pswitch_data_0
 
     goto :goto_0
 
     :pswitch_0
-    const v0, 0x7f080307
+    const v0, 0x7f0802fc
 
     goto :goto_0
 
     :pswitch_1
-    const v0, 0x7f080306
+    const v0, 0x7f0802fb
 
     goto :goto_0
 
     :pswitch_2
-    const v0, 0x7f08043e
+    const v0, 0x7f080434
 
     goto :goto_0
 
     :pswitch_3
-    const v0, 0x7f08043d
+    const v0, 0x7f080433
 
     nop
 
@@ -3836,7 +3836,7 @@
 .method public static isSupportScreenCutting()Z
     .locals 1
 
-    const-string v0, "OP_FEATURE_SCREEN_CUTTING"
+    const-string v0, "OP_FEATURE_CAMERA_NOTCH"
 
     invoke-static {v0}, Lcom/oneplus/lib/util/ReflectUtil;->isFeatureSupported(Ljava/lang/String;)Z
 
@@ -3848,7 +3848,7 @@
 .method public static isSupportScreenDisplayAdaption()Z
     .locals 1
 
-    const-string v0, "OP_FEATURE_SCREEN_DISPLAY_ADAPTION"
+    const-string v0, "OP_FEATURE_SCREEN_COMPAT"
 
     invoke-static {v0}, Lcom/oneplus/lib/util/ReflectUtil;->isFeatureSupported(Ljava/lang/String;)Z
 
@@ -3872,7 +3872,7 @@
 .method public static isSupportSocTriState()Z
     .locals 1
 
-    const-string v0, "OP_FEATURE_SOC_TRI_STATE_KEY"
+    const-string v0, "OP_FEATURE_ALERT_SLIDER_RVS"
 
     invoke-static {v0}, Lcom/oneplus/lib/util/ReflectUtil;->isFeatureSupported(Ljava/lang/String;)Z
 
@@ -5483,9 +5483,9 @@
 
     new-instance v0, Ljava/lang/Thread;
 
-    new-instance v1, Lcom/oneplus/settings/utils/OPUtils$5;
+    new-instance v1, Lcom/oneplus/settings/utils/OPUtils$6;
 
-    invoke-direct {v1, p0}, Lcom/oneplus/settings/utils/OPUtils$5;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, p0}, Lcom/oneplus/settings/utils/OPUtils$6;-><init>(Landroid/content/Context;)V
 
     invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
@@ -5556,9 +5556,9 @@
 
     new-instance v0, Ljava/lang/Thread;
 
-    new-instance v1, Lcom/oneplus/settings/utils/OPUtils$1;
+    new-instance v1, Lcom/oneplus/settings/utils/OPUtils$2;
 
-    invoke-direct {v1, p0}, Lcom/oneplus/settings/utils/OPUtils$1;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, p0}, Lcom/oneplus/settings/utils/OPUtils$2;-><init>(Landroid/content/Context;)V
 
     invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
@@ -5582,7 +5582,7 @@
 .end method
 
 .method public static sendAppTracker(Ljava/lang/String;I)V
-    .locals 3
+    .locals 4
 
     sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
 
@@ -5616,6 +5616,30 @@
     move-result-object v1
 
     invoke-interface {v0, p0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v1, "OPUtils"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "action from Settings key:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, " value:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-interface {v0}, Ljava/util/Map;->size()I
 
@@ -5679,6 +5703,30 @@
 
     invoke-interface {v0, p0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    const-string v1, "OPUtils"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "action from Settings key:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, " value:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     invoke-interface {v0}, Ljava/util/Map;->size()I
 
     move-result v1
@@ -5706,7 +5754,7 @@
 .end method
 
 .method public static sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 2
+    .locals 4
 
     sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
 
@@ -5737,6 +5785,30 @@
 
     invoke-interface {v0, p0, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    const-string v1, "OPUtils"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "action from Settings key:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, " value:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     invoke-interface {v0}, Ljava/util/Map;->size()I
 
     move-result v1
@@ -5756,7 +5828,7 @@
 .end method
 
 .method public static sendAppTracker(Ljava/lang/String;Z)V
-    .locals 3
+    .locals 4
 
     sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
 
@@ -5791,6 +5863,30 @@
 
     invoke-interface {v0, p0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    const-string v1, "OPUtils"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "action from Settings key:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, " value:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     invoke-interface {v0}, Ljava/util/Map;->size()I
 
     move-result v1
@@ -5809,6 +5905,154 @@
     move-result-object v2
 
     invoke-static {v1, p0, v2}, Lcom/oneplus/settings/utils/OPUtils;->sendGoogleTracker(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForAccentColor()V
+    .locals 4
+
+    const-string v0, "theme_accent_color_white"
+
+    sget-object v1, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v1}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v2, "oem_white_mode_accent_color_index"
+
+    const/4 v3, 0x0
+
+    invoke-static {v1, v2, v3}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    invoke-static {v0, v1}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
+
+    const-string v0, "theme_accent_color_black"
+
+    sget-object v1, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v1}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v2, "oem_black_mode_accent_color_index"
+
+    invoke-static {v1, v2, v3}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    invoke-static {v0, v1}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForAllSettings()V
+    .locals 2
+
+    new-instance v0, Ljava/lang/Thread;
+
+    new-instance v1, Lcom/oneplus/settings/utils/OPUtils$1;
+
+    invoke-direct {v1}, Lcom/oneplus/settings/utils/OPUtils$1;-><init>()V
+
+    invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForAssistApp()V
+    .locals 5
+
+    :try_start_0
+    new-instance v0, Lcom/android/internal/app/AssistUtils;
+
+    sget-object v1, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-direct {v0, v1}, Lcom/android/internal/app/AssistUtils;-><init>(Landroid/content/Context;)V
+
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/android/internal/app/AssistUtils;->getAssistComponentForUser(I)Landroid/content/ComponentName;
+
+    move-result-object v1
+
+    const-string v2, "OPUtils"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "sendAppTrackerForAssistApp componentNamePkg is:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    if-eqz v1, :cond_0
+
+    const-string v2, "default_app_assist&voice input"
+
+    invoke-virtual {v1}, Landroid/content/ComponentName;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_0
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "OPUtils"
+
+    const-string v2, "sendAppTrackerForAssistApp componentNamePkg is not exist"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_0
+    return-void
+.end method
+
+.method public static sendAppTrackerForAssistAppByComponentName(Ljava/lang/String;)V
+    .locals 3
+
+    const-string v0, "default_app_assist&voice input"
+
+    invoke-static {v0, p0}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v0, "OPUtils"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "sendAppTrackerForAssistAppByComponentName componentName is:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 .end method
@@ -5855,6 +6099,408 @@
 
     :goto_1
     invoke-static {v1, v2}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForAutoBrightness()V
+    .locals 3
+
+    sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v0}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "screen_brightness_mode"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    const-string v1, "adaptive_brightness_click_auto_open"
+
+    invoke-static {v1, v0}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForAutoNightMode()V
+    .locals 3
+
+    new-instance v0, Lcom/android/internal/app/ColorDisplayController;
+
+    sget-object v1, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-direct {v0, v1}, Lcom/android/internal/app/ColorDisplayController;-><init>(Landroid/content/Context;)V
+
+    nop
+
+    invoke-virtual {v0}, Lcom/android/internal/app/ColorDisplayController;->getAutoMode()I
+
+    move-result v1
+
+    const-string v2, "night_mode_auto_open"
+
+    invoke-static {v2, v1}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForBrightness()V
+    .locals 4
+
+    sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v0}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "screen_brightness"
+
+    const/4 v2, 0x0
+
+    const/4 v3, -0x2
+
+    invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    const/16 v2, 0x28
+
+    if-ge v0, v2, :cond_0
+
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/16 v2, 0x8c
+
+    if-ge v0, v2, :cond_1
+
+    const/4 v1, 0x2
+
+    goto :goto_0
+
+    :cond_1
+    const/16 v2, 0xdc
+
+    if-ge v0, v2, :cond_2
+
+    const/4 v1, 0x3
+
+    goto :goto_0
+
+    :cond_2
+    const/16 v2, 0x1a4
+
+    if-ge v0, v2, :cond_3
+
+    const/4 v1, 0x4
+
+    goto :goto_0
+
+    :cond_3
+    const/4 v1, 0x5
+
+    :goto_0
+    const-string v2, "adaptive_brightness_manual_slider"
+
+    invoke-static {v2, v1}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForDefaultHomeApp()V
+    .locals 5
+
+    :try_start_0
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    sget-object v1, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v1}, Landroid/app/Application;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/content/pm/PackageManager;->getHomeActivities(Ljava/util/List;)Landroid/content/ComponentName;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    const-string v3, "default_app_home_app"
+
+    invoke-virtual {v2}, Landroid/content/ComponentName;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_0
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "OPUtils"
+
+    const-string v2, "sendAppTrackerForDefaultJHomeApp componentNamePkg is not exist"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_0
+    return-void
+.end method
+
+.method public static sendAppTrackerForDefaultHomeAppByComponentName(Ljava/lang/String;)V
+    .locals 3
+
+    const-string v0, "default_app_home_app"
+
+    invoke-static {v0, p0}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v0, "OPUtils"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "sendAppTrackerForDefaultHomeAppByPackageName componentName is:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForEffectStrength()V
+    .locals 4
+
+    sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v0}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "oem_nightmode_progress_status"
+
+    const/16 v2, 0x67
+
+    const/4 v3, -0x2
+
+    invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    const/16 v2, 0x2c
+
+    if-ge v0, v2, :cond_0
+
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/16 v2, 0x58
+
+    if-ge v0, v2, :cond_1
+
+    const/4 v1, 0x2
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x3
+
+    :goto_0
+    const-string v2, "night_mode_effect_strength"
+
+    invoke-static {v2, v1}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForFodAnimStyle()V
+    .locals 4
+
+    sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v0}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "op_custom_unlock_animation_style"
+
+    const/4 v2, 0x0
+
+    const/4 v3, -0x2
+
+    invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    const-string v1, "fod_style"
+
+    invoke-static {v1, v0}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForGameMode3drPartyCalls()V
+    .locals 4
+
+    sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v0}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "game_mode_notifications_3rd_calls"
+
+    const/4 v2, 0x0
+
+    const/4 v3, -0x2
+
+    invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    const-string v1, "game_mode_3rd_party_calls"
+
+    invoke-static {v1, v0}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForGameModeApps(Ljava/lang/String;)V
+    .locals 1
+
+    const-string v0, "game_mode_apps"
+
+    invoke-static {v0, p0}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForGameModeBrightness()V
+    .locals 4
+
+    sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v0}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "game_mode_close_automatic_brightness"
+
+    const/4 v2, 0x0
+
+    const/4 v3, -0x2
+
+    invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    const-string v1, "game_mode_disable_auto_brightness"
+
+    invoke-static {v1, v0}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForGameModeNetWorkBoost()V
+    .locals 4
+
+    sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v0}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "game_mode_network_acceleration"
+
+    const/4 v2, 0x0
+
+    const/4 v3, -0x2
+
+    invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    const-string v1, "game_mode_network_boost"
+
+    invoke-static {v1, v0}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForGameModeNotificationShow()V
+    .locals 4
+
+    sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v0}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "game_mode_block_notification"
+
+    const/4 v2, 0x0
+
+    const/4 v3, -0x2
+
+    invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    const-string v1, "game_mode_notification_show"
+
+    invoke-static {v1, v0}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForGameModeSpeakerAnswer()V
+    .locals 4
+
+    sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v0}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "game_mode_answer_no_incallui"
+
+    const/4 v2, 0x0
+
+    const/4 v3, -0x2
+
+    invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    const-string v1, "game_mode_speaker_answer"
+
+    invoke-static {v1, v0}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
 
     return-void
 .end method
@@ -5947,6 +6593,28 @@
     return-void
 .end method
 
+.method public static sendAppTrackerForNightMode()V
+    .locals 3
+
+    new-instance v0, Lcom/android/internal/app/ColorDisplayController;
+
+    sget-object v1, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-direct {v0, v1}, Lcom/android/internal/app/ColorDisplayController;-><init>(Landroid/content/Context;)V
+
+    nop
+
+    const-string v1, "night_mode_manual_open"
+
+    invoke-virtual {v0}, Lcom/android/internal/app/ColorDisplayController;->isActivated()Z
+
+    move-result v2
+
+    invoke-static {v1, v2}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
 .method public static sendAppTrackerForQuickLaunch()V
     .locals 2
 
@@ -5963,6 +6631,212 @@
     move-result-object v1
 
     invoke-static {v0, v1}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForReadingMode()V
+    .locals 3
+
+    sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v0}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "reading_mode_status_manual"
+
+    const/4 v2, -0x2
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    const-string v2, "force-on"
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const-string v2, "force-off"
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    const/4 v1, 0x0
+
+    :cond_1
+    :goto_0
+    const-string v2, "read_mode_manual_open"
+
+    invoke-static {v2, v1}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForReadingModeApps(Ljava/lang/String;)V
+    .locals 1
+
+    const-string v0, "read_mode_apps"
+
+    invoke-static {v0, p0}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForReadingModeNotification()V
+    .locals 4
+
+    sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v0}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "reading_mode_block_notification"
+
+    const/4 v2, 0x0
+
+    const/4 v3, -0x2
+
+    invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    const-string v1, "read_mode_block_peek_noti"
+
+    invoke-static {v1, v0}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForScreenColorMode()V
+    .locals 3
+
+    sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v0}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "screen_color_mode_settings_value"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    const-string v1, "screen_calibration_screen_calibration"
+
+    invoke-static {v1, v0}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForScreenCustomColorMode()V
+    .locals 3
+
+    sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v0}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "oem_screen_better_value"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    const/16 v2, 0x21
+
+    if-ge v0, v2, :cond_0
+
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/16 v2, 0x42
+
+    if-ge v0, v2, :cond_1
+
+    const/4 v1, 0x2
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x3
+
+    :goto_0
+    const-string v2, "screen_calibration_custom_color"
+
+    invoke-static {v2, v1}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForSmartWifiSwitch()V
+    .locals 3
+
+    sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v0}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "wifi_should_switch_network"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    const-string v1, "smart_wifi_switch"
+
+    invoke-static {v1, v0}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForThemes()V
+    .locals 3
+
+    sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v0}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "oem_black_mode"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    const-string v1, "theme_theme"
+
+    invoke-static {v1, v0}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
 
     return-void
 .end method
@@ -6078,6 +6952,41 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    return-void
+.end method
+
+.method public static setLightNavigationBar(Landroid/view/Window;Z)V
+    .locals 2
+
+    if-eqz p0, :cond_1
+
+    invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/View;->getSystemUiVisibility()I
+
+    move-result v0
+
+    if-eqz p1, :cond_0
+
+    or-int/lit8 v0, v0, 0x10
+
+    or-int/lit16 v0, v0, 0x2000
+
+    goto :goto_0
+
+    :cond_0
+    and-int/lit8 v0, v0, -0x11
+
+    :goto_0
+    invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->setSystemUiVisibility(I)V
+
+    :cond_1
     return-void
 .end method
 

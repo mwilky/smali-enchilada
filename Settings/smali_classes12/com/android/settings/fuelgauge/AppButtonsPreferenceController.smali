@@ -612,7 +612,7 @@
 
     check-cast v0, Lcom/android/settings/widget/ActionButtonPreference;
 
-    const v1, 0x7f121253
+    const v1, 0x7f121258
 
     invoke-virtual {v0, v1}, Lcom/android/settings/widget/ActionButtonPreference;->setButton1Text(I)Lcom/android/settings/widget/ActionButtonPreference;
 

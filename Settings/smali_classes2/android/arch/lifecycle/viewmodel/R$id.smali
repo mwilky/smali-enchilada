@@ -1265,37 +1265,37 @@
 
 .field public static final imei_value:I = 0x7f0a0270
 
-.field public static final img_alert_slider_instructions:I = 0x7f0a0271
+.field public static final img_bluetooth:I = 0x7f0a0271
 
-.field public static final img_bluetooth:I = 0x7f0a0272
+.field public static final img_brightness:I = 0x7f0a0272
 
-.field public static final img_brightness:I = 0x7f0a0273
+.field public static final img_location:I = 0x7f0a0273
 
-.field public static final img_location:I = 0x7f0a0274
+.field public static final img_quickpay_play:I = 0x7f0a0274
 
-.field public static final img_quickpay_play:I = 0x7f0a0275
+.field public static final img_sync:I = 0x7f0a0275
 
-.field public static final img_sync:I = 0x7f0a0276
+.field public static final img_wifi:I = 0x7f0a0276
 
-.field public static final img_wifi:I = 0x7f0a0277
+.field public static final ims_reg_state_label:I = 0x7f0a0277
 
-.field public static final ims_reg_state_label:I = 0x7f0a0278
+.field public static final ims_reg_state_value:I = 0x7f0a0278
 
-.field public static final ims_reg_state_value:I = 0x7f0a0279
+.field public static final imsi:I = 0x7f0a0279
 
-.field public static final imsi:I = 0x7f0a027a
+.field public static final increment:I = 0x7f0a027a
 
-.field public static final increment:I = 0x7f0a027b
+.field public static final ind_bluetooth:I = 0x7f0a027b
 
-.field public static final ind_bluetooth:I = 0x7f0a027c
+.field public static final ind_brightness:I = 0x7f0a027c
 
-.field public static final ind_brightness:I = 0x7f0a027d
+.field public static final ind_location:I = 0x7f0a027d
 
-.field public static final ind_location:I = 0x7f0a027e
+.field public static final ind_sync:I = 0x7f0a027e
 
-.field public static final ind_sync:I = 0x7f0a027f
+.field public static final ind_wifi:I = 0x7f0a027f
 
-.field public static final ind_wifi:I = 0x7f0a0280
+.field public static final indeterminate:I = 0x7f0a0280
 
 .field public static final info:I = 0x7f0a0281
 

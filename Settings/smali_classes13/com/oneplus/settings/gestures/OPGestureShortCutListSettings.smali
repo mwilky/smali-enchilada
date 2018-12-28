@@ -236,9 +236,9 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/gestures/OPGestureShortCutListSettings;->mGestureShortcutListView:Landroid/widget/ListView;
 
-    const v2, 0x7f0803cc
+    const v2, 0x7f0803c2
 
-    const v3, 0x7f0803ca
+    const v3, 0x7f0803c0
 
     const v4, 0x7f0702b0
 
@@ -439,7 +439,7 @@
 
     invoke-super {p0, p1}, Lcom/oneplus/settings/BaseActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0d017f
+    const v0, 0x7f0d017e
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/gestures/OPGestureShortCutListSettings;->setContentView(I)V
 

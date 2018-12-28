@@ -205,7 +205,7 @@
 .method private getWfcModeSummary(I)I
     .locals 4
 
-    const v0, 0x10406ff
+    const v0, 0x1040700
 
     iget-object v1, p0, Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub;->mImsManager:Lcom/android/ims/ImsManager;
 
@@ -238,17 +238,17 @@
     goto :goto_0
 
     :pswitch_0
-    const v0, 0x10406de
+    const v0, 0x10406df
 
     goto :goto_0
 
     :pswitch_1
-    const v0, 0x10406dc
+    const v0, 0x10406dd
 
     goto :goto_0
 
     :pswitch_2
-    const v0, 0x10406dd
+    const v0, 0x10406de
 
     nop
 
@@ -717,7 +717,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v2, 0x7f1213f3
+    const v2, 0x7f1213f8
 
     invoke-virtual {v0, v2}, Lcom/android/settings/SettingsActivity;->getString(I)Ljava/lang/String;
 
@@ -725,7 +725,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const v2, 0x7f1213f4
+    const v2, 0x7f1213f9
 
     invoke-virtual {v0, v2}, Lcom/android/settings/SettingsActivity;->getString(I)Ljava/lang/String;
 
@@ -947,7 +947,7 @@
 
     const/4 v0, 0x0
 
-    const v1, 0x7f0d02e1
+    const v1, 0x7f0d02e0
 
     invoke-virtual {p1, v1, p2, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

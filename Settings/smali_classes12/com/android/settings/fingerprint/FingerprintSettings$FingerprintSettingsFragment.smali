@@ -233,7 +233,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setKey(Ljava/lang/String;)V
 
-    const v1, 0x7f120b14
+    const v1, 0x7f120b17
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setTitle(I)V
 
@@ -261,7 +261,7 @@
 
     invoke-direct {v0, v1}, Landroid/support/v7/preference/PreferenceCategory;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f120cba
+    const v1, 0x7f120cbe
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/PreferenceCategory;->setTitle(I)V
 
@@ -277,7 +277,7 @@
 
     invoke-virtual {v1, v2}, Landroid/support/v14/preference/SwitchPreference;->setKey(Ljava/lang/String;)V
 
-    const v2, 0x7f120b6b
+    const v2, 0x7f120b6e
 
     invoke-virtual {v1, v2}, Landroid/support/v14/preference/SwitchPreference;->setTitle(I)V
 
@@ -327,7 +327,7 @@
 
     invoke-virtual {v2, v4}, Landroid/support/v14/preference/SwitchPreference;->setKey(Ljava/lang/String;)V
 
-    const v4, 0x7f120cbc
+    const v4, 0x7f120cc0
 
     invoke-virtual {v2, v4}, Landroid/support/v14/preference/SwitchPreference;->setTitle(I)V
 
@@ -430,7 +430,7 @@
 
     invoke-virtual {v5, v2}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;->setPersistent(Z)V
 
-    const v6, 0x7f080197
+    const v6, 0x7f0801b2
 
     invoke-virtual {v5, v6}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;->setIcon(I)V
 
@@ -509,7 +509,7 @@
 
     invoke-virtual {v2, v3}, Landroid/support/v7/preference/Preference;->setTitle(I)V
 
-    const v3, 0x7f0801c8
+    const v3, 0x7f0801e3
 
     invoke-virtual {v2, v3}, Landroid/support/v7/preference/Preference;->setIcon(I)V
 
@@ -601,24 +601,24 @@
 
     move-result v0
 
-    const v1, 0x7f120cc1
+    const v1, 0x7f120cc5
 
     packed-switch v0, :pswitch_data_0
 
     return v1
 
     :pswitch_0
-    const v1, 0x7f120dcd
+    const v1, 0x7f120dd2
 
     return v1
 
     :pswitch_1
-    const v1, 0x7f120cc3
+    const v1, 0x7f120cc7
 
     return v1
 
     :pswitch_2
-    const v1, 0x7f120cc2
+    const v1, 0x7f120cc6
 
     return v1
 
@@ -647,7 +647,7 @@
 
     if-eqz v0, :cond_0
 
-    const v1, 0x7f080446
+    const v1, 0x7f08043c
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -759,7 +759,7 @@
 
     nop
 
-    const v1, 0x7f120fd5
+    const v1, 0x7f120fda
 
     invoke-virtual {p0, v1}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;->getString(I)Ljava/lang/String;
 
@@ -1779,12 +1779,12 @@
 
     if-eqz v5, :cond_5
 
-    const v9, 0x7f120fb4
+    const v9, 0x7f120fb9
 
     goto :goto_0
 
     :cond_5
-    const v9, 0x7f120fb3
+    const v9, 0x7f120fb8
 
     :goto_0
     invoke-virtual {p0, v9}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;->getText(I)Ljava/lang/CharSequence;
@@ -2227,7 +2227,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f120cbe
+    const v10, 0x7f120cc2
 
     invoke-static {v9, v10, v5}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 

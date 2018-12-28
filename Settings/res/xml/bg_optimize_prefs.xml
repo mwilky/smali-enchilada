@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <SwitchPreference android:icon="@drawable/op_ic_settings_advanced_optimization" android:title="@string/bg_optimize_advance_settings" android:key="bg_optimize_switch" android:summary="@string/bg_optimize_advance_settings_summery" />
+    <SwitchPreference android:icon="@drawable/op_ic_settings_advanced_optimization" android:title="@string/oneplus_deep_optimization" android:key="bg_optimize_switch" android:summary="@string/bg_optimize_advance_settings_summery" />
     <SwitchPreference android:icon="@drawable/op_ic_settings_sleep_standby_optimization" android:title="@string/oneplus_sleep_standby_title" android:key="sleep_standby" android:summary="@string/oneplus_sleep_standby_summary" />
 </PreferenceScreen>

@@ -97,7 +97,7 @@
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 3
 
-    const v0, 0x7f120d79
+    const v0, 0x7f120d7e
 
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isOP6ModeBefore()Z
 

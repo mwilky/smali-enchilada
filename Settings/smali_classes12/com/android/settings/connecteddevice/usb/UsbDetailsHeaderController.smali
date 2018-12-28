@@ -73,7 +73,7 @@
 
     iget-object v1, p0, Lcom/android/settings/connecteddevice/usb/UsbDetailsHeaderController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f1212bc
+    const v2, 0x7f1212c1
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -85,7 +85,7 @@
 
     iget-object v1, p0, Lcom/android/settings/connecteddevice/usb/UsbDetailsHeaderController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f080253
+    const v2, 0x7f08026e
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

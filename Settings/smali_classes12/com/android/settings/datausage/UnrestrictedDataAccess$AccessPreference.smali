@@ -38,7 +38,7 @@
 
     invoke-direct {p0, p2}, Lcom/android/settings/widget/AppSwitchPreference;-><init>(Landroid/content/Context;)V
 
-    const v0, 0x7f0d023b
+    const v0, 0x7f0d023a
 
     invoke-virtual {p0, v0}, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;->setWidgetLayoutResource(I)V
 
@@ -104,18 +104,18 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;)Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
+.method static synthetic access$000(Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;)Lcom/android/settings/datausage/AppStateDataUsageBridge$DataUsageState;
     .locals 1
 
-    iget-object v0, p0, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;->mEntry:Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;->mState:Lcom/android/settings/datausage/AppStateDataUsageBridge$DataUsageState;
 
     return-object v0
 .end method
 
-.method static synthetic access$100(Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;)Lcom/android/settings/datausage/AppStateDataUsageBridge$DataUsageState;
+.method static synthetic access$100(Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;)Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
     .locals 1
 
-    iget-object v0, p0, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;->mState:Lcom/android/settings/datausage/AppStateDataUsageBridge$DataUsageState;
+    iget-object v0, p0, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;->mEntry:Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
 
     return-object v0
 .end method
@@ -158,7 +158,7 @@
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f120f11
+    const v0, 0x7f120f16
 
     invoke-virtual {p0, v0}, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;->setSummary(I)V
 

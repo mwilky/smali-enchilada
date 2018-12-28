@@ -1768,7 +1768,7 @@
 .method private switchToFragment(Ljava/lang/String;Landroid/os/Bundle;ZZILjava/lang/CharSequence;Z)Landroid/app/Fragment;
     .locals 5
 
-    const v0, 0x7f120e9e
+    const v0, 0x7f120ea3
 
     invoke-virtual {p0, v0}, Lcom/android/settings/SettingsActivity;->getString(I)Ljava/lang/String;
 
@@ -2402,29 +2402,20 @@
 
     iput-object v0, v1, Lcom/android/settings/SettingsActivity;->mDashboardFeatureProvider:Lcom/android/settings/dashboard/DashboardFeatureProvider;
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SettingsActivity;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/oneplus/settings/utils/OPUtils;->isWhiteModeOn(Landroid/content/ContentResolver;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SettingsActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+    invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SettingsActivity;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v0
+    move-result-object v6
 
-    const/16 v6, 0x2000
+    invoke-static {v6}, Lcom/oneplus/settings/utils/OPUtils;->isWhiteModeOn(Landroid/content/ContentResolver;)Z
 
-    invoke-virtual {v0, v6}, Landroid/view/View;->setSystemUiVisibility(I)V
+    move-result v6
 
-    :cond_0
+    invoke-static {v0, v6}, Lcom/oneplus/settings/utils/OPUtils;->setLightNavigationBar(Landroid/view/Window;Z)V
+
     invoke-direct/range {p0 .. p0}, Lcom/android/settings/SettingsActivity;->getMetaData()V
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SettingsActivity;->getIntent()Landroid/content/Intent;
@@ -2437,11 +2428,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     iget-object v0, v1, Lcom/android/settings/SettingsActivity;->mActivityAction:Ljava/lang/String;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     :try_start_0
     new-instance v0, Landroid/content/Intent;
@@ -2479,13 +2470,13 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_1
+    :cond_0
     :goto_0
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SettingsActivity;->finish()V
 
     return-void
 
-    :cond_2
+    :cond_1
     const-string v0, "settings:ui_options"
 
     invoke-virtual {v6, v0}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
@@ -2494,7 +2485,7 @@
 
     const/4 v7, 0x0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SettingsActivity;->getWindow()Landroid/view/Window;
 
@@ -2508,7 +2499,7 @@
 
     invoke-virtual {v0, v8}, Landroid/view/Window;->setUiOptions(I)V
 
-    :cond_3
+    :cond_2
     new-instance v0, Lcom/android/settings/SmqSettings;
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SettingsActivity;->getApplicationContext()Landroid/content/Context;
@@ -2549,7 +2540,7 @@
 
     const/4 v11, 0x1
 
-    if-nez v10, :cond_5
+    if-nez v10, :cond_4
 
     const-string v10, ":settings:show_fragment_as_subsetting"
 
@@ -2557,37 +2548,37 @@
 
     move-result v10
 
-    if-eqz v10, :cond_4
+    if-eqz v10, :cond_3
 
     goto :goto_1
 
-    :cond_4
+    :cond_3
     move v10, v7
 
     goto :goto_2
 
-    :cond_5
+    :cond_4
     :goto_1
     move v10, v11
 
     :goto_2
-    if-eqz v10, :cond_6
+    if-eqz v10, :cond_5
 
     const v12, 0x7f130444
 
     invoke-virtual {v1, v12}, Lcom/android/settings/SettingsActivity;->setTheme(I)V
 
-    :cond_6
+    :cond_5
     iget-boolean v12, v1, Lcom/android/settings/SettingsActivity;->mIsShowingDashboard:Z
 
-    if-eqz v12, :cond_7
+    if-eqz v12, :cond_6
 
-    const v12, 0x7f0d0254
+    const v12, 0x7f0d0253
 
     goto :goto_3
 
-    :cond_7
-    const v12, 0x7f0d0255
+    :cond_6
+    const v12, 0x7f0d0254
 
     :goto_3
     invoke-virtual {v1, v12}, Lcom/android/settings/SettingsActivity;->setContentView(I)V
@@ -2608,7 +2599,7 @@
 
     invoke-virtual {v12, v1}, Landroid/app/FragmentManager;->addOnBackStackChangedListener(Landroid/app/FragmentManager$OnBackStackChangedListener;)V
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_8
 
     invoke-direct {v1, v6}, Lcom/android/settings/SettingsActivity;->setTitleFromIntent(Landroid/content/Intent;)V
 
@@ -2618,7 +2609,7 @@
 
     move-result-object v12
 
-    if-eqz v12, :cond_8
+    if-eqz v12, :cond_7
 
     iget-object v13, v1, Lcom/android/settings/SettingsActivity;->mCategories:Ljava/util/ArrayList;
 
@@ -2630,10 +2621,10 @@
 
     invoke-direct/range {p0 .. p0}, Lcom/android/settings/SettingsActivity;->setTitleFromBackStack()V
 
-    :cond_8
+    :cond_7
     goto :goto_4
 
-    :cond_9
+    :cond_8
     invoke-virtual {v1, v0, v10, v6}, Lcom/android/settings/SettingsActivity;->launchSettingFragment(Ljava/lang/String;ZLandroid/content/Intent;)V
 
     :goto_4
@@ -2645,20 +2636,20 @@
 
     const/16 v13, 0x8
 
-    if-eqz v12, :cond_a
+    if-eqz v12, :cond_9
 
     invoke-virtual {v12, v13}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_a
+    :cond_9
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SettingsActivity;->getActionBar()Landroid/app/ActionBar;
 
     move-result-object v14
 
-    if-eqz v14, :cond_b
+    if-eqz v14, :cond_a
 
     iget-boolean v15, v1, Lcom/android/settings/SettingsActivity;->mIsShowingDashboard:Z
 
-    if-nez v15, :cond_b
+    if-nez v15, :cond_a
 
     invoke-static/range {p0 .. p0}, Lcom/android/settings/Utils;->isDeviceProvisioned(Landroid/content/Context;)Z
 
@@ -2674,12 +2665,12 @@
 
     invoke-virtual {v14, v11}, Landroid/app/ActionBar;->setDisplayShowTitleEnabled(Z)V
 
-    :cond_b
+    :cond_a
     iget-boolean v11, v1, Lcom/android/settings/SettingsActivity;->mIsShowingDashboard:Z
 
-    if-eqz v11, :cond_c
+    if-eqz v11, :cond_b
 
-    if-eqz v14, :cond_c
+    if-eqz v14, :cond_b
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SettingsActivity;->getResources()Landroid/content/res/Resources;
 
@@ -2697,7 +2688,7 @@
 
     invoke-virtual {v14, v13}, Landroid/app/ActionBar;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    :cond_c
+    :cond_b
     const v11, 0x7f0a055a
 
     invoke-virtual {v1, v11}, Lcom/android/settings/SettingsActivity;->findViewById(I)Landroid/view/View;
@@ -2710,7 +2701,7 @@
 
     iget-object v11, v1, Lcom/android/settings/SettingsActivity;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
-    if-eqz v11, :cond_d
+    if-eqz v11, :cond_c
 
     iget-object v11, v1, Lcom/android/settings/SettingsActivity;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
@@ -2720,14 +2711,14 @@
 
     invoke-virtual {v11, v13}, Lcom/android/settings/widget/SwitchBar;->setMetricsTag(Ljava/lang/String;)V
 
-    :cond_d
+    :cond_c
     const-string v11, "extra_prefs_show_button_bar"
 
     invoke-virtual {v6, v11, v7}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v11
 
-    if-eqz v11, :cond_12
+    if-eqz v11, :cond_11
 
     const v11, 0x7f0a00cd
 
@@ -2735,7 +2726,7 @@
 
     move-result-object v11
 
-    if-eqz v11, :cond_12
+    if-eqz v11, :cond_11
 
     invoke-virtual {v11, v7}, Landroid/view/View;->setVisibility(I)V
 
@@ -2793,7 +2784,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_e
 
     const-string v0, "extra_prefs_set_next_text"
 
@@ -2805,7 +2796,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_e
+    if-eqz v7, :cond_d
 
     iget-object v7, v1, Lcom/android/settings/SettingsActivity;->mNextButton:Landroid/widget/Button;
 
@@ -2815,12 +2806,12 @@
 
     goto :goto_5
 
-    :cond_e
+    :cond_d
     iget-object v2, v1, Lcom/android/settings/SettingsActivity;->mNextButton:Landroid/widget/Button;
 
     invoke-virtual {v2, v0}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_f
+    :cond_e
     :goto_5
     const-string v0, "extra_prefs_set_back_text"
 
@@ -2828,7 +2819,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_10
 
     const-string v0, "extra_prefs_set_back_text"
 
@@ -2840,7 +2831,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_f
 
     const/16 v2, 0x8
 
@@ -2848,10 +2839,10 @@
 
     goto :goto_6
 
-    :cond_10
+    :cond_f
     invoke-virtual {v13, v0}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_11
+    :cond_10
     :goto_6
     const-string v0, "extra_prefs_show_skip"
 
@@ -2861,16 +2852,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_12
 
     invoke-virtual {v15, v2}, Landroid/widget/Button;->setVisibility(I)V
 
     goto :goto_7
 
-    :cond_12
+    :cond_11
     move-object/from16 v16, v0
 
-    :cond_13
+    :cond_12
     :goto_7
     return-void
 .end method

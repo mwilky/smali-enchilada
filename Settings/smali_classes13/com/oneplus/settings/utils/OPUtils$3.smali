@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/oneplus/settings/utils/OPUtils;->disableCardPackageEntranceInLauncher(Landroid/content/Context;)V
+    value = Lcom/oneplus/settings/utils/OPUtils;->enableAppBgService(Landroid/content/Context;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -35,71 +35,86 @@
 
 # virtual methods
 .method public run()V
-    .locals 7
+    .locals 11
 
     iget-object v0, p0, Lcom/oneplus/settings/utils/OPUtils$3;->val$context:Landroid/content/Context;
 
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-static {v0}, Lcom/android/settings/fuelgauge/BatteryUtils;->getInstance(Landroid/content/Context;)Lcom/android/settings/fuelgauge/BatteryUtils;
 
     move-result-object v0
 
-    const-string v1, "com.oneplus.card"
+    iget-object v1, p0, Lcom/oneplus/settings/utils/OPUtils$3;->val$context:Landroid/content/Context;
 
-    const-string v2, "com.oneplus.card.entity.activity.CardlistActivity"
+    invoke-static {v1}, Lcom/oneplus/settings/backgroundoptimize/BgOActivityManager;->getInstance(Landroid/content/Context;)Lcom/oneplus/settings/backgroundoptimize/BgOActivityManager;
 
-    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isO2()Z
+    move-result-object v1
 
-    move-result v3
+    sget-object v2, Lcom/oneplus/settings/utils/OPUtils;->bgServicePackages:[Ljava/lang/String;
 
-    if-eqz v3, :cond_0
-
-    iget-object v3, p0, Lcom/oneplus/settings/utils/OPUtils$3;->val$context:Landroid/content/Context;
-
-    invoke-static {v3, v1}, Lcom/oneplus/settings/highpowerapp/PackageUtils;->isSystemApplication(Landroid/content/Context;Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    const-string v3, "oneplus_card_disabled"
+    array-length v3, v2
 
     const/4 v4, 0x0
 
-    invoke-static {v0, v3, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    move v5, v4
 
-    move-result v3
+    :goto_0
+    if-ge v5, v3, :cond_1
 
-    if-nez v3, :cond_0
+    aget-object v6, v2, v5
 
-    :try_start_0
-    iget-object v3, p0, Lcom/oneplus/settings/utils/OPUtils$3;->val$context:Landroid/content/Context;
+    iget-object v7, p0, Lcom/oneplus/settings/utils/OPUtils$3;->val$context:Landroid/content/Context;
 
-    invoke-virtual {v3}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    invoke-static {v7, v6}, Lcom/oneplus/settings/utils/OPUtils;->isAppExist(Landroid/content/Context;Ljava/lang/String;)Z
 
-    move-result-object v3
+    move-result v7
 
-    new-instance v4, Landroid/content/ComponentName;
+    if-eqz v7, :cond_0
 
-    invoke-direct {v4, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v7, p0, Lcom/oneplus/settings/utils/OPUtils$3;->val$context:Landroid/content/Context;
 
-    const/4 v5, 0x2
+    invoke-static {v7}, Lcom/oneplus/settings/backgroundoptimize/BgOActivityManager;->getInstance(Landroid/content/Context;)Lcom/oneplus/settings/backgroundoptimize/BgOActivityManager;
 
-    const/4 v6, 0x1
+    move-result-object v7
 
-    invoke-virtual {v3, v4, v5, v6}, Landroid/content/pm/PackageManager;->setComponentEnabledSetting(Landroid/content/ComponentName;II)V
+    invoke-virtual {v7, v6, v4}, Lcom/oneplus/settings/backgroundoptimize/BgOActivityManager;->getAppControlMode(Ljava/lang/String;I)I
 
-    const-string v4, "oneplus_card_disabled"
+    move-result v7
 
-    invoke-static {v0, v4, v6}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    if-nez v7, :cond_0
+
+    invoke-virtual {v0, v6}, Lcom/android/settings/fuelgauge/BatteryUtils;->getPackageUid(Ljava/lang/String;)I
+
+    move-result v8
+
+    invoke-virtual {v0, v8, v6, v4}, Lcom/android/settings/fuelgauge/BatteryUtils;->setForceAppStandby(ILjava/lang/String;I)V
+
+    const/4 v8, 0x1
+
+    invoke-virtual {v1, v6, v4, v8}, Lcom/oneplus/settings/backgroundoptimize/BgOActivityManager;->setAppControlMode(Ljava/lang/String;II)I
+
+    const-string v8, "OPUtils"
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "enableAppBgService pkg:"
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    :catch_0
-    move-exception v3
-
-    :cond_0
-    :goto_0
+    :cond_1
     return-void
 .end method

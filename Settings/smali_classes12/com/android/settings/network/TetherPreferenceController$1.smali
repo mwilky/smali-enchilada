@@ -61,6 +61,22 @@
 
     iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController$1;->this$0:Lcom/android/settings/network/TetherPreferenceController;
 
+    iget-object v1, p0, Lcom/android/settings/network/TetherPreferenceController$1;->this$0:Lcom/android/settings/network/TetherPreferenceController;
+
+    invoke-static {v1}, Lcom/android/settings/network/TetherPreferenceController;->access$000(Lcom/android/settings/network/TetherPreferenceController;)Ljava/util/concurrent/atomic/AtomicReference;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/bluetooth/BluetoothPan;
+
+    invoke-static {v0, v1}, Lcom/android/settings/network/TetherPreferenceController;->access$102(Lcom/android/settings/network/TetherPreferenceController;Landroid/bluetooth/BluetoothPan;)Landroid/bluetooth/BluetoothPan;
+
+    iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController$1;->this$0:Lcom/android/settings/network/TetherPreferenceController;
+
     invoke-static {v0}, Lcom/android/settings/network/TetherPreferenceController;->access$000(Lcom/android/settings/network/TetherPreferenceController;)Ljava/util/concurrent/atomic/AtomicReference;
 
     move-result-object v0

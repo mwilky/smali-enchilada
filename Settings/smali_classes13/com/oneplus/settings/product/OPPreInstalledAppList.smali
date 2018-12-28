@@ -57,7 +57,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120ba6
+    const v2, 0x7f120ba9
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -77,7 +77,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120ba7
+    const v2, 0x7f120baa
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -390,6 +390,14 @@
     move-result-object v4
 
     invoke-direct {v3, v4}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;)V
+
+    const v4, 0x7f0d019c
+
+    invoke-virtual {v3, v4}, Landroid/support/v7/preference/Preference;->setLayoutResource(I)V
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v3, v4}, Landroid/support/v7/preference/Preference;->setIconSpaceReserved(Z)V
 
     sget-object v4, Lcom/oneplus/settings/product/OPPreInstalledAppList;->sOneplusH2PreIinstalledAppsName:[Ljava/lang/String;
 

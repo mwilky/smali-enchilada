@@ -235,6 +235,7 @@
     <string name="oneplus_broadcat_wifi_name">ஒளிபரப்பு நெட்வொர்க் பெயர் (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">பொத்தான்கள் &amp; சைகைகள்</string>
     <string name="oneplus_buttons_dashboard_summary">ஸ்லைடர் எச்சரிக்கை, நேவிகேஷன், சைகைகள்</string>
+    <string name="oneplus_buttons_settings">பொத்தான் அமைப்புகள்</string>
     <string name="oneplus_buttons_settings_summary">நேவிகேஷன் சைகை</string>
     <string name="oneplus_call_information_broadcast">காலர் IDயைக் கூறவும்</string>
     <string name="oneplus_call_information_broadcast_summary">உள்வரும் காலர் IDயை இயர்ஃபோன் வழியாக கூறவும்</string>
@@ -249,6 +250,7 @@
     <string name="oneplus_colorful_mode_title">கலர்ஃபுல்</string>
     <string name="oneplus_compatibility_mode_summary">முழுத்திரை செயலிகள், நாட்ச் பகுதியைப் பயன்படுத்த முடியாது</string>
     <string name="oneplus_compatibility_mode_title">இணக்கத்தன்மை பயன்முறை</string>
+    <string name="oneplus_condition_night_mode_title">இரவுப் பயன்முறை ஆனில் உள்ளது</string>
     <string name="oneplus_connected_device_count">%1$s சாதனங்கள் இணைக்கப்பட்டுள்ளன</string>
     <string name="oneplus_connected_device_management_title">இணைக்கப்பட்ட சாதன மேலாளர்</string>
     <string name="oneplus_connected_devices_count">%1$s சாதனங்கள் இணைக்கப்பட்டுள்ளன</string>
@@ -261,6 +263,9 @@
     <string name="oneplus_data_usage_control_title">தரவு பயன்பாடு கட்டுப்பாடு</string>
     <string name="oneplus_deep_clear_way">டீப் க்ளீயர்</string>
     <string name="oneplus_deep_clear_way_summary">பின்னணி செயல்முறைகளை அழிக்கிறது, இதனால் சில பயன்பாடுகள் வேலை செய்வது நின்றுவிடக்கூடும், மேலும் உங்களால் அறிவிப்புகளை பெற முடியாது</string>
+    <string name="oneplus_deep_optimization">மேம்பட்ட உகந்ததாக்கல்</string>
+    <string name="oneplus_deep_optimization_summary">மேம்பட்ட உகந்ததாக்கலை நீங்கள் ஆஃப் செய்தால், மின்சக்தி நுகர்வு பெரியளவில் அதிகரிக்கும், இது உங்களின் வழக்கமான பயன்பாட்டைப் பாதிக்கும்.</string>
+    <string name="oneplus_deep_optimization_title">மேம்பட்ட உகந்ததாக்கலை ஆஃப் செய்யவா?</string>
     <string name="oneplus_default_launcher">இயல்புநிலை துவக்கி</string>
     <string name="oneplus_delete_fingerprint_list">கைரேகையை நீக்கவும்</string>
     <string name="oneplus_deleted_fingerprint_list">கைரேகை நீக்கப்பட்டது</string>
@@ -301,6 +306,7 @@
     <string name="oneplus_earphone_mode">இயர்ஃபோன் பயன்முறை</string>
     <string name="oneplus_emergency_rescue_settings">அவசரகால மீட்பு</string>
     <string name="oneplus_emergency_rescue_settings_summary">பவர் பொத்தானை துரிதமாக அழுத்துவதன் மூலம், உதவி கேட்கலாம்</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">அவசரகால மீட்புப் பவர் பொத்தான் அமைப்புகளை மாற்றியமைத்தப் பிறகு கிடைக்கும்</string>
     <string name="oneplus_enroll_fingerprint_tips_title">கைரேகை அமைப்பு விழிப்பூட்டல்</string>
     <string name="oneplus_enter_your_fingerprint">உங்கள் கைரேகையைப் பதிவுசெய்க</string>
     <string name="oneplus_experience_improvement_programs">அனுபவ மேம்பாட்டுத் திட்டங்கள்</string>
@@ -414,7 +420,7 @@
     <string name="oneplus_hide_notch_display_summary">அனைத்து செயலிகளாலும் நாட்ச் பகுதியைப் பயன்படுத்த முடியாது</string>
     <string name="oneplus_hide_notch_display_title">நாட்ச் பகுதியை மறை</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">கைரேகைச் செயல்பாட்டைப் பயன்படுத்துவதற்கு, திரையின் கீழ்பகுதியில் கைரேகை வடிவமைப்பு தோன்றியவுடன், கைரேகை அடையாளம் காணும் பகுதியில் உங்கள் விரலை வைத்து அழுத்தவும்: உங்கள் ஃபோனை எழுப்ப மற்றும் பூட்டுநீக்க, வாங்குதல்களை அங்கீகரிக்க, அல்லது பயன்பாடுகளுக்குள் உள்நுழைய.</string>
-    <string name="oneplus_hydrogen_version">ஹைட்ரஜன் OS பதிப்பு</string>
+    <string name="oneplus_hydrogen_version">H₂OS பதிப்பு</string>
     <string name="oneplus_incoming_call_vibrate_intensity">உள்வரும் அழைப்பு</string>
     <string name="oneplus_incoming_call_vibrate_mode">உள்வரும் அழைப்பு அதிர்வு வடிவம்</string>
     <string name="oneplus_init_finger_input">கைரேகையைத் துவக்குகிறது</string>
@@ -669,6 +675,7 @@
     <string name="oneplus_setting_ringtone">ரிங்கை அமைக்கவும்</string>
     <string name="oneplus_setting_sim_ringtone_switch">ஒவ்வொரு SIM அட்டைக்கும் ரிங்டோனை அமைக்கவும்</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">திரையைப் பூட்டுநீக்க ஓர் மாற்றுவழியை அமைக்கவும்</string>
+    <string name="oneplus_share_this_wifi">Wi-Fi கவரேஜை விரிவுபடுத்து</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi பகிர்தல்</string>
     <string name="oneplus_shielding_notification">தடுக்கவும்</string>
     <string name="oneplus_shielding_notification_summary">அறிவிப்புகள் தடுக்கப்படும் (அழைப்புகள் மற்றும் அலாரங்கள் தவிர)</string>
@@ -744,6 +751,11 @@
     <string name="oneplus_weak_text_reminding">உரை மட்டும்</string>
     <string name="oneplus_weak_text_reminding_summary">ஹெட்ஸ் அப் அறிவிப்பைக் காட்ட பயன்பாடுகளை அனுமதி</string>
     <string name="oneplus_wifi_ap_error">SIM அட்டையை செருகவும்</string>
+    <string name="oneplus_wifi_hidden_network_warning">"உங்கள் ரூட்டர் SSID ஒளிபரப்புகளை முடக்கினால், மறைக்கப்பட்ட நெட்வொர்க்குடன் இணைய \"ஆம்\" என்பதை நீங்கள் தேர்வுசெய்ய வேண்டும்.
+
+உங்கள் ஃபோன், நெட்வொர்க்கைக் கண்டுபிடிக்க வழக்கமாக அதன் சிக்னலை ஒளிபரப்பும் என்பதால் இது பாதுகாப்பு அபாயத்தை ஏற்படுத்தக்கூடும்.
+
+நெட்வொர்க்கை மறைக்கப்பட்டதாக அமைப்பது, உங்கள் ரூட்டர் அமைப்புகளை மாற்றாது."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">IPv6 ஐ முடக்குவது குறிப்பிட்ட Wi-Fi ரூட்டர்களுடன் இணக்கத்தன்மை பிரச்சனைகளைத் தவிர்க்கக்கூடும்.</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6 ஆதரவு</string>
     <string name="oneplus_wifi_list">Wi‑Fi பட்டியல்</string>

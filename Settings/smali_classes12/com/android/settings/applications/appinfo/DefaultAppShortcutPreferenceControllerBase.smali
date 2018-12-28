@@ -66,7 +66,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f121567
+    const v0, 0x7f12156c
 
     goto :goto_0
 

@@ -4,6 +4,10 @@
 
 
 # static fields
+.field public static final ADAPTIVE_BRIGHTNESS_CLICK_AUTO_OPEN:Ljava/lang/String; = "adaptive_brightness_click_auto_open"
+
+.field public static final ADAPTIVE_BRIGHTNESS_MANUAL_SLIDER:Ljava/lang/String; = "adaptive_brightness_manual_slider"
+
 .field public static final ALIPAY_QRCODE_TYPE:I = 0x2
 
 .field public static final ALIPAY_SCANING_TYPE:I = 0x3
@@ -16,11 +20,31 @@
 
 .field public static final BUTTONS_SHOW_ON_SCREEN_NAVKEYS:Ljava/lang/String; = "buttons_show_on_screen_navkeys"
 
+.field public static final DEFAULT_APP_ASSIST_VOICE_INPUT:Ljava/lang/String; = "default_app_assist&voice input"
+
+.field public static final DEFAULT_APP_HOME_APP:Ljava/lang/String; = "default_app_home_app"
+
 .field public static final FACELOCK_PACKAGE_NAME:Ljava/lang/String; = "com.android.facelock"
 
 .field public static final FEATURE_QUICKPAY_ANIM_FOR_ENCHILADA:Ljava/lang/String; = "OP_FEATURE_SETTINGS_QUICKPAY_ANIM_FOR_ENCHILADA"
 
 .field public static final FLAG_MULTI_APP:I = 0x4000000
+
+.field public static final FOD_ANIMAITON_STYLE:Ljava/lang/String; = "fod_style"
+
+.field public static final GAME_MODE_3RD_PARTY_CALLS:Ljava/lang/String; = "game_mode_3rd_party_calls"
+
+.field public static final GAME_MODE_APPS:Ljava/lang/String; = "game_mode_apps"
+
+.field public static final GAME_MODE_BATTERY_SAVER:Ljava/lang/String; = "game_mode_battery_saver"
+
+.field public static final GAME_MODE_DISABLE_AUTO_BRIGHTNESS:Ljava/lang/String; = "game_mode_disable_auto_brightness"
+
+.field public static final GAME_MODE_NETWORK_BOOST:Ljava/lang/String; = "game_mode_network_boost"
+
+.field public static final GAME_MODE_NOTIFICATION_SHOW:Ljava/lang/String; = "game_mode_notification_show"
+
+.field public static final GAME_MODE_SPEAKER_ANSWER:Ljava/lang/String; = "game_mode_speaker_answer"
 
 .field public static final HAVE_EDIT_QUICK_LAUNCH_LIST:Ljava/lang/String; = "op_quick_launcher_edited"
 
@@ -73,6 +97,12 @@
 .field public static final MULTI_APP_USER_ID:I = 0x3e7
 
 .field public static final NAV_GESTURES_SETTINGS:Ljava/lang/String; = "nav&gestures_settings"
+
+.field public static final NIGHT_MODE_AUTO_OPEN:Ljava/lang/String; = "night_mode_auto_open"
+
+.field public static final NIGHT_MODE_EFFECT_STRENGTH:Ljava/lang/String; = "night_mode_effect_strength"
+
+.field public static final NIGHT_MODE_MANUAL_OPEN:Ljava/lang/String; = "night_mode_manual_open"
 
 .field public static final NO_NEED_POWER_ON_PASSWORD:Ljava/lang/String; = "oem.no_need_power_on_password.support"
 
@@ -127,6 +157,12 @@
 .field public static final ONEPLUS_GESTURE_SHORTCUT_LIST_ACTION:Ljava/lang/String; = "oneplus.intent.action.ONEPLUS_GESTURE_SHORTCUT_LIST_ACTION"
 
 .field public static final ONEPLUS_INTENT_ACTION_DELETE:Ljava/lang/String; = "oneplus.intent.action.DELETE"
+
+.field public static final ONEPLUS_THEME:Ljava/lang/String; = "theme_theme"
+
+.field public static final ONEPLUS_THEME_ACCENT_COLOR_BLACK:Ljava/lang/String; = "theme_accent_color_black"
+
+.field public static final ONEPLUS_THEME_ACCENT_COLOR_WHITE:Ljava/lang/String; = "theme_accent_color_white"
 
 .field public static final ONEPLUS_WHITE_CUSTOM_ACCENT_COLOR:Ljava/lang/String; = "oneplus_white_custom_accent_color"
 
@@ -258,6 +294,12 @@
 
 .field public static final QUICK_LAUNCH__QUICK_PAY:I = 0x2
 
+.field public static final READ_MODE_APPS:Ljava/lang/String; = "read_mode_apps"
+
+.field public static final READ_MODE_BLOCK_PEEK_NOTI:Ljava/lang/String; = "read_mode_block_peek_noti"
+
+.field public static final READ_MODE_MANUAL_OPEN:Ljava/lang/String; = "read_mode_manual_open"
+
 .field public static final SCOPEINFO_TYPE_ADDRESS:I = 0xa
 
 .field public static final SCOPEINFO_TYPE_AFTER_SALE_CHANGE:I = 0x8
@@ -281,6 +323,12 @@
 .field public static final SCOPEINFO_TYPE_ORDER:I = 0x1
 
 .field public static final SCOPEINFO_TYPE_USERID:I = 0x0
+
+.field public static final SCREEN_CALIBRATION_CUSTOM_COLOR:Ljava/lang/String; = "screen_calibration_custom_color"
+
+.field public static final SCREEN_CALIBRATION_SCREEN_CALIBRATION:Ljava/lang/String; = "screen_calibration_screen_calibration"
+
+.field public static final SMART_WIFI_SWITCH:Ljava/lang/String; = "smart_wifi_switch"
 
 .field public static final SWAP_BUTTON:Ljava/lang/String; = "swap_button"
 

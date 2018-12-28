@@ -64,7 +64,7 @@
 .end method
 
 .method private mayUpdateGearIcon(Lcom/android/settingslib/applications/DefaultAppInfo;Landroid/support/v7/preference/Preference;)V
-    .locals 3
+    .locals 6
 
     instance-of v0, p2, Lcom/android/settings/widget/GearPreference;
 
@@ -77,39 +77,61 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    const/4 v1, 0x0
 
-    :try_start_0
+    if-eqz v0, :cond_3
+
+    invoke-virtual {v0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+
+    move-result-object v2
+
+    if-nez v2, :cond_1
+
+    return-void
+
+    :cond_1
+    iget-object v3, p0, Lcom/android/settings/applications/defaultapps/DefaultAppPreferenceController;->mPackageManager:Lcom/android/settingslib/wrapper/PackageManagerWrapper;
+
+    invoke-virtual {v3}, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Landroid/content/pm/PackageManager;->getComponentEnabledSetting(Landroid/content/ComponentName;)I
+
+    move-result v4
+
+    const/4 v5, 0x1
+
+    if-ne v4, v5, :cond_2
+
     move-object v1, p2
 
     check-cast v1, Lcom/android/settings/widget/GearPreference;
 
-    new-instance v2, Lcom/android/settings/applications/defaultapps/-$$Lambda$DefaultAppPreferenceController$P93yGe3NhKzPqeqQwHkMaXpVB1M;
+    new-instance v5, Lcom/android/settings/applications/defaultapps/-$$Lambda$DefaultAppPreferenceController$P93yGe3NhKzPqeqQwHkMaXpVB1M;
 
-    invoke-direct {v2, p0, v0}, Lcom/android/settings/applications/defaultapps/-$$Lambda$DefaultAppPreferenceController$P93yGe3NhKzPqeqQwHkMaXpVB1M;-><init>(Lcom/android/settings/applications/defaultapps/DefaultAppPreferenceController;Landroid/content/Intent;)V
+    invoke-direct {v5, p0, v0}, Lcom/android/settings/applications/defaultapps/-$$Lambda$DefaultAppPreferenceController$P93yGe3NhKzPqeqQwHkMaXpVB1M;-><init>(Lcom/android/settings/applications/defaultapps/DefaultAppPreferenceController;Landroid/content/Intent;)V
 
-    invoke-virtual {v1, v2}, Lcom/android/settings/widget/GearPreference;->setOnGearClickListener(Lcom/android/settings/widget/GearPreference$OnGearClickListener;)V
-    :try_end_0
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v1, v5}, Lcom/android/settings/widget/GearPreference;->setOnGearClickListener(Lcom/android/settings/widget/GearPreference$OnGearClickListener;)V
 
     goto :goto_0
 
-    :catch_0
-    move-exception v1
+    :cond_2
+    move-object v5, p2
 
-    invoke-virtual {v1}, Landroid/content/ActivityNotFoundException;->printStackTrace()V
+    check-cast v5, Lcom/android/settings/widget/GearPreference;
+
+    invoke-virtual {v5, v1}, Lcom/android/settings/widget/GearPreference;->setOnGearClickListener(Lcom/android/settings/widget/GearPreference$OnGearClickListener;)V
 
     :goto_0
     goto :goto_1
 
-    :cond_1
-    move-object v1, p2
+    :cond_3
+    move-object v2, p2
 
-    check-cast v1, Lcom/android/settings/widget/GearPreference;
+    check-cast v2, Lcom/android/settings/widget/GearPreference;
 
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Lcom/android/settings/widget/GearPreference;->setOnGearClickListener(Lcom/android/settings/widget/GearPreference$OnGearClickListener;)V
+    invoke-virtual {v2, v1}, Lcom/android/settings/widget/GearPreference;->setOnGearClickListener(Lcom/android/settings/widget/GearPreference$OnGearClickListener;)V
 
     :goto_1
     return-void

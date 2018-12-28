@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/oneplus/settings/utils/OPUtils;->enableAppBgService(Landroid/content/Context;)V
+    value = Lcom/oneplus/settings/utils/OPUtils;->restoreBackupEntranceInLauncher(Landroid/content/Context;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -35,86 +35,61 @@
 
 # virtual methods
 .method public run()V
-    .locals 11
+    .locals 7
 
     iget-object v0, p0, Lcom/oneplus/settings/utils/OPUtils$2;->val$context:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/android/settings/fuelgauge/BatteryUtils;->getInstance(Landroid/content/Context;)Lcom/android/settings/fuelgauge/BatteryUtils;
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/oneplus/settings/utils/OPUtils$2;->val$context:Landroid/content/Context;
+    const-string v1, "com.oneplus.backuprestore"
 
-    invoke-static {v1}, Lcom/oneplus/settings/backgroundoptimize/BgOActivityManager;->getInstance(Landroid/content/Context;)Lcom/oneplus/settings/backgroundoptimize/BgOActivityManager;
+    const-string v2, "com.oneplus.backuprestore.activity.BootActivity"
 
-    move-result-object v1
-
-    sget-object v2, Lcom/oneplus/settings/utils/OPUtils;->bgServicePackages:[Ljava/lang/String;
-
-    array-length v3, v2
+    const-string v3, "oneplus_backuprestore_disabled"
 
     const/4 v4, 0x0
 
-    move v5, v4
+    invoke-static {v0, v3, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
-    :goto_0
-    if-ge v5, v3, :cond_1
+    move-result v3
 
-    aget-object v6, v2, v5
+    const/4 v5, 0x1
 
-    iget-object v7, p0, Lcom/oneplus/settings/utils/OPUtils$2;->val$context:Landroid/content/Context;
+    if-ne v3, v5, :cond_0
 
-    invoke-static {v7, v6}, Lcom/oneplus/settings/utils/OPUtils;->isAppExist(Landroid/content/Context;Ljava/lang/String;)Z
+    :try_start_0
+    const-string v3, "OPUtils"
 
-    move-result v7
+    const-string v6, "restore entry"
 
-    if-eqz v7, :cond_0
+    invoke-static {v3, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v7, p0, Lcom/oneplus/settings/utils/OPUtils$2;->val$context:Landroid/content/Context;
+    iget-object v3, p0, Lcom/oneplus/settings/utils/OPUtils$2;->val$context:Landroid/content/Context;
 
-    invoke-static {v7}, Lcom/oneplus/settings/backgroundoptimize/BgOActivityManager;->getInstance(Landroid/content/Context;)Lcom/oneplus/settings/backgroundoptimize/BgOActivityManager;
+    invoke-virtual {v3}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v7
+    move-result-object v3
 
-    invoke-virtual {v7, v6, v4}, Lcom/oneplus/settings/backgroundoptimize/BgOActivityManager;->getAppControlMode(Ljava/lang/String;I)I
+    new-instance v6, Landroid/content/ComponentName;
 
-    move-result v7
+    invoke-direct {v6, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-nez v7, :cond_0
+    invoke-virtual {v3, v6, v5, v5}, Landroid/content/pm/PackageManager;->setComponentEnabledSetting(Landroid/content/ComponentName;II)V
 
-    invoke-virtual {v0, v6}, Lcom/android/settings/fuelgauge/BatteryUtils;->getPackageUid(Ljava/lang/String;)I
+    const-string v5, "oneplus_backuprestore_disabled"
 
-    move-result v8
-
-    invoke-virtual {v0, v8, v6, v4}, Lcom/android/settings/fuelgauge/BatteryUtils;->setForceAppStandby(ILjava/lang/String;I)V
-
-    const/4 v8, 0x1
-
-    invoke-virtual {v1, v6, v4, v8}, Lcom/oneplus/settings/backgroundoptimize/BgOActivityManager;->setAppControlMode(Ljava/lang/String;II)I
-
-    const-string v8, "OPUtils"
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "enableAppBgService pkg:"
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_0
-    add-int/lit8 v5, v5, 0x1
+    invoke-static {v0, v5, v4}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    :cond_1
+    :catch_0
+    move-exception v3
+
+    :cond_0
+    :goto_0
     return-void
 .end method

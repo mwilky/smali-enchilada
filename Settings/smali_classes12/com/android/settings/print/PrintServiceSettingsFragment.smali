@@ -328,7 +328,7 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    const v4, 0x7f120e60
+    const v4, 0x7f120e65
 
     invoke-virtual {p0, v4}, Lcom/android/settings/print/PrintServiceSettingsFragment;->getString(I)Ljava/lang/String;
 
@@ -446,7 +446,7 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    const v4, 0x7f120e57
+    const v4, 0x7f120e5c
 
     invoke-virtual {p0, v4}, Lcom/android/settings/print/PrintServiceSettingsFragment;->getString(I)Ljava/lang/String;
 

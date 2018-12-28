@@ -33,7 +33,7 @@
 
     invoke-direct {p0, p1, p2, p3}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const v0, 0x7f0d01d7
+    const v0, 0x7f0d01d6
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/timer/timepower/TimepowerPreference;->setLayoutResource(I)V
 

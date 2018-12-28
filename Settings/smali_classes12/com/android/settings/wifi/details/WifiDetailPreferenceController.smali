@@ -861,7 +861,7 @@
 
     iget-object v2, p0, Lcom/android/settings/wifi/details/WifiDetailPreferenceController;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f080228
+    const v3, 0x7f080243
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1044,7 +1044,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f1213ee
+    const v4, 0x7f1213f3
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1067,7 +1067,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f1213ef
+    const v4, 0x7f1213f4
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1495,7 +1495,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f1214f8
+    const v2, 0x7f1214fd
 
     invoke-virtual {v0, v2}, Lcom/android/settings/widget/ActionButtonPreference;->setButton2Text(I)Lcom/android/settings/widget/ActionButtonPreference;
 

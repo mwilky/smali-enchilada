@@ -298,7 +298,7 @@
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/storage/UserProfileController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0803e6
+    const v2, 0x7f0803dc
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

@@ -255,6 +255,8 @@
 
     check-cast v1, Lcom/android/settingslib/bluetooth/A2dpProfile;
 
+    if-eqz v0, :cond_1
+
     invoke-virtual {v1, v0}, Lcom/android/settingslib/bluetooth/A2dpProfile;->supportsHighQualityAudio(Landroid/bluetooth/BluetoothDevice;)Z
 
     move-result v2

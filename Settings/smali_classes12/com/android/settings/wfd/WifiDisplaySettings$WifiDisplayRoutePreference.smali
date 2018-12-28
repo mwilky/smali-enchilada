@@ -33,7 +33,7 @@
 
     iput-object p4, p0, Lcom/android/settings/wfd/WifiDisplaySettings$WifiDisplayRoutePreference;->mDisplay:Landroid/hardware/display/WifiDisplay;
 
-    const p1, 0x7f0d02e7
+    const p1, 0x7f0d02e6
 
     invoke-virtual {p0, p1}, Lcom/android/settings/wfd/WifiDisplaySettings$WifiDisplayRoutePreference;->setWidgetLayoutResource(I)V
 

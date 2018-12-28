@@ -62,7 +62,7 @@
 .method protected getSecondTargetResId()I
     .locals 1
 
-    const v0, 0x7f0d0212
+    const v0, 0x7f0d0211
 
     return v0
 .end method

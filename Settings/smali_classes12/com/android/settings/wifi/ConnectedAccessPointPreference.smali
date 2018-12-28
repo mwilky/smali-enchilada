@@ -42,7 +42,7 @@
 .method protected getWidgetLayoutResourceId()I
     .locals 1
 
-    const v0, 0x7f0d0215
+    const v0, 0x7f0d0214
 
     return v0
 .end method
@@ -156,7 +156,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f121511
+    const v0, 0x7f121516
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/ConnectedAccessPointPreference;->setSummary(I)V
 

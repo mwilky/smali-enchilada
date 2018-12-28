@@ -2616,6 +2616,7 @@ akkumulátor takarékállapota automatikusan kikapcsol a készülék töltéseko
     <string name="oneplus_broadcat_wifi_name">Hálózatnév sugárzás (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Gombok és gesztusok</string>
     <string name="oneplus_buttons_dashboard_summary">Riasztási csúszka, navigáció, gesztusok</string>
+    <string name="oneplus_buttons_settings">gombok beállításai</string>
     <string name="oneplus_buttons_settings_summary">Navigációs gesztus</string>
     <string name="oneplus_call_information_broadcast">Hívásazonosító mondása</string>
     <string name="oneplus_call_information_broadcast_summary">Mondja meg a bejövő hívásazonosítót a fejhallgatón keresztül</string>
@@ -2630,6 +2631,7 @@ akkumulátor takarékállapota automatikusan kikapcsol a készülék töltéseko
     <string name="oneplus_colorful_mode_title">Színes</string>
     <string name="oneplus_compatibility_mode_summary">A teljes képernyős alkalmazások nem használhatják a beugró területet.</string>
     <string name="oneplus_compatibility_mode_title">Kompatibilitás mód</string>
+    <string name="oneplus_condition_night_mode_title">Éjszakai üzemmód bekapcsolva</string>
     <string name="oneplus_connected_device_count">%1$s eszköz kapcsolódik</string>
     <string name="oneplus_connected_device_management_title">Csatlakoztatott eszközkezelő</string>
     <string name="oneplus_connected_devices_count">%1$s eszköz kapcsolódik</string>
@@ -2642,6 +2644,9 @@ akkumulátor takarékállapota automatikusan kikapcsol a készülék töltéseko
     <string name="oneplus_data_usage_control_title">Adathasználat ellenőrzése</string>
     <string name="oneplus_deep_clear_way">Mélytisztítás</string>
     <string name="oneplus_deep_clear_way_summary">Törli az összes háttérfolyamatot. Egyes alkalmazások leállhatnak, és addig nem fog értesítéseket fogadni</string>
+    <string name="oneplus_deep_optimization">Mély optimalizálás</string>
+    <string name="oneplus_deep_optimization_summary">Ha kikapcsolja a mély optimalizálást, az energiafogyasztás nagyban nőni fog, ami hatással lesz a normális használatára.</string>
+    <string name="oneplus_deep_optimization_title">Kikapcsolja a mély optimalizálást?</string>
     <string name="oneplus_default_launcher">Alapértelmezett indító</string>
     <string name="oneplus_delete_fingerprint_list">Ujjlenyomat törlése</string>
     <string name="oneplus_deleted_fingerprint_list">Ujjlenyomat törölve</string>
@@ -2682,6 +2687,7 @@ akkumulátor takarékállapota automatikusan kikapcsol a készülék töltéseko
     <string name="oneplus_earphone_mode">Fülhallgató mód</string>
     <string name="oneplus_emergency_rescue_settings">Segélyhívó</string>
     <string name="oneplus_emergency_rescue_settings_summary">Automatikus gyors segélyhívás a főkapcsoló megnyomásával</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">Elérhető a Segélyhívó BEKAPCSOLÓ GOMB beállításainak módosítása után</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Ujjlenyomat-telepítési kérdés</string>
     <string name="oneplus_enter_your_fingerprint">· Készítsen felvételt ujjlenyomatáról</string>
     <string name="oneplus_experience_improvement_programs">Élményjavító programok</string>
@@ -2795,7 +2801,7 @@ Ha bármikor a kezdőképernyőre kíván lépni, legyintsen felfelé a képerny
     <string name="oneplus_hide_notch_display_summary">Egyik alkalmazás sem használhatja a beugró területet</string>
     <string name="oneplus_hide_notch_display_title">Beugró terület elrejtése</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Amikor az ujjlenyomat minta megjelenik a képernyő alján, egyszerűen csak nyomja meg az ujjlenyomat azonosítási felületet az ujjával, hogy használni tudja az ujjlenyomat funkciót: a telefonja felébresztéséhez, a zárolás feloldásához, vásárlások engedélyezéséhez, vagy alkalmazásokba való bejelentkezéshez.</string>
-    <string name="oneplus_hydrogen_version">Hydrogen operációs rendszer változat</string>
+    <string name="oneplus_hydrogen_version">H₂OS változat</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Bejövő hívás</string>
     <string name="oneplus_incoming_call_vibrate_mode">Rezgésminta bejövő hívásokhoz</string>
     <string name="oneplus_init_finger_input">Ujjlenyomat inicializálása</string>
@@ -3050,6 +3056,7 @@ Ha bármikor a kezdőképernyőre kíván lépni, legyintsen felfelé a képerny
     <string name="oneplus_setting_ringtone">Csenő beállítása</string>
     <string name="oneplus_setting_sim_ringtone_switch">Csengőhang beállítása mindegyik SIM kártyához</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Állítson be alternatív módot a képernyőzár feloldásához</string>
+    <string name="oneplus_share_this_wifi">Wi-Fi lefedettség kibővítése</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi megosztás</string>
     <string name="oneplus_shielding_notification">Letiltás</string>
     <string name="oneplus_shielding_notification_summary">Az értesítések letiltásra kerülnek (kivéve a hívások és riasztások)</string>
@@ -3125,6 +3132,11 @@ Megjegyzés: A zár feloldása arcfelismeréssel kevésbé biztonságos, mint az
     <string name="oneplus_weak_text_reminding">Csak szöveg</string>
     <string name="oneplus_weak_text_reminding_summary">Engedélyezi az alkalmazásoknak, hogy megjelenítsék a figyelmeztető értesítéseket</string>
     <string name="oneplus_wifi_ap_error">Kérjük, helyezze be a SIM-kártyát</string>
+    <string name="oneplus_wifi_hidden_network_warning">"Ha a routere kikapcsolja az SSID sugárzást, akkor kiválaszthatja az \"Igen\" lehetőséget, hogy csatlakozzon a rejtett hálózathoz.
+
+Ez biztonsági kockázatokkal járhat, mivel a telefonja rendszeresen sugározni fogja a jelet, hogy megtalálja a hálózatot.
+
+Ha a hálózatot rejtett állapotra állítja be, az nem fogja megváltoztatni a router beállításait."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">Az IPv6 kikapcsolása által elkerülhetők a kompatibilitási problémák bizonyos Wi-Fi útválasztókkal.</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6-támogatás</string>
     <string name="oneplus_wifi_list">Wi‑Fi lista</string>

@@ -739,11 +739,22 @@
 
     move-result-object v0
 
+    iget-object v1, p0, Lcom/android/settings/DisplaySettings;->mCurrentTempColor:Ljava/lang/String;
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget-object v0, p0, Lcom/android/settings/DisplaySettings;->mCurrentTempColor:Ljava/lang/String;
+
+    :cond_0
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     invoke-direct {p0}, Lcom/android/settings/DisplaySettings;->getColorIndex()I
 
@@ -753,7 +764,7 @@
 
     aget-object v0, v2, v1
 
-    :cond_0
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v1
@@ -1195,33 +1206,33 @@
 
     :array_0
     .array-data 4
-        0x7f120d9e
-        0x7f120da4
-        0x7f120daa
-        0x7f120da7
-        0x7f120d9a
+        0x7f120da3
+        0x7f120da9
         0x7f120daf
-        0x7f120db2
-        0x7f120da1
-        0x7f120dab
         0x7f120dac
-        0x7f120d9b
+        0x7f120d9f
+        0x7f120db4
+        0x7f120db7
+        0x7f120da6
+        0x7f120db0
+        0x7f120db1
+        0x7f120da0
         0x7f12047a
     .end array-data
 
     :array_1
     .array-data 4
-        0x7f120d9c
-        0x7f120da2
-        0x7f120da8
-        0x7f120da5
-        0x7f120d98
+        0x7f120da1
+        0x7f120da7
         0x7f120dad
+        0x7f120daa
+        0x7f120d9d
+        0x7f120db2
+        0x7f120db5
+        0x7f120da4
         0x7f120db0
-        0x7f120d9f
-        0x7f120dab
-        0x7f120dac
-        0x7f120d9b
+        0x7f120db1
+        0x7f120da0
         0x7f12047a
     .end array-data
 .end method
@@ -1379,7 +1390,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040149
+    const v2, 0x104014a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1611,6 +1622,8 @@
     invoke-static {v1, v2, p1}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     :goto_2
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForAccentColor()V
+
     return-void
 .end method
 
@@ -2229,7 +2242,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120c73
+    const v3, 0x7f120c77
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2250,7 +2263,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120c71
+    const v3, 0x7f120c75
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2271,7 +2284,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120c74
+    const v3, 0x7f120c78
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2292,7 +2305,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120c72
+    const v3, 0x7f120c76
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2334,7 +2347,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120c76
+    const v3, 0x7f120c7a
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2848,7 +2861,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f120c78
+    const v6, 0x7f120c7c
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2875,7 +2888,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f120c75
+    const v6, 0x7f120c79
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3105,7 +3118,7 @@
 
     move-result-object v3
 
-    const v6, 0x7f120f5d
+    const v6, 0x7f120f62
 
     const/4 v7, 0x1
 
@@ -3491,7 +3504,7 @@
 
     iget-object v3, p0, Lcom/android/settings/DisplaySettings;->mDozePreference:Landroid/support/v7/preference/Preference;
 
-    const v4, 0x7f120b6a
+    const v4, 0x7f120b6d
 
     invoke-virtual {v3, v4}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -4442,7 +4455,7 @@
 
     if-nez v7, :cond_1a
 
-    iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mCustomRootPreference:Landroid/support/v7/preference/PreferenceCategory;
+    iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mScreenBrightnessRootPreference:Landroid/support/v7/preference/PreferenceCategory;
 
     iget-object v8, p0, Lcom/android/settings/DisplaySettings;->mDisplaySizeAdaptionPreference:Landroid/support/v7/preference/Preference;
 
@@ -4451,7 +4464,7 @@
     goto :goto_8
 
     :cond_19
-    iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mCustomRootPreference:Landroid/support/v7/preference/PreferenceCategory;
+    iget-object v7, p0, Lcom/android/settings/DisplaySettings;->mScreenBrightnessRootPreference:Landroid/support/v7/preference/PreferenceCategory;
 
     iget-object v8, p0, Lcom/android/settings/DisplaySettings;->mDisplaySizeAdaptionPreference:Landroid/support/v7/preference/Preference;
 
@@ -4540,14 +4553,6 @@
     const-string v1, "oneplus.intent.action.ONEPLUS_COLOR_PICKER"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lcom/android/settings/DisplaySettings;->mCurrentTempColor:Ljava/lang/String;
-
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
 
     iget-object v1, p0, Lcom/android/settings/DisplaySettings;->mContext:Landroid/content/Context;
 
@@ -4794,6 +4799,8 @@
     nop
 
     invoke-static {v2, v3, v1}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForAutoBrightness()V
 
     :cond_1
     iget-object v1, p0, Lcom/android/settings/DisplaySettings;->mNetworkNameDisplayedPreference:Landroid/support/v14/preference/SwitchPreference;

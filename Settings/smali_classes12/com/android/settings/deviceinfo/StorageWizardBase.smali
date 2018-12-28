@@ -258,7 +258,7 @@
     return-object v0
 
     :cond_1
-    const v0, 0x7f121259
+    const v0, 0x7f12125e
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardBase;->getText(I)Ljava/lang/CharSequence;
 
@@ -296,7 +296,7 @@
     return-object v0
 
     :cond_1
-    const v0, 0x7f121259
+    const v0, 0x7f12125e
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardBase;->getText(I)Ljava/lang/CharSequence;
 
@@ -491,7 +491,7 @@
 
     const/4 v2, 0x0
 
-    const v3, 0x7f0d026b
+    const v3, 0x7f0d026a
 
     invoke-virtual {v1, v3, v0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -509,7 +509,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const v3, 0x7f121160
+    const v3, 0x7f121165
 
     invoke-virtual {p0, v3}, Lcom/android/settings/deviceinfo/StorageWizardBase;->getText(I)Ljava/lang/CharSequence;
 

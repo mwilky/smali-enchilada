@@ -45,12 +45,12 @@
     .end annotation
 .end field
 
-.field static final IMS_REGISTRATION_STATE_LABEL_ID:I = 0x7f0a0278
+.field static final IMS_REGISTRATION_STATE_LABEL_ID:I = 0x7f0a0277
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 .end field
 
-.field static final IMS_REGISTRATION_STATE_VALUE_ID:I = 0x7f0a0279
+.field static final IMS_REGISTRATION_STATE_VALUE_ID:I = 0x7f0a0278
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 .end field
@@ -357,7 +357,7 @@
 
     iget-object v0, p0, Lcom/android/settings/deviceinfo/simstatus/SimStatusDialogController;->mRes:Landroid/content/res/Resources;
 
-    const v1, 0x7f120ebc
+    const v1, 0x7f120ec1
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -368,7 +368,7 @@
     :pswitch_0
     iget-object v0, p0, Lcom/android/settings/deviceinfo/simstatus/SimStatusDialogController;->mRes:Landroid/content/res/Resources;
 
-    const v1, 0x7f120ea9
+    const v1, 0x7f120eae
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -379,7 +379,7 @@
     :pswitch_1
     iget-object v0, p0, Lcom/android/settings/deviceinfo/simstatus/SimStatusDialogController;->mRes:Landroid/content/res/Resources;
 
-    const v1, 0x7f120ea6
+    const v1, 0x7f120eab
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -390,7 +390,7 @@
     :pswitch_2
     iget-object v0, p0, Lcom/android/settings/deviceinfo/simstatus/SimStatusDialogController;->mRes:Landroid/content/res/Resources;
 
-    const v1, 0x7f120ea7
+    const v1, 0x7f120eac
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -401,7 +401,7 @@
     :pswitch_3
     iget-object v0, p0, Lcom/android/settings/deviceinfo/simstatus/SimStatusDialogController;->mRes:Landroid/content/res/Resources;
 
-    const v1, 0x7f120ea8
+    const v1, 0x7f120ead
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -542,7 +542,7 @@
     move-result v2
 
     :goto_0
-    const v3, 0x7f0a0279
+    const v3, 0x7f0a0278
 
     if-eqz v2, :cond_2
 
@@ -577,7 +577,7 @@
     :cond_2
     iget-object v4, p0, Lcom/android/settings/deviceinfo/simstatus/SimStatusDialogController;->mDialog:Lcom/android/settings/deviceinfo/simstatus/SimStatusDialogFragment;
 
-    const v5, 0x7f0a0278
+    const v5, 0x7f0a0277
 
     invoke-virtual {v4, v5}, Lcom/android/settings/deviceinfo/simstatus/SimStatusDialogFragment;->removeSettingFromScreen(I)V
 
@@ -848,7 +848,7 @@
 
     iget-object v2, p0, Lcom/android/settings/deviceinfo/simstatus/SimStatusDialogController;->mRes:Landroid/content/res/Resources;
 
-    const v3, 0x7f120eb6
+    const v3, 0x7f120ebb
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -863,7 +863,7 @@
 
     iget-object v2, p0, Lcom/android/settings/deviceinfo/simstatus/SimStatusDialogController;->mRes:Landroid/content/res/Resources;
 
-    const v3, 0x7f120eb7
+    const v3, 0x7f120ebc
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -898,7 +898,7 @@
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/simstatus/SimStatusDialogController;->mRes:Landroid/content/res/Resources;
 
-    const v2, 0x7f120ebc
+    const v2, 0x7f120ec1
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -909,7 +909,7 @@
     :pswitch_0
     iget-object v1, p0, Lcom/android/settings/deviceinfo/simstatus/SimStatusDialogController;->mRes:Landroid/content/res/Resources;
 
-    const v2, 0x7f120eba
+    const v2, 0x7f120ebf
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -920,7 +920,7 @@
     :pswitch_1
     iget-object v1, p0, Lcom/android/settings/deviceinfo/simstatus/SimStatusDialogController;->mRes:Landroid/content/res/Resources;
 
-    const v2, 0x7f120ebb
+    const v2, 0x7f120ec0
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -931,7 +931,7 @@
     :pswitch_2
     iget-object v1, p0, Lcom/android/settings/deviceinfo/simstatus/SimStatusDialogController;->mRes:Landroid/content/res/Resources;
 
-    const v2, 0x7f120eb9
+    const v2, 0x7f120ebe
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1045,7 +1045,7 @@
 
     iget-object v9, p0, Lcom/android/settings/deviceinfo/simstatus/SimStatusDialogController;->mRes:Landroid/content/res/Resources;
 
-    const v10, 0x7f121089
+    const v10, 0x7f12108e
 
     const/4 v11, 0x2
 

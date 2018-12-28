@@ -183,7 +183,7 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$4;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
-    const v2, 0x7f120baf
+    const v2, 0x7f120bb2
 
     invoke-virtual {v1, v2}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->getString(I)Ljava/lang/String;
 

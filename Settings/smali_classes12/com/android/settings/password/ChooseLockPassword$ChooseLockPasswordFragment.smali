@@ -2309,7 +2309,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f080199
+    const v5, 0x7f0801b4
 
     invoke-virtual {v4, v5}, Landroid/app/Activity;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2437,7 +2437,7 @@
 
     move-result-object v6
 
-    const v7, 0x1040157
+    const v7, 0x1040158
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2501,7 +2501,7 @@
 
     const/16 v7, 0x3a
 
-    const v8, 0x7f12127b
+    const v8, 0x7f121280
 
     invoke-virtual {p0, v8}, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment;->getString(I)Ljava/lang/String;
 

@@ -49,7 +49,7 @@
 
 .field protected mErrorTextView:Landroid/widget/TextView;
 
-.field private mFingerprintHelper:Lcom/android/settings/fingerprint/FingerprintUiHelper;
+.field protected mFingerprintHelper:Lcom/android/settings/fingerprint/FingerprintUiHelper;
 
 .field protected mFingerprintIcon:Landroid/widget/ImageView;
 
@@ -193,51 +193,6 @@
     .end packed-switch
 .end method
 
-.method private isFingerprintAllowed()Z
-    .locals 3
-
-    iget-boolean v0, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;->mReturnCredentials:Z
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
-
-    move-result-object v0
-
-    const-string v2, "com.android.settings.ConfirmCredentials.allowFpAuthentication"
-
-    invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;->isStrongAuthRequired()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-direct {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;->isFingerprintDisabledByAdmin()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v1, 0x1
-
-    nop
-
-    :cond_0
-    return v1
-.end method
-
 .method private isFingerprintDisabledByAdmin()Z
     .locals 3
 
@@ -346,7 +301,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0804c7
+    const v3, 0x7f080499
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -501,6 +456,51 @@
 .end method
 
 .method protected abstract getLastTryErrorMessage(I)I
+.end method
+
+.method protected isFingerprintAllowed()Z
+    .locals 3
+
+    iget-boolean v0, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;->mReturnCredentials:Z
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+
+    move-result-object v0
+
+    const-string v2, "com.android.settings.ConfirmCredentials.allowFpAuthentication"
+
+    invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;->isStrongAuthRequired()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-direct {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;->isFingerprintDisabledByAdmin()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v1, 0x1
+
+    nop
+
+    :cond_0
+    return v1
 .end method
 
 .method protected isStrongAuthRequired()Z
@@ -927,7 +927,7 @@
 .method protected refreshLockScreen()V
     .locals 2
 
-    invoke-direct {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;->isFingerprintAllowed()Z
+    invoke-virtual {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;->isFingerprintAllowed()Z
 
     move-result v0
 

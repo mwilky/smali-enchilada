@@ -153,7 +153,7 @@
 
     if-eqz v2, :cond_2
 
-    const v2, 0x7f121415
+    const v2, 0x7f12141a
 
     iput v2, p0, Lcom/android/settings/datausage/DataUsageSummaryPreferenceController;->mDataUsageTemplate:I
 

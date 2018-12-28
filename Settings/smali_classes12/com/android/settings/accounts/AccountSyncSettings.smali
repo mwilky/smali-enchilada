@@ -844,7 +844,7 @@
     :goto_5
     if-nez v13, :cond_9
 
-    const v6, 0x7f1211a7
+    const v6, 0x7f1211ac
 
     invoke-virtual {v9, v6}, Lcom/android/settings/accounts/SyncStateSwitchPreference;->setSummary(I)V
 
@@ -860,7 +860,7 @@
     :cond_9
     if-eqz v7, :cond_a
 
-    const v6, 0x7f1211ac
+    const v6, 0x7f1211b1
 
     invoke-virtual {v9, v6}, Lcom/android/settings/accounts/SyncStateSwitchPreference;->setSummary(I)V
 
@@ -1722,7 +1722,7 @@
 
     nop
 
-    const v0, 0x7f1211af
+    const v0, 0x7f1211b4
 
     invoke-virtual {p0, v0}, Lcom/android/settings/accounts/AccountSyncSettings;->getString(I)Ljava/lang/String;
 
@@ -1736,7 +1736,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0801cf
+    const v2, 0x7f0801ea
 
     invoke-interface {v0, v2}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
@@ -1744,7 +1744,7 @@
 
     nop
 
-    const v2, 0x7f1211ae
+    const v2, 0x7f1211b3
 
     invoke-virtual {p0, v2}, Lcom/android/settings/accounts/AccountSyncSettings;->getString(I)Ljava/lang/String;
 

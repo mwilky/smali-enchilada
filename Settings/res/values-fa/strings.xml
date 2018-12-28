@@ -2614,6 +2614,7 @@
     <string name="oneplus_broadcat_wifi_name">پخش نام شبکه (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">دکمه‌ها و فرمان‌های حرکتی</string>
     <string name="oneplus_buttons_dashboard_summary">نشانگر کشویی هشدار، پیمایش، فرمان‌های حرکتی</string>
+    <string name="oneplus_buttons_settings">تنظیمات دکمه‌ها</string>
     <string name="oneplus_buttons_settings_summary">فرمان حرکتی پیمایش</string>
     <string name="oneplus_call_information_broadcast">تلفظ شناسۀ تماس‌گیرنده</string>
     <string name="oneplus_call_information_broadcast_summary">تلفظ شناسۀ تماس‌گیرندۀ ورودی از طریق گوشی</string>
@@ -2628,6 +2629,7 @@
     <string name="oneplus_colorful_mode_title">رنگارنگ</string>
     <string name="oneplus_compatibility_mode_summary">برنامه‌های تمام‌صفحه نمی‌توانند از قسمت برآمده استفاده کنند</string>
     <string name="oneplus_compatibility_mode_title">حالت سازگاری</string>
+    <string name="oneplus_condition_night_mode_title">حالت شب روشن است</string>
     <string name="oneplus_connected_device_count">%1$s دستگاه متصل وجود دارد</string>
     <string name="oneplus_connected_device_management_title">مدیر دستگاه متصل شده</string>
     <string name="oneplus_connected_devices_count">%1$s دستگاه متصل وجود دارد</string>
@@ -2640,6 +2642,9 @@
     <string name="oneplus_data_usage_control_title">کنترل مصرف داده</string>
     <string name="oneplus_deep_clear_way">پاکسازی عمیق</string>
     <string name="oneplus_deep_clear_way_summary">فرآیندهای پس‌زمینه را پاک می‌کند که در این صورت، بعضی از برنامه‌ها از کار می‌افتند و اعلانی دریافت نمی‌کنید</string>
+    <string name="oneplus_deep_optimization">بهینه‌سازی عمیق</string>
+    <string name="oneplus_deep_optimization_summary">وقتی بهینه‌سازی عمیق را خاموش می‌کنید، مصرف نیرو به شدت افزایش می‌یابد و این بر استفادۀ عادی شما اثر می‌گذارد.</string>
+    <string name="oneplus_deep_optimization_title">بهینه‌سازی عمیق خاموش شود؟</string>
     <string name="oneplus_default_launcher">راه‌‍انداز پیش فرض</string>
     <string name="oneplus_delete_fingerprint_list">اثر انگشت را حذف کنید</string>
     <string name="oneplus_deleted_fingerprint_list">اثر انگشت حذف شد</string>
@@ -2680,6 +2685,7 @@
     <string name="oneplus_earphone_mode">حالت گوشی</string>
     <string name="oneplus_emergency_rescue_settings">نجات اضطراری</string>
     <string name="oneplus_emergency_rescue_settings_summary">برای درخواست کمک خودکار، دکمه روشن/خاموش را پشت سر هم فشار دهید</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">بعد از تغییر تنظیمات «دکمۀ روشن/خاموش» «نجات اضطراری» در دسترس خواهد بود</string>
     <string name="oneplus_enroll_fingerprint_tips_title">تنظیم سریع اثرانگشت</string>
     <string name="oneplus_enter_your_fingerprint">· ثبت اثر انگشت</string>
     <string name="oneplus_experience_improvement_programs">برنامه‌های بهبود تجربه کاربری</string>
@@ -2793,7 +2799,7 @@
     <string name="oneplus_hide_notch_display_summary">همه برنامه‌ها نمی‌توانند از قسمت برآمده استفاده کنند</string>
     <string name="oneplus_hide_notch_display_title">پنهان کردن قسمت برآمده</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">زمانی که الگوی اثر انگشت در پایین صفحه نمایش ظاهر می‌شود، کافی است انگشت خود را روی ناحیه شناسایی اثر انگشت فشار دهید تا بتوانید از عملکرد اثر انگشت استفاده کنید: تلفن خود را بیدار کنید و قفل آن را باز کنید، اجازه پرداخت بدهید یا وارد سیستم برنامه‌ها شوید.</string>
-    <string name="oneplus_hydrogen_version">نسخه سیستم عامل هیدروژن</string>
+    <string name="oneplus_hydrogen_version">نسخۀ H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">تماس دریافتی</string>
     <string name="oneplus_incoming_call_vibrate_mode">الگوی ارتعاش تماس دریافتی</string>
     <string name="oneplus_init_finger_input">تنظیات اولیۀ اثر انگشت</string>
@@ -3048,6 +3054,7 @@
     <string name="oneplus_setting_ringtone">تعیین آهنگ زنگ</string>
     <string name="oneplus_setting_sim_ringtone_switch">تنظیم آهنگ زنگ برای هر سیم کارت</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· راه جایگزینی برای قفل‌گشایی صفحه نمایش تعیین کنید</string>
+    <string name="oneplus_share_this_wifi">گسترش پوشش Wi-Fi</string>
     <string name="oneplus_share_wifi_title">اشتراک گذاری بی‑سیم</string>
     <string name="oneplus_shielding_notification">مسدود کردن</string>
     <string name="oneplus_shielding_notification_summary">اعلان‌ها (به غیر از تماس‌ها و زنگ‌های هشدار) مسدود خواهند شد</string>
@@ -3123,6 +3130,11 @@
     <string name="oneplus_weak_text_reminding">فقط متن</string>
     <string name="oneplus_weak_text_reminding_summary">اجازه به برنامه‌ها برای نشان دادن اعلان هشدار</string>
     <string name="oneplus_wifi_ap_error">لطفا سیم کارت را وارد کنید</string>
+    <string name="oneplus_wifi_hidden_network_warning">"اگر روتر شما پخش SSID را غیرفعال کرد، برای اتصال به شبکۀ پنهان، باید «بله» را انتخاب کنید.
+
+این کار می‌تواند یک ریسک امنیتی ایجاد کند زیرا تلفنتان به منظور پیدا کردن شبکه، سیگنالش را به طور مرتب پخش می‌کند.
+
+تنظیم شبکه به صورت پنهان تنظیمات روتر شما را تغییر نخواهد داد."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">غیرفعال کردن IPv6 می‌تواند از مشکلات سازگاری بعضی روترهای Wi-Fi جلوگیری کند.</string>
     <string name="oneplus_wifi_ipv6_surport_title">پشتیبانی از IPv6</string>
     <string name="oneplus_wifi_list">لیست بی‑سیم</string>

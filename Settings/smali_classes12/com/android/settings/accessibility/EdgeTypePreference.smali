@@ -43,7 +43,7 @@
 
     invoke-virtual {p0, v1}, Lcom/android/settings/accessibility/EdgeTypePreference;->setDialogLayoutResource(I)V
 
-    const v1, 0x7f0d0222
+    const v1, 0x7f0d0221
 
     invoke-virtual {p0, v1}, Lcom/android/settings/accessibility/EdgeTypePreference;->setListItemLayoutResource(I)V
 

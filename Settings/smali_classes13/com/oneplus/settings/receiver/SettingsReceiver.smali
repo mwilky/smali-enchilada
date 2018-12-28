@@ -446,116 +446,80 @@
 
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->disableWirelessAdbDebuging()V
 
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForAllSettings()V
+
+    const-string v1, "user"
+
+    invoke-virtual {p1, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/os/UserManager;
+
+    iput-object v1, p0, Lcom/oneplus/settings/receiver/SettingsReceiver;->mUm:Landroid/os/UserManager;
+
+    iget-object v1, p0, Lcom/oneplus/settings/receiver/SettingsReceiver;->mUm:Landroid/os/UserManager;
+
+    if-eqz v1, :cond_d
+
+    iget-object v1, p0, Lcom/oneplus/settings/receiver/SettingsReceiver;->mUm:Landroid/os/UserManager;
+
+    const/16 v3, 0x3e7
+
+    invoke-virtual {v1, v3}, Landroid/os/UserManager;->isUserRunning(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_d
+
+    const-string v1, "SettingsReceiver"
+
+    const-string v5, "Handle Parallel App Requirement"
+
+    invoke-static {v1, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :try_start_1
     sget-object v1, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
 
     invoke-virtual {v1}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    const-string v3, "oem_acc_sensor_three_finger"
+    const-string v5, "oem_acc_sensor_three_finger"
 
-    invoke-static {v1, v3, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v1, v5, v4}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v1
 
-    const-string v3, "op_three_key_screenshots_enabled"
-
-    invoke-static {v3, v1}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
-
-    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForGestureAndButton()V
-
-    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForAssistantAPP()V
-
-    sget-object v3, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
-
-    invoke-virtual {v3}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v3
-
-    const-string v5, "op_camera_notch_ignore"
-
-    invoke-static {v3, v5, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v3
-
-    const-string v5, "notch_display"
-
-    invoke-static {v5, v3}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
-
-    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForQuickLaunch()V
-
-    const-string v5, "user"
-
-    invoke-virtual {p1, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/os/UserManager;
-
-    iput-object v5, p0, Lcom/oneplus/settings/receiver/SettingsReceiver;->mUm:Landroid/os/UserManager;
-
-    iget-object v5, p0, Lcom/oneplus/settings/receiver/SettingsReceiver;->mUm:Landroid/os/UserManager;
-
-    if-eqz v5, :cond_d
-
-    iget-object v5, p0, Lcom/oneplus/settings/receiver/SettingsReceiver;->mUm:Landroid/os/UserManager;
-
-    const/16 v6, 0x3e7
-
-    invoke-virtual {v5, v6}, Landroid/os/UserManager;->isUserRunning(I)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_d
-
-    const-string v5, "SettingsReceiver"
-
-    const-string v7, "Handle Parallel App Requirement"
-
-    invoke-static {v5, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :try_start_1
     sget-object v5, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
 
     invoke-virtual {v5}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v5
 
-    const-string v7, "oem_acc_sensor_three_finger"
+    const-string v6, "oem_acc_sensor_three_finger"
 
-    invoke-static {v5, v7, v4}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v5
-
-    sget-object v7, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
-
-    invoke-virtual {v7}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v7
-
-    const-string v8, "oem_acc_sensor_three_finger"
-
-    invoke-static {v7, v8, v5, v6}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
+    invoke-static {v5, v6, v1, v3}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     goto :goto_2
 
     :catch_1
-    move-exception v5
+    move-exception v1
 
-    invoke-virtual {v5}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
     :goto_2
-    new-instance v5, Ljava/lang/Thread;
+    new-instance v1, Ljava/lang/Thread;
 
-    new-instance v6, Lcom/oneplus/settings/receiver/SettingsReceiver$1;
+    new-instance v3, Lcom/oneplus/settings/receiver/SettingsReceiver$1;
 
-    invoke-direct {v6, p0, p1}, Lcom/oneplus/settings/receiver/SettingsReceiver$1;-><init>(Lcom/oneplus/settings/receiver/SettingsReceiver;Landroid/content/Context;)V
+    invoke-direct {v3, p0, p1}, Lcom/oneplus/settings/receiver/SettingsReceiver$1;-><init>(Lcom/oneplus/settings/receiver/SettingsReceiver;Landroid/content/Context;)V
 
-    invoke-direct {v5, v6}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+    invoke-direct {v1, v3}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
-    invoke-virtual {v5}, Ljava/lang/Thread;->start()V
+    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
 
     :cond_d
     const-string v1, "oneplus.intent.action.otg_auto_shutdown"
@@ -606,7 +570,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f120c11
+    const v7, 0x7f120c15
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -622,7 +586,7 @@
 
     invoke-direct {v5, p1, v6}, Landroid/support/v4/app/NotificationCompat$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    const v6, 0x7f080387
+    const v6, 0x7f08037c
 
     invoke-virtual {v5, v6}, Landroid/support/v4/app/NotificationCompat$Builder;->setSmallIcon(I)Landroid/support/v4/app/NotificationCompat$Builder;
 

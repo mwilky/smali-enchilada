@@ -239,7 +239,7 @@
 
     move-result-object v1
 
-    const v5, 0x7f1211ff
+    const v5, 0x7f121204
 
     invoke-virtual {v1, v5}, Landroid/app/Activity;->setTitle(I)V
 

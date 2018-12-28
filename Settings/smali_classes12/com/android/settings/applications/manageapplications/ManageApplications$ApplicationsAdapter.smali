@@ -1551,7 +1551,7 @@
 .end method
 
 .method public onRebuildComplete(Ljava/util/ArrayList;)V
-    .locals 5
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1587,9 +1587,9 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    const/16 v3, 0x8
 
-    const/16 v4, 0x8
+    const/4 v4, 0x0
 
     if-nez v2, :cond_2
 
@@ -1599,7 +1599,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2, v4}, Landroid/support/v7/widget/RecyclerView;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/support/v7/widget/RecyclerView;->setVisibility(I)V
 
     iget-object v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mManageApplications:Lcom/android/settings/applications/manageapplications/ManageApplications;
 
@@ -1607,7 +1607,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v2, v4}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 
@@ -1618,7 +1618,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2, v4}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mManageApplications:Lcom/android/settings/applications/manageapplications/ManageApplications;
 
@@ -1626,7 +1626,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2, v3}, Landroid/support/v7/widget/RecyclerView;->setVisibility(I)V
+    invoke-virtual {v2, v4}, Landroid/support/v7/widget/RecyclerView;->setVisibility(I)V
 
     :goto_0
     iget v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mLastIndex:I
@@ -1639,9 +1639,9 @@
 
     move-result v2
 
-    iget v4, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mLastIndex:I
+    iget v5, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mLastIndex:I
 
-    if-le v2, v4, :cond_3
+    if-le v2, v5, :cond_3
 
     iget-object v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mManageApplications:Lcom/android/settings/applications/manageapplications/ManageApplications;
 
@@ -1653,13 +1653,64 @@
 
     move-result-object v2
 
-    iget v4, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mLastIndex:I
+    iget v5, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mLastIndex:I
 
-    invoke-virtual {v2, v4}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->scrollToPosition(I)V
+    invoke-virtual {v2, v5}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->scrollToPosition(I)V
 
     iput v3, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mLastIndex:I
 
     :cond_3
+    const-string v2, "ManageApplications"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "onRebuildComplete mSession.getAllApps().size() = "
+
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v5, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mSession:Lcom/android/settingslib/applications/ApplicationsState$Session;
+
+    invoke-virtual {v5}, Lcom/android/settingslib/applications/ApplicationsState$Session;->getAllApps()Ljava/util/ArrayList;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
+
+    move-result v5
+
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v5, "mManageApplications.mListContainer is VISIBLE = "
+
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v5, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mManageApplications:Lcom/android/settings/applications/manageapplications/ManageApplications;
+
+    invoke-static {v5}, Lcom/android/settings/applications/manageapplications/ManageApplications;->access$800(Lcom/android/settings/applications/manageapplications/ManageApplications;)Landroid/view/View;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/view/View;->getVisibility()I
+
+    move-result v5
+
+    if-eqz v5, :cond_4
+
+    move v4, v1
+
+    nop
+
+    :cond_4
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     iget-object v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mSession:Lcom/android/settingslib/applications/ApplicationsState$Session;
 
     invoke-virtual {v2}, Lcom/android/settingslib/applications/ApplicationsState$Session;->getAllApps()Ljava/util/ArrayList;
@@ -1670,7 +1721,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_5
 
     iget-object v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mManageApplications:Lcom/android/settings/applications/manageapplications/ManageApplications;
 
@@ -1682,24 +1733,24 @@
 
     move-result v2
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_5
 
     iget-object v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mLoadingViewController:Lcom/android/settings/widget/LoadingViewController;
 
     invoke-virtual {v2, v1}, Lcom/android/settings/widget/LoadingViewController;->showContent(Z)V
 
-    :cond_4
+    :cond_5
     iget-object v1, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mManageApplications:Lcom/android/settings/applications/manageapplications/ManageApplications;
 
     iget v1, v1, Lcom/android/settings/applications/manageapplications/ManageApplications;->mListType:I
 
     const/4 v2, 0x4
 
-    if-ne v1, v2, :cond_5
+    if-ne v1, v2, :cond_6
 
     return-void
 
-    :cond_5
+    :cond_6
     iget-object v1, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mManageApplications:Lcom/android/settings/applications/manageapplications/ManageApplications;
 
     iget-object v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mState:Lcom/android/settingslib/applications/ApplicationsState;
@@ -2137,6 +2188,42 @@
     .locals 3
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
+
+    const-string v0, "ManageApplications"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "updateLoading mHasReceivedLoadEntries = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mHasReceivedLoadEntries:Z
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v2, " mSession.getAllApps().size() = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mSession:Lcom/android/settingslib/applications/ApplicationsState$Session;
+
+    invoke-virtual {v2}, Lcom/android/settingslib/applications/ApplicationsState$Session;->getAllApps()Ljava/util/ArrayList;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-boolean v0, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$ApplicationsAdapter;->mHasReceivedLoadEntries:Z
 

@@ -2616,6 +2616,7 @@ Batteribesparing stängs av automatiskt när enheten laddar."</string>
     <string name="oneplus_broadcat_wifi_name">Namn på broadcast-nätverk (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Knappar &amp; gester</string>
     <string name="oneplus_buttons_dashboard_summary">Växlingsknapp, navigering, gester</string>
+    <string name="oneplus_buttons_settings">knappinställningar</string>
     <string name="oneplus_buttons_settings_summary">Navigeringsgester</string>
     <string name="oneplus_call_information_broadcast">Säg uppringar-ID</string>
     <string name="oneplus_call_information_broadcast_summary">Säg inkommande uppringar-ID via hörlurarna</string>
@@ -2630,6 +2631,7 @@ Batteribesparing stängs av automatiskt när enheten laddar."</string>
     <string name="oneplus_colorful_mode_title">Färgrika</string>
     <string name="oneplus_compatibility_mode_summary">Appar i helskärmsläge kan inte använda hackområdet</string>
     <string name="oneplus_compatibility_mode_title">Kompatibilitetsläge</string>
+    <string name="oneplus_condition_night_mode_title">Nattläge är på</string>
     <string name="oneplus_connected_device_count">Det finns %1$s enhet ansluten</string>
     <string name="oneplus_connected_device_management_title">Enhetshanteraren är ansluten</string>
     <string name="oneplus_connected_devices_count">Det finns %1$s enheter anslutna</string>
@@ -2642,6 +2644,9 @@ Batteribesparing stängs av automatiskt när enheten laddar."</string>
     <string name="oneplus_data_usage_control_title">Kontroll av dataanvändning</string>
     <string name="oneplus_deep_clear_way">Djup rensning</string>
     <string name="oneplus_deep_clear_way_summary">Om du rensar bakgrundsprocesser kan detta leda till att vissa appar slutar fungera och du får inga meddelanden</string>
+    <string name="oneplus_deep_optimization">Djup optimering</string>
+    <string name="oneplus_deep_optimization_summary">När du stänger av djup optimering ökar energiförbrukning kraftigt, vilket påverkar din normala användning.</string>
+    <string name="oneplus_deep_optimization_title">Vill du slå av djup optimering?</string>
     <string name="oneplus_default_launcher">Förinställt startprogram</string>
     <string name="oneplus_delete_fingerprint_list">Ta bort fingeravtrycket</string>
     <string name="oneplus_deleted_fingerprint_list">Fingeravtrycket har tagits bort</string>
@@ -2682,6 +2687,7 @@ Batteribesparing stängs av automatiskt när enheten laddar."</string>
     <string name="oneplus_earphone_mode">Läge för hörlurar</string>
     <string name="oneplus_emergency_rescue_settings">Räddningstjänst</string>
     <string name="oneplus_emergency_rescue_settings_summary">Ring efter hjälp automatiskt genom att snabbt trycka på strömknappen</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">Tillgängligt efter att STRÖMBRYTARENS inställningar har ändrats för Räddningstjänst</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Fråga om att ställa in fingeravtryck</string>
     <string name="oneplus_enter_your_fingerprint">· Registrera ditt fingeravtryck</string>
     <string name="oneplus_experience_improvement_programs">Upplevelseförbättringsprogram</string>
@@ -2795,7 +2801,7 @@ Svep uppåt från botten av skärmen för att gå till startsidan."</string>
     <string name="oneplus_hide_notch_display_summary">Inte alla appar kan använda hackområdet</string>
     <string name="oneplus_hide_notch_display_title">Dölj hackområdet</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">När fingeravtrycksmönstret visas längst ned på skärmen är det bara att trycka med fingret på området för fingeravtrycksidentifiering för att använda fingeravtrycksfunktionen: väck och lås upp telefonen, auktorisera köp eller logga in i appar.</string>
-    <string name="oneplus_hydrogen_version">Hydrogen OS-version</string>
+    <string name="oneplus_hydrogen_version">H₂OS-version</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Inkommande samtal</string>
     <string name="oneplus_incoming_call_vibrate_mode">Vibrationsmönster för inkommande samtal</string>
     <string name="oneplus_init_finger_input">Initierar fingeravtryck</string>
@@ -3050,6 +3056,7 @@ Svep uppåt från botten av skärmen för att gå till startsidan."</string>
     <string name="oneplus_setting_ringtone">Ange ringsignal</string>
     <string name="oneplus_setting_sim_ringtone_switch">Ställ in ringsignal för varje SIM-kort</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Ställ in ett alternativt sätt att låsa upp skärmen</string>
+    <string name="oneplus_share_this_wifi">Utökad Wi-Fi-täckning</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi-delning</string>
     <string name="oneplus_shielding_notification">Blockera</string>
     <string name="oneplus_shielding_notification_summary">Aviseringar kommer att blockeras (förutom samtal och larm)</string>
@@ -3125,6 +3132,11 @@ Obs! Ansiktsupplåsning kan vara mindre säkert än fingeravtryck, PIN-kod eller
     <string name="oneplus_weak_text_reminding">Endast text</string>
     <string name="oneplus_weak_text_reminding_summary">Låter apparna visa heads up-meddelanden</string>
     <string name="oneplus_wifi_ap_error">Sätt i SIM-kortet</string>
+    <string name="oneplus_wifi_hidden_network_warning">"Om din router inaktiverar SSID broadcast, bör du välja ”Ja” för att ansluta till det dolda nätverket.
+
+Detta kan skapa en säkerhetsrisk eftersom telefonen regelbundet kommer att sända signalen för att hitta nätverk.
+
+Om nätverket ställs in som dolt ändras inte dina routerinställningar."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">Genom att inaktivera IPv6 kan du undvika kompatibilitetsproblem med vissa Wi-Fi-routrar.</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6-stöd</string>
     <string name="oneplus_wifi_list">Wi‑Fi-lista</string>

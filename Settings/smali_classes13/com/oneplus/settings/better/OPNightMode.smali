@@ -519,7 +519,7 @@
 
     sget-object v3, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
 
-    const v4, 0x7f120bce
+    const v4, 0x7f120bd1
 
     invoke-virtual {v3, v4}, Landroid/app/Application;->getText(I)Ljava/lang/CharSequence;
 
@@ -659,6 +659,8 @@
 
     invoke-virtual {v2, v1}, Lcom/android/internal/app/ColorDisplayController;->setActivated(Z)Z
 
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForNightMode()V
+
     goto :goto_0
 
     :cond_0
@@ -693,6 +695,8 @@
     move-result v2
 
     invoke-direct {p0, v2}, Lcom/oneplus/settings/better/OPNightMode;->updateAutoActivateModePreferenceDescription(I)V
+
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForAutoNightMode()V
 
     :cond_1
     :goto_0

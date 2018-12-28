@@ -171,7 +171,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f0d02f8
+    const v3, 0x7f0d02f7
 
     const/4 v4, 0x0
 
@@ -248,7 +248,7 @@
 
     sget-object v2, Lcom/android/settings/notification/ZenRuleSelectionDialog;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f080250
+    const v4, 0x7f08026b
 
     invoke-virtual {v2, v4}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -269,7 +269,7 @@
 
     sget-object v2, Lcom/android/settings/notification/ZenRuleSelectionDialog;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f08018e
+    const v4, 0x7f0801a9
 
     invoke-virtual {v2, v4}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -325,7 +325,7 @@
 
     sget-object v2, Lcom/android/settings/notification/ZenRuleSelectionDialog;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f121577
+    const v3, 0x7f12157c
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -391,7 +391,7 @@
 
     sget-object v2, Lcom/android/settings/notification/ZenRuleSelectionDialog;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f121622
+    const v3, 0x7f121627
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -499,7 +499,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0d02f9
+    const v2, 0x7f0d02f8
 
     const/4 v3, 0x0
 
@@ -552,7 +552,7 @@
 
     invoke-direct {v2, v3}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v3, 0x7f1215a8
+    const v3, 0x7f1215ad
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 

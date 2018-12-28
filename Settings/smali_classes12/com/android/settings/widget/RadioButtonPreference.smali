@@ -29,7 +29,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
 
-    const v0, 0x7f040287
+    const v0, 0x7f040288
 
     const v1, 0x101008e
 
@@ -51,11 +51,11 @@
 
     iput-object v0, p0, Lcom/android/settings/widget/RadioButtonPreference;->mListener:Lcom/android/settings/widget/RadioButtonPreference$OnClickListener;
 
-    const v0, 0x7f0d0218
+    const v0, 0x7f0d0217
 
     invoke-virtual {p0, v0}, Lcom/android/settings/widget/RadioButtonPreference;->setWidgetLayoutResource(I)V
 
-    const v0, 0x7f0d0209
+    const v0, 0x7f0d0208
 
     invoke-virtual {p0, v0}, Lcom/android/settings/widget/RadioButtonPreference;->setLayoutResource(I)V
 

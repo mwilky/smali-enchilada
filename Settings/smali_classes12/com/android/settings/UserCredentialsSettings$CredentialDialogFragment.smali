@@ -115,7 +115,7 @@
 
     const/4 v2, 0x0
 
-    const v3, 0x7f0d02d1
+    const v3, 0x7f0d02d0
 
     invoke-virtual {v1, v3, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -129,7 +129,7 @@
 
     check-cast v3, Landroid/view/ViewGroup;
 
-    const v4, 0x7f0d02d0
+    const v4, 0x7f0d02cf
 
     const/4 v5, 0x1
 
@@ -151,7 +151,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f1212fa
+    const v6, 0x7f1212ff
 
     invoke-virtual {v5, v6}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -191,7 +191,7 @@
 
     if-eqz v8, :cond_0
 
-    const v8, 0x7f121215
+    const v8, 0x7f12121a
 
     invoke-virtual {v2, v8, v7}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

@@ -204,7 +204,7 @@
 
     iget v2, v1, Landroid/content/pm/ActivityInfo;->icon:I
 
-    const v3, 0x7f0d025d
+    const v3, 0x7f0d025c
 
     invoke-virtual {p0}, Lcom/android/settings/shortcut/CreateShortcut;->getResources()Landroid/content/res/Resources;
 
@@ -227,7 +227,7 @@
     goto :goto_0
 
     :cond_0
-    const v2, 0x7f0801bb
+    const v2, 0x7f0801d6
 
     invoke-static {p0, v2}, Landroid/graphics/drawable/Icon;->createWithResource(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;
 
@@ -315,7 +315,7 @@
 
     iget v7, v1, Landroid/content/pm/ActivityInfo;->icon:I
 
-    const v8, 0x7f0d025c
+    const v8, 0x7f0d025b
 
     invoke-virtual {p0}, Lcom/android/settings/shortcut/CreateShortcut;->getResources()Landroid/content/res/Resources;
 

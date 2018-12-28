@@ -46,7 +46,7 @@
 
     iget-object v0, p0, Lcom/android/settings/wifi/WifiNoInternetDialog;->mAlert:Lcom/android/internal/app/AlertController;
 
-    const v1, 0x7f080229
+    const v1, 0x7f080244
 
     invoke-virtual {v0, v1}, Lcom/android/internal/app/AlertController;->setIcon(I)V
 
@@ -74,7 +74,7 @@
 
     iput-object v1, v0, Lcom/android/internal/app/AlertController$AlertParams;->mMessage:Ljava/lang/CharSequence;
 
-    const v1, 0x7f121567
+    const v1, 0x7f12156c
 
     invoke-virtual {p0, v1}, Lcom/android/settings/wifi/WifiNoInternetDialog;->getString(I)Ljava/lang/String;
 

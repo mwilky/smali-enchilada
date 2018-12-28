@@ -121,7 +121,7 @@
 .method public setupView(Lcom/android/settings/applications/manageapplications/ApplicationViewHolder;)V
     .locals 3
 
-    const v0, 0x7f0801a6
+    const v0, 0x7f0801c1
 
     invoke-virtual {p1, v0}, Lcom/android/settings/applications/manageapplications/ApplicationViewHolder;->setIcon(I)V
 

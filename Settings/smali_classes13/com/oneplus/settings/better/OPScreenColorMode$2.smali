@@ -1,5 +1,5 @@
 .class Lcom/oneplus/settings/better/OPScreenColorMode$2;
-.super Lcom/android/settings/search/BaseSearchIndexProvider;
+.super Landroid/database/ContentObserver;
 .source "OPScreenColorMode.java"
 
 
@@ -14,96 +14,252 @@
 .end annotation
 
 
-# direct methods
-.method constructor <init>()V
-    .locals 0
+# instance fields
+.field private final ACCESSIBILITY_DISPLAY_DALTONIZER_ENABLED_URI:Landroid/net/Uri;
 
-    invoke-direct {p0}, Lcom/android/settings/search/BaseSearchIndexProvider;-><init>()V
+.field private final ACCESSIBILITY_DISPLAY_INVERSION_ENABLED_URI:Landroid/net/Uri;
+
+.field final synthetic this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
+
+
+# direct methods
+.method constructor <init>(Lcom/oneplus/settings/better/OPScreenColorMode;Landroid/os/Handler;)V
+    .locals 1
+
+    iput-object p1, p0, Lcom/oneplus/settings/better/OPScreenColorMode$2;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
+
+    invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
+
+    const-string v0, "accessibility_display_daltonizer_enabled"
+
+    invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/oneplus/settings/better/OPScreenColorMode$2;->ACCESSIBILITY_DISPLAY_DALTONIZER_ENABLED_URI:Landroid/net/Uri;
+
+    const-string v0, "accessibility_display_inversion_enabled"
+
+    invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/oneplus/settings/better/OPScreenColorMode$2;->ACCESSIBILITY_DISPLAY_INVERSION_ENABLED_URI:Landroid/net/Uri;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getNonIndexableKeys(Landroid/content/Context;)Ljava/util/List;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            ")",
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
+.method public onChange(ZLandroid/net/Uri;)V
+    .locals 6
 
-    new-instance v0, Ljava/util/ArrayList;
+    invoke-super {p0, p1, p2}, Landroid/database/ContentObserver;->onChange(ZLandroid/net/Uri;)V
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    iget-object v0, p0, Lcom/oneplus/settings/better/OPScreenColorMode$2;->ACCESSIBILITY_DISPLAY_DALTONIZER_ENABLED_URI:Landroid/net/Uri;
 
-    invoke-static {}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$1000()Z
+    invoke-virtual {v0, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
-    const-string v1, "screen_color_mode_dci_p3_settings"
+    iget-object v0, p0, Lcom/oneplus/settings/better/OPScreenColorMode$2;->ACCESSIBILITY_DISPLAY_INVERSION_ENABLED_URI:Landroid/net/Uri;
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
 
     :cond_0
-    invoke-static {}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$1100()Z
+    iget-object v0, p0, Lcom/oneplus/settings/better/OPScreenColorMode$2;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
 
-    move-result v1
+    invoke-static {v0}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$1000(Lcom/oneplus/settings/better/OPScreenColorMode;)Landroid/content/ContentResolver;
 
-    if-nez v1, :cond_1
+    move-result-object v0
 
-    const-string v1, "screen_color_mode_adaptive_model_settings"
+    const-string v1, "accessibility_display_daltonizer_enabled"
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    const/16 v2, 0xc
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_1
+
+    move v0, v2
+
+    goto :goto_0
 
     :cond_1
-    invoke-static {}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$1200()Z
+    move v0, v1
 
-    move-result v1
+    :goto_0
+    iget-object v3, p0, Lcom/oneplus/settings/better/OPScreenColorMode$2;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
 
-    if-nez v1, :cond_2
+    invoke-static {v3}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$1100(Lcom/oneplus/settings/better/OPScreenColorMode;)Landroid/content/ContentResolver;
 
-    const-string v1, "screen_color_mode_soft_settings"
+    move-result-object v3
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    const-string v4, "accessibility_display_inversion_enabled"
+
+    invoke-static {v3, v4, v1}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v3
+
+    if-ne v3, v2, :cond_2
+
+    move v3, v2
+
+    goto :goto_1
 
     :cond_2
-    return-object v0
-.end method
+    move v3, v1
 
-.method public getXmlResourcesToIndex(Landroid/content/Context;Z)Ljava/util/List;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            "Z)",
-            "Ljava/util/List<",
-            "Landroid/provider/SearchIndexableResource;",
-            ">;"
-        }
-    .end annotation
+    :goto_1
+    iget-object v4, p0, Lcom/oneplus/settings/better/OPScreenColorMode$2;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
 
-    new-instance v0, Ljava/util/ArrayList;
+    invoke-static {v4}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$200(Lcom/oneplus/settings/better/OPScreenColorMode;)Lcom/android/settings/ui/RadioButtonPreference;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    move-result-object v4
 
-    new-instance v1, Landroid/provider/SearchIndexableResource;
+    if-nez v0, :cond_3
 
-    invoke-direct {v1, p1}, Landroid/provider/SearchIndexableResource;-><init>(Landroid/content/Context;)V
+    if-nez v3, :cond_3
 
-    const v2, 0x7f160094
+    move v5, v2
 
-    iput v2, v1, Landroid/provider/SearchIndexableResource;->xmlResId:I
+    goto :goto_2
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :cond_3
+    move v5, v1
 
-    return-object v0
+    :goto_2
+    invoke-virtual {v4, v5}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
+
+    iget-object v4, p0, Lcom/oneplus/settings/better/OPScreenColorMode$2;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
+
+    invoke-static {v4}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$300(Lcom/oneplus/settings/better/OPScreenColorMode;)Lcom/android/settings/ui/RadioButtonPreference;
+
+    move-result-object v4
+
+    if-nez v0, :cond_4
+
+    if-nez v3, :cond_4
+
+    move v5, v2
+
+    goto :goto_3
+
+    :cond_4
+    move v5, v1
+
+    :goto_3
+    invoke-virtual {v4, v5}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
+
+    iget-object v4, p0, Lcom/oneplus/settings/better/OPScreenColorMode$2;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
+
+    invoke-static {v4}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$400(Lcom/oneplus/settings/better/OPScreenColorMode;)Lcom/android/settings/ui/RadioButtonPreference;
+
+    move-result-object v4
+
+    if-nez v0, :cond_5
+
+    if-nez v3, :cond_5
+
+    move v5, v2
+
+    goto :goto_4
+
+    :cond_5
+    move v5, v1
+
+    :goto_4
+    invoke-virtual {v4, v5}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
+
+    iget-object v4, p0, Lcom/oneplus/settings/better/OPScreenColorMode$2;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
+
+    invoke-static {v4}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$500(Lcom/oneplus/settings/better/OPScreenColorMode;)Lcom/android/settings/ui/RadioButtonPreference;
+
+    move-result-object v4
+
+    if-nez v0, :cond_6
+
+    if-nez v3, :cond_6
+
+    move v5, v2
+
+    goto :goto_5
+
+    :cond_6
+    move v5, v1
+
+    :goto_5
+    invoke-virtual {v4, v5}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
+
+    iget-object v4, p0, Lcom/oneplus/settings/better/OPScreenColorMode$2;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
+
+    invoke-static {v4}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$600(Lcom/oneplus/settings/better/OPScreenColorMode;)Lcom/android/settings/ui/RadioButtonPreference;
+
+    move-result-object v4
+
+    if-nez v0, :cond_7
+
+    if-nez v3, :cond_7
+
+    move v5, v2
+
+    goto :goto_6
+
+    :cond_7
+    move v5, v1
+
+    :goto_6
+    invoke-virtual {v4, v5}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
+
+    iget-object v4, p0, Lcom/oneplus/settings/better/OPScreenColorMode$2;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
+
+    invoke-static {v4}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$700(Lcom/oneplus/settings/better/OPScreenColorMode;)Lcom/android/settings/ui/RadioButtonPreference;
+
+    move-result-object v4
+
+    if-nez v0, :cond_8
+
+    if-nez v3, :cond_8
+
+    move v5, v2
+
+    goto :goto_7
+
+    :cond_8
+    move v5, v1
+
+    :goto_7
+    invoke-virtual {v4, v5}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
+
+    iget-object v4, p0, Lcom/oneplus/settings/better/OPScreenColorMode$2;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
+
+    invoke-static {v4}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$800(Lcom/oneplus/settings/better/OPScreenColorMode;)Lcom/oneplus/settings/ui/OPSeekBarPreference;
+
+    move-result-object v4
+
+    if-nez v0, :cond_9
+
+    if-nez v3, :cond_9
+
+    move v1, v2
+
+    nop
+
+    :cond_9
+    invoke-virtual {v4, v1}, Lcom/oneplus/settings/ui/OPSeekBarPreference;->setEnabled(Z)V
+
+    :cond_a
+    return-void
 .end method

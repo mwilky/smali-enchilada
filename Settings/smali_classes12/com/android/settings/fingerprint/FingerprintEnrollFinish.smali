@@ -94,7 +94,7 @@
 .method protected applyActionBarTitle()I
     .locals 1
 
-    const v0, 0x7f120bff
+    const v0, 0x7f120c03
 
     return v0
 .end method
@@ -149,7 +149,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollFinish;->setContentView(I)V
 
-    const v0, 0x7f120fbe
+    const v0, 0x7f120fc3
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollFinish;->setHeaderText(I)V
 

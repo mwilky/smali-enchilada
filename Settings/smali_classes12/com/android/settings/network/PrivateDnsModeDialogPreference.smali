@@ -588,7 +588,7 @@
 
     if-eqz v5, :cond_0
 
-    const v5, 0x7f120e66
+    const v5, 0x7f120e6b
 
     invoke-virtual {v0, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

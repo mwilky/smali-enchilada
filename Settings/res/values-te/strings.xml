@@ -2616,6 +2616,7 @@
     <string name="oneplus_broadcat_wifi_name">బ్రాడ్‌క్యాస్ట్ నెట్‌వర్క్ పేరు (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">బటన్‌లు &amp; సంజ్ఞలు</string>
     <string name="oneplus_buttons_dashboard_summary">హెచ్చరిక స్లయిడర్, నావిగేషన్, సంజ్ఞలు</string>
+    <string name="oneplus_buttons_settings">బటన్ సెట్టింగ్‌లు</string>
     <string name="oneplus_buttons_settings_summary">నావిగేషన్ సంజ్ఞ</string>
     <string name="oneplus_call_information_broadcast">స్పీకర్ కాలర్ ID</string>
     <string name="oneplus_call_information_broadcast_summary">ఇయర్‌ఫోన్‌ల ద్వారా ఇన్‌కమింగ్ కాలర్ IDని చదివి, వినిపించు</string>
@@ -2630,6 +2631,7 @@
     <string name="oneplus_colorful_mode_title">రంగులతో కూడినది</string>
     <string name="oneplus_compatibility_mode_summary">పూర్తి స్క్రీన్ అప్లికేషన్‌లు నోచ్ ప్రాంతాన్ని ఉపయోగించలేవు</string>
     <string name="oneplus_compatibility_mode_title">అనుకూల మోడ్</string>
+    <string name="oneplus_condition_night_mode_title">రాత్రి మోడ్ ఆన్‌లో ఉంది</string>
     <string name="oneplus_connected_device_count">%1$s పరికరం కనెక్ట్ చేయబడింది</string>
     <string name="oneplus_connected_device_management_title">కనెక్ట్ చేయబడ్డ డివైస్ మేనేజర్</string>
     <string name="oneplus_connected_devices_count">%1$s పరికరాలు కనెక్ట్ చేయబడ్డాయి</string>
@@ -2642,6 +2644,9 @@
     <string name="oneplus_data_usage_control_title">డేటా వినియోగ నియంత్రణ</string>
     <string name="oneplus_deep_clear_way">డీప్ క్లీన్</string>
     <string name="oneplus_deep_clear_way_summary">నేపథ్య ప్రాసెస్‌లను క్లియర్ చేస్తుంది, దీని అర్థం కొన్ని అప్లికేషన్‌లు పని చేయడం ఆగిపోవచ్చు మరియు మీరు నోటిఫికేషన్‌లను స్వీకరించరు</string>
+    <string name="oneplus_deep_optimization">గాఢ ఆప్టిమైజేషన్</string>
+    <string name="oneplus_deep_optimization_summary">మీరు డీప్ ఆప్టిమైజేషన్ ఆఫ్ చేసినప్పుడు, పవర్ వినియోగం అత్యధికంగా పెరిగిపోతుంది, దీని వలన మీ సాధారణ వినియోగం ప్రభావితమవుతుంది.</string>
+    <string name="oneplus_deep_optimization_title">డీప్ ఆప్టిమైజేషన్ ఆఫ్ చేయాలా?</string>
     <string name="oneplus_default_launcher">డిఫాల్ట్ లాంఛర్</string>
     <string name="oneplus_delete_fingerprint_list">వేలిముద్రలు తొలగించండి</string>
     <string name="oneplus_deleted_fingerprint_list">వేలిముద్ర తొలగించబడింది</string>
@@ -2682,6 +2687,7 @@
     <string name="oneplus_earphone_mode">ఇయర్‌ఫోన్‌ మోడ్</string>
     <string name="oneplus_emergency_rescue_settings">అత్యవసర సహాయం</string>
     <string name="oneplus_emergency_rescue_settings_summary">పవర్ బటన్‌ను త్వరగా నొక్కడం ద్వారా సహాయం కోసం స్వయంచాలకంగా పిలవండి</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">అత్యవసర ప్రమాద సంరక్షణ పవర్ బటన్ సెట్టింగ్‌లను సవరించిన తరువాత అందుబాటులో ఉంటుంది</string>
     <string name="oneplus_enroll_fingerprint_tips_title">వేలిముద్ర సెటప్ ప్రాంప్ట్</string>
     <string name="oneplus_enter_your_fingerprint">· మీ వేలిముద్రను నమోదు చేయి</string>
     <string name="oneplus_experience_improvement_programs">అనుభవ మెరుగుదల కార్యక్రమాలు</string>
@@ -2795,7 +2801,7 @@
     <string name="oneplus_hide_notch_display_summary">అన్ని అప్లికేషన్‌లు నోచ్ ప్రాంతాన్ని ఉపయోగించలేవు</string>
     <string name="oneplus_hide_notch_display_title">నోచ్ ప్రాంతాన్ని దాచు</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">స్క్రీన్ దిగువన వేలిముద్ర నమూనా కనిపించినప్పుడు, వేలిముద్ర ఫంక్షన్ ఉపయోగించడానికి వేలిముద్ర గుర్తింపు ప్రాంతంలో మీ వేలితో నెమ్మదిగా నొక్కండి: మీ ఫోన్‌ను మేల్కొలపడానికి మరియు అన్‌లాక్ చేయడానికి, కొనుగోళ్లు ప్రమాణీకరించడానికి లేదా అప్లికేషన్‌ల్లోకి సైన్ ఇన్ చేయడానికి.</string>
-    <string name="oneplus_hydrogen_version">Hydrogen OS వెర్షన్</string>
+    <string name="oneplus_hydrogen_version">H₂OS వెర్షన్</string>
     <string name="oneplus_incoming_call_vibrate_intensity">ఇన్‌కమింగ్ కాల్</string>
     <string name="oneplus_incoming_call_vibrate_mode">ఇన్‌కమింగ్ కాల్ వైబ్రేషన్ ప్యాట్రన్</string>
     <string name="oneplus_init_finger_input">వేలిముద్రలకు ఉపక్రమించడం</string>
@@ -3050,6 +3056,7 @@
     <string name="oneplus_setting_ringtone">రింగ్ సెట్ చేయి</string>
     <string name="oneplus_setting_sim_ringtone_switch">ప్రతి SIM కార్డుకు రింగ్‌టోన్ సెట్ చేయి</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· స్క్రీన్ అన్‌లాక్ చేయడానికి ప్రత్యామ్నాయ మార్గాన్ని సెట్ చేయి</string>
+    <string name="oneplus_share_this_wifi">విస్తార Wi-Fi పరిధి</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi పంచుకుంటోంది</string>
     <string name="oneplus_shielding_notification">బ్లాక్ చేయి</string>
     <string name="oneplus_shielding_notification_summary">నోటిఫికేషన్‌లను బ్లాక్ చేయబడతాయి (కాల్‌లు మరియు అలారాలకు మినహా)</string>
@@ -3125,6 +3132,11 @@
     <string name="oneplus_weak_text_reminding">టెక్స్ట్ మాత్రమే</string>
     <string name="oneplus_weak_text_reminding_summary">రాబోయే వాటి గురించి నోటిఫికేషన్‌ను చూపడానికి అప్లికేషన్‌లు అనుమతించు</string>
     <string name="oneplus_wifi_ap_error">దయచేసి SIM కార్డ్‌ని చొప్పించండి</string>
+    <string name="oneplus_wifi_hidden_network_warning">"మీ రూటర్ SSID ప్రసారాన్ని నిలిపివేసినట్లయితే, మీరు దాచిన నెట్‌వర్క్‌కు కనెక్ట్ చేయడానికి \"అవును\" ఎంచుకోవాలి.
+
+మీ ఫోన్ నెట్‌వర్క్‌ను కనుగొనడానికి నిరంతరంగా దాని సిగ్నల్‌ను ప్రసారం చేస్తుంది కనుక దీని వలన భద్రతా ప్రమాదం సృష్టించవచ్చు.
+
+నెట్‌వర్క్‌ను దాచినట్లుగా సెట్ చేయడం వలన మీ రూటర్ సెట్టింగ్‌లు మారవు."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">IPv6 డిసేబుల్ చేయడం వల్ల కొన్ని Wi-Fi రూటర్‌లతో కంపాటబిలిటీ సమస్యలు రావొచ్చు.</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6 సపోర్ట్</string>
     <string name="oneplus_wifi_list">Wi‑Fi లిస్ట్</string>

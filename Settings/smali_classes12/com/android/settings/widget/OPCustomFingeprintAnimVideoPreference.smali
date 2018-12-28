@@ -153,7 +153,7 @@
 
     invoke-virtual {p0, v3}, Lcom/android/settings/widget/OPCustomFingeprintAnimVideoPreference;->setVisible(Z)V
 
-    const v4, 0x7f0d0150
+    const v4, 0x7f0d014f
 
     sget-object v5, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->MCL:Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
 
@@ -167,7 +167,7 @@
 
     if-eqz v5, :cond_0
 
-    const v4, 0x7f0d0151
+    const v4, 0x7f0d0150
 
     :cond_0
     invoke-virtual {p0, v4}, Lcom/android/settings/widget/OPCustomFingeprintAnimVideoPreference;->setLayoutResource(I)V
@@ -562,6 +562,8 @@
     const/4 v2, -0x2
 
     invoke-static {v0, v1, p1, v2}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
+
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForFodAnimStyle()V
 
     return-void
 .end method

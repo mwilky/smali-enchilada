@@ -1172,6 +1172,8 @@
     goto :goto_0
 
     :cond_2
+    if-eqz p3, :cond_3
+
     const-string v1, "power_on_psw"
 
     invoke-virtual {p3, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -1180,6 +1182,7 @@
 
     invoke-direct {p0, v1}, Lcom/android/settings/MasterClear;->showFinalConfirmation(Ljava/lang/String;)V
 
+    :cond_3
     :goto_0
     return-void
 .end method

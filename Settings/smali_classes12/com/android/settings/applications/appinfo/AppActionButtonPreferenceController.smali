@@ -9,6 +9,10 @@
 # static fields
 .field private static final KEY_ACTION_BUTTONS:Ljava/lang/String; = "action_buttons"
 
+.field private static final KEY_GOOGLE__INPUTMETHOD:Ljava/lang/String; = "com.google.android.inputmethod.latin"
+
+.field private static final KEY_LATIN_INPUTMETHOD:Ljava/lang/String; = "com.android.inputmethod.latin"
+
 .field private static final TAG:Ljava/lang/String; = "AppActionButtonControl"
 
 
@@ -525,6 +529,30 @@
 
     if-nez v1, :cond_2
 
+    const-string v1, "com.android.inputmethod.latin"
+
+    iget-object v4, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v4, v4, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    invoke-virtual {v1, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    const-string v1, "com.google.android.inputmethod.latin"
+
+    iget-object v4, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget-object v4, v4, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+
+    invoke-virtual {v1, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/AppActionButtonPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -536,8 +564,6 @@
     invoke-static {v1, v4, p2}, Lcom/android/settings/Utils;->isSystemPackage(Landroid/content/res/Resources;Landroid/content/pm/PackageManager;Landroid/content/pm/PackageInfo;)Z
 
     move-result v1
-    
-    const/4 v1, 0x0
 
     if-eqz v1, :cond_0
 
@@ -679,7 +705,7 @@
     :goto_0
     iget-object v2, p0, Lcom/android/settings/applications/appinfo/AppActionButtonPreferenceController;->mActionButtons:Lcom/android/settings/widget/ActionButtonPreference;
 
-    const v4, 0x7f121253
+    const v4, 0x7f121258
 
     invoke-virtual {v2, v4}, Lcom/android/settings/widget/ActionButtonPreference;->setButton1Text(I)Lcom/android/settings/widget/ActionButtonPreference;
 

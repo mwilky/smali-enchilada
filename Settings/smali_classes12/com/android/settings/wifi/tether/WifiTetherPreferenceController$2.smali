@@ -48,7 +48,7 @@
 
     iget-object v1, p0, Lcom/android/settings/wifi/tether/WifiTetherPreferenceController$2;->this$0:Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;
 
-    const v2, 0x7f121463
+    const v2, 0x7f121468
 
     invoke-static {v1, v2}, Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;->access$300(Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;I)V
 

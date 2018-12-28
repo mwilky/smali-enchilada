@@ -52,6 +52,10 @@
 
     iput-object v1, p0, Lcom/android/settings/users/OwnerInfoSettings;->mOwnerInfo:Landroid/widget/EditText;
 
+    iget-object v1, p0, Lcom/android/settings/users/OwnerInfoSettings;->mOwnerInfo:Landroid/widget/EditText;
+
+    invoke-virtual {v1}, Landroid/widget/EditText;->requestFocus()Z
+
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -205,7 +209,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d01e3
+    const v1, 0x7f0d01e2
 
     const/4 v2, 0x0
 
@@ -225,7 +229,7 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f120de9
+    const v1, 0x7f120dee
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -237,7 +241,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f120f4e
+    const v1, 0x7f120f53
 
     invoke-virtual {v0, v1, p0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

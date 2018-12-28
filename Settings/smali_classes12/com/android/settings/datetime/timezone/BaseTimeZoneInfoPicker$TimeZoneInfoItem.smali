@@ -245,7 +245,7 @@
     :cond_2
     iget-object v1, p0, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->mResources:Landroid/content/res/Resources;
 
-    const v2, 0x7f121634
+    const v2, 0x7f121639
 
     const/4 v3, 0x2
 

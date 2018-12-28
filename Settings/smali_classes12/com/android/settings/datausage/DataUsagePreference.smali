@@ -30,7 +30,7 @@
 
     aput v2, v0, v1
 
-    const v2, 0x7f040287
+    const v2, 0x7f040288
 
     const v3, 0x101008e
 

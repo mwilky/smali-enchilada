@@ -350,7 +350,7 @@
 
     iget-object v3, p0, Lcom/android/settings/notification/ZenModeStarredContactsPreferenceController;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f1215c2
+    const v4, 0x7f1215c7
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

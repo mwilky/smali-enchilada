@@ -2616,6 +2616,7 @@ Batterij sparen schakelt automatisch uit wanneer het toestel oplaadt."</string>
     <string name="oneplus_broadcat_wifi_name">Netwerknaam uitzenden (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Knoppen &amp; gebaren</string>
     <string name="oneplus_buttons_dashboard_summary">Waarschuw schuifregelaar, navigatie, gebaren</string>
+    <string name="oneplus_buttons_settings">instellingen voor knoppen</string>
     <string name="oneplus_buttons_settings_summary">Navigatiegebaar</string>
     <string name="oneplus_call_information_broadcast">Beller-ID inspreken</string>
     <string name="oneplus_call_information_broadcast_summary">Spreken van de binnenkomende beller-ID via oortelefoon</string>
@@ -2630,6 +2631,7 @@ Batterij sparen schakelt automatisch uit wanneer het toestel oplaadt."</string>
     <string name="oneplus_colorful_mode_title">Kleurrijk</string>
     <string name="oneplus_compatibility_mode_summary">Apps in volledig scherm mogen het notch gebied niet gebruiken</string>
     <string name="oneplus_compatibility_mode_title">Compatibiliteitsmodus</string>
+    <string name="oneplus_condition_night_mode_title">Nachtmodus is ingeschakeld</string>
     <string name="oneplus_connected_device_count">Er is %1$s toestel verbonden</string>
     <string name="oneplus_connected_device_management_title">Apparaatbeheer verbonden</string>
     <string name="oneplus_connected_devices_count">Er zijn %1$s toestellen verbonden</string>
@@ -2642,6 +2644,9 @@ Batterij sparen schakelt automatisch uit wanneer het toestel oplaadt."</string>
     <string name="oneplus_data_usage_control_title">Controle dataverbruik</string>
     <string name="oneplus_deep_clear_way">Grondig opruimen</string>
     <string name="oneplus_deep_clear_way_summary">Wis achtergrondprocessen, wat kan leiden tot onbedoelde resultaten. Sommige apps kunnen stoppen met werken en geen meldingen ontvangen.</string>
+    <string name="oneplus_deep_optimization">Diepte-optimalisatie</string>
+    <string name="oneplus_deep_optimization_summary">Wanneer u diepte-optimalisatie uitschakelt, neemt het stroomverbruik sterk toe; dit is van invloed op uw normale gebruik.</string>
+    <string name="oneplus_deep_optimization_title">Diepte-optimalisatie uitschakelen?</string>
     <string name="oneplus_default_launcher">Standaard launcher</string>
     <string name="oneplus_delete_fingerprint_list">Vingerafdruk verwijderen</string>
     <string name="oneplus_deleted_fingerprint_list">Vingerafdruk verwijderd</string>
@@ -2682,6 +2687,7 @@ Batterij sparen schakelt automatisch uit wanneer het toestel oplaadt."</string>
     <string name="oneplus_earphone_mode">Hoofdtelefoon modus</string>
     <string name="oneplus_emergency_rescue_settings">Noodhulp</string>
     <string name="oneplus_emergency_rescue_settings_summary">Automatisch noodoproep maken dor snel te drukken op de aan/uit-knop</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">Beschikbaar na het wijzigen van de instellingen van de AAN-UITKNOP van noodhulp</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Prompt voor vingerafdruk instellen</string>
     <string name="oneplus_enter_your_fingerprint">· Uw vingerafdruk te registreren</string>
     <string name="oneplus_experience_improvement_programs">"Programma's voor betere gebruikerservaring"</string>
@@ -2795,7 +2801,7 @@ Om op elk moment naar het Home-scherm te gaan, veeg omhoog vanaf de onderste cen
     <string name="oneplus_hide_notch_display_summary">De apps mogen het notchgebied niet gebruiken</string>
     <string name="oneplus_hide_notch_display_title">Het notchgebied verbergen</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Wanneer het vingerafdrukpatroon onderaan het scherm verschijnt, drukt u met uw vinger op het gebied van de vingerafdrukidentificatie om de vingerafdrukfunctie te gebruiken om uw telefoon te wekken of te ontgrendelen, aankopen te autoriseren of u aan te melden bij apps.</string>
-    <string name="oneplus_hydrogen_version">Hydrogen OS-versie</string>
+    <string name="oneplus_hydrogen_version">H₂OS versie</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Inkomende oproep</string>
     <string name="oneplus_incoming_call_vibrate_mode">Vibratiepatroon inkomende oproepen</string>
     <string name="oneplus_init_finger_input">Vingerafdruk wordt geïnitialiseerd</string>
@@ -3050,6 +3056,7 @@ Om op elk moment naar het Home-scherm te gaan, veeg omhoog vanaf de onderste cen
     <string name="oneplus_setting_ringtone">Stel beltoon in</string>
     <string name="oneplus_setting_sim_ringtone_switch">Stel beltoon in voor elke SIM-kaart</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Een alternatieve manier in te stellen om het scherm te ontgrendelen</string>
+    <string name="oneplus_share_this_wifi">Wi-Fi dekking uitbreiden</string>
     <string name="oneplus_share_wifi_title">Wi-Fi Delen</string>
     <string name="oneplus_shielding_notification">Blokkeren</string>
     <string name="oneplus_shielding_notification_summary">Meldingen worden geblokkeerd (uitgezonderd oproepen en alarmen)</string>
@@ -3067,7 +3074,7 @@ Om op elk moment naar het Home-scherm te gaan, veeg omhoog vanaf de onderste cen
     <string name="oneplus_sim1_ringtone_switch">SIM-kaart 1</string>
     <string name="oneplus_sim2_ringtone_switch">SIM-kaart 2</string>
     <string name="oneplus_simcard_title">SIM</string>
-    <string name="oneplus_sleep_standby_summary">Optimaliseer de levensduur van de batterij (bijvoorbeeld door het netwerk af te sluiten) terwijl u slaapt. Hierdoor kunnen Apps tijdig meldingen ontvangen.</string>
+    <string name="oneplus_sleep_standby_summary">Optimaliseer de levensduur van de batterij (bijvoorbeeld door het netwerk af te sluiten) terwijl u slaapt. Hierdoor kunnen Apps tijdig geen meldingen ontvangen.</string>
     <string name="oneplus_sleep_standby_title">Slaap standby-optimalisatie</string>
     <string name="oneplus_smart_background_management_title">Agressief sluimeren &amp; slaapstand apps</string>
     <string name="oneplus_sound_and_vibrate">Geluid &amp; vibratie</string>
@@ -3125,6 +3132,11 @@ Let op: gezichtontgrendeling kan minder veilig zijn dan vingerafdruk-, PIN- of a
     <string name="oneplus_weak_text_reminding">Alleen tekst</string>
     <string name="oneplus_weak_text_reminding_summary">Apps toestaan aankondigingsmeldingen te tonen</string>
     <string name="oneplus_wifi_ap_error">Plaats de SIM-kaart</string>
+    <string name="oneplus_wifi_hidden_network_warning">"Als uw router de SSID-broadcast uitschakelt, moet u 'Ja' selecteren om verbinding te maken met het verborgen netwerk.
+
+Dit kan een beveiligingsrisico veroorzaken omdat uw telefoon regelmatig signalen stuurt om het netwerk te vinden.
+
+Als u het netwerk instelt als verborgen worden de instellingen van uw router niet gewijzigd."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">IPv6 uitschakelen kan compatibiliteitsproblemen vermijden met bepaalde Wi-Fi-routers.</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6 Ondersteuning</string>
     <string name="oneplus_wifi_list">Wi-Fi-lijst</string>

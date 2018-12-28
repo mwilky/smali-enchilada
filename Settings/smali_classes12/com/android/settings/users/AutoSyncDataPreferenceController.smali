@@ -182,7 +182,11 @@
 
     check-cast v0, Landroid/support/v14/preference/SwitchPreference;
 
-    iget-object v1, p0, Lcom/android/settings/users/AutoSyncDataPreferenceController;->mUserHandle:Landroid/os/UserHandle;
+    nop
+
+    invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
+
+    move-result-object v1
 
     invoke-virtual {v1}, Landroid/os/UserHandle;->getIdentifier()I
 

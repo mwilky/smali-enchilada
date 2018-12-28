@@ -177,7 +177,7 @@
 
     move-result v1
 
-    const v4, 0x7f08030c
+    const v4, 0x7f080301
 
     if-eqz v1, :cond_4
 
@@ -204,7 +204,7 @@
     :cond_4
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v5, 0x7f120ba6
+    const v5, 0x7f120ba9
 
     invoke-virtual {p0, v5}, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->getString(I)Ljava/lang/String;
 
@@ -218,7 +218,7 @@
 
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v5, 0x7f120ba7
+    const v5, 0x7f120baa
 
     invoke-virtual {p0, v5}, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->getString(I)Ljava/lang/String;
 
@@ -338,7 +338,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setTitle(I)V
 
-    const v0, 0x7f0d0147
+    const v0, 0x7f0d0146
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->setContentView(I)V
 

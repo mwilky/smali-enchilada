@@ -126,7 +126,7 @@
 
     nop
 
-    const v2, 0x7f120db8
+    const v2, 0x7f120dbd
 
     invoke-virtual {p0, v2}, Lcom/oneplus/settings/others/OPToolsSettings;->getString(I)Ljava/lang/String;
 
@@ -296,7 +296,7 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/others/OPToolsSettings;->mQuickPayPreference:Landroid/support/v7/preference/Preference;
 
-    const v3, 0x7f120c33
+    const v3, 0x7f120c37
 
     invoke-virtual {v1, v3}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -305,7 +305,7 @@
     :cond_4
     iget-object v1, p0, Lcom/oneplus/settings/others/OPToolsSettings;->mQuickPayPreference:Landroid/support/v7/preference/Preference;
 
-    const v3, 0x7f120c3d
+    const v3, 0x7f120c41
 
     invoke-virtual {v1, v3}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -364,7 +364,7 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/others/OPToolsSettings;->mAntiMisOperationTouch:Landroid/support/v14/preference/SwitchPreference;
 
-    const v3, 0x7f120c18
+    const v3, 0x7f120c1c
 
     invoke-virtual {v1, v3}, Landroid/support/v14/preference/SwitchPreference;->setSummary(I)V
 
@@ -389,7 +389,7 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/others/OPToolsSettings;->mTimerShutdownPreference:Landroid/support/v7/preference/Preference;
 
-    const v2, 0x7f120cfe
+    const v2, 0x7f120d02
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 

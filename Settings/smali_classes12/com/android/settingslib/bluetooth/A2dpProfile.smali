@@ -715,54 +715,68 @@
 
     iget-object v0, p0, Lcom/android/settingslib/bluetooth/A2dpProfile;->mServiceWrapper:Lcom/android/settingslib/wrapper/BluetoothA2dpWrapper;
 
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    return v1
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/settingslib/bluetooth/A2dpProfile;->mServiceWrapper:Lcom/android/settingslib/wrapper/BluetoothA2dpWrapper;
+
     invoke-virtual {v0, p1}, Lcom/android/settingslib/wrapper/BluetoothA2dpWrapper;->getOptionalCodecsEnabled(Landroid/bluetooth/BluetoothDevice;)I
 
     move-result v0
 
-    const/4 v1, 0x0
+    const/4 v2, -0x1
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    const/4 v3, -0x1
+    if-eq v0, v2, :cond_2
 
-    if-eq v0, v3, :cond_1
+    if-ne v0, v3, :cond_1
 
-    if-ne v0, v2, :cond_0
-
-    move v1, v2
+    move v1, v3
 
     nop
 
-    :cond_0
+    :cond_1
     return v1
 
-    :cond_1
+    :cond_2
     invoke-virtual {p0, p1}, Lcom/android/settingslib/bluetooth/A2dpProfile;->getConnectionStatus(Landroid/bluetooth/BluetoothDevice;)I
 
-    move-result v3
+    move-result v2
 
     const/4 v4, 0x2
 
-    if-eq v3, v4, :cond_2
+    if-eq v2, v4, :cond_3
 
     invoke-virtual {p0, p1}, Lcom/android/settingslib/bluetooth/A2dpProfile;->supportsHighQualityAudio(Landroid/bluetooth/BluetoothDevice;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_3
 
-    return v2
+    return v3
 
-    :cond_2
-    const/4 v3, 0x0
+    :cond_3
+    const/4 v2, 0x0
 
+    iget-object v4, p0, Lcom/android/settingslib/bluetooth/A2dpProfile;->mServiceWrapper:Lcom/android/settingslib/wrapper/BluetoothA2dpWrapper;
+
+    if-nez v4, :cond_4
+
+    return v1
+
+    :cond_4
     iget-object v4, p0, Lcom/android/settingslib/bluetooth/A2dpProfile;->mServiceWrapper:Lcom/android/settingslib/wrapper/BluetoothA2dpWrapper;
 
     invoke-virtual {v4, p1}, Lcom/android/settingslib/wrapper/BluetoothA2dpWrapper;->getCodecStatus(Landroid/bluetooth/BluetoothDevice;)Landroid/bluetooth/BluetoothCodecStatus;
 
     move-result-object v4
 
-    if-eqz v4, :cond_3
+    if-eqz v4, :cond_5
 
     iget-object v4, p0, Lcom/android/settingslib/bluetooth/A2dpProfile;->mServiceWrapper:Lcom/android/settingslib/wrapper/BluetoothA2dpWrapper;
 
@@ -772,20 +786,20 @@
 
     invoke-virtual {v4}, Landroid/bluetooth/BluetoothCodecStatus;->getCodecConfig()Landroid/bluetooth/BluetoothCodecConfig;
 
-    move-result-object v3
+    move-result-object v2
 
-    :cond_3
-    if-eqz v3, :cond_4
+    :cond_5
+    if-eqz v2, :cond_6
 
-    invoke-virtual {v3}, Landroid/bluetooth/BluetoothCodecConfig;->isMandatoryCodec()Z
+    invoke-virtual {v2}, Landroid/bluetooth/BluetoothCodecConfig;->isMandatoryCodec()Z
 
     move-result v1
 
-    xor-int/2addr v1, v2
+    xor-int/2addr v1, v3
 
     return v1
 
-    :cond_4
+    :cond_6
     return v1
 .end method
 
@@ -871,20 +885,25 @@
     :goto_0
     iget-object v1, p0, Lcom/android/settingslib/bluetooth/A2dpProfile;->mServiceWrapper:Lcom/android/settingslib/wrapper/BluetoothA2dpWrapper;
 
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lcom/android/settingslib/bluetooth/A2dpProfile;->mServiceWrapper:Lcom/android/settingslib/wrapper/BluetoothA2dpWrapper;
+
     invoke-virtual {v1, p1, v0}, Lcom/android/settingslib/wrapper/BluetoothA2dpWrapper;->setOptionalCodecsEnabled(Landroid/bluetooth/BluetoothDevice;I)V
 
+    :cond_1
     invoke-virtual {p0, p1}, Lcom/android/settingslib/bluetooth/A2dpProfile;->getConnectionStatus(Landroid/bluetooth/BluetoothDevice;)I
 
     move-result v1
 
     const/4 v2, 0x2
 
-    if-eq v1, v2, :cond_1
+    if-eq v1, v2, :cond_2
 
     return-void
 
-    :cond_1
-    if-eqz p2, :cond_2
+    :cond_2
+    if-eqz p2, :cond_3
 
     iget-object v1, p0, Lcom/android/settingslib/bluetooth/A2dpProfile;->mService:Landroid/bluetooth/BluetoothA2dp;
 
@@ -892,7 +911,7 @@
 
     goto :goto_1
 
-    :cond_2
+    :cond_3
     iget-object v1, p0, Lcom/android/settingslib/bluetooth/A2dpProfile;->mService:Landroid/bluetooth/BluetoothA2dp;
 
     invoke-virtual {v1, p1}, Landroid/bluetooth/BluetoothA2dp;->disableOptionalCodecs(Landroid/bluetooth/BluetoothDevice;)V
@@ -942,24 +961,32 @@
 .end method
 
 .method public supportsHighQualityAudio(Landroid/bluetooth/BluetoothDevice;)Z
-    .locals 2
+    .locals 3
 
+    iget-object v0, p0, Lcom/android/settingslib/bluetooth/A2dpProfile;->mServiceWrapper:Lcom/android/settingslib/wrapper/BluetoothA2dpWrapper;
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    return v1
+
+    :cond_0
     iget-object v0, p0, Lcom/android/settingslib/bluetooth/A2dpProfile;->mServiceWrapper:Lcom/android/settingslib/wrapper/BluetoothA2dpWrapper;
 
     invoke-virtual {v0, p1}, Lcom/android/settingslib/wrapper/BluetoothA2dpWrapper;->supportsOptionalCodecs(Landroid/bluetooth/BluetoothDevice;)I
 
     move-result v0
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v2, :cond_1
 
-    goto :goto_0
+    move v1, v2
 
-    :cond_0
-    const/4 v1, 0x0
+    nop
 
-    :goto_0
+    :cond_1
     return v1
 .end method
 

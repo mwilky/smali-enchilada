@@ -6,6 +6,14 @@
 .implements Lcom/android/settings/core/PreferenceControllerMixin;
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController$loadAggregatedUsageEventsTask;
+    }
+.end annotation
+
+
 # static fields
 .field private static final DAYS_TO_CHECK:I = 0x7
 
@@ -52,6 +60,17 @@
 .field private mCategory:Landroid/support/v7/preference/PreferenceCategory;
 
 .field private mDivider:Landroid/support/v7/preference/Preference;
+
+.field private mEventsMap:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field private final mHost:Landroid/app/Fragment;
 
@@ -233,6 +252,22 @@
     return-void
 .end method
 
+.method static synthetic access$102(Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;Ljava/util/Map;)Ljava/util/Map;
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mEventsMap:Ljava/util/Map;
+
+    return-object p1
+.end method
+
+.method static synthetic access$200(Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;)Landroid/support/v7/preference/PreferenceCategory;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mCategory:Landroid/support/v7/preference/PreferenceCategory;
+
+    return-object v0
+.end method
+
 .method private addBlockStatus(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;)V
     .locals 3
 
@@ -397,7 +432,7 @@
 .end method
 
 .method private displayRecentApps(Landroid/content/Context;Ljava/util/List;)V
-    .locals 22
+    .locals 20
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -412,7 +447,7 @@
 
     iget-object v1, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mCategory:Landroid/support/v7/preference/PreferenceCategory;
 
-    const v2, 0x7f120eed
+    const v2, 0x7f120ef2
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/PreferenceCategory;->setTitle(I)V
 
@@ -430,7 +465,7 @@
 
     iget-object v1, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mSeeAllPref:Landroid/support/v7/preference/Preference;
 
-    const v3, 0x7f080181
+    const v3, 0x7f08019c
 
     invoke-virtual {v1, v3}, Landroid/support/v7/preference/Preference;->setIcon(I)V
 
@@ -479,57 +514,59 @@
     goto :goto_0
 
     :cond_1
-    invoke-virtual/range {p0 .. p0}, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->getAggregatedUsageEvents()Ljava/util/Map;
-
-    move-result-object v5
-
     invoke-interface/range {p2 .. p2}, Ljava/util/List;->size()I
 
-    move-result v6
+    move-result v5
 
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
     :goto_1
-    if-ge v7, v6, :cond_7
+    if-ge v6, v5, :cond_8
 
-    move-object/from16 v8, p2
+    move-object/from16 v7, p2
 
-    invoke-interface {v8, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v7, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Landroid/service/notification/NotifyingApp;
+
+    invoke-virtual {v8}, Landroid/service/notification/NotifyingApp;->getPackage()Ljava/lang/String;
 
     move-result-object v9
 
-    check-cast v9, Landroid/service/notification/NotifyingApp;
+    iget-object v10, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mApplicationsState:Lcom/android/settingslib/applications/ApplicationsState;
 
-    invoke-virtual {v9}, Landroid/service/notification/NotifyingApp;->getPackage()Ljava/lang/String;
-
-    move-result-object v10
-
-    iget-object v11, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mApplicationsState:Lcom/android/settingslib/applications/ApplicationsState;
-
-    invoke-virtual {v9}, Landroid/service/notification/NotifyingApp;->getPackage()Ljava/lang/String;
-
-    move-result-object v12
-
-    iget v13, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mUserId:I
-
-    invoke-virtual {v11, v12, v13}, Lcom/android/settingslib/applications/ApplicationsState;->getEntry(Ljava/lang/String;I)Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
+    invoke-virtual {v8}, Landroid/service/notification/NotifyingApp;->getPackage()Ljava/lang/String;
 
     move-result-object v11
 
-    if-nez v11, :cond_2
+    iget v12, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mUserId:I
+
+    invoke-virtual {v10, v11, v12}, Lcom/android/settingslib/applications/ApplicationsState;->getEntry(Ljava/lang/String;I)Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
+
+    move-result-object v10
+
+    if-nez v10, :cond_2
 
     nop
 
-    move v4, v2
+    move-object/from16 v14, p1
 
-    move/from16 v20, v3
+    move/from16 v19, v5
 
-    const/4 v3, 0x0
+    const/4 v5, 0x0
 
     goto/16 :goto_5
 
     :cond_2
-    iget-object v12, v11, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
+    iget-object v11, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mEventsMap:Ljava/util/Map;
+
+    if-eqz v11, :cond_3
+
+    iget-object v11, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mEventsMap:Ljava/util/Map;
+
+    iget-object v12, v10, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
 
     iget v12, v12, Landroid/content/pm/ApplicationInfo;->uid:I
 
@@ -537,7 +574,7 @@
 
     move-result v12
 
-    iget-object v13, v11, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
+    iget-object v13, v10, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
 
     iget-object v13, v13, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
@@ -545,250 +582,247 @@
 
     move-result-object v12
 
-    invoke-interface {v5, v12}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v11, v12}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;
+
+    invoke-direct {v0, v11}, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->calculateAvgSentCounts(Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;)V
+
+    invoke-direct {v0, v10, v11}, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->addBlockStatus(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;)V
+
+    iput-object v11, v10, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->extraInfo:Ljava/lang/Object;
+
+    :cond_3
+    const/4 v11, 0x1
+
+    invoke-interface {v1, v9}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v12
 
-    check-cast v12, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;
+    check-cast v12, Lcom/android/settings/notification/NotificationAppPreference;
 
-    invoke-direct {v0, v12}, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->calculateAvgSentCounts(Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;)V
+    if-nez v12, :cond_4
 
-    invoke-direct {v0, v11, v12}, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->addBlockStatus(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;)V
+    new-instance v13, Lcom/android/settings/notification/NotificationAppPreference;
 
-    iput-object v12, v11, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->extraInfo:Ljava/lang/Object;
+    move-object/from16 v14, p1
 
-    const/4 v13, 0x1
+    invoke-direct {v13, v14}, Lcom/android/settings/notification/NotificationAppPreference;-><init>(Landroid/content/Context;)V
 
-    invoke-interface {v1, v10}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    move-object v12, v13
 
-    move-result-object v14
-
-    check-cast v14, Lcom/android/settings/notification/NotificationAppPreference;
-
-    if-nez v14, :cond_3
-
-    new-instance v15, Lcom/android/settings/notification/NotificationAppPreference;
-
-    move-object/from16 v4, p1
-
-    invoke-direct {v15, v4}, Lcom/android/settings/notification/NotificationAppPreference;-><init>(Landroid/content/Context;)V
-
-    move-object v14, v15
-
-    const/4 v13, 0x0
+    const/4 v11, 0x0
 
     goto :goto_2
 
-    :cond_3
-    move-object/from16 v4, p1
+    :cond_4
+    move-object/from16 v14, p1
 
     :goto_2
-    invoke-virtual {v14, v10}, Lcom/android/settings/notification/NotificationAppPreference;->setKey(Ljava/lang/String;)V
+    invoke-virtual {v12, v9}, Lcom/android/settings/notification/NotificationAppPreference;->setKey(Ljava/lang/String;)V
 
-    iget-object v15, v11, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->label:Ljava/lang/String;
+    iget-object v13, v10, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->label:Ljava/lang/String;
 
-    invoke-virtual {v14, v15}, Lcom/android/settings/notification/NotificationAppPreference;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v12, v13}, Lcom/android/settings/notification/NotificationAppPreference;->setTitle(Ljava/lang/CharSequence;)V
 
-    iget-object v15, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mIconDrawableFactory:Landroid/util/IconDrawableFactory;
+    iget-object v13, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mIconDrawableFactory:Landroid/util/IconDrawableFactory;
 
-    iget-object v2, v11, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
+    iget-object v15, v10, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
 
-    invoke-virtual {v15, v2}, Landroid/util/IconDrawableFactory;->getBadgedIcon(Landroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v13, v15}, Landroid/util/IconDrawableFactory;->getBadgedIcon(Landroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v2
+    move-result-object v13
 
-    invoke-virtual {v14, v2}, Lcom/android/settings/notification/NotificationAppPreference;->setIcon(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v12, v13}, Lcom/android/settings/notification/NotificationAppPreference;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    const/4 v2, 0x2
+    const/4 v13, 0x2
 
-    invoke-virtual {v14, v2}, Lcom/android/settings/notification/NotificationAppPreference;->setIconSize(I)V
+    invoke-virtual {v12, v13}, Lcom/android/settings/notification/NotificationAppPreference;->setIconSize(I)V
 
-    iget-object v2, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mContext:Landroid/content/Context;
+    iget-object v13, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v16
+    move-result-wide v15
 
-    invoke-virtual {v9}, Landroid/service/notification/NotifyingApp;->getLastNotified()J
+    invoke-virtual {v8}, Landroid/service/notification/NotifyingApp;->getLastNotified()J
 
-    move-result-wide v18
+    move-result-wide v17
 
-    move/from16 v20, v3
+    move/from16 v19, v5
 
-    sub-long v3, v16, v18
+    sub-long v4, v15, v17
 
-    long-to-double v3, v3
+    long-to-double v4, v4
 
-    const/4 v15, 0x1
-
-    invoke-static {v2, v3, v4, v15}, Lcom/android/settingslib/utils/StringUtil;->formatRelativeTime(Landroid/content/Context;DZ)Ljava/lang/CharSequence;
-
-    move-result-object v2
-
-    invoke-virtual {v14, v2}, Lcom/android/settings/notification/NotificationAppPreference;->setSummary(Ljava/lang/CharSequence;)V
-
-    invoke-virtual {v14, v7}, Lcom/android/settings/notification/NotificationAppPreference;->setOrder(I)V
-
-    new-instance v2, Landroid/os/Bundle;
-
-    invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
-
-    const-string v3, "package"
-
-    invoke-virtual {v2, v3, v10}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v3, "uid"
-
-    iget-object v4, v11, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
-
-    iget v4, v4, Landroid/content/pm/ApplicationInfo;->uid:I
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
-
-    new-instance v3, Lcom/android/settings/core/SubSettingLauncher;
-
-    iget-object v4, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mHost:Landroid/app/Fragment;
-
-    invoke-virtual {v4}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
+    invoke-static {v13, v4, v5, v2}, Lcom/android/settingslib/utils/StringUtil;->formatRelativeTime(Landroid/content/Context;DZ)Ljava/lang/CharSequence;
 
     move-result-object v4
 
-    invoke-direct {v3, v4}, Lcom/android/settings/core/SubSettingLauncher;-><init>(Landroid/content/Context;)V
+    invoke-virtual {v12, v4}, Lcom/android/settings/notification/NotificationAppPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    const-class v4, Lcom/android/settings/notification/AppNotificationSettings;
+    invoke-virtual {v12, v6}, Lcom/android/settings/notification/NotificationAppPreference;->setOrder(I)V
 
-    invoke-virtual {v4}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    new-instance v4, Landroid/os/Bundle;
 
-    move-result-object v4
+    invoke-direct {v4}, Landroid/os/Bundle;-><init>()V
 
-    invoke-virtual {v3, v4}, Lcom/android/settings/core/SubSettingLauncher;->setDestination(Ljava/lang/String;)Lcom/android/settings/core/SubSettingLauncher;
+    const-string v5, "package"
 
-    move-result-object v3
+    invoke-virtual {v4, v5, v9}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    const v4, 0x7f120a2b
+    const-string v5, "uid"
 
-    invoke-virtual {v3, v4}, Lcom/android/settings/core/SubSettingLauncher;->setTitle(I)Lcom/android/settings/core/SubSettingLauncher;
+    iget-object v13, v10, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
 
-    move-result-object v3
+    iget v13, v13, Landroid/content/pm/ApplicationInfo;->uid:I
 
-    invoke-virtual {v3, v2}, Lcom/android/settings/core/SubSettingLauncher;->setArguments(Landroid/os/Bundle;)Lcom/android/settings/core/SubSettingLauncher;
+    invoke-virtual {v4, v5, v13}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    move-result-object v3
+    new-instance v5, Lcom/android/settings/core/SubSettingLauncher;
 
-    const/16 v4, 0x85
+    iget-object v13, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mHost:Landroid/app/Fragment;
 
-    invoke-virtual {v3, v4}, Lcom/android/settings/core/SubSettingLauncher;->setSourceMetricsCategory(I)Lcom/android/settings/core/SubSettingLauncher;
+    invoke-virtual {v13}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
 
-    move-result-object v3
+    move-result-object v13
 
-    invoke-virtual {v3}, Lcom/android/settings/core/SubSettingLauncher;->toIntent()Landroid/content/Intent;
+    invoke-direct {v5, v13}, Lcom/android/settings/core/SubSettingLauncher;-><init>(Landroid/content/Context;)V
 
-    move-result-object v3
+    const-class v13, Lcom/android/settings/notification/AppNotificationSettings;
 
-    invoke-virtual {v14, v3}, Lcom/android/settings/notification/NotificationAppPreference;->setIntent(Landroid/content/Intent;)V
+    invoke-virtual {v13}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    new-instance v3, Lcom/android/settings/notification/-$$Lambda$RecentNotifyingAppsPreferenceController$7CmRKIepfLY9sZOWQrI97x_3AWA;
+    move-result-object v13
 
-    invoke-direct {v3, v0, v10, v11}, Lcom/android/settings/notification/-$$Lambda$RecentNotifyingAppsPreferenceController$7CmRKIepfLY9sZOWQrI97x_3AWA;-><init>(Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;Ljava/lang/String;Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)V
+    invoke-virtual {v5, v13}, Lcom/android/settings/core/SubSettingLauncher;->setDestination(Ljava/lang/String;)Lcom/android/settings/core/SubSettingLauncher;
 
-    invoke-virtual {v14, v3}, Lcom/android/settings/notification/NotificationAppPreference;->setOnPreferenceChangeListener(Landroid/support/v7/preference/Preference$OnPreferenceChangeListener;)V
+    move-result-object v5
 
-    iget-object v3, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mNotificationBackend:Lcom/android/settings/notification/NotificationBackend;
+    const v13, 0x7f120a2b
 
-    iget-object v4, v11, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
+    invoke-virtual {v5, v13}, Lcom/android/settings/core/SubSettingLauncher;->setTitle(I)Lcom/android/settings/core/SubSettingLauncher;
 
-    iget v4, v4, Landroid/content/pm/ApplicationInfo;->uid:I
+    move-result-object v5
 
-    invoke-virtual {v3, v10, v4}, Lcom/android/settings/notification/NotificationBackend;->getNotificationsBanned(Ljava/lang/String;I)Z
+    invoke-virtual {v5, v4}, Lcom/android/settings/core/SubSettingLauncher;->setArguments(Landroid/os/Bundle;)Lcom/android/settings/core/SubSettingLauncher;
 
-    move-result v3
+    move-result-object v5
 
-    const/4 v4, 0x1
+    const/16 v13, 0x85
 
-    xor-int/2addr v3, v4
+    invoke-virtual {v5, v13}, Lcom/android/settings/core/SubSettingLauncher;->setSourceMetricsCategory(I)Lcom/android/settings/core/SubSettingLauncher;
 
-    invoke-virtual {v14, v3}, Lcom/android/settings/notification/NotificationAppPreference;->setChecked(Z)V
+    move-result-object v5
 
-    const-string v3, "com.oneplus.deskclock"
+    invoke-virtual {v5}, Lcom/android/settings/core/SubSettingLauncher;->toIntent()Landroid/content/Intent;
 
-    invoke-virtual {v3, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v5
 
-    move-result v3
+    invoke-virtual {v12, v5}, Lcom/android/settings/notification/NotificationAppPreference;->setIntent(Landroid/content/Intent;)V
 
-    if-nez v3, :cond_5
+    new-instance v5, Lcom/android/settings/notification/-$$Lambda$RecentNotifyingAppsPreferenceController$7CmRKIepfLY9sZOWQrI97x_3AWA;
 
-    const-string v3, "com.android.incallui"
+    invoke-direct {v5, v0, v9, v10}, Lcom/android/settings/notification/-$$Lambda$RecentNotifyingAppsPreferenceController$7CmRKIepfLY9sZOWQrI97x_3AWA;-><init>(Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;Ljava/lang/String;Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)V
 
-    invoke-virtual {v3, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v12, v5}, Lcom/android/settings/notification/NotificationAppPreference;->setOnPreferenceChangeListener(Landroid/support/v7/preference/Preference$OnPreferenceChangeListener;)V
 
-    move-result v3
+    iget-object v5, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mNotificationBackend:Lcom/android/settings/notification/NotificationBackend;
 
-    if-nez v3, :cond_5
+    iget-object v13, v10, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
 
-    const-string v3, "com.google.android.calendar"
+    iget v13, v13, Landroid/content/pm/ApplicationInfo;->uid:I
 
-    invoke-virtual {v3, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v9, v13}, Lcom/android/settings/notification/NotificationBackend;->getNotificationsBanned(Ljava/lang/String;I)Z
 
-    move-result v3
+    move-result v5
 
-    if-nez v3, :cond_5
+    xor-int/2addr v5, v2
 
-    const-string v3, "com.oneplus.calendar"
+    invoke-virtual {v12, v5}, Lcom/android/settings/notification/NotificationAppPreference;->setChecked(Z)V
 
-    invoke-virtual {v3, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string v5, "com.oneplus.deskclock"
 
-    move-result v3
+    invoke-virtual {v5, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-nez v3, :cond_5
+    move-result v5
 
-    const-string v3, "com.android.dialer"
+    if-nez v5, :cond_6
 
-    invoke-virtual {v3, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string v5, "com.android.incallui"
 
-    move-result v3
+    invoke-virtual {v5, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-eqz v3, :cond_4
+    move-result v5
+
+    if-nez v5, :cond_6
+
+    const-string v5, "com.google.android.calendar"
+
+    invoke-virtual {v5, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_6
+
+    const-string v5, "com.oneplus.calendar"
+
+    invoke-virtual {v5, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_6
+
+    const-string v5, "com.android.dialer"
+
+    invoke-virtual {v5, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_5
 
     goto :goto_3
 
-    :cond_4
-    invoke-static {v11}, Lcom/android/settings/applications/AppStateNotificationBridge;->enableSwitch(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)Z
+    :cond_5
+    invoke-static {v10}, Lcom/android/settings/applications/AppStateNotificationBridge;->enableSwitch(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)Z
 
-    move-result v3
+    move-result v5
 
-    invoke-virtual {v14, v3}, Lcom/android/settings/notification/NotificationAppPreference;->setSwitchEnabled(Z)V
+    invoke-virtual {v12, v5}, Lcom/android/settings/notification/NotificationAppPreference;->setSwitchEnabled(Z)V
 
-    const/4 v3, 0x0
+    const/4 v5, 0x0
 
     goto :goto_4
 
-    :cond_5
+    :cond_6
     :goto_3
-    const/4 v3, 0x0
+    const/4 v5, 0x0
 
-    invoke-virtual {v14, v3}, Lcom/android/settings/notification/NotificationAppPreference;->setSwitchEnabled(Z)V
+    invoke-virtual {v12, v5}, Lcom/android/settings/notification/NotificationAppPreference;->setSwitchEnabled(Z)V
 
     :goto_4
-    if-nez v13, :cond_6
+    if-nez v11, :cond_7
 
-    iget-object v15, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mCategory:Landroid/support/v7/preference/PreferenceCategory;
+    iget-object v13, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mCategory:Landroid/support/v7/preference/PreferenceCategory;
 
-    invoke-virtual {v15, v14}, Landroid/support/v7/preference/PreferenceCategory;->addPreference(Landroid/support/v7/preference/Preference;)Z
+    invoke-virtual {v13, v12}, Landroid/support/v7/preference/PreferenceCategory;->addPreference(Landroid/support/v7/preference/Preference;)Z
 
-    :cond_6
+    :cond_7
     :goto_5
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v6, v6, 0x1
 
-    move v2, v4
-
-    move/from16 v3, v20
+    move/from16 v5, v19
 
     goto/16 :goto_1
 
-    :cond_7
-    move-object/from16 v8, p2
+    :cond_8
+    move-object/from16 v14, p1
 
-    move/from16 v20, v3
+    move-object/from16 v7, p2
+
+    move/from16 v19, v5
 
     invoke-interface {v1}, Ljava/util/Map;->values()Ljava/util/Collection;
 
@@ -801,23 +835,23 @@
     :goto_6
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_8
+    if-eqz v4, :cond_9
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v4
 
-    check-cast v3, Landroid/support/v7/preference/Preference;
+    check-cast v4, Landroid/support/v7/preference/Preference;
 
-    iget-object v4, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mCategory:Landroid/support/v7/preference/PreferenceCategory;
+    iget-object v5, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mCategory:Landroid/support/v7/preference/PreferenceCategory;
 
-    invoke-virtual {v4, v3}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
+    invoke-virtual {v5, v4}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
     goto :goto_6
 
-    :cond_8
+    :cond_9
     return-void
 .end method
 
@@ -967,6 +1001,24 @@
     return v1
 .end method
 
+.method private loadAggregatedUsageEvents()V
+    .locals 2
+
+    new-instance v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController$loadAggregatedUsageEventsTask;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController$loadAggregatedUsageEventsTask;-><init>(Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController$1;)V
+
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController$loadAggregatedUsageEventsTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    return-void
+.end method
+
 .method private shouldIncludePkgInRecents(Ljava/lang/String;)Z
     .locals 6
 
@@ -1107,13 +1159,7 @@
 
     invoke-super {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;->displayPreference(Landroid/support/v7/preference/PreferenceScreen;)V
 
-    iget-object v0, p0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mCategory:Landroid/support/v7/preference/PreferenceCategory;
-
-    invoke-virtual {v0}, Landroid/support/v7/preference/PreferenceCategory;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->refreshUi(Landroid/content/Context;)V
+    invoke-direct {p0}, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->loadAggregatedUsageEvents()V
 
     return-void
 .end method
@@ -1506,7 +1552,7 @@
 
     iget-object v1, p0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f120eee
+    const v2, 0x7f120ef3
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

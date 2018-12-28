@@ -60,7 +60,7 @@
 
     invoke-super {p0, p1}, Lcom/android/settings/deviceinfo/StorageWizardBase;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0d026d
+    const v0, 0x7f0d026c
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardMigrateConfirm;->setContentView(I)V
 
@@ -94,11 +94,11 @@
     goto :goto_0
 
     :cond_1
-    const v2, 0x7f08023e
+    const v2, 0x7f080259
 
     invoke-virtual {p0, v2}, Lcom/android/settings/deviceinfo/StorageWizardMigrateConfirm;->setIcon(I)V
 
-    const v2, 0x7f121163
+    const v2, 0x7f121168
 
     new-array v1, v1, [Ljava/lang/CharSequence;
 
@@ -140,13 +140,13 @@
 
     invoke-virtual {v1, v2}, Lcom/android/settings/deviceinfo/MigrateEstimateTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    const v1, 0x7f121161
+    const v1, 0x7f121166
 
     new-array v2, v4, [Ljava/lang/CharSequence;
 
     invoke-virtual {p0, v1, v2}, Lcom/android/settings/deviceinfo/StorageWizardMigrateConfirm;->setBackButtonText(I[Ljava/lang/CharSequence;)V
 
-    const v1, 0x7f121162
+    const v1, 0x7f121167
 
     new-array v2, v4, [Ljava/lang/CharSequence;
 
@@ -277,7 +277,7 @@
 
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const v0, 0x7f121169
+    const v0, 0x7f12116e
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardMigrateConfirm;->getText(I)Ljava/lang/CharSequence;
 

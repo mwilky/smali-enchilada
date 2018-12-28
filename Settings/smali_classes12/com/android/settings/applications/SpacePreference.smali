@@ -11,7 +11,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
 
-    const v0, 0x7f040287
+    const v0, 0x7f040288
 
     const v1, 0x101008e
 
@@ -39,7 +39,7 @@
 
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    const v0, 0x7f0d0261
+    const v0, 0x7f0d0260
 
     invoke-virtual {p0, v0}, Lcom/android/settings/applications/SpacePreference;->setLayoutResource(I)V
 

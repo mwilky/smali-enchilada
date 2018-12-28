@@ -97,3 +97,23 @@
 
     return-void
 .end method
+
+.method public setChecked(Ljava/lang/Boolean;)V
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lcom/oneplus/lib/widget/button/OPCheckBox;->setTriStateChecked(Ljava/lang/Boolean;)V
+
+    return-void
+.end method
+
+.method public setChecked(Z)V
+    .locals 1
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/oneplus/lib/widget/button/OPCheckBox;->setChecked(Ljava/lang/Boolean;)V
+
+    return-void
+.end method

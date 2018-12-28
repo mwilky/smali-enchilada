@@ -107,7 +107,7 @@
 
     iget v2, p0, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;->mUserId:I
 
-    const v3, 0x7f120fd5
+    const v3, 0x7f120fda
 
     const/16 v4, -0x2710
 
@@ -315,12 +315,12 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f120afa
+    const v0, 0x7f120afd
 
     return v0
 
     :cond_0
-    const v0, 0x7f120fbc
+    const v0, 0x7f120fc1
 
     return v0
 .end method
@@ -505,7 +505,7 @@
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f120afa
+    const v0, 0x7f120afd
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;->setHeaderText(I)V
 
@@ -570,7 +570,7 @@
     goto :goto_1
 
     :cond_1
-    const v0, 0x7f120fbc
+    const v0, 0x7f120fc1
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;->setHeaderText(I)V
 

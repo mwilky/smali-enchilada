@@ -346,7 +346,7 @@
 
     invoke-virtual {v3, v2}, Lcom/oneplus/settings/widget/OPHotspotApBandSelectionPreference;->setEnabled(Z)V
 
-    const v2, 0x7f1213e3
+    const v2, 0x7f1213e8
 
     invoke-virtual {v3, v2}, Lcom/oneplus/settings/widget/OPHotspotApBandSelectionPreference;->setSummary(I)V
 

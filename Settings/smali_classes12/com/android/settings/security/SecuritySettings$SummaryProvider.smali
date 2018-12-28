@@ -78,7 +78,7 @@
 
     iget-object v2, p0, Lcom/android/settings/security/SecuritySettings$SummaryProvider;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f120cb3
+    const v3, 0x7f120cb7
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -94,7 +94,7 @@
 
     iget-object v2, p0, Lcom/android/settings/security/SecuritySettings$SummaryProvider;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f120cb4
+    const v3, 0x7f120cb8
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -109,7 +109,7 @@
 
     iget-object v2, p0, Lcom/android/settings/security/SecuritySettings$SummaryProvider;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f120fa8
+    const v3, 0x7f120fad
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

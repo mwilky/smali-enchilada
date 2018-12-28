@@ -6,6 +6,7 @@
 .implements Landroid/view/View$OnClickListener;
 .implements Landroid/widget/TextView$OnEditorActionListener;
 .implements Lcom/android/settings/password/CredentialCheckResultTracker$Listener;
+.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
 
 # annotations
@@ -36,11 +37,17 @@
 
 .field private mDisappearing:Z
 
+.field protected mHasWindowFocus:Z
+
 .field private mHeaderTextView:Landroid/widget/TextView;
+
+.field protected mHideFodIconRunnable:Ljava/lang/Runnable;
 
 .field private mImm:Landroid/view/inputmethod/InputMethodManager;
 
 .field private mIsAlpha:Z
+
+.field protected mOnViewCreated:Z
 
 .field private mPasswordEntry:Lcom/android/settings/widget/ImeAwareEditText;
 
@@ -71,6 +78,16 @@
     iput-boolean v0, p0, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->mDisappearing:Z
 
     iput-boolean v0, p0, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->mUsingFingerprint:Z
+
+    iput-boolean v0, p0, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->mOnViewCreated:Z
+
+    iput-boolean v0, p0, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->mHasWindowFocus:Z
+
+    new-instance v0, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment$1;
+
+    invoke-direct {v0, p0}, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment$1;-><init>(Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;)V
+
+    iput-object v0, p0, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->mHideFodIconRunnable:Ljava/lang/Runnable;
 
     return-void
 .end method
@@ -304,7 +321,7 @@
 .method private handleAttemptLockout(J)V
     .locals 7
 
-    new-instance v6, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment$3;
+    new-instance v6, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment$5;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -318,9 +335,9 @@
 
     move-object v1, p0
 
-    invoke-direct/range {v0 .. v5}, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment$3;-><init>(Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;JJ)V
+    invoke-direct/range {v0 .. v5}, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment$5;-><init>(Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;JJ)V
 
-    invoke-virtual {v6}, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment$3;->start()Landroid/os/CountDownTimer;
+    invoke-virtual {v6}, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment$5;->start()Landroid/os/CountDownTimer;
 
     move-result-object v0
 
@@ -522,9 +539,9 @@
 
     iget-object v1, p0, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    new-instance v2, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment$2;
+    new-instance v2, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment$4;
 
-    invoke-direct {v2, p0, p2, p1, v0}, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment$2;-><init>(Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;Landroid/content/Intent;Ljava/lang/String;I)V
+    invoke-direct {v2, p0, p2, p1, v0}, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment$4;-><init>(Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;Landroid/content/Intent;Ljava/lang/String;I)V
 
     invoke-static {v1, p1, v0, v2}, Lcom/android/internal/widget/LockPatternChecker;->checkPassword(Lcom/android/internal/widget/LockPatternUtils;Ljava/lang/String;ILcom/android/internal/widget/LockPatternChecker$OnCheckCallback;)Landroid/os/AsyncTask;
 
@@ -634,11 +651,11 @@
 
     iget v4, v0, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->mUserId:I
 
-    new-instance v10, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment$1;
+    new-instance v10, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment$3;
 
     move-object/from16 v14, p2
 
-    invoke-direct {v10, v0, v14, v3}, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment$1;-><init>(Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;Landroid/content/Intent;I)V
+    invoke-direct {v10, v0, v14, v3}, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment$3;-><init>(Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;Landroid/content/Intent;I)V
 
     if-ne v3, v4, :cond_0
 
@@ -914,6 +931,39 @@
     return-void
 .end method
 
+.method public onCreate(Landroid/os/Bundle;)V
+    .locals 1
+
+    invoke-super {p0, p1}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;->onCreate(Landroid/os/Bundle;)V
+
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportCustomFingerprint()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+    :cond_0
+    return-void
+.end method
+
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 24
 
@@ -1165,7 +1215,7 @@
 
     move-result-object v10
 
-    const v11, 0x1040157
+    const v11, 0x1040158
 
     invoke-virtual {v10, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1284,6 +1334,16 @@
     invoke-virtual {v4}, Landroid/app/FragmentTransaction;->commit()I
 
     :cond_8
+    iget-object v4, v0, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->mHandler:Landroid/os/Handler;
+
+    new-instance v9, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment$2;
+
+    invoke-direct {v9, v0}, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment$2;-><init>(Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;)V
+
+    const-wide/16 v10, 0xc8
+
+    invoke-virtual {v4, v9, v10, v11}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
     return-object v3
 .end method
 
@@ -1292,6 +1352,39 @@
 
     invoke-direct/range {p0 .. p5}, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->onPasswordChecked(ZLandroid/content/Intent;IIZ)V
 
+    return-void
+.end method
+
+.method public onDestroy()V
+    .locals 1
+
+    invoke-super {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;->onDestroy()V
+
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportCustomFingerprint()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+    :cond_0
     return-void
 .end method
 
@@ -1329,6 +1422,99 @@
 
     iput-boolean p1, p0, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->mUsingFingerprint:Z
 
+    return-void
+.end method
+
+.method public onGlobalLayout()V
+    .locals 9
+
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportCustomFingerprint()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-boolean v0, p0, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->mOnViewCreated:Z
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->isFingerprintAllowed()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    invoke-virtual {p0}, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->getWindowVisibleDisplayFrame(Landroid/graphics/Rect;)V
+
+    invoke-virtual {p0}, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/View;->getHeight()I
+
+    move-result v1
+
+    iget v2, v0, Landroid/graphics/Rect;->bottom:I
+
+    sub-int v2, v1, v2
+
+    int-to-double v3, v2
+
+    int-to-double v5, v1
+
+    const-wide v7, 0x3fc3333333333333L    # 0.15
+
+    mul-double/2addr v5, v7
+
+    cmpl-double v3, v3, v5
+
+    if-lez v3, :cond_0
+
+    iget-object v3, p0, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->mFingerprintHelper:Lcom/android/settings/fingerprint/FingerprintUiHelper;
+
+    invoke-virtual {v3}, Lcom/android/settings/fingerprint/FingerprintUiHelper;->stopListening()V
+
+    goto :goto_0
+
+    :cond_0
+    iget-boolean v3, p0, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->mHasWindowFocus:Z
+
+    if-eqz v3, :cond_1
+
+    iget-object v3, p0, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->mHandler:Landroid/os/Handler;
+
+    iget-object v4, p0, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->mHideFodIconRunnable:Ljava/lang/Runnable;
+
+    const-wide/16 v5, 0xfa
+
+    invoke-virtual {v3, v4, v5, v6}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    :cond_1
+    :goto_0
     return-void
 .end method
 
@@ -1425,6 +1611,8 @@
 
 .method public onWindowFocusChanged(Z)V
     .locals 2
+
+    iput-boolean p1, p0, Lcom/android/settings/password/ConfirmLockPassword$ConfirmLockPasswordFragment;->mHasWindowFocus:Z
 
     if-nez p1, :cond_0
 

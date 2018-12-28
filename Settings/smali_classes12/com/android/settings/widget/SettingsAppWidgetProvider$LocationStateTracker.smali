@@ -84,7 +84,7 @@
 .method public getButtonId()I
     .locals 1
 
-    const v0, 0x7f0a0274
+    const v0, 0x7f0a0273
 
     return v0
 .end method
@@ -104,17 +104,17 @@
 
     if-eq v0, v1, :cond_0
 
-    const v0, 0x7f080163
+    const v0, 0x7f08017e
 
     return v0
 
     :cond_0
-    const v0, 0x7f080162
+    const v0, 0x7f08017d
 
     return v0
 
     :cond_1
-    const v0, 0x7f080161
+    const v0, 0x7f08017c
 
     return v0
 .end method
@@ -130,7 +130,7 @@
 .method public getIndicatorId()I
     .locals 1
 
-    const v0, 0x7f0a027e
+    const v0, 0x7f0a027d
 
     return v0
 .end method

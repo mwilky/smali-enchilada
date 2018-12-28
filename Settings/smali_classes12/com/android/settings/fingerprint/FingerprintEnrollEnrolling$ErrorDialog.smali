@@ -88,7 +88,7 @@
 
     move-result v2
 
-    const v3, 0x7f120cb7
+    const v3, 0x7f120cbb
 
     invoke-virtual {v0, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -108,7 +108,7 @@
 
     invoke-direct {v5, p0, v2}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$ErrorDialog$1;-><init>(Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$ErrorDialog;I)V
 
-    const v6, 0x7f120fb2
+    const v6, 0x7f120fb7
 
     invoke-virtual {v3, v6, v5}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

@@ -19,7 +19,7 @@
 
     iput-object p2, p0, Lcom/android/settings/inputmethod/SpellCheckerPreference;->mScis:[Landroid/view/textservice/SpellCheckerInfo;
 
-    const v0, 0x7f0d0213
+    const v0, 0x7f0d0212
 
     invoke-virtual {p0, v0}, Lcom/android/settings/inputmethod/SpellCheckerPreference;->setWidgetLayoutResource(I)V
 

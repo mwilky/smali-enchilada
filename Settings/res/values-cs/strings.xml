@@ -2616,6 +2616,7 @@ Spořič baterie se automaticky vypne, až se bude zařízení nabíjet."</strin
     <string name="oneplus_broadcat_wifi_name">Vysílat název sítě (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Tlačítka &amp; gesta</string>
     <string name="oneplus_buttons_dashboard_summary">Posuvník upozornění, navigace, gesta</string>
+    <string name="oneplus_buttons_settings">nastavení tlačítek</string>
     <string name="oneplus_buttons_settings_summary">Navigační gesto</string>
     <string name="oneplus_call_information_broadcast">Vyslovit ID volajícího</string>
     <string name="oneplus_call_information_broadcast_summary">Vyslovit do sluchátek ID volajícího příchozího hovoru</string>
@@ -2630,6 +2631,7 @@ Spořič baterie se automaticky vypne, až se bude zařízení nabíjet."</strin
     <string name="oneplus_colorful_mode_title">Barevný</string>
     <string name="oneplus_compatibility_mode_summary">Celoobrazovkové aplikace nemohou používat oblast zářezu</string>
     <string name="oneplus_compatibility_mode_title">Režim kompatibility</string>
+    <string name="oneplus_condition_night_mode_title">Je zapnut noční režim</string>
     <string name="oneplus_connected_device_count">Je připojeno %1$s zařízení</string>
     <string name="oneplus_connected_device_management_title">Správce připojené zařízení</string>
     <string name="oneplus_connected_devices_count">Je připojeno %1$s zařízení</string>
@@ -2642,6 +2644,9 @@ Spořič baterie se automaticky vypne, až se bude zařízení nabíjet."</strin
     <string name="oneplus_data_usage_control_title">Řízení využití dat</string>
     <string name="oneplus_deep_clear_way">Hluboké čištění</string>
     <string name="oneplus_deep_clear_way_summary">Vymaže procesy na pozadí, které mohou vést k nezamýšleným důsledkům. Některé aplikace mohou přestat pracovat a nebudete dostávat oznámení</string>
+    <string name="oneplus_deep_optimization">Hloubková optimalizace</string>
+    <string name="oneplus_deep_optimization_summary">Pokud vypnete hloubkovou optimalizaci, spotřeba energie se výrazně zvýší, což může ovlivnit normální používání.</string>
+    <string name="oneplus_deep_optimization_title">Vypnout hloubkovou optimalizaci?</string>
     <string name="oneplus_default_launcher">Výchozí spouštěč</string>
     <string name="oneplus_delete_fingerprint_list">Smazat otisk prstu</string>
     <string name="oneplus_deleted_fingerprint_list">Otisk prstu odstraněn</string>
@@ -2682,6 +2687,7 @@ Spořič baterie se automaticky vypne, až se bude zařízení nabíjet."</strin
     <string name="oneplus_earphone_mode">Režim sluchátka</string>
     <string name="oneplus_emergency_rescue_settings">Tísňová záchrana</string>
     <string name="oneplus_emergency_rescue_settings_summary">Automaticky volejte o pomoc rychlým stisknutím tlačítka napájení</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">Dostupné po úpravě nastavení tísňové záchrany TLAČÍTKA NAPÁJENÍ</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Výzva nastavení otisku prstu</string>
     <string name="oneplus_enter_your_fingerprint">· Registrace otisku prstu</string>
     <string name="oneplus_experience_improvement_programs">Programy zlepšovaní zážitku</string>
@@ -2795,7 +2801,7 @@ Pokud chcete kdykoliv přejít na úvodní obrazovku, potáhněte prstem nahoru 
     <string name="oneplus_hide_notch_display_summary">Všechny aplikace nemohou používat oblast zářezu</string>
     <string name="oneplus_hide_notch_display_title">Skrýt oblast zářezu</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Když se v dolní části obrazovky zobrazí vzor otisk prstu, jednoduše přitiskněte prst na oblast identifikace otisku prstu, abyste použili funkci otisku prstu: probuďte a odemkněte svůj telefon, autorizujte nákupy nebo se přihlaste do aplikací.</string>
-    <string name="oneplus_hydrogen_version">Verze Hydrogen OS</string>
+    <string name="oneplus_hydrogen_version">Verze H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Příchozí hovor</string>
     <string name="oneplus_incoming_call_vibrate_mode">Vzorek vibrace příchozího hovoru</string>
     <string name="oneplus_init_finger_input">Inicializace otisku</string>
@@ -3050,6 +3056,7 @@ Pokud chcete kdykoliv přejít na úvodní obrazovku, potáhněte prstem nahoru 
     <string name="oneplus_setting_ringtone">Nastavte vyzvánění</string>
     <string name="oneplus_setting_sim_ringtone_switch">Nastavit vyzvánění pro každou SIM kartu</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Nastavit alternativní způsob odemknutí obrazovky</string>
+    <string name="oneplus_share_this_wifi">Rozšířit pokrytí Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi Sdílení</string>
     <string name="oneplus_shielding_notification">Blokovat</string>
     <string name="oneplus_shielding_notification_summary">Oznámení budou zablokována (kromě volání a alarmů)</string>
@@ -3125,6 +3132,11 @@ Poznámka: Funkce Odemknutí obličejem je méně bezpečná než otisk prstu, k
     <string name="oneplus_weak_text_reminding">Pouze text</string>
     <string name="oneplus_weak_text_reminding_summary">Povolit aplikacím zobrazit oznámení pro přípravu</string>
     <string name="oneplus_wifi_ap_error">Vložte prosím SIM kartu</string>
+    <string name="oneplus_wifi_hidden_network_warning">"Pokud směrovač zakáže vysílání SSID, měli byste pro přijení se ke skryté síti vybrat „Ano“.
+
+Toto může vytvořit bezpečnostní riziko, protože telefon pravidelně vysílá signál k nalezení sítě.
+
+Nastavení sítě jako skryté nezmění nastavení směrovače."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">Zakázáním protokolu IPv6 se můžete vyhnout problémům s kompatibilitou některých směrovačů Wi-Fi.</string>
     <string name="oneplus_wifi_ipv6_surport_title">Podpora IPv6</string>
     <string name="oneplus_wifi_list">Wi‑Fi seznam</string>

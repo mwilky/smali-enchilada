@@ -114,7 +114,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/laboratory/OPLabPluginListAdapter;->mInflate:Landroid/view/LayoutInflater;
 
-    const v3, 0x7f0d0183
+    const v3, 0x7f0d0182
 
     invoke-virtual {v2, v3, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 

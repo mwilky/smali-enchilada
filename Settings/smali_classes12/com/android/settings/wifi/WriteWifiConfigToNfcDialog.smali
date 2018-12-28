@@ -310,7 +310,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1210ec
+    const v1, 0x7f1210f1
 
     if-eqz v0, :cond_1
 
@@ -332,7 +332,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1210d9
+    const v2, 0x7f1210de
 
     :try_start_0
     invoke-virtual {v0}, Landroid/nfc/tech/Ndef;->connect()V
@@ -359,13 +359,13 @@
 
     iget-object v3, p0, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;->mLabelView:Landroid/widget/TextView;
 
-    const v4, 0x7f1210f1
+    const v4, 0x7f1210f6
 
     invoke-direct {p0, v3, v4}, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;->setViewText(Landroid/widget/TextView;I)V
 
     iget-object v3, p0, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;->mCancelButton:Landroid/widget/Button;
 
-    const v4, 0x10401d7
+    const v4, 0x10401d8
 
     invoke-direct {p0, v3, v4}, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;->setViewText(Landroid/widget/TextView;I)V
     :try_end_0
@@ -724,7 +724,7 @@
 
     iget-object v8, p0, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;->mLabelView:Landroid/widget/TextView;
 
-    const v9, 0x7f1210c0
+    const v9, 0x7f1210c5
 
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->setText(I)V
 
@@ -749,7 +749,7 @@
     :cond_1
     iget-object v4, p0, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;->mLabelView:Landroid/widget/TextView;
 
-    const v5, 0x7f1210de
+    const v5, 0x7f1210e3
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(I)V
 
@@ -766,7 +766,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0d02ef
+    const v2, 0x7f0d02ee
 
     invoke-virtual {v0, v2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -782,7 +782,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;->setInverseBackgroundForced(Z)V
 
-    const v2, 0x7f121017
+    const v2, 0x7f12101c
 
     invoke-virtual {p0, v2}, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;->setTitle(I)V
 
@@ -794,7 +794,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f121565
+    const v2, 0x7f12156a
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

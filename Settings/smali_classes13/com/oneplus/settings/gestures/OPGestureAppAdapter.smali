@@ -139,7 +139,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/gestures/OPGestureAppAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v3, 0x7f0d017e
+    const v3, 0x7f0d017d
 
     const/4 v4, 0x0
 
@@ -259,7 +259,7 @@
 
     iget-object v6, v0, Lcom/oneplus/settings/gestures/OPGestureAppAdapter$ItemViewHolder;->titleTv:Landroid/widget/TextView;
 
-    const v7, 0x7f120b5e
+    const v7, 0x7f120b61
 
     invoke-virtual {v6, v7}, Landroid/widget/TextView;->setText(I)V
 
@@ -270,7 +270,7 @@
 
     iget-object v6, v0, Lcom/oneplus/settings/gestures/OPGestureAppAdapter$ItemViewHolder;->titleTv:Landroid/widget/TextView;
 
-    const v7, 0x7f120b5f
+    const v7, 0x7f120b62
 
     invoke-virtual {v6, v7}, Landroid/widget/TextView;->setText(I)V
 

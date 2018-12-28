@@ -2616,6 +2616,7 @@ Akunsäästäjä poistuu automaattisesti käytössä, kun laitetta ladataan."</s
     <string name="oneplus_broadcat_wifi_name">Lähetä verkon nimi (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Painikkeet ja eleet</string>
     <string name="oneplus_buttons_dashboard_summary">Hälytysliukusäädin, navigointi, eleet</string>
+    <string name="oneplus_buttons_settings">painikkeiden asetukset</string>
     <string name="oneplus_buttons_settings_summary">Navigointiele</string>
     <string name="oneplus_call_information_broadcast">Sano soittajatunnus</string>
     <string name="oneplus_call_information_broadcast_summary">Sano saapuvan puhelun tunnus kuulokkeissa</string>
@@ -2630,6 +2631,7 @@ Akunsäästäjä poistuu automaattisesti käytössä, kun laitetta ladataan."</s
     <string name="oneplus_colorful_mode_title">Värikäs</string>
     <string name="oneplus_compatibility_mode_summary">Koko näytön sovellukset eivät voi käyttää lovialuetta</string>
     <string name="oneplus_compatibility_mode_title">Yhteensopivuustila</string>
+    <string name="oneplus_condition_night_mode_title">Yötila on päällä</string>
     <string name="oneplus_connected_device_count">Yhdistettynä on %1$s laite</string>
     <string name="oneplus_connected_device_management_title">Yhdistettyjen laitteiden hallinta</string>
     <string name="oneplus_connected_devices_count">Yhdistettynä on %1$s laitetta</string>
@@ -2642,6 +2644,9 @@ Akunsäästäjä poistuu automaattisesti käytössä, kun laitetta ladataan."</s
     <string name="oneplus_data_usage_control_title">Datakäytön hallinta</string>
     <string name="oneplus_deep_clear_way">Syvä puhdistus</string>
     <string name="oneplus_deep_clear_way_summary">Tyhjentää taustaprosessit, mikä voi merkitä sitä, että jotkut sovellukset lakkaavat toimimasta ja että et saa ilmoituksia</string>
+    <string name="oneplus_deep_optimization">Syvä optimointi</string>
+    <string name="oneplus_deep_optimization_summary">Kun syvä optimointi poistetaan käytöstä, virrankulutus kasvaa merkittävästi, ja tämä vaikuttaa normaalikäyttöön.</string>
+    <string name="oneplus_deep_optimization_title">Poistetaanko syvä optimointi käytöstä?</string>
     <string name="oneplus_default_launcher">Oletusarvoinen käynnistys</string>
     <string name="oneplus_delete_fingerprint_list">Poista sormenjälki</string>
     <string name="oneplus_deleted_fingerprint_list">Sormenjälki poistettu</string>
@@ -2682,6 +2687,7 @@ Akunsäästäjä poistuu automaattisesti käytössä, kun laitetta ladataan."</s
     <string name="oneplus_earphone_mode">Kuuloketila</string>
     <string name="oneplus_emergency_rescue_settings">Hätäpelastus</string>
     <string name="oneplus_emergency_rescue_settings_summary">Soita automaattisesti apua painamalla virtapainiketta nopeasti</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">Käytettävissä vasta, kun hätäpalautuksen VIRTAPAINIKKEEN asetuksia on muutettu</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Sormenjäljen asetuskehote</string>
     <string name="oneplus_enter_your_fingerprint">– rekisteröitävä sormenjälkesi</string>
     <string name="oneplus_experience_improvement_programs">Kokemusta parantavat ohjelmat</string>
@@ -2795,7 +2801,7 @@ Voit siirtyä aloitusnäyttöön milloin vain pyyhkäisemällä näytön alareun
     <string name="oneplus_hide_notch_display_summary">Kaikki sovellukset eivät voi käyttää lovialuetta</string>
     <string name="oneplus_hide_notch_display_title">Piilota lovialue</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Kun näytön alalaidassa näkyy sormenjälkikuvio, paina sormellasi sormenjäljen tunnistusaluetta käyttääksesi sormenjälkitoimintoa, kuten puhelimen herättämistä ja lukituksen avaamista, ostosten valtuuttamista tai sovelluksiin kirjautumista.</string>
-    <string name="oneplus_hydrogen_version">Hydrogen OS -versio</string>
+    <string name="oneplus_hydrogen_version">H₂OS-versio</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Saapuva puhelu</string>
     <string name="oneplus_incoming_call_vibrate_mode">Saapuvan puhelun värinä</string>
     <string name="oneplus_init_finger_input">Alustetaan sormenjälki</string>
@@ -3050,6 +3056,7 @@ Voit siirtyä aloitusnäyttöön milloin vain pyyhkäisemällä näytön alareun
     <string name="oneplus_setting_ringtone">Aseta soittoääni</string>
     <string name="oneplus_setting_sim_ringtone_switch">Aseta soittoääni kullekin SIM-kortille</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">– määrittää vaihtoehtoinen tapa näytön lukituksen avaamiseen</string>
+    <string name="oneplus_share_this_wifi">Laajenna Wi-Fi-katetta</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi-jakaminen</string>
     <string name="oneplus_shielding_notification">Estä</string>
     <string name="oneplus_shielding_notification_summary">Ilmoitukset estetään (puheluita ja hälytyksiä lukuun ottamatta)</string>
@@ -3125,6 +3132,11 @@ Huomautus: Lukituksen avaaminen kasvojentunnistuksella saattaa olla vähemmän t
     <string name="oneplus_weak_text_reminding">Vain teksti</string>
     <string name="oneplus_weak_text_reminding_summary">Sallii sovellusten näyttää ennakkoilmoituksia</string>
     <string name="oneplus_wifi_ap_error">Aseta SIM-kortti</string>
+    <string name="oneplus_wifi_hidden_network_warning">"Jos reitittimesi poistaa SSID-lähetyksen käytöstä, valitse Kyllä yhdistääksesi piilotettuun verkkoon.
+
+Tämä voi aiheuttaa turvallisuusriskin, sillä puhelimesi lähettää säännöllisesti signaaliaan löytääkseen verkon.
+
+Verkon muuttaminen piilotetuksi ei muuta reitittimen asetuksia."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">IPv6:n poistaminen käytöstä voi aiheuttaa yhteensopivuusongelmia joidenkin Wi-Fi-reitittimien kanssa.</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6-tuki</string>
     <string name="oneplus_wifi_list">Wi‑Fi-lista</string>

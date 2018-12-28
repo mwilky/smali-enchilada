@@ -2616,6 +2616,7 @@ Economizorul de baterie se oprește automat când aparatul se încarcă."</strin
     <string name="oneplus_broadcat_wifi_name">Denumire rețea difuzare (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Butoane &amp; gesturi</string>
     <string name="oneplus_buttons_dashboard_summary">Cursor de alertă, navigație, gesturi</string>
+    <string name="oneplus_buttons_settings">setări butoane</string>
     <string name="oneplus_buttons_settings_summary">Gest de navigare</string>
     <string name="oneplus_call_information_broadcast">Rostiți ID-ul apelantului</string>
     <string name="oneplus_call_information_broadcast_summary">Rostiți ID-ul apelantului prin căști</string>
@@ -2630,6 +2631,7 @@ Economizorul de baterie se oprește automat când aparatul se încarcă."</strin
     <string name="oneplus_colorful_mode_title">Colorat</string>
     <string name="oneplus_compatibility_mode_summary">Aplicațiile cu ecran complet nu pot folosi zona cu gradație</string>
     <string name="oneplus_compatibility_mode_title">Mod compatibilitate</string>
+    <string name="oneplus_condition_night_mode_title">Modul noapte este activat</string>
     <string name="oneplus_connected_device_count">Este %1$s dispozitiv conectat</string>
     <string name="oneplus_connected_device_management_title">Manager de dispozitive conectate</string>
     <string name="oneplus_connected_devices_count">Sunt %1$s dispozitive conectate</string>
@@ -2642,6 +2644,9 @@ Economizorul de baterie se oprește automat când aparatul se încarcă."</strin
     <string name="oneplus_data_usage_control_title">Control utilizare date</string>
     <string name="oneplus_deep_clear_way">Ștergere profundă</string>
     <string name="oneplus_deep_clear_way_summary">Șterge procesele de fundal, ceea ce poate duce nefuncționarea unor aplicații și nu veți mai primi notificări</string>
+    <string name="oneplus_deep_optimization">Optimizare intensă</string>
+    <string name="oneplus_deep_optimization_summary">Dacă dezactivați optimizare intensă, consumul de energie va crește foarte mult, ceea ce va afecta utilizarea normală.</string>
+    <string name="oneplus_deep_optimization_title">Dezactivați optimizarea intensă?</string>
     <string name="oneplus_default_launcher">Lansator implicit</string>
     <string name="oneplus_delete_fingerprint_list">Ștergere amprentă</string>
     <string name="oneplus_deleted_fingerprint_list">Amprentă ștearsă</string>
@@ -2682,6 +2687,7 @@ Economizorul de baterie se oprește automat când aparatul se încarcă."</strin
     <string name="oneplus_earphone_mode">Mod Cască</string>
     <string name="oneplus_emergency_rescue_settings">Salvare de urgență</string>
     <string name="oneplus_emergency_rescue_settings_summary">Apel automat pentru ajutor prin apăsarea rapidă a butonului de pornire</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">Disponibil după modificarea setărilor BUTONULUI DE PORNIRE pentru Salvare de urgență</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Mesaj setare amprentă</string>
     <string name="oneplus_enter_your_fingerprint">· Înscrieți amprenta</string>
     <string name="oneplus_experience_improvement_programs">Programe de îmbunatățire a experienței</string>
@@ -2795,7 +2801,7 @@ Pentru a accesa ecranul principal în orice moment, glosați cu degetul în sus 
     <string name="oneplus_hide_notch_display_summary">Toate aplicațiile nu pot folosi zona cu gradație</string>
     <string name="oneplus_hide_notch_display_title">Ascundere zonă cu gradație</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Când modelul amprentei apare în partea de jos a ecranului, atingeți doar cu degetul în zona de amprentă pentru a utiliza această funcție: activați și deblocați telefonul, autorizați achizițiile sau conectați-vă la aplicații.</string>
-    <string name="oneplus_hydrogen_version">versiunea Hydrogen OS</string>
+    <string name="oneplus_hydrogen_version">Versiune H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Apel primit</string>
     <string name="oneplus_incoming_call_vibrate_mode">Model vibrații apel primit</string>
     <string name="oneplus_init_finger_input">Inițializare amprentă</string>
@@ -3050,6 +3056,7 @@ Pentru a accesa ecranul principal în orice moment, glosați cu degetul în sus 
     <string name="oneplus_setting_ringtone">Setare ton de apel</string>
     <string name="oneplus_setting_sim_ringtone_switch">Setare ton de apel pentru fiecare cartelă SIM</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Configurați un mod alternativ de deblocare a ecranului</string>
+    <string name="oneplus_share_this_wifi">Extindere acoperire Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Partajare Wi‑Fi</string>
     <string name="oneplus_shielding_notification">Blocare</string>
     <string name="oneplus_shielding_notification_summary">Notificările vor fi blocate (cu excepția apelurilor și alarmelor)</string>
@@ -3125,6 +3132,11 @@ Notă: Deblocarea facială poate fi mai puțin sigură decât amprenta, PIN-ul s
     <string name="oneplus_weak_text_reminding">Doar text</string>
     <string name="oneplus_weak_text_reminding_summary">Permiteți aplicațiilor să afișeze notificările de atenționare</string>
     <string name="oneplus_wifi_ap_error">Vă rugăm să introduceți cartela SIM</string>
+    <string name="oneplus_wifi_hidden_network_warning">"Dacă router-ul dvs. dezactivează difuzarea SSID, ar trebui să selectați „Da” pentru a conecta la rețeaua ascunsă.
+
+Aceasta poate crea un risc de securitate, deoarece telefonul dvs. își va transmite regulat semnalul pentru a găsi rețeaua.
+
+Setarea rețelei ca ascunsă nu va schimba setările router-ului dvs."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">Dezactivarea IPv6 poate evita problemele de compatibilitate cu anumite routere Wi-Fi.</string>
     <string name="oneplus_wifi_ipv6_surport_title">Asistență IPv6</string>
     <string name="oneplus_wifi_list">Listă Wi‑Fi</string>

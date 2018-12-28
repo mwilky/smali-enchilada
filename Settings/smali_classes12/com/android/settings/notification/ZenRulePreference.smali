@@ -126,7 +126,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/settings/notification/ZenRulePreference;->setAttributes(Landroid/app/AutomaticZenRule;)V
 
-    const v1, 0x7f0d01a2
+    const v1, 0x7f0d01a1
 
     invoke-virtual {p0, v1}, Lcom/android/settings/notification/ZenRulePreference;->setLayoutResource(I)V
 
@@ -161,7 +161,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1211a2
+    const v1, 0x7f1211a7
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -177,7 +177,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1211a1
+    const v1, 0x7f1211a6
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -223,7 +223,7 @@
     return v0
 
     :cond_0
-    const v0, 0x7f0d02fa
+    const v0, 0x7f0d02f9
 
     return v0
 .end method

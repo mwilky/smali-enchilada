@@ -20,6 +20,12 @@
 
 .field private static final FINGERPRINT_LONG_PRESS_CAMERA_SHOT_KEY:Ljava/lang/String; = "op_fingerprint_long_press_camera_shot"
 
+.field private static final KEY_ALERTSLIDER_SETTINGS_SOC_TRI_STATE:Ljava/lang/String; = "op_alertslider_settings_soc_tri_state"
+
+.field private static final KEY_BUTTONS_AND_FULLSCREEN_GESTURES:Ljava/lang/String; = "op_buttons_and_fullscreen_gestures"
+
+.field private static final KEY_BUTTONS_SETTINGS:Ljava/lang/String; = "buttons_settings"
+
 .field private static final KEY_CAMERA_DOUBLE_TAP_POWER_GESTURE:Ljava/lang/String; = "camera_double_tap_power_gesture"
 
 .field private static final ONEPLUS_EMERGENCY_TAP_POWER_GESTURE_FIVE_TIMES:I = 0x5
@@ -36,6 +42,12 @@
 
 
 # instance fields
+.field private mAlertsliderSettingsPreference:Landroid/support/v7/preference/Preference;
+
+.field private mButtonsAndFullscreenGesturesPreference:Landroid/support/v7/preference/Preference;
+
+.field private mButtonsSettingsPreference:Landroid/support/v7/preference/Preference;
+
 .field private mCameraDoubleTapPowerGesturePreference:Landroid/support/v14/preference/SwitchPreference;
 
 .field private mContext:Landroid/content/Context;
@@ -70,6 +82,16 @@
     invoke-direct {p0}, Lcom/android/settings/dashboard/DashboardFragment;-><init>()V
 
     return-void
+.end method
+
+.method static synthetic access$000()Z
+    .locals 1
+
+    invoke-static {}, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->isSupportHardwareKeys()Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method private static isCameraDoubleTapPowerGestureAvailable(Landroid/content/res/Resources;)Z
@@ -109,6 +131,26 @@
     move v1, v2
 
     :goto_0
+    return v1
+.end method
+
+.method private static isSupportHardwareKeys()Z
+    .locals 2
+
+    sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v0}, Landroid/app/Application;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x11200a0
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result v0
+
+    xor-int/lit8 v1, v0, 0x1
+
     return v1
 .end method
 
@@ -202,7 +244,7 @@
 
     iget-object v4, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mCameraDoubleTapPowerGesturePreference:Landroid/support/v14/preference/SwitchPreference;
 
-    const v5, 0x7f120af8
+    const v5, 0x7f120afb
 
     invoke-virtual {v4, v5}, Landroid/support/v14/preference/SwitchPreference;->setSummary(I)V
 
@@ -341,7 +383,7 @@
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 2
+    .locals 3
 
     invoke-super {p0, p1}, Lcom/android/settings/dashboard/DashboardFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -454,6 +496,65 @@
 
     :cond_2
     :goto_1
+    const-string v0, "op_alertslider_settings_soc_tri_state"
+
+    invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mAlertsliderSettingsPreference:Landroid/support/v7/preference/Preference;
+
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportSocTriState()Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    iget-object v0, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mAlertsliderSettingsPreference:Landroid/support/v7/preference/Preference;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mAlertsliderSettingsPreference:Landroid/support/v7/preference/Preference;
+
+    const v2, 0x7f1200ee
+
+    invoke-virtual {v0, v2}, Landroid/support/v7/preference/Preference;->setTitle(I)V
+
+    :cond_3
+    const-string v0, "op_buttons_and_fullscreen_gestures"
+
+    invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mButtonsAndFullscreenGesturesPreference:Landroid/support/v7/preference/Preference;
+
+    const-string v0, "buttons_settings"
+
+    invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mButtonsSettingsPreference:Landroid/support/v7/preference/Preference;
+
+    invoke-static {}, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->isSupportHardwareKeys()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mButtonsAndFullscreenGesturesPreference:Landroid/support/v7/preference/Preference;
+
+    invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setVisible(Z)V
+
+    goto :goto_2
+
+    :cond_4
+    iget-object v0, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mButtonsSettingsPreference:Landroid/support/v7/preference/Preference;
+
+    invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setVisible(Z)V
+
+    :goto_2
     return-void
 .end method
 

@@ -200,7 +200,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120f45
+    const v2, 0x7f120f4a
 
     invoke-virtual {v1, v2}, Lcom/android/settings/core/SubSettingLauncher;->setTitle(I)Lcom/android/settings/core/SubSettingLauncher;
 
@@ -263,7 +263,7 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    const v1, 0x7f0d023e
+    const v1, 0x7f0d023d
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -312,7 +312,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    const v2, 0x7f0d023c
+    const v2, 0x7f0d023b
 
     const/4 v3, 0x0
 
@@ -680,7 +680,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f120f3e
+    const v5, 0x7f120f43
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -694,7 +694,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f120f38
+    const v5, 0x7f120f3d
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -711,7 +711,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f120f3c
+    const v5, 0x7f120f41
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -725,7 +725,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f120f37
+    const v5, 0x7f120f3c
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -860,7 +860,7 @@
 
     aput-object v12, v2, v16
 
-    const v15, 0x7f120f3b
+    const v15, 0x7f120f40
 
     invoke-virtual {v14, v15, v2}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -894,7 +894,7 @@
 
     aput-object v2, v15, v16
 
-    const v14, 0x7f120f3b
+    const v14, 0x7f120f40
 
     invoke-virtual {v13, v14, v15}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -930,7 +930,7 @@
 
     aput-object v2, v14, v16
 
-    const v15, 0x7f120f3b
+    const v15, 0x7f120f40
 
     invoke-virtual {v13, v15, v14}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

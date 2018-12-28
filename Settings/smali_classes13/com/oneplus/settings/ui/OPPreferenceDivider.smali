@@ -45,7 +45,7 @@
 
     iput-object p1, p0, Lcom/oneplus/settings/ui/OPPreferenceDivider;->mContext:Landroid/content/Context;
 
-    const v0, 0x7f0d0197
+    const v0, 0x7f0d0196
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/ui/OPPreferenceDivider;->setLayoutResource(I)V
 

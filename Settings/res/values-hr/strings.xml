@@ -2616,6 +2616,7 @@ Aplikacija će također moći uključiti ili isključiti značajku Ne ometaj i p
     <string name="oneplus_broadcat_wifi_name">Emitirani naziv mreže (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Gumbi i geste</string>
     <string name="oneplus_buttons_dashboard_summary">Klizač upozorenja, navigacija, geste</string>
+    <string name="oneplus_buttons_settings">postavke gumba</string>
     <string name="oneplus_buttons_settings_summary">Navigacijska gesta</string>
     <string name="oneplus_call_information_broadcast">Izgovori ID pozivatelja</string>
     <string name="oneplus_call_information_broadcast_summary">Izgovori dolazni ID pozivatelja na slušalice</string>
@@ -2630,6 +2631,7 @@ Aplikacija će također moći uključiti ili isključiti značajku Ne ometaj i p
     <string name="oneplus_colorful_mode_title">Šarena</string>
     <string name="oneplus_compatibility_mode_summary">Aplikacije za cijeli zaslon ne mogu upotrebljavati područje poluotoka</string>
     <string name="oneplus_compatibility_mode_title">Način kompatibilnosti</string>
+    <string name="oneplus_condition_night_mode_title">Noćni način je uključen</string>
     <string name="oneplus_connected_device_count">Spojeno uređaja: %1$s</string>
     <string name="oneplus_connected_device_management_title">Upravitelj povezanih uređaja</string>
     <string name="oneplus_connected_devices_count">Spojeno uređaja: %1$s</string>
@@ -2642,6 +2644,9 @@ Aplikacija će također moći uključiti ili isključiti značajku Ne ometaj i p
     <string name="oneplus_data_usage_control_title">Kontrola korištenja podataka</string>
     <string name="oneplus_deep_clear_way">Duboko čišćenje</string>
     <string name="oneplus_deep_clear_way_summary">Uklanja pozadinske procese što može rezultirati prestankom rada nekih aplikacija i neprimanjem nekih obavijesti</string>
+    <string name="oneplus_deep_optimization">Duboka optimizacija</string>
+    <string name="oneplus_deep_optimization_summary">Kada isključite duboku optimizaciju, potrošnja energije značajno će se povećati, a što će utjecati na normalnu upotrebu.</string>
+    <string name="oneplus_deep_optimization_title">Isključiti duboku optimizaciju?</string>
     <string name="oneplus_default_launcher">Zadani pokretač</string>
     <string name="oneplus_delete_fingerprint_list">Izbriši otisak prsta</string>
     <string name="oneplus_deleted_fingerprint_list">Otisak prsta je izbrisan</string>
@@ -2682,6 +2687,7 @@ Aplikacija će također moći uključiti ili isključiti značajku Ne ometaj i p
     <string name="oneplus_earphone_mode">Režim slušalice</string>
     <string name="oneplus_emergency_rescue_settings">Spasilačka služba</string>
     <string name="oneplus_emergency_rescue_settings_summary">Automatski pozovite pomoć brzim pritiskom na gumb za uključivanje</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">Dostupno nakon promjene postavke za GUMB ZA UKLJUČIVANJE za značajku Spasilačka služba</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Upit za postavljanje otiska prsta</string>
     <string name="oneplus_enter_your_fingerprint">· Primijeniti vaš otisak prsta</string>
     <string name="oneplus_experience_improvement_programs">Programi poboljšanja iskustva</string>
@@ -2795,7 +2801,7 @@ Za prijelaz na početni zaslon u bilo kojem trenutku, prijeđite prstom od sredi
     <string name="oneplus_hide_notch_display_summary">Niti jedna aplikacija ne može upotrebljavati područje poluotoka</string>
     <string name="oneplus_hide_notch_display_title">Skrivanje područja poluotoka</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Kada se na dnu zaslona pojavi uzorak otiska prsta, jednostavno pritisnite svoj prst na područje za identifikaciju otiska prsta i moći ćete upotrebljavati funkciju otiska prsta za buđenje i otključavanje telefona, potvrdu kupovina ili prijave u aplikacije.</string>
-    <string name="oneplus_hydrogen_version">Hydrogen – verzija OS-a</string>
+    <string name="oneplus_hydrogen_version">H₂OS verzija</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Dolazni poziv</string>
     <string name="oneplus_incoming_call_vibrate_mode">Uzorak vibracija dolaznog poziva</string>
     <string name="oneplus_init_finger_input">Pokretanje otiska prsta</string>
@@ -3050,6 +3056,7 @@ Za prijelaz na početni zaslon u bilo kojem trenutku, prijeđite prstom od sredi
     <string name="oneplus_setting_ringtone">Postavi zvuk</string>
     <string name="oneplus_setting_sim_ringtone_switch">Postavi zvuk zvona za svaku SIM karticu</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Postaviti alternativni način otključavanja zaslona</string>
+    <string name="oneplus_share_this_wifi">Proširiti pokrivenost Wi-Fi-ja</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi dijeljenje</string>
     <string name="oneplus_shielding_notification">Blokiraj</string>
     <string name="oneplus_shielding_notification_summary">Obavijesti su blokirane (osim poziva i alarma)</string>
@@ -3125,6 +3132,11 @@ Napomena: otključavanje licem može biti manje sigurno od otiska prsta, PIN kod
     <string name="oneplus_weak_text_reminding">Samo tekst</string>
     <string name="oneplus_weak_text_reminding_summary">Dopusti aplikacijama da prikazuje najave</string>
     <string name="oneplus_wifi_ap_error">Umetnite SIM karticu</string>
+    <string name="oneplus_wifi_hidden_network_warning">"Ako je na usmjerivaču onemogućeno emitiranje SSID-ja, morate odabrati \"Da\" da biste se povezali na skrivenu mrežu.
+
+To može predstavljati sigurnosnu opasnost jer će vaš telefon redovito emitirati svoj signal kako bi tražio mrežu.
+
+Postavljanje mreže kao skrivene neće promijeniti postavku usmjerivača."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">Ako onemogućite podršku za IPv6, kod nekih bezmrežnih usmjernika izbjegnite probleme s kompatibilnošću.</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6 podrška</string>
     <string name="oneplus_wifi_list">Wi‑Fi popis</string>

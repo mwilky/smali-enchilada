@@ -2616,6 +2616,7 @@ L'estalviador de bateria es desactiva automàticament quan el dispositiu s'està
     <string name="oneplus_broadcat_wifi_name">"Nom de la xarxa d'emissió (SSID)"</string>
     <string name="oneplus_buttons_and_gestures_settings">Botons i gestos</string>
     <string name="oneplus_buttons_dashboard_summary">"Control lliscant d'avisos, navegació, gestos"</string>
+    <string name="oneplus_buttons_settings">configuració dels botons</string>
     <string name="oneplus_buttons_settings_summary">Gest de navegació</string>
     <string name="oneplus_call_information_broadcast">"Digues l'ID de l'autor de la trucada"</string>
     <string name="oneplus_call_information_broadcast_summary">"Digues l'ID de l'autor de la trucada a través dels auriculars"</string>
@@ -2630,6 +2631,7 @@ L'estalviador de bateria es desactiva automàticament quan el dispositiu s'està
     <string name="oneplus_colorful_mode_title">Colorit</string>
     <string name="oneplus_compatibility_mode_summary">Les aplicacions en pantalla completa no poden utilitzar la zona de la clivella</string>
     <string name="oneplus_compatibility_mode_title">Mode de compatibilitat</string>
+    <string name="oneplus_condition_night_mode_title">El mode nit està activat</string>
     <string name="oneplus_connected_device_count">Hi ha %1$s dispositiu connectat</string>
     <string name="oneplus_connected_device_management_title">Gestor de dispositiu connectat</string>
     <string name="oneplus_connected_devices_count">Hi ha %1$s dispositius connectats</string>
@@ -2642,6 +2644,9 @@ L'estalviador de bateria es desactiva automàticament quan el dispositiu s'està
     <string name="oneplus_data_usage_control_title">"Control d'ús de dades"</string>
     <string name="oneplus_deep_clear_way">Neteja a fons</string>
     <string name="oneplus_deep_clear_way_summary">Desactiva els processos en segon pla que poden fer que algunes aplicacions deixin de funcionar i que no rebeu notificacions</string>
+    <string name="oneplus_deep_optimization">Optimització profunda</string>
+    <string name="oneplus_deep_optimization_summary">"Quan desactiveu l'optimització profunda, el consum d'energia augmentarà en gran mesura, i açò afectarà el seu ús normal."</string>
+    <string name="oneplus_deep_optimization_title">"Voleu apagar l'optimització profunda?"</string>
     <string name="oneplus_default_launcher">Iniciador per defecte</string>
     <string name="oneplus_delete_fingerprint_list">"Suprimeix l'empremta digital"</string>
     <string name="oneplus_deleted_fingerprint_list">Empremta digital suprimida</string>
@@ -2682,6 +2687,7 @@ L'estalviador de bateria es desactiva automàticament quan el dispositiu s'està
     <string name="oneplus_earphone_mode">Mode auricular</string>
     <string name="oneplus_emergency_rescue_settings">"Rescat d'emergència"</string>
     <string name="oneplus_emergency_rescue_settings_summary">"Demaneu ajuda automàticament prement ràpidament el botó d'engegada"</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">"Disponible després de modificar la configuració de BOTÓ D'ENGEGADA del rescat d'emergència"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">"Indicador de configuració d'empremta digital"</string>
     <string name="oneplus_enter_your_fingerprint">· Enregistrar la vostra empremta digital</string>
     <string name="oneplus_experience_improvement_programs">"Programes de millora d'experiència"</string>
@@ -2795,7 +2801,7 @@ Per anar a la pantalla d'inici en qualsevol moment, feu lliscar el dit cap amunt
     <string name="oneplus_hide_notch_display_summary">No totes les aplicacions poden utilitzar la zona de la clivella</string>
     <string name="oneplus_hide_notch_display_title">Oculta la zona de la clivella</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">"Quan el patró d'empremta digital, apareix en la part inferior de la pantalla, senzillament premeu amb el dit la zona d'identificació d'empremta digital per utilitzar la funció d'empremta digital: activar i desbloquejar el telèfon, autoritzar compres o iniciar sessions en aolicacions."</string>
-    <string name="oneplus_hydrogen_version">Versió Hydrogen del sistema operatiu</string>
+    <string name="oneplus_hydrogen_version">Versió H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Trucada entrant</string>
     <string name="oneplus_incoming_call_vibrate_mode">Patró de vibració de la trucada entrant</string>
     <string name="oneplus_init_finger_input">"S'està inicialitzant l'empremta digital"</string>
@@ -3050,6 +3056,7 @@ Per anar a la pantalla d'inici en qualsevol moment, feu lliscar el dit cap amunt
     <string name="oneplus_setting_ringtone">Estableix so de trucada</string>
     <string name="oneplus_setting_sim_ringtone_switch">Estableix el so de trucada de cada targeta SIM</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Establir una manera alternativa de desbloquejar la pantalla</string>
+    <string name="oneplus_share_this_wifi">Amplia la cobertura Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Compartint Wi‑Fi</string>
     <string name="oneplus_shielding_notification">Boqueja</string>
     <string name="oneplus_shielding_notification_summary">Es bloquejaran les notificacions (excepte les trucades i alarmes)</string>
@@ -3125,6 +3132,11 @@ Nota: el desbloqueig facial pot ser menys segur que el d'empremta digital, PIN o
     <string name="oneplus_weak_text_reminding">Només text</string>
     <string name="oneplus_weak_text_reminding_summary">Permet que les aplicacions mostrin notificacions amb avisos</string>
     <string name="oneplus_wifi_ap_error">Introduïu la targeta SIM</string>
+    <string name="oneplus_wifi_hidden_network_warning">"Si l'encaminador inhabilita la transmissió de l'SSID, cal seleccionar \"Sí\" per connectar-se a la xarxa oculta.
+
+Açò pot crear un risc de seguretat perquè el seu telèfon regularment transmetrà el seu senyal per trobar la xarxa.
+
+Configurar la xarxa com oculta no canviarà la configuració de l'encaminador."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">"Desactivar l'IPv6 pot evitar problemes de compatibilitat amb certs routers Wi-Fi."</string>
     <string name="oneplus_wifi_ipv6_surport_title">Suport per a IPv6</string>
     <string name="oneplus_wifi_list">Llista Wi‑Fi</string>

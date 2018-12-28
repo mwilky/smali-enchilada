@@ -188,7 +188,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f120b2f
+    const v1, 0x7f120b32
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->setTitle(I)V
 
@@ -213,7 +213,7 @@
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->removeAllViews()V
 
-    const v2, 0x7f0d0173
+    const v2, 0x7f0d0172
 
     const/4 v3, 0x0
 

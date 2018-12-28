@@ -99,7 +99,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/aboutphone/OPSecurityPatchLevel;->mPackageManager:Lcom/android/settingslib/wrapper/PackageManagerWrapper;
 
-    const v0, 0x7f0d01ba
+    const v0, 0x7f0d01b9
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/aboutphone/OPSecurityPatchLevel;->setLayoutResource(I)V
 

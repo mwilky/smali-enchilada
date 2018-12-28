@@ -2134,7 +2134,7 @@
 
     iget-object v6, p0, Lcom/android/settings/DeviceAdminAdd;->mActionButton:Landroid/widget/Button;
 
-    const v7, 0x7f120ef7
+    const v7, 0x7f120efc
 
     invoke-virtual {v6, v7}, Landroid/widget/Button;->setText(I)V
 
@@ -2174,7 +2174,7 @@
     goto/16 :goto_5
 
     :cond_4
-    const v0, 0x7f120ef6
+    const v0, 0x7f120efb
 
     if-nez v3, :cond_7
 
@@ -2241,7 +2241,7 @@
 
     iget-object v0, p0, Lcom/android/settings/DeviceAdminAdd;->mActionButton:Landroid/widget/Button;
 
-    const v4, 0x7f120ef5
+    const v4, 0x7f120efa
 
     invoke-virtual {v0, v4}, Landroid/widget/Button;->setText(I)V
 
@@ -2360,7 +2360,7 @@
 
     if-eqz v0, :cond_b
 
-    const v0, 0x7f120e83
+    const v0, 0x7f120e88
 
     invoke-virtual {p0, v0}, Lcom/android/settings/DeviceAdminAdd;->getText(I)Ljava/lang/CharSequence;
 

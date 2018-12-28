@@ -829,7 +829,7 @@
     goto :goto_0
 
     :pswitch_0
-    const v0, 0x7f121506
+    const v0, 0x7f12150b
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->getString(I)Ljava/lang/String;
 
@@ -838,7 +838,7 @@
     goto :goto_0
 
     :pswitch_1
-    const v0, 0x7f121503
+    const v0, 0x7f121508
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->getString(I)Ljava/lang/String;
 
@@ -847,7 +847,7 @@
     goto :goto_0
 
     :pswitch_2
-    const v0, 0x7f121504
+    const v0, 0x7f121509
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->getString(I)Ljava/lang/String;
 
@@ -856,7 +856,7 @@
     goto :goto_0
 
     :pswitch_3
-    const v0, 0x7f121501
+    const v0, 0x7f121506
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->getString(I)Ljava/lang/String;
 
@@ -865,7 +865,7 @@
     goto :goto_0
 
     :pswitch_4
-    const v0, 0x7f121502
+    const v0, 0x7f121507
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->getString(I)Ljava/lang/String;
 
@@ -903,7 +903,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120ebc
+    const v2, 0x7f120ec1
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1013,7 +1013,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/settings/wifi/WifiStatusTest;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    const v0, 0x7f0d02ee
+    const v0, 0x7f0d02ed
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiStatusTest;->setContentView(I)V
 

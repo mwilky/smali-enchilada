@@ -243,7 +243,7 @@
 
     const v2, 0x7f0a0344
 
-    const v3, 0x7f1210e2
+    const v3, 0x7f1210e7
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

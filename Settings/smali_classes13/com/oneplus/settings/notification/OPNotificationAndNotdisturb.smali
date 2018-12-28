@@ -72,7 +72,7 @@
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 2
+    .locals 4
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -141,9 +141,33 @@
 
     if-eqz v1, :cond_1
 
+    iget-object v1, p0, Lcom/oneplus/settings/notification/OPNotificationAndNotdisturb;->mDonotdisturbSetings:Landroid/support/v7/preference/Preference;
+
+    invoke-virtual {v0, v1}, Landroid/support/v7/preference/PreferenceGroup;->removePreference(Landroid/support/v7/preference/Preference;)Z
+
     goto :goto_0
 
     :cond_1
+    invoke-virtual {p0}, Lcom/oneplus/settings/notification/OPNotificationAndNotdisturb;->getActivity()Landroid/app/Activity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lcom/oneplus/settings/notification/OPNotificationAndNotdisturb;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    const v3, 0x7f1200ee
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Landroid/app/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
+
     iget-object v1, p0, Lcom/oneplus/settings/notification/OPNotificationAndNotdisturb;->mVibrationSettings:Landroid/support/v7/preference/Preference;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/PreferenceGroup;->removePreference(Landroid/support/v7/preference/Preference;)Z

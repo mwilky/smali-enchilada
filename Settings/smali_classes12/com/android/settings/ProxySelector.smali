@@ -238,27 +238,27 @@
     return v0
 
     :pswitch_0
-    const v0, 0x7f120e8f
+    const v0, 0x7f120e94
 
     return v0
 
     :pswitch_1
-    const v0, 0x7f120e91
+    const v0, 0x7f120e96
 
     return v0
 
     :pswitch_2
-    const v0, 0x7f120e8e
+    const v0, 0x7f120e93
 
     return v0
 
     :pswitch_3
-    const v0, 0x7f120e90
+    const v0, 0x7f120e95
 
     return v0
 
     :pswitch_4
-    const v0, 0x7f120e8d
+    const v0, 0x7f120e92
 
     return v0
 
@@ -425,13 +425,13 @@
 
     invoke-direct {v5, v6}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v6, 0x7f120e8b
+    const v6, 0x7f120e90
 
     invoke-virtual {v5, v6}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v5
 
-    const v6, 0x7f120e8c
+    const v6, 0x7f120e91
 
     invoke-virtual {v5, v6, v0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -454,7 +454,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
 
-    const v0, 0x7f0d0227
+    const v0, 0x7f0d0226
 
     const/4 v1, 0x0
 
@@ -590,7 +590,7 @@
     goto :goto_1
 
     :cond_4
-    const v10, 0x7f120e99
+    const v10, 0x7f120e9e
 
     invoke-virtual {v0, v10}, Landroid/app/Activity;->setTitle(I)V
 

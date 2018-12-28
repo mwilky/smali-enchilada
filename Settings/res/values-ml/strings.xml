@@ -2616,6 +2616,7 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="oneplus_broadcat_wifi_name">ബ്രോഡ്‌കാസ്റ്റ് നെറ്റ്‌വർക്ക് പേര് (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">ബട്ടണുകളും ആംഗ്യങ്ങളും</string>
     <string name="oneplus_buttons_dashboard_summary">മുന്നറിയിപ്പ് സ്ലൈഡർ, നാവിഗേഷൻ, ആംഗ്യങ്ങൾ</string>
+    <string name="oneplus_buttons_settings">ബട്ടൺ ക്രമീകരണം</string>
     <string name="oneplus_buttons_settings_summary">നാവിഗേഷൻ ആംഗ്യം</string>
     <string name="oneplus_call_information_broadcast">സ്പീക്ക് കോളർ ID</string>
     <string name="oneplus_call_information_broadcast_summary">ഇയർഫോണുകൾ വഴി ഇൻകമിംഗ് കോളർ ID പറയുക</string>
@@ -2630,6 +2631,7 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="oneplus_colorful_mode_title">വർണ്ണശബളം</string>
     <string name="oneplus_compatibility_mode_summary">നോച്ച് മേഖല ഉപയോഗിക്കാൻ പൂർണ്ണസ്ക്രീൻ ആപ്സുകൾക്കാകില്ല</string>
     <string name="oneplus_compatibility_mode_title">അനുയോജ്യതാ മോഡ്</string>
+    <string name="oneplus_condition_night_mode_title">രാത്രി മോഡ് ഓണ്‍ ആണ്</string>
     <string name="oneplus_connected_device_count">%1$sഡിവൈസ് ബന്ധിപ്പിച്ചിട്ടുണ്ട്</string>
     <string name="oneplus_connected_device_management_title">ബന്ധിപ്പിച്ച ഡിവൈസ് മാനേജര്‍</string>
     <string name="oneplus_connected_devices_count">%1$s ഡിവൈസ് ബന്ധിപ്പിച്ചിട്ടുണ്ട്</string>
@@ -2642,6 +2644,9 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="oneplus_data_usage_control_title">ഡാറ്റ ഉപയോഗ നിയന്ത്രണം</string>
     <string name="oneplus_deep_clear_way">ഡീപ് ക്ലിയര്‍</string>
     <string name="oneplus_deep_clear_way_summary">പശ്ചാത്തല പ്രവര്‍ത്തനങ്ങൾ നിർത്തുന്നു, അത് ചില ആപ്പുകള്‍ പ്രവര്‍ത്തനം നിർത്തുന്നതിനും അറിയിപ്പുകള്‍ ലഭിക്കാതിരിക്കുന്നതിനും ഇടയാക്കാം</string>
+    <string name="oneplus_deep_optimization">ആഴത്തിലുള്ള ഒപ്റ്റിമൈസേഷൻ</string>
+    <string name="oneplus_deep_optimization_summary">ആഴത്തിലുള്ള ഒപ്റ്റിമൈസേഷൻ ഓഫാക്കുമ്പോൾ, വൈദ്യുതി ഉപഭോഗം വളരെയധികം വർദ്ധിക്കും, അത് നിങ്ങളുടെ സാധാരണ ഉപയോഗത്തെ ബാധിക്കും.</string>
+    <string name="oneplus_deep_optimization_title">ആഴത്തിലുള്ള ഒപ്റ്റിമൈസേഷൻ ഓഫാക്കട്ടെ?</string>
     <string name="oneplus_default_launcher">ഡിഫോള്‍ട്ട് ഹോം ആപ്പ്</string>
     <string name="oneplus_delete_fingerprint_list">വിരലടയാളം ഇല്ലാതാക്കുക</string>
     <string name="oneplus_deleted_fingerprint_list">വിരലടയാളം ഇല്ലാതാക്കി</string>
@@ -2682,6 +2687,7 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="oneplus_earphone_mode">ഇയര്‍ഫോണ്‍ മോഡ്</string>
     <string name="oneplus_emergency_rescue_settings">അടിയന്തരമായി രക്ഷപ്പെടുത്തൽ</string>
     <string name="oneplus_emergency_rescue_settings_summary">പവർ ബട്ടൺ വേഗത്തിൽ അമർത്തിക്കൊണ്ട് സഹായത്തിനായി സ്വയമേവ കോൾ ചെയ്യുക</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">എമർജൻസി റെസ്ക്യൂവിന്റെ പവർ ബട്ടൺ ക്രമീകരണങ്ങൾ പരിഷ്ക്കരിച്ചതിനുശേഷം ലഭ്യമാണ്</string>
     <string name="oneplus_enroll_fingerprint_tips_title">ഫിംഗർപ്രിൻ്റ് സെറ്റപ്പ് പ്രോംപ്റ്റ്</string>
     <string name="oneplus_enter_your_fingerprint">നിങ്ങളുടെ വിരലടയാളം ചേര്‍ക്കുക</string>
     <string name="oneplus_experience_improvement_programs">മെച്ചപ്പെടുത്തൽ പ്രോഗ്രാമുകൾ അനുഭവിക്കുക</string>
@@ -2795,7 +2801,7 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="oneplus_hide_notch_display_summary">നോച്ച് മേഖല ഉപയോഗിക്കാൻ എല്ലാ ആപ്സുകൾക്കും ആവില്ല</string>
     <string name="oneplus_hide_notch_display_title">നോച്ച് ഏരിയ മറയ്ക്കുക</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">വിരലടയാള പാറ്റേൺ സ്ക്രീനിൻ്റെ താഴെ ദൃശ്യമാകുമ്പോൾ, വിരലടയാള ഫംഗ്ഷൻ ഉപയോഗിക്കുന്നതിന് വിരലടയാള ഐഡൻ്റിഫിക്കേഷൻ ഏരിയയിൽ നിങ്ങളുടെ വിരൽ ഉപയോഗിച്ച് അമർത്തുക: ഉണർന്ന് നിങ്ങളുടെ ഫോൺ അൺലോക്കുചെയ്യുക, വാങ്ങലുകൾ അംഗീകരിക്കുക അല്ലെങ്കിൽ ആപ്പുകളിലേയ്ക്ക് സൈനിൻ ചെയ്യുക.</string>
-    <string name="oneplus_hydrogen_version">Hydrogen OS പതിപ്പ്</string>
+    <string name="oneplus_hydrogen_version">H₂OS പതിപ്പ്</string>
     <string name="oneplus_incoming_call_vibrate_intensity">ഇന്‍കമിങ്ങ് കോള്‍</string>
     <string name="oneplus_incoming_call_vibrate_mode">ഇന്‍കമിങ്ങ് കോള്‍ വൈബ്രേഷന്‍ ഘടന</string>
     <string name="oneplus_init_finger_input">വിരലടയാളം ആരംഭിക്കുന്നു</string>
@@ -3050,6 +3056,7 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="oneplus_setting_ringtone">റിംഗ് സജ്ജീകരിക്കുക</string>
     <string name="oneplus_setting_sim_ringtone_switch">ഓരോ SIM കാര്‍‍ഡിനും റിംഗ്‍ടോണ്‍ സജ്ജീകരിക്കുക</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">സ്ക്രീന്‍ അണ്‍ലോക്ക് ചെയ്യാന്‍ മറ്റൊരു മാര്‍ഗ്ഗം സജ്ജീകരിക്കുക</string>
+    <string name="oneplus_share_this_wifi">Wi-Fi കവറേജ് വിപുലീകരിക്കുക</string>
     <string name="oneplus_share_wifi_title">Wi-Fi ഷെയറിങ്ങ്</string>
     <string name="oneplus_shielding_notification">തടയുക</string>
     <string name="oneplus_shielding_notification_summary">അറിയിപ്പുകളെ തടയും (കോളുകളും അലാമുകളും ഒഴികെ)</string>
@@ -3125,6 +3132,11 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="oneplus_weak_text_reminding">ടെക്സ്റ്റ് മാത്രം</string>
     <string name="oneplus_weak_text_reminding_summary">ഹെഡ്‌സ് അപ്പ് അറിയിപ്പ് കാണിക്കാൻ ആപ്പുകളെ അനുവദിക്കുക</string>
     <string name="oneplus_wifi_ap_error">ദയവായി SIM കാര്‍ഡ് ഇടുക</string>
+    <string name="oneplus_wifi_hidden_network_warning">"നിങ്ങളുടെ റൗട്ടർ SSID പ്രക്ഷേപണം അപ്രാപ്തമാക്കിയിട്ടുണ്ടെങ്കിൽ, മറഞ്ഞിരിക്കുന്ന നെറ്റ്‌വർക്കിലേക്ക് കണക്റ്റുചെയ്യുന്നതിന് നിങ്ങൾ \"അതെ\" തിരഞ്ഞെടുക്കണം.
+
+നെറ്റ്‌വർക്ക് കണ്ടെത്തുന്നതിന് നിങ്ങളുടെ ഫോൺ പതിവായി അതിന്റെ സിഗ്നൽ പ്രക്ഷേപണം ചെയ്യുന്നതിനാൽ ഇത് ഒരു സുരക്ഷാ അപകടസാധ്യത സൃഷ്ടിക്കാം.
+
+നെറ്റ്‌വർക്ക് മറഞ്ഞിരിക്കുന്നതായി ക്രമീകരിക്കുന്നത് നിങ്ങളുടെ റൗട്ടർ ക്രമീകരണം മാറ്റില്ല."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">IPv6 അപ്രാപ്തമാക്കുന്നത് ചില പ്രത്യേക Wi-Fi റൂട്ടറുകളുമായുള്ള പൊരുത്തം സംബന്ധിച്ച പ്രശ്നങ്ങള്‍ ഒഴിവാക്കും.</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6 പിന്തുണ</string>
     <string name="oneplus_wifi_list">Wi-Fi ലിസ്റ്റ്</string>

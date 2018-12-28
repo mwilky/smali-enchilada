@@ -379,7 +379,7 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x7f1212f2
+    const v1, 0x7f1212f7
 
     const/4 v2, 0x1
 
@@ -439,7 +439,7 @@
 
     const/4 v2, 0x3
 
-    const v3, 0x7f12127b
+    const v3, 0x7f121280
 
     invoke-virtual {p0, v3}, Lcom/android/settings/accounts/AddAccountSettings;->getString(I)Ljava/lang/String;
 

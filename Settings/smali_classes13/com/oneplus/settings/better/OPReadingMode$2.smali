@@ -36,7 +36,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/better/OPReadingMode$2;->this$0:Lcom/oneplus/settings/better/OPReadingMode;
 
-    invoke-static {v0}, Lcom/oneplus/settings/better/OPReadingMode;->access$500(Lcom/oneplus/settings/better/OPReadingMode;)Landroid/content/ContentResolver;
+    invoke-static {v0}, Lcom/oneplus/settings/better/OPReadingMode;->access$600(Lcom/oneplus/settings/better/OPReadingMode;)Landroid/content/ContentResolver;
 
     move-result-object v0
 
@@ -52,7 +52,7 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/better/OPReadingMode$2;->this$0:Lcom/oneplus/settings/better/OPReadingMode;
 
-    invoke-static {v1}, Lcom/oneplus/settings/better/OPReadingMode;->access$600(Lcom/oneplus/settings/better/OPReadingMode;)Landroid/support/v14/preference/SwitchPreference;
+    invoke-static {v1}, Lcom/oneplus/settings/better/OPReadingMode;->access$700(Lcom/oneplus/settings/better/OPReadingMode;)Landroid/support/v14/preference/SwitchPreference;
 
     move-result-object v1
 
@@ -60,7 +60,7 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/better/OPReadingMode$2;->this$0:Lcom/oneplus/settings/better/OPReadingMode;
 
-    invoke-static {v1}, Lcom/oneplus/settings/better/OPReadingMode;->access$600(Lcom/oneplus/settings/better/OPReadingMode;)Landroid/support/v14/preference/SwitchPreference;
+    invoke-static {v1}, Lcom/oneplus/settings/better/OPReadingMode;->access$700(Lcom/oneplus/settings/better/OPReadingMode;)Landroid/support/v14/preference/SwitchPreference;
 
     move-result-object v1
 

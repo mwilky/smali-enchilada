@@ -333,7 +333,7 @@
 
     iget-object v0, p0, Lcom/android/settings/widget/DonutView;->mBigNumberPaint:Landroid/text/TextPaint;
 
-    const v7, 0x1040157
+    const v7, 0x1040158
 
     invoke-virtual {p1, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -725,7 +725,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f121124
+    const v1, 0x7f121129
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

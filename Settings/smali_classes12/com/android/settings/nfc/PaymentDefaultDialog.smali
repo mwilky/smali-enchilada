@@ -268,7 +268,7 @@
     iput-object v0, v5, Lcom/android/internal/app/AlertController$AlertParams;->mMessage:Ljava/lang/CharSequence;
 
     :goto_1
-    const v0, 0x7f121567
+    const v0, 0x7f12156c
 
     invoke-virtual {p0, v0}, Lcom/android/settings/nfc/PaymentDefaultDialog;->getString(I)Ljava/lang/String;
 

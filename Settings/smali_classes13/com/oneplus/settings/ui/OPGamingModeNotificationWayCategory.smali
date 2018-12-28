@@ -37,7 +37,7 @@
 
     invoke-direct {p0, p1}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;)V
 
-    const v0, 0x7f0d017c
+    const v0, 0x7f0d017b
 
     iput v0, p0, Lcom/oneplus/settings/ui/OPGamingModeNotificationWayCategory;->mLayoutResId:I
 
@@ -55,7 +55,7 @@
 
     invoke-direct {p0, p1, p2}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    const v0, 0x7f0d017c
+    const v0, 0x7f0d017b
 
     iput v0, p0, Lcom/oneplus/settings/ui/OPGamingModeNotificationWayCategory;->mLayoutResId:I
 
@@ -73,7 +73,7 @@
 
     invoke-direct {p0, p1, p2, p3}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const v0, 0x7f0d017c
+    const v0, 0x7f0d017b
 
     iput v0, p0, Lcom/oneplus/settings/ui/OPGamingModeNotificationWayCategory;->mLayoutResId:I
 
@@ -223,7 +223,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f080417
+    const v3, 0x7f08040d
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -242,7 +242,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f080418
+    const v3, 0x7f08040e
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -329,7 +329,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPGamingModeNotificationWayCategory;->mNoficationWaySummary:Landroid/widget/TextView;
 
-    const v1, 0x7f120d2f
+    const v1, 0x7f120d33
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -350,7 +350,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPGamingModeNotificationWayCategory;->mNoficationWaySummary:Landroid/widget/TextView;
 
-    const v1, 0x7f120cd0
+    const v1, 0x7f120cd4
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -375,7 +375,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPGamingModeNotificationWayCategory;->mNoficationWaySummary:Landroid/widget/TextView;
 
-    const v1, 0x7f120cef
+    const v1, 0x7f120cf3
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 

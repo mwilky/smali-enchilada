@@ -2616,6 +2616,7 @@
     <string name="oneplus_broadcat_wifi_name">प्रसारण नेटवर्क नाम (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">बटन और जेस्चर्स</string>
     <string name="oneplus_buttons_dashboard_summary">चेतावनी स्लाइडर, नेविगेशन, जेस्चर्स</string>
+    <string name="oneplus_buttons_settings">बटन सेटिंग्स</string>
     <string name="oneplus_buttons_settings_summary">नेविगेशन जेस्चर</string>
     <string name="oneplus_call_information_broadcast">कॉलर ID बोलें</string>
     <string name="oneplus_call_information_broadcast_summary">ईयरफ़ोन द्वारा इनकमिंग कॉलर ID बोलें</string>
@@ -2630,6 +2631,7 @@
     <string name="oneplus_colorful_mode_title">रंगीन</string>
     <string name="oneplus_compatibility_mode_summary">नॉच क्षेत्र में फुल स्क्रीन ऐप्स उपयोग नहीं हो सकते हैं</string>
     <string name="oneplus_compatibility_mode_title">संगतता मोड</string>
+    <string name="oneplus_condition_night_mode_title">रात्रि मोड ऑन है</string>
     <string name="oneplus_connected_device_count">%1$s डिवाइस कनेक्ट है</string>
     <string name="oneplus_connected_device_management_title">कनेक्टेड डिवाइस मैनेजर</string>
     <string name="oneplus_connected_devices_count">%1$s डिवाइसें कनेक्ट हैं</string>
@@ -2642,6 +2644,9 @@
     <string name="oneplus_data_usage_control_title">डेटा उपयोग नियंत्रण</string>
     <string name="oneplus_deep_clear_way">डीप क्लीयर</string>
     <string name="oneplus_deep_clear_way_summary">बैकग्राउंड प्रोसेस को साफ करता है, जिससे कुछ ऐप्स काम करना बंद कर देते हैं और आपको नोटिफ़िकेशन प्राप्त नहीं होते</string>
+    <string name="oneplus_deep_optimization">डीप अनुकूलन</string>
+    <string name="oneplus_deep_optimization_summary">आपके द्वारा डीप ऑप्टिमाइज़ेशन बंद किए जाने के बाद, पॉवर उपभोग में बहुत अधिक वृद्धि होगी, जो आपके सामान्य उपयोग को प्रभावित करेगी।</string>
+    <string name="oneplus_deep_optimization_title">डीप ऑप्टिमाइज़ेशन बंद करें?</string>
     <string name="oneplus_default_launcher">डिफ़ॉल्ट लॉन्चर</string>
     <string name="oneplus_delete_fingerprint_list">फिंगरप्रिंट डिलीट करें</string>
     <string name="oneplus_deleted_fingerprint_list">फिंगरप्रिंट डिलीट किया गया</string>
@@ -2682,6 +2687,7 @@
     <string name="oneplus_earphone_mode">इयरफोन मोड</string>
     <string name="oneplus_emergency_rescue_settings">आपातकालीन बचाव</string>
     <string name="oneplus_emergency_rescue_settings_summary">पावर बटन को तेजी से दबा कर सहायता के लिए स्वचालित कॉल करें</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">आपातकालीन बचाव की पॉवर बटन सेटिंग्स को संशोधित करने के बाद उपलब्ध</string>
     <string name="oneplus_enroll_fingerprint_tips_title">फ़िंगरप्रिंट सेटअप प्रॉंप्ट</string>
     <string name="oneplus_enter_your_fingerprint">· अपना फ़िंगरप्रिंट दर्ज कराएँ</string>
     <string name="oneplus_experience_improvement_programs">अनुभव सुधार कार्यक्रम</string>
@@ -2795,7 +2801,7 @@
     <string name="oneplus_hide_notch_display_summary">सभी ऐप नॉच क्षेत्र का उपयोग नहीं कर सकते</string>
     <string name="oneplus_hide_notch_display_title">नॉच क्षेत्र छिपाएँ</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">स्क्रीन के निचले हिस्से में फ़िगरप्रिंट पैटर्न प्रदर्शित होने पर, फ़िंगरप्रिंट फ़ंक्शन का उपयोग करने के लिए बस अपनी अंगुलि से फ़िंगरप्रिंट पहचान क्षेत्र दबाएँ: अपने फ़ोन को वेक और अनलॉक करना, खरीदारी को अधिकृत करना या ऐप्स में इन करना</string>
-    <string name="oneplus_hydrogen_version">Hydrogen OS संस्करण</string>
+    <string name="oneplus_hydrogen_version">H2OS संस्करण</string>
     <string name="oneplus_incoming_call_vibrate_intensity">इनकमिंग कॉल</string>
     <string name="oneplus_incoming_call_vibrate_mode">इनकमिंग कॉल कंपन पैटर्न</string>
     <string name="oneplus_init_finger_input">फिंगरप्रिंट आरंभ कर रहा</string>
@@ -3050,6 +3056,7 @@
     <string name="oneplus_setting_ringtone">रिंग सेट करें</string>
     <string name="oneplus_setting_sim_ringtone_switch">प्रत्येक सिम कार्ड के लिए रिंगटोन सेट करें</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· स्क्रीन अनलॉक करने हेतु एक वैकल्पिक तरीका सेट करें</string>
+    <string name="oneplus_share_this_wifi">वाई-फ़ाई कवरेज को विस्तारित किया गया</string>
     <string name="oneplus_share_wifi_title">वाई‑फ़ाई शेयरिंग</string>
     <string name="oneplus_shielding_notification">ब्लॉक</string>
     <string name="oneplus_shielding_notification_summary">सूचनाएं अवरुद्ध हो जाएंगी (कॉल और अलार्म को छोड़कर)</string>
@@ -3125,6 +3132,11 @@
     <string name="oneplus_weak_text_reminding">केवल पाठ</string>
     <string name="oneplus_weak_text_reminding_summary">ऐप्स को पूर्व सूचना दिखाने की अनुमति दें</string>
     <string name="oneplus_wifi_ap_error">कृपया सिम कार्ड डालें</string>
+    <string name="oneplus_wifi_hidden_network_warning">"अगर आपके राउटर ने SSID प्रसारण को अक्षम करता है, तो आपको छिपे हुए नेटवर्क से कनेक्ट करने के लिए “हाँ” का चयन करना चाहिए।
+
+यह सुरक्षा जोखिम बना सकते हैं क्योंकि आपका फ़ोन नेटवर्क ढूँढने के लिए नियमित रूप से अपने सिग्नल को प्रसारित करेगा।
+
+नेटवर्क को छिपे हुए रूप में सेट करने से आपकी राउटर सेटिंग्स नहीं बदलेंगी।"</string>
     <string name="oneplus_wifi_ipv6_surport_summary">कुछ वाई-फ़ाई रूटरों के साथ संगतता यानी कम्पैटिबिलिटी समस्या IPv6 को अक्षम करने से दूर हो सकती है।</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6 सपोर्ट</string>
     <string name="oneplus_wifi_list">वाई‑फ़ाई सूची</string>

@@ -2616,6 +2616,7 @@ Trình tiết kiệm pin sẽ tắt tự động khi thiết bị của bạn đ
     <string name="oneplus_broadcat_wifi_name">Tên mạng truyền phát (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Nút &amp; cử chỉ</string>
     <string name="oneplus_buttons_dashboard_summary">Thanh trượt cảnh báo, điều hướng, cử chỉ</string>
+    <string name="oneplus_buttons_settings">cài đặt nút</string>
     <string name="oneplus_buttons_settings_summary">Cử chỉ điều hướng</string>
     <string name="oneplus_call_information_broadcast">Nói ID Người gọi</string>
     <string name="oneplus_call_information_broadcast_summary">Nói ID người gọi đến qua tai nghe</string>
@@ -2630,6 +2631,7 @@ Trình tiết kiệm pin sẽ tắt tự động khi thiết bị của bạn đ
     <string name="oneplus_colorful_mode_title">Nhiều màu sắc</string>
     <string name="oneplus_compatibility_mode_summary">Các ứng dụng toàn màn hình không thể sử dụng khu vực tai thỏ</string>
     <string name="oneplus_compatibility_mode_title">Chế độ tương thích</string>
+    <string name="oneplus_condition_night_mode_title">Chế độ ban đêm đang bật</string>
     <string name="oneplus_connected_device_count">Có %1$s thiết bị đang được kết nối</string>
     <string name="oneplus_connected_device_management_title">Quản lý thiết bị được kết nối</string>
     <string name="oneplus_connected_devices_count">Có %1$s thiết bị đang được kết nối</string>
@@ -2642,6 +2644,9 @@ Trình tiết kiệm pin sẽ tắt tự động khi thiết bị của bạn đ
     <string name="oneplus_data_usage_control_title">Kiểm soát sử dụng dữ liệu</string>
     <string name="oneplus_deep_clear_way">Dọn dẹp sâu</string>
     <string name="oneplus_deep_clear_way_summary">Xóa các quy trình chạy dưới nền hệ thống, nghĩa là một số ứng dụng có thể ngừng chạy và bạn sẽ không nhận được các thông báo</string>
+    <string name="oneplus_deep_optimization">Tối ưu hóa sâu</string>
+    <string name="oneplus_deep_optimization_summary">Khi bạn tắt tối ưu hóa sâu, mức tiêu thụ pin sẽ tăng đáng kể, điều này sẽ ảnh hưởng đến quá trình sử dụng thông thường của bạn.</string>
+    <string name="oneplus_deep_optimization_title">Tắt tối ưu hóa sâu?</string>
     <string name="oneplus_default_launcher">Trình khởi chạy mặc định</string>
     <string name="oneplus_delete_fingerprint_list">Xóa dấu vân tay</string>
     <string name="oneplus_deleted_fingerprint_list">Đã xóa Dấu vân tay</string>
@@ -2682,6 +2687,7 @@ Trình tiết kiệm pin sẽ tắt tự động khi thiết bị của bạn đ
     <string name="oneplus_earphone_mode">Chế độ Tai nghe</string>
     <string name="oneplus_emergency_rescue_settings">Giải cứu khẩn cấp</string>
     <string name="oneplus_emergency_rescue_settings_summary">Tự động yêu cầu trợ giúp bằng cách nhấn nhanh nút nguồn</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">Có thể sử dụng sau khi sửa đổi cài đặt NÚT NGUỒN của Cứu hộ Khẩn cấp</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Thông báo nhắc thiết lập vân tay</string>
     <string name="oneplus_enter_your_fingerprint">· Đăng ký vân tay của bạn</string>
     <string name="oneplus_experience_improvement_programs">Chương trình cải thiện trải nghiệm</string>
@@ -2795,7 +2801,7 @@ Bạn có thể tắt chúng bằng cách bật lại thanh điều hướng tro
     <string name="oneplus_hide_notch_display_summary">Tất cả ứng dụng không thể sử dụng khu vực tai thỏ</string>
     <string name="oneplus_hide_notch_display_title">Ẩn khu vực tai thỏ</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Khi mẫu vân tay xuất hiện ở phía dưới cùng của màn hình, bạn chỉ cần nhấn ngón tay vào khu vực nhận dạng vân tay để sử dụng chức năng vân tay: đánh thức và mở khóa điện thoại, cho phép giao dịch mua hoặc đăng nhập vào ứng dụng.</string>
-    <string name="oneplus_hydrogen_version">Phiên bản Hydrogen OS</string>
+    <string name="oneplus_hydrogen_version">Phiên bản H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Cuộc gọi đến</string>
     <string name="oneplus_incoming_call_vibrate_mode">Nhịp rung cho cuộc gọi đến</string>
     <string name="oneplus_init_finger_input">Khởi tạo dấu vân tay</string>
@@ -3050,6 +3056,7 @@ Còn %d lượt."</string>
     <string name="oneplus_setting_ringtone">Đặt nhạc chuông</string>
     <string name="oneplus_setting_sim_ringtone_switch">Đặt nhạc chuông cho mỗi thẻ SIM</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Đăng ký một cách khác để mở khóa màn hình</string>
+    <string name="oneplus_share_this_wifi">Mở rộng vùng phủ sóng Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Chia sẻ Wi‑Fi</string>
     <string name="oneplus_shielding_notification">Chặn</string>
     <string name="oneplus_shielding_notification_summary">Các thông báo sẽ bị chặn (ngoại trừ cuộc gọi và báo thức)</string>
@@ -3123,6 +3130,11 @@ Còn %d lượt."</string>
     <string name="oneplus_weak_text_reminding">Chỉ văn bản</string>
     <string name="oneplus_weak_text_reminding_summary">Cho phép các ứng dụng hiển thị thông báo trên đầu</string>
     <string name="oneplus_wifi_ap_error">Vui lòng lắp thẻ SIM</string>
+    <string name="oneplus_wifi_hidden_network_warning">"Nếu bộ định tuyến của bạn tắt truyền phát SSID, bạn cần chọn \"Có\" để kết nối với mạng ẩn.
+
+Điều này có thể gây rủi ro bảo mật do điện thoại của bạn sẽ thường xuyên phát tín hiệu để tìm mạng.
+
+Việc cài đặt mạng dưới dạng ẩn sẽ không thay đổi cài đặt bộ định tuyến của bạn."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">Việc tắt IPv6 có thể ngăn các vấn đề về tương thích với một số router Wi-Fi nhất định.</string>
     <string name="oneplus_wifi_ipv6_surport_title">Hỗ trợ IPv6</string>
     <string name="oneplus_wifi_list">Danh sách Wi‑Fi</string>

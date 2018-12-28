@@ -341,6 +341,14 @@
 
     move-result-object v0
 
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPairingController;->mDevice:Landroid/bluetooth/BluetoothDevice;
+
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothDevice;->getBluetoothClass()Landroid/bluetooth/BluetoothClass;
+
+    move-result-object v0
+
     invoke-virtual {v0}, Landroid/bluetooth/BluetoothClass;->getDeviceClass()I
 
     move-result v0

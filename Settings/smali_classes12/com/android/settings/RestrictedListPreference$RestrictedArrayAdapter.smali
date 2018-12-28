@@ -34,7 +34,7 @@
 
     iput-object p1, p0, Lcom/android/settings/RestrictedListPreference$RestrictedArrayAdapter;->this$0:Lcom/android/settings/RestrictedListPreference;
 
-    const v0, 0x7f0d0234
+    const v0, 0x7f0d0233
 
     const v1, 0x7f0a0577
 

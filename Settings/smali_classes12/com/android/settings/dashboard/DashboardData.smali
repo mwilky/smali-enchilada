@@ -198,7 +198,7 @@
 
     const/4 v1, 0x1
 
-    const v2, 0x7f0d01b8
+    const v2, 0x7f0d01b7
 
     const/4 v3, 0x5
 
@@ -246,7 +246,7 @@
     move v6, v4
 
     :goto_1
-    const v7, 0x7f0d0273
+    const v7, 0x7f0d0272
 
     invoke-direct {p0, v5, v7, v4, v6}, Lcom/android/settings/dashboard/DashboardData;->addToItemList(Ljava/lang/Object;IIZ)V
 

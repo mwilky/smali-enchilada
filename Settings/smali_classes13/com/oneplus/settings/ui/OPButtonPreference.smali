@@ -41,7 +41,7 @@
 
     invoke-direct {p0, p1}, Lcom/android/settingslib/RestrictedPreference;-><init>(Landroid/content/Context;)V
 
-    const v0, 0x7f0d0149
+    const v0, 0x7f0d0148
 
     iput v0, p0, Lcom/oneplus/settings/ui/OPButtonPreference;->resid:I
 
@@ -55,7 +55,7 @@
 
     invoke-direct {p0, p1, p2}, Lcom/android/settingslib/RestrictedPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    const v0, 0x7f0d0149
+    const v0, 0x7f0d0148
 
     iput v0, p0, Lcom/oneplus/settings/ui/OPButtonPreference;->resid:I
 
@@ -69,7 +69,7 @@
 
     invoke-direct {p0, p1, p2, p3}, Lcom/android/settingslib/RestrictedPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const v0, 0x7f0d0149
+    const v0, 0x7f0d0148
 
     iput v0, p0, Lcom/oneplus/settings/ui/OPButtonPreference;->resid:I
 

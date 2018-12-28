@@ -41,7 +41,7 @@
 
     iput-object v0, p0, Lcom/android/settings/tts/TtsEnginePreference;->mRadioChangeListener:Landroid/widget/CompoundButton$OnCheckedChangeListener;
 
-    const v0, 0x7f0d020c
+    const v0, 0x7f0d020b
 
     invoke-virtual {p0, v0}, Lcom/android/settings/tts/TtsEnginePreference;->setLayoutResource(I)V
 
@@ -139,7 +139,7 @@
 
     aput-object v5, v4, v6
 
-    const v5, 0x7f121225
+    const v5, 0x7f12122a
 
     invoke-virtual {v2, v5, v4}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

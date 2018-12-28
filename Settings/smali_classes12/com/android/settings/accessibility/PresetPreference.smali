@@ -21,7 +21,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/settings/accessibility/PresetPreference;->setDialogLayoutResource(I)V
 
-    const v0, 0x7f0d0222
+    const v0, 0x7f0d0221
 
     invoke-virtual {p0, v0}, Lcom/android/settings/accessibility/PresetPreference;->setListItemLayoutResource(I)V
 

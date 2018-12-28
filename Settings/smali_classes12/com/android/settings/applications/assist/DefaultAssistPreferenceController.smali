@@ -79,6 +79,33 @@
     return-object v1
 
     :cond_0
+    sget-object v1, Ljava/lang/System;->out:Ljava/io/PrintStream;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "zhuyang--getDefaultAppInfo:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Landroid/content/ComponentName;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForAssistAppByComponentName(Ljava/lang/String;)V
+
+    :cond_1
     new-instance v1, Lcom/android/settingslib/applications/DefaultAppInfo;
 
     iget-object v2, p0, Lcom/android/settings/applications/assist/DefaultAssistPreferenceController;->mContext:Landroid/content/Context;

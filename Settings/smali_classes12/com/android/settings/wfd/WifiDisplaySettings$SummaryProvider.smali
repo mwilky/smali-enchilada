@@ -114,7 +114,7 @@
 
     iget-object v4, p0, Lcom/android/settings/wfd/WifiDisplaySettings$SummaryProvider;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f121432
+    const v5, 0x7f121437
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

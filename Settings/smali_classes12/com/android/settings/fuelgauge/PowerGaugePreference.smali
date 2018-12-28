@@ -109,7 +109,7 @@
     :goto_0
     invoke-virtual {p0, v1}, Lcom/android/settings/fuelgauge/PowerGaugePreference;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    const v1, 0x7f0d021c
+    const v1, 0x7f0d021b
 
     invoke-virtual {p0, v1}, Lcom/android/settings/fuelgauge/PowerGaugePreference;->setWidgetLayoutResource(I)V
 
@@ -121,7 +121,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120d4a
+    const v2, 0x7f120d4f
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -427,7 +427,7 @@
 
     if-eqz v2, :cond_0
 
-    const v2, 0x7f08025a
+    const v2, 0x7f080275
 
     invoke-virtual {v1, v2, v3, v3, v3}, Landroid/widget/TextView;->setCompoundDrawablesRelativeWithIntrinsicBounds(IIII)V
 
@@ -453,7 +453,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    const v3, 0x7f120ce9
+    const v3, 0x7f120ced
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(I)V
 

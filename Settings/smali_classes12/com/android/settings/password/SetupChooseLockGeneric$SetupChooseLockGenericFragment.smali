@@ -36,14 +36,14 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0d0258
+    const v0, 0x7f0d0257
 
     invoke-virtual {p0, v0}, Lcom/android/settings/password/SetupChooseLockGeneric$SetupChooseLockGenericFragment;->setHeaderView(I)V
 
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f0d0259
+    const v0, 0x7f0d0258
 
     invoke-virtual {p0, v0}, Lcom/android/settings/password/SetupChooseLockGeneric$SetupChooseLockGenericFragment;->setHeaderView(I)V
 
@@ -69,6 +69,14 @@
 
     :goto_0
     return-void
+.end method
+
+.method protected canRunBeforeDeviceProvisioned()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
 .end method
 
 .method protected disableUnusablePreferences(IZ)V
@@ -332,7 +340,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0801c1
+    const v2, 0x7f0801dc
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -349,7 +357,7 @@
     goto :goto_0
 
     :cond_0
-    const v1, 0x7f121016
+    const v1, 0x7f12101b
 
     :goto_0
     invoke-virtual {p0}, Lcom/android/settings/password/SetupChooseLockGeneric$SetupChooseLockGenericFragment;->getActivity()Landroid/app/Activity;

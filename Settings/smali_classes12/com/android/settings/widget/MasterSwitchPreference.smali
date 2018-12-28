@@ -21,7 +21,7 @@
 
     iput-boolean v0, p0, Lcom/android/settings/widget/MasterSwitchPreference;->mEnableSwitch:Z
 
-    const v0, 0x7f0d01a2
+    const v0, 0x7f0d01a1
 
     invoke-virtual {p0, v0}, Lcom/android/settings/widget/MasterSwitchPreference;->setLayoutResource(I)V
 
@@ -37,7 +37,7 @@
 
     iput-boolean v0, p0, Lcom/android/settings/widget/MasterSwitchPreference;->mEnableSwitch:Z
 
-    const v0, 0x7f0d01a2
+    const v0, 0x7f0d01a1
 
     invoke-virtual {p0, v0}, Lcom/android/settings/widget/MasterSwitchPreference;->setLayoutResource(I)V
 
@@ -53,7 +53,7 @@
 
     iput-boolean v0, p0, Lcom/android/settings/widget/MasterSwitchPreference;->mEnableSwitch:Z
 
-    const v0, 0x7f0d01a2
+    const v0, 0x7f0d01a1
 
     invoke-virtual {p0, v0}, Lcom/android/settings/widget/MasterSwitchPreference;->setLayoutResource(I)V
 
@@ -69,7 +69,7 @@
 
     iput-boolean v0, p0, Lcom/android/settings/widget/MasterSwitchPreference;->mEnableSwitch:Z
 
-    const v0, 0x7f0d01a2
+    const v0, 0x7f0d01a1
 
     invoke-virtual {p0, v0}, Lcom/android/settings/widget/MasterSwitchPreference;->setLayoutResource(I)V
 
@@ -107,7 +107,7 @@
 .method protected getSecondTargetResId()I
     .locals 1
 
-    const v0, 0x7f0d0217
+    const v0, 0x7f0d0216
 
     return v0
 .end method

@@ -55,13 +55,13 @@
 
     move-result-object v0
 
-    const v1, 0x7f1213a6
+    const v1, 0x7f1213ab
 
     invoke-virtual {v0, v1}, Lcom/android/settings/utils/ManagedServiceSettings$Config$Builder;->setWarningDialogTitle(I)Lcom/android/settings/utils/ManagedServiceSettings$Config$Builder;
 
     move-result-object v0
 
-    const v1, 0x7f1213a5
+    const v1, 0x7f1213aa
 
     invoke-virtual {v0, v1}, Lcom/android/settings/utils/ManagedServiceSettings$Config$Builder;->setWarningDialogSummary(I)Lcom/android/settings/utils/ManagedServiceSettings$Config$Builder;
 

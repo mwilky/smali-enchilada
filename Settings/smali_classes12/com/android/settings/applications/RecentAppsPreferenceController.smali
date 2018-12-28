@@ -296,7 +296,7 @@
 
     iget-object v0, v1, Lcom/android/settings/applications/RecentAppsPreferenceController;->mCategory:Landroid/support/v7/preference/PreferenceCategory;
 
-    const v2, 0x7f120eec
+    const v2, 0x7f120ef1
 
     invoke-virtual {v0, v2}, Landroid/support/v7/preference/PreferenceCategory;->setTitle(I)V
 
@@ -314,7 +314,7 @@
 
     iget-object v0, v1, Lcom/android/settings/applications/RecentAppsPreferenceController;->mSeeAllPref:Landroid/support/v7/preference/Preference;
 
-    const v2, 0x7f080181
+    const v2, 0x7f08019c
 
     invoke-virtual {v0, v2}, Landroid/support/v7/preference/Preference;->setIcon(I)V
 

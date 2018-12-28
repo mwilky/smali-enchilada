@@ -550,7 +550,7 @@
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f121027
+    const v2, 0x7f12102c
 
     invoke-static {v0, v2, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 

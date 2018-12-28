@@ -246,7 +246,7 @@
 
     new-instance v8, Landroid/text/SpannableString;
 
-    const v9, 0x104022e
+    const v9, 0x104022f
 
     move-object/from16 v12, p0
 
@@ -893,7 +893,7 @@
     :cond_a
     if-eqz v4, :cond_b
 
-    const v6, 0x7f121415
+    const v6, 0x7f12141a
 
     goto :goto_3
 

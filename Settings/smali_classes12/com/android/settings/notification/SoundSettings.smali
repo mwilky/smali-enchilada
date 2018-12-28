@@ -1359,7 +1359,7 @@
 
     iget-object v1, p0, Lcom/android/settings/notification/SoundSettings;->mContext:Landroid/content/Context;
 
-    const v2, 0x10403e6
+    const v2, 0x10403e7
 
     const/4 v3, 0x1
 
@@ -1400,11 +1400,11 @@
 
     move-result v0
 
-    const v1, 0x7f080355
+    const v1, 0x7f08034a
 
-    const v2, 0x7f080356
+    const v2, 0x7f08034b
 
-    const v3, 0x7f080357
+    const v3, 0x7f08034c
 
     if-nez v0, :cond_2
 
@@ -1581,7 +1581,7 @@
     move-result-object v1
 
     :goto_0
-    const v2, 0x10405c1
+    const v2, 0x10405c2
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1589,7 +1589,7 @@
 
     if-nez v1, :cond_2
 
-    const v0, 0x10405c0
+    const v0, 0x10405c1
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2407,7 +2407,7 @@
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 7
+    .locals 8
 
     invoke-super {p0, p1}, Lcom/android/settings/dashboard/DashboardFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -2629,7 +2629,7 @@
 
     const/4 v5, 0x3
 
-    const v6, 0x7f080354
+    const v6, 0x7f080349
 
     invoke-direct {p0, v4, v5, v6}, Lcom/android/settings/notification/SoundSettings;->initVolumePreference(Ljava/lang/String;II)Lcom/android/settings/notification/VolumeSeekBarPreference;
 
@@ -2641,7 +2641,7 @@
 
     const/4 v5, 0x4
 
-    const v6, 0x7f080352
+    const v6, 0x7f080347
 
     invoke-direct {p0, v4, v5, v6}, Lcom/android/settings/notification/SoundSettings;->initVolumePreference(Ljava/lang/String;II)Lcom/android/settings/notification/VolumeSeekBarPreference;
 
@@ -2653,7 +2653,7 @@
 
     const/4 v5, 0x2
 
-    const v6, 0x7f080356
+    const v6, 0x7f08034b
 
     invoke-direct {p0, v4, v5, v6}, Lcom/android/settings/notification/SoundSettings;->initVolumePreference(Ljava/lang/String;II)Lcom/android/settings/notification/VolumeSeekBarPreference;
 
@@ -2676,7 +2676,7 @@
 
     const/4 v5, 0x5
 
-    const v6, 0x7f080355
+    const v6, 0x7f08034a
 
     invoke-direct {p0, v4, v5, v6}, Lcom/android/settings/notification/SoundSettings;->initVolumePreference(Ljava/lang/String;II)Lcom/android/settings/notification/VolumeSeekBarPreference;
 
@@ -2722,115 +2722,115 @@
 
     move-result v4
 
-    const-string v5, "incoming_call_vibrate_mode"
+    const-string v6, "incoming_call_vibrate_mode"
 
-    invoke-direct {p0, v5, v4}, Lcom/android/settings/notification/SoundSettings;->updateVibratePreferenceDescription(Ljava/lang/String;I)V
+    invoke-direct {p0, v6, v4}, Lcom/android/settings/notification/SoundSettings;->updateVibratePreferenceDescription(Ljava/lang/String;I)V
 
-    iget-object v5, p0, Lcom/android/settings/notification/SoundSettings;->mOPSoundDirectPreference:Landroid/support/v7/preference/Preference;
+    iget-object v6, p0, Lcom/android/settings/notification/SoundSettings;->mOPSoundDirectPreference:Landroid/support/v7/preference/Preference;
 
-    new-instance v6, Lcom/android/settings/notification/SoundSettings$5;
+    new-instance v7, Lcom/android/settings/notification/SoundSettings$5;
 
-    invoke-direct {v6, p0}, Lcom/android/settings/notification/SoundSettings$5;-><init>(Lcom/android/settings/notification/SoundSettings;)V
+    invoke-direct {v7, p0}, Lcom/android/settings/notification/SoundSettings$5;-><init>(Lcom/android/settings/notification/SoundSettings;)V
 
-    invoke-virtual {v5, v6}, Landroid/support/v7/preference/Preference;->setOnPreferenceClickListener(Landroid/support/v7/preference/Preference$OnPreferenceClickListener;)V
+    invoke-virtual {v6, v7}, Landroid/support/v7/preference/Preference;->setOnPreferenceClickListener(Landroid/support/v7/preference/Preference$OnPreferenceClickListener;)V
 
-    iget-object v5, p0, Lcom/android/settings/notification/SoundSettings;->mEarphoneModePreference:Landroid/support/v7/preference/Preference;
+    iget-object v6, p0, Lcom/android/settings/notification/SoundSettings;->mEarphoneModePreference:Landroid/support/v7/preference/Preference;
 
-    new-instance v6, Lcom/android/settings/notification/SoundSettings$6;
+    new-instance v7, Lcom/android/settings/notification/SoundSettings$6;
 
-    invoke-direct {v6, p0}, Lcom/android/settings/notification/SoundSettings$6;-><init>(Lcom/android/settings/notification/SoundSettings;)V
+    invoke-direct {v7, p0}, Lcom/android/settings/notification/SoundSettings$6;-><init>(Lcom/android/settings/notification/SoundSettings;)V
 
-    invoke-virtual {v5, v6}, Landroid/support/v7/preference/Preference;->setOnPreferenceClickListener(Landroid/support/v7/preference/Preference$OnPreferenceClickListener;)V
+    invoke-virtual {v6, v7}, Landroid/support/v7/preference/Preference;->setOnPreferenceClickListener(Landroid/support/v7/preference/Preference$OnPreferenceClickListener;)V
 
     invoke-virtual {p0}, Lcom/android/settings/notification/SoundSettings;->getActivity()Landroid/app/Activity;
 
-    move-result-object v5
+    move-result-object v6
 
-    const-string v6, "com.oneplus.dirac.simplemanager"
+    const-string v7, "com.oneplus.dirac.simplemanager"
 
-    invoke-static {v5, v6}, Lcom/oneplus/settings/utils/OPUtils;->isAppPakExist(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v6, v7}, Lcom/oneplus/settings/utils/OPUtils;->isAppPakExist(Landroid/content/Context;Ljava/lang/String;)Z
 
-    move-result v5
+    move-result v6
 
-    if-nez v5, :cond_4
+    if-nez v6, :cond_4
 
-    iget-object v5, p0, Lcom/android/settings/notification/SoundSettings;->mOPSoundDirectPreference:Landroid/support/v7/preference/Preference;
+    iget-object v6, p0, Lcom/android/settings/notification/SoundSettings;->mOPSoundDirectPreference:Landroid/support/v7/preference/Preference;
 
-    if-eqz v5, :cond_4
+    if-eqz v6, :cond_4
 
-    iget-object v5, p0, Lcom/android/settings/notification/SoundSettings;->mOPSoundDirectPreference:Landroid/support/v7/preference/Preference;
+    iget-object v6, p0, Lcom/android/settings/notification/SoundSettings;->mOPSoundDirectPreference:Landroid/support/v7/preference/Preference;
 
-    invoke-virtual {v1, v5}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
+    invoke-virtual {v1, v6}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
     :cond_4
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isGuestMode()Z
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_6
+    if-eqz v6, :cond_6
 
-    iget-object v5, p0, Lcom/android/settings/notification/SoundSettings;->mVibrateWhenRingingPreference:Landroid/support/v7/preference/Preference;
+    iget-object v6, p0, Lcom/android/settings/notification/SoundSettings;->mVibrateWhenRingingPreference:Landroid/support/v7/preference/Preference;
 
-    if-eqz v5, :cond_5
+    if-eqz v6, :cond_5
 
-    iget-object v5, p0, Lcom/android/settings/notification/SoundSettings;->mVibrateWhenRingingPreference:Landroid/support/v7/preference/Preference;
+    iget-object v6, p0, Lcom/android/settings/notification/SoundSettings;->mVibrateWhenRingingPreference:Landroid/support/v7/preference/Preference;
 
-    invoke-virtual {v2, v5}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
+    invoke-virtual {v2, v6}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
     :cond_5
-    const-string v5, "screen_locking_sounds"
+    const-string v6, "screen_locking_sounds"
 
-    invoke-virtual {p0, v5}, Lcom/android/settings/notification/SoundSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
+    invoke-virtual {p0, v6}, Lcom/android/settings/notification/SoundSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v2, v5}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
+    invoke-virtual {v2, v6}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
     :cond_6
-    sget-boolean v5, Lcom/android/settings/notification/SoundSettings;->isSupportLinearMotor:Z
+    sget-boolean v6, Lcom/android/settings/notification/SoundSettings;->isSupportLinearMotor:Z
 
-    if-eqz v5, :cond_8
+    if-eqz v6, :cond_8
 
-    iget-object v5, p0, Lcom/android/settings/notification/SoundSettings;->mVibrateWhenRingingPreference:Landroid/support/v7/preference/Preference;
+    iget-object v6, p0, Lcom/android/settings/notification/SoundSettings;->mVibrateWhenRingingPreference:Landroid/support/v7/preference/Preference;
 
-    if-eqz v5, :cond_7
+    if-eqz v6, :cond_7
 
-    iget-object v5, p0, Lcom/android/settings/notification/SoundSettings;->mVibrateWhenRingingPreference:Landroid/support/v7/preference/Preference;
+    iget-object v6, p0, Lcom/android/settings/notification/SoundSettings;->mVibrateWhenRingingPreference:Landroid/support/v7/preference/Preference;
 
-    invoke-virtual {v2, v5}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
+    invoke-virtual {v2, v6}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
     :cond_7
-    const-string v5, "vibrate_on_touch"
+    const-string v6, "vibrate_on_touch"
 
-    invoke-virtual {p0, v5}, Lcom/android/settings/notification/SoundSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
+    invoke-virtual {p0, v6}, Lcom/android/settings/notification/SoundSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v2, v5}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
+    invoke-virtual {v2, v6}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
     goto :goto_1
 
     :cond_8
     invoke-virtual {p0}, Lcom/android/settings/notification/SoundSettings;->getPreferenceScreen()Landroid/support/v7/preference/PreferenceScreen;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v5, v3}, Landroid/support/v7/preference/PreferenceScreen;->removePreference(Landroid/support/v7/preference/Preference;)Z
+    invoke-virtual {v6, v3}, Landroid/support/v7/preference/PreferenceScreen;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
     :goto_1
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isGuestMode()Z
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_9
+    if-eqz v6, :cond_9
 
     if-eqz v3, :cond_9
 
     invoke-virtual {p0}, Lcom/android/settings/notification/SoundSettings;->getPreferenceScreen()Landroid/support/v7/preference/PreferenceScreen;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v5, v3}, Landroid/support/v7/preference/PreferenceScreen;->removePreference(Landroid/support/v7/preference/Preference;)Z
+    invoke-virtual {v6, v3}, Landroid/support/v7/preference/PreferenceScreen;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
     :cond_9
     invoke-direct {p0}, Lcom/android/settings/notification/SoundSettings;->initRingtones()V
@@ -2843,12 +2843,31 @@
 
     invoke-direct {p0}, Lcom/android/settings/notification/SoundSettings;->updateEffectsSuppressor()V
 
-    iget-object v5, p0, Lcom/android/settings/notification/SoundSettings;->mSettingsObserver:Lcom/android/settings/notification/SoundSettings$SettingsObserver;
+    iget-object v6, p0, Lcom/android/settings/notification/SoundSettings;->mSettingsObserver:Lcom/android/settings/notification/SoundSettings$SettingsObserver;
 
-    const/4 v6, 0x1
+    const/4 v7, 0x1
 
-    invoke-virtual {v5, v6}, Lcom/android/settings/notification/SoundSettings$SettingsObserver;->register(Z)V
+    invoke-virtual {v6, v7}, Lcom/android/settings/notification/SoundSettings$SettingsObserver;->register(Z)V
 
+    const-string v6, "do_not_disturb"
+
+    invoke-virtual {p0, v6}, Lcom/android/settings/notification/SoundSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
+
+    move-result-object v6
+
+    check-cast v6, Landroid/support/v7/preference/PreferenceCategory;
+
+    if-eqz v6, :cond_a
+
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportSocTriState()Z
+
+    move-result v7
+
+    if-nez v7, :cond_a
+
+    invoke-virtual {v6, v5}, Landroid/support/v7/preference/PreferenceCategory;->setVisible(Z)V
+
+    :cond_a
     return-void
 .end method
 

@@ -120,18 +120,18 @@
 
     :array_0
     .array-data 4
-        0x7f1210f3
-        0x7f1210fc
+        0x7f1210f8
+        0x7f121101
     .end array-data
 
     :array_1
     .array-data 4
-        0x7f1210f3
-        0x7f1210fa
-        0x7f1210fd
-        0x7f1210f4
-        0x7f1210fc
-        0x7f1210fb
+        0x7f1210f8
+        0x7f1210ff
+        0x7f121102
+        0x7f1210f9
+        0x7f121101
+        0x7f121100
     .end array-data
 .end method
 
@@ -310,7 +310,7 @@
 .method private addItem(Landroid/support/v7/preference/PreferenceGroup;ILjava/lang/CharSequence;I)V
     .locals 4
 
-    const v0, 0x7f1210fc
+    const v0, 0x7f121101
 
     if-ne p2, v0, :cond_1
 
@@ -470,7 +470,7 @@
 
     invoke-direct {v0, v1}, Lcom/android/settings/deviceinfo/StorageItemPreference;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f080139
+    const v1, 0x7f080154
 
     invoke-virtual {v0, v1}, Lcom/android/settings/deviceinfo/StorageItemPreference;->setIcon(I)V
 
@@ -780,7 +780,7 @@
 
     if-lez v9, :cond_7
 
-    const v9, 0x7f121123
+    const v9, 0x7f121128
 
     invoke-virtual {v0, v9}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->getText(I)Ljava/lang/CharSequence;
 
@@ -821,7 +821,7 @@
     goto :goto_4
 
     :cond_7
-    const v9, 0x7f1210f5
+    const v9, 0x7f1210fa
 
     const/4 v11, 0x0
 
@@ -860,7 +860,7 @@
 
     iget-object v15, v0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->mSummary:Lcom/android/settings/deviceinfo/StorageSummaryPreference;
 
-    const v5, 0x7f12112a
+    const v5, 0x7f12112f
 
     invoke-virtual {v0, v5}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->getText(I)Ljava/lang/CharSequence;
 
@@ -906,7 +906,7 @@
 
     aput-object v5, v3, v6
 
-    const v5, 0x7f121138
+    const v5, 0x7f12113d
 
     invoke-virtual {v0, v5, v3}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1288,14 +1288,14 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f1210f3
+    .packed-switch 0x7f1210f8
         :pswitch_6
         :pswitch_5
         :pswitch_4
     .end packed-switch
 
     :pswitch_data_1
-    .packed-switch 0x7f1210fa
+    .packed-switch 0x7f1210ff
         :pswitch_3
         :pswitch_2
         :pswitch_1
@@ -1490,7 +1490,7 @@
 
     iput-object v3, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->mCurrentUser:Landroid/content/pm/UserInfo;
 
-    const v3, 0x7f121112
+    const v3, 0x7f121117
 
     invoke-direct {p0, v3}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->buildAction(I)Landroid/support/v7/preference/Preference;
 
@@ -1585,7 +1585,7 @@
 
     move-result-object v2
 
-    const v4, 0x7f12111d
+    const v4, 0x7f121122
 
     invoke-virtual {v2, v4}, Lcom/android/settings/core/SubSettingLauncher;->setTitle(I)Lcom/android/settings/core/SubSettingLauncher;
 
@@ -1686,7 +1686,7 @@
 
     move-result-object v2
 
-    const v4, 0x7f121114
+    const v4, 0x7f121119
 
     invoke-virtual {v2, v4}, Lcom/android/settings/core/SubSettingLauncher;->setTitle(I)Lcom/android/settings/core/SubSettingLauncher;
 
@@ -1782,7 +1782,7 @@
 
     if-eqz v1, :cond_3
 
-    const v4, 0x7f121112
+    const v4, 0x7f121117
 
     if-eq v1, v4, :cond_1
 
@@ -1976,14 +1976,14 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f1210f3
+    .packed-switch 0x7f1210f8
         :pswitch_6
         :pswitch_5
         :pswitch_4
     .end packed-switch
 
     :pswitch_data_1
-    .packed-switch 0x7f1210fa
+    .packed-switch 0x7f1210ff
         :pswitch_3
         :pswitch_2
         :pswitch_1
@@ -2129,7 +2129,7 @@
     invoke-interface {v5, v8}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
     :goto_2
-    const v6, 0x7f121116
+    const v6, 0x7f12111b
 
     invoke-interface {v3, v6}, Landroid/view/MenuItem;->setTitle(I)Landroid/view/MenuItem;
 

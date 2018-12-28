@@ -106,7 +106,7 @@
 
     aget v6, v3, v5
 
-    const v7, 0x7f0d02fb
+    const v7, 0x7f0d02fa
 
     invoke-virtual {v4, v7, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

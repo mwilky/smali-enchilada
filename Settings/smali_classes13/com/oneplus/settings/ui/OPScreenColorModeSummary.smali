@@ -47,7 +47,7 @@
 
     iput-object p1, p0, Lcom/oneplus/settings/ui/OPScreenColorModeSummary;->mContext:Landroid/content/Context;
 
-    const v0, 0x7f0d01b3
+    const v0, 0x7f0d01b2
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/ui/OPScreenColorModeSummary;->setLayoutResource(I)V
 
@@ -123,7 +123,7 @@
 
     sget-object v3, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
 
-    const v4, 0x7f120c78
+    const v4, 0x7f120c7c
 
     invoke-virtual {v3, v4}, Landroid/app/Application;->getText(I)Ljava/lang/CharSequence;
 
@@ -138,7 +138,7 @@
 
     sget-object v3, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
 
-    const v4, 0x7f120c75
+    const v4, 0x7f120c79
 
     invoke-virtual {v3, v4}, Landroid/app/Application;->getText(I)Ljava/lang/CharSequence;
 

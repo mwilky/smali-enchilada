@@ -51,20 +51,20 @@
 
     move-result v1
 
-    const v2, 0x7f1215e2
+    const v2, 0x7f1215e7
 
     if-eqz p2, :cond_1
 
     if-eqz v0, :cond_0
 
-    const v2, 0x7f12157a    # 1.941788E38f
+    const v2, 0x7f12157f
 
     goto :goto_0
 
     :cond_0
     if-eqz v1, :cond_1
 
-    const v2, 0x7f12157c
+    const v2, 0x7f121581
 
     :cond_1
     :goto_0
@@ -194,7 +194,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0d02f7
+    const v9, 0x7f0d02f6
 
     const/4 v10, 0x0
 
@@ -245,7 +245,7 @@
 
     if-eqz v5, :cond_2
 
-    const v9, 0x7f121579
+    const v9, 0x7f12157e
 
     goto :goto_1
 

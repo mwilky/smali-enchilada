@@ -2578,7 +2578,7 @@ Dodatkowo aplikacja będzie mogła włączać lub wyłączać opcję Nie przeszk
     <string name="oneplus_applock_need_to_unlock_wrong">Nieprawidłowy PIN</string>
     <string name="oneplus_applock_pattern_header">Narysuj swój wzór</string>
     <string name="oneplus_applock_wrong_pattern_header">Nieprawidłowy wzór</string>
-    <string name="oneplus_apps_notifications">Aplikacjie i powiadomienia</string>
+    <string name="oneplus_apps_notifications">Aplikacje i powiadomienia</string>
     <string name="oneplus_apps_title">Aplikacje</string>
     <string name="oneplus_aptx_hd_support">obsługa aptX / aptX HD</string>
     <string name="oneplus_authentication_information">Informacje uwierzytelniania</string>
@@ -2616,6 +2616,7 @@ Oszczędzanie baterii zostanie automatycznie wyłączone w czasie ładowania two
     <string name="oneplus_broadcat_wifi_name">Nazwa sieci transmisji (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Przyciski i gesty</string>
     <string name="oneplus_buttons_dashboard_summary">Suwak alertów, nawigacja, gesty</string>
+    <string name="oneplus_buttons_settings">ustawienia przycisków</string>
     <string name="oneplus_buttons_settings_summary">Gest nawigacyjny</string>
     <string name="oneplus_call_information_broadcast">Powiedz identyfikator rozmówcy</string>
     <string name="oneplus_call_information_broadcast_summary">Powiedz przez słuchawki identyfikator rozmówcy</string>
@@ -2630,6 +2631,7 @@ Oszczędzanie baterii zostanie automatycznie wyłączone w czasie ładowania two
     <string name="oneplus_colorful_mode_title">Kolorowy</string>
     <string name="oneplus_compatibility_mode_summary">Aplikacje pełnoekranowe nie mogą korzystać z obszaru wycięcia</string>
     <string name="oneplus_compatibility_mode_title">Tryb zgodności</string>
+    <string name="oneplus_condition_night_mode_title">Tryb nocny jest włączony</string>
     <string name="oneplus_connected_device_count">Podłączono urządzenie: %1$s</string>
     <string name="oneplus_connected_device_management_title">Podłączono menedżer urządzeń</string>
     <string name="oneplus_connected_devices_count">Podłączono urządzeń: %1$s</string>
@@ -2642,6 +2644,9 @@ Oszczędzanie baterii zostanie automatycznie wyłączone w czasie ładowania two
     <string name="oneplus_data_usage_control_title">Kontrola użycia danych</string>
     <string name="oneplus_deep_clear_way">Głębokie czyszczenie</string>
     <string name="oneplus_deep_clear_way_summary">Wyczyść procesy w tle, co oznacza, że niektóre aplikacje przestaną działać i nie będziesz otrzymywać powiadomień</string>
+    <string name="oneplus_deep_optimization">Głęboka optymalizacja</string>
+    <string name="oneplus_deep_optimization_summary">Wyłączenie głębokiej optymalizacji spowoduje drastyczny wzrost zużycia energii i wpłynie na warunki użytkowania.</string>
+    <string name="oneplus_deep_optimization_title">Wyłączyć głęboką optymalizację?</string>
     <string name="oneplus_default_launcher">Domyślny launcher</string>
     <string name="oneplus_delete_fingerprint_list">Usuń odcisk palca</string>
     <string name="oneplus_deleted_fingerprint_list">Odcisk palca usunięty</string>
@@ -2682,6 +2687,7 @@ Oszczędzanie baterii zostanie automatycznie wyłączone w czasie ładowania two
     <string name="oneplus_earphone_mode">Tryb słuchawkowy</string>
     <string name="oneplus_emergency_rescue_settings">Ratowanie awaryjne</string>
     <string name="oneplus_emergency_rescue_settings_summary">Automatycznie wzywaj pomoc, szybko naciskając przycisk zasilania</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">Dostępna po zmianie ustawień PRZYCISKU ZASILANIA w przypadku ratowania awaryjnego</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Monit konfiguracji odcisku palca</string>
     <string name="oneplus_enter_your_fingerprint">· Zarejestruj odcisk palca</string>
     <string name="oneplus_experience_improvement_programs">Programy poprawy wrażeń</string>
@@ -2795,7 +2801,7 @@ Aby w każdej chwili przejść do ekranu domowego, przesuń palcem w górę od �
     <string name="oneplus_hide_notch_display_summary">Żadne aplikacje nie mogą korzystać z obszaru wycięcia</string>
     <string name="oneplus_hide_notch_display_title">Ukryj obszar wycięcia</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Gdy wzór linii papilarnych wyświetli się na dole ekranu, przyciśnij palec w obszarze czytnika, aby uruchomić funkcję odcisku palca: wybudź i odblokuj telefon, autoryzuj płatności lub zaloguj się do aplikacji.</string>
-    <string name="oneplus_hydrogen_version">Wersja systemu operacyjnego Hydrogen</string>
+    <string name="oneplus_hydrogen_version">Wersja H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Połączenie przychodzące</string>
     <string name="oneplus_incoming_call_vibrate_mode">Wzorzec wibracji dla połączenia przychodzącego</string>
     <string name="oneplus_init_finger_input">Inicjowanie odcisku palca</string>
@@ -3050,6 +3056,7 @@ Pozostało prób:%d."</string>
     <string name="oneplus_setting_ringtone">Ustaw dzwonek</string>
     <string name="oneplus_setting_sim_ringtone_switch">Ustaw dzwonek dla każdej karty SIM</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Skonfiguruj alternatywny sposób odblokowania ekranu</string>
+    <string name="oneplus_share_this_wifi">Zwiększ zasięg Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Udostępnianie Wi‑Fi</string>
     <string name="oneplus_shielding_notification">Blokada</string>
     <string name="oneplus_shielding_notification_summary">Powiadomienia zostaną zablokowane (z wyjątkiem połączeń i alarmów)</string>
@@ -3125,6 +3132,11 @@ Uwaga: korzystanie z funkcji Odblokowanie twarzą może być mniej bezpieczne ni
     <string name="oneplus_weak_text_reminding">Tylko tekst</string>
     <string name="oneplus_weak_text_reminding_summary">Zezwól aplikacjom na wyświetlanie powiadomień</string>
     <string name="oneplus_wifi_ap_error">Wstaw kartę SIM</string>
+    <string name="oneplus_wifi_hidden_network_warning">"Jeśli router nie wyświetla identyfikatora SSID, wybierz „Tak”, aby połączyć z ukrytą siecią.
+
+Regularne wyświetlanie sygnału telefonu w celu wykrycia sieci może stanowić zagrożenie.
+
+Ustawienie sieci jako ukrytej nie ma wpływa na ustawienia routera."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">Wyłącz IPv6 w razie problemów kompatybilności z niektórymi routerami Wi-Fi.</string>
     <string name="oneplus_wifi_ipv6_surport_title">Obsługa IPv6</string>
     <string name="oneplus_wifi_list">Lista Wi‑Fi</string>

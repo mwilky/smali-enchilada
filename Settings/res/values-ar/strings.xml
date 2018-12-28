@@ -2614,8 +2614,9 @@
     <string name="oneplus_bluetooth_volume_switch">مستوى صوت البلوتوث المطلق</string>
     <string name="oneplus_bluetooth_volume_switch_summary">مزامنة تلقائية لمستوى صوت الجهاز والسماعة عند الاتصال بالبلوتوث</string>
     <string name="oneplus_broadcat_wifi_name">اسم شبكة البث (SSID)</string>
-    <string name="oneplus_buttons_and_gestures_settings">الأزرار &amp; الإيماءات</string>
+    <string name="oneplus_buttons_and_gestures_settings">الأزرار والإيماءات</string>
     <string name="oneplus_buttons_dashboard_summary">شريط تمرير التنبيهات، والتنقل، والإيماءات</string>
+    <string name="oneplus_buttons_settings">إعدادات الأزرار</string>
     <string name="oneplus_buttons_settings_summary">إيماءات التنقل</string>
     <string name="oneplus_call_information_broadcast">معرفة هوية المتصل بالصوت</string>
     <string name="oneplus_call_information_broadcast_summary">معرفة هوية المتصل للمكالمة الواردة بالصوت عبر سماعات الأذن</string>
@@ -2630,11 +2631,12 @@
     <string name="oneplus_colorful_mode_title">ملوَّن</string>
     <string name="oneplus_compatibility_mode_summary">لا يمكن لتطبيقات الشاشة الكاملة أن تستخدم منطقة الحز</string>
     <string name="oneplus_compatibility_mode_title">وضع التوافق</string>
+    <string name="oneplus_condition_night_mode_title">الوضع الليلي قيد التشغيل</string>
     <string name="oneplus_connected_device_count">يوجد %1$s جهاز متصل</string>
     <string name="oneplus_connected_device_management_title">مدير الجهاز المتصل</string>
     <string name="oneplus_connected_devices_count">يوجد %1$s من الأجهزة متصلة</string>
     <string name="oneplus_connected_devices_dashboard_summary">NFC، إصدار، طباعة</string>
-    <string name="oneplus_connected_devices_dashboard_title">البلوتوث &amp; جهاز متصل</string>
+    <string name="oneplus_connected_devices_dashboard_title">البلوتوث والجهاز المتصل</string>
     <string name="oneplus_cpu">وحدة المعالجة المركزية</string>
     <string name="oneplus_custom_time">نطاق الوقت المخصص</string>
     <string name="oneplus_customization">تخصيص شريط التنقل</string>
@@ -2642,6 +2644,9 @@
     <string name="oneplus_data_usage_control_title">التحكم في استخدام البيانات</string>
     <string name="oneplus_deep_clear_way">مسح عميق</string>
     <string name="oneplus_deep_clear_way_summary">يقوم بمسح عمليات الخلفية، مما قد يعني توقف بعض التطبيقات عن العمل وعدم تلقيك إشعارات</string>
+    <string name="oneplus_deep_optimization">تحسين عميق</string>
+    <string name="oneplus_deep_optimization_summary">يرتفع استهلاك البطارية بشكل كبير عند تفعيل التحسين العميق مما سيؤثر على استخدامك العادي.</string>
+    <string name="oneplus_deep_optimization_title">إيقاف تشغيل التحسين العميق؟</string>
     <string name="oneplus_default_launcher">المشغل الافتراضي</string>
     <string name="oneplus_delete_fingerprint_list">حذف بصمة الإصبع</string>
     <string name="oneplus_deleted_fingerprint_list">تم حذف بصمة الإصبع</string>
@@ -2682,6 +2687,7 @@
     <string name="oneplus_earphone_mode">وضع السماعة</string>
     <string name="oneplus_emergency_rescue_settings">الإنقاذ في حالات الطوارئ</string>
     <string name="oneplus_emergency_rescue_settings_summary">الاتصال التلقائي للحصول على المساعدة عن طريق الضغط بسرعة على زر الطاقة</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">متاح بعد تعديل إعدادات مفتاح الطاقة للإنقاذ في حالة الطوارئ</string>
     <string name="oneplus_enroll_fingerprint_tips_title">طلب إعداد بصمة الإصبع</string>
     <string name="oneplus_enter_your_fingerprint">· تسجيل بصمة إصبعك</string>
     <string name="oneplus_experience_improvement_programs">برامج تحسين التجربة</string>
@@ -2795,7 +2801,7 @@
     <string name="oneplus_hide_notch_display_summary">لا يمكن لجميع التطبيقات استخدام منطقة الحز</string>
     <string name="oneplus_hide_notch_display_title">إخفاء منطقة الحز</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">عندما يظهر نمط بصمة الإصبع في أسفل الشاشة، فما عليك سوى الضغط بإصبعك على منطقة التعرف على بصمة الإصبع لاستخدام وظيفة بصمة الإصبع: قم بإبقاظ هاتفك وإلغاء قفله أو إصدار أذونات عمليات الشراء أو تسجيل الدخول إلى التطبيقات.</string>
-    <string name="oneplus_hydrogen_version">إصدار نظام التشغيل بالهيدروجين</string>
+    <string name="oneplus_hydrogen_version">إصدار H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">مكالمة واردة</string>
     <string name="oneplus_incoming_call_vibrate_mode">نمط اهتزاز المكالمة الواردة</string>
     <string name="oneplus_init_finger_input">تهيئة بصمة الإصبع</string>
@@ -2844,7 +2850,7 @@
     <string name="oneplus_navigation_bar_title">إيماءات &amp; شريط التنقل</string>
     <string name="oneplus_network_auto_change_summary">التبديل تلقائيًا بين شبكة Wi‑Fi أو بيانات الهاتف، تبعًا للاتصال وقوة الإشارة</string>
     <string name="oneplus_network_auto_change_title">مبادل Wi-Fi الذكي</string>
-    <string name="oneplus_network_dashboard_title">Wi-Fi &amp; الإنترنت</string>
+    <string name="oneplus_network_dashboard_title">الواي-فاي والإنترنت</string>
     <string name="oneplus_network_datausage_restrict_title">تعطيل استخدام البيانات</string>
     <string name="oneplus_network_wifi_restrict_title">تعطيل Wi‑Fi</string>
     <string name="oneplus_never_auto">معطل</string>
@@ -2997,7 +3003,7 @@
     <string name="oneplus_search_keyword_about_settings">اسم الجهاز، إصدار Android، رقم الإصدار، الطراز، وحدة المعالجة المركزية، وحدة التخزين، ذاكرة الوصول العشوائي، ذاكرة القراءة فقط، الكاميرا، البكسل، الشاشة</string>
     <string name="oneplus_search_keyword_accent_color">اللون</string>
     <string name="oneplus_search_keyword_app_lock">القفل، رمز PIN، كلمات المرور</string>
-    <string name="oneplus_search_keyword_connected_device_manager">مدير الجهاز المتصل،الجهاز</string>
+    <string name="oneplus_search_keyword_connected_device_manager">مدير الجهاز المتصل، الجهاز</string>
     <string name="oneplus_search_keyword_data_usage_control">التحكم في استخدام البيانات</string>
     <string name="oneplus_search_keyword_default_launcher_app">المشغل، الافتراضي، التطبيقات، تطبيق الصفحة الرئيسية الافتراضي، تطبيق الصفحة الرئيسية</string>
     <string name="oneplus_search_keyword_discoverable_device">قابل للاكتشاف</string>
@@ -3040,7 +3046,7 @@
     <string name="oneplus_security_dashboard_summary">بصمة الإصبع، وإلغاء القفل بالوجه، والموقع</string>
     <string name="oneplus_security_dashboard_summary_no_faceunlock">بصمات الأصابع، الموقع</string>
     <string name="oneplus_security_lock_settings_summary">فتح قفل التفضيلات، وخدمة الموقع، ووحدة قفل التطبيق</string>
-    <string name="oneplus_security_lock_settings_title">الأمان &amp; الخصوصية</string>
+    <string name="oneplus_security_lock_settings_title">الأمان والخصوصية</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">فشل الإعداد</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">تم بالفعل تسجيل بصمة الإصبع هذه، الرجاء المحاولة بإصبع آخر.</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\"النقر المزدوج لايقاظ الشاشة\" ممكّن وسيتم تعطيل \"النقر على الشاشة للإظهار\"</string>
@@ -3050,6 +3056,7 @@
     <string name="oneplus_setting_ringtone">إعداد نغمة</string>
     <string name="oneplus_setting_sim_ringtone_switch">إعداد نغمة رنين لكل بطاقة SIM</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· إعداد طريقة بديلة لقفل الشاشة</string>
+    <string name="oneplus_share_this_wifi">تمديد تغطية الـ Wi-Fi</string>
     <string name="oneplus_share_wifi_title">مشاركة عبر Wi‑Fi</string>
     <string name="oneplus_shielding_notification">حظر</string>
     <string name="oneplus_shielding_notification_summary">سيتم حظر الإشعارات (باستثناء إشعارات المكالمات والمنبهات)</string>
@@ -3125,6 +3132,11 @@
     <string name="oneplus_weak_text_reminding">النص فقط</string>
     <string name="oneplus_weak_text_reminding_summary">السماح للتطبيقات بعرض إشعارات المتابعة</string>
     <string name="oneplus_wifi_ap_error">الرجاء إدخال بطاقة SIM</string>
+    <string name="oneplus_wifi_hidden_network_warning">"إذا عطل جهاز التوجيه خاص بك بث SSID فيجب عليك اختيار \"نعم\" للاتصال بالشبكة المخفية.
+
+قد يخلق هذا خطراً أمنياً لأن هاتفك سيحاول بانتظام بث إشارته لإيجاد الشبكة.
+
+تعيين الشبكة كشبكة مخفية لن يغير إعدادات جهاز التوجيه خاصتك."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">تعطيل IPv6 يمكن أن يجنب مشكلات التوافق مع أجهزة توجيه Wi-Fi معينة.</string>
     <string name="oneplus_wifi_ipv6_surport_title">دعم IPv6</string>
     <string name="oneplus_wifi_list">قائمة Wi‑Fi</string>

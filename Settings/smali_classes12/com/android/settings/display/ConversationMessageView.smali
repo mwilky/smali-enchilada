@@ -319,12 +319,12 @@
 
     if-eqz v11, :cond_2
 
-    const v11, 0x7f0802b3
+    const v11, 0x7f0802ce
 
     goto :goto_2
 
     :cond_2
-    const v11, 0x7f0802b4
+    const v11, 0x7f0802cf
 
     :goto_2
     iget-boolean v12, v0, Lcom/android/settings/display/ConversationMessageView;->mIncoming:Z
@@ -441,7 +441,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f08012f
+    const v1, 0x7f08014a
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

@@ -302,7 +302,7 @@
 
     if-eqz v0, :cond_0
 
-    const v1, 0x7f121373
+    const v1, 0x7f121378
 
     const/4 v2, 0x0
 

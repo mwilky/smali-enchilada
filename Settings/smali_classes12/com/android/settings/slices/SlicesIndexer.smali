@@ -94,13 +94,16 @@
     return-void
 
     :cond_0
+    :try_start_0
     iget-object v0, p0, Lcom/android/settings/slices/SlicesIndexer;->mHelper:Lcom/android/settings/slices/SlicesDatabaseHelper;
 
     invoke-virtual {v0}, Lcom/android/settings/slices/SlicesDatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :try_start_0
+    :try_start_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
@@ -152,14 +155,15 @@
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    :try_start_2
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
     nop
 
-    return-void
+    goto :goto_0
 
     :catchall_0
     move-exception v1
@@ -167,6 +171,16 @@
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
     throw v1
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+
+    :catch_0
+    move-exception v0
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    :goto_0
+    return-void
 .end method
 
 .method insertSliceData(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/List;)V

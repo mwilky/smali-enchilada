@@ -2616,6 +2616,7 @@ Battery saver turns off automatically when your device is charging."</string>
     <string name="oneplus_broadcat_wifi_name">Broadcast network name (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Buttons &amp; gestures</string>
     <string name="oneplus_buttons_dashboard_summary">Alert Slider, navigation, gestures</string>
+    <string name="oneplus_buttons_settings">buttons settings</string>
     <string name="oneplus_buttons_settings_summary">Navigation gesture</string>
     <string name="oneplus_call_information_broadcast">Speak Caller ID</string>
     <string name="oneplus_call_information_broadcast_summary">Speak the incoming caller ID via earphones</string>
@@ -2630,6 +2631,7 @@ Battery saver turns off automatically when your device is charging."</string>
     <string name="oneplus_colorful_mode_title">Colourful</string>
     <string name="oneplus_compatibility_mode_summary">Fullscreen apps cannot use the notch area</string>
     <string name="oneplus_compatibility_mode_title">Compatibility mode</string>
+    <string name="oneplus_condition_night_mode_title">Night mode is on</string>
     <string name="oneplus_connected_device_count">There is %1$s device connected</string>
     <string name="oneplus_connected_device_management_title">Connected device manager</string>
     <string name="oneplus_connected_devices_count">There are %1$s devices connected</string>
@@ -2642,6 +2644,9 @@ Battery saver turns off automatically when your device is charging."</string>
     <string name="oneplus_data_usage_control_title">Data usage control</string>
     <string name="oneplus_deep_clear_way">Deep clear</string>
     <string name="oneplus_deep_clear_way_summary">Clears background processes, which may mean some apps stop working and you do not receive notifications</string>
+    <string name="oneplus_deep_optimization">Deep Optimisation</string>
+    <string name="oneplus_deep_optimization_summary">When you turn off Deep Optimization, power consumption will increase greatly, which will affect your normal use.</string>
+    <string name="oneplus_deep_optimization_title">Turn off Deep Optimisation?</string>
     <string name="oneplus_default_launcher">Default launcher</string>
     <string name="oneplus_delete_fingerprint_list">Delete fingerprint</string>
     <string name="oneplus_deleted_fingerprint_list">Fingerprint deleted</string>
@@ -2682,6 +2687,7 @@ Battery saver turns off automatically when your device is charging."</string>
     <string name="oneplus_earphone_mode">Earphone mode</string>
     <string name="oneplus_emergency_rescue_settings">Emergency rescue</string>
     <string name="oneplus_emergency_rescue_settings_summary">Automatically call for help by quickly pressing the power button</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">Available after modifying the POWER BUTTON settings of Emergency Rescue</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Fingerprint setup prompt</string>
     <string name="oneplus_enter_your_fingerprint">· Register your fingerprint</string>
     <string name="oneplus_experience_improvement_programs">Experience improvement programs</string>
@@ -2795,7 +2801,7 @@ To go to the home screen at any time, swipe up from the bottom center edge of th
     <string name="oneplus_hide_notch_display_summary">All apps cannot use the notch area</string>
     <string name="oneplus_hide_notch_display_title">Hide the notch area</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">When the fingerprint pattern appears at the bottom of the screen, simply press the fingerprint identification area with your finger to use the fingerprint function to wake and unlock your phone, authorise purchases or sign in to apps.</string>
-    <string name="oneplus_hydrogen_version">Hydrogen OS version</string>
+    <string name="oneplus_hydrogen_version">H₂OS version</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Incoming call</string>
     <string name="oneplus_incoming_call_vibrate_mode">Incoming call vibration pattern</string>
     <string name="oneplus_init_finger_input">Initializing Fingerprint</string>
@@ -3050,6 +3056,7 @@ To go to the home screen at any time, swipe up from the bottom center edge of th
     <string name="oneplus_setting_ringtone">Set ring</string>
     <string name="oneplus_setting_sim_ringtone_switch">Set ringtone for each SIM card</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Set up an alternative way to unlock the screen</string>
+    <string name="oneplus_share_this_wifi">Extend Wi-Fi coverage</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi Sharing</string>
     <string name="oneplus_shielding_notification">Block</string>
     <string name="oneplus_shielding_notification_summary">Notifications will be blocked (except for calls and alarms)</string>
@@ -3125,6 +3132,11 @@ Note: Face Unlock may be less secure than fingerprint, PIN or other screen lock 
     <string name="oneplus_weak_text_reminding">Text only</string>
     <string name="oneplus_weak_text_reminding_summary">Allow apps to show heads-up notification</string>
     <string name="oneplus_wifi_ap_error">Please insert the SIM card</string>
+    <string name="oneplus_wifi_hidden_network_warning">"If your router disables the SSID broadcast, you should select \"Yes\" to connect to the hidden network.
+
+This may create a security risk because your phone will regularly broadcast its signal to find the network.
+
+Setting the network as hidden will not change your router settings."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">Disabling IPv6 can avoid compatibility issues with certain Wi-Fi routers.</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6 Support</string>
     <string name="oneplus_wifi_list">Wi‑Fi list</string>

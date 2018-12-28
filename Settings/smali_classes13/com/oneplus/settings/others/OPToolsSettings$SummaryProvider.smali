@@ -57,7 +57,7 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/others/OPToolsSettings$SummaryProvider;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f120b4a
+    const v2, 0x7f120b4d
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -78,7 +78,7 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/others/OPToolsSettings$SummaryProvider;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f120d07
+    const v2, 0x7f120d0b
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -93,7 +93,7 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/others/OPToolsSettings$SummaryProvider;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f120d08
+    const v2, 0x7f120d0c
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

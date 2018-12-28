@@ -138,7 +138,7 @@
 
     invoke-virtual {p0, v3}, Lcom/android/settings/widget/VideoPreference;->setVisible(Z)V
 
-    const v4, 0x7f0d02da
+    const v4, 0x7f0d02d9
 
     invoke-virtual {p0, v4}, Lcom/android/settings/widget/VideoPreference;->setLayoutResource(I)V
 

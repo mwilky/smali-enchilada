@@ -2614,6 +2614,7 @@ T馬などの動物はいないようでした。荷物は小さな緑色の手�
     <string name="oneplus_broadcat_wifi_name">ブロードキャストネットワーク名（SSID）</string>
     <string name="oneplus_buttons_and_gestures_settings">ボタンとジェスチャー</string>
     <string name="oneplus_buttons_dashboard_summary">3 段トグルスライダー、ナビゲーション、ジェスチャー</string>
+    <string name="oneplus_buttons_settings">ボタン設定</string>
     <string name="oneplus_buttons_settings_summary">ナビゲーションジェスチャー</string>
     <string name="oneplus_call_information_broadcast">発信者 ID を音声で入力してください</string>
     <string name="oneplus_call_information_broadcast_summary">発信者 ID をイヤホン経由で音声で入力してください</string>
@@ -2628,6 +2629,7 @@ T馬などの動物はいないようでした。荷物は小さな緑色の手�
     <string name="oneplus_colorful_mode_title">カラフル</string>
     <string name="oneplus_compatibility_mode_summary">全画面表示アプリではノッチ領域を使用できません</string>
     <string name="oneplus_compatibility_mode_title">互換モード</string>
+    <string name="oneplus_condition_night_mode_title">おやすみモードがオンです</string>
     <string name="oneplus_connected_device_count">接続済みのデバイスが %1$s 個あります</string>
     <string name="oneplus_connected_device_management_title">接続済みのデバイス マネージャー</string>
     <string name="oneplus_connected_devices_count">接続済みのデバイスが %1$s 個あります</string>
@@ -2640,6 +2642,9 @@ T馬などの動物はいないようでした。荷物は小さな緑色の手�
     <string name="oneplus_data_usage_control_title">データ使用量の制御</string>
     <string name="oneplus_deep_clear_way">ディープクリア</string>
     <string name="oneplus_deep_clear_way_summary">バックグラウンドプロセスが終了されるため、一部のアプリが動作を停止し、通知を受け取れなくなる可能性があります</string>
+    <string name="oneplus_deep_optimization">詳細な最適化</string>
+    <string name="oneplus_deep_optimization_summary">詳細な最適化をオフにすると、電源消費量が大幅に増加し、通常の使用に影響が及びます。</string>
+    <string name="oneplus_deep_optimization_title">詳細な最適化をオフにしますか？</string>
     <string name="oneplus_default_launcher">既定のランチャー</string>
     <string name="oneplus_delete_fingerprint_list">指紋を削除</string>
     <string name="oneplus_deleted_fingerprint_list">指紋を削除しました</string>
@@ -2680,6 +2685,7 @@ T馬などの動物はいないようでした。荷物は小さな緑色の手�
     <string name="oneplus_earphone_mode">イヤホンモード</string>
     <string name="oneplus_emergency_rescue_settings">緊急救助</string>
     <string name="oneplus_emergency_rescue_settings_summary">電源ボタンを押すと、自動的に助けを求めます</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">緊急救助の電源ボタン設定を変更した後に利用できます</string>
     <string name="oneplus_enroll_fingerprint_tips_title">指紋セットアップ プロンプト</string>
     <string name="oneplus_enter_your_fingerprint">· あなたの指紋を登録します。</string>
     <string name="oneplus_experience_improvement_programs">エクスペリエンス向上プログラム</string>
@@ -2793,7 +2799,7 @@ T馬などの動物はいないようでした。荷物は小さな緑色の手�
     <string name="oneplus_hide_notch_display_summary">すべてのアプリでノッチ領域を使用できません</string>
     <string name="oneplus_hide_notch_display_title">ノッチ領域を非表示</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">画面下部に指紋パターンが表示されたら、指紋識別エリアを指で押すだけで指紋機能を利用できます。それによって携帯電話のスリープ解除やロック解除、購入の承認、アプリへのサインインができます。</string>
-    <string name="oneplus_hydrogen_version">Hydrogen OS バージョン</string>
+    <string name="oneplus_hydrogen_version">H₂OS バージョン</string>
     <string name="oneplus_incoming_call_vibrate_intensity">着信通話</string>
     <string name="oneplus_incoming_call_vibrate_mode">着信バイブのパターン</string>
     <string name="oneplus_init_finger_input">指紋を初期中</string>
@@ -3048,6 +3054,7 @@ T馬などの動物はいないようでした。荷物は小さな緑色の手�
     <string name="oneplus_setting_ringtone">着信音を設定</string>
     <string name="oneplus_setting_sim_ringtone_switch">SIM カード別に着信音を設定</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· 画面のロックを解除する別の方法を設定します</string>
+    <string name="oneplus_share_this_wifi">Wi-Fi 通信範囲を拡張</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi 共有</string>
     <string name="oneplus_shielding_notification">ブロック</string>
     <string name="oneplus_shielding_notification_summary">通知がブロックされます（着信とアラームを除く）</string>
@@ -3123,6 +3130,11 @@ T馬などの動物はいないようでした。荷物は小さな緑色の手�
     <string name="oneplus_weak_text_reminding">テキストのみ</string>
     <string name="oneplus_weak_text_reminding_summary">アプリがポップアップ通知を表示することを許可する</string>
     <string name="oneplus_wifi_ap_error">SIM カードを挿入してください</string>
+    <string name="oneplus_wifi_hidden_network_warning">"ご使用のルーターで SSID ブロードキャストが無効にされている場合は、[はい] を選択して、非表示のネットワークに接続してください。
+
+これにより、ネットワークを検出するために携帯電話から信号が定期的に発信されるため、セキュリティリスクが生じる可能性があります。
+
+ネットワークを非表示に設定しても、ルーターの設定が変更されることはありません。"</string>
     <string name="oneplus_wifi_ipv6_surport_summary">IPv6 を無効にすることで、特定の Wi-Fi ルーターとの互換性の問題を回避できます。</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6 のサポート</string>
     <string name="oneplus_wifi_list">Wi‑Fi の一覧</string>

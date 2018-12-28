@@ -385,7 +385,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f120fc4
+    const v1, 0x7f120fc9
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -399,27 +399,27 @@
 
     if-eqz v2, :cond_0
 
-    const v2, 0x7f120d16
+    const v2, 0x7f120d1a
 
     invoke-virtual {p0, v2}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->setHeaderText(I)V
 
-    const v2, 0x7f120d15
+    const v2, 0x7f120d19
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(I)V
 
     goto :goto_0
 
     :cond_0
-    const v2, 0x7f120b00
+    const v2, 0x7f120b03
 
     invoke-virtual {p0, v2}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->setHeaderText(I)V
 
-    const v2, 0x7f120aff
+    const v2, 0x7f120b02
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(I)V
 
     :goto_0
-    const v2, 0x7f120b01
+    const v2, 0x7f120b04
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(I)V
 
@@ -433,7 +433,7 @@
 
     invoke-virtual {v2, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v3, 0x7f120fc0
+    const v3, 0x7f120fc5
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setText(I)V
 
@@ -897,7 +897,7 @@
     iput-boolean v0, p0, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->mAlreadyHadLockScreenSetup:Z
 
     :goto_0
-    const v0, 0x7f0d0166
+    const v0, 0x7f0d0165
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->setContentView(I)V
 

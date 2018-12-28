@@ -139,7 +139,7 @@
 
     iget-object v6, v0, Lcom/android/settings/sim/SimPreferenceDialog;->mColorStrings:[Ljava/lang/String;
 
-    const v7, 0x7f0d0251
+    const v7, 0x7f0d0250
 
     invoke-direct {v4, v0, v5, v7, v6}, Lcom/android/settings/sim/SimPreferenceDialog$SelectColorAdapter;-><init>(Lcom/android/settings/sim/SimPreferenceDialog;Landroid/content/Context;I[Ljava/lang/String;)V
 
@@ -287,7 +287,7 @@
 
     iget-object v10, v0, Lcom/android/settings/sim/SimPreferenceDialog;->mBuilder:Landroid/app/AlertDialog$Builder;
 
-    const v12, 0x7f121054
+    const v12, 0x7f121059
 
     invoke-virtual {v1, v12}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

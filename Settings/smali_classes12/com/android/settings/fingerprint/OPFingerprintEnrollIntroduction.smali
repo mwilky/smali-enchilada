@@ -266,7 +266,7 @@
 
     if-eqz v1, :cond_0
 
-    const v1, 0x7f120fc5
+    const v1, 0x7f120fca
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -501,7 +501,7 @@
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f0d016d
+    const v0, 0x7f0d016c
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/OPFingerprintEnrollIntroduction;->setContentView(I)V
 
@@ -515,11 +515,11 @@
     :goto_1
     iget-boolean v0, p0, Lcom/android/settings/fingerprint/OPFingerprintEnrollIntroduction;->mFingerprintUnlockDisabledByAdmin:Z
 
-    const v2, 0x7f120fc6
+    const v2, 0x7f120fcb
 
     if-eqz v0, :cond_2
 
-    const v0, 0x7f120fc7
+    const v0, 0x7f120fcc
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/OPFingerprintEnrollIntroduction;->setHeaderText(I)V
 

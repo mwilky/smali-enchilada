@@ -96,7 +96,9 @@
 
     iget-boolean v0, p0, Lcom/android/settings/users/AutoSyncDataPreferenceController$ConfirmAutoSyncChangeFragment;->mEnabling:Z
 
-    iget-object v1, p0, Lcom/android/settings/users/AutoSyncDataPreferenceController$ConfirmAutoSyncChangeFragment;->mUserHandle:Landroid/os/UserHandle;
+    invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
+
+    move-result-object v1
 
     invoke-virtual {v1}, Landroid/os/UserHandle;->getIdentifier()I
 

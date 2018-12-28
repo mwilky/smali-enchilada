@@ -119,13 +119,13 @@
 .method public setupView(Lcom/android/settings/applications/manageapplications/ApplicationViewHolder;)V
     .locals 3
 
-    const v0, 0x7f0801ee
+    const v0, 0x7f080209
 
     invoke-virtual {p1, v0}, Lcom/android/settings/applications/manageapplications/ApplicationViewHolder;->setIcon(I)V
 
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/PhotosViewHolderController;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1210fa
+    const v1, 0x7f1210ff
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

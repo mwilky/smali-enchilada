@@ -68,7 +68,7 @@
     return-object v0
 
     :pswitch_0
-    const v0, 0x7f0801ea
+    const v0, 0x7f080205
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -77,7 +77,7 @@
     return-object v0
 
     :pswitch_1
-    const v0, 0x7f0801ef
+    const v0, 0x7f08020a
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -86,7 +86,7 @@
     return-object v0
 
     :pswitch_2
-    const v0, 0x7f0801eb
+    const v0, 0x7f080206
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

@@ -300,7 +300,7 @@
 
     move-result v0
 
-    const v1, 0x7f121324
+    const v1, 0x7f121329
 
     if-eqz v0, :cond_0
 
@@ -308,7 +308,7 @@
 
     invoke-direct {v0}, Lcom/oneplus/settings/packageuninstaller/ErrorFragment;-><init>()V
 
-    const v2, 0x7f121325
+    const v2, 0x7f12132a
 
     invoke-direct {p0, v0, v2, v1}, Lcom/oneplus/settings/packageuninstaller/UninstallerActivity;->showContentFragment(Landroid/app/Fragment;II)V
 
@@ -1056,7 +1056,7 @@
 
     const-string v10, "uninstalling"
 
-    const v11, 0x7f121258
+    const v11, 0x7f12125d
 
     invoke-virtual {v1, v11}, Lcom/oneplus/settings/packageuninstaller/UninstallerActivity;->getString(I)Ljava/lang/String;
 
@@ -1074,7 +1074,7 @@
 
     invoke-direct {v0, v1, v11}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    const v11, 0x7f0801f3
+    const v11, 0x7f08020e
 
     invoke-virtual {v0, v11}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -1084,7 +1084,7 @@
 
     move-result-object v0
 
-    const v11, 0x7f121257
+    const v11, 0x7f12125c
 
     new-array v12, v5, [Ljava/lang/Object;
 

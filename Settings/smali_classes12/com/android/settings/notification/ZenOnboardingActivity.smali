@@ -417,7 +417,7 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    const v0, 0x7f0d02f6
+    const v0, 0x7f0d02f5
 
     invoke-virtual {p0, v0}, Lcom/android/settings/notification/ZenOnboardingActivity;->setContentView(I)V
 

@@ -180,7 +180,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/quicklaunch/OPApplicationListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v3, 0x7f0d0146
+    const v3, 0x7f0d0145
 
     const/4 v4, 0x0
 
@@ -286,7 +286,7 @@
     :goto_0
     const/4 v2, 0x0
 
-    const v3, 0x7f120c12
+    const v3, 0x7f120c16
 
     const/16 v4, 0x44
 
@@ -312,7 +312,7 @@
 
     iget-object v3, v0, Lcom/oneplus/settings/quicklaunch/OPApplicationListAdapter$ItemViewHolder;->titleTv:Landroid/widget/TextView;
 
-    const v4, 0x7f120c55
+    const v4, 0x7f120c59
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 

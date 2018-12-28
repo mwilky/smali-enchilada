@@ -63,7 +63,7 @@
 
     new-instance v1, Landroid/app/Notification$Action$Builder;
 
-    const v2, 0x7f0801c1
+    const v2, 0x7f0801dc
 
     invoke-static {p1, v2}, Landroid/graphics/drawable/Icon;->createWithResource(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;
 
@@ -117,7 +117,7 @@
 
     new-instance v1, Landroid/app/Notification$Action$Builder;
 
-    const v2, 0x7f080214
+    const v2, 0x7f08022f
 
     invoke-static {p1, v2}, Landroid/graphics/drawable/Icon;->createWithResource(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;
 
@@ -341,7 +341,7 @@
 
     const-string v12, "uninstall failure"
 
-    const v13, 0x7f121252
+    const v13, 0x7f121257
 
     invoke-virtual {v2, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -593,7 +593,7 @@
 
     invoke-direct {v1, v2, v13}, Lcom/oneplus/settings/packageuninstaller/OPUninstallFinish;->addDeviceManagerButton(Landroid/content/Context;Landroid/app/Notification$Builder;)V
 
-    const v3, 0x7f12124f
+    const v3, 0x7f121254
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -632,7 +632,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const v3, 0x7f121250
+    const v3, 0x7f121255
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -832,7 +832,7 @@
     :cond_b
     if-nez v12, :cond_c
 
-    const v3, 0x7f121248
+    const v3, 0x7f12124d
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -845,7 +845,7 @@
     :cond_c
     if-eqz v9, :cond_d
 
-    const v3, 0x7f121242
+    const v3, 0x7f121247
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -856,7 +856,7 @@
     goto :goto_a
 
     :cond_d
-    const v3, 0x7f121249
+    const v3, 0x7f12124e
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -867,7 +867,7 @@
     nop
 
     :goto_a
-    const v0, 0x7f12124e
+    const v0, 0x7f121253
 
     const/4 v3, 0x1
 
@@ -885,7 +885,7 @@
 
     invoke-virtual {v13, v4}, Landroid/app/Notification$Builder;->setOngoing(Z)Landroid/app/Notification$Builder;
 
-    const v0, 0x7f08018d
+    const v0, 0x7f0801a8
 
     invoke-virtual {v13, v0}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -906,7 +906,7 @@
 
     invoke-direct {v1, v2, v0}, Lcom/oneplus/settings/packageuninstaller/OPUninstallFinish;->notifyPackageRemoved(Landroid/content/Context;Ljava/lang/String;)V
 
-    const v0, 0x7f12124c
+    const v0, 0x7f121251
 
     const/4 v3, 0x1
 

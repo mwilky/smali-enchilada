@@ -2618,6 +2618,7 @@ bateria desliga-se automaticamente quando o dispositivo está a carregar."</stri
     <string name="oneplus_broadcat_wifi_name">Nome da rede de transmissão (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Botões &amp; gestos</string>
     <string name="oneplus_buttons_dashboard_summary">Controlo de deslize de alerta, navegação, gestos</string>
+    <string name="oneplus_buttons_settings">configurações de botões</string>
     <string name="oneplus_buttons_settings_summary">Gesto de navegação</string>
     <string name="oneplus_call_information_broadcast">Dizer a ID do autor da chamada</string>
     <string name="oneplus_call_information_broadcast_summary">Dizer a ID do autor da chamada através dos auriculares</string>
@@ -2632,6 +2633,7 @@ bateria desliga-se automaticamente quando o dispositivo está a carregar."</stri
     <string name="oneplus_colorful_mode_title">Colorido</string>
     <string name="oneplus_compatibility_mode_summary">As aplicações de ecrã inteiro não podem usar a área do entalhe</string>
     <string name="oneplus_compatibility_mode_title">Modo de compatibilidade</string>
+    <string name="oneplus_condition_night_mode_title">Modo noturno ativado</string>
     <string name="oneplus_connected_device_count">Há %1$s dispositivo ligado</string>
     <string name="oneplus_connected_device_management_title">Gestor de dispositivo ligado</string>
     <string name="oneplus_connected_devices_count">Há %1$s dispositivos ligados</string>
@@ -2644,6 +2646,9 @@ bateria desliga-se automaticamente quando o dispositivo está a carregar."</stri
     <string name="oneplus_data_usage_control_title">Controlo de utilização de dados</string>
     <string name="oneplus_deep_clear_way">Limpeza profunda</string>
     <string name="oneplus_deep_clear_way_summary">Limpar processos de segundo plano que possam conduzir a resultados indesejados e a algumas aplicações deixarem de funcionar e de receber notificações até serem reiniciadas</string>
+    <string name="oneplus_deep_optimization">Melhoramento profundo</string>
+    <string name="oneplus_deep_optimization_summary">Quando desliga o melhoramento profundo, o consumo de energira irá aumentar consideravelmente, afetando a utilização normal.</string>
+    <string name="oneplus_deep_optimization_title">Desligar o melhoramento profundo?</string>
     <string name="oneplus_default_launcher">Lançador padrão</string>
     <string name="oneplus_delete_fingerprint_list">Eliminar a impressão digital</string>
     <string name="oneplus_deleted_fingerprint_list">Impressão digital eliminada</string>
@@ -2684,6 +2689,7 @@ bateria desliga-se automaticamente quando o dispositivo está a carregar."</stri
     <string name="oneplus_earphone_mode">Modo auricular</string>
     <string name="oneplus_emergency_rescue_settings">Resgate de emergência</string>
     <string name="oneplus_emergency_rescue_settings_summary">Liga automaticamente a pedir ajuda ao premir rapidamente o botão de alimentação</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">Disponível depois de modificar as configurações do BOTÃO LIGAR/DESLIGAR do Resgate de emergência</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Indicação de configuração de impressão digital</string>
     <string name="oneplus_enter_your_fingerprint">· Registar a sua impressão digital</string>
     <string name="oneplus_experience_improvement_programs">Programas de melhoramento da experiência</string>
@@ -2797,7 +2803,7 @@ Para ir para o ecrã inicial a qualquer momento, deslize para cima a partir do c
     <string name="oneplus_hide_notch_display_summary">Nenhuma aplicação pode usar a área do entalhe</string>
     <string name="oneplus_hide_notch_display_title">Ocultar a área de entalhe</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Quando o padrão da impressão digital aparece no fundo do ecrã, basta premir no seu dedo contra a área de identificação da impressão digital para utilizar esta função: ative e desbloqueie o seu telefone, autorize compras ou iniciar sessão em aplicações.</string>
-    <string name="oneplus_hydrogen_version">Versão do SO Hydrogen</string>
+    <string name="oneplus_hydrogen_version">Versão H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Chamada recebida</string>
     <string name="oneplus_incoming_call_vibrate_mode">Padrão de vibração para chamadas recebidas</string>
     <string name="oneplus_init_finger_input">Inicializar a impressão digital</string>
@@ -3052,6 +3058,7 @@ Para ir para o ecrã inicial a qualquer momento, deslize para cima a partir do c
     <string name="oneplus_setting_ringtone">Definir toque</string>
     <string name="oneplus_setting_sim_ringtone_switch">Definir o toque para cada cartão SIM</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Configurar um método alternativo para desbloquear o ecrã</string>
+    <string name="oneplus_share_this_wifi">Expandir a cobertura do Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Partilha de Wi‑Fi</string>
     <string name="oneplus_shielding_notification">Bloquear</string>
     <string name="oneplus_shielding_notification_summary">As notificações serão bloqueadas (exceto as de chamadas e alarmes)</string>
@@ -3127,6 +3134,11 @@ Nota: o Desbloqueio com o rosto pode ser menos seguro do que a impressão digita
     <string name="oneplus_weak_text_reminding">Apenas texto</string>
     <string name="oneplus_weak_text_reminding_summary">Permitir que as aplicações mostrem uma notificação de atenção</string>
     <string name="oneplus_wifi_ap_error">Introduza o cartão SIM</string>
+    <string name="oneplus_wifi_hidden_network_warning">"Se o seu router desativar a transmissão SSID, deve selecionar \"Sim\" para ligar à rede ocultada.
+
+Isto poderá criar um risco de segurança porque o seu telefone irá transmitir regularmente o seu sinal para localizar a rede.
+
+Definir a rede como ocultada não irá alterar as definições do seu router."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">Desativar o IPv6 pode evitar problemas de compatibilidade com certos routers Wi-Fi.</string>
     <string name="oneplus_wifi_ipv6_surport_title">Suporte para IPv6</string>
     <string name="oneplus_wifi_list">Lista Wi‑Fi</string>

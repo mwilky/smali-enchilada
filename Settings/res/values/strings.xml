@@ -2823,6 +2823,7 @@ Battery saver turns off automatically when your device is charging."</string>
     <string name="oneplus_broadcat_wifi_name">Broadcast network name (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Buttons &amp; gestures</string>
     <string name="oneplus_buttons_dashboard_summary">Alert Slider, navigation, gestures</string>
+    <string name="oneplus_buttons_settings">buttons settings</string>
     <string name="oneplus_buttons_settings_summary">Navigation gesture</string>
     <string name="oneplus_call_information_broadcast">Speak Caller ID</string>
     <string name="oneplus_call_information_broadcast_summary">Speak the incoming caller ID via earphones</string>
@@ -2872,6 +2873,9 @@ Battery saver turns off automatically when your device is charging."</string>
     <string name="oneplus_data_usage_summary_title">@string/data_usage_rank_wlan</string>
     <string name="oneplus_deep_clear_way">Deep clear</string>
     <string name="oneplus_deep_clear_way_summary">Clears background processes, which may mean some apps stop working and you do not receive notifications</string>
+    <string name="oneplus_deep_optimization">Deep optimization</string>
+    <string name="oneplus_deep_optimization_summary">When you turn off deep optimization, the power consumption will increase greatly, which will affect your normal use.</string>
+    <string name="oneplus_deep_optimization_title">Turn off deep optimization?</string>
     <string name="oneplus_default_launcher">Default Home app</string>
     <string name="oneplus_delete_fingerprint_list">Delete fingerprint</string>
     <string name="oneplus_deleted_fingerprint_list">Fingerprint deleted</string>
@@ -3157,6 +3161,7 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
  prompt notification center position, no sound and light breathing tips"</string>
     <string name="oneplus_normal_notification_title">Normal</string>
     <string name="oneplus_not_disturb_on">Do Not Disturb is on</string>
+    <string name="oneplus_not_disturb_summary">Mute calls and notifications and turn off vibration, except for your selected exceptions</string>
     <string name="oneplus_not_show">"Don't show this again"</string>
     <string name="oneplus_notch_display_area">Notch</string>
     <string name="oneplus_notch_display_choose_title">How to show the notch area</string>
@@ -3213,8 +3218,8 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
 %d attempts left."</string>
     <string name="oneplus_pocket_mode_summary">Prevent accidental screen touches when the phone is in your pocket</string>
     <string name="oneplus_pre_application">Preinstalled application list</string>
-    <string name="oneplus_pre_install_app_tips1">"预装软件可以卸载，卸载方法：
-进入设置——应用程序，点击对应的应用，选择卸载。"</string>
+    <string name="oneplus_pre_install_app_tips1">"The preinstalled apps can be uninstalled:
+Go to \"Settings - Apps &amp; notifications\", click on the corresponding application, select \"UNINSTALL\"."</string>
     <string name="oneplus_preference_settings">Behavior</string>
     <string name="oneplus_preference_settings_auto_activate">Scheduled</string>
     <string name="oneplus_preference_settings_behavior">Preferences</string>
@@ -3496,6 +3501,11 @@ Note: Face Unlock may be less secure than fingerprint, PIN or other screen lock 
     <string name="oneplus_weak_text_reminding_summary">Allow apps to show heads up notification</string>
     <string name="oneplus_wifi_ap_error">Please insert the SIM card</string>
     <string name="oneplus_wifi_display_settings_title">@string/wifi_display_settings_title</string>
+    <string name="oneplus_wifi_hidden_network_warning">"If your router is set to not broadcast SSID, you should select \"Yes\" to connect to the hidden network.
+
+This may create a security risk because your phone will regularly broadcast its signal to find the network.
+
+Setting the network as hidden will not change your router settings."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">Disabling IPv6 can avoid compatibility issues with certain Wi-Fi routers.</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6 Support</string>
     <string name="oneplus_wifi_list">Wi-Fi list</string>
@@ -5965,23 +5975,15 @@ Update settings to:
     <item type="string" name="APKTOOL_DUMMY_a40">false</item>
     <item type="string" name="APKTOOL_DUMMY_a63">false</item>
     <item type="string" name="APKTOOL_DUMMY_a64">false</item>
-    <item type="string" name="APKTOOL_DUMMY_a96">false</item>
-    <item type="string" name="APKTOOL_DUMMY_ac8">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b92">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b94">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b96">false</item>
-    <item type="string" name="APKTOOL_DUMMY_bb6">false</item>
-    <item type="string" name="APKTOOL_DUMMY_bb7">false</item>
-    <item type="string" name="APKTOOL_DUMMY_bf8">false</item>
-    <item type="string" name="APKTOOL_DUMMY_bf9">false</item>
-    <item type="string" name="APKTOOL_DUMMY_cff">false</item>
-    <item type="string" name="APKTOOL_DUMMY_d00">false</item>
-    <item type="string" name="APKTOOL_DUMMY_1251">false</item>
-    <string name="hardware_keys_action_kill">Kill foreground app</string>
-    <string name="hardware_keys_action_screenshot">Full screenshot</string>
-    <string name="hardware_keys_action_screenshot2">Croppable screenshot</string>
-    <string name="hardware_keys_action_app">Launch custom app (select app in RiCE)</string>
-    <string name="hardware_keys_action_previous_app">Switch to previous app</string>
-    <string name="hardware_keys_action_default_double_recents">Nothing (Switch to previous app)</string>
-    <string name="oneplus_search_keyword_fingerprint_key">fingerprint</string>
+    <item type="string" name="APKTOOL_DUMMY_acb">false</item>
+    <item type="string" name="APKTOOL_DUMMY_b95">false</item>
+    <item type="string" name="APKTOOL_DUMMY_b97">false</item>
+    <item type="string" name="APKTOOL_DUMMY_b99">false</item>
+    <item type="string" name="APKTOOL_DUMMY_bb9">false</item>
+    <item type="string" name="APKTOOL_DUMMY_bba">false</item>
+    <item type="string" name="APKTOOL_DUMMY_bfc">false</item>
+    <item type="string" name="APKTOOL_DUMMY_bfd">false</item>
+    <item type="string" name="APKTOOL_DUMMY_d03">false</item>
+    <item type="string" name="APKTOOL_DUMMY_d04">false</item>
+    <item type="string" name="APKTOOL_DUMMY_1256">false</item>
 </resources>

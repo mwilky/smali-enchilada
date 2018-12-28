@@ -75,7 +75,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f120e3f
+    const v0, 0x7f120e44
 
     invoke-virtual {p0, v0}, Lcom/android/settings/applications/PremiumSmsAccess;->setEmptyText(I)V
 
@@ -139,7 +139,7 @@
 
     invoke-direct {v0, v1}, Lcom/android/settingslib/widget/FooterPreference;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f120e40
+    const v1, 0x7f120e45
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/widget/FooterPreference;->setTitle(I)V
 

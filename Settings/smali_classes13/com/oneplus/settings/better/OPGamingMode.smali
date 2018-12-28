@@ -176,6 +176,16 @@
     return-object v0
 .end method
 
+.method static synthetic access$500(Lcom/oneplus/settings/better/OPGamingMode;)Landroid/content/ContentResolver;
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/oneplus/settings/better/OPGamingMode;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method private showToast()V
     .locals 3
 
@@ -183,7 +193,7 @@
 
     const/4 v1, 0x1
 
-    const v2, 0x7f120b58
+    const v2, 0x7f120b5b
 
     if-eqz v0, :cond_0
 
@@ -324,7 +334,7 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/better/OPGamingMode;->mNotificationWaysPreference:Landroid/support/v7/preference/Preference;
 
-    const v2, 0x7f120cee
+    const v2, 0x7f120cf2
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -337,7 +347,7 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/better/OPGamingMode;->mNotificationWaysPreference:Landroid/support/v7/preference/Preference;
 
-    const v2, 0x7f120d2e
+    const v2, 0x7f120d32
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -350,7 +360,7 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/better/OPGamingMode;->mNotificationWaysPreference:Landroid/support/v7/preference/Preference;
 
-    const v2, 0x7f120ccf
+    const v2, 0x7f120cd3
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -706,7 +716,7 @@
 
     invoke-static {v3, v4, v5, v2}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :cond_1
     const-string v1, "do_not_disturb_answer_call_by_speaker"
@@ -739,6 +749,8 @@
 
     invoke-static {v3, v4, v5, v2}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForGameModeSpeakerAnswer()V
+
     goto :goto_0
 
     :cond_2
@@ -765,6 +777,8 @@
     move-result v5
 
     invoke-static {v3, v4, v5, v2}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
+
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForGameModeBrightness()V
 
     goto :goto_0
 
@@ -793,6 +807,8 @@
 
     invoke-static {v3, v4, v5, v2}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForGameModeNetWorkBoost()V
+
     goto :goto_0
 
     :cond_4
@@ -819,6 +835,8 @@
     move-result v5
 
     invoke-static {v3, v4, v5, v2}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
+
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForGameMode3drPartyCalls()V
 
     :cond_5
     :goto_0

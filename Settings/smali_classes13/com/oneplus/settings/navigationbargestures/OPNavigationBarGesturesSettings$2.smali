@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public getNonIndexableKeys(Landroid/content/Context;)Ljava/util/List;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -42,6 +42,37 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
+    invoke-static {}, Lcom/oneplus/settings/navigationbargestures/OPNavigationBarGesturesSettings;->access$400()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const-string v1, "customization"
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    const-string v1, "choose_navigation_bar"
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    const-string v1, "always_show_navigation_bar"
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    const-string v1, "back_home"
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    const-string v1, "gesture_navigation_bar"
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    const-string v1, "phone_control_way"
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_0
     return-object v0
 .end method
 

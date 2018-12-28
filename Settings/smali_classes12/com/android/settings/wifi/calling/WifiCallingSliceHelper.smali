@@ -123,7 +123,7 @@
 
     iget-object v0, p0, Lcom/android/settings/wifi/calling/WifiCallingSliceHelper;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0804c3
+    const v1, 0x7f080495
 
     invoke-static {v0, v1}, Landroid/support/v4/graphics/drawable/IconCompat;->createWithResource(Landroid/content/Context;I)Landroid/support/v4/graphics/drawable/IconCompat;
 
@@ -253,13 +253,13 @@
 .method private getWifiCallingSlice(Landroid/net/Uri;Landroid/content/Context;Z)Landroidx/slice/Slice;
     .locals 5
 
-    const v0, 0x7f0804c3
+    const v0, 0x7f080495
 
     invoke-static {p2, v0}, Landroid/support/v4/graphics/drawable/IconCompat;->createWithResource(Landroid/content/Context;I)Landroid/support/v4/graphics/drawable/IconCompat;
 
     move-result-object v0
 
-    const v1, 0x7f1213fa
+    const v1, 0x7f1213ff
 
     invoke-virtual {p2, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -458,9 +458,9 @@
 
     const/4 v3, 0x1
 
-    const v4, 0x7f1213f2
+    const v4, 0x7f1213f7
 
-    const v5, 0x7f1213fa
+    const v5, 0x7f1213ff
 
     const/4 v6, -0x1
 
@@ -549,7 +549,7 @@
 
     iget-object v7, p0, Lcom/android/settings/wifi/calling/WifiCallingSliceHelper;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f1213f9
+    const v8, 0x7f1213fe
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -597,7 +597,7 @@
 
     iget-object v4, p0, Lcom/android/settings/wifi/calling/WifiCallingSliceHelper;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f1213fd
+    const v5, 0x7f121402
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

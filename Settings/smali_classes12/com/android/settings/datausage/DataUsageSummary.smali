@@ -220,7 +220,7 @@
 
     new-instance v5, Landroid/text/SpannableString;
 
-    const v7, 0x104022e
+    const v7, 0x104022f
 
     move-object/from16 v10, p0
 

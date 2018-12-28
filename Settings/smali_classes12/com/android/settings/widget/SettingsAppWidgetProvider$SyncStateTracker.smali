@@ -56,7 +56,7 @@
 .method public getButtonId()I
     .locals 1
 
-    const v0, 0x7f0a0276
+    const v0, 0x7f0a0275
 
     return v0
 .end method
@@ -66,12 +66,12 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f080165
+    const v0, 0x7f080180
 
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f080164
+    const v0, 0x7f08017f
 
     :goto_0
     return v0
@@ -88,7 +88,7 @@
 .method public getIndicatorId()I
     .locals 1
 
-    const v0, 0x7f0a027f
+    const v0, 0x7f0a027e
 
     return v0
 .end method

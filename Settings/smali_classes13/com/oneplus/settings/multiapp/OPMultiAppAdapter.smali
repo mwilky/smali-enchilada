@@ -162,7 +162,7 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/multiapp/OPMultiAppAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v4, 0x7f0d018e
+    const v4, 0x7f0d018d
 
     invoke-virtual {v3, v4, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -276,7 +276,7 @@
 
     invoke-virtual {v3, v5}, Landroid/view/View;->setVisibility(I)V
 
-    const v3, 0x7f120bac
+    const v3, 0x7f120baf
 
     const/4 v6, 0x1
 
@@ -294,7 +294,7 @@
 
     iget-object v3, v0, Lcom/oneplus/settings/multiapp/OPMultiAppAdapter$ItemViewHolder;->titleTv:Landroid/widget/TextView;
 
-    const v7, 0x7f120bae
+    const v7, 0x7f120bb1
 
     invoke-virtual {v3, v7}, Landroid/widget/TextView;->setText(I)V
 

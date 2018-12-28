@@ -49,7 +49,7 @@
 
     const-string v2, "sim_select_notification_channel"
 
-    const v3, 0x7f121084
+    const v3, 0x7f121089
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -65,7 +65,7 @@
 
     invoke-direct {v2, p1, v3}, Landroid/support/v4/app/NotificationCompat$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    const v3, 0x7f080230
+    const v3, 0x7f08024b
 
     invoke-virtual {v2, v3}, Landroid/support/v4/app/NotificationCompat$Builder;->setSmallIcon(I)Landroid/support/v4/app/NotificationCompat$Builder;
 
@@ -81,7 +81,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f121077
+    const v3, 0x7f12107c
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -91,7 +91,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f121076
+    const v3, 0x7f12107b
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

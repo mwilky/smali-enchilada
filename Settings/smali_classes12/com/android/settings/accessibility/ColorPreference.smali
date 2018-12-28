@@ -120,7 +120,7 @@
 
     if-ge v1, v3, :cond_0
 
-    const v3, 0x7f0804c0
+    const v3, 0x7f080492
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 
@@ -207,7 +207,7 @@
 
     if-ge v2, v3, :cond_0
 
-    const v2, 0x7f0804c0
+    const v2, 0x7f080492
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 
@@ -288,7 +288,7 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f0d01f2
+    const v0, 0x7f0d01f1
 
     invoke-virtual {p0, v0}, Lcom/android/settings/accessibility/ColorPreference;->setWidgetLayoutResource(I)V
 

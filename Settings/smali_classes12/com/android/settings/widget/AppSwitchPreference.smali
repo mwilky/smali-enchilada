@@ -9,7 +9,7 @@
 
     invoke-direct {p0, p1}, Landroid/support/v14/preference/SwitchPreference;-><init>(Landroid/content/Context;)V
 
-    const v0, 0x7f0d01e9
+    const v0, 0x7f0d01e8
 
     invoke-virtual {p0, v0}, Lcom/android/settings/widget/AppSwitchPreference;->setLayoutResource(I)V
 

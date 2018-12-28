@@ -47,7 +47,7 @@
 
     iget-object v1, p0, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference$1;->this$1:Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;
 
-    invoke-static {v1}, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;->access$000(Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;)Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
+    invoke-static {v1}, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;->access$100(Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;)Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
 
     move-result-object v1
 
@@ -57,7 +57,7 @@
 
     iget-object v1, p0, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference$1;->this$1:Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;
 
-    invoke-static {v1}, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;->access$000(Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;)Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
+    invoke-static {v1}, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;->access$100(Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;)Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
 
     move-result-object v1
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen android:title="@string/oneplus_tools_title" settings:keywords="@string/oneplus_tools_title"
+<PreferenceScreen android:title="@string/oneplus_tools_title" android:key="op_tools_settings" settings:keywords="@string/oneplus_tools_title"
   xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
     <com.oneplus.settings.ui.OPPreferenceHeaderMargin android:key="preference_divider_line" />
     <PreferenceScreen android:icon="@drawable/op_ic_settings_gaming_mode" android:title="@string/oneplus_gaming_mode" android:key="gaming_mode" android:fragment="com.oneplus.settings.better.OPGamingMode" settings:keywords="@string/oneplus_search_keyword_game_mode" />
-    <Preference android:icon="@drawable/op_ic_settings_quick_pay" android:persistent="false" android:title="@string/oneplus_quickpay" android:key="oneplus_quick_pay" android:summary="@string/oneplus_quickpay_entry_summary" android:fragment="com.oneplus.settings.quickpay.QuickPaySettings" settings:keywords="@string/oneplus_search_keyword_quickpay" />
+    <Preference android:icon="@drawable/op_ic_settings_quick_pay" android:persistent="false" android:title="@string/oneplus_quickpay" android:key="oneplus_quick_pay" android:fragment="com.oneplus.settings.quickpay.QuickPaySettings" settings:keywords="@string/oneplus_search_keyword_quickpay" />
     <Preference android:icon="@drawable/op_ic_settings_quick_launch" android:persistent="false" android:title="@string/oneplus_quick_launch_title" android:key="oneplus_quick_launch" android:summary="@string/oneplus_quick_launch_summary" android:fragment="com.oneplus.settings.quicklaunch.OPQuickLaunchSettings" settings:keywords="@string/oneplus_search_keyword_quickpay" />
     <Preference android:icon="@drawable/op_ic_settings_multi_app" android:persistent="false" android:title="@string/oneplus_multi_app" android:key="oneplus_multi_app" settings:keywords="@string/oneplus_search_keyword_mult_app" />
     <Preference android:icon="@drawable/op_ic_settings_app_locker" android:title="@string/oneplus_app_locker_title" android:key="oneplus_app_locker" android:summary="@string/oneplus_app_locker_summary" android:fragment="com.oneplus.settings.better.OPAppLocker" settings:keywords="@string/oneplus_search_keyword_app_lock" />

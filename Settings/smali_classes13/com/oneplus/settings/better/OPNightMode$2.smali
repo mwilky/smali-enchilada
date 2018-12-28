@@ -50,6 +50,8 @@
 
     move-result v0
 
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForEffectStrength()V
+
     iget-object v1, p0, Lcom/oneplus/settings/better/OPNightMode$2;->this$0:Lcom/oneplus/settings/better/OPNightMode;
 
     invoke-static {v1}, Lcom/oneplus/settings/better/OPNightMode;->access$400(Lcom/oneplus/settings/better/OPNightMode;)Lcom/oneplus/settings/ui/OPNightModeLevelPreferenceCategory;

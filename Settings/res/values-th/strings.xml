@@ -2616,6 +2616,7 @@
     <string name="oneplus_broadcat_wifi_name">ชื่อเครือข่ายการกระจายข้อมูล (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">ปุ่ม &amp; ท่าทาง</string>
     <string name="oneplus_buttons_dashboard_summary">แถบเลื่อนการเตือน, การนำทาง, ท่าทาง</string>
+    <string name="oneplus_buttons_settings">การตั้งค่าปุ่ม</string>
     <string name="oneplus_buttons_settings_summary">ท่าทางการนำทาง</string>
     <string name="oneplus_call_information_broadcast">พูด ID ผู้โทร</string>
     <string name="oneplus_call_information_broadcast_summary">พูด ID ผู้โทรเข้าผ่านหูฟัง</string>
@@ -2630,6 +2631,7 @@
     <string name="oneplus_colorful_mode_title">สีสัน</string>
     <string name="oneplus_compatibility_mode_summary">แอปเต็มหน้าจอไม่สามารถใช้พื้นที่รอยบากได้</string>
     <string name="oneplus_compatibility_mode_title">โหมดความเข้ากันได้</string>
+    <string name="oneplus_condition_night_mode_title">โหมดกลางคืน เปิดอยู่</string>
     <string name="oneplus_connected_device_count">มี %1$s อุปกรณ์เชื่อมต่ออยู่</string>
     <string name="oneplus_connected_device_management_title">ตัวจัดการอุปกรณ์ที่เชื่อมต่ออยู่</string>
     <string name="oneplus_connected_devices_count">มี %1$s อุปกรณ์เชื่อมต่ออยู่</string>
@@ -2642,6 +2644,9 @@
     <string name="oneplus_data_usage_control_title">ควบคุมการใช้ดาต้า</string>
     <string name="oneplus_deep_clear_way">ล้างแบบ Deep</string>
     <string name="oneplus_deep_clear_way_summary">ล้างการทำงานเบื้องหลังซึ่งอาจทำให้แอปบางแอปหยุดการทำงานและไม่ได้รับการแจ้งเตือน</string>
+    <string name="oneplus_deep_optimization">การปรับประสิทธิภาพขั้นสูง</string>
+    <string name="oneplus_deep_optimization_summary">เมื่อคุณปิดการปรับประสิทธิภาพขั้นสูง การใช้พลังงานจะเพิ่มขึ้นอย่างมาก ซึ่งจะส่งผลต่อการใช้งานตามมปกติของคุณ</string>
+    <string name="oneplus_deep_optimization_title">ปิดการปรับประสิทธิภาพขั้นสูงหรือไม่</string>
     <string name="oneplus_default_launcher">ตัวเปิดใช้งานเริ่มต้น</string>
     <string name="oneplus_delete_fingerprint_list">ลบลายนิ้วมือ</string>
     <string name="oneplus_deleted_fingerprint_list">ลายนิ้วมือถูกลบแล้ว</string>
@@ -2682,6 +2687,7 @@
     <string name="oneplus_earphone_mode">โหมดหูฟัง</string>
     <string name="oneplus_emergency_rescue_settings">ทีมกู้ภัยฉุกเฉิน</string>
     <string name="oneplus_emergency_rescue_settings_summary">โทรโดยอัตโนมัติเพื่อขอความช่วยเหลือโดยการกดปุ่มเปิดปิดอย่างรวดเร็ว</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">พร้อมใช้งานหลังจากเปลี่ยนแปลงการตั้งค่าปุ่มเปิด/ปิดสำหรับการกู้ภัยฉุกเฉิน</string>
     <string name="oneplus_enroll_fingerprint_tips_title">ข้อความการตั้งค่าลายนิ้วมือ</string>
     <string name="oneplus_enter_your_fingerprint">· ลงทะเบียนลายนิ้วมือของคุณ</string>
     <string name="oneplus_experience_improvement_programs">โปรแกรมการปรับปรุงประสบการณ์</string>
@@ -2795,7 +2801,7 @@
     <string name="oneplus_hide_notch_display_summary">แอปทั้งหมดไม่สามารถใช้พื้นที่รอยบากได้</string>
     <string name="oneplus_hide_notch_display_title">ซ่อนพื้นที่รอยบาก</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">เมื่อรูปแบบลายนิ้วมือปรากฏขึ้นที่ด้านล่างของหน้าจอ เพียงกดด้วยนิ้วมือของคุณบนพื้นที่ระบุลายนิ้วมือเพื่อใช้งานฟังก์ชันลายนิ้วมือ ได้แก่ การปลุกและการปลดล็อคโทรศัพท์ของคุณ การอนุมัติการชำระเงิน หรือการเข้าสู่ระบบแอป</string>
-    <string name="oneplus_hydrogen_version">เวอร์ชัน Hydrogen OS</string>
+    <string name="oneplus_hydrogen_version">รุ่น H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">สายเรียกเข้า</string>
     <string name="oneplus_incoming_call_vibrate_mode">รูปแบบการสั่นของสายเรียกเข้า</string>
     <string name="oneplus_init_finger_input">เริ่มต้นการใช้ลายนิ้วมือ</string>
@@ -3050,6 +3056,7 @@
     <string name="oneplus_setting_ringtone">ตั้งค่าเสียงเข้า</string>
     <string name="oneplus_setting_sim_ringtone_switch">ตั้งเสียงเรียกเข้าสำหรับแต่ละซิมการ์ด</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· ตั้งค่าวิธีอื่นเพื่อปลดล็อคหน้าจอ</string>
+    <string name="oneplus_share_this_wifi">ขยายความครอบคลุม Wi-Fi</string>
     <string name="oneplus_share_wifi_title">การแบ่งปันวายฟาย</string>
     <string name="oneplus_shielding_notification">ปิดกั้น</string>
     <string name="oneplus_shielding_notification_summary">การแจ้งเตือนจะถูกปิดกั้น (ยกเว้นการโทรและการปลุก)</string>
@@ -3125,6 +3132,11 @@
     <string name="oneplus_weak_text_reminding">ข้อความเท่านั้น</string>
     <string name="oneplus_weak_text_reminding_summary">อนุญาตให้แอปแสดงการแจ้งเตือนล่วงหน้า</string>
     <string name="oneplus_wifi_ap_error">กรุณาใส่ซิมการ์ด</string>
+    <string name="oneplus_wifi_hidden_network_warning">"หากเราเตอร์ของคุณปิดใช้งานการกระจายข้อมูล SSID คุณควรเลือก \"ใช่\" เพื่อเชื่อมต่อเครือข่ายที่ซ่อนอยู่
+
+ซึ่งอาจสร้างความเสี่ยงด้านความปลอดภัยเนื่องจากโทรศัพท์ของคุณจะกระจายข้อมูลสัญญาณเป็นระยะ ๆ เพื่อค้นหาเครือข่าย
+
+การตั้งค่าเครือข่ายเป็นซ่อนไว้จะไม่เปลี่ยนการตั้งค่าเราเตอร์ของคุณ"</string>
     <string name="oneplus_wifi_ipv6_surport_summary">การปิดใช้งาน IPv6 สามารถหลีกเลี่ยงปัญหาความเข้ากันได้กับเราเตอร์วายฟายบางตัวได้</string>
     <string name="oneplus_wifi_ipv6_surport_title">รองรับ IPv6</string>
     <string name="oneplus_wifi_list">รายการวายฟาย</string>

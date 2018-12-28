@@ -22,6 +22,8 @@
 
 .field private mCurrentColor:Ljava/lang/String;
 
+.field private mCurrentTempColor:Ljava/lang/String;
+
 .field private mEditColorDialog:Landroid/app/AlertDialog;
 
 .field private mPickerView:Lcom/oneplus/settings/ui/ColorPickerView;
@@ -415,13 +417,13 @@
 
     const/4 v0, 0x0
 
-    const v1, 0x7f121475
+    const v1, 0x7f12147a
 
     invoke-interface {p1, v0, v0, v0, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
     move-result-object v0
 
-    const v1, 0x7f08035d
+    const v1, 0x7f080352
 
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
@@ -435,7 +437,7 @@
 .end method
 
 .method public onBackPressed()V
-    .locals 4
+    .locals 3
 
     new-instance v0, Landroid/content/Intent;
 
@@ -443,15 +445,7 @@
 
     const-string v1, "current_temp_color"
 
-    invoke-virtual {p0}, Lcom/oneplus/settings/OPColorPickerActivity;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    const-string v3, "oneplus_accent_color"
-
-    invoke-static {v2, v3}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
+    iget-object v2, p0, Lcom/oneplus/settings/OPColorPickerActivity;->mCurrentTempColor:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
@@ -574,7 +568,7 @@
 
     invoke-super {p0, p1}, Lcom/oneplus/settings/BaseActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0d014b
+    const v0, 0x7f0d014a
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPColorPickerActivity;->setContentView(I)V
 
@@ -684,6 +678,14 @@
 
     iput-object v1, p0, Lcom/oneplus/settings/OPColorPickerActivity;->mCurrentColor:Ljava/lang/String;
 
+    const-string v1, "current_color"
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/oneplus/settings/OPColorPickerActivity;->mCurrentTempColor:Ljava/lang/String;
+
     iget-object v1, p0, Lcom/oneplus/settings/OPColorPickerActivity;->mCurrentColor:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -708,6 +710,10 @@
     const-string v1, "#FF0000"
 
     iput-object v1, p0, Lcom/oneplus/settings/OPColorPickerActivity;->mCurrentColor:Ljava/lang/String;
+
+    const-string v1, "#FF0000"
+
+    iput-object v1, p0, Lcom/oneplus/settings/OPColorPickerActivity;->mCurrentTempColor:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/oneplus/settings/OPColorPickerActivity;->mPickerView:Lcom/oneplus/settings/ui/ColorPickerView;
 
@@ -807,7 +813,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0d0171
+    const v2, 0x7f0d0170
 
     invoke-virtual {v0, v2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -864,7 +870,7 @@
 
     invoke-direct {v2, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v3, 0x7f120d7b
+    const v3, 0x7f120d80
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 

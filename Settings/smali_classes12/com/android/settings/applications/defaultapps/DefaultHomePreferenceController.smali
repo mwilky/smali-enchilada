@@ -244,6 +244,15 @@
 
     if-eqz v1, :cond_0
 
+    invoke-virtual {v1}, Landroid/content/ComponentName;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForDefaultHomeAppByComponentName(Ljava/lang/String;)V
+
+    :cond_0
+    if-eqz v1, :cond_1
+
     new-instance v2, Lcom/android/settingslib/applications/DefaultAppInfo;
 
     iget-object v3, p0, Lcom/android/settings/applications/defaultapps/DefaultHomePreferenceController;->mContext:Landroid/content/Context;
@@ -256,12 +265,12 @@
 
     return-object v2
 
-    :cond_0
+    :cond_1
     invoke-direct {p0, v0}, Lcom/android/settings/applications/defaultapps/DefaultHomePreferenceController;->getOnlyAppInfo(Ljava/util/List;)Landroid/content/pm/ActivityInfo;
 
     move-result-object v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
     new-instance v3, Lcom/android/settingslib/applications/DefaultAppInfo;
 
@@ -279,7 +288,7 @@
 
     return-object v3
 
-    :cond_1
+    :cond_2
     const/4 v3, 0x0
 
     return-object v3

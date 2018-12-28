@@ -288,10 +288,46 @@
 .end method
 
 .method setCodecConfigPreference(Landroid/bluetooth/BluetoothDevice;Landroid/bluetooth/BluetoothCodecConfig;)V
-    .locals 1
+    .locals 2
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 
+    invoke-virtual {p2}, Landroid/bluetooth/BluetoothCodecConfig;->getCodecName()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "AAC"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "persist.vendor.bt.a2dp.aac_whitelist"
+
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_0
+    const-string v0, "persist.vendor.bt.a2dp.aac_whitelist"
+
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    :goto_0
     iget-object v0, p0, Lcom/android/settings/development/AbstractBluetoothA2dpPreferenceController;->mBluetoothA2dp:Landroid/bluetooth/BluetoothA2dp;
 
     invoke-virtual {v0, p1, p2}, Landroid/bluetooth/BluetoothA2dp;->setCodecConfigPreference(Landroid/bluetooth/BluetoothDevice;Landroid/bluetooth/BluetoothCodecConfig;)V

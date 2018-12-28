@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/oneplus/settings/utils/OPUtils;->enablePackageInstaller(Landroid/content/Context;)V
+    value = Lcom/oneplus/settings/utils/OPUtils;->disableCardPackageEntranceInLauncher(Landroid/content/Context;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -39,91 +39,67 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/utils/OPUtils$4;->val$context:Landroid/content/Context;
 
-    const-string v1, "user"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    check-cast v0, Landroid/os/UserManager;
+    const-string v1, "com.oneplus.card"
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/os/UserManager;->getUserInfo(I)Landroid/content/pm/UserInfo;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_3
-
-    iget v2, v1, Landroid/content/pm/UserInfo;->id:I
-
-    const/16 v3, 0x3e7
-
-    if-ne v2, v3, :cond_3
-
-    :try_start_0
-    iget-object v2, p0, Lcom/oneplus/settings/utils/OPUtils$4;->val$context:Landroid/content/Context;
-
-    invoke-virtual {v2}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v2
+    const-string v2, "com.oneplus.card.entity.activity.CardlistActivity"
 
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isO2()Z
 
     move-result v3
 
-    const/4 v4, 0x1
+    if-eqz v3, :cond_0
 
-    if-eqz v3, :cond_1
+    iget-object v3, p0, Lcom/oneplus/settings/utils/OPUtils$4;->val$context:Landroid/content/Context;
 
-    new-instance v3, Landroid/content/ComponentName;
+    invoke-static {v3, v1}, Lcom/oneplus/settings/highpowerapp/PackageUtils;->isSystemApplication(Landroid/content/Context;Ljava/lang/String;)Z
 
-    const-string v5, "com.google.android.packageinstaller"
+    move-result v3
 
-    const-string v6, "com.android.packageinstaller.PackageInstallerActivity"
+    if-eqz v3, :cond_0
 
-    invoke-direct {v3, v5, v6}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    const-string v3, "oneplus_card_disabled"
 
-    invoke-virtual {v2, v3}, Landroid/content/pm/PackageManager;->getComponentEnabledSetting(Landroid/content/ComponentName;)I
+    const/4 v4, 0x0
 
-    move-result v5
+    invoke-static {v0, v3, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
-    if-eq v5, v4, :cond_0
+    move-result v3
 
-    invoke-virtual {v2, v3, v4, v4}, Landroid/content/pm/PackageManager;->setComponentEnabledSetting(Landroid/content/ComponentName;II)V
+    if-nez v3, :cond_0
 
-    :cond_0
-    goto :goto_0
+    :try_start_0
+    iget-object v3, p0, Lcom/oneplus/settings/utils/OPUtils$4;->val$context:Landroid/content/Context;
 
-    :cond_1
-    new-instance v3, Landroid/content/ComponentName;
+    invoke-virtual {v3}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    const-string v5, "com.android.packageinstaller"
+    move-result-object v3
 
-    const-string v6, "com.android.packageinstaller.PackageInstallerActivity"
+    new-instance v4, Landroid/content/ComponentName;
 
-    invoke-direct {v3, v5, v6}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v4, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v2, v3}, Landroid/content/pm/PackageManager;->getComponentEnabledSetting(Landroid/content/ComponentName;)I
+    const/4 v5, 0x2
 
-    move-result v5
+    const/4 v6, 0x1
 
-    if-eq v5, v4, :cond_2
+    invoke-virtual {v3, v4, v5, v6}, Landroid/content/pm/PackageManager;->setComponentEnabledSetting(Landroid/content/ComponentName;II)V
 
-    invoke-virtual {v2, v3, v4, v4}, Landroid/content/pm/PackageManager;->setComponentEnabledSetting(Landroid/content/ComponentName;II)V
+    const-string v4, "oneplus_card_disabled"
+
+    invoke-static {v0, v4, v6}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_2
-    :goto_0
-    goto :goto_1
+    goto :goto_0
 
     :catch_0
-    move-exception v2
+    move-exception v3
 
-    :cond_3
-    :goto_1
+    :cond_0
+    :goto_0
     return-void
 .end method

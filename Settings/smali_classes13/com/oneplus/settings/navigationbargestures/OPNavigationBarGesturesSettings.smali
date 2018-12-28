@@ -109,6 +109,16 @@
     return-void
 .end method
 
+.method static synthetic access$400()Z
+    .locals 1
+
+    invoke-static {}, Lcom/oneplus/settings/navigationbargestures/OPNavigationBarGesturesSettings;->isSupportHardwareKeys()Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method private delayHideNavkey()V
     .locals 4
 
@@ -209,6 +219,26 @@
 
     :goto_0
     return v2
+.end method
+
+.method private static isSupportHardwareKeys()Z
+    .locals 2
+
+    sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v0}, Landroid/app/Application;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x11200a0
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result v0
+
+    xor-int/lit8 v1, v0, 0x1
+
+    return v1
 .end method
 
 .method private killSomeProcess()V
@@ -554,8 +584,15 @@
     invoke-virtual {v3, v2}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
 
     iget-object v3, p0, Lcom/oneplus/settings/navigationbargestures/OPNavigationBarGesturesSettings;->mCustomization:Landroid/support/v7/preference/Preference;
-	
-    invoke-virtual {v3, v2}, Landroid/support/v7/preference/Preference;->setEnabled(Z)V
+
+    if-eq v0, v4, :cond_3
+
+    move v1, v2
+
+    nop
+
+    :cond_3
+    invoke-virtual {v3, v1}, Landroid/support/v7/preference/Preference;->setEnabled(Z)V
 
     :goto_2
     return-void
@@ -672,7 +709,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/navigationbargestures/OPNavigationBarGesturesSettings;->mAlwaysShowNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
-    const v1, 0x7f120b2d
+    const v1, 0x7f120b30
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/navigationbargestures/OPNavigationBarGesturesSettings;->getString(I)Ljava/lang/String;
 

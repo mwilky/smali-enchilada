@@ -60,7 +60,7 @@
 
     iget-object v1, p0, Lcom/android/settings/notification/ZenAutomaticRuleSwitchPreferenceController;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
-    const v2, 0x7f12160a
+    const v2, 0x7f12160f
 
     invoke-virtual {v1, v2, v2}, Lcom/android/settings/widget/SwitchBar;->setSwitchBarText(II)V
 

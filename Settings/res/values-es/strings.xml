@@ -2616,6 +2616,7 @@ El ahorro de batería se desactiva automáticamente cuando carga tu dispositivo.
     <string name="oneplus_broadcat_wifi_name">Nombre de la red de transmisión (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Botones y gestos</string>
     <string name="oneplus_buttons_dashboard_summary">Control deslizante de alerta, navegación, gestos</string>
+    <string name="oneplus_buttons_settings">ajustes de botones</string>
     <string name="oneplus_buttons_settings_summary">Gesto de navegación</string>
     <string name="oneplus_call_information_broadcast">Decir el id. del autor de la llamada</string>
     <string name="oneplus_call_information_broadcast_summary">Decir el id. del autor de la llamada entrante por los auriculares</string>
@@ -2630,6 +2631,7 @@ El ahorro de batería se desactiva automáticamente cuando carga tu dispositivo.
     <string name="oneplus_colorful_mode_title">A color</string>
     <string name="oneplus_compatibility_mode_summary">Las aplicaciones de pantalla completa no pueden utilizar la zona de la muesca</string>
     <string name="oneplus_compatibility_mode_title">Modo de compatibilidad</string>
+    <string name="oneplus_condition_night_mode_title">El modo nocturno está activado</string>
     <string name="oneplus_connected_device_count">Hay %1$s dispositivos conectados</string>
     <string name="oneplus_connected_device_management_title">Gestor de dispositivos conectado</string>
     <string name="oneplus_connected_devices_count">Hay %1$s dispositivos conectados</string>
@@ -2642,6 +2644,9 @@ El ahorro de batería se desactiva automáticamente cuando carga tu dispositivo.
     <string name="oneplus_data_usage_control_title">Control de uso de datos</string>
     <string name="oneplus_deep_clear_way">Limpieza profunda</string>
     <string name="oneplus_deep_clear_way_summary">Detiene los procesos en segundo plano, lo que podría hacer que algunas aplicaciones dejen de funcionar y no recibas notificaciones</string>
+    <string name="oneplus_deep_optimization">Optimización profunda</string>
+    <string name="oneplus_deep_optimization_summary">Cuando desactivas la optimización profunda, el consumo de energía aumentará en gran medida, lo que afectará al uso normal.</string>
+    <string name="oneplus_deep_optimization_title">¿Quieres desactivar la optimización profunda?</string>
     <string name="oneplus_default_launcher">Iniciador predeterminado</string>
     <string name="oneplus_delete_fingerprint_list">Eliminar huella digital</string>
     <string name="oneplus_deleted_fingerprint_list">Huella digital eliminada</string>
@@ -2682,6 +2687,7 @@ El ahorro de batería se desactiva automáticamente cuando carga tu dispositivo.
     <string name="oneplus_earphone_mode">Modo auricular</string>
     <string name="oneplus_emergency_rescue_settings">Rescate de emergencia</string>
     <string name="oneplus_emergency_rescue_settings_summary">Pedir ayuda de forma automática pulsando rápidamente el botón de encendido</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">Disponible después de modificar la configuración del BOTÓN DE ENCENDIDO para rescate de emergencia</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Solicitud de configuración de huella digital</string>
     <string name="oneplus_enter_your_fingerprint">· Registrar tu huella dactilar</string>
     <string name="oneplus_experience_improvement_programs">Programas de mejora de la experiencia</string>
@@ -2795,7 +2801,7 @@ Para ir a la pantalla de inicio en cualquier momento, desliza hacia arriba desde
     <string name="oneplus_hide_notch_display_summary">Ninguna aplicación puede utilizar la zona de la muesca</string>
     <string name="oneplus_hide_notch_display_title">Ocultar la zona de la muesca</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Cuando el patrón de huella digital aparece en la parte inferior de la pantalla, solo tienes que presionar el dedo sobre la zona de identificación de huellas digitales para utilizar la función de huella digital, con la que puedes desbloquear el teléfono, autorizar compras o iniciar sesión en aplicaciones.</string>
-    <string name="oneplus_hydrogen_version">Versión de Hydrogen OS</string>
+    <string name="oneplus_hydrogen_version">Versión H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Llamada entrante</string>
     <string name="oneplus_incoming_call_vibrate_mode">Patrón de vibración de la llamada entrante</string>
     <string name="oneplus_init_finger_input">Inicializando huella digital</string>
@@ -3050,6 +3056,7 @@ Quedan%dintentos."</string>
     <string name="oneplus_setting_ringtone">Establecer sonido de timbre</string>
     <string name="oneplus_setting_sim_ringtone_switch">Establecer tono de llamada para cada tarjeta SIM</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Configurar una solución alternativa de desbloquear la pantalla</string>
+    <string name="oneplus_share_this_wifi">Ampliar la cobertura de Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Compartiendo Wi-Fi</string>
     <string name="oneplus_shielding_notification">Bloquear</string>
     <string name="oneplus_shielding_notification_summary">Se bloquearán las notificaciones (excepto para llamadas y alarmas)</string>
@@ -3125,6 +3132,11 @@ Nota: El Desbloqueo facial puede ser menos seguro que la huella digital, el PIN 
     <string name="oneplus_weak_text_reminding">Solo texto</string>
     <string name="oneplus_weak_text_reminding_summary">Permitir que las aplicaciones muestren notificaciones de aviso</string>
     <string name="oneplus_wifi_ap_error">Introduzca la targeta SIM</string>
+    <string name="oneplus_wifi_hidden_network_warning">"Si el router desactiva la difusión de SSID, debes seleccionar \"Sí\" para conectar a la red oculta.
+
+Esto puede crear un riesgo de seguridad porque el teléfono transmitirá su señal regularmente para detectar la red.
+
+Configurar la red como oculta no cambiará la configuración del router."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">Desactivar el IPv6 puede evitar problemas de compatibilidad con ciertos routers Wi-Fi.</string>
     <string name="oneplus_wifi_ipv6_surport_title">Soporte para IPv6</string>
     <string name="oneplus_wifi_list">Lista Wi-Fi</string>

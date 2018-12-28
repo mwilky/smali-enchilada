@@ -102,7 +102,7 @@
 
     invoke-super {p0, p1}, Lcom/android/settings/PreviewSeekBarPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0d0243
+    const v0, 0x7f0d0242
 
     iput v0, p0, Lcom/android/settings/display/ScreenZoomSettings;->mActivityLayoutResId:I
 
@@ -192,7 +192,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120f76
+    const v3, 0x7f120f7b
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->setTitle(I)V
 
@@ -202,7 +202,7 @@
 
     :array_0
     .array-data 4
-        0x7f0d0244
-        0x7f0d0247
+        0x7f0d0243
+        0x7f0d0246
     .end array-data
 .end method

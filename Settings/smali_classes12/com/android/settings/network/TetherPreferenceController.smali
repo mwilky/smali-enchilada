@@ -21,6 +21,8 @@
 
 
 # static fields
+.field public static final BLUETOOTH_MANAGER_SERVICE:Ljava/lang/String; = "bluetooth_manager"
+
 .field private static final KEY_TETHER_SETTINGS:Ljava/lang/String; = "tether_settings"
 
 
@@ -28,6 +30,16 @@
 .field private final mAdminDisallowedTetherConfig:Z
 
 .field private mAirplaneModeObserver:Lcom/android/settings/network/TetherPreferenceController$SettingObserver;
+
+.field private mBluetoohListener:Ljava/util/concurrent/atomic/AtomicReference;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/concurrent/atomic/AtomicReference<",
+            "Landroid/bluetooth/IBluetoothStateChangeCallback;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field private final mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
 
@@ -41,12 +53,18 @@
     .end annotation
 .end field
 
+.field private mBluetoothService:Landroid/bluetooth/IBluetoothManager;
+
+.field private final mBluetoothStateChangeCallback:Landroid/bluetooth/IBluetoothStateChangeCallback;
+
 .field final mBtProfileServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 .end field
 
 .field private final mConnectivityManager:Landroid/net/ConnectivityManager;
+
+.field private mLastBluetoothPan:Landroid/bluetooth/BluetoothPan;
 
 .field private mPreference:Landroid/support/v7/preference/Preference;
 
@@ -64,11 +82,23 @@
 
     invoke-direct {p0, v0}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
+    new-instance v1, Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-direct {v1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+
+    iput-object v1, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoohListener:Ljava/util/concurrent/atomic/AtomicReference;
+
     new-instance v1, Lcom/android/settings/network/TetherPreferenceController$1;
 
     invoke-direct {v1, p0}, Lcom/android/settings/network/TetherPreferenceController$1;-><init>(Lcom/android/settings/network/TetherPreferenceController;)V
 
     iput-object v1, p0, Lcom/android/settings/network/TetherPreferenceController;->mBtProfileServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
+
+    new-instance v1, Lcom/android/settings/network/TetherPreferenceController$2;
+
+    invoke-direct {v1, p0}, Lcom/android/settings/network/TetherPreferenceController$2;-><init>(Lcom/android/settings/network/TetherPreferenceController;)V
+
+    iput-object v1, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothStateChangeCallback:Landroid/bluetooth/IBluetoothStateChangeCallback;
 
     const/4 v1, 0x0
 
@@ -96,11 +126,23 @@
 
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+
+    iput-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoohListener:Ljava/util/concurrent/atomic/AtomicReference;
+
     new-instance v0, Lcom/android/settings/network/TetherPreferenceController$1;
 
     invoke-direct {v0, p0}, Lcom/android/settings/network/TetherPreferenceController$1;-><init>(Lcom/android/settings/network/TetherPreferenceController;)V
 
     iput-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mBtProfileServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
+
+    new-instance v0, Lcom/android/settings/network/TetherPreferenceController$2;
+
+    invoke-direct {v0, p0}, Lcom/android/settings/network/TetherPreferenceController$2;-><init>(Lcom/android/settings/network/TetherPreferenceController;)V
+
+    iput-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothStateChangeCallback:Landroid/bluetooth/IBluetoothStateChangeCallback;
 
     new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
@@ -146,7 +188,15 @@
     return-object v0
 .end method
 
-.method static synthetic access$100(Lcom/android/settings/network/TetherPreferenceController;)Landroid/content/Context;
+.method static synthetic access$102(Lcom/android/settings/network/TetherPreferenceController;Landroid/bluetooth/BluetoothPan;)Landroid/bluetooth/BluetoothPan;
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/settings/network/TetherPreferenceController;->mLastBluetoothPan:Landroid/bluetooth/BluetoothPan;
+
+    return-object p1
+.end method
+
+.method static synthetic access$200(Lcom/android/settings/network/TetherPreferenceController;)Landroid/content/Context;
     .locals 1
 
     iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mContext:Landroid/content/Context;
@@ -154,12 +204,128 @@
     return-object v0
 .end method
 
-.method static synthetic access$200(Lcom/android/settings/network/TetherPreferenceController;)V
+.method static synthetic access$300(Lcom/android/settings/network/TetherPreferenceController;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/settings/network/TetherPreferenceController;->updateSummaryToOff()V
 
     return-void
+.end method
+
+.method static synthetic access$400(Lcom/android/settings/network/TetherPreferenceController;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/settings/network/TetherPreferenceController;->openProfileProxy()V
+
+    return-void
+.end method
+
+.method static synthetic access$500(Lcom/android/settings/network/TetherPreferenceController;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/android/settings/network/TetherPreferenceController;->registerBluetoothStateListener(Z)V
+
+    return-void
+.end method
+
+.method private closeProfileProxy()V
+    .locals 4
+
+    iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
+
+    const/4 v1, 0x5
+
+    const/4 v2, 0x0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothPan:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "TetherPreferenceController"
+
+    const-string v3, "closeProfileProxy"
+
+    invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
+
+    iget-object v3, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothPan:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v3, v2}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/bluetooth/BluetoothProfile;
+
+    invoke-virtual {v0, v1, v3}, Landroid/bluetooth/BluetoothAdapter;->closeProfileProxy(ILandroid/bluetooth/BluetoothProfile;)V
+
+    iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothPan:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mLastBluetoothPan:Landroid/bluetooth/BluetoothPan;
+
+    if-eqz v0, :cond_1
+
+    const-string v0, "TetherPreferenceController"
+
+    const-string v3, "close last ProfileProxy"
+
+    invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
+
+    iget-object v3, p0, Lcom/android/settings/network/TetherPreferenceController;->mLastBluetoothPan:Landroid/bluetooth/BluetoothPan;
+
+    invoke-virtual {v0, v1, v3}, Landroid/bluetooth/BluetoothAdapter;->closeProfileProxy(ILandroid/bluetooth/BluetoothProfile;)V
+
+    iput-object v2, p0, Lcom/android/settings/network/TetherPreferenceController;->mLastBluetoothPan:Landroid/bluetooth/BluetoothPan;
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method private getBluetoothManager()Landroid/bluetooth/IBluetoothManager;
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothService:Landroid/bluetooth/IBluetoothManager;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothService:Landroid/bluetooth/IBluetoothManager;
+
+    return-object v0
+
+    :cond_0
+    const-string v0, "bluetooth_manager"
+
+    invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/bluetooth/IBluetoothManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/bluetooth/IBluetoothManager;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothService:Landroid/bluetooth/IBluetoothManager;
+
+    iget-object v1, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothService:Landroid/bluetooth/IBluetoothManager;
+
+    return-object v1
 .end method
 
 .method public static isTetherConfigDisallowed(Landroid/content/Context;)Z
@@ -188,6 +354,135 @@
     return v0
 .end method
 
+.method private openProfileProxy()V
+    .locals 4
+
+    iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothPan:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    const-string v0, "TetherPreferenceController"
+
+    const-string v1, "openProfileProxy"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
+
+    iget-object v1, p0, Lcom/android/settings/network/TetherPreferenceController;->mContext:Landroid/content/Context;
+
+    iget-object v2, p0, Lcom/android/settings/network/TetherPreferenceController;->mBtProfileServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
+
+    const/4 v3, 0x5
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/bluetooth/BluetoothAdapter;->getProfileProxy(Landroid/content/Context;Landroid/bluetooth/BluetoothProfile$ServiceListener;I)Z
+
+    :cond_0
+    return-void
+.end method
+
+.method private registerBluetoothStateListener(Z)V
+    .locals 4
+
+    invoke-direct {p0}, Lcom/android/settings/network/TetherPreferenceController;->getBluetoothManager()Landroid/bluetooth/IBluetoothManager;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_2
+
+    if-eqz p1, :cond_0
+
+    :try_start_0
+    iget-object v1, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoohListener:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    if-nez v1, :cond_0
+
+    const-string v1, "TetherPreferenceController"
+
+    const-string v2, "register listener"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v1, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothStateChangeCallback:Landroid/bluetooth/IBluetoothStateChangeCallback;
+
+    invoke-interface {v0, v1}, Landroid/bluetooth/IBluetoothManager;->registerStateChangeCallback(Landroid/bluetooth/IBluetoothStateChangeCallback;)V
+
+    iget-object v1, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoohListener:Ljava/util/concurrent/atomic/AtomicReference;
+
+    iget-object v2, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothStateChangeCallback:Landroid/bluetooth/IBluetoothStateChangeCallback;
+
+    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v1
+
+    goto :goto_0
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    iget-object v1, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoohListener:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_1
+
+    const-string v1, "TetherPreferenceController"
+
+    const-string v2, "unregister listener"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v1, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothStateChangeCallback:Landroid/bluetooth/IBluetoothStateChangeCallback;
+
+    invoke-interface {v0, v1}, Landroid/bluetooth/IBluetoothManager;->unregisterStateChangeCallback(Landroid/bluetooth/IBluetoothStateChangeCallback;)V
+
+    iget-object v1, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoohListener:Ljava/util/concurrent/atomic/AtomicReference;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :goto_0
+    nop
+
+    const-string v2, "PrefControllerMixin"
+
+    const-string v3, ""
+
+    invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_2
+
+    :cond_1
+    :goto_1
+    nop
+
+    :cond_2
+    :goto_2
+    return-void
+.end method
+
 .method private updateSummaryToOff()V
     .locals 2
 
@@ -200,7 +495,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
-    const v1, 0x7f1211a1
+    const v1, 0x7f1211a6
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -326,13 +621,21 @@
 
     iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
 
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothAdapter;->isEnabled()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
+
     invoke-virtual {v0}, Landroid/bluetooth/BluetoothAdapter;->getState()I
 
     move-result v0
 
     const/16 v1, 0xc
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v1, :cond_1
 
     iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
 
@@ -344,36 +647,27 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/bluetooth/BluetoothAdapter;->getProfileProxy(Landroid/content/Context;Landroid/bluetooth/BluetoothProfile$ServiceListener;I)Z
 
+    goto :goto_0
+
     :cond_0
+    const/4 v0, 0x1
+
+    invoke-direct {p0, v0}, Lcom/android/settings/network/TetherPreferenceController;->registerBluetoothStateListener(Z)V
+
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public onDestroy()V
-    .locals 3
+    .locals 1
 
-    iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothPan:Ljava/util/concurrent/atomic/AtomicReference;
+    invoke-direct {p0}, Lcom/android/settings/network/TetherPreferenceController;->closeProfileProxy()V
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {p0, v0}, Lcom/android/settings/network/TetherPreferenceController;->registerBluetoothStateListener(Z)V
 
-    move-result-object v0
-
-    check-cast v0, Landroid/bluetooth/BluetoothProfile;
-
-    if-eqz v0, :cond_0
-
-    iget-object v1, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lcom/android/settings/network/TetherPreferenceController;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
-
-    const/4 v2, 0x5
-
-    invoke-virtual {v1, v2, v0}, Landroid/bluetooth/BluetoothAdapter;->closeProfileProxy(ILandroid/bluetooth/BluetoothProfile;)V
-
-    :cond_0
     return-void
 .end method
 
@@ -679,7 +973,7 @@
 
     iget-object v5, p0, Lcom/android/settings/network/TetherPreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
-    const v6, 0x7f1211a1
+    const v6, 0x7f1211a6
 
     invoke-virtual {v5, v6}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -692,7 +986,7 @@
 
     iget-object v5, p0, Lcom/android/settings/network/TetherPreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
-    const v6, 0x7f1211ce
+    const v6, 0x7f1211d3
 
     invoke-virtual {v5, v6}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -703,7 +997,7 @@
 
     iget-object v5, p0, Lcom/android/settings/network/TetherPreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
-    const v6, 0x7f1211cd
+    const v6, 0x7f1211d2
 
     invoke-virtual {v5, v6}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -712,7 +1006,7 @@
     :cond_d
     iget-object v5, p0, Lcom/android/settings/network/TetherPreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
-    const v6, 0x7f1211cc
+    const v6, 0x7f1211d1
 
     invoke-virtual {v5, v6}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 

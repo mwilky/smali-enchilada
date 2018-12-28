@@ -74,6 +74,11 @@
                 <Spinner android:id="@id/wapi_cert_select" android:layout_width="fill_parent" android:layout_height="wrap_content" android:prompt="@string/wapi_cert_select" style="@style/wifi_item_content" />
             </LinearLayout>
         </LinearLayout>
+        <LinearLayout android:id="@id/hidden_settings_field" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/wifi_item">
+            <TextView android:id="@id/hidden_settings_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wifi_hidden_network" style="@style/wifi_item_label" />
+            <Spinner android:entries="@array/wifi_hidden_entries" android:id="@id/hidden_settings" android:layout_width="fill_parent" android:layout_height="wrap_content" android:prompt="@string/wifi_hidden_network" style="@style/wifi_item_spinner" />
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/hidden_settings_warning" android:padding="8.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/oneplus_wifi_hidden_network_warning" android:breakStrategy="simple" />
+        </LinearLayout>
         <LinearLayout android:id="@id/wifi_advanced_toggle" android:paddingBottom="4.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:contentDescription="@string/wifi_advanced_toggle_description_collapsed" android:importantForAccessibility="yes" style="@style/wifi_item">
             <CheckBox android:id="@id/wifi_advanced_togglebox" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/wifi_show_advanced" android:importantForAccessibility="noHideDescendants" style="@style/wifi_advanced_toggle" />
         </LinearLayout>
@@ -141,11 +146,6 @@
                 <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/wifi_item">
                     <CheckBox android:textSize="14.0sp" android:id="@id/shared" android:layout_width="fill_parent" android:layout_height="wrap_content" android:checked="true" android:text="@string/wifi_shared" style="@style/wifi_item_content" />
                 </LinearLayout>
-            </LinearLayout>
-            <LinearLayout android:id="@id/hidden_settings_field" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/wifi_item">
-                <TextView android:id="@id/hidden_settings_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wifi_hidden_network" style="@style/wifi_item_label" />
-                <Spinner android:entries="@array/wifi_hidden_entries" android:id="@id/hidden_settings" android:layout_width="fill_parent" android:layout_height="wrap_content" android:prompt="@string/wifi_hidden_network" style="@style/wifi_item_spinner" />
-                <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/hidden_settings_warning" android:padding="8.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wifi_hidden_network_warning" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

@@ -360,7 +360,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0d02c3
+    const v9, 0x7f0d02c2
 
     invoke-virtual {v4, v9, v3, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -868,7 +868,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/app/Activity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    const v2, 0x7f12120f
+    const v2, 0x7f121214
 
     invoke-virtual {v0, v2}, Landroid/app/Activity;->setTitle(I)V
 
@@ -878,7 +878,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
 
-    const v0, 0x7f0d02c4
+    const v0, 0x7f0d02c3
 
     const/4 v1, 0x0
 

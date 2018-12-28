@@ -46,8 +46,15 @@
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
+    invoke-static {}, Lcom/oneplus/settings/navigationbargestures/OPButtonCustomSettings;->access$000()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    :cond_0
     const v1, 0x7f160074
 
     invoke-static {v1, p1}, Lcom/oneplus/settings/utils/XmlParseUtils;->parsePreferenceKeyFromResource(ILandroid/content/Context;)Ljava/util/List;
@@ -56,7 +63,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    :cond_0
+    :cond_1
     return-object v0
 .end method
 

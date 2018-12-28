@@ -139,7 +139,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchCategorySettings;->mFragmentTitles:Ljava/util/List;
 
-    const v4, 0x7f120cd4
+    const v4, 0x7f120cd8
 
     invoke-virtual {p0, v4}, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchCategorySettings;->getString(I)Ljava/lang/String;
 
@@ -289,7 +289,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setSystemUiVisibility(I)V
 
     :cond_0
-    const v0, 0x7f0d01aa
+    const v0, 0x7f0d01a9
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/quicklaunch/OPQuickLaunchCategorySettings;->setContentView(I)V
 

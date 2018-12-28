@@ -235,6 +235,7 @@
     <string name="oneplus_broadcat_wifi_name">ਪ੍ਰਸਾਰਣ ਨੈੱਟਵਰਕ ਦਾ ਨਾਂ (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">ਬਟਨ &amp; ਜੈਸਚਰ</string>
     <string name="oneplus_buttons_dashboard_summary">ਚਿਤਾਵਨੀ ਸਲਾਈਡਰ, ਨੈਵੀਗੇਸ਼ਨ, ਜੈਸਚਰ</string>
+    <string name="oneplus_buttons_settings">ਬਟਨਾਂ ਦੀਆਂ ਸੈਟਿੰਗਾਂ</string>
     <string name="oneplus_buttons_settings_summary">ਨੈਵੀਗੇਸ਼ਨ ਜੈਸਚਰ</string>
     <string name="oneplus_call_information_broadcast">ਕਾਲਰ ID ਬੋਲੋ</string>
     <string name="oneplus_call_information_broadcast_summary">ਈਅਰਫ਼ੋਨਾਂ ਰਾਹੀਂ ਇਨਕਮਿੰਗ ਕਾਲਰ ID ਬੋਲੋ</string>
@@ -249,6 +250,7 @@
     <string name="oneplus_colorful_mode_title">ਰੰਗਦਾਰ</string>
     <string name="oneplus_compatibility_mode_summary">ਨੌਚ ਖੇਤਰ ਵਿੱਚ ਪੂਰੀ ਸਕ੍ਰੀਨ ਵਾਲੀਆਂ ਐਪਾਂ ਵਰਤੀਆਂ ਨਹੀਂ ਜਾ ਸਕਦੀਆਂ</string>
     <string name="oneplus_compatibility_mode_title">ਅਨੁਕੂਲਤਾ ਮੋਡ</string>
+    <string name="oneplus_condition_night_mode_title">ਨਾਈਟ ਮੋਡ ਚਾਲੂ ਹੈ</string>
     <string name="oneplus_connected_device_count">%1$s ਡਿਵਾਈਸ ਕਨੈਕਟ ਹੈ</string>
     <string name="oneplus_connected_device_management_title">ਡਿਵਾਈਸ ਪ੍ਰਬੰਧਕ ਕਨੈਕਟ ਹੋਇਆ</string>
     <string name="oneplus_connected_devices_count">%1$s ਡਿਵਾਈਸ ਕਨੈਕਟ ਹਨ</string>
@@ -261,6 +263,9 @@
     <string name="oneplus_data_usage_control_title">ਡੇਟਾ ਵਰਤੋਂ ਨਿਯੰਤਰਣ</string>
     <string name="oneplus_deep_clear_way">ਡੂੰਘੀ ਸਫ਼ਾਈ</string>
     <string name="oneplus_deep_clear_way_summary">ਉਨ੍ਹਾਂ ਸਾਰੀਆਂ ਬੈਕਗ੍ਰਾਊਂਡ ਪ੍ਰਕਿਰਿਆਵਾਂ ਨੂੰ ਸਾਫ਼ ਕਰਦਾ ਹੈ, ਜਿੰਨ੍ਹਾਂ ਕਰਕੇ ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਕੁਝ ਐਪਾਂ ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦਿੰਦੀਆਂ ਹੋਣ ਅਤੇ ਤੁਹਾਨੂੰ ਸੂਚਨਾਵਾਂ ਪ੍ਰਾਪਤ ਨਾ ਹੁੰਦੀਆਂ ਹੋਣ</string>
+    <string name="oneplus_deep_optimization">ਤੀਬਰ ਅਨੁਕੂਲਣ</string>
+    <string name="oneplus_deep_optimization_summary">ਜਦੋਂ ਤੁਸੀਂ ਤੀਬਰ ਅਨੁਕੂਲਣ ਨੂੰ ਬੰਦ ਕਰਦੇ ਹੋ, ਤਾਂ ਪਾਵਰ ਖਪਤ ਬਹੁਤ ਜ਼ਿਆਦਾ ਵਧ ਜਾਵੇਗੀ, ਜਿਸ ਨਾਲ ਤੁਹਾਡੀ ਸਧਾਰਨ ਵਰਤੋਂ ਪ੍ਰਭਾਵਿਤ ਹੋਵੇਗੀ।</string>
+    <string name="oneplus_deep_optimization_title">ਤੀਬਰ ਅਨੁਕੂਲਣ ਨੂੰ ਬੰਦ ਕਰਨਾ ਹੈ?</string>
     <string name="oneplus_default_launcher">ਡਿਫੌਲਟ ਲਾਂਚਰ</string>
     <string name="oneplus_delete_fingerprint_list">ਫਿੰਗਰਪ੍ਰਿੰਟ ਮਿਟਾਓ</string>
     <string name="oneplus_deleted_fingerprint_list">ਫਿੰਗਰਪ੍ਰਿੰਟ ਮਿਟਾਇਆ</string>
@@ -301,6 +306,7 @@
     <string name="oneplus_earphone_mode">ਈਅਰਫ਼ੋਨ ਮੋਡ</string>
     <string name="oneplus_emergency_rescue_settings">ਐਮਰਜੈਂਸੀ ਬਚਾਅ</string>
     <string name="oneplus_emergency_rescue_settings_summary">ਤੇਜ਼ੀ ਨਾਲ ਪਾਵਰ ਬਟਨ ਦਬਾ ਕੇ ਮਦਦ ਲਈ ਆਟੋਮੈਟਿਕਲੀ ਕਾਲ ਕਰੋ</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">ਐਮਰਜੈਂਸੀ ਬਚਾਅ ਦੀਆਂ ਪਾਵਰ ਬਟਨ ਸੈਟਿੰਗਾਂ ਦੇ ਸੰਸ਼ੋਧਨ ਤੋਂ ਬਾਅਦ ਉਪਲਬਧ</string>
     <string name="oneplus_enroll_fingerprint_tips_title">ਫਿੰਗਰਪ੍ਰਿੰਟ ਸੈੱਟਅੱਪ ਪ੍ਰੋਂਪਟ</string>
     <string name="oneplus_enter_your_fingerprint">· ਆਪਣਾ ਫਿੰਗਰਪ੍ਰਿੰਟ ਦਰਜ ਕਰੋ</string>
     <string name="oneplus_experience_improvement_programs">ਅਨੁਭਵ ਸੁਧਾਰ ਪ੍ਰੋਗਰਾਮ</string>
@@ -414,7 +420,7 @@
     <string name="oneplus_hide_notch_display_summary">ਨੌਚ ਖੇਤਰ ਵਿੱਚ ਸਾਰੀਆਂ ਐਪਾਂ ਵਰਤੀਆਂ ਨਹੀਂ ਜਾ ਸਕਦੀਆਂ</string>
     <string name="oneplus_hide_notch_display_title">ਨੌਟ ਖੇਤਰ ਨੂੰ ਲੁਕਾਓ</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">"ਸਕ੍ਰੀਨ ਦੇ ਹੇਠਲੇ ਹਿੱਸੇ ਵਿੱਚ ਫਿੰਗਰਪ੍ਰਿੰਟ ਪੈਟਰਨ ਪ੍ਰਦਰਸ਼ਿਤ ਹੋਣ 'ਤੇ, ਫਿੰਗਰਪ੍ਰਿੰਟ ਫੰਕਸ਼ਨਾਂ ਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ ਬੱਸ ਆਪਣੀ ਉਂਗਲੀ ਨਾਲ ਫਿੰਗਰਪ੍ਰਿੰਟ ਪਛਾਣ ਖੇਤਰ ਨੂੰ ਦਬਾਓ: ਆਪਣੇ ਫ਼ੋਨ ਨੂੰ ਕਿਰਿਆਸ਼ੀਲ ਅਤੇ ਅਨਲੌਕ ਕਰਨਾ, ਖ਼ਰੀਦਦਾਰੀ ਨੂੰ ਪ੍ਰਮਾਣਿਤ ਕਰਨਾ ਜਾਂ ਐਪਾਂ ਵਿੱਚ ਸਾਈਨ ਇਨ ਕਰਨਾ।"</string>
-    <string name="oneplus_hydrogen_version">Hydrogen OS ਸੰਸਕਰਨ</string>
+    <string name="oneplus_hydrogen_version">H₂OS ਸੰਸਕਰਣ</string>
     <string name="oneplus_incoming_call_vibrate_intensity">ਇਨਕਮਿੰਗ ਕਾਲ</string>
     <string name="oneplus_incoming_call_vibrate_mode">ਇਨਕਮਿੰਗ ਕਾਲ ਵਾਈਬ੍ਰੇਸ਼ਨ ਪੈਟਰਨ</string>
     <string name="oneplus_init_finger_input">ਫਿੰਗਰਪ੍ਰਿੰਟ ਅਰੰਭ ਕਰ ਰਿਹਾ</string>
@@ -669,6 +675,7 @@
     <string name="oneplus_setting_ringtone">ਰਿੰਗ ਸੈੱਟ ਕਰੋ</string>
     <string name="oneplus_setting_sim_ringtone_switch">ਹਰੇਕ SIM ਕਾਰਡ ਲਈ ਰਿੰਗਟੋਨ ਸੈੱਟ ਕਰੋ</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· ਸਕ੍ਰੀਨ ਅਣਲੌਕ ਕਰਨ ਦਾ ਇੱਕ ਵਿਕਲਪਕ ਤਰੀਕਾ ਸੈੱਟ ਅੱਪ ਕਰੋ</string>
+    <string name="oneplus_share_this_wifi">Wi-Fi ਕਵਰੇਜ ਨੂੰ ਵਧਾਓ</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi ਸਾਂਝਾਕਰਨ</string>
     <string name="oneplus_shielding_notification">ਬਲੌਕ ਕਰੋ</string>
     <string name="oneplus_shielding_notification_summary">ਸੂਚਨਾਵਾਂ ਨੂੰ ਬਲੌਕ ਕੀਤਾ ਜਾਵੇਗਾ (ਕਾਲਾਂ ਅਤੇ ਅਲਾਰਮਾਂ ਨੂੰ ਛੱਡ ਕੇ)</string>
@@ -744,6 +751,11 @@
     <string name="oneplus_weak_text_reminding">ਸਿਰਫ਼ ਟੈਕਸਟ</string>
     <string name="oneplus_weak_text_reminding_summary">ਅਗਾਮੀ ਸੂਚਨਾ ਦਿਖਾਉਣ ਲਈ ਐਪਾਂ ਨੂੰ ਇਜਾਜ਼ਤ ਦਿਓ</string>
     <string name="oneplus_wifi_ap_error">ਕਿਰਪਾ ਕਰਕੇ SIM ਕਾਰਡ ਪਾਓ</string>
+    <string name="oneplus_wifi_hidden_network_warning">"ਜੇਕਰ ਤੁਹਾਡਾ ਰੂਟਰ SSID ਪ੍ਰਸਾਰਣ ਨੂੰ ਅਸਮਰੱਥ ਕਰਦਾ ਹੈ, ਤਾਂ ਤੁਹਾਨੂੰ ਲੁਕਾਏ ਹੋਏ ਨੈੱਟਵਰਕ ਨਾਲ ਕਨੈਕਟ ਕਰਨ ਲਈ \"ਹਾਂ\" ਨੂੰ ਚੁਣਨਾ ਚਾਹੀਦਾ ਹੈ।
+
+ਇਸ ਨਾਲ ਸੁਰੱਖਿਆ ਜੋਖਿਮ ਪੈਦਾ ਹੋ ਸਕਦਾ ਹੈ ਕਿਉਂਕਿ ਤੁਹਾਡਾ ਫ਼ੋਨ ਨੈੱਟਵਰਕ ਨੂੰ ਲੱਭਣ ਲਈ ਨਿਯਮਿਤ ਤੌਰ 'ਤੇ ਆਪਣੇ ਸਿਗਨਲਾਂ ਦਾ ਪ੍ਰਸਾਰਣ ਕਰੇਗਾ।
+
+ਨੈੱਟਵਰਕ ਨੂੰ ਲੁਕਾਏ ਗਏ ਵਜੋਂ ਸੈੱਟ ਕਰਨ ਨਾਲ ਤੁਹਾਡੇ ਰੂਟਰ ਦੀਆਂ ਸੈਟਿੰਗਾਂ ਨਹੀਂ ਬਦਲਣਗੀਆਂ।"</string>
     <string name="oneplus_wifi_ipv6_surport_summary">IPv6 ਨੂੰ ਅਯੋਗ ਬਣਾਉਣ ਨਾਲ ਕੁਝ Wi-Fi ਰਾਊਟਰਾਂ ਨਾਲ ਅਨੁਕੂਲਤਾ ਸਬੰਧੀ ਸਮੱਸਿਆਵਾਂ ਤੋਂ ਬਚਿਆ ਜਾ ਸਕਦਾ ਹੈ।</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6 ਸਮਰਥਨ</string>
     <string name="oneplus_wifi_list">Wi‑Fi ਸੂਚੀ</string>

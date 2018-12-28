@@ -421,7 +421,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120d04
+    const v3, 0x7f120d08
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -435,7 +435,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120d03
+    const v3, 0x7f120d07
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -467,7 +467,7 @@
 
     move-result-object v2
 
-    const v4, 0x7f120d02
+    const v4, 0x7f120d06
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -487,7 +487,7 @@
 
     move-result-object v2
 
-    const v4, 0x7f120d01
+    const v4, 0x7f120d05
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -527,7 +527,7 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/timer/timepower/OPPowerOffPromptActivity;->mShutdownDialog:Landroid/app/ProgressDialog;
 
-    const v2, 0x1040612
+    const v2, 0x1040613
 
     invoke-virtual {p0, v2}, Lcom/oneplus/settings/timer/timepower/OPPowerOffPromptActivity;->getString(I)Ljava/lang/String;
 

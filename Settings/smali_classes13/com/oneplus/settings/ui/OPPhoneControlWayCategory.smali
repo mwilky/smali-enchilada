@@ -83,7 +83,7 @@
 
     invoke-direct {p0, p1}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;)V
 
-    const v0, 0x7f0d0194
+    const v0, 0x7f0d0193
 
     iput v0, p0, Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;->mLayoutResId:I
 
@@ -103,7 +103,7 @@
 
     invoke-direct {p0, p1, p2}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    const v0, 0x7f0d0194
+    const v0, 0x7f0d0193
 
     iput v0, p0, Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;->mLayoutResId:I
 
@@ -123,7 +123,7 @@
 
     invoke-direct {p0, p1, p2, p3}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const v0, 0x7f0d0194
+    const v0, 0x7f0d0193
 
     iput v0, p0, Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;->mLayoutResId:I
 
@@ -253,7 +253,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d0178
+    const v2, 0x7f0d0177
 
     const/4 v3, 0x0
 
@@ -269,7 +269,7 @@
 
     check-cast v6, Landroid/widget/TextView;
 
-    const v7, 0x7f120b3f
+    const v7, 0x7f120b42
 
     invoke-virtual {v6, v7}, Landroid/widget/TextView;->setText(I)V
 
@@ -281,7 +281,7 @@
 
     check-cast v8, Landroid/widget/TextView;
 
-    const v9, 0x7f120b3e
+    const v9, 0x7f120b41
 
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->setText(I)V
 
@@ -339,7 +339,7 @@
 
     check-cast v12, Landroid/widget/TextView;
 
-    const v13, 0x7f120b47
+    const v13, 0x7f120b4a
 
     invoke-virtual {v12, v13}, Landroid/widget/TextView;->setText(I)V
 
@@ -349,7 +349,7 @@
 
     check-cast v13, Landroid/widget/TextView;
 
-    const v14, 0x7f120b46
+    const v14, 0x7f120b49
 
     invoke-virtual {v13, v14}, Landroid/widget/TextView;->setText(I)V
 
@@ -403,7 +403,7 @@
 
     check-cast v15, Landroid/widget/TextView;
 
-    const v5, 0x7f120b36
+    const v5, 0x7f120b39
 
     invoke-virtual {v15, v5}, Landroid/widget/TextView;->setText(I)V
 
@@ -413,7 +413,7 @@
 
     check-cast v5, Landroid/widget/TextView;
 
-    const v7, 0x7f120b35
+    const v7, 0x7f120b38
 
     invoke-virtual {v5, v7}, Landroid/widget/TextView;->setText(I)V
 
@@ -471,7 +471,7 @@
 
     check-cast v7, Landroid/widget/TextView;
 
-    const v9, 0x7f120b45
+    const v9, 0x7f120b48
 
     invoke-virtual {v7, v9}, Landroid/widget/TextView;->setText(I)V
 
@@ -485,7 +485,7 @@
 
     check-cast v9, Landroid/widget/TextView;
 
-    const v3, 0x7f120b44
+    const v3, 0x7f120b47
 
     invoke-virtual {v9, v3}, Landroid/widget/TextView;->setText(I)V
 
@@ -535,7 +535,7 @@
 
     invoke-virtual {v3}, Lcom/airbnb/lottie/LottieAnimationView;->playAnimation()V
 
-    const v3, 0x7f0d0179
+    const v3, 0x7f0d0178
 
     const/4 v11, 0x0
 
@@ -553,7 +553,7 @@
 
     move-object/from16 v17, v1
 
-    const v1, 0x7f120b41
+    const v1, 0x7f120b44
 
     invoke-virtual {v11, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -567,7 +567,7 @@
 
     move-object/from16 v18, v5
 
-    const v5, 0x7f120b40
+    const v5, 0x7f120b43
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setText(I)V
 
@@ -686,7 +686,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0803e5
+    const v1, 0x7f0803db
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -700,7 +700,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0803e4
+    const v1, 0x7f0803da
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

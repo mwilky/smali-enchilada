@@ -54,7 +54,7 @@
 
     iget-object v0, p0, Lcom/android/settings/widget/SlidingTabLayout;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f0d025f
+    const v1, 0x7f0d025e
 
     const/4 v2, 0x0
 
@@ -258,7 +258,7 @@
 
     iget-object v3, p0, Lcom/android/settings/widget/SlidingTabLayout;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    const v4, 0x7f0d0260
+    const v4, 0x7f0d025f
 
     iget-object v5, p0, Lcom/android/settings/widget/SlidingTabLayout;->mTitleView:Landroid/widget/LinearLayout;
 

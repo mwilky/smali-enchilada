@@ -12,7 +12,7 @@
 
 
 # static fields
-.field private static final layoutResId:I = 0x7f0d01af
+.field private static final layoutResId:I = 0x7f0d01ae
 
 
 # instance fields
@@ -115,7 +115,7 @@
 .method private initView(Landroid/content/Context;)V
     .locals 1
 
-    const v0, 0x7f0d01af
+    const v0, 0x7f0d01ae
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/ui/OPScreenBetterPreference;->setLayoutResource(I)V
 
@@ -187,19 +187,19 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0d01b4
+    const v2, 0x7f0d01b3
 
     invoke-virtual {v0, v2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v2
 
-    const v3, 0x7f0d01b6
+    const v3, 0x7f0d01b5
 
     invoke-virtual {v0, v3, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v3
 
-    const v4, 0x7f0d01b5
+    const v4, 0x7f0d01b4
 
     invoke-virtual {v0, v4, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 

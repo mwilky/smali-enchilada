@@ -296,7 +296,7 @@
 
     iget-object v1, p0, Lcom/android/settings/backup/ToggleBackupSettingFragment;->mSummaryPreference:Landroid/support/v7/preference/Preference;
 
-    const v2, 0x7f0d02ba
+    const v2, 0x7f0d02b9
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setLayoutResource(I)V
 

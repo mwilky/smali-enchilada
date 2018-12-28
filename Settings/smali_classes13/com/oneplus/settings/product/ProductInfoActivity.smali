@@ -101,7 +101,7 @@
 .method private initViews()V
     .locals 15
 
-    const v0, 0x7f0d01a8
+    const v0, 0x7f0d01a7
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/product/ProductInfoActivity;->setContentView(I)V
 
@@ -117,7 +117,7 @@
 
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v2, 0x7f120ba6
+    const v2, 0x7f120ba9
 
     invoke-virtual {p0, v2}, Lcom/oneplus/settings/product/ProductInfoActivity;->getString(I)Ljava/lang/String;
 
@@ -133,7 +133,7 @@
 
     const/4 v4, 0x0
 
-    const v5, 0x7f0d01a7
+    const v5, 0x7f0d01a6
 
     const/4 v6, 0x0
 
@@ -141,7 +141,7 @@
 
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v7, 0x7f120ba7
+    const v7, 0x7f120baa
 
     invoke-virtual {p0, v7}, Lcom/oneplus/settings/product/ProductInfoActivity;->getString(I)Ljava/lang/String;
 
@@ -421,7 +421,7 @@
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v1, 0x7f120ba6
+    const v1, 0x7f120ba9
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/product/ProductInfoActivity;->getString(I)Ljava/lang/String;
 
@@ -435,7 +435,7 @@
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v1, 0x7f120ba7
+    const v1, 0x7f120baa
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/product/ProductInfoActivity;->getString(I)Ljava/lang/String;
 

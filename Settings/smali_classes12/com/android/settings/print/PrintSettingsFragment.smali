@@ -181,11 +181,11 @@
 
     invoke-direct {v1, v2}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f120e54
+    const v2, 0x7f120e59
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setTitle(I)V
 
-    const v2, 0x7f0801c8
+    const v2, 0x7f0801e3
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setIcon(I)V
 
@@ -435,7 +435,7 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    const v4, 0x7f120e58
+    const v4, 0x7f120e5d
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 

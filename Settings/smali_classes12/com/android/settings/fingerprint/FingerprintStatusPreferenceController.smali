@@ -261,7 +261,7 @@
     goto :goto_1
 
     :cond_3
-    const v0, 0x7f120fd4
+    const v0, 0x7f120fd9
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 

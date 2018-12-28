@@ -150,7 +150,7 @@
 
     iget-object v8, p0, Lcom/android/settings/notification/OPZenModeTurnOnSettings;->mContext:Landroid/content/Context;
 
-    const v9, 0x7f1215f7
+    const v9, 0x7f1215fc
 
     new-array v10, v6, [Ljava/lang/Object;
 
@@ -168,7 +168,7 @@
 
     iget-object v5, p0, Lcom/android/settings/notification/OPZenModeTurnOnSettings;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f1215f9
+    const v6, 0x7f1215fe
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -203,7 +203,7 @@
 
     iget-object v8, p0, Lcom/android/settings/notification/OPZenModeTurnOnSettings;->mContext:Landroid/content/Context;
 
-    const v9, 0x7f1215f8
+    const v9, 0x7f1215fd
 
     new-array v10, v6, [Ljava/lang/Object;
 
@@ -252,7 +252,7 @@
 
     move-result v8
 
-    const v9, 0x7f1215f6
+    const v9, 0x7f1215fb
 
     if-nez v8, :cond_4
 
@@ -416,7 +416,9 @@
 .method public isAvailable()Z
     .locals 1
 
-    const/4 v0, 0x1
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportSocTriState()Z
+
+    move-result v0
 
     return v0
 .end method

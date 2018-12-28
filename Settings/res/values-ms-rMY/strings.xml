@@ -235,6 +235,7 @@ Penjimat bateri dipadamkan secara automatik apabila peranti anda sedang mengecas
     <string name="oneplus_broadcat_wifi_name">Penyiaran nama rangkaian (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Butang &amp; gerak isyarat</string>
     <string name="oneplus_buttons_dashboard_summary">Peluncur Amaran, navigasi, gerak isyarat</string>
+    <string name="oneplus_buttons_settings">seting butang</string>
     <string name="oneplus_buttons_settings_summary">Gerak isyarat navigasi</string>
     <string name="oneplus_call_information_broadcast">Sebutkan ID Pemanggil</string>
     <string name="oneplus_call_information_broadcast_summary">Sebutkan ID pemanggil masuk melalui fon telinga</string>
@@ -249,6 +250,7 @@ Penjimat bateri dipadamkan secara automatik apabila peranti anda sedang mengecas
     <string name="oneplus_colorful_mode_title">Berwarna-warni</string>
     <string name="oneplus_compatibility_mode_summary">Aplikasi skrin penuh tidak dapat menggunakan kawasan takuk</string>
     <string name="oneplus_compatibility_mode_title">Mod keserasian</string>
+    <string name="oneplus_condition_night_mode_title">Mod malam dihidupkan</string>
     <string name="oneplus_connected_device_count">Terdapat %1$s peranti bersambung</string>
     <string name="oneplus_connected_device_management_title">Pengurus peranti disambung</string>
     <string name="oneplus_connected_devices_count">Terdapat %1$s peranti bersambung</string>
@@ -261,6 +263,9 @@ Penjimat bateri dipadamkan secara automatik apabila peranti anda sedang mengecas
     <string name="oneplus_data_usage_control_title">Kawalan penggunaan data</string>
     <string name="oneplus_deep_clear_way">Pembersihan dalam</string>
     <string name="oneplus_deep_clear_way_summary">Mengosongkan proses latar belakang, yang mungkin mengakibatkan beberapa aplikasi anda berhenti berfungsi dan tidak menerima pemberitahuan</string>
+    <string name="oneplus_deep_optimization">Pengoptimuman mendalam</string>
+    <string name="oneplus_deep_optimization_summary">Apabila anda mematikan pengoptimuman mendalam, penggunaan kuasa akan meningkat dengan banyak, yang akan menjejaskan penggunaan biasa.</string>
+    <string name="oneplus_deep_optimization_title">Matikan pengoptimuman mendalam?</string>
     <string name="oneplus_default_launcher">Pelancar lalai</string>
     <string name="oneplus_delete_fingerprint_list">Padam cap jari</string>
     <string name="oneplus_deleted_fingerprint_list">Cap jari dipadamkan</string>
@@ -301,6 +306,7 @@ Penjimat bateri dipadamkan secara automatik apabila peranti anda sedang mengecas
     <string name="oneplus_earphone_mode">Mod fon telinga</string>
     <string name="oneplus_emergency_rescue_settings">Bantuan kecemasan</string>
     <string name="oneplus_emergency_rescue_settings_summary">Panggil bantuan secara automatik dengan menekan butang kuasa dengan cepat</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">Tersedia selepas mengubah suai tetapan BUTANG KUASA Bantuan Kecemasan</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Prom persediaan cap jari</string>
     <string name="oneplus_enter_your_fingerprint">· Daftarkan cap jari anda</string>
     <string name="oneplus_experience_improvement_programs">Program peningkatan pengalaman</string>
@@ -414,7 +420,7 @@ Untuk pergi ke skrin utama pada bila-bila masa, leret ke atas dari pinggir tenga
     <string name="oneplus_hide_notch_display_summary">Semua aplikasi tidak dapat menggunakan kawasan takuk</string>
     <string name="oneplus_hide_notch_display_title">Sembunyikan kawasan takuk</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Apabila corak cap jari muncul di bahagian bawah skrin, hanya tekan dengan jari anda pada kawasan pengecaman cap jari untuk menggunakan fungsi cap jari: bangunkan dan buka kunci telefon anda, membenarkan pembelian atau log masuk ke aplikasi.</string>
-    <string name="oneplus_hydrogen_version">Versi Hydrogen OS</string>
+    <string name="oneplus_hydrogen_version">Versi H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Panggilan masuk</string>
     <string name="oneplus_incoming_call_vibrate_mode">Corak getaran panggilan masuk</string>
     <string name="oneplus_init_finger_input">Mengasal cap jari</string>
@@ -669,6 +675,7 @@ Untuk pergi ke skrin utama pada bila-bila masa, leret ke atas dari pinggir tenga
     <string name="oneplus_setting_ringtone">Tetapkan dering</string>
     <string name="oneplus_setting_sim_ringtone_switch">Tetapkan nada dering untuk setiap kad SIM</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Sediakan cara alternatif untuk membuka kunci skrin</string>
+    <string name="oneplus_share_this_wifi">Perluaskan liputan Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi Berkongsi</string>
     <string name="oneplus_shielding_notification">Sekat</string>
     <string name="oneplus_shielding_notification_summary">Pemberitahuan akan disekat (kecuali untuk panggilan dan penggera)</string>
@@ -744,6 +751,11 @@ Nota: Buka Kunci Muka mungkin kurang selamat berbanding cap jari, PIN atau pilih
     <string name="oneplus_weak_text_reminding">Teks sahaja</string>
     <string name="oneplus_weak_text_reminding_summary">Benarkan aplikasi untuk memaparkan pemberitahuan terapung</string>
     <string name="oneplus_wifi_ap_error">Sila masukkan kad SIM</string>
+    <string name="oneplus_wifi_hidden_network_warning">"Jika penghala anda menyahdayakan penyiaran SSID, anda perlu memilih \"Ya\" untuk menyambung ke rangkaian tersembunyi.
+
+Ini mungkin menimbulkan risiko keselamatan kerana telefon anda akan menyiarkan isyaratnya secara tetap untuk mencari rangkaian.
+
+Menetapkan rangkaian sebagai tersembunyi tidak akan mengubah tetapan penghala anda."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">Melumpuhkan IPv6 boleh mengelakkan isu-isu keserasian dengan penghala Wi-Fi tertentu.</string>
     <string name="oneplus_wifi_ipv6_surport_title">Sokongan IPv6</string>
     <string name="oneplus_wifi_list">Senarai Wi‑Fi</string>

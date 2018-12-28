@@ -2616,6 +2616,7 @@
     <string name="oneplus_broadcat_wifi_name">Передавати ім’я мережі (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Кнопки та жести</string>
     <string name="oneplus_buttons_dashboard_summary">Перемикач оповіщень, навігація, жести</string>
+    <string name="oneplus_buttons_settings">налаштування кнопок</string>
     <string name="oneplus_buttons_settings_summary">Жест навігації</string>
     <string name="oneplus_call_information_broadcast">Промовити номер вхідного абонента</string>
     <string name="oneplus_call_information_broadcast_summary">Промовити номер вхідного абонента через навушники</string>
@@ -2630,6 +2631,7 @@
     <string name="oneplus_colorful_mode_title">Барвиста тема</string>
     <string name="oneplus_compatibility_mode_summary">Повноекранні додатки не можуть використовувати область виїмки</string>
     <string name="oneplus_compatibility_mode_title">Режим сумісності</string>
+    <string name="oneplus_condition_night_mode_title">Нічний режим увімкнено</string>
     <string name="oneplus_connected_device_count">"Під'єднано пристроїв: %1$s"</string>
     <string name="oneplus_connected_device_management_title">"Управління під'єднаними пристроями"</string>
     <string name="oneplus_connected_devices_count">"Під'єднано пристроїв: %1$s"</string>
@@ -2642,6 +2644,9 @@
     <string name="oneplus_data_usage_control_title">Керування використанням даних</string>
     <string name="oneplus_deep_clear_way">Глибоке очищення</string>
     <string name="oneplus_deep_clear_way_summary">Зупиняє фонові процеси, через що деякі додатки можуть перестати працювати, і ви не отримуватимете сповіщень</string>
+    <string name="oneplus_deep_optimization">Повна оптимізація</string>
+    <string name="oneplus_deep_optimization_summary">Якщо вимкнути повну оптимізацію, споживання енергії суттєво збільшиться. Це вплине на звичайне використання пристрою.</string>
+    <string name="oneplus_deep_optimization_title">Вимкнути повну оптимізацію?</string>
     <string name="oneplus_default_launcher">Завантажувач за замовчуванням</string>
     <string name="oneplus_delete_fingerprint_list">Видалити відбиток пальця</string>
     <string name="oneplus_deleted_fingerprint_list">Відбиток пальця видалено</string>
@@ -2682,6 +2687,7 @@
     <string name="oneplus_earphone_mode">Режим навушників</string>
     <string name="oneplus_emergency_rescue_settings">Екстрена допомога</string>
     <string name="oneplus_emergency_rescue_settings_summary">Автоматично зверніться по допомогу, швидко натиснувши кнопку живлення</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">Доступно після змінення налаштувань КНОПКИ ЖИВЛЕННЯ для функції \"Екстрена допомога\"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Підказка з налаштування відбитка пальця</string>
     <string name="oneplus_enter_your_fingerprint">· Зберегти відбиток пальця</string>
     <string name="oneplus_experience_improvement_programs">Програми покращення взаємодії</string>
@@ -2795,7 +2801,7 @@
     <string name="oneplus_hide_notch_display_summary">Додатки не можуть використовувати область виїмки</string>
     <string name="oneplus_hide_notch_display_title">Приховувати область виїмки</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Коли внизу екрана з’являється піктограма відбитка пальця, просто прикладіть палець до ділянки датчика відбитків, щоб скористатися функцією відбитка пальця: активувати та розблокувати телефон, підтвердити покупку або ввійти в додаток.</string>
-    <string name="oneplus_hydrogen_version">Версія Hydrogen OS</string>
+    <string name="oneplus_hydrogen_version">Версія H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Вхідний дзвінок</string>
     <string name="oneplus_incoming_call_vibrate_mode">Режим вібрації для вхідного дзвінка</string>
     <string name="oneplus_init_finger_input">Ініціалізація зчитування відбитків пальців</string>
@@ -3050,6 +3056,7 @@
     <string name="oneplus_setting_ringtone">Налаштування мелодії</string>
     <string name="oneplus_setting_sim_ringtone_switch">Встановити мелодію для кожної SIM-карти</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Налаштувати альтернативний спосіб розблокування екрану</string>
+    <string name="oneplus_share_this_wifi">Збільшити покриття мережі Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Роздача Wi‑Fi</string>
     <string name="oneplus_shielding_notification">Блокувати</string>
     <string name="oneplus_shielding_notification_summary">Сповіщення буде заблоковано (крім викликів і сигналів будильника)</string>
@@ -3125,6 +3132,11 @@
     <string name="oneplus_weak_text_reminding">Лише текст</string>
     <string name="oneplus_weak_text_reminding_summary">Дозволити додаткам показувати сповіщення в спливаючому вікні</string>
     <string name="oneplus_wifi_ap_error">Вставте SIM-картку</string>
+    <string name="oneplus_wifi_hidden_network_warning">"Якщо маршрутизатор вимикає передавання SSID, виберіть \"Так\", щоб підключитися до прихованої мережі.
+
+Це може створювати загрозу порушення безпеки, оскільки телефон регулярно передаватиме сигнал, щоб знайти мережу.
+
+Якщо зробити мережу прихованою, налаштування маршрутизатора не буде змінено."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">Вимкніть IPv6 у разі проблем з сумісністю з деякими роутерами Wi-Fi.</string>
     <string name="oneplus_wifi_ipv6_surport_title">Підтримка IPv6</string>
     <string name="oneplus_wifi_list">Список мереж Wi‑Fi</string>

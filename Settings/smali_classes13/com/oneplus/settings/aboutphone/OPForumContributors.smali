@@ -65,7 +65,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPForumContributors;->mForumImageview:Landroid/widget/ImageView;
 
-    const v1, 0x7f080347
+    const v1, 0x7f08033c
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -74,7 +74,7 @@
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPForumContributors;->mForumImageview:Landroid/widget/ImageView;
 
-    const v1, 0x7f080348
+    const v1, 0x7f08033d
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -104,7 +104,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPForumContributors;->mForumImageview:Landroid/widget/ImageView;
 
-    const v1, 0x7f080345
+    const v1, 0x7f08033a
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -113,7 +113,7 @@
     :cond_2
     iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPForumContributors;->mForumImageview:Landroid/widget/ImageView;
 
-    const v1, 0x7f080346
+    const v1, 0x7f08033b
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -483,7 +483,7 @@
 
     invoke-static {v0, v1}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
 
-    const v0, 0x7f0d0175
+    const v0, 0x7f0d0174
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/aboutphone/OPForumContributors;->setContentView(I)V
 
@@ -495,7 +495,7 @@
 
     check-cast v0, Landroid/widget/Toolbar;
 
-    const v1, 0x7f120fa1
+    const v1, 0x7f120fa6
 
     invoke-virtual {v0, v1}, Landroid/widget/Toolbar;->setTitle(I)V
 
@@ -521,7 +521,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120bfa
+    const v3, 0x7f120bfe
 
     invoke-virtual {v2, v3}, Landroid/app/ActionBar;->setTitle(I)V
 
@@ -532,7 +532,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120b68
+    const v3, 0x7f120b6b
 
     invoke-virtual {v2, v3}, Landroid/app/ActionBar;->setTitle(I)V
 
@@ -617,7 +617,7 @@
 
     invoke-interface {v1, v2}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
-    const v3, 0x7f0801d1
+    const v3, 0x7f0801ec
 
     invoke-interface {v1, v3}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 

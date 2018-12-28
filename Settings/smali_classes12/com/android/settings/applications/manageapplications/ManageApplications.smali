@@ -525,7 +525,7 @@
     :pswitch_4
     const-class v0, Lcom/android/settings/applications/AppStorageSettings;
 
-    const v1, 0x7f121125
+    const v1, 0x7f12112a
 
     invoke-direct {p0, v0, v1}, Lcom/android/settings/applications/manageapplications/ManageApplications;->startAppInfoFragment(Ljava/lang/Class;I)V
 
@@ -534,7 +534,7 @@
     :pswitch_5
     const-class v0, Lcom/android/settings/applications/AppStorageSettings;
 
-    const v1, 0x7f121120
+    const v1, 0x7f121125
 
     invoke-direct {p0, v0, v1}, Lcom/android/settings/applications/manageapplications/ManageApplications;->startAppInfoFragment(Ljava/lang/Class;I)V
 
@@ -561,7 +561,7 @@
     :pswitch_8
     const-class v0, Lcom/android/settings/applications/appinfo/WriteSettingsDetails;
 
-    const v1, 0x7f121564
+    const v1, 0x7f121569
 
     invoke-direct {p0, v0, v1}, Lcom/android/settings/applications/manageapplications/ManageApplications;->startAppInfoFragment(Ljava/lang/Class;I)V
 
@@ -570,7 +570,7 @@
     :pswitch_9
     const-class v0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;
 
-    const v1, 0x7f120de5
+    const v1, 0x7f120dea
 
     invoke-direct {p0, v0, v1}, Lcom/android/settings/applications/manageapplications/ManageApplications;->startAppInfoFragment(Ljava/lang/Class;I)V
 
@@ -588,7 +588,7 @@
     :pswitch_b
     const-class v0, Lcom/android/settings/applications/UsageAccessDetails;
 
-    const v1, 0x7f121293
+    const v1, 0x7f121298
 
     invoke-direct {p0, v0, v1}, Lcom/android/settings/applications/manageapplications/ManageApplications;->startAppInfoFragment(Ljava/lang/Class;I)V
 
@@ -597,7 +597,7 @@
     :pswitch_c
     const-class v0, Lcom/android/settings/applications/AppStorageSettings;
 
-    const v1, 0x7f121127
+    const v1, 0x7f12112c
 
     invoke-direct {p0, v0, v1}, Lcom/android/settings/applications/manageapplications/ManageApplications;->startAppInfoFragment(Ljava/lang/Class;I)V
 
@@ -1370,7 +1370,7 @@
 
     iput v0, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mListType:I
 
-    const v4, 0x7f121293
+    const v4, 0x7f121298
 
     goto/16 :goto_2
 
@@ -1414,7 +1414,7 @@
 
     iput v0, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mListType:I
 
-    const v4, 0x7f1211b4
+    const v4, 0x7f1211b9
 
     goto/16 :goto_2
 
@@ -1435,7 +1435,7 @@
 
     iput v0, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mListType:I
 
-    const v4, 0x7f12155e
+    const v4, 0x7f121563
 
     goto/16 :goto_2
 

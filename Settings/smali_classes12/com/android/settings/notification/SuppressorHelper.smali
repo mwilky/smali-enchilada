@@ -21,7 +21,7 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x10403e6
+    const v0, 0x10403e7
 
     const/4 v1, 0x1
 

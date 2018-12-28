@@ -134,6 +134,14 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_5
+    const-string v1, "fingerprint_gesture_control"
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    const-string v1, "op_fingerprint_long_press_camera_shot"
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
     return-object v0
 .end method
 

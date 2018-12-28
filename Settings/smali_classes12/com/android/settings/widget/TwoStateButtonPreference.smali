@@ -18,7 +18,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 4
 
-    const v0, 0x7f040360
+    const v0, 0x7f040363
 
     const v1, 0x101008e
 
@@ -47,7 +47,7 @@
 
     const/4 v1, 0x1
 
-    const v2, 0x7f121191
+    const v2, 0x7f121196
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 

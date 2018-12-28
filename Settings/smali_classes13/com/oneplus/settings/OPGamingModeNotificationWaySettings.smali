@@ -333,6 +333,8 @@
 
     :cond_2
     :goto_0
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForGameModeNotificationShow()V
+
     return-void
 .end method
 

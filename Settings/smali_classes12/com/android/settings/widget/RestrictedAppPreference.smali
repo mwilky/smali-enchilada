@@ -47,7 +47,7 @@
 .method private initialize(Landroid/util/AttributeSet;Ljava/lang/String;)V
     .locals 2
 
-    const v0, 0x7f0d0235
+    const v0, 0x7f0d0234
 
     invoke-virtual {p0, v0}, Lcom/android/settings/widget/RestrictedAppPreference;->setWidgetLayoutResource(I)V
 

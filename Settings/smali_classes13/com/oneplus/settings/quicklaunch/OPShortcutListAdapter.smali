@@ -180,7 +180,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/quicklaunch/OPShortcutListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v3, 0x7f0d0146
+    const v3, 0x7f0d0145
 
     const/4 v4, 0x0
 
@@ -325,7 +325,7 @@
     :cond_1
     iget-object v5, v0, Lcom/oneplus/settings/quicklaunch/OPShortcutListAdapter$ItemViewHolder;->titleTv:Landroid/widget/TextView;
 
-    const v6, 0x7f120c3b
+    const v6, 0x7f120c3f
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(I)V
 

@@ -782,7 +782,7 @@
 
     iget-object v3, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f080378
+    const v4, 0x7f08036d
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -896,7 +896,7 @@
 
     iget-object v4, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f1211bc
+    const v5, 0x7f1211c1
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -952,11 +952,11 @@
 
     if-eq v0, v1, :cond_2
 
-    const v1, 0x7f0d01b8
+    const v1, 0x7f0d01b7
 
     if-eq v0, v1, :cond_1
 
-    const v1, 0x7f0d0273
+    const v1, 0x7f0d0272
 
     if-eq v0, v1, :cond_0
 
@@ -1102,7 +1102,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d01b8
+    const v1, 0x7f0d01b7
 
     if-ne p2, v1, :cond_0
 
@@ -1135,7 +1135,7 @@
     return-object v1
 
     :cond_2
-    const v1, 0x7f0d0273
+    const v1, 0x7f0d0272
 
     if-ne p2, v1, :cond_3
 

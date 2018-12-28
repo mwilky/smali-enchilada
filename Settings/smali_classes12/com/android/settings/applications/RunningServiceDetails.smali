@@ -534,7 +534,7 @@
 
     const/4 v3, 0x0
 
-    const v4, 0x7f0d0240
+    const v4, 0x7f0d023f
 
     invoke-virtual {v1, v4, v2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -611,7 +611,7 @@
     goto :goto_1
 
     :pswitch_0
-    const v4, 0x7f120e71
+    const v4, 0x7f120e76
 
     iget-object v8, v6, Landroid/app/ActivityManager$RunningAppProcessInfo;->importanceReasonComponent:Landroid/content/ComponentName;
 
@@ -658,7 +658,7 @@
     goto :goto_1
 
     :pswitch_1
-    const v4, 0x7f120e70
+    const v4, 0x7f120e75
 
     iget-object v8, v6, Landroid/app/ActivityManager$RunningAppProcessInfo;->importanceReasonComponent:Landroid/content/ComponentName;
 
@@ -751,7 +751,7 @@
 
     iget-object v0, p0, Lcom/android/settings/applications/RunningServiceDetails;->mInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f0d024f
+    const v1, 0x7f0d024e
 
     iget-object v2, p0, Lcom/android/settings/applications/RunningServiceDetails;->mAllDetails:Landroid/view/ViewGroup;
 
@@ -767,7 +767,7 @@
 
     iget-object v0, p0, Lcom/android/settings/applications/RunningServiceDetails;->mProcessesHeader:Landroid/widget/TextView;
 
-    const v1, 0x7f120f43
+    const v1, 0x7f120f48
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -825,7 +825,7 @@
 
     iget-object v2, p0, Lcom/android/settings/applications/RunningServiceDetails;->mInflater:Landroid/view/LayoutInflater;
 
-    const v3, 0x7f0d0241
+    const v3, 0x7f0d0240
 
     iget-object v4, p0, Lcom/android/settings/applications/RunningServiceDetails;->mAllDetails:Landroid/view/ViewGroup;
 
@@ -1029,7 +1029,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f120ff5
+    const v9, 0x7f120ffa
 
     new-array v10, v3, [Ljava/lang/Object;
 
@@ -1058,7 +1058,7 @@
 
     if-eqz p1, :cond_9
 
-    const v7, 0x7f120ffa
+    const v7, 0x7f120fff
 
     goto :goto_3
 
@@ -1087,12 +1087,12 @@
 
     if-eqz v8, :cond_a
 
-    const v8, 0x7f120ff4
+    const v8, 0x7f120ff9
 
     goto :goto_5
 
     :cond_a
-    const v8, 0x7f120ff9
+    const v8, 0x7f120ffe
 
     :goto_5
     invoke-virtual {v7, v8}, Landroid/app/Activity;->getText(I)Ljava/lang/CharSequence;
@@ -1107,7 +1107,7 @@
 
     iget-object v6, v1, Lcom/android/settings/applications/RunningServiceDetails$ActiveDetail;->mReportButton:Landroid/widget/Button;
 
-    const v7, 0x10405ae
+    const v7, 0x10405af
 
     invoke-virtual {v6, v7}, Landroid/widget/Button;->setText(I)V
 
@@ -1189,7 +1189,7 @@
 
     iget-object v0, p0, Lcom/android/settings/applications/RunningServiceDetails;->mInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f0d024f
+    const v1, 0x7f0d024e
 
     iget-object v2, p0, Lcom/android/settings/applications/RunningServiceDetails;->mAllDetails:Landroid/view/ViewGroup;
 
@@ -1205,7 +1205,7 @@
 
     iget-object v0, p0, Lcom/android/settings/applications/RunningServiceDetails;->mServicesHeader:Landroid/widget/TextView;
 
-    const v1, 0x7f120f44
+    const v1, 0x7f120f49
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -1488,7 +1488,7 @@
 
     const/4 v0, 0x0
 
-    const v1, 0x7f0d023f
+    const v1, 0x7f0d023e
 
     invoke-virtual {p1, v1, p2, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

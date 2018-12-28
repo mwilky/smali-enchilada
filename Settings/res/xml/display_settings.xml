@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen android:title="@string/display_settings" settings:keywords="@string/keywords_display"
+<PreferenceScreen android:title="@string/display_settings" android:key="display_settings" settings:keywords="@string/keywords_display"
   xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
     <com.oneplus.settings.ui.OPPreferenceHeaderMargin android:key="preference_divider_line" />
     <PreferenceCategory android:title="@string/display_label" android:key="screen_brightness">
@@ -14,11 +14,11 @@
             <intent android:action="com.oneplus.settings.action.NOTCHDISPLAYGUIDE" />
         </PreferenceScreen>
         <PreferenceScreen android:icon="@drawable/op_ic_settings_app_display_in_fullscreen" android:persistent="false" android:title="@string/oneplus_app_display_fullscreen_title" android:key="oneplus_notch_fullscreen_app" android:summary="@string/oneplus_app_display_fullscreen_summary" settings:keywords="@string/oneplus_search_keyword_fullscreen_app" />
+        <PreferenceScreen android:icon="@drawable/op_ic_settings_app_display_in_fullscreen" android:persistent="false" android:title="@string/oneplus_app_display_fullscreen_title" android:key="display_size_adaption" android:summary="@string/oneplus_display_size_adaption_summary" settings:keywords="@string/oneplus_search_keyword_fullscreen_app" />
         <com.android.settingslib.RestrictedPreference android:icon="@drawable/op_ic_settings_ambient_display" android:persistent="false" android:title="@string/oneplus_doze_title" android:key="doze" settings:keywords="@string/oneplus_search_keyword_doze" settings:userRestriction="no_ambient_display" />
         <com.android.settingslib.RestrictedPreference android:icon="@drawable/op_ic_settings_ambient_display" android:persistent="false" android:title="@string/oneplus_doze_title_801" android:key="doze_801" settings:keywords="@string/oneplus_search_keyword_doze" settings:userRestriction="no_ambient_display" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/header_category_custom" android:key="header_category_custom">
-        <PreferenceScreen android:persistent="false" android:title="@string/oneplus_app_display_fullscreen_title" android:key="display_size_adaption" android:summary="@string/oneplus_display_size_adaption_summary" settings:keywords="@string/oneplus_search_keyword_fullscreen_app" />
         <PreferenceScreen android:title="@string/wallpaper_attributions" android:key="lockguard_wallpaper_settings" settings:keywords="@string/oneplus_search_keyword_wallpaper_settings" />
         <SwitchPreference android:title="@string/oneplus_dark_mode" android:key="dark_mode" android:summary="@string/oneplus_dark_mode_summary" />
         <ListPreference android:persistent="true" android:entries="@array/oneplus_theme_mode_entries" android:title="@string/op_theme_mode_title" android:key="op_theme_mode" android:summary="@string/op_light_mode_title" android:entryValues="@array/oneplus_theme_mode_values" settings:keywords="@string/oneplus_search_keyword_theme_mode" />

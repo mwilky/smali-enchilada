@@ -117,6 +117,21 @@
 .method private maybeFinish()V
     .locals 6
 
+    invoke-virtual {p0}, Lcom/android/settings/FallbackHome;->isFinishing()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "FallbackHome"
+
+    const-string v1, "maybeFinish, Activity isFinishing, return."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_0
     const-class v0, Landroid/os/UserManager;
 
     invoke-virtual {p0, v0}, Lcom/android/settings/FallbackHome;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -129,7 +144,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     new-instance v0, Landroid/content/Intent;
 
@@ -153,7 +168,11 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
+
+    iget-object v3, v1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+
+    if-eqz v3, :cond_2
 
     invoke-virtual {p0}, Lcom/android/settings/FallbackHome;->getPackageName()Ljava/lang/String;
 
@@ -167,23 +186,23 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_2
 
     invoke-static {}, Landroid/os/UserManager;->isSplitSystemUser()Z
 
     move-result v3
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_1
 
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v3
 
-    if-nez v3, :cond_0
+    if-nez v3, :cond_1
 
     return-void
 
-    :cond_0
+    :cond_1
     const-string v3, "FallbackHome"
 
     const-string v4, "User unlocked but no home; let\'s hope someone enables one soon?"
@@ -198,7 +217,7 @@
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     const-string v3, "FallbackHome"
 
     const-string v4, "User unlocked and real home found; let\'s go!"
@@ -221,7 +240,7 @@
 
     invoke-virtual {p0}, Lcom/android/settings/FallbackHome;->finish()V
 
-    :cond_2
+    :cond_3
     :goto_0
     return-void
 .end method
@@ -306,13 +325,19 @@
 .end method
 
 .method protected onDestroy()V
-    .locals 1
+    .locals 2
 
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
     iget-object v0, p0, Lcom/android/settings/FallbackHome;->mReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v0}, Lcom/android/settings/FallbackHome;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+
+    iget-object v0, p0, Lcom/android/settings/FallbackHome;->mHandler:Landroid/os/Handler;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
     return-void
 .end method

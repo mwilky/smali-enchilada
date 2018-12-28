@@ -13,7 +13,7 @@
 
     invoke-direct {p0, p1, p2}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    const v0, 0x7f0d021c
+    const v0, 0x7f0d021b
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiDetailPreference;->setWidgetLayoutResource(I)V
 

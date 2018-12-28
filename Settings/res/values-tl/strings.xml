@@ -2616,6 +2616,7 @@ Ang Battery saver ay awtomatikong pinapatay kapag ang iyong aparato ay nag-charg
     <string name="oneplus_broadcat_wifi_name">Broadcast network name (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Mga button at gesture</string>
     <string name="oneplus_buttons_dashboard_summary">Slider ng Alerto, navigation, mga gesture</string>
+    <string name="oneplus_buttons_settings">mga setting ng mga button</string>
     <string name="oneplus_buttons_settings_summary">Navigation gesture</string>
     <string name="oneplus_call_information_broadcast">Sabihin ang Caller ID</string>
     <string name="oneplus_call_information_broadcast_summary">Sabihin ang paparating na caller ID sa pamamagitan ng earphones</string>
@@ -2630,6 +2631,7 @@ Ang Battery saver ay awtomatikong pinapatay kapag ang iyong aparato ay nag-charg
     <string name="oneplus_colorful_mode_title">Colorful theme</string>
     <string name="oneplus_compatibility_mode_summary">Hindi magagamit ng mga fullscreen na app ang notch</string>
     <string name="oneplus_compatibility_mode_title">Compatibility mode</string>
+    <string name="oneplus_condition_night_mode_title">Naka-on ang night mode</string>
     <string name="oneplus_connected_device_count">Mayroong%1$s isang aparatong nakakonekta</string>
     <string name="oneplus_connected_device_management_title">Nakakonekta na device manager</string>
     <string name="oneplus_connected_devices_count">Mayroong%1$s mga aparatong nakakonekta</string>
@@ -2642,6 +2644,9 @@ Ang Battery saver ay awtomatikong pinapatay kapag ang iyong aparato ay nag-charg
     <string name="oneplus_data_usage_control_title">Kontrol sa paggamit ng data</string>
     <string name="oneplus_deep_clear_way">Malalim na paglinis</string>
     <string name="oneplus_deep_clear_way_summary">Nagki-clear sa mga proseso sa background, na maaaring mangahulugang ang ilang app ay huminto at hindi ka nakakatanggap ng mga notification</string>
+    <string name="oneplus_deep_optimization">Malalim na pag-optimize</string>
+    <string name="oneplus_deep_optimization_summary">Kapag na-off mo ang malalim na pag-optimize, lubos na tataas ang pagkonsumo ng power, na makakaapekto sa normal na paggamit mo.</string>
+    <string name="oneplus_deep_optimization_title">I-off ang malalim na pag-optimize?</string>
     <string name="oneplus_default_launcher">Default na launcher</string>
     <string name="oneplus_delete_fingerprint_list">Burahin ang tatak ng daliri</string>
     <string name="oneplus_deleted_fingerprint_list">Na-delete ang fingerprint</string>
@@ -2682,6 +2687,7 @@ Ang Battery saver ay awtomatikong pinapatay kapag ang iyong aparato ay nag-charg
     <string name="oneplus_earphone_mode">Mode ng Earphone</string>
     <string name="oneplus_emergency_rescue_settings">Emergency na pagsagip</string>
     <string name="oneplus_emergency_rescue_settings_summary">Awtomatikong tumawag ng tulong sa pamamagitan ng mabilis na pagpindot sa power button</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">Available pagkatapos baguhin ang mga setting ng POWER BUTTON ng Emergency Rescue</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Prompt sa pag-set up ng fingerprint</string>
     <string name="oneplus_enter_your_fingerprint">· I-enroll ang iyong tatak ng daliri</string>
     <string name="oneplus_experience_improvement_programs">Mga program sa pagpapahusay ng karanasan</string>
@@ -2795,7 +2801,7 @@ Upang pumunta sa home screen kahit anu mang oras, i-swipe pataas mula sa ibabang
     <string name="oneplus_hide_notch_display_summary">Hindi magagamit ng lahat ng app ang notch area</string>
     <string name="oneplus_hide_notch_display_title">Itago ang notch area</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Kapag lumitaw ang pattern ng fingerprint sa ibaba ng screen, pumindot lang gamit ang iyong daliri sa bahagi ng pagkilala ng fingerprint para magamit ang function ng fingerprint: i-wake at i-unlock ang iyong telepono, pahintulutan ang mga pagbili, o mag-sign in sa mga app.</string>
-    <string name="oneplus_hydrogen_version">Hydrogen OS version</string>
+    <string name="oneplus_hydrogen_version">Bersyon ng H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Papasok na tawag</string>
     <string name="oneplus_incoming_call_vibrate_mode">Papasok na pattern ng vibrasyon ng tawag</string>
     <string name="oneplus_init_finger_input">Sinisimulan ang tatak ng daliri</string>
@@ -3050,6 +3056,7 @@ Upang pumunta sa home screen kahit anu mang oras, i-swipe pataas mula sa ibabang
     <string name="oneplus_setting_ringtone">Itakda ang tunog</string>
     <string name="oneplus_setting_sim_ringtone_switch">Itakda ang ringtone para sa bawat kard ng SIM</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Ituma ang isang kahaliling paraan upang ma-unlock ang screen</string>
+    <string name="oneplus_share_this_wifi">I-extend ang sakop ng Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Pagbabahagi ng mga Wi‑Fi</string>
     <string name="oneplus_shielding_notification">I-block</string>
     <string name="oneplus_shielding_notification_summary">Iba-block ang mga notification (maliban sa mga tawag at alarm)</string>
@@ -3125,6 +3132,11 @@ Tandaan: Maaaring hindi gaanong secure ang Face Unlock kumpara sa fingerprint, P
     <string name="oneplus_weak_text_reminding">Text lang</string>
     <string name="oneplus_weak_text_reminding_summary">Payagan ang mga app na magpakita ng heads up na notification</string>
     <string name="oneplus_wifi_ap_error">Mangyaring ipasok ang SIM card</string>
+    <string name="oneplus_wifi_hidden_network_warning">"Kung idi-disable ng iyong router ang SSID broadcast, dapat mong piliin ang \"Oo\" para kumonekta sa nakatagong network.
+
+Maaari itong makagawa ng banta sa seguridad dahil regular na ibo-broadcast ng iyong telepono ang signal nito para mahanap ang network.
+
+Kahit gawing nakatago ang network, hindi nito mababago ang mga setting ng iyong router."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">Ang hindi pagpapagana sa IPv6 ay maiiwasan ang mga isyu sa pagkakatugma sa ilang mga routers sa Wi-Fi.</string>
     <string name="oneplus_wifi_ipv6_surport_title">Suporta na IPv6</string>
     <string name="oneplus_wifi_list">Wi‑Fi listahan</string>

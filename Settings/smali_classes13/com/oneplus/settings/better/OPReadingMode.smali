@@ -142,7 +142,17 @@
     return-object v0
 .end method
 
-.method static synthetic access$600(Lcom/oneplus/settings/better/OPReadingMode;)Landroid/support/v14/preference/SwitchPreference;
+.method static synthetic access$600(Lcom/oneplus/settings/better/OPReadingMode;)Landroid/content/ContentResolver;
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/oneplus/settings/better/OPReadingMode;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method static synthetic access$700(Lcom/oneplus/settings/better/OPReadingMode;)Landroid/support/v14/preference/SwitchPreference;
     .locals 1
 
     iget-object v0, p0, Lcom/oneplus/settings/better/OPReadingMode;->mReadingModeTurnOnPreference:Landroid/support/v14/preference/SwitchPreference;
@@ -367,6 +377,8 @@
     invoke-static {v3, v4, v5, v2}, Landroid/provider/Settings$System;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
     :goto_0
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForReadingMode()V
+
     goto :goto_1
 
     :cond_1
@@ -393,6 +405,8 @@
     const-string v4, "reading_mode_block_notification"
 
     invoke-static {v3, v4, v1, v2}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
+
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTrackerForReadingModeNotification()V
 
     :cond_2
     :goto_1

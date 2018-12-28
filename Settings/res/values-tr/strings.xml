@@ -2578,7 +2578,7 @@ Bu izin, uygulamaya, Rahatsız Etmeyin ayarını açma veya kapatma ve ilgili ay
     <string name="oneplus_applock_need_to_unlock_wrong">Hatalı PIN</string>
     <string name="oneplus_applock_pattern_header">Lütfen deseninizi çizin</string>
     <string name="oneplus_applock_wrong_pattern_header">Hatalı Desen</string>
-    <string name="oneplus_apps_notifications">Apps &amp; bildirimleri</string>
+    <string name="oneplus_apps_notifications">Uygulamalar ve bildirimler</string>
     <string name="oneplus_apps_title">Uygulamalar</string>
     <string name="oneplus_aptx_hd_support">aptX / aptX HD desteği</string>
     <string name="oneplus_authentication_information">Kimlik doğrulama bilgileri</string>
@@ -2616,6 +2616,7 @@ Pil tasarrufu, cihazınız şarj olduğunda otomatik olarak kapanır."</string>
     <string name="oneplus_broadcat_wifi_name">Yayın ağ adı (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Düğmeler &amp; işlem kısayolları</string>
     <string name="oneplus_buttons_dashboard_summary">Uyarı Kaydırıcı, navigasyon, işlem kısayolları</string>
+    <string name="oneplus_buttons_settings">düğme ayarları</string>
     <string name="oneplus_buttons_settings_summary">Navigasyon işlem kısayolu</string>
     <string name="oneplus_call_information_broadcast">Arayan Kişinin Kimliği ile Konuşma</string>
     <string name="oneplus_call_information_broadcast_summary">Kulaklık vasıtasıyla gelen arayıcı ile konuşur</string>
@@ -2630,6 +2631,7 @@ Pil tasarrufu, cihazınız şarj olduğunda otomatik olarak kapanır."</string>
     <string name="oneplus_colorful_mode_title">Renkli</string>
     <string name="oneplus_compatibility_mode_summary">Tam ekran uygulamaları tam ekranı kullanamıyor</string>
     <string name="oneplus_compatibility_mode_title">Uyumluluk modu</string>
+    <string name="oneplus_condition_night_mode_title">Gece modu etkin</string>
     <string name="oneplus_connected_device_count">%1$s cihaz bağlı</string>
     <string name="oneplus_connected_device_management_title">Bağlı cihaz yöneticisi</string>
     <string name="oneplus_connected_devices_count">%1$s cihaz bağlı</string>
@@ -2642,6 +2644,9 @@ Pil tasarrufu, cihazınız şarj olduğunda otomatik olarak kapanır."</string>
     <string name="oneplus_data_usage_control_title">Veri kullanım denetimi</string>
     <string name="oneplus_deep_clear_way">Derin temizlik</string>
     <string name="oneplus_deep_clear_way_summary">Arka plan işlemlerini temizler, bu bazı uygulamaların çalışmayı durdurması ve bildirim almamanız anlamına gelebilir</string>
+    <string name="oneplus_deep_optimization">Derin iyileştirme</string>
+    <string name="oneplus_deep_optimization_summary">Derin iyileştirmeyi kapattığınızda, güç tüketimi büyük ölçüde artarak normal kullanımınızı etkileyecektir.</string>
+    <string name="oneplus_deep_optimization_title">Derin iyileştirme kapatılsın mı?</string>
     <string name="oneplus_default_launcher">Varsayılan başlatıcı</string>
     <string name="oneplus_delete_fingerprint_list">Parmak izini sil</string>
     <string name="oneplus_deleted_fingerprint_list">Parmak izi silindi</string>
@@ -2682,6 +2687,7 @@ Pil tasarrufu, cihazınız şarj olduğunda otomatik olarak kapanır."</string>
     <string name="oneplus_earphone_mode">Kulaklık modu</string>
     <string name="oneplus_emergency_rescue_settings">Acil kurtarma</string>
     <string name="oneplus_emergency_rescue_settings_summary">Güç düğmesine hızlı bir şekilde basarak otomatik olarak yardım çağrısında bulunun</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">Acil Kurtarma ile ilgili GÜÇ DÜĞMESİ ayarlarının değiştirilmesinden sonra kullanılabilir</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Parmak izi kurulumu istemi</string>
     <string name="oneplus_enter_your_fingerprint">· Parmak izinizi kaydedin</string>
     <string name="oneplus_experience_improvement_programs">İyileştirme programlarını deneyin</string>
@@ -2794,7 +2800,7 @@ Ekrana gitmek için, parmağınızı ekranın alt orta köşesinden yukarıya do
     <string name="oneplus_hide_notch_display_summary">Uygulamaların tümü tam ekran alanını kullanamıyor</string>
     <string name="oneplus_hide_notch_display_title">Tam ekran alanını gizle</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Ekranın alt kısmında parmak izi deseni göründüğünde, parmak izi fonksiyonunu kullanmak, yani telefonunuzu uyandırmak ve kilidini açmak, alışverişleri onaylamak veya uygulamalarda oturum açmak için parmak izi tanımlama alanına parmağınızla basmanız yeterlidir.</string>
-    <string name="oneplus_hydrogen_version">Hydrogen OS sürümü</string>
+    <string name="oneplus_hydrogen_version">H₂OS sürümü</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Gelen arama</string>
     <string name="oneplus_incoming_call_vibrate_mode">gelen arama titreşim deseni</string>
     <string name="oneplus_init_finger_input">Parmak İzi Oluştur</string>
@@ -3049,6 +3055,7 @@ Ekrana gitmek için, parmağınızı ekranın alt orta köşesinden yukarıya do
     <string name="oneplus_setting_ringtone">Zil sesini ayarla</string>
     <string name="oneplus_setting_sim_ringtone_switch">Her SIM kart için zil sesi ata</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Ekran kilidini açmak için alternatif bir yol oluşturun</string>
+    <string name="oneplus_share_this_wifi">Wi-Fi kapsama alanını genişlet</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi Paylaşımı</string>
     <string name="oneplus_shielding_notification">Engelle</string>
     <string name="oneplus_shielding_notification_summary">Bildirimler (aramalar ve alarmlar hariç) engellenir</string>
@@ -3124,6 +3131,11 @@ Not: Yüz Kilidi parmak izi, PIN veya diğer ekran kilidi seçeneklerinden daha 
     <string name="oneplus_weak_text_reminding">Yalnızca metin</string>
     <string name="oneplus_weak_text_reminding_summary">Uygulamaların göz hizası bildirimleri göstermesine izin ver</string>
     <string name="oneplus_wifi_ap_error">Lütfen SIM kartı takın</string>
+    <string name="oneplus_wifi_hidden_network_warning">"Yönlendiriciniz SSID yayınını devre dışı bırakırsa, gizli ağa bağlanmak için \"Evet\" tercihini seçmelisiniz.
+
+Telefonunuz ağı bulmak için düzenli olarak sinyal yayınlayacağından dolayı, bu durum bir güvenlik riski oluşturabilir.
+
+Ağın gizli olarak ayarlanması yönlendirici ayarlarınızı değiştirmeyecektir."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">"IPv6'yı devre dışı bırakmak bazı Wi-Fi yönlendiricilerinden kaynaklanan uyumluluk sorunlarını engelleyebilir."</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6 Desteği</string>
     <string name="oneplus_wifi_list">Wi‑Fi listesi</string>

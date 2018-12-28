@@ -58,7 +58,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f120fda
+    const v4, 0x7f120fdf
 
     new-array v2, v2, [Ljava/lang/Object;
 
@@ -111,7 +111,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0801fc
+    const v1, 0x7f080217
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setIcon(I)V
 

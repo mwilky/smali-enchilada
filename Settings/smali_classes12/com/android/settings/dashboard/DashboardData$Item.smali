@@ -31,7 +31,7 @@
 
 .field private static final TYPE_SUGGESTION_CONDITION_DIVIDER:I = 0x7f0d00a4
 
-.field private static final TYPE_SUGGESTION_CONTAINER:I = 0x7f0d0273
+.field private static final TYPE_SUGGESTION_CONTAINER:I = 0x7f0d0272
 
 
 # instance fields
@@ -107,7 +107,7 @@
 
     if-eq v3, v4, :cond_3
 
-    const v4, 0x7f0d0273
+    const v4, 0x7f0d0272
 
     if-eq v3, v4, :cond_5
 

@@ -105,7 +105,7 @@
 .method public static getIntent(Landroid/content/Context;)Landroid/content/Intent;
     .locals 5
 
-    const v0, 0x7f1214ce
+    const v0, 0x7f1214d3
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -187,13 +187,13 @@
 
     move-result v0
 
-    const v1, 0x7f080229
+    const v1, 0x7f080244
 
     invoke-static {p0, v1}, Landroid/support/v4/graphics/drawable/IconCompat;->createWithResource(Landroid/content/Context;I)Landroid/support/v4/graphics/drawable/IconCompat;
 
     move-result-object v1
 
-    const v2, 0x7f1214ce
+    const v2, 0x7f1214d3
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -313,7 +313,7 @@
     return-object v1
 
     :pswitch_2
-    const v1, 0x7f1211a1
+    const v1, 0x7f1211a6
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

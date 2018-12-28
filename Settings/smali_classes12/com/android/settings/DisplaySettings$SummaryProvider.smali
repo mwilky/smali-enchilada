@@ -45,7 +45,7 @@
 .end method
 
 .method private updateSummary()V
-    .locals 4
+    .locals 8
 
     iget-object v0, p0, Lcom/android/settings/DisplaySettings$SummaryProvider;->mContext:Landroid/content/Context;
 
@@ -61,21 +61,72 @@
 
     move-result v0
 
+    const/4 v1, 0x0
+
     if-ne v0, v2, :cond_0
+
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v0, v1
 
     :goto_0
-    move v0, v2
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isGuestMode()Z
 
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    iget-object v3, p0, Lcom/android/settings/DisplaySettings$SummaryProvider;->mContext:Landroid/content/Context;
+
+    const v4, 0x7f1210d9
+
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcom/android/settings/DisplaySettings$SummaryProvider;->mContext:Landroid/content/Context;
+
+    const v5, 0x7f120aee
+
+    invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lcom/android/settings/DisplaySettings$SummaryProvider;->mContext:Landroid/content/Context;
+
+    const v6, 0x7f120783
+
+    const/4 v7, 0x2
+
+    new-array v7, v7, [Ljava/lang/Object;
+
+    aput-object v3, v7, v1
+
+    aput-object v4, v7, v2
+
+    invoke-virtual {v5, v6, v7}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/settings/DisplaySettings$SummaryProvider;->mLoader:Lcom/android/settings/dashboard/SummaryLoader;
+
+    invoke-virtual {v2, p0, v1}, Lcom/android/settings/dashboard/SummaryLoader;->setSummary(Lcom/android/settings/dashboard/SummaryLoader$SummaryProvider;Ljava/lang/CharSequence;)V
+
+    goto :goto_1
+
+    :cond_1
     iget-object v1, p0, Lcom/android/settings/DisplaySettings$SummaryProvider;->mLoader:Lcom/android/settings/dashboard/SummaryLoader;
 
     iget-object v2, p0, Lcom/android/settings/DisplaySettings$SummaryProvider;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f120ad8
+    const v3, 0x7f120adb
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -87,13 +138,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Lcom/android/settings/DisplaySettings$SummaryProvider;->mLoader:Lcom/android/settings/dashboard/SummaryLoader;
 
     iget-object v2, p0, Lcom/android/settings/DisplaySettings$SummaryProvider;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f120ad9
+    const v3, 0x7f120adc
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -101,7 +152,8 @@
 
     invoke-virtual {v1, p0, v2}, Lcom/android/settings/dashboard/SummaryLoader;->setSummary(Lcom/android/settings/dashboard/SummaryLoader$SummaryProvider;Ljava/lang/CharSequence;)V
 
-    :cond_1
+    :cond_2
+    :goto_1
     return-void
 .end method
 

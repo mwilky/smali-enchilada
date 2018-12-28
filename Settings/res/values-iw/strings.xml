@@ -2614,6 +2614,7 @@ Battery נכבה אוטומטית כאשר המכשיר במצב טעינה."</s
     <string name="oneplus_broadcat_wifi_name">שידור שם הרשת (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">לחצנים ומחוות</string>
     <string name="oneplus_buttons_dashboard_summary">מחוון התראה, ניווט, מחוות</string>
+    <string name="oneplus_buttons_settings">הגדרות לחצנים</string>
     <string name="oneplus_buttons_settings_summary">מחוות ניווט</string>
     <string name="oneplus_call_information_broadcast">אמור את מזהה המתקשר</string>
     <string name="oneplus_call_information_broadcast_summary">אמור באזניות את מזהה המתקשר בשיחה נכנסת</string>
@@ -2628,6 +2629,7 @@ Battery נכבה אוטומטית כאשר המכשיר במצב טעינה."</s
     <string name="oneplus_colorful_mode_title">צבעוני</string>
     <string name="oneplus_compatibility_mode_summary">יישומי מסך מלא לא יכולים להשתמש באזור החריץ</string>
     <string name="oneplus_compatibility_mode_title">מצב תאימות</string>
+    <string name="oneplus_condition_night_mode_title">מצב לילה פועל</string>
     <string name="oneplus_connected_device_count">יש מכשיר %1$s מחובר</string>
     <string name="oneplus_connected_device_management_title">מנהל התקנים מחוברים</string>
     <string name="oneplus_connected_devices_count">ישנם %1$s מכשירים מחוברים</string>
@@ -2640,6 +2642,9 @@ Battery נכבה אוטומטית כאשר המכשיר במצב טעינה."</s
     <string name="oneplus_data_usage_control_title">בקרת שימוש בנתונים</string>
     <string name="oneplus_deep_clear_way">ניקוי עמוק</string>
     <string name="oneplus_deep_clear_way_summary">מנקה תהליכי רקע ולכן ייתכן שיישומים מסוימים יפסיקו לפעול ושלא תקבל התראות</string>
+    <string name="oneplus_deep_optimization">מיטוב לעומק</string>
+    <string name="oneplus_deep_optimization_summary">אם תבטל מיטוב לעומק, צריכת החשמל תגדל משמעותית, והדבר ישפיע על השימוש הרגיל.</string>
+    <string name="oneplus_deep_optimization_title">האם לבטל מיטוב לעומק?</string>
     <string name="oneplus_default_launcher">"לאנצ'ר ברירת מחדל"</string>
     <string name="oneplus_delete_fingerprint_list">מחק טביעת אצבע</string>
     <string name="oneplus_deleted_fingerprint_list">טביעת האצבע נמחקה</string>
@@ -2680,6 +2685,7 @@ Battery נכבה אוטומטית כאשר המכשיר במצב טעינה."</s
     <string name="oneplus_earphone_mode">מצב אוזניות</string>
     <string name="oneplus_emergency_rescue_settings">חירום והצלה</string>
     <string name="oneplus_emergency_rescue_settings_summary">התקשר לקבלת עזרה על ידי לחיצה מהירה בלחצן ההפעלה</string>
+    <string name="oneplus_emergency_tap_power_gesture_tips">זמין לאחר שינוי ההגדרות של לחצן ההפעלה עבור חירום והצלה</string>
     <string name="oneplus_enroll_fingerprint_tips_title">הנחייה להגדרת טביעת אצבע</string>
     <string name="oneplus_enter_your_fingerprint">רשום את טביעת האצבע שלך</string>
     <string name="oneplus_experience_improvement_programs">תכניות לשיפור החוויה</string>
@@ -2793,7 +2799,7 @@ Battery נכבה אוטומטית כאשר המכשיר במצב טעינה."</s
     <string name="oneplus_hide_notch_display_summary">כל היישומים לא יכולים להשתמש באזור החריץ</string>
     <string name="oneplus_hide_notch_display_title">הסתר את אזור החריץ</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">כאשר דפוס טביעות האצבעות מופיע בחלק התחתון של המסך, פשוט הקש עם האצבע באזור הזיהוי של טביעות אצבעות כדי להשתמש בפונקציה של טביעות אצבעות: כך תוכל להוציא את הטלפון ממצב שינה ולבטל את הנעילה שלו, לאשר רכישות או להיכנס לאפליקציות.</string>
-    <string name="oneplus_hydrogen_version">גרסת Hydrogen OS</string>
+    <string name="oneplus_hydrogen_version">גרסת H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">שיחה נכנסת</string>
     <string name="oneplus_incoming_call_vibrate_mode">דפוס רטט שיחות נכנסות</string>
     <string name="oneplus_init_finger_input">מפעיל טביעת אצבע</string>
@@ -3048,6 +3054,7 @@ Battery נכבה אוטומטית כאשר המכשיר במצב טעינה."</s
     <string name="oneplus_setting_ringtone">הגדר צלצול</string>
     <string name="oneplus_setting_sim_ringtone_switch">הגדר רינגטון לכל כרטיס SIM</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">להגדיר דרך חלופית לבטל נעילת מסך</string>
+    <string name="oneplus_share_this_wifi">הרחב כיסוי Wi-Fi</string>
     <string name="oneplus_share_wifi_title">שיתוף Wi‑Fi</string>
     <string name="oneplus_shielding_notification">חסום</string>
     <string name="oneplus_shielding_notification_summary">התראות ייחסמו (למעט שיחות ושעון מעורר)</string>
@@ -3123,6 +3130,11 @@ Battery נכבה אוטומטית כאשר המכשיר במצב טעינה."</s
     <string name="oneplus_weak_text_reminding">טקסט בלבד</string>
     <string name="oneplus_weak_text_reminding_summary">אפשר לאפליקציות להציג התראות</string>
     <string name="oneplus_wifi_ap_error">אנא הכנס את כרטיס ה-SIM</string>
+    <string name="oneplus_wifi_hidden_network_warning">"אם הנתב שלך משבית את שידור SSID, עליך לבחור באפשרות 'כן' על-מנת להתחבר אל הרשת המוסתרת.
+
+דבר זה עלול ליצור סיכון אבטחה מאחר שהטלפון שלך ישדר את האות שלו באופן קבוע כדי למצוא את הרשת.
+
+הגדרת הרשת כמוסתרת לא תשנה את הגדרות הנתב."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">הפסקת IPv6 עלולה להוביל לבעיות תאימות עם נתבי Wi-Fi מסוימים.</string>
     <string name="oneplus_wifi_ipv6_surport_title">תמיכת IPv6</string>
     <string name="oneplus_wifi_list">רשימת Wi‑Fi</string>

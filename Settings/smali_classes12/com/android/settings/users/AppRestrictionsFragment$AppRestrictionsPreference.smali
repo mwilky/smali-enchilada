@@ -56,7 +56,7 @@
 
     iput-object v0, p0, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->mChildren:Ljava/util/List;
 
-    const v0, 0x7f0d01ea
+    const v0, 0x7f0d01e9
 
     invoke-virtual {p0, v0}, Lcom/android/settings/users/AppRestrictionsFragment$AppRestrictionsPreference;->setLayoutResource(I)V
 
