@@ -25,6 +25,8 @@
 
 .field private static final TAG:Ljava/lang/String; = "Longshot.LongshotMode"
 
+.field public static final UNSUPPORT_REASON_COLOSE_SYSDIALOG:I = 0x7d0
+
 .field public static final UNSUPPORT_REASON_RINGING:I = 0x3e8
 
 .field private static sInstance:Lcom/oneplus/screenshot/longshot/state/LongshotMode;
@@ -1438,24 +1440,37 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 v0, 0x0
+    const/16 v0, 0x3e8
 
-    const/16 v1, 0x3e8
+    const/4 v1, 0x0
 
-    if-ne p1, v1, :cond_0
+    if-ne p1, v0, :cond_0
 
-    iput v1, p0, Lcom/oneplus/screenshot/longshot/state/LongshotMode;->mUnsupportReason:I
+    iput v0, p0, Lcom/oneplus/screenshot/longshot/state/LongshotMode;->mUnsupportReason:I
 
-    sget-object v1, Lcom/oneplus/screenshot/longshot/state/LongshotState;->UNSUPPORTED:Lcom/oneplus/screenshot/longshot/state/LongshotState;
+    sget-object v0, Lcom/oneplus/screenshot/longshot/state/LongshotState;->UNSUPPORTED:Lcom/oneplus/screenshot/longshot/state/LongshotState;
 
-    invoke-virtual {p0, v1, v0}, Lcom/oneplus/screenshot/longshot/state/LongshotMode;->updateState(Lcom/oneplus/screenshot/longshot/state/LongshotState;Lcom/oneplus/screenshot/longshot/state/LongshotAction$OnStateListener;)V
+    invoke-virtual {p0, v0, v1}, Lcom/oneplus/screenshot/longshot/state/LongshotMode;->updateState(Lcom/oneplus/screenshot/longshot/state/LongshotState;Lcom/oneplus/screenshot/longshot/state/LongshotAction$OnStateListener;)V
 
     return-void
 
     :cond_0
-    sget-object v1, Lcom/oneplus/screenshot/longshot/state/LongshotState;->IDLE:Lcom/oneplus/screenshot/longshot/state/LongshotState;
+    const/16 v0, 0x7d0
 
-    invoke-virtual {p0, v1, v0}, Lcom/oneplus/screenshot/longshot/state/LongshotMode;->updateState(Lcom/oneplus/screenshot/longshot/state/LongshotState;Lcom/oneplus/screenshot/longshot/state/LongshotAction$OnStateListener;)V
+    if-ne p1, v0, :cond_1
+
+    iput v0, p0, Lcom/oneplus/screenshot/longshot/state/LongshotMode;->mUnsupportReason:I
+
+    sget-object v0, Lcom/oneplus/screenshot/longshot/state/LongshotState;->UNSUPPORTED:Lcom/oneplus/screenshot/longshot/state/LongshotState;
+
+    invoke-virtual {p0, v0, v1}, Lcom/oneplus/screenshot/longshot/state/LongshotMode;->updateState(Lcom/oneplus/screenshot/longshot/state/LongshotState;Lcom/oneplus/screenshot/longshot/state/LongshotAction$OnStateListener;)V
+
+    return-void
+
+    :cond_1
+    sget-object v0, Lcom/oneplus/screenshot/longshot/state/LongshotState;->IDLE:Lcom/oneplus/screenshot/longshot/state/LongshotState;
+
+    invoke-virtual {p0, v0, v1}, Lcom/oneplus/screenshot/longshot/state/LongshotMode;->updateState(Lcom/oneplus/screenshot/longshot/state/LongshotState;Lcom/oneplus/screenshot/longshot/state/LongshotAction$OnStateListener;)V
 
     invoke-direct {p0}, Lcom/oneplus/screenshot/longshot/state/LongshotMode;->onDestroy()V
 
@@ -1841,7 +1856,7 @@
 
     iget-object v0, p0, Lcom/oneplus/screenshot/longshot/state/LongshotMode;->mCurrentState:Lcom/oneplus/screenshot/longshot/state/LongshotState;
 
-    if-eq v0, p1, :cond_6
+    if-eq v0, p1, :cond_7
 
     iget-object v0, p0, Lcom/oneplus/screenshot/longshot/state/LongshotMode;->mCurrentState:Lcom/oneplus/screenshot/longshot/state/LongshotState;
 
@@ -1896,7 +1911,7 @@
     :cond_0
     sget-object v1, Lcom/oneplus/screenshot/longshot/state/LongshotState;->UNSUPPORTED:Lcom/oneplus/screenshot/longshot/state/LongshotState;
 
-    if-ne p1, v1, :cond_2
+    if-ne p1, v1, :cond_3
 
     const-string v1, "Longshot.LongshotMode"
 
@@ -1939,6 +1954,27 @@
     goto :goto_0
 
     :cond_1
+    iget v1, p0, Lcom/oneplus/screenshot/longshot/state/LongshotMode;->mUnsupportReason:I
+
+    const/16 v2, 0x7d0
+
+    if-ne v1, v2, :cond_2
+
+    invoke-virtual {p0}, Lcom/oneplus/screenshot/longshot/state/LongshotMode;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    const v2, 0x7f0c0001
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/oneplus/screenshot/longshot/state/LongshotMode;->notifyToast(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_2
     invoke-virtual {p0}, Lcom/oneplus/screenshot/longshot/state/LongshotMode;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -1956,10 +1992,10 @@
 
     return-void
 
-    :cond_2
+    :cond_3
     sget-object v1, Lcom/oneplus/screenshot/longshot/state/LongshotState;->SAVE:Lcom/oneplus/screenshot/longshot/state/LongshotState;
 
-    if-ne p1, v1, :cond_3
+    if-ne p1, v1, :cond_4
 
     invoke-virtual {p0}, Lcom/oneplus/screenshot/longshot/state/LongshotMode;->getContext()Landroid/content/Context;
 
@@ -1975,10 +2011,10 @@
 
     goto :goto_1
 
-    :cond_3
+    :cond_4
     sget-object v1, Lcom/oneplus/screenshot/longshot/state/LongshotState;->SHOT_FIRST:Lcom/oneplus/screenshot/longshot/state/LongshotState;
 
-    if-ne v0, v1, :cond_4
+    if-ne v0, v1, :cond_5
 
     invoke-virtual {p0}, Lcom/oneplus/screenshot/longshot/state/LongshotMode;->getContext()Landroid/content/Context;
 
@@ -2002,14 +2038,14 @@
 
     goto :goto_1
 
-    :cond_4
+    :cond_5
     sget-object v1, Lcom/oneplus/screenshot/longshot/state/LongshotState;->SHOT_FIRST:Lcom/oneplus/screenshot/longshot/state/LongshotState;
 
-    if-ne p1, v1, :cond_5
+    if-ne p1, v1, :cond_6
 
     invoke-direct {p0}, Lcom/oneplus/screenshot/longshot/state/LongshotMode;->hideSoftInput()V
 
-    :cond_5
+    :cond_6
     :goto_1
     iget-object v1, p0, Lcom/oneplus/screenshot/longshot/state/LongshotMode;->mCurrentState:Lcom/oneplus/screenshot/longshot/state/LongshotState;
 
@@ -2023,6 +2059,6 @@
 
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
-    :cond_6
+    :cond_7
     return-void
 .end method

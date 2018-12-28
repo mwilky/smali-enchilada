@@ -145,10 +145,25 @@
 .end method
 
 .method public onCloseSystemDialogs()V
-    .locals 0
+    .locals 2
 
-    invoke-virtual {p0}, Lcom/oneplus/screenshot/longshot/app/LongshotDialog;->dismiss()V
+    const-string v0, "Longshot.Dialog"
 
+    const-string v1, "onCloseSystemDialogs"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v0, p0, Lcom/oneplus/screenshot/longshot/app/LongshotDialog;->mOnDismissListener:Lcom/oneplus/screenshot/longshot/app/LongshotDialog$OnDismissListener;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/oneplus/screenshot/longshot/app/LongshotDialog;->mOnDismissListener:Lcom/oneplus/screenshot/longshot/app/LongshotDialog$OnDismissListener;
+
+    const/16 v1, 0x7d0
+
+    invoke-interface {v0, v1}, Lcom/oneplus/screenshot/longshot/app/LongshotDialog$OnDismissListener;->onDismiss(I)V
+
+    :cond_0
     return-void
 .end method
 

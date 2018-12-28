@@ -679,7 +679,7 @@
 
     sget-object v6, Lcom/oneplus/screenshot/GlobalScreenshot;->ALERTS:Ljava/lang/String;
 
-    const v8, 0x1040403
+    const v8, 0x1040404
 
     invoke-virtual {p1, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
