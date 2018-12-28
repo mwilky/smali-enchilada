@@ -57,7 +57,7 @@
 
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$5;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$4500(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$4600(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/os/Handler;
 
     move-result-object v2
 

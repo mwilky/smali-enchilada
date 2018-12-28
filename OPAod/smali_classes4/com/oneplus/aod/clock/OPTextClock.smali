@@ -438,7 +438,7 @@
 .end method
 
 .method private createTime(Ljava/lang/String;)V
-    .locals 1
+    .locals 2
 
     if-eqz p1, :cond_0
 
@@ -446,7 +446,9 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Ljava/util/Calendar;->getInstance(Ljava/util/TimeZone;)Ljava/util/Calendar;
+    sget-object v1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
+
+    invoke-static {v0, v1}, Ljava/util/Calendar;->getInstance(Ljava/util/TimeZone;Ljava/util/Locale;)Ljava/util/Calendar;
 
     move-result-object v0
 

@@ -281,7 +281,7 @@
 
     iput-object v0, p0, Lcom/oneplus/aod/NotificationIconAreaController;->mBatteryEmptyView:Landroid/view/View;
 
-    const v0, 0x7f0900b6
+    const v0, 0x7f0900b7
 
     invoke-virtual {p2, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -289,7 +289,7 @@
 
     iput-object v0, p0, Lcom/oneplus/aod/NotificationIconAreaController;->mNotificationEmptyView:Landroid/view/View;
 
-    const v0, 0x7f0900b5
+    const v0, 0x7f0900b6
 
     invoke-virtual {p2, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -301,7 +301,7 @@
 
     iget-object v0, p0, Lcom/oneplus/aod/NotificationIconAreaController;->mNotificationIconArea:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f0900b2
+    const v1, 0x7f0900b3
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -313,7 +313,7 @@
 
     iget-object v0, p0, Lcom/oneplus/aod/NotificationIconAreaController;->mNotificationIconArea:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f0900a9
+    const v1, 0x7f0900aa
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 

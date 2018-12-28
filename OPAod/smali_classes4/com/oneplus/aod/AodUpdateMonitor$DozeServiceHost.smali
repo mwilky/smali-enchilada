@@ -436,7 +436,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_7
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
@@ -576,11 +576,40 @@
 
     const/4 v0, 0x0
 
+    sget-boolean v2, Landroid/os/Build;->DEBUG_ONEPLUS:Z
+
+    if-eqz v2, :cond_3
+
+    const-string v2, "AodUpdateMonitor"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "handleStopDozing mWakingUpReason "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v4, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
+
+    invoke-static {v4}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1100(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_3
     invoke-static {}, Lcom/oneplus/aod/Utils;->isCustomFingerprint()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_4
+    if-eqz v2, :cond_5
 
     iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
@@ -594,19 +623,43 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
     const/16 v1, 0x12c
 
     goto :goto_1
 
-    :cond_3
+    :cond_4
     const/16 v1, 0x46
 
     :goto_1
     move v0, v1
 
-    :cond_4
+    goto :goto_2
+
+    :cond_5
+    iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
+
+    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1100(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "FINGERPRINT_WALLPAPER"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_6
+
+    const/16 v1, 0x64
+
+    nop
+
+    :cond_6
+    move v0, v1
+
+    :goto_2
     iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->mHandler:Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost$H;
 
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
@@ -619,7 +672,7 @@
 
     invoke-virtual {v1, v2, v3, v4}, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost$H;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    :cond_5
+    :cond_7
     return-void
 .end method
 

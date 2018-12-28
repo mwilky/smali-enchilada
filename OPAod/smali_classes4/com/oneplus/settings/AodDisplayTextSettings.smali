@@ -70,7 +70,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/AodDisplayTextSettings;->mView:Landroid/view/View;
 
-    const v3, 0x7f0900e5
+    const v3, 0x7f0900e6
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

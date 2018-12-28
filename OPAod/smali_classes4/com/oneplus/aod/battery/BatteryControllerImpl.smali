@@ -250,9 +250,9 @@
 
     :array_0
     .array-data 4
-        0x7f0700f5
-        0x7f0700f6
-        0x7f0700f7
+        0x7f070110
+        0x7f070111
+        0x7f070112
     .end array-data
 .end method
 
