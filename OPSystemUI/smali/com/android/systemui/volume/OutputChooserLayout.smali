@@ -289,7 +289,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserLayout;->mEmptyText:Landroid/widget/TextView;
 
-    const v1, 0x7f070554
+    const v1, 0x7f070552
 
     invoke-static {v0, v1}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/widget/TextView;I)V
 
@@ -312,19 +312,19 @@
 
     const v3, 0x7f0a012c
 
-    const v4, 0x7f070562
+    const v4, 0x7f070560
 
     invoke-static {v2, v3, v4}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/view/View;II)V
 
     const v3, 0x1020010
 
-    const v4, 0x7f070563
+    const v4, 0x7f070561
 
     invoke-static {v2, v3, v4}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/view/View;II)V
 
     const v3, 0x1020016
 
-    const v4, 0x7f070558
+    const v4, 0x7f070556
 
     invoke-static {v2, v3, v4}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/view/View;II)V
 
@@ -422,7 +422,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/OutputChooserLayout;->mEmptyIcon:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a0424
+    const v0, 0x7f0a0425
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/OutputChooserLayout;->findViewById(I)Landroid/view/View;
 

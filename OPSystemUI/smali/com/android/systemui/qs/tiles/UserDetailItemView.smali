@@ -245,7 +245,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/UserDetailItemView;->mName:Landroid/widget/TextView;
 
-    const v1, 0x7f070563
+    const v1, 0x7f070561
 
     invoke-static {v0, v1}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/widget/TextView;I)V
 
@@ -255,7 +255,7 @@
 .method protected onFinishInflate()V
     .locals 1
 
-    const v0, 0x7f0a046e
+    const v0, 0x7f0a046f
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/tiles/UserDetailItemView;->findViewById(I)Landroid/view/View;
 
@@ -265,7 +265,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/UserDetailItemView;->mAvatar:Lcom/android/systemui/statusbar/phone/UserAvatarView;
 
-    const v0, 0x7f0a046d
+    const v0, 0x7f0a046e
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/tiles/UserDetailItemView;->findViewById(I)Landroid/view/View;
 
@@ -303,7 +303,7 @@
     :cond_1
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/UserDetailItemView;->updateTypeface()V
 
-    const v0, 0x7f0a0350
+    const v0, 0x7f0a0351
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/tiles/UserDetailItemView;->findViewById(I)Landroid/view/View;
 

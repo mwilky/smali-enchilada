@@ -591,19 +591,19 @@
 
     move-result v0
 
-    const v2, 0x7f0805b0
+    const v2, 0x7f0805cb
 
     if-eq v0, v2, :cond_1
 
-    const v2, 0x7f0805b2
+    const v2, 0x7f0805cd
 
     if-eq v0, v2, :cond_1
 
-    const v2, 0x7f0805b3
+    const v2, 0x7f0805ce
 
     if-eq v0, v2, :cond_1
 
-    const v2, 0x7f0805b4
+    const v2, 0x7f0805cf
 
     if-ne v0, v2, :cond_0
 

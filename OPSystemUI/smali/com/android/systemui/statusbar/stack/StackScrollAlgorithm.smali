@@ -904,7 +904,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07039a
+    const v1, 0x7f070398
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -914,7 +914,7 @@
 
     nop
 
-    const v1, 0x7f07039b
+    const v1, 0x7f070399
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -922,7 +922,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;->mIncreasedPaddingBetweenElements:I
 
-    const v1, 0x7f0703b1
+    const v1, 0x7f0703af
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -930,7 +930,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;->mCollapsedSize:I
 
-    const v1, 0x7f070628
+    const v1, 0x7f070626
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

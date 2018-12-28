@@ -98,7 +98,7 @@
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/StatusBar$ThemeChangeReceiver;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v6}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3400(Lcom/android/systemui/statusbar/phone/StatusBar;)I
+    invoke-static {v6}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3500(Lcom/android/systemui/statusbar/phone/StatusBar;)I
 
     move-result v6
 
@@ -120,7 +120,7 @@
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/StatusBar$ThemeChangeReceiver;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v6}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3500(Lcom/android/systemui/statusbar/phone/StatusBar;)I
+    invoke-static {v6}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3600(Lcom/android/systemui/statusbar/phone/StatusBar;)I
 
     move-result v6
 
@@ -142,7 +142,7 @@
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/StatusBar$ThemeChangeReceiver;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v6}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3600(Lcom/android/systemui/statusbar/phone/StatusBar;)Z
+    invoke-static {v6}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3700(Lcom/android/systemui/statusbar/phone/StatusBar;)Z
 
     move-result v6
 
@@ -170,7 +170,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$ThemeChangeReceiver;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3400(Lcom/android/systemui/statusbar/phone/StatusBar;)I
+    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3500(Lcom/android/systemui/statusbar/phone/StatusBar;)I
 
     move-result v3
 
@@ -178,7 +178,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$ThemeChangeReceiver;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3500(Lcom/android/systemui/statusbar/phone/StatusBar;)I
+    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3600(Lcom/android/systemui/statusbar/phone/StatusBar;)I
 
     move-result v3
 
@@ -186,7 +186,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$ThemeChangeReceiver;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3600(Lcom/android/systemui/statusbar/phone/StatusBar;)Z
+    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3700(Lcom/android/systemui/statusbar/phone/StatusBar;)Z
 
     move-result v3
 
@@ -195,15 +195,15 @@
     :cond_0
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$ThemeChangeReceiver;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v3, v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3402(Lcom/android/systemui/statusbar/phone/StatusBar;I)I
+    invoke-static {v3, v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3502(Lcom/android/systemui/statusbar/phone/StatusBar;I)I
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$ThemeChangeReceiver;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v3, v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3602(Lcom/android/systemui/statusbar/phone/StatusBar;Z)Z
+    invoke-static {v3, v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3702(Lcom/android/systemui/statusbar/phone/StatusBar;Z)Z
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$ThemeChangeReceiver;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v3, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3502(Lcom/android/systemui/statusbar/phone/StatusBar;I)I
+    invoke-static {v3, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3602(Lcom/android/systemui/statusbar/phone/StatusBar;I)I
 
     invoke-static {p1}, Lcom/android/systemui/util/ThemeColorUtils;->init(Landroid/content/Context;)V
 
@@ -219,7 +219,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$ThemeChangeReceiver;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3700(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/phone/OPFacelockController;
+    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3800(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     move-result-object v3
 
@@ -227,7 +227,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$ThemeChangeReceiver;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3700(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/phone/OPFacelockController;
+    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$3800(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     move-result-object v3
 

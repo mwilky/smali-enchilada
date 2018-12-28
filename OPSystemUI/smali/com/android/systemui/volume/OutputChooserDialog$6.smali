@@ -3,7 +3,7 @@
 .source "OutputChooserDialog.java"
 
 # interfaces
-.implements Lcom/android/settingslib/bluetooth/Utils$ErrorListener;
+.implements Lcom/android/settingslib/bluetooth/LocalBluetoothManager$BluetoothManagerCallback;
 
 
 # annotations
@@ -28,16 +28,14 @@
 
 
 # virtual methods
-.method public onShowError(Landroid/content/Context;Ljava/lang/String;I)V
-    .locals 2
+.method public onBluetoothManagerInitialized(Landroid/content/Context;Lcom/android/settingslib/bluetooth/LocalBluetoothManager;)V
+    .locals 1
 
-    invoke-static {}, Lcom/android/systemui/volume/OutputChooserDialog;->access$300()Ljava/lang/String;
+    invoke-static {}, Lcom/android/systemui/volume/OutputChooserDialog;->access$900()Lcom/android/settingslib/bluetooth/Utils$ErrorListener;
 
     move-result-object v0
 
-    const-string v1, " init BluetoothManager error"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0}, Lcom/android/settingslib/bluetooth/Utils;->setErrorListener(Lcom/android/settingslib/bluetooth/Utils$ErrorListener;)V
 
     return-void
 .end method

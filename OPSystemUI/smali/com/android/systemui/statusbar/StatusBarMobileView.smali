@@ -12,10 +12,6 @@
 
 .field private mDirty:Z
 
-.field public mSignalIconColor:I
-
-.field public mDarkIconColor:I
-
 .field private mDotView:Lcom/android/systemui/statusbar/StatusBarIconView;
 
 .field private mIn:Landroid/widget/ImageView;
@@ -159,7 +155,7 @@
 .end method
 
 .method private applyColors()V
-    .locals 8
+    .locals 6
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mRect:Landroid/graphics/Rect;
 
@@ -168,147 +164,53 @@
     return-void
 
     :cond_0
+    iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mRect:Landroid/graphics/Rect;
+
     iget v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIntensity:F
-    
-    float-to-int v7, v1
+
+    iget v2, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mTint:I
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileDrawable:Lcom/android/settingslib/graph/SignalDrawable;
 
     invoke-virtual {v3, v1}, Lcom/android/settingslib/graph/SignalDrawable;->setDarkIntensity(F)V
-    
-  	invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusBar;->isCameraNotchIgnoring()Z
 
-    move-result v6
-    
-    if-nez v6, :cond_notch
-    
-    iget v3, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
+    invoke-static {v0, p0, v2}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->getTint(Landroid/graphics/Rect;Landroid/view/View;I)I
 
-    if-nez v7, :cond_mw #set to grey if dark intensity is 1
-    
-    :cond_notch
-    iget v3, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
+    move-result v3
 
-    :cond_mw
     invoke-static {v3}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
 
     move-result-object v3
-    
+
     iget-object v4, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileType:Landroid/widget/ImageView;
 
     invoke-virtual {v4, v3}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileInOut:Landroid/widget/ImageView;
-    
-    if-nez v6, :cond_notch2
-    
-    iget v3, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
 
-    if-nez v7, :cond_01 #set to grey if dark intensity is 1
-    
-    :cond_notch2
-    iget v3, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
-
-    :cond_01
-    invoke-static {v3}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v3
-    
     invoke-virtual {v4, v3}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mStackedDataStrengthView:Landroid/widget/ImageView;
-    
-    if-nez v6, :cond_notch3
-    
-    iget v3, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
 
-    if-nez v7, :cond_02 #set to grey if dark intensity is 1
-    
-    :cond_notch3
-    iget v3, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
-
-    :cond_02
-    invoke-static {v3}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v3
-    
     invoke-virtual {v4, v3}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mStackedDataTypeView:Landroid/widget/ImageView;
-    
-    if-nez v6, :cond_notch4
-    
-    iget v3, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
 
-    if-nez v7, :cond_03 #set to grey if dark intensity is 1
-    
-    :cond_notch4
-    iget v3, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
-
-    :cond_03
-    invoke-static {v3}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v3
-    
     invoke-virtual {v4, v3}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mStackedVoiceStrengthView:Landroid/widget/ImageView;
-    
-    if-nez v6, :cond_notch5
-    
-    iget v3, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
 
-    if-nez v7, :cond_04 #set to grey if dark intensity is 1
-    
-    :cond_notch5
-    iget v3, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
-
-    :cond_04
-    invoke-static {v3}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v3
-    
     invoke-virtual {v4, v3}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mStackedVoiceTypeView:Landroid/widget/ImageView;
-    
-    if-nez v6, :cond_notch6
-    
-    iget v3, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
 
-    if-nez v7, :cond_05 #set to grey if dark intensity is 1
-    
-    :cond_notch6
-    iget v3, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
-
-    :cond_05
-    invoke-static {v3}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v3
-    
     invoke-virtual {v4, v3}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobile:Landroid/widget/ImageView;
-    
-    if-nez v6, :cond_notch7
-    
-    iget v3, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
 
-    if-nez v7, :cond_06 #set to grey if dark intensity is 1
-    
-    :cond_notch7
-    iget v3, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
-
-    :cond_06
-    invoke-static {v3}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v3
-    
     invoke-virtual {v4, v3}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDotView:Lcom/android/systemui/statusbar/StatusBarIconView;
-    
-    iget v2, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mTint:I
 
     invoke-virtual {v4, v2}, Lcom/android/systemui/statusbar/StatusBarIconView;->setDecorColor(I)V
 
@@ -368,22 +270,22 @@
     :cond_1
     packed-switch v0, :pswitch_data_0
 
-    const v1, 0x7f080843
+    const v1, 0x7f08085e
 
     return v1
 
     :pswitch_0
-    const v1, 0x7f080842
+    const v1, 0x7f08085d
 
     return v1
 
     :pswitch_1
-    const v1, 0x7f080844
+    const v1, 0x7f08085f
 
     return v1
 
     :pswitch_2
-    const v1, 0x7f080841
+    const v1, 0x7f08085c
 
     return v1
 
@@ -398,7 +300,7 @@
 .method private init()V
     .locals 4
 
-    const v0, 0x7f0a0249
+    const v0, 0x7f0a024a
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -408,7 +310,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileGroup:Landroid/widget/LinearLayout;
 
-    const v0, 0x7f0a024f
+    const v0, 0x7f0a0250
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -418,7 +320,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobile:Landroid/widget/ImageView;
 
-    const v1, 0x7f0a0255
+    const v1, 0x7f0a0256
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -428,7 +330,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileType:Landroid/widget/ImageView;
 
-    const v2, 0x7f0a024d
+    const v2, 0x7f0a024e
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -438,7 +340,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileRoaming:Landroid/widget/ImageView;
 
-    const v2, 0x7f0a024e
+    const v2, 0x7f0a024f
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -446,7 +348,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileRoamingSpace:Landroid/view/View;
 
-    const v2, 0x7f0a024a
+    const v2, 0x7f0a024b
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -456,7 +358,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mIn:Landroid/widget/ImageView;
 
-    const v2, 0x7f0a024c
+    const v2, 0x7f0a024d
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -466,7 +368,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mOut:Landroid/widget/ImageView;
 
-    const v2, 0x7f0a01b3
+    const v2, 0x7f0a01b4
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -492,7 +394,7 @@
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/StatusBarMobileView;->initDotView()V
 
-    const v2, 0x7f0a0250
+    const v2, 0x7f0a0251
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -502,7 +404,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mStackedDataGroup:Landroid/view/ViewGroup;
 
-    const v2, 0x7f0a0254
+    const v2, 0x7f0a0255
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -552,7 +454,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mStackedVoiceTypeView:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a0252
+    const v0, 0x7f0a0253
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -562,7 +464,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileSingleGroup:Landroid/view/ViewGroup;
 
-    const v0, 0x7f0a0253
+    const v0, 0x7f0a0254
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -572,7 +474,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileStackedGroup:Landroid/view/ViewGroup;
 
-    const v0, 0x7f0a024b
+    const v0, 0x7f0a024c
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -588,7 +490,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070636
+    const v1, 0x7f070634
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -602,19 +504,13 @@
 
     move-result-object v0
 
-    const v1, 0x7f070637
+    const v1, 0x7f070635
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v0
 
     iput v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileTypeOverlapPlus:I
-    
-     const/4 v0, 0x0
-    
-    int-to-float v0, v0
-
-    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/StatusBarMobileView;->updateViews(F)V
 
     return-void
 .end method
@@ -646,7 +542,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07062e
+    const v1, 0x7f07062c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -797,12 +693,12 @@
 
     if-nez v3, :cond_3
 
-    const v3, 0x7f08060c
+    const v3, 0x7f080627
 
     goto :goto_2
 
     :cond_3
-    const v3, 0x7f08060d
+    const v3, 0x7f080628
 
     :goto_2
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageResource(I)V
@@ -956,7 +852,7 @@
 
     iget v3, v3, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->typeId:I
 
-    const v4, 0x7f0805cc
+    const v4, 0x7f0805e7
 
     if-eq v3, v4, :cond_4
 
@@ -964,7 +860,7 @@
 
     iget v3, v3, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->typeId:I
 
-    const v4, 0x7f0805ce
+    const v4, 0x7f0805e9
 
     if-ne v3, v4, :cond_1
 
@@ -989,7 +885,7 @@
 
     iget v3, v3, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->typeId:I
 
-    const v5, 0x7f0805cd
+    const v5, 0x7f0805e8
 
     if-eq v3, v5, :cond_2
 
@@ -1003,7 +899,7 @@
 
     iget v3, v3, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->typeId:I
 
-    const v4, 0x7f0805d2
+    const v4, 0x7f0805ed
 
     if-eq v3, v4, :cond_2
 
@@ -1011,7 +907,7 @@
 
     iget v3, v3, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->typeId:I
 
-    const v4, 0x7f0805d5
+    const v4, 0x7f0805f0
 
     if-ne v3, v4, :cond_3
 
@@ -1180,12 +1076,12 @@
 
     if-nez v1, :cond_5
 
-    const v1, 0x7f08060c
+    const v1, 0x7f080627
 
     goto :goto_2
 
     :cond_5
-    const v1, 0x7f08060d
+    const v1, 0x7f080628
 
     :goto_2
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
@@ -1657,40 +1553,4 @@
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public updateViews(F)V
-	.locals 1
-	
-	invoke-virtual {p0}, Lcom/android/systemui/statusbar/StatusBarMobileView;->readRenovateMods()V
-	
-	invoke-direct {p0}, Lcom/android/systemui/statusbar/StatusBarMobileView;->applyColors()V
-	
-	return-void
-.end method
-
-.method public readRenovateMods()V
-    .locals 1
-	
-	sget v0, Lcom/android/mwilky/Renovate;->mSignalIconColorOP:I
-    
-	iput v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I
-	
-	sget v0, Lcom/android/mwilky/Renovate;->mDarkIconColor:I
-    
-	iput v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I
-    
-    return-void
-.end method
-
-.method public getLockscreenIconColors()I
-    .locals 2
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSlot:Ljava/lang/String;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->getStatusbarColorFromSlotNameOP(Ljava/lang/String;)I
-    
-    move-result v0
-
-    return v0
 .end method

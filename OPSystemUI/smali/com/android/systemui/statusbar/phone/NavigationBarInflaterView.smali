@@ -46,8 +46,6 @@
 
 .field private final mDisplay:Landroid/view/Display;
 
-.field private mIsCameraNotch:Z
-
 .field private mIsCustomNavBar:Z
 
 .field private mIsSupportHideNavBar:Z
@@ -81,7 +79,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 5
+    .locals 4
 
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -96,8 +94,6 @@
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mIsCustomNavBar:Z
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mIsSupportHideNavBar:Z
-
-    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mIsCameraNotch:Z
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->createInflaters()V
 
@@ -129,11 +125,9 @@
 
     move-result v3
 
-    const/4 v4, 0x1
-
     if-le v2, v3, :cond_0
 
-    move v2, v4
+    const/4 v2, 0x1
 
     goto :goto_0
 
@@ -166,8 +160,6 @@
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mIsSupportHideNavBar:Z
-
-    iput-boolean v4, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mIsCameraNotch:Z
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mIsSupportHideNavBar:Z
 
@@ -575,7 +567,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mRot0:Landroid/widget/FrameLayout;
 
-    const v1, 0x7f0a027c
+    const v1, 0x7f0a027d
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -777,7 +769,7 @@
     :goto_2
     move-object v0, v2
 
-    goto/16 :goto_7
+    goto/16 :goto_6
 
     :cond_5
     const-string v2, "back"
@@ -810,7 +802,7 @@
     :goto_3
     move-object v0, v2
 
-    goto/16 :goto_7
+    goto/16 :goto_6
 
     :cond_7
     const-string v2, "recent"
@@ -843,7 +835,7 @@
     :goto_4
     move-object v0, v2
 
-    goto/16 :goto_7
+    goto/16 :goto_6
 
     :cond_9
     const-string v2, "menu_ime"
@@ -876,7 +868,7 @@
     :goto_5
     move-object v0, v2
 
-    goto/16 :goto_7
+    goto/16 :goto_6
 
     :cond_b
     const-string v2, "space"
@@ -885,7 +877,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_c
 
     const v2, 0x7f0d00e2
 
@@ -893,31 +885,21 @@
 
     move-result-object v0
 
+    iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mIsCustomNavBar:Z
+
+    if-eqz v2, :cond_11
+
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
 
-    const/4 v4, 0x1
-
-    new-array v4, v4, [I
-
-    const/16 v5, 0x3a
-
-    aput v5, v4, v3
-
-    invoke-static {v4}, Landroid/util/OpFeatures;->isSupport([I)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_c
-
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    const v4, 0x7f07038d
+    const v4, 0x7f0704ce
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -927,41 +909,16 @@
 
     iput v3, v2, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    goto :goto_6
+    goto/16 :goto_6
 
     :cond_c
-    iget-boolean v3, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mIsCustomNavBar:Z
-
-    if-eqz v3, :cond_d
-
-    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    const v4, 0x7f07038c
-
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result v3
-
-    float-to-int v3, v3
-
-    iput v3, v2, Landroid/view/ViewGroup$LayoutParams;->width:I
-
-    :cond_d
-    :goto_6
-    goto/16 :goto_7
-
-    :cond_e
     const-string v2, "clipboard"
 
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_d
 
     const v2, 0x7f0d0051
 
@@ -969,16 +926,16 @@
 
     move-result-object v0
 
-    goto/16 :goto_7
+    goto/16 :goto_6
 
-    :cond_f
+    :cond_d
     const-string v2, "contextual"
 
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_e
 
     const v2, 0x7f0d0053
 
@@ -986,16 +943,16 @@
 
     move-result-object v0
 
-    goto :goto_7
+    goto :goto_6
 
-    :cond_10
+    :cond_e
     const-string v2, "nav"
 
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_f
 
     const v2, 0x7f0d00df
 
@@ -1003,16 +960,16 @@
 
     move-result-object v0
 
-    goto :goto_7
+    goto :goto_6
 
-    :cond_11
+    :cond_f
     const-string v2, "key"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_11
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->extractImage(Ljava/lang/String;)Ljava/lang/String;
 
@@ -1034,7 +991,7 @@
 
     invoke-virtual {v5, v4}, Lcom/android/systemui/statusbar/policy/KeyButtonView;->setCode(I)V
 
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_11
 
     const-string v5, ":"
 
@@ -1042,7 +999,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_12
+    if-eqz v5, :cond_10
 
     move-object v3, v0
 
@@ -1054,16 +1011,16 @@
 
     invoke-virtual {v3, v5}, Lcom/android/systemui/statusbar/policy/KeyButtonView;->loadAsync(Landroid/graphics/drawable/Icon;)V
 
-    goto :goto_7
+    goto :goto_6
 
-    :cond_12
+    :cond_10
     const-string v5, "/"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_13
+    if-eqz v5, :cond_11
 
     const/16 v5, 0x2f
 
@@ -1095,8 +1052,8 @@
 
     invoke-virtual {v7, v8}, Lcom/android/systemui/statusbar/policy/KeyButtonView;->loadAsync(Landroid/graphics/drawable/Icon;)V
 
-    :cond_13
-    :goto_7
+    :cond_11
+    :goto_6
     return-object v0
 .end method
 
@@ -1287,11 +1244,11 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mRot0:Landroid/widget/FrameLayout;
 
-    const v2, 0x7f0a035d
+    const v2, 0x7f0a035e
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setId(I)V
 
-    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mIsCameraNotch:Z
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mIsCustomNavBar:Z
 
     if-eqz v0, :cond_0
 
@@ -1301,7 +1258,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0704e4
+    const v2, 0x7f0704e2
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1310,17 +1267,7 @@
     goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v2, 0x7f0704e3
-
-    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v0
+    move v0, v1
 
     :goto_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mRot0:Landroid/widget/FrameLayout;
@@ -1351,7 +1298,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mRot90:Landroid/widget/FrameLayout;
 
-    const v4, 0x7f0a035e
+    const v4, 0x7f0a035f
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setId(I)V
 

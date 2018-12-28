@@ -32,7 +32,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07062c
+    const v1, 0x7f07062a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -100,13 +100,13 @@
 
     move-result v1
 
-    const v2, 0x7f0805b4
+    const v2, 0x7f0805cf
 
-    const v3, 0x7f0805b3
+    const v3, 0x7f0805ce
 
-    const v4, 0x7f0805b2
+    const v4, 0x7f0805cd
 
-    const v5, 0x7f0805b0
+    const v5, 0x7f0805cb
 
     if-eqz v1, :cond_1
 

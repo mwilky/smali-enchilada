@@ -1,6 +1,9 @@
 .class Lcom/android/systemui/volume/OutputChooserDialog$1;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "OutputChooserDialog.java"
+
+# interfaces
+.implements Landroid/bluetooth/BluetoothProfile$ServiceListener;
 
 
 # annotations
@@ -24,97 +27,162 @@
 
     iput-object p1, p0, Lcom/android/systemui/volume/OutputChooserDialog$1;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 2
+.method public onServiceConnected(ILandroid/bluetooth/BluetoothProfile;)V
+    .locals 3
 
-    const-string v0, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
+    invoke-static {}, Lcom/android/systemui/volume/OutputChooserDialog;->access$000()Ljava/lang/String;
 
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "BluetoothProfile.ServiceListener / onServiceConnected / profile:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, "  / proxy: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    monitor-enter p0
 
-    if-eqz v0, :cond_1
+    const/4 v0, 0x1
 
-    sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
+    if-ne p1, v0, :cond_0
 
-    if-eqz v0, :cond_0
+    :try_start_0
+    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog$1;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
 
-    invoke-static {}, Lcom/android/systemui/volume/OutputChooserDialog;->access$300()Ljava/lang/String;
+    move-object v1, p2
+
+    check-cast v1, Landroid/bluetooth/BluetoothHeadset;
+
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->access$102(Lcom/android/systemui/volume/OutputChooserDialog;Landroid/bluetooth/BluetoothHeadset;)Landroid/bluetooth/BluetoothHeadset;
+
+    invoke-static {}, Lcom/android/systemui/volume/OutputChooserDialog;->access$000()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "Received ACTION_CLOSE_SYSTEM_DIALOGS"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    :cond_0
-    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog$1;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
+    const-string v2, "- Got BluetoothHeadset: "
 
-    invoke-virtual {v0}, Lcom/android/systemui/volume/OutputChooserDialog;->cancel()V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog$1;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
+    iget-object v2, p0, Lcom/android/systemui/volume/OutputChooserDialog$1;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
 
-    invoke-virtual {v0}, Lcom/android/systemui/volume/OutputChooserDialog;->cleanUp()V
+    invoke-static {v2}, Lcom/android/systemui/volume/OutputChooserDialog;->access$100(Lcom/android/systemui/volume/OutputChooserDialog;)Landroid/bluetooth/BluetoothHeadset;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
-    :cond_1
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    :catchall_0
+    move-exception v0
+
+    goto :goto_1
+
+    :cond_0
+    invoke-static {}, Lcom/android/systemui/volume/OutputChooserDialog;->access$000()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "android.intent.action.HEADSET_PLUG"
+    const-string v1, "Connected to non-headset bluetooth service. Not changing bluetooth headset."
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    :goto_0
+    monitor-exit p0
 
-    if-nez v0, :cond_2
+    return-void
 
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    :goto_1
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v0
+    throw v0
+.end method
 
-    const-string v1, "android.media.STREAM_DEVICES_CHANGED_ACTION"
+.method public onServiceDisconnected(I)V
+    .locals 3
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    :cond_2
-    sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
-
-    if-eqz v0, :cond_3
-
-    invoke-static {}, Lcom/android/systemui/volume/OutputChooserDialog;->access$300()Ljava/lang/String;
+    invoke-static {}, Lcom/android/systemui/volume/OutputChooserDialog;->access$000()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "Received ACTION_HEADSET_PLUG"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    :cond_3
+    const-string v2, "BluetoothProfile.ServiceListener / onServiceDisconnected / profile:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    monitor-enter p0
+
+    :try_start_0
     iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog$1;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->access$200(Lcom/android/systemui/volume/OutputChooserDialog;Z)V
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->access$102(Lcom/android/systemui/volume/OutputChooserDialog;Landroid/bluetooth/BluetoothHeadset;)Landroid/bluetooth/BluetoothHeadset;
 
-    :cond_4
-    :goto_0
+    invoke-static {}, Lcom/android/systemui/volume/OutputChooserDialog;->access$000()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "Lost BluetoothHeadset service. Removing all tracked devices."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    monitor-exit p0
+
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

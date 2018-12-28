@@ -462,7 +462,7 @@
 
     aget-object v1, v1, v3
 
-    const v4, 0x7f0a0409
+    const v4, 0x7f0a040a
 
     invoke-virtual {v1, v4}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -1139,7 +1139,7 @@
     :cond_1
     iget-object v1, v0, Lcom/android/systemui/volume/OPThreekeyNavigationDialog;->mMainView:Landroid/view/View;
 
-    const v2, 0x7f0a040c
+    const v2, 0x7f0a040d
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1151,7 +1151,7 @@
 
     iget-object v1, v0, Lcom/android/systemui/volume/OPThreekeyNavigationDialog;->mMainView:Landroid/view/View;
 
-    const v2, 0x7f0a040f
+    const v2, 0x7f0a0410
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1169,7 +1169,7 @@
 
     iget-object v1, v0, Lcom/android/systemui/volume/OPThreekeyNavigationDialog;->mMainView:Landroid/view/View;
 
-    const v2, 0x7f0a0415
+    const v2, 0x7f0a0416
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1181,7 +1181,7 @@
 
     iget-object v1, v0, Lcom/android/systemui/volume/OPThreekeyNavigationDialog;->mSecondView:Landroid/view/View;
 
-    const v2, 0x7f0a040d
+    const v2, 0x7f0a040e
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1213,7 +1213,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/volume/OPThreekeyNavigationDialog;->mMainView:Landroid/view/View;
 
-    const v5, 0x7f0a0419
+    const v5, 0x7f0a041a
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1229,7 +1229,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/volume/OPThreekeyNavigationDialog;->mMainView:Landroid/view/View;
 
-    const v6, 0x7f0a041a
+    const v6, 0x7f0a041b
 
     invoke-virtual {v4, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1245,7 +1245,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/volume/OPThreekeyNavigationDialog;->mMainView:Landroid/view/View;
 
-    const v7, 0x7f0a0418
+    const v7, 0x7f0a0419
 
     invoke-virtual {v4, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1261,13 +1261,13 @@
 
     aget-object v3, v3, v5
 
-    const v4, 0x7f0a0409
+    const v4, 0x7f0a040a
 
     invoke-virtual {v3, v4}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
     move-result-object v3
 
-    const v8, 0x7f0801e9
+    const v8, 0x7f080204
 
     invoke-virtual {v1, v8}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1283,7 +1283,7 @@
 
     move-result-object v3
 
-    const v8, 0x7f0801e5
+    const v8, 0x7f080200
 
     invoke-virtual {v1, v8}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1299,7 +1299,7 @@
 
     move-result-object v3
 
-    const v9, 0x7f0801e4
+    const v9, 0x7f0801ff
 
     invoke-virtual {v1, v9}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1326,7 +1326,7 @@
 
     aget-object v10, v10, v3
 
-    const v11, 0x7f0a0408
+    const v11, 0x7f0a0409
 
     invoke-virtual {v10, v11}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -1342,7 +1342,7 @@
 
     aget-object v10, v10, v3
 
-    const v11, 0x7f0a0417
+    const v11, 0x7f0a0418
 
     invoke-virtual {v10, v11}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -1361,7 +1361,7 @@
 
     aget-object v3, v3, v5
 
-    const v9, 0x7f0804fe
+    const v9, 0x7f080519
 
     invoke-virtual {v3, v9}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1369,7 +1369,7 @@
 
     aget-object v3, v3, v6
 
-    const v9, 0x7f0804ff
+    const v9, 0x7f08051a
 
     invoke-virtual {v3, v9}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1377,7 +1377,7 @@
 
     aget-object v3, v3, v7
 
-    const v9, 0x7f0804fc
+    const v9, 0x7f080517
 
     invoke-virtual {v3, v9}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1425,25 +1425,25 @@
 
     packed-switch v3, :pswitch_data_0
 
-    const v2, 0x7f070660
+    const v2, 0x7f07065e
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
-    const v3, 0x7f07065e
+    const v3, 0x7f07065c
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v3
 
-    const v8, 0x7f07065c
+    const v8, 0x7f07065a
 
     invoke-virtual {v1, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v8
 
-    const v10, 0x7f0704e9
+    const v10, 0x7f0704e7
 
     invoke-virtual {v1, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1505,7 +1505,7 @@
 
     invoke-direct {v4, v12, v12}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    const v9, 0x7f0704eb
+    const v9, 0x7f0704e9
 
     invoke-virtual {v1, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1683,7 +1683,7 @@
 
     invoke-direct {v4, v12, v12}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    const v9, 0x7f0704ea
+    const v9, 0x7f0704e8
 
     invoke-virtual {v1, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

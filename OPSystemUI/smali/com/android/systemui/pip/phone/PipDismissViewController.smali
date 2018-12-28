@@ -97,7 +97,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f070524
+    const v4, 0x7f070522
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -109,7 +109,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f070525
+    const v5, 0x7f070523
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -149,7 +149,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f080553
+    const v6, 0x7f08056e
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -165,7 +165,7 @@
 
     iget-object v5, v0, Lcom/android/systemui/pip/phone/PipDismissViewController;->mDismissView:Landroid/view/View;
 
-    const v6, 0x7f0a0301
+    const v6, 0x7f0a0302
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

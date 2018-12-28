@@ -19,12 +19,12 @@
 
 .field public static final icon_frame:I = 0x7f0a019d
 
-.field public static final last_updated:I = 0x7f0a01f0
+.field public static final last_updated:I = 0x7f0a01f1
 
-.field public static final remote_input_progress:I = 0x7f0a034a
+.field public static final remote_input_progress:I = 0x7f0a034b
 
-.field public static final remote_input_send:I = 0x7f0a034b
+.field public static final remote_input_send:I = 0x7f0a034c
 
-.field public static final text_see_more:I = 0x7f0a0403
+.field public static final text_see_more:I = 0x7f0a0404
 
-.field public static final text_see_more_count:I = 0x7f0a0404
+.field public static final text_see_more_count:I = 0x7f0a0405

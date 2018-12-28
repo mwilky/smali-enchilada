@@ -304,7 +304,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/globalactions/GlobalActionsImpl;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f040463
+    const v5, 0x7f040466
 
     invoke-static {v4, v5}, Lcom/android/settingslib/Utils;->getColorAttr(Landroid/content/Context;I)I
 

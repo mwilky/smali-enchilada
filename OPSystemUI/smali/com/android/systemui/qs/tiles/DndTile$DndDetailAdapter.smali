@@ -360,7 +360,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->mZenPanel:Lcom/android/systemui/volume/ZenModePanel;
 
-    const v1, 0x7f080370
+    const v1, 0x7f08038b
 
     const v2, 0x7f110244
 

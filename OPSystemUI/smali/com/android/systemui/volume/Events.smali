@@ -63,7 +63,7 @@
 
     const-string/jumbo v14, "zen_mode_changed"
 
-    const-string v15, "suppressor_changed"
+    const-string/jumbo v15, "suppressor_changed"
 
     const-string v16, "mute_changed"
 

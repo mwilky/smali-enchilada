@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$RecoveryAction;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
-    const p1, 0x7f08039d
+    const p1, 0x7f0803b8
 
     const v0, 0x50c006c
 

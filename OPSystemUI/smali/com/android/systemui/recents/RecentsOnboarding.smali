@@ -147,7 +147,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsOnboarding;->mLayout:Landroid/view/View;
 
-    const v2, 0x7f0a02b2
+    const v2, 0x7f0a02b3
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -201,7 +201,7 @@
 
     iput v2, p0, Lcom/android/systemui/recents/RecentsOnboarding;->mOnboardingToastColor:I
 
-    const v2, 0x7f0705c9
+    const v2, 0x7f0705c7
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1434,7 +1434,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0705ca
+    const v5, 0x7f0705c8
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

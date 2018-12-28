@@ -1300,7 +1300,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f070521
+    const v4, 0x7f07051f
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1312,7 +1312,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f070526
+    const v4, 0x7f070524
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1754,7 +1754,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    const v0, 0x7f0a023f
+    const v0, 0x7f0a0240
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/pip/phone/PipMenuActivity;->findViewById(I)Landroid/view/View;
 
@@ -1776,7 +1776,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    const v0, 0x7f0a03b0
+    const v0, 0x7f0a03b1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/pip/phone/PipMenuActivity;->findViewById(I)Landroid/view/View;
 
@@ -1830,7 +1830,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070523
+    const v1, 0x7f070521
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -80,7 +80,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f0a042b
+    const v3, 0x7f0a042c
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/settings/ToggleSliderView;->findViewById(I)Landroid/view/View;
 
@@ -96,7 +96,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    const v3, 0x7f0a03c1
+    const v3, 0x7f0a03c2
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/settings/ToggleSliderView;->findViewById(I)Landroid/view/View;
 
@@ -112,7 +112,7 @@
 
     invoke-virtual {v3, v4}, Lcom/android/systemui/settings/ToggleSeekBar;->setOnSeekBarChangeListener(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V
 
-    const v3, 0x7f0a01e9
+    const v3, 0x7f0a01ea
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/settings/ToggleSliderView;->findViewById(I)Landroid/view/View;
 

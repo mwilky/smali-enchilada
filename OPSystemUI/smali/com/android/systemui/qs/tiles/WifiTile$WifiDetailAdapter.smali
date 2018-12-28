@@ -182,7 +182,7 @@
 
     const/4 v2, 0x0
 
-    const v3, 0x7f080394
+    const v3, 0x7f0803af
 
     if-nez v0, :cond_4
 
@@ -278,7 +278,7 @@
 
     if-eqz v5, :cond_6
 
-    const v5, 0x7f080570
+    const v5, 0x7f08058b
 
     goto :goto_3
 

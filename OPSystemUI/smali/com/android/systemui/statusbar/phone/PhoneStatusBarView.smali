@@ -25,8 +25,6 @@
 
 .field private mBattery:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
 
-.field private mBatteryLeft:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
-
 .field private mContentPaddintTop:I
 
 .field private mCutoutSideNudge:I
@@ -896,10 +894,6 @@
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mBattery:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->addDarkReceiver(Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;)V
-    
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mBatteryLeft:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
-
-    invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->addDarkReceiver(Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;)V
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->getResources()Landroid/content/res/Resources;
 
@@ -982,10 +976,6 @@
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mBattery:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->removeDarkReceiver(Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;)V
-    
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mBatteryLeft:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
-
-    invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->removeDarkReceiver(Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;)V
 
     const/4 v0, 0x0
 
@@ -1032,22 +1022,6 @@
     check-cast v0, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mBattery:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
-    
-    const-string v0, "battery_left"
-
-    const-string v1, "id"
-
-    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v1
-    
-    invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
-    
-    move-result-object v0
-
-    check-cast v0, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
-
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mBatteryLeft:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
 
     const v0, 0x7f0a00e7
 
@@ -1057,7 +1031,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mCutoutSpace:Landroid/view/View;
 
-    const v0, 0x7f0a03d7
+    const v0, 0x7f0a03d8
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -1065,7 +1039,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mSystemIcons:Landroid/view/View;
 
-    const v0, 0x7f0a029a
+    const v0, 0x7f0a029b
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -1073,7 +1047,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mNotifications:Landroid/view/View;
 
-    const v0, 0x7f0a03db
+    const v0, 0x7f0a03dc
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -1081,7 +1055,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mStatusBarContentLeft:Landroid/view/View;
 
-    const v0, 0x7f0a03da
+    const v0, 0x7f0a03db
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -1193,7 +1167,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070634
+    const v1, 0x7f070632
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1622,7 +1596,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f070628
+    const v2, 0x7f070626
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

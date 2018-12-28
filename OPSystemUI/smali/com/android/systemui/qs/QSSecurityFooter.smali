@@ -151,7 +151,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSSecurityFooter;->mFooterIcon:Landroid/widget/ImageView;
 
-    const v0, 0x7f08029b
+    const v0, 0x7f0802b6
 
     iput v0, p0, Lcom/android/systemui/qs/QSSecurityFooter;->mFooterIconId:I
 
@@ -541,7 +541,7 @@
 
     move-result-object v3
 
-    const v1, 0x7f0a0282
+    const v1, 0x7f0a0283
 
     if-nez v3, :cond_3
 
@@ -564,7 +564,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    const v0, 0x7f0a0284
+    const v0, 0x7f0a0285
 
     invoke-virtual {v5, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -579,7 +579,7 @@
 
     move-result-object v1
 
-    const v0, 0x7f0a0487
+    const v0, 0x7f0a0488
 
     if-nez v1, :cond_4
 
@@ -606,7 +606,7 @@
 
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
-    const v0, 0x7f0a0489
+    const v0, 0x7f0a048a
 
     invoke-virtual {v5, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -894,7 +894,7 @@
 
     iput-object v0, v10, Lcom/android/systemui/qs/QSSecurityFooter;->mFooterTextContent:Ljava/lang/CharSequence;
 
-    const v0, 0x7f08029b
+    const v0, 0x7f0802b6
 
     if-nez v18, :cond_4
 
@@ -909,12 +909,12 @@
 
     if-eqz v1, :cond_5
 
-    const v0, 0x7f08035f
+    const v0, 0x7f08037a
 
     goto :goto_3
 
     :cond_5
-    const v0, 0x7f08038d
+    const v0, 0x7f0803a8
 
     :cond_6
     :goto_3
@@ -991,7 +991,7 @@
     :cond_5
     if-eqz p3, :cond_6
 
-    const v2, 0x7f0a0283
+    const v2, 0x7f0a0284
 
     invoke-virtual {p5, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1002,7 +1002,7 @@
     :cond_6
     if-eqz p4, :cond_7
 
-    const v2, 0x7f0a0488
+    const v2, 0x7f0a0489
 
     invoke-virtual {p5, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1636,7 +1636,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/QSSecurityFooter;->mFooterText:Landroid/widget/TextView;
 
-    const v1, 0x7f07059e
+    const v1, 0x7f07059c
 
     invoke-static {v0, v1}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/widget/TextView;I)V
 

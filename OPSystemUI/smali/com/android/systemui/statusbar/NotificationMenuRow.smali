@@ -353,7 +353,7 @@
 
     new-instance v3, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;
 
-    const v4, 0x7f0803a6
+    const v4, 0x7f0803c1
 
     invoke-direct {v3, p0, v1, v2, v4}, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;-><init>(Landroid/content/Context;Ljava/lang/String;Lcom/android/systemui/statusbar/NotificationGuts$GutsContent;I)V
 
@@ -369,7 +369,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0703af
+    const v1, 0x7f0703ad
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -379,7 +379,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mHorizSpaceForIcon:F
 
-    const v1, 0x7f0703b1
+    const v1, 0x7f0703af
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -615,7 +615,7 @@
 
     new-instance v3, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;
 
-    const v4, 0x7f0803b6
+    const v4, 0x7f0803d1
 
     invoke-direct {v3, p0, v2, v1, v4}, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;-><init>(Landroid/content/Context;Ljava/lang/String;Lcom/android/systemui/statusbar/NotificationGuts$GutsContent;I)V
 

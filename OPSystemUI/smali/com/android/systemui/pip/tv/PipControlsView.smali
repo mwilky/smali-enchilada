@@ -544,7 +544,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/pip/tv/PipControlsView;->mPlayPauseButtonView:Lcom/android/systemui/pip/tv/PipControlButtonView;
 
-    const v4, 0x7f080351
+    const v4, 0x7f08036c
 
     invoke-virtual {v3, v4}, Lcom/android/systemui/pip/tv/PipControlButtonView;->setImageResource(I)V
 
@@ -559,7 +559,7 @@
     :cond_8
     iget-object v3, p0, Lcom/android/systemui/pip/tv/PipControlsView;->mPlayPauseButtonView:Lcom/android/systemui/pip/tv/PipControlButtonView;
 
-    const v4, 0x7f080354
+    const v4, 0x7f08036f
 
     invoke-virtual {v3, v4}, Lcom/android/systemui/pip/tv/PipControlButtonView;->setImageResource(I)V
 
@@ -696,7 +696,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/pip/tv/PipControlButtonView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a0308
+    const v0, 0x7f0a0309
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/pip/tv/PipControlsView;->findViewById(I)Landroid/view/View;
 

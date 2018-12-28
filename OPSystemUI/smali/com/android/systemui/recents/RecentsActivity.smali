@@ -1368,7 +1368,7 @@
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/RecentsActivity;->takeKeyEvents(Z)V
 
-    const v1, 0x7f0a0346
+    const v1, 0x7f0a0347
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/RecentsActivity;->findViewById(I)Landroid/view/View;
 

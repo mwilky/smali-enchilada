@@ -32,9 +32,15 @@
 
 .field private mBgDrawable:I
 
+.field private mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
+
 .field private mBluetoothCallbackHandler:Lcom/android/systemui/volume/OutputChooserDialog$BluetoothCallbackHandler;
 
 .field private final mBluetoothController:Lcom/android/systemui/statusbar/policy/BluetoothController;
+
+.field private mBluetoothHeadset:Landroid/bluetooth/BluetoothHeadset;
+
+.field private final mBluetoothProfileServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
 
 .field private final mCallback:Lcom/android/systemui/statusbar/policy/BluetoothController$Callback;
 
@@ -119,15 +125,15 @@
 
     sput-object v0, Lcom/android/systemui/volume/OutputChooserDialog;->TAG:Ljava/lang/String;
 
-    new-instance v0, Lcom/android/systemui/volume/OutputChooserDialog$5;
-
-    invoke-direct {v0}, Lcom/android/systemui/volume/OutputChooserDialog$5;-><init>()V
-
-    sput-object v0, Lcom/android/systemui/volume/OutputChooserDialog;->mOnInitCallback:Lcom/android/settingslib/bluetooth/LocalBluetoothManager$BluetoothManagerCallback;
-
     new-instance v0, Lcom/android/systemui/volume/OutputChooserDialog$6;
 
     invoke-direct {v0}, Lcom/android/systemui/volume/OutputChooserDialog$6;-><init>()V
+
+    sput-object v0, Lcom/android/systemui/volume/OutputChooserDialog;->mOnInitCallback:Lcom/android/settingslib/bluetooth/LocalBluetoothManager$BluetoothManagerCallback;
+
+    new-instance v0, Lcom/android/systemui/volume/OutputChooserDialog$7;
+
+    invoke-direct {v0}, Lcom/android/systemui/volume/OutputChooserDialog$7;-><init>()V
 
     sput-object v0, Lcom/android/systemui/volume/OutputChooserDialog;->mErrorListener:Lcom/android/settingslib/bluetooth/Utils$ErrorListener;
 
@@ -161,23 +167,29 @@
 
     invoke-direct {v1, p0}, Lcom/android/systemui/volume/OutputChooserDialog$1;-><init>(Lcom/android/systemui/volume/OutputChooserDialog;)V
 
-    iput-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mReceiver:Landroid/content/BroadcastReceiver;
+    iput-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBluetoothProfileServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
 
     new-instance v1, Lcom/android/systemui/volume/OutputChooserDialog$2;
 
     invoke-direct {v1, p0}, Lcom/android/systemui/volume/OutputChooserDialog$2;-><init>(Lcom/android/systemui/volume/OutputChooserDialog;)V
 
-    iput-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mCallback:Lcom/android/systemui/statusbar/policy/BluetoothController$Callback;
+    iput-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v1, Lcom/android/systemui/volume/OutputChooserDialog$3;
 
     invoke-direct {v1, p0}, Lcom/android/systemui/volume/OutputChooserDialog$3;-><init>(Lcom/android/systemui/volume/OutputChooserDialog;)V
 
-    iput-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mHandler:Landroid/os/Handler;
+    iput-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mCallback:Lcom/android/systemui/statusbar/policy/BluetoothController$Callback;
 
     new-instance v1, Lcom/android/systemui/volume/OutputChooserDialog$4;
 
     invoke-direct {v1, p0}, Lcom/android/systemui/volume/OutputChooserDialog$4;-><init>(Lcom/android/systemui/volume/OutputChooserDialog;)V
+
+    iput-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mHandler:Landroid/os/Handler;
+
+    new-instance v1, Lcom/android/systemui/volume/OutputChooserDialog$5;
+
+    invoke-direct {v1, p0}, Lcom/android/systemui/volume/OutputChooserDialog$5;-><init>(Lcom/android/systemui/volume/OutputChooserDialog;)V
 
     iput-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mControllerCallbackH:Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;
 
@@ -195,9 +207,9 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBgDrawable:I
 
-    new-instance v2, Lcom/android/systemui/volume/OutputChooserDialog$7;
+    new-instance v2, Lcom/android/systemui/volume/OutputChooserDialog$8;
 
-    invoke-direct {v2, p0}, Lcom/android/systemui/volume/OutputChooserDialog$7;-><init>(Lcom/android/systemui/volume/OutputChooserDialog;)V
+    invoke-direct {v2, p0}, Lcom/android/systemui/volume/OutputChooserDialog$8;-><init>(Lcom/android/systemui/volume/OutputChooserDialog;)V
 
     iput-object v2, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mCheckActiveDeviceRunnable:Ljava/lang/Runnable;
 
@@ -311,7 +323,7 @@
 
     invoke-virtual {v2, v1}, Landroid/view/Window;->clearFlags(I)V
 
-    const v1, 0x10c0120
+    const v1, 0x10c0128
 
     invoke-virtual {v2, v1}, Landroid/view/Window;->addFlags(I)V
 
@@ -344,39 +356,7 @@
     return-void
 .end method
 
-.method static synthetic access$1000(Lcom/android/systemui/volume/OutputChooserDialog;)Landroid/os/Handler;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mHandler:Landroid/os/Handler;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1100(Lcom/android/systemui/volume/OutputChooserDialog;)Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mPreSelectDevice:Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1102(Lcom/android/systemui/volume/OutputChooserDialog;Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
-    .locals 0
-
-    iput-object p1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mPreSelectDevice:Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
-
-    return-object p1
-.end method
-
-.method static synthetic access$200(Lcom/android/systemui/volume/OutputChooserDialog;Z)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcom/android/systemui/volume/OutputChooserDialog;->updateItems(Z)V
-
-    return-void
-.end method
-
-.method static synthetic access$300()Ljava/lang/String;
+.method static synthetic access$000()Ljava/lang/String;
     .locals 1
 
     sget-object v0, Lcom/android/systemui/volume/OutputChooserDialog;->TAG:Ljava/lang/String;
@@ -384,7 +364,63 @@
     return-object v0
 .end method
 
-.method static synthetic access$402(Lcom/android/systemui/volume/OutputChooserDialog;Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
+.method static synthetic access$100(Lcom/android/systemui/volume/OutputChooserDialog;)Landroid/bluetooth/BluetoothHeadset;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBluetoothHeadset:Landroid/bluetooth/BluetoothHeadset;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1000(Lcom/android/systemui/volume/OutputChooserDialog;)Ljava/lang/Runnable;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mCheckActiveDeviceRunnable:Ljava/lang/Runnable;
+
+    return-object v0
+.end method
+
+.method static synthetic access$102(Lcom/android/systemui/volume/OutputChooserDialog;Landroid/bluetooth/BluetoothHeadset;)Landroid/bluetooth/BluetoothHeadset;
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBluetoothHeadset:Landroid/bluetooth/BluetoothHeadset;
+
+    return-object p1
+.end method
+
+.method static synthetic access$1100(Lcom/android/systemui/volume/OutputChooserDialog;)Landroid/os/Handler;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mHandler:Landroid/os/Handler;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1200(Lcom/android/systemui/volume/OutputChooserDialog;)Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mPreSelectDevice:Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1202(Lcom/android/systemui/volume/OutputChooserDialog;Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mPreSelectDevice:Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
+
+    return-object p1
+.end method
+
+.method static synthetic access$400(Lcom/android/systemui/volume/OutputChooserDialog;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/android/systemui/volume/OutputChooserDialog;->updateItems(Z)V
+
+    return-void
+.end method
+
+.method static synthetic access$502(Lcom/android/systemui/volume/OutputChooserDialog;Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
     .locals 0
 
     iput-object p1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mPaddingActiveDevice:Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
@@ -392,7 +428,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$500(Lcom/android/systemui/volume/OutputChooserDialog;)Landroid/telecom/TelecomManager;
+.method static synthetic access$600(Lcom/android/systemui/volume/OutputChooserDialog;)Landroid/telecom/TelecomManager;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mTelecomManager:Landroid/telecom/TelecomManager;
@@ -400,7 +436,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$602(Lcom/android/systemui/volume/OutputChooserDialog;Z)Z
+.method static synthetic access$702(Lcom/android/systemui/volume/OutputChooserDialog;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mIsInCall:Z
@@ -408,7 +444,7 @@
     return p1
 .end method
 
-.method static synthetic access$700(Lcom/android/systemui/volume/OutputChooserDialog;)V
+.method static synthetic access$800(Lcom/android/systemui/volume/OutputChooserDialog;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/systemui/volume/OutputChooserDialog;->updateTile()V
@@ -416,18 +452,10 @@
     return-void
 .end method
 
-.method static synthetic access$800()Lcom/android/settingslib/bluetooth/Utils$ErrorListener;
+.method static synthetic access$900()Lcom/android/settingslib/bluetooth/Utils$ErrorListener;
     .locals 1
 
     sget-object v0, Lcom/android/systemui/volume/OutputChooserDialog;->mErrorListener:Lcom/android/settingslib/bluetooth/Utils$ErrorListener;
-
-    return-object v0
-.end method
-
-.method static synthetic access$900(Lcom/android/systemui/volume/OutputChooserDialog;)Ljava/lang/Runnable;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mCheckActiveDeviceRunnable:Ljava/lang/Runnable;
 
     return-object v0
 .end method
@@ -514,7 +542,7 @@
 
     invoke-direct {v9}, Lcom/android/systemui/volume/OutputChooserLayout$Item;-><init>()V
 
-    const v10, 0x7f08035e
+    const v10, 0x7f080379
 
     iput v10, v9, Lcom/android/systemui/volume/OutputChooserLayout$Item;->iconResId:I
 
@@ -540,7 +568,7 @@
 
     if-ne v10, v11, :cond_4
 
-    const v13, 0x7f08035b
+    const v13, 0x7f080376
 
     iput v13, v9, Lcom/android/systemui/volume/OutputChooserLayout$Item;->iconResId:I
 
@@ -664,7 +692,7 @@
     :cond_4
     if-ne v10, v12, :cond_5
 
-    const v8, 0x7f08035c
+    const v8, 0x7f080377
 
     iput v8, v9, Lcom/android/systemui/volume/OutputChooserLayout$Item;->iconResId:I
 
@@ -729,7 +757,7 @@
 
     iput-object v1, v0, Lcom/android/systemui/volume/OutputChooserLayout$Item;->line1:Ljava/lang/CharSequence;
 
-    const v1, 0x7f08034e
+    const v1, 0x7f080369
 
     iput v1, v0, Lcom/android/systemui/volume/OutputChooserLayout$Item;->iconResId:I
 
@@ -744,7 +772,7 @@
 
     iput-object v1, v0, Lcom/android/systemui/volume/OutputChooserLayout$Item;->line1:Ljava/lang/CharSequence;
 
-    const v1, 0x7f08034f
+    const v1, 0x7f08036a
 
     iput v1, v0, Lcom/android/systemui/volume/OutputChooserLayout$Item;->iconResId:I
 
@@ -781,7 +809,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0704d8
+    const v1, 0x7f0704d7
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1711,7 +1739,7 @@
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 8
+    .locals 9
 
     invoke-super {p0, p1}, Landroid/app/Dialog;->onCreate(Landroid/os/Bundle;)V
 
@@ -1729,7 +1757,7 @@
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    const v1, 0x7f0a02ea
+    const v1, 0x7f0a02eb
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->findViewById(I)Landroid/view/View;
 
@@ -1747,7 +1775,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f080247
+    const v2, 0x7f080262
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1757,7 +1785,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0803f9
+    const v2, 0x7f080414
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1767,7 +1795,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0803b8
+    const v2, 0x7f0803d3
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1777,7 +1805,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0803b9
+    const v2, 0x7f0803d4
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1912,37 +1940,66 @@
 
     move-result v4
 
-    xor-int/2addr v0, v4
+    xor-int/2addr v4, v0
 
     if-eqz v3, :cond_2
 
-    if-eqz v0, :cond_2
+    if-eqz v4, :cond_2
 
-    iget-object v4, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mView:Lcom/android/systemui/volume/OutputChooserLayout;
+    iget-object v5, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mView:Lcom/android/systemui/volume/OutputChooserLayout;
 
-    invoke-direct {p0, v3, v0}, Lcom/android/systemui/volume/OutputChooserDialog;->getDisabledServicesMessage(ZZ)Ljava/lang/String;
+    invoke-direct {p0, v3, v4}, Lcom/android/systemui/volume/OutputChooserDialog;->getDisabledServicesMessage(ZZ)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v4, v5}, Lcom/android/systemui/volume/OutputChooserLayout;->setEmptyState(Ljava/lang/String;)V
+    invoke-virtual {v5, v6}, Lcom/android/systemui/volume/OutputChooserLayout;->setEmptyState(Ljava/lang/String;)V
 
     :cond_2
-    iget-object v4, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mView:Lcom/android/systemui/volume/OutputChooserLayout;
+    iget-object v5, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mView:Lcom/android/systemui/volume/OutputChooserLayout;
 
-    new-instance v5, Lcom/android/systemui/volume/-$$Lambda$OutputChooserDialog$oZBPIb0B7f7Rep6hYPmtCE6QG_w;
+    new-instance v6, Lcom/android/systemui/volume/-$$Lambda$OutputChooserDialog$oZBPIb0B7f7Rep6hYPmtCE6QG_w;
 
-    invoke-direct {v5, p0}, Lcom/android/systemui/volume/-$$Lambda$OutputChooserDialog$oZBPIb0B7f7Rep6hYPmtCE6QG_w;-><init>(Lcom/android/systemui/volume/OutputChooserDialog;)V
+    invoke-direct {v6, p0}, Lcom/android/systemui/volume/-$$Lambda$OutputChooserDialog$oZBPIb0B7f7Rep6hYPmtCE6QG_w;-><init>(Lcom/android/systemui/volume/OutputChooserDialog;)V
 
-    const-wide/16 v6, 0x1388
+    const-wide/16 v7, 0x1388
 
-    invoke-virtual {v4, v5, v6, v7}, Lcom/android/systemui/volume/OutputChooserLayout;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v5, v6, v7, v8}, Lcom/android/systemui/volume/OutputChooserLayout;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    new-instance v4, Lcom/android/systemui/volume/OutputChooserDialog$BluetoothCallbackHandler;
+    new-instance v5, Lcom/android/systemui/volume/OutputChooserDialog$BluetoothCallbackHandler;
 
-    invoke-direct {v4, p0, v1}, Lcom/android/systemui/volume/OutputChooserDialog$BluetoothCallbackHandler;-><init>(Lcom/android/systemui/volume/OutputChooserDialog;Lcom/android/systemui/volume/OutputChooserDialog$1;)V
+    invoke-direct {v5, p0, v1}, Lcom/android/systemui/volume/OutputChooserDialog$BluetoothCallbackHandler;-><init>(Lcom/android/systemui/volume/OutputChooserDialog;Lcom/android/systemui/volume/OutputChooserDialog$1;)V
 
-    iput-object v4, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBluetoothCallbackHandler:Lcom/android/systemui/volume/OutputChooserDialog$BluetoothCallbackHandler;
+    iput-object v5, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBluetoothCallbackHandler:Lcom/android/systemui/volume/OutputChooserDialog$BluetoothCallbackHandler;
 
+    invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
+
+    iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
+
+    if-eqz v1, :cond_3
+
+    iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
+
+    invoke-virtual {v1}, Landroid/bluetooth/BluetoothAdapter;->getState()I
+
+    move-result v1
+
+    const/16 v5, 0xc
+
+    if-ne v1, v5, :cond_3
+
+    iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
+
+    iget-object v5, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
+
+    iget-object v6, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBluetoothProfileServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
+
+    invoke-virtual {v1, v5, v6, v0}, Landroid/bluetooth/BluetoothAdapter;->getProfileProxy(Landroid/content/Context;Landroid/bluetooth/BluetoothProfile$ServiceListener;I)Z
+
+    :cond_3
     return-void
 .end method
 
@@ -2242,6 +2299,55 @@
 
     :cond_4
     :goto_0
+    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBluetoothHeadset:Landroid/bluetooth/BluetoothHeadset;
+
+    if-eqz v0, :cond_5
+
+    sget-object v0, Lcom/android/systemui/volume/OutputChooserDialog;->TAG:Ljava/lang/String;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "mBluetoothHeadset:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBluetoothHeadset:Landroid/bluetooth/BluetoothHeadset;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v2, " / mBluetoothHeadset.isAudioOn():"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBluetoothHeadset:Landroid/bluetooth/BluetoothHeadset;
+
+    invoke-virtual {v2}, Landroid/bluetooth/BluetoothHeadset;->isAudioOn()Z
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBluetoothHeadset:Landroid/bluetooth/BluetoothHeadset;
+
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothHeadset;->isAudioOn()Z
+
+    move-result v0
+
+    if-nez v0, :cond_5
+
+    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBluetoothHeadset:Landroid/bluetooth/BluetoothHeadset;
+
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothHeadset;->connectAudio()Z
+
+    :cond_5
     return-void
 .end method
 
@@ -2290,7 +2396,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mSecondaryTextColor:I
 
-    const v1, 0x7f08087c
+    const v1, 0x7f080897
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBgDrawable:I
 
@@ -2329,7 +2435,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mSecondaryTextColor:I
 
-    const v1, 0x7f08087b
+    const v1, 0x7f080896
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBgDrawable:I
 

@@ -599,7 +599,7 @@
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_1
-    const v2, 0x7f0a03c2
+    const v2, 0x7f0a03c3
 
     invoke-virtual {p0, v2}, Lcom/android/keyguard/KeyguardSimPinView;->findViewById(I)Landroid/view/View;
 
@@ -868,7 +868,7 @@
 .method protected getPasswordTextViewId()I
     .locals 1
 
-    const v0, 0x7f0a03be
+    const v0, 0x7f0a03bf
 
     return v0
 .end method
@@ -974,7 +974,7 @@
     invoke-virtual {v0, v1}, Lcom/android/keyguard/EmergencyCarrierArea;->setCarrierTextVisible(Z)V
 
     :cond_0
-    const v0, 0x7f0a01e1
+    const v0, 0x7f0a01e2
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardSimPinView;->findViewById(I)Landroid/view/View;
 
@@ -1052,7 +1052,7 @@
 
     move-result v0
 
-    const v2, 0x7f0a01d3
+    const v2, 0x7f0a01d4
 
     invoke-virtual {p0, v2}, Lcom/android/keyguard/KeyguardSimPinView;->findViewById(I)Landroid/view/View;
 

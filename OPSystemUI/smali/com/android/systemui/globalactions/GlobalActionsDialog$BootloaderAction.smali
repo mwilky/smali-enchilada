@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$BootloaderAction;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
-    const p1, 0x7f08023b
+    const p1, 0x7f080256
 
     const v0, 0x50c0067
 

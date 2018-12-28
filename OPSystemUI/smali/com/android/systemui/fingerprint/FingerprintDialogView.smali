@@ -468,7 +468,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mDimLayout:Landroid/view/ViewGroup;
 
-    const v1, 0x7f0a02d2
+    const v1, 0x7f0a02d3
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -480,7 +480,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mPressedLayout:Landroid/view/ViewGroup;
 
-    const v1, 0x7f0a02d6
+    const v1, 0x7f0a02d7
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -492,7 +492,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mLayout:Landroid/view/ViewGroup;
 
-    const v1, 0x7f0a02d3
+    const v1, 0x7f0a02d4
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -504,7 +504,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mLayout:Landroid/view/ViewGroup;
 
-    const v1, 0x7f0a02d5
+    const v1, 0x7f0a02d6
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -516,7 +516,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mLayout:Landroid/view/ViewGroup;
 
-    const v1, 0x7f0a02d4
+    const v1, 0x7f0a02d5
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -528,7 +528,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mLayout:Landroid/view/ViewGroup;
 
-    const v1, 0x7f0a02c2
+    const v1, 0x7f0a02c3
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -601,7 +601,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mLayout:Landroid/view/ViewGroup;
 
-    const v1, 0x7f0a03cb
+    const v1, 0x7f0a03cc
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -609,7 +609,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mLayout:Landroid/view/ViewGroup;
 
-    const v5, 0x7f0a0215
+    const v5, 0x7f0a0216
 
     invoke-virtual {v1, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -617,7 +617,7 @@
 
     iget-object v5, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mLayout:Landroid/view/ViewGroup;
 
-    const v6, 0x7f0a0356
+    const v6, 0x7f0a0357
 
     invoke-virtual {v5, v6}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -940,7 +940,7 @@
 
     if-ne p2, v0, :cond_0
 
-    const v0, 0x7f080214
+    const v0, 0x7f08022f
 
     :goto_0
     goto :goto_1
@@ -952,7 +952,7 @@
 
     if-ne p2, v1, :cond_1
 
-    const v0, 0x7f080214
+    const v0, 0x7f08022f
 
     goto :goto_0
 
@@ -961,7 +961,7 @@
 
     if-ne p2, v0, :cond_2
 
-    const v0, 0x7f080213
+    const v0, 0x7f08022e
 
     goto :goto_0
 
@@ -972,7 +972,7 @@
 
     if-ne p2, v0, :cond_3
 
-    const v0, 0x7f080213
+    const v0, 0x7f08022e
 
     goto :goto_0
 
@@ -2642,7 +2642,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mLayout:Landroid/view/ViewGroup;
 
-    const v1, 0x7f0a0424
+    const v1, 0x7f0a0425
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -2652,7 +2652,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView;->mLayout:Landroid/view/ViewGroup;
 
-    const v2, 0x7f0a03e6
+    const v2, 0x7f0a03e7
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

@@ -173,7 +173,7 @@
     goto :goto_2
 
     :cond_1
-    const-string v13, "sw"
+    const-string/jumbo v13, "sw"
 
     invoke-virtual {v14, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -401,6 +401,8 @@
     invoke-direct/range {v14 .. v28}, Lcom/airbnb/lottie/model/DocumentData;-><init>(Ljava/lang/String;Ljava/lang/String;DIIDDIIIZ)V
 
     return-object v13
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x73

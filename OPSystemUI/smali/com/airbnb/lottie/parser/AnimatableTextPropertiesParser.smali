@@ -144,7 +144,7 @@
     goto :goto_1
 
     :cond_0
-    const-string v6, "sw"
+    const-string/jumbo v6, "sw"
 
     invoke-virtual {v4, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -237,8 +237,6 @@
     invoke-direct {v4, v0, v1, v2, v3}, Lcom/airbnb/lottie/model/animatable/AnimatableTextProperties;-><init>(Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;)V
 
     return-object v4
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

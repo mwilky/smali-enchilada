@@ -179,8 +179,6 @@
 
 .method protected handleClick()V
     .locals 1
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/OtgTile;->isOtgEnabled()Z
 
@@ -257,7 +255,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f080380
+    const v0, 0x7f08039b
 
     invoke-static {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -268,7 +266,7 @@
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f08037f
+    const v0, 0x7f08039a
 
     invoke-static {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 

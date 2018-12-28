@@ -29,7 +29,7 @@
 
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;-><init>(Lcom/android/systemui/qs/QSHost;)V
 
-    const v0, 0x7f0803ab
+    const v0, 0x7f0803c6
 
     invoke-static {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -121,8 +121,6 @@
 
 .method protected handleClick()V
     .locals 2
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     invoke-static {}, Landroid/app/ActivityManager;->isUserAMonkey()Z
 

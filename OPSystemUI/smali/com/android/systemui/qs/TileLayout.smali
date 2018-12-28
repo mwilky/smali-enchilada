@@ -7,8 +7,6 @@
 
 
 # instance fields
-.field public mQsColumns:I
-
 .field protected mCellHeight:I
 
 .field protected mCellMarginHorizontal:I
@@ -61,9 +59,7 @@
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/TileLayout;->setFocusableInTouchMode(Z)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/TileLayout;->readRenovateMods()V
-    
+
     invoke-virtual {p0}, Lcom/android/systemui/qs/TileLayout;->updateResources()Z
 
     return-void
@@ -543,8 +539,6 @@
     move-result v1
 
     const/4 v2, 0x1
-    
-    iget v1, p0, Lcom/android/systemui/qs/TileLayout;->mQsColumns:I
 
     invoke-static {v2, v1}, Ljava/lang/Math;->max(II)I
 
@@ -556,7 +550,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f070591
+    const v4, 0x7f07058f
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -564,7 +558,7 @@
 
     iput v3, p0, Lcom/android/systemui/qs/TileLayout;->mCellHeight:I
 
-    const v3, 0x7f070595
+    const v3, 0x7f070593
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -572,7 +566,7 @@
 
     iput v3, p0, Lcom/android/systemui/qs/TileLayout;->mCellMarginHorizontal:I
 
-    const v3, 0x7f070598
+    const v3, 0x7f070596
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -580,7 +574,7 @@
 
     iput v3, p0, Lcom/android/systemui/qs/TileLayout;->mCellMarginVertical:I
 
-    const v3, 0x7f070597
+    const v3, 0x7f070595
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -588,7 +582,7 @@
 
     iput v3, p0, Lcom/android/systemui/qs/TileLayout;->mCellMarginTop:I
 
-    const v3, 0x7f070593
+    const v3, 0x7f070591
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -610,14 +604,4 @@
     const/4 v2, 0x0
 
     return v2
-.end method
-
-.method public readRenovateMods()V
-    .locals 1
-	
-	sget v0, Lcom/android/mwilky/Renovate;->mQsColumns:I
-	
-	iput v0, p0, Lcom/android/systemui/qs/TileLayout;->mQsColumns:I
-	
-    return-void
 .end method

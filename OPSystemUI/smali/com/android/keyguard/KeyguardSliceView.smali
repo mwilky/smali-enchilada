@@ -935,7 +935,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0706c8
+    const v1, 0x7f0706c6
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -973,7 +973,7 @@
 
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
-    const v0, 0x7f0a0424
+    const v0, 0x7f0a0425
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardSliceView;->findViewById(I)Landroid/view/View;
 
@@ -983,7 +983,7 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardSliceView;->mTitle:Landroid/widget/TextView;
 
-    const v0, 0x7f0a0360
+    const v0, 0x7f0a0361
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardSliceView;->findViewById(I)Landroid/view/View;
 
@@ -995,7 +995,7 @@
 
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSliceView;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f040463
+    const v1, 0x7f040466
 
     invoke-static {v0, v1}, Lcom/android/settingslib/Utils;->getColorAttr(Landroid/content/Context;I)I
 

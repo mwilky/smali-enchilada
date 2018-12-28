@@ -45,7 +45,7 @@
 .method public onActiveDeviceChanged(Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;I)V
     .locals 4
 
-    invoke-static {}, Lcom/android/systemui/volume/OutputChooserDialog;->access$300()Ljava/lang/String;
+    invoke-static {}, Lcom/android/systemui/volume/OutputChooserDialog;->access$000()Ljava/lang/String;
 
     move-result-object v0
 
@@ -67,13 +67,13 @@
 
     iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog$BluetoothCallbackHandler;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
 
-    invoke-static {v0}, Lcom/android/systemui/volume/OutputChooserDialog;->access$1000(Lcom/android/systemui/volume/OutputChooserDialog;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/systemui/volume/OutputChooserDialog;->access$1100(Lcom/android/systemui/volume/OutputChooserDialog;)Landroid/os/Handler;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog$BluetoothCallbackHandler;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
 
-    invoke-static {v1}, Lcom/android/systemui/volume/OutputChooserDialog;->access$900(Lcom/android/systemui/volume/OutputChooserDialog;)Ljava/lang/Runnable;
+    invoke-static {v1}, Lcom/android/systemui/volume/OutputChooserDialog;->access$1000(Lcom/android/systemui/volume/OutputChooserDialog;)Ljava/lang/Runnable;
 
     move-result-object v1
 
@@ -81,7 +81,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog$BluetoothCallbackHandler;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
 
-    invoke-static {v0}, Lcom/android/systemui/volume/OutputChooserDialog;->access$1100(Lcom/android/systemui/volume/OutputChooserDialog;)Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
+    invoke-static {v0}, Lcom/android/systemui/volume/OutputChooserDialog;->access$1200(Lcom/android/systemui/volume/OutputChooserDialog;)Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
     move-result-object v0
 
@@ -89,13 +89,13 @@
 
     iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog$BluetoothCallbackHandler;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
 
-    invoke-static {v0}, Lcom/android/systemui/volume/OutputChooserDialog;->access$1000(Lcom/android/systemui/volume/OutputChooserDialog;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/systemui/volume/OutputChooserDialog;->access$1100(Lcom/android/systemui/volume/OutputChooserDialog;)Landroid/os/Handler;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog$BluetoothCallbackHandler;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
 
-    invoke-static {v1}, Lcom/android/systemui/volume/OutputChooserDialog;->access$900(Lcom/android/systemui/volume/OutputChooserDialog;)Ljava/lang/Runnable;
+    invoke-static {v1}, Lcom/android/systemui/volume/OutputChooserDialog;->access$1000(Lcom/android/systemui/volume/OutputChooserDialog;)Ljava/lang/Runnable;
 
     move-result-object v1
 
@@ -110,14 +110,14 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->access$1102(Lcom/android/systemui/volume/OutputChooserDialog;Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->access$1202(Lcom/android/systemui/volume/OutputChooserDialog;Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog$BluetoothCallbackHandler;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->access$200(Lcom/android/systemui/volume/OutputChooserDialog;Z)V
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->access$400(Lcom/android/systemui/volume/OutputChooserDialog;Z)V
 
     return-void
 .end method
@@ -147,7 +147,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->access$200(Lcom/android/systemui/volume/OutputChooserDialog;Z)V
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->access$400(Lcom/android/systemui/volume/OutputChooserDialog;Z)V
 
     return-void
 .end method
@@ -165,7 +165,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->access$200(Lcom/android/systemui/volume/OutputChooserDialog;Z)V
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->access$400(Lcom/android/systemui/volume/OutputChooserDialog;Z)V
 
     return-void
 .end method

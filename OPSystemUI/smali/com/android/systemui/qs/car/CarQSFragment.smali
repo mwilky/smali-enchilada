@@ -404,7 +404,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/car/CarQSFragment;->mHeader:Landroid/view/View;
 
-    const v0, 0x7f0a0333
+    const v0, 0x7f0a0334
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -416,7 +416,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/car/CarQSFragment;->mFooter:Lcom/android/systemui/qs/car/CarQSFooter;
 
-    const v1, 0x7f0a046d
+    const v1, 0x7f0a046e
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/car/CarQSFooter;->findViewById(I)Landroid/view/View;
 
@@ -426,7 +426,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/car/CarQSFragment;->mFooter:Lcom/android/systemui/qs/car/CarQSFooter;
 
-    const v1, 0x7f0a046f
+    const v1, 0x7f0a0470
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/car/CarQSFooter;->findViewById(I)Landroid/view/View;
 
@@ -434,7 +434,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/car/CarQSFragment;->mFooterExpandIcon:Landroid/view/View;
 
-    const v0, 0x7f0a0470
+    const v0, 0x7f0a0471
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -452,7 +452,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/qs/car/CarQSFragment;->mUserSwitcherContainer:Landroid/view/View;
 
-    const v2, 0x7f0a046c
+    const v2, 0x7f0a046d
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

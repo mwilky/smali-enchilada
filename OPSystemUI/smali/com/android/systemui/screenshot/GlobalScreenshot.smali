@@ -281,7 +281,7 @@
 
     move v3, v2
 
-    const v4, 0x7f0703bb
+    const v4, 0x7f0703b9
 
     :try_start_0
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -307,7 +307,7 @@
     :cond_0
     iput v3, p0, Lcom/android/systemui/screenshot/GlobalScreenshot;->mPreviewWidth:I
 
-    const v4, 0x7f0703ac
+    const v4, 0x7f0703aa
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -625,7 +625,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0805a7
+    const v3, 0x7f0805c2
 
     invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 

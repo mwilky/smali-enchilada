@@ -418,8 +418,6 @@
 
 .method protected handleClick()V
     .locals 2
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/CellularTile;->getState()Lcom/android/systemui/plugins/qs/QSTile$State;
 
@@ -613,7 +611,7 @@
 
     if-eqz v5, :cond_4
 
-    const v5, 0x7f08037e
+    const v5, 0x7f080399
 
     invoke-static {v5}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -624,7 +622,7 @@
     goto :goto_3
 
     :cond_4
-    const v5, 0x7f0803bb
+    const v5, 0x7f0803d6
 
     invoke-static {v5}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 

@@ -57,7 +57,7 @@
 
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tileimpl/QSIconViewImpl;-><init>(Landroid/content/Context;)V
 
-    const v0, 0x7f08038b
+    const v0, 0x7f0803a6
 
     invoke-direct {p0, v0}, Lcom/android/systemui/qs/SignalTileView;->addTrafficView(I)Landroid/widget/ImageView;
 
@@ -65,7 +65,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/SignalTileView;->mIn:Landroid/widget/ImageView;
 
-    const v0, 0x7f08038c
+    const v0, 0x7f0803a7
 
     invoke-direct {p0, v0}, Lcom/android/systemui/qs/SignalTileView;->addTrafficView(I)Landroid/widget/ImageView;
 
@@ -83,7 +83,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0706c2
+    const v1, 0x7f0706c0
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -95,7 +95,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070602
+    const v1, 0x7f070600
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -107,7 +107,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07058e
+    const v1, 0x7f07058c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

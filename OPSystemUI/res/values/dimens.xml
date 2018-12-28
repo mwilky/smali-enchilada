@@ -907,8 +907,6 @@
     <dimen name="navigation_key_padding">0.0dip</dimen>
     <dimen name="navigation_key_width">70.0dip</dimen>
     <dimen name="navigation_side_padding">36.0dip</dimen>
-    <dimen name="navigation_side_padding_custom">51.0px</dimen>
-    <dimen name="navigation_side_padding_custom_round">36.0px</dimen>
     <dimen name="network_speed_padding_end">3.0dip</dimen>
     <dimen name="no_signal_cluster_battery_padding">3.0dip</dimen>
     <dimen name="notification_action_icon_size">32.0dip</dimen>
@@ -1230,6 +1228,7 @@
     <dimen name="op_navigation_key_padding">20.0px</dimen>
     <dimen name="op_navigation_key_padding_big">67.0px</dimen>
     <dimen name="op_navigation_key_width">211.0px</dimen>
+    <dimen name="op_navigation_side_padding">30.0px</dimen>
     <item type="dimen" name="op_output_chooser_dialog_detail_item_height">@dimen/oneplus_contorl_list_item_height_one_line1</item>
     <item type="dimen" name="op_output_chooser_dialog_detail_item_icon_1_width">@dimen/oneplus_contorl_layout_margin_left4</item>
     <item type="dimen" name="op_output_chooser_dialog_detail_item_icon_2_margen_start">@dimen/oneplus_contorl_padding_space2</item>
@@ -1249,8 +1248,7 @@
     <dimen name="op_quick_launch_label_size">47.0px</dimen>
     <dimen name="op_quick_launch_track_view_padding">158.0px</dimen>
     <dimen name="op_reduce_padding_space2">-9.0dip</dimen>
-    <dimen name="op_rounded_corner_content_padding">0.0dip</dimen>
-    <dimen name="op_rounded_corner_content_padding_custom">0.0dip</dimen>
+    <dimen name="op_rounded_corner_content_padding">8.0dip</dimen>
     <item type="dimen" name="op_tabs_padding_end">@dimen/oneplus_contorl_layout_margin_right2</item>
     <item type="dimen" name="op_tabs_padding_start">@dimen/oneplus_contorl_layout_margin_left2</item>
     <dimen name="op_text_size_menu_material">16.0sp</dimen>

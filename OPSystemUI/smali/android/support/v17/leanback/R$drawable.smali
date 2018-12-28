@@ -15,14 +15,14 @@
 
 
 # static fields
-.field public static final lb_ic_in_app_search:I = 0x7f08043b
+.field public static final lb_ic_in_app_search:I = 0x7f080456
 
-.field public static final lb_ic_nav_arrow:I = 0x7f08043f
+.field public static final lb_ic_nav_arrow:I = 0x7f08045a
 
-.field public static final lb_ic_search_mic:I = 0x7f080447
+.field public static final lb_ic_search_mic:I = 0x7f080462
 
-.field public static final lb_ic_search_mic_out:I = 0x7f080448
+.field public static final lb_ic_search_mic_out:I = 0x7f080463
 
-.field public static final lb_text_dot_one:I = 0x7f08045a
+.field public static final lb_text_dot_one:I = 0x7f080475
 
-.field public static final lb_text_dot_two:I = 0x7f08045c
+.field public static final lb_text_dot_two:I = 0x7f080477

@@ -91,6 +91,8 @@
 
 .field private mIsScreenTurnedOn:Z
 
+.field private mIsScreenTurningOn:Z
+
 .field private mIsSleep:Z
 
 .field private mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -183,6 +185,8 @@
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsKeyguardShowing:Z
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mBouncer:Z
+
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsScreenTurningOn:Z
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsScreenTurnedOn:Z
 
@@ -1361,6 +1365,14 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
+    const-string v3, ", on:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v3, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsScreenTurnedOn:Z
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -1451,6 +1463,10 @@
     iput-boolean v5, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mFaceLockActive:Z
 
     iput-boolean v5, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mNeedToPendingStopFacelock:Z
+
+    iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsScreenTurningOn:Z
+
+    if-nez v1, :cond_5
 
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsScreenTurnedOn:Z
 
@@ -3570,6 +3586,8 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsScreenTurnedOn:Z
 
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsScreenTurningOn:Z
+
     return-void
 .end method
 
@@ -3651,6 +3669,27 @@
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_2
+    return-void
+.end method
+
+.method public onScreenTurningOn()V
+    .locals 2
+
+    sget-boolean v0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->DEBUG:Z
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "OPFacelockController"
+
+    const-string v1, "onScreenTurningOn"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController;->mIsScreenTurningOn:Z
+
     return-void
 .end method
 

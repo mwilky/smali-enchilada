@@ -1015,7 +1015,7 @@
     goto :goto_1
 
     :cond_1
-    const v3, 0x7f0a02a5
+    const v3, 0x7f0a02a6
 
     if-ne v0, v3, :cond_3
 
@@ -1065,7 +1065,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07060e
+    const v1, 0x7f07060c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1073,7 +1073,7 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/NotificationSnooze;->mCollapsedHeight:I
 
-    const v0, 0x7f0a02a5
+    const v0, 0x7f0a02a6
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/NotificationSnooze;->findViewById(I)Landroid/view/View;
 
@@ -1081,7 +1081,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a03c9
+    const v0, 0x7f0a03ca
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/NotificationSnooze;->findViewById(I)Landroid/view/View;
 
@@ -1091,7 +1091,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/NotificationSnooze;->mSelectedOptionText:Landroid/widget/TextView;
 
-    const v0, 0x7f0a045b
+    const v0, 0x7f0a045c
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/NotificationSnooze;->findViewById(I)Landroid/view/View;
 
@@ -1129,7 +1129,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    const v0, 0x7f0a03ca
+    const v0, 0x7f0a03cb
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/NotificationSnooze;->findViewById(I)Landroid/view/View;
 

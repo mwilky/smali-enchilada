@@ -27,7 +27,7 @@
 
     iput-object p1, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mContext:Landroid/content/Context;
 
-    const v0, 0x7f0a027b
+    const v0, 0x7f0a027c
 
     invoke-virtual {p1, v0}, Lcom/android/systemui/recents/RecentsActivity;->findViewById(I)Landroid/view/View;
 

@@ -61,7 +61,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07058b
+    const v1, 0x7f070589
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -83,7 +83,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f07058c
+    const v2, 0x7f07058a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -121,7 +121,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mBg:Landroid/widget/ImageView;
 
-    const v3, 0x7f08036b
+    const v3, 0x7f080386
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 

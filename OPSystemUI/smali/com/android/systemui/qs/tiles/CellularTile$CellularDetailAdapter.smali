@@ -92,7 +92,7 @@
     :cond_1
     invoke-virtual {v1, v2}, Lcom/android/systemui/qs/tiles/DataUsageDetailView;->bind(Lcom/android/settingslib/net/DataUsageController$DataUsageInfo;)V
 
-    const v3, 0x7f0a035c
+    const v3, 0x7f0a035d
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/qs/tiles/DataUsageDetailView;->findViewById(I)Landroid/view/View;
 

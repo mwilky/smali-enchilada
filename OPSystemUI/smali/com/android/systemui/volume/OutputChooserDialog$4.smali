@@ -1,9 +1,6 @@
 .class Lcom/android/systemui/volume/OutputChooserDialog$4;
-.super Ljava/lang/Object;
+.super Landroid/os/Handler;
 .source "OutputChooserDialog.java"
-
-# interfaces
-.implements Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;
 
 
 # annotations
@@ -27,120 +24,86 @@
 
     iput-object p1, p0, Lcom/android/systemui/volume/OutputChooserDialog$4;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAccessibilityModeChanged(Ljava/lang/Boolean;)V
-    .locals 0
+.method public handleMessage(Landroid/os/Message;)V
+    .locals 4
 
-    return-void
-.end method
+    iget v0, p1, Landroid/os/Message;->what:I
 
-.method public onConfigurationChanged()V
-    .locals 1
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog$4;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
+    goto :goto_0
 
-    invoke-virtual {v0}, Lcom/android/systemui/volume/OutputChooserDialog;->dismiss()V
+    :pswitch_0
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    return-void
-.end method
-
-.method public onConnectedDeviceChanged(Ljava/lang/String;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onDismissRequested(I)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onLayoutDirectionChanged(I)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onPhoneStateChanged(I)V
-    .locals 2
-
-    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog$4;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
-
-    invoke-static {v0}, Lcom/android/systemui/volume/OutputChooserDialog;->access$500(Lcom/android/systemui/volume/OutputChooserDialog;)Landroid/telecom/TelecomManager;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog$4;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
+    check-cast v0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
     iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog$4;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
 
-    invoke-static {v1}, Lcom/android/systemui/volume/OutputChooserDialog;->access$500(Lcom/android/systemui/volume/OutputChooserDialog;)Landroid/telecom/TelecomManager;
+    invoke-virtual {v1, v0}, Lcom/android/systemui/volume/OutputChooserDialog;->setActiveBluetoothDevice(Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)V
+
+    iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog$4;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v2}, Lcom/android/systemui/volume/OutputChooserDialog;->access$502(Lcom/android/systemui/volume/OutputChooserDialog;Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
+
+    invoke-static {}, Lcom/android/systemui/volume/OutputChooserDialog;->access$000()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/telecom/TelecomManager;->isInCall()Z
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "active the select device:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    :pswitch_1
+    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog$4;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
+
+    iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/Boolean;
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
-    invoke-static {v0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->access$602(Lcom/android/systemui/volume/OutputChooserDialog;Z)Z
+    invoke-static {v0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->access$400(Lcom/android/systemui/volume/OutputChooserDialog;Z)V
 
-    :cond_0
-    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog$4;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
+    nop
 
-    invoke-static {v0}, Lcom/android/systemui/volume/OutputChooserDialog;->access$700(Lcom/android/systemui/volume/OutputChooserDialog;)V
-
+    :goto_0
     return-void
-.end method
 
-.method public onScreenOff()V
-    .locals 1
+    nop
 
-    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog$4;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
-
-    invoke-virtual {v0}, Lcom/android/systemui/volume/OutputChooserDialog;->dismiss()V
-
-    return-void
-.end method
-
-.method public onShowRequested(I)V
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog$4;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
-
-    invoke-virtual {v0}, Lcom/android/systemui/volume/OutputChooserDialog;->dismiss()V
-
-    return-void
-.end method
-
-.method public onShowSafetyWarning(I)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onShowSilentHint()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onShowVibrateHint()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onStateChanged(Lcom/android/systemui/plugins/VolumeDialogController$State;)V
-    .locals 0
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

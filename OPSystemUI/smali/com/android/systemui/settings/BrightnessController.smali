@@ -810,12 +810,12 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f080362
+    const v0, 0x7f08037d
 
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f080360
+    const v0, 0x7f08037b
 
     :goto_0
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setImageResource(I)V
@@ -825,11 +825,11 @@
 
     iget-boolean v0, p0, Lcom/android/systemui/settings/BrightnessController;->mIsVrModeEnabled:Z
 
-    const v1, 0x7f080366
+    const v1, 0x7f080381
 
-    const v2, 0x7f080364
+    const v2, 0x7f08037f
 
-    const v3, 0x7f080365
+    const v3, 0x7f080380
 
     if-eqz v0, :cond_4
 

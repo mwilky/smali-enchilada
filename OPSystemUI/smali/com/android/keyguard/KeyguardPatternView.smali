@@ -879,7 +879,7 @@
     :goto_0
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPatternView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    const v0, 0x7f0a021e
+    const v0, 0x7f0a021f
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPatternView;->findViewById(I)Landroid/view/View;
 
@@ -941,7 +941,7 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPatternView;->mSecurityMessageDisplay:Lcom/android/keyguard/KeyguardMessageArea;
 
-    const v0, 0x7f0a01e0
+    const v0, 0x7f0a01e1
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPatternView;->findViewById(I)Landroid/view/View;
 

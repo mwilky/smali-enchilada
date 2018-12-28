@@ -10,17 +10,13 @@
 
 
 # instance fields
-.field private mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
-
-.field public mCarrierLabelTextColor:I
-
 .field private mBatteryCharging:Z
 
 .field private mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
 
 .field private mBatteryListening:Z
 
-.field public mBatteryView:Lcom/android/systemui/BatteryMeterView;
+.field private mBatteryView:Lcom/android/systemui/BatteryMeterView;
 
 .field private mCarrierLabel:Landroid/widget/TextView;
 
@@ -410,7 +406,7 @@
 
     const/16 v1, 0x10
 
-    const v2, 0x7f0a03e0
+    const v2, 0x7f0a03e1
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
@@ -444,7 +440,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f070641
+    const v4, 0x7f07063f
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -510,10 +506,8 @@
     return-void
 .end method
 
-.method public updateVisibilities()V
-    .locals 1
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->setLockscreenStatusbarVisibility()V
+.method private updateVisibilities()V
+    .locals 0
 
     return-void
 .end method
@@ -596,7 +590,7 @@
 
     new-instance v1, Lcom/android/systemui/statusbar/phone/StatusBarIconController$TintedIconManager;
 
-    const v2, 0x7f0a03d7
+    const v2, 0x7f0a03d8
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -658,7 +652,7 @@
 
     iput-boolean p3, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mBatteryCharging:Z
 
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
 
     :cond_0
     return-void
@@ -729,7 +723,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f070641
+    const v2, 0x7f07063f
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -759,7 +753,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f07063f
+    const v5, 0x7f07063d
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -831,7 +825,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f070626
+    const v2, 0x7f070624
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -903,7 +897,7 @@
 
     invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
 
-    const v0, 0x7f0a03f4
+    const v0, 0x7f0a03f5
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -911,7 +905,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mSystemIconsContainer:Landroid/view/View;
 
-    const v0, 0x7f0a0276
+    const v0, 0x7f0a0277
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -927,7 +921,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/MultiUserSwitch;->setVisibility(I)V
 
-    const v0, 0x7f0a0275
+    const v0, 0x7f0a0276
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -937,7 +931,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mMultiUserAvatar:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a01d0
+    const v0, 0x7f0a01d1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -946,26 +940,6 @@
     check-cast v0, Landroid/widget/TextView;
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mCarrierLabel:Landroid/widget/TextView;
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->setCarrierTextColor()V
-    
-    const-string v0, "clock_right"
-
-    const-string v1, "id"
-
-    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v1
-    
-    invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/systemui/statusbar/policy/ClockRight;
-
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->setClockPosition()V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mSystemIconsContainer:Landroid/view/View;
 
@@ -978,8 +952,6 @@
     check-cast v0, Lcom/android/systemui/BatteryMeterView;
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mBatteryView:Lcom/android/systemui/BatteryMeterView;
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->setBatteryPosition()V
 
     const v0, 0x7f0a00e7
 
@@ -989,7 +961,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mCutoutSpace:Landroid/view/View;
 
-    const v0, 0x7f0a03e0
+    const v0, 0x7f0a03e1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -1013,7 +985,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
 
-    const v0, 0x7f0a03d7
+    const v0, 0x7f0a03d8
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -1038,14 +1010,12 @@
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->setLockscreenStatusbarVisibility()V
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f070634
+    const v1, 0x7f070632
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1155,7 +1125,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f040463
+    const v1, 0x7f040466
 
     invoke-static {v0, v1}, Lcom/android/settingslib/Utils;->getColorAttr(Landroid/content/Context;I)I
 
@@ -1208,6 +1178,10 @@
     const v1, -0x333334
 
     :cond_2
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mCarrierLabel:Landroid/widget/TextView;
+
+    invoke-virtual {v3, v1}, Landroid/widget/TextView;->setTextColor(I)V
+
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mBatteryView:Lcom/android/systemui/BatteryMeterView;
 
     invoke-virtual {v3, v1}, Lcom/android/systemui/BatteryMeterView;->setFillColor(I)V
@@ -1222,7 +1196,7 @@
 
     invoke-direct {v3, v4, v4, v4, v4}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    const v4, 0x7f0a03bd
+    const v4, 0x7f0a03be
 
     invoke-direct {p0, v4, v3, v2, v1}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->applyDarkness(ILandroid/graphics/Rect;FI)V
 
@@ -1269,7 +1243,7 @@
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->animateNextLayoutChange()V
 
     :cond_0
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateLayoutConsideringCutout()Z
 
@@ -1339,7 +1313,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateSystemIconsLayoutParams()V
 
@@ -1370,91 +1344,5 @@
     :goto_1
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    return-void
-.end method
-
-.method public readRenovateMods()V
-    .locals 1
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mCarrierTextColorOP:I
-    
-	iput v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mCarrierLabelTextColor:I
-	
-    return-void
-.end method
-
-.method public setCarrierTextColor()V
-    .locals 2
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->readRenovateMods()V
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mCarrierLabel:Landroid/widget/TextView;
-    
-	iget v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mCarrierLabelTextColor:I
-	
-	invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
-	
-    return-void
-.end method
-
-.method public setLockscreenStatusbarVisibility()V
-    .locals 2
-    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideLockscreenStatusbar:Z
-    
-    if-nez v0, :cond_hidden
-
-	goto :goto_exit
-    
-    :cond_hidden
-    const v1, 0x8
-    
-    invoke-virtual {p0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
-	
-    :goto_exit
-    return-void
-.end method
-
-.method public setLockscreenStatusbarVisibility()V
-    .locals 2
-    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideLockscreenStatusbar:Z
-    
-    if-nez v0, :cond_hidden
-
-	goto :goto_exit
-    
-    :cond_hidden
-    const v1, 0x8
-    
-    invoke-virtual {p0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
-	
-    :goto_exit
-    return-void
-.end method
-
-.method public setClockPosition()V
-    .locals 2
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
-    
-    if-eqz v0, :cond_exit
-    
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/ClockRight;->updateClockVisibility()V
-    
-    :cond_exit
-    return-void
-.end method
-
-.method public setBatteryPosition()V
-    .locals 2
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mBatteryView:Lcom/android/systemui/BatteryMeterView;
-    
-    if-eqz v0, :cond_exit
-    
-    invoke-virtual {v0}, Lcom/android/systemui/BatteryMeterView;->batteryPosition()V
-    
-    :cond_exit
     return-void
 .end method

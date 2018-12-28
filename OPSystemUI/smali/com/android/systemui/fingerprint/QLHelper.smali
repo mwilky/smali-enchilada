@@ -77,7 +77,7 @@
 
     move-result-object v1
 
-    const v2, 0x5020021
+    const v2, 0x5020022
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -247,7 +247,7 @@
     goto :goto_0
 
     :pswitch_0
-    const v2, 0x7f080231
+    const v2, 0x7f08024c
 
     invoke-direct {p0, v1, v2}, Lcom/android/systemui/fingerprint/QLHelper;->getDrawable(Landroid/content/res/Resources;I)Landroid/graphics/drawable/Drawable;
 
@@ -256,7 +256,7 @@
     goto :goto_0
 
     :pswitch_1
-    const v2, 0x7f080230
+    const v2, 0x7f08024b
 
     invoke-direct {p0, v1, v2}, Lcom/android/systemui/fingerprint/QLHelper;->getDrawable(Landroid/content/res/Resources;I)Landroid/graphics/drawable/Drawable;
 
@@ -265,7 +265,7 @@
     goto :goto_0
 
     :pswitch_2
-    const v2, 0x7f08041d
+    const v2, 0x7f080438
 
     invoke-direct {p0, v1, v2}, Lcom/android/systemui/fingerprint/QLHelper;->getDrawable(Landroid/content/res/Resources;I)Landroid/graphics/drawable/Drawable;
 
@@ -274,7 +274,7 @@
     goto :goto_0
 
     :pswitch_3
-    const v2, 0x7f08041c
+    const v2, 0x7f080437
 
     invoke-direct {p0, v1, v2}, Lcom/android/systemui/fingerprint/QLHelper;->getDrawable(Landroid/content/res/Resources;I)Landroid/graphics/drawable/Drawable;
 
@@ -363,7 +363,7 @@
 
     move-result-object v1
 
-    const v2, 0x5020020
+    const v2, 0x5020021
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

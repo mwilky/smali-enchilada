@@ -175,7 +175,7 @@
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mIndicationArea:Landroid/view/ViewGroup;
 
-    const v1, 0x7f0a01d8
+    const v1, 0x7f0a01d9
 
     invoke-virtual {p2, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -203,7 +203,7 @@
     :goto_0
     iput v1, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mInitialTextColor:I
 
-    const v1, 0x7f0a01d7
+    const v1, 0x7f0a01d8
 
     invoke-virtual {p2, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -695,7 +695,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0704c9
+    const v3, 0x7f0704c7
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -759,7 +759,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0704c9
+    const v3, 0x7f0704c7
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -1216,7 +1216,7 @@
 
     if-eqz v0, :cond_1
 
-    const v3, 0x7f0704ca
+    const v3, 0x7f0704c8
 
     goto :goto_0
 
@@ -1953,7 +1953,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f08019f
+    const v2, 0x7f0801ba
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2221,32 +2221,7 @@
     iget-object v5, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mChargingInfo:Landroid/widget/TextView;
 
     invoke-virtual {v5, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/KeyguardIndicationController;->setViewsVisibility()V
 
     :cond_7
-    return-void
-.end method
-
-.method public setViewsVisibility()V
-    .locals 4
-
-    .prologue    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideLockscreenClock:Z
-    
-    iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mChargingInfo:Landroid/widget/TextView;
-    
-    if-nez v0, :cond_hide
-    
-    const v2, 0x0
-    
-    goto :goto_vis    
-    
-    :cond_hide
-    const v2, 0x8
-    
-    :goto_vis
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
-    
     return-void
 .end method

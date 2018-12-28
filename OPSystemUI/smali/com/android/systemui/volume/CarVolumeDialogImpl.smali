@@ -737,7 +737,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/volume/CarVolumeDialogImpl;->mWindow:Landroid/view/Window;
 
-    const v3, 0x7f0a047f
+    const v3, 0x7f0a0480
 
     invoke-virtual {v2, v3}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 

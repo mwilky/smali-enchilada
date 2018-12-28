@@ -266,7 +266,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0703a3
+    const v1, 0x7f0703a1
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -274,7 +274,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/NotificationShelf;->mIconAppearTopPadding:I
 
-    const v1, 0x7f070628
+    const v1, 0x7f070626
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -282,7 +282,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/NotificationShelf;->mStatusBarHeight:I
 
-    const v1, 0x7f070633
+    const v1, 0x7f070631
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -290,7 +290,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/NotificationShelf;->mStatusBarPaddingStart:I
 
-    const v1, 0x7f07039a
+    const v1, 0x7f070398
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -298,7 +298,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/NotificationShelf;->mPaddingBetweenElements:I
 
-    const v1, 0x7f0705fd
+    const v1, 0x7f0705fb
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -310,7 +310,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0703bf
+    const v2, 0x7f0703bd
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -320,7 +320,7 @@
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/NotificationShelf;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    const v2, 0x7f0705fe
+    const v2, 0x7f0705fc
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -332,7 +332,7 @@
 
     invoke-virtual {v3, v2, v4, v2, v4}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer;->setPadding(IIII)V
 
-    const v3, 0x7f0705ef
+    const v3, 0x7f0705ed
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
