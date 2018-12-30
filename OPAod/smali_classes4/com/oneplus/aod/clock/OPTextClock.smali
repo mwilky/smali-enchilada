@@ -790,7 +790,7 @@
 
     :cond_3
     iget v2, v0, Lcom/oneplus/aod/clock/OPTextClock;->mDigitColorWhite:I
-
+    
     :goto_3
     iget-object v15, v0, Lcom/oneplus/aod/clock/OPTextClock;->mHourPaint:Landroid/graphics/Paint;
 
@@ -1128,6 +1128,12 @@
     invoke-virtual {v1, v11, v3, v6, v15}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
     :goto_9
+    iget-object v5, v0, Lcom/oneplus/aod/clock/OPTextClock;->mMinPaint:Landroid/graphics/Paint;
+    
+    iget v2, v0, Lcom/oneplus/aod/clock/OPTextClock;->mDigitColorWhite:I
+
+    invoke-virtual {v5, v2}, Landroid/graphics/Paint;->setColor(I)V
+    
     return-void
 .end method
 
@@ -1494,6 +1500,8 @@
 
 .method private drawClockDigital(Landroid/graphics/Canvas;)V
     .locals 9
+    
+    invoke-virtual {p0}, Lcom/oneplus/aod/clock/OPTextClock;->updateTextColors()V
 
     iget-object v0, p0, Lcom/oneplus/aod/clock/OPTextClock;->mContext:Landroid/content/Context;
 
