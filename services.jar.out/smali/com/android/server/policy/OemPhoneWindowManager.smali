@@ -6090,7 +6090,6 @@
 
     invoke-direct {v0, v3, v7, v7}, Lcom/android/server/policy/OemPhoneWindowManager;->performKeyAction(ILandroid/view/KeyEvent;Z)V
 
-
     return-wide v27
 
     :cond_40
@@ -7236,7 +7235,7 @@
     
     move-result v0
     
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_31
     
     move-object/from16 v0, p0
     
