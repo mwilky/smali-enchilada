@@ -70,7 +70,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const v0, 0x7f070689
+    const v0, 0x7f070688
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimension(I)F
 

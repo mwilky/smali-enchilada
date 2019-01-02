@@ -163,7 +163,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f080593
+    const v2, 0x7f080578
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -171,7 +171,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mLightDismissDrawable:Landroid/graphics/drawable/Drawable;
 
-    const v2, 0x7f080592
+    const v2, 0x7f080577
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -229,7 +229,7 @@
 
     iput v2, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mTaskBarViewDarkTextColor:I
 
-    const v2, 0x7f0805a0
+    const v2, 0x7f080585
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -237,7 +237,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mLightFullscreenIcon:Landroid/graphics/drawable/Drawable;
 
-    const v2, 0x7f08059f
+    const v2, 0x7f080584
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -245,7 +245,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mDarkFullscreenIcon:Landroid/graphics/drawable/Drawable;
 
-    const v2, 0x7f080598
+    const v2, 0x7f08057d
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -253,7 +253,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mLightInfoIcon:Landroid/graphics/drawable/Drawable;
 
-    const v2, 0x7f080597
+    const v2, 0x7f08057c
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1409,7 +1409,7 @@
 
     invoke-virtual {v1, p0}, Landroid/widget/ImageView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    const v1, 0x7f0a0425
+    const v1, 0x7f0a0424
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/views/TaskViewHeader;->findViewById(I)Landroid/view/View;
 

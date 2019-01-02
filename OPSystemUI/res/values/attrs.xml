@@ -643,7 +643,6 @@
     <attr name="imageCardViewInfoAreaStyle" format="reference" />
     <attr name="imageCardViewStyle" format="reference" />
     <attr name="imageCardViewTitleStyle" format="reference" />
-    <attr name="indeterminate" format="boolean" />
     <attr name="indeterminateProgressStyle" format="reference" />
     <attr name="infoAreaBackground" format="reference|color" />
     <attr name="infoVisibility">
@@ -1377,7 +1376,6 @@
     <attr name="state_encrypted" format="boolean" />
     <attr name="state_encrypted_owe" format="boolean" />
     <attr name="state_encrypted_sae" format="boolean" />
-    <attr name="state_indeterminate" format="boolean" />
     <attr name="state_metered" format="boolean" />
     <attr name="state_saved" format="boolean" />
     <attr name="statusBarBackground" format="reference|color" />
@@ -1481,7 +1479,6 @@
     <attr name="textView" format="reference" />
     <attr name="theme" format="reference" />
     <attr name="thickness" format="dimension" />
-    <attr name="threeState" format="boolean" />
     <attr name="thumbTextPadding" format="dimension" />
     <attr name="thumbTint" format="color" />
     <attr name="thumbTintMode">

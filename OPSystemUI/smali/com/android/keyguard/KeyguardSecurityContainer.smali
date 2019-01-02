@@ -331,17 +331,17 @@
     return v0
 
     :pswitch_1
-    const v0, 0x7f0a01e4
-
-    return v0
-
-    :pswitch_2
     const v0, 0x7f0a01e3
 
     return v0
 
+    :pswitch_2
+    const v0, 0x7f0a01e2
+
+    return v0
+
     :pswitch_3
-    const v0, 0x7f0a01db
+    const v0, 0x7f0a01da
 
     return v0
 
@@ -354,17 +354,17 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0a01de
-
-    return v0
-
-    :cond_0
     const v0, 0x7f0a01dd
 
     return v0
 
-    :pswitch_5
+    :cond_0
     const v0, 0x7f0a01dc
+
+    return v0
+
+    :pswitch_5
+    const v0, 0x7f0a01db
 
     return v0
 
@@ -1424,7 +1424,7 @@
 .method protected onFinishInflate()V
     .locals 2
 
-    const v0, 0x7f0a0476
+    const v0, 0x7f0a0475
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardSecurityContainer;->findViewById(I)Landroid/view/View;
 
@@ -1902,7 +1902,7 @@
 
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mSecurityIcon:Landroid/view/View;
 
-    const v1, 0x7f0a03a7
+    const v1, 0x7f0a03a6
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1991,7 +1991,7 @@
 
     const/4 v6, 0x1
 
-    const v7, 0x7f08020b
+    const v7, 0x7f0801f0
 
     invoke-virtual {v0, v7}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2054,7 +2054,7 @@
     :goto_4
     move v6, v10
 
-    const v10, 0x7f080284
+    const v10, 0x7f080269
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setImageResource(I)V
 

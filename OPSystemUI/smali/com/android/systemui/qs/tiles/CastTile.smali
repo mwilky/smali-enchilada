@@ -245,8 +245,6 @@
 
 .method public static synthetic lambda$handleClick$0(Lcom/android/systemui/qs/tiles/CastTile;)V
     .locals 1
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     const/4 v0, 0x1
 
@@ -671,12 +669,12 @@
 
     if-eqz v0, :cond_5
 
-    const v0, 0x7f080385
+    const v0, 0x7f08036a
 
     goto :goto_3
 
     :cond_5
-    const v0, 0x7f080384
+    const v0, 0x7f080369
 
     :goto_3
     invoke-static {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;

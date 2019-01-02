@@ -236,7 +236,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a049f
+    const v1, 0x7f0a049e
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -320,7 +320,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/ChargingAnimationControllerImpl;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f040466
+    const v4, 0x7f040463
 
     invoke-static {v3, v4}, Lcom/android/settingslib/Utils;->getColorAttr(Landroid/content/Context;I)I
 

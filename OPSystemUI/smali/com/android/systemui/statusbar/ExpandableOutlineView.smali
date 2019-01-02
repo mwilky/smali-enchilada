@@ -63,11 +63,11 @@
 
     sget-object v2, Lcom/android/systemui/statusbar/-$$Lambda$5MBgGbVXpg7XHgCv0UsDp2v7mps;->INSTANCE:Lcom/android/systemui/statusbar/-$$Lambda$5MBgGbVXpg7XHgCv0UsDp2v7mps;
 
-    const v3, 0x7f0a0437
+    const v3, 0x7f0a0436
 
-    const v4, 0x7f0a0435
+    const v4, 0x7f0a0434
 
-    const v5, 0x7f0a0436
+    const v5, 0x7f0a0435
 
     invoke-static/range {v0 .. v5}, Lcom/android/systemui/statusbar/notification/AnimatableProperty;->from(Ljava/lang/String;Ljava/util/function/BiConsumer;Ljava/util/function/Function;III)Lcom/android/systemui/statusbar/notification/AnimatableProperty;
 

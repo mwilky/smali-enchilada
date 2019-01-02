@@ -3060,7 +3060,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f040466
+    const v1, 0x7f040463
 
     invoke-static {v0, v1}, Lcom/android/settingslib/Utils;->getColorAttr(Landroid/content/Context;I)I
 

@@ -1754,7 +1754,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    const v0, 0x7f0a0240
+    const v0, 0x7f0a023f
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/pip/phone/PipMenuActivity;->findViewById(I)Landroid/view/View;
 
@@ -1776,7 +1776,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    const v0, 0x7f0a03b1
+    const v0, 0x7f0a03b0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/pip/phone/PipMenuActivity;->findViewById(I)Landroid/view/View;
 

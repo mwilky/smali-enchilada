@@ -815,7 +815,7 @@
 
     const-string v8, "lock_unlock_success"
 
-    const-string/jumbo v9, "swipe"
+    const-string v9, "swipe"
 
     const-string v10, "1"
 
@@ -1186,10 +1186,6 @@
 
 .method private runPeekAnimation(JFZ)V
     .locals 5
-    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mStatusbarPeek:Z
-    
-    if-eqz v0, :cond_mw
 
     iput p3, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mPeekHeight:F
 
@@ -1197,7 +1193,6 @@
 
     if-eqz v0, :cond_0
 
-    :cond_mw
     return-void
 
     :cond_0
@@ -2961,7 +2956,7 @@
 
     iput v2, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mHintDistance:F
 
-    const v2, 0x7f070692
+    const v2, 0x7f070691
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

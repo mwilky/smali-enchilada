@@ -22,7 +22,7 @@
     :try_start_0
     const-class v1, Landroid/view/ViewGroup;
 
-    const-string/jumbo v2, "suppressLayout"
+    const-string v2, "suppressLayout"
 
     new-array v3, v0, [Ljava/lang/Class;
 

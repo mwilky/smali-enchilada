@@ -66,12 +66,12 @@
 
     if-eqz p2, :cond_0
 
-    const v0, 0x7f0805b0
+    const v0, 0x7f080595
 
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f0805ad
+    const v0, 0x7f080592
 
     :goto_0
     const/4 v1, 0x0
@@ -123,12 +123,12 @@
 
     if-eqz p2, :cond_2
 
-    const v1, 0x7f0805b1
+    const v1, 0x7f080596
 
     goto :goto_1
 
     :cond_2
-    const v1, 0x7f0805ae
+    const v1, 0x7f080593
 
     :goto_1
     invoke-virtual {p0, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;

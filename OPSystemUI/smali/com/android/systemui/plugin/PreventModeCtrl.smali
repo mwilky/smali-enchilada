@@ -40,8 +40,6 @@
 
 .field private mKeyguardIsVisible:Z
 
-.field private mOPSceneModeObserver:Lcom/oneplus/scene/OPSceneModeObserver;
-
 .field private mObject:Ljava/lang/Object;
 
 .field mPMView:Lcom/android/systemui/plugin/PreventModeView;
@@ -154,50 +152,6 @@
     invoke-direct {p0}, Lcom/android/systemui/plugin/PreventModeCtrl;->disableProximitySensorInternal()V
 
     return-void
-.end method
-
-.method private bypassPreventMode()Z
-    .locals 2
-
-    invoke-static {}, Lcom/android/systemui/plugin/LSState;->getInstance()Lcom/android/systemui/plugin/LSState;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/systemui/plugin/LSState;->getPhoneStatusBar()Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->isCameraForeground()Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    :cond_0
-    iget-object v1, p0, Lcom/android/systemui/plugin/PreventModeCtrl;->mOPSceneModeObserver:Lcom/oneplus/scene/OPSceneModeObserver;
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, p0, Lcom/android/systemui/plugin/PreventModeCtrl;->mOPSceneModeObserver:Lcom/oneplus/scene/OPSceneModeObserver;
-
-    invoke-virtual {v1}, Lcom/oneplus/scene/OPSceneModeObserver;->isBreathModeEnabled()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    :cond_1
-    const/4 v1, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v1, 0x0
-
-    :goto_0
-    return v1
 .end method
 
 .method private disableProximitySensorInternal()V
@@ -380,17 +334,11 @@
 
     sget-boolean v0, Lcom/android/systemui/plugin/PreventModeCtrl;->mPreventModeActive:Z
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_5
 
     iget-boolean v0, p0, Lcom/android/systemui/plugin/PreventModeCtrl;->mKeyguardIsShowing:Z
 
-    if-eqz v0, :cond_4
-
-    invoke-direct {p0}, Lcom/android/systemui/plugin/PreventModeCtrl;->bypassPreventMode()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
     goto/16 :goto_0
 
@@ -403,6 +351,17 @@
 
     move-result-object v0
 
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->isCameraForeground()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    return-void
+
+    :cond_1
     iget-object v1, p0, Lcom/android/systemui/plugin/PreventModeCtrl;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -461,9 +420,9 @@
 
     const/4 v2, 0x1
 
-    if-nez v1, :cond_1
+    if-nez v1, :cond_2
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     const/4 v1, 0x0
 
@@ -477,16 +436,16 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_1
+    :cond_2
     sput-boolean v2, Lcom/android/systemui/plugin/PreventModeCtrl;->mPreventModeActive:Z
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->getFacelockController()Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     move-result-object v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->getFacelockController()Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
@@ -494,10 +453,10 @@
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->stopFacelockLightMode()V
 
-    :cond_2
+    :cond_3
     invoke-virtual {v0, v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->notifyPreventModeChange(Z)V
 
-    :cond_3
+    :cond_4
     const/4 v1, 0x2
 
     new-array v1, v1, [F
@@ -538,9 +497,11 @@
 
     return-void
 
-    :cond_4
+    :cond_5
     :goto_0
     return-void
+
+    nop
 
     :array_0
     .array-data 4
@@ -712,7 +673,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a031c
+    const v1, 0x7f0a031b
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -730,7 +691,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a02fc
+    const v1, 0x7f0a02fb
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -808,16 +769,6 @@
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/plugin/PreventModeCtrl;->mProximitySensor:Landroid/hardware/Sensor;
-
-    const-class v0, Lcom/oneplus/scene/OPSceneModeObserver;
-
-    invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/oneplus/scene/OPSceneModeObserver;
-
-    iput-object v0, p0, Lcom/android/systemui/plugin/PreventModeCtrl;->mOPSceneModeObserver:Lcom/oneplus/scene/OPSceneModeObserver;
 
     return-void
 .end method

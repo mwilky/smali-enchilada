@@ -140,8 +140,8 @@
 
 .method static synthetic access$000(Lcom/android/systemui/qs/PagedTileLayout;)V
     .locals 0
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/PagedTileLayout;->distributeTiles()V
+
+    invoke-direct {p0}, Lcom/android/systemui/qs/PagedTileLayout;->distributeTiles()V
 
     return-void
 .end method
@@ -218,7 +218,7 @@
     return v0
 .end method
 
-.method public distributeTiles()V
+.method private distributeTiles()V
     .locals 9
 
     iget-object v0, p0, Lcom/android/systemui/qs/PagedTileLayout;->mPages:Ljava/util/ArrayList;
@@ -1268,30 +1268,9 @@
 
     :cond_0
     if-eqz v0, :cond_1
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/PagedTileLayout;->distributeTiles()V
-    
+
+    invoke-direct {p0}, Lcom/android/systemui/qs/PagedTileLayout;->distributeTiles()V
+
     :cond_1
     return v0
-.end method
-
-.method public updateTileLayout()V
-    .locals 3
-
-    .prologue
-    const/4 v0, 0x0
-
-    iget-object v1, p0, Lcom/android/systemui/qs/PagedTileLayout;->mPages:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/systemui/qs/PagedTileLayout$TilePage;
-
-    invoke-virtual {v1}, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->updateResources()Z
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/PagedTileLayout;->distributeTiles()V
-   
-    return-void
 .end method

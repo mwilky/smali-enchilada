@@ -87,7 +87,7 @@
 
     :cond_1
     :goto_0
-    const/high16 v0, 0x7fc00000    # Float.NaN
+    const/high16 v0, 0x7fc00000    # NaNf
 
     return v0
 .end method

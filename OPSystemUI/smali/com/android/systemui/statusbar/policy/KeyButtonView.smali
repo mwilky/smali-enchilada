@@ -312,7 +312,7 @@
 
     if-eq v0, v1, :cond_1
 
-    const v1, 0x7f0a0346
+    const v1, 0x7f0a0345
 
     if-eq v0, v1, :cond_0
 

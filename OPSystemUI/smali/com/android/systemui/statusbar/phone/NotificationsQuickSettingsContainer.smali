@@ -356,7 +356,7 @@
 
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    const v0, 0x7f0a0337
+    const v0, 0x7f0a0336
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/NotificationsQuickSettingsContainer;->findViewById(I)Landroid/view/View;
 
@@ -366,7 +366,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationsQuickSettingsContainer;->mQsFrame:Landroid/widget/FrameLayout;
 
-    const v0, 0x7f0a02a7
+    const v0, 0x7f0a02a6
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/NotificationsQuickSettingsContainer;->findViewById(I)Landroid/view/View;
 
@@ -388,7 +388,7 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/NotificationsQuickSettingsContainer;->mStackScrollerMargin:I
 
-    const v0, 0x7f0a01d5
+    const v0, 0x7f0a01d4
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/NotificationsQuickSettingsContainer;->findViewById(I)Landroid/view/View;
 
@@ -396,7 +396,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationsQuickSettingsContainer;->mKeyguardStatusBar:Landroid/view/View;
 
-    const v0, 0x7f0a01e7
+    const v0, 0x7f0a01e6
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/NotificationsQuickSettingsContainer;->findViewById(I)Landroid/view/View;
 

@@ -1578,7 +1578,6 @@
     <item type="dimen" name="status_bar_padding">@dimen/oneplus_contorl_layout_margin_left2</item>
     <item type="dimen" name="status_bar_padding_end">@dimen/status_bar_padding</item>
     <item type="dimen" name="status_bar_padding_start">@dimen/status_bar_padding</item>
-    <dimen name="status_bar_padding_top">0.0px</dimen>
     <dimen name="status_bar_wifi_signal_spacer_width">2.0dip</dimen>
     <dimen name="statusbar_mobile_type_overlap">10.5dip</dimen>
     <dimen name="statusbar_mobile_type_overlap_plus">11.0dip</dimen>

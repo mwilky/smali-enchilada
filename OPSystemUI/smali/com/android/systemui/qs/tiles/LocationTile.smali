@@ -35,7 +35,7 @@
 
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;-><init>(Lcom/android/systemui/qs/QSHost;)V
 
-    const v0, 0x7f0803c7
+    const v0, 0x7f0803ac
 
     invoke-static {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
@@ -76,8 +76,6 @@
 
 .method public static synthetic lambda$handleClick$0(Lcom/android/systemui/qs/tiles/LocationTile;)V
     .locals 3
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mState:Lcom/android/systemui/plugins/qs/QSTile$State;
 

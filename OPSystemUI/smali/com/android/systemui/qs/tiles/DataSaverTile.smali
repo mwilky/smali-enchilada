@@ -64,8 +64,6 @@
 
 .method public static synthetic lambda$handleClick$0(Lcom/android/systemui/qs/tiles/DataSaverTile;Landroid/content/DialogInterface;I)V
     .locals 0
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/DataSaverTile;->toggleDataSaver()V
 
@@ -211,15 +209,15 @@
 
     invoke-direct {v0, v1}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x1040192
+    const v1, 0x1040191
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setTitle(I)V
 
-    const v1, 0x1040190
+    const v1, 0x104018f
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setMessage(I)V
 
-    const v1, 0x1040191
+    const v1, 0x1040190
 
     new-instance v2, Lcom/android/systemui/qs/tiles/-$$Lambda$DataSaverTile$7vpE4nfIgph7ByTloh1_igU2EhI;
 
@@ -333,12 +331,12 @@
 
     if-eqz v0, :cond_2
 
-    const v0, 0x7f08026b
+    const v0, 0x7f080250
 
     goto :goto_2
 
     :cond_2
-    const v0, 0x7f08026c
+    const v0, 0x7f080251
 
     :goto_2
     invoke-static {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;

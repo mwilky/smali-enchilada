@@ -21,7 +21,7 @@
         </LinearLayout>
     </LinearLayout>
     <RelativeLayout android:orientation="horizontal" android:id="@id/confirmation" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/notification_guts_button_spacing" android:layout_marginBottom="@dimen/notification_guts_button_spacing" android:layout_marginStart="@dimen/notification_guts_button_side_margin" android:layout_marginEnd="@dimen/notification_guts_button_side_margin">
-        <TextView android:id="@id/confirmation_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/notification_channel_disabled" android:layout_centerVertical="true" android:layout_toStartOf="@id/undo" android:layout_alignParentStart="true" style="@style/TextAppearance.NotificationInfo.Confirmation" />
+        <TextView android:id="@id/confirmation_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/notification_channel_disabled" android:layout_centerVertical="true" style="@style/TextAppearance.NotificationInfo.Confirmation" />
         <TextView android:id="@id/undo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/inline_undo" android:layout_centerVertical="true" android:layout_alignParentEnd="true" style="@style/TextAppearance.NotificationInfo.Button" />
     </RelativeLayout>
 </com.android.systemui.statusbar.NotificationInfo>

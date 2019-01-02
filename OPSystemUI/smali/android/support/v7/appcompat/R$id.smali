@@ -61,52 +61,52 @@
 
 .field public static final image:I = 0x7f0a01a4
 
-.field public static final list_item:I = 0x7f0a021c
+.field public static final list_item:I = 0x7f0a021b
 
-.field public static final message:I = 0x7f0a0241
+.field public static final message:I = 0x7f0a0240
 
-.field public static final parentPanel:I = 0x7f0a02f8
+.field public static final parentPanel:I = 0x7f0a02f7
 
-.field public static final scrollIndicatorDown:I = 0x7f0a0393
+.field public static final scrollIndicatorDown:I = 0x7f0a0392
 
-.field public static final scrollIndicatorUp:I = 0x7f0a0394
+.field public static final scrollIndicatorUp:I = 0x7f0a0393
 
-.field public static final scrollView:I = 0x7f0a0395
+.field public static final scrollView:I = 0x7f0a0394
 
-.field public static final search_button:I = 0x7f0a039b
+.field public static final search_button:I = 0x7f0a039a
 
-.field public static final search_close_btn:I = 0x7f0a039c
+.field public static final search_close_btn:I = 0x7f0a039b
 
-.field public static final search_edit_frame:I = 0x7f0a039d
+.field public static final search_edit_frame:I = 0x7f0a039c
 
-.field public static final search_go_btn:I = 0x7f0a039e
+.field public static final search_go_btn:I = 0x7f0a039d
 
-.field public static final search_mag_icon:I = 0x7f0a03a0
+.field public static final search_mag_icon:I = 0x7f0a039f
 
-.field public static final search_plate:I = 0x7f0a03a2
+.field public static final search_plate:I = 0x7f0a03a1
 
-.field public static final search_src_text:I = 0x7f0a03a3
+.field public static final search_src_text:I = 0x7f0a03a2
 
-.field public static final search_voice_btn:I = 0x7f0a03a4
+.field public static final search_voice_btn:I = 0x7f0a03a3
 
-.field public static final shortcut:I = 0x7f0a03ba
+.field public static final shortcut:I = 0x7f0a03b9
 
-.field public static final spacer:I = 0x7f0a03cf
+.field public static final spacer:I = 0x7f0a03ce
 
-.field public static final split_action_bar:I = 0x7f0a03d2
+.field public static final split_action_bar:I = 0x7f0a03d1
 
-.field public static final submenuarrow:I = 0x7f0a03e5
+.field public static final submenuarrow:I = 0x7f0a03e4
 
-.field public static final submit_area:I = 0x7f0a03e6
+.field public static final submit_area:I = 0x7f0a03e5
 
-.field public static final textSpacerNoButtons:I = 0x7f0a03ff
+.field public static final textSpacerNoButtons:I = 0x7f0a03fe
 
-.field public static final textSpacerNoTitle:I = 0x7f0a0400
+.field public static final textSpacerNoTitle:I = 0x7f0a03ff
 
-.field public static final title:I = 0x7f0a0425
+.field public static final title:I = 0x7f0a0424
 
-.field public static final titleDividerNoCustom:I = 0x7f0a0426
+.field public static final titleDividerNoCustom:I = 0x7f0a0425
 
-.field public static final title_template:I = 0x7f0a042a
+.field public static final title_template:I = 0x7f0a0429
 
-.field public static final topPanel:I = 0x7f0a0430
+.field public static final topPanel:I = 0x7f0a042f

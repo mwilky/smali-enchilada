@@ -132,12 +132,12 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0801bd
+    const v0, 0x7f0801a2
 
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f0801bc
+    const v0, 0x7f0801a1
 
     :goto_0
     invoke-virtual {p0, v0}, Lcom/android/systemui/tuner/ClipboardView;->setImageResource(I)V

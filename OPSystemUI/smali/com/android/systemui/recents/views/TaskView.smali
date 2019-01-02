@@ -781,7 +781,7 @@
 .method protected onFinishInflate()V
     .locals 2
 
-    const v0, 0x7f0a03fa
+    const v0, 0x7f0a03f9
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->findViewById(I)Landroid/view/View;
 
@@ -791,7 +791,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
-    const v0, 0x7f0a03fb
+    const v0, 0x7f0a03fa
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->findViewById(I)Landroid/view/View;
 
@@ -807,7 +807,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/TaskViewThumbnail;->updateClipToTaskBar(Landroid/view/View;)V
 
-    const v0, 0x7f0a0225
+    const v0, 0x7f0a0224
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskView;->findViewById(I)Landroid/view/View;
 

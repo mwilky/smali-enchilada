@@ -109,7 +109,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/volume/CarVolumeDialogImpl$2;->this$0:Lcom/android/systemui/volume/CarVolumeDialogImpl;
 
-    const v4, 0x7f0801a9
+    const v4, 0x7f08018e
 
     new-instance v5, Lcom/android/systemui/volume/CarVolumeDialogImpl$ExpandIconListener;
 

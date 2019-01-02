@@ -159,7 +159,7 @@
 
     iput v0, p0, Lcom/android/systemui/OverviewProxyService;->mConnectionBackoffAttempts:I
 
-    const v1, 0x1040175
+    const v1, 0x1040174
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

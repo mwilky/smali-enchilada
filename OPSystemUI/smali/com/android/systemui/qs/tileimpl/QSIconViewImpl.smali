@@ -389,7 +389,7 @@
     iget-object v0, p2, Lcom/android/systemui/plugins/qs/QSTile$State;->icon:Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
     :goto_0
-    const v1, 0x7f0a0338
+    const v1, 0x7f0a0337
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->getTag(I)Ljava/lang/Object;
 
@@ -399,7 +399,7 @@
 
     move-result v2
 
-    const v3, 0x7f0a033a
+    const v3, 0x7f0a0339
 
     if-eqz v2, :cond_1
 

@@ -396,7 +396,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0a027e
+    const v5, 0x7f0a027d
 
     const-string v6, "NavigationBar"
 
@@ -902,7 +902,7 @@
 
     const v0, 0x7f0a006f
 
-    const v1, 0x7f0a0346
+    const v1, 0x7f0a0345
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarFragment;->onLongPressNavigationButtons(Landroid/view/View;II)Z
 
@@ -939,7 +939,7 @@
 
     move-result v7
 
-    const v8, 0x7f0a0346
+    const v8, 0x7f0a0345
 
     const/4 v9, 0x1
 

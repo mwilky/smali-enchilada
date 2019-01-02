@@ -507,7 +507,7 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardClockPositionAlgorithm;->mBurnInPreventionOffsetY:I
 
-    const v0, 0x7f0706c8
+    const v0, 0x7f0706c7
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

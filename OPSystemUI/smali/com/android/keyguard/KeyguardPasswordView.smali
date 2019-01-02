@@ -646,7 +646,7 @@
 .method protected getPasswordTextViewId()I
     .locals 1
 
-    const v0, 0x7f0a02fa
+    const v0, 0x7f0a02f9
 
     return v0
 .end method
@@ -700,7 +700,7 @@
 
     move-result-object v0
 
-    const v1, 0x10402d6
+    const v1, 0x10402d5
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -916,7 +916,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSelected(Z)V
 
-    const v0, 0x7f0a03f0
+    const v0, 0x7f0a03ef
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPasswordView;->findViewById(I)Landroid/view/View;
 

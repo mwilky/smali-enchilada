@@ -149,7 +149,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f08056e
+    const v6, 0x7f080553
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -165,7 +165,7 @@
 
     iget-object v5, v0, Lcom/android/systemui/pip/phone/PipDismissViewController;->mDismissView:Landroid/view/View;
 
-    const v6, 0x7f0a0302
+    const v6, 0x7f0a0301
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -6,42 +6,17 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/oneplus/notification/OPNotificationController$OimcObserver;,
         Lcom/oneplus/notification/OPNotificationController$SettingsObserver;
     }
 .end annotation
 
 
-# static fields
-.field private static final PRIORITY_LIST_BREATH_MODE:Ljava/util/ArrayList;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/ArrayList<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private static final PRIORITY_LIST_GAME_MODE:Ljava/util/ArrayList;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/ArrayList<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
 # instance fields
 .field private DEBUG:Z
 
-.field private mBlocked:Z
-
-.field private mBlockedByBreath:Z
-
 .field private mContext:Landroid/content/Context;
+
+.field private mEnabledBlock:Z
 
 .field private mEntryManager:Lcom/android/systemui/statusbar/NotificationEntryManager;
 
@@ -49,58 +24,14 @@
 
 .field private mGameModeNotifType:I
 
-.field private mOimcObserver:Lcom/oneplus/notification/OPNotificationController$OimcObserver;
+.field protected final mOimcObserver:Landroid/database/ContentObserver;
 
 .field private mSettingsObserver:Lcom/oneplus/notification/OPNotificationController$SettingsObserver;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    const-string v1, "com.android.dialer"
-
-    const-string v2, "com.android.incallui"
-
-    const-string v3, "com.oneplus.deskclock"
-
-    filled-new-array {v1, v2, v3}, [Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    sput-object v0, Lcom/oneplus/notification/OPNotificationController;->PRIORITY_LIST_GAME_MODE:Ljava/util/ArrayList;
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    const-string v1, "com.android.dialer"
-
-    const-string v2, "com.android.incallui"
-
-    filled-new-array {v1, v2}, [Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    sput-object v0, Lcom/oneplus/notification/OPNotificationController;->PRIORITY_LIST_BREATH_MODE:Ljava/util/ArrayList;
-
-    return-void
-.end method
-
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 2
+    .locals 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -120,43 +51,55 @@
 
     iput-object v1, p0, Lcom/oneplus/notification/OPNotificationController;->mGameMode3rdCallUid:Ljava/lang/String;
 
-    iput-boolean v0, p0, Lcom/oneplus/notification/OPNotificationController;->mBlocked:Z
+    iput-boolean v0, p0, Lcom/oneplus/notification/OPNotificationController;->mEnabledBlock:Z
 
-    iput-boolean v0, p0, Lcom/oneplus/notification/OPNotificationController;->mBlockedByBreath:Z
+    new-instance v1, Lcom/oneplus/notification/OPNotificationController$1;
+
+    new-instance v2, Landroid/os/Handler;
+
+    invoke-direct {v2}, Landroid/os/Handler;-><init>()V
+
+    invoke-direct {v1, p0, v2}, Lcom/oneplus/notification/OPNotificationController$1;-><init>(Lcom/oneplus/notification/OPNotificationController;Landroid/os/Handler;)V
+
+    iput-object v1, p0, Lcom/oneplus/notification/OPNotificationController;->mOimcObserver:Landroid/database/ContentObserver;
 
     iput-object p1, p0, Lcom/oneplus/notification/OPNotificationController;->mContext:Landroid/content/Context;
 
-    sget-object v0, Lcom/oneplus/oimc/OIMCRule;->Rule_Disable_HeadsUpNotification_Breath:Lcom/oneplus/oimc/OIMCRule;
+    new-instance v1, Lcom/oneplus/notification/OPNotificationController$SettingsObserver;
 
-    invoke-static {v0}, Lcom/oneplus/oimc/OIMCManager;->addFuncRuleGlobal(Lcom/oneplus/oimc/OIMCRule;)V
+    new-instance v2, Landroid/os/Handler;
 
-    new-instance v0, Lcom/oneplus/notification/OPNotificationController$SettingsObserver;
+    invoke-direct {v2}, Landroid/os/Handler;-><init>()V
 
-    new-instance v1, Landroid/os/Handler;
+    invoke-direct {v1, p0, v2}, Lcom/oneplus/notification/OPNotificationController$SettingsObserver;-><init>(Lcom/oneplus/notification/OPNotificationController;Landroid/os/Handler;)V
 
-    invoke-direct {v1}, Landroid/os/Handler;-><init>()V
+    iput-object v1, p0, Lcom/oneplus/notification/OPNotificationController;->mSettingsObserver:Lcom/oneplus/notification/OPNotificationController$SettingsObserver;
 
-    invoke-direct {v0, p0, v1}, Lcom/oneplus/notification/OPNotificationController$SettingsObserver;-><init>(Lcom/oneplus/notification/OPNotificationController;Landroid/os/Handler;)V
+    iget-object v1, p0, Lcom/oneplus/notification/OPNotificationController;->mSettingsObserver:Lcom/oneplus/notification/OPNotificationController$SettingsObserver;
 
-    iput-object v0, p0, Lcom/oneplus/notification/OPNotificationController;->mSettingsObserver:Lcom/oneplus/notification/OPNotificationController$SettingsObserver;
+    invoke-virtual {v1}, Lcom/oneplus/notification/OPNotificationController$SettingsObserver;->observe()V
 
-    iget-object v0, p0, Lcom/oneplus/notification/OPNotificationController;->mSettingsObserver:Lcom/oneplus/notification/OPNotificationController$SettingsObserver;
+    iget-object v1, p0, Lcom/oneplus/notification/OPNotificationController;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v0}, Lcom/oneplus/notification/OPNotificationController$SettingsObserver;->observe()V
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    new-instance v0, Lcom/oneplus/notification/OPNotificationController$OimcObserver;
+    move-result-object v1
 
-    new-instance v1, Landroid/os/Handler;
+    const-string v2, "op_oimc_func_disable_headsup"
 
-    invoke-direct {v1}, Landroid/os/Handler;-><init>()V
+    invoke-static {v2}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
-    invoke-direct {v0, p0, v1}, Lcom/oneplus/notification/OPNotificationController$OimcObserver;-><init>(Lcom/oneplus/notification/OPNotificationController;Landroid/os/Handler;)V
+    move-result-object v2
 
-    iput-object v0, p0, Lcom/oneplus/notification/OPNotificationController;->mOimcObserver:Lcom/oneplus/notification/OPNotificationController$OimcObserver;
+    iget-object v3, p0, Lcom/oneplus/notification/OPNotificationController;->mOimcObserver:Landroid/database/ContentObserver;
 
-    iget-object v0, p0, Lcom/oneplus/notification/OPNotificationController;->mOimcObserver:Lcom/oneplus/notification/OPNotificationController$OimcObserver;
+    invoke-virtual {v1, v2, v0, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    invoke-virtual {v0}, Lcom/oneplus/notification/OPNotificationController$OimcObserver;->observe()V
+    iget-object v0, p0, Lcom/oneplus/notification/OPNotificationController;->mOimcObserver:Landroid/database/ContentObserver;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroid/database/ContentObserver;->onChange(Z)V
 
     return-void
 .end method
@@ -220,7 +163,7 @@
 .method static synthetic access$500(Lcom/oneplus/notification/OPNotificationController;)Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/oneplus/notification/OPNotificationController;->mBlocked:Z
+    iget-boolean v0, p0, Lcom/oneplus/notification/OPNotificationController;->mEnabledBlock:Z
 
     return v0
 .end method
@@ -228,156 +171,52 @@
 .method static synthetic access$502(Lcom/oneplus/notification/OPNotificationController;Z)Z
     .locals 0
 
-    iput-boolean p1, p0, Lcom/oneplus/notification/OPNotificationController;->mBlocked:Z
+    iput-boolean p1, p0, Lcom/oneplus/notification/OPNotificationController;->mEnabledBlock:Z
 
     return p1
 .end method
 
-.method static synthetic access$600(Lcom/oneplus/notification/OPNotificationController;)Z
-    .locals 1
+.method private blockByDnd()Z
+    .locals 6
 
-    iget-boolean v0, p0, Lcom/oneplus/notification/OPNotificationController;->mBlockedByBreath:Z
+    iget-object v0, p0, Lcom/oneplus/notification/OPNotificationController;->mContext:Landroid/content/Context;
 
-    return v0
-.end method
-
-.method static synthetic access$602(Lcom/oneplus/notification/OPNotificationController;Z)Z
-    .locals 0
-
-    iput-boolean p1, p0, Lcom/oneplus/notification/OPNotificationController;->mBlockedByBreath:Z
-
-    return p1
-.end method
-
-.method private blockByBreathMode(Ljava/lang/String;)Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/oneplus/notification/OPNotificationController;->mBlockedByBreath:Z
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lcom/oneplus/notification/OPNotificationController;->PRIORITY_LIST_BREATH_MODE:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-.end method
-
-.method private blockByGameMode(Landroid/service/notification/StatusBarNotification;)Z
-    .locals 5
-
-    invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    sget-object v1, Lcom/oneplus/notification/OPNotificationController;->PRIORITY_LIST_GAME_MODE:Ljava/util/ArrayList;
+    const-string v1, "dnd_mode_enabled"
 
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    const/4 v2, -0x2
 
-    move-result v1
+    const/4 v3, 0x0
 
-    const/4 v2, 0x0
+    invoke-static {v0, v1, v3, v2}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
-    if-eqz v1, :cond_0
+    move-result v0
 
-    return v2
+    const/4 v1, 0x1
 
-    :cond_0
-    const-string v1, "call"
+    if-ne v0, v1, :cond_0
 
-    invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
+    iget-object v4, p0, Lcom/oneplus/notification/OPNotificationController;->mContext:Landroid/content/Context;
 
-    move-result-object v3
+    invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    iget-object v3, v3, Landroid/app/Notification;->category:Ljava/lang/String;
+    move-result-object v4
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string v5, "do_not_disturb_block_notification"
 
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    return v2
-
-    :cond_1
-    iget-boolean v1, p0, Lcom/oneplus/notification/OPNotificationController;->DEBUG:Z
-
-    if-eqz v1, :cond_2
-
-    const-string v1, "OPNotificationController"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "mBlocked: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v4, p0, Lcom/oneplus/notification/OPNotificationController;->mBlocked:Z
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v4, " type: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v4, p0, Lcom/oneplus/notification/OPNotificationController;->mGameModeNotifType:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_2
-    iget-boolean v1, p0, Lcom/oneplus/notification/OPNotificationController;->mBlocked:Z
-
-    if-eqz v1, :cond_4
-
-    iget v1, p0, Lcom/oneplus/notification/OPNotificationController;->mGameModeNotifType:I
-
-    if-eqz v1, :cond_4
-
-    invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
-
-    move-result-object v1
-
-    iget-object v1, v1, Landroid/app/Notification;->extras:Landroid/os/Bundle;
-
-    const/4 v3, 0x1
-
-    if-eqz v1, :cond_3
-
-    const-string v4, "oneplus.shouldPeekInGameMode"
-
-    invoke-virtual {v1, v4, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {v4, v5, v3, v2}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v2
 
-    xor-int/2addr v2, v3
+    if-ne v2, v1, :cond_0
 
-    return v2
+    return v1
 
-    :cond_3
+    :cond_0
     return v3
-
-    :cond_4
-    return v2
 .end method
 
 .method private blockByReadMode()Z
@@ -423,38 +262,150 @@
     return v3
 .end method
 
-
-# virtual methods
-.method public isPanelDisabledInBrickMode()Z
+.method private isPriorityPkg(Ljava/lang/String;)Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/oneplus/notification/OPNotificationController;->mBlockedByBreath:Z
+    const-string v0, "com.android.dialer"
 
-    if-eqz v0, :cond_0
-
-    invoke-static {}, Lcom/android/systemui/plugin/LSState;->getInstance()Lcom/android/systemui/plugin/LSState;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/systemui/plugin/LSState;->getPhoneStatusBar()Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->panelsEnabled()Z
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
-    const/4 v0, 0x1
+    const-string v0, "com.android.incallui"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    const-string v0, "com.oneplus.deskclock"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
 
     goto :goto_0
 
     :cond_0
     const/4 v0, 0x0
 
-    :goto_0
     return v0
+
+    :cond_1
+    :goto_0
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+
+# virtual methods
+.method public blockByGameMode(Landroid/service/notification/StatusBarNotification;)Z
+    .locals 5
+
+    invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lcom/oneplus/notification/OPNotificationController;->isPriorityPkg(Ljava/lang/String;)Z
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_0
+
+    return v2
+
+    :cond_0
+    const-string v1, "call"
+
+    invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
+
+    move-result-object v3
+
+    iget-object v3, v3, Landroid/app/Notification;->category:Ljava/lang/String;
+
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    return v2
+
+    :cond_1
+    iget-boolean v1, p0, Lcom/oneplus/notification/OPNotificationController;->DEBUG:Z
+
+    if-eqz v1, :cond_2
+
+    const-string v1, "OPNotificationController"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "game mode block enabled: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v4, p0, Lcom/oneplus/notification/OPNotificationController;->mEnabledBlock:Z
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v4, " type: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v4, p0, Lcom/oneplus/notification/OPNotificationController;->mGameModeNotifType:I
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_2
+    iget-boolean v1, p0, Lcom/oneplus/notification/OPNotificationController;->mEnabledBlock:Z
+
+    if-eqz v1, :cond_4
+
+    iget v1, p0, Lcom/oneplus/notification/OPNotificationController;->mGameModeNotifType:I
+
+    if-eqz v1, :cond_4
+
+    invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
+
+    move-result-object v1
+
+    iget-object v1, v1, Landroid/app/Notification;->extras:Landroid/os/Bundle;
+
+    const/4 v3, 0x1
+
+    if-eqz v1, :cond_3
+
+    const-string v4, "oneplus.shouldPeekInGameMode"
+
+    invoke-virtual {v1, v4, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v2
+
+    xor-int/2addr v2, v3
+
+    return v2
+
+    :cond_3
+    return v3
+
+    :cond_4
+    return v2
 .end method
 
 .method public keepLightBlink(Ljava/util/ArrayList;)Z
@@ -530,35 +481,11 @@
 .method public shouldPeek(Landroid/service/notification/StatusBarNotification;)I
     .locals 4
 
-    invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/oneplus/notification/OPNotificationController;->blockByBreathMode(Ljava/lang/String;)Z
-
-    move-result v0
+    iget-object v0, p0, Lcom/oneplus/notification/OPNotificationController;->mGameMode3rdCallUid:Ljava/lang/String;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
-
-    iget-boolean v0, p0, Lcom/oneplus/notification/OPNotificationController;->DEBUG:Z
-
-    if-eqz v0, :cond_0
-
-    const-string v0, "OPNotificationController"
-
-    const-string v2, "No peeking: block by brick mode"
-
-    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_0
-    return v1
-
-    :cond_1
-    iget-object v0, p0, Lcom/oneplus/notification/OPNotificationController;->mGameMode3rdCallUid:Ljava/lang/String;
-
-    if-eqz v0, :cond_3
 
     const-string v0, "-1"
 
@@ -568,23 +495,21 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
-
-    sget-object v0, Lcom/oneplus/notification/OPNotificationController;->PRIORITY_LIST_GAME_MODE:Ljava/util/ArrayList;
+    if-nez v0, :cond_1
 
     invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    invoke-direct {p0, v0}, Lcom/oneplus/notification/OPNotificationController;->isPriorityPkg(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_1
 
     iget-boolean v0, p0, Lcom/oneplus/notification/OPNotificationController;->DEBUG:Z
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_0
 
     const-string v0, "OPNotificationController"
 
@@ -606,11 +531,31 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    :cond_0
+    return v1
+
+    :cond_1
+    invoke-direct {p0}, Lcom/oneplus/notification/OPNotificationController;->blockByReadMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    iget-boolean v0, p0, Lcom/oneplus/notification/OPNotificationController;->DEBUG:Z
+
+    if-eqz v0, :cond_2
+
+    const-string v0, "OPNotificationController"
+
+    const-string v2, "No peeking: block by reading mode"
+
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     :cond_2
     return v1
 
     :cond_3
-    invoke-direct {p0}, Lcom/oneplus/notification/OPNotificationController;->blockByReadMode()Z
+    invoke-direct {p0}, Lcom/oneplus/notification/OPNotificationController;->blockByDnd()Z
 
     move-result v0
 
@@ -622,7 +567,7 @@
 
     const-string v0, "OPNotificationController"
 
-    const-string v2, "No peeking: block by reading mode"
+    const-string v2, "No peeking: block by dnd"
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -630,7 +575,7 @@
     return v1
 
     :cond_5
-    invoke-direct {p0, p1}, Lcom/oneplus/notification/OPNotificationController;->blockByGameMode(Landroid/service/notification/StatusBarNotification;)Z
+    invoke-virtual {p0, p1}, Lcom/oneplus/notification/OPNotificationController;->blockByGameMode(Landroid/service/notification/StatusBarNotification;)Z
 
     move-result v0
 
@@ -657,36 +602,10 @@
     return v0
 .end method
 
-.method public shouldPeekInBreathMode(Ljava/lang/String;)Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/oneplus/notification/OPNotificationController;->mBlockedByBreath:Z
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lcom/oneplus/notification/OPNotificationController;->PRIORITY_LIST_BREATH_MODE:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-.end method
-
 .method public showSimpleHeadsUp()Z
     .locals 2
 
-    iget-boolean v0, p0, Lcom/oneplus/notification/OPNotificationController;->mBlocked:Z
+    iget-boolean v0, p0, Lcom/oneplus/notification/OPNotificationController;->mEnabledBlock:Z
 
     if-eqz v0, :cond_0
 
@@ -767,23 +686,14 @@
 
     iget-object v0, p0, Lcom/oneplus/notification/OPNotificationController;->mSettingsObserver:Lcom/oneplus/notification/OPNotificationController$SettingsObserver;
 
-    const/4 v1, 0x0
-
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/oneplus/notification/OPNotificationController;->mSettingsObserver:Lcom/oneplus/notification/OPNotificationController$SettingsObserver;
 
+    const/4 v1, 0x0
+
     invoke-virtual {v0, v1}, Lcom/oneplus/notification/OPNotificationController$SettingsObserver;->update(Landroid/net/Uri;)V
 
     :cond_0
-    iget-object v0, p0, Lcom/oneplus/notification/OPNotificationController;->mOimcObserver:Lcom/oneplus/notification/OPNotificationController$OimcObserver;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/oneplus/notification/OPNotificationController;->mOimcObserver:Lcom/oneplus/notification/OPNotificationController$OimcObserver;
-
-    invoke-virtual {v0, v1}, Lcom/oneplus/notification/OPNotificationController$OimcObserver;->update(Landroid/net/Uri;)V
-
-    :cond_1
     return-void
 .end method

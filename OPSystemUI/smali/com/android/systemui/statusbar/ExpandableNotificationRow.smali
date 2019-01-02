@@ -4919,15 +4919,8 @@
 .end method
 
 .method public isUserExpanded()Z
-    .locals 2
-    
-    sget-boolean v1, Lcom/android/mwilky/Renovate;->mExpandedNotifications:Z
-    
-    if-eqz v1, :cond_stock
-    
-    return v1
-    
-    :cond_stock
+    .locals 1
+
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mUserExpanded:Z
 
     return v0
@@ -5383,7 +5376,7 @@
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f0a0299
+    const v0, 0x7f0a0298
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->findViewById(I)Landroid/view/View;
 

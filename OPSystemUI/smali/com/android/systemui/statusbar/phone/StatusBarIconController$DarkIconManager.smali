@@ -100,13 +100,13 @@
 
     move-result v1
 
-    const v2, 0x7f0805cf
+    const v2, 0x7f0805b4
 
-    const v3, 0x7f0805ce
+    const v3, 0x7f0805b3
 
-    const v4, 0x7f0805cd
+    const v4, 0x7f0805b2
 
-    const v5, 0x7f0805cb
+    const v5, 0x7f0805b0
 
     if-eqz v1, :cond_1
 

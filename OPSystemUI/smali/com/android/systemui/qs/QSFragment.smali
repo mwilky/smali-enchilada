@@ -825,7 +825,7 @@
 
     invoke-super {p0, p1, p2}, Landroid/app/Fragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 
-    const v0, 0x7f0a0340
+    const v0, 0x7f0a033f
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -835,7 +835,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSFragment;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
 
-    const v0, 0x7f0a0330
+    const v0, 0x7f0a032f
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -855,7 +855,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSFragment;->mHeader:Lcom/android/systemui/qs/QuickStatusBarHeader;
 
-    const v0, 0x7f0a0334
+    const v0, 0x7f0a0333
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -865,7 +865,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSFragment;->mFooter:Lcom/android/systemui/qs/QSFooter;
 
-    const v0, 0x7f0a033e
+    const v0, 0x7f0a033d
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -891,7 +891,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/qs/QSFragment;->mHeader:Lcom/android/systemui/qs/QuickStatusBarHeader;
 
-    const v2, 0x7f0a033b
+    const v2, 0x7f0a033a
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 
@@ -905,7 +905,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSFragment;->mQSAnimator:Lcom/android/systemui/qs/QSAnimator;
 
-    const v0, 0x7f0a032f
+    const v0, 0x7f0a032e
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

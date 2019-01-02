@@ -207,7 +207,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/FooterView;->mDismissButton:Lcom/android/systemui/statusbar/FooterViewButton;
 
-    const v0, 0x7f0a0231
+    const v0, 0x7f0a0230
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/FooterView;->findViewById(I)Landroid/view/View;
 

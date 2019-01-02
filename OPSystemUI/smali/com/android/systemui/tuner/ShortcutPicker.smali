@@ -233,7 +233,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/tuner/ShortcutPicker;->mNonePreference:Lcom/android/systemui/tuner/SelectablePreference;
 
-    const v5, 0x7f0803ba
+    const v5, 0x7f08039f
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/tuner/SelectablePreference;->setIcon(I)V
 

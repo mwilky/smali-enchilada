@@ -19,12 +19,12 @@
 
 .field public static final floatingActionButtonStyle:I = 0x7f040174
 
-.field public static final navigationViewStyle:I = 0x7f040288
+.field public static final navigationViewStyle:I = 0x7f040287
 
-.field public static final state_collapsed:I = 0x7f0403d3
+.field public static final state_collapsed:I = 0x7f0403d2
 
-.field public static final state_collapsible:I = 0x7f0403d4
+.field public static final state_collapsible:I = 0x7f0403d3
 
-.field public static final tabStyle:I = 0x7f040409
+.field public static final tabStyle:I = 0x7f040407
 
-.field public static final textInputStyle:I = 0x7f040428
+.field public static final textInputStyle:I = 0x7f040426

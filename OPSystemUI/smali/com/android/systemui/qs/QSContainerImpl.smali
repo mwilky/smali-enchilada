@@ -360,7 +360,7 @@
 
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    const v0, 0x7f0a0340
+    const v0, 0x7f0a033f
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -370,7 +370,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
 
-    const v0, 0x7f0a0330
+    const v0, 0x7f0a032f
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -388,7 +388,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mHeader:Lcom/android/systemui/qs/QuickStatusBarHeader;
 
-    const v0, 0x7f0a032f
+    const v0, 0x7f0a032e
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -398,7 +398,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mQSCustomizer:Lcom/android/systemui/qs/customize/QSCustomizer;
 
-    const v0, 0x7f0a0334
+    const v0, 0x7f0a0333
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -406,7 +406,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mQSFooter:Landroid/view/View;
 
-    const v0, 0x7f0a033d
+    const v0, 0x7f0a033c
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -414,7 +414,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mBackground:Landroid/view/View;
 
-    const v0, 0x7f0a0341
+    const v0, 0x7f0a0340
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -422,7 +422,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mStatusBarBackground:Landroid/view/View;
 
-    const v0, 0x7f0a033f
+    const v0, 0x7f0a033e
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 

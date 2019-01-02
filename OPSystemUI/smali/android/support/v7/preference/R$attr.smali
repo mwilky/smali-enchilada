@@ -23,18 +23,18 @@
 
 .field public static final editTextPreferenceStyle:I = 0x7f04014d
 
-.field public static final preferenceCategoryStyle:I = 0x7f040360
+.field public static final preferenceCategoryStyle:I = 0x7f04035f
 
-.field public static final preferenceFragmentStyle:I = 0x7f040364
+.field public static final preferenceFragmentStyle:I = 0x7f040363
 
-.field public static final preferenceScreenStyle:I = 0x7f04036a
+.field public static final preferenceScreenStyle:I = 0x7f040369
 
-.field public static final preferenceStyle:I = 0x7f04036b
+.field public static final preferenceStyle:I = 0x7f04036a
 
-.field public static final preferenceTheme:I = 0x7f04036c
+.field public static final preferenceTheme:I = 0x7f04036b
 
-.field public static final seekBarPreferenceStyle:I = 0x7f0403a6
+.field public static final seekBarPreferenceStyle:I = 0x7f0403a5
 
-.field public static final switchPreferenceCompatStyle:I = 0x7f0403ee
+.field public static final switchPreferenceCompatStyle:I = 0x7f0403ec
 
-.field public static final switchPreferenceStyle:I = 0x7f0403ef
+.field public static final switchPreferenceStyle:I = 0x7f0403ed

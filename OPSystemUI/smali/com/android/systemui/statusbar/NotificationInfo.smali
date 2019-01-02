@@ -111,7 +111,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f0a01bf
+    const v1, 0x7f0a01be
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 
@@ -119,7 +119,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const v2, 0x7f0a0245
+    const v2, 0x7f0a0244
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 
@@ -141,7 +141,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const v4, 0x7f0a045c
+    const v4, 0x7f0a045b
 
     invoke-virtual {p0, v4}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 
@@ -344,7 +344,7 @@
     move-result-object v0
 
     :goto_0
-    const v1, 0x7f0a0304
+    const v1, 0x7f0a0303
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 
@@ -354,7 +354,7 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    const v1, 0x7f0a0305
+    const v1, 0x7f0a0304
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 
@@ -411,7 +411,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    const v3, 0x7f0a0303
+    const v3, 0x7f0a0302
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 
@@ -439,7 +439,7 @@
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
     :goto_1
-    const v6, 0x7f0a01ad
+    const v6, 0x7f0a01ac
 
     invoke-virtual {p0, v6}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 
@@ -849,7 +849,7 @@
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
     :cond_0
-    const v0, 0x7f0a032c
+    const v0, 0x7f0a032b
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 

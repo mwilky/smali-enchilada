@@ -464,8 +464,6 @@
 
 .method protected handleClick()V
     .locals 3
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/BluetoothTile;->mState:Lcom/android/systemui/plugins/qs/QSTile$State;
 
@@ -717,7 +715,7 @@
 
     const v6, 0x7f1100b1
 
-    const v7, 0x7f080379
+    const v7, 0x7f08035e
 
     if-eqz v3, :cond_b
 
@@ -791,7 +789,7 @@
 
     if-eqz v8, :cond_a
 
-    const v6, 0x7f080255
+    const v6, 0x7f08023a
 
     invoke-static {v6}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
 

@@ -90,7 +90,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;->mBrightnessMirror:Landroid/view/View;
 
-    const v0, 0x7f0a02a1
+    const v0, 0x7f0a02a0
 
     invoke-virtual {p1, v0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 

@@ -163,7 +163,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/ScreenDecorations;->mOverlay:Landroid/view/View;
 
-    const v1, 0x7f0a0213
+    const v1, 0x7f0a0212
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -173,7 +173,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/ScreenDecorations;->mOverlay:Landroid/view/View;
 
-    const v3, 0x7f0a0353
+    const v3, 0x7f0a0352
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -460,7 +460,7 @@
     :goto_0
     if-eqz v1, :cond_1
 
-    const v2, 0x7f0a01d5
+    const v2, 0x7f0a01d4
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -480,7 +480,7 @@
 
     new-instance v4, Lcom/android/systemui/ScreenDecorations$TunablePaddingTagListener;
 
-    const v5, 0x7f0a03d9
+    const v5, 0x7f0a03d8
 
     invoke-direct {v4, p1, v5}, Lcom/android/systemui/ScreenDecorations$TunablePaddingTagListener;-><init>(II)V
 
@@ -557,7 +557,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/ScreenDecorations;->mOverlay:Landroid/view/View;
 
-    const v1, 0x7f0a0213
+    const v1, 0x7f0a0212
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -565,7 +565,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/ScreenDecorations;->mOverlay:Landroid/view/View;
 
-    const v3, 0x7f0a0353
+    const v3, 0x7f0a0352
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -274,7 +274,7 @@
 
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextViewForPin;->mDrawPaint:Landroid/graphics/Paint;
 
-    const v4, 0x1040159
+    const v4, 0x1040158
 
     invoke-virtual {p1, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

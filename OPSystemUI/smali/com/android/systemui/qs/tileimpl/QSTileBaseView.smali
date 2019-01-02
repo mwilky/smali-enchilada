@@ -121,7 +121,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mBg:Landroid/widget/ImageView;
 
-    const v3, 0x7f080386
+    const v3, 0x7f08036b
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 

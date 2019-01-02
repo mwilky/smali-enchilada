@@ -29,7 +29,7 @@
 
     const p1, 0x10804ca
 
-    const v0, 0x1040268
+    const v0, 0x1040267
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog$SinglePressAction;-><init>(II)V
 

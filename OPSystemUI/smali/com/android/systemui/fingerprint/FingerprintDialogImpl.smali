@@ -9,8 +9,6 @@
 # static fields
 .field private static final DEBUG:Z
 
-.field public static final SHOW_TRANSPARENT_ICON_VIEW:Z
-
 .field private static final VIBRATION_ATTRIBUTES:Landroid/media/AudioAttributes;
 
 
@@ -71,16 +69,6 @@
     sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
     sput-boolean v0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->DEBUG:Z
-
-    const-string v0, "debug.show_transparent_icon_view"
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    sput-boolean v0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->SHOW_TRANSPARENT_ICON_VIEW:Z
 
     new-instance v0, Landroid/media/AudioAttributes$Builder;
 
@@ -844,7 +832,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040239
+    const v2, 0x1040238
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -2534,23 +2522,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    sget-boolean v0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->SHOW_TRANSPARENT_ICON_VIEW:Z
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconView:Landroid/view/View;
-
-    const/high16 v1, -0x10000
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
-
-    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconView:Landroid/view/View;
-
-    const v1, 0x3e99999a    # 0.3f
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
-
-    :cond_2
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mDialogView:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconView:Landroid/view/View;

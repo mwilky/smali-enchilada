@@ -154,7 +154,7 @@
 
     invoke-super {p0}, Lcom/android/keyguard/AlphaOptimizedLinearLayout;->onFinishInflate()V
 
-    const v0, 0x7f0a02aa
+    const v0, 0x7f0a02a9
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/notification/HybridNotificationView;->findViewById(I)Landroid/view/View;
 
@@ -164,7 +164,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/notification/HybridNotificationView;->mTitleView:Landroid/widget/TextView;
 
-    const v0, 0x7f0a02a9
+    const v0, 0x7f0a02a8
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/notification/HybridNotificationView;->findViewById(I)Landroid/view/View;
 

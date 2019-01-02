@@ -3096,18 +3096,6 @@
 
     if-eqz v2, :cond_7
 
-    iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationEntryManager;->mOPNotifyController:Lcom/oneplus/notification/OPNotificationController;
-
-    invoke-virtual {p2}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/oneplus/notification/OPNotificationController;->shouldPeekInBreathMode(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_7
-
     const-string v2, "NotificationEntryMgr"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3211,14 +3199,6 @@
     return v1
 
     :cond_a
-    iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationEntryManager;->mOPNotifyController:Lcom/oneplus/notification/OPNotificationController;
-
-    invoke-virtual {v3}, Lcom/oneplus/notification/OPNotificationController;->isPanelDisabledInBrickMode()Z
-
-    move-result v3
-
-    if-nez v3, :cond_b
-
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationEntryManager;->mCallback:Lcom/android/systemui/statusbar/NotificationEntryManager$Callback;
 
     invoke-interface {v3, p1, p2}, Lcom/android/systemui/statusbar/NotificationEntryManager$Callback;->shouldPeek(Lcom/android/systemui/statusbar/NotificationData$Entry;Landroid/service/notification/StatusBarNotification;)Z

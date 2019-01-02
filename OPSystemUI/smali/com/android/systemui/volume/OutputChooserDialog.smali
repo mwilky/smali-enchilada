@@ -323,7 +323,7 @@
 
     invoke-virtual {v2, v1}, Landroid/view/Window;->clearFlags(I)V
 
-    const v1, 0x10c0128
+    const v1, 0x10c0120
 
     invoke-virtual {v2, v1}, Landroid/view/Window;->addFlags(I)V
 
@@ -542,7 +542,7 @@
 
     invoke-direct {v9}, Lcom/android/systemui/volume/OutputChooserLayout$Item;-><init>()V
 
-    const v10, 0x7f080379
+    const v10, 0x7f08035e
 
     iput v10, v9, Lcom/android/systemui/volume/OutputChooserLayout$Item;->iconResId:I
 
@@ -568,7 +568,7 @@
 
     if-ne v10, v11, :cond_4
 
-    const v13, 0x7f080376
+    const v13, 0x7f08035b
 
     iput v13, v9, Lcom/android/systemui/volume/OutputChooserLayout$Item;->iconResId:I
 
@@ -692,7 +692,7 @@
     :cond_4
     if-ne v10, v12, :cond_5
 
-    const v8, 0x7f080377
+    const v8, 0x7f08035c
 
     iput v8, v9, Lcom/android/systemui/volume/OutputChooserLayout$Item;->iconResId:I
 
@@ -757,7 +757,7 @@
 
     iput-object v1, v0, Lcom/android/systemui/volume/OutputChooserLayout$Item;->line1:Ljava/lang/CharSequence;
 
-    const v1, 0x7f080369
+    const v1, 0x7f08034e
 
     iput v1, v0, Lcom/android/systemui/volume/OutputChooserLayout$Item;->iconResId:I
 
@@ -772,7 +772,7 @@
 
     iput-object v1, v0, Lcom/android/systemui/volume/OutputChooserLayout$Item;->line1:Ljava/lang/CharSequence;
 
-    const v1, 0x7f08036a
+    const v1, 0x7f08034f
 
     iput v1, v0, Lcom/android/systemui/volume/OutputChooserLayout$Item;->iconResId:I
 
@@ -1757,7 +1757,7 @@
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    const v1, 0x7f0a02eb
+    const v1, 0x7f0a02ea
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->findViewById(I)Landroid/view/View;
 
@@ -1775,7 +1775,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f080262
+    const v2, 0x7f080247
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1785,7 +1785,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f080414
+    const v2, 0x7f0803f9
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1795,7 +1795,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0803d3
+    const v2, 0x7f0803b8
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1805,7 +1805,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0803d4
+    const v2, 0x7f0803b9
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2396,7 +2396,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mSecondaryTextColor:I
 
-    const v1, 0x7f080897
+    const v1, 0x7f08087c
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBgDrawable:I
 
@@ -2435,7 +2435,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mSecondaryTextColor:I
 
-    const v1, 0x7f080896
+    const v1, 0x7f08087b
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBgDrawable:I
 

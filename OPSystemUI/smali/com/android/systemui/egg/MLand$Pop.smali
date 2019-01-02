@@ -40,7 +40,7 @@
 
     invoke-direct {p0, p1, p2, p3}, Lcom/android/systemui/egg/MLand$Obstacle;-><init>(Lcom/android/systemui/egg/MLand;Landroid/content/Context;F)V
 
-    const v0, 0x7f08049a
+    const v0, 0x7f08047f
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/egg/MLand$Pop;->setBackgroundResource(I)V
 

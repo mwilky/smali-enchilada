@@ -422,7 +422,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/OutputChooserLayout;->mEmptyIcon:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a0425
+    const v0, 0x7f0a0424
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/OutputChooserLayout;->findViewById(I)Landroid/view/View;
 

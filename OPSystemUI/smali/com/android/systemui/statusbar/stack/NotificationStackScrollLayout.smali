@@ -919,7 +919,7 @@
 
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mFadeNotificationsOnDismiss:Z
 
-    const v1, 0x7f0706ca
+    const v1, 0x7f0706c9
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -927,7 +927,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mSeparatorWidth:I
 
-    const v1, 0x7f0706c9
+    const v1, 0x7f0706c8
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -935,7 +935,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mSeparatorThickness:I
 
-    const v1, 0x7f0706c2
+    const v1, 0x7f0706c1
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -11268,7 +11268,7 @@
 .end method
 
 .method public getMinExpansionHeight()I
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mShelf:Lcom/android/systemui/statusbar/NotificationShelf;
 
@@ -11276,19 +11276,21 @@
 
     move-result v0
 
-    iget v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mStatusBarHeight:I
+    iget-object v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mShelf:Lcom/android/systemui/statusbar/NotificationShelf;
 
-    sub-int v1, v0, v1
-
-    div-int/lit8 v1, v1, 0x2
-
-    sub-int v1, v0, v1
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+    invoke-virtual {v1}, Lcom/android/systemui/statusbar/NotificationShelf;->getIntrinsicHeight()I
 
     move-result v1
 
-    return v1
+    iget v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mStatusBarHeight:I
+
+    sub-int/2addr v1, v2
+
+    div-int/lit8 v1, v1, 0x2
+
+    sub-int/2addr v0, v1
+
+    return v0
 .end method
 
 .method public getNotGoneChildCount()I
@@ -15345,7 +15347,7 @@
     :goto_0
     invoke-direct {v0, v1, v2}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
-    const v1, 0x7f040466
+    const v1, 0x7f040463
 
     invoke-static {v0, v1}, Lcom/android/settingslib/Utils;->getColorAttr(Landroid/content/Context;I)I
 

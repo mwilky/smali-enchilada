@@ -133,7 +133,7 @@
 
     invoke-direct {v1}, Lcom/android/systemui/qs/QSDetailItems$Item;-><init>()V
 
-    const v4, 0x7f080385
+    const v4, 0x7f08036a
 
     iput v4, v1, Lcom/android/systemui/qs/QSDetailItems$Item;->iconResId:I
 
@@ -258,7 +258,7 @@
 
     invoke-direct {v6}, Lcom/android/systemui/qs/QSDetailItems$Item;-><init>()V
 
-    const v7, 0x7f080384
+    const v7, 0x7f080369
 
     iput v7, v6, Lcom/android/systemui/qs/QSDetailItems$Item;->iconResId:I
 
@@ -356,7 +356,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
 
-    const v1, 0x7f080383
+    const v1, 0x7f080368
 
     const v2, 0x7f1104cb
 

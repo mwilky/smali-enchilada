@@ -349,7 +349,7 @@
 
     iput-object v4, v6, Lcom/android/systemui/statusbar/policy/MobileSignalController;->mNetworkNameSeparator:Ljava/lang/String;
 
-    const v4, 0x104032c
+    const v4, 0x104032b
 
     invoke-virtual {v6, v4}, Lcom/android/systemui/statusbar/policy/MobileSignalController;->getStringIfExists(I)Ljava/lang/String;
 
@@ -3160,7 +3160,7 @@
 
     if-eqz v0, :cond_6
 
-    const v0, 0x7f08084e
+    const v0, 0x7f080833
 
     return v0
 

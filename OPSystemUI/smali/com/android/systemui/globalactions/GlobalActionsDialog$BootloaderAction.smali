@@ -24,9 +24,9 @@
 
     iput-object p1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$BootloaderAction;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
-    const p1, 0x7f080256
+    const p1, 0x7f08023b
 
-    const v0, 0x50c0067
+    const v0, 0x50c005f
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog$SinglePressAction;-><init>(II)V
 

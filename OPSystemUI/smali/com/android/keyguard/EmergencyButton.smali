@@ -639,12 +639,12 @@
 
     if-eqz v1, :cond_6
 
-    const v1, 0x1040348
+    const v1, 0x1040347
 
     goto :goto_5
 
     :cond_6
-    const v1, 0x104032d
+    const v1, 0x104032c
 
     :goto_5
     invoke-virtual {p0, v1}, Lcom/android/keyguard/EmergencyButton;->setText(I)V

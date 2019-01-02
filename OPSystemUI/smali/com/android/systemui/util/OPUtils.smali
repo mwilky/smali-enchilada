@@ -130,82 +130,6 @@
     return v0
 .end method
 
-.method private static getReleaseType()I
-    .locals 6
-
-    const/4 v0, 0x0
-
-    const-string v1, "1"
-
-    const-string v2, "ro.build.alpha"
-
-    invoke-static {v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    const-string v2, "1"
-
-    const-string v3, "ro.build.beta"
-
-    invoke-static {v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v1, :cond_0
-
-    if-eqz v2, :cond_0
-
-    const/4 v0, 0x3
-
-    goto :goto_0
-
-    :cond_0
-    if-nez v1, :cond_1
-
-    if-eqz v2, :cond_1
-
-    const/4 v0, 0x2
-
-    goto :goto_0
-
-    :cond_1
-    if-nez v1, :cond_2
-
-    if-nez v2, :cond_2
-
-    const/4 v0, 0x1
-
-    :cond_2
-    :goto_0
-    const-string v3, "Utils"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "getROMType:"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    return v0
-.end method
-
 .method public static getThemeAccentColor(Landroid/content/Context;I)I
     .locals 4
 
@@ -362,46 +286,6 @@
     .locals 1
 
     sget-boolean v0, Lcom/android/systemui/util/OPUtils;->mIsCTS:Z
-
-    return v0
-.end method
-
-.method public static isClosedBeta()Z
-    .locals 4
-
-    invoke-static {}, Lcom/android/systemui/util/OPUtils;->getReleaseType()I
-
-    move-result v0
-
-    const/4 v1, 0x3
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    const-string v1, "Utils"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "isClosedBeta:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     return v0
 .end method
@@ -751,7 +635,7 @@
 
     const/4 v1, 0x0
 
-    const/16 v2, 0x60
+    const/16 v2, 0x61
 
     aput v2, v0, v1
 

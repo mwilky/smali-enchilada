@@ -15,10 +15,10 @@
 
 
 # static fields
-.field public static final textinput_counter:I = 0x7f0a0406
+.field public static final textinput_counter:I = 0x7f0a0405
 
-.field public static final textinput_error:I = 0x7f0a0407
+.field public static final textinput_error:I = 0x7f0a0406
 
-.field public static final textinput_helper_text:I = 0x7f0a0408
+.field public static final textinput_helper_text:I = 0x7f0a0407
 
-.field public static final view_offset_helper:I = 0x7f0a0477
+.field public static final view_offset_helper:I = 0x7f0a0476

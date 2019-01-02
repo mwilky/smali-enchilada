@@ -635,7 +635,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->mBatteryLevel:Landroid/widget/TextView;
 
-    const v0, 0x7f0a04a2
+    const v0, 0x7f0a04a1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->findViewById(I)Landroid/view/View;
 
@@ -655,7 +655,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->mBackgroundView:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a048b
+    const v0, 0x7f0a048a
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->findViewById(I)Landroid/view/View;
 
@@ -671,7 +671,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    const v0, 0x7f0a01b2
+    const v0, 0x7f0a01b1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->findViewById(I)Landroid/view/View;
 
@@ -679,7 +679,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->mInfoView:Landroid/view/View;
 
-    const v0, 0x7f0a0391
+    const v0, 0x7f0a0390
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->findViewById(I)Landroid/view/View;
 

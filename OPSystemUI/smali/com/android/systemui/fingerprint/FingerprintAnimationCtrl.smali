@@ -83,7 +83,7 @@
 
     iput-object p2, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->mContext:Landroid/content/Context;
 
-    const v0, 0x7f0a02ce
+    const v0, 0x7f0a02cd
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -93,7 +93,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->mDownAnimationView:Lcom/android/systemui/fingerprint/FingerprintAnimationView;
 
-    const v0, 0x7f0a02d0
+    const v0, 0x7f0a02cf
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -315,13 +315,13 @@
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->mDownAnimationView:Lcom/android/systemui/fingerprint/FingerprintAnimationView;
 
-    const v2, 0x7f080237
+    const v2, 0x7f08021c
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->setAnimationRes(I)V
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->mUpAnimationView:Lcom/android/systemui/fingerprint/FingerprintAnimationView;
 
-    const v2, 0x7f080238
+    const v2, 0x7f08021d
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->setAnimationRes(I)V
 
@@ -334,13 +334,13 @@
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->mDownAnimationView:Lcom/android/systemui/fingerprint/FingerprintAnimationView;
 
-    const v2, 0x7f080233
+    const v2, 0x7f080218
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->setAnimationRes(I)V
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->mUpAnimationView:Lcom/android/systemui/fingerprint/FingerprintAnimationView;
 
-    const v2, 0x7f080234
+    const v2, 0x7f080219
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->setAnimationRes(I)V
 
@@ -353,13 +353,13 @@
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->mDownAnimationView:Lcom/android/systemui/fingerprint/FingerprintAnimationView;
 
-    const v2, 0x7f080235
+    const v2, 0x7f08021a
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->setAnimationRes(I)V
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->mUpAnimationView:Lcom/android/systemui/fingerprint/FingerprintAnimationView;
 
-    const v2, 0x7f080236
+    const v2, 0x7f08021b
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->setAnimationRes(I)V
 
@@ -372,13 +372,13 @@
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->mDownAnimationView:Lcom/android/systemui/fingerprint/FingerprintAnimationView;
 
-    const v2, 0x7f080239
+    const v2, 0x7f08021e
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->setAnimationRes(I)V
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->mUpAnimationView:Lcom/android/systemui/fingerprint/FingerprintAnimationView;
 
-    const v2, 0x7f08023a
+    const v2, 0x7f08021f
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->setAnimationRes(I)V
 

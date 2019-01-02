@@ -568,7 +568,7 @@
 
 # virtual methods
 .method drawFrame()V
-    .locals 19
+    .locals 21
 
     move-object/from16 v7, p0
 
@@ -843,68 +843,6 @@
 
     float-to-int v2, v1
 
-    const-string v1, "ImageWallpaper"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "drawFrame: newRotation="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v9, ", mScale="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v9, v7, Lcom/android/systemui/ImageWallpaper$DrawableEngine;->mScale:F
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    const-string v9, ", dw="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v9, ", dh="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v9, ", bgWidth="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v9, v7, Lcom/android/systemui/ImageWallpaper$DrawableEngine;->mBackground:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v9}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v9, ", bgHeight="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v9, v7, Lcom/android/systemui/ImageWallpaper$DrawableEngine;->mBackground:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v9}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v1, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     iput-boolean v3, v7, Lcom/android/systemui/ImageWallpaper$DrawableEngine;->mOffsetsChanged:Z
 
     if-eqz v15, :cond_b
@@ -939,8 +877,6 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     :cond_c
-    const-wide/16 v8, 0x8
-
     invoke-static {v8, v9}, Landroid/os/Trace;->traceEnd(J)V
 
     return-void
@@ -966,23 +902,23 @@
     :cond_e
     move-object v1, v7
 
-    move v8, v2
+    move/from16 v17, v2
 
     move-object v2, v11
 
     move v3, v6
 
-    move v9, v4
+    move/from16 v18, v4
 
     move v4, v5
 
-    move/from16 v17, v5
+    move/from16 v19, v5
 
-    move v5, v9
+    move/from16 v5, v18
 
-    move/from16 v18, v6
+    move/from16 v20, v6
 
-    move v6, v8
+    move/from16 v6, v17
 
     invoke-direct/range {v1 .. v6}, Lcom/android/systemui/ImageWallpaper$DrawableEngine;->drawWallpaperWithCanvas(Landroid/view/SurfaceHolder;IIII)V
 
@@ -990,9 +926,7 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    const-wide/16 v1, 0x8
-
-    invoke-static {v1, v2}, Landroid/os/Trace;->traceEnd(J)V
+    invoke-static {v8, v9}, Landroid/os/Trace;->traceEnd(J)V
 
     nop
 
@@ -1001,9 +935,7 @@
     :catchall_0
     move-exception v0
 
-    const-wide/16 v1, 0x8
-
-    invoke-static {v1, v2}, Landroid/os/Trace;->traceEnd(J)V
+    invoke-static {v8, v9}, Landroid/os/Trace;->traceEnd(J)V
 
     throw v0
 .end method

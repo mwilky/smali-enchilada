@@ -37,7 +37,7 @@
 .method public run()V
     .locals 2
 
-    invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->access$000()Ljava/lang/String;
+    invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->access$300()Ljava/lang/String;
 
     move-result-object v0
 

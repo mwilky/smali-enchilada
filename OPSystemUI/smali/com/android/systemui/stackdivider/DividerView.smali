@@ -3149,7 +3149,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/stackdivider/DividerView;->mBackground:Landroid/view/View;
 
-    const v0, 0x7f0a0246
+    const v0, 0x7f0a0245
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/stackdivider/DividerView;->findViewById(I)Landroid/view/View;
 

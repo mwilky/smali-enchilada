@@ -540,7 +540,7 @@
 
     const/4 v2, 0x0
 
-    const/16 v3, 0x62
+    const/16 v3, 0x60
 
     aput v3, v1, v2
 

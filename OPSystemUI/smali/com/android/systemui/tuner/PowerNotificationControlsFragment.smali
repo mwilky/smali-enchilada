@@ -123,7 +123,7 @@
 
     invoke-super {p0, p1, p2}, Landroid/app/Fragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 
-    const v0, 0x7f0a03ed
+    const v0, 0x7f0a03ec
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -137,7 +137,7 @@
 
     check-cast v1, Landroid/widget/Switch;
 
-    const v2, 0x7f0a03f1
+    const v2, 0x7f0a03f0
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
