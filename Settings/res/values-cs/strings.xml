@@ -2631,7 +2631,6 @@ Spořič baterie se automaticky vypne, až se bude zařízení nabíjet."</strin
     <string name="oneplus_colorful_mode_title">Barevný</string>
     <string name="oneplus_compatibility_mode_summary">Celoobrazovkové aplikace nemohou používat oblast zářezu</string>
     <string name="oneplus_compatibility_mode_title">Režim kompatibility</string>
-    <string name="oneplus_condition_night_mode_title">Je zapnut noční režim</string>
     <string name="oneplus_connected_device_count">Je připojeno %1$s zařízení</string>
     <string name="oneplus_connected_device_management_title">Správce připojené zařízení</string>
     <string name="oneplus_connected_devices_count">Je připojeno %1$s zařízení</string>

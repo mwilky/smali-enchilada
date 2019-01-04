@@ -36,7 +36,7 @@
 .method private initDefaultBuilderParams()V
     .locals 2
 
-    const v0, 0x1040639
+    const v0, 0x1040638
 
     invoke-virtual {p0, v0}, Lcom/android/settings/TrustedCredentialsDialogBuilder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 

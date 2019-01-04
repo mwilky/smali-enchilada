@@ -602,7 +602,6 @@
     <item type="id" name="ind_location">false</item>
     <item type="id" name="ind_sync">false</item>
     <item type="id" name="ind_wifi">false</item>
-    <item type="id" name="indeterminate">false</item>
     <item type="id" name="info_field">false</item>
     <item type="id" name="initial">false</item>
     <item type="id" name="initiate_encrypt">false</item>

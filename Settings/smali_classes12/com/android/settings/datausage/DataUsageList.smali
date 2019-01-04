@@ -1718,7 +1718,7 @@
 
     iget-object v0, p0, Lcom/android/settings/datausage/DataUsageList;->mHeader:Landroid/view/View;
 
-    const v3, 0x7f0a05aa
+    const v3, 0x7f0a05a9
 
     invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1800,7 +1800,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0a0310
+    const v5, 0x7f0a030f
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

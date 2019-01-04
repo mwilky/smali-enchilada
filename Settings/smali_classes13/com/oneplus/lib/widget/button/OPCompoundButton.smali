@@ -10,7 +10,6 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/oneplus/lib/widget/button/OPCompoundButton$SavedState;,
-        Lcom/oneplus/lib/widget/button/OPCompoundButton$OnTriStateCheckedChangeListener;,
         Lcom/oneplus/lib/widget/button/OPCompoundButton$OnCheckedChangeListener;
     }
 .end annotation
@@ -18,8 +17,6 @@
 
 # static fields
 .field private static final CHECKED_STATE_SET:[I
-
-.field private static final INDETERMINATE_STATE_SET:[I
 
 .field public static TAG:Ljava/lang/String;
 
@@ -41,20 +38,14 @@
 
 .field private mHasButtonTintMode:Z
 
-.field private mIndeterminate:Z
-
 .field private mOnCheckedChangeListener:Lcom/oneplus/lib/widget/button/OPCompoundButton$OnCheckedChangeListener;
 
 .field private mOnCheckedChangeWidgetListener:Lcom/oneplus/lib/widget/button/OPCompoundButton$OnCheckedChangeListener;
 
-.field private mOnTriStateCheckedChangeListener:Lcom/oneplus/lib/widget/button/OPCompoundButton$OnTriStateCheckedChangeListener;
-
-.field private mThreeState:Z
-
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 3
 
     const-class v0, Lcom/oneplus/lib/widget/button/OPCompoundButton;
 
@@ -66,21 +57,13 @@
 
     const/4 v0, 0x1
 
-    new-array v1, v0, [I
-
-    sget v2, Lcom/oneplus/commonctrl/R$attr;->state_indeterminate:I
-
-    const/4 v3, 0x0
-
-    aput v2, v1, v3
-
-    sput-object v1, Lcom/oneplus/lib/widget/button/OPCompoundButton;->INDETERMINATE_STATE_SET:[I
-
     new-array v0, v0, [I
 
-    const v1, 0x10100a0
+    const/4 v1, 0x0
 
-    aput v1, v0, v3
+    const v2, 0x10100a0
+
+    aput v2, v0, v1
 
     sput-object v0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->CHECKED_STATE_SET:[I
 
@@ -118,7 +101,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-    .locals 8
+    .locals 7
 
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/Button;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
@@ -128,126 +111,94 @@
 
     iput-object v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mButtonTintMode:Landroid/graphics/PorterDuff$Mode;
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    iput-boolean v1, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mHasButtonTint:Z
+    iput-boolean v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mHasButtonTint:Z
 
-    iput-boolean v1, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mHasButtonTintMode:Z
+    iput-boolean v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mHasButtonTintMode:Z
 
-    sget-object v2, Lcom/oneplus/commonctrl/R$styleable;->OPCompoundbutton:[I
+    sget-object v1, Lcom/oneplus/commonctrl/R$styleable;->OPCompoundbutton:[I
 
-    invoke-virtual {p1, p2, v2, p3, p4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v1, p3, p4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+
+    move-result-object v1
+
+    sget v2, Lcom/oneplus/commonctrl/R$styleable;->OPCompoundbutton_android_button:I
+
+    invoke-virtual {v1, v2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    sget v3, Lcom/oneplus/commonctrl/R$styleable;->OPCompoundbutton_android_button:I
+    if-eqz v2, :cond_0
 
-    invoke-virtual {v2, v3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0, v2}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    :cond_0
+    sget v3, Lcom/oneplus/commonctrl/R$styleable;->OPCompoundbutton_android_buttonTintMode:I
+
+    invoke-virtual {v1, v3}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v3
+
+    const/4 v4, 0x1
+
+    const/4 v5, -0x1
+
+    if-eqz v3, :cond_1
+
+    sget v3, Lcom/oneplus/commonctrl/R$styleable;->OPCompoundbutton_android_buttonTintMode:I
+
+    invoke-virtual {v1, v3, v5}, Landroid/content/res/TypedArray;->getInt(II)I
+
+    move-result v3
+
+    iget-object v6, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mButtonTintMode:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-static {v3, v6}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->parseTintMode(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
 
     move-result-object v3
 
-    if-eqz v3, :cond_0
+    iput-object v3, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mButtonTintMode:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-virtual {p0, v3}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    :cond_0
-    sget v4, Lcom/oneplus/commonctrl/R$styleable;->OPCompoundbutton_android_buttonTintMode:I
-
-    invoke-virtual {v2, v4}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v4
-
-    const/4 v5, 0x1
-
-    const/4 v6, -0x1
-
-    if-eqz v4, :cond_1
-
-    sget v4, Lcom/oneplus/commonctrl/R$styleable;->OPCompoundbutton_android_buttonTintMode:I
-
-    invoke-virtual {v2, v4, v6}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    move-result v4
-
-    iget-object v7, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mButtonTintMode:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-static {v4, v7}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->parseTintMode(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
-
-    move-result-object v4
-
-    iput-object v4, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mButtonTintMode:Landroid/graphics/PorterDuff$Mode;
-
-    iput-boolean v5, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mHasButtonTintMode:Z
+    iput-boolean v4, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mHasButtonTintMode:Z
 
     :cond_1
-    sget v4, Lcom/oneplus/commonctrl/R$styleable;->OPCompoundbutton_android_buttonTint:I
+    sget v3, Lcom/oneplus/commonctrl/R$styleable;->OPCompoundbutton_android_buttonTint:I
 
-    invoke-virtual {v2, v4}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {v1, v3}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_2
+    if-eqz v3, :cond_2
 
-    sget v4, Lcom/oneplus/commonctrl/R$styleable;->OPCompoundbutton_android_buttonTint:I
+    sget v3, Lcom/oneplus/commonctrl/R$styleable;->OPCompoundbutton_android_buttonTint:I
 
-    invoke-virtual {v2, v4}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+    invoke-virtual {v1, v3}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
-    move-result-object v4
+    move-result-object v3
 
-    iput-object v4, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mButtonTintList:Landroid/content/res/ColorStateList;
+    iput-object v3, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mButtonTintList:Landroid/content/res/ColorStateList;
 
-    iput-boolean v5, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mHasButtonTint:Z
+    iput-boolean v4, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mHasButtonTint:Z
 
     :cond_2
-    sget v4, Lcom/oneplus/commonctrl/R$styleable;->OPCompoundbutton_threeState:I
+    sget v3, Lcom/oneplus/commonctrl/R$styleable;->OPCompoundbutton_android_checked:I
 
-    invoke-virtual {v2, v4, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v4
-
-    sget v5, Lcom/oneplus/commonctrl/R$styleable;->OPCompoundbutton_android_checked:I
-
-    invoke-virtual {v2, v5, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v5
-
-    sget v7, Lcom/oneplus/commonctrl/R$styleable;->OPCompoundbutton_indeterminate:I
-
-    invoke-virtual {v2, v7, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v1
-
-    invoke-virtual {p0, v4}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->setThreeState(Z)V
-
-    if-eqz v1, :cond_4
-
-    if-eqz v1, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-virtual {p0, v0}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->setTriStateChecked(Ljava/lang/Boolean;)V
-
-    goto :goto_1
-
-    :cond_4
-    invoke-virtual {p0, v5}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->setCheckedInternal(Z)V
-
-    :goto_1
-    sget v0, Lcom/oneplus/commonctrl/R$styleable;->OPCompoundbutton_android_radius:I
-
-    invoke-virtual {v2, v0, v6}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v1, v3, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v0
 
-    invoke-direct {p0, v0}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->setRadius(I)V
+    invoke-virtual {p0, v0}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->setChecked(Z)V
 
-    invoke-virtual {v2}, Landroid/content/res/TypedArray;->recycle()V
+    sget v3, Lcom/oneplus/commonctrl/R$styleable;->OPCompoundbutton_android_radius:I
+
+    invoke-virtual {v1, v3, v5}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+
+    move-result v3
+
+    invoke-direct {p0, v3}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->setRadius(I)V
+
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
     invoke-direct {p0}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->applyButtonTint()V
 
@@ -317,59 +268,6 @@
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
     :cond_3
-    return-void
-.end method
-
-.method private notifyViewAccessibilityStateChangedIfNeededInternal(I)V
-    .locals 6
-
-    :try_start_0
-    const-string v0, "android.view.View"
-
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v0
-
-    const-string v1, "notifyViewAccessibilityStateChangedIfNeeded"
-
-    const/4 v2, 0x1
-
-    new-array v3, v2, [Ljava/lang/Class;
-
-    sget-object v4, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    const/4 v5, 0x0
-
-    aput-object v4, v3, v5
-
-    invoke-virtual {v0, v1, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v2, v5
-
-    invoke-virtual {v1, p0, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    sget-object v1, Lcom/oneplus/lib/widget/button/OPCompoundButton;->TAG:Ljava/lang/String;
-
-    const-string v2, "notifyViewAccessibilityStateChangedIfNeeded with Exception!"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    :goto_0
     return-void
 .end method
 
@@ -621,16 +519,6 @@
     return v0
 .end method
 
-.method public isIndeterminate()Z
-    .locals 1
-    .annotation runtime Landroid/view/ViewDebug$ExportedProperty;
-    .end annotation
-
-    iget-boolean v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mIndeterminate:Z
-
-    return v0
-.end method
-
 .method public isLayoutRtl()Z
     .locals 2
 
@@ -649,16 +537,6 @@
 
     :goto_0
     return v1
-.end method
-
-.method public isThreeState()Z
-    .locals 1
-    .annotation runtime Landroid/view/ViewDebug$ExportedProperty;
-    .end annotation
-
-    iget-boolean v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mThreeState:Z
-
-    return v0
 .end method
 
 .method public jumpDrawablesToCurrentState()V
@@ -687,31 +565,17 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->isIndeterminate()Z
+    invoke-virtual {p0}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->isChecked()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    sget-object v1, Lcom/oneplus/lib/widget/button/OPCompoundButton;->INDETERMINATE_STATE_SET:[I
-
-    invoke-static {v0, v1}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mergeDrawableStates([I[I)[I
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->isChecked()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
     sget-object v1, Lcom/oneplus/lib/widget/button/OPCompoundButton;->CHECKED_STATE_SET:[I
 
     invoke-static {v0, v1}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mergeDrawableStates([I[I)[I
 
-    :cond_1
-    :goto_0
+    :cond_0
     return-object v0
 .end method
 
@@ -918,40 +782,10 @@
 
     invoke-super {p0, v1}, Landroid/widget/Button;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    iget-boolean v1, v0, Lcom/oneplus/lib/widget/button/OPCompoundButton$SavedState;->threeState:Z
-
-    iput-boolean v1, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mThreeState:Z
-
-    iget-boolean v1, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mThreeState:Z
-
-    if-eqz v1, :cond_1
-
-    iget-boolean v1, v0, Lcom/oneplus/lib/widget/button/OPCompoundButton$SavedState;->indeterminate:Z
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x0
-
-    goto :goto_0
-
-    :cond_0
     iget-boolean v1, v0, Lcom/oneplus/lib/widget/button/OPCompoundButton$SavedState;->checked:Z
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {p0, v1}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->setChecked(Z)V
 
-    move-result-object v1
-
-    :goto_0
-    invoke-virtual {p0, v1}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->setTriStateChecked(Ljava/lang/Boolean;)V
-
-    goto :goto_1
-
-    :cond_1
-    iget-boolean v1, v0, Lcom/oneplus/lib/widget/button/OPCompoundButton$SavedState;->checked:Z
-
-    invoke-virtual {p0, v1}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->setCheckedInternal(Z)V
-
-    :goto_1
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->requestLayout()V
 
     return-void
@@ -974,66 +808,25 @@
 
     iput-boolean v2, v1, Lcom/oneplus/lib/widget/button/OPCompoundButton$SavedState;->checked:Z
 
-    iget-boolean v2, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mThreeState:Z
-
-    iput-boolean v2, v1, Lcom/oneplus/lib/widget/button/OPCompoundButton$SavedState;->threeState:Z
-
-    iget-boolean v2, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mIndeterminate:Z
-
-    iput-boolean v2, v1, Lcom/oneplus/lib/widget/button/OPCompoundButton$SavedState;->indeterminate:Z
-
     return-object v1
 .end method
 
 .method public performClick()Z
     .locals 2
 
-    iget-boolean v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mThreeState:Z
-
-    if-eqz v0, :cond_1
-
-    iget-boolean v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mIndeterminate:Z
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_0
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->setTriStateChecked(Ljava/lang/Boolean;)V
-
-    goto :goto_0
-
-    :cond_0
-    iget-boolean v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mChecked:Z
-
-    xor-int/2addr v0, v1
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->setTriStateChecked(Ljava/lang/Boolean;)V
-
-    goto :goto_0
-
-    :cond_1
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->toggle()V
 
-    :goto_0
     invoke-super {p0}, Landroid/widget/Button;->performClick()Z
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_0
 
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->playSoundEffect(I)V
 
-    :cond_2
+    :cond_0
     return v0
 .end method
 
@@ -1220,89 +1013,97 @@
 .end method
 
 .method public setChecked(Z)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->setCheckedInternal(Z)V
-
-    return-void
-.end method
-
-.method public setCheckedInternal(Z)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, v0}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->setCheckedInternal(ZZ)V
-
-    return-void
-.end method
-
-.method public setCheckedInternal(ZZ)V
-    .locals 4
+    .locals 6
 
     iget-boolean v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mChecked:Z
 
-    const/4 v1, 0x1
+    if-eq v0, p1, :cond_3
 
-    const/4 v2, 0x0
-
-    if-eq v0, p1, :cond_0
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_0
-    move v0, v2
-
-    :goto_0
-    if-nez v0, :cond_1
-
-    if-eqz p2, :cond_5
-
-    :cond_1
     iput-boolean p1, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mChecked:Z
 
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->refreshDrawableState()V
 
-    invoke-direct {p0, v2}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->notifyViewAccessibilityStateChangedIfNeededInternal(I)V
+    const/4 v0, 0x1
 
-    if-eqz v0, :cond_5
+    const/4 v1, 0x0
 
-    iget-boolean v3, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mBroadcasting:Z
+    :try_start_0
+    const-string v2, "android.view.View"
 
-    if-eqz v3, :cond_2
+    invoke-static {v2}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v2
+
+    const-string v3, "notifyViewAccessibilityStateChangedIfNeeded"
+
+    new-array v4, v0, [Ljava/lang/Class;
+
+    sget-object v5, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    aput-object v5, v4, v1
+
+    invoke-virtual {v2, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v3
+
+    new-array v4, v0, [Ljava/lang/Object;
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v4, v1
+
+    invoke-virtual {v3, p0, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v2
+
+    sget-object v3, Lcom/oneplus/lib/widget/button/OPCompoundButton;->TAG:Ljava/lang/String;
+
+    const-string v4, "notifyViewAccessibilityStateChangedIfNeeded with Exception!"
+
+    invoke-static {v3, v4, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    :goto_0
+    iget-boolean v2, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mBroadcasting:Z
+
+    if-eqz v2, :cond_0
 
     return-void
+
+    :cond_0
+    iput-boolean v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mBroadcasting:Z
+
+    iget-object v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mOnCheckedChangeListener:Lcom/oneplus/lib/widget/button/OPCompoundButton$OnCheckedChangeListener;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mOnCheckedChangeListener:Lcom/oneplus/lib/widget/button/OPCompoundButton$OnCheckedChangeListener;
+
+    iget-boolean v2, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mChecked:Z
+
+    invoke-interface {v0, p0, v2}, Lcom/oneplus/lib/widget/button/OPCompoundButton$OnCheckedChangeListener;->onCheckedChanged(Lcom/oneplus/lib/widget/button/OPCompoundButton;Z)V
+
+    :cond_1
+    iget-object v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mOnCheckedChangeWidgetListener:Lcom/oneplus/lib/widget/button/OPCompoundButton$OnCheckedChangeListener;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mOnCheckedChangeWidgetListener:Lcom/oneplus/lib/widget/button/OPCompoundButton$OnCheckedChangeListener;
+
+    iget-boolean v2, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mChecked:Z
+
+    invoke-interface {v0, p0, v2}, Lcom/oneplus/lib/widget/button/OPCompoundButton$OnCheckedChangeListener;->onCheckedChanged(Lcom/oneplus/lib/widget/button/OPCompoundButton;Z)V
 
     :cond_2
     iput-boolean v1, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mBroadcasting:Z
 
-    iget-object v1, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mOnCheckedChangeListener:Lcom/oneplus/lib/widget/button/OPCompoundButton$OnCheckedChangeListener;
-
-    if-eqz v1, :cond_3
-
-    iget-object v1, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mOnCheckedChangeListener:Lcom/oneplus/lib/widget/button/OPCompoundButton$OnCheckedChangeListener;
-
-    iget-boolean v3, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mChecked:Z
-
-    invoke-interface {v1, p0, v3}, Lcom/oneplus/lib/widget/button/OPCompoundButton$OnCheckedChangeListener;->onCheckedChanged(Lcom/oneplus/lib/widget/button/OPCompoundButton;Z)V
-
     :cond_3
-    iget-object v1, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mOnCheckedChangeWidgetListener:Lcom/oneplus/lib/widget/button/OPCompoundButton$OnCheckedChangeListener;
-
-    if-eqz v1, :cond_4
-
-    iget-object v1, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mOnCheckedChangeWidgetListener:Lcom/oneplus/lib/widget/button/OPCompoundButton$OnCheckedChangeListener;
-
-    iget-boolean v3, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mChecked:Z
-
-    invoke-interface {v1, p0, v3}, Lcom/oneplus/lib/widget/button/OPCompoundButton$OnCheckedChangeListener;->onCheckedChanged(Lcom/oneplus/lib/widget/button/OPCompoundButton;Z)V
-
-    :cond_4
-    iput-boolean v2, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mBroadcasting:Z
-
-    :cond_5
     return-void
 .end method
 
@@ -1322,106 +1123,6 @@
     return-void
 .end method
 
-.method public setOnTriStateCheckedChangeListener(Lcom/oneplus/lib/widget/button/OPCompoundButton$OnTriStateCheckedChangeListener;)V
-    .locals 0
-
-    iput-object p1, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mOnTriStateCheckedChangeListener:Lcom/oneplus/lib/widget/button/OPCompoundButton$OnTriStateCheckedChangeListener;
-
-    return-void
-.end method
-
-.method public setThreeState(Z)V
-    .locals 0
-
-    iput-boolean p1, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mThreeState:Z
-
-    return-void
-.end method
-
-.method protected setTriStateChecked(Ljava/lang/Boolean;)V
-    .locals 4
-
-    iget-boolean v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mIndeterminate:Z
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    if-nez p1, :cond_0
-
-    move v3, v2
-
-    goto :goto_0
-
-    :cond_0
-    move v3, v1
-
-    :goto_0
-    if-ne v0, v3, :cond_1
-
-    if-eqz p1, :cond_6
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    iget-boolean v3, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mChecked:Z
-
-    if-eq v0, v3, :cond_6
-
-    :cond_1
-    if-nez p1, :cond_2
-
-    move v0, v2
-
-    goto :goto_1
-
-    :cond_2
-    move v0, v1
-
-    :goto_1
-    iput-boolean v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mIndeterminate:Z
-
-    if-eqz p1, :cond_3
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    invoke-virtual {p0, v0, v2}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->setCheckedInternal(ZZ)V
-
-    goto :goto_2
-
-    :cond_3
-    invoke-virtual {p0}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->refreshDrawableState()V
-
-    invoke-direct {p0, v1}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->notifyViewAccessibilityStateChangedIfNeededInternal(I)V
-
-    :goto_2
-    iget-boolean v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mBroadcasting:Z
-
-    if-eqz v0, :cond_4
-
-    return-void
-
-    :cond_4
-    iput-boolean v2, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mBroadcasting:Z
-
-    iget-object v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mOnTriStateCheckedChangeListener:Lcom/oneplus/lib/widget/button/OPCompoundButton$OnTriStateCheckedChangeListener;
-
-    if-eqz v0, :cond_5
-
-    iget-object v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mOnTriStateCheckedChangeListener:Lcom/oneplus/lib/widget/button/OPCompoundButton$OnTriStateCheckedChangeListener;
-
-    invoke-interface {v0, p0, p1}, Lcom/oneplus/lib/widget/button/OPCompoundButton$OnTriStateCheckedChangeListener;->onCheckedChanged(Lcom/oneplus/lib/widget/button/OPCompoundButton;Ljava/lang/Boolean;)V
-
-    :cond_5
-    iput-boolean v1, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton;->mBroadcasting:Z
-
-    :cond_6
-    return-void
-.end method
-
 .method public toggle()V
     .locals 1
 
@@ -1429,7 +1130,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    invoke-virtual {p0, v0}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->setCheckedInternal(Z)V
+    invoke-virtual {p0, v0}, Lcom/oneplus/lib/widget/button/OPCompoundButton;->setChecked(Z)V
 
     return-void
 .end method

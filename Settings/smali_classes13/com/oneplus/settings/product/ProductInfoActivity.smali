@@ -293,7 +293,7 @@
     goto :goto_2
 
     :cond_2
-    const v1, 0x7f0a0323
+    const v1, 0x7f0a0322
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/product/ProductInfoActivity;->findViewById(I)Landroid/view/View;
 
@@ -303,7 +303,7 @@
 
     iput-object v1, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mViewPager:Landroid/support/v4/view/ViewPager;
 
-    const v1, 0x7f0a057f
+    const v1, 0x7f0a057e
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/product/ProductInfoActivity;->findViewById(I)Landroid/view/View;
 

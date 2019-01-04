@@ -319,12 +319,12 @@
 
     if-eqz v11, :cond_2
 
-    const v11, 0x7f0802ce
+    const v11, 0x7f0802b3
 
     goto :goto_2
 
     :cond_2
-    const v11, 0x7f0802cf
+    const v11, 0x7f0802b4
 
     :goto_2
     iget-boolean v12, v0, Lcom/android/settings/display/ConversationMessageView;->mIncoming:Z
@@ -441,7 +441,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f08014a
+    const v1, 0x7f08012f
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -469,7 +469,7 @@
 .method protected onFinishInflate()V
     .locals 1
 
-    const v0, 0x7f0a0339
+    const v0, 0x7f0a0338
 
     invoke-virtual {p0, v0}, Lcom/android/settings/display/ConversationMessageView;->findViewById(I)Landroid/view/View;
 
@@ -479,7 +479,7 @@
 
     iput-object v0, p0, Lcom/android/settings/display/ConversationMessageView;->mMessageBubble:Landroid/widget/LinearLayout;
 
-    const v0, 0x7f0a033d
+    const v0, 0x7f0a033c
 
     invoke-virtual {p0, v0}, Lcom/android/settings/display/ConversationMessageView;->findViewById(I)Landroid/view/View;
 
@@ -489,7 +489,7 @@
 
     iput-object v0, p0, Lcom/android/settings/display/ConversationMessageView;->mMessageTextAndInfoView:Landroid/view/ViewGroup;
 
-    const v0, 0x7f0a033c
+    const v0, 0x7f0a033b
 
     invoke-virtual {p0, v0}, Lcom/android/settings/display/ConversationMessageView;->findViewById(I)Landroid/view/View;
 
@@ -499,7 +499,7 @@
 
     iput-object v0, p0, Lcom/android/settings/display/ConversationMessageView;->mMessageTextView:Landroid/widget/TextView;
 
-    const v0, 0x7f0a033b
+    const v0, 0x7f0a033a
 
     invoke-virtual {p0, v0}, Lcom/android/settings/display/ConversationMessageView;->findViewById(I)Landroid/view/View;
 

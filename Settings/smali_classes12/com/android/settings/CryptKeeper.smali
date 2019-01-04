@@ -301,7 +301,7 @@
 .method private beginAttempt()V
     .locals 2
 
-    const v0, 0x7f0a0517
+    const v0, 0x7f0a0516
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -339,7 +339,7 @@
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/LockPatternView;->setEnabled(Z)V
 
     :cond_1
-    const v0, 0x7f0a0517
+    const v0, 0x7f0a0516
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -446,7 +446,7 @@
     invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
     :cond_0
-    const v0, 0x7f0a0442
+    const v0, 0x7f0a0441
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -579,7 +579,7 @@
     goto/16 :goto_2
 
     :cond_1
-    const v0, 0x7f0a0517
+    const v0, 0x7f0a0516
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -1029,7 +1029,7 @@
 .method private passwordEntryInit()V
     .locals 6
 
-    const v0, 0x7f0a0402
+    const v0, 0x7f0a0401
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -1064,7 +1064,7 @@
     invoke-virtual {v0, p0}, Lcom/android/settings/widget/ImeAwareEditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
     :cond_0
-    const v0, 0x7f0a0314
+    const v0, 0x7f0a0313
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -1114,7 +1114,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     :cond_2
-    const v0, 0x7f0a055d
+    const v0, 0x7f0a055c
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -1465,9 +1465,9 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v2, 0x7f0a0517
+    const v2, 0x7f0a0516
 
-    const v3, 0x7f0a058b
+    const v3, 0x7f0a058a
 
     if-eqz p1, :cond_0
 
@@ -1764,7 +1764,7 @@
     move-exception v5
 
     :goto_2
-    const v5, 0x7f0a0517
+    const v5, 0x7f0a0516
 
     invoke-virtual {p0, v5}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 

@@ -2631,7 +2631,6 @@ Aplikácia tým získa aj možnosť vypnúť alebo zapnúť nastavenie Nerušiť
     <string name="oneplus_colorful_mode_title">Farebné</string>
     <string name="oneplus_compatibility_mode_summary">Aplikácie na celú obrazovku nemôžu používať oblasť zárezu</string>
     <string name="oneplus_compatibility_mode_title">Režim kompatibility</string>
-    <string name="oneplus_condition_night_mode_title">Nočný režim je zapnutý</string>
     <string name="oneplus_connected_device_count">Počet pripojených zariadení: %1$s</string>
     <string name="oneplus_connected_device_management_title">Správca pripojených zariadení</string>
     <string name="oneplus_connected_devices_count">Počet pripojených zariadení: %1$s</string>

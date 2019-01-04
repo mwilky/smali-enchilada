@@ -2631,7 +2631,6 @@ Batterij sparen schakelt automatisch uit wanneer het toestel oplaadt."</string>
     <string name="oneplus_colorful_mode_title">Kleurrijk</string>
     <string name="oneplus_compatibility_mode_summary">Apps in volledig scherm mogen het notch gebied niet gebruiken</string>
     <string name="oneplus_compatibility_mode_title">Compatibiliteitsmodus</string>
-    <string name="oneplus_condition_night_mode_title">Nachtmodus is ingeschakeld</string>
     <string name="oneplus_connected_device_count">Er is %1$s toestel verbonden</string>
     <string name="oneplus_connected_device_management_title">Apparaatbeheer verbonden</string>
     <string name="oneplus_connected_devices_count">Er zijn %1$s toestellen verbonden</string>

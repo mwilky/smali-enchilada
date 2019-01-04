@@ -2631,7 +2631,6 @@ Batterisparetilstanden deaktiveres automatisk, når din enhed oplader."</string>
     <string name="oneplus_colorful_mode_title">Farverig</string>
     <string name="oneplus_compatibility_mode_summary">Fuldskærmsapps kan ikke bruge notch-området</string>
     <string name="oneplus_compatibility_mode_title">Kompatibilitetstilstand</string>
-    <string name="oneplus_condition_night_mode_title">Nattetilstand er slået til</string>
     <string name="oneplus_connected_device_count">Der er %1$s enhed tilsluttet</string>
     <string name="oneplus_connected_device_management_title">Forbundet enhedshåndtering</string>
     <string name="oneplus_connected_devices_count">Der er %1$s enheder tilsluttet</string>

@@ -2631,7 +2631,6 @@
     <string name="oneplus_colorful_mode_title">สีสัน</string>
     <string name="oneplus_compatibility_mode_summary">แอปเต็มหน้าจอไม่สามารถใช้พื้นที่รอยบากได้</string>
     <string name="oneplus_compatibility_mode_title">โหมดความเข้ากันได้</string>
-    <string name="oneplus_condition_night_mode_title">โหมดกลางคืน เปิดอยู่</string>
     <string name="oneplus_connected_device_count">มี %1$s อุปกรณ์เชื่อมต่ออยู่</string>
     <string name="oneplus_connected_device_management_title">ตัวจัดการอุปกรณ์ที่เชื่อมต่ออยู่</string>
     <string name="oneplus_connected_devices_count">มี %1$s อุปกรณ์เชื่อมต่ออยู่</string>

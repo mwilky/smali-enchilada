@@ -15,7 +15,7 @@
 
     invoke-direct {p0, p1, v0}, Lcom/android/settings/vpn2/ManageablePreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    const v0, 0x7f080273
+    const v0, 0x7f080258
 
     invoke-virtual {p0, v0}, Lcom/android/settings/vpn2/LegacyVpnPreference;->setIcon(I)V
 
@@ -159,7 +159,7 @@
 
     move-result v0
 
-    const v1, 0x7f0a04d8
+    const v1, 0x7f0a04d7
 
     if-ne v0, v1, :cond_0
 

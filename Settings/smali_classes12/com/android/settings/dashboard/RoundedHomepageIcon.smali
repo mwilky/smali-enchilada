@@ -19,7 +19,7 @@
 
     new-array v0, v0, [Landroid/graphics/drawable/Drawable;
 
-    const v1, 0x7f0801ca
+    const v1, 0x7f0801af
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

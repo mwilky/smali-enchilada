@@ -835,7 +835,7 @@
 
     iput-object v2, p0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment;->mPasswordRequirements:[I
 
-    const v2, 0x7f0a0407
+    const v2, 0x7f0a0406
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1863,7 +1863,7 @@
 
     if-eq v0, v1, :cond_1
 
-    const v1, 0x7f0a035d
+    const v1, 0x7f0a035c
 
     if-eq v0, v1, :cond_0
 
@@ -2190,7 +2190,7 @@
 
     iput-object v0, p0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment;->mLayout:Lcom/android/setupwizardlib/GlifLayout;
 
-    const v0, 0x7f0a0403
+    const v0, 0x7f0a0402
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2202,7 +2202,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setOpticalInsets(Landroid/graphics/Insets;)V
 
-    const v1, 0x7f0a04f6
+    const v1, 0x7f0a04f5
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2216,7 +2216,7 @@
 
     invoke-virtual {v1, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v1, 0x7f0a035d
+    const v1, 0x7f0a035c
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2289,7 +2289,7 @@
     invoke-virtual {v1, v4}, Landroid/widget/CheckBox;->setChecked(Z)V
 
     :cond_1
-    const v1, 0x7f0a0337
+    const v1, 0x7f0a0336
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2309,7 +2309,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0801b4
+    const v5, 0x7f080199
 
     invoke-virtual {v4, v5}, Landroid/app/Activity;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2375,7 +2375,7 @@
 
     invoke-virtual {v1, v4}, Landroid/support/v7/widget/RecyclerView;->setLayoutManager(Landroid/support/v7/widget/RecyclerView$LayoutManager;)V
 
-    const v1, 0x7f0a0404
+    const v1, 0x7f0a0403
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2437,7 +2437,7 @@
 
     move-result-object v6
 
-    const v7, 0x1040158
+    const v7, 0x1040157
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

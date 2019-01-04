@@ -111,7 +111,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f080217
+    const v1, 0x7f0801fc
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setIcon(I)V
 

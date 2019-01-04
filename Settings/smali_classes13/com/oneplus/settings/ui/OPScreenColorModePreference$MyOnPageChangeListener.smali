@@ -49,9 +49,9 @@
 .method public onPageSelected(I)V
     .locals 4
 
-    const v0, 0x7f0803db
+    const v0, 0x7f0803c0
 
-    const v1, 0x7f0803da
+    const v1, 0x7f0803bf
 
     packed-switch p1, :pswitch_data_0
 

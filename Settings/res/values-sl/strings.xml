@@ -2631,7 +2631,6 @@ Varčevanje akumulatorja je samodejno onemogočeno med polnjenjem naprave."</str
     <string name="oneplus_colorful_mode_title">Barvito</string>
     <string name="oneplus_compatibility_mode_summary">Celozaslonske aplikacije ne morejo uporabljati območja izreza</string>
     <string name="oneplus_compatibility_mode_title">Združljivostni način</string>
-    <string name="oneplus_condition_night_mode_title">Nočni način je vklopljen</string>
     <string name="oneplus_connected_device_count">Št. trenutnih priključenih naprav: %1$s</string>
     <string name="oneplus_connected_device_management_title">Priključen upravitelj naprav</string>
     <string name="oneplus_connected_devices_count">Št. trenutnih priključenih naprav: %1$s</string>

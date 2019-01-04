@@ -2631,7 +2631,6 @@
     <string name="oneplus_colorful_mode_title">रंगीन</string>
     <string name="oneplus_compatibility_mode_summary">नॉच क्षेत्र में फुल स्क्रीन ऐप्स उपयोग नहीं हो सकते हैं</string>
     <string name="oneplus_compatibility_mode_title">संगतता मोड</string>
-    <string name="oneplus_condition_night_mode_title">रात्रि मोड ऑन है</string>
     <string name="oneplus_connected_device_count">%1$s डिवाइस कनेक्ट है</string>
     <string name="oneplus_connected_device_management_title">कनेक्टेड डिवाइस मैनेजर</string>
     <string name="oneplus_connected_devices_count">%1$s डिवाइसें कनेक्ट हैं</string>

@@ -2631,7 +2631,6 @@ Ang Battery saver ay awtomatikong pinapatay kapag ang iyong aparato ay nag-charg
     <string name="oneplus_colorful_mode_title">Colorful theme</string>
     <string name="oneplus_compatibility_mode_summary">Hindi magagamit ng mga fullscreen na app ang notch</string>
     <string name="oneplus_compatibility_mode_title">Compatibility mode</string>
-    <string name="oneplus_condition_night_mode_title">Naka-on ang night mode</string>
     <string name="oneplus_connected_device_count">Mayroong%1$s isang aparatong nakakonekta</string>
     <string name="oneplus_connected_device_management_title">Nakakonekta na device manager</string>
     <string name="oneplus_connected_devices_count">Mayroong%1$s mga aparatong nakakonekta</string>

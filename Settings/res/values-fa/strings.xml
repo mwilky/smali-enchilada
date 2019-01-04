@@ -2629,7 +2629,6 @@
     <string name="oneplus_colorful_mode_title">رنگارنگ</string>
     <string name="oneplus_compatibility_mode_summary">برنامه‌های تمام‌صفحه نمی‌توانند از قسمت برآمده استفاده کنند</string>
     <string name="oneplus_compatibility_mode_title">حالت سازگاری</string>
-    <string name="oneplus_condition_night_mode_title">حالت شب روشن است</string>
     <string name="oneplus_connected_device_count">%1$s دستگاه متصل وجود دارد</string>
     <string name="oneplus_connected_device_management_title">مدیر دستگاه متصل شده</string>
     <string name="oneplus_connected_devices_count">%1$s دستگاه متصل وجود دارد</string>

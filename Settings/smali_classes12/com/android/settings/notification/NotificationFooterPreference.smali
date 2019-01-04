@@ -35,7 +35,7 @@
 .method private init()V
     .locals 1
 
-    const v0, 0x7f0801d3
+    const v0, 0x7f0801b8
 
     invoke-virtual {p0, v0}, Lcom/android/settings/notification/NotificationFooterPreference;->setIcon(I)V
 

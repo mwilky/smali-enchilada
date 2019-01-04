@@ -2631,7 +2631,6 @@ Der Akku-Schoner wird beim Aufladen des Geräts automatisch deaktiviert."</strin
     <string name="oneplus_colorful_mode_title">Farbig</string>
     <string name="oneplus_compatibility_mode_summary">Vollbild-Apps können den Notch-Bereich nicht verwenden</string>
     <string name="oneplus_compatibility_mode_title">Kompatibilitäts-Modus</string>
-    <string name="oneplus_condition_night_mode_title">Nacht-Modus ist aktiviert</string>
     <string name="oneplus_connected_device_count">Es ist %1$s Gerät verbunden</string>
     <string name="oneplus_connected_device_management_title">Verbundener Gerätemanager</string>
     <string name="oneplus_connected_devices_count">Es sind %1$s Geräte verbunden</string>

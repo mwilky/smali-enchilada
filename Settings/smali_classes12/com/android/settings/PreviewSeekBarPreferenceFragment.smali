@@ -276,7 +276,7 @@
 
     move-result v4
 
-    const v6, 0x7f0a04c5
+    const v6, 0x7f0a04c4
 
     invoke-virtual {v2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -296,7 +296,7 @@
 
     invoke-virtual {v6, v4}, Lcom/android/settings/widget/LabeledSeekBar;->setMax(I)V
 
-    const v6, 0x7f0a04fd
+    const v6, 0x7f0a04fc
 
     invoke-virtual {v2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -312,7 +312,7 @@
 
     invoke-virtual {v6, v7}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v6, 0x7f0a02cd
+    const v6, 0x7f0a02cc
 
     invoke-virtual {v2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -391,7 +391,7 @@
     goto :goto_1
 
     :cond_2
-    const v10, 0x7f0a042e
+    const v10, 0x7f0a042d
 
     invoke-virtual {v2, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -439,7 +439,7 @@
 
     invoke-virtual {v10, v11}, Landroid/support/v4/view/ViewPager;->addOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
 
-    const v10, 0x7f0a03fa
+    const v10, 0x7f0a03f9
 
     invoke-virtual {v2, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

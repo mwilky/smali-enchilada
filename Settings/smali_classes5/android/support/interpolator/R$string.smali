@@ -5461,8 +5461,6 @@
 
 .field public static final oneplus_compatibility_mode_title:I = 0x7f120aa9
 
-.field public static final oneplus_condition_night_mode_title:I = 0x7f120aaa
-
 .field public static final oneplus_connected_device_count:I = 0x7f120aab
 
 .field public static final oneplus_connected_device_management_title:I = 0x7f120aac

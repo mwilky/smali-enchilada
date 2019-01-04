@@ -94,7 +94,7 @@
     goto :goto_0
 
     :cond_1
-    const v2, 0x7f080259
+    const v2, 0x7f08023e
 
     invoke-virtual {p0, v2}, Lcom/android/settings/deviceinfo/StorageWizardMigrateConfirm;->setIcon(I)V
 

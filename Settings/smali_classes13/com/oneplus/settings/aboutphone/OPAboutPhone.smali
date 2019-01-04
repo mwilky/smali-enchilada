@@ -100,7 +100,7 @@
 
     check-cast v0, Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a040c
+    const v1, 0x7f0a040b
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -122,7 +122,7 @@
 
     move-result v3
 
-    const v4, 0x7f0802f0
+    const v4, 0x7f0802d5
 
     if-nez v3, :cond_4
 
@@ -151,7 +151,7 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0802ee
+    const v4, 0x7f0802d3
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -178,7 +178,7 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0802ef
+    const v4, 0x7f0802d4
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -201,7 +201,7 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0802f5
+    const v4, 0x7f0802da
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -331,7 +331,7 @@
 
     check-cast v0, Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a040e
+    const v1, 0x7f0a040d
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -361,7 +361,7 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f08032d
+    const v4, 0x7f080312
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -385,7 +385,7 @@
 
     iget-object v4, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0802ff
+    const v5, 0x7f0802e4
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -427,7 +427,7 @@
 
     check-cast v0, Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a040e
+    const v1, 0x7f0a040d
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -457,7 +457,7 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0802fd
+    const v4, 0x7f0802e2
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -487,7 +487,7 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0803d9
+    const v5, 0x7f0803be
 
     invoke-virtual {v3, v5}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -540,7 +540,7 @@
     :cond_0
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f080340
+    const v5, 0x7f080325
 
     invoke-virtual {v3, v5}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -623,7 +623,7 @@
 
     check-cast v0, Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a040e
+    const v1, 0x7f0a040d
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -643,7 +643,7 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f08040f
+    const v4, 0x7f0803f5
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -687,7 +687,7 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0803d3
+    const v4, 0x7f0803b8
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -765,7 +765,7 @@
 
     check-cast v0, Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a040e
+    const v1, 0x7f0a040d
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -795,7 +795,7 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0803be
+    const v4, 0x7f0803a3
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -815,7 +815,7 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f080414
+    const v4, 0x7f0803fa
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -857,7 +857,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->SoftWare5Preference:Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a040e
+    const v1, 0x7f0a040d
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -877,7 +877,7 @@
 
     const v3, 0x7f120b36
 
-    const v4, 0x7f080304
+    const v4, 0x7f0802e9
 
     if-nez v2, :cond_1
 
@@ -894,7 +894,7 @@
     :cond_0
     iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0803e5
+    const v5, 0x7f0803ca
 
     invoke-virtual {v2, v5}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1028,7 +1028,7 @@
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->SoftWare5Preference:Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a040e
+    const v1, 0x7f0a040d
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -1044,7 +1044,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0803e5
+    const v3, 0x7f0803ca
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1644,131 +1644,87 @@
 .end method
 
 .method private isSupportAuthenticationInformation()Z
-    .locals 3
+    .locals 2
 
-    const-string v0, "ro.rf_version"
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+    const v1, 0x7f120ba9
 
-    move-result-object v0
+    invoke-virtual {p0, v1}, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->getString(I)Ljava/lang/String;
 
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    move-result-object v1
 
-    const v2, 0x7f120ba9
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {p0, v2}, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->getString(I)Ljava/lang/String;
+    move-result v0
 
-    move-result-object v2
+    if-nez v0, :cond_1
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    move-result v1
+    const-string v1, "ONEPLUS A6000"
 
-    if-nez v1, :cond_1
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    move-result v0
 
-    const-string v2, "ONEPLUS A6000"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    const-string v1, "In"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    const-string v1, "Ch"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     :goto_1
-    return v1
+    return v0
 .end method
 
 .method private isSupportRegulatoryLabels()Z
-    .locals 3
+    .locals 2
 
-    const-string v0, "ro.rf_version"
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+    const v1, 0x7f120baa
 
-    move-result-object v0
+    invoke-virtual {p0, v1}, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->getString(I)Ljava/lang/String;
 
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    move-result-object v1
 
-    const v2, 0x7f120baa
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {p0, v2}, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->getString(I)Ljava/lang/String;
+    move-result v0
 
-    move-result-object v2
+    if-nez v0, :cond_1
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    move-result v1
+    const-string v1, "ONEPLUS A6003"
 
-    if-nez v1, :cond_1
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    move-result v0
 
-    const-string v2, "ONEPLUS A6003"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    const-string v1, "Eu"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    const-string v1, "Am"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     :goto_1
-    return v1
+    return v0
 .end method
 
 .method static synthetic lambda$static$0(Landroid/app/Activity;Lcom/android/settings/dashboard/SummaryLoader;)Lcom/android/settings/dashboard/SummaryLoader$SummaryProvider;

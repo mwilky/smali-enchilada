@@ -85,7 +85,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f080199
+    const v1, 0x7f08017e
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -208,7 +208,7 @@
 .end method
 
 .method public onPrimaryClick()V
-    .locals 3
+    .locals 4
 
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/CellularDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
@@ -218,9 +218,15 @@
 
     new-instance v1, Landroid/content/Intent;
 
-    const-string v2, "oneplus.intent.action.SIM_AND_NETWORK_SETTINGS"
+    iget-object v2, p0, Lcom/android/settings/dashboard/conditional/CellularDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    const-class v3, Lcom/android/settings/Settings$DataUsageSummaryActivity;
+
+    invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
     const/high16 v2, 0x10000000
 

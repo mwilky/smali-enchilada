@@ -1949,7 +1949,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a031f
+    const v3, 0x7f0a031e
 
     invoke-virtual {v2, v3, v1}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
@@ -2583,7 +2583,7 @@
     :goto_3
     invoke-virtual {v1, v12}, Lcom/android/settings/SettingsActivity;->setContentView(I)V
 
-    const v12, 0x7f0a031f
+    const v12, 0x7f0a031e
 
     invoke-virtual {v1, v12}, Lcom/android/settings/SettingsActivity;->findViewById(I)Landroid/view/View;
 
@@ -2628,7 +2628,7 @@
     invoke-virtual {v1, v0, v10, v6}, Lcom/android/settings/SettingsActivity;->launchSettingFragment(Ljava/lang/String;ZLandroid/content/Intent;)V
 
     :goto_4
-    const v12, 0x7f0a04ac
+    const v12, 0x7f0a04ab
 
     invoke-virtual {v1, v12}, Lcom/android/settings/SettingsActivity;->findViewById(I)Landroid/view/View;
 
@@ -2689,7 +2689,7 @@
     invoke-virtual {v14, v13}, Landroid/app/ActionBar;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     :cond_b
-    const v11, 0x7f0a055a
+    const v11, 0x7f0a0559
 
     invoke-virtual {v1, v11}, Lcom/android/settings/SettingsActivity;->findViewById(I)Landroid/view/View;
 
@@ -2744,7 +2744,7 @@
 
     invoke-virtual {v13, v15}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v15, 0x7f0a04f6
+    const v15, 0x7f0a04f5
 
     invoke-virtual {v1, v15}, Lcom/android/settings/SettingsActivity;->findViewById(I)Landroid/view/View;
 
@@ -2758,7 +2758,7 @@
 
     invoke-virtual {v15, v7}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v7, 0x7f0a035d
+    const v7, 0x7f0a035c
 
     invoke-virtual {v1, v7}, Lcom/android/settings/SettingsActivity;->findViewById(I)Landroid/view/View;
 

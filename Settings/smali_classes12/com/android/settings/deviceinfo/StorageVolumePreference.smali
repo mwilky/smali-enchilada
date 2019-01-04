@@ -101,7 +101,7 @@
 
     if-eqz v5, :cond_0
 
-    const v5, 0x7f080250
+    const v5, 0x7f080235
 
     invoke-virtual {v2, v5}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -110,7 +110,7 @@
     goto :goto_0
 
     :cond_0
-    const v5, 0x7f08024c
+    const v5, 0x7f080231
 
     invoke-virtual {v2, v5}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -286,7 +286,7 @@
 
     iput v11, v1, Lcom/android/settings/deviceinfo/StorageVolumePreference;->mColor:I
 
-    const v11, 0x7f080275
+    const v11, 0x7f08025a
 
     invoke-virtual {v2, v11}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -350,7 +350,7 @@
 .method public onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
     .locals 4
 
-    const v0, 0x7f0a05b7
+    const v0, 0x7f0a05b6
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

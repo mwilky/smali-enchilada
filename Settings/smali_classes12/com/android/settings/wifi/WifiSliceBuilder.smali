@@ -187,7 +187,7 @@
 
     move-result v0
 
-    const v1, 0x7f080244
+    const v1, 0x7f080229
 
     invoke-static {p0, v1}, Landroid/support/v4/graphics/drawable/IconCompat;->createWithResource(Landroid/content/Context;I)Landroid/support/v4/graphics/drawable/IconCompat;
 

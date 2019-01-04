@@ -2843,7 +2843,6 @@ Battery saver turns off automatically when your device is charging."</string>
     <string name="oneplus_colorful_mode_title">Colorful</string>
     <string name="oneplus_compatibility_mode_summary">Fullscreen apps cannot use the notch area</string>
     <string name="oneplus_compatibility_mode_title">Compatibility mode</string>
-    <string name="oneplus_condition_night_mode_title">Night mode is on</string>
     <string name="oneplus_connected_device_count">There is %1$s device connected</string>
     <string name="oneplus_connected_device_management_title">Connected device manager</string>
     <string name="oneplus_connected_devices_count">There are %1$s devices connected</string>
@@ -2952,7 +2951,7 @@ Risk tip: Face Unlock is less secure than fingerprint and password"</string>
     <string name="oneplus_fingerprint_acquired_imager_dirty" />
     <string name="oneplus_fingerprint_acquired_partial" />
     <string name="oneplus_fingerprint_acquired_too_fast" />
-    <string name="oneplus_fingerprint_acquired_too_similar">Similar fingerprint detected. Please move your finger slightly to enter the fingerprint of different parts.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar" />
     <string name="oneplus_fingerprint_animation_effect_title">Fingerprint animation effect</string>
     <string name="oneplus_fingerprint_bind_save_list">Fingerprint bind list</string>
     <string name="oneplus_fingerprint_check_oneplus_account">Check oneplus account</string>
@@ -5975,6 +5974,7 @@ Update settings to:
     <item type="string" name="APKTOOL_DUMMY_a40">false</item>
     <item type="string" name="APKTOOL_DUMMY_a63">false</item>
     <item type="string" name="APKTOOL_DUMMY_a64">false</item>
+    <item type="string" name="APKTOOL_DUMMY_aaa">false</item>
     <item type="string" name="APKTOOL_DUMMY_acb">false</item>
     <item type="string" name="APKTOOL_DUMMY_b95">false</item>
     <item type="string" name="APKTOOL_DUMMY_b97">false</item>
@@ -5986,11 +5986,4 @@ Update settings to:
     <item type="string" name="APKTOOL_DUMMY_d03">false</item>
     <item type="string" name="APKTOOL_DUMMY_d04">false</item>
     <item type="string" name="APKTOOL_DUMMY_1256">false</item>
-    <string name="hardware_keys_action_kill">Kill foreground app</string>
-    <string name="hardware_keys_action_screenshot">Full screenshot</string>
-    <string name="hardware_keys_action_screenshot2">Croppable screenshot</string>
-    <string name="hardware_keys_action_app">Launch custom app (select app in RiCE)</string>
-    <string name="hardware_keys_action_previous_app">Switch to previous app</string>
-    <string name="hardware_keys_action_default_double_recents">Nothing (Switch to previous app)</string>
-    <string name="oneplus_search_keyword_fingerprint_key">fingerprint</string>
 </resources>

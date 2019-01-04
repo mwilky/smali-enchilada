@@ -97,7 +97,7 @@
     :goto_0
     iget-boolean v1, p0, Lcom/android/settings/SummaryPreference;->mChartEnabled:Z
 
-    const v4, 0x7f0a02c3
+    const v4, 0x7f0a02c2
 
     if-eqz v1, :cond_2
 

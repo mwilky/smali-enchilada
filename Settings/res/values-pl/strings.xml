@@ -2631,7 +2631,6 @@ Oszczędzanie baterii zostanie automatycznie wyłączone w czasie ładowania two
     <string name="oneplus_colorful_mode_title">Kolorowy</string>
     <string name="oneplus_compatibility_mode_summary">Aplikacje pełnoekranowe nie mogą korzystać z obszaru wycięcia</string>
     <string name="oneplus_compatibility_mode_title">Tryb zgodności</string>
-    <string name="oneplus_condition_night_mode_title">Tryb nocny jest włączony</string>
     <string name="oneplus_connected_device_count">Podłączono urządzenie: %1$s</string>
     <string name="oneplus_connected_device_management_title">Podłączono menedżer urządzeń</string>
     <string name="oneplus_connected_devices_count">Podłączono urządzeń: %1$s</string>

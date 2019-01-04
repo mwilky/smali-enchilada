@@ -117,7 +117,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a04bd
+    const v1, 0x7f0a04bc
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -125,7 +125,7 @@
 
     check-cast v1, Landroid/widget/LinearLayout;
 
-    const v2, 0x7f0a04bf
+    const v2, 0x7f0a04be
 
     invoke-virtual {p1, v2}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

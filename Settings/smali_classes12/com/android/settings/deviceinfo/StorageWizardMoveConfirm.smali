@@ -148,7 +148,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f080259
+    const v3, 0x7f08023e
 
     invoke-virtual {p0, v3}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->setIcon(I)V
 

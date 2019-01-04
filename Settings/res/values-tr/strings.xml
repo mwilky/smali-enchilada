@@ -2631,7 +2631,6 @@ Pil tasarrufu, cihazınız şarj olduğunda otomatik olarak kapanır."</string>
     <string name="oneplus_colorful_mode_title">Renkli</string>
     <string name="oneplus_compatibility_mode_summary">Tam ekran uygulamaları tam ekranı kullanamıyor</string>
     <string name="oneplus_compatibility_mode_title">Uyumluluk modu</string>
-    <string name="oneplus_condition_night_mode_title">Gece modu etkin</string>
     <string name="oneplus_connected_device_count">%1$s cihaz bağlı</string>
     <string name="oneplus_connected_device_management_title">Bağlı cihaz yöneticisi</string>
     <string name="oneplus_connected_devices_count">%1$s cihaz bağlı</string>

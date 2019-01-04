@@ -2631,7 +2631,6 @@ Economizorul de baterie se oprește automat când aparatul se încarcă."</strin
     <string name="oneplus_colorful_mode_title">Colorat</string>
     <string name="oneplus_compatibility_mode_summary">Aplicațiile cu ecran complet nu pot folosi zona cu gradație</string>
     <string name="oneplus_compatibility_mode_title">Mod compatibilitate</string>
-    <string name="oneplus_condition_night_mode_title">Modul noapte este activat</string>
     <string name="oneplus_connected_device_count">Este %1$s dispozitiv conectat</string>
     <string name="oneplus_connected_device_management_title">Manager de dispozitive conectate</string>
     <string name="oneplus_connected_devices_count">Sunt %1$s dispozitive conectate</string>

@@ -2631,7 +2631,6 @@ L'estalviador de bateria es desactiva automàticament quan el dispositiu s'està
     <string name="oneplus_colorful_mode_title">Colorit</string>
     <string name="oneplus_compatibility_mode_summary">Les aplicacions en pantalla completa no poden utilitzar la zona de la clivella</string>
     <string name="oneplus_compatibility_mode_title">Mode de compatibilitat</string>
-    <string name="oneplus_condition_night_mode_title">El mode nit està activat</string>
     <string name="oneplus_connected_device_count">Hi ha %1$s dispositiu connectat</string>
     <string name="oneplus_connected_device_management_title">Gestor de dispositiu connectat</string>
     <string name="oneplus_connected_devices_count">Hi ha %1$s dispositius connectats</string>

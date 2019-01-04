@@ -143,7 +143,7 @@
 
     check-cast v2, Lcom/android/settings/graph/UsageView;
 
-    const v3, 0x7f0a02c7
+    const v3, 0x7f0a02c6
 
     invoke-virtual {v2, v3}, Lcom/android/settings/graph/UsageView;->findViewById(I)Landroid/view/View;
 

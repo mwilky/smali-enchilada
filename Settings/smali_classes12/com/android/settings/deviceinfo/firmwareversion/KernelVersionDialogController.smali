@@ -18,7 +18,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    const v0, 0x7f0a02ab
+    const v0, 0x7f0a02aa
 
     sput v0, Lcom/android/settings/deviceinfo/firmwareversion/KernelVersionDialogController;->KERNEL_VERSION_VALUE_ID:I
 

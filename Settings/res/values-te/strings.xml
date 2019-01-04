@@ -2631,7 +2631,6 @@
     <string name="oneplus_colorful_mode_title">రంగులతో కూడినది</string>
     <string name="oneplus_compatibility_mode_summary">పూర్తి స్క్రీన్ అప్లికేషన్‌లు నోచ్ ప్రాంతాన్ని ఉపయోగించలేవు</string>
     <string name="oneplus_compatibility_mode_title">అనుకూల మోడ్</string>
-    <string name="oneplus_condition_night_mode_title">రాత్రి మోడ్ ఆన్‌లో ఉంది</string>
     <string name="oneplus_connected_device_count">%1$s పరికరం కనెక్ట్ చేయబడింది</string>
     <string name="oneplus_connected_device_management_title">కనెక్ట్ చేయబడ్డ డివైస్ మేనేజర్</string>
     <string name="oneplus_connected_devices_count">%1$s పరికరాలు కనెక్ట్ చేయబడ్డాయి</string>

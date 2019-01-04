@@ -96,7 +96,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$1;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
-    const v1, 0x7f0a03a1
+    const v1, 0x7f0a03a0
 
     invoke-virtual {v0, v1}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->findViewById(I)Landroid/view/View;
 

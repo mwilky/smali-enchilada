@@ -499,7 +499,7 @@
 
     move-result v5
 
-    const v6, 0x7f08024c
+    const v6, 0x7f080231
 
     if-eqz v5, :cond_4
 
@@ -553,7 +553,7 @@
 
     invoke-virtual {v7, v8}, Landroid/support/v7/preference/Preference;->setTitle(Ljava/lang/CharSequence;)V
 
-    const v8, 0x1040214
+    const v8, 0x1040213
 
     invoke-virtual {v7, v8}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -618,7 +618,7 @@
 
     invoke-virtual {v8, v9}, Landroid/support/v7/preference/Preference;->setTitle(Ljava/lang/CharSequence;)V
 
-    const v9, 0x104021a
+    const v9, 0x1040219
 
     invoke-virtual {v8, v9}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 

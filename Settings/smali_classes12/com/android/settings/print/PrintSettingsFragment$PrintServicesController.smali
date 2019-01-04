@@ -311,7 +311,7 @@
 
     if-eqz v7, :cond_4
 
-    const v8, 0x7f080236
+    const v8, 0x7f08021b
 
     invoke-virtual {v4, v8}, Landroid/support/v7/preference/Preference;->setIcon(I)V
 

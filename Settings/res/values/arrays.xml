@@ -429,7 +429,6 @@
         <item>Qualcomm® aptX™ audio</item>
         <item>Qualcomm® aptX™ HD audio</item>
         <item>LDAC</item>
-        <item>Qualcomm® aptX™ Adaptive audio</item>
         <item>Enable Optional Codecs</item>
         <item>Disable Optional Codecs</item>
     </string-array>
@@ -440,7 +439,6 @@
         <item>Qualcomm® aptX™ audio</item>
         <item>Qualcomm® aptX™ HD audio</item>
         <item>LDAC</item>
-        <item>Qualcomm® aptX™ Adaptive audio</item>
         <item>Enable Optional Codecs</item>
         <item>Disable Optional Codecs</item>
     </string-array>
@@ -453,7 +451,6 @@
         <item>4</item>
         <item>5</item>
         <item>6</item>
-        <item>7</item>
     </string-array>
     <string-array name="bluetooth_audio_active_device_summaries">
         <item></item>
@@ -801,10 +798,6 @@
         <item>@string/hardware_keys_action_shelf</item>
         <item>@string/hardware_keys_action_notification_center</item>
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
-        <item>@string/hardware_keys_action_kill</item>
-        <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_app</item>
-        <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
     <string-array name="hardware_keys_action_entries_nogms">
         <item>@string/hardware_keys_action_nothing</item>
@@ -816,10 +809,6 @@
         <item>@string/hardware_keys_action_shelf</item>
         <item>@string/hardware_keys_action_notification_center</item>
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
-        <item>@string/hardware_keys_action_kill</item>
-        <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_app</item>
-        <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
     <string-array name="hardware_keys_action_entries_nogms_quickpay">
         <item>@string/hardware_keys_action_nothing</item>
@@ -832,10 +821,6 @@
         <item>@string/hardware_keys_action_notification_center</item>
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
         <item>@string/oneplus_quickpay</item>
-        <item>@string/hardware_keys_action_kill</item>
-        <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_app</item>
-        <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
     <string-array name="hardware_keys_action_entries_quickpay">
         <item>@string/hardware_keys_action_nothing</item>
@@ -850,10 +835,6 @@
         <item>@string/hardware_keys_action_notification_center</item>
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
         <item>@string/oneplus_quickpay</item>
-        <item>@string/hardware_keys_action_kill</item>
-        <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_app</item>
-        <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
     <string-array name="hardware_keys_action_values">
         <item>0</item>
@@ -867,11 +848,6 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
     </string-array>
     <string-array name="hardware_keys_action_values_nogms">
         <item>0</item>
@@ -883,11 +859,6 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
     </string-array>
     <string-array name="hardware_keys_action_values_nogms_quickpay">
         <item>0</item>
@@ -900,11 +871,6 @@
         <item>9</item>
         <item>10</item>
         <item>11</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
     </string-array>
     <string-array name="hardware_keys_action_values_quickpay">
         <item>0</item>
@@ -919,11 +885,6 @@
         <item>9</item>
         <item>10</item>
         <item>11</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
     </string-array>
     <string-array name="hdcp_checking_summaries">
         <item>Never use HDCP checking</item>
@@ -1019,10 +980,6 @@
         <item>@string/hardware_keys_action_shelf</item>
         <item>@string/hardware_keys_action_notification_center</item>
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
-        <item>@string/hardware_keys_action_kill</item>
-        <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_app</item>
-        <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
     <string-array name="navigation_bar_keys_action_entries_nogms">
         <item>@string/hardware_keys_action_nothing</item>
@@ -1031,10 +988,6 @@
         <item>@string/hardware_keys_action_shelf</item>
         <item>@string/hardware_keys_action_notification_center</item>
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
-        <item>@string/hardware_keys_action_kill</item>
-        <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_app</item>
-        <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
     <string-array name="navigation_bar_keys_action_entries_nogms_quickpay">
         <item>@string/hardware_keys_action_nothing</item>
@@ -1043,10 +996,6 @@
         <item>@string/hardware_keys_action_shelf</item>
         <item>@string/hardware_keys_action_notification_center</item>
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
-        <item>@string/hardware_keys_action_kill</item>
-        <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_app</item>
-        <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
     <string-array name="navigation_bar_keys_action_entries_quickpay">
         <item>@string/hardware_keys_action_nothing</item>
@@ -1057,10 +1006,6 @@
         <item>@string/hardware_keys_action_shelf</item>
         <item>@string/hardware_keys_action_notification_center</item>
         <item>@string/oneplus_hardware_keys_action_split_screen</item>
-        <item>@string/hardware_keys_action_kill</item>
-        <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_app</item>
-        <item>@string/hardware_keys_action_previous_app</item>
     </string-array>
     <string-array name="navigation_bar_keys_action_values">
         <item>0</item>
@@ -1071,10 +1016,6 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
     </string-array>
     <string-array name="navigation_bar_keys_action_values_nogms">
         <item>0</item>
@@ -1083,10 +1024,6 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
     </string-array>
     <string-array name="navigation_bar_keys_action_values_nogms_quickpay">
         <item>0</item>
@@ -1095,10 +1032,6 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
     </string-array>
     <string-array name="navigation_bar_keys_action_values_quickpay">
         <item>0</item>
@@ -1109,37 +1042,6 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-    </string-array>
-    <string-array name="navigation_bar_keys_recents_action_entries">
-        <item>@string/hardware_keys_action_default_double_recents</item>
-        <item>@string/hardware_keys_action_menu</item>
-        <item>@string/hardware_keys_action_assist</item>
-        <item>@string/hardware_keys_action_turn_off_screen</item>
-        <item>@string/hardware_keys_action_voice_search</item>
-        <item>@string/hardware_keys_action_shelf</item>
-        <item>@string/hardware_keys_action_notification_center</item>
-        <item>@string/oneplus_hardware_keys_action_split_screen</item>
-        <item>@string/hardware_keys_action_kill</item>
-        <item>@string/hardware_keys_action_screenshot</item>
-        <item>@string/hardware_keys_action_app</item>
-    </string-array>
-    <string-array name="navigation_bar_keys_recents_action_values">
-        <item>0</item>
-        <item>1</item>
-        <item>3</item>
-        <item>4</item>
-        <item>6</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
     </string-array>
     <string-array name="oneplus_battery_style_entries">
         <item>@string/battery_bar</item>
@@ -1230,7 +1132,7 @@
         <item>深圳市万普拉斯科技有限公司</item>
         <item>广州网易计算机系统有限公司</item>
         <item>深圳市万普拉斯科技有限公司</item>
-        <item>深圳市万普拉斯科技有限公司</item>
+        <item>深圳市腾讯计算机系统有限公司</item>
         <item>高德软件有限公司</item>
         <item>深圳市万普拉斯科技有限公司</item>
         <item>深圳市万普拉斯科技有限公司</item>
@@ -1243,7 +1145,6 @@
         <item>深圳市万普拉斯科技有限公司</item>
         <item>Google Inc</item>
         <item>Google Inc</item>
-        <item>深圳市万普拉斯科技有限公司</item>
     </string-array>
     <string-array name="oneplus_h2_pre_installed_app_company_fat">
         <item>网易（杭州）网络有限公司</item>
@@ -1360,7 +1261,7 @@
         <item>同步通讯录、短信等</item>
         <item>收发邮件</item>
         <item>社区讨论</item>
-        <item>桌面应用</item>
+        <item>观看视频</item>
         <item>生活服务</item>
         <item>境外上网服务</item>
         <item>生活服务</item>
@@ -1373,7 +1274,6 @@
         <item>桌面图标</item>
         <item>彩蛋</item>
         <item>Google组件</item>
-        <item>数据迁移</item>
     </string-array>
     <string-array name="oneplus_h2_pre_installed_app_function_fat">
         <item>收发邮件</item>
@@ -1490,7 +1390,7 @@
         <item>云同步</item>
         <item>网易邮箱大师</item>
         <item>一加社区</item>
-        <item>氢桌面</item>
+        <item>腾讯视频</item>
         <item>高德出行服务</item>
         <item>国际上网</item>
         <item>公交卡</item>
@@ -1503,7 +1403,6 @@
         <item>Light</item>
         <item>Android Easter Egg</item>
         <item>Google合作伙伴设置</item>
-        <item>一加搬家</item>
     </string-array>
     <string-array name="oneplus_h2_pre_installed_app_name_fat">
         <item>邮箱大师</item>

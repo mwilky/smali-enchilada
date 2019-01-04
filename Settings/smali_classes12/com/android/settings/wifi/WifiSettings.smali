@@ -308,7 +308,7 @@
 
     iget-object v1, p0, Lcom/android/settings/wifi/WifiSettings;->mAddPreference:Landroid/support/v7/preference/Preference;
 
-    const v2, 0x7f0801e4
+    const v2, 0x7f0801c9
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setIcon(I)V
 
@@ -464,7 +464,7 @@
 
     iget-object v3, p0, Lcom/android/settings/wifi/WifiSettings;->mUserBadgeCache:Lcom/android/settingslib/wifi/AccessPointPreference$UserBadgeCache;
 
-    const v4, 0x7f08027a
+    const v4, 0x7f08025f
 
     const/4 v5, 0x0
 
@@ -492,7 +492,7 @@
 
     const/4 v4, 0x0
 
-    const v5, 0x7f08027a
+    const v5, 0x7f08025f
 
     move-object v0, v7
 
@@ -3071,7 +3071,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a0443
+    const v2, 0x7f0a0442
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

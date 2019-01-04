@@ -67,7 +67,7 @@
 .method private initSeekBar(Landroid/support/v7/preference/PreferenceViewHolder;)V
     .locals 3
 
-    const v0, 0x7f0a049e
+    const v0, 0x7f0a049d
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

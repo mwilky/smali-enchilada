@@ -252,7 +252,7 @@
     goto :goto_0
 
     :cond_1
-    const v1, 0x7f0801f0
+    const v1, 0x7f0801d5
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageButton;->setImageResource(I)V
 
@@ -454,7 +454,7 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x7f0a0292
+    const v1, 0x7f0a0291
 
     iget-object v2, p0, Lcom/android/settings/widget/EntityHeaderController;->mHeader:Landroid/view/View;
 

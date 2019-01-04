@@ -27,7 +27,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a035d
+    const v1, 0x7f0a035c
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/OPScreenColorModeForSetupWizard;->findViewById(I)Landroid/view/View;
 

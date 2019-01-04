@@ -69,11 +69,11 @@
 
     move-result v0
 
-    const v1, 0x7f0a049f
+    const v1, 0x7f0a049e
 
     if-eq v0, v1, :cond_1
 
-    const v1, 0x7f0a04f6
+    const v1, 0x7f0a04f5
 
     if-eq v0, v1, :cond_0
 
@@ -222,7 +222,7 @@
 
     if-eqz v3, :cond_2
 
-    const v5, 0x7f0a049f
+    const v5, 0x7f0a049e
 
     invoke-virtual {p1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -241,7 +241,7 @@
     invoke-virtual {v2, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :cond_2
-    const v2, 0x7f0a0337
+    const v2, 0x7f0a0336
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

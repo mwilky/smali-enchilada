@@ -2631,7 +2631,6 @@ El ahorro de batería se desactiva automáticamente cuando carga tu dispositivo.
     <string name="oneplus_colorful_mode_title">A color</string>
     <string name="oneplus_compatibility_mode_summary">Las aplicaciones de pantalla completa no pueden utilizar la zona de la muesca</string>
     <string name="oneplus_compatibility_mode_title">Modo de compatibilidad</string>
-    <string name="oneplus_condition_night_mode_title">El modo nocturno está activado</string>
     <string name="oneplus_connected_device_count">Hay %1$s dispositivos conectados</string>
     <string name="oneplus_connected_device_management_title">Gestor de dispositivos conectado</string>
     <string name="oneplus_connected_devices_count">Hay %1$s dispositivos conectados</string>

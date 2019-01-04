@@ -307,22 +307,20 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mPaletteNamesResIds:[I
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_9
 
     iget-object v0, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mPaletteNamesResIds:[I
 
     array-length v0, v0
 
-    if-ltz v0, :cond_b
+    if-ltz v0, :cond_9
 
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mPalette:[Ljava/lang/String;
 
-    const/4 v1, -0x1
-
     if-nez v0, :cond_1
 
-    move v0, v1
+    const/4 v0, -0x1
 
     goto :goto_0
 
@@ -333,81 +331,24 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mColor:Ljava/lang/String;
+    iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mColor:Ljava/lang/String;
 
-    invoke-interface {v0, v2}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
+    invoke-interface {v0, v1}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
 
     move-result v0
 
     :goto_0
-    if-ne v0, v1, :cond_3
-
-    iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/oneplus/settings/utils/OPUtils;->isWhiteModeOn(Landroid/content/ContentResolver;)Z
-
-    move-result v1
-
-    const/4 v2, 0x0
+    iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mPaletteNamesResIds:[I
 
     if-eqz v1, :cond_2
 
-    iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string v3, "oem_white_mode_accent_color_index"
-
-    invoke-static {v1, v3, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-
-    goto :goto_1
-
-    :cond_2
-    iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/oneplus/settings/utils/OPUtils;->isBlackModeOn(Landroid/content/ContentResolver;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string v3, "oem_black_mode_accent_color_index"
-
-    invoke-static {v1, v3, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-
-    :cond_3
-    :goto_1
-    iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mPaletteNamesResIds:[I
-
-    if-eqz v1, :cond_4
-
-    if-ltz v0, :cond_4
+    if-ltz v0, :cond_2
 
     iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mPaletteNamesResIds:[I
 
     array-length v1, v1
 
-    if-ge v0, v1, :cond_4
+    if-ge v0, v1, :cond_2
 
     invoke-virtual {p0}, Lcom/oneplus/settings/ui/ColorPickerPreference;->getContext()Landroid/content/Context;
 
@@ -423,12 +364,12 @@
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/ui/ColorPickerPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_3
+    goto/16 :goto_2
 
-    :cond_4
+    :cond_2
     iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mColor:Ljava/lang/String;
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_4
 
     iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mColor:Ljava/lang/String;
 
@@ -438,7 +379,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_6
+    if-nez v1, :cond_4
 
     iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mColor:Ljava/lang/String;
 
@@ -446,17 +387,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_6
+    if-nez v1, :cond_4
 
     invoke-direct {p0}, Lcom/oneplus/settings/ui/ColorPickerPreference;->isDefaultColor()Z
 
     move-result v1
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_3
 
-    goto :goto_2
+    goto :goto_1
 
-    :cond_5
+    :cond_3
     invoke-virtual {p0}, Lcom/oneplus/settings/ui/ColorPickerPreference;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -469,10 +410,10 @@
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/ui/ColorPickerPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_3
+    goto/16 :goto_2
 
-    :cond_6
-    :goto_2
+    :cond_4
+    :goto_1
     iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -485,7 +426,7 @@
 
     const/16 v2, 0x8
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_5
 
     invoke-virtual {p0}, Lcom/oneplus/settings/ui/ColorPickerPreference;->getContext()Landroid/content/Context;
 
@@ -501,15 +442,15 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mImageView:Landroid/widget/ImageView;
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_9
 
     iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mImageView:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    goto/16 :goto_3
+    goto/16 :goto_2
 
-    :cond_7
+    :cond_5
     iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -520,7 +461,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_6
 
     sget-object v1, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->SW:Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
 
@@ -532,7 +473,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_6
 
     invoke-virtual {p0}, Lcom/oneplus/settings/ui/ColorPickerPreference;->getContext()Landroid/content/Context;
 
@@ -548,15 +489,15 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mImageView:Landroid/widget/ImageView;
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_9
 
     iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mImageView:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    goto :goto_3
+    goto :goto_2
 
-    :cond_8
+    :cond_6
     iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -567,7 +508,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_7
 
     sget-object v1, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->AVG:Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
 
@@ -579,7 +520,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_7
 
     invoke-virtual {p0}, Lcom/oneplus/settings/ui/ColorPickerPreference;->getContext()Landroid/content/Context;
 
@@ -595,15 +536,15 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mImageView:Landroid/widget/ImageView;
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_9
 
     iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mImageView:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    goto :goto_3
+    goto :goto_2
 
-    :cond_9
+    :cond_7
     iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -614,7 +555,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_8
 
     sget-object v1, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->MCL:Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
 
@@ -626,7 +567,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_8
 
     invoke-virtual {p0}, Lcom/oneplus/settings/ui/ColorPickerPreference;->getContext()Landroid/content/Context;
 
@@ -642,15 +583,15 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mImageView:Landroid/widget/ImageView;
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_9
 
     iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mImageView:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    goto :goto_3
+    goto :goto_2
 
-    :cond_a
+    :cond_8
     invoke-virtual {p0}, Lcom/oneplus/settings/ui/ColorPickerPreference;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -663,8 +604,8 @@
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/ui/ColorPickerPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    :cond_b
-    :goto_3
+    :cond_9
+    :goto_2
     return-void
 .end method
 
@@ -757,15 +698,7 @@
 .method public init()V
     .locals 2
 
-    iget-object v0, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    const-string v1, "oneplus_accent_color"
-
-    invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/oneplus/settings/ui/ColorPickerPreference;->getColor()Ljava/lang/String;
 
     move-result-object v0
 
@@ -774,8 +707,6 @@
     iget-object v0, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mColor:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mTmpColor:Ljava/lang/String;
-
-    invoke-direct {p0}, Lcom/oneplus/settings/ui/ColorPickerPreference;->updateSummary()V
 
     iget-object v0, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mTmpColor:Ljava/lang/String;
 
@@ -943,7 +874,7 @@
 
     aget-object v4, v4, v2
 
-    const v5, 0x7f080325
+    const v5, 0x7f08030a
 
     invoke-virtual {v4, v5}, Landroid/view/View;->setBackgroundResource(I)V
 
@@ -999,7 +930,7 @@
     goto/16 :goto_0
 
     :cond_6
-    const v2, 0x7f0a0337
+    const v2, 0x7f0a0336
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1059,7 +990,7 @@
 
     nop
 
-    const v1, 0x7f0a04ba
+    const v1, 0x7f0a04b9
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -1131,7 +1062,7 @@
 .end method
 
 .method protected onDialogClosed(I)V
-    .locals 7
+    .locals 6
 
     invoke-super {p0, p1}, Lcom/oneplus/settings/ui/CustomDialogPreference;->onDialogClosed(I)V
 
@@ -1151,7 +1082,7 @@
     move v2, v0
 
     :goto_0
-    const/4 v3, -0x2
+    const/4 v3, -0x3
 
     if-ne p1, v3, :cond_1
 
@@ -1163,139 +1094,86 @@
     move v3, v0
 
     :goto_1
-    const/4 v4, -0x3
+    if-eqz v2, :cond_6
 
-    if-ne p1, v4, :cond_2
+    iget-object v4, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mColor:Ljava/lang/String;
 
-    move v4, v1
+    if-nez v4, :cond_2
 
-    goto :goto_2
+    iget-object v4, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mTmpColor:Ljava/lang/String;
+
+    if-eqz v4, :cond_3
 
     :cond_2
-    move v4, v0
+    iget-object v4, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mColor:Ljava/lang/String;
 
-    :goto_2
-    if-eqz v2, :cond_7
+    if-eqz v4, :cond_4
 
-    iget-object v5, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mColor:Ljava/lang/String;
 
-    invoke-virtual {v5}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    iget-object v5, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mTmpColor:Ljava/lang/String;
 
-    move-result-object v5
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const-string v6, "oneplus_accent_color"
+    move-result v4
 
-    invoke-static {v5, v6}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_5
-
-    if-eqz v5, :cond_3
-
-    iget-object v6, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mTmpColor:Ljava/lang/String;
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_5
+    if-eqz v4, :cond_4
 
     :cond_3
-    if-eqz v5, :cond_4
-
-    iget-object v6, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mColor:Ljava/lang/String;
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_4
-
-    goto :goto_3
-
-    :cond_4
-    goto :goto_4
-
-    :cond_5
-    :goto_3
     move v0, v1
 
-    :goto_4
-    if-eqz v0, :cond_6
+    nop
+
+    :cond_4
+    if-nez v0, :cond_5
 
     iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mTmpColor:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/ui/ColorPickerPreference;->setColor(Ljava/lang/String;)V
 
+    :cond_5
+    goto :goto_2
+
     :cond_6
-    goto :goto_5
+    if-eqz v3, :cond_a
+
+    iget-object v4, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mColor:Ljava/lang/String;
+
+    if-nez v4, :cond_7
+
+    iget-object v4, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mDefaultColor:Ljava/lang/String;
+
+    if-eqz v4, :cond_8
 
     :cond_7
-    if-eqz v3, :cond_8
+    iget-object v4, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mColor:Ljava/lang/String;
 
-    iget-object v0, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mContext:Landroid/content/Context;
+    if-eqz v4, :cond_9
 
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    const-string v1, "oneplus_accent_color"
-
-    invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mColor:Ljava/lang/String;
-
-    invoke-direct {p0}, Lcom/oneplus/settings/ui/ColorPickerPreference;->updateSummary()V
-
-    goto :goto_5
-
-    :cond_8
-    if-eqz v4, :cond_c
-
-    iget-object v5, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mColor:Ljava/lang/String;
-
-    if-nez v5, :cond_9
+    iget-object v4, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mColor:Ljava/lang/String;
 
     iget-object v5, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mDefaultColor:Ljava/lang/String;
 
-    if-eqz v5, :cond_a
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    :cond_9
-    iget-object v5, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mColor:Ljava/lang/String;
+    move-result v4
 
-    if-eqz v5, :cond_b
+    if-eqz v4, :cond_9
 
-    iget-object v5, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mColor:Ljava/lang/String;
-
-    iget-object v6, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mDefaultColor:Ljava/lang/String;
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_b
-
-    :cond_a
+    :cond_8
     move v0, v1
 
     nop
 
-    :cond_b
-    if-nez v0, :cond_c
+    :cond_9
+    if-nez v0, :cond_a
 
     iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mDefaultColor:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/ui/ColorPickerPreference;->setColor(Ljava/lang/String;)V
 
-    :cond_c
-    :goto_5
+    :cond_a
+    :goto_2
     return-void
 .end method
 
@@ -1675,11 +1553,9 @@
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mPalette:[Ljava/lang/String;
 
-    const/4 v1, -0x1
-
     if-nez v0, :cond_1
 
-    move v0, v1
+    const/4 v0, -0x1
 
     goto :goto_0
 
@@ -1695,70 +1571,13 @@
     move-result v0
 
     :goto_0
-    if-ne v0, v1, :cond_3
-
-    iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/oneplus/settings/utils/OPUtils;->isWhiteModeOn(Landroid/content/ContentResolver;)Z
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string v3, "oem_white_mode_accent_color_index"
-
-    invoke-static {v1, v3, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-
-    goto :goto_1
-
-    :cond_2
-    iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/oneplus/settings/utils/OPUtils;->isBlackModeOn(Landroid/content/ContentResolver;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    iget-object v1, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string v3, "oem_black_mode_accent_color_index"
-
-    invoke-static {v1, v3, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-
-    :cond_3
-    :goto_1
     const/16 v1, 0xc
 
     new-array v1, v1, [I
 
     fill-array-data v1, :array_0
 
-    if-ltz v0, :cond_4
+    if-ltz v0, :cond_2
 
     iget-object v2, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mViews:[Landroid/view/View;
 
@@ -1772,9 +1591,9 @@
 
     invoke-virtual {v2, p2}, Landroid/view/View;->setVisibility(I)V
 
-    goto :goto_2
+    goto :goto_1
 
-    :cond_4
+    :cond_2
     iget-object v2, p0, Lcom/oneplus/settings/ui/ColorPickerPreference;->mViews:[Landroid/view/View;
 
     array-length v3, v1
@@ -1797,10 +1616,8 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    :goto_2
+    :goto_1
     return-void
-
-    nop
 
     :array_0
     .array-data 4

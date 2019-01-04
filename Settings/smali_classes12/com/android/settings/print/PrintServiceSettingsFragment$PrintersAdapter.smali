@@ -306,7 +306,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0a058b
+    const v5, 0x7f0a058a
 
     invoke-virtual {p2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -316,7 +316,7 @@
 
     invoke-virtual {v5, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const v6, 0x7f0a0530
+    const v6, 0x7f0a052f
 
     invoke-virtual {p2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -346,7 +346,7 @@
     invoke-virtual {v6, v8}, Landroid/widget/TextView;->setVisibility(I)V
 
     :goto_0
-    const v7, 0x7f0a034f
+    const v7, 0x7f0a034e
 
     invoke-virtual {p2, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

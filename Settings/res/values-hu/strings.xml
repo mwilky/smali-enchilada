@@ -2631,7 +2631,6 @@ akkumulátor takarékállapota automatikusan kikapcsol a készülék töltéseko
     <string name="oneplus_colorful_mode_title">Színes</string>
     <string name="oneplus_compatibility_mode_summary">A teljes képernyős alkalmazások nem használhatják a beugró területet.</string>
     <string name="oneplus_compatibility_mode_title">Kompatibilitás mód</string>
-    <string name="oneplus_condition_night_mode_title">Éjszakai üzemmód bekapcsolva</string>
     <string name="oneplus_connected_device_count">%1$s eszköz kapcsolódik</string>
     <string name="oneplus_connected_device_management_title">Csatlakoztatott eszközkezelő</string>
     <string name="oneplus_connected_devices_count">%1$s eszköz kapcsolódik</string>

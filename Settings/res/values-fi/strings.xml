@@ -2631,7 +2631,6 @@ Akunsäästäjä poistuu automaattisesti käytössä, kun laitetta ladataan."</s
     <string name="oneplus_colorful_mode_title">Värikäs</string>
     <string name="oneplus_compatibility_mode_summary">Koko näytön sovellukset eivät voi käyttää lovialuetta</string>
     <string name="oneplus_compatibility_mode_title">Yhteensopivuustila</string>
-    <string name="oneplus_condition_night_mode_title">Yötila on päällä</string>
     <string name="oneplus_connected_device_count">Yhdistettynä on %1$s laite</string>
     <string name="oneplus_connected_device_management_title">Yhdistettyjen laitteiden hallinta</string>
     <string name="oneplus_connected_devices_count">Yhdistettynä on %1$s laitetta</string>

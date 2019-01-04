@@ -204,7 +204,7 @@
 
     nop
 
-    const v0, 0x7f0a03a9
+    const v0, 0x7f0a03a8
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -216,7 +216,7 @@
 
     nop
 
-    const v0, 0x7f0a03a8
+    const v0, 0x7f0a03a7
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -228,7 +228,7 @@
 
     nop
 
-    const v0, 0x7f0a03e7
+    const v0, 0x7f0a03e6
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -240,7 +240,7 @@
 
     nop
 
-    const v0, 0x7f0a03e6
+    const v0, 0x7f0a03e5
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -252,7 +252,7 @@
 
     nop
 
-    const v0, 0x7f0a03e5
+    const v0, 0x7f0a03e4
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

@@ -27,49 +27,21 @@
 .method public static final convertGammaToLinear(III)I
     .locals 5
 
-    const/4 v0, 0x0
+    int-to-float v0, p0
 
     const/4 v1, 0x0
 
-    const/16 v2, 0x200
-
-    if-gt p0, v2, :cond_0
-
-    const v2, 0x44138000    # 590.0f
-
-    int-to-float v3, p0
-
-    invoke-static {v1, v2, v3}, Landroid/util/MathUtils;->norm(FFF)F
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_0
-    const/16 v2, 0x37a
-
-    add-int/lit16 v3, p0, -0x200
-
-    mul-int/lit16 v3, v3, 0x85
-
-    div-int/lit16 v3, v3, 0x1ff
-
-    add-int p0, v2, v3
-
     const v2, 0x447fc000    # 1023.0f
 
-    int-to-float v3, p0
-
-    invoke-static {v1, v2, v3}, Landroid/util/MathUtils;->norm(FFF)F
+    invoke-static {v1, v2, v0}, Landroid/util/MathUtils;->norm(FFF)F
 
     move-result v0
 
-    :goto_0
     const/high16 v1, 0x3f000000    # 0.5f
 
     cmpg-float v2, v0, v1
 
-    if-gtz v2, :cond_1
+    if-gtz v2, :cond_0
 
     div-float v1, v0, v1
 
@@ -77,9 +49,9 @@
 
     move-result v1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_1
+    :cond_0
     const v1, 0x3f0f564f
 
     sub-float v1, v0, v1
@@ -96,7 +68,7 @@
 
     add-float/2addr v1, v2
 
-    :goto_1
+    :goto_0
     int-to-float v2, p1
 
     int-to-float v3, p2
@@ -117,7 +89,7 @@
 .end method
 
 .method public static final convertLinearToGamma(III)I
-    .locals 6
+    .locals 4
 
     int-to-float v0, p1
 
@@ -179,41 +151,5 @@
 
     move-result v2
 
-    const v3, 0x3f5eb7ae    # 0.8699902f
-
-    cmpg-float v4, v1, v3
-
-    if-gtz v4, :cond_1
-
-    mul-int/lit16 v4, v2, 0x200
-
-    div-int/lit16 v4, v4, 0x37a
-
-    int-to-float v4, v4
-
-    invoke-static {v4}, Ljava/lang/Math;->round(F)I
-
-    move-result v4
-
-    goto :goto_1
-
-    :cond_1
-    add-int/lit16 v4, v2, -0x37a
-
-    mul-int/lit16 v4, v4, 0x1ff
-
-    div-int/lit16 v4, v4, 0x85
-
-    const/16 v5, 0x200
-
-    add-int/2addr v5, v4
-
-    int-to-float v4, v5
-
-    invoke-static {v4}, Ljava/lang/Math;->round(F)I
-
-    move-result v4
-
-    :goto_1
-    return v4
+    return v2
 .end method

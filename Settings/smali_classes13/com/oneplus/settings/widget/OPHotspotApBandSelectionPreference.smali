@@ -120,7 +120,7 @@
 .method private addApBandRadioGroupViews(Landroid/widget/LinearLayout;)V
     .locals 3
 
-    const v0, 0x7f0a0460
+    const v0, 0x7f0a045f
 
     invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -148,7 +148,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    const v0, 0x7f0a0461
+    const v0, 0x7f0a0460
 
     invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -176,7 +176,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    const v0, 0x7f0a045f
+    const v0, 0x7f0a045e
 
     invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 

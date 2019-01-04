@@ -58,11 +58,11 @@
 
     const v4, 0x7f12121c
 
-    const v5, 0x7f0a056f
+    const v5, 0x7f0a056e
 
-    const v6, 0x7f0a056b
+    const v6, 0x7f0a056a
 
-    const v7, 0x7f0a0565
+    const v7, 0x7f0a0564
 
     const/4 v8, 0x1
 
@@ -82,11 +82,11 @@
 
     const v14, 0x7f12121e
 
-    const v15, 0x7f0a05d0
+    const v15, 0x7f0a05cf
 
-    const v16, 0x7f0a05cf
+    const v16, 0x7f0a05ce
 
-    const v17, 0x7f0a05c3
+    const v17, 0x7f0a05c2
 
     const/16 v18, 0x0
 

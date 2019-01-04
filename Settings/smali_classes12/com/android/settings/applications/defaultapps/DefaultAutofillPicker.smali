@@ -187,7 +187,7 @@
 
     invoke-virtual {v2, v3}, Landroid/support/v7/preference/Preference;->setTitle(I)V
 
-    const v3, 0x7f0801e3
+    const v3, 0x7f0801c8
 
     invoke-virtual {v2, v3}, Landroid/support/v7/preference/Preference;->setIcon(I)V
 

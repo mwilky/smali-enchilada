@@ -71,14 +71,6 @@
     return-void
 .end method
 
-.method protected canRunBeforeDeviceProvisioned()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
 .method protected disableUnusablePreferences(IZ)V
     .locals 2
 
@@ -340,7 +332,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0801dc
+    const v2, 0x7f0801c1
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

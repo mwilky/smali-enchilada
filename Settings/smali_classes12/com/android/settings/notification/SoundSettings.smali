@@ -1359,7 +1359,7 @@
 
     iget-object v1, p0, Lcom/android/settings/notification/SoundSettings;->mContext:Landroid/content/Context;
 
-    const v2, 0x10403e7
+    const v2, 0x10403e6
 
     const/4 v3, 0x1
 
@@ -1400,11 +1400,11 @@
 
     move-result v0
 
-    const v1, 0x7f08034a
+    const v1, 0x7f08032f
 
-    const v2, 0x7f08034b
+    const v2, 0x7f080330
 
-    const v3, 0x7f08034c
+    const v3, 0x7f080331
 
     if-nez v0, :cond_2
 
@@ -1581,7 +1581,7 @@
     move-result-object v1
 
     :goto_0
-    const v2, 0x10405c2
+    const v2, 0x10405c1
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1589,7 +1589,7 @@
 
     if-nez v1, :cond_2
 
-    const v0, 0x10405c1
+    const v0, 0x10405c0
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2629,7 +2629,7 @@
 
     const/4 v5, 0x3
 
-    const v6, 0x7f080349
+    const v6, 0x7f08032e
 
     invoke-direct {p0, v4, v5, v6}, Lcom/android/settings/notification/SoundSettings;->initVolumePreference(Ljava/lang/String;II)Lcom/android/settings/notification/VolumeSeekBarPreference;
 
@@ -2641,7 +2641,7 @@
 
     const/4 v5, 0x4
 
-    const v6, 0x7f080347
+    const v6, 0x7f08032c
 
     invoke-direct {p0, v4, v5, v6}, Lcom/android/settings/notification/SoundSettings;->initVolumePreference(Ljava/lang/String;II)Lcom/android/settings/notification/VolumeSeekBarPreference;
 
@@ -2653,7 +2653,7 @@
 
     const/4 v5, 0x2
 
-    const v6, 0x7f08034b
+    const v6, 0x7f080330
 
     invoke-direct {p0, v4, v5, v6}, Lcom/android/settings/notification/SoundSettings;->initVolumePreference(Ljava/lang/String;II)Lcom/android/settings/notification/VolumeSeekBarPreference;
 
@@ -2676,7 +2676,7 @@
 
     const/4 v5, 0x5
 
-    const v6, 0x7f08034a
+    const v6, 0x7f08032f
 
     invoke-direct {p0, v4, v5, v6}, Lcom/android/settings/notification/SoundSettings;->initVolumePreference(Ljava/lang/String;II)Lcom/android/settings/notification/VolumeSeekBarPreference;
 

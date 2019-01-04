@@ -51,7 +51,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setSystemUiVisibility(I)V
 
-    const v0, 0x7f0a035d
+    const v0, 0x7f0a035c
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPScreenColorModeForProvision;->findViewById(I)Landroid/view/View;
 

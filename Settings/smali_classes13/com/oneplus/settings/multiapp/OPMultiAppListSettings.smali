@@ -527,7 +527,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->mProgressDialog:Landroid/app/ProgressDialog;
 
-    const v0, 0x7f0a0399
+    const v0, 0x7f0a0398
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->findViewById(I)Landroid/view/View;
 
@@ -541,9 +541,9 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->mAppListView:Landroid/widget/ListView;
 
-    const v2, 0x7f0803c2
+    const v2, 0x7f0803a7
 
-    const v3, 0x7f0803c0
+    const v3, 0x7f0803a5
 
     const v4, 0x7f0702b0
 
@@ -567,7 +567,7 @@
 
     invoke-virtual {v0, p0}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    const v0, 0x7f0a0310
+    const v0, 0x7f0a030f
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->findViewById(I)Landroid/view/View;
 
@@ -577,7 +577,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->mLoadingContainer:Landroid/view/View;
 
-    const v1, 0x7f0a0311
+    const v1, 0x7f0a0310
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -2631,7 +2631,6 @@ Batterisparing slås automatisk av når enheten lader."</string>
     <string name="oneplus_colorful_mode_title">Fargerik</string>
     <string name="oneplus_compatibility_mode_summary">Fullskjermapper kan ikke bruke hakkområdet</string>
     <string name="oneplus_compatibility_mode_title">Kompatibilitetsmodus</string>
-    <string name="oneplus_condition_night_mode_title">Nattmodus er på</string>
     <string name="oneplus_connected_device_count">%1$s enhet er tilkoblet</string>
     <string name="oneplus_connected_device_management_title">Tilkoblet enhetsbehandling</string>
     <string name="oneplus_connected_devices_count">%1$s enheter er tilkoblet</string>

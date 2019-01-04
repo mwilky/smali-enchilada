@@ -2631,7 +2631,6 @@
     <string name="oneplus_colorful_mode_title">Πολύχρωμο</string>
     <string name="oneplus_compatibility_mode_summary">Να μην επιτρέπεται η χρήση της περιοχής της εγκοπής από εφαρμογές πλήρους οθόνης.</string>
     <string name="oneplus_compatibility_mode_title">Λειτουργία συμβατότητας</string>
-    <string name="oneplus_condition_night_mode_title">Η Λειτουργία τη νύχτα είναι ενεργοποιημένη.</string>
     <string name="oneplus_connected_device_count">Υπάρχει %1$s συνδεδεμένη συσκευή</string>
     <string name="oneplus_connected_device_management_title">Διαχείριση συνδεδεμένων συσκευών</string>
     <string name="oneplus_connected_devices_count">Υπάρχουν %1$s συνδεδεμένες συσκευές</string>

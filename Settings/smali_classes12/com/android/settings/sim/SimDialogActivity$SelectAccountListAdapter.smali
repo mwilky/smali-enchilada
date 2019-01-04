@@ -116,7 +116,7 @@
 
     move-object v2, v3
 
-    const v3, 0x7f0a058b
+    const v3, 0x7f0a058a
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -126,7 +126,7 @@
 
     iput-object v3, v2, Lcom/android/settings/sim/SimDialogActivity$SelectAccountListAdapter$ViewHolder;->title:Landroid/widget/TextView;
 
-    const v3, 0x7f0a0533
+    const v3, 0x7f0a0532
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -194,7 +194,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0801d9
+    const v6, 0x7f0801be
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

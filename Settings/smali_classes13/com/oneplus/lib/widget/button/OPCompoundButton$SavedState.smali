@@ -29,10 +29,6 @@
 # instance fields
 .field checked:Z
 
-.field indeterminate:Z
-
-.field threeState:Z
-
 
 # direct methods
 .method static constructor <clinit>()V
@@ -48,35 +44,11 @@
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
-    .locals 2
+    .locals 1
 
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
     const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->readValue(Ljava/lang/ClassLoader;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Boolean;
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    iput-boolean v1, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton$SavedState;->checked:Z
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->readValue(Ljava/lang/ClassLoader;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Boolean;
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    iput-boolean v1, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton$SavedState;->threeState:Z
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readValue(Ljava/lang/ClassLoader;)Ljava/lang/Object;
 
@@ -88,7 +60,7 @@
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton$SavedState;->indeterminate:Z
+    iput-boolean v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton$SavedState;->checked:Z
 
     return-void
 .end method
@@ -140,22 +112,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v1, ", indeterminate="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton$SavedState;->indeterminate:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", threeState="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton$SavedState;->threeState:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
     const-string v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -173,22 +129,6 @@
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
     iget-boolean v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton$SavedState;->checked:Z
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeValue(Ljava/lang/Object;)V
-
-    iget-boolean v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton$SavedState;->threeState:Z
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeValue(Ljava/lang/Object;)V
-
-    iget-boolean v0, p0, Lcom/oneplus/lib/widget/button/OPCompoundButton$SavedState;->indeterminate:Z
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 

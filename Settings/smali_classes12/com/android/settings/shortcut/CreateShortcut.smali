@@ -227,7 +227,7 @@
     goto :goto_0
 
     :cond_0
-    const v2, 0x7f0801d6
+    const v2, 0x7f0801bb
 
     invoke-static {p0, v2}, Landroid/graphics/drawable/Icon;->createWithResource(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;
 

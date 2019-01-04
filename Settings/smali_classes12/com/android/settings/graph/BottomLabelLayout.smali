@@ -125,7 +125,7 @@
     :goto_0
     invoke-virtual {p0, v0}, Lcom/android/settings/graph/BottomLabelLayout;->setGravity(I)V
 
-    const v0, 0x7f0a0507
+    const v0, 0x7f0a0506
 
     invoke-virtual {p0, v0}, Lcom/android/settings/graph/BottomLabelLayout;->findViewById(I)Landroid/view/View;
 

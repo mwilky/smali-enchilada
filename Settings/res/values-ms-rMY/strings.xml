@@ -250,7 +250,6 @@ Penjimat bateri dipadamkan secara automatik apabila peranti anda sedang mengecas
     <string name="oneplus_colorful_mode_title">Berwarna-warni</string>
     <string name="oneplus_compatibility_mode_summary">Aplikasi skrin penuh tidak dapat menggunakan kawasan takuk</string>
     <string name="oneplus_compatibility_mode_title">Mod keserasian</string>
-    <string name="oneplus_condition_night_mode_title">Mod malam dihidupkan</string>
     <string name="oneplus_connected_device_count">Terdapat %1$s peranti bersambung</string>
     <string name="oneplus_connected_device_management_title">Pengurus peranti disambung</string>
     <string name="oneplus_connected_devices_count">Terdapat %1$s peranti bersambung</string>

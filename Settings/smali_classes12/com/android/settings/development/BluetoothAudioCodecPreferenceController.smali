@@ -21,7 +21,7 @@
 
 # virtual methods
 .method protected getCurrentA2dpSettingIndex(Landroid/bluetooth/BluetoothCodecConfig;)I
-    .locals 3
+    .locals 2
 
     invoke-virtual {p1}, Landroid/bluetooth/BluetoothCodecConfig;->getCodecType()I
 
@@ -29,46 +29,41 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x5
-
-    if-eq v0, v2, :cond_0
-
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
     :pswitch_0
-    const/4 v1, 0x4
+    const/4 v1, 0x5
 
     goto :goto_0
 
     :pswitch_1
-    const/4 v1, 0x3
+    const/4 v1, 0x4
 
     goto :goto_0
 
     :pswitch_2
-    const/4 v1, 0x2
+    const/4 v1, 0x3
 
     goto :goto_0
 
     :pswitch_3
-    const/4 v1, 0x1
+    const/4 v1, 0x2
 
     goto :goto_0
 
-    :cond_0
-    const/4 v1, 0x5
+    :pswitch_4
+    const/4 v1, 0x1
 
     nop
 
     :goto_0
     return v1
 
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_4
         :pswitch_3
         :pswitch_2
         :pswitch_1
@@ -208,7 +203,7 @@
     throw v3
 
     :pswitch_2
-    const/4 v1, 0x5
+    const/4 v1, 0x4
 
     const v2, 0xf4240
 
@@ -260,7 +255,7 @@
     goto :goto_0
 
     :pswitch_8
-    const/4 v1, 0x5
+    const/4 v1, 0x4
 
     goto :goto_0
 

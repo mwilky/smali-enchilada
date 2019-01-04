@@ -134,7 +134,7 @@
 
     move-result-object v12
 
-    const v0, 0x7f0a05cd
+    const v0, 0x7f0a05cc
 
     invoke-virtual {v11, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -148,7 +148,7 @@
 
     invoke-virtual {v13, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    const v0, 0x7f0a05ce
+    const v0, 0x7f0a05cd
 
     invoke-virtual {v11, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

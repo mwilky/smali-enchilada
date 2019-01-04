@@ -99,33 +99,18 @@
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
     .locals 3
 
-    iget-object v0, p0, Lcom/android/settings/search/actionbar/SearchMenuController;->mHost:Landroid/app/Fragment;
-
-    invoke-virtual {v0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/settings/Utils;->isDeviceProvisioned(Landroid/content/Context;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
+    if-nez p1, :cond_0
 
     return-void
 
     :cond_0
-    if-nez p1, :cond_1
-
-    return-void
-
-    :cond_1
     iget-object v0, p0, Lcom/android/settings/search/actionbar/SearchMenuController;->mHost:Landroid/app/Fragment;
 
     invoke-virtual {v0}, Landroid/app/Fragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     const-string v1, "need_search_icon_in_action_bar"
 
@@ -135,11 +120,11 @@
 
     move-result v1
 
-    if-nez v1, :cond_2
+    if-nez v1, :cond_1
 
     return-void
 
-    :cond_2
+    :cond_1
     const v1, 0x7f120fa3
 
     const/4 v2, 0x0
@@ -148,7 +133,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0801ec
+    const v2, 0x7f0801d1
 
     invoke-interface {v1, v2}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 

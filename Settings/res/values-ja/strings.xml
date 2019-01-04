@@ -2629,7 +2629,6 @@ T馬などの動物はいないようでした。荷物は小さな緑色の手�
     <string name="oneplus_colorful_mode_title">カラフル</string>
     <string name="oneplus_compatibility_mode_summary">全画面表示アプリではノッチ領域を使用できません</string>
     <string name="oneplus_compatibility_mode_title">互換モード</string>
-    <string name="oneplus_condition_night_mode_title">おやすみモードがオンです</string>
     <string name="oneplus_connected_device_count">接続済みのデバイスが %1$s 個あります</string>
     <string name="oneplus_connected_device_management_title">接続済みのデバイス マネージャー</string>
     <string name="oneplus_connected_devices_count">接続済みのデバイスが %1$s 個あります</string>

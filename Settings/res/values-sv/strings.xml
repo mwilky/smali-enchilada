@@ -2631,7 +2631,6 @@ Batteribesparing stängs av automatiskt när enheten laddar."</string>
     <string name="oneplus_colorful_mode_title">Färgrika</string>
     <string name="oneplus_compatibility_mode_summary">Appar i helskärmsläge kan inte använda hackområdet</string>
     <string name="oneplus_compatibility_mode_title">Kompatibilitetsläge</string>
-    <string name="oneplus_condition_night_mode_title">Nattläge är på</string>
     <string name="oneplus_connected_device_count">Det finns %1$s enhet ansluten</string>
     <string name="oneplus_connected_device_management_title">Enhetshanteraren är ansluten</string>
     <string name="oneplus_connected_devices_count">Det finns %1$s enheter anslutna</string>

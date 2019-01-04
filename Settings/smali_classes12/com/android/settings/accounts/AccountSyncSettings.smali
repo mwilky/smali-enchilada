@@ -1359,7 +1359,7 @@
 .method protected initializeUi(Landroid/view/View;)V
     .locals 2
 
-    const v0, 0x7f0a0562
+    const v0, 0x7f0a0561
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1375,7 +1375,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    const v0, 0x7f0a05cb
+    const v0, 0x7f0a05ca
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1385,7 +1385,7 @@
 
     iput-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->mUserId:Landroid/widget/TextView;
 
-    const v0, 0x7f0a044f
+    const v0, 0x7f0a044e
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1395,7 +1395,7 @@
 
     iput-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->mProviderId:Landroid/widget/TextView;
 
-    const v0, 0x7f0a044e
+    const v0, 0x7f0a044d
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1736,7 +1736,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0801ea
+    const v2, 0x7f0801cf
 
     invoke-interface {v0, v2}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
@@ -1784,7 +1784,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a0429
+    const v2, 0x7f0a0428
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -2631,7 +2631,6 @@ La funzione di risparmio batteria è disattivata automaticamente quando il dispo
     <string name="oneplus_colorful_mode_title">A colori</string>
     <string name="oneplus_compatibility_mode_summary">"Le app a schermo intero non possono utilizzare l'area notch"</string>
     <string name="oneplus_compatibility_mode_title">Modalità compatibilità</string>
-    <string name="oneplus_condition_night_mode_title">Modalità notturna attivata</string>
     <string name="oneplus_connected_device_count">%1$s dispositivo connesso</string>
     <string name="oneplus_connected_device_management_title">Gestione dispositivi collegati</string>
     <string name="oneplus_connected_devices_count">%1$s dispositivi connessi</string>

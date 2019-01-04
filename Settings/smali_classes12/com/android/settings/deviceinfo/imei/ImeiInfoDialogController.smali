@@ -24,19 +24,19 @@
     .end annotation
 .end field
 
-.field static final ID_MEID_NUMBER_VALUE:I = 0x7f0a0335
+.field static final ID_MEID_NUMBER_VALUE:I = 0x7f0a0334
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 .end field
 
-.field private static final ID_MIN_NUMBER_LABEL:I = 0x7f0a0344
+.field private static final ID_MIN_NUMBER_LABEL:I = 0x7f0a0343
 
-.field static final ID_MIN_NUMBER_VALUE:I = 0x7f0a0345
+.field static final ID_MIN_NUMBER_VALUE:I = 0x7f0a0344
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 .end field
 
-.field static final ID_PRL_VERSION_VALUE:I = 0x7f0a043d
+.field static final ID_PRL_VERSION_VALUE:I = 0x7f0a043c
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 .end field
@@ -199,7 +199,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a0335
+    const v3, 0x7f0a0334
 
     invoke-virtual {v1, v3, v2}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->setText(ILjava/lang/CharSequence;)V
 
@@ -227,7 +227,7 @@
     const-string v2, ""
 
     :goto_0
-    const v3, 0x7f0a0345
+    const v3, 0x7f0a0344
 
     invoke-virtual {v1, v3, v2}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->setText(ILjava/lang/CharSequence;)V
 
@@ -241,7 +241,7 @@
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mDialog:Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
 
-    const v2, 0x7f0a0344
+    const v2, 0x7f0a0343
 
     const v3, 0x7f1210e7
 
@@ -254,7 +254,7 @@
     :cond_1
     iget-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mDialog:Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
 
-    const v2, 0x7f0a043d
+    const v2, 0x7f0a043c
 
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->getCdmaPrlVersion()Ljava/lang/String;
 

@@ -470,7 +470,7 @@
 
     invoke-direct {v0, v1}, Lcom/android/settings/deviceinfo/StorageItemPreference;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f080154
+    const v1, 0x7f080139
 
     invoke-virtual {v0, v1}, Lcom/android/settings/deviceinfo/StorageItemPreference;->setIcon(I)V
 
@@ -1711,7 +1711,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f0a051c
+    .packed-switch 0x7f0a051b
         :pswitch_6
         :pswitch_5
         :pswitch_0
@@ -2003,37 +2003,37 @@
     return-void
 
     :cond_0
-    const v0, 0x7f0a0522
+    const v0, 0x7f0a0521
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v0
 
-    const v1, 0x7f0a0520
+    const v1, 0x7f0a051f
 
     invoke-interface {p1, v1}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v1
 
-    const v2, 0x7f0a0524
+    const v2, 0x7f0a0523
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v2
 
-    const v3, 0x7f0a051c
+    const v3, 0x7f0a051b
 
     invoke-interface {p1, v3}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v3
 
-    const v4, 0x7f0a051f
+    const v4, 0x7f0a051e
 
     invoke-interface {p1, v4}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v4
 
-    const v5, 0x7f0a051d
+    const v5, 0x7f0a051c
 
     invoke-interface {p1, v5}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 

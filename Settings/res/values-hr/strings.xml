@@ -2631,7 +2631,6 @@ Aplikacija će također moći uključiti ili isključiti značajku Ne ometaj i p
     <string name="oneplus_colorful_mode_title">Šarena</string>
     <string name="oneplus_compatibility_mode_summary">Aplikacije za cijeli zaslon ne mogu upotrebljavati područje poluotoka</string>
     <string name="oneplus_compatibility_mode_title">Način kompatibilnosti</string>
-    <string name="oneplus_condition_night_mode_title">Noćni način je uključen</string>
     <string name="oneplus_connected_device_count">Spojeno uređaja: %1$s</string>
     <string name="oneplus_connected_device_management_title">Upravitelj povezanih uređaja</string>
     <string name="oneplus_connected_devices_count">Spojeno uređaja: %1$s</string>

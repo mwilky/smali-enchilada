@@ -101,7 +101,7 @@
 
     const/4 v2, 0x1
 
-    const v3, 0x7f0a0567
+    const v3, 0x7f0a0566
 
     if-ne v0, v3, :cond_1
 
@@ -137,7 +137,7 @@
 
     move-result v0
 
-    const v3, 0x7f0a04f7
+    const v3, 0x7f0a04f6
 
     if-ne v0, v3, :cond_3
 
@@ -223,7 +223,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    const v3, 0x7f0a0568
+    const v3, 0x7f0a0567
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -233,7 +233,7 @@
 
     iput-object v3, p0, Lcom/oneplus/settings/OPFontStyleSettings;->mSystemFontButton:Landroid/widget/RadioButton;
 
-    const v3, 0x7f0a04f8
+    const v3, 0x7f0a04f7
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -243,7 +243,7 @@
 
     iput-object v3, p0, Lcom/oneplus/settings/OPFontStyleSettings;->mSlateFontButton:Landroid/widget/RadioButton;
 
-    const v3, 0x7f0a0567
+    const v3, 0x7f0a0566
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -251,7 +251,7 @@
 
     iput-object v3, p0, Lcom/oneplus/settings/OPFontStyleSettings;->mSystemFont:Landroid/view/View;
 
-    const v3, 0x7f0a04f7
+    const v3, 0x7f0a04f6
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

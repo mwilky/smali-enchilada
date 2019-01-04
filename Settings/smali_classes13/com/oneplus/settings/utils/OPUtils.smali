@@ -1580,29 +1580,29 @@
 .method public static getQuickPayIconByType(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
     .locals 2
 
-    const v0, 0x7f080433
+    const v0, 0x7f080419
 
     packed-switch p1, :pswitch_data_0
 
     goto :goto_0
 
     :pswitch_0
-    const v0, 0x7f0802fc
+    const v0, 0x7f0802e1
 
     goto :goto_0
 
     :pswitch_1
-    const v0, 0x7f0802fb
+    const v0, 0x7f0802e0
 
     goto :goto_0
 
     :pswitch_2
-    const v0, 0x7f080434
+    const v0, 0x7f08041a
 
     goto :goto_0
 
     :pswitch_3
-    const v0, 0x7f080433
+    const v0, 0x7f080419
 
     nop
 

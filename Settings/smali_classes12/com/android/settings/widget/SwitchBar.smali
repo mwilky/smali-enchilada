@@ -91,10 +91,10 @@
 
     :array_0
     .array-data 4
-        0x7f040321
-        0x7f040320
         0x7f04031f
         0x7f04031e
+        0x7f04031d
+        0x7f04031c
     .end array-data
 .end method
 
@@ -193,7 +193,7 @@
 
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    const v4, 0x7f0a055e
+    const v4, 0x7f0a055d
 
     invoke-virtual {p0, v4}, Lcom/android/settings/widget/SwitchBar;->findViewById(I)Landroid/view/View;
 
@@ -223,7 +223,7 @@
 
     invoke-virtual {v4, v3}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginStart(I)V
 
-    const v5, 0x7f0a055f
+    const v5, 0x7f0a055e
 
     invoke-virtual {p0, v5}, Lcom/android/settings/widget/SwitchBar;->findViewById(I)Landroid/view/View;
 
@@ -263,7 +263,7 @@
 
     invoke-virtual {p0, v4}, Lcom/android/settings/widget/SwitchBar;->addOnSwitchChangeListener(Lcom/android/settings/widget/SwitchBar$OnSwitchChangeListener;)V
 
-    const v4, 0x7f0a047a
+    const v4, 0x7f0a0479
 
     invoke-virtual {p0, v4}, Lcom/android/settings/widget/SwitchBar;->findViewById(I)Landroid/view/View;
 

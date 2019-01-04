@@ -58,8 +58,6 @@
 # instance fields
 .field private isSupportReadingMode:Z
 
-.field private mAccessibilityDisplayDaltonizerAndInversionContentObserver:Landroid/database/ContentObserver;
-
 .field private mCM:Lcom/oneplus/settings/OneplusColorManager;
 
 .field private mContext:Landroid/content/Context;
@@ -93,9 +91,9 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lcom/oneplus/settings/better/OPScreenColorMode$3;
+    new-instance v0, Lcom/oneplus/settings/better/OPScreenColorMode$2;
 
-    invoke-direct {v0}, Lcom/oneplus/settings/better/OPScreenColorMode$3;-><init>()V
+    invoke-direct {v0}, Lcom/oneplus/settings/better/OPScreenColorMode$2;-><init>()V
 
     sput-object v0, Lcom/oneplus/settings/better/OPScreenColorMode;->SEARCH_INDEX_DATA_PROVIDER:Lcom/android/settings/search/Indexable$SearchIndexProvider;
 
@@ -121,16 +119,6 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/better/OPScreenColorMode;->mScreenColorModeContentObserver:Landroid/database/ContentObserver;
 
-    new-instance v0, Lcom/oneplus/settings/better/OPScreenColorMode$2;
-
-    new-instance v1, Landroid/os/Handler;
-
-    invoke-direct {v1}, Landroid/os/Handler;-><init>()V
-
-    invoke-direct {v0, p0, v1}, Lcom/oneplus/settings/better/OPScreenColorMode$2;-><init>(Lcom/oneplus/settings/better/OPScreenColorMode;Landroid/os/Handler;)V
-
-    iput-object v0, p0, Lcom/oneplus/settings/better/OPScreenColorMode;->mAccessibilityDisplayDaltonizerAndInversionContentObserver:Landroid/database/ContentObserver;
-
     return-void
 .end method
 
@@ -154,27 +142,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1000(Lcom/oneplus/settings/better/OPScreenColorMode;)Landroid/content/ContentResolver;
-    .locals 1
-
-    invoke-virtual {p0}, Lcom/oneplus/settings/better/OPScreenColorMode;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic access$1100(Lcom/oneplus/settings/better/OPScreenColorMode;)Landroid/content/ContentResolver;
-    .locals 1
-
-    invoke-virtual {p0}, Lcom/oneplus/settings/better/OPScreenColorMode;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic access$1200()Z
+.method static synthetic access$1000()Z
     .locals 1
 
     sget-boolean v0, Lcom/oneplus/settings/better/OPScreenColorMode;->isSupportDcip3:Z
@@ -182,7 +150,7 @@
     return v0
 .end method
 
-.method static synthetic access$1300()Z
+.method static synthetic access$1100()Z
     .locals 1
 
     sget-boolean v0, Lcom/oneplus/settings/better/OPScreenColorMode;->isSupportAdaptive:Z
@@ -190,7 +158,7 @@
     return v0
 .end method
 
-.method static synthetic access$1400()Z
+.method static synthetic access$1200()Z
     .locals 1
 
     sget-boolean v0, Lcom/oneplus/settings/better/OPScreenColorMode;->isSupportSoft:Z
@@ -860,14 +828,6 @@
 
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    invoke-virtual {p0}, Lcom/oneplus/settings/better/OPScreenColorMode;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/oneplus/settings/better/OPScreenColorMode;->mAccessibilityDisplayDaltonizerAndInversionContentObserver:Landroid/database/ContentObserver;
-
-    invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
-
     return-void
 .end method
 
@@ -1283,34 +1243,6 @@
     move-result-object v2
 
     iget-object v3, p0, Lcom/oneplus/settings/better/OPScreenColorMode;->mScreenColorModeContentObserver:Landroid/database/ContentObserver;
-
-    invoke-virtual {v1, v2, v5, v3, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
-
-    invoke-virtual {p0}, Lcom/oneplus/settings/better/OPScreenColorMode;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string v2, "accessibility_display_daltonizer_enabled"
-
-    invoke-static {v2}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/oneplus/settings/better/OPScreenColorMode;->mAccessibilityDisplayDaltonizerAndInversionContentObserver:Landroid/database/ContentObserver;
-
-    invoke-virtual {v1, v2, v5, v3, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
-
-    invoke-virtual {p0}, Lcom/oneplus/settings/better/OPScreenColorMode;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string v2, "accessibility_display_inversion_enabled"
-
-    invoke-static {v2}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/oneplus/settings/better/OPScreenColorMode;->mAccessibilityDisplayDaltonizerAndInversionContentObserver:Landroid/database/ContentObserver;
 
     invoke-virtual {v1, v2, v5, v3, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 

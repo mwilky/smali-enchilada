@@ -2576,7 +2576,6 @@
     <string name="oneplus_colorful_mode_title">彩色主題</string>
     <string name="oneplus_compatibility_mode_summary">全屏應用無法使用凹形區域</string>
     <string name="oneplus_compatibility_mode_title">兼容模式</string>
-    <string name="oneplus_condition_night_mode_title">「夜間模式」已開啟</string>
     <string name="oneplus_connected_device_count">已有%1$s個設備連入</string>
     <string name="oneplus_connected_device_management_title">連入設備管理</string>
     <string name="oneplus_connected_devices_dashboard_summary">NFC、投射、打印</string>
@@ -2648,7 +2647,7 @@
     <string name="oneplus_face_auto_unlock_while_screen_on_title">喚醒螢幕後自動解鎖</string>
     <string name="oneplus_face_setup_unlock_settings_summary">"人臉解鎖是一種快捷的解鎖方式。妳只需要喚醒螢幕後，正面看向手機，就可以解鎖並使用手機。
 
-風險提示：人臉識別的安全性低於指紋及密碼，您的手機可能會被容貌與您相近的人或外形與您相似的物品解鎖。"</string>
+風險提示：人臉識別的安全性低於指紋及密碼"</string>
     <string name="oneplus_face_setup_unlock_settings_title">試試看人臉解鎖吧</string>
     <string name="oneplus_face_unlock_add_title">添加人臉數據</string>
     <string name="oneplus_face_unlock_assistive_lighting_summary">在黑暗環境下，螢幕會進行補光幫助完成臉部辨識</string>
@@ -2665,7 +2664,6 @@
     <string name="oneplus_finger_input_error_tips">指紋錄入錯誤，請返回重試</string>
     <string name="oneplus_finger_input_fail_tips">錄入失敗，請調整姿勢重新錄入</string>
     <string name="oneplus_fingerprint">指紋</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">指紋特征重複，請稍微移動手指，錄入不同部位的指紋</string>
     <string name="oneplus_fingerprint_animation_effect_title">指紋動畫效果</string>
     <string name="oneplus_fingerprint_bind_save_list">指紋綁定記錄保存</string>
     <string name="oneplus_fingerprint_check_oneplus_account">指紋驗證一加帳號</string>
@@ -3145,7 +3143,7 @@
     <string name="oneplus_unlock_set_unlock_mode_pin">數字密碼</string>
     <string name="oneplus_use_faceunlock_and_fingerprint_settings_summary">"使用人臉解鎖配合指紋解鎖，能夠獲得更快速、更便捷的解鎖體驗。你只需要在點亮熒幕後，正面看向手機，就可以解鎖並使用手機。
 
-請注意：人臉識別的安全性低於指紋及密碼，您的手機可能會被容貌與您相近的人或外形與您相似的物品解鎖。"</string>
+請注意：人臉解鎖的安全性可能不及安全係數更高的指紋或密碼。"</string>
     <string name="oneplus_use_faceunlock_and_fingerprint_settings_title">推薦使用人臉配合指紋解鎖</string>
     <string name="oneplus_use_fingerprint_to_unlock">使用指紋解鎖</string>
     <string name="oneplus_used_storage">已用儲存</string>

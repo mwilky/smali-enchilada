@@ -143,7 +143,7 @@
     :goto_0
     move v10, v1
 
-    if-ge v10, v9, :cond_3
+    if-ge v10, v9, :cond_1
 
     invoke-interface {v8, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -153,56 +153,9 @@
 
     check-cast v11, Lcom/android/settingslib/wifi/AccessPoint;
 
-    invoke-virtual {v11}, Lcom/android/settingslib/wifi/AccessPoint;->isPasspointConfig()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
     invoke-virtual {v11}, Lcom/android/settingslib/wifi/AccessPoint;->getKey()Ljava/lang/String;
 
-    move-result-object v1
-
-    goto :goto_1
-
-    :cond_0
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v11}, Lcom/android/settingslib/wifi/AccessPoint;->getPasspointFqdn()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v11}, Lcom/android/settingslib/wifi/AccessPoint;->getConfigName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    const/16 v2, 0x2c
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v11}, Lcom/android/settingslib/wifi/AccessPoint;->getConfigName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_1
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    :goto_1
-    move-object v12, v1
+    move-result-object v12
 
     nop
 
@@ -214,7 +167,7 @@
 
     check-cast v13, Lcom/android/settings/wifi/LongPressAccessPointPreference;
 
-    if-nez v13, :cond_2
+    if-nez v13, :cond_0
 
     new-instance v14, Lcom/android/settings/wifi/LongPressAccessPointPreference;
 
@@ -242,19 +195,19 @@
 
     invoke-virtual {v0, v13}, Landroid/support/v7/preference/PreferenceScreen;->addPreference(Landroid/support/v7/preference/Preference;)Z
 
-    :cond_2
+    :cond_0
     invoke-virtual {v13, v10}, Lcom/android/settings/wifi/LongPressAccessPointPreference;->setOrder(I)V
 
     add-int/lit8 v1, v10, 0x1
 
     goto :goto_0
 
-    :cond_3
+    :cond_1
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/SavedAccessPointsWifiSettings;->removeCachedPrefs(Landroid/support/v7/preference/PreferenceGroup;)V
 
     iget-object v1, p0, Lcom/android/settings/wifi/SavedAccessPointsWifiSettings;->mAddNetworkPreference:Landroid/support/v7/preference/Preference;
 
-    if-nez v1, :cond_4
+    if-nez v1, :cond_2
 
     new-instance v1, Landroid/support/v7/preference/Preference;
 
@@ -268,7 +221,7 @@
 
     iget-object v1, p0, Lcom/android/settings/wifi/SavedAccessPointsWifiSettings;->mAddNetworkPreference:Landroid/support/v7/preference/Preference;
 
-    const v2, 0x7f0801e4
+    const v2, 0x7f0801c9
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setIcon(I)V
 
@@ -278,7 +231,7 @@
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setTitle(I)V
 
-    :cond_4
+    :cond_2
     iget-object v1, p0, Lcom/android/settings/wifi/SavedAccessPointsWifiSettings;->mAddNetworkPreference:Landroid/support/v7/preference/Preference;
 
     invoke-virtual {v1, v9}, Landroid/support/v7/preference/Preference;->setOrder(I)V
@@ -297,7 +250,7 @@
 
     const/4 v2, 0x1
 
-    if-ge v1, v2, :cond_5
+    if-ge v1, v2, :cond_3
 
     const-string v1, "SavedAccessPoints"
 
@@ -305,7 +258,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_5
+    :cond_3
     return-void
 .end method
 

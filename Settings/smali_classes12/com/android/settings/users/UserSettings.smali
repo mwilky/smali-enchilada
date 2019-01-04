@@ -2410,11 +2410,11 @@
 
     move-result v1
 
-    const v2, 0x7f0a0324
+    const v2, 0x7f0a0323
 
     if-eq v1, v2, :cond_2
 
-    const v2, 0x7f0a05a2
+    const v2, 0x7f0a05a1
 
     if-eq v1, v2, :cond_0
 
@@ -3231,8 +3231,8 @@
 
     :array_0
     .array-data 4
-        0x7f0a058b
-        0x7f0a0533
+        0x7f0a058a
+        0x7f0a0532
     .end array-data
 .end method
 

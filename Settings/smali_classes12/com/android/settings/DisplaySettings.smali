@@ -1390,7 +1390,7 @@
 
     move-result-object v1
 
-    const v2, 0x104014a
+    const v2, 0x1040149
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -4553,6 +4553,14 @@
     const-string v1, "oneplus.intent.action.ONEPLUS_COLOR_PICKER"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lcom/android/settings/DisplaySettings;->mCurrentTempColor:Ljava/lang/String;
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
 
     iget-object v1, p0, Lcom/android/settings/DisplaySettings;->mContext:Landroid/content/Context;
 

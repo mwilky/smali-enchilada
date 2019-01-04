@@ -2629,7 +2629,6 @@ Battery נכבה אוטומטית כאשר המכשיר במצב טעינה."</s
     <string name="oneplus_colorful_mode_title">צבעוני</string>
     <string name="oneplus_compatibility_mode_summary">יישומי מסך מלא לא יכולים להשתמש באזור החריץ</string>
     <string name="oneplus_compatibility_mode_title">מצב תאימות</string>
-    <string name="oneplus_condition_night_mode_title">מצב לילה פועל</string>
     <string name="oneplus_connected_device_count">יש מכשיר %1$s מחובר</string>
     <string name="oneplus_connected_device_management_title">מנהל התקנים מחוברים</string>
     <string name="oneplus_connected_devices_count">ישנם %1$s מכשירים מחוברים</string>

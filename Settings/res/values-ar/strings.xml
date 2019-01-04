@@ -2631,7 +2631,6 @@
     <string name="oneplus_colorful_mode_title">ملوَّن</string>
     <string name="oneplus_compatibility_mode_summary">لا يمكن لتطبيقات الشاشة الكاملة أن تستخدم منطقة الحز</string>
     <string name="oneplus_compatibility_mode_title">وضع التوافق</string>
-    <string name="oneplus_condition_night_mode_title">الوضع الليلي قيد التشغيل</string>
     <string name="oneplus_connected_device_count">يوجد %1$s جهاز متصل</string>
     <string name="oneplus_connected_device_management_title">مدير الجهاز المتصل</string>
     <string name="oneplus_connected_devices_count">يوجد %1$s من الأجهزة متصلة</string>

@@ -2631,7 +2631,6 @@
     <string name="oneplus_colorful_mode_title">Цветная тема</string>
     <string name="oneplus_compatibility_mode_summary">Полноэкранные приложения не могут использовать вырез на экране</string>
     <string name="oneplus_compatibility_mode_title">Режим совместимости</string>
-    <string name="oneplus_condition_night_mode_title">Ночной режим включен</string>
     <string name="oneplus_connected_device_count">Подключено устройств: %1$s</string>
     <string name="oneplus_connected_device_management_title">Подключен диспетчер устройств</string>
     <string name="oneplus_connected_devices_count">Подключено устройств: %1$s</string>

@@ -2631,7 +2631,6 @@ L'économiseur de batterie se désactive automatiquement quand votre téléphone
     <string name="oneplus_colorful_mode_title">En couleur</string>
     <string name="oneplus_compatibility_mode_summary">"Les applications en plein écran ne peuvent pas utiliser la zone de l'encoche"</string>
     <string name="oneplus_compatibility_mode_title">Mode de compatibilité</string>
-    <string name="oneplus_condition_night_mode_title">Le mode Nocture est activé</string>
     <string name="oneplus_connected_device_count">Il y a %1$s appareil connecté</string>
     <string name="oneplus_connected_device_management_title">Gestionnaire des périphériques connectés</string>
     <string name="oneplus_connected_devices_count">Il y a %1$s appareils connectés</string>

@@ -2248,7 +2248,7 @@
 
     if-eqz v0, :cond_1
 
-    const/high16 v0, 0x7fc00000    # Float.NaN
+    const/high16 v0, 0x7fc00000    # NaNf
 
     invoke-virtual {p0, v0}, Lcom/oneplus/lib/preference/Preference;->getPersistedFloat(F)F
 

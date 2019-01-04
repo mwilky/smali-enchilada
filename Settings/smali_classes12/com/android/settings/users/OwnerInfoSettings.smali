@@ -42,7 +42,7 @@
 
     iget-object v1, p0, Lcom/android/settings/users/OwnerInfoSettings;->mView:Landroid/view/View;
 
-    const v2, 0x7f0a03f2
+    const v2, 0x7f0a03f1
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -51,10 +51,6 @@
     check-cast v1, Landroid/widget/EditText;
 
     iput-object v1, p0, Lcom/android/settings/users/OwnerInfoSettings;->mOwnerInfo:Landroid/widget/EditText;
-
-    iget-object v1, p0, Lcom/android/settings/users/OwnerInfoSettings;->mOwnerInfo:Landroid/widget/EditText;
-
-    invoke-virtual {v1}, Landroid/widget/EditText;->requestFocus()Z
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 

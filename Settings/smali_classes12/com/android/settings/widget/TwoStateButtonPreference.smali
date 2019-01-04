@@ -18,7 +18,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 4
 
-    const v0, 0x7f040363
+    const v0, 0x7f040360
 
     const v1, 0x101008e
 
@@ -61,7 +61,7 @@
 
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    const v3, 0x7f0a0515
+    const v3, 0x7f0a0514
 
     invoke-virtual {p0, v3}, Lcom/android/settings/widget/TwoStateButtonPreference;->findViewById(I)Landroid/view/View;
 
@@ -79,7 +79,7 @@
 
     invoke-virtual {v3, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v3, 0x7f0a0514
+    const v3, 0x7f0a0513
 
     invoke-virtual {p0, v3}, Lcom/android/settings/widget/TwoStateButtonPreference;->findViewById(I)Landroid/view/View;
 
@@ -144,7 +144,7 @@
 
     move-result v0
 
-    const v1, 0x7f0a0515
+    const v1, 0x7f0a0514
 
     if-ne v0, v1, :cond_0
 

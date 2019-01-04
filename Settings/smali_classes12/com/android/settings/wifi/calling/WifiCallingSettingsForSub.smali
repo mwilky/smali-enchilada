@@ -205,7 +205,7 @@
 .method private getWfcModeSummary(I)I
     .locals 4
 
-    const v0, 0x1040700
+    const v0, 0x10406ff
 
     iget-object v1, p0, Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub;->mImsManager:Lcom/android/ims/ImsManager;
 
@@ -238,17 +238,17 @@
     goto :goto_0
 
     :pswitch_0
-    const v0, 0x10406df
+    const v0, 0x10406de
 
     goto :goto_0
 
     :pswitch_1
-    const v0, 0x10406dd
+    const v0, 0x10406dc
 
     goto :goto_0
 
     :pswitch_2
-    const v0, 0x10406de
+    const v0, 0x10406dd
 
     nop
 
@@ -745,7 +745,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a055a
+    const v3, 0x7f0a0559
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -953,7 +953,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a0429
+    const v2, 0x7f0a0428
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

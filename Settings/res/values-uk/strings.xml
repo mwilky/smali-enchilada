@@ -2631,7 +2631,6 @@
     <string name="oneplus_colorful_mode_title">Барвиста тема</string>
     <string name="oneplus_compatibility_mode_summary">Повноекранні додатки не можуть використовувати область виїмки</string>
     <string name="oneplus_compatibility_mode_title">Режим сумісності</string>
-    <string name="oneplus_condition_night_mode_title">Нічний режим увімкнено</string>
     <string name="oneplus_connected_device_count">"Під'єднано пристроїв: %1$s"</string>
     <string name="oneplus_connected_device_management_title">"Управління під'єднаними пристроями"</string>
     <string name="oneplus_connected_devices_count">"Під'єднано пристроїв: %1$s"</string>

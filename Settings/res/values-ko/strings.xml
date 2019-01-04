@@ -2631,7 +2631,6 @@
     <string name="oneplus_colorful_mode_title">컬러풀</string>
     <string name="oneplus_compatibility_mode_summary">전체 화면 앱이 노치 영역을 사용할 수 없습니다.</string>
     <string name="oneplus_compatibility_mode_title">호환성 모드</string>
-    <string name="oneplus_condition_night_mode_title">야간 모드가 켜졌습니다.</string>
     <string name="oneplus_connected_device_count">%1$s개의 연결된 장치가 있습니다.</string>
     <string name="oneplus_connected_device_management_title">연결된 장치 관리자</string>
     <string name="oneplus_connected_devices_count">%1$s개의 연결된 장치가 있습니다.</string>

@@ -185,7 +185,7 @@
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setTitle(I)V
 
-    const v2, 0x7f0801e3
+    const v2, 0x7f0801c8
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setIcon(I)V
 
@@ -427,7 +427,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f0a0337
+    const v3, 0x7f0a0336
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

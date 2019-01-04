@@ -2631,7 +2631,6 @@ Trình tiết kiệm pin sẽ tắt tự động khi thiết bị của bạn đ
     <string name="oneplus_colorful_mode_title">Nhiều màu sắc</string>
     <string name="oneplus_compatibility_mode_summary">Các ứng dụng toàn màn hình không thể sử dụng khu vực tai thỏ</string>
     <string name="oneplus_compatibility_mode_title">Chế độ tương thích</string>
-    <string name="oneplus_condition_night_mode_title">Chế độ ban đêm đang bật</string>
     <string name="oneplus_connected_device_count">Có %1$s thiết bị đang được kết nối</string>
     <string name="oneplus_connected_device_management_title">Quản lý thiết bị được kết nối</string>
     <string name="oneplus_connected_devices_count">Có %1$s thiết bị đang được kết nối</string>

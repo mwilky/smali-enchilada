@@ -2633,7 +2633,6 @@ bateria desliga-se automaticamente quando o dispositivo está a carregar."</stri
     <string name="oneplus_colorful_mode_title">Colorido</string>
     <string name="oneplus_compatibility_mode_summary">As aplicações de ecrã inteiro não podem usar a área do entalhe</string>
     <string name="oneplus_compatibility_mode_title">Modo de compatibilidade</string>
-    <string name="oneplus_condition_night_mode_title">Modo noturno ativado</string>
     <string name="oneplus_connected_device_count">Há %1$s dispositivo ligado</string>
     <string name="oneplus_connected_device_management_title">Gestor de dispositivo ligado</string>
     <string name="oneplus_connected_devices_count">Há %1$s dispositivos ligados</string>

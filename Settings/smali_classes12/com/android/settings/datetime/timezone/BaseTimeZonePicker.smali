@@ -121,7 +121,7 @@
 
     invoke-virtual {p2, v0, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 
-    const v0, 0x7f0a0589
+    const v0, 0x7f0a0588
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -297,7 +297,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a0469
+    const v2, 0x7f0a0468
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

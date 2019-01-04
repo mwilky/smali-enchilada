@@ -250,7 +250,6 @@
     <string name="oneplus_colorful_mode_title">கலர்ஃபுல்</string>
     <string name="oneplus_compatibility_mode_summary">முழுத்திரை செயலிகள், நாட்ச் பகுதியைப் பயன்படுத்த முடியாது</string>
     <string name="oneplus_compatibility_mode_title">இணக்கத்தன்மை பயன்முறை</string>
-    <string name="oneplus_condition_night_mode_title">இரவுப் பயன்முறை ஆனில் உள்ளது</string>
     <string name="oneplus_connected_device_count">%1$s சாதனங்கள் இணைக்கப்பட்டுள்ளன</string>
     <string name="oneplus_connected_device_management_title">இணைக்கப்பட்ட சாதன மேலாளர்</string>
     <string name="oneplus_connected_devices_count">%1$s சாதனங்கள் இணைக்கப்பட்டுள்ளன</string>

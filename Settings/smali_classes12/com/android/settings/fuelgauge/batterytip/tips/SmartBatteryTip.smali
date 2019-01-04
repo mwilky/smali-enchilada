@@ -51,7 +51,7 @@
 .method public getIconId()I
     .locals 1
 
-    const v0, 0x7f080208
+    const v0, 0x7f0801ed
 
     return v0
 .end method

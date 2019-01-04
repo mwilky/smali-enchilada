@@ -123,7 +123,7 @@
 
     iget-object v0, p0, Lcom/android/settings/wifi/calling/WifiCallingSliceHelper;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f080495
+    const v1, 0x7f08047b
 
     invoke-static {v0, v1}, Landroid/support/v4/graphics/drawable/IconCompat;->createWithResource(Landroid/content/Context;I)Landroid/support/v4/graphics/drawable/IconCompat;
 
@@ -253,7 +253,7 @@
 .method private getWifiCallingSlice(Landroid/net/Uri;Landroid/content/Context;Z)Landroidx/slice/Slice;
     .locals 5
 
-    const v0, 0x7f080495
+    const v0, 0x7f08047b
 
     invoke-static {p2, v0}, Landroid/support/v4/graphics/drawable/IconCompat;->createWithResource(Landroid/content/Context;I)Landroid/support/v4/graphics/drawable/IconCompat;
 

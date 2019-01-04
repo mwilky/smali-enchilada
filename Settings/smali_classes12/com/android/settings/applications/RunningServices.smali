@@ -149,7 +149,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0497
+    const v1, 0x7f0a0496
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -163,7 +163,7 @@
 
     invoke-virtual {v1}, Lcom/android/settings/applications/RunningProcessesView;->doCreate()V
 
-    const v1, 0x7f0a0310
+    const v1, 0x7f0a030f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
