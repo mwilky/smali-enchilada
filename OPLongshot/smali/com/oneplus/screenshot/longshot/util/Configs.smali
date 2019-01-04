@@ -441,8 +441,6 @@
 
 .field public static mNoFooter:Z
 
-.field private static mOSTracker:Lnet/oneplus/odm/insight/tracker/OSTracker;
-
 .field private static mToast:Landroid/widget/Toast;
 
 .field private static mTopActivity:Landroid/content/ComponentName;
@@ -5220,14 +5218,6 @@
 
     invoke-static {p0}, Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;->init(Landroid/content/Context;)V
 
-    new-instance v1, Lnet/oneplus/odm/insight/tracker/OSTracker;
-
-    const-string v2, "RHJ2VVOOTS"
-
-    invoke-direct {v1, p0, v2}, Lnet/oneplus/odm/insight/tracker/OSTracker;-><init>(Landroid/content/Context;Ljava/lang/String;)V
-
-    sput-object v1, Lcom/oneplus/screenshot/longshot/util/Configs;->mOSTracker:Lnet/oneplus/odm/insight/tracker/OSTracker;
-
     return-void
 .end method
 
@@ -5476,7 +5466,7 @@
 .end method
 
 .method public static sendAppTrackerEvent(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 4
+    .locals 2
 
     sget-object v0, Lcom/oneplus/screenshot/longshot/util/Configs;->mAppTrackers:Lnet/oneplus/odm/insight/tracker/AppTracker;
 
@@ -5489,24 +5479,11 @@
     sput-object v0, Lcom/oneplus/screenshot/longshot/util/Configs;->mAppTrackers:Lnet/oneplus/odm/insight/tracker/AppTracker;
 
     :cond_0
-    sget-object v0, Lcom/oneplus/screenshot/longshot/util/Configs;->mOSTracker:Lnet/oneplus/odm/insight/tracker/OSTracker;
-
-    if-nez v0, :cond_1
-
-    new-instance v0, Lnet/oneplus/odm/insight/tracker/OSTracker;
-
-    const-string v1, "RHJ2VVOOTS"
-
-    invoke-direct {v0, p0, v1}, Lnet/oneplus/odm/insight/tracker/OSTracker;-><init>(Landroid/content/Context;Ljava/lang/String;)V
-
-    sput-object v0, Lcom/oneplus/screenshot/longshot/util/Configs;->mOSTracker:Lnet/oneplus/odm/insight/tracker/OSTracker;
-
-    :cond_1
-    if-nez p3, :cond_2
+    if-nez p3, :cond_1
 
     sget-object p3, Lcom/oneplus/screenshot/longshot/util/Configs;->mTopFocusWindow:Ljava/lang/String;
 
-    :cond_2
+    :cond_1
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -5517,83 +5494,26 @@
 
     invoke-virtual {v1, p1, v0}, Lnet/oneplus/odm/insight/tracker/AppTracker;->onEvent(Ljava/lang/String;Ljava/util/Map;)V
 
-    new-instance v1, Ljava/util/HashMap;
+    sget-object v1, Lcom/oneplus/screenshot/longshot/util/Configs;->gaInstance:Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;
 
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
-
-    const-string v2, "normal"
-
-    invoke-virtual {v2, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    const-string v2, "pn"
-
-    invoke-virtual {v1, v2, p3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v2, "type"
-
-    const-string v3, "0"
-
-    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget-object v2, Lcom/oneplus/screenshot/longshot/util/Configs;->mOSTracker:Lnet/oneplus/odm/insight/tracker/OSTracker;
-
-    const-string v3, "screenshot"
-
-    invoke-virtual {v2, v3, v1}, Lnet/oneplus/odm/insight/tracker/OSTracker;->onEvent(Ljava/lang/String;Ljava/util/Map;)V
-
-    goto :goto_0
-
-    :cond_3
-    const-string v2, "long"
-
-    invoke-virtual {v2, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    const-string v2, "pn"
-
-    invoke-virtual {v1, v2, p3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v2, "type"
-
-    const-string v3, "1"
-
-    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget-object v2, Lcom/oneplus/screenshot/longshot/util/Configs;->mOSTracker:Lnet/oneplus/odm/insight/tracker/OSTracker;
-
-    const-string v3, "screenshot"
-
-    invoke-virtual {v2, v3, v1}, Lnet/oneplus/odm/insight/tracker/OSTracker;->onEvent(Ljava/lang/String;Ljava/util/Map;)V
-
-    :cond_4
-    :goto_0
-    sget-object v2, Lcom/oneplus/screenshot/longshot/util/Configs;->gaInstance:Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;
-
-    if-nez v2, :cond_5
+    if-nez v1, :cond_2
 
     invoke-static {p0}, Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;->getInstance(Landroid/content/Context;)Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;
 
-    move-result-object v2
+    move-result-object v1
 
-    sput-object v2, Lcom/oneplus/screenshot/longshot/util/Configs;->gaInstance:Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;
+    sput-object v1, Lcom/oneplus/screenshot/longshot/util/Configs;->gaInstance:Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;
 
-    :cond_5
-    sget-object v2, Lcom/oneplus/screenshot/longshot/util/Configs;->gaInstance:Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;
+    :cond_2
+    sget-object v1, Lcom/oneplus/screenshot/longshot/util/Configs;->gaInstance:Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;
 
-    if-eqz v2, :cond_6
+    if-eqz v1, :cond_3
 
-    sget-object v2, Lcom/oneplus/screenshot/longshot/util/Configs;->gaInstance:Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;
+    sget-object v1, Lcom/oneplus/screenshot/longshot/util/Configs;->gaInstance:Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;
 
-    invoke-virtual {v2, p1, p2, p3}, Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;->send(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1, p1, p2, p3}, Lcom/oneplus/screenshot/longshot/util/GoogleAnalyticsHelper;->send(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_6
+    :cond_3
     return-void
 .end method
 
