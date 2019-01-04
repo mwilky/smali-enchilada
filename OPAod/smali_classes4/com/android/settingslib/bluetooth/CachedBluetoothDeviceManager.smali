@@ -695,7 +695,7 @@
 .end method
 
 .method public declared-synchronized findDevice(Landroid/bluetooth/BluetoothDevice;)Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
-    .locals 4
+    .locals 3
 
     monitor-enter p0
 
@@ -719,19 +719,11 @@
 
     check-cast v1, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
-    if-eqz v1, :cond_0
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {v1}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->getAddress()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->getDevice()Landroid/bluetooth/BluetoothDevice;
 
     move-result-object v2
 
-    invoke-virtual {p1}, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, p1}, Landroid/bluetooth/BluetoothDevice;->equals(Ljava/lang/Object;)Z
 
     move-result v2
     :try_end_0
@@ -767,19 +759,11 @@
 
     check-cast v1, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
-    if-eqz v1, :cond_2
-
-    if-eqz p1, :cond_2
-
-    invoke-virtual {v1}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->getAddress()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->getDevice()Landroid/bluetooth/BluetoothDevice;
 
     move-result-object v2
 
-    invoke-virtual {p1}, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, p1}, Landroid/bluetooth/BluetoothDevice;->equals(Ljava/lang/Object;)Z
 
     move-result v2
     :try_end_1

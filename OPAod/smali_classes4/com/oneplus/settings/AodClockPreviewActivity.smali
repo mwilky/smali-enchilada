@@ -302,7 +302,7 @@
 
     iput-object v5, p0, Lcom/oneplus/settings/AodClockPreviewActivity;->mBack:Landroid/widget/ImageButton;
 
-    const v5, 0x7f0900a1
+    const v5, 0x7f0900a0
 
     invoke-virtual {v1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -348,7 +348,7 @@
 
     iput v3, p0, Lcom/oneplus/settings/AodClockPreviewActivity;->mStyle:I
 
-    const v3, 0x7f0900f0
+    const v3, 0x7f0900ef
 
     invoke-virtual {p0, v3}, Lcom/oneplus/settings/AodClockPreviewActivity;->findViewById(I)Landroid/view/View;
 

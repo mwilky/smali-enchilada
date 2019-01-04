@@ -106,7 +106,6 @@
     <item type="id" name="icon_group">false</item>
     <item type="id" name="image">false</item>
     <item type="id" name="increment">false</item>
-    <item type="id" name="indeterminate">false</item>
     <item type="id" name="info">false</item>
     <item type="id" name="input_am_pm_parent">false</item>
     <item type="id" name="input_block">false</item>

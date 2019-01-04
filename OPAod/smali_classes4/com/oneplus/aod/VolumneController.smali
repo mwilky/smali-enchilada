@@ -311,7 +311,7 @@
 
     if-eqz v1, :cond_0
 
-    const v2, 0x7f090134
+    const v2, 0x7f090133
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -333,7 +333,7 @@
 
     const-string v4, "VolumneController"
 
-    const-string v5, "find ImageView fail resId=2131296564"
+    const-string v5, "find ImageView fail resId=2131296563"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -357,7 +357,7 @@
 
     if-eqz v1, :cond_0
 
-    const v2, 0x7f090135
+    const v2, 0x7f090134
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -379,7 +379,7 @@
 
     const-string v4, "VolumneController"
 
-    const-string v5, "find TextView fail resId=2131296565"
+    const-string v5, "find TextView fail resId=2131296564"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 

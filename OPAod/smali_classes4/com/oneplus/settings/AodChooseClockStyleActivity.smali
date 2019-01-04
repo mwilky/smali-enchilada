@@ -219,7 +219,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/AodChooseClockStyleActivity;->mDefaultClock:Landroid/widget/RelativeLayout;
 
-    const v3, 0x7f09010e
+    const v3, 0x7f09010d
 
     invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 

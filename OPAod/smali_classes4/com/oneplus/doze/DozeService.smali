@@ -540,7 +540,9 @@
 
     if-nez v1, :cond_2
 
-    invoke-static {}, Lcom/oneplus/aod/Utils;->isSingleTapEnabled()Z
+    iget-object v1, p0, Lcom/oneplus/doze/DozeService;->mContext:Landroid/content/Context;
+
+    invoke-static {v1, v0}, Lcom/oneplus/aod/Utils;->isSingleTapEnabled(Landroid/content/Context;I)Z
 
     move-result v1
 

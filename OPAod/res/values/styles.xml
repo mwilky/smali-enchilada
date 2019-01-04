@@ -2675,7 +2675,6 @@
         <item name="android:colorAccent">@color/selection_control_on_dark</item>
         <item name="android:switchStyle">@style/Oneplus.Widget.Material.CompoundButton.Switch</item>
         <item name="android:actionOverflowMenuStyle">@style/Oneplus.Widget.Material.PopupMenu.Overflow</item>
-        <item name="android:navigationBarColor">#ff000001</item>
         <item name="android:timePickerStyle">@style/Oneplus.Widget.Material.TimePicker</item>
         <item name="android:timePickerDialogTheme">@style/Oneplus.Theme.Material.Dialog.Picker</item>
         <item name="android:toolbarStyle">@style/Oneplus.Widget.Material.Toolbar</item>
@@ -2797,7 +2796,6 @@
         <item name="android:colorAccent">@color/selection_control_on_light</item>
         <item name="android:switchStyle">@style/Oneplus.Widget.Material.Light.CompoundButton.Switch</item>
         <item name="android:actionOverflowMenuStyle">@style/Oneplus.Widget.Material.Light.PopupMenu.Overflow</item>
-        <item name="android:navigationBarColor">#ffebebeb</item>
         <item name="android:timePickerStyle">@style/Oneplus.Widget.Material.Light.TimePicker</item>
         <item name="android:timePickerDialogTheme">@style/Oneplus.Theme.Material.Light.Dialog.Picker</item>
         <item name="android:toolbarStyle">@style/Oneplus.Widget.Material.Toolbar</item>

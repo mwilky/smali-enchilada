@@ -346,7 +346,7 @@
     :cond_0
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$4500(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/hardware/SensorManager;
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$4400(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/hardware/SensorManager;
 
     move-result-object v0
 
@@ -387,7 +387,7 @@
 
     iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$4500(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/hardware/SensorManager;
+    invoke-static {v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$4400(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/hardware/SensorManager;
 
     move-result-object v2
 
@@ -443,7 +443,7 @@
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$4500(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/hardware/SensorManager;
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$4400(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/hardware/SensorManager;
 
     move-result-object v0
 
