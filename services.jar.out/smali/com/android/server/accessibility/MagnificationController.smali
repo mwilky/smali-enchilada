@@ -1594,7 +1594,7 @@
     return v1
 
     :cond_0
-    const/high16 v3, 0x7fc00000    # Float.NaN
+    const/high16 v3, 0x7fc00000    # NaNf
 
     move-object v2, p0
 

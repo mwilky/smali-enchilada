@@ -5917,7 +5917,7 @@
 
     move-result-object v0
 
-    const v1, 0x1040167
+    const v1, 0x1040166
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -13098,7 +13098,7 @@
     :cond_3
     iget-object v4, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mInjector:Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;
 
-    const-string/jumbo v5, "global_http_proxy_host"
+    const-string v5, "global_http_proxy_host"
 
     aget-object v3, v0, v3
 
@@ -13106,13 +13106,13 @@
 
     iget-object v3, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mInjector:Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;
 
-    const-string/jumbo v4, "global_http_proxy_port"
+    const-string v4, "global_http_proxy_port"
 
     invoke-virtual {v3, v4, v1}, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->settingsGlobalPutInt(Ljava/lang/String;I)V
 
     iget-object v3, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mInjector:Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;
 
-    const-string/jumbo v4, "global_http_proxy_exclusion_list"
+    const-string v4, "global_http_proxy_exclusion_list"
 
     invoke-virtual {v3, v4, p2}, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->settingsGlobalPutString(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -14146,7 +14146,7 @@
 
     iget-object v7, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
 
-    const v8, 0x10403ee
+    const v8, 0x10403ed
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -14158,7 +14158,7 @@
 
     iget-object v7, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
 
-    const v9, 0x10403ed
+    const v9, 0x10403ec
 
     invoke-virtual {v7, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -14319,7 +14319,7 @@
 
     iget-object v1, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
 
-    const v2, 0x104071f
+    const v2, 0x104071e
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -33027,7 +33027,7 @@
     :try_start_3
     iget-object v0, v7, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
 
-    const v1, 0x1040722
+    const v1, 0x1040721
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

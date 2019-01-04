@@ -481,7 +481,7 @@
 
     if-ne v3, v4, :cond_8
 
-    const v3, 0x10405d7
+    const v3, 0x10405d6
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(I)V
 

@@ -1003,16 +1003,6 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {}, Lcom/oneplus/scene/OimcBrickModeObserver;->getInstance()Lcom/oneplus/scene/OimcBrickModeObserver;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/oneplus/scene/OimcBrickModeObserver;->isOn()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/server/policy/BarController;->setTransientBarState(I)V

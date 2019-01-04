@@ -362,8 +362,6 @@
     .end annotation
 .end field
 
-.field private mCollector:Lnet/oneplus/odm/insight/PreloadApplicationEventCollector;
-
 .field private final mConnectedDevices:Landroid/util/ArrayMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1182,7 +1180,7 @@
 
     check-cast v10, Landroid/os/PowerManager;
 
-    const-string/jumbo v5, "handleAudioEvent"
+    const-string v5, "handleAudioEvent"
 
     invoke-virtual {v10, v4, v5}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
 
@@ -1743,15 +1741,7 @@
     iput v1, v0, Lcom/android/server/audio/AudioService;->mPerSpeakerMediaVolume:I
 
     :cond_b
-    invoke-static/range {p1 .. p1}, Lnet/oneplus/odm/insight/PreloadApplicationEventCollector;->getInstance(Landroid/content/Context;)Lnet/oneplus/odm/insight/PreloadApplicationEventCollector;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcom/android/server/audio/AudioService;->mCollector:Lnet/oneplus/odm/insight/PreloadApplicationEventCollector;
-
     return-void
-
-    nop
 
     :array_0
     .array-data 4
@@ -6597,7 +6587,7 @@
 
     const-string v7, "AudioService"
 
-    const-string/jumbo v8, "handleBtScoActiveDeviceChange: btDeviceName is null, sending empty string"
+    const-string v8, "handleBtScoActiveDeviceChange: btDeviceName is null, sending empty string"
 
     invoke-static {v7, v8}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -6683,8 +6673,6 @@
     invoke-static {v5, v7}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     return v0
-
-    nop
 
     :array_0
     .array-data 4
@@ -6857,7 +6845,7 @@
     :goto_4
     new-instance v15, Ljava/lang/String;
 
-    const-string/jumbo v0, "handleConfigurationChanged"
+    const-string v0, "handleConfigurationChanged"
 
     invoke-direct {v15, v0}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
@@ -6952,7 +6940,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "handleDeviceConnection("
+    const-string v2, "handleDeviceConnection("
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7319,7 +7307,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "handleDeviceConnection() failed, deviceKey="
+    const-string v3, "handleDeviceConnection() failed, deviceKey="
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7349,7 +7337,7 @@
 
     const-string v0, "AudioService"
 
-    const-string/jumbo v1, "handleDeviceConnection: returning false"
+    const-string v1, "handleDeviceConnection: returning false"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -8352,7 +8340,7 @@
     goto :goto_1
 
     :cond_1
-    const-string/jumbo v5, "group"
+    const-string v5, "group"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -8867,9 +8855,35 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-string v0, ""
+    const-string v0, "AudioService"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "makeA2dpDeviceUnavailableNow address = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v0, p0, Lcom/android/server/audio/AudioService;->mStreamStates:[Lcom/android/server/audio/AudioService$VolumeStreamState;
+
+    const/4 v2, 0x3
+
+    aget-object v0, v0, v2
 
     const/16 v2, 0x80
+
+    invoke-direct {p0, v0, v2}, Lcom/android/server/audio/AudioService;->setDeviceVolume(Lcom/android/server/audio/AudioService$VolumeStreamState;I)V
+
+    const-string v0, ""
 
     invoke-static {v2, v1, p1, v0}, Landroid/media/AudioSystem;->setDeviceConnectionState(IILjava/lang/String;Ljava/lang/String;)I
 
@@ -12669,10 +12683,6 @@
     const-string/jumbo v3, "portName"
 
     invoke-virtual {v12, v3, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    iget-object v3, v1, Lcom/android/server/audio/AudioService;->mCollector:Lnet/oneplus/odm/insight/PreloadApplicationEventCollector;
-
-    invoke-virtual {v3, v10, v11, v0}, Lnet/oneplus/odm/insight/PreloadApplicationEventCollector;->collectHeadPhoneEvent(ILjava/lang/String;Ljava/lang/String;)V
 
     const-string v3, "American Headset"
 
@@ -25279,7 +25289,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x10406be
+    const v2, 0x10406bd
 
     goto :goto_0
 
@@ -25292,7 +25302,7 @@
 
     const/4 v1, 0x1
 
-    const v2, 0x10406bf
+    const v2, 0x10406be
 
     :goto_0
     invoke-direct {p0, v0}, Lcom/android/server/audio/AudioService;->maybeVibrate(Landroid/os/VibrationEffect;)Z

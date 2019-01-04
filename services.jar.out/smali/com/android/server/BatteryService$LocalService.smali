@@ -53,7 +53,7 @@
     :try_start_0
     iget-object v1, p0, Lcom/android/server/BatteryService$LocalService;->this$0:Lcom/android/server/BatteryService;
 
-    invoke-static {v1}, Lcom/android/server/BatteryService;->access$2000(Lcom/android/server/BatteryService;)Landroid/hardware/health/V1_0/HealthInfo;
+    invoke-static {v1}, Lcom/android/server/BatteryService;->access$1700(Lcom/android/server/BatteryService;)Landroid/hardware/health/V1_0/HealthInfo;
 
     move-result-object v1
 
@@ -87,7 +87,7 @@
     :try_start_0
     iget-object v1, p0, Lcom/android/server/BatteryService$LocalService;->this$0:Lcom/android/server/BatteryService;
 
-    invoke-static {v1}, Lcom/android/server/BatteryService;->access$2000(Lcom/android/server/BatteryService;)Landroid/hardware/health/V1_0/HealthInfo;
+    invoke-static {v1}, Lcom/android/server/BatteryService;->access$1700(Lcom/android/server/BatteryService;)Landroid/hardware/health/V1_0/HealthInfo;
 
     move-result-object v1
 
@@ -121,7 +121,7 @@
     :try_start_0
     iget-object v1, p0, Lcom/android/server/BatteryService$LocalService;->this$0:Lcom/android/server/BatteryService;
 
-    invoke-static {v1}, Lcom/android/server/BatteryService;->access$2000(Lcom/android/server/BatteryService;)Landroid/hardware/health/V1_0/HealthInfo;
+    invoke-static {v1}, Lcom/android/server/BatteryService;->access$1700(Lcom/android/server/BatteryService;)Landroid/hardware/health/V1_0/HealthInfo;
 
     move-result-object v1
 
@@ -155,7 +155,7 @@
     :try_start_0
     iget-object v1, p0, Lcom/android/server/BatteryService$LocalService;->this$0:Lcom/android/server/BatteryService;
 
-    invoke-static {v1}, Lcom/android/server/BatteryService;->access$2900(Lcom/android/server/BatteryService;)Z
+    invoke-static {v1}, Lcom/android/server/BatteryService;->access$2700(Lcom/android/server/BatteryService;)Z
 
     move-result v1
 
@@ -251,7 +251,7 @@
     :try_start_0
     iget-object v1, p0, Lcom/android/server/BatteryService$LocalService;->this$0:Lcom/android/server/BatteryService;
 
-    invoke-static {v1, p1}, Lcom/android/server/BatteryService;->access$2800(Lcom/android/server/BatteryService;I)Z
+    invoke-static {v1, p1}, Lcom/android/server/BatteryService;->access$2600(Lcom/android/server/BatteryService;I)Z
 
     move-result v1
 
@@ -281,7 +281,7 @@
     monitor-enter v0
 
     :try_start_0
-    invoke-static {p1}, Lcom/android/server/BatteryService;->access$3002(Z)Z
+    invoke-static {p1}, Lcom/android/server/BatteryService;->access$2802(Z)Z
 
     monitor-exit v0
 

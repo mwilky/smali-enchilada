@@ -2664,7 +2664,7 @@
 .end method
 
 .method public static synthetic lambda$new$3(Lcom/android/server/wm/DisplayContent;Lcom/android/server/wm/WindowState;)Z
-    .locals 10
+    .locals 6
 
     iget-object v0, p0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -2713,46 +2713,37 @@
     invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    invoke-virtual {p1}, Lcom/android/server/wm/WindowState;->inPreloadWindowingMode()Z
+    invoke-virtual {p1}, Lcom/android/server/wm/WindowState;->canReceiveKeys()Z
 
     move-result v1
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_1
-
-    return v2
-
-    :cond_1
-    invoke-virtual {p1}, Lcom/android/server/wm/WindowState;->canReceiveKeys()Z
-
-    move-result v1
-
     const/4 v3, 0x3
 
     const/4 v4, 0x1
 
-    if-nez v1, :cond_c
+    if-nez v1, :cond_8
 
     iget-boolean v1, p1, Lcom/android/server/wm/WindowState;->mHasSurface:Z
 
-    if-ne v1, v4, :cond_b
+    if-ne v1, v4, :cond_7
 
     iget-boolean v1, p1, Lcom/android/server/wm/WindowState;->mAnimatingExit:Z
 
-    if-nez v1, :cond_b
+    if-nez v1, :cond_7
 
     iget v1, p1, Lcom/android/server/wm/WindowState;->mOwnerUid:I
 
     const/16 v4, 0x2710
 
-    if-lt v1, v4, :cond_b
+    if-lt v1, v4, :cond_7
 
     iget-object v1, p0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
 
     iget-object v1, v1, Lcom/android/server/wm/WindowManagerService;->mCurrentFocus:Lcom/android/server/wm/WindowState;
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_1
 
     iget-object v1, p0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -2762,12 +2753,35 @@
 
     iget v4, p1, Lcom/android/server/wm/WindowState;->mOwnerUid:I
 
-    if-eq v1, v4, :cond_b
+    if-eq v1, v4, :cond_7
+
+    :cond_1
+    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
+
+    if-eqz v1, :cond_2
+
+    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
+
+    move-result v1
+
+    const/16 v4, 0x28
+
+    if-le v1, v4, :cond_2
+
+    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
+
+    move-result v1
+
+    if-gt v1, v4, :cond_3
 
     :cond_2
     iget-object v1, p1, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_7
 
     iget-object v1, p1, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
 
@@ -2775,9 +2789,7 @@
 
     move-result v1
 
-    const/4 v4, 0x5
-
-    if-le v1, v4, :cond_3
+    if-nez v1, :cond_7
 
     iget-object v1, p1, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
 
@@ -2785,41 +2797,20 @@
 
     move-result v1
 
-    if-gt v1, v4, :cond_4
-
-    :cond_3
-    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
-
-    if-eqz v1, :cond_b
-
-    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
-
-    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
-
-    move-result v1
-
-    if-nez v1, :cond_b
-
-    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
-
-    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
-
-    move-result v1
-
-    if-nez v1, :cond_b
+    if-nez v1, :cond_7
 
     iget-object v1, p1, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
     iget v1, v1, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    if-eq v1, v3, :cond_b
+    if-eq v1, v3, :cond_7
 
-    :cond_4
+    :cond_3
     invoke-virtual {p1}, Lcom/android/server/wm/WindowState;->getOwningPackage()Ljava/lang/String;
 
     move-result-object v1
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_7
 
     invoke-virtual {p1}, Lcom/android/server/wm/WindowState;->getOwningPackage()Ljava/lang/String;
 
@@ -2831,7 +2822,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_b
+    if-nez v1, :cond_7
 
     invoke-virtual {p1}, Lcom/android/server/wm/WindowState;->getOwningPackage()Ljava/lang/String;
 
@@ -2843,7 +2834,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_b
+    if-nez v1, :cond_7
 
     invoke-virtual {p1}, Lcom/android/server/wm/WindowState;->getOwningPackage()Ljava/lang/String;
 
@@ -2855,17 +2846,32 @@
 
     move-result v1
 
-    if-nez v1, :cond_b
+    if-nez v1, :cond_7
 
+    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
+
+    if-eqz v1, :cond_4
+
+    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
+
+    invoke-virtual {v1}, Lcom/android/server/wm/AppWindowToken;->isClientHidden()Z
+
+    move-result v1
+
+    if-nez v1, :cond_7
+
+    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
+
+    iget-boolean v1, v1, Lcom/android/server/wm/AppWindowToken;->hasVisible:Z
+
+    if-nez v1, :cond_7
+
+    :cond_4
     invoke-virtual {p1}, Lcom/android/server/wm/WindowState;->isVisible()Z
 
     move-result v1
 
-    if-eqz v1, :cond_b
-
-    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
-
-    if-nez v1, :cond_7
+    if-eqz v1, :cond_7
 
     invoke-static {}, Lcom/android/server/am/OnePlusProcessManager;->isSupportFrozenApp()Z
 
@@ -2909,231 +2915,40 @@
     :cond_6
     iget-object v1, p0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
 
-    sget-object v3, Lcom/android/server/wm/WindowManagerService;->mOpTwj:Lcom/android/server/OnePlusUtil$OnePlusTouchWinJudge;
+    sget-object v1, Lcom/android/server/wm/WindowManagerService;->mOpTwj:Lcom/android/server/OnePlusUtil$OnePlusTouchWinJudge;
 
-    iget v1, p1, Lcom/android/server/wm/WindowState;->mOwnerUid:I
+    iget v3, p1, Lcom/android/server/wm/WindowState;->mOwnerUid:I
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {p1}, Lcom/android/server/wm/WindowState;->getWindowPid()I
-
-    move-result v5
-
-    invoke-virtual {p1}, Lcom/android/server/wm/WindowState;->getOwningPackage()Ljava/lang/String;
-
-    move-result-object v6
-
-    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
-
-    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
-
-    move-result v7
-
-    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
-
-    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
-
-    move-result v8
-
-    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
-
-    iget v9, v1, Landroid/view/WindowManager$LayoutParams;->type:I
-
-    invoke-virtual/range {v3 .. v9}, Lcom/android/server/OnePlusUtil$OnePlusTouchWinJudge;->addUidtoTouchWindowUids(IILjava/lang/String;III)V
-
-    goto/16 :goto_0
+    invoke-virtual {v1, v3}, Lcom/android/server/OnePlusUtil$OnePlusTouchWinJudge;->addUidtoTouchWindowUids(I)V
 
     :cond_7
-    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
-
-    invoke-virtual {v1}, Lcom/android/server/wm/AppWindowToken;->isClientHidden()Z
-
-    move-result v1
-
-    if-nez v1, :cond_b
-
-    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
-
-    iget-boolean v1, v1, Lcom/android/server/wm/AppWindowToken;->hasVisible:Z
-
-    if-eqz v1, :cond_8
-
-    invoke-virtual {p1}, Lcom/android/server/wm/WindowState;->isOnScreen()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_8
-
-    invoke-virtual {p1}, Lcom/android/server/wm/WindowState;->getConfiguration()Landroid/content/res/Configuration;
-
-    move-result-object v1
-
-    iget-object v1, v1, Landroid/content/res/Configuration;->windowConfiguration:Landroid/app/WindowConfiguration;
-
-    invoke-virtual {v1}, Landroid/app/WindowConfiguration;->getWindowingMode()I
-
-    move-result v1
-
-    const/4 v3, 0x2
-
-    if-ne v1, v3, :cond_8
-
-    iget-object v1, p0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
-
-    sget-object v3, Lcom/android/server/wm/WindowManagerService;->mOpTwj:Lcom/android/server/OnePlusUtil$OnePlusTouchWinJudge;
-
-    iget v1, p1, Lcom/android/server/wm/WindowState;->mOwnerUid:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v4
-
-    invoke-virtual {p1}, Lcom/android/server/wm/WindowState;->getWindowPid()I
-
-    move-result v5
-
-    invoke-virtual {p1}, Lcom/android/server/wm/WindowState;->getOwningPackage()Ljava/lang/String;
-
-    move-result-object v6
-
-    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
-
-    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
-
-    move-result v7
-
-    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
-
-    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
-
-    move-result v8
-
-    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
-
-    iget v9, v1, Landroid/view/WindowManager$LayoutParams;->type:I
-
-    invoke-virtual/range {v3 .. v9}, Lcom/android/server/OnePlusUtil$OnePlusTouchWinJudge;->addUidtoTouchWindowUids(IILjava/lang/String;III)V
-
-    goto :goto_0
+    return v2
 
     :cond_8
     iget-object v1, p1, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
-    iget-boolean v1, v1, Lcom/android/server/wm/AppWindowToken;->hasVisible:Z
-
-    if-nez v1, :cond_b
-
-    invoke-static {}, Lcom/android/server/am/OnePlusProcessManager;->isSupportFrozenApp()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_9
-
-    iget-object v1, p0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
-
-    iget-object v1, v1, Lcom/android/server/wm/WindowManagerService;->mFontSmallWindowUids:Ljava/util/HashSet;
-
-    iget v3, p1, Lcom/android/server/wm/WindowState;->mOwnerUid:I
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    :cond_9
-    iget-object v1, p0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
-
-    iget-object v1, v1, Lcom/android/server/wm/WindowManagerService;->mOpWms:Lcom/android/server/wm/OnePlusWmUtil$OnePlusWindowManagerService;
-
-    iget-boolean v1, v1, Lcom/android/server/wm/OnePlusWmUtil$OnePlusWindowManagerService;->mNetBoostFeature:Z
-
-    if-eqz v1, :cond_a
-
-    iget-object v1, p0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
-
-    iget-object v1, v1, Lcom/android/server/wm/WindowManagerService;->mFontSmallWindowUids_netCgroupSet:Ljava/util/HashSet;
-
-    iget v3, p1, Lcom/android/server/wm/WindowState;->mOwnerUid:I
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    :cond_a
-    iget-object v1, p0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
-
-    sget-object v3, Lcom/android/server/wm/WindowManagerService;->mOpTwj:Lcom/android/server/OnePlusUtil$OnePlusTouchWinJudge;
-
-    iget v1, p1, Lcom/android/server/wm/WindowState;->mOwnerUid:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v4
-
-    invoke-virtual {p1}, Lcom/android/server/wm/WindowState;->getWindowPid()I
-
-    move-result v5
-
-    invoke-virtual {p1}, Lcom/android/server/wm/WindowState;->getOwningPackage()Ljava/lang/String;
-
-    move-result-object v6
-
-    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
-
-    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
-
-    move-result v7
-
-    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
-
-    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
-
-    move-result v8
-
-    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
-
-    iget v9, v1, Landroid/view/WindowManager$LayoutParams;->type:I
-
-    invoke-virtual/range {v3 .. v9}, Lcom/android/server/OnePlusUtil$OnePlusTouchWinJudge;->addUidtoTouchWindowUids(IILjava/lang/String;III)V
-
-    :cond_b
-    :goto_0
-    return v2
-
-    :cond_c
-    iget-object v1, p1, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
-
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_c
 
     iget-boolean v5, v1, Lcom/android/server/wm/AppWindowToken;->removed:Z
 
-    if-nez v5, :cond_d
+    if-nez v5, :cond_9
 
     iget-boolean v5, v1, Lcom/android/server/wm/AppWindowToken;->sendingToBottom:Z
 
-    if-eqz v5, :cond_10
+    if-eqz v5, :cond_c
 
-    :cond_d
+    :cond_9
     sget-boolean v3, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_FOCUS:Z
 
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_b
 
     const-string v3, "WindowManager"
 
@@ -3153,16 +2968,16 @@
 
     iget-boolean v5, v1, Lcom/android/server/wm/AppWindowToken;->removed:Z
 
-    if-eqz v5, :cond_e
+    if-eqz v5, :cond_a
 
     const-string/jumbo v5, "removed"
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_e
+    :cond_a
     const-string/jumbo v5, "sendingToBottom"
 
-    :goto_1
+    :goto_0
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -3171,15 +2986,15 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_f
+    :cond_b
     return v2
 
-    :cond_10
-    if-nez v0, :cond_12
+    :cond_c
+    if-nez v0, :cond_e
 
     sget-boolean v2, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_FOCUS_LIGHT:Z
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_d
 
     const-string v2, "WindowManager"
 
@@ -3199,21 +3014,21 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_11
+    :cond_d
     iput-object p1, p0, Lcom/android/server/wm/DisplayContent;->mTmpWindow:Lcom/android/server/wm/WindowState;
 
     return v4
 
-    :cond_12
+    :cond_e
     invoke-virtual {v0}, Lcom/android/server/wm/AppWindowToken;->windowsAreFocusable()Z
 
     move-result v2
 
-    if-nez v2, :cond_14
+    if-nez v2, :cond_10
 
     sget-boolean v2, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_FOCUS_LIGHT:Z
 
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_f
 
     const-string v2, "WindowManager"
 
@@ -3233,29 +3048,29 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_13
+    :cond_f
     iput-object p1, p0, Lcom/android/server/wm/DisplayContent;->mTmpWindow:Lcom/android/server/wm/WindowState;
 
     return v4
 
-    :cond_14
-    if-eqz v1, :cond_16
+    :cond_10
+    if-eqz v1, :cond_12
 
     iget-object v2, p1, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
     iget v2, v2, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    if-eq v2, v3, :cond_16
+    if-eq v2, v3, :cond_12
 
     invoke-virtual {v0, v1}, Lcom/android/server/wm/AppWindowToken;->compareTo(Lcom/android/server/wm/WindowContainer;)I
 
     move-result v2
 
-    if-lez v2, :cond_16
+    if-lez v2, :cond_12
 
     sget-boolean v2, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_FOCUS_LIGHT:Z
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_11
 
     const-string v2, "WindowManager"
 
@@ -3275,17 +3090,17 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_15
+    :cond_11
     const/4 v2, 0x0
 
     iput-object v2, p0, Lcom/android/server/wm/DisplayContent;->mTmpWindow:Lcom/android/server/wm/WindowState;
 
     return v4
 
-    :cond_16
+    :cond_12
     sget-boolean v2, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_FOCUS_LIGHT:Z
 
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_13
 
     const-string v2, "WindowManager"
 
@@ -3305,7 +3120,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_17
+    :cond_13
     iput-object p1, p0, Lcom/android/server/wm/DisplayContent;->mTmpWindow:Lcom/android/server/wm/WindowState;
 
     return v4

@@ -4,8 +4,6 @@
 
 
 # static fields
-.field public static final CONNOR_DB_VERSION:I = 0x2
-
 .field protected static final CONNOR_FEED_COUNT:Ljava/lang/String; = "connor_feed_count"
 
 .field protected static final CONNOR_FEED_HIT:Ljava/lang/String; = "connor_feed_hit"
@@ -173,45 +171,78 @@
 
     move-result v2
 
+    const/4 v3, 0x0
+
     invoke-interface {v0}, Landroid/database/Cursor;->moveToLast()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_0
+    if-eqz v4, :cond_0
+
+    const-string v4, "connor_id"
+
+    invoke-interface {v0, v4}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v4
+
+    invoke-interface {v0, v4}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v4
+
+    move v3, v4
 
     :goto_0
     invoke-interface {v0}, Landroid/database/Cursor;->isBeforeFirst()Z
 
-    move-result v3
+    move-result v4
 
-    if-nez v3, :cond_0
+    if-nez v4, :cond_0
 
     invoke-interface {v0, v2}, Landroid/database/Cursor;->getLong(I)J
 
-    move-result-wide v3
+    move-result-wide v4
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
-    invoke-static {v3, v4, v5, v6}, Lcom/android/server/am/Connor;->nativeFeed(JLjava/lang/String;Z)V
+    invoke-static {v4, v5, v6, v7}, Lcom/android/server/am/Connor;->nativeFeed(JLjava/lang/String;Z)V
 
     invoke-interface {v0}, Landroid/database/Cursor;->moveToPrevious()Z
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
     :cond_0
-    if-eqz v0, :cond_1
+    if-lez v3, :cond_1
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "DELETE FROM connor_history_table WHERE connor_id < "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v9, v4}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_1
+    if-eqz v0, :cond_2
 
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    :cond_1
-    if-eqz v9, :cond_3
+    :cond_2
+    if-eqz v9, :cond_4
 
     goto :goto_1
 
@@ -228,29 +259,29 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    :cond_2
-    if-eqz v9, :cond_3
+    :cond_3
+    if-eqz v9, :cond_4
 
     :goto_1
     invoke-virtual {v9}, Landroid/database/sqlite/SQLiteDatabase;->close()V
 
-    :cond_3
+    :cond_4
     return-void
 
     :goto_2
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    :cond_4
-    if-eqz v9, :cond_5
+    :cond_5
+    if-eqz v9, :cond_6
 
     invoke-virtual {v9}, Landroid/database/sqlite/SQLiteDatabase;->close()V
 
-    :cond_5
+    :cond_6
     throw v1
 .end method

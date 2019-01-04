@@ -55,7 +55,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;->this$0:Lcom/android/server/BatteryService$HealthServiceWrapper;
 
-    invoke-static {v0}, Lcom/android/server/BatteryService$HealthServiceWrapper;->access$3200(Lcom/android/server/BatteryService$HealthServiceWrapper;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/android/server/BatteryService$HealthServiceWrapper;->access$3000(Lcom/android/server/BatteryService$HealthServiceWrapper;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -70,7 +70,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;->this$0:Lcom/android/server/BatteryService$HealthServiceWrapper;
 
-    invoke-static {v0}, Lcom/android/server/BatteryService$HealthServiceWrapper;->access$3600(Lcom/android/server/BatteryService$HealthServiceWrapper;)Landroid/os/HandlerThread;
+    invoke-static {v0}, Lcom/android/server/BatteryService$HealthServiceWrapper;->access$3400(Lcom/android/server/BatteryService$HealthServiceWrapper;)Landroid/os/HandlerThread;
 
     move-result-object v0
 

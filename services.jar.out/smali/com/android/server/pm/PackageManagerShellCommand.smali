@@ -629,7 +629,7 @@
     :goto_2
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v12, "group:"
+    const-string v12, "group:"
 
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -11225,7 +11225,7 @@
     goto/16 :goto_1
 
     :sswitch_14
-    const-string/jumbo v2, "grant"
+    const-string v2, "grant"
 
     invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -12214,8 +12214,6 @@
     invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     return v1
-
-    nop
 
     nop
 

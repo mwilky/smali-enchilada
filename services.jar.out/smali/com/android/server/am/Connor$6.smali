@@ -52,7 +52,7 @@
 
     const/4 v3, 0x1
 
-    invoke-static {v1, v3}, Lcom/android/server/am/Connor;->access$1800(Lcom/android/server/am/Connor;Z)V
+    invoke-static {v1, v3}, Lcom/android/server/am/Connor;->access$1600(Lcom/android/server/am/Connor;Z)V
 
     iget-object v1, p0, Lcom/android/server/am/Connor$6;->this$0:Lcom/android/server/am/Connor;
 
@@ -86,7 +86,7 @@
 
     iget-object v1, p0, Lcom/android/server/am/Connor$6;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v1, v2}, Lcom/android/server/am/Connor;->access$1800(Lcom/android/server/am/Connor;Z)V
+    invoke-static {v1, v2}, Lcom/android/server/am/Connor;->access$1600(Lcom/android/server/am/Connor;Z)V
 
     goto :goto_0
 
@@ -111,13 +111,17 @@
 
     iget-object v2, p0, Lcom/android/server/am/Connor$6;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v2}, Lcom/android/server/am/Connor;->access$1300(Lcom/android/server/am/Connor;)V
+    invoke-static {v2}, Lcom/android/server/am/Connor;->access$1100(Lcom/android/server/am/Connor;)V
 
-    sget-boolean v2, Lcom/android/server/am/Connor;->mIsAlpha:Z
+    invoke-static {}, Lcom/android/server/am/Connor;->access$1700()Z
+
+    move-result v2
 
     if-nez v2, :cond_3
 
-    sget-boolean v2, Lcom/android/server/am/Connor;->mIsBeta:Z
+    invoke-static {}, Lcom/android/server/am/Connor;->access$1800()Z
+
+    move-result v2
 
     if-eqz v2, :cond_5
 
@@ -163,7 +167,7 @@
 
     const-string v3, "Connor"
 
-    const-string/jumbo v4, "got exception while apply"
+    const-string v4, "got exception while apply"
 
     invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 

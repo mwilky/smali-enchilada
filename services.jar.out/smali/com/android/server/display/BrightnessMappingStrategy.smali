@@ -13,8 +13,6 @@
 
 
 # static fields
-.field private static mAlternativeBrightness:Z
-
 .field private static final DEBUG:Z = false
 
 .field private static final LUX_GRAD_SMOOTHING:F = 0.25f
@@ -37,8 +35,6 @@
     move-result-object v0
 
     sput-object v0, Lcom/android/server/display/BrightnessMappingStrategy;->PLOG:Lcom/android/server/display/utils/Plog;
-    
-    invoke-static {}, Lcom/android/server/display/BrightnessMappingStrategy;->getBrightnessTweak()V
 
     return-void
 .end method
@@ -92,7 +88,7 @@
 .end method
 
 .method public static create(Landroid/content/res/Resources;)Lcom/android/server/display/BrightnessMappingStrategy;
-    .locals 12
+    .locals 11
 
     const v0, 0x1070011
 
@@ -137,19 +133,9 @@
     invoke-static {v5}, Lcom/android/server/display/BrightnessMappingStrategy;->getFloatArray(Landroid/content/res/TypedArray;)[F
 
     move-result-object v5
-    
-    sget-boolean v11, Lcom/android/server/display/BrightnessMappingStrategy;->mAlternativeBrightness:Z
-    
-    if-eqz v11, :cond_stock
-    
-    const v6, 0x107007b
-    
-    goto :goto_skip
-    
-    :cond_stock
+
     const v6, 0x107003f
 
-    :goto_skip
     invoke-virtual {p0, v6}, Landroid/content/res/Resources;->getIntArray(I)[I
 
     move-result-object v7
@@ -456,7 +442,7 @@
 
     const/4 v0, 0x0
 
-    const/high16 v1, 0x7fc00000    # Float.NaN
+    const/high16 v1, 0x7fc00000    # NaNf
 
     const v2, 0x3dcccccd    # 0.1f
 
@@ -1028,22 +1014,6 @@
 
     :cond_3
     :goto_3
-    return-void
-.end method
-
-.method private static getBrightnessTweak()V
-	.locals 2
-
-    const-string v0, "tweaks.alternative.brightness"
-
-    const v1, 0x0
-
-    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
-
-    move-result v1
-    
-    sput-boolean v1, Lcom/android/server/display/BrightnessMappingStrategy;->mAlternativeBrightness:Z
-    
     return-void
 .end method
 

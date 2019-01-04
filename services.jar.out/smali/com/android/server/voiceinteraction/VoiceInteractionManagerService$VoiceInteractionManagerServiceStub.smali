@@ -127,7 +127,7 @@
 
     nop
 
-    const v0, 0x1040153
+    const v0, 0x1040152
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1633,7 +1633,7 @@
 
     const-string v0, "VoiceInteractionManagerService"
 
-    const-string/jumbo v1, "getUserDisabledShowContext without running voice interaction service"
+    const-string v1, "getUserDisabledShowContext without running voice interaction service"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 

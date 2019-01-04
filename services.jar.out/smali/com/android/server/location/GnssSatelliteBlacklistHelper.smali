@@ -65,7 +65,7 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "gnss_satellite_blacklist"
+    const-string v2, "gnss_satellite_blacklist"
 
     invoke-static {v2}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -179,7 +179,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "gnss_satellite_blacklist"
+    const-string v1, "gnss_satellite_blacklist"
 
     invoke-static {v0, v1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 

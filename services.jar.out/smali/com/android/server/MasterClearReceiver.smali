@@ -63,7 +63,7 @@
 
     if-eqz v0, :cond_0
 
-    const-string/jumbo v0, "google.com"
+    const-string v0, "google.com"
 
     const-string v1, "from"
 

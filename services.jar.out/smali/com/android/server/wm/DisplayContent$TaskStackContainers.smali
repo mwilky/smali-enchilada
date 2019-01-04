@@ -1676,21 +1676,6 @@
 .method positionChildAt(ILcom/android/server/wm/TaskStack;Z)V
     .locals 4
 
-    const/high16 v0, -0x80000000
-
-    if-eq p1, v0, :cond_0
-
-    if-eqz p2, :cond_0
-
-    invoke-virtual {p2}, Lcom/android/server/wm/TaskStack;->inPreloadWindowingMode()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/high16 p1, -0x80000000
-
-    :cond_0
     invoke-virtual {p2}, Lcom/android/server/wm/TaskStack;->getWindowConfiguration()Landroid/app/WindowConfiguration;
 
     move-result-object v0
@@ -1701,11 +1686,11 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     const v0, 0x7fffffff
 
-    if-eq p1, v0, :cond_1
+    if-eq p1, v0, :cond_0
 
     const-string v0, "WindowManager"
 
@@ -1739,7 +1724,7 @@
 
     return-void
 
-    :cond_1
+    :cond_0
     invoke-direct {p0, p1, p2, v1}, Lcom/android/server/wm/DisplayContent$TaskStackContainers;->findPositionForStack(ILcom/android/server/wm/TaskStack;Z)I
 
     move-result v0

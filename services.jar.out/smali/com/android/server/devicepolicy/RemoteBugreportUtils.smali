@@ -107,7 +107,7 @@
 
     if-ne p1, v5, :cond_0
 
-    const v5, 0x104060a
+    const v5, 0x1040609
 
     invoke-virtual {p0, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -124,7 +124,7 @@
     :cond_0
     if-ne p1, v3, :cond_1
 
-    const v5, 0x1040675
+    const v5, 0x1040674
 
     invoke-virtual {p0, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -169,7 +169,7 @@
 
     new-instance v5, Landroid/app/Notification$Action$Builder;
 
-    const v6, 0x10401b7
+    const v6, 0x10401b6
 
     invoke-virtual {p0, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -189,7 +189,7 @@
 
     new-instance v6, Landroid/app/Notification$Action$Builder;
 
-    const v8, 0x1040605
+    const v8, 0x1040604
 
     invoke-virtual {p0, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -205,7 +205,7 @@
 
     move-result-object v5
 
-    const v6, 0x1040607
+    const v6, 0x1040606
 
     invoke-virtual {p0, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -215,7 +215,7 @@
 
     move-result-object v5
 
-    const v6, 0x1040606
+    const v6, 0x1040605
 
     invoke-virtual {p0, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

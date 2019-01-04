@@ -58,8 +58,6 @@
 
 .field private mPinnedStack:Lcom/android/server/am/ActivityStack;
 
-.field private mPreloadStack:Lcom/android/server/am/ActivityStack;
-
 .field private mRecentsStack:Lcom/android/server/am/ActivityStack;
 
 .field private mSleeping:Z
@@ -158,8 +156,6 @@
     iput-object v0, p0, Lcom/android/server/am/ActivityDisplay;->mPinnedStack:Lcom/android/server/am/ActivityStack;
 
     iput-object v0, p0, Lcom/android/server/am/ActivityDisplay;->mSplitScreenPrimaryStack:Lcom/android/server/am/ActivityStack;
-
-    iput-object v0, p0, Lcom/android/server/am/ActivityDisplay;->mPreloadStack:Lcom/android/server/am/ActivityStack;
 
     new-instance v0, Landroid/graphics/Point;
 
@@ -511,11 +507,7 @@
 
     if-eqz p1, :cond_7
 
-    if-eq p1, v0, :cond_7
-
-    const/4 v1, 0x6
-
-    if-ne p1, v1, :cond_0
+    if-ne p1, v0, :cond_0
 
     goto :goto_2
 
@@ -1378,31 +1370,6 @@
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :cond_3
-    iget-object v1, p0, Lcom/android/server/am/ActivityDisplay;->mPreloadStack:Lcom/android/server/am/ActivityStack;
-
-    if-eqz v1, :cond_4
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string/jumbo v2, "mPreloadStack="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v2, p0, Lcom/android/server/am/ActivityDisplay;->mPreloadStack:Lcom/android/server/am/ActivityStack;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    :cond_4
     return-void
 .end method
 
@@ -1704,15 +1671,6 @@
     return-object v0
 
     :cond_3
-    const/4 v0, 0x6
-
-    if-ne p1, v0, :cond_4
-
-    iget-object v0, p0, Lcom/android/server/am/ActivityDisplay;->mPreloadStack:Lcom/android/server/am/ActivityStack;
-
-    return-object v0
-
-    :cond_4
     iget-object v0, p0, Lcom/android/server/am/ActivityDisplay;->mStacks:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1722,7 +1680,7 @@
     add-int/lit8 v0, v0, -0x1
 
     :goto_0
-    if-ltz v0, :cond_6
+    if-ltz v0, :cond_5
 
     iget-object v1, p0, Lcom/android/server/am/ActivityDisplay;->mStacks:Ljava/util/ArrayList;
 
@@ -1736,16 +1694,16 @@
 
     move-result v2
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_4
 
     return-object v1
 
-    :cond_5
+    :cond_4
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    :cond_6
+    :cond_5
     const/4 v0, 0x0
 
     return-object v0

@@ -276,7 +276,7 @@
 .end method
 
 .method public moveToFront()V
-    .locals 8
+    .locals 7
 
     invoke-direct {p0}, Lcom/android/server/am/AppTaskImpl;->checkCaller()V
 
@@ -293,33 +293,24 @@
     move-result-wide v2
 
     :try_start_0
-    iget-object v4, p0, Lcom/android/server/am/AppTaskImpl;->mService:Lcom/android/server/am/ActivityManagerService;
-
-    monitor-enter v4
+    monitor-enter p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     :try_start_1
-    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
+    iget-object v4, p0, Lcom/android/server/am/AppTaskImpl;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    iget-object v5, p0, Lcom/android/server/am/AppTaskImpl;->mService:Lcom/android/server/am/ActivityManagerService;
+    iget-object v4, v4, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
-    iget-object v5, v5, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+    iget v5, p0, Lcom/android/server/am/AppTaskImpl;->mTaskId:I
 
-    iget v6, p0, Lcom/android/server/am/AppTaskImpl;->mTaskId:I
+    const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    invoke-virtual {v4, v0, v1, v5, v6}, Lcom/android/server/am/ActivityStackSupervisor;->startActivityFromRecents(IIILcom/android/server/am/SafeActivityOptions;)I
 
-    invoke-virtual {v5, v0, v1, v6, v7}, Lcom/android/server/am/ActivityStackSupervisor;->startActivityFromRecents(IIILcom/android/server/am/SafeActivityOptions;)I
-
-    monitor-exit v4
+    monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :try_start_2
-    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
@@ -328,19 +319,17 @@
     return-void
 
     :catchall_0
-    move-exception v5
+    move-exception v4
+
+    :try_start_2
+    monitor-exit p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     :try_start_3
-    monitor-exit v4
+    throw v4
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    :try_start_4
-    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
-
-    throw v5
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     :catchall_1
     move-exception v4

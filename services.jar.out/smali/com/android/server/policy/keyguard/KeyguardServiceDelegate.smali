@@ -230,7 +230,7 @@
 
     nop
 
-    const v1, 0x1040165
+    const v1, 0x1040164
 
     invoke-virtual {v7, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

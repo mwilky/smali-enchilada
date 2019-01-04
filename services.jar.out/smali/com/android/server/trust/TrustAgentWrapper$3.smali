@@ -252,7 +252,7 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "handle"
+    const-string v2, "handle"
 
     invoke-virtual {v1, v2, p1, p2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
@@ -387,7 +387,7 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "handle"
+    const-string v2, "handle"
 
     invoke-virtual {v1, v2, p1, p2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
@@ -600,7 +600,7 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "handle"
+    const-string v2, "handle"
 
     invoke-virtual {v1, v2, p1, p2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 

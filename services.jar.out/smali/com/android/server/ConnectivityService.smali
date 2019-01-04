@@ -399,8 +399,6 @@
 
 .field private mStatsService:Landroid/net/INetworkStatsService;
 
-.field mSubscriptionManager:Landroid/telephony/SubscriptionManager;
-
 .field private mSystemProperties:Lcom/android/server/connectivity/MockableSystemProperties;
 
 .field private mSystemReady:Z
@@ -968,14 +966,6 @@
     check-cast v0, Landroid/telephony/TelephonyManager;
 
     iput-object v0, v1, Lcom/android/server/ConnectivityService;->mTelephonyManager:Landroid/telephony/TelephonyManager;
-
-    iget-object v0, v1, Lcom/android/server/ConnectivityService;->mContext:Landroid/content/Context;
-
-    invoke-static {v0}, Landroid/telephony/SubscriptionManager;->from(Landroid/content/Context;)Landroid/telephony/SubscriptionManager;
-
-    move-result-object v0
-
-    iput-object v0, v1, Lcom/android/server/ConnectivityService;->mSubscriptionManager:Landroid/telephony/SubscriptionManager;
 
     :try_start_0
     iget-object v0, v1, Lcom/android/server/ConnectivityService;->mPolicyManager:Landroid/net/INetworkPolicyManager;
@@ -6278,7 +6268,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v1, "handleLingerComplete for "
+    const-string v1, "handleLingerComplete for "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6402,7 +6392,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "handleNetworkUnvalidated "
+    const-string v2, "handleNetworkUnvalidated "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6554,7 +6544,7 @@
 .end method
 
 .method private handlePromptUnvalidated(Landroid/net/Network;)V
-    .locals 2
+    .locals 4
 
     sget-boolean v0, Lcom/android/server/ConnectivityService;->VDBG:Z
 
@@ -6564,7 +6554,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v1, "handlePromptUnvalidated "
+    const-string v1, "handlePromptUnvalidated "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6581,39 +6571,88 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_2
+    iget-object v1, p0, Lcom/android/server/ConnectivityService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v2, "captive_portal_detection_enabled"
+
+    const/4 v3, 0x1
+
+    invoke-static {v1, v2, v3}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    if-ne v1, v3, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v3, 0x0
+
+    :goto_0
+    iput-boolean v3, p0, Lcom/android/server/ConnectivityService;->mIsCaptivePortalCheckEnabled:Z
+
+    iget-boolean v1, p0, Lcom/android/server/ConnectivityService;->mIsCaptivePortalCheckEnabled:Z
+
+    if-nez v1, :cond_2
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "handlePromptUnvalidated mIsCaptivePortalCheckEnabled "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v2, p0, Lcom/android/server/ConnectivityService;->mIsCaptivePortalCheckEnabled:Z
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
+
+    return-void
+
+    :cond_2
+    if-eqz v0, :cond_4
 
     iget-boolean v1, v0, Lcom/android/server/connectivity/NetworkAgentInfo;->everValidated:Z
 
-    if-nez v1, :cond_2
+    if-nez v1, :cond_4
 
     iget-boolean v1, v0, Lcom/android/server/connectivity/NetworkAgentInfo;->everCaptivePortalDetected:Z
 
-    if-nez v1, :cond_2
+    if-nez v1, :cond_4
 
     iget-object v1, v0, Lcom/android/server/connectivity/NetworkAgentInfo;->networkMisc:Landroid/net/NetworkMisc;
 
     iget-boolean v1, v1, Landroid/net/NetworkMisc;->explicitlySelected:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_4
 
     iget-object v1, v0, Lcom/android/server/connectivity/NetworkAgentInfo;->networkMisc:Landroid/net/NetworkMisc;
 
     iget-boolean v1, v1, Landroid/net/NetworkMisc;->acceptUnvalidated:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_3
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_1
+    :cond_3
     sget-object v1, Lcom/android/server/connectivity/NetworkNotificationManager$NotificationType;->NO_INTERNET:Lcom/android/server/connectivity/NetworkNotificationManager$NotificationType;
 
     invoke-direct {p0, v0, v1}, Lcom/android/server/ConnectivityService;->showValidationNotification(Lcom/android/server/connectivity/NetworkAgentInfo;Lcom/android/server/connectivity/NetworkNotificationManager$NotificationType;)V
 
     return-void
 
-    :cond_2
-    :goto_0
+    :cond_4
+    :goto_1
     return-void
 .end method
 
@@ -8092,7 +8131,7 @@
 
     move-result-object v1
 
-    const v2, 0x5020009
+    const v2, 0x5020008
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -8568,13 +8607,13 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "global_http_proxy_host"
+    const-string v1, "global_http_proxy_host"
 
     invoke-static {v0, v1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string/jumbo v2, "global_http_proxy_port"
+    const-string v2, "global_http_proxy_port"
 
     const/4 v3, 0x0
 
@@ -8582,13 +8621,13 @@
 
     move-result v2
 
-    const-string/jumbo v3, "global_http_proxy_exclusion_list"
+    const-string v3, "global_http_proxy_exclusion_list"
 
     invoke-static {v0, v3}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    const-string/jumbo v4, "global_proxy_pac_url"
+    const-string v4, "global_proxy_pac_url"
 
     invoke-static {v0, v4}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
@@ -11477,7 +11516,7 @@
 
     const/4 v0, 0x1
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_1
 
     const/4 v1, 0x0
 
@@ -11485,7 +11524,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_1
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -11507,39 +11546,6 @@
 
     invoke-static {v2}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
 
-    const/16 v2, 0xa
-
-    invoke-virtual {p1, v2}, Landroid/net/NetworkCapabilities;->hasCapability(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Lcom/android/server/ConnectivityService;->mSubscriptionManager:Landroid/telephony/SubscriptionManager;
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Lcom/android/server/ConnectivityService;->mSubscriptionManager:Landroid/telephony/SubscriptionManager;
-
-    invoke-virtual {v2}, Landroid/telephony/SubscriptionManager;->getActiveSubscriptionInfoList()Ljava/util/List;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_1
-
-    iget-object v2, p0, Lcom/android/server/ConnectivityService;->mSubscriptionManager:Landroid/telephony/SubscriptionManager;
-
-    invoke-virtual {v2}, Landroid/telephony/SubscriptionManager;->getActiveSubscriptionInfoList()Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/List;->size()I
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    :cond_0
     invoke-virtual {p1}, Landroid/net/NetworkCapabilities;->getNetworkSpecifier()Landroid/net/NetworkSpecifier;
 
     move-result-object v2
@@ -11552,15 +11558,14 @@
 
     move-result v3
 
-    if-ne v2, v3, :cond_2
+    if-ne v2, v3, :cond_0
 
-    :cond_1
     return v0
 
-    :cond_2
+    :cond_0
     return v1
 
-    :cond_3
+    :cond_1
     return v0
 .end method
 
@@ -13358,16 +13363,6 @@
     move-result-object v5
 
     if-eqz v5, :cond_4
-
-    iget-object v5, v4, Lcom/android/server/ConnectivityService$NetworkRequestInfo;->request:Landroid/net/NetworkRequest;
-
-    iget v5, v5, Landroid/net/NetworkRequest;->requestId:I
-
-    invoke-direct {p0, v5}, Lcom/android/server/ConnectivityService;->getNetworkForRequest(I)Lcom/android/server/connectivity/NetworkAgentInfo;
-
-    move-result-object v5
-
-    if-eqz v5, :cond_5
 
     iget-object v5, v4, Lcom/android/server/ConnectivityService$NetworkRequestInfo;->request:Landroid/net/NetworkRequest;
 
@@ -17016,7 +17011,7 @@
 
     move-result-object v1
 
-    const v2, 0x10403e4
+    const v2, 0x10403e3
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -19831,19 +19826,19 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     :try_start_1
-    const-string/jumbo v8, "global_http_proxy_host"
+    const-string v8, "global_http_proxy_host"
 
     invoke-static {v5, v8, v1}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    const-string/jumbo v8, "global_http_proxy_port"
+    const-string v8, "global_http_proxy_port"
 
     invoke-static {v5, v8, v2}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    const-string/jumbo v8, "global_http_proxy_exclusion_list"
+    const-string v8, "global_http_proxy_exclusion_list"
 
     invoke-static {v5, v8, v3}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    const-string/jumbo v8, "global_proxy_pac_url"
+    const-string v8, "global_proxy_pac_url"
 
     invoke-static {v5, v8, v4}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
     :try_end_1

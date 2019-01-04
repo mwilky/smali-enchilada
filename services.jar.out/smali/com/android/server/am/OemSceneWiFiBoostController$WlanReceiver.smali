@@ -64,7 +64,7 @@
 
     check-cast v1, Landroid/net/NetworkInfo;
 
-    invoke-static {}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$200()Z
+    invoke-static {}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$100()Z
 
     move-result v2
 
@@ -105,7 +105,7 @@
 
     iget-object v2, p0, Lcom/android/server/am/OemSceneWiFiBoostController$WlanReceiver;->this$0:Lcom/android/server/am/OemSceneWiFiBoostController;
 
-    invoke-static {v2}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$300(Lcom/android/server/am/OemSceneWiFiBoostController;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$200(Lcom/android/server/am/OemSceneWiFiBoostController;)Landroid/os/Handler;
 
     move-result-object v2
 
@@ -119,7 +119,7 @@
 
     iget-object v2, p0, Lcom/android/server/am/OemSceneWiFiBoostController$WlanReceiver;->this$0:Lcom/android/server/am/OemSceneWiFiBoostController;
 
-    invoke-static {v2}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$300(Lcom/android/server/am/OemSceneWiFiBoostController;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$200(Lcom/android/server/am/OemSceneWiFiBoostController;)Landroid/os/Handler;
 
     move-result-object v2
 
@@ -128,7 +128,7 @@
     :cond_1
     iget-object v2, p0, Lcom/android/server/am/OemSceneWiFiBoostController$WlanReceiver;->this$0:Lcom/android/server/am/OemSceneWiFiBoostController;
 
-    invoke-static {v2}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$300(Lcom/android/server/am/OemSceneWiFiBoostController;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$200(Lcom/android/server/am/OemSceneWiFiBoostController;)Landroid/os/Handler;
 
     move-result-object v2
 
@@ -139,7 +139,7 @@
     :cond_2
     iget-object v2, p0, Lcom/android/server/am/OemSceneWiFiBoostController$WlanReceiver;->this$0:Lcom/android/server/am/OemSceneWiFiBoostController;
 
-    invoke-static {v2}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$300(Lcom/android/server/am/OemSceneWiFiBoostController;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$200(Lcom/android/server/am/OemSceneWiFiBoostController;)Landroid/os/Handler;
 
     move-result-object v2
 
@@ -153,7 +153,7 @@
 
     iget-object v2, p0, Lcom/android/server/am/OemSceneWiFiBoostController$WlanReceiver;->this$0:Lcom/android/server/am/OemSceneWiFiBoostController;
 
-    invoke-static {v2}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$300(Lcom/android/server/am/OemSceneWiFiBoostController;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$200(Lcom/android/server/am/OemSceneWiFiBoostController;)Landroid/os/Handler;
 
     move-result-object v2
 
@@ -162,7 +162,7 @@
     :cond_3
     iget-object v2, p0, Lcom/android/server/am/OemSceneWiFiBoostController$WlanReceiver;->this$0:Lcom/android/server/am/OemSceneWiFiBoostController;
 
-    invoke-static {v2}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$300(Lcom/android/server/am/OemSceneWiFiBoostController;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$200(Lcom/android/server/am/OemSceneWiFiBoostController;)Landroid/os/Handler;
 
     move-result-object v2
 

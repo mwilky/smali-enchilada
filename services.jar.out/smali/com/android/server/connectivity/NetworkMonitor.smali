@@ -69,13 +69,9 @@
 
 .field private static final FALL_BACK_HTTP_SERVERS:[Ljava/lang/String;
 
-.field private static final GOOGLE_NETWORK_URL:Ljava/lang/String; = "www.google.com"
+.field private static final GOOGLE_NETWORK_URL:Ljava/lang/String; = "https://www.google.com"
 
 .field private static final HTTPS_PORT:I = 0x1bb
-
-.field private static final HTTP_GOOGLE_NETWORK_URL:Ljava/lang/String; = "http://www.google.com"
-
-.field private static final HTTP_NETWORK_TEST_URL:Ljava/lang/String; = "http://www.baidu.com"
 
 .field private static final IGNORE_REEVALUATE_ATTEMPTS:I = 0x5
 
@@ -89,7 +85,7 @@
 
 .field public static final NETWORK_TEST_RESULT_VALID:I = 0x0
 
-.field private static final NETWORK_TEST_URL:Ljava/lang/String; = "www.baidu.com"
+.field private static final NETWORK_TEST_URL:Ljava/lang/String; = "https://www.baidu.com"
 
 .field private static final NO_UID:I = 0x0
 

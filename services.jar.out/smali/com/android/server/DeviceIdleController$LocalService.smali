@@ -220,7 +220,7 @@
 .end method
 
 .method public setInBatteryStatsServiceInstance(Lcom/android/server/am/BatteryStatsService;)V
-    .locals 6
+    .locals 3
 
     const-string v0, "DeviceIdleController"
 
@@ -242,87 +242,6 @@
 
     invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$202(Lcom/android/server/OnePlusStandbyAnalyzer;)Lcom/android/server/OnePlusStandbyAnalyzer;
 
-    const-string/jumbo v0, "ro.boot.project_name"
-
-    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_2
-
-    const-string v1, "17819"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    const-string/jumbo v1, "ro.build.version.ota"
-
-    invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_2
-
-    const-string v2, "Hydrogen"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    const-string/jumbo v2, "ro.build.alpha"
-
-    const/4 v3, 0x0
-
-    invoke-static {v2, v3}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
-
-    move-result v2
-
-    const/4 v4, 0x1
-
-    if-ne v2, v4, :cond_0
-
-    move v3, v4
-
-    nop
-
-    :cond_0
-    move v2, v3
-
-    if-eqz v2, :cond_2
-
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1700()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    const-string v3, "DeviceIdleController"
-
-    const-string v5, "It\'s 17819 Alpha H2 rom, default enable qxdm grabbing mechanism"
-
-    invoke-static {v3, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_1
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$200()Lcom/android/server/OnePlusStandbyAnalyzer;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v4}, Lcom/android/server/OnePlusStandbyAnalyzer;->updateQXDMGrabMechanism(Z)V
-
-    invoke-static {}, Lcom/android/server/DeviceIdleController;->access$200()Lcom/android/server/OnePlusStandbyAnalyzer;
-
-    move-result-object v3
-
-    const-wide/32 v4, 0x2932e00
-
-    invoke-virtual {v3, v4, v5}, Lcom/android/server/OnePlusStandbyAnalyzer;->updateQXDMGrabMinimumPeriod(J)V
-
-    :cond_2
     return-void
 .end method
 

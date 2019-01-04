@@ -114,16 +114,6 @@
 
     iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mDisplayRotation:I
 
-    if-nez v4, :cond_3
-
-    invoke-static {}, Lcom/oneplus/scene/OimcBrickModeObserver;->getInstance()Lcom/oneplus/scene/OimcBrickModeObserver;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Lcom/oneplus/scene/OimcBrickModeObserver;->isOn()Z
-
-    move-result v4
-
     if-eqz v4, :cond_2
 
     goto :goto_1

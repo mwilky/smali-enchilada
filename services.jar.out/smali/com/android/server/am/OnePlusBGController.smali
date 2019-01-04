@@ -352,29 +352,29 @@
 
     iput v1, p0, Lcom/android/server/am/OnePlusBGController;->INIT_INVALID_CRITERIA:F
 
-    const/high16 v1, 0x40a00000    # 5.0f
+    const/high16 v1, 0x41200000    # 10.0f
 
     iput v1, p0, Lcom/android/server/am/OnePlusBGController;->mBg_HighCriteria:F
 
-    const/high16 v1, 0x40800000    # 4.0f
+    const/high16 v1, 0x41000000    # 8.0f
 
     iput v1, p0, Lcom/android/server/am/OnePlusBGController;->mBg_HighCriteria_For_Notorious:F
 
-    const/high16 v1, 0x40200000    # 2.5f
+    const/high16 v1, 0x40a00000    # 5.0f
 
     iput v1, p0, Lcom/android/server/am/OnePlusBGController;->mBg_GeneCriteria:F
 
-    const/high16 v1, 0x40000000    # 2.0f
+    const/high16 v1, 0x40800000    # 4.0f
 
     iput v1, p0, Lcom/android/server/am/OnePlusBGController;->mBg_GeneCriteria_For_Notorious:F
 
-    const/high16 v2, 0x3fc00000    # 1.5f
+    const/high16 v1, 0x40400000    # 3.0f
 
-    iput v2, p0, Lcom/android/server/am/OnePlusBGController;->mBg_LowCriteria:F
+    iput v1, p0, Lcom/android/server/am/OnePlusBGController;->mBg_LowCriteria:F
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    const/high16 v1, 0x40000000    # 2.0f
 
-    iput v2, p0, Lcom/android/server/am/OnePlusBGController;->mBg_LowCriteria_For_Notorious:F
+    iput v1, p0, Lcom/android/server/am/OnePlusBGController;->mBg_LowCriteria_For_Notorious:F
 
     iput v1, p0, Lcom/android/server/am/OnePlusBGController;->mBg_ReliefBonusmAh:F
 
@@ -2444,7 +2444,7 @@
 
     sget-object v1, Lcom/android/server/am/OnePlusBGController;->mAudioManager:Landroid/media/AudioManager;
 
-    const-string/jumbo v2, "get_uid"
+    const-string v2, "get_uid"
 
     invoke-virtual {v1, v2}, Landroid/media/AudioManager;->getParameters(Ljava/lang/String;)Ljava/lang/String;
 
@@ -2881,7 +2881,7 @@
 
     sget-object v1, Lcom/android/server/am/OnePlusBGController;->mAudioManager:Landroid/media/AudioManager;
 
-    const-string/jumbo v2, "get_uid"
+    const-string v2, "get_uid"
 
     invoke-virtual {v1, v2}, Landroid/media/AudioManager;->getParameters(Ljava/lang/String;)Ljava/lang/String;
 

@@ -158,26 +158,5 @@
     move-exception v0
 
     :goto_5
-    :try_start_6
-    sget-object v0, Lcom/android/server/policy/OemPhoneWindowManager$13;->$SwitchMap$com$android$server$policy$OemPhoneWindowManager$KeyLockMode:[I
-
-    sget-object v1, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;->VOLUME_SWITCH:Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
-
-    invoke-virtual {v1}, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x7
-
-    aput v2, v0, v1
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
-
-    goto :goto_6
-
-    :catch_6
-    move-exception v0
-
-    :goto_6
     return-void
 .end method

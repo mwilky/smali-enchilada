@@ -2080,7 +2080,7 @@
 
     const-string v0, "GnssLocationProvider"
 
-    const-string/jumbo v1, "handleDisable"
+    const-string v1, "handleDisable"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -2131,7 +2131,7 @@
 
     const-string v0, "GnssLocationProvider"
 
-    const-string/jumbo v1, "handleDownloadXtraData() called when Xtra not supported"
+    const-string v1, "handleDownloadXtraData() called when Xtra not supported"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -2194,7 +2194,7 @@
 
     const-string v0, "GnssLocationProvider"
 
-    const-string/jumbo v1, "handleEnable"
+    const-string v1, "handleEnable"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -2309,7 +2309,7 @@
 
     iget-object v1, p0, Lcom/android/server/location/GnssLocationProvider;->mLocationManager:Landroid/location/LocationManager;
 
-    const-string/jumbo v2, "gps"
+    const-string v2, "gps"
 
     invoke-virtual {v1, v2}, Landroid/location/LocationManager;->getCurrentProviderPackageList(Ljava/lang/String;)Ljava/util/List;
 
@@ -2724,7 +2724,7 @@
 
     const-string v0, "GnssLocationProvider"
 
-    const-string/jumbo v1, "got fix, hibernating"
+    const-string v1, "got fix, hibernating"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -3086,7 +3086,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "gnss_hal_location_request_duration_millis"
+    const-string v1, "gnss_hal_location_request_duration_millis"
 
     const-wide/16 v2, 0x0
 
@@ -7554,7 +7554,7 @@
 .method public getName()Ljava/lang/String;
     .locals 1
 
-    const-string/jumbo v0, "gps"
+    const-string v0, "gps"
 
     return-object v0
 .end method
@@ -7875,7 +7875,7 @@
 
     new-instance v3, Landroid/location/Location;
 
-    const-string/jumbo v4, "gps"
+    const-string v4, "gps"
 
     invoke-direct {v3, v4}, Landroid/location/Location;-><init>(Ljava/lang/String;)V
 

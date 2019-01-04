@@ -36,8 +36,6 @@
 
 .field public static DEBUG_OEMLOG:Z = false
 
-.field private static ENABLE_RECORDER:Z = false
-
 .field public static final GLOBAL_FLAG_SETTED_SIM_COUNTRY:I = 0x1
 
 .field private static INSTANCE:Lcom/android/server/am/OnePlusAppBootManager; = null
@@ -71,8 +69,6 @@
 .field private static final PROP_BLACKLIST:Ljava/lang/String; = "persist.sys.appboot.blacklist"
 
 .field private static final PROP_DEBUG:Ljava/lang/String; = "persist.sys.appboot.debug"
-
-.field private static final PROP_ENABLE_RECORDER:Ljava/lang/String; = "persist.sys.appboot.recorder"
 
 .field private static final PROP_FLAGS:Ljava/lang/String; = "persist.sys.appboot.flags"
 
@@ -341,8 +337,6 @@
     .end annotation
 .end field
 
-.field private mRecorder:Lcom/android/server/am/OnePlusAppBootRecorder;
-
 .field private mResolver:Landroid/content/ContentResolver;
 
 .field private mRestrictActivityPackage:Ljava/util/ArrayList;
@@ -437,8 +431,6 @@
     sput-boolean v2, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG_OEMLOG:Z
 
     sput-boolean v2, Lcom/android/server/am/OnePlusAppBootManager;->QUICK_APP_RANK_DEBUG:Z
-
-    sput-boolean v2, Lcom/android/server/am/OnePlusAppBootManager;->ENABLE_RECORDER:Z
 
     sget-boolean v1, Lcom/android/server/am/OnePlusAppBootManager;->IN_USING:Z
 
@@ -1139,15 +1131,7 @@
     return-void
 .end method
 
-.method static synthetic access$1100(Lcom/android/server/am/OnePlusAppBootManager;)Lcom/android/server/am/OnePlusAppBootRecorder;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager;->mRecorder:Lcom/android/server/am/OnePlusAppBootRecorder;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1202(Z)Z
+.method static synthetic access$1102(Z)Z
     .locals 0
 
     sput-boolean p0, Lcom/android/server/am/OnePlusAppBootManager;->mScreenOn:Z
@@ -1155,7 +1139,7 @@
     return p0
 .end method
 
-.method static synthetic access$1300()Z
+.method static synthetic access$1200()Z
     .locals 1
 
     sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->QUICK_APP_RANK_DEBUG:Z
@@ -1163,7 +1147,7 @@
     return v0
 .end method
 
-.method static synthetic access$1400(Lcom/android/server/am/OnePlusAppBootManager;)Z
+.method static synthetic access$1300(Lcom/android/server/am/OnePlusAppBootManager;)Z
     .locals 1
 
     invoke-direct {p0}, Lcom/android/server/am/OnePlusAppBootManager;->responseSIMStateChanged()Z
@@ -1173,7 +1157,7 @@
     return v0
 .end method
 
-.method static synthetic access$1700(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)V
+.method static synthetic access$1600(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusAppBootManager;->updateSettingsObserver(Ljava/lang/String;)V
@@ -1181,7 +1165,7 @@
     return-void
 .end method
 
-.method static synthetic access$1800()Ljava/util/HashMap;
+.method static synthetic access$1700()Ljava/util/HashMap;
     .locals 1
 
     sget-object v0, Lcom/android/server/am/OnePlusAppBootManager;->mPkgMap:Ljava/util/HashMap;
@@ -1189,12 +1173,22 @@
     return-object v0
 .end method
 
-.method static synthetic access$1900()Z
+.method static synthetic access$1800(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)I
     .locals 1
 
-    sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->ENABLE_RECORDER:Z
+    invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusAppBootManager;->forceStopPkg(Ljava/lang/String;)I
+
+    move-result v0
 
     return v0
+.end method
+
+.method static synthetic access$1900(Lcom/android/server/am/OnePlusAppBootManager;)Landroid/content/Context;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager;->mContext:Landroid/content/Context;
+
+    return-object v0
 .end method
 
 .method static synthetic access$200(Ljava/lang/String;)Z
@@ -1207,25 +1201,7 @@
     return v0
 .end method
 
-.method static synthetic access$2000(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)I
-    .locals 1
-
-    invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusAppBootManager;->forceStopPkg(Ljava/lang/String;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method static synthetic access$2100(Lcom/android/server/am/OnePlusAppBootManager;)Landroid/content/Context;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager;->mContext:Landroid/content/Context;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2200()Ljava/lang/String;
+.method static synthetic access$2000()Ljava/lang/String;
     .locals 1
 
     sget-object v0, Lcom/android/server/am/OnePlusAppBootManager;->APPBOOT_CONFIG_NAME:Ljava/lang/String;
@@ -1233,7 +1209,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2300(Lcom/android/server/am/OnePlusAppBootManager;Lorg/json/JSONArray;)V
+.method static synthetic access$2100(Lcom/android/server/am/OnePlusAppBootManager;Lorg/json/JSONArray;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusAppBootManager;->resolveAppBootConfigFromJSON(Lorg/json/JSONArray;)V
@@ -1241,7 +1217,7 @@
     return-void
 .end method
 
-.method static synthetic access$2400(Lcom/android/server/am/OnePlusAppBootManager;Z)V
+.method static synthetic access$2200(Lcom/android/server/am/OnePlusAppBootManager;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusAppBootManager;->updateHugePowerPkgTempAction(Z)V
@@ -1249,7 +1225,7 @@
     return-void
 .end method
 
-.method static synthetic access$2500(Lcom/android/server/am/OnePlusAppBootManager;)V
+.method static synthetic access$2300(Lcom/android/server/am/OnePlusAppBootManager;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/am/OnePlusAppBootManager;->autoChangeRule()V
@@ -1257,7 +1233,7 @@
     return-void
 .end method
 
-.method static synthetic access$2600(Lcom/android/server/am/OnePlusAppBootManager;J)V
+.method static synthetic access$2400(Lcom/android/server/am/OnePlusAppBootManager;J)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/android/server/am/OnePlusAppBootManager;->sendNextChangeRuleMsg(J)V
@@ -1265,7 +1241,7 @@
     return-void
 .end method
 
-.method static synthetic access$2700(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;
+.method static synthetic access$2500(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;
     .locals 1
 
     invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusAppBootManager;->updateAppBootInfo(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;
@@ -1275,7 +1251,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2800(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)V
+.method static synthetic access$2600(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusAppBootManager;->removeAppBootInfo(Ljava/lang/String;)V
@@ -1564,15 +1540,6 @@
     throw v1
 
     :cond_8
-    sget-boolean v1, Lcom/android/server/am/OnePlusAppBootManager;->ENABLE_RECORDER:Z
-
-    if-eqz v1, :cond_9
-
-    iget-object v1, p0, Lcom/android/server/am/OnePlusAppBootManager;->mRecorder:Lcom/android/server/am/OnePlusAppBootRecorder;
-
-    invoke-virtual {v1}, Lcom/android/server/am/OnePlusAppBootRecorder;->clearRecords()V
-
-    :cond_9
     return-void
 .end method
 
@@ -2510,7 +2477,7 @@
 
     if-ne v3, v4, :cond_1
 
-    invoke-static {v2}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->access$2900(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->access$2700(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -4015,7 +3982,7 @@
 
     move-result v2
 
-    if-ge v1, v2, :cond_2c
+    if-ge v1, v2, :cond_25
 
     invoke-virtual {p1, v1}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
@@ -5213,290 +5180,11 @@
     iput-boolean v3, p0, Lcom/android/server/am/OnePlusAppBootManager;->mProcessServiceKillEnable:Z
 
     :cond_24
-    const-string/jumbo v3, "name"
-
-    invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v4, "config_record"
-
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2b
-
-    const-string/jumbo v3, "value"
-
-    invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
-
-    move-result-object v3
-
-    move v4, v0
-
-    :goto_17
-    invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
-
-    move-result v5
-
-    if-ge v4, v5, :cond_2b
-
-    invoke-virtual {v3, v4}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
-
-    move-result-object v5
-
-    const-string/jumbo v6, "name"
-
-    invoke-virtual {v5, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string/jumbo v7, "record"
-
-    invoke-virtual {v7, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_25
-
-    const-string/jumbo v7, "value"
-
-    invoke-virtual {v5, v7}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v7}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
-
-    move-result v7
-
-    sput-boolean v7, Lcom/android/server/am/OnePlusAppBootManager;->ENABLE_RECORDER:Z
-
-    const-string/jumbo v7, "persist.sys.appboot.recorder"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    sget-boolean v9, Lcom/android/server/am/OnePlusAppBootManager;->ENABLE_RECORDER:Z
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v9, ""
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v8, "record "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-boolean v8, Lcom/android/server/am/OnePlusAppBootManager;->ENABLE_RECORDER:Z
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v7}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
-
-    :cond_25
-    const-string/jumbo v7, "mdm"
-
-    invoke-virtual {v7, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_26
-
-    const-string/jumbo v7, "value"
-
-    invoke-virtual {v5, v7}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v7}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
-
-    move-result v7
-
-    iget-object v8, p0, Lcom/android/server/am/OnePlusAppBootManager;->mRecorder:Lcom/android/server/am/OnePlusAppBootRecorder;
-
-    invoke-virtual {v8, v7}, Lcom/android/server/am/OnePlusAppBootRecorder;->enableMDM(Z)V
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v9, "record mdm "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v8}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
-
-    :cond_26
-    const-string/jumbo v7, "local"
-
-    invoke-virtual {v7, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_27
-
-    const-string/jumbo v7, "value"
-
-    invoke-virtual {v5, v7}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v7}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
-
-    move-result v7
-
-    iget-object v8, p0, Lcom/android/server/am/OnePlusAppBootManager;->mRecorder:Lcom/android/server/am/OnePlusAppBootRecorder;
-
-    invoke-virtual {v8, v7}, Lcom/android/server/am/OnePlusAppBootRecorder;->enableLocal(Z)V
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v9, "record local "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v8}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
-
-    :cond_27
-    const-string/jumbo v7, "level"
-
-    invoke-virtual {v7, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_28
-
-    const-string/jumbo v7, "value"
-
-    invoke-virtual {v5, v7}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/android/server/am/OnePlusAppBootManager;->mRecorder:Lcom/android/server/am/OnePlusAppBootRecorder;
-
-    invoke-static {v7}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v9
-
-    invoke-virtual {v8, v9}, Lcom/android/server/am/OnePlusAppBootRecorder;->setRecordLevel(I)V
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v9, "record level "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v8}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
-
-    :cond_28
-    const-string/jumbo v7, "special"
-
-    invoke-virtual {v7, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_2a
-
-    new-instance v7, Ljava/util/ArrayList;
-
-    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
-
-    const-string/jumbo v8, "value"
-
-    invoke-virtual {v5, v8}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
-
-    move-result-object v8
-
-    move v9, v0
-
-    :goto_18
-    invoke-virtual {v8}, Lorg/json/JSONArray;->length()I
-
-    move-result v10
-
-    if-ge v9, v10, :cond_29
-
-    invoke-virtual {v8, v9}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-virtual {v7, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v12, "record ignore apps add: "
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v11, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-static {v11}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
-
-    add-int/lit8 v9, v9, 0x1
-
-    goto :goto_18
-
-    :cond_29
-    iget-object v9, p0, Lcom/android/server/am/OnePlusAppBootManager;->mRecorder:Lcom/android/server/am/OnePlusAppBootRecorder;
-
-    invoke-virtual {v9, v7}, Lcom/android/server/am/OnePlusAppBootRecorder;->setIgnoredApps(Ljava/util/ArrayList;)V
-
-    :cond_2a
-    add-int/lit8 v4, v4, 0x1
-
-    goto/16 :goto_17
-
-    :cond_2b
     add-int/lit8 v1, v1, 0x1
 
     goto/16 :goto_0
 
-    :cond_2c
+    :cond_25
     const-string v0, "OnePlusAppBootManager"
 
     const-string v1, "[OnlineConfig] AppBoot updated complete"
@@ -5509,7 +5197,7 @@
 
     sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_26
 
     const-string v0, "after resolveAppBootConfigFromJSON # specialList:"
 
@@ -5673,7 +5361,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    :goto_19
+    :goto_17
     const-string/jumbo v1, "mProviderClassBlackList size "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -5692,12 +5380,12 @@
 
     invoke-static {v0}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    goto/16 :goto_1a
+    goto/16 :goto_18
 
     :catchall_a
     move-exception v0
 
-    goto/16 :goto_1d
+    goto/16 :goto_1b
 
     :catch_0
     move-exception v0
@@ -5729,7 +5417,7 @@
 
     sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_26
 
     const-string v0, "after resolveAppBootConfigFromJSON # specialList:"
 
@@ -5893,7 +5581,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    goto/16 :goto_19
+    goto/16 :goto_17
 
     :catch_1
     move-exception v0
@@ -5925,7 +5613,7 @@
 
     sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_26
 
     const-string v0, "after resolveAppBootConfigFromJSON # specialList:"
 
@@ -6089,15 +5777,15 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    goto/16 :goto_19
+    goto/16 :goto_17
 
-    :cond_2d
-    :goto_1a
+    :cond_26
+    :goto_18
     sget-object v0, Lcom/android/server/am/OnePlusAppBootManager;->mPrePkgMap:Ljava/util/HashMap;
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_27
 
     sget-object v0, Lcom/android/server/am/OnePlusAppBootManager;->mPrePkgMap:Ljava/util/HashMap;
 
@@ -6105,11 +5793,11 @@
 
     move-result v0
 
-    if-ge v0, v1, :cond_2e
+    if-ge v0, v1, :cond_27
 
     return-void
 
-    :cond_2e
+    :cond_27
     sget-object v0, Lcom/android/server/am/OnePlusAppBootManager;->mABILock:Ljava/lang/Object;
 
     monitor-enter v0
@@ -6117,7 +5805,7 @@
     :try_start_29
     sget-object v2, Lcom/android/server/am/OnePlusAppBootManager;->mPkgMap:Ljava/util/HashMap;
 
-    if-nez v2, :cond_2f
+    if-nez v2, :cond_28
 
     sget-object v2, Lcom/android/server/am/OnePlusAppBootManager;->mPkgMap:Ljava/util/HashMap;
 
@@ -6125,13 +5813,13 @@
 
     move-result v2
 
-    if-ge v2, v1, :cond_2f
+    if-ge v2, v1, :cond_28
 
     monitor-exit v0
 
     return-void
 
-    :cond_2f
+    :cond_28
     monitor-exit v0
     :try_end_29
     .catchall {:try_start_29 .. :try_end_29} :catchall_c
@@ -6146,12 +5834,12 @@
 
     move-result-object v0
 
-    :goto_1b
+    :goto_19
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_33
+    if-eqz v2, :cond_2c
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -6159,17 +5847,17 @@
 
     check-cast v2, Lcom/android/server/am/OnePlusAppBootManager$PrePkgInfo;
 
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_2b
 
     iget-object v3, v2, Lcom/android/server/am/OnePlusAppBootManager$PrePkgInfo;->mPkgName:Ljava/lang/String;
 
-    if-eqz v3, :cond_32
+    if-eqz v3, :cond_2b
 
     iget v3, v2, Lcom/android/server/am/OnePlusAppBootManager$PrePkgInfo;->mFlag:I
 
     and-int/lit16 v3, v3, 0x4000
 
-    if-eqz v3, :cond_32
+    if-eqz v3, :cond_2b
 
     sget-object v3, Lcom/android/server/am/OnePlusAppBootManager;->mABILock:Ljava/lang/Object;
 
@@ -6186,7 +5874,7 @@
 
     check-cast v4, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;
 
-    if-eqz v4, :cond_31
+    if-eqz v4, :cond_2a
 
     invoke-virtual {v4}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getAction()I
 
@@ -6194,27 +5882,27 @@
 
     iget v6, v2, Lcom/android/server/am/OnePlusAppBootManager$PrePkgInfo;->mAction:I
 
-    if-eq v5, v6, :cond_31
+    if-eq v5, v6, :cond_2a
 
     iget v5, v2, Lcom/android/server/am/OnePlusAppBootManager$PrePkgInfo;->mAction:I
 
-    if-eq v5, v1, :cond_30
+    if-eq v5, v1, :cond_29
 
     iget v5, v2, Lcom/android/server/am/OnePlusAppBootManager$PrePkgInfo;->mAction:I
 
     const/4 v6, 0x2
 
-    if-ne v5, v6, :cond_31
+    if-ne v5, v6, :cond_2a
 
-    :cond_30
+    :cond_29
     iget v5, v2, Lcom/android/server/am/OnePlusAppBootManager$PrePkgInfo;->mAction:I
 
     invoke-virtual {v4, v5}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->setAction(I)V
 
-    :cond_31
+    :cond_2a
     monitor-exit v3
 
-    goto :goto_1c
+    goto :goto_1a
 
     :catchall_b
     move-exception v0
@@ -6225,11 +5913,11 @@
 
     throw v0
 
-    :cond_32
-    :goto_1c
-    goto :goto_1b
+    :cond_2b
+    :goto_1a
+    goto :goto_19
 
-    :cond_33
+    :cond_2c
     return-void
 
     :catchall_c
@@ -6242,10 +5930,10 @@
 
     throw v1
 
-    :goto_1d
+    :goto_1b
     sget-boolean v1, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_2d
 
     const-string v1, "after resolveAppBootConfigFromJSON # specialList:"
 
@@ -6427,7 +6115,7 @@
 
     invoke-static {v1}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    :cond_34
+    :cond_2d
     throw v0
 .end method
 
@@ -6447,7 +6135,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const-string/jumbo v2, "gsm.sim.operator.iso-country"
+    const-string v2, "gsm.sim.operator.iso-country"
 
     const-string v3, ""
 
@@ -7997,32 +7685,6 @@
 
     invoke-virtual {v3, v1}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->setBootFlag(I)V
 
-    sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->ENABLE_RECORDER:Z
-
-    if-eqz v0, :cond_7
-
-    new-instance v0, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    const-string v1, "activity"
-
-    iget-object v4, p1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
-
-    invoke-direct {v0, v1, p2, v4}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v1, p1, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setCanal(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->build()Lcom/android/server/am/OnePlusAppBootRecorder$Record;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/server/am/OnePlusAppBootManager;->mRecorder:Lcom/android/server/am/OnePlusAppBootRecorder;
-
-    invoke-virtual {v1, v0}, Lcom/android/server/am/OnePlusAppBootRecorder;->record(Lcom/android/server/am/OnePlusAppBootRecorder$Record;)V
-
     :cond_7
     iget-object v0, p1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
@@ -8757,13 +8419,13 @@
 .end method
 
 .method public canProviderGo(Lcom/android/server/am/ContentProviderRecord;Lcom/android/server/am/ProcessRecord;)Z
-    .locals 10
+    .locals 8
 
     sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->IN_USING:Z
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_d
 
     sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->mAppBootSwitch:Z
 
@@ -8778,11 +8440,11 @@
 
     const/4 v3, 0x0
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_b
 
     iget-object v4, p1, Lcom/android/server/am/ContentProviderRecord;->appInfo:Landroid/content/pm/ApplicationInfo;
 
-    if-eqz v4, :cond_c
+    if-eqz v4, :cond_b
 
     iget-object v4, p1, Lcom/android/server/am/ContentProviderRecord;->appInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -8877,155 +8539,124 @@
     iget-object v2, v6, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
     :cond_3
-    new-instance v6, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
+    sget-boolean v6, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    const-string/jumbo v7, "provider"
+    if-eqz v6, :cond_4
 
-    invoke-direct {v6, v7, v2, v3}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    iget-object v7, p1, Lcom/android/server/am/ContentProviderRecord;->appInfo:Landroid/content/pm/ApplicationInfo;
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v7, v7, Landroid/content/pm/ApplicationInfo;->className:Ljava/lang/String;
+    const-string v7, "# canProviderGo # "
 
-    invoke-virtual {v6, v7}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setCanal(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v7, " calling "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6
 
-    const/4 v7, 0x2
-
-    invoke-virtual {v6, v7}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v6
-
-    sget-boolean v8, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
-
-    if-eqz v8, :cond_4
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "# canProviderGo # "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v9, " calling "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v8}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
+    invoke-static {v6}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
     :cond_4
     if-eqz v2, :cond_6
 
     if-eqz v3, :cond_6
 
-    const-string v8, "android"
+    const-string v6, "android"
 
-    invoke-virtual {v2, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v8
+    move-result v6
 
-    if-eqz v8, :cond_5
-
-    invoke-virtual {v6, v1}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
+    if-eqz v6, :cond_5
 
     goto :goto_0
 
     :cond_5
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v8
+    move-result v6
 
-    if-nez v8, :cond_6
+    if-nez v6, :cond_6
 
     invoke-virtual {v4, v2}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->addCallerPackage(Ljava/lang/String;)V
 
     invoke-static {v2}, Lcom/android/server/am/OnePlusAppBootManager;->getAppBootInfo(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;
 
-    move-result-object v8
+    move-result-object v6
 
-    invoke-virtual {v8, v3}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->addCalleePackage(Ljava/lang/String;)V
+    invoke-virtual {v6, v3}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->addCalleePackage(Ljava/lang/String;)V
 
     :cond_6
     :goto_0
     invoke-virtual {v4}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getBootFlag()I
 
-    move-result v8
+    move-result v6
 
-    if-eq v8, v1, :cond_9
+    if-eq v6, v1, :cond_8
 
     invoke-virtual {v4}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getAction()I
 
-    move-result v8
+    move-result v6
 
-    if-ne v8, v7, :cond_8
+    const/4 v7, 0x2
+
+    if-ne v6, v7, :cond_7
 
     invoke-direct {p0, v3}, Lcom/android/server/am/OnePlusAppBootManager;->isWidgetPkg(Ljava/lang/String;)Z
 
-    move-result v7
+    move-result v6
 
-    if-nez v7, :cond_7
+    if-nez v6, :cond_7
 
     const/4 v0, 0x0
 
     :cond_7
-    const/4 v7, 0x4
-
-    invoke-virtual {v6, v7}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v7
-
-    const-string v8, "WidgetPkg"
-
-    invoke-virtual {v7, v8}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setDetail(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    :cond_8
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v7
+    move-result v6
 
-    if-nez v7, :cond_9
+    if-nez v6, :cond_8
 
     invoke-static {v2}, Lcom/android/server/am/OnePlusAppBootManager;->getAppBootInfo(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {v7}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getPkgFlag()I
+    invoke-virtual {v6}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getPkgFlag()I
 
-    move-result v7
+    move-result v6
 
-    and-int/lit16 v7, v7, 0x200
+    and-int/lit16 v6, v6, 0x200
 
-    if-eqz v7, :cond_9
+    if-eqz v6, :cond_8
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "# canProviderGo # ret=false callerPkg="
+    const-string v6, "# canProviderGo # ret=false callerPkg="
 
-    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v7, " calleePkg="
+    const-string v6, " calleePkg="
 
-    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v7, " # call from sandbox app"
+    const-string v6, " # call from sandbox app"
 
-    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -9035,36 +8666,36 @@
 
     return v5
 
-    :cond_9
+    :cond_8
     sget-boolean v5, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    if-eqz v5, :cond_a
+    if-eqz v5, :cond_9
 
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "# canProviderGo # ret="
+    const-string v6, "# canProviderGo # ret="
 
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v7, ", callerApp="
+    const-string v6, ", callerApp="
 
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v7, ", cpr="
+    const-string v6, ", cpr="
 
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v7, " # abi="
+    const-string v6, " # abi="
 
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -9074,27 +8705,15 @@
 
     invoke-static {v5}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    :cond_a
-    if-eqz v0, :cond_b
+    :cond_9
+    if-eqz v0, :cond_a
 
     invoke-virtual {v4, v1}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->setBootFlag(I)V
 
-    sget-boolean v1, Lcom/android/server/am/OnePlusAppBootManager;->ENABLE_RECORDER:Z
-
-    if-eqz v1, :cond_b
-
-    iget-object v1, p0, Lcom/android/server/am/OnePlusAppBootManager;->mRecorder:Lcom/android/server/am/OnePlusAppBootRecorder;
-
-    invoke-virtual {v6}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->build()Lcom/android/server/am/OnePlusAppBootRecorder$Record;
-
-    move-result-object v5
-
-    invoke-virtual {v1, v5}, Lcom/android/server/am/OnePlusAppBootRecorder;->record(Lcom/android/server/am/OnePlusAppBootRecorder$Record;)V
-
-    :cond_b
+    :cond_a
     goto :goto_1
 
-    :cond_c
+    :cond_b
     const-string v1, "OnePlusAppBootManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -9125,65 +8744,12 @@
 
     invoke-static {v1, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget-boolean v1, Lcom/android/server/am/OnePlusAppBootManager;->ENABLE_RECORDER:Z
-
-    if-eqz v1, :cond_d
-
-    new-instance v1, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    const-string/jumbo v4, "provider"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "caller:"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "cpr:"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-direct {v1, v4, v5, v6}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v4, "exception"
-
-    invoke-virtual {v1, v4}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setCanal(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->build()Lcom/android/server/am/OnePlusAppBootRecorder$Record;
-
-    move-result-object v1
-
-    iget-object v4, p0, Lcom/android/server/am/OnePlusAppBootManager;->mRecorder:Lcom/android/server/am/OnePlusAppBootRecorder;
-
-    invoke-virtual {v4, v1}, Lcom/android/server/am/OnePlusAppBootRecorder;->record(Lcom/android/server/am/OnePlusAppBootRecorder$Record;)V
-
-    :cond_d
     :goto_1
     sget-boolean v1, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG_OEMLOG:Z
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_c
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_c
 
     const-string v1, "OnePlusAppBootManager"
 
@@ -9203,28 +8769,28 @@
 
     invoke-static {v1, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_e
+    :cond_c
     return v0
 
-    :cond_f
+    :cond_d
     :goto_2
     return v1
 .end method
 
 .method public canReceiverGo(Landroid/content/pm/ApplicationInfo;Lcom/android/server/am/BroadcastRecord;)Z
-    .locals 11
+    .locals 7
 
     sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->IN_USING:Z
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_18
 
     sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->mAppBootSwitch:Z
 
     if-nez v0, :cond_0
 
-    goto/16 :goto_4
+    goto/16 :goto_2
 
     :cond_0
     const/4 v0, 0x0
@@ -9248,78 +8814,21 @@
     return v1
 
     :cond_1
-    const/4 v3, 0x0
+    if-eqz p2, :cond_7
 
-    if-eqz p2, :cond_9
+    iget-object v3, p2, Lcom/android/server/am/BroadcastRecord;->intent:Landroid/content/Intent;
 
-    iget-object v5, p2, Lcom/android/server/am/BroadcastRecord;->intent:Landroid/content/Intent;
+    if-eqz v3, :cond_7
 
-    if-eqz v5, :cond_9
+    iget-object v3, p2, Lcom/android/server/am/BroadcastRecord;->intent:Landroid/content/Intent;
 
-    iget-object v5, p2, Lcom/android/server/am/BroadcastRecord;->intent:Landroid/content/Intent;
-
-    invoke-virtual {v5}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v5
-
-    if-eqz v5, :cond_9
-
-    iget-object v5, p0, Lcom/android/server/am/OnePlusAppBootManager;->mWidgetBroadcastActionList:Ljava/util/ArrayList;
-
-    iget-object v6, p2, Lcom/android/server/am/BroadcastRecord;->intent:Landroid/content/Intent;
-
-    invoke-virtual {v6}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    const-wide/16 v6, 0x2710
-
-    const/4 v8, 0x4
-
-    if-eqz v5, :cond_5
-
-    invoke-virtual {v2}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getBootFlag()I
-
-    move-result v4
-
-    if-eq v4, v1, :cond_3
-
-    invoke-virtual {v2, v1}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->setBootFlag(I)V
-
-    sget-boolean v4, Lcom/android/server/am/OnePlusAppBootManager;->ENABLE_RECORDER:Z
-
-    if-eqz v4, :cond_3
-
-    new-instance v4, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    const-string v5, "broadcast"
-
-    iget-object v9, p2, Lcom/android/server/am/BroadcastRecord;->callerPackage:Ljava/lang/String;
-
-    iget-object v10, p1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
-
-    invoke-direct {v4, v5, v9, v10}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v5, p2, Lcom/android/server/am/BroadcastRecord;->curComponent:Landroid/content/ComponentName;
-
-    if-eqz v5, :cond_2
-
-    iget-object v3, p2, Lcom/android/server/am/BroadcastRecord;->curComponent:Landroid/content/ComponentName;
-
-    invoke-virtual {v3}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
+    invoke-virtual {v3}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v3
 
-    nop
+    if-eqz v3, :cond_7
 
-    :cond_2
-    invoke-virtual {v4, v3}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setCanal(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v3
+    iget-object v3, p0, Lcom/android/server/am/OnePlusAppBootManager;->mWidgetBroadcastActionList:Ljava/util/ArrayList;
 
     iget-object v4, p2, Lcom/android/server/am/BroadcastRecord;->intent:Landroid/content/Intent;
 
@@ -9327,34 +8836,28 @@
 
     move-result-object v4
 
-    invoke-virtual {v3, v4}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setAction(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    move-result-object v3
+    move-result v3
 
-    const-string v4, "# widget intent action"
+    const-wide/16 v4, 0x2710
 
-    invoke-virtual {v3, v4}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setDetail(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
+    if-eqz v3, :cond_4
 
-    move-result-object v3
+    invoke-virtual {v2}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getBootFlag()I
 
-    invoke-virtual {v3, v8}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
+    move-result v3
 
-    move-result-object v3
+    if-eq v3, v1, :cond_2
 
-    iget-object v4, p0, Lcom/android/server/am/OnePlusAppBootManager;->mRecorder:Lcom/android/server/am/OnePlusAppBootRecorder;
+    invoke-virtual {v2, v1}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->setBootFlag(I)V
 
-    invoke-virtual {v3}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->build()Lcom/android/server/am/OnePlusAppBootRecorder$Record;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Lcom/android/server/am/OnePlusAppBootRecorder;->record(Lcom/android/server/am/OnePlusAppBootRecorder$Record;)V
-
-    :cond_3
-    invoke-direct {p0, v6, v7}, Lcom/android/server/am/OnePlusAppBootManager;->schedulePersistAppBootInfo(J)V
+    :cond_2
+    invoke-direct {p0, v4, v5}, Lcom/android/server/am/OnePlusAppBootManager;->schedulePersistAppBootInfo(J)V
 
     sget-boolean v3, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_3
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -9384,97 +8887,38 @@
 
     invoke-static {v3}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    :cond_4
+    :cond_3
     return v1
 
-    :cond_5
-    iget-object v5, p0, Lcom/android/server/am/OnePlusAppBootManager;->mBroadcastIntentActionWhiteList:Ljava/util/ArrayList;
+    :cond_4
+    iget-object v3, p0, Lcom/android/server/am/OnePlusAppBootManager;->mBroadcastIntentActionWhiteList:Ljava/util/ArrayList;
 
-    iget-object v9, p2, Lcom/android/server/am/BroadcastRecord;->intent:Landroid/content/Intent;
+    iget-object v6, p2, Lcom/android/server/am/BroadcastRecord;->intent:Landroid/content/Intent;
 
-    invoke-virtual {v9}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    invoke-virtual {v6}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v6
 
-    invoke-virtual {v5, v9}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v6}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v3
 
-    if-eqz v5, :cond_9
+    if-eqz v3, :cond_7
 
     invoke-virtual {v2}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getBootFlag()I
 
-    move-result v4
+    move-result v3
 
-    if-eq v4, v1, :cond_7
+    if-eq v3, v1, :cond_5
 
     invoke-virtual {v2, v1}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->setBootFlag(I)V
 
-    sget-boolean v4, Lcom/android/server/am/OnePlusAppBootManager;->ENABLE_RECORDER:Z
-
-    if-eqz v4, :cond_7
-
-    new-instance v4, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    const-string v5, "broadcast"
-
-    iget-object v9, p2, Lcom/android/server/am/BroadcastRecord;->callerPackage:Ljava/lang/String;
-
-    iget-object v10, p1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
-
-    invoke-direct {v4, v5, v9, v10}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v5, p2, Lcom/android/server/am/BroadcastRecord;->curComponent:Landroid/content/ComponentName;
-
-    if-eqz v5, :cond_6
-
-    iget-object v3, p2, Lcom/android/server/am/BroadcastRecord;->curComponent:Landroid/content/ComponentName;
-
-    invoke-virtual {v3}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
-
-    move-result-object v3
-
-    nop
-
-    :cond_6
-    invoke-virtual {v4, v3}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setCanal(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v3
-
-    iget-object v4, p2, Lcom/android/server/am/BroadcastRecord;->intent:Landroid/content/Intent;
-
-    invoke-virtual {v4}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setAction(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v3
-
-    const-string v4, "# white intent"
-
-    invoke-virtual {v3, v4}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setDetail(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v8}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/android/server/am/OnePlusAppBootManager;->mRecorder:Lcom/android/server/am/OnePlusAppBootRecorder;
-
-    invoke-virtual {v3}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->build()Lcom/android/server/am/OnePlusAppBootRecorder$Record;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Lcom/android/server/am/OnePlusAppBootRecorder;->record(Lcom/android/server/am/OnePlusAppBootRecorder$Record;)V
-
-    :cond_7
-    invoke-direct {p0, v6, v7}, Lcom/android/server/am/OnePlusAppBootManager;->schedulePersistAppBootInfo(J)V
+    :cond_5
+    invoke-direct {p0, v4, v5}, Lcom/android/server/am/OnePlusAppBootManager;->schedulePersistAppBootInfo(J)V
 
     sget-boolean v3, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_6
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -9502,106 +8946,42 @@
 
     invoke-static {v3}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    :cond_8
+    :cond_6
     return v1
 
-    :cond_9
-    new-instance v5, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    const-string v6, "broadcast"
-
-    if-eqz p2, :cond_a
-
-    iget-object v7, p2, Lcom/android/server/am/BroadcastRecord;->callerPackage:Ljava/lang/String;
-
-    goto :goto_0
-
-    :cond_a
-    move-object v7, v3
-
-    :goto_0
-    iget-object v8, p1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
-
-    invoke-direct {v5, v6, v7, v8}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    if-eqz p2, :cond_d
-
-    iget-object v6, p2, Lcom/android/server/am/BroadcastRecord;->curComponent:Landroid/content/ComponentName;
-
-    if-eqz v6, :cond_b
-
-    iget-object v6, p2, Lcom/android/server/am/BroadcastRecord;->curComponent:Landroid/content/ComponentName;
-
-    invoke-virtual {v6}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
-
-    move-result-object v6
-
-    goto :goto_1
-
-    :cond_b
-    move-object v6, v3
-
-    :goto_1
-    invoke-virtual {v5, v6}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setCanal(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v6
-
-    iget-object v7, p2, Lcom/android/server/am/BroadcastRecord;->intent:Landroid/content/Intent;
-
-    if-eqz v7, :cond_c
-
-    iget-object v3, p2, Lcom/android/server/am/BroadcastRecord;->intent:Landroid/content/Intent;
-
-    invoke-virtual {v3}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v3
-
-    nop
-
-    :cond_c
-    invoke-virtual {v6, v3}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setAction(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    :cond_d
+    :cond_7
     invoke-virtual {v2}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getBootFlag()I
 
     move-result v3
 
-    if-eq v3, v1, :cond_15
+    if-eq v3, v1, :cond_f
 
+    invoke-virtual {v2}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getAction()I
+
+    move-result v3
+
+    if-ne v3, v1, :cond_8
+
+    invoke-virtual {v2, v1}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->setBootFlag(I)V
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_8
     invoke-virtual {v2}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getAction()I
 
     move-result v3
 
     const/4 v4, 0x2
 
-    if-ne v3, v1, :cond_e
-
-    invoke-virtual {v2, v1}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->setBootFlag(I)V
-
-    const/4 v0, 0x1
-
-    invoke-virtual {v5, v4}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "white list"
-
-    invoke-virtual {v3, v4}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setDetail(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    goto :goto_2
-
-    :cond_e
-    invoke-virtual {v2}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getAction()I
-
-    move-result v3
-
-    if-ne v3, v4, :cond_f
+    if-ne v3, v4, :cond_9
 
     const/4 v0, 0x0
 
     sget-boolean v3, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    if-eqz v3, :cond_14
+    if-eqz v3, :cond_e
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -9635,38 +9015,34 @@
 
     invoke-static {v3}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_f
+    :cond_9
     iget v3, p2, Lcom/android/server/am/BroadcastRecord;->callingUid:I
 
     const/16 v4, 0x2710
 
-    if-ge v3, v4, :cond_10
+    if-ge v3, v4, :cond_a
 
     const/4 v0, 0x1
 
-    invoke-virtual {v5, v1}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
+    goto :goto_0
 
-    goto :goto_2
-
-    :cond_10
+    :cond_a
     iget v3, p1, Landroid/content/pm/ApplicationInfo;->flags:I
 
     and-int/lit16 v3, v3, 0x81
 
-    if-eqz v3, :cond_11
+    if-eqz v3, :cond_b
 
     const/4 v0, 0x1
 
-    invoke-virtual {v5, v1}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
+    goto :goto_0
 
-    goto :goto_2
-
-    :cond_11
+    :cond_b
     iget-object v3, p2, Lcom/android/server/am/BroadcastRecord;->callerApp:Lcom/android/server/am/ProcessRecord;
 
-    if-eqz v3, :cond_13
+    if-eqz v3, :cond_d
 
     iget-object v3, p2, Lcom/android/server/am/BroadcastRecord;->callerApp:Lcom/android/server/am/ProcessRecord;
 
@@ -9674,7 +9050,7 @@
 
     iget v3, v3, Landroid/content/pm/ApplicationInfo;->uid:I
 
-    if-lt v3, v4, :cond_12
+    if-lt v3, v4, :cond_c
 
     iget-object v3, p2, Lcom/android/server/am/BroadcastRecord;->callerApp:Lcom/android/server/am/ProcessRecord;
 
@@ -9684,52 +9060,48 @@
 
     and-int/lit16 v3, v3, 0x81
 
-    if-eqz v3, :cond_14
+    if-eqz v3, :cond_e
 
-    :cond_12
+    :cond_c
     const/4 v0, 0x1
 
-    invoke-virtual {v5, v1}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
+    goto :goto_0
 
-    goto :goto_2
-
-    :cond_13
+    :cond_d
     const/4 v0, 0x0
 
-    :cond_14
-    :goto_2
-    if-eqz v0, :cond_1b
+    :cond_e
+    :goto_0
+    if-eqz v0, :cond_15
 
     invoke-virtual {v2, v1}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->setBootFlag(I)V
 
-    goto/16 :goto_3
+    goto/16 :goto_1
 
-    :cond_15
+    :cond_f
     const/4 v0, 0x1
-
-    invoke-virtual {v5, v4}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
 
     sget-boolean v3, Lcom/android/server/am/OnePlusAppBootManager;->BLACKLIST_ENABLE:Z
 
-    if-eqz v3, :cond_1b
+    if-eqz v3, :cond_15
 
     invoke-virtual {v2}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getBlackListEnableFlag()Z
 
     move-result v3
 
-    if-eqz v3, :cond_1b
+    if-eqz v3, :cond_15
 
     invoke-virtual {v2}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getAction()I
 
     move-result v3
 
-    if-eq v3, v1, :cond_1b
+    if-eq v3, v1, :cond_15
 
-    if-eqz p2, :cond_1b
+    if-eqz p2, :cond_15
 
     iget-object v1, p2, Lcom/android/server/am/BroadcastRecord;->intent:Landroid/content/Intent;
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_15
 
     iget-object v1, p2, Lcom/android/server/am/BroadcastRecord;->intent:Landroid/content/Intent;
 
@@ -9737,7 +9109,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_12
 
     iget-object v3, p0, Lcom/android/server/am/OnePlusAppBootManager;->mBroadcastIntentActionBlackList:Ljava/util/ArrayList;
 
@@ -9745,19 +9117,19 @@
 
     move-result v3
 
-    if-eqz v3, :cond_18
+    if-eqz v3, :cond_12
 
     const/4 v0, 0x0
 
     sget-boolean v3, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    if-nez v3, :cond_16
+    if-nez v3, :cond_10
 
     sget-boolean v3, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG_OEMLOG:Z
 
-    if-eqz v3, :cond_17
+    if-eqz v3, :cond_11
 
-    :cond_16
+    :cond_10
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -9780,13 +9152,13 @@
 
     invoke-static {v3}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    :cond_17
+    :cond_11
     return v0
 
-    :cond_18
+    :cond_12
     iget-object v3, p2, Lcom/android/server/am/BroadcastRecord;->curComponent:Landroid/content/ComponentName;
 
-    if-eqz v3, :cond_1b
+    if-eqz v3, :cond_15
 
     iget-object v3, p2, Lcom/android/server/am/BroadcastRecord;->curComponent:Landroid/content/ComponentName;
 
@@ -9794,7 +9166,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_14
 
     iget-object v3, p0, Lcom/android/server/am/OnePlusAppBootManager;->mBroadcastIntentClassBlackList:Ljava/util/ArrayList;
 
@@ -9802,19 +9174,19 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_14
 
     const/4 v0, 0x0
 
     sget-boolean v3, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    if-nez v3, :cond_19
+    if-nez v3, :cond_13
 
     sget-boolean v3, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG_OEMLOG:Z
 
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_14
 
-    :cond_19
+    :cond_13
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -9837,18 +9209,18 @@
 
     invoke-static {v3}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    :cond_1a
+    :cond_14
     return v0
 
-    :cond_1b
-    :goto_3
+    :cond_15
+    :goto_1
     sget-boolean v1, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    if-nez v1, :cond_1c
+    if-nez v1, :cond_16
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_17
 
-    :cond_1c
+    :cond_16
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -9883,31 +9255,16 @@
 
     invoke-static {v1}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    :cond_1d
-    if-eqz v0, :cond_1e
-
-    sget-boolean v1, Lcom/android/server/am/OnePlusAppBootManager;->ENABLE_RECORDER:Z
-
-    if-eqz v1, :cond_1e
-
-    iget-object v1, p0, Lcom/android/server/am/OnePlusAppBootManager;->mRecorder:Lcom/android/server/am/OnePlusAppBootRecorder;
-
-    invoke-virtual {v5}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->build()Lcom/android/server/am/OnePlusAppBootRecorder$Record;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Lcom/android/server/am/OnePlusAppBootRecorder;->record(Lcom/android/server/am/OnePlusAppBootRecorder$Record;)V
-
-    :cond_1e
+    :cond_17
     return v0
 
-    :cond_1f
-    :goto_4
+    :cond_18
+    :goto_2
     return v1
 .end method
 
 .method public canServiceGo(Lcom/android/server/am/ProcessRecord;Landroid/content/Intent;Lcom/android/server/am/ServiceRecord;ILjava/lang/String;)Z
-    .locals 18
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -9923,13 +9280,13 @@
 
     const/4 v6, 0x1
 
-    if-eqz v5, :cond_40
+    if-eqz v5, :cond_3a
 
     sget-boolean v5, Lcom/android/server/am/OnePlusAppBootManager;->mAppBootSwitch:Z
 
     if-nez v5, :cond_0
 
-    goto/16 :goto_c
+    goto/16 :goto_b
 
     :cond_0
     const/4 v5, 0x0
@@ -10000,61 +9357,44 @@
 
     :cond_5
     :goto_0
-    new-instance v15, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    const-string/jumbo v6, "service"
-
-    invoke-direct {v15, v6, v12, v13}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    move-object v6, v15
-
-    if-eqz v11, :cond_6
-
-    invoke-virtual {v11}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
-
-    move-result-object v15
-
-    invoke-virtual {v6, v15}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setCanal(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    :cond_6
-    invoke-virtual {v6, v9}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setAction(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
     sget-boolean v15, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    if-eqz v15, :cond_7
+    if-eqz v15, :cond_6
 
     new-instance v15, Ljava/lang/StringBuilder;
 
     invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v10, "# canServiceGo # "
+    const-string v6, "# canServiceGo # "
 
-    invoke-virtual {v15, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v15, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v15, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v10, " calling "
+    const-string v6, " calling "
 
-    invoke-virtual {v15, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v15, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v15, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v6
 
-    invoke-static {v10}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
+    invoke-static {v6}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    :cond_7
-    if-eqz v12, :cond_16
+    :cond_6
+    const/4 v6, 0x2
 
-    if-eqz v13, :cond_16
+    if-eqz v12, :cond_15
+
+    if-eqz v13, :cond_15
 
     invoke-virtual {v12, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v15
 
-    if-nez v15, :cond_8
+    if-nez v15, :cond_7
 
     invoke-static {v12}, Lcom/android/server/am/OnePlusAppBootManager;->getAppBootInfo(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;
 
@@ -10066,40 +9406,38 @@
 
     and-int/lit16 v15, v15, 0x200
 
-    if-eqz v15, :cond_8
+    if-eqz v15, :cond_7
 
-    new-instance v10, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v15, "# canServiceGo # ret=false pkgName "
 
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v15, " # call from sandbox app"
 
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v6
 
-    invoke-static {v10}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
-
-    const/4 v10, 0x0
+    invoke-static {v6}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
     return v10
 
-    :cond_8
+    :cond_7
     const-string v15, "android"
 
     invoke-virtual {v12, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v15
 
-    if-nez v15, :cond_a
+    if-nez v15, :cond_9
 
     const-string v15, "com.android.nfc"
 
@@ -10107,16 +9445,16 @@
 
     move-result v15
 
-    if-eqz v15, :cond_9
+    if-eqz v15, :cond_8
 
     goto :goto_1
 
-    :cond_9
+    :cond_8
     invoke-virtual {v12, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v15
 
-    if-nez v15, :cond_16
+    if-nez v15, :cond_15
 
     invoke-virtual {v8, v12}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->addCallerPackage(Ljava/lang/String;)V
 
@@ -10126,9 +9464,9 @@
 
     invoke-virtual {v15, v13}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->addCalleePackage(Ljava/lang/String;)V
 
-    goto/16 :goto_4
+    goto/16 :goto_2
 
-    :cond_a
+    :cond_9
     :goto_1
     invoke-virtual {v8}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getBootFlag()I
 
@@ -10136,164 +9474,107 @@
 
     const/4 v10, 0x1
 
-    if-eq v15, v10, :cond_14
+    if-eq v15, v10, :cond_13
 
     invoke-virtual {v8}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getAction()I
 
     move-result v10
 
-    const/4 v15, 0x2
+    if-ne v10, v6, :cond_12
 
-    if-ne v10, v15, :cond_13
-
-    sget-object v10, Lcom/android/server/am/OnePlusAppBootManager;->mSyncServiceClassList:Ljava/util/ArrayList;
+    sget-object v6, Lcom/android/server/am/OnePlusAppBootManager;->mSyncServiceClassList:Ljava/util/ArrayList;
 
     invoke-virtual {v11}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;
 
-    move-result-object v15
-
-    invoke-virtual {v10, v15}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
-
-    move-result v10
-
-    if-eqz v10, :cond_d
-
-    sget-boolean v10, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
-
-    if-nez v10, :cond_b
-
-    sget-boolean v10, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG_OEMLOG:Z
-
-    if-eqz v10, :cond_c
-
-    :cond_b
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v15, "# canServiceGo # ret=false pkgName "
-
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v15, " # SyncAdapter"
-
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
     move-result-object v10
 
-    invoke-static {v10}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
+    invoke-virtual {v6, v10}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_c
+
+    sget-boolean v6, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
+
+    if-nez v6, :cond_a
+
+    sget-boolean v6, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG_OEMLOG:Z
+
+    if-eqz v6, :cond_b
+
+    :cond_a
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "# canServiceGo # ret=false pkgName "
+
+    invoke-virtual {v6, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v10, " # SyncAdapter"
+
+    invoke-virtual {v6, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v6}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
+
+    :cond_b
+    const/4 v6, 0x0
+
+    return v6
 
     :cond_c
-    const/4 v10, 0x0
+    sget-boolean v6, Lcom/android/server/am/OnePlusAppBootManager;->BLACKLIST_ENABLE:Z
 
-    return v10
-
-    :cond_d
-    sget-boolean v10, Lcom/android/server/am/OnePlusAppBootManager;->BLACKLIST_ENABLE:Z
-
-    if-eqz v10, :cond_13
+    if-eqz v6, :cond_12
 
     invoke-virtual {v8}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getBlackListEnableFlag()Z
 
-    move-result v10
+    move-result v6
 
-    if-eqz v10, :cond_13
+    if-eqz v6, :cond_12
 
-    if-eqz v11, :cond_10
+    if-eqz v11, :cond_f
 
     invoke-virtual {v11}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v6
 
-    if-eqz v10, :cond_10
+    if-eqz v6, :cond_f
 
-    iget-object v15, v0, Lcom/android/server/am/OnePlusAppBootManager;->mServiceClassBlackList:Ljava/util/ArrayList;
+    iget-object v10, v0, Lcom/android/server/am/OnePlusAppBootManager;->mServiceClassBlackList:Ljava/util/ArrayList;
 
-    invoke-virtual {v15, v10}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
-
-    move-result v15
-
-    if-eqz v15, :cond_10
-
-    sget-boolean v15, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
-
-    if-nez v15, :cond_f
-
-    sget-boolean v15, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG_OEMLOG:Z
-
-    if-eqz v15, :cond_e
-
-    goto :goto_2
-
-    :cond_e
-    move-object/from16 v16, v10
-
-    goto :goto_3
-
-    :cond_f
-    :goto_2
-    new-instance v15, Ljava/lang/StringBuilder;
-
-    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
-
-    move-object/from16 v16, v10
-
-    const-string v10, "# canServiceGo # ret=false r "
-
-    invoke-virtual {v15, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v15, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v10, " # blackclass"
-
-    invoke-virtual {v15, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v10}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
-
-    :goto_3
-    const/4 v10, 0x0
-
-    return v10
-
-    :cond_10
-    if-eqz v9, :cond_13
-
-    iget-object v10, v0, Lcom/android/server/am/OnePlusAppBootManager;->mServiceActionBlackList:Ljava/util/ArrayList;
-
-    invoke-virtual {v10, v9}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v10, v6}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
     move-result v10
 
-    if-eqz v10, :cond_13
+    if-eqz v10, :cond_f
 
     sget-boolean v10, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    if-nez v10, :cond_11
+    if-nez v10, :cond_d
 
     sget-boolean v10, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG_OEMLOG:Z
 
-    if-eqz v10, :cond_12
+    if-eqz v10, :cond_e
 
-    :cond_11
+    :cond_d
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v15, "# canServiceGo # ret=false intent "
+    const-string v15, "# canServiceGo # ret=false r "
 
     invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v15, " # black-action"
+    const-string v15, " # blackclass"
 
     invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -10303,142 +9584,148 @@
 
     invoke-static {v10}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    :cond_12
+    :cond_e
     const/4 v10, 0x0
 
     return v10
 
+    :cond_f
+    if-eqz v9, :cond_12
+
+    iget-object v6, v0, Lcom/android/server/am/OnePlusAppBootManager;->mServiceActionBlackList:Ljava/util/ArrayList;
+
+    invoke-virtual {v6, v9}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_12
+
+    sget-boolean v6, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
+
+    if-nez v6, :cond_10
+
+    sget-boolean v6, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG_OEMLOG:Z
+
+    if-eqz v6, :cond_11
+
+    :cond_10
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "# canServiceGo # ret=false intent "
+
+    invoke-virtual {v6, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v10, " # black-action"
+
+    invoke-virtual {v6, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v6}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
+
+    :cond_11
+    const/4 v6, 0x0
+
+    return v6
+
+    :cond_12
+    const/4 v6, 0x1
+
+    invoke-virtual {v8, v6}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->setBootFlag(I)V
+
     :cond_13
-    const/4 v10, 0x1
+    sget-boolean v6, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    invoke-virtual {v8, v10}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->setBootFlag(I)V
+    if-eqz v6, :cond_14
 
-    sget-boolean v15, Lcom/android/server/am/OnePlusAppBootManager;->ENABLE_RECORDER:Z
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    if-eqz v15, :cond_14
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v6, v10}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
+    const-string v10, "# canServiceGo # ret=true pkgName "
 
-    iget-object v10, v0, Lcom/android/server/am/OnePlusAppBootManager;->mRecorder:Lcom/android/server/am/OnePlusAppBootRecorder;
+    invoke-virtual {v6, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->build()Lcom/android/server/am/OnePlusAppBootRecorder$Record;
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v15
+    const-string v10, " # android call"
 
-    invoke-virtual {v10, v15}, Lcom/android/server/am/OnePlusAppBootRecorder;->record(Lcom/android/server/am/OnePlusAppBootRecorder$Record;)V
+    invoke-virtual {v6, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v6}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
     :cond_14
-    sget-boolean v10, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
-
-    if-eqz v10, :cond_15
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v15, "# canServiceGo # ret=true pkgName "
-
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v15, " # android call"
-
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v10}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
-
-    :cond_15
     const/4 v10, 0x1
 
     return v10
 
-    :cond_16
-    :goto_4
+    :cond_15
+    :goto_2
     const/4 v10, 0x1
 
     invoke-virtual {v8}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getBootFlag()I
 
     move-result v15
 
-    if-eq v15, v10, :cond_27
+    if-eq v15, v10, :cond_23
 
     invoke-direct {v0, v5}, Lcom/android/server/am/OnePlusAppBootManager;->isWidgetPkg(Ljava/lang/String;)Z
 
     move-result v15
 
-    if-eqz v15, :cond_19
+    if-eqz v15, :cond_17
 
     invoke-virtual {v8, v10}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->setBootFlag(I)V
 
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
-    sget-boolean v10, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
+    sget-boolean v7, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    if-eqz v10, :cond_17
+    if-eqz v7, :cond_16
 
-    new-instance v10, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v15, "# canServiceGo # ret="
+    const-string v10, "# canServiceGo # ret="
 
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v15, " pkgName "
+    const-string v10, " pkgName "
 
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v15, " # widgetpkg"
+    const-string v10, " # widgetpkg"
 
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v7
 
-    invoke-static {v10}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
+    invoke-static {v7}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    :cond_17
-    sget-boolean v10, Lcom/android/server/am/OnePlusAppBootManager;->ENABLE_RECORDER:Z
-
-    if-eqz v10, :cond_18
-
-    const-string/jumbo v10, "widgetpkg"
-
-    invoke-virtual {v6, v10}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setDetail(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v10
-
-    const/4 v15, 0x4
-
-    invoke-virtual {v10, v15}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->build()Lcom/android/server/am/OnePlusAppBootRecorder$Record;
-
-    move-result-object v10
-
-    iget-object v15, v0, Lcom/android/server/am/OnePlusAppBootManager;->mRecorder:Lcom/android/server/am/OnePlusAppBootRecorder;
-
-    invoke-virtual {v15, v10}, Lcom/android/server/am/OnePlusAppBootRecorder;->record(Lcom/android/server/am/OnePlusAppBootRecorder$Record;)V
-
-    :cond_18
+    :cond_16
     const/4 v10, 0x1
 
     return v10
 
-    :cond_19
-    if-eqz v9, :cond_1c
+    :cond_17
+    if-eqz v9, :cond_19
 
     iget-object v15, v0, Lcom/android/server/am/OnePlusAppBootManager;->mServiceActionWhiteList:Ljava/util/ArrayList;
 
@@ -10446,699 +9733,587 @@
 
     move-result v15
 
-    if-eqz v15, :cond_1c
+    if-eqz v15, :cond_19
 
     invoke-virtual {v8, v10}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->setBootFlag(I)V
 
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
-    sget-boolean v10, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
+    sget-boolean v7, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    if-eqz v10, :cond_1a
+    if-eqz v7, :cond_18
 
-    new-instance v10, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v15, "# canServiceGo # ret="
+    const-string v10, "# canServiceGo # ret="
 
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v15, " pkgName "
+    const-string v10, " pkgName "
 
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v15, " # white-action"
+    const-string v10, " # white-action"
 
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v7
 
-    invoke-static {v10}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
+    invoke-static {v7}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    :cond_1a
-    sget-boolean v10, Lcom/android/server/am/OnePlusAppBootManager;->ENABLE_RECORDER:Z
+    :cond_18
+    return v6
 
-    if-eqz v10, :cond_1b
-
-    const-string/jumbo v10, "white-action"
-
-    invoke-virtual {v6, v10}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setDetail(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v10
-
-    const/4 v15, 0x2
-
-    invoke-virtual {v10, v15}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->build()Lcom/android/server/am/OnePlusAppBootRecorder$Record;
-
-    move-result-object v10
-
-    iget-object v15, v0, Lcom/android/server/am/OnePlusAppBootManager;->mRecorder:Lcom/android/server/am/OnePlusAppBootRecorder;
-
-    invoke-virtual {v15, v10}, Lcom/android/server/am/OnePlusAppBootRecorder;->record(Lcom/android/server/am/OnePlusAppBootRecorder$Record;)V
-
-    :cond_1b
-    return v7
-
-    :cond_1c
+    :cond_19
     invoke-virtual {v8}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getAction()I
 
     move-result v10
 
     const/4 v15, 0x1
 
-    if-ne v10, v15, :cond_1d
+    if-ne v10, v15, :cond_1a
 
     invoke-virtual {v8, v15}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->setBootFlag(I)V
 
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
-    const-string/jumbo v10, "whitelist"
+    :goto_3
+    goto/16 :goto_5
 
-    invoke-virtual {v6, v10}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setDetail(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v10
-
-    const/4 v15, 0x2
-
-    invoke-virtual {v10, v15}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    goto/16 :goto_6
-
-    :cond_1d
-    const/4 v15, 0x2
-
+    :cond_1a
     invoke-virtual {v8}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getAction()I
 
     move-result v10
 
-    const/4 v14, 0x3
+    if-ne v10, v6, :cond_1d
 
-    if-ne v10, v15, :cond_22
+    const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    sget-boolean v7, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    sget-boolean v10, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
+    if-eqz v7, :cond_1b
 
-    if-eqz v10, :cond_1e
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    new-instance v10, Ljava/lang/StringBuilder;
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v10, "# canServiceGo # ret="
 
-    const-string v15, "# canServiceGo # ret="
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    const-string v10, " pkgName "
 
-    const-string v15, " pkgName "
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v10, " # blacklist"
 
-    const-string v15, " # blacklist"
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v7
 
-    move-result-object v10
+    invoke-static {v7}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    invoke-static {v10}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
-
-    :cond_1e
-    if-lez v4, :cond_20
+    :cond_1b
+    if-lez v4, :cond_1c
 
     invoke-static/range {p4 .. p4}, Landroid/os/UserHandle;->getAppId(I)I
 
+    move-result v7
+
+    invoke-virtual {v8}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getUid()I
+
     move-result v10
 
-    invoke-virtual {v8}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getUid()I
+    if-ne v7, v10, :cond_1c
 
-    move-result v15
+    const/4 v6, 0x1
 
-    if-ne v10, v15, :cond_20
+    sget-boolean v7, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    const/4 v7, 0x1
+    if-eqz v7, :cond_1c
 
-    sget-boolean v10, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    if-eqz v10, :cond_1f
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-instance v10, Ljava/lang/StringBuilder;
+    const-string v10, "# canServiceGo # ret="
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v15, "# canServiceGo # ret="
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v10, " pkgName "
 
-    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v15, " pkgName "
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v10, " # blacklist # callingUid"
 
-    invoke-virtual {v10, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v15, " # blacklist # callingUid"
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v7
 
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v7}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    move-result-object v10
+    :cond_1c
+    if-nez v6, :cond_22
 
-    invoke-static {v10}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
+    if-eqz v1, :cond_22
 
-    :cond_1f
-    const-string v10, "blacklist # callingUid"
+    iget-object v7, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
 
-    invoke-virtual {v6, v10}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setDetail(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v14}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    :cond_20
-    if-nez v7, :cond_26
-
-    if-eqz v1, :cond_26
-
-    iget-object v10, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
-
-    iget v10, v10, Landroid/content/pm/ApplicationInfo;->uid:I
+    iget v7, v7, Landroid/content/pm/ApplicationInfo;->uid:I
 
     invoke-virtual {v8}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getUid()I
 
-    move-result v15
+    move-result v10
 
-    if-ne v10, v15, :cond_26
+    if-ne v7, v10, :cond_22
 
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
-    sget-boolean v10, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
+    sget-boolean v7, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    if-eqz v10, :cond_21
+    if-eqz v7, :cond_22
 
-    new-instance v10, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v15, "# canServiceGo # ret="
+    const-string v10, "# canServiceGo # ret="
 
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v15, " pkgName "
+    const-string v10, " pkgName "
 
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v15, " # blacklist # proc uid"
+    const-string v10, " # blacklist # proc uid"
 
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v7
 
-    invoke-static {v10}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
-
-    :cond_21
-    const-string v10, "# blacklist # proc uid"
-
-    invoke-virtual {v6, v10}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setDetail(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v14}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    goto :goto_6
-
-    :cond_22
-    const/16 v10, 0x2710
-
-    if-nez v7, :cond_24
-
-    if-lez v4, :cond_24
-
-    if-ge v4, v10, :cond_23
-
-    const/4 v7, 0x1
-
-    const-string v15, "FIRST_APPLICATION_UID"
-
-    invoke-virtual {v6, v15}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setDetail(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v15
-
-    const/4 v10, 0x1
-
-    invoke-virtual {v15, v10}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
+    invoke-static {v7}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
     goto :goto_5
 
-    :cond_23
+    :cond_1d
+    const/16 v6, 0x2710
+
+    if-nez v7, :cond_1f
+
+    if-lez v4, :cond_1f
+
+    if-ge v4, v6, :cond_1e
+
+    const/4 v7, 0x1
+
+    goto :goto_4
+
+    :cond_1e
     invoke-virtual {v8}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getUid()I
 
     move-result v10
 
-    if-ne v4, v10, :cond_24
+    if-ne v4, v10, :cond_1f
 
     const/4 v7, 0x1
 
-    const-string/jumbo v10, "same uid"
+    :cond_1f
+    :goto_4
+    if-nez v7, :cond_21
 
-    invoke-virtual {v6, v10}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setDetail(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v14}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    :cond_24
-    :goto_5
-    if-nez v7, :cond_26
-
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_21
 
     iget-object v10, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
 
     iget v10, v10, Landroid/content/pm/ApplicationInfo;->uid:I
 
-    const/16 v15, 0x2710
+    if-ge v10, v6, :cond_20
 
-    if-ge v10, v15, :cond_25
+    const/4 v6, 0x1
 
-    const/4 v7, 0x1
+    goto/16 :goto_3
 
-    const-string v10, "FIRST_APPLICATION_UID"
+    :cond_20
+    iget-object v6, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
 
-    invoke-virtual {v6, v10}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setDetail(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v10
-
-    const/4 v14, 0x1
-
-    invoke-virtual {v10, v14}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    goto :goto_6
-
-    :cond_25
-    iget-object v10, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
-
-    iget v10, v10, Landroid/content/pm/ApplicationInfo;->uid:I
+    iget v6, v6, Landroid/content/pm/ApplicationInfo;->uid:I
 
     invoke-virtual {v8}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getUid()I
 
-    move-result v15
+    move-result v10
 
-    if-ne v10, v15, :cond_26
+    if-ne v6, v10, :cond_21
+
+    const/4 v6, 0x1
+
+    goto/16 :goto_3
+
+    :cond_21
+    move v6, v7
+
+    :cond_22
+    :goto_5
+    if-eqz v6, :cond_2c
 
     const/4 v7, 0x1
 
-    const-string/jumbo v10, "same uid"
+    invoke-virtual {v8, v7}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->setBootFlag(I)V
 
-    invoke-virtual {v6, v10}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setDetail(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
+    goto/16 :goto_6
 
-    move-result-object v10
+    :cond_23
+    const/4 v6, 0x1
 
-    invoke-virtual {v10, v14}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
+    sget-boolean v7, Lcom/android/server/am/OnePlusAppBootManager;->BLACKLIST_ENABLE:Z
 
-    :cond_26
-    :goto_6
-    if-eqz v7, :cond_31
-
-    const/4 v10, 0x1
-
-    invoke-virtual {v8, v10}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->setBootFlag(I)V
-
-    goto/16 :goto_7
-
-    :cond_27
-    const/4 v7, 0x1
-
-    const/4 v10, 0x0
-
-    invoke-virtual {v6, v10}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setLevel(I)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    sget-boolean v10, Lcom/android/server/am/OnePlusAppBootManager;->BLACKLIST_ENABLE:Z
-
-    if-eqz v10, :cond_31
+    if-eqz v7, :cond_2c
 
     invoke-virtual {v8}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getBlackListEnableFlag()Z
 
-    move-result v10
+    move-result v7
 
-    if-eqz v10, :cond_31
+    if-eqz v7, :cond_2c
 
     invoke-virtual {v8}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getAction()I
 
-    move-result v10
+    move-result v7
 
-    const/4 v14, 0x1
+    const/4 v10, 0x1
 
-    if-eq v10, v14, :cond_31
+    if-eq v7, v10, :cond_2c
 
-    if-eqz v12, :cond_28
+    if-eqz v12, :cond_24
 
     invoke-virtual {v12, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v10
+    move-result v7
 
-    if-nez v10, :cond_31
+    if-nez v7, :cond_2c
 
-    :cond_28
-    if-eqz v11, :cond_2e
+    :cond_24
+    if-eqz v11, :cond_29
 
     invoke-virtual {v11}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v7
 
-    if-eqz v10, :cond_2e
+    if-eqz v7, :cond_29
 
-    iget-object v14, v0, Lcom/android/server/am/OnePlusAppBootManager;->mCurAppServiceClassWhiteList:Ljava/util/ArrayList;
+    iget-object v10, v0, Lcom/android/server/am/OnePlusAppBootManager;->mCurAppServiceClassWhiteList:Ljava/util/ArrayList;
 
-    invoke-virtual {v14, v10}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
-
-    move-result v14
-
-    if-eqz v14, :cond_2b
-
-    if-eqz v13, :cond_2b
-
-    sget-object v14, Lcom/android/server/am/OnePlusAppBootManager;->mCurrentActivityPkg:Ljava/lang/String;
-
-    invoke-virtual {v13, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v14
-
-    if-eqz v14, :cond_2b
-
-    sget-boolean v14, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
-
-    if-eqz v14, :cond_29
-
-    new-instance v14, Ljava/lang/StringBuilder;
-
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v15, "# canServiceGo # ret=true r "
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v14, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v15, " # temp-white-class"
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-static {v14}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
-
-    :cond_29
-    sget-boolean v14, Lcom/android/server/am/OnePlusAppBootManager;->ENABLE_RECORDER:Z
-
-    if-eqz v14, :cond_2a
-
-    const-string/jumbo v14, "temp-white-class"
-
-    invoke-virtual {v6, v14}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setDetail(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->build()Lcom/android/server/am/OnePlusAppBootRecorder$Record;
-
-    move-result-object v14
-
-    iget-object v15, v0, Lcom/android/server/am/OnePlusAppBootManager;->mRecorder:Lcom/android/server/am/OnePlusAppBootRecorder;
-
-    invoke-virtual {v15, v14}, Lcom/android/server/am/OnePlusAppBootRecorder;->record(Lcom/android/server/am/OnePlusAppBootRecorder$Record;)V
-
-    :cond_2a
-    const/4 v14, 0x1
-
-    return v14
-
-    :cond_2b
-    iget-object v14, v0, Lcom/android/server/am/OnePlusAppBootManager;->mServiceClassBlackList:Ljava/util/ArrayList;
-
-    invoke-virtual {v14, v10}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
-
-    move-result v14
-
-    if-eqz v14, :cond_2e
-
-    sget-boolean v14, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
-
-    if-nez v14, :cond_2c
-
-    sget-boolean v14, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG_OEMLOG:Z
-
-    if-eqz v14, :cond_2d
-
-    :cond_2c
-    new-instance v14, Ljava/lang/StringBuilder;
-
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v15, "# canServiceGo # ret=false r "
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v14, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v15, " # blackclass"
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-static {v14}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
-
-    :cond_2d
-    const/4 v14, 0x0
-
-    return v14
-
-    :cond_2e
-    if-eqz v9, :cond_31
-
-    iget-object v10, v0, Lcom/android/server/am/OnePlusAppBootManager;->mServiceActionBlackList:Ljava/util/ArrayList;
-
-    invoke-virtual {v10, v9}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v10, v7}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
     move-result v10
 
-    if-eqz v10, :cond_31
+    if-eqz v10, :cond_26
+
+    if-eqz v13, :cond_26
+
+    sget-object v10, Lcom/android/server/am/OnePlusAppBootManager;->mCurrentActivityPkg:Ljava/lang/String;
+
+    invoke-virtual {v13, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_26
 
     sget-boolean v10, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    if-nez v10, :cond_2f
+    if-eqz v10, :cond_25
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v15, "# canServiceGo # ret=true r "
+
+    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v15, " # temp-white-class"
+
+    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v10}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
+
+    :cond_25
+    const/4 v10, 0x1
+
+    return v10
+
+    :cond_26
+    iget-object v10, v0, Lcom/android/server/am/OnePlusAppBootManager;->mServiceClassBlackList:Ljava/util/ArrayList;
+
+    invoke-virtual {v10, v7}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_29
+
+    sget-boolean v10, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
+
+    if-nez v10, :cond_27
 
     sget-boolean v10, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG_OEMLOG:Z
 
-    if-eqz v10, :cond_30
+    if-eqz v10, :cond_28
+
+    :cond_27
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v15, "# canServiceGo # ret=false r "
+
+    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v15, " # blackclass"
+
+    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v10}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
+
+    :cond_28
+    const/4 v10, 0x0
+
+    return v10
+
+    :cond_29
+    if-eqz v9, :cond_2c
+
+    iget-object v7, v0, Lcom/android/server/am/OnePlusAppBootManager;->mServiceActionBlackList:Ljava/util/ArrayList;
+
+    invoke-virtual {v7, v9}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_2c
+
+    sget-boolean v7, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
+
+    if-nez v7, :cond_2a
+
+    sget-boolean v7, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG_OEMLOG:Z
+
+    if-eqz v7, :cond_2b
+
+    :cond_2a
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "# canServiceGo # ret=false intent "
+
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v10, " # black-action"
+
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v7}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
+
+    :cond_2b
+    const/4 v7, 0x0
+
+    return v7
+
+    :cond_2c
+    :goto_6
+    if-nez v6, :cond_36
+
+    if-eqz v12, :cond_36
+
+    sget-object v7, Lcom/android/server/am/OnePlusAppBootManager;->mCurrentActivityPkg:Ljava/lang/String;
+
+    invoke-virtual {v12, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_2d
+
+    sget-object v7, Lcom/android/server/am/OnePlusAppBootManager;->mLastActivityPkg:Ljava/lang/String;
+
+    invoke-virtual {v12, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_36
+
+    :cond_2d
+    const/4 v7, 0x0
+
+    if-eqz v11, :cond_2e
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v11}, Landroid/content/ComponentName;->flattenToString()Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v15, "#"
+
+    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    goto :goto_7
+
+    :cond_2e
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v10, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v15, "#"
+
+    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    :goto_7
+    if-eqz v1, :cond_2f
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v15, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    iget v15, v15, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v15, "#"
+
+    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v15, v1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+
+    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    goto :goto_8
 
     :cond_2f
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v14, "# canServiceGo # ret=false intent "
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v14, " # black-action"
-
-    invoke-virtual {v10, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v10
-
-    invoke-static {v10}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
-
-    :cond_30
-    const/4 v10, 0x0
-
-    return v10
-
-    :cond_31
-    :goto_7
-    if-nez v7, :cond_3b
-
-    if-eqz v12, :cond_3b
-
-    sget-object v10, Lcom/android/server/am/OnePlusAppBootManager;->mCurrentActivityPkg:Ljava/lang/String;
-
-    invoke-virtual {v12, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v10
-
-    if-nez v10, :cond_32
-
-    sget-object v10, Lcom/android/server/am/OnePlusAppBootManager;->mLastActivityPkg:Ljava/lang/String;
-
-    invoke-virtual {v12, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v10
-
-    if-eqz v10, :cond_3b
-
-    :cond_32
-    const/4 v10, 0x0
-
-    if-eqz v11, :cond_33
-
-    new-instance v14, Ljava/lang/StringBuilder;
-
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v11}, Landroid/content/ComponentName;->flattenToString()Ljava/lang/String;
-
-    move-result-object v15
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v15, "#"
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    goto :goto_8
-
-    :cond_33
-    new-instance v14, Ljava/lang/StringBuilder;
-
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v14, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v15, "#"
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
+    move-result-object v7
 
     :goto_8
-    if-eqz v1, :cond_34
+    invoke-virtual {v8, v7}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->updateLastCallingServiceBootPolicy(Ljava/lang/String;)Z
 
-    new-instance v14, Ljava/lang/StringBuilder;
+    move-result v6
 
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
+    if-eqz v6, :cond_35
 
-    invoke-virtual {v14, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-boolean v10, Lcom/android/server/am/OnePlusAppBootManager;->BLACKLIST_ENABLE:Z
 
-    iget-object v15, v1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
-
-    iget v15, v15, Landroid/content/pm/ApplicationInfo;->uid:I
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v15, "#"
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v15, v1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    goto :goto_9
-
-    :cond_34
-    new-instance v14, Ljava/lang/StringBuilder;
-
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v14, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v14, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    :goto_9
-    invoke-virtual {v8, v10}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->updateLastCallingServiceBootPolicy(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_3a
-
-    sget-boolean v14, Lcom/android/server/am/OnePlusAppBootManager;->BLACKLIST_ENABLE:Z
-
-    if-eqz v14, :cond_3a
+    if-eqz v10, :cond_35
 
     invoke-virtual {v8}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getBlackListEnableFlag()Z
 
-    move-result v14
+    move-result v10
 
-    if-eqz v14, :cond_3a
+    if-eqz v10, :cond_35
 
     invoke-virtual {v8}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->getAction()I
 
-    move-result v14
+    move-result v10
 
     const/4 v15, 0x1
 
-    if-eq v14, v15, :cond_3a
+    if-eq v10, v15, :cond_35
 
-    if-eqz v11, :cond_37
+    if-eqz v11, :cond_32
 
     invoke-virtual {v11}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v10
 
-    if-eqz v14, :cond_37
+    if-eqz v10, :cond_32
 
     iget-object v15, v0, Lcom/android/server/am/OnePlusAppBootManager;->mServiceClassBlackList:Ljava/util/ArrayList;
 
-    invoke-virtual {v15, v14}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v15, v10}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
     move-result v15
 
-    if-eqz v15, :cond_37
+    if-eqz v15, :cond_32
 
     sget-boolean v15, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    if-nez v15, :cond_35
+    if-nez v15, :cond_30
 
     sget-boolean v15, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG_OEMLOG:Z
 
-    if-eqz v15, :cond_36
+    if-eqz v15, :cond_31
 
-    :cond_35
+    :cond_30
     new-instance v15, Ljava/lang/StringBuilder;
 
     invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
@@ -11159,13 +10334,13 @@
 
     invoke-static {v1}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    :cond_36
+    :cond_31
     const/4 v1, 0x0
 
     return v1
 
-    :cond_37
-    if-eqz v9, :cond_3a
+    :cond_32
+    if-eqz v9, :cond_35
 
     iget-object v1, v0, Lcom/android/server/am/OnePlusAppBootManager;->mServiceActionBlackList:Ljava/util/ArrayList;
 
@@ -11173,30 +10348,140 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_35
 
     sget-boolean v1, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    if-nez v1, :cond_38
+    if-nez v1, :cond_33
 
     sget-boolean v1, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG_OEMLOG:Z
 
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_34
 
-    :cond_38
+    :cond_33
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v14, "# canServiceGo # ret=false intent "
+    const-string v10, "# canServiceGo # ret=false intent "
 
-    invoke-virtual {v1, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v14, " # black-action"
+    const-string v10, " # black-action"
 
-    invoke-virtual {v1, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
+
+    :cond_34
+    const/4 v1, 0x0
+
+    return v1
+
+    :cond_35
+    if-eqz v6, :cond_36
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v8, v1}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->setBootFlag(I)V
+
+    const-string v1, "OnePlusAppBootManager"
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v15, "let intent "
+
+    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v15, " go for boot policy!"
+
+    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v1, v10}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_36
+    sget-boolean v1, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
+
+    if-nez v1, :cond_38
+
+    if-nez v6, :cond_37
+
+    goto :goto_9
+
+    :cond_37
+    sget-boolean v1, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG_OEMLOG:Z
+
+    if-eqz v1, :cond_39
+
+    if-nez v6, :cond_39
+
+    const-string v1, "OnePlusAppBootManager"
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "canServiceGo forbid "
+
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v1, v7}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_a
+
+    :cond_38
+    :goto_9
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "# canServiceGo # ret="
+
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v7, " # abi="
+
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v7, " # mCurrentActivityPkg="
+
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget-object v7, Lcom/android/server/am/OnePlusAppBootManager;->mCurrentActivityPkg:Ljava/lang/String;
+
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v7, " mLastActivityPkg="
+
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget-object v7, Lcom/android/server/am/OnePlusAppBootManager;->mLastActivityPkg:Ljava/lang/String;
+
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -11205,140 +10490,11 @@
     invoke-static {v1}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
     :cond_39
-    const/4 v1, 0x0
-
-    return v1
+    :goto_a
+    return v6
 
     :cond_3a
-    if-eqz v7, :cond_3b
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v8, v1}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->setBootFlag(I)V
-
-    const-string v1, "OnePlusAppBootManager"
-
-    new-instance v14, Ljava/lang/StringBuilder;
-
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v15, "let intent "
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v14, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v15, " go for boot policy!"
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-static {v1, v14}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "boot policy"
-
-    invoke-virtual {v6, v1}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->setDetail(Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;
-
-    :cond_3b
-    sget-boolean v1, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
-
-    if-nez v1, :cond_3d
-
-    if-nez v7, :cond_3c
-
-    goto :goto_a
-
-    :cond_3c
-    sget-boolean v1, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG_OEMLOG:Z
-
-    if-eqz v1, :cond_3e
-
-    if-nez v7, :cond_3e
-
-    const-string v1, "OnePlusAppBootManager"
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v14, "canServiceGo forbid "
-
-    invoke-virtual {v10, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v1, v10}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_b
-
-    :cond_3d
-    :goto_a
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "# canServiceGo # ret="
-
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v10, " # abi="
-
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v10, " # mCurrentActivityPkg="
-
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-object v10, Lcom/android/server/am/OnePlusAppBootManager;->mCurrentActivityPkg:Ljava/lang/String;
-
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v10, " mLastActivityPkg="
-
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-object v10, Lcom/android/server/am/OnePlusAppBootManager;->mLastActivityPkg:Ljava/lang/String;
-
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
-
-    :cond_3e
     :goto_b
-    if-eqz v7, :cond_3f
-
-    sget-boolean v1, Lcom/android/server/am/OnePlusAppBootManager;->ENABLE_RECORDER:Z
-
-    if-eqz v1, :cond_3f
-
-    iget-object v1, v0, Lcom/android/server/am/OnePlusAppBootManager;->mRecorder:Lcom/android/server/am/OnePlusAppBootRecorder;
-
-    invoke-virtual {v6}, Lcom/android/server/am/OnePlusAppBootRecorder$Record$RecordBuild;->build()Lcom/android/server/am/OnePlusAppBootRecorder$Record;
-
-    move-result-object v10
-
-    invoke-virtual {v1, v10}, Lcom/android/server/am/OnePlusAppBootRecorder;->record(Lcom/android/server/am/OnePlusAppBootRecorder$Record;)V
-
-    :cond_3f
-    return v7
-
-    :cond_40
-    :goto_c
     const/4 v1, 0x1
 
     return v1
@@ -11976,53 +11132,33 @@
 
     iput-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager;->mResolver:Landroid/content/ContentResolver;
 
-    new-instance v0, Lcom/android/server/am/OnePlusAppBootRecorder;
+    iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager;->mResolver:Landroid/content/ContentResolver;
 
-    iget-object v1, p0, Lcom/android/server/am/OnePlusAppBootManager;->mContext:Landroid/content/Context;
+    const-string/jumbo v1, "sms_default_application"
 
-    iget-object v2, p0, Lcom/android/server/am/OnePlusAppBootManager;->mResolver:Landroid/content/ContentResolver;
+    invoke-static {v1}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
-    invoke-direct {v0, v1, v2}, Lcom/android/server/am/OnePlusAppBootRecorder;-><init>(Landroid/content/Context;Landroid/content/ContentResolver;)V
+    move-result-object v1
 
-    iput-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager;->mRecorder:Lcom/android/server/am/OnePlusAppBootRecorder;
+    iget-object v2, p0, Lcom/android/server/am/OnePlusAppBootManager;->mSettingsObserver:Lcom/android/server/am/OnePlusAppBootManager$SettingsObserver;
 
-    const-string/jumbo v0, "persist.sys.appboot.recorder"
+    const/4 v3, -0x1
 
-    const/4 v1, 0x1
+    const/4 v4, 0x0
 
-    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    sput-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->ENABLE_RECORDER:Z
+    invoke-virtual {v0, v1, v4, v2, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
     iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager;->mResolver:Landroid/content/ContentResolver;
 
-    const-string/jumbo v2, "sms_default_application"
+    const-string v1, "dialer_default_application"
 
-    invoke-static {v2}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {v1}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
-    move-result-object v2
+    move-result-object v1
 
-    iget-object v3, p0, Lcom/android/server/am/OnePlusAppBootManager;->mSettingsObserver:Lcom/android/server/am/OnePlusAppBootManager$SettingsObserver;
+    iget-object v2, p0, Lcom/android/server/am/OnePlusAppBootManager;->mSettingsObserver:Lcom/android/server/am/OnePlusAppBootManager$SettingsObserver;
 
-    const/4 v4, -0x1
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v0, v2, v5, v3, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
-
-    iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager;->mResolver:Landroid/content/ContentResolver;
-
-    const-string v2, "dialer_default_application"
-
-    invoke-static {v2}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/android/server/am/OnePlusAppBootManager;->mSettingsObserver:Lcom/android/server/am/OnePlusAppBootManager$SettingsObserver;
-
-    invoke-virtual {v0, v2, v5, v3, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
+    invoke-virtual {v0, v1, v4, v2, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
     const-string/jumbo v0, "init"
 
@@ -12030,17 +11166,19 @@
 
     const-string v0, "com.tencent.mobileqq"
 
-    const-string v2, "com.tencent.mobileqq:MSF"
+    const-string v1, "com.tencent.mobileqq:MSF"
 
-    invoke-virtual {p0, v0, v2}, Lcom/android/server/am/OnePlusAppBootManager;->addPackageProcessName(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p0, v0, v1}, Lcom/android/server/am/OnePlusAppBootManager;->addPackageProcessName(Ljava/lang/String;Ljava/lang/String;)V
 
     sget-object v0, Lcom/android/server/am/OnePlusAppBootManager;->mRegion:Ljava/lang/String;
 
-    const-string v2, "CN"
+    const-string v1, "CN"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
+
+    const/4 v1, 0x1
 
     if-nez v0, :cond_2
 
@@ -12052,7 +11190,7 @@
 
     sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->mAppBootSwitch:Z
 
-    sput-boolean v5, Lcom/android/server/am/OnePlusAppBootManager;->mAppBootSwitch:Z
+    sput-boolean v4, Lcom/android/server/am/OnePlusAppBootManager;->mAppBootSwitch:Z
 
     sget-boolean v2, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
@@ -12064,19 +11202,19 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "initEnv # set from "
+    const-string/jumbo v5, "initEnv # set from "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v4, " -> "
+    const-string v5, " -> "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-boolean v4, Lcom/android/server/am/OnePlusAppBootManager;->mAppBootSwitch:Z
+    sget-boolean v5, Lcom/android/server/am/OnePlusAppBootManager;->mAppBootSwitch:Z
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -12089,7 +11227,7 @@
 
     const/16 v1, 0x22
 
-    aput v1, v0, v5
+    aput v1, v0, v4
 
     invoke-static {v0}, Landroid/util/OpFeatures;->isSupport([I)Z
 
@@ -12274,25 +11412,25 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->access$1500(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;)I
+    invoke-static {v2}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->access$1400(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;)I
 
     move-result v3
 
     and-int/lit8 v3, v3, -0x21
 
-    invoke-static {v2, v3}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->access$1502(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;I)I
+    invoke-static {v2, v3}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->access$1402(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;I)I
 
-    invoke-static {v2}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->access$1500(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;)I
+    invoke-static {v2}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->access$1400(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;)I
 
     move-result v3
 
     and-int/lit8 v3, v3, -0x41
 
-    invoke-static {v2, v3}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->access$1502(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;I)I
+    invoke-static {v2, v3}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->access$1402(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;I)I
 
     const/4 v3, 0x0
 
-    invoke-static {v2, v3}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->access$1602(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;I)I
+    invoke-static {v2, v3}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->access$1502(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;I)I
 
     invoke-virtual {v2, v3}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->setAction(I)V
 
@@ -12922,7 +12060,7 @@
 
     iget-object v0, v1, Lcom/android/server/am/OnePlusAppBootManager;->mAbiRestoreList:Ljava/util/ArrayList;
 
-    invoke-static {v3}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->access$2900(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;->access$2700(Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;)Ljava/lang/String;
 
     move-result-object v5
 

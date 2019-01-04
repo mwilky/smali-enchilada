@@ -38,7 +38,7 @@
 
     const-string v1, "change"
 
-    invoke-static {v0, v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$1700(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$1600(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)V
 
     return-void
 .end method

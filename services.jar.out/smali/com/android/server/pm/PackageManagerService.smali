@@ -937,7 +937,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .locals 14
+    .locals 13
 
     const/4 v0, 0x0
 
@@ -1023,9 +1023,7 @@
 
     const-string v12, "android.intent.action.EDIT"
 
-    const-string v13, "android.intent.action.GET_CONTENT"
-
-    filled-new-array/range {v3 .. v13}, [Ljava/lang/String;
+    filled-new-array/range {v3 .. v12}, [Ljava/lang/String;
 
     move-result-object v2
 
@@ -1701,7 +1699,7 @@
 
     move-result-object v1
 
-    const v2, 0x5020012
+    const v2, 0x5020011
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -9652,7 +9650,7 @@
 
     move-result-object v0
 
-    const v1, 0x10401be
+    const v1, 0x10401bd
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -28257,7 +28255,7 @@
 
     move-result-object v2
 
-    const v4, 0x1040171
+    const v4, 0x1040170
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -29603,7 +29601,7 @@
 
     move-result-object v2
 
-    const v4, 0x1040171
+    const v4, 0x1040170
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -40154,7 +40152,7 @@
 
     const/4 v0, 0x1
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_1
     const-string v1, "android.intent.action.VIEW"
@@ -40245,41 +40243,6 @@
 
     invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
-
-    check-cast v3, Landroid/content/pm/ResolveInfo;
-
-    iget-object v3, v3, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
-
-    iget-object v3, v3, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_4
-    const-string v1, "android.intent.action.GET_CONTENT"
-
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    const-string v1, "com.android.documentsui"
-
-    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
     move-result-object v2
 
     check-cast v2, Landroid/content/pm/ResolveInfo;
@@ -40292,13 +40255,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_4
 
     const/4 v0, 0x1
 
-    :cond_5
+    :cond_4
     :goto_0
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/server/pm/PackageManagerService;->queryIntentOnOwnerUserId(Ljava/util/List;Landroid/content/Intent;Ljava/lang/String;I)Ljava/util/List;
 
@@ -40306,7 +40269,7 @@
 
     return-object v1
 
-    :cond_6
+    :cond_5
     return-object p1
 .end method
 
@@ -43830,7 +43793,7 @@
 
     move-result-object v12
 
-    const-string/jumbo v2, "grant"
+    const-string v2, "grant"
 
     invoke-virtual {v12, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -58161,7 +58124,7 @@
 
     if-nez v7, :cond_1
 
-    const-string/jumbo v15, "grant"
+    const-string v15, "grant"
 
     invoke-interface {v1, v3, v15}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -58270,7 +58233,7 @@
     :cond_a
     if-eqz v7, :cond_b
 
-    const-string/jumbo v0, "grant"
+    const-string v0, "grant"
 
     invoke-interface {v1, v3, v0}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -82088,7 +82051,7 @@
 
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService;->mContext:Landroid/content/Context;
 
-    const v1, 0x1040143
+    const v1, 0x1040142
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -82370,7 +82333,7 @@
 .method public grantDefaultPermissionsToActiveLuiApp(Ljava/lang/String;I)V
     .locals 4
 
-    const-string/jumbo v0, "grantDefaultPermissionsToActiveLuiApp"
+    const-string v0, "grantDefaultPermissionsToActiveLuiApp"
 
     invoke-static {v0}, Lcom/android/server/pm/PackageManagerService;->enforceSystemOrPhoneCaller(Ljava/lang/String;)V
 
@@ -82421,7 +82384,7 @@
 .method public grantDefaultPermissionsToEnabledCarrierApps([Ljava/lang/String;I)V
     .locals 4
 
-    const-string/jumbo v0, "grantPermissionsToEnabledCarrierApps"
+    const-string v0, "grantPermissionsToEnabledCarrierApps"
 
     invoke-static {v0}, Lcom/android/server/pm/PackageManagerService;->enforceSystemOrPhoneCaller(Ljava/lang/String;)V
 
@@ -82472,7 +82435,7 @@
 .method public grantDefaultPermissionsToEnabledImsServices([Ljava/lang/String;I)V
     .locals 4
 
-    const-string/jumbo v0, "grantDefaultPermissionsToEnabledImsServices"
+    const-string v0, "grantDefaultPermissionsToEnabledImsServices"
 
     invoke-static {v0}, Lcom/android/server/pm/PackageManagerService;->enforceSystemOrPhoneCaller(Ljava/lang/String;)V
 
@@ -82523,7 +82486,7 @@
 .method public grantDefaultPermissionsToEnabledTelephonyDataServices([Ljava/lang/String;I)V
     .locals 2
 
-    const-string/jumbo v0, "grantDefaultPermissionsToEnabledTelephonyDataServices"
+    const-string v0, "grantDefaultPermissionsToEnabledTelephonyDataServices"
 
     invoke-static {v0}, Lcom/android/server/pm/PackageManagerService;->enforceSystemOrPhoneCaller(Ljava/lang/String;)V
 
@@ -85109,6 +85072,8 @@
 
     move-result-object v1
 
+    check-cast v1, [Landroid/content/pm/PackageManagerInternal$PackageListObserver;
+
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -85121,8 +85086,6 @@
     if-ltz v0, :cond_1
 
     aget-object v2, v1, v0
-
-    check-cast v2, Landroid/content/pm/PackageManagerInternal$PackageListObserver;
 
     invoke-interface {v2, p1}, Landroid/content/pm/PackageManagerInternal$PackageListObserver;->onPackageAdded(Ljava/lang/String;)V
 
@@ -85171,6 +85134,8 @@
 
     move-result-object v1
 
+    check-cast v1, [Landroid/content/pm/PackageManagerInternal$PackageListObserver;
+
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -85183,8 +85148,6 @@
     if-ltz v0, :cond_1
 
     aget-object v2, v1, v0
-
-    check-cast v2, Landroid/content/pm/PackageManagerInternal$PackageListObserver;
 
     invoke-interface {v2, p1}, Landroid/content/pm/PackageManagerInternal$PackageListObserver;->onPackageRemoved(Ljava/lang/String;)V
 

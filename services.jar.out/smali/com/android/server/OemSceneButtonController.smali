@@ -2,14 +2,15 @@
 .super Ljava/lang/Object;
 .source "OemSceneButtonController.java"
 
+# interfaces
+.implements Lcom/oneplus/oimc/IOPFunction;
+
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/android/server/OemSceneButtonController$GameModeButtonLockFeatureContentObserver;,
         Lcom/android/server/OemSceneButtonController$GameModeButtonSettingsContentObserver;,
-        Lcom/android/server/OemSceneButtonController$VSButtonLocker;,
-        Lcom/android/server/OemSceneButtonController$FootButtonLocker;,
         Lcom/android/server/OemSceneButtonController$KeyLockMode;
     }
 .end annotation
@@ -17,10 +18,6 @@
 
 # static fields
 .field private static DBG:Z = false
-
-.field private static final KEYMODE_FOOT:I
-
-.field private static final KEYMODE_VS:I
 
 .field private static final URI_DISABLE_GAME_BTN_FEATURE:Landroid/net/Uri;
 
@@ -34,17 +31,11 @@
 
 .field private static final VALUE_ON_STR:Ljava/lang/String; = "1"
 
-.field private static sFootButtonLocker:Lcom/android/server/OemSceneButtonController$FootButtonLocker;
-
 .field private static sInstance:Lcom/android/server/OemSceneButtonController;
-
-.field private static sVSButtonLocker:Lcom/android/server/OemSceneButtonController$VSButtonLocker;
 
 
 # instance fields
 .field private final TAG:Ljava/lang/String;
-
-.field private keyMode:I
 
 .field private mContext:Landroid/content/Context;
 
@@ -65,7 +56,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
     sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
@@ -86,28 +77,6 @@
     move-result-object v0
 
     sput-object v0, Lcom/android/server/OemSceneButtonController;->URI_DISABLE_GAME_BTN_FEATURE:Landroid/net/Uri;
-
-    sget-object v0, Lcom/android/server/OemSceneButtonController$KeyLockMode;->FOOT:Lcom/android/server/OemSceneButtonController$KeyLockMode;
-
-    invoke-virtual {v0}, Lcom/android/server/OemSceneButtonController$KeyLockMode;->ordinal()I
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    shl-int v0, v1, v0
-
-    sput v0, Lcom/android/server/OemSceneButtonController;->KEYMODE_FOOT:I
-
-    sget-object v0, Lcom/android/server/OemSceneButtonController$KeyLockMode;->VOLUME_SWITCH:Lcom/android/server/OemSceneButtonController$KeyLockMode;
-
-    invoke-virtual {v0}, Lcom/android/server/OemSceneButtonController$KeyLockMode;->ordinal()I
-
-    move-result v0
-
-    shl-int v0, v1, v0
-
-    sput v0, Lcom/android/server/OemSceneButtonController;->KEYMODE_VS:I
 
     return-void
 .end method
@@ -134,8 +103,6 @@
     invoke-direct {v2}, Landroid/os/Handler;-><init>()V
 
     iput-object v2, p0, Lcom/android/server/OemSceneButtonController;->mHandler:Landroid/os/Handler;
-
-    iput v0, p0, Lcom/android/server/OemSceneButtonController;->keyMode:I
 
     iput-object p1, p0, Lcom/android/server/OemSceneButtonController;->mContext:Landroid/content/Context;
 
@@ -200,7 +167,7 @@
 
     invoke-direct {v1, p0}, Lcom/android/server/OemSceneButtonController$1;-><init>(Lcom/android/server/OemSceneButtonController;)V
 
-    const-class v2, Lcom/android/server/OemSceneButtonController;
+    const-class v2, Lcom/android/server/OemSceneAutoBrightnessController;
 
     invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
@@ -338,75 +305,29 @@
 
 
 # virtual methods
-.method public getFootButtonLocker()Lcom/android/server/OemSceneButtonController$FootButtonLocker;
-    .locals 1
+.method public config(Ljava/lang/Object;)I
+    .locals 2
 
-    sget-object v0, Lcom/android/server/OemSceneButtonController;->sFootButtonLocker:Lcom/android/server/OemSceneButtonController$FootButtonLocker;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Lcom/android/server/OemSceneButtonController$FootButtonLocker;
-
-    invoke-direct {v0, p0}, Lcom/android/server/OemSceneButtonController$FootButtonLocker;-><init>(Lcom/android/server/OemSceneButtonController;)V
-
-    sput-object v0, Lcom/android/server/OemSceneButtonController;->sFootButtonLocker:Lcom/android/server/OemSceneButtonController$FootButtonLocker;
-
-    :cond_0
-    sget-object v0, Lcom/android/server/OemSceneButtonController;->sFootButtonLocker:Lcom/android/server/OemSceneButtonController$FootButtonLocker;
-
-    return-object v0
-.end method
-
-.method public getVSButtonLocker()Lcom/android/server/OemSceneButtonController$VSButtonLocker;
-    .locals 1
-
-    sget-object v0, Lcom/android/server/OemSceneButtonController;->sVSButtonLocker:Lcom/android/server/OemSceneButtonController$VSButtonLocker;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Lcom/android/server/OemSceneButtonController$VSButtonLocker;
-
-    invoke-direct {v0, p0}, Lcom/android/server/OemSceneButtonController$VSButtonLocker;-><init>(Lcom/android/server/OemSceneButtonController;)V
-
-    sput-object v0, Lcom/android/server/OemSceneButtonController;->sVSButtonLocker:Lcom/android/server/OemSceneButtonController$VSButtonLocker;
-
-    :cond_0
-    sget-object v0, Lcom/android/server/OemSceneButtonController;->sVSButtonLocker:Lcom/android/server/OemSceneButtonController$VSButtonLocker;
-
-    return-object v0
-.end method
-
-.method public setNextKeyMode()Z
-    .locals 4
-
-    iget v0, p0, Lcom/android/server/OemSceneButtonController;->keyMode:I
-
-    sget v1, Lcom/android/server/OemSceneButtonController;->KEYMODE_VS:I
-
-    and-int/2addr v0, v1
-
-    const/4 v1, 0x1
+    sget-boolean v0, Lcom/android/server/OemSceneButtonController;->DBG:Z
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/android/server/OemSceneButtonController$KeyLockMode;->VOLUME_SWITCH:Lcom/android/server/OemSceneButtonController$KeyLockMode;
+    const-string v0, "OemSceneButtonController"
 
-    invoke-virtual {v0}, Lcom/android/server/OemSceneButtonController$KeyLockMode;->ordinal()I
+    const-string v1, "[scene] KeyBlocking: config"
 
-    move-result v0
-
-    invoke-direct {p0, v0}, Lcom/android/server/OemSceneButtonController;->setKeyMode(I)V
-
-    return v1
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    iget v0, p0, Lcom/android/server/OemSceneButtonController;->keyMode:I
+    const/4 v0, 0x0
 
-    sget v2, Lcom/android/server/OemSceneButtonController;->KEYMODE_FOOT:I
+    return v0
+.end method
 
-    and-int/2addr v0, v2
+.method public setEnable(Z)V
+    .locals 4
 
-    if-eqz v0, :cond_1
+    if-eqz p1, :cond_0
 
     sget-object v0, Lcom/android/server/OemSceneButtonController$KeyLockMode;->FOOT:Lcom/android/server/OemSceneButtonController$KeyLockMode;
 
@@ -416,27 +337,16 @@
 
     invoke-direct {p0, v0}, Lcom/android/server/OemSceneButtonController;->setKeyMode(I)V
 
-    return v1
+    goto :goto_0
 
-    :cond_1
-    iget v0, p0, Lcom/android/server/OemSceneButtonController;->keyMode:I
-
-    if-eqz v0, :cond_2
-
-    const-string v0, "OemSceneButtonController"
-
-    const-string v1, "[scene] error keyMode!!!"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_2
+    :cond_0
     invoke-direct {p0}, Lcom/android/server/OemSceneButtonController;->getOnScreenNaviBarEnable()Z
 
     move-result v0
 
     sget-boolean v1, Lcom/android/server/OemSceneButtonController;->DBG:Z
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_1
 
     const-string v1, "OemSceneButtonController"
 
@@ -456,8 +366,8 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_3
-    if-eqz v0, :cond_4
+    :cond_1
+    if-eqz v0, :cond_2
 
     sget-object v1, Lcom/android/server/OemSceneButtonController$KeyLockMode;->BACK_SWITCH:Lcom/android/server/OemSceneButtonController$KeyLockMode;
 
@@ -469,7 +379,7 @@
 
     goto :goto_0
 
-    :cond_4
+    :cond_2
     sget-object v1, Lcom/android/server/OemSceneButtonController$KeyLockMode;->NORMAL:Lcom/android/server/OemSceneButtonController$KeyLockMode;
 
     invoke-virtual {v1}, Lcom/android/server/OemSceneButtonController$KeyLockMode;->ordinal()I
@@ -479,9 +389,51 @@
     invoke-direct {p0, v1}, Lcom/android/server/OemSceneButtonController;->setKeyMode(I)V
 
     :goto_0
-    const/4 v1, 0x0
+    return-void
+.end method
 
-    return v1
+.method public start(Ljava/lang/Object;)I
+    .locals 2
+
+    sget-boolean v0, Lcom/android/server/OemSceneButtonController;->DBG:Z
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "OemSceneButtonController"
+
+    const-string v1, "[scene] KeyBlocking: start"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Lcom/android/server/OemSceneButtonController;->setEnable(Z)V
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public stop(Ljava/lang/Object;)I
+    .locals 2
+
+    sget-boolean v0, Lcom/android/server/OemSceneButtonController;->DBG:Z
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "OemSceneButtonController"
+
+    const-string v1, "[scene] KeyBlocking: stop"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/android/server/OemSceneButtonController;->setEnable(Z)V
+
+    return v0
 .end method
 
 .method public updateFunctionRule(I)V
@@ -580,7 +532,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "[scene] removeFuncRule for blocking foot key "
+    const-string v2, "[scene] removeFuncRule for blocking key "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -597,7 +549,7 @@
     :cond_2
     iget-object v0, p0, Lcom/android/server/OemSceneButtonController;->mLocalOIMCService:Lcom/oneplus/server/OIMCService$LocalService;
 
-    sget-object v1, Lcom/oneplus/oimc/OIMCRule;->Rule_FootKeyBlocking:Lcom/oneplus/oimc/OIMCRule;
+    sget-object v1, Lcom/oneplus/oimc/OIMCRule;->Rule_KeyBlocking:Lcom/oneplus/oimc/OIMCRule;
 
     iget v2, p0, Lcom/android/server/OemSceneButtonController;->mUser:I
 
@@ -612,7 +564,7 @@
 
     iget-object v0, p0, Lcom/android/server/OemSceneButtonController;->mLocalOIMCService:Lcom/oneplus/server/OIMCService$LocalService;
 
-    sget-object v1, Lcom/oneplus/oimc/OIMCRule;->Rule_FootKeyBlocking:Lcom/oneplus/oimc/OIMCRule;
+    sget-object v1, Lcom/oneplus/oimc/OIMCRule;->Rule_KeyBlocking:Lcom/oneplus/oimc/OIMCRule;
 
     invoke-virtual {v0, v1, p1}, Lcom/oneplus/server/OIMCService$LocalService;->removeFuncRule(Lcom/oneplus/oimc/OIMCRule;I)V
 
@@ -627,7 +579,7 @@
 
     iget-object v0, p0, Lcom/android/server/OemSceneButtonController;->mLocalOIMCService:Lcom/oneplus/server/OIMCService$LocalService;
 
-    sget-object v1, Lcom/oneplus/oimc/OIMCRule;->Rule_FootKeyBlocking:Lcom/oneplus/oimc/OIMCRule;
+    sget-object v1, Lcom/oneplus/oimc/OIMCRule;->Rule_KeyBlocking:Lcom/oneplus/oimc/OIMCRule;
 
     invoke-virtual {v0, v1, p1}, Lcom/oneplus/server/OIMCService$LocalService;->addFuncRule(Lcom/oneplus/oimc/OIMCRule;I)V
 
@@ -636,7 +588,7 @@
     :cond_5
     iget-object v0, p0, Lcom/android/server/OemSceneButtonController;->mLocalOIMCService:Lcom/oneplus/server/OIMCService$LocalService;
 
-    sget-object v1, Lcom/oneplus/oimc/OIMCRule;->Rule_FootKeyBlocking:Lcom/oneplus/oimc/OIMCRule;
+    sget-object v1, Lcom/oneplus/oimc/OIMCRule;->Rule_KeyBlocking:Lcom/oneplus/oimc/OIMCRule;
 
     invoke-virtual {v0, v1, p1}, Lcom/oneplus/server/OIMCService$LocalService;->removeFuncRule(Lcom/oneplus/oimc/OIMCRule;I)V
     :try_end_0
@@ -668,40 +620,6 @@
 
     :goto_1
     iput p1, p0, Lcom/android/server/OemSceneButtonController;->mUser:I
-
-    return-void
-.end method
-
-.method public updateKeyLockMode(IZ)V
-    .locals 2
-
-    const/4 v0, 0x1
-
-    if-eqz p2, :cond_0
-
-    iget v1, p0, Lcom/android/server/OemSceneButtonController;->keyMode:I
-
-    shl-int/2addr v0, p1
-
-    or-int/2addr v0, v1
-
-    iput v0, p0, Lcom/android/server/OemSceneButtonController;->keyMode:I
-
-    goto :goto_0
-
-    :cond_0
-    iget v1, p0, Lcom/android/server/OemSceneButtonController;->keyMode:I
-
-    shl-int/2addr v0, p1
-
-    not-int v0, v0
-
-    and-int/2addr v0, v1
-
-    iput v0, p0, Lcom/android/server/OemSceneButtonController;->keyMode:I
-
-    :goto_0
-    invoke-virtual {p0}, Lcom/android/server/OemSceneButtonController;->setNextKeyMode()Z
 
     return-void
 .end method

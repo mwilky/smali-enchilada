@@ -2725,7 +2725,7 @@
 
     move-result v2
 
-    const-string/jumbo v3, "getTvContentRatingSystemList"
+    const-string v3, "getTvContentRatingSystemList"
 
     invoke-static {v0, v1, v2, p1, v3}, Lcom/android/server/tv/TvInputManagerService;->access$4100(Lcom/android/server/tv/TvInputManagerService;IIILjava/lang/String;)I
 
@@ -2808,7 +2808,7 @@
 
     move-result v2
 
-    const-string/jumbo v3, "getTvInputInfo"
+    const-string v3, "getTvInputInfo"
 
     invoke-static {v0, v1, v2, p2, v3}, Lcom/android/server/tv/TvInputManagerService;->access$4100(Lcom/android/server/tv/TvInputManagerService;IIILjava/lang/String;)I
 
@@ -2908,7 +2908,7 @@
 
     move-result v2
 
-    const-string/jumbo v3, "getTvInputList"
+    const-string v3, "getTvInputList"
 
     invoke-static {v0, v1, v2, p1, v3}, Lcom/android/server/tv/TvInputManagerService;->access$4100(Lcom/android/server/tv/TvInputManagerService;IIILjava/lang/String;)I
 
@@ -3016,7 +3016,7 @@
 
     move-result v2
 
-    const-string/jumbo v3, "getTvInputState"
+    const-string v3, "getTvInputState"
 
     invoke-static {v0, v1, v2, p2, v3}, Lcom/android/server/tv/TvInputManagerService;->access$4100(Lcom/android/server/tv/TvInputManagerService;IIILjava/lang/String;)I
 

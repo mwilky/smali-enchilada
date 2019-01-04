@@ -57,11 +57,11 @@
 
     iget-object v3, p0, Lcom/android/server/OemExService$3;->this$0:Lcom/android/server/OemExService;
 
-    invoke-static {v3, v2}, Lcom/android/server/OemExService;->access$600(Lcom/android/server/OemExService;Z)V
+    invoke-static {v3, v2}, Lcom/android/server/OemExService;->access$700(Lcom/android/server/OemExService;Z)V
 
     iget-object v3, p0, Lcom/android/server/OemExService$3;->this$0:Lcom/android/server/OemExService;
 
-    invoke-static {v3}, Lcom/android/server/OemExService;->access$700(Lcom/android/server/OemExService;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {v3}, Lcom/android/server/OemExService;->access$800(Lcom/android/server/OemExService;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v3
 
@@ -73,7 +73,7 @@
 
     iget-object v3, p0, Lcom/android/server/OemExService$3;->this$0:Lcom/android/server/OemExService;
 
-    invoke-static {v3}, Lcom/android/server/OemExService;->access$700(Lcom/android/server/OemExService;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {v3}, Lcom/android/server/OemExService;->access$800(Lcom/android/server/OemExService;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v3
 

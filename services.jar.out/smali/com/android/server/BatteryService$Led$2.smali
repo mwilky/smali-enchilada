@@ -50,11 +50,11 @@
 
     iget-object v1, p0, Lcom/android/server/BatteryService$Led$2;->this$1:Lcom/android/server/BatteryService$Led;
 
-    invoke-static {v1, v2}, Lcom/android/server/BatteryService$Led;->access$1802(Lcom/android/server/BatteryService$Led;Z)Z
+    invoke-static {v1, v2}, Lcom/android/server/BatteryService$Led;->access$1402(Lcom/android/server/BatteryService$Led;Z)Z
 
     iget-object v1, p0, Lcom/android/server/BatteryService$Led$2;->this$1:Lcom/android/server/BatteryService$Led;
 
-    invoke-static {v1}, Lcom/android/server/BatteryService$Led;->access$1900(Lcom/android/server/BatteryService$Led;)Landroid/os/Handler;
+    invoke-static {v1}, Lcom/android/server/BatteryService$Led;->access$1500(Lcom/android/server/BatteryService$Led;)Landroid/os/Handler;
 
     move-result-object v1
 
@@ -79,7 +79,7 @@
 
     const/4 v3, 0x0
 
-    invoke-static {v1, v3}, Lcom/android/server/BatteryService$Led;->access$1802(Lcom/android/server/BatteryService$Led;Z)Z
+    invoke-static {v1, v3}, Lcom/android/server/BatteryService$Led;->access$1402(Lcom/android/server/BatteryService$Led;Z)Z
 
     iget-object v1, p0, Lcom/android/server/BatteryService$Led$2;->this$1:Lcom/android/server/BatteryService$Led;
 
@@ -102,7 +102,7 @@
 
     iget-object v3, p0, Lcom/android/server/BatteryService$Led$2;->this$1:Lcom/android/server/BatteryService$Led;
 
-    invoke-static {v3}, Lcom/android/server/BatteryService$Led;->access$1900(Lcom/android/server/BatteryService$Led;)Landroid/os/Handler;
+    invoke-static {v3}, Lcom/android/server/BatteryService$Led;->access$1500(Lcom/android/server/BatteryService$Led;)Landroid/os/Handler;
 
     move-result-object v3
 
@@ -115,7 +115,7 @@
     :cond_2
     iget-object v3, p0, Lcom/android/server/BatteryService$Led$2;->this$1:Lcom/android/server/BatteryService$Led;
 
-    invoke-static {v3}, Lcom/android/server/BatteryService$Led;->access$1900(Lcom/android/server/BatteryService$Led;)Landroid/os/Handler;
+    invoke-static {v3}, Lcom/android/server/BatteryService$Led;->access$1500(Lcom/android/server/BatteryService$Led;)Landroid/os/Handler;
 
     move-result-object v3
 

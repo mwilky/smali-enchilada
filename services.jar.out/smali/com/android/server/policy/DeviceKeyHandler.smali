@@ -94,7 +94,7 @@
 
 .field private mEventHandler:Lcom/android/server/policy/DeviceKeyHandler$EventHandler;
 
-.field public mFlashlightEnabled:Z
+.field private mFlashlightEnabled:Z
 
 .field final mGestureMap:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;

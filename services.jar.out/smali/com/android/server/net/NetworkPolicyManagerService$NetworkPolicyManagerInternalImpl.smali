@@ -55,7 +55,7 @@
 
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$NetworkPolicyManagerInternalImpl;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    invoke-static {v2, p1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$5100(Lcom/android/server/net/NetworkPolicyManagerService;Landroid/net/Network;)I
+    invoke-static {v2, p1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$5000(Lcom/android/server/net/NetworkPolicyManagerService;Landroid/net/Network;)I
 
     move-result v2
 
@@ -161,13 +161,13 @@
     :try_start_0
     iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService$NetworkPolicyManagerInternalImpl;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    invoke-static {v1, p1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$5100(Lcom/android/server/net/NetworkPolicyManagerService;Landroid/net/Network;)I
+    invoke-static {v1, p1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$5000(Lcom/android/server/net/NetworkPolicyManagerService;Landroid/net/Network;)I
 
     move-result v1
 
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$NetworkPolicyManagerInternalImpl;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    invoke-static {v2, v1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$5200(Lcom/android/server/net/NetworkPolicyManagerService;I)Landroid/telephony/SubscriptionPlan;
+    invoke-static {v2, v1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$5100(Lcom/android/server/net/NetworkPolicyManagerService;I)Landroid/telephony/SubscriptionPlan;
 
     move-result-object v2
 
@@ -197,13 +197,13 @@
     :try_start_0
     iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService$NetworkPolicyManagerInternalImpl;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    invoke-static {v1, p1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$5300(Lcom/android/server/net/NetworkPolicyManagerService;Landroid/net/NetworkTemplate;)I
+    invoke-static {v1, p1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$5200(Lcom/android/server/net/NetworkPolicyManagerService;Landroid/net/NetworkTemplate;)I
 
     move-result v1
 
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$NetworkPolicyManagerInternalImpl;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    invoke-static {v2, v1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$5200(Lcom/android/server/net/NetworkPolicyManagerService;I)Landroid/telephony/SubscriptionPlan;
+    invoke-static {v2, v1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$5100(Lcom/android/server/net/NetworkPolicyManagerService;I)Landroid/telephony/SubscriptionPlan;
 
     move-result-object v2
 
@@ -255,7 +255,7 @@
 
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$NetworkPolicyManagerInternalImpl;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    invoke-static {v2, p1, v3}, Lcom/android/server/net/NetworkPolicyManagerService;->access$4800(Lcom/android/server/net/NetworkPolicyManagerService;IZ)Z
+    invoke-static {v2, p1, v3}, Lcom/android/server/net/NetworkPolicyManagerService;->access$4700(Lcom/android/server/net/NetworkPolicyManagerService;IZ)Z
 
     move-result v2
 
@@ -312,7 +312,7 @@
 
     if-eqz v2, :cond_0
 
-    invoke-static {v1, v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$4700(II)Z
+    invoke-static {v1, v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$4600(II)Z
 
     move-result v3
 
@@ -320,7 +320,7 @@
 
     const/4 v3, 0x2
 
-    invoke-static {v1, v3}, Lcom/android/server/net/NetworkPolicyManagerService;->access$4700(II)Z
+    invoke-static {v1, v3}, Lcom/android/server/net/NetworkPolicyManagerService;->access$4600(II)Z
 
     move-result v3
 
@@ -350,7 +350,7 @@
 
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$NetworkPolicyManagerInternalImpl;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$5400(Lcom/android/server/net/NetworkPolicyManagerService;)Ljava/util/concurrent/CountDownLatch;
+    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$5300(Lcom/android/server/net/NetworkPolicyManagerService;)Ljava/util/concurrent/CountDownLatch;
 
     move-result-object v0
 
@@ -381,7 +381,7 @@
 
     iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService$NetworkPolicyManagerInternalImpl;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    invoke-static {v1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$4900(Lcom/android/server/net/NetworkPolicyManagerService;)Landroid/util/SparseBooleanArray;
+    invoke-static {v1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$4800(Lcom/android/server/net/NetworkPolicyManagerService;)Landroid/util/SparseBooleanArray;
 
     move-result-object v1
 
@@ -394,7 +394,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService$NetworkPolicyManagerInternalImpl;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    invoke-static {v1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$4900(Lcom/android/server/net/NetworkPolicyManagerService;)Landroid/util/SparseBooleanArray;
+    invoke-static {v1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$4800(Lcom/android/server/net/NetworkPolicyManagerService;)Landroid/util/SparseBooleanArray;
 
     move-result-object v1
 
@@ -403,7 +403,7 @@
     :goto_0
     iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService$NetworkPolicyManagerInternalImpl;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    invoke-static {v1, p1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$5000(Lcom/android/server/net/NetworkPolicyManagerService;I)V
+    invoke-static {v1, p1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$4900(Lcom/android/server/net/NetworkPolicyManagerService;I)V
 
     monitor-exit v0
 

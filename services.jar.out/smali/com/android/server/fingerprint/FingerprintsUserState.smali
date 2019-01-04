@@ -202,7 +202,7 @@
 
     invoke-interface {v4, v2, v8, v9}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string/jumbo v8, "groupId"
+    const-string v8, "groupId"
 
     invoke-virtual {v7}, Landroid/hardware/fingerprint/Fingerprint;->getGroupId()I
 
@@ -390,7 +390,7 @@
     :goto_0
     iget-object v2, p0, Lcom/android/server/fingerprint/FingerprintsUserState;->mCtx:Landroid/content/Context;
 
-    const v3, 0x1040244
+    const v3, 0x1040243
 
     new-array v4, v0, [Ljava/lang/Object;
 
@@ -535,7 +535,7 @@
 
     move-result-object v4
 
-    const-string/jumbo v6, "groupId"
+    const-string v6, "groupId"
 
     invoke-interface {v0, v5, v6}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 

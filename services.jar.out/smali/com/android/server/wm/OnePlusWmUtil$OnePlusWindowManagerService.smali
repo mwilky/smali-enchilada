@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/server/wm/WindowManagerService;)V
-    .locals 3
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,23 +38,9 @@
 
     iput-object p1, p0, Lcom/android/server/wm/OnePlusWmUtil$OnePlusWindowManagerService;->mWms:Lcom/android/server/wm/WindowManagerService;
 
-    iget-object v1, p1, Lcom/android/server/wm/WindowManagerService;->mContext:Landroid/content/Context;
+    iget-object v0, p1, Lcom/android/server/wm/WindowManagerService;->mContext:Landroid/content/Context;
 
-    iput-object v1, p0, Lcom/android/server/wm/OnePlusWmUtil$OnePlusWindowManagerService;->mContext:Landroid/content/Context;
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [I
-
-    const/16 v2, 0x42
-
-    aput v2, v1, v0
-
-    invoke-static {v1}, Landroid/util/OpFeatures;->isSupport([I)Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/android/server/wm/OnePlusWmUtil$OnePlusWindowManagerService;->mNetBoostFeature:Z
+    iput-object v0, p0, Lcom/android/server/wm/OnePlusWmUtil$OnePlusWindowManagerService;->mContext:Landroid/content/Context;
 
     return-void
 .end method

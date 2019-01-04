@@ -177,7 +177,7 @@
     return-void
 .end method
 
-.method static synthetic access$1802(Lcom/android/server/BatteryService$Led;Z)Z
+.method static synthetic access$1402(Lcom/android/server/BatteryService$Led;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/BatteryService$Led;->mScreenOn:Z
@@ -185,7 +185,7 @@
     return p1
 .end method
 
-.method static synthetic access$1900(Lcom/android/server/BatteryService$Led;)Landroid/os/Handler;
+.method static synthetic access$1500(Lcom/android/server/BatteryService$Led;)Landroid/os/Handler;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/BatteryService$Led;->mLightHandler:Landroid/os/Handler;
@@ -248,7 +248,7 @@
 
     iget-object v0, p0, Lcom/android/server/BatteryService$Led;->this$0:Lcom/android/server/BatteryService;
 
-    invoke-static {v0}, Lcom/android/server/BatteryService;->access$2000(Lcom/android/server/BatteryService;)Landroid/hardware/health/V1_0/HealthInfo;
+    invoke-static {v0}, Lcom/android/server/BatteryService;->access$1700(Lcom/android/server/BatteryService;)Landroid/hardware/health/V1_0/HealthInfo;
 
     move-result-object v0
 
@@ -278,7 +278,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/server/BatteryService$Led;->this$0:Lcom/android/server/BatteryService;
 
-    invoke-static {v0}, Lcom/android/server/BatteryService;->access$2000(Lcom/android/server/BatteryService;)Landroid/hardware/health/V1_0/HealthInfo;
+    invoke-static {v0}, Lcom/android/server/BatteryService;->access$1700(Lcom/android/server/BatteryService;)Landroid/hardware/health/V1_0/HealthInfo;
 
     move-result-object v0
 
@@ -286,7 +286,7 @@
 
     iget-object v1, p0, Lcom/android/server/BatteryService$Led;->this$0:Lcom/android/server/BatteryService;
 
-    invoke-static {v1}, Lcom/android/server/BatteryService;->access$2000(Lcom/android/server/BatteryService;)Landroid/hardware/health/V1_0/HealthInfo;
+    invoke-static {v1}, Lcom/android/server/BatteryService;->access$1700(Lcom/android/server/BatteryService;)Landroid/hardware/health/V1_0/HealthInfo;
 
     move-result-object v1
 
@@ -294,7 +294,7 @@
 
     iget-object v2, p0, Lcom/android/server/BatteryService$Led;->this$0:Lcom/android/server/BatteryService;
 
-    invoke-static {v2}, Lcom/android/server/BatteryService;->access$2100(Lcom/android/server/BatteryService;)I
+    invoke-static {v2}, Lcom/android/server/BatteryService;->access$1800(Lcom/android/server/BatteryService;)I
 
     move-result v2
 
@@ -308,7 +308,7 @@
 
     iget-object v3, p0, Lcom/android/server/BatteryService$Led;->this$0:Lcom/android/server/BatteryService;
 
-    invoke-static {v3}, Lcom/android/server/BatteryService;->access$1700(Lcom/android/server/BatteryService;)Z
+    invoke-static {v3}, Lcom/android/server/BatteryService;->access$1900(Lcom/android/server/BatteryService;)Z
 
     move-result v3
 
@@ -387,7 +387,7 @@
 
     iget-object v3, p0, Lcom/android/server/BatteryService$Led;->this$0:Lcom/android/server/BatteryService;
 
-    invoke-static {v3}, Lcom/android/server/BatteryService;->access$1700(Lcom/android/server/BatteryService;)Z
+    invoke-static {v3}, Lcom/android/server/BatteryService;->access$1900(Lcom/android/server/BatteryService;)Z
 
     move-result v3
 

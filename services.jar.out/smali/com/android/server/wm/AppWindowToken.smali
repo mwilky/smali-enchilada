@@ -878,7 +878,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_a
 
     sget-boolean v8, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_ANIM:Z
 
@@ -919,19 +919,6 @@
 
     invoke-virtual {v2, v8, v9, v3, v4}, Landroid/view/animation/Animation;->initialize(IIII)V
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/AppWindowToken;->inPreloadWindowingMode()Z
-
-    move-result v10
-
-    if-eqz v10, :cond_a
-
-    const/4 v10, 0x0
-
-    invoke-virtual {v2, v10}, Landroid/view/animation/Animation;->scaleCurrentDuration(F)V
-
-    goto :goto_2
-
-    :cond_a
     iget-object v10, v0, Lcom/android/server/wm/AppWindowToken;->mService:Lcom/android/server/wm/WindowManagerService;
 
     invoke-virtual {v10}, Lcom/android/server/wm/WindowManagerService;->getTransitionAnimationScaleLocked()F
@@ -940,8 +927,7 @@
 
     invoke-virtual {v2, v10}, Landroid/view/animation/Animation;->scaleCurrentDuration(F)V
 
-    :cond_b
-    :goto_2
+    :cond_a
     return-object v2
 .end method
 
@@ -5304,7 +5290,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/16 v2, 0xf
+    const/4 v2, 0x5
 
     invoke-static {v2}, Landroid/os/Debug;->getCallers(I)Ljava/lang/String;
 

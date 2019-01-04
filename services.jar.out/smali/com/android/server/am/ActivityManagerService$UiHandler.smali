@@ -230,7 +230,7 @@
 
     iget-object v2, v2, Lcom/android/server/am/ActivityManagerService;->mUiContext:Landroid/content/Context;
 
-    const v3, 0x1040672
+    const v3, 0x1040671
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -262,8 +262,6 @@
     invoke-static {v0}, Lcom/android/server/am/ActivityManagerService;->access$1000(Lcom/android/server/am/ActivityManagerService;)Z
 
     move-result v0
-    
-    const v0, 0x0
 
     if-eqz v0, :cond_d
 
@@ -297,7 +295,7 @@
 
     iget-object v2, v2, Lcom/android/server/am/ActivityManagerService;->mUiContext:Landroid/content/Context;
 
-    const v3, 0x1040673
+    const v3, 0x1040672
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

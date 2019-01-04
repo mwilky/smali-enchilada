@@ -726,11 +726,11 @@
 
     const v7, 0x1080387
 
-    const v8, 0x1040273
+    const v8, 0x1040272
 
-    const v9, 0x1040272
+    const v9, 0x1040271
 
-    const v10, 0x1040271
+    const v10, 0x1040270
 
     move-object v4, v0
 
@@ -1135,7 +1135,7 @@
 
     const v1, 0x10802f3
 
-    const v2, 0x104025e
+    const v2, 0x104025d
 
     invoke-direct {v0, p0, v1, v2}, Lcom/android/server/policy/LegacyGlobalActions$5;-><init>(Lcom/android/server/policy/LegacyGlobalActions;II)V
 
@@ -1173,7 +1173,7 @@
 
     const v1, 0x10802a2
 
-    const v2, 0x1040262
+    const v2, 0x1040261
 
     invoke-direct {v0, p0, v1, v2}, Lcom/android/server/policy/LegacyGlobalActions$4;-><init>(Lcom/android/server/policy/LegacyGlobalActions;II)V
 
@@ -1187,7 +1187,7 @@
 
     const v1, 0x108002f
 
-    const v2, 0x1040264
+    const v2, 0x1040263
 
     invoke-direct {v0, p0, v1, v2}, Lcom/android/server/policy/LegacyGlobalActions$7;-><init>(Lcom/android/server/policy/LegacyGlobalActions;II)V
 
@@ -1201,7 +1201,7 @@
 
     const v1, 0x10804d2
 
-    const v2, 0x104026a
+    const v2, 0x1040269
 
     invoke-direct {v0, p0, v1, v2}, Lcom/android/server/policy/LegacyGlobalActions$3;-><init>(Lcom/android/server/policy/LegacyGlobalActions;II)V
 
@@ -1215,7 +1215,7 @@
 
     const v1, 0x10804f2
 
-    const v2, 0x104026f
+    const v2, 0x104026e
 
     invoke-direct {v0, p0, v1, v2}, Lcom/android/server/policy/LegacyGlobalActions$6;-><init>(Lcom/android/server/policy/LegacyGlobalActions;II)V
 

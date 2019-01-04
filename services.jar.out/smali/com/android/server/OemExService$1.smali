@@ -66,9 +66,9 @@
 
     move-result-object v1
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_4
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
     iget-object v2, p0, Lcom/android/server/OemExService$1;->this$0:Lcom/android/server/OemExService;
 
@@ -182,11 +182,42 @@
     invoke-virtual {v3, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_2
-    invoke-static {}, Lcom/android/server/OemExService;->access$300()Z
+    invoke-static {}, Lcom/android/server/OemExService;->access$300()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_3
+
+    new-instance v3, Landroid/content/Intent;
+
+    invoke-direct {v3}, Landroid/content/Intent;-><init>()V
+
+    const-string v4, "com.oneplus.exservice.INTENT_PACKAGE_INSTALL_COMMIT"
+
+    invoke-virtual {v3, v4}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    const v4, 0x1000020
+
+    invoke-virtual {v3, v4}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    invoke-static {}, Lcom/android/server/OemExService;->access$300()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    invoke-virtual {p1, v3}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
+
+    :cond_3
+    invoke-static {}, Lcom/android/server/OemExService;->access$400()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_4
 
     const-string v3, "OemExService"
 
@@ -216,12 +247,12 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_3
+    :cond_4
     invoke-static {}, Lcom/android/server/OemExService;->access$100()I
 
     move-result v2
 
-    if-nez v2, :cond_5
+    if-nez v2, :cond_6
 
     iget-object v2, p0, Lcom/android/server/OemExService$1;->this$0:Lcom/android/server/OemExService;
 
@@ -235,7 +266,7 @@
 
     const-string/jumbo v3, "package_verifier_enable"
 
-    invoke-static {}, Lcom/android/server/OemExService;->access$400()I
+    invoke-static {}, Lcom/android/server/OemExService;->access$500()I
 
     move-result v4
 
@@ -243,7 +274,7 @@
 
     sget-boolean v2, Lcom/android/server/OemExService;->DEBUG_ONEPLUS:Z
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_5
 
     const-string v2, "OemExService"
 
@@ -279,11 +310,11 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_4
+    :cond_5
     iget-object v2, p0, Lcom/android/server/OemExService$1;->this$0:Lcom/android/server/OemExService;
 
-    invoke-static {v2}, Lcom/android/server/OemExService;->access$500(Lcom/android/server/OemExService;)V
+    invoke-static {v2}, Lcom/android/server/OemExService;->access$600(Lcom/android/server/OemExService;)V
 
-    :cond_5
+    :cond_6
     return-void
 .end method

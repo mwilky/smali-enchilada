@@ -34,7 +34,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
 
-    invoke-static {}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$200()Z
+    invoke-static {}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$100()Z
 
     move-result v0
 
@@ -66,64 +66,42 @@
     goto :goto_0
 
     :pswitch_0
-    new-instance v0, Lcom/oneplus/config/ConfigGrabber;
+    iget-object v0, p0, Lcom/android/server/am/OemSceneWiFiBoostController$WiFiBoostThreadHandler;->this$0:Lcom/android/server/am/OemSceneWiFiBoostController;
 
-    iget-object v1, p0, Lcom/android/server/am/OemSceneWiFiBoostController$WiFiBoostThreadHandler;->this$0:Lcom/android/server/am/OemSceneWiFiBoostController;
+    iget v1, p1, Landroid/os/Message;->arg1:I
 
-    invoke-static {v1}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$1100(Lcom/android/server/am/OemSceneWiFiBoostController;)Landroid/content/Context;
-
-    move-result-object v1
-
-    const-string v2, "WifiBoost"
-
-    invoke-direct {v0, v1, v2}, Lcom/oneplus/config/ConfigGrabber;-><init>(Landroid/content/Context;Ljava/lang/String;)V
-
-    iget-object v1, p0, Lcom/android/server/am/OemSceneWiFiBoostController$WiFiBoostThreadHandler;->this$0:Lcom/android/server/am/OemSceneWiFiBoostController;
-
-    invoke-virtual {v0}, Lcom/oneplus/config/ConfigGrabber;->grabConfig()Lorg/json/JSONArray;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$000(Lcom/android/server/am/OemSceneWiFiBoostController;Lorg/json/JSONArray;)V
+    invoke-static {v0, v1}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$900(Lcom/android/server/am/OemSceneWiFiBoostController;I)V
 
     goto :goto_0
 
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/am/OemSceneWiFiBoostController$WiFiBoostThreadHandler;->this$0:Lcom/android/server/am/OemSceneWiFiBoostController;
 
-    iget v1, p1, Landroid/os/Message;->arg1:I
-
-    invoke-static {v0, v1}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$1000(Lcom/android/server/am/OemSceneWiFiBoostController;I)V
+    invoke-static {v0}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$800(Lcom/android/server/am/OemSceneWiFiBoostController;)V
 
     goto :goto_0
 
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/am/OemSceneWiFiBoostController$WiFiBoostThreadHandler;->this$0:Lcom/android/server/am/OemSceneWiFiBoostController;
 
-    invoke-static {v0}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$900(Lcom/android/server/am/OemSceneWiFiBoostController;)V
+    invoke-static {v0}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$700(Lcom/android/server/am/OemSceneWiFiBoostController;)V
 
     goto :goto_0
 
     :pswitch_3
     iget-object v0, p0, Lcom/android/server/am/OemSceneWiFiBoostController$WiFiBoostThreadHandler;->this$0:Lcom/android/server/am/OemSceneWiFiBoostController;
 
-    invoke-static {v0}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$800(Lcom/android/server/am/OemSceneWiFiBoostController;)V
-
-    goto :goto_0
-
-    :pswitch_4
-    iget-object v0, p0, Lcom/android/server/am/OemSceneWiFiBoostController$WiFiBoostThreadHandler;->this$0:Lcom/android/server/am/OemSceneWiFiBoostController;
-
-    invoke-static {v0}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$700(Lcom/android/server/am/OemSceneWiFiBoostController;)V
+    invoke-static {v0}, Lcom/android/server/am/OemSceneWiFiBoostController;->access$600(Lcom/android/server/am/OemSceneWiFiBoostController;)V
 
     nop
 
     :goto_0
     return-void
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_4
         :pswitch_3
         :pswitch_2
         :pswitch_1

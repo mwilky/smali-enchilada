@@ -3048,17 +3048,15 @@
 
     move-object/from16 v9, p0
 
-    move-object/from16 v10, p2
-
     move-object/from16 v1, p3
 
-    move/from16 v11, p4
+    move/from16 v10, p4
 
     const-string/jumbo v0, "vibrate"
 
-    const-wide/32 v12, 0x800000
+    const-wide/32 v11, 0x800000
 
-    invoke-static {v12, v13, v0}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
+    invoke-static {v11, v12, v0}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
     :try_start_0
     iget-object v0, v9, Lcom/android/server/VibratorService;->mContext:Landroid/content/Context;
@@ -3069,7 +3067,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_9
 
     if-nez p5, :cond_0
 
@@ -3079,9 +3077,9 @@
 
     invoke-static {v0, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_4
+    .catchall {:try_start_0 .. :try_end_0} :catchall_5
 
-    invoke-static {v12, v13}, Landroid/os/Trace;->traceEnd(J)V
+    invoke-static {v11, v12}, Landroid/os/Trace;->traceEnd(J)V
 
     return-void
 
@@ -3093,11 +3091,11 @@
 
     move-result v0
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_4
+    .catchall {:try_start_1 .. :try_end_1} :catchall_5
 
     if-nez v0, :cond_1
 
-    invoke-static {v12, v13}, Landroid/os/Trace;->traceEnd(J)V
+    invoke-static {v11, v12}, Landroid/os/Trace;->traceEnd(J)V
 
     return-void
 
@@ -3112,14 +3110,19 @@
     const-string/jumbo v3, "vibrate from \'"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_5
 
-    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-object/from16 v13, p2
+
+    :try_start_3
+    invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v3, "\', usageHint = "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -3129,33 +3132,11 @@
 
     iget-object v0, v9, Lcom/android/server/VibratorService;->mContext:Landroid/content/Context;
 
-    invoke-static {v0, v10}, Lcom/android/server/OemSceneVibrationController;->canVibrationGo(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v0, v10}, Lcom/oneplus/util/OemSceneModeUtils;->isUsageMutedByGameMode(Landroid/content/Context;I)Z
 
     move-result v0
 
-    if-nez v0, :cond_2
-
-    const-string v0, "VibratorService"
-
-    const-string v2, "Vibrating is ignored by OemSceneVibrationController."
-
-    invoke-static {v0, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_4
-
-    invoke-static {v12, v13}, Landroid/os/Trace;->traceEnd(J)V
-
-    return-void
-
-    :cond_2
-    :try_start_3
-    iget-object v0, v9, Lcom/android/server/VibratorService;->mContext:Landroid/content/Context;
-
-    invoke-static {v0, v11}, Lcom/oneplus/util/OemSceneModeUtils;->isUsageMutedByGameMode(Landroid/content/Context;I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     const-string v0, "VibratorService"
 
@@ -3165,15 +3146,15 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_4
 
-    invoke-static {v12, v13}, Landroid/os/Trace;->traceEnd(J)V
+    invoke-static {v11, v12}, Landroid/os/Trace;->traceEnd(J)V
 
     return-void
 
-    :cond_3
+    :cond_2
     :try_start_4
     instance-of v0, v1, Landroid/os/VibrationEffect$Waveform;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_6
 
     const-string v0, "Middle"
 
@@ -3193,7 +3174,7 @@
 
     cmp-long v6, v6, v14
 
-    if-nez v6, :cond_4
+    if-nez v6, :cond_3
 
     const-string/jumbo v6, "weak"
 
@@ -3213,14 +3194,14 @@
 
     goto :goto_0
 
-    :cond_4
+    :cond_3
     aget-wide v6, v3, v5
 
     const-wide/16 v14, -0x2
 
     cmp-long v6, v6, v14
 
-    if-nez v6, :cond_5
+    if-nez v6, :cond_4
 
     const/16 v6, 0x5e4
 
@@ -3236,14 +3217,14 @@
 
     goto :goto_0
 
-    :cond_5
+    :cond_4
     aget-wide v6, v3, v5
 
     const-wide/16 v14, -0x3
 
     cmp-long v6, v6, v14
 
-    if-nez v6, :cond_6
+    if-nez v6, :cond_5
 
     const-string v6, "Strong"
 
@@ -3263,7 +3244,7 @@
 
     goto :goto_0
 
-    :cond_6
+    :cond_5
     const/16 v5, 0x4fc
 
     invoke-direct {v9, v5}, Lcom/android/server/VibratorService;->WriteNodeValue(I)V
@@ -3317,11 +3298,11 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_4
 
-    invoke-static {v12, v13}, Landroid/os/Trace;->traceEnd(J)V
+    invoke-static {v11, v12}, Landroid/os/Trace;->traceEnd(J)V
 
     return-void
 
-    :cond_7
+    :cond_6
     move-object v14, v1
 
     :goto_1
@@ -3335,11 +3316,11 @@
     :try_start_8
     instance-of v0, v14, Landroid/os/VibrationEffect$OneShot;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_7
 
     iget-object v0, v9, Lcom/android/server/VibratorService;->mCurrentVibration:Lcom/android/server/VibratorService$Vibration;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_7
 
     iget-object v0, v9, Lcom/android/server/VibratorService;->mCurrentVibration:Lcom/android/server/VibratorService$Vibration;
 
@@ -3347,7 +3328,7 @@
 
     instance-of v0, v0, Landroid/os/VibrationEffect$OneShot;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_7
 
     move-object v0, v14
 
@@ -3369,7 +3350,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_7
 
     invoke-virtual {v0}, Landroid/os/VibrationEffect$OneShot;->getAmplitude()I
 
@@ -3379,27 +3360,27 @@
 
     move-result v3
 
-    if-ne v2, v3, :cond_8
+    if-ne v2, v3, :cond_7
 
     monitor-exit v8
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_1
 
-    invoke-static {v12, v13}, Landroid/os/Trace;->traceEnd(J)V
+    invoke-static {v11, v12}, Landroid/os/Trace;->traceEnd(J)V
 
     return-void
 
-    :cond_8
+    :cond_7
     :try_start_9
     invoke-static {v14}, Lcom/android/server/VibratorService;->isRepeatingVibration(Landroid/os/VibrationEffect;)Z
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_8
 
     iget-object v0, v9, Lcom/android/server/VibratorService;->mCurrentVibration:Lcom/android/server/VibratorService$Vibration;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_8
 
     iget-object v0, v9, Lcom/android/server/VibratorService;->mCurrentVibration:Lcom/android/server/VibratorService$Vibration;
 
@@ -3409,17 +3390,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_8
 
     monitor-exit v8
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_1
 
-    invoke-static {v12, v13}, Landroid/os/Trace;->traceEnd(J)V
+    invoke-static {v11, v12}, Landroid/os/Trace;->traceEnd(J)V
 
     return-void
 
-    :cond_9
+    :cond_8
     :try_start_a
     new-instance v0, Lcom/android/server/VibratorService$Vibration;
     :try_end_a
@@ -3435,11 +3416,11 @@
 
     move-object v4, v14
 
-    move v5, v11
+    move v5, v10
 
     move/from16 v6, p1
 
-    move-object v7, v10
+    move-object v7, v13
 
     move-object/from16 v16, v8
 
@@ -3476,7 +3457,7 @@
     :try_end_d
     .catchall {:try_start_d .. :try_end_d} :catchall_2
 
-    invoke-static {v12, v13}, Landroid/os/Trace;->traceEnd(J)V
+    invoke-static {v11, v12}, Landroid/os/Trace;->traceEnd(J)V
 
     nop
 
@@ -3517,7 +3498,9 @@
 
     goto :goto_3
 
-    :cond_a
+    :cond_9
+    move-object/from16 v13, p2
+
     :try_start_10
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -3532,8 +3515,15 @@
     :catchall_4
     move-exception v0
 
+    goto :goto_3
+
+    :catchall_5
+    move-exception v0
+
+    move-object/from16 v13, p2
+
     :goto_3
-    invoke-static {v12, v13}, Landroid/os/Trace;->traceEnd(J)V
+    invoke-static {v11, v12}, Landroid/os/Trace;->traceEnd(J)V
 
     throw v0
 .end method

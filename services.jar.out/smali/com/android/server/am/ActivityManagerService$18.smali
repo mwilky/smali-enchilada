@@ -45,7 +45,7 @@
 
     iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
 
-    const v2, 0x50c0066
+    const v2, 0x50c005e
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

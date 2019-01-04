@@ -4434,52 +4434,9 @@
 
     invoke-direct {v1, v2, v0}, Lcom/android/server/OnePlusPowerController;->dumpDiagnosisRecords(Ljava/io/PrintWriter;Ljava/lang/String;)V
 
-    invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
-
-    const-string v0, "**** BGC ****"
-
-    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
-
-    if-eqz v0, :cond_6
-
-    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
-
-    sget-object v0, Lcom/android/server/am/ActivityManagerService;->mOpAms:Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;
-
-    if-eqz v0, :cond_6
-
-    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
-
-    sget-object v0, Lcom/android/server/am/ActivityManagerService;->mOpAms:Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;
-
-    invoke-virtual {v0}, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;->ifOHPDInited()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_6
-
-    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
-
-    sget-object v0, Lcom/android/server/am/ActivityManagerService;->mOpAms:Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;
-
-    invoke-virtual {v0}, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;->getOHPD()Lcom/android/server/am/OnePlusHighPowerDetector;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->getBGCInstance()Lcom/android/server/am/OnePlusBGController;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_6
-
-    invoke-virtual {v0, v2}, Lcom/android/server/am/OnePlusBGController;->dumpUidSippermAhStats(Ljava/io/PrintWriter;)V
-
-    :cond_6
     iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_6
 
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
@@ -4634,6 +4591,49 @@
     move-result-object v0
 
     invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    :cond_6
+    invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
+
+    const-string v0, "**** BGC ****"
+
+    invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
+
+    if-eqz v0, :cond_7
+
+    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
+
+    sget-object v0, Lcom/android/server/am/ActivityManagerService;->mOpAms:Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;
+
+    if-eqz v0, :cond_7
+
+    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
+
+    sget-object v0, Lcom/android/server/am/ActivityManagerService;->mOpAms:Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;
+
+    invoke-virtual {v0}, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;->ifOHPDInited()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7
+
+    iget-object v0, v1, Lcom/android/server/OnePlusPowerController;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
+
+    sget-object v0, Lcom/android/server/am/ActivityManagerService;->mOpAms:Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;
+
+    invoke-virtual {v0}, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;->getOHPD()Lcom/android/server/am/OnePlusHighPowerDetector;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/server/am/OnePlusHighPowerDetector;->getBGCInstance()Lcom/android/server/am/OnePlusBGController;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_7
+
+    invoke-virtual {v0, v2}, Lcom/android/server/am/OnePlusBGController;->dumpUidSippermAhStats(Ljava/io/PrintWriter;)V
 
     :cond_7
     monitor-exit p0

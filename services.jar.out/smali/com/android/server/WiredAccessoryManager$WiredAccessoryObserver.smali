@@ -120,7 +120,7 @@
     :goto_0
     new-instance v2, Lcom/android/server/WiredAccessoryManager$WiredAccessoryObserver$UEventInfo;
 
-    const-string/jumbo v6, "h2w"
+    const-string v6, "h2w"
 
     const/4 v7, 0x1
 

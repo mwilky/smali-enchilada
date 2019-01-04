@@ -61,10 +61,6 @@
 
     aget v2, v2, v3
 
-    sget-boolean v4, Lcom/android/server/display/AutomaticBrightnessController;->DEBUG:Z
-
-    if-eqz v4, :cond_0
-
     invoke-static {}, Lcom/android/server/display/AutomaticBrightnessController;->access$800()Z
 
     move-result v4

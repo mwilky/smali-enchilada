@@ -1467,7 +1467,7 @@
     :goto_0
     sput-boolean v1, Lcom/android/server/power/ShutdownThread;->mRebootHasProgressBar:Z
 
-    const v1, 0x104059a
+    const v1, 0x1040599
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1491,7 +1491,7 @@
 
     invoke-virtual {v0, v4}, Landroid/app/ProgressDialog;->setProgressStyle(I)V
 
-    const v1, 0x1040598
+    const v1, 0x1040597
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1513,7 +1513,7 @@
     :cond_2
     invoke-virtual {v0, v4}, Landroid/app/ProgressDialog;->setIndeterminate(Z)V
 
-    const v1, 0x1040599
+    const v1, 0x1040598
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1526,9 +1526,9 @@
     :cond_3
     sget-boolean v1, Lcom/android/server/power/ShutdownThread;->mNeedShutdownDialog:Z
 
-    const v5, 0x1040613
+    const v5, 0x1040612
 
-    const v6, 0x104057d
+    const v6, 0x104057c
 
     if-eqz v1, :cond_5
 
@@ -1569,7 +1569,7 @@
     goto :goto_1
 
     :cond_4
-    const v1, 0x1040596
+    const v1, 0x1040595
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1577,7 +1577,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setTitle(Ljava/lang/CharSequence;)V
 
-    const v1, 0x1040595
+    const v1, 0x1040594
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1802,7 +1802,7 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x1040592
+    const v1, 0x1040591
 
     goto :goto_0
 
@@ -1811,12 +1811,12 @@
 
     if-ne v0, v1, :cond_2
 
-    const v1, 0x1040612
+    const v1, 0x1040611
 
     goto :goto_0
 
     :cond_2
-    const v1, 0x1040611
+    const v1, 0x1040610
 
     :goto_0
     const-string v2, "ShutdownThread"
@@ -1860,12 +1860,12 @@
 
     if-eqz v4, :cond_4
 
-    const v4, 0x1040593
+    const v4, 0x1040592
 
     goto :goto_1
 
     :cond_4
-    const v4, 0x104057d
+    const v4, 0x104057c
 
     :goto_1
     invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;

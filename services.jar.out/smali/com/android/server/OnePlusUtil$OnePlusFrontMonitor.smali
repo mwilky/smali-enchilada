@@ -46,8 +46,6 @@
 
 .field private mPackageName:Ljava/lang/String;
 
-.field private mPid:I
-
 .field private mUid:I
 
 .field private packageListeners:Ljava/util/ArrayList;
@@ -157,8 +155,8 @@
     return-void
 .end method
 
-.method private notifyPackageChanged(Ljava/lang/String;IILjava/lang/String;II)V
-    .locals 9
+.method private notifyPackageChanged()V
+    .locals 3
 
     iget-object v0, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->packageListeners:Ljava/util/ArrayList;
 
@@ -179,21 +177,9 @@
 
     check-cast v1, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor$FrontPackageListener;
 
-    move-object v2, v1
+    iget-object v2, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mPackageName:Ljava/lang/String;
 
-    move-object v3, p1
-
-    move v4, p2
-
-    move v5, p3
-
-    move-object v6, p4
-
-    move v7, p5
-
-    move v8, p6
-
-    invoke-interface/range {v2 .. v8}, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor$FrontPackageListener;->frontPackageChanged(Ljava/lang/String;IILjava/lang/String;II)V
+    invoke-interface {v1, v2}, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor$FrontPackageListener;->frontPackageChanged(Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -204,149 +190,51 @@
 
 # virtual methods
 .method public getFrontActivityName()Ljava/lang/String;
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mLock:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mActivityName:Ljava/lang/String;
 
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mActivityName:Ljava/lang/String;
-
-    monitor-exit v0
-
-    return-object v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
+    return-object v0
 .end method
 
 .method public getFrontPackageName()Ljava/lang/String;
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mLock:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mPackageName:Ljava/lang/String;
 
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mPackageName:Ljava/lang/String;
-
-    monitor-exit v0
-
-    return-object v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
+    return-object v0
 .end method
 
 .method public getFrontUid()I
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mLock:Ljava/lang/Object;
+    iget v0, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mUid:I
 
-    monitor-enter v0
-
-    :try_start_0
-    iget v1, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mUid:I
-
-    monitor-exit v0
-
-    return v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
+    return v0
 .end method
 
 .method public registerFrontActivityListener(Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor$FrontActivityListener;)V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mLock:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->activityListeners:Ljava/util/ArrayList;
 
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->activityListeners:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    iget-object v1, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->activityListeners:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_0
-    monitor-exit v0
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
 .end method
 
 .method public registerFrontPackageListener(Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor$FrontPackageListener;)V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mLock:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->packageListeners:Ljava/util/ArrayList;
 
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->packageListeners:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    iget-object v1, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->packageListeners:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_0
-    monitor-exit v0
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
 .end method
 
-.method public setFront(Ljava/lang/String;Ljava/lang/String;II)V
-    .locals 9
+.method public setFront(Ljava/lang/String;Ljava/lang/String;I)V
+    .locals 3
 
     iget-object v0, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mLock:Ljava/lang/Object;
 
@@ -363,29 +251,13 @@
 
     if-nez v1, :cond_0
 
-    iget-object v6, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mPackageName:Ljava/lang/String;
-
-    iget v7, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mUid:I
-
-    iget v8, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mPid:I
-
-    move-object v2, p0
-
-    move-object v3, p2
-
-    move v4, p3
-
-    move v5, p4
-
-    invoke-direct/range {v2 .. v8}, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->notifyPackageChanged(Ljava/lang/String;IILjava/lang/String;II)V
-
     iput-object p2, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mPackageName:Ljava/lang/String;
 
-    iput p3, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mUid:I
-
-    iput p4, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mPid:I
+    invoke-direct {p0}, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->notifyPackageChanged()V
 
     :cond_0
+    iput p3, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mUid:I
+
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -477,53 +349,21 @@
 .end method
 
 .method public unregisterFrontActivityListener(Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor$FrontActivityListener;)V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mLock:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->activityListeners:Ljava/util/ArrayList;
 
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->activityListeners:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-
-    monitor-exit v0
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
 .end method
 
 .method public unregisterFrontPackageListener(Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor$FrontPackageListener;)V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->mLock:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->packageListeners:Ljava/util/ArrayList;
 
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->packageListeners:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-
-    monitor-exit v0
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
 .end method

@@ -38,7 +38,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .locals 7
 
-    const-string/jumbo v0, "handleMessagemsg.what"
+    const-string v0, "handleMessagemsg.what"
 
     const-wide/32 v1, 0x20000
 
@@ -249,8 +249,6 @@
     invoke-static {v1, v2}, Landroid/os/Trace;->traceEnd(J)V
 
     return-void
-
-    nop
 
     nop
 

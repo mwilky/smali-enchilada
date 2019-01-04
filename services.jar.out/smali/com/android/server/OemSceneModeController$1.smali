@@ -51,53 +51,46 @@
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/OemSceneModeController$1;->this$0:Lcom/android/server/OemSceneModeController;
 
-    invoke-virtual {v0}, Lcom/android/server/OemSceneModeController;->handleBreathModeChanged()V
+    invoke-virtual {v0}, Lcom/android/server/OemSceneModeController;->handleStartMonitorPassive()V
 
     goto :goto_0
 
     :pswitch_3
     iget-object v0, p0, Lcom/android/server/OemSceneModeController$1;->this$0:Lcom/android/server/OemSceneModeController;
 
-    invoke-virtual {v0}, Lcom/android/server/OemSceneModeController;->handleStartMonitorPassive()V
+    invoke-virtual {v0}, Lcom/android/server/OemSceneModeController;->handleStopMonitorPassive()V
 
     goto :goto_0
 
     :pswitch_4
     iget-object v0, p0, Lcom/android/server/OemSceneModeController$1;->this$0:Lcom/android/server/OemSceneModeController;
 
-    invoke-virtual {v0}, Lcom/android/server/OemSceneModeController;->handleStopMonitorPassive()V
+    invoke-virtual {v0}, Lcom/android/server/OemSceneModeController;->handleStartMonitor()V
 
     goto :goto_0
 
     :pswitch_5
     iget-object v0, p0, Lcom/android/server/OemSceneModeController$1;->this$0:Lcom/android/server/OemSceneModeController;
 
-    invoke-virtual {v0}, Lcom/android/server/OemSceneModeController;->handleStartMonitor()V
+    invoke-static {v0}, Lcom/android/server/OemSceneModeController;->access$900(Lcom/android/server/OemSceneModeController;)V
 
     goto :goto_0
 
     :pswitch_6
     iget-object v0, p0, Lcom/android/server/OemSceneModeController$1;->this$0:Lcom/android/server/OemSceneModeController;
 
-    invoke-static {v0}, Lcom/android/server/OemSceneModeController;->access$900(Lcom/android/server/OemSceneModeController;)V
+    invoke-static {v0}, Lcom/android/server/OemSceneModeController;->access$800(Lcom/android/server/OemSceneModeController;)V
 
     goto :goto_0
 
     :pswitch_7
     iget-object v0, p0, Lcom/android/server/OemSceneModeController$1;->this$0:Lcom/android/server/OemSceneModeController;
 
-    invoke-static {v0}, Lcom/android/server/OemSceneModeController;->access$800(Lcom/android/server/OemSceneModeController;)V
-
-    goto :goto_0
-
-    :pswitch_8
-    iget-object v0, p0, Lcom/android/server/OemSceneModeController$1;->this$0:Lcom/android/server/OemSceneModeController;
-
     invoke-static {v0}, Lcom/android/server/OemSceneModeController;->access$700(Lcom/android/server/OemSceneModeController;)V
 
     goto :goto_0
 
-    :pswitch_9
+    :pswitch_8
     iget-object v0, p0, Lcom/android/server/OemSceneModeController$1;->this$0:Lcom/android/server/OemSceneModeController;
 
     invoke-static {v0}, Lcom/android/server/OemSceneModeController;->access$600(Lcom/android/server/OemSceneModeController;)V
@@ -113,15 +106,15 @@
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_9
         :pswitch_8
         :pswitch_7
         :pswitch_6
         :pswitch_5
-        :pswitch_0
         :pswitch_4
+        :pswitch_0
         :pswitch_3
         :pswitch_2
+        :pswitch_0
         :pswitch_0
         :pswitch_0
         :pswitch_1

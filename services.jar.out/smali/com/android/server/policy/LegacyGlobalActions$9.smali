@@ -103,7 +103,7 @@
 
     move-result-object v1
 
-    const-string/jumbo v3, "globalactions"
+    const-string v3, "globalactions"
 
     invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

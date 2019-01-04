@@ -114,7 +114,7 @@
 
     iget-object v1, p0, Lcom/android/server/connectivity/NetworkMonitor$ValidatedState;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
 
-    const-string/jumbo v6, "www.baidu.com"
+    const-string/jumbo v6, "https://www.baidu.com"
 
     invoke-static {v1, v6, v5, v2}, Lcom/android/server/connectivity/NetworkMonitor;->access$2800(Lcom/android/server/connectivity/NetworkMonitor;Ljava/lang/String;II)Z
 
@@ -125,7 +125,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/server/connectivity/NetworkMonitor$ValidatedState;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
 
-    const-string/jumbo v6, "www.google.com"
+    const-string/jumbo v6, "https://www.google.com"
 
     invoke-static {v1, v6, v5, v2}, Lcom/android/server/connectivity/NetworkMonitor;->access$2800(Lcom/android/server/connectivity/NetworkMonitor;Ljava/lang/String;II)Z
 

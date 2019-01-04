@@ -426,7 +426,9 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    sget-boolean v6, Landroid/os/Build;->DEBUG_ONEPLUS:Z
+    invoke-static {}, Lcom/android/server/notification/ValidateNotificationPeople;->access$000()Z
+
+    move-result v6
 
     if-eqz v6, :cond_8
 
@@ -495,7 +497,9 @@
     goto/16 :goto_0
 
     :cond_b
-    sget-boolean v2, Landroid/os/Build;->DEBUG_ONEPLUS:Z
+    invoke-static {}, Lcom/android/server/notification/ValidateNotificationPeople;->access$000()Z
+
+    move-result v2
 
     if-eqz v2, :cond_c
 

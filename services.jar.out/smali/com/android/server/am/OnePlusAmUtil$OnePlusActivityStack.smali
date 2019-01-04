@@ -60,7 +60,7 @@
 .end method
 
 .method public final resumeTopActivityInnerLocked(Lcom/android/server/am/ActivityRecord;Landroid/app/ActivityOptions;Lcom/android/server/am/ActivityRecord;)Z
-    .locals 5
+    .locals 4
 
     iget-object v0, p0, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityStack;->mSceneModeActivityStack:Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;
 
@@ -88,10 +88,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/am/OnePlusTemperatureMonitor;->startAntutuMonitor(Ljava/lang/String;)Z
 
-    iget-object v0, p3, Lcom/android/server/am/ActivityRecord;->app:Lcom/android/server/am/ProcessRecord;
-
-    if-eqz v0, :cond_0
-
+    :cond_0
     invoke-static {}, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->getInstance()Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;
 
     move-result-object v0
@@ -106,13 +103,8 @@
 
     iget v3, v3, Landroid/content/pm/ApplicationInfo;->uid:I
 
-    iget-object v4, p3, Lcom/android/server/am/ActivityRecord;->app:Lcom/android/server/am/ProcessRecord;
+    invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->setFront(Ljava/lang/String;Ljava/lang/String;I)V
 
-    iget v4, v4, Lcom/android/server/am/ProcessRecord;->pid:I
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->setFront(Ljava/lang/String;Ljava/lang/String;II)V
-
-    :cond_0
     const/4 v0, 0x0
 
     return v0

@@ -199,21 +199,24 @@
     :cond_0
     move v4, v5
 
+    if-eqz v4, :cond_1
+
     const-string/jumbo v5, "persist.vendor.color.matrix"
 
     const-string v6, "2"
 
     invoke-static {v5, v6}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
+    :cond_1
     const/16 v5, 0x12c
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_2
 
     sget-object v6, Lcom/android/server/accessibility/DisplayAdjustmentUtils;->MATRIX_INVERT_COLOR:[F
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     const/4 v6, 0x0
 
     :goto_0

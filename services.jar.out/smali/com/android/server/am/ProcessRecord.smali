@@ -2444,7 +2444,6 @@
     :goto_1
     if-ge v4, v2, :cond_3
 
-    :try_start_0
     iget-object v5, p0, Lcom/android/server/am/ProcessRecord;->services:Landroid/util/ArraySet;
 
     invoke-virtual {v5, v4}, Landroid/util/ArraySet;->valueAt(I)Ljava/lang/Object;
@@ -2456,22 +2455,12 @@
     if-eqz v5, :cond_2
 
     iget-boolean v6, v5, Lcom/android/server/am/ServiceRecord;->isForeground:Z
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     if-eqz v6, :cond_2
 
     return v3
 
     :cond_2
-    goto :goto_2
-
-    :catch_0
-    move-exception v5
-
-    invoke-virtual {v5}, Ljava/lang/Exception;->printStackTrace()V
-
-    :goto_2
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
@@ -2528,7 +2517,7 @@
 
     iget-boolean v0, p0, Lcom/android/server/am/ProcessRecord;->killedByAm:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_5
 
     const-string/jumbo v0, "kill"
 
@@ -2706,78 +2695,9 @@
 
     invoke-virtual {v0, v4, v6, v3, v6}, Landroid/util/BoostFramework;->perfUXEngine_events(IILjava/lang/String;I)I
 
-    if-eqz p1, :cond_6
-
-    const-string v3, "BgDetect"
-
-    invoke-virtual {p1, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_5
-
-    const-string v3, "BGC"
-
-    invoke-virtual {p1, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_6
-
-    :cond_5
-    iget-object v3, p0, Lcom/android/server/am/ProcessRecord;->pkgList:Landroid/util/ArrayMap;
-
-    invoke-virtual {v3}, Landroid/util/ArrayMap;->keySet()Ljava/util/Set;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_1
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_6
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/lang/String;
-
-    invoke-static {}, Lcom/android/server/preload/AbnormalMonitor;->getInstance()Lcom/android/server/preload/AbnormalMonitor;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v4}, Lcom/android/server/preload/AbnormalMonitor;->addBlackApp(Ljava/lang/String;)V
-
-    const-string v5, "OneplusAppPreload"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "Add BgDetect package to blacklist : "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_1
-
-    :cond_6
     invoke-static {v1, v2}, Landroid/os/Trace;->traceEnd(J)V
 
-    :cond_7
+    :cond_5
     return-void
 .end method
 

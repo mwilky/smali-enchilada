@@ -808,7 +808,7 @@
     :goto_1
     iget-object v1, p0, Lcom/android/server/vr/VrManagerService;->mContext:Landroid/content/Context;
 
-    const v4, 0x10406d4
+    const v4, 0x10406d3
 
     const-string v5, "android.settings.VR_LISTENER_SETTINGS"
 

@@ -2054,7 +2054,7 @@
 
     iget-object v4, v0, Lcom/android/server/autofill/AutofillManagerServiceImpl;->mContext:Landroid/content/Context;
 
-    const v5, 0x104013c
+    const v5, 0x104013b
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -3042,7 +3042,7 @@
     monitor-enter v0
 
     :try_start_0
-    const-string/jumbo v1, "getUserData"
+    const-string v1, "getUserData"
 
     invoke-direct {p0, v1, p1}, Lcom/android/server/autofill/AutofillManagerServiceImpl;->isCalledByServiceLocked(Ljava/lang/String;I)Z
 

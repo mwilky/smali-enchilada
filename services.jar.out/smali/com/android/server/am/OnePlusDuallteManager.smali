@@ -830,7 +830,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "handleDualSimStateReady ready:"
+    const-string v2, "handleDualSimStateReady ready:"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -957,7 +957,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "handleMobile4gStateReady ready:"
+    const-string v2, "handleMobile4gStateReady ready:"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1039,7 +1039,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "handlePkgChanged:"
+    const-string v2, "handlePkgChanged:"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1245,8 +1245,6 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

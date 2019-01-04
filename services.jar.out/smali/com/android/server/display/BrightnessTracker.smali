@@ -227,7 +227,7 @@
 
     iput-object v0, p0, Lcom/android/server/display/BrightnessTracker;->mLastSensorReadings:Ljava/util/Deque;
 
-    const/high16 v0, 0x7fc00000    # Float.NaN
+    const/high16 v0, 0x7fc00000    # NaNf
 
     iput v0, p0, Lcom/android/server/display/BrightnessTracker;->mLastBatteryLevel:F
 

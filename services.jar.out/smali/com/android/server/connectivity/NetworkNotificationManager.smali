@@ -136,7 +136,7 @@
     :catch_0
     move-exception v2
 
-    const v3, 0x10403f2
+    const v3, 0x10403f1
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -557,7 +557,7 @@
 
     sget-object v0, Lcom/android/server/connectivity/NetworkNotificationManager$NotificationType;->NO_INTERNET:Lcom/android/server/connectivity/NetworkNotificationManager$NotificationType;
 
-    const v13, 0x1040705
+    const v13, 0x1040704
 
     if-ne v3, v0, :cond_4
 
@@ -575,7 +575,7 @@
 
     move-result-object v0
 
-    const v13, 0x1040706
+    const v13, 0x1040705
 
     invoke-virtual {v11, v13}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -603,7 +603,7 @@
 
     move-result-object v0
 
-    const v13, 0x1040706
+    const v13, 0x1040705
 
     invoke-virtual {v11, v13}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -616,11 +616,11 @@
 
     if-ne v3, v0, :cond_6
 
-    const v13, 0x10403eb
+    const v13, 0x10403ea
 
     packed-switch v7, :pswitch_data_0
 
-    const/4 v0, 0x1
+    move v0, v14
 
     new-array v14, v0, [Ljava/lang/Object;
 
@@ -638,7 +638,7 @@
 
     aput-object v8, v14, v15
 
-    const v0, 0x10403ec
+    const v0, 0x10403eb
 
     invoke-virtual {v11, v0, v14}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -655,7 +655,7 @@
     goto :goto_3
 
     :pswitch_0
-    const v13, 0x10406fb
+    const v13, 0x10406fa
 
     new-array v0, v14, [Ljava/lang/Object;
 
@@ -683,7 +683,7 @@
 
     aput-object v14, v13, v15
 
-    const v14, 0x10403ec
+    const v14, 0x10403eb
 
     invoke-virtual {v11, v14, v13}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -698,23 +698,25 @@
 
     invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object v16
 
-    aput-object v0, v14, v15
+    aput-object v16, v14, v15
 
     invoke-virtual {v11, v13, v14}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
-
-    iget-object v13, v1, Lcom/android/server/connectivity/NetworkNotificationManager;->mTelephonyManager:Landroid/telephony/TelephonyManager;
-
-    invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubscriptionId()I
-
-    move-result v14
-
-    invoke-virtual {v13, v14}, Landroid/telephony/TelephonyManager;->getNetworkOperatorName(I)Ljava/lang/String;
-
     move-result-object v13
+
+    iget-object v14, v1, Lcom/android/server/connectivity/NetworkNotificationManager;->mTelephonyManager:Landroid/telephony/TelephonyManager;
+
+    invoke-virtual {v14}, Landroid/telephony/TelephonyManager;->getNetworkOperatorName()Ljava/lang/String;
+
+    move-result-object v14
+
+    nop
+
+    move-object v0, v13
+
+    move-object v13, v14
 
     goto :goto_3
 
@@ -741,7 +743,7 @@
 
     aput-object v13, v4, v15
 
-    const v14, 0x10403ef
+    const v14, 0x10403ee
 
     invoke-virtual {v11, v14, v4}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -757,7 +759,7 @@
 
     aput-object v0, v14, v16
 
-    const v15, 0x10403f0
+    const v15, 0x10403ef
 
     invoke-virtual {v11, v15, v14}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -971,6 +973,8 @@
 
     nop
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -1015,7 +1019,7 @@
 
     aput-object v1, v3, v4
 
-    const v5, 0x10403f1
+    const v5, 0x10403f0
 
     invoke-virtual {v2, v5, v3}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

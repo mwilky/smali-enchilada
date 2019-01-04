@@ -42,10 +42,6 @@
 
 
 # instance fields
-.field private BrightAdjustThreshold:F
-
-.field private DarkAdjustThreshold:F
-
 .field private SHORT_TERM_MODEL_THRESHOLD_RATIO:F
 
 .field private mAdjustBrightness:Z
@@ -184,14 +180,6 @@
     const/4 v1, -0x1
 
     iput v1, v0, Lcom/android/server/display/AutomaticBrightnessController;->mScreenAutoBrightness:I
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    iput v2, v0, Lcom/android/server/display/AutomaticBrightnessController;->BrightAdjustThreshold:F
-
-    const/high16 v2, 0x3f000000    # 0.5f
-
-    iput v2, v0, Lcom/android/server/display/AutomaticBrightnessController;->DarkAdjustThreshold:F
 
     const/4 v2, 0x0
 
@@ -1094,92 +1082,6 @@
     return-void
 .end method
 
-.method private getAdjustBrighteningThreshold(F)F
-    .locals 4
-
-    iget v0, p0, Lcom/android/server/display/AutomaticBrightnessController;->BrightAdjustThreshold:F
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    add-float/2addr v1, v0
-
-    mul-float/2addr v1, p1
-
-    sget-boolean v0, Lcom/android/server/display/AutomaticBrightnessController;->DEBUG_BACKLIGHT:Z
-
-    if-eqz v0, :cond_0
-
-    const-string v0, "AutomaticBrightnessController"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Adjust BrightThreshold=: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    const-string v3, ", lux="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_0
-    return v1
-.end method
-
-.method private getAdjustDarkeningThreshold(F)F
-    .locals 4
-
-    iget v0, p0, Lcom/android/server/display/AutomaticBrightnessController;->DarkAdjustThreshold:F
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    sub-float/2addr v1, v0
-
-    mul-float/2addr v1, p1
-
-    sget-boolean v0, Lcom/android/server/display/AutomaticBrightnessController;->DEBUG_BACKLIGHT:Z
-
-    if-eqz v0, :cond_0
-
-    const-string v0, "AutomaticBrightnessController"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Adjust BrightThreshold=: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    const-string v3, ", lux="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_0
-    return v1
-.end method
-
 .method private handleLightSensorEvent(JF)V
     .locals 4
 
@@ -1956,22 +1858,6 @@
     move-result-object v2
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget v1, p0, Lcom/android/server/display/AutomaticBrightnessController;->mShortTermModelAnchor:F
-
-    invoke-direct {p0, v1}, Lcom/android/server/display/AutomaticBrightnessController;->getAdjustBrighteningThreshold(F)F
-
-    move-result v1
-
-    iput v1, p0, Lcom/android/server/display/AutomaticBrightnessController;->mBrighteningLuxThreshold:F
-
-    iget v1, p0, Lcom/android/server/display/AutomaticBrightnessController;->mShortTermModelAnchor:F
-
-    invoke-direct {p0, v1}, Lcom/android/server/display/AutomaticBrightnessController;->getAdjustDarkeningThreshold(F)F
-
-    move-result v1
-
-    iput v1, p0, Lcom/android/server/display/AutomaticBrightnessController;->mDarkeningLuxThreshold:F
 
     return v0
 .end method

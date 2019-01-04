@@ -4595,7 +4595,7 @@
 
     const-string v1, "android.permission.GRANT_RUNTIME_PERMISSIONS"
 
-    const-string/jumbo v2, "grantRuntimePermission"
+    const-string v2, "grantRuntimePermission"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -4605,7 +4605,7 @@
 
     const/4 v6, 0x0
 
-    const-string/jumbo v7, "grantRuntimePermission"
+    const-string v7, "grantRuntimePermission"
 
     move-object v1, v8
 
@@ -8869,7 +8869,7 @@
 
     move-result p4
 
-    const-string/jumbo v0, "grantPermissions"
+    const-string v0, "grantPermissions"
 
     const-wide/32 v1, 0x40000
 

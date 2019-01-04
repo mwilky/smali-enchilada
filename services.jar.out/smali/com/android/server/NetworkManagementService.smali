@@ -6361,7 +6361,7 @@
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    const-string/jumbo v3, "getcfg"
+    const-string v3, "getcfg"
 
     const/4 v4, 0x0
 

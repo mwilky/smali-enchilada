@@ -807,203 +807,171 @@
 .end method
 
 .method private calculateBoundsForWindowModeChange()Landroid/graphics/Rect;
-    .locals 10
+    .locals 9
 
-    invoke-virtual {p0}, Lcom/android/server/wm/TaskStack;->inPreloadWindowingMode()Z
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
-
-    iget v0, v0, Lcom/android/server/wm/DisplayContent;->mInitialDisplayWidth:I
-
-    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
-
-    iget v2, v2, Lcom/android/server/wm/DisplayContent;->mInitialDisplayHeight:I
-
-    if-le v0, v2, :cond_0
-
-    move v3, v0
-
-    move v0, v2
-
-    move v2, v3
-
-    :cond_0
-    new-instance v3, Landroid/graphics/Rect;
-
-    add-int v4, v2, v2
-
-    invoke-direct {v3, v2, v1, v4, v2}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    return-object v3
-
-    :cond_1
     invoke-virtual {p0}, Lcom/android/server/wm/TaskStack;->inSplitScreenPrimaryWindowingMode()Z
 
     move-result v0
 
-    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
+    iget-object v1, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
-    invoke-virtual {v2}, Lcom/android/server/wm/DisplayContent;->getSplitScreenPrimaryStackIgnoringVisibility()Lcom/android/server/wm/TaskStack;
+    invoke-virtual {v1}, Lcom/android/server/wm/DisplayContent;->getSplitScreenPrimaryStackIgnoringVisibility()Lcom/android/server/wm/TaskStack;
 
-    move-result-object v2
+    move-result-object v1
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_2
 
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_0
 
     invoke-virtual {p0}, Lcom/android/server/wm/TaskStack;->inSplitScreenSecondaryWindowingMode()Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_0
 
-    invoke-virtual {v2}, Lcom/android/server/wm/TaskStack;->fillsParent()Z
+    invoke-virtual {v1}, Lcom/android/server/wm/TaskStack;->fillsParent()Z
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_2
+    if-nez v2, :cond_0
 
     goto :goto_0
 
-    :cond_2
+    :cond_0
     invoke-virtual {p0}, Lcom/android/server/wm/TaskStack;->inPinnedWindowingMode()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_3
+    if-eqz v2, :cond_1
 
-    iget-object v1, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
 
-    invoke-virtual {p0, v1}, Lcom/android/server/wm/TaskStack;->getAnimationOrCurrentBounds(Landroid/graphics/Rect;)V
+    invoke-virtual {p0, v2}, Lcom/android/server/wm/TaskStack;->getAnimationOrCurrentBounds(Landroid/graphics/Rect;)V
 
-    iget-object v1, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
+    iget-object v2, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
-    iget-object v1, v1, Lcom/android/server/wm/DisplayContent;->mPinnedStackControllerLocked:Lcom/android/server/wm/PinnedStackController;
+    iget-object v2, v2, Lcom/android/server/wm/DisplayContent;->mPinnedStackControllerLocked:Lcom/android/server/wm/PinnedStackController;
 
     iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
 
     iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mTmpRect3:Landroid/graphics/Rect;
 
-    invoke-virtual {v1, v3, v4}, Lcom/android/server/wm/PinnedStackController;->onTaskStackBoundsChanged(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
+    invoke-virtual {v2, v3, v4}, Lcom/android/server/wm/PinnedStackController;->onTaskStackBoundsChanged(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_3
+    if-eqz v2, :cond_1
 
-    new-instance v1, Landroid/graphics/Rect;
+    new-instance v2, Landroid/graphics/Rect;
 
     iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTmpRect3:Landroid/graphics/Rect;
 
-    invoke-direct {v1, v3}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
+    invoke-direct {v2, v3}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
 
-    return-object v1
+    return-object v2
 
-    :cond_3
-    const/4 v1, 0x0
+    :cond_1
+    const/4 v2, 0x0
 
-    return-object v1
+    return-object v2
 
-    :cond_4
+    :cond_2
     :goto_0
-    new-instance v3, Landroid/graphics/Rect;
+    new-instance v2, Landroid/graphics/Rect;
 
-    invoke-direct {v3}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
-    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
-    iget-object v5, p0, Lcom/android/server/wm/TaskStack;->mTmpRect:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mTmpRect:Landroid/graphics/Rect;
 
-    invoke-virtual {v4, v5}, Lcom/android/server/wm/DisplayContent;->getBounds(Landroid/graphics/Rect;)V
+    invoke-virtual {v3, v4}, Lcom/android/server/wm/DisplayContent;->getBounds(Landroid/graphics/Rect;)V
 
-    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
 
-    invoke-virtual {v4}, Landroid/graphics/Rect;->setEmpty()V
+    invoke-virtual {v3}, Landroid/graphics/Rect;->setEmpty()V
 
-    if-eqz v2, :cond_6
+    if-eqz v1, :cond_4
 
     invoke-virtual {p0}, Lcom/android/server/wm/TaskStack;->inSplitScreenSecondaryWindowingMode()Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_5
+    if-eqz v3, :cond_3
 
-    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
-    iget-object v4, v4, Lcom/android/server/wm/DisplayContent;->mDividerControllerLocked:Lcom/android/server/wm/DockedStackDividerController;
+    iget-object v3, v3, Lcom/android/server/wm/DisplayContent;->mDividerControllerLocked:Lcom/android/server/wm/DockedStackDividerController;
 
-    invoke-virtual {v4}, Lcom/android/server/wm/DockedStackDividerController;->isMinimizedDock()Z
+    invoke-virtual {v3}, Lcom/android/server/wm/DockedStackDividerController;->isMinimizedDock()Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_5
+    if-eqz v3, :cond_3
 
-    invoke-virtual {v2}, Lcom/android/server/wm/TaskStack;->getTopChild()Lcom/android/server/wm/WindowContainer;
+    invoke-virtual {v1}, Lcom/android/server/wm/TaskStack;->getTopChild()Lcom/android/server/wm/WindowContainer;
 
-    move-result-object v4
+    move-result-object v3
 
-    if-eqz v4, :cond_5
+    if-eqz v3, :cond_3
 
-    invoke-virtual {v2}, Lcom/android/server/wm/TaskStack;->getTopChild()Lcom/android/server/wm/WindowContainer;
+    invoke-virtual {v1}, Lcom/android/server/wm/TaskStack;->getTopChild()Lcom/android/server/wm/WindowContainer;
 
-    move-result-object v4
+    move-result-object v3
 
-    check-cast v4, Lcom/android/server/wm/Task;
+    check-cast v3, Lcom/android/server/wm/Task;
 
-    iget-object v5, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
 
-    invoke-virtual {v4, v5}, Lcom/android/server/wm/Task;->getBounds(Landroid/graphics/Rect;)V
+    invoke-virtual {v3, v4}, Lcom/android/server/wm/Task;->getBounds(Landroid/graphics/Rect;)V
 
     goto :goto_1
 
-    :cond_5
-    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+    :cond_3
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
 
-    invoke-virtual {v2, v4}, Lcom/android/server/wm/TaskStack;->getRawBounds(Landroid/graphics/Rect;)V
+    invoke-virtual {v1, v3}, Lcom/android/server/wm/TaskStack;->getRawBounds(Landroid/graphics/Rect;)V
 
-    :cond_6
+    :cond_4
     :goto_1
-    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mService:Lcom/android/server/wm/WindowManagerService;
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mService:Lcom/android/server/wm/WindowManagerService;
 
-    iget v4, v4, Lcom/android/server/wm/WindowManagerService;->mDockedStackCreateMode:I
+    iget v3, v3, Lcom/android/server/wm/WindowManagerService;->mDockedStackCreateMode:I
 
-    if-nez v4, :cond_7
+    if-nez v3, :cond_5
 
-    const/4 v1, 0x1
+    const/4 v3, 0x1
 
     :goto_2
-    move v9, v1
+    move v8, v3
 
     goto :goto_3
 
-    :cond_7
+    :cond_5
+    const/4 v3, 0x0
+
     goto :goto_2
 
     :goto_3
-    iget-object v5, p0, Lcom/android/server/wm/TaskStack;->mTmpRect:Landroid/graphics/Rect;
+    iget-object v4, p0, Lcom/android/server/wm/TaskStack;->mTmpRect:Landroid/graphics/Rect;
 
-    iget-object v7, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
+    iget-object v6, p0, Lcom/android/server/wm/TaskStack;->mTmpRect2:Landroid/graphics/Rect;
 
-    iget-object v1, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
+    iget-object v3, p0, Lcom/android/server/wm/TaskStack;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
-    iget-object v1, v1, Lcom/android/server/wm/DisplayContent;->mDividerControllerLocked:Lcom/android/server/wm/DockedStackDividerController;
+    iget-object v3, v3, Lcom/android/server/wm/DisplayContent;->mDividerControllerLocked:Lcom/android/server/wm/DockedStackDividerController;
 
-    invoke-virtual {v1}, Lcom/android/server/wm/DockedStackDividerController;->getContentWidth()I
+    invoke-virtual {v3}, Lcom/android/server/wm/DockedStackDividerController;->getContentWidth()I
 
-    move-result v8
+    move-result v7
 
-    move-object v4, p0
+    move-object v3, p0
 
-    move-object v6, v3
+    move-object v5, v2
 
-    invoke-direct/range {v4 .. v9}, Lcom/android/server/wm/TaskStack;->getStackDockedModeBounds(Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;IZ)V
+    invoke-direct/range {v3 .. v8}, Lcom/android/server/wm/TaskStack;->getStackDockedModeBounds(Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;IZ)V
 
-    return-object v3
+    return-object v2
 .end method
 
 .method private canSpecifyOrientation()Z

@@ -877,57 +877,41 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    new-instance v0, Lcom/android/internal/util/FastXmlSerializer;
 
-    if-eqz p1, :cond_1
+    invoke-direct {v0}, Lcom/android/internal/util/FastXmlSerializer;-><init>()V
 
-    invoke-virtual {p1}, Lcom/android/server/am/TaskRecord;->isPreloadTask()Z
+    new-instance v1, Ljava/io/StringWriter;
 
-    move-result v1
+    invoke-direct {v1}, Ljava/io/StringWriter;-><init>()V
 
-    if-nez v1, :cond_0
+    invoke-interface {v0, v1}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/Writer;)V
 
-    iget-boolean v1, p1, Lcom/android/server/am/TaskRecord;->inPreload:Z
+    const/4 v2, 0x1
 
-    if-eqz v1, :cond_1
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    :cond_0
-    return-object v0
+    move-result-object v2
 
-    :cond_1
-    new-instance v1, Lcom/android/internal/util/FastXmlSerializer;
+    const/4 v3, 0x0
 
-    invoke-direct {v1}, Lcom/android/internal/util/FastXmlSerializer;-><init>()V
+    invoke-interface {v0, v3, v2}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    new-instance v2, Ljava/io/StringWriter;
+    const-string/jumbo v2, "task"
 
-    invoke-direct {v2}, Ljava/io/StringWriter;-><init>()V
+    invoke-interface {v0, v3, v2}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    invoke-interface {v1, v2}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/Writer;)V
+    invoke-virtual {p1, v0}, Lcom/android/server/am/TaskRecord;->saveToXml(Lorg/xmlpull/v1/XmlSerializer;)V
 
-    const/4 v3, 0x1
+    const-string/jumbo v2, "task"
 
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-interface {v0, v3, v2}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    move-result-object v3
+    invoke-interface {v0}, Lorg/xmlpull/v1/XmlSerializer;->endDocument()V
 
-    invoke-interface {v1, v0, v3}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
+    invoke-interface {v0}, Lorg/xmlpull/v1/XmlSerializer;->flush()V
 
-    const-string/jumbo v3, "task"
-
-    invoke-interface {v1, v0, v3}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
-
-    invoke-virtual {p1, v1}, Lcom/android/server/am/TaskRecord;->saveToXml(Lorg/xmlpull/v1/XmlSerializer;)V
-
-    const-string/jumbo v3, "task"
-
-    invoke-interface {v1, v0, v3}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
-
-    invoke-interface {v1}, Lorg/xmlpull/v1/XmlSerializer;->endDocument()V
-
-    invoke-interface {v1}, Lorg/xmlpull/v1/XmlSerializer;->flush()V
-
-    return-object v2
+    return-object v1
 .end method
 
 .method private taskIdToTask(ILjava/util/ArrayList;)Lcom/android/server/am/TaskRecord;

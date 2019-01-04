@@ -1635,7 +1635,7 @@
     add-int/lit8 v0, v0, -0x1
 
     :goto_0
-    if-ltz v0, :cond_8
+    if-ltz v0, :cond_7
 
     iget-object v3, p0, Lcom/android/server/wm/WindowContainer;->mChildren:Lcom/android/server/wm/WindowList;
 
@@ -1645,18 +1645,9 @@
 
     check-cast v3, Lcom/android/server/wm/WindowContainer;
 
-    invoke-virtual {v3}, Lcom/android/server/wm/WindowContainer;->inPreloadWindowingMode()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_2
-
-    goto :goto_2
-
-    :cond_2
     const/4 v4, 0x3
 
-    if-ne p1, v4, :cond_3
+    if-ne p1, v4, :cond_2
 
     nop
 
@@ -1664,7 +1655,7 @@
 
     goto :goto_1
 
-    :cond_3
+    :cond_2
     nop
 
     move v5, v1
@@ -1674,39 +1665,39 @@
 
     move-result v5
 
-    if-ne v5, v4, :cond_4
+    if-ne v5, v4, :cond_3
 
     move p1, v5
 
     goto :goto_2
 
-    :cond_4
-    if-ne v5, v1, :cond_5
+    :cond_3
+    if-ne v5, v1, :cond_4
 
     goto :goto_2
 
-    :cond_5
+    :cond_4
     invoke-virtual {v3}, Lcom/android/server/wm/WindowContainer;->fillsParent()Z
 
     move-result v4
 
-    if-nez v4, :cond_7
+    if-nez v4, :cond_6
 
-    if-eq v5, v2, :cond_6
+    if-eq v5, v2, :cond_5
 
     goto :goto_3
 
-    :cond_6
+    :cond_5
     :goto_2
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    :cond_7
+    :cond_6
     :goto_3
     return v5
 
-    :cond_8
+    :cond_7
     return p1
 .end method
 

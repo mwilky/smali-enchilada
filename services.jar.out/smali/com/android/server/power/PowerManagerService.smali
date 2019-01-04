@@ -20,7 +20,6 @@
         Lcom/android/server/power/PowerManagerService$UserSwitchedReceiver;,
         Lcom/android/server/power/PowerManagerService$DreamReceiver;,
         Lcom/android/server/power/PowerManagerService$BatteryReceiver;,
-        Lcom/android/server/power/PowerManagerService$RemoveWakeLockReceiver;,
         Lcom/android/server/power/PowerManagerService$DozeBlackConfigUpdater;,
         Lcom/android/server/power/PowerManagerService$Constants;,
         Lcom/android/server/power/PowerManagerService$ProfilePowerState;,
@@ -1403,23 +1402,7 @@
     return-void
 .end method
 
-.method static synthetic access$2300(Lcom/android/server/power/PowerManagerService;)Ljava/util/ArrayList;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/server/power/PowerManagerService;->mWakeLocks:Ljava/util/ArrayList;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2400(Lcom/android/server/power/PowerManagerService;Lcom/android/server/power/PowerManagerService$WakeLock;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lcom/android/server/power/PowerManagerService;->removeWakeLockLocked(Lcom/android/server/power/PowerManagerService$WakeLock;I)V
-
-    return-void
-.end method
-
-.method static synthetic access$2500(Lcom/android/server/power/PowerManagerService;)V
+.method static synthetic access$2300(Lcom/android/server/power/PowerManagerService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/power/PowerManagerService;->handleBatteryStateChangedLocked()V
@@ -1427,7 +1410,7 @@
     return-void
 .end method
 
-.method static synthetic access$2600(Lcom/android/server/power/PowerManagerService;)V
+.method static synthetic access$2400(Lcom/android/server/power/PowerManagerService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/power/PowerManagerService;->scheduleSandmanLocked()V
@@ -1435,7 +1418,7 @@
     return-void
 .end method
 
-.method static synthetic access$2700(Lcom/android/server/power/PowerManagerService;)V
+.method static synthetic access$2500(Lcom/android/server/power/PowerManagerService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/power/PowerManagerService;->handleSettingsChangedLocked()V
@@ -1443,7 +1426,7 @@
     return-void
 .end method
 
-.method static synthetic access$2800(Lcom/android/server/power/PowerManagerService;)I
+.method static synthetic access$2600(Lcom/android/server/power/PowerManagerService;)I
     .locals 1
 
     iget v0, p0, Lcom/android/server/power/PowerManagerService;->mDockState:I
@@ -1451,7 +1434,7 @@
     return v0
 .end method
 
-.method static synthetic access$2802(Lcom/android/server/power/PowerManagerService;I)I
+.method static synthetic access$2602(Lcom/android/server/power/PowerManagerService;I)I
     .locals 0
 
     iput p1, p0, Lcom/android/server/power/PowerManagerService;->mDockState:I
@@ -1459,7 +1442,7 @@
     return p1
 .end method
 
-.method static synthetic access$2900(Lcom/android/server/power/PowerManagerService;II)V
+.method static synthetic access$2700(Lcom/android/server/power/PowerManagerService;II)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/android/server/power/PowerManagerService;->powerHintInternal(II)V
@@ -1467,7 +1450,7 @@
     return-void
 .end method
 
-.method static synthetic access$3000(Lcom/android/server/power/PowerManagerService;)Z
+.method static synthetic access$2800(Lcom/android/server/power/PowerManagerService;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/server/power/PowerManagerService;->mIsVrModeEnabled:Z
@@ -1475,7 +1458,7 @@
     return v0
 .end method
 
-.method static synthetic access$3100(Lcom/android/server/power/PowerManagerService;)V
+.method static synthetic access$2900(Lcom/android/server/power/PowerManagerService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/power/PowerManagerService;->handleUserActivityTimeout()V
@@ -1483,7 +1466,7 @@
     return-void
 .end method
 
-.method static synthetic access$3200(Lcom/android/server/power/PowerManagerService;)V
+.method static synthetic access$3000(Lcom/android/server/power/PowerManagerService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/power/PowerManagerService;->handleSandman()V
@@ -1491,7 +1474,7 @@
     return-void
 .end method
 
-.method static synthetic access$3300(Lcom/android/server/power/PowerManagerService;)V
+.method static synthetic access$3100(Lcom/android/server/power/PowerManagerService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/power/PowerManagerService;->handleScreenBrightnessBoostTimeout()V
@@ -1499,7 +1482,7 @@
     return-void
 .end method
 
-.method static synthetic access$3400(Lcom/android/server/power/PowerManagerService;)Landroid/app/ActivityManager;
+.method static synthetic access$3200(Lcom/android/server/power/PowerManagerService;)Landroid/app/ActivityManager;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService;->mActivityManager:Landroid/app/ActivityManager;
@@ -1507,7 +1490,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3402(Lcom/android/server/power/PowerManagerService;Landroid/app/ActivityManager;)Landroid/app/ActivityManager;
+.method static synthetic access$3202(Lcom/android/server/power/PowerManagerService;Landroid/app/ActivityManager;)Landroid/app/ActivityManager;
     .locals 0
 
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService;->mActivityManager:Landroid/app/ActivityManager;
@@ -1515,7 +1498,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$3500(Lcom/android/server/power/PowerManagerService;)Landroid/content/Context;
+.method static synthetic access$3300(Lcom/android/server/power/PowerManagerService;)Landroid/content/Context;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
@@ -1523,7 +1506,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3600()Ljava/lang/String;
+.method static synthetic access$3400()Ljava/lang/String;
     .locals 1
 
     sget-object v0, Lcom/android/server/power/PowerManagerService;->PACKAGEMANAGERMENT_CONFIG_NAME:Ljava/lang/String;
@@ -1531,7 +1514,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3700(Landroid/os/WorkSource;)Landroid/os/WorkSource;
+.method static synthetic access$3500(Landroid/os/WorkSource;)Landroid/os/WorkSource;
     .locals 1
 
     invoke-static {p0}, Lcom/android/server/power/PowerManagerService;->copyWorkSource(Landroid/os/WorkSource;)Landroid/os/WorkSource;
@@ -1541,7 +1524,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3800(Lcom/android/server/power/PowerManagerService;Lcom/android/server/power/PowerManagerService$WakeLock;)V
+.method static synthetic access$3600(Lcom/android/server/power/PowerManagerService;Lcom/android/server/power/PowerManagerService$WakeLock;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/power/PowerManagerService;->handleWakeLockDeath(Lcom/android/server/power/PowerManagerService$WakeLock;)V
@@ -1549,7 +1532,7 @@
     return-void
 .end method
 
-.method static synthetic access$3900(Ljava/lang/String;)V
+.method static synthetic access$3700(Ljava/lang/String;)V
     .locals 0
 
     invoke-static {p0}, Lcom/android/server/power/PowerManagerService;->nativeReleaseSuspendBlocker(Ljava/lang/String;)V
@@ -1557,7 +1540,7 @@
     return-void
 .end method
 
-.method static synthetic access$4000()Z
+.method static synthetic access$3800()Z
     .locals 1
 
     sget-boolean v0, Lcom/android/server/power/PowerManagerService;->DEBUG_SPEW:Z
@@ -1565,7 +1548,7 @@
     return v0
 .end method
 
-.method static synthetic access$4100(Ljava/lang/String;)V
+.method static synthetic access$3900(Ljava/lang/String;)V
     .locals 0
 
     invoke-static {p0}, Lcom/android/server/power/PowerManagerService;->nativeAcquireSuspendBlocker(Ljava/lang/String;)V
@@ -1573,7 +1556,7 @@
     return-void
 .end method
 
-.method static synthetic access$4200(Lcom/android/server/power/PowerManagerService;)Z
+.method static synthetic access$4000(Lcom/android/server/power/PowerManagerService;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/server/power/PowerManagerService;->mSystemReady:Z
@@ -1581,7 +1564,7 @@
     return v0
 .end method
 
-.method static synthetic access$4300(Lcom/android/server/power/PowerManagerService;Landroid/os/IBinder;ILjava/lang/String;Ljava/lang/String;Landroid/os/WorkSource;Ljava/lang/String;II)V
+.method static synthetic access$4100(Lcom/android/server/power/PowerManagerService;Landroid/os/IBinder;ILjava/lang/String;Ljava/lang/String;Landroid/os/WorkSource;Ljava/lang/String;II)V
     .locals 0
 
     invoke-direct/range {p0 .. p8}, Lcom/android/server/power/PowerManagerService;->acquireWakeLockInternal(Landroid/os/IBinder;ILjava/lang/String;Ljava/lang/String;Landroid/os/WorkSource;Ljava/lang/String;II)V
@@ -1589,7 +1572,7 @@
     return-void
 .end method
 
-.method static synthetic access$4400(Lcom/android/server/power/PowerManagerService;Landroid/os/IBinder;I)V
+.method static synthetic access$4200(Lcom/android/server/power/PowerManagerService;Landroid/os/IBinder;I)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/android/server/power/PowerManagerService;->releaseWakeLockInternal(Landroid/os/IBinder;I)V
@@ -1597,7 +1580,7 @@
     return-void
 .end method
 
-.method static synthetic access$4500(Lcom/android/server/power/PowerManagerService;Landroid/os/IBinder;Landroid/os/WorkSource;Ljava/lang/String;I)V
+.method static synthetic access$4300(Lcom/android/server/power/PowerManagerService;Landroid/os/IBinder;Landroid/os/WorkSource;Ljava/lang/String;I)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/server/power/PowerManagerService;->updateWakeLockWorkSourceInternal(Landroid/os/IBinder;Landroid/os/WorkSource;Ljava/lang/String;I)V
@@ -1605,7 +1588,7 @@
     return-void
 .end method
 
-.method static synthetic access$4600(Lcom/android/server/power/PowerManagerService;I)Z
+.method static synthetic access$4400(Lcom/android/server/power/PowerManagerService;I)Z
     .locals 1
 
     invoke-direct {p0, p1}, Lcom/android/server/power/PowerManagerService;->isWakeLockLevelSupportedInternal(I)Z
@@ -1615,7 +1598,7 @@
     return v0
 .end method
 
-.method static synthetic access$4700(Lcom/android/server/power/PowerManagerService;)J
+.method static synthetic access$4500(Lcom/android/server/power/PowerManagerService;)J
     .locals 2
 
     iget-wide v0, p0, Lcom/android/server/power/PowerManagerService;->mLastWarningAboutUserActivityPermission:J
@@ -1623,7 +1606,7 @@
     return-wide v0
 .end method
 
-.method static synthetic access$4702(Lcom/android/server/power/PowerManagerService;J)J
+.method static synthetic access$4502(Lcom/android/server/power/PowerManagerService;J)J
     .locals 0
 
     iput-wide p1, p0, Lcom/android/server/power/PowerManagerService;->mLastWarningAboutUserActivityPermission:J
@@ -1631,7 +1614,7 @@
     return-wide p1
 .end method
 
-.method static synthetic access$4800(Lcom/android/server/power/PowerManagerService;JIII)V
+.method static synthetic access$4600(Lcom/android/server/power/PowerManagerService;JIII)V
     .locals 0
 
     invoke-direct/range {p0 .. p5}, Lcom/android/server/power/PowerManagerService;->userActivityInternal(JIII)V
@@ -1639,7 +1622,7 @@
     return-void
 .end method
 
-.method static synthetic access$4900(Lcom/android/server/power/PowerManagerService;I)V
+.method static synthetic access$4700(Lcom/android/server/power/PowerManagerService;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/power/PowerManagerService;->overrideScreenBrightnessRangeMinimumInternal(I)V
@@ -1647,7 +1630,7 @@
     return-void
 .end method
 
-.method static synthetic access$5000(Lcom/android/server/power/PowerManagerService;JI)V
+.method static synthetic access$4800(Lcom/android/server/power/PowerManagerService;JI)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/power/PowerManagerService;->napInternal(JI)V
@@ -1655,7 +1638,7 @@
     return-void
 .end method
 
-.method static synthetic access$5100(Lcom/android/server/power/PowerManagerService;)Z
+.method static synthetic access$4900(Lcom/android/server/power/PowerManagerService;)Z
     .locals 1
 
     invoke-direct {p0}, Lcom/android/server/power/PowerManagerService;->isInteractiveInternal()Z
@@ -1665,7 +1648,7 @@
     return v0
 .end method
 
-.method static synthetic access$5200(Lcom/android/server/power/PowerManagerService;)Lcom/android/server/power/batterysaver/BatterySaverController;
+.method static synthetic access$5000(Lcom/android/server/power/PowerManagerService;)Lcom/android/server/power/batterysaver/BatterySaverController;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService;->mBatterySaverController:Lcom/android/server/power/batterysaver/BatterySaverController;
@@ -1673,7 +1656,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$5300(Lcom/android/server/power/PowerManagerService;)Lcom/android/server/power/BatterySaverPolicy;
+.method static synthetic access$5100(Lcom/android/server/power/PowerManagerService;)Lcom/android/server/power/BatterySaverPolicy;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService;->mBatterySaverPolicy:Lcom/android/server/power/BatterySaverPolicy;
@@ -1681,7 +1664,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$5400(Lcom/android/server/power/PowerManagerService;Z)Z
+.method static synthetic access$5200(Lcom/android/server/power/PowerManagerService;Z)Z
     .locals 1
 
     invoke-direct {p0, p1}, Lcom/android/server/power/PowerManagerService;->setLowPowerModeInternal(Z)Z
@@ -1691,7 +1674,7 @@
     return v0
 .end method
 
-.method static synthetic access$5500(Lcom/android/server/power/PowerManagerService;IZLjava/lang/String;Z)V
+.method static synthetic access$5300(Lcom/android/server/power/PowerManagerService;IZLjava/lang/String;Z)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/server/power/PowerManagerService;->shutdownOrRebootInternal(IZLjava/lang/String;Z)V
@@ -1699,7 +1682,7 @@
     return-void
 .end method
 
-.method static synthetic access$5600(Lcom/android/server/power/PowerManagerService;Ljava/lang/String;)V
+.method static synthetic access$5400(Lcom/android/server/power/PowerManagerService;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/power/PowerManagerService;->crashInternal(Ljava/lang/String;)V
@@ -1707,7 +1690,7 @@
     return-void
 .end method
 
-.method static synthetic access$5700(Lcom/android/server/power/PowerManagerService;ZI)V
+.method static synthetic access$5500(Lcom/android/server/power/PowerManagerService;ZI)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/android/server/power/PowerManagerService;->setAttentionLightInternal(ZI)V
@@ -1715,7 +1698,7 @@
     return-void
 .end method
 
-.method static synthetic access$5800(Lcom/android/server/power/PowerManagerService;Z)V
+.method static synthetic access$5600(Lcom/android/server/power/PowerManagerService;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/power/PowerManagerService;->setDozeAfterScreenOffInternal(Z)V
@@ -1723,7 +1706,7 @@
     return-void
 .end method
 
-.method static synthetic access$5900(Lcom/android/server/power/PowerManagerService;JI)V
+.method static synthetic access$5700(Lcom/android/server/power/PowerManagerService;JI)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/power/PowerManagerService;->boostScreenBrightnessInternal(JI)V
@@ -1731,7 +1714,7 @@
     return-void
 .end method
 
-.method static synthetic access$6000(Lcom/android/server/power/PowerManagerService;)Z
+.method static synthetic access$5800(Lcom/android/server/power/PowerManagerService;)Z
     .locals 1
 
     invoke-direct {p0}, Lcom/android/server/power/PowerManagerService;->isScreenBrightnessBoostedInternal()Z
@@ -1741,7 +1724,7 @@
     return v0
 .end method
 
-.method static synthetic access$6100(Lcom/android/server/power/PowerManagerService;Ljava/io/FileDescriptor;)V
+.method static synthetic access$5900(Lcom/android/server/power/PowerManagerService;Ljava/io/FileDescriptor;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/power/PowerManagerService;->dumpProto(Ljava/io/FileDescriptor;)V
@@ -1749,7 +1732,7 @@
     return-void
 .end method
 
-.method static synthetic access$6200(Lcom/android/server/power/PowerManagerService;Ljava/io/PrintWriter;)V
+.method static synthetic access$6000(Lcom/android/server/power/PowerManagerService;Ljava/io/PrintWriter;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/power/PowerManagerService;->dumpInternal(Ljava/io/PrintWriter;)V
@@ -1757,7 +1740,7 @@
     return-void
 .end method
 
-.method static synthetic access$6300(Lcom/android/server/power/PowerManagerService;I)V
+.method static synthetic access$6100(Lcom/android/server/power/PowerManagerService;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/power/PowerManagerService;->setScreenBrightnessOverrideFromWindowManagerInternal(I)V
@@ -1765,7 +1748,7 @@
     return-void
 .end method
 
-.method static synthetic access$6400(Lcom/android/server/power/PowerManagerService;II)V
+.method static synthetic access$6200(Lcom/android/server/power/PowerManagerService;II)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/android/server/power/PowerManagerService;->setDozeOverrideFromDreamManagerInternal(II)V
@@ -1773,7 +1756,7 @@
     return-void
 .end method
 
-.method static synthetic access$6500(Lcom/android/server/power/PowerManagerService;)V
+.method static synthetic access$6300(Lcom/android/server/power/PowerManagerService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/power/PowerManagerService;->setUserInactiveOverrideFromWindowManagerInternal()V
@@ -1781,7 +1764,7 @@
     return-void
 .end method
 
-.method static synthetic access$6600(Lcom/android/server/power/PowerManagerService;J)V
+.method static synthetic access$6400(Lcom/android/server/power/PowerManagerService;J)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/android/server/power/PowerManagerService;->setUserActivityTimeoutOverrideFromWindowManagerInternal(J)V
@@ -1789,7 +1772,7 @@
     return-void
 .end method
 
-.method static synthetic access$6700(Lcom/android/server/power/PowerManagerService;Z)V
+.method static synthetic access$6500(Lcom/android/server/power/PowerManagerService;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/power/PowerManagerService;->setDrawWakeLockOverrideFromSidekickInternal(Z)V
@@ -1797,7 +1780,7 @@
     return-void
 .end method
 
-.method static synthetic access$6800(Lcom/android/server/power/PowerManagerService;)Ljava/util/HashMap;
+.method static synthetic access$6600(Lcom/android/server/power/PowerManagerService;)Ljava/util/HashMap;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService;->mExclusiveWakeLocks:Ljava/util/HashMap;
@@ -1805,7 +1788,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$6902(Lcom/android/server/power/PowerManagerService;Z)Z
+.method static synthetic access$6702(Lcom/android/server/power/PowerManagerService;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/power/PowerManagerService;->mDeviceIdleAggressive:Z
@@ -6294,7 +6277,7 @@
 
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService;->mAudioManager:Landroid/media/AudioManager;
 
-    const-string/jumbo v2, "get_uid"
+    const-string v2, "get_uid"
 
     invoke-virtual {v1, v2}, Landroid/media/AudioManager;->getParameters(Ljava/lang/String;)Ljava/lang/String;
 
@@ -6747,7 +6730,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "goToSleepNoUpdateLocked: eventTime="
+    const-string v3, "goToSleepNoUpdateLocked: eventTime="
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6824,7 +6807,7 @@
     :cond_3
     iput-boolean v1, p0, Lcom/android/server/power/PowerManagerService;->mBlockFingerprintSleep:Z
 
-    const-string/jumbo v0, "goToSleep"
+    const-string v0, "goToSleep"
 
     const-wide/32 v4, 0x20000
 
@@ -17738,7 +17721,7 @@
 
     move-result-object v5
 
-    const v6, 0x502000b
+    const v6, 0x502000a
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -17892,7 +17875,7 @@
 
     move-result-object v5
 
-    const v6, 0x502000c
+    const v6, 0x502000b
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -18185,75 +18168,69 @@
 
     invoke-virtual {v4, v5, v2, v3, v6}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    new-instance v4, Lcom/android/server/power/PowerManagerService$RemoveWakeLockReceiver;
+    new-instance v4, Landroid/content/IntentFilter;
 
-    iget-object v5, p0, Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
+    invoke-direct {v4}, Landroid/content/IntentFilter;-><init>()V
 
-    invoke-direct {v4, p0, v5}, Lcom/android/server/power/PowerManagerService$RemoveWakeLockReceiver;-><init>(Lcom/android/server/power/PowerManagerService;Landroid/content/Context;)V
+    move-object v2, v4
 
-    new-instance v5, Landroid/content/IntentFilter;
+    const-string v4, "android.intent.action.DREAMING_STARTED"
 
-    invoke-direct {v5}, Landroid/content/IntentFilter;-><init>()V
+    invoke-virtual {v2, v4}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    move-object v2, v5
+    const-string v4, "android.intent.action.DREAMING_STOPPED"
 
-    const-string v5, "android.intent.action.DREAMING_STARTED"
+    invoke-virtual {v2, v4}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    invoke-virtual {v2, v5}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    iget-object v4, p0, Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
 
-    const-string v5, "android.intent.action.DREAMING_STOPPED"
+    new-instance v5, Lcom/android/server/power/PowerManagerService$DreamReceiver;
 
-    invoke-virtual {v2, v5}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    invoke-direct {v5, p0, v3}, Lcom/android/server/power/PowerManagerService$DreamReceiver;-><init>(Lcom/android/server/power/PowerManagerService;Lcom/android/server/power/PowerManagerService$1;)V
 
-    iget-object v5, p0, Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/android/server/power/PowerManagerService;->mHandler:Lcom/android/server/power/PowerManagerService$PowerManagerHandler;
 
-    new-instance v6, Lcom/android/server/power/PowerManagerService$DreamReceiver;
+    invoke-virtual {v4, v5, v2, v3, v6}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    invoke-direct {v6, p0, v3}, Lcom/android/server/power/PowerManagerService$DreamReceiver;-><init>(Lcom/android/server/power/PowerManagerService;Lcom/android/server/power/PowerManagerService$1;)V
+    new-instance v4, Landroid/content/IntentFilter;
 
-    iget-object v7, p0, Lcom/android/server/power/PowerManagerService;->mHandler:Lcom/android/server/power/PowerManagerService$PowerManagerHandler;
+    invoke-direct {v4}, Landroid/content/IntentFilter;-><init>()V
 
-    invoke-virtual {v5, v6, v2, v3, v7}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+    move-object v2, v4
 
-    new-instance v5, Landroid/content/IntentFilter;
+    const-string v4, "android.intent.action.USER_SWITCHED"
 
-    invoke-direct {v5}, Landroid/content/IntentFilter;-><init>()V
+    invoke-virtual {v2, v4}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    move-object v2, v5
+    iget-object v4, p0, Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
 
-    const-string v5, "android.intent.action.USER_SWITCHED"
+    new-instance v5, Lcom/android/server/power/PowerManagerService$UserSwitchedReceiver;
 
-    invoke-virtual {v2, v5}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    invoke-direct {v5, p0, v3}, Lcom/android/server/power/PowerManagerService$UserSwitchedReceiver;-><init>(Lcom/android/server/power/PowerManagerService;Lcom/android/server/power/PowerManagerService$1;)V
 
-    iget-object v5, p0, Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/android/server/power/PowerManagerService;->mHandler:Lcom/android/server/power/PowerManagerService$PowerManagerHandler;
 
-    new-instance v6, Lcom/android/server/power/PowerManagerService$UserSwitchedReceiver;
+    invoke-virtual {v4, v5, v2, v3, v6}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    invoke-direct {v6, p0, v3}, Lcom/android/server/power/PowerManagerService$UserSwitchedReceiver;-><init>(Lcom/android/server/power/PowerManagerService;Lcom/android/server/power/PowerManagerService$1;)V
+    new-instance v4, Landroid/content/IntentFilter;
 
-    iget-object v7, p0, Lcom/android/server/power/PowerManagerService;->mHandler:Lcom/android/server/power/PowerManagerService$PowerManagerHandler;
+    invoke-direct {v4}, Landroid/content/IntentFilter;-><init>()V
 
-    invoke-virtual {v5, v6, v2, v3, v7}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+    move-object v2, v4
 
-    new-instance v5, Landroid/content/IntentFilter;
+    const-string v4, "android.intent.action.DOCK_EVENT"
 
-    invoke-direct {v5}, Landroid/content/IntentFilter;-><init>()V
+    invoke-virtual {v2, v4}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    move-object v2, v5
+    iget-object v4, p0, Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
 
-    const-string v5, "android.intent.action.DOCK_EVENT"
+    new-instance v5, Lcom/android/server/power/PowerManagerService$DockReceiver;
 
-    invoke-virtual {v2, v5}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    invoke-direct {v5, p0, v3}, Lcom/android/server/power/PowerManagerService$DockReceiver;-><init>(Lcom/android/server/power/PowerManagerService;Lcom/android/server/power/PowerManagerService$1;)V
 
-    iget-object v5, p0, Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/android/server/power/PowerManagerService;->mHandler:Lcom/android/server/power/PowerManagerService$PowerManagerHandler;
 
-    new-instance v6, Lcom/android/server/power/PowerManagerService$DockReceiver;
-
-    invoke-direct {v6, p0, v3}, Lcom/android/server/power/PowerManagerService$DockReceiver;-><init>(Lcom/android/server/power/PowerManagerService;Lcom/android/server/power/PowerManagerService$1;)V
-
-    iget-object v7, p0, Lcom/android/server/power/PowerManagerService;->mHandler:Lcom/android/server/power/PowerManagerService$PowerManagerHandler;
-
-    invoke-virtual {v5, v6, v2, v3, v7}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+    invoke-virtual {v4, v5, v2, v3, v6}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
     return-void
 

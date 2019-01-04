@@ -3204,16 +3204,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_2
-
     :cond_4
-    const-string v0, "OnePlusSmartBoostManager"
-
-    const-string v1, "echo PROP_RESIDE_SWITCH failed!"
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    :goto_2
     return-void
 .end method
 

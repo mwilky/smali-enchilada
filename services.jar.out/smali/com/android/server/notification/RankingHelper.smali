@@ -44,8 +44,6 @@
 
 .field private static final DEFAULT_VISIBILITY:I = -0x3e8
 
-.field private static final OP_DEBUG:Z
-
 .field private static final TAG:Ljava/lang/String; = "RankingHelper"
 
 .field private static final TAG_CHANNEL:Ljava/lang/String; = "channel"
@@ -113,16 +111,6 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
-
-    sput-boolean v0, Lcom/android/server/notification/RankingHelper;->OP_DEBUG:Z
-
-    return-void
-.end method
-
 .method public constructor <init>(Landroid/content/Context;Landroid/content/pm/PackageManager;Lcom/android/server/notification/RankingHandler;Lcom/android/server/notification/ZenModeHelper;Lcom/android/server/notification/NotificationUsageStats;[Ljava/lang/String;)V
     .locals 7
 
@@ -358,7 +346,7 @@
 
     move-result v0
 
-    const v1, 0x10401bf
+    const v1, 0x10401be
 
     if-eqz v0, :cond_0
 
@@ -460,8 +448,6 @@
     move-result-object v2
 
     invoke-virtual {v1, v2, v0}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-direct {p0, p1}, Lcom/android/server/notification/RankingHelper;->print(Lcom/android/server/notification/RankingHelper$Record;)V
 
     return-void
 .end method
@@ -1242,67 +1228,6 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v2
-.end method
-
-.method private print(Lcom/android/server/notification/RankingHelper$Record;)V
-    .locals 3
-
-    sget-boolean v0, Lcom/android/server/notification/RankingHelper;->OP_DEBUG:Z
-
-    if-eqz v0, :cond_0
-
-    iget v0, p1, Lcom/android/server/notification/RankingHelper$Record;->importance:I
-
-    const/4 v1, 0x3
-
-    if-ne v0, v1, :cond_0
-
-    const-string v0, "com.tencent.mm"
-
-    iget-object v1, p1, Lcom/android/server/notification/RankingHelper$Record;->pkg:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const-string v0, "RankingHelper"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Update record importance to IMPORTANCE_DEFAULT for com.tencent.mm from pid "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {}, Landroid/os/Binder;->getCallingPid()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v2, " "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/4 v2, 0x7
-
-    invoke-static {v2}, Landroid/os/Debug;->getCallers(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_0
-    return-void
 .end method
 
 .method private static recordKey(Ljava/lang/String;I)Ljava/lang/String;
@@ -2133,7 +2058,7 @@
     const/4 v1, 0x0
 
     :goto_0
-    if-ge v1, v0, :cond_1
+    if-ge v1, v0, :cond_0
 
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -2155,28 +2080,11 @@
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    iget-object v2, p0, Lcom/android/server/notification/RankingHelper;->mSignalExtractors:[Lcom/android/server/notification/NotificationSignalExtractor;
-
-    aget-object v2, v2, v1
-
-    instance-of v2, v2, Lcom/android/server/notification/ValidateNotificationPeople;
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Lcom/android/server/notification/RankingHelper;->mSignalExtractors:[Lcom/android/server/notification/NotificationSignalExtractor;
-
-    aget-object v2, v2, v1
-
-    check-cast v2, Lcom/android/server/notification/ValidateNotificationPeople;
-
-    invoke-virtual {v2, p1, p2}, Lcom/android/server/notification/ValidateNotificationPeople;->dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
-
-    :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v1, "per-package config:"
@@ -2625,7 +2533,7 @@
     goto :goto_3
 
     :cond_6
-    const-string/jumbo v9, "groups"
+    const-string v9, "groups"
 
     invoke-virtual {v6, v9, v8}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
     :try_end_2
@@ -3789,7 +3697,7 @@
 
     move-result-object v5
 
-    const v6, 0x10401bf
+    const v6, 0x10401be
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -4890,7 +4798,7 @@
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v10, "gsk="
+    const-string v10, "gsk="
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5356,8 +5264,6 @@
     move-result v2
 
     iput-boolean v2, v0, Lcom/android/server/notification/RankingHelper$Record;->showBadge:Z
-
-    invoke-direct {p0, v0}, Lcom/android/server/notification/RankingHelper;->print(Lcom/android/server/notification/RankingHelper$Record;)V
 
     :cond_4
     invoke-virtual {v1, p3}, Landroid/app/NotificationChannel;->equals(Ljava/lang/Object;)Z

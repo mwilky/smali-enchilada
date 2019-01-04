@@ -255,7 +255,7 @@
     move v2, v0
 
     :goto_1
-    const-string/jumbo v3, "handle must be null or non-empty"
+    const-string v3, "handle must be null or non-empty"
 
     invoke-static {v2, v3}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
@@ -276,7 +276,7 @@
 
     :cond_3
     :goto_2
-    const-string/jumbo v2, "handle must not be longer than 996"
+    const-string v2, "handle must not be longer than 996"
 
     invoke-static {v0, v2}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 

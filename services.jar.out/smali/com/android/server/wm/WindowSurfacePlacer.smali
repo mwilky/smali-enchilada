@@ -781,7 +781,7 @@
 
     iget-object v6, p0, Lcom/android/server/wm/WindowSurfacePlacer;->mService:Lcom/android/server/wm/WindowManagerService;
 
-    const-string/jumbo v7, "handleAppTransitionReadyLocked"
+    const-string v7, "handleAppTransitionReadyLocked"
 
     invoke-virtual {v6, v7}, Lcom/android/server/wm/WindowManagerService;->closeSurfaceTransaction(Ljava/lang/String;)V
 
@@ -850,7 +850,7 @@
 
     iget-object v6, p0, Lcom/android/server/wm/WindowSurfacePlacer;->mService:Lcom/android/server/wm/WindowManagerService;
 
-    const-string/jumbo v7, "handleAppTransitionReadyLocked"
+    const-string v7, "handleAppTransitionReadyLocked"
 
     invoke-virtual {v6, v7}, Lcom/android/server/wm/WindowManagerService;->closeSurfaceTransaction(Ljava/lang/String;)V
 

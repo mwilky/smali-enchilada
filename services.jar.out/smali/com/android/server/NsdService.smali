@@ -410,7 +410,7 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    const-string/jumbo v2, "getaddrinfo"
+    const-string v2, "getaddrinfo"
 
     const/4 v3, 0x0
 

@@ -1541,17 +1541,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1000(Lcom/android/server/am/OnePlusProcessManager;I)Z
-    .locals 1
-
-    invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusProcessManager;->startSuspendUid(I)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method static synthetic access$1100(Lcom/android/server/am/OnePlusProcessManager;I)J
+.method static synthetic access$1000(Lcom/android/server/am/OnePlusProcessManager;I)J
     .locals 2
 
     invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusProcessManager;->addSuspendDelayCount(I)J
@@ -1561,7 +1551,7 @@
     return-wide v0
 .end method
 
-.method static synthetic access$1200(Lcom/android/server/am/OnePlusProcessManager;)D
+.method static synthetic access$1100(Lcom/android/server/am/OnePlusProcessManager;)D
     .locals 2
 
     iget-wide v0, p0, Lcom/android/server/am/OnePlusProcessManager;->SUSPEND_FAIL_NOTRY:D
@@ -1569,7 +1559,7 @@
     return-wide v0
 .end method
 
-.method static synthetic access$1300(Lcom/android/server/am/OnePlusProcessManager;)D
+.method static synthetic access$1200(Lcom/android/server/am/OnePlusProcessManager;)D
     .locals 2
 
     iget-wide v0, p0, Lcom/android/server/am/OnePlusProcessManager;->SUSPEND_FAIL_LONG:D
@@ -1577,7 +1567,7 @@
     return-wide v0
 .end method
 
-.method static synthetic access$1400(Lcom/android/server/am/OnePlusProcessManager;)D
+.method static synthetic access$1300(Lcom/android/server/am/OnePlusProcessManager;)D
     .locals 2
 
     iget-wide v0, p0, Lcom/android/server/am/OnePlusProcessManager;->SUSPEND_FAIL_SLEEP:D
@@ -1585,12 +1575,22 @@
     return-wide v0
 .end method
 
-.method static synthetic access$1500()Z
+.method static synthetic access$1400()Z
     .locals 1
 
     sget-boolean v0, Lcom/android/server/am/OnePlusProcessManager;->isAlarmAdjust:Z
 
     return v0
+.end method
+
+.method static synthetic access$1500(Lcom/android/server/am/OnePlusProcessManager;I)Ljava/lang/String;
+    .locals 1
+
+    invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusProcessManager;->getPackageNameForUid(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method static synthetic access$1600(Lcom/android/server/am/OnePlusProcessManager;IJ)V
@@ -1959,14 +1959,14 @@
     return-object v0
 .end method
 
-.method static synthetic access$900(Lcom/android/server/am/OnePlusProcessManager;I)Ljava/lang/String;
+.method static synthetic access$900(Lcom/android/server/am/OnePlusProcessManager;I)Z
     .locals 1
 
-    invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusProcessManager;->getPackageNameForUid(I)Ljava/lang/String;
+    invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusProcessManager;->startSuspendUid(I)Z
 
-    move-result-object v0
+    move-result v0
 
-    return-object v0
+    return v0
 .end method
 
 .method private add3rdAppProcessState(II)V
@@ -2673,50 +2673,17 @@
 .method private canSuspendUid(I)D
     .locals 4
 
-    invoke-static {}, Lcom/android/server/preload/PreloadUtils;->getInstance()Lcom/android/server/preload/PreloadUtils;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lcom/android/server/preload/PreloadUtils;->isPreloadUid(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const-string v0, "AppPreload"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "canSuspendUid : "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget-wide v0, p0, Lcom/android/server/am/OnePlusProcessManager;->SUSPEND_OK:D
-
-    return-wide v0
-
-    :cond_0
     invoke-static {p1}, Landroid/os/UserHandle;->isApp(I)Z
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     iget-wide v0, p0, Lcom/android/server/am/OnePlusProcessManager;->SUSPEND_FAIL_NOTRY:D
 
     return-wide v0
 
-    :cond_1
+    :cond_0
     iget-object v0, p0, Lcom/android/server/am/OnePlusProcessManager;->mRulesLock:Ljava/lang/Object;
 
     monitor-enter v0
@@ -2738,17 +2705,17 @@
 
     check-cast v1, Ljava/util/ArrayList;
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_12
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-gtz v2, :cond_2
+    if-gtz v2, :cond_1
 
     goto/16 :goto_1
 
-    :cond_2
+    :cond_1
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
@@ -2763,7 +2730,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     const-string v0, "OnePlusProcessManager"
 
@@ -2787,12 +2754,12 @@
 
     return-wide v0
 
-    :cond_3
+    :cond_2
     invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusProcessManager;->checkWhiteUid(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     const-string v0, "OnePlusProcessManager"
 
@@ -2816,12 +2783,12 @@
 
     return-wide v0
 
-    :cond_4
+    :cond_3
     invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusProcessManager;->checkWhitePackageUid(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     const-string v0, "OnePlusProcessManager"
 
@@ -2845,7 +2812,7 @@
 
     return-wide v0
 
-    :cond_5
+    :cond_4
     iget-object v0, p0, Lcom/android/server/am/OnePlusProcessManager;->mUidState:Landroid/util/SparseIntArray;
 
     const/16 v1, 0x12
@@ -2856,7 +2823,7 @@
 
     const/4 v1, 0x2
 
-    if-gt v0, v1, :cond_6
+    if-gt v0, v1, :cond_5
 
     const-string v0, "OnePlusProcessManager"
 
@@ -2880,7 +2847,7 @@
 
     return-wide v0
 
-    :cond_6
+    :cond_5
     iget-object v0, p0, Lcom/android/server/am/OnePlusProcessManager;->mFrontWindowTouchUids:Ljava/util/HashSet;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2891,7 +2858,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_6
 
     const-string v0, "OnePlusProcessManager"
 
@@ -2915,16 +2882,16 @@
 
     return-wide v0
 
-    :cond_7
+    :cond_6
     sget v0, Lcom/android/server/am/OnePlusProcessManager;->sInputMethodUid:I
 
-    if-ne v0, p1, :cond_8
+    if-ne v0, p1, :cond_7
 
     iget-wide v0, p0, Lcom/android/server/am/OnePlusProcessManager;->SUSPEND_FAIL_LONG:D
 
     return-wide v0
 
-    :cond_8
+    :cond_7
     iget-object v0, p0, Lcom/android/server/am/OnePlusProcessManager;->mSuspendProcessHandler:Landroid/os/Handler;
 
     add-int/lit16 v1, p1, -0x2710
@@ -2933,7 +2900,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_8
 
     const-string v0, "OnePlusProcessManager"
 
@@ -2957,12 +2924,12 @@
 
     return-wide v0
 
-    :cond_9
+    :cond_8
     invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusProcessManager;->checkActiveAudioUids(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_9
 
     const-string v0, "OnePlusProcessManager"
 
@@ -2986,7 +2953,7 @@
 
     return-wide v0
 
-    :cond_a
+    :cond_9
     sget-object v0, Lcom/android/server/am/OnePlusProcessManager;->mTrafficUids:Ljava/util/HashSet;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2997,7 +2964,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_a
 
     const-string v0, "OnePlusProcessManager"
 
@@ -3021,12 +2988,12 @@
 
     return-wide v0
 
-    :cond_b
+    :cond_a
     invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusProcessManager;->checkActiveSensor(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_c
 
     const-string v0, "OnePlusProcessManager"
 
@@ -3052,7 +3019,7 @@
 
     sget-boolean v1, Lcom/android/server/am/OnePlusProcessManager;->mScreen_ON:Z
 
-    if-nez v1, :cond_c
+    if-nez v1, :cond_b
 
     iget-object v1, p0, Lcom/android/server/am/OnePlusProcessManager;->mForceStopSensorPackage:Ljava/util/List;
 
@@ -3060,7 +3027,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_b
 
     sget-object v1, Lcom/android/server/am/OnePlusProcessManager;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
 
@@ -3095,13 +3062,13 @@
 
     throw v2
 
-    :cond_c
+    :cond_b
     :goto_0
     iget-wide v1, p0, Lcom/android/server/am/OnePlusProcessManager;->SUSPEND_FAIL_LONG:D
 
     return-wide v1
 
-    :cond_d
+    :cond_c
     sget-object v0, Lcom/android/server/am/OnePlusProcessManager;->mAdjustUids:Ljava/util/HashSet;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3112,7 +3079,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_d
 
     const-string v0, "OnePlusProcessManager"
 
@@ -3136,7 +3103,7 @@
 
     return-wide v0
 
-    :cond_e
+    :cond_d
     iget-object v0, p0, Lcom/android/server/am/OnePlusProcessManager;->mImportantUids:Ljava/util/HashSet;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3147,7 +3114,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_e
 
     const-string v0, "OnePlusProcessManager"
 
@@ -3171,7 +3138,7 @@
 
     return-wide v0
 
-    :cond_f
+    :cond_e
     iget-object v0, p0, Lcom/android/server/am/OnePlusProcessManager;->mGpsReceiverLocationUids:Ljava/util/ArrayList;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3182,7 +3149,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_10
 
     invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusProcessManager;->getPackageNameForUid(I)Ljava/lang/String;
 
@@ -3194,7 +3161,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_10
+    if-nez v1, :cond_f
 
     const-string v1, "OnePlusProcessManager"
 
@@ -3222,7 +3189,7 @@
 
     return-wide v1
 
-    :cond_10
+    :cond_f
     const-string v1, "OnePlusProcessManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3241,7 +3208,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_11
+    :cond_10
     iget-object v0, p0, Lcom/android/server/am/OnePlusProcessManager;->mOtherReceiverLocationUids:Ljava/util/ArrayList;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3252,24 +3219,24 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_11
 
     invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusProcessManager;->addLocationFailCount(I)Z
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_11
 
     iget-wide v0, p0, Lcom/android/server/am/OnePlusProcessManager;->SUSPEND_FAIL_DEFAULT:D
 
     return-wide v0
 
-    :cond_12
+    :cond_11
     iget-wide v0, p0, Lcom/android/server/am/OnePlusProcessManager;->SUSPEND_OK:D
 
     return-wide v0
 
-    :cond_13
+    :cond_12
     :goto_1
     :try_start_3
     iget-wide v2, p0, Lcom/android/server/am/OnePlusProcessManager;->SUSPEND_FAIL_NOTRY:D
@@ -5600,7 +5567,7 @@
 
     iget-object v1, p0, Lcom/android/server/am/OnePlusProcessManager;->mAudioManager:Landroid/media/AudioManager;
 
-    const-string/jumbo v2, "get_uid"
+    const-string v2, "get_uid"
 
     invoke-virtual {v1, v2}, Landroid/media/AudioManager;->getParameters(Ljava/lang/String;)Ljava/lang/String;
 
@@ -6304,24 +6271,6 @@
     goto :goto_5
 
     :cond_5
-    const-string v5, "OnePlusProcessManager"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v15, "services binding.client.uid : "
-
-    invoke-virtual {v6, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     return-object v4
 
     :cond_6
@@ -6339,7 +6288,7 @@
 
     add-int/lit8 v10, v10, 0x1
 
-    goto/16 :goto_3
+    goto :goto_3
 
     :cond_8
     move/from16 v17, v6
@@ -6481,24 +6430,6 @@
     goto :goto_8
 
     :cond_c
-    const-string v11, "OnePlusProcessManager"
-
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v13, "pubProviders binding.client.uid : "
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     return-object v4
 
     :catch_1
@@ -6583,7 +6514,7 @@
 
     iget-object v1, p0, Lcom/android/server/am/OnePlusProcessManager;->mAudioManager:Landroid/media/AudioManager;
 
-    const-string/jumbo v2, "get_silent_uid"
+    const-string v2, "get_silent_uid"
 
     invoke-virtual {v1, v2}, Landroid/media/AudioManager;->getParameters(Ljava/lang/String;)Ljava/lang/String;
 
@@ -7010,7 +6941,7 @@
 
     move-result v5
 
-    const-string/jumbo v6, "handlePackageChange"
+    const-string v6, "handlePackageChange"
 
     invoke-static {v5, v6}, Lcom/android/server/am/OnePlusProcessManager;->resumeProcessByUID_out(ILjava/lang/String;)V
 
@@ -7158,7 +7089,7 @@
 
     iget v6, v5, Landroid/content/pm/ApplicationInfo;->uid:I
 
-    const-string/jumbo v7, "handlePackageChange"
+    const-string v7, "handlePackageChange"
 
     invoke-static {v6, v7}, Lcom/android/server/am/OnePlusProcessManager;->resumeProcessByUID_out(ILjava/lang/String;)V
     :try_end_0
@@ -9887,7 +9818,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const-string/jumbo v2, "gsm.sim.operator.iso-country"
+    const-string v2, "gsm.sim.operator.iso-country"
 
     const-string v3, ""
 
@@ -10042,7 +9973,7 @@
 .end method
 
 .method public static final resumeProcessByUID_out(ILjava/lang/String;)V
-    .locals 3
+    .locals 1
 
     sget-boolean v0, Lcom/android/server/am/OnePlusProcessManager;->isSuppoerted:Z
 
@@ -10058,37 +9989,6 @@
     return-void
 
     :cond_1
-    invoke-static {}, Lcom/android/server/preload/PreloadUtils;->getInstance()Lcom/android/server/preload/PreloadUtils;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Lcom/android/server/preload/PreloadUtils;->isPreloadUid(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    const-string v0, "OnePlusProcessManager"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Don\'t resume preload uid : "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    return-void
-
-    :cond_2
     const/4 v0, 0x0
 
     invoke-static {p0, p1, v0}, Lcom/android/server/am/OnePlusProcessManager;->resumeProcessByUID_out(ILjava/lang/String;Z)V
@@ -10553,7 +10453,7 @@
 
     invoke-interface {v3, v0}, Lorg/xmlpull/v1/XmlSerializer;->text(Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string/jumbo v5, "gs"
+    const-string v5, "gs"
 
     invoke-interface {v3, v1, v5}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -10583,7 +10483,7 @@
 
     invoke-interface {v3, v0}, Lorg/xmlpull/v1/XmlSerializer;->text(Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string/jumbo v5, "gs"
+    const-string v5, "gs"
 
     invoke-interface {v3, v1, v5}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -13715,18 +13615,6 @@
     return v3
 
     :cond_f
-    invoke-static {}, Lcom/android/server/preload/PreloadUtils;->getInstance()Lcom/android/server/preload/PreloadUtils;
-
-    move-result-object v2
-
-    iget v4, p1, Lcom/android/server/am/ProcessRecord;->uid:I
-
-    invoke-virtual {v2, v4}, Lcom/android/server/preload/PreloadUtils;->isPreloadUid(I)Z
-
-    move-result v2
-
-    if-nez v2, :cond_10
-
     iget v2, p1, Lcom/android/server/am/ProcessRecord;->uid:I
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -13754,35 +13642,6 @@
     invoke-direct {p0, v2, v3}, Lcom/android/server/am/OnePlusProcessManager;->scheduleResumeUid(ILjava/lang/String;)Z
 
     return v0
-
-    :cond_10
-    const-string v0, "AppPreload"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Skip resume "
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v4, p1, Lcom/android/server/am/ProcessRecord;->uid:I
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v4, " for action : "
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    return v3
 .end method
 
 .method private startComputeUidTraffic(I)V

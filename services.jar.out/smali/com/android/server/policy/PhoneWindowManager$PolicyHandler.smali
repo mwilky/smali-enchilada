@@ -88,7 +88,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "handleAuthStateChange, authenticating:"
+    const-string v5, "handleAuthStateChange, authenticating:"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -225,22 +225,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-static {v0}, Lcom/android/server/policy/PhoneWindowManager;->access$1600(Lcom/android/server/policy/PhoneWindowManager;)V
-
-    :cond_0
-    sget-boolean v0, Landroid/os/Build;->AUTO_TEST_ONEPLUS:Z
-
-    if-eqz v0, :cond_6
-
-    const-string v0, "WindowManager"
-
-    const-string v1, "[Accessibility] MSG_ACCESSIBILITY_TV"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_3
 
@@ -255,16 +244,6 @@
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-static {v0}, Lcom/android/server/policy/PhoneWindowManager;->access$1600(Lcom/android/server/policy/PhoneWindowManager;)V
-
-    sget-boolean v0, Landroid/os/Build;->AUTO_TEST_ONEPLUS:Z
-
-    if-eqz v0, :cond_6
-
-    const-string v0, "WindowManager"
-
-    const-string v1, "[Accessibility] MSG_ACCESSIBILITY_SHORTCUT"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_3
 
@@ -296,7 +275,7 @@
     :pswitch_10
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -304,13 +283,13 @@
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mNavigationBar:Lcom/android/server/policy/WindowManagerPolicy$WindowState;
 
     :goto_0
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
     iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -323,11 +302,11 @@
 
     iget v3, p1, Landroid/os/Message;->arg1:I
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_1
 
     goto :goto_1
 
-    :cond_2
+    :cond_1
     move v1, v2
 
     :goto_1
@@ -355,11 +334,11 @@
 
     iget v5, p1, Landroid/os/Message;->arg1:I
 
-    if-eqz v5, :cond_3
+    if-eqz v5, :cond_2
 
     goto :goto_2
 
-    :cond_3
+    :cond_2
     move v1, v2
 
     :goto_2
@@ -404,7 +383,7 @@
     :pswitch_18
     sget-boolean v0, Lcom/android/server/policy/PhoneWindowManager;->DEBUG_WAKEUP:Z
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     const-string v0, "WindowManager"
 
@@ -412,7 +391,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_4
+    :cond_3
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-static {v0}, Lcom/android/server/policy/PhoneWindowManager;->access$400(Lcom/android/server/policy/PhoneWindowManager;)V
@@ -435,7 +414,7 @@
     :pswitch_1a
     sget-boolean v0, Lcom/android/server/policy/PhoneWindowManager;->DEBUG_WAKEUP:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     const-string v0, "WindowManager"
 
@@ -443,7 +422,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_5
+    :cond_4
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-static {v0}, Lcom/android/server/policy/PhoneWindowManager;->access$300(Lcom/android/server/policy/PhoneWindowManager;)V
@@ -486,11 +465,9 @@
 
     nop
 
-    :cond_6
+    :cond_5
     :goto_3
     return-void
-
-    nop
 
     nop
 

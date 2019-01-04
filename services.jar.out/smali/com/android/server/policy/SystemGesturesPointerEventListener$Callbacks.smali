@@ -53,6 +53,3 @@
 
 .method public abstract onUpOrCancel()V
 .end method
-
-.method public abstract onVerticalFling(I)V
-.end method

@@ -19,7 +19,7 @@
 
     const-string/jumbo v2, "metadata/"
 
-    const-string/jumbo v3, "gservices.version"
+    const-string v3, "gservices.version"
 
     invoke-direct {p0, v0, v1, v2, v3}, Lcom/android/server/updates/ConfigUpdateInstallReceiver;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 

@@ -138,18 +138,6 @@
     return-void
 .end method
 
-.method public reportJank(Ljava/lang/String;Ljava/lang/String;II)V
-    .locals 1
-
-    invoke-static {}, Lcom/android/server/am/OnePlusJankManager;->getInstance()Lcom/android/server/am/OnePlusJankManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1, p2, p3, p4}, Lcom/android/server/am/OnePlusJankManager;->reportJank(Ljava/lang/String;Ljava/lang/String;II)V
-
-    return-void
-.end method
-
 .method public setAppControlMode(Ljava/lang/String;II)I
     .locals 1
 

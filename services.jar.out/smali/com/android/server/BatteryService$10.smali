@@ -3,7 +3,7 @@
 .source "BatteryService.java"
 
 # interfaces
-.implements Lcom/android/server/am/OnePlusPowerConsumptionStatistic$ResetParamListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -34,100 +34,44 @@
 
 
 # virtual methods
-.method public getPlugState()I
-    .locals 1
+.method public run()V
+    .locals 3
 
     iget-object v0, p0, Lcom/android/server/BatteryService$10;->this$0:Lcom/android/server/BatteryService;
 
-    invoke-static {v0}, Lcom/android/server/BatteryService;->access$1600(Lcom/android/server/BatteryService;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public resetParamForOPCS()Z
-    .locals 6
-
-    iget-object v0, p0, Lcom/android/server/BatteryService$10;->this$0:Lcom/android/server/BatteryService;
-
-    invoke-static {v0}, Lcom/android/server/BatteryService;->access$1400(Lcom/android/server/BatteryService;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/android/server/BatteryService;->access$1300(Lcom/android/server/BatteryService;)Landroid/content/Context;
 
     move-result-object v0
 
-    monitor-enter v0
+    const-string/jumbo v1, "vibrator"
 
-    :try_start_0
-    iget-object v1, p0, Lcom/android/server/BatteryService$10;->this$0:Lcom/android/server/BatteryService;
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    move-result-object v0
 
-    invoke-static {v1, v2}, Lcom/android/server/BatteryService;->access$1502(Lcom/android/server/BatteryService;Z)Z
+    check-cast v0, Landroid/os/Vibrator;
 
-    invoke-static {}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->getInstance()Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+    const/4 v1, 0x4
 
-    move-result-object v1
+    new-array v1, v1, [J
 
-    if-eqz v1, :cond_1
+    fill-array-data v1, :array_0
 
-    iget-object v1, p0, Lcom/android/server/BatteryService$10;->this$0:Lcom/android/server/BatteryService;
+    const/4 v2, -0x1
 
-    invoke-static {}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->getInstance()Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+    invoke-virtual {v0, v1, v2}, Landroid/os/Vibrator;->vibrate([JI)V
 
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/android/server/BatteryService$10;->this$0:Lcom/android/server/BatteryService;
-
-    invoke-static {v4}, Lcom/android/server/BatteryService;->access$1600(Lcom/android/server/BatteryService;)I
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    const/4 v2, 0x1
+    return-void
 
     nop
 
-    :cond_0
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    nop
 
-    move-result-object v2
-
-    iget-object v4, p0, Lcom/android/server/BatteryService$10;->this$0:Lcom/android/server/BatteryService;
-
-    invoke-static {v4}, Lcom/android/server/BatteryService;->access$1600(Lcom/android/server/BatteryService;)I
-
-    move-result v4
-
-    iget-object v5, p0, Lcom/android/server/BatteryService$10;->this$0:Lcom/android/server/BatteryService;
-
-    invoke-static {v5}, Lcom/android/server/BatteryService;->access$1700(Lcom/android/server/BatteryService;)Z
-
-    move-result v5
-
-    invoke-virtual {v3, v2, v4, v5}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->initPlugState(Ljava/lang/Boolean;IZ)Z
-
-    move-result v2
-
-    invoke-static {v1, v2}, Lcom/android/server/BatteryService;->access$1502(Lcom/android/server/BatteryService;Z)Z
-
-    :cond_1
-    iget-object v1, p0, Lcom/android/server/BatteryService$10;->this$0:Lcom/android/server/BatteryService;
-
-    invoke-static {v1}, Lcom/android/server/BatteryService;->access$1500(Lcom/android/server/BatteryService;)Z
-
-    move-result v1
-
-    monitor-exit v0
-
-    return v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
+    :array_0
+    .array-data 8
+        0x0
+        0xa
+        0x96
+        0xc
+    .end array-data
 .end method

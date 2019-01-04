@@ -903,7 +903,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "grants"
+    const-string v1, "grants"
 
     const-string v2, "accounts_id=? AND auth_token_type=? AND uid=?"
 
@@ -955,7 +955,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "grants"
+    const-string v1, "grants"
 
     const-string/jumbo v2, "uid=?"
 
@@ -1914,7 +1914,7 @@
 
     move-object v9, v1
 
-    const-string/jumbo v2, "grants"
+    const-string v2, "grants"
 
     const-string/jumbo v1, "uid"
 
@@ -3664,7 +3664,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    const-string/jumbo v2, "grants"
+    const-string v2, "grants"
 
     const-string v3, "accounts_id"
 

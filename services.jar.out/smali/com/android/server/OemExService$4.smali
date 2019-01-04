@@ -46,7 +46,7 @@
 
     iget-object v1, p0, Lcom/android/server/OemExService$4;->val$apkPath:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lcom/android/server/OemExService;->access$800(Lcom/android/server/OemExService;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/server/OemExService;->access$900(Lcom/android/server/OemExService;Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

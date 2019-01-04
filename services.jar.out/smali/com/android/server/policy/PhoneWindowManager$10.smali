@@ -49,7 +49,7 @@
 
     invoke-virtual {v0}, Lcom/android/server/policy/PhoneWindowManager$MyOrientationListener;->onTouchStart()V
 
-    invoke-static {}, Lcom/android/server/policy/PhoneWindowManager;->access$3700()Z
+    invoke-static {}, Lcom/android/server/policy/PhoneWindowManager;->access$3600()Z
 
     move-result v0
 
@@ -63,7 +63,7 @@
 
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-static {v0}, Lcom/android/server/policy/PhoneWindowManager;->access$3800(Lcom/android/server/policy/PhoneWindowManager;)Z
+    invoke-static {v0}, Lcom/android/server/policy/PhoneWindowManager;->access$3700(Lcom/android/server/policy/PhoneWindowManager;)Z
 
     move-result v0
 
@@ -79,30 +79,97 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/server/policy/PhoneWindowManager;->access$3802(Lcom/android/server/policy/PhoneWindowManager;Z)Z
+    invoke-static {v0, v1}, Lcom/android/server/policy/PhoneWindowManager;->access$3702(Lcom/android/server/policy/PhoneWindowManager;Z)Z
 
     :cond_0
     return-void
 .end method
 
 .method public onFling(I)V
-    .locals 2
+    .locals 5
 
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mPowerManagerInternal:Landroid/os/PowerManagerInternal;
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+    move-result-object v0
 
-    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mPowerManagerInternal:Landroid/os/PowerManagerInternal;
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    const/4 v1, 0x2
+    iget-object v1, v1, Lcom/android/server/policy/PhoneWindowManager;->mPowerManagerInternal:Landroid/os/PowerManagerInternal;
 
-    invoke-virtual {v0, v1, p1}, Landroid/os/PowerManagerInternal;->powerHint(II)V
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    iget-object v1, v1, Lcom/android/server/policy/PhoneWindowManager;->mPowerManagerInternal:Landroid/os/PowerManagerInternal;
+
+    const/4 v2, 0x2
+
+    invoke-virtual {v1, v2, p1}, Landroid/os/PowerManagerInternal;->powerHint(II)V
 
     :cond_0
+    invoke-static {}, Lcom/android/server/policy/PhoneWindowManager;->access$3600()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    iget-object v1, v1, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostFling:Landroid/util/BoostFramework;
+
+    if-nez v1, :cond_1
+
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    new-instance v2, Landroid/util/BoostFramework;
+
+    invoke-direct {v2}, Landroid/util/BoostFramework;-><init>()V
+
+    iput-object v2, v1, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostFling:Landroid/util/BoostFramework;
+
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v2}, Lcom/android/server/policy/PhoneWindowManager;->access$3702(Lcom/android/server/policy/PhoneWindowManager;Z)Z
+
+    :cond_1
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    iget-object v1, v1, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostFling:Landroid/util/BoostFramework;
+
+    if-nez v1, :cond_2
+
+    const-string v1, "WindowManager"
+
+    const-string v2, "Error: boost object null"
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_2
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    iget-object v1, v1, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostFling:Landroid/util/BoostFramework;
+
+    const/16 v2, 0x1080
+
+    add-int/lit16 v3, p1, 0xa0
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v1, v2, v0, v3, v4}, Landroid/util/BoostFramework;->perfHint(ILjava/lang/String;II)I
+
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    invoke-static {v1, v4}, Lcom/android/server/policy/PhoneWindowManager;->access$3702(Lcom/android/server/policy/PhoneWindowManager;Z)Z
+
+    :cond_3
     return-void
 .end method
 
@@ -189,7 +256,7 @@
 .end method
 
 .method public onScroll(Z)V
-    .locals 6
+    .locals 5
 
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -201,113 +268,103 @@
 
     iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-static {v1}, Lcom/android/server/policy/PhoneWindowManager;->access$3600(Lcom/android/server/policy/PhoneWindowManager;)Z
+    iget-object v1, v1, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostDrag:Landroid/util/BoostFramework;
+
+    if-nez v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    new-instance v2, Landroid/util/BoostFramework;
+
+    invoke-direct {v2}, Landroid/util/BoostFramework;-><init>()V
+
+    iput-object v2, v1, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostDrag:Landroid/util/BoostFramework;
+
+    :cond_0
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    iget-object v1, v1, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostDrag:Landroid/util/BoostFramework;
+
+    if-nez v1, :cond_1
+
+    const-string v1, "WindowManager"
+
+    const-string v2, "Error: boost object null"
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_1
+    invoke-static {}, Lcom/android/server/policy/PhoneWindowManager;->access$3600()Z
 
     move-result v1
 
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+    const/4 v2, -0x1
 
-    iget-object v2, v2, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostDrag:Landroid/util/BoostFramework;
+    if-eqz v1, :cond_4
 
-    if-nez v2, :cond_0
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v1, v1, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostPrefling:Landroid/util/BoostFramework;
+
+    if-nez v1, :cond_2
+
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     new-instance v3, Landroid/util/BoostFramework;
 
     invoke-direct {v3}, Landroid/util/BoostFramework;-><init>()V
 
-    iput-object v3, v2, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostDrag:Landroid/util/BoostFramework;
-
-    :cond_0
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget-object v2, v2, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostDrag:Landroid/util/BoostFramework;
-
-    if-nez v2, :cond_1
-
-    const-string v2, "WindowManager"
-
-    const-string v3, "Error: boost object null"
-
-    invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    return-void
-
-    :cond_1
-    invoke-static {}, Lcom/android/server/policy/PhoneWindowManager;->access$3700()Z
-
-    move-result v2
-
-    const/4 v3, -0x1
-
-    if-eqz v2, :cond_4
-
-    if-nez v1, :cond_4
-
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget-object v2, v2, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostPrefling:Landroid/util/BoostFramework;
-
-    if-nez v2, :cond_2
-
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    new-instance v4, Landroid/util/BoostFramework;
-
-    invoke-direct {v4}, Landroid/util/BoostFramework;-><init>()V
-
-    iput-object v4, v2, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostPrefling:Landroid/util/BoostFramework;
+    iput-object v3, v1, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostPrefling:Landroid/util/BoostFramework;
 
     :cond_2
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget-object v2, v2, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostPrefling:Landroid/util/BoostFramework;
+    iget-object v1, v1, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostPrefling:Landroid/util/BoostFramework;
 
-    if-nez v2, :cond_3
+    if-nez v1, :cond_3
 
-    const-string v2, "WindowManager"
+    const-string v1, "WindowManager"
 
-    const-string v3, "Error: boost object null"
+    const-string v2, "Error: boost object null"
 
-    invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 
     :cond_3
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget-object v2, v2, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostPrefling:Landroid/util/BoostFramework;
+    iget-object v1, v1, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostPrefling:Landroid/util/BoostFramework;
 
-    const/16 v4, 0x1080
+    const/16 v3, 0x1080
 
-    const/4 v5, 0x4
+    const/4 v4, 0x4
 
-    invoke-virtual {v2, v4, v0, v3, v5}, Landroid/util/BoostFramework;->perfHint(ILjava/lang/String;II)I
+    invoke-virtual {v1, v3, v0, v2, v4}, Landroid/util/BoostFramework;->perfHint(ILjava/lang/String;II)I
 
     :cond_4
-    if-nez v1, :cond_5
-
     if-eqz p1, :cond_5
 
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget-object v2, v2, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostDrag:Landroid/util/BoostFramework;
+    iget-object v1, v1, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostDrag:Landroid/util/BoostFramework;
 
-    const/16 v4, 0x1087
+    const/16 v3, 0x1087
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    invoke-virtual {v2, v4, v0, v3, v5}, Landroid/util/BoostFramework;->perfHint(ILjava/lang/String;II)I
+    invoke-virtual {v1, v3, v0, v2, v4}, Landroid/util/BoostFramework;->perfHint(ILjava/lang/String;II)I
 
     goto :goto_0
 
     :cond_5
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget-object v2, v2, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostDrag:Landroid/util/BoostFramework;
+    iget-object v1, v1, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostDrag:Landroid/util/BoostFramework;
 
-    invoke-virtual {v2}, Landroid/util/BoostFramework;->perfLockRelease()I
+    invoke-virtual {v1}, Landroid/util/BoostFramework;->perfLockRelease()I
 
     :goto_0
     return-void
@@ -493,86 +550,5 @@
 
     invoke-virtual {v0}, Lcom/android/server/policy/PhoneWindowManager$MyOrientationListener;->onTouchEnd()V
 
-    return-void
-.end method
-
-.method public onVerticalFling(I)V
-    .locals 6
-
-    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    invoke-static {v1}, Lcom/android/server/policy/PhoneWindowManager;->access$3600(Lcom/android/server/policy/PhoneWindowManager;)Z
-
-    move-result v1
-
-    invoke-static {}, Lcom/android/server/policy/PhoneWindowManager;->access$3700()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    if-nez v1, :cond_2
-
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget-object v2, v2, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostFling:Landroid/util/BoostFramework;
-
-    if-nez v2, :cond_0
-
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    new-instance v3, Landroid/util/BoostFramework;
-
-    invoke-direct {v3}, Landroid/util/BoostFramework;-><init>()V
-
-    iput-object v3, v2, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostFling:Landroid/util/BoostFramework;
-
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    const/4 v3, 0x0
-
-    invoke-static {v2, v3}, Lcom/android/server/policy/PhoneWindowManager;->access$3802(Lcom/android/server/policy/PhoneWindowManager;Z)Z
-
-    :cond_0
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget-object v2, v2, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostFling:Landroid/util/BoostFramework;
-
-    if-nez v2, :cond_1
-
-    const-string v2, "WindowManager"
-
-    const-string v3, "Error: boost object null"
-
-    invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    return-void
-
-    :cond_1
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget-object v2, v2, Lcom/android/server/policy/PhoneWindowManager;->mPerfBoostFling:Landroid/util/BoostFramework;
-
-    const/16 v3, 0x1080
-
-    add-int/lit16 v4, p1, 0xa0
-
-    const/4 v5, 0x1
-
-    invoke-virtual {v2, v3, v0, v4, v5}, Landroid/util/BoostFramework;->perfHint(ILjava/lang/String;II)I
-
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    invoke-static {v2, v5}, Lcom/android/server/policy/PhoneWindowManager;->access$3802(Lcom/android/server/policy/PhoneWindowManager;Z)Z
-
-    :cond_2
     return-void
 .end method

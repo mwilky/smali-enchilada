@@ -35,7 +35,7 @@
 
     aput-object v1, v3, v4
 
-    const v4, 0x1040697
+    const v4, 0x1040696
 
     invoke-virtual {p2, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -71,7 +71,7 @@
 
     if-eqz v5, :cond_0
 
-    const v6, 0x1040696
+    const v6, 0x1040695
 
     new-instance v7, Lcom/android/server/am/-$$Lambda$UnsupportedCompileSdkDialog$K7plB7GGwH9pXpEKQfCoIs-hrJg;
 

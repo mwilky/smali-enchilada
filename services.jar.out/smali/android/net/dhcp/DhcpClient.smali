@@ -85,12 +85,6 @@
 
 .field private static final PUBLIC_BASE:I = 0x30000
 
-.field private static final PUBLIC_CHINA_DNS_SERVER:Ljava/lang/String; = "114.114.114.114"
-
-.field private static final PUBLIC_GOOGLE_DNS2_SERVER:Ljava/lang/String; = "8.8.4.4"
-
-.field private static final PUBLIC_GOOGLE_DNS_SERVER:Ljava/lang/String; = "8.8.8.8"
-
 .field static final REQUESTED_PARAMS:[B
 
 .field private static final SECONDS:I = 0x3e8
@@ -528,127 +522,10 @@
 .end method
 
 .method private acceptDhcpResults(Landroid/net/DhcpResults;Ljava/lang/String;)V
-    .locals 5
+    .locals 3
 
     iput-object p1, p0, Landroid/net/dhcp/DhcpClient;->mDhcpLease:Landroid/net/DhcpResults;
 
-    iget-object v0, p0, Landroid/net/dhcp/DhcpClient;->mDhcpLease:Landroid/net/DhcpResults;
-
-    invoke-virtual {v0}, Landroid/net/DhcpResults;->isSingleDns()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Landroid/net/dhcp/DhcpClient;->mDhcpLease:Landroid/net/DhcpResults;
-
-    invoke-virtual {v0}, Landroid/net/DhcpResults;->getDnsServers()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/net/NetworkUtils;->makeStrings(Ljava/util/Collection;)[Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "DhcpClient"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "currently only one dns: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/4 v3, 0x0
-
-    aget-object v4, v0, v3
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v4, ", begin to add the default dns "
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-direct {p0}, Landroid/net/dhcp/DhcpClient;->isCountryChinaLocal()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    const-string v1, "DhcpClient"
-
-    const-string/jumbo v2, "now it is in China, check the china dns value"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "114.114.114.114"
-
-    aget-object v2, v0, v3
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    iget-object v1, p0, Landroid/net/dhcp/DhcpClient;->mDhcpLease:Landroid/net/DhcpResults;
-
-    const-string v2, "114.114.114.114"
-
-    invoke-virtual {v1, v2}, Landroid/net/DhcpResults;->addDns(Ljava/lang/String;)Z
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v1, p0, Landroid/net/dhcp/DhcpClient;->mDhcpLease:Landroid/net/DhcpResults;
-
-    const-string v2, "8.8.8.8"
-
-    invoke-virtual {v1, v2}, Landroid/net/DhcpResults;->addDns(Ljava/lang/String;)Z
-
-    goto :goto_0
-
-    :cond_1
-    const-string v1, "DhcpClient"
-
-    const-string/jumbo v2, "now it is out of China, so check the google dns value"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "8.8.8.8"
-
-    aget-object v2, v0, v3
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    iget-object v1, p0, Landroid/net/dhcp/DhcpClient;->mDhcpLease:Landroid/net/DhcpResults;
-
-    const-string v2, "8.8.8.8"
-
-    invoke-virtual {v1, v2}, Landroid/net/DhcpResults;->addDns(Ljava/lang/String;)Z
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v1, p0, Landroid/net/dhcp/DhcpClient;->mDhcpLease:Landroid/net/DhcpResults;
-
-    const-string v2, "8.8.4.4"
-
-    invoke-virtual {v1, v2}, Landroid/net/DhcpResults;->addDns(Ljava/lang/String;)Z
-
-    :cond_3
-    :goto_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/net/dhcp/DhcpClient;->mOffer:Landroid/net/DhcpResults;
@@ -1426,32 +1303,6 @@
     invoke-static {v0}, Landroid/net/TrafficStats;->setThreadStatsTag(I)V
 
     throw v1
-.end method
-
-.method private isCountryChinaLocal()Z
-    .locals 3
-
-    iget-object v0, p0, Landroid/net/dhcp/DhcpClient;->mContext:Landroid/content/Context;
-
-    const-string/jumbo v1, "wifi"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/net/wifi/WifiManager;
-
-    invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->getCountryCode()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "CN"
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v2
-
-    return v2
 .end method
 
 .method private logError(I)V

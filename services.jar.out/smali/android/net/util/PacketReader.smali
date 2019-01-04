@@ -243,7 +243,7 @@
     :catch_0
     move-exception v0
 
-    const-string/jumbo v2, "handlePacket error: "
+    const-string v2, "handlePacket error: "
 
     invoke-virtual {p0, v2, v0}, Landroid/net/util/PacketReader;->logError(Ljava/lang/String;Ljava/lang/Exception;)V
 

@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onBarVisibilityChanged(Z)V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$7;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -43,16 +43,5 @@
 
     invoke-virtual {v0, p1}, Landroid/view/accessibility/AccessibilityManager;->notifyAccessibilityButtonVisibilityChanged(Z)V
 
-    sget-boolean v0, Landroid/os/Build;->AUTO_TEST_ONEPLUS:Z
-
-    if-eqz v0, :cond_0
-
-    const-string v0, "WindowManager"
-
-    const-string v1, "[Accessibility] onBarVisibilityChanged"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_0
     return-void
 .end method

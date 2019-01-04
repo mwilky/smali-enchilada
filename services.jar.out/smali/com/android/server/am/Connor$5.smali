@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 10
+    .locals 9
 
     invoke-static {}, Lcom/android/server/am/Connor;->nativeCluster()Ljava/util/HashMap;
 
@@ -48,7 +48,7 @@
     :try_start_0
     iget-object v2, p0, Lcom/android/server/am/Connor$5;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v2, v0}, Lcom/android/server/am/Connor;->access$1402(Lcom/android/server/am/Connor;Ljava/util/Map;)Ljava/util/Map;
+    invoke-static {v2, v0}, Lcom/android/server/am/Connor;->access$1202(Lcom/android/server/am/Connor;Ljava/util/Map;)Ljava/util/Map;
 
     monitor-exit v1
     :try_end_0
@@ -56,7 +56,7 @@
 
     iget-object v1, p0, Lcom/android/server/am/Connor$5;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v1}, Lcom/android/server/am/Connor;->access$1500(Lcom/android/server/am/Connor;)Landroid/app/usage/UsageStatsManager;
+    invoke-static {v1}, Lcom/android/server/am/Connor;->access$1300(Lcom/android/server/am/Connor;)Landroid/app/usage/UsageStatsManager;
 
     move-result-object v1
 
@@ -80,103 +80,88 @@
 
     check-cast v2, Landroid/app/usage/UsageStatsManager;
 
-    invoke-static {v1, v2}, Lcom/android/server/am/Connor;->access$1502(Lcom/android/server/am/Connor;Landroid/app/usage/UsageStatsManager;)Landroid/app/usage/UsageStatsManager;
+    invoke-static {v1, v2}, Lcom/android/server/am/Connor;->access$1302(Lcom/android/server/am/Connor;Landroid/app/usage/UsageStatsManager;)Landroid/app/usage/UsageStatsManager;
 
     :cond_0
     :try_start_1
-    iget-object v1, p0, Lcom/android/server/am/Connor$5;->this$0:Lcom/android/server/am/Connor;
+    new-instance v1, Ljava/util/HashMap;
 
-    invoke-static {v1}, Lcom/android/server/am/Connor;->access$500(Lcom/android/server/am/Connor;)Lcom/android/server/am/ActivityManagerService;
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    move-result-object v1
+    iget-object v2, p0, Lcom/android/server/am/Connor$5;->this$0:Lcom/android/server/am/Connor;
 
-    iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
+    invoke-static {v2}, Lcom/android/server/am/Connor;->access$1200(Lcom/android/server/am/Connor;)Ljava/util/Map;
 
-    invoke-static {v1}, Lcom/android/server/am/ConnorFilter;->getClusterFilterSet(Landroid/content/Context;)Ljava/util/HashSet;
+    move-result-object v2
 
-    move-result-object v1
+    invoke-interface {v2}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
-    new-instance v2, Ljava/util/HashMap;
+    move-result-object v2
 
-    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
+    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    iget-object v3, p0, Lcom/android/server/am/Connor$5;->this$0:Lcom/android/server/am/Connor;
-
-    invoke-static {v3}, Lcom/android/server/am/Connor;->access$1400(Lcom/android/server/am/Connor;)Ljava/util/Map;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
+    move-result-object v2
 
     :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_3
+    if-eqz v3, :cond_2
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    iget-object v4, p0, Lcom/android/server/am/Connor$5;->this$0:Lcom/android/server/am/Connor;
+
+    invoke-static {v4}, Lcom/android/server/am/Connor;->access$1200(Lcom/android/server/am/Connor;)Ljava/util/Map;
 
     move-result-object v4
 
-    check-cast v4, Ljava/lang/String;
+    invoke-interface {v4, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v5, p0, Lcom/android/server/am/Connor$5;->this$0:Lcom/android/server/am/Connor;
+    move-result-object v4
 
-    invoke-static {v5}, Lcom/android/server/am/Connor;->access$1400(Lcom/android/server/am/Connor;)Ljava/util/Map;
+    check-cast v4, [Ljava/lang/String;
 
-    move-result-object v5
+    array-length v5, v4
 
-    invoke-interface {v5, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, [Ljava/lang/String;
-
-    array-length v6, v5
-
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
     :goto_1
-    if-ge v7, v6, :cond_2
+    if-ge v6, v5, :cond_1
 
-    aget-object v8, v5, v7
+    aget-object v7, v4, v6
 
-    invoke-virtual {v1, v8}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+    iget-object v8, p0, Lcom/android/server/am/Connor$5;->this$0:Lcom/android/server/am/Connor;
 
-    move-result v9
+    invoke-static {v8, v3}, Lcom/android/server/am/Connor;->access$1400(Lcom/android/server/am/Connor;Ljava/lang/String;)I
 
-    if-nez v9, :cond_1
+    move-result v8
 
-    iget-object v9, p0, Lcom/android/server/am/Connor$5;->this$0:Lcom/android/server/am/Connor;
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v9, v4}, Lcom/android/server/am/Connor;->access$1600(Lcom/android/server/am/Connor;Ljava/lang/String;)I
+    move-result-object v8
 
-    move-result v9
+    invoke-virtual {v1, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    invoke-virtual {v2, v8, v9}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-
-    :cond_1
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_1
 
-    :cond_2
+    :cond_1
     goto :goto_0
 
-    :cond_3
+    :cond_2
+    const-string v2, "android"
+
+    invoke-virtual {v1, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+
     goto :goto_2
 
     :catch_0
@@ -195,7 +180,7 @@
 
     iget-object v2, p0, Lcom/android/server/am/Connor$5;->this$0:Lcom/android/server/am/Connor;
 
-    invoke-static {v2}, Lcom/android/server/am/Connor;->access$1700(Lcom/android/server/am/Connor;)Ljava/lang/Runnable;
+    invoke-static {v2}, Lcom/android/server/am/Connor;->access$1500(Lcom/android/server/am/Connor;)Ljava/lang/Runnable;
 
     move-result-object v2
 
