@@ -435,7 +435,7 @@
     :cond_0
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/StatusBarIconView;->setDecorColor(I)V
     
-	  int-to-float v1, v1
+	int-to-float v1, v1
 		
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/StatusBarIconView;->updateViews(F)V
 
