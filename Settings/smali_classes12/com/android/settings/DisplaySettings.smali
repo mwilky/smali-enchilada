@@ -3504,11 +3504,19 @@
 
     iget-object v3, p0, Lcom/android/settings/DisplaySettings;->mDozePreference:Landroid/support/v7/preference/Preference;
 
+    const v4, 0x7f120b8c
+
+    invoke-virtual {v3, v4}, Landroid/support/v7/preference/Preference;->setSummary(I)V
+    
+    goto :goto_1
+
+    :cond_3
+    iget-object v3, p0, Lcom/android/settings/DisplaySettings;->mDozePreference:Landroid/support/v7/preference/Preference;
+
     const v4, 0x7f120b6d
 
     invoke-virtual {v3, v4}, Landroid/support/v7/preference/Preference;->setSummary(I)V
-
-    :cond_3
+    
     :goto_1
     iget-object v3, p0, Lcom/android/settings/DisplaySettings;->mDozePreference:Landroid/support/v7/preference/Preference;
 
