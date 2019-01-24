@@ -123,28 +123,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string v0, "sys.aod.localtest"
+    sget-boolean v0, Lcom/oneplus/aod/Utils;->mIsAlwaysOnModeEnabled:Z
 
-    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "1"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x1
-
-    return v1
-
-    :cond_0
-    const/4 v1, 0x0
-
-    return v1
+    return v0
 .end method
 
 .method public static isCustomFingerprint()Z
@@ -255,9 +236,155 @@
 .method public static isSupportAlwaysOn()Z
     .locals 1
 
-    const/4 v0, 0x0
+    invoke-static {}, Lcom/oneplus/aod/Utils;->isAODAllowed()Z
+    
+    move-result v0
 
     return v0
+.end method
+
+.method public static isAODAllowed()Z
+    .registers 5
+
+    .line 22
+    new-instance v0, Ljava/lang/String;
+
+    const/16 v1, 0x13
+
+    new-array v1, v1, [C
+
+    fill-array-data v1, :array_42
+
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>([C)V
+
+    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 23
+    .local v0, "str":Ljava/lang/String;
+    new-instance v1, Ljava/lang/String;
+
+    const/16 v2, 0x14
+
+    new-array v2, v2, [C
+
+    fill-array-data v2, :array_5a
+
+    invoke-direct {v1, v2}, Ljava/lang/String;-><init>([C)V
+
+    .line 24
+    .local v1, "path":Ljava/lang/String;
+    new-instance v2, Ljava/io/File;
+
+    invoke-direct {v2, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 25
+    .local v2, "file":Ljava/io/File;
+    invoke-virtual {v2}, Ljava/io/File;->exists()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3e
+
+    if-eqz v0, :cond_3e
+
+    new-instance v3, Ljava/lang/String;
+
+    const/16 v4, 0x8
+
+    new-array v4, v4, [C
+
+    fill-array-data v4, :array_72
+
+    invoke-direct {v3, v4}, Ljava/lang/String;-><init>([C)V
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_3c
+
+    goto :goto_3e
+
+    .line 28
+    :cond_3c
+    const/4 v3, 0x1
+
+    return v3
+
+    .line 25
+    :cond_3e
+    :goto_3e
+    nop
+
+    .line 26
+    const/4 v3, 0x0
+
+    return v3
+
+    nop
+
+    :array_42
+    .array-data 2
+        0x72s
+        0x6fs
+        0x2es
+        0x62s
+        0x75s
+        0x69s
+        0x6cs
+        0x64s
+        0x2es
+        0x64s
+        0x69s
+        0x73s
+        0x70s
+        0x6cs
+        0x61s
+        0x79s
+        0x2es
+        0x69s
+        0x64s
+    .end array-data
+
+    nop
+
+    :array_5a
+    .array-data 2
+        0x2fs
+        0x73s
+        0x79s
+        0x73s
+        0x74s
+        0x65s
+        0x6ds
+        0x2fs
+        0x65s
+        0x74s
+        0x63s
+        0x2fs
+        0x72s
+        0x65s
+        0x6es
+        0x6fs
+        0x76s
+        0x61s
+        0x74s
+        0x65s
+    .end array-data
+
+    :array_72
+    .array-data 2
+        0x52s
+        0x45s
+        0x4es
+        0x4fs
+        0x56s
+        0x41s
+        0x54s
+        0x45s
+    .end array-data
 .end method
 
 .method public static updateAlwaysOnState(Landroid/content/Context;I)V
