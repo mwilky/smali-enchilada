@@ -497,7 +497,16 @@
 
 .method private checkLightSensor()V
     .locals 1
+    
+    invoke-static {}, Lcom/oneplus/aod/Utils;->isSupportAlwaysOn()Z
 
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
     new-instance v0, Lcom/oneplus/doze/DozeService$7;
 
     invoke-direct {v0, p0}, Lcom/oneplus/doze/DozeService$7;-><init>(Lcom/oneplus/doze/DozeService;)V
