@@ -801,6 +801,15 @@
     move v6, v1
 
     :goto_4
+    sget-boolean v7, Lcom/android/mwilky/Renovate;->mHideQsLabels:Z
+    
+    if-eqz v7, :cond_show
+    
+    const/4 v5, 0x0
+    
+    goto :goto_skip
+    
+    :cond_show
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/DndTile;->mController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     invoke-interface {v7}, Lcom/android/systemui/statusbar/policy/ZenModeController;->getConfig()Landroid/service/notification/ZenModeConfig;
@@ -815,6 +824,7 @@
 
     move-result-object v5
 
+    :goto_skip
     iput-object v5, p1, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->secondaryLabel:Ljava/lang/CharSequence;
 
     const v5, 0x7f080372
