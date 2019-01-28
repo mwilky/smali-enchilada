@@ -5518,13 +5518,13 @@
     
     sget-boolean v0, Lcom/android/server/policy/PhoneWindowManager;->mBlockPowerMenuKeyguard:Z
     
-    if-eqz v0, :cond_mw
+    if-eqz v0, :cond_mw1
     
     invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->isScreenOn()Z
     
     move-result v0
     
-    if-eqz v0, :cond_mw
+    if-eqz v0, :cond_mw1
     
     invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->keyguardOn()Z
 
@@ -5532,7 +5532,7 @@
     
     if-nez v0, :cond_14
     
-    :cond_mw
+    :cond_mw1
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getFlags()I
 
     move-result v9
