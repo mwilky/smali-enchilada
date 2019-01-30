@@ -244,7 +244,16 @@
 
 .method private getSecondaryLabel(ZLjava/lang/String;)Ljava/lang/CharSequence;
     .locals 2
+    
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideQsLabels:Z
+    
+    if-eqz v0, :cond_stock
+    
+    const/4 v0, 0x0
+    
+    return-object v0
 
+    :cond_stock
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile;->mContext:Landroid/content/Context;
