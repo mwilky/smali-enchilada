@@ -2611,10 +2611,6 @@
     const/4 v1, 0x3 #media
 
     if-ne v0, v1, :cond_ringer
-    
-    sget-boolean v1, Lcom/android/mwilky/Renovate;->mExtendedVolumePanelMedia:Z
-    
-    if-eqz v1, :cond_ringer
 
     return v2
     
