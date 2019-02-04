@@ -370,7 +370,7 @@
 .end method
 
 .method public static getCircleColorForState(I)I
-    .locals 2
+    .locals 3
 
     packed-switch p0, :pswitch_data_0
 
@@ -392,7 +392,14 @@
     invoke-static {v0}, Lcom/android/systemui/util/ThemeColorUtils;->getColor(I)I
 
     move-result v0
+    
+    sget-boolean v2, Lcom/android/mwilky/Renovate;->mOreoQs:Z
+    
+    if-eqz v2, :cond_stock
+    
+    const v0, 0x0
 
+    :cond_stock
     return v0
 
     :pswitch_1
@@ -401,7 +408,14 @@
     invoke-static {v0}, Lcom/android/systemui/util/ThemeColorUtils;->getColor(I)I
 
     move-result v0
+    
+    sget-boolean v2, Lcom/android/mwilky/Renovate;->mOreoQs:Z
+    
+    if-eqz v2, :cond_stock2
+    
+    const v0, 0x0
 
+    :cond_stock2
     return v0
 
     :cond_0
@@ -410,8 +424,15 @@
     invoke-static {v0}, Lcom/android/systemui/util/ThemeColorUtils;->getColor(I)I
 
     move-result v0
+    
+    sget-boolean v2, Lcom/android/mwilky/Renovate;->mOreoQs:Z
+    
+    if-eqz v2, :cond_stock3
+    
+    const v0, 0x0
 
     :goto_0
+    :cond_stock3
     return v0
 
     nop
@@ -424,7 +445,7 @@
 .end method
 
 .method public static getColorForState(Landroid/content/Context;I)I
-    .locals 3
+    .locals 4
 
     packed-switch p1, :pswitch_data_0
 
@@ -469,8 +490,19 @@
     invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
     move-result v0
+    
+    sget-boolean v3, Lcom/android/mwilky/Renovate;->mOreoQs:Z
+    
+    if-eqz v3, :cond_stock
+    
+    sget v0, Lcom/android/systemui/util/ThemeColorUtils;->QS_ACCENT:I
+
+    invoke-static {v0}, Lcom/android/systemui/util/ThemeColorUtils;->getColor(I)I
+
+    move-result v0
 
     :goto_0
+    :cond_stock
     return v0
 
     :pswitch_1
