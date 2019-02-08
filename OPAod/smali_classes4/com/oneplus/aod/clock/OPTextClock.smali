@@ -2146,7 +2146,7 @@
 .end method
 
 .method public updateTextStyle()V
-    .locals 4
+    .locals 5
 
     iget v0, p0, Lcom/oneplus/aod/clock/OPTextClock;->mClockStyle:I
 
@@ -2303,9 +2303,18 @@
     iget-object v0, p0, Lcom/oneplus/aod/clock/OPTextClock;->mHourPaint:Landroid/graphics/Paint;
 
     const-string v1, "sans-serif"
-
+    
+    invoke-virtual {p0}, Lcom/oneplus/aod/clock/OPTextClock;->showThinText()Z
+    
+    move-result v4
+    
     const/4 v2, 0x1
+    
+    if-eqz v4, :cond_stock
 
+    const/4 v2, 0x0
+
+    :cond_stock
     invoke-static {v1, v2}, Landroid/graphics/Typeface;->create(Ljava/lang/String;I)Landroid/graphics/Typeface;
 
     move-result-object v1
@@ -2728,4 +2737,36 @@
     .line 314
     :goto_7e
     return-void
+.end method
+
+.method public showThinText()Z
+    .registers 5
+
+    .line 368
+    iget-object v0, p0, Lcom/oneplus/aod/clock/OPTextClock;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    .line 369
+    .local v0, "ContentResolver":Landroid/content/ContentResolver;
+    const-string v1, "tweaks_thin_aod_clock"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    const/4 v3, 0x1
+
+    if-ne v1, v3, :cond_12
+
+    move v2, v3
+
+    nop
+
+    :cond_12
+    return v2
 .end method
