@@ -24,10 +24,6 @@
 # static fields
 .field public static mSensorCovered:Z
 
-.field public static mWakeWithTorch:Z
-
-.field public static mTorchPowerScreenOff:Z
-
 .field public static mAllowCustomNavBarHeight:Z
 
 .field public static mCustomNavBarHeight:I
@@ -5279,25 +5275,6 @@
 .method private interceptPowerKeyDown(Landroid/view/KeyEvent;Z)V
     .locals 12
     
-    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->isScreenOn()Z
-    
-    move-result v0
-    
-    if-nez v0, :cond_mw
-    
-    sget-boolean v0, Lcom/android/server/policy/PhoneWindowManager;->mTorchPowerScreenOff:Z
-    
-    if-eqz v0, :cond_mw
-    
-    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->enableFlashlight()V
-    
-    sget-boolean v0, Lcom/android/server/policy/PhoneWindowManager;->mWakeWithTorch:Z
-    
-    if-nez v0, :cond_mw
-    
-    return-void
-
-    :cond_mw
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mPowerKeyWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
@@ -31544,10 +31521,6 @@
 .method public updateSettings()V
     .locals 14
     
-    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->setTorchPower()V
-    
-    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->setWakeWithTorch()V
-    
     invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->allowNavBarHeightTweak()V
     
     invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->getNavBarHeightTweak()V
@@ -32455,50 +32428,6 @@
     move-result v0
     
     sput v0, Lcom/android/server/policy/PhoneWindowManager;->mCustomNavBarHeight:I
-
-    return-void
-.end method
-
-.method public setTorchPower()V
-    .locals 2
-
-    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string/jumbo p0, "tweaks_torch_power"
-
-    const/4 v0, 0x0
-
-    invoke-static {v1, p0, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-    
-    sput-boolean v0, Lcom/android/server/policy/PhoneWindowManager;->mTorchPowerScreenOff:Z
-
-    return-void
-.end method
-
-.method public setWakeWithTorch()V
-    .locals 2
-
-    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string/jumbo p0, "tweaks_torch_power_wake"
-
-    const/4 v0, 0x0
-
-    invoke-static {v1, p0, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-    
-    sput-boolean v0, Lcom/android/server/policy/PhoneWindowManager;->mWakeWithTorch:Z
 
     return-void
 .end method
