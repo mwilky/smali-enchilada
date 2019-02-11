@@ -66,7 +66,7 @@
 
     move-result v1
 
-    const-string v2, "subscription"
+    const-string/jumbo v2, "subscription"
 
     const/4 v3, -0x1
 

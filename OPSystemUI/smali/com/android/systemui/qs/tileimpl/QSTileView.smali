@@ -200,8 +200,6 @@
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileView;->mLabelContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/tileimpl/QSTileView;->addView(Landroid/view/View;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileView;->hideQsLabel()V
 
     return-void
 .end method
@@ -485,7 +483,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileView;->mLabel:Landroid/widget/TextView;
 
-    const v1, 0x7f07059c
+    const v1, 0x7f0705ac
 
     invoke-static {v0, v1}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/widget/TextView;I)V
 
@@ -546,30 +544,4 @@
 
     :cond_1
     return-void
-.end method
-
-.method public hideQsLabel()V
-	.locals 3
-	
-	sget-boolean v2, Lcom/android/mwilky/Renovate;->mHideQsLabels:Z
-
-	iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileView;->mLabel:Landroid/widget/TextView;
-	
-	iget-object v1, p0, Lcom/android/systemui/qs/tileimpl/QSTileView;->mSecondLine:Landroid/widget/TextView;
-	
-	if-nez v2, :cond_hide
-	
-	const v2, 0x0
-	
-	goto :goto_skip
-    
-    :cond_hide
-    const v2, 0x8
-    
-    :goto_skip
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
-    
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
-    
-	return-void
 .end method

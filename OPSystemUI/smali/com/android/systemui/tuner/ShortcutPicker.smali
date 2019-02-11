@@ -209,7 +209,7 @@
 
     invoke-direct {v3, v0}, Landroid/support/v7/preference/PreferenceCategory;-><init>(Landroid/content/Context;)V
 
-    const v4, 0x7f110643
+    const v4, 0x7f11064d
 
     invoke-virtual {v3, v4}, Landroid/support/v7/preference/PreferenceCategory;->setTitle(I)V
 

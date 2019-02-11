@@ -350,7 +350,7 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string v7, "stroke"
+    const-string/jumbo v7, "stroke"
 
     invoke-direct {v4, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 

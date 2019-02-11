@@ -446,7 +446,7 @@
 
     move-result-object v3
 
-    const-string v6, "subscription"
+    const-string/jumbo v6, "subscription"
 
     invoke-virtual {v1, v6, v4}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 

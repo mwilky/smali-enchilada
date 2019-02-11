@@ -432,7 +432,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, p4}, Lcom/oneplus/util/OemSceneModeUtils;->isMutedByGameMode(Landroid/content/Context;Landroid/media/AudioAttributes;)Z
+    invoke-static {v0, p4}, Lcom/oneplus/util/OemSceneCallBlocker;->isMutedByCallBlocker(Landroid/content/Context;Landroid/media/AudioAttributes;)Z
 
     move-result v0
 

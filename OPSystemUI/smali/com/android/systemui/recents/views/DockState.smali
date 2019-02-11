@@ -232,7 +232,7 @@
 
     new-instance v6, Lcom/android/systemui/recents/views/DockState$ViewState;
 
-    const v4, 0x7f110545
+    const v4, 0x7f11054f
 
     const/4 v5, 0x0
 

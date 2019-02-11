@@ -528,7 +528,7 @@
     <dimen name="keyguard_affordance_min_background_radius">30.0dip</dimen>
     <dimen name="keyguard_affordance_touch_target_size">120.0dip</dimen>
     <dimen name="keyguard_affordance_width">56.0dip</dimen>
-    <dimen name="keyguard_carrier_text_margin">16.0dip</dimen>
+    <item type="dimen" name="keyguard_carrier_text_margin">@dimen/status_bar_padding</item>
     <dimen name="keyguard_clock_notifications_margin">30.0dip</dimen>
     <dimen name="keyguard_clock_top_margin">36.0dip</dimen>
     <dimen name="keyguard_drag_down_min_distance">100.0dip</dimen>
@@ -1253,9 +1253,25 @@
     <item type="dimen" name="op_tabs_padding_start">@dimen/oneplus_contorl_layout_margin_left2</item>
     <dimen name="op_text_size_menu_material">16.0sp</dimen>
     <dimen name="op_threekey_dialog_elevation">2.0dip</dimen>
+    <dimen name="op_threekey_dialog_icon_out_width">126.0px</dimen>
+    <dimen name="op_threekey_dialog_icon_size">63.0px</dimen>
+    <dimen name="op_threekey_dialog_inner_height">126.0px</dimen>
     <dimen name="op_threekey_dialog_padding">14.0px</dimen>
+    <dimen name="op_threekey_dialog_text_size">34.125px</dimen>
     <dimen name="op_threekey_dialog_triangle_long">189.0px</dimen>
     <dimen name="op_threekey_dialog_triangle_short">63.0px</dimen>
+    <dimen name="op_threekey_down_bottom_left_radius">63.0px</dimen>
+    <dimen name="op_threekey_down_bottom_right_radius">63.0px</dimen>
+    <dimen name="op_threekey_down_top_left_radius">63.0px</dimen>
+    <dimen name="op_threekey_down_top_right_radius">0.0px</dimen>
+    <dimen name="op_threekey_mid_bottom_left_radius">63.0px</dimen>
+    <dimen name="op_threekey_mid_bottom_right_radius">63.0px</dimen>
+    <dimen name="op_threekey_mid_top_left_radius">63.0px</dimen>
+    <dimen name="op_threekey_mid_top_right_radius">63.0px</dimen>
+    <dimen name="op_threekey_up_bottom_left_radius">63.0px</dimen>
+    <dimen name="op_threekey_up_bottom_right_radius">0.0px</dimen>
+    <dimen name="op_threekey_up_top_left_radius">63.0px</dimen>
+    <dimen name="op_threekey_up_top_right_radius">63.0px</dimen>
     <dimen name="op_volume_button_size">124.0px</dimen>
     <dimen name="op_volume_dialog_content_padding_bottom">46.0px</dimen>
     <dimen name="op_volume_dialog_content_padding_top">34.0px</dimen>

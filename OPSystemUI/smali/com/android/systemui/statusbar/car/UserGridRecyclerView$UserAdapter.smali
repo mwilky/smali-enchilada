@@ -208,7 +208,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/car/UserGridRecyclerView$UserAdapter;->mRes:Landroid/content/res/Resources;
 
-    const v1, 0x7f110661
+    const v1, 0x7f11066b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -236,7 +236,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/car/UserGridRecyclerView$UserAdapter;->mRes:Landroid/content/res/Resources;
 
-    const v2, 0x7f110663
+    const v2, 0x7f11066d
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -256,7 +256,7 @@
 
     invoke-direct {v1, v2, v3}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;I)V
 
-    const v2, 0x7f110664
+    const v2, 0x7f11066e
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 

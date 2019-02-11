@@ -148,7 +148,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/HardwareUiLayout;->setOutsideTouchListener(Landroid/view/View$OnClickListener;)V
 
-    const v1, 0x104026f
+    const v1, 0x1040270
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;->setTitle(I)V
 

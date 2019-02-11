@@ -381,12 +381,12 @@
 
     if-eqz v5, :cond_a
 
-    const v7, 0x7f11056e
+    const v7, 0x7f110578
 
     goto :goto_7
 
     :cond_a
-    const v7, 0x7f11056d
+    const v7, 0x7f110577
 
     :goto_7
     goto :goto_8
@@ -418,12 +418,12 @@
 
     if-eqz v5, :cond_c
 
-    const v7, 0x7f110570
+    const v7, 0x7f11057a
 
     goto :goto_8
 
     :cond_c
-    const v7, 0x7f11056f
+    const v7, 0x7f110579
 
     :goto_8
     if-eqz v2, :cond_d

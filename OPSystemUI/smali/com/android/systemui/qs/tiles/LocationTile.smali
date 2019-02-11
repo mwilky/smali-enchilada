@@ -76,8 +76,6 @@
 
 .method public static synthetic lambda$handleClick$0(Lcom/android/systemui/qs/tiles/LocationTile;)V
     .locals 3
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mState:Lcom/android/systemui/plugins/qs/QSTile$State;
 
@@ -158,7 +156,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f110508
+    const v1, 0x7f110512
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -303,7 +301,7 @@
 
     iput-boolean v2, v1, Lcom/android/systemui/plugins/qs/QSTile$SlashState;->isSlashed:Z
 
-    const v1, 0x7f110508
+    const v1, 0x7f110512
 
     if-eqz v0, :cond_2
 

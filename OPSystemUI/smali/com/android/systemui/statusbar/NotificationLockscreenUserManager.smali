@@ -396,7 +396,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    const v3, 0x7f080606
+    const v3, 0x7f080607
 
     invoke-virtual {v2, v3, v1, v1, v1}, Landroid/widget/TextView;->setCompoundDrawablesRelativeWithIntrinsicBounds(IIII)V
 

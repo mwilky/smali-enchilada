@@ -102,7 +102,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
-    const v3, 0x7f11054b
+    const v3, 0x7f110555
 
     const/4 v4, 0x1
 

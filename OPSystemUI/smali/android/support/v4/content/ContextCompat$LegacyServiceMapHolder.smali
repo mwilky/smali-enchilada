@@ -412,7 +412,7 @@
 
     const-class v1, Landroid/os/storage/StorageManager;
 
-    const-string v2, "storage"
+    const-string/jumbo v2, "storage"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

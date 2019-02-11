@@ -683,11 +683,11 @@
 
     move-result-object v0
 
-    const v1, 0x7f08087c
+    const v1, 0x7f08087d
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorDialogBackground:I
 
-    const v1, 0x7f080880
+    const v1, 0x7f080881
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorDialogRowContainerBackground:I
 
@@ -715,7 +715,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorSeekbarThumb:I
 
-    const v1, 0x7f08087e
+    const v1, 0x7f08087f
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorSeekbarBackgroundDrawable:I
 
@@ -739,11 +739,11 @@
 
     move-result-object v0
 
-    const v1, 0x7f08087b
+    const v1, 0x7f08087c
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorDialogBackground:I
 
-    const v1, 0x7f08087f
+    const v1, 0x7f080880
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorDialogRowContainerBackground:I
 
@@ -771,7 +771,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorSeekbarThumb:I
 
-    const v1, 0x7f08087d
+    const v1, 0x7f08087e
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorSeekbarBackgroundDrawable:I
 
@@ -963,11 +963,11 @@
 
     move-result-object v0
 
-    const v1, 0x7f08087c
+    const v1, 0x7f08087d
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorDialogBackground:I
 
-    const v1, 0x7f080880
+    const v1, 0x7f080881
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorDialogRowContainerBackground:I
 
@@ -995,7 +995,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorSeekbarThumb:I
 
-    const v1, 0x7f08087e
+    const v1, 0x7f08087f
 
     iput v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mThemeColorSeekbarBackgroundDrawable:I
 
@@ -2478,10 +2478,6 @@
 
 .method private shouldBeVisibleH(Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;)Z
     .locals 6
-    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mExtendedVolumePanel:Z
-    
-    if-nez v0, :cond_extended
 
     invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;->access$300(Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;)I
 
@@ -2600,84 +2596,6 @@
 
     :cond_6
     return v2
-    
-    :cond_extended
-    const/4 v2, 0x1
-    
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;->access$300(Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;)I
-
-    move-result v0
-
-    const/4 v1, 0x3 #media
-
-    if-ne v0, v1, :cond_ringer
-
-    return v2
-    
-    :cond_ringer
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;->access$300(Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;)I
-
-    move-result v0
-
-    const/4 v1, 0x2 #ringer
-
-    if-ne v0, v1, :cond_alarm
-    
-    sget-boolean v1, Lcom/android/mwilky/Renovate;->mExtendedVolumePanelRinger:Z
-    
-    if-eqz v1, :cond_alarm
-
-    return v2
-    
-    :cond_alarm
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;->access$300(Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;)I
-
-    move-result v0
-
-    const/4 v1, 0x4 #alarm
-
-    if-ne v0, v1, :cond_call
-    
-    sget-boolean v1, Lcom/android/mwilky/Renovate;->mExtendedVolumePanelAlarm:Z
-    
-    if-eqz v1, :cond_call
-
-    return v2
-    
-    :cond_call
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;->access$300(Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;)I
-
-    move-result v0
-
-    const/4 v1, 0x0 #call
-
-    if-ne v0, v1, :cond_bcall
-    
-    sget-boolean v1, Lcom/android/mwilky/Renovate;->mExtendedVolumePanelCall:Z
-    
-    if-eqz v1, :cond_bcall
-
-    return v2
-    
-    :cond_bcall    
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;->access$300(Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;)I
-
-    move-result v0
-
-    const/4 v1, 0x6 #bluetooth call
-
-    if-ne v0, v1, :cond_remove
-    
-    sget-boolean v1, Lcom/android/mwilky/Renovate;->mExtendedVolumePanelBCall:Z
-    
-    if-eqz v1, :cond_remove
-
-    return v2 
-    
-    :cond_remove
-    const/4 v0, 0x0
-    
-    return v0  
 .end method
 
 .method private showH(I)V
@@ -3132,7 +3050,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0704f3
+    const v7, 0x7f070503
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -3152,7 +3070,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0704f2
+    const v8, 0x7f070502
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -3177,7 +3095,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0704f1
+    const v9, 0x7f070501
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -3197,7 +3115,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0704f4
+    const v10, 0x7f070504
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -4012,7 +3930,7 @@
 
     if-eqz v6, :cond_3a
 
-    const v9, 0x7f110683
+    const v9, 0x7f11068d
 
     if-eqz v5, :cond_35
 
@@ -4040,7 +3958,7 @@
 
     aput-object v6, v8, v16
 
-    const v6, 0x7f110684
+    const v6, 0x7f11068e
 
     invoke-virtual {v7, v6, v8}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -4078,12 +3996,12 @@
 
     if-eqz v8, :cond_32
 
-    const v8, 0x7f110686
+    const v8, 0x7f110690
 
     goto :goto_1b
 
     :cond_32
-    const v8, 0x7f110685
+    const v8, 0x7f11068f
 
     :goto_1b
     move/from16 v25, v10
@@ -4124,7 +4042,7 @@
     goto :goto_1c
 
     :cond_34
-    const v9, 0x7f110682
+    const v9, 0x7f11068c
 
     :goto_1c
     const/4 v8, 0x1
@@ -4197,7 +4115,7 @@
     goto :goto_1d
 
     :cond_38
-    const v9, 0x7f110682
+    const v9, 0x7f11068c
 
     :goto_1d
     const/4 v8, 0x1
@@ -4240,7 +4158,7 @@
 
     aput-object v10, v9, v16
 
-    const v10, 0x7f110684
+    const v10, 0x7f11068e
 
     invoke-virtual {v7, v10, v9}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -4884,7 +4802,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f110676
+    const v2, 0x7f110680
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

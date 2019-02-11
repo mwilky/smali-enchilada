@@ -162,7 +162,7 @@
 
     if-ne p2, v0, :cond_2
 
-    const v0, 0x7f080876
+    const v0, 0x7f080877
 
     return v0
 
@@ -1076,7 +1076,7 @@
     goto :goto_8
 
     :cond_8
-    const v3, 0x7f080876
+    const v3, 0x7f080877
 
     if-ne v0, v3, :cond_9
 

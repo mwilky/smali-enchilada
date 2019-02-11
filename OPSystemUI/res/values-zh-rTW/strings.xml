@@ -1020,6 +1020,7 @@
     <string name="output_service_bt_wifi">藍牙和 Wi-Fi</string>
     <string name="output_service_wifi">Wi-Fi</string>
     <string name="output_title">媒體輸出</string>
+    <string name="overheat_toast_content">手機處於高溫狀態，建議不要使用此功能</string>
     <string name="overlay_display_devices_title">模擬次要顯示器</string>
     <string name="overview">總覽</string>
     <string name="phone_hint">滑動手機圖示即可啟用</string>

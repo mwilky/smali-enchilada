@@ -520,7 +520,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "subInfo change subId to "
+    const-string/jumbo v4, "subInfo change subId to "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -888,7 +888,7 @@
 
     move-result-object v0
 
-    const v1, 0x10402d9
+    const v1, 0x10402da
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

@@ -82,7 +82,7 @@
     goto :goto_1
 
     :cond_0
-    const-string v10, "style"
+    const-string/jumbo v10, "style"
 
     invoke-virtual {v8, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -282,8 +282,6 @@
     invoke-direct/range {v8 .. v16}, Lcom/airbnb/lottie/model/FontCharacter;-><init>(Ljava/util/List;CDDLjava/lang/String;Ljava/lang/String;)V
 
     return-object v17
-
-    nop
 
     nop
 

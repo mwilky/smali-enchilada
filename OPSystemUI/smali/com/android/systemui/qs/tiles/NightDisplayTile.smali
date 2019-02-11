@@ -49,11 +49,11 @@
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
+    const-string v2, "accessibility_display_inversion_enabled"
 
-    const-string v3, "accessibility_display_inversion_enabled"
+    const/4 v3, 0x0
 
-    invoke-direct {v0, p0, v1, v2, v3}, Lcom/android/systemui/qs/tiles/NightDisplayTile$1;-><init>(Lcom/android/systemui/qs/tiles/NightDisplayTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
+    invoke-direct {v0, p0, v1, v3, v2}, Lcom/android/systemui/qs/tiles/NightDisplayTile$1;-><init>(Lcom/android/systemui/qs/tiles/NightDisplayTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mInversionSetting:Lcom/android/systemui/qs/SecureSetting;
 
@@ -61,11 +61,9 @@
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
+    const-string v2, "accessibility_display_daltonizer_enabled"
 
-    const-string v3, "accessibility_display_daltonizer_enabled"
-
-    invoke-direct {v0, p0, v1, v2, v3}, Lcom/android/systemui/qs/tiles/NightDisplayTile$2;-><init>(Lcom/android/systemui/qs/tiles/NightDisplayTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
+    invoke-direct {v0, p0, v1, v3, v2}, Lcom/android/systemui/qs/tiles/NightDisplayTile$2;-><init>(Lcom/android/systemui/qs/tiles/NightDisplayTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mDaltonizerSetting:Lcom/android/systemui/qs/SecureSetting;
 
@@ -74,10 +72,6 @@
 
 .method private getSecondaryLabel(Z)Ljava/lang/String;
     .locals 8
-    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideQsLabels:Z
-    
-    if-nez v0, :cond_hide
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mController:Lcom/android/internal/app/ColorDisplayController;
 
@@ -87,7 +81,6 @@
 
     packed-switch v0, :pswitch_data_0
 
-    :cond_hide
     const/4 v0, 0x0
 
     return-object v0
@@ -97,7 +90,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f110513
+    const v1, 0x7f11051d
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -108,7 +101,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f110512
+    const v1, 0x7f11051c
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -126,7 +119,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f110523
+    const v1, 0x7f11052d
 
     goto :goto_1
 
@@ -137,7 +130,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f110511
+    const v1, 0x7f11051b
 
     :goto_1
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mContext:Landroid/content/Context;
@@ -274,8 +267,6 @@
 
 .method protected handleClick()V
     .locals 3
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/NightDisplayTile;->isColorCalibrationAvailable()Z
 

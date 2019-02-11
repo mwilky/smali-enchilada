@@ -22,10 +22,12 @@
 
 .field private final mIcon:Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
+.field private final mOveHeatMode:Lcom/android/systemui/qs/GlobalSetting;
+
 
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/qs/QSHost;)V
-    .locals 1
+    .locals 4
 
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;-><init>(Lcom/android/systemui/qs/QSHost;)V
 
@@ -46,6 +48,18 @@
     check-cast v0, Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
+
+    new-instance v0, Lcom/android/systemui/qs/tiles/FlashlightTile$1;
+
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mContext:Landroid/content/Context;
+
+    const-string v2, "op_overheat_temperature_type"
+
+    const/4 v3, 0x0
+
+    invoke-direct {v0, p0, v1, v3, v2}, Lcom/android/systemui/qs/tiles/FlashlightTile$1;-><init>(Lcom/android/systemui/qs/tiles/FlashlightTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
+
+    iput-object v0, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mOveHeatMode:Lcom/android/systemui/qs/GlobalSetting;
 
     return-void
 .end method
@@ -110,7 +124,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1104f3
+    const v1, 0x7f1104fd
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -120,15 +134,34 @@
 .end method
 
 .method protected handleClick()V
-    .locals 2
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
+    .locals 3
 
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mOveHeatMode:Lcom/android/systemui/qs/GlobalSetting;
+
+    invoke-virtual {v0}, Lcom/android/systemui/qs/GlobalSetting;->getValue()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mContext:Landroid/content/Context;
+
+    const v2, 0x7f110471
+
+    invoke-static {v0, v2, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
+    :cond_0
     invoke-static {}, Landroid/app/ActivityManager;->isUserAMonkey()Z
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
@@ -136,18 +169,18 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mState:Lcom/android/systemui/plugins/qs/QSTile$State;
 
     check-cast v0, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;
 
     iget-boolean v0, v0, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->value:Z
 
-    xor-int/lit8 v0, v0, 0x1
+    xor-int/2addr v0, v1
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -161,7 +194,7 @@
 
     return-void
 
-    :cond_1
+    :cond_2
     :goto_0
     return-void
 .end method
@@ -199,6 +232,10 @@
     invoke-interface {v0, p0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->removeCallback(Ljava/lang/Object;)V
 
     :goto_0
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mOveHeatMode:Lcom/android/systemui/qs/GlobalSetting;
+
+    invoke-virtual {v0, p1}, Lcom/android/systemui/qs/GlobalSetting;->setListening(Z)V
+
     return-void
 .end method
 
@@ -222,7 +259,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1104f3
+    const v1, 0x7f1104fd
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

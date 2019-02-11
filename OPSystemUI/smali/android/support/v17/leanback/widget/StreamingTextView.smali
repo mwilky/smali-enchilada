@@ -54,7 +54,7 @@
 
     const-class v1, Ljava/lang/Integer;
 
-    const-string v2, "streamPosition"
+    const-string/jumbo v2, "streamPosition"
 
     invoke-direct {v0, v1, v2}, Landroid/support/v17/leanback/widget/StreamingTextView$1;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 

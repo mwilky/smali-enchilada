@@ -173,7 +173,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy;->mContext:Landroid/content/Context;
 
-    const v3, 0x104063a
+    const v3, 0x104063b
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -183,7 +183,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy;->mContext:Landroid/content/Context;
 
-    const v3, 0x1040649
+    const v3, 0x104064a
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -193,7 +193,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy;->mContext:Landroid/content/Context;
 
-    const v3, 0x1040659
+    const v3, 0x104065a
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -203,7 +203,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy;->mContext:Landroid/content/Context;
 
-    const v3, 0x1040643
+    const v3, 0x1040644
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -213,7 +213,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy;->mContext:Landroid/content/Context;
 
-    const v3, 0x1040658
+    const v3, 0x1040659
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -335,12 +335,12 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f0805ae
+    const v0, 0x7f0805af
 
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f080851
+    const v0, 0x7f080852
 
     :goto_0
     return v0
@@ -875,7 +875,7 @@
 
     invoke-direct {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;-><init>(Ljava/lang/String;)V
 
-    const v1, 0x7f080849
+    const v1, 0x7f08084a
 
     iput v1, v0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;->resId:I
 
@@ -889,7 +889,7 @@
 
     invoke-direct {v2, v3}, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;-><init>(Ljava/lang/String;)V
 
-    const v3, 0x7f08084d
+    const v3, 0x7f08084e
 
     iput v3, v2, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;->resId:I
 
@@ -1449,7 +1449,7 @@
 .end method
 
 .method public setLTEStatus([Lcom/android/systemui/statusbar/policy/NetworkController$IconState;)V
-    .locals 8
+    .locals 9
 
     const/4 v0, 0x0
 
@@ -1462,7 +1462,7 @@
 
     move-result v2
 
-    if-ge v1, v2, :cond_1
+    if-ge v1, v2, :cond_2
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy;->mLTEIconStates:Ljava/util/List;
 
@@ -1476,13 +1476,9 @@
 
     aget-object v4, p1, v3
 
-    iget v4, v4, Lcom/android/systemui/statusbar/policy/NetworkController$IconState;->icon:I
-
-    iput v4, v2, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;->resId:I
-
-    aget-object v4, p1, v3
-
     iget-boolean v4, v4, Lcom/android/systemui/statusbar/policy/NetworkController$IconState;->visible:Z
+
+    const/4 v5, 0x1
 
     if-eqz v4, :cond_0
 
@@ -1492,7 +1488,13 @@
 
     if-nez v4, :cond_0
 
-    const/4 v4, 0x1
+    aget-object v4, p1, v3
+
+    iget v4, v4, Lcom/android/systemui/statusbar/policy/NetworkController$IconState;->icon:I
+
+    if-lez v4, :cond_0
+
+    move v4, v5
 
     goto :goto_1
 
@@ -1502,6 +1504,16 @@
     :goto_1
     iput-boolean v4, v2, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;->visible:Z
 
+    iget-boolean v4, v2, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;->visible:Z
+
+    if-eqz v4, :cond_1
+
+    aget-object v4, p1, v3
+
+    iget v4, v4, Lcom/android/systemui/statusbar/policy/NetworkController$IconState;->icon:I
+
+    iput v4, v2, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;->resId:I
+
     aget-object v4, p1, v3
 
     iget-object v4, v4, Lcom/android/systemui/statusbar/policy/NetworkController$IconState;->contentDescription:Ljava/lang/String;
@@ -1510,30 +1522,38 @@
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy;->mIconController:Lcom/android/systemui/statusbar/phone/StatusBarIconController;
 
-    iget-object v5, v2, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;->slot:Ljava/lang/String;
+    iget-object v6, v2, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;->slot:Ljava/lang/String;
 
-    iget v6, v2, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;->resId:I
+    iget v7, v2, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;->resId:I
 
-    iget-object v7, v2, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;->contentDescription:Ljava/lang/String;
+    iget-object v8, v2, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;->contentDescription:Ljava/lang/String;
 
-    invoke-interface {v4, v5, v6, v7}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->setIcon(Ljava/lang/String;ILjava/lang/CharSequence;)V
+    invoke-interface {v4, v6, v7, v8}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->setIcon(Ljava/lang/String;ILjava/lang/CharSequence;)V
 
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy;->mIconController:Lcom/android/systemui/statusbar/phone/StatusBarIconController;
+
+    iget-object v6, v2, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;->slot:Ljava/lang/String;
+
+    invoke-interface {v4, v6, v5}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->setIconVisibility(Ljava/lang/String;Z)V
+
+    goto :goto_2
+
+    :cond_1
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy;->mIconController:Lcom/android/systemui/statusbar/phone/StatusBarIconController;
 
     iget-object v5, v2, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;->slot:Ljava/lang/String;
 
-    iget-boolean v6, v2, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$LTEIconState;->visible:Z
+    invoke-interface {v4, v5, v0}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->setIconVisibility(Ljava/lang/String;Z)V
 
-    invoke-interface {v4, v5, v6}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->setIconVisibility(Ljava/lang/String;Z)V
-
+    :goto_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     sget-boolean v0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy;->OP_DEBUG:Z
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     const-string v0, "StatusBarSignalPolicy"
 
@@ -1559,7 +1579,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_2
+    :cond_3
     return-void
 .end method
 

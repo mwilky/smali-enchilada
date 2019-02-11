@@ -1019,6 +1019,19 @@
     <string name="output_service_bt_wifi">蓝牙和 WLAN</string>
     <string name="output_service_wifi">WLAN</string>
     <string name="output_title">媒体输出</string>
+    <string name="overheat_dialog_orange_button">立即执行</string>
+    <string name="overheat_dialog_orange_message">"将执行以下操作，以降低手机温度
+1.降低亮度
+2.关闭热点
+3.关闭闪光灯"</string>
+    <string name="overheat_dialog_purple_button">立即关闭</string>
+    <string name="overheat_dialog_purple_message">5秒后将自动关闭手机</string>
+    <string name="overheat_dialog_red_message">将清除掉所有的前后台应用以降低温度</string>
+    <string name="overheat_dialog_title">手机温度过高</string>
+    <string name="overheat_notification_alert">手机温度过高，已关闭高耗电功能以降低手机温度</string>
+    <string name="overheat_notification_resume">手机温度已恢复，可以正常使用手机</string>
+    <string name="overheat_notification_title_resume">手机温度已恢复</string>
+    <string name="overheat_toast_content">手机处于高温状态，建议不要使用此功能</string>
     <string name="overlay_display_devices_title">模拟辅助显示设备</string>
     <string name="overview">多任务</string>
     <string name="phone_hint">滑动图标即可拨打电话</string>

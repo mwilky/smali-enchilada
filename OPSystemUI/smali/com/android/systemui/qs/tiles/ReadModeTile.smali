@@ -33,9 +33,9 @@
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/ReadModeTile;->mContext:Landroid/content/Context;
 
-    iget-object v3, p0, Lcom/android/systemui/qs/tiles/ReadModeTile;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
-
     const-string v4, "reading_mode_status"
+
+    const/4 v3, 0x0
 
     const/4 v5, 0x1
 
@@ -51,11 +51,9 @@
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ReadModeTile;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/android/systemui/qs/tiles/ReadModeTile;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
+    const-string v2, "accessibility_display_inversion_enabled"
 
-    const-string v3, "accessibility_display_inversion_enabled"
-
-    invoke-direct {v0, p0, v1, v2, v3}, Lcom/android/systemui/qs/tiles/ReadModeTile$2;-><init>(Lcom/android/systemui/qs/tiles/ReadModeTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
+    invoke-direct {v0, p0, v1, v3, v2}, Lcom/android/systemui/qs/tiles/ReadModeTile$2;-><init>(Lcom/android/systemui/qs/tiles/ReadModeTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/ReadModeTile;->mInversionSetting:Lcom/android/systemui/qs/SecureSetting;
 
@@ -63,11 +61,9 @@
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ReadModeTile;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/android/systemui/qs/tiles/ReadModeTile;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
+    const-string v2, "accessibility_display_daltonizer_enabled"
 
-    const-string v3, "accessibility_display_daltonizer_enabled"
-
-    invoke-direct {v0, p0, v1, v2, v3}, Lcom/android/systemui/qs/tiles/ReadModeTile$3;-><init>(Lcom/android/systemui/qs/tiles/ReadModeTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
+    invoke-direct {v0, p0, v1, v3, v2}, Lcom/android/systemui/qs/tiles/ReadModeTile$3;-><init>(Lcom/android/systemui/qs/tiles/ReadModeTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/ReadModeTile;->mDaltonizerSetting:Lcom/android/systemui/qs/SecureSetting;
 
@@ -210,7 +206,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ReadModeTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f110517
+    const v1, 0x7f110521
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -221,8 +217,6 @@
 
 .method protected handleClick()V
     .locals 3
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/ReadModeTile;->isColorCalibrationAvailable()Z
 
@@ -348,7 +342,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ReadModeTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f110517
+    const v1, 0x7f110521
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -370,12 +364,12 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x7f110519
+    const v1, 0x7f110523
 
     goto :goto_0
 
     :cond_1
-    const v1, 0x7f110518
+    const v1, 0x7f110522
 
     :goto_0
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;

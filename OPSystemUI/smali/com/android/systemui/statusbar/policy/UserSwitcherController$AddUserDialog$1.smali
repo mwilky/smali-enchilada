@@ -52,7 +52,7 @@
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f110669
+    const v2, 0x7f110673
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

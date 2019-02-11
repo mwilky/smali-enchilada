@@ -307,7 +307,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/plugin/PreventModeView;->mPhone:Landroid/widget/ImageView;
 
-    const v1, 0x7f080563
+    const v1, 0x7f080564
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -321,25 +321,25 @@
 
     iget-object v0, p0, Lcom/android/systemui/plugin/PreventModeView;->mTitle:Landroid/widget/TextView;
 
-    const v1, 0x7f11049c
+    const v1, 0x7f1104a6
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
     iget-object v0, p0, Lcom/android/systemui/plugin/PreventModeView;->mTitleCancel:Landroid/widget/TextView;
 
-    const v1, 0x7f11049d
+    const v1, 0x7f1104a7
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
     iget-object v0, p0, Lcom/android/systemui/plugin/PreventModeView;->mTag:Landroid/widget/TextView;
 
-    const v1, 0x7f11049e
+    const v1, 0x7f1104a8
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
     iget-object v0, p0, Lcom/android/systemui/plugin/PreventModeView;->mTag2:Landroid/widget/TextView;
 
-    const v1, 0x7f11049f
+    const v1, 0x7f1104a9
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 

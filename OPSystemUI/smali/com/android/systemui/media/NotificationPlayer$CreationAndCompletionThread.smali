@@ -290,7 +290,7 @@
 
     iget-object v3, v3, Lcom/android/systemui/media/NotificationPlayer$Command;->attributes:Landroid/media/AudioAttributes;
 
-    invoke-static {v2, v3}, Lcom/oneplus/util/OemSceneModeUtils;->isMutedByGameMode(Landroid/content/Context;Landroid/media/AudioAttributes;)Z
+    invoke-static {v2, v3}, Lcom/oneplus/util/OemSceneCallBlocker;->isMutedByCallBlocker(Landroid/content/Context;Landroid/media/AudioAttributes;)Z
 
     move-result v2
 

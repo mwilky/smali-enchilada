@@ -502,7 +502,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f1106f2
+    const v4, 0x7f1106fc
 
     const/4 v5, 0x2
 
@@ -1321,13 +1321,13 @@
 
     if-gez v9, :cond_4
 
-    const v6, 0x7f1106ec
+    const v6, 0x7f1106f6
 
     goto :goto_1
 
     :cond_3
     :goto_0
-    const v6, 0x7f1106ed
+    const v6, 0x7f1106f7
 
     :cond_4
     :goto_1
@@ -1658,7 +1658,7 @@
 .method private static foreverSummary(Landroid/content/Context;)Ljava/lang/String;
     .locals 1
 
-    const v0, 0x104072d
+    const v0, 0x104072e
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2839,14 +2839,14 @@
 
     if-eqz v3, :cond_a
 
-    const v6, 0x7f1106fa
+    const v6, 0x7f110704
 
     goto :goto_6
 
     :cond_a
     if-eqz v5, :cond_b
 
-    const v6, 0x7f1106ee
+    const v6, 0x7f1106f8
 
     goto :goto_6
 
@@ -2855,12 +2855,12 @@
 
     if-eqz v6, :cond_c
 
-    const v6, 0x7f1106fc
+    const v6, 0x7f110706
 
     goto :goto_6
 
     :cond_c
-    const v6, 0x7f1106fb
+    const v6, 0x7f110705
 
     :goto_6
     iget-object v7, p0, Lcom/android/systemui/volume/ZenModePanel;->mConfigurableTexts:Lcom/android/systemui/volume/ConfigurableTexts;
@@ -3479,7 +3479,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenIntroductionCustomize:Landroid/widget/TextView;
 
-    const v2, 0x7f1106f9
+    const v2, 0x7f110703
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/volume/ConfigurableTexts;->add(Landroid/widget/TextView;I)I
 

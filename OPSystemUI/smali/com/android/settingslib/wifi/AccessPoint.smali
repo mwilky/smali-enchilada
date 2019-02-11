@@ -1633,7 +1633,7 @@
 
     const-string v2, "network_available_sign_in"
 
-    const-string v5, "string"
+    const-string/jumbo v5, "string"
 
     const-string v6, "android"
 

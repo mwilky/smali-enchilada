@@ -832,7 +832,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040238
+    const v2, 0x1040239
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1229,25 +1229,20 @@
 
     iget-boolean v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconShowing:Z
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_7
 
     iget-boolean v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mOnViewPressing:Z
 
-    if-nez v1, :cond_8
+    if-nez v1, :cond_7
 
     iget-boolean v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mFpSensorPressing:Z
 
-    if-nez v1, :cond_8
-
-    iget-boolean v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mIsEnableQL:Z
-
-    if-eqz v1, :cond_7
+    if-nez v1, :cond_7
 
     iget-boolean v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mFingerOnSensor:Z
 
-    if-nez v1, :cond_8
+    if-nez v1, :cond_7
 
-    :cond_7
     invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->updateTransparentIconLayoutParams(Z)V
 
     iput-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mTransparentIconShowing:Z
@@ -1264,7 +1259,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_8
+    :cond_7
     return-void
 .end method
 

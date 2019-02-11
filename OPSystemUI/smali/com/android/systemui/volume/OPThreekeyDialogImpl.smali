@@ -765,21 +765,21 @@
     :pswitch_0
     const v1, 0x7f0804fc
 
-    const v2, 0x7f110679
+    const v2, 0x7f110683
 
     goto :goto_0
 
     :pswitch_1
     const v1, 0x7f0804ff
 
-    const v2, 0x7f11068e
+    const v2, 0x7f110698
 
     goto :goto_0
 
     :pswitch_2
     const v1, 0x7f0804fe
 
-    const v2, 0x7f11067a
+    const v2, 0x7f110684
 
     nop
 
@@ -809,9 +809,9 @@
     :goto_1
     iget v11, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mOrientationType:I
 
-    const v14, 0x7f070660
+    const v14, 0x7f070670
 
-    const v15, 0x7f07065f
+    const v15, 0x7f07066f
 
     const/4 v12, 0x2
 
@@ -864,7 +864,7 @@
 
     if-ne v10, v12, :cond_7
 
-    const v10, 0x7f07065c
+    const v10, 0x7f07066c
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -879,7 +879,7 @@
 
     if-ne v10, v11, :cond_8
 
-    const v10, 0x7f07065a
+    const v10, 0x7f07066a
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -902,7 +902,7 @@
     const/16 v7, 0x55
 
     :goto_4
-    const v11, 0x7f07065e
+    const v11, 0x7f07066e
 
     invoke-virtual {v4, v11}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -912,7 +912,7 @@
 
     if-ne v11, v10, :cond_a
 
-    const v10, 0x7f07065d
+    const v10, 0x7f07066d
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -934,7 +934,7 @@
 
     if-ne v10, v12, :cond_b
 
-    const v10, 0x7f07065b
+    const v10, 0x7f07066b
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -955,7 +955,7 @@
 
     if-ne v10, v11, :cond_c
 
-    const v10, 0x7f070659
+    const v10, 0x7f070669
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1014,7 +1014,7 @@
 
     if-ne v10, v12, :cond_10
 
-    const v10, 0x7f07065c
+    const v10, 0x7f07066c
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1029,7 +1029,7 @@
 
     if-ne v10, v11, :cond_11
 
-    const v10, 0x7f07065a
+    const v10, 0x7f07066a
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1045,7 +1045,7 @@
     const/16 v7, 0x33
 
     :goto_9
-    const v11, 0x7f07065e
+    const v11, 0x7f07066e
 
     invoke-virtual {v4, v11}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1055,7 +1055,7 @@
 
     if-ne v11, v10, :cond_13
 
-    const v10, 0x7f07065d
+    const v10, 0x7f07066d
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1076,7 +1076,7 @@
 
     if-ne v10, v12, :cond_14
 
-    const v10, 0x7f07065b
+    const v10, 0x7f07066b
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1099,7 +1099,7 @@
 
     if-ne v10, v11, :cond_15
 
-    const v10, 0x7f070659
+    const v10, 0x7f070669
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1159,7 +1159,7 @@
     iput v5, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mDialogPosition:I
 
     :cond_19
-    const v10, 0x7f0704e7
+    const v10, 0x7f0704ea
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

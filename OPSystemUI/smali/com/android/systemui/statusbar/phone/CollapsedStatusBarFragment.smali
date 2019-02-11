@@ -7,8 +7,6 @@
 
 
 # instance fields
-.field private mLeftBatteryMeterView:Lcom/android/systemui/BatteryMeterViewLeft;
-
 .field private mClockView:Landroid/view/View;
 
 .field private mDarkIconManager:Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;
@@ -116,16 +114,6 @@
     .locals 1
 
     const/4 v0, 0x4
-
-    invoke-direct {p0, p1, v0, p2}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->animateHiddenState(Landroid/view/View;IZ)V
-
-    return-void
-.end method
-
-.method private animateGone(Landroid/view/View;Z)V
-    .locals 1
-
-    const v0, 0x8
 
     invoke-direct {p0, p1, v0, p2}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->animateHiddenState(Landroid/view/View;IZ)V
 
@@ -489,8 +477,6 @@
     if-eqz v2, :cond_0
 
     invoke-virtual {p0, p3}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->hideSystemIconArea(Z)V
-    
-    invoke-virtual {p0, p3}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->hideLeftBattery(Z)V
 
     invoke-virtual {p0, p3}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->hideOperatorName(Z)V
 
@@ -498,8 +484,6 @@
 
     :cond_0
     invoke-virtual {p0, p3}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->showSystemIconArea(Z)V
-    
-    invoke-virtual {p0, p3}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->showLeftBattery(Z)V
 
     invoke-virtual {p0, p3}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->showOperatorName(Z)V
 
@@ -923,25 +907,34 @@
     check-cast v0, Landroid/widget/LinearLayout;
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mSystemIconArea:Landroid/widget/LinearLayout;
-    
-    const-string v0, "battery_left"
 
-    const-string v2, "id"
+    invoke-static {}, Lcom/android/systemui/util/OPUtils;->isSupportCustomStatusBar()Z
 
-    invoke-static {v0, v2}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+    move-result v0
 
-    move-result v2
+    if-nez v0, :cond_1
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mSystemIconArea:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v0, v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    check-cast v0, Lcom/android/systemui/BatteryMeterViewLeft;
+    check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mLeftBatteryMeterView:Lcom/android/systemui/BatteryMeterViewLeft;
+    const/4 v2, -0x2
 
+    iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
+
+    const/4 v2, 0x0
+
+    iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->weight:F
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mSystemIconArea:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v2, v0}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
     const v2, 0x7f0a00c0
@@ -972,11 +965,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->showClock(Z)V
 
-    :cond_1
+    :cond_2
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->initEmergencyCryptkeeperText()V
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->initOperatorName()V
@@ -1050,51 +1043,5 @@
 
     invoke-direct {p0, v0, p1}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->animateShow(Landroid/view/View;Z)V
 
-    return-void
-.end method
-
-.method public hideLeftBattery(Z)V
-    .locals 2
-    
-    const/4 v0, 0x1
-	
-	sget v1, Lcom/android/mwilky/Renovate;->mClockPosition:I
-	
-	if-ne v0, v1, :cond_mw
-	
-	sget-boolean v1, Lcom/android/mwilky/Renovate;->mSwapBatteryPosition:Z
-	
-	if-eqz v1, :cond_mw
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mLeftBatteryMeterView:Lcom/android/systemui/BatteryMeterViewLeft;
-	
-	if-eqz v0, :cond_mw
-
-    invoke-direct {p0, v0, p1}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->animateGone(Landroid/view/View;Z)V
-    
-	:cond_mw
-    return-void
-.end method
-
-.method public showLeftBattery(Z)V
-    .locals 2
-    
-    const/4 v0, 0x1
-	
-	sget v1, Lcom/android/mwilky/Renovate;->mClockPosition:I
-	
-	if-ne v0, v1, :cond_mw
-	
-	sget-boolean v1, Lcom/android/mwilky/Renovate;->mSwapBatteryPosition:Z
-	
-	if-eqz v1, :cond_mw
-    
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mLeftBatteryMeterView:Lcom/android/systemui/BatteryMeterViewLeft;
-	
-	if-eqz v0, :cond_mw
-
-    invoke-direct {p0, v0, p1}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->animateShow(Landroid/view/View;Z)V
-    
-	:cond_mw
     return-void
 .end method

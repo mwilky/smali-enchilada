@@ -28,10 +28,6 @@
 # instance fields
 .field private isDedEnable:Z
 
-.field private mDndSetting:Lcom/android/systemui/qs/SystemSetting;
-
-.field private mHandler:Landroid/os/Handler;
-
 .field private final mIcon:Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
 .field private mListening:Z
@@ -89,19 +85,7 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/systemui/qs/tiles/OPDndTile;->mDndSetting:Lcom/android/systemui/qs/SystemSetting;
-
-    iput-object v0, p0, Lcom/android/systemui/qs/tiles/OPDndTile;->mHandler:Landroid/os/Handler;
-
-    const/4 v0, 0x0
-
     iput-boolean v0, p0, Lcom/android/systemui/qs/tiles/OPDndTile;->isDedEnable:Z
-
-    new-instance v0, Landroid/os/Handler;
-
-    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
-
-    iput-object v0, p0, Lcom/android/systemui/qs/tiles/OPDndTile;->mHandler:Landroid/os/Handler;
 
     const-class v0, Lcom/android/systemui/statusbar/policy/OPZenModeController;
 
@@ -192,7 +176,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/OPDndTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1104ef
+    const v1, 0x7f1104f9
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -203,8 +187,6 @@
 
 .method protected handleClick()V
     .locals 3
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/OPDndTile;->TAG:Ljava/lang/String;
 

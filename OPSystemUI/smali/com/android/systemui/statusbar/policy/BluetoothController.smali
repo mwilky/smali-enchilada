@@ -35,6 +35,9 @@
 .method public abstract disconnect(Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)V
 .end method
 
+.method public abstract getBatteryLevel()I
+.end method
+
 .method public abstract getBluetoothState()I
 .end method
 

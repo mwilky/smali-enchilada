@@ -313,7 +313,7 @@
 
     iput v5, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mMobileDataIconStartPadding:I
 
-    const v5, 0x7f0705f2
+    const v5, 0x7f070602
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -321,7 +321,7 @@
 
     iput v5, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mSecondaryTelephonyPadding:I
 
-    const v5, 0x7f0705fd
+    const v5, 0x7f07060d
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -341,7 +341,7 @@
 
     invoke-direct {v5}, Landroid/util/TypedValue;-><init>()V
 
-    const v6, 0x7f07062b
+    const v6, 0x7f07063b
 
     invoke-virtual {v4, v6, v5, v2}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 
@@ -1347,12 +1347,12 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f0805ae
+    const v0, 0x7f0805af
 
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f080851
+    const v0, 0x7f080852
 
     :goto_0
     return v0
@@ -1378,13 +1378,13 @@
     add-int/lit8 v0, v0, 0x4
 
     :cond_2
-    const v1, 0x7f080841
+    const v1, 0x7f080842
 
-    const v2, 0x7f080844
+    const v2, 0x7f080845
 
-    const v3, 0x7f080842
+    const v3, 0x7f080843
 
-    const v4, 0x7f080843
+    const v4, 0x7f080844
 
     packed-switch v0, :pswitch_data_0
 
@@ -1630,22 +1630,22 @@
     :cond_1
     packed-switch v0, :pswitch_data_0
 
-    const v1, 0x7f080832
+    const v1, 0x7f080833
 
     return v1
 
     :pswitch_0
-    const v1, 0x7f080831
+    const v1, 0x7f080832
 
     return v1
 
     :pswitch_1
-    const v1, 0x7f08083c
+    const v1, 0x7f08083d
 
     return v1
 
     :pswitch_2
-    const v1, 0x7f080830
+    const v1, 0x7f080831
 
     return v1
 
@@ -3163,11 +3163,5 @@
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/SignalClusterView;->apply()V
 
-    return-void
-.end method
-
-.method public updateViews(F)V
-    .locals 0
-	
     return-void
 .end method

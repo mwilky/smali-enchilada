@@ -239,7 +239,7 @@
 
     if-nez v2, :cond_1
 
-    const-string v2, "strokeColor"
+    const-string/jumbo v2, "strokeColor"
 
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

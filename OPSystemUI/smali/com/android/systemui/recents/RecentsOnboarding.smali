@@ -201,7 +201,7 @@
 
     iput v2, p0, Lcom/android/systemui/recents/RecentsOnboarding;->mOnboardingToastColor:I
 
-    const v2, 0x7f0705c7
+    const v2, 0x7f0705d7
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -713,7 +713,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f110557
+    const v2, 0x7f110561
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1383,7 +1383,7 @@
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setSystemUiVisibility(I)V
 
-    const v1, 0x7f110557
+    const v1, 0x7f110561
 
     if-ne p1, v1, :cond_1
 
@@ -1434,7 +1434,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0705c8
+    const v5, 0x7f0705d8
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

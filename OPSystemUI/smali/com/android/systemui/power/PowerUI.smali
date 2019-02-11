@@ -1919,6 +1919,19 @@
 
     invoke-direct {p0}, Lcom/android/systemui/power/PowerUI;->initTemperatureWarning()V
 
+    iget-object v2, p0, Lcom/android/systemui/power/PowerUI;->mContext:Landroid/content/Context;
+
+    invoke-static {v2}, Lcom/android/systemui/util/OPUtils;->isGlobalROM(Landroid/content/Context;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    iget-object v2, p0, Lcom/android/systemui/power/PowerUI;->mContext:Landroid/content/Context;
+
+    invoke-static {v2}, Lcom/android/systemui/power/OverHeatProtector;->getInstance(Landroid/content/Context;)Lcom/android/systemui/power/OverHeatProtector;
+
+    :cond_1
     return-void
 .end method
 

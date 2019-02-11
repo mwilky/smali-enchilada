@@ -1166,6 +1166,19 @@ You're also connected to a VPN, which can monitor your network activity."</strin
     <string name="output_service_bt_wifi">Bluetooth and Wi-Fi</string>
     <string name="output_service_wifi">Wi-Fi</string>
     <string name="output_title">Media output</string>
+    <string name="overheat_dialog_orange_button">Execute now</string>
+    <string name="overheat_dialog_orange_message">"Will take these actions to lower the temperature
+1.Reduce the brightness
+2.Turn off the hotspot
+3.Turn off the flashlight"</string>
+    <string name="overheat_dialog_purple_button">Power off now</string>
+    <string name="overheat_dialog_purple_message">The phone will be powered off after 5 seconds</string>
+    <string name="overheat_dialog_red_message">Will clear all application processes to lower the temperature</string>
+    <string name="overheat_dialog_title">The temperature of the phone is high</string>
+    <string name="overheat_notification_alert">The temperature of the phone is too high, and the high power consumption function is turned off</string>
+    <string name="overheat_notification_resume">"The phone's temperature has been restored and the phone can be used normally"</string>
+    <string name="overheat_notification_title_resume">"The phone's temperature has been restored"</string>
+    <string name="overheat_toast_content">The temperature of the phone is too high, it is not recommended to use this feature</string>
     <string name="overlay_display_devices_title">Simulate secondary displays</string>
     <string name="overview">Overview</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
@@ -1871,5 +1884,5 @@ Credential storage might not enable"</string>
     <item type="string" name="APKTOOL_DUMMY_33b">false</item>
     <item type="string" name="APKTOOL_DUMMY_35a">false</item>
     <item type="string" name="APKTOOL_DUMMY_3ac">false</item>
-    <item type="string" name="APKTOOL_DUMMY_5ca">false</item>
+    <item type="string" name="APKTOOL_DUMMY_5d4">false</item>
 </resources>

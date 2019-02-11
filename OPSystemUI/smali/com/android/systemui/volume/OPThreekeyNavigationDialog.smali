@@ -1385,7 +1385,7 @@
 
     aget-object v3, v3, v5
 
-    const v9, 0x7f11067a
+    const v9, 0x7f110684
 
     invoke-virtual {v1, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1397,7 +1397,7 @@
 
     aget-object v3, v3, v6
 
-    const v9, 0x7f11068e
+    const v9, 0x7f110698
 
     invoke-virtual {v1, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1409,7 +1409,7 @@
 
     aget-object v3, v3, v7
 
-    const v9, 0x7f110679
+    const v9, 0x7f110683
 
     invoke-virtual {v1, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1425,25 +1425,25 @@
 
     packed-switch v3, :pswitch_data_0
 
-    const v2, 0x7f07065d
+    const v2, 0x7f07066d
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
-    const v3, 0x7f07065b
+    const v3, 0x7f07066b
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v3
 
-    const v8, 0x7f070659
+    const v8, 0x7f070669
 
     invoke-virtual {v1, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v8
 
-    const v10, 0x7f0704e7
+    const v10, 0x7f0704ea
 
     invoke-virtual {v1, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1505,7 +1505,7 @@
 
     invoke-direct {v4, v12, v12}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    const v9, 0x7f0704e9
+    const v9, 0x7f0704ed
 
     invoke-virtual {v1, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1683,7 +1683,7 @@
 
     invoke-direct {v4, v12, v12}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    const v9, 0x7f0704e8
+    const v9, 0x7f0704ec
 
     invoke-virtual {v1, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

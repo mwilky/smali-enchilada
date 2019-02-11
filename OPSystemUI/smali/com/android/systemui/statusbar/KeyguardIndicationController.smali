@@ -869,7 +869,7 @@
     :goto_1
     iget v5, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mChargingSpeed:I
 
-    if-eqz v5, :cond_5
+    if-eqz v5, :cond_4
 
     packed-switch v5, :pswitch_data_0
 
@@ -890,35 +890,26 @@
     goto :goto_4
 
     :pswitch_1
-    sget-boolean v5, Lcom/android/systemui/util/OPUtils;->SUPPORT_WARP_CHARGING:Z
-
-    if-eqz v5, :cond_3
-
-    const v5, 0x7f110326
-
-    goto :goto_4
-
-    :cond_3
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     const v5, 0x7f11030b
 
     goto :goto_2
 
-    :cond_4
+    :cond_3
     const v5, 0x7f110324
 
     :goto_2
     goto :goto_4
 
-    :cond_5
-    if-eqz v0, :cond_6
+    :cond_4
+    if-eqz v0, :cond_5
 
     const v5, 0x7f11030d
 
     goto :goto_3
 
-    :cond_6
+    :cond_5
     const v5, 0x7f110325
 
     :goto_3
@@ -945,7 +936,7 @@
 
     move-result-object v6
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_6
 
     iget-object v7, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mContext:Landroid/content/Context;
 
@@ -995,7 +986,7 @@
 
     return-object v1
 
-    :cond_7
+    :cond_6
     :try_start_2
     iget-object v7, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mContext:Landroid/content/Context;
 
@@ -1750,7 +1741,7 @@
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mContext:Landroid/content/Context;
 
-    const v8, 0x104023c
+    const v8, 0x104023d
 
     invoke-virtual {v6, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2105,7 +2096,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mTextView:Lcom/android/systemui/statusbar/phone/KeyguardIndicationTextView;
 
-    const v5, 0x104034f
+    const v5, 0x1040350
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/KeyguardIndicationTextView;->switchIndication(I)V
 
@@ -2221,32 +2212,7 @@
     iget-object v5, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mChargingInfo:Landroid/widget/TextView;
 
     invoke-virtual {v5, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/KeyguardIndicationController;->setViewsVisibility()V
 
     :cond_7
-    return-void
-.end method
-
-.method public setViewsVisibility()V
-    .locals 4
-
-    .prologue    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideLockscreenClock:Z
-    
-    iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mChargingInfo:Landroid/widget/TextView;
-    
-    if-nez v0, :cond_hide
-    
-    const v2, 0x0
-    
-    goto :goto_vis    
-    
-    :cond_hide
-    const v2, 0x8
-    
-    :goto_vis
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
-    
     return-void
 .end method

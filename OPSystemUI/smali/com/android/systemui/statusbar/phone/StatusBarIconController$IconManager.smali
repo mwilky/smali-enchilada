@@ -591,11 +591,7 @@
 
     move-result v0
 
-    const v2, 0x7f0805b0
-
-    if-eq v0, v2, :cond_1
-
-    const v2, 0x7f0805b2
+    const v2, 0x7f0805b1
 
     if-eq v0, v2, :cond_1
 
@@ -604,6 +600,10 @@
     if-eq v0, v2, :cond_1
 
     const v2, 0x7f0805b4
+
+    if-eq v0, v2, :cond_1
+
+    const v2, 0x7f0805b5
 
     if-ne v0, v2, :cond_0
 

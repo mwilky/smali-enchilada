@@ -67,20 +67,20 @@
 
     :array_0
     .array-data 4
-        0x7f080855
-        0x7f080857
-        0x7f080859
-        0x7f08085b
-        0x7f08085d
-    .end array-data
-
-    :array_1
-    .array-data 4
         0x7f080856
         0x7f080858
         0x7f08085a
         0x7f08085c
         0x7f08085e
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x7f080857
+        0x7f080859
+        0x7f08085b
+        0x7f08085d
+        0x7f08085f
     .end array-data
 
     :array_2

@@ -435,7 +435,7 @@
 
     const-string v10, "map_slice"
 
-    const-string v11, "supports_versioned_parcelable"
+    const-string/jumbo v11, "supports_versioned_parcelable"
 
     invoke-virtual {v9, v10, v11, v8}, Landroid/content/ContentProviderClient;->call(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
 
@@ -629,7 +629,7 @@
 
     const-string v4, "bind_slice"
 
-    const-string v5, "supports_versioned_parcelable"
+    const-string/jumbo v5, "supports_versioned_parcelable"
 
     invoke-virtual {v3, v4, v5, v2}, Landroid/content/ContentProviderClient;->call(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
 
@@ -1228,7 +1228,7 @@
 
     const-string v3, "pin_slice"
 
-    const-string v4, "supports_versioned_parcelable"
+    const-string/jumbo v4, "supports_versioned_parcelable"
 
     invoke-virtual {v2, v3, v4, v1}, Landroid/content/ContentProviderClient;->call(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
     :try_end_0
@@ -1322,7 +1322,7 @@
 
     const-string/jumbo v3, "unpin_slice"
 
-    const-string v4, "supports_versioned_parcelable"
+    const-string/jumbo v4, "supports_versioned_parcelable"
 
     invoke-virtual {v2, v3, v4, v1}, Landroid/content/ContentProviderClient;->call(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
     :try_end_0
@@ -1403,7 +1403,7 @@
 
     invoke-direct {v4}, Landroid/os/Bundle;-><init>()V
 
-    const-string v5, "supports_versioned_parcelable"
+    const-string/jumbo v5, "supports_versioned_parcelable"
 
     invoke-virtual {v5, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1484,7 +1484,7 @@
 
     move-result-object v5
 
-    const-string v6, "supports_versioned_parcelable"
+    const-string/jumbo v6, "supports_versioned_parcelable"
 
     invoke-virtual {v6, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

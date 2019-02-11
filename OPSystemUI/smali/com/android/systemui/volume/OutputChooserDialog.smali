@@ -323,7 +323,7 @@
 
     invoke-virtual {v2, v1}, Landroid/view/Window;->clearFlags(I)V
 
-    const v1, 0x10c0120
+    const v1, 0x10c0128
 
     invoke-virtual {v2, v1}, Landroid/view/Window;->addFlags(I)V
 
@@ -598,7 +598,7 @@
 
     iget-object v15, v0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f1104d9
+    const v8, 0x7f1104e3
 
     new-array v11, v12, [Ljava/lang/Object;
 
@@ -621,7 +621,7 @@
     :cond_2
     iget-object v8, v0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v11, 0x7f1104d8
+    const v11, 0x7f1104e2
 
     invoke-virtual {v8, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -698,7 +698,7 @@
 
     iget-object v8, v0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v11, 0x7f1104da
+    const v11, 0x7f1104e4
 
     invoke-virtual {v8, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1819,7 +1819,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1104f4
+    const v2, 0x7f1104fe
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1833,7 +1833,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1104f6
+    const v2, 0x7f110500
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2396,7 +2396,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mSecondaryTextColor:I
 
-    const v1, 0x7f08087c
+    const v1, 0x7f08087d
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBgDrawable:I
 
@@ -2435,7 +2435,7 @@
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mSecondaryTextColor:I
 
-    const v1, 0x7f08087b
+    const v1, 0x7f08087c
 
     iput v1, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mBgDrawable:I
 

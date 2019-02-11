@@ -302,13 +302,7 @@
 
     invoke-virtual {v1, v3}, Landroid/app/Dialog;->setCancelable(Z)V
 
-    iget-object v4, p0, Lcom/android/systemui/globalactions/GlobalActionsImpl;->mContext:Landroid/content/Context;
-
-    const v5, 0x7f040463
-
-    invoke-static {v4, v5}, Lcom/android/settingslib/Utils;->getColorAttr(Landroid/content/Context;I)I
-
-    move-result v4
+    const/4 v4, -0x1
 
     iget-object v5, p0, Lcom/android/systemui/globalactions/GlobalActionsImpl;->mContext:Landroid/content/Context;
 
@@ -350,7 +344,7 @@
 
     if-eqz p1, :cond_1
 
-    const v8, 0x1040594
+    const v8, 0x1040595
 
     invoke-virtual {v7, v8}, Landroid/widget/TextView;->setText(I)V
 

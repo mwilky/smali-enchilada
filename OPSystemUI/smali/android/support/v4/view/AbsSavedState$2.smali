@@ -65,7 +65,7 @@
     :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
 
-    const-string v2, "superState must be null"
+    const-string/jumbo v2, "superState must be null"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

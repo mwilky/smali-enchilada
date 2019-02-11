@@ -40,6 +40,8 @@
 
 .field protected final mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
+.field private final mOveHeatMode:Lcom/android/systemui/qs/GlobalSetting;
+
 .field protected final mSignalCallback:Lcom/android/systemui/qs/tiles/HotspotTile$HotspotSignalCallback;
 
 .field private mVirtualSimExist:Z
@@ -133,15 +135,23 @@
 
     new-instance v0, Lcom/android/systemui/qs/tiles/HotspotTile$1;
 
-    iget-object v1, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mContext:Landroid/content/Context;
-
-    iget-object v2, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
+    iget-object v2, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mContext:Landroid/content/Context;
 
     const-string v3, "airplane_mode_on"
 
-    invoke-direct {v0, p0, v1, v2, v3}, Lcom/android/systemui/qs/tiles/HotspotTile$1;-><init>(Lcom/android/systemui/qs/tiles/HotspotTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
+    invoke-direct {v0, p0, v2, v1, v3}, Lcom/android/systemui/qs/tiles/HotspotTile$1;-><init>(Lcom/android/systemui/qs/tiles/HotspotTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mAirplaneMode:Lcom/android/systemui/qs/GlobalSetting;
+
+    new-instance v0, Lcom/android/systemui/qs/tiles/HotspotTile$2;
+
+    iget-object v2, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mContext:Landroid/content/Context;
+
+    const-string v3, "op_overheat_temperature_type"
+
+    invoke-direct {v0, p0, v2, v1, v3}, Lcom/android/systemui/qs/tiles/HotspotTile$2;-><init>(Lcom/android/systemui/qs/tiles/HotspotTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
+
+    iput-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mOveHeatMode:Lcom/android/systemui/qs/GlobalSetting;
 
     return-void
 .end method
@@ -193,7 +203,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f110503
+    const v1, 0x7f11050d
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -206,7 +216,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f110502
+    const v1, 0x7f11050c
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -317,7 +327,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1104ff
+    const v1, 0x7f110509
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -328,16 +338,35 @@
 
 .method protected handleClick()V
     .locals 3
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mOveHeatMode:Lcom/android/systemui/qs/GlobalSetting;
+
+    invoke-virtual {v0}, Lcom/android/systemui/qs/GlobalSetting;->getValue()I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mContext:Landroid/content/Context;
+
+    const v1, 0x7f110471
+
+    const/4 v2, 0x1
+
+    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
+    :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mState:Lcom/android/systemui/plugins/qs/QSTile$State;
 
     check-cast v0, Lcom/android/systemui/plugins/qs/QSTile$AirplaneBooleanState;
 
     iget-boolean v0, v0, Lcom/android/systemui/plugins/qs/QSTile$AirplaneBooleanState;->value:Z
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mAirplaneMode:Lcom/android/systemui/qs/GlobalSetting;
 
@@ -345,7 +374,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_1
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mDataSaverController:Lcom/android/systemui/statusbar/policy/DataSaverController;
 
@@ -353,15 +382,15 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
-
-    :cond_0
-    return-void
+    if-eqz v1, :cond_2
 
     :cond_1
+    return-void
+
+    :cond_2
     iget-boolean v1, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mVirtualSimExist:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->TAG:Ljava/lang/String;
 
@@ -371,14 +400,14 @@
 
     return-void
 
-    :cond_2
-    if-eqz v0, :cond_3
+    :cond_3
+    if-eqz v0, :cond_4
 
     const/4 v1, 0x0
 
     goto :goto_0
 
-    :cond_3
+    :cond_4
     sget-object v1, Lcom/android/systemui/qs/tiles/HotspotTile;->ARG_SHOW_TRANSIENT_ENABLING:Ljava/lang/Object;
 
     :goto_0
@@ -458,6 +487,10 @@
 
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mAirplaneMode:Lcom/android/systemui/qs/GlobalSetting;
+
+    invoke-virtual {v0, p1}, Lcom/android/systemui/qs/GlobalSetting;->setListening(Z)V
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mOveHeatMode:Lcom/android/systemui/qs/GlobalSetting;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/qs/GlobalSetting;->setListening(Z)V
 
@@ -598,7 +631,7 @@
 
     iget-object v6, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mContext:Landroid/content/Context;
 
-    const v7, 0x7f1104ff
+    const v7, 0x7f110509
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

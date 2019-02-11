@@ -2927,7 +2927,7 @@
     move v4, v2
 
     :goto_3
-    const v11, 0x7f070639
+    const v11, 0x7f070649
 
     if-eqz v4, :cond_7
 
@@ -2939,7 +2939,7 @@
 
     invoke-direct {v12, v0, v13}, Lcom/android/systemui/egg/MLand$Star;-><init>(Lcom/android/systemui/egg/MLand;Landroid/content/Context;)V
 
-    const v13, 0x7f080864
+    const v13, 0x7f080865
 
     invoke-virtual {v12, v13}, Lcom/android/systemui/egg/MLand$Star;->setBackgroundResource(I)V
 

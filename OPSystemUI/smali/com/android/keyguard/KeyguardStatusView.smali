@@ -23,8 +23,6 @@
 
 .field private mClockView:Lcom/android/keyguard/clock/OPTextClock;
 
-.field private mClockContainer:Landroid/widget/RelativeLayout;
-
 .field private mDarkAmount:F
 
 .field private mHandler:Landroid/os/Handler;
@@ -134,7 +132,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0706ca
+    const v1, 0x7f0706da
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -144,7 +142,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0706c0
+    const v2, 0x7f0706d0
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -839,7 +837,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040264
+    const v2, 0x1040265
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1037,7 +1035,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0706ce
+    const v1, 0x7f0706de
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1057,7 +1055,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0706c0
+    const v3, 0x7f0706d0
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1077,7 +1075,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0706cb
+    const v3, 0x7f0706db
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1098,7 +1096,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0706c6
+    const v3, 0x7f0706d6
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1177,24 +1175,6 @@
     check-cast v0, Lcom/android/keyguard/clock/OPTextClock;
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardStatusView;->mClockView:Lcom/android/keyguard/clock/OPTextClock;
-    
-     const-string v0, "keyguard_clock_container"
-
-    const-string v1, "id"
-
-    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v0
-
-    invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardStatusView;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/RelativeLayout;
-
-    iput-object v0, p0, Lcom/android/keyguard/KeyguardStatusView;->mClockContainer:Landroid/widget/RelativeLayout;
-    
-    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardStatusView;->setViewsVisibility()V
 
     iget-object v0, p0, Lcom/android/keyguard/KeyguardStatusView;->mClockView:Lcom/android/keyguard/clock/OPTextClock;
 
@@ -1291,7 +1271,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0706cb
+    const v1, 0x7f0706db
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1900,28 +1880,5 @@
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     :goto_3
-    return-void
-.end method
-
-.method public setViewsVisibility()V
-    .locals 4
-
-    .prologue    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideLockscreenClock:Z
-    
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardStatusView;->mClockContainer:Landroid/widget/RelativeLayout;
-    
-    if-nez v0, :cond_hide
-    
-    const v2, 0x0
-    
-    goto :goto_vis    
-    
-    :cond_hide
-    const v2, 0x8
-    
-    :goto_vis
-    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->setVisibility(I)V
-    
     return-void
 .end method

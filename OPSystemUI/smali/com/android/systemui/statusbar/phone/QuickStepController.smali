@@ -196,7 +196,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/QuickStepController;->mTrackEndPadding:I
 
-    const v1, 0x7f080572
+    const v1, 0x7f080573
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

@@ -244,21 +244,12 @@
 
 .method private getSecondaryLabel(ZLjava/lang/String;)Ljava/lang/CharSequence;
     .locals 2
-    
-    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideQsLabels:Z
-    
-    if-eqz v0, :cond_stock
-    
-    const/4 v0, 0x0
-    
-    return-object v0
 
-    :cond_stock
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f110536
+    const v1, 0x7f110540
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -277,8 +268,6 @@
 
 .method public static synthetic lambda$handleClick$0(Lcom/android/systemui/qs/tiles/WifiTile;)V
     .locals 1
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     iget-boolean v0, p0, Lcom/android/systemui/qs/tiles/WifiTile;->mExpectDisabled:Z
 
@@ -426,7 +415,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f110531
+    const v1, 0x7f11053b
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -851,7 +840,7 @@
     invoke-static {v13, v14}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_f
-    const v13, 0x7f110531
+    const v13, 0x7f11053b
 
     if-eqz v10, :cond_10
 

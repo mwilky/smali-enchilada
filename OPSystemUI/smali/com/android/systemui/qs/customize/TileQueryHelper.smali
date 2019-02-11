@@ -13,6 +13,16 @@
 
 
 # instance fields
+.field private mAllTiles:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList<",
+            "Lcom/android/systemui/plugins/qs/QSTile;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private final mBgHandler:Landroid/os/Handler;
 
 .field private final mContext:Landroid/content/Context;
@@ -61,6 +71,12 @@
     invoke-direct {v0}, Landroid/util/ArraySet;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/qs/customize/TileQueryHelper;->mSpecs:Landroid/util/ArraySet;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/android/systemui/qs/customize/TileQueryHelper;->mAllTiles:Ljava/util/ArrayList;
 
     iput-object p1, p0, Lcom/android/systemui/qs/customize/TileQueryHelper;->mContext:Landroid/content/Context;
 
@@ -112,7 +128,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/customize/TileQueryHelper;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f11052b
+    const v1, 0x7f110535
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -199,6 +215,10 @@
     invoke-interface {v5, v4}, Lcom/android/systemui/plugins/qs/QSTile;->setTileSpec(Ljava/lang/String;)V
 
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v6, p0, Lcom/android/systemui/qs/customize/TileQueryHelper;->mAllTiles:Ljava/util/ArrayList;
+
+    invoke-virtual {v6, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
@@ -412,7 +432,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/qs/customize/TileQueryHelper;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f11052b
+    const v6, 0x7f110535
 
     invoke-virtual {v4, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -602,8 +622,6 @@
 
     iput-object v3, v2, Lcom/android/systemui/plugins/qs/QSTile$State;->label:Ljava/lang/CharSequence;
 
-    invoke-interface {v1}, Lcom/android/systemui/plugins/qs/QSTile;->destroy()V
-
     invoke-interface {v1}, Lcom/android/systemui/plugins/qs/QSTile;->getTileSpec()Ljava/lang/String;
 
     move-result-object v3
@@ -675,6 +693,45 @@
 
 
 # virtual methods
+.method public destroyTiles()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/systemui/qs/customize/TileQueryHelper;->mAllTiles:Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/systemui/qs/customize/TileQueryHelper;->mAllTiles:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/systemui/plugins/qs/QSTile;
+
+    invoke-interface {v1}, Lcom/android/systemui/plugins/qs/QSTile;->destroy()V
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/systemui/qs/customize/TileQueryHelper;->mAllTiles:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    :cond_1
+    return-void
+.end method
+
 .method public isFinished()Z
     .locals 1
 
@@ -693,6 +750,10 @@
     iget-object v0, p0, Lcom/android/systemui/qs/customize/TileQueryHelper;->mSpecs:Landroid/util/ArraySet;
 
     invoke-virtual {v0}, Landroid/util/ArraySet;->clear()V
+
+    iget-object v0, p0, Lcom/android/systemui/qs/customize/TileQueryHelper;->mAllTiles:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
     const/4 v0, 0x0
 

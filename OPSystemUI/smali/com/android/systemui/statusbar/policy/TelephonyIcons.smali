@@ -291,7 +291,7 @@
 
     const v28, 0x7f110201
 
-    const v29, 0x7f0805c8
+    const v29, 0x7f0805c9
 
     const/16 v30, 0x1
 
@@ -313,7 +313,7 @@
 
     const v15, 0x7f110204
 
-    const v16, 0x7f0805c9
+    const v16, 0x7f0805ca
 
     const/16 v17, 0x1
 
@@ -335,7 +335,7 @@
 
     const v28, 0x7f110202
 
-    const v29, 0x7f0805ca
+    const v29, 0x7f0805cb
 
     move-object/from16 v18, v0
 
@@ -399,7 +399,7 @@
 
     const v15, 0x7f110208
 
-    const v16, 0x7f0805cf
+    const v16, 0x7f0805d0
 
     move-object v5, v0
 
@@ -419,7 +419,7 @@
 
     const v28, 0x7f110207
 
-    const v29, 0x7f0805c7
+    const v29, 0x7f0805c8
 
     const/16 v30, 0x1
 
@@ -441,7 +441,7 @@
 
     const v15, 0x7f110209
 
-    const v16, 0x7f0805d0
+    const v16, 0x7f0805d1
 
     move-object v5, v0
 
@@ -461,7 +461,7 @@
 
     const v28, 0x7f110202
 
-    const v29, 0x7f0805d1
+    const v29, 0x7f0805d2
 
     const/16 v30, 0x0
 
@@ -483,7 +483,7 @@
 
     const v15, 0x7f110203
 
-    const v16, 0x7f0805d2
+    const v16, 0x7f0805d3
 
     move-object v5, v0
 
@@ -503,7 +503,7 @@
 
     const v28, 0x7f110205
 
-    const v29, 0x7f0805cb
+    const v29, 0x7f0805cc
 
     const/16 v30, 0x1
 
@@ -525,7 +525,7 @@
 
     const v15, 0x7f110206
 
-    const v16, 0x7f0805cd
+    const v16, 0x7f0805ce
 
     const/16 v17, 0x1
 
@@ -547,7 +547,7 @@
 
     const v28, 0x7f11020b
 
-    const v29, 0x7f0805d4
+    const v29, 0x7f0805d5
 
     move-object/from16 v18, v0
 
@@ -567,7 +567,7 @@
 
     const v15, 0x7f11020c
 
-    const v16, 0x7f0805d5
+    const v16, 0x7f0805d6
 
     move-object v5, v0
 
@@ -585,7 +585,7 @@
 
     aget v27, v1, v4
 
-    const v29, 0x7f0805cc
+    const v29, 0x7f0805cd
 
     move-object/from16 v18, v0
 
@@ -605,7 +605,7 @@
 
     const v15, 0x7f1101cf
 
-    const v16, 0x7f0805c6
+    const v16, 0x7f0805c7
 
     const/16 v17, 0x0
 
@@ -635,23 +635,32 @@
 
     :array_0
     .array-data 4
-        0x7f080677
-        0x7f0806c7
-        0x7f08071b
-        0x7f08076f
-        0x7f0807c3
+        0x7f080678
+        0x7f0806c8
+        0x7f08071c
+        0x7f080770
+        0x7f0807c4
     .end array-data
 
     :array_1
     .array-data 4
-        0x7f08069a
-        0x7f0806ea
-        0x7f08073e
-        0x7f080792
-        0x7f0807e6
+        0x7f08069b
+        0x7f0806eb
+        0x7f08073f
+        0x7f080793
+        0x7f0807e7
     .end array-data
 
     :array_2
+    .array-data 4
+        0x7f080696
+        0x7f0806e6
+        0x7f08073a
+        0x7f08078e
+        0x7f0807e2
+    .end array-data
+
+    :array_3
     .array-data 4
         0x7f080695
         0x7f0806e5
@@ -660,16 +669,25 @@
         0x7f0807e1
     .end array-data
 
-    :array_3
+    :array_4
     .array-data 4
-        0x7f080694
-        0x7f0806e4
-        0x7f080738
-        0x7f08078c
-        0x7f0807e0
+        0x7f0806af
+        0x7f0806ff
+        0x7f080753
+        0x7f0807a7
+        0x7f0807fb
     .end array-data
 
-    :array_4
+    :array_5
+    .array-data 4
+        0x7f080838
+        0x7f080839
+        0x7f08083a
+        0x7f08083b
+        0x7f08083c
+    .end array-data
+
+    :array_6
     .array-data 4
         0x7f0806ae
         0x7f0806fe
@@ -678,35 +696,7 @@
         0x7f0807fa
     .end array-data
 
-    :array_5
-    .array-data 4
-        0x7f080837
-        0x7f080838
-        0x7f080839
-        0x7f08083a
-        0x7f08083b
-    .end array-data
-
-    :array_6
-    .array-data 4
-        0x7f0806ad
-        0x7f0806fd
-        0x7f080751
-        0x7f0807a5
-        0x7f0807f9
-    .end array-data
-
     :array_7
-    .array-data 4
-        0x7f0806af
-        0x7f0806ff
-        0x7f080753
-        0x7f0807a7
-        0x7f0807fb
-        0x7f08081b
-    .end array-data
-
-    :array_8
     .array-data 4
         0x7f0806b0
         0x7f080700
@@ -716,17 +706,7 @@
         0x7f08081c
     .end array-data
 
-    :array_9
-    .array-data 4
-        0x7f0806b3
-        0x7f080703
-        0x7f080757
-        0x7f0807ab
-        0x7f0807ff
-        0x7f08081f
-    .end array-data
-
-    :array_a
+    :array_8
     .array-data 4
         0x7f0806b1
         0x7f080701
@@ -736,7 +716,17 @@
         0x7f08081d
     .end array-data
 
-    :array_b
+    :array_9
+    .array-data 4
+        0x7f0806b4
+        0x7f080704
+        0x7f080758
+        0x7f0807ac
+        0x7f080800
+        0x7f080820
+    .end array-data
+
+    :array_a
     .array-data 4
         0x7f0806b2
         0x7f080702
@@ -744,6 +734,16 @@
         0x7f0807aa
         0x7f0807fe
         0x7f08081e
+    .end array-data
+
+    :array_b
+    .array-data 4
+        0x7f0806b3
+        0x7f080703
+        0x7f080757
+        0x7f0807ab
+        0x7f0807ff
+        0x7f08081f
     .end array-data
 .end method
 
@@ -794,7 +794,7 @@
 
     packed-switch p0, :pswitch_data_1
 
-    const v1, 0x7f0805f0
+    const v1, 0x7f0805f1
 
     const-string v4, "TelephonyIcons"
 
@@ -819,12 +819,12 @@
     :pswitch_0
     if-eqz p2, :cond_0
 
-    const v4, 0x7f0805f1
+    const v4, 0x7f0805f2
 
     goto :goto_0
 
     :cond_0
-    const v4, 0x7f0805ee
+    const v4, 0x7f0805ef
 
     :goto_0
     move v1, v4
@@ -832,19 +832,19 @@
     goto :goto_2
 
     :pswitch_1
-    const v1, 0x7f0805ec
+    const v1, 0x7f0805ed
 
     goto :goto_2
 
     :cond_1
     if-eqz p2, :cond_2
 
-    const v4, 0x7f0805f2
+    const v4, 0x7f0805f3
 
     goto :goto_1
 
     :cond_2
-    const v4, 0x7f0805ef
+    const v4, 0x7f0805f0
 
     :goto_1
     move v1, v4
@@ -853,7 +853,7 @@
 
     :cond_3
     :pswitch_2
-    const v1, 0x7f0805ed
+    const v1, 0x7f0805ee
 
     nop
 
@@ -902,7 +902,7 @@
 
     if-eqz p2, :cond_0
 
-    const v1, 0x7f0805f3
+    const v1, 0x7f0805f4
 
     goto :goto_1
 
@@ -915,7 +915,7 @@
 
     if-eq p0, v4, :cond_1
 
-    const v1, 0x7f0805eb
+    const v1, 0x7f0805ec
 
     const-string v4, "TelephonyIcons"
 
@@ -940,12 +940,12 @@
     :cond_1
     if-eqz p3, :cond_2
 
-    const v4, 0x7f0805f1
+    const v4, 0x7f0805f2
 
     goto :goto_0
 
     :cond_2
-    const v4, 0x7f0805ee
+    const v4, 0x7f0805ef
 
     :goto_0
     move v1, v4
@@ -953,7 +953,7 @@
     goto :goto_1
 
     :cond_3
-    const v1, 0x7f0805eb
+    const v1, 0x7f0805ec
 
     nop
 

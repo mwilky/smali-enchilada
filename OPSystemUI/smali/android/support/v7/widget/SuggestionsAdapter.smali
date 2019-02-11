@@ -1097,7 +1097,7 @@
 
     if-eqz p1, :cond_2
 
-    const-string v0, "suggest_text_1"
+    const-string/jumbo v0, "suggest_text_1"
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -1105,7 +1105,7 @@
 
     iput v0, p0, Landroid/support/v7/widget/SuggestionsAdapter;->mText1Col:I
 
-    const-string v0, "suggest_text_2"
+    const-string/jumbo v0, "suggest_text_2"
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -1113,7 +1113,7 @@
 
     iput v0, p0, Landroid/support/v7/widget/SuggestionsAdapter;->mText2Col:I
 
-    const-string v0, "suggest_text_2_url"
+    const-string/jumbo v0, "suggest_text_2_url"
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -1121,7 +1121,7 @@
 
     iput v0, p0, Landroid/support/v7/widget/SuggestionsAdapter;->mText2UrlCol:I
 
-    const-string v0, "suggest_icon_1"
+    const-string/jumbo v0, "suggest_icon_1"
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -1129,7 +1129,7 @@
 
     iput v0, p0, Landroid/support/v7/widget/SuggestionsAdapter;->mIconName1Col:I
 
-    const-string v0, "suggest_icon_2"
+    const-string/jumbo v0, "suggest_icon_2"
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -1137,7 +1137,7 @@
 
     iput v0, p0, Landroid/support/v7/widget/SuggestionsAdapter;->mIconName2Col:I
 
-    const-string v0, "suggest_flags"
+    const-string/jumbo v0, "suggest_flags"
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -1173,7 +1173,7 @@
     return-object v0
 
     :cond_0
-    const-string v1, "suggest_intent_query"
+    const-string/jumbo v1, "suggest_intent_query"
 
     invoke-static {p1, v1}, Landroid/support/v7/widget/SuggestionsAdapter;->getColumnString(Landroid/database/Cursor;Ljava/lang/String;)Ljava/lang/String;
 
@@ -1192,7 +1192,7 @@
 
     if-eqz v2, :cond_2
 
-    const-string v2, "suggest_intent_data"
+    const-string/jumbo v2, "suggest_intent_data"
 
     invoke-static {p1, v2}, Landroid/support/v7/widget/SuggestionsAdapter;->getColumnString(Landroid/database/Cursor;Ljava/lang/String;)Ljava/lang/String;
 
@@ -1211,7 +1211,7 @@
 
     if-eqz v2, :cond_3
 
-    const-string v2, "suggest_text_1"
+    const-string/jumbo v2, "suggest_text_1"
 
     invoke-static {p1, v2}, Landroid/support/v7/widget/SuggestionsAdapter;->getColumnString(Landroid/database/Cursor;Ljava/lang/String;)Ljava/lang/String;
 

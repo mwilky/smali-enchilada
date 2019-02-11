@@ -37,10 +37,6 @@
 
 .field protected TAG:Ljava/lang/String;
 
-.field public mVibrator:Landroid/os/Vibrator;
-
-.field protected final TAG:Ljava/lang/String;
-
 .field private mAnnounceNextStateChange:Z
 
 .field private final mCallbacks:Ljava/util/ArrayList;
@@ -281,18 +277,6 @@
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mContext:Landroid/content/Context;
-    
-    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mContext:Landroid/content/Context;
-    
-    const-string v1, "vibrator"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/os/Vibrator;
-    
-    iput-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mVibrator:Landroid/os/Vibrator;
 
     return-void
 .end method
@@ -370,7 +354,7 @@
 .end method
 
 .method public static getCircleColorForState(I)I
-    .locals 3
+    .locals 2
 
     packed-switch p0, :pswitch_data_0
 
@@ -392,14 +376,7 @@
     invoke-static {v0}, Lcom/android/systemui/util/ThemeColorUtils;->getColor(I)I
 
     move-result v0
-    
-    sget-boolean v2, Lcom/android/mwilky/Renovate;->mOreoQs:Z
-    
-    if-eqz v2, :cond_stock
-    
-    const v0, 0x0
 
-    :cond_stock
     return v0
 
     :pswitch_1
@@ -408,14 +385,7 @@
     invoke-static {v0}, Lcom/android/systemui/util/ThemeColorUtils;->getColor(I)I
 
     move-result v0
-    
-    sget-boolean v2, Lcom/android/mwilky/Renovate;->mOreoQs:Z
-    
-    if-eqz v2, :cond_stock2
-    
-    const v0, 0x0
 
-    :cond_stock2
     return v0
 
     :cond_0
@@ -424,15 +394,8 @@
     invoke-static {v0}, Lcom/android/systemui/util/ThemeColorUtils;->getColor(I)I
 
     move-result v0
-    
-    sget-boolean v2, Lcom/android/mwilky/Renovate;->mOreoQs:Z
-    
-    if-eqz v2, :cond_stock3
-    
-    const v0, 0x0
 
     :goto_0
-    :cond_stock3
     return v0
 
     nop
@@ -445,7 +408,7 @@
 .end method
 
 .method public static getColorForState(Landroid/content/Context;I)I
-    .locals 4
+    .locals 3
 
     packed-switch p1, :pswitch_data_0
 
@@ -490,19 +453,8 @@
     invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
     move-result v0
-    
-    sget-boolean v3, Lcom/android/mwilky/Renovate;->mOreoQs:Z
-    
-    if-eqz v3, :cond_stock
-    
-    sget v0, Lcom/android/systemui/util/ThemeColorUtils;->QS_ACCENT:I
-
-    invoke-static {v0}, Lcom/android/systemui/util/ThemeColorUtils;->getColor(I)I
-
-    move-result v0
 
     :goto_0
-    :cond_stock
     return v0
 
     :pswitch_1
@@ -934,6 +886,10 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
 
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
+
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1, p1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
@@ -942,6 +898,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
+    :cond_0
     return-void
 .end method
 
@@ -998,10 +955,15 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
 
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
+
     const/16 v1, 0xb
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->sendEmptyMessage(I)Z
 
+    :cond_0
     return-void
 .end method
 
@@ -1030,10 +992,15 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
 
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
+
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->sendEmptyMessage(I)Z
 
+    :cond_0
     return-void
 .end method
 
@@ -1070,10 +1037,15 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
 
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
+
     const/16 v1, 0xa
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->sendEmptyMessage(I)Z
 
+    :cond_0
     return-void
 .end method
 
@@ -1082,16 +1054,21 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_0
 
-    const/16 v2, 0x9
+    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
 
-    invoke-virtual {v0, v2, p1, v1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->obtainMessage(III)Landroid/os/Message;
+    const/16 v1, 0x9
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, p1, v2}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
+    :cond_0
     return-void
 .end method
 
@@ -1100,16 +1077,21 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_0
 
-    const/16 v2, 0x8
+    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
 
-    invoke-virtual {v0, v2, p1, v1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->obtainMessage(III)Landroid/os/Message;
+    const/16 v1, 0x8
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, p1, v2}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
+    :cond_0
     return-void
 .end method
 
@@ -1205,6 +1187,14 @@
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
+    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
+
+    invoke-virtual {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->removeAllMessages()V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
+
     return-void
 .end method
 
@@ -1254,7 +1244,16 @@
 
     const/16 v2, 0xf
 
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
+
     invoke-virtual {v1, v2}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->removeMessages(I)V
+
+    :cond_1
+    iget-object v1, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
+
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
 
@@ -1264,6 +1263,7 @@
 
     invoke-virtual {v1, v2, v3, v4}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->sendEmptyMessageDelayed(IJ)Z
 
+    :cond_2
     iget-object v1, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mStaleListener:Ljava/lang/Object;
 
     const/4 v2, 0x0
@@ -1359,8 +1359,13 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
 
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
+
     invoke-virtual {v0, v2}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->sendEmptyMessage(I)Z
 
+    :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mContext:Landroid/content/Context;
 
     const-string v1, "QsLongPressTooltipShownCount"
@@ -1460,6 +1465,10 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
 
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
+
     const/4 v1, 0x5
 
     invoke-virtual {v0, v1, p1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
@@ -1468,11 +1477,16 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
+    :cond_0
     return-void
 .end method
 
 .method public removeCallback(Lcom/android/systemui/plugins/qs/QSTile$Callback;)V
     .locals 2
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
+
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
 
@@ -1484,6 +1498,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
+    :cond_0
     return-void
 .end method
 
@@ -1524,10 +1539,15 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
 
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
+
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->sendEmptyMessage(I)Z
 
+    :cond_0
     return-void
 .end method
 
@@ -1542,16 +1562,21 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_0
 
-    const/16 v2, 0xe
+    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
 
-    invoke-virtual {v0, v2, p2, v1, p1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    const/16 v1, 0xe
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, p2, v2, p1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
+    :cond_0
     return-void
 .end method
 
@@ -1576,21 +1601,30 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_0
 
-    const/4 v2, 0x6
+    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
 
-    invoke-virtual {v0, v2, p1, v1}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->obtainMessage(III)Landroid/os/Message;
+    const/4 v1, 0x6
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, p1, v2}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
+    :cond_0
     return-void
 .end method
 
 .method public userSwitch(I)V
     .locals 3
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
+
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHandler:Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;
 
@@ -1604,22 +1638,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    return-void
-.end method
-
-.method public setVibrateTweak()V
-	.locals 3
-	
-	sget-boolean v0, Lcom/android/mwilky/Renovate;->mQsVibration:Z
-	
-	if-eqz v0, :cond_stock
-
-	iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mVibrator:Landroid/os/Vibrator;
-	
-    const-wide/16 v1, 0x64
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/Vibrator;->vibrate(J)V
-    
-    :cond_stock
+    :cond_0
     return-void
 .end method

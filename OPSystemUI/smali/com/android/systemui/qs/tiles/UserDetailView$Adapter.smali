@@ -252,7 +252,7 @@
 
     const-string v1, "quick_user"
 
-    const-string v2, "switch"
+    const-string/jumbo v2, "switch"
 
     const-string v3, "1"
 
@@ -273,7 +273,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/UserDetailView$Adapter;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f110525
+    const v3, 0x7f11052f
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

@@ -741,7 +741,7 @@
     const/4 v0, 0x0
 
     :try_start_0
-    const-string v1, "suggest_intent_action"
+    const-string/jumbo v1, "suggest_intent_action"
 
     invoke-static {p1, v1}, Landroid/support/v7/widget/SuggestionsAdapter;->getColumnString(Landroid/database/Cursor;Ljava/lang/String;)Ljava/lang/String;
 
@@ -765,7 +765,7 @@
     move-object v1, v2
 
     :cond_1
-    const-string v2, "suggest_intent_data"
+    const-string/jumbo v2, "suggest_intent_data"
 
     invoke-static {p1, v2}, Landroid/support/v7/widget/SuggestionsAdapter;->getColumnString(Landroid/database/Cursor;Ljava/lang/String;)Ljava/lang/String;
 
@@ -784,7 +784,7 @@
     :cond_2
     if-eqz v2, :cond_3
 
-    const-string v3, "suggest_intent_data_id"
+    const-string/jumbo v3, "suggest_intent_data_id"
 
     invoke-static {p1, v3}, Landroid/support/v7/widget/SuggestionsAdapter;->getColumnString(Landroid/database/Cursor;Ljava/lang/String;)Ljava/lang/String;
 
@@ -831,13 +831,13 @@
     move-object v4, v2
 
     :goto_0
-    const-string v2, "suggest_intent_query"
+    const-string/jumbo v2, "suggest_intent_query"
 
     invoke-static {p1, v2}, Landroid/support/v7/widget/SuggestionsAdapter;->getColumnString(Landroid/database/Cursor;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
-    const-string v2, "suggest_intent_extra_data"
+    const-string/jumbo v2, "suggest_intent_extra_data"
 
     invoke-static {p1, v2}, Landroid/support/v7/widget/SuggestionsAdapter;->getColumnString(Landroid/database/Cursor;Ljava/lang/String;)Ljava/lang/String;
 

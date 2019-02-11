@@ -225,7 +225,7 @@
         <item>"Échelle d'animation x 1"</item>
         <item>"Échelle d'animation x 1,5"</item>
         <item>"Échelle d'animation x 2"</item>
-        <item>"Échelle d'animation x 0,5"</item>
+        <item>"Échelle d'animation x 5"</item>
         <item>"Échelle d'animation x 10"</item>
     </string-array>
     <string-array name="tts_rate_entries">

@@ -315,7 +315,7 @@
 
     iput v3, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VFullPath;->mFillAlpha:F
 
-    const-string v3, "strokeLineCap"
+    const-string/jumbo v3, "strokeLineCap"
 
     const/16 v4, 0x8
 
@@ -333,7 +333,7 @@
 
     iput-object v4, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VFullPath;->mStrokeLineCap:Landroid/graphics/Paint$Cap;
 
-    const-string v4, "strokeLineJoin"
+    const-string/jumbo v4, "strokeLineJoin"
 
     const/16 v6, 0x9
 
@@ -349,7 +349,7 @@
 
     iput-object v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VFullPath;->mStrokeLineJoin:Landroid/graphics/Paint$Join;
 
-    const-string v5, "strokeMiterLimit"
+    const-string/jumbo v5, "strokeMiterLimit"
 
     const/16 v6, 0xa
 
@@ -361,7 +361,7 @@
 
     iput v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VFullPath;->mStrokeMiterlimit:F
 
-    const-string v5, "strokeColor"
+    const-string/jumbo v5, "strokeColor"
 
     const/4 v6, 0x3
 
@@ -373,7 +373,7 @@
 
     iput v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VFullPath;->mStrokeColor:I
 
-    const-string v5, "strokeAlpha"
+    const-string/jumbo v5, "strokeAlpha"
 
     const/16 v6, 0xb
 
@@ -385,7 +385,7 @@
 
     iput v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VFullPath;->mStrokeAlpha:F
 
-    const-string v5, "strokeWidth"
+    const-string/jumbo v5, "strokeWidth"
 
     const/4 v6, 0x4
 
