@@ -36,9 +36,7 @@
 
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    iget-object v1, p0, Lcom/oneplus/screenshot/longshot/task/MoveTask$1;->this$0:Lcom/oneplus/screenshot/longshot/task/MoveTask;
-
-    invoke-static {v1}, Lcom/oneplus/screenshot/longshot/task/MoveTask;->access$000(Lcom/oneplus/screenshot/longshot/task/MoveTask;)Landroid/graphics/Bitmap;
+    invoke-static {}, Lcom/oneplus/screenshot/longshot/task/MoveTask;->access$000()Ljava/lang/Object;
 
     move-result-object v1
 

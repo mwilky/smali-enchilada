@@ -25,6 +25,8 @@
 # static fields
 .field private static final TAG:Ljava/lang/String; = "Longshot.MoveTask"
 
+.field private static final mCheckLock:Ljava/lang/Object;
+
 
 # instance fields
 .field inputSource:I
@@ -59,6 +61,18 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lcom/oneplus/screenshot/longshot/task/MoveTask;->mCheckLock:Ljava/lang/Object;
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;Lcom/oneplus/screenshot/longshot/task/MoveTask$OnMoveListener;Lcom/oneplus/screenshot/longshot/util/MovePoint;)V
     .locals 2
 
@@ -119,10 +133,10 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/oneplus/screenshot/longshot/task/MoveTask;)Landroid/graphics/Bitmap;
+.method static synthetic access$000()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lcom/oneplus/screenshot/longshot/task/MoveTask;->mLastScreenPart:Landroid/graphics/Bitmap;
+    sget-object v0, Lcom/oneplus/screenshot/longshot/task/MoveTask;->mCheckLock:Ljava/lang/Object;
 
     return-object v0
 .end method
@@ -545,78 +559,8 @@
     return v0
 .end method
 
-.method private sendPointerSync(Lcom/oneplus/screenshot/longshot/util/MovePoint;I)V
-    .locals 8
-
-    nop
-
-    invoke-virtual {p1}, Lcom/oneplus/screenshot/longshot/util/MovePoint;->getDownTime()J
-
-    move-result-wide v0
-
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v2
-
-    iget v4, p1, Lcom/oneplus/screenshot/longshot/util/MovePoint;->x:I
-
-    int-to-float v5, v4
-
-    iget v4, p1, Lcom/oneplus/screenshot/longshot/util/MovePoint;->y:I
-
-    int-to-float v6, v4
-
-    const/4 v7, 0x0
-
-    move v4, p2
-
-    invoke-static/range {v0 .. v7}, Landroid/view/MotionEvent;->obtain(JJIFFI)Landroid/view/MotionEvent;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/MotionEvent;->getSource()I
-
-    move-result v1
-
-    const v2, 0x10001002
-
-    or-int/2addr v1, v2
-
-    invoke-virtual {v0, v1}, Landroid/view/MotionEvent;->setSource(I)V
-
-    const/4 v1, 0x1
-
-    :try_start_0
-    iget-object v2, p0, Lcom/oneplus/screenshot/longshot/task/MoveTask;->mInstrumentation:Landroid/app/Instrumentation;
-
-    invoke-virtual {v2, v0}, Landroid/app/Instrumentation;->sendPointerSync(Landroid/view/MotionEvent;)V
-    :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v2
-
-    sput-boolean v1, Lcom/oneplus/screenshot/longshot/util/Configs;->STOP_BY_USER:Z
-
-    goto :goto_1
-
-    :catch_1
-    move-exception v2
-
-    sput-boolean v1, Lcom/oneplus/screenshot/longshot/util/Configs;->STOP_BY_USER:Z
-
-    :goto_0
-    nop
-
-    :goto_1
-    return-void
-.end method
-
 .method private sendSwipe(III)V
-    .locals 29
+    .locals 30
 
     move-object/from16 v8, p0
 
@@ -741,7 +685,7 @@
 
     move v10, v7
 
-    goto/16 :goto_4
+    goto/16 :goto_3
 
     :cond_1
     iget-object v0, v8, Lcom/oneplus/screenshot/longshot/task/MoveTask;->mMovePoint:Lcom/oneplus/screenshot/longshot/util/MovePoint;
@@ -808,12 +752,9 @@
 
     add-int/lit8 v7, v10, 0x1
 
-    goto :goto_2
+    move v10, v7
 
     :cond_2
-    move v7, v10
-
-    :goto_2
     iget-object v0, v8, Lcom/oneplus/screenshot/longshot/task/MoveTask;->mListener:Lcom/oneplus/screenshot/longshot/task/MoveTask$OnMoveListener;
 
     invoke-interface {v0}, Lcom/oneplus/screenshot/longshot/task/MoveTask$OnMoveListener;->isOverScroll()Z
@@ -826,10 +767,12 @@
 
     if-nez v0, :cond_3
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_3
     nop
+
+    move v7, v10
 
     move/from16 v1, v27
 
@@ -838,12 +781,30 @@
     goto :goto_1
 
     :cond_4
-    :goto_3
+    :goto_2
+    const/4 v2, 0x3
+
     iget-object v0, v8, Lcom/oneplus/screenshot/longshot/task/MoveTask;->mMovePoint:Lcom/oneplus/screenshot/longshot/util/MovePoint;
 
-    const/4 v1, 0x3
+    invoke-virtual {v0}, Lcom/oneplus/screenshot/longshot/util/MovePoint;->getDownTime()J
 
-    invoke-direct {v8, v0, v1}, Lcom/oneplus/screenshot/longshot/task/MoveTask;->sendPointerSync(Lcom/oneplus/screenshot/longshot/util/MovePoint;I)V
+    move-result-wide v3
+
+    int-to-float v5, v13
+
+    iget-object v0, v8, Lcom/oneplus/screenshot/longshot/task/MoveTask;->mMovePoint:Lcom/oneplus/screenshot/longshot/util/MovePoint;
+
+    iget v0, v0, Lcom/oneplus/screenshot/longshot/util/MovePoint;->y:I
+
+    int-to-float v6, v0
+
+    const/high16 v7, 0x3f800000    # 1.0f
+
+    move-object v0, v8
+
+    move v1, v9
+
+    invoke-direct/range {v0 .. v7}, Lcom/oneplus/screenshot/longshot/task/MoveTask;->injectMotionEvent(IIJFFF)V
 
     iget-object v0, v8, Lcom/oneplus/screenshot/longshot/task/MoveTask;->mListener:Lcom/oneplus/screenshot/longshot/task/MoveTask$OnMoveListener;
 
@@ -870,33 +831,79 @@
 
     move v10, v7
 
-    :goto_4
+    :goto_3
     iget-object v0, v8, Lcom/oneplus/screenshot/longshot/task/MoveTask;->mMovePoint:Lcom/oneplus/screenshot/longshot/util/MovePoint;
 
     move/from16 v7, v27
 
     invoke-virtual {v0, v13, v7}, Lcom/oneplus/screenshot/longshot/util/MovePoint;->set(II)V
 
-    const/4 v0, 0x0
+    const/4 v6, 0x0
 
-    move v1, v0
+    move v0, v6
 
-    :goto_5
-    move/from16 v6, p3
+    :goto_4
+    move v5, v0
 
-    if-ge v1, v6, :cond_6
+    move/from16 v3, p3
 
-    iget-object v2, v8, Lcom/oneplus/screenshot/longshot/task/MoveTask;->mMovePoint:Lcom/oneplus/screenshot/longshot/util/MovePoint;
+    if-ge v5, v3, :cond_6
 
-    const/4 v3, 0x2
+    const/4 v2, 0x2
 
-    invoke-direct {v8, v2, v3}, Lcom/oneplus/screenshot/longshot/task/MoveTask;->sendPointerSync(Lcom/oneplus/screenshot/longshot/util/MovePoint;I)V
+    iget-object v0, v8, Lcom/oneplus/screenshot/longshot/task/MoveTask;->mMovePoint:Lcom/oneplus/screenshot/longshot/util/MovePoint;
 
-    add-int/lit8 v1, v1, 0x1
+    invoke-virtual {v0}, Lcom/oneplus/screenshot/longshot/util/MovePoint;->getDownTime()J
 
-    goto :goto_5
+    move-result-wide v20
+
+    int-to-float v4, v13
+
+    int-to-float v1, v7
+
+    const/high16 v22, 0x3f800000    # 1.0f
+
+    move-object v0, v8
+
+    move/from16 v23, v1
+
+    move v1, v9
+
+    move/from16 v24, v4
+
+    move-wide/from16 v3, v20
+
+    move/from16 v20, v5
+
+    move/from16 v5, v24
+
+    move/from16 v6, v23
+
+    move/from16 v29, v10
+
+    move v10, v7
+
+    move/from16 v7, v22
+
+    invoke-direct/range {v0 .. v7}, Lcom/oneplus/screenshot/longshot/task/MoveTask;->injectMotionEvent(IIJFFF)V
+
+    add-int/lit8 v0, v20, 0x1
+
+    move v7, v10
+
+    move/from16 v10, v29
+
+    const/4 v6, 0x0
+
+    goto :goto_4
 
     :cond_6
+    move/from16 v29, v10
+
+    move v10, v7
+
+    const/4 v0, 0x0
+
     iput v0, v8, Lcom/oneplus/screenshot/longshot/task/MoveTask;->mPartScreenshotMatchTimes:I
 
     const/4 v2, 0x1
@@ -909,21 +916,13 @@
 
     int-to-float v5, v13
 
-    int-to-float v1, v7
+    int-to-float v6, v10
 
-    const/high16 v20, 0x3f800000    # 1.0f
+    const/high16 v7, 0x3f800000    # 1.0f
 
     move-object v0, v8
 
-    move/from16 v21, v1
-
     move v1, v9
-
-    move/from16 v6, v21
-
-    move/from16 v21, v7
-
-    move/from16 v7, v20
 
     invoke-direct/range {v0 .. v7}, Lcom/oneplus/screenshot/longshot/task/MoveTask;->injectMotionEvent(IIJFFF)V
 
@@ -1463,7 +1462,7 @@
     invoke-interface {v0}, Lcom/oneplus/screenshot/longshot/task/MoveTask$OnMoveListener;->onMoveFinished()V
 
     :cond_2
-    iget-object v0, p0, Lcom/oneplus/screenshot/longshot/task/MoveTask;->mLastScreenPart:Landroid/graphics/Bitmap;
+    sget-object v0, Lcom/oneplus/screenshot/longshot/task/MoveTask;->mCheckLock:Ljava/lang/Object;
 
     monitor-enter v0
 
@@ -1535,25 +1534,9 @@
 .end method
 
 .method public updateMovePoint(Lcom/oneplus/screenshot/longshot/util/MovePoint;)V
-    .locals 2
+    .locals 0
 
-    iget-object v0, p0, Lcom/oneplus/screenshot/longshot/task/MoveTask;->mMovePoint:Lcom/oneplus/screenshot/longshot/util/MovePoint;
-
-    monitor-enter v0
-
-    :try_start_0
     iput-object p1, p0, Lcom/oneplus/screenshot/longshot/task/MoveTask;->mMovePoint:Lcom/oneplus/screenshot/longshot/util/MovePoint;
 
-    monitor-exit v0
-
     return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
 .end method

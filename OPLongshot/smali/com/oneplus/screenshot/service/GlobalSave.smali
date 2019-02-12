@@ -11,6 +11,8 @@
 
 .field private static final TAG:Ljava/lang/String;
 
+.field private static final mLock:Ljava/lang/Object;
+
 
 # instance fields
 .field private mBundle:Landroid/os/Bundle;
@@ -49,6 +51,12 @@
     move-result-object v0
 
     sput-object v0, Lcom/oneplus/screenshot/service/GlobalSave;->TAG:Ljava/lang/String;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lcom/oneplus/screenshot/service/GlobalSave;->mLock:Ljava/lang/Object;
 
     return-void
 .end method
@@ -114,7 +122,7 @@
 
     iput-object v0, p0, Lcom/oneplus/screenshot/service/GlobalSave;->mSaveTask:Lcom/oneplus/screenshot/service/SaveTask;
 
-    iget-object v1, p0, Lcom/oneplus/screenshot/service/GlobalSave;->mCachable:Lcom/oneplus/screenshot/util/Cachable;
+    sget-object v1, Lcom/oneplus/screenshot/service/GlobalSave;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
@@ -203,7 +211,7 @@
 
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/oneplus/screenshot/service/GlobalSave;->mCachable:Lcom/oneplus/screenshot/util/Cachable;
+    sget-object v1, Lcom/oneplus/screenshot/service/GlobalSave;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
