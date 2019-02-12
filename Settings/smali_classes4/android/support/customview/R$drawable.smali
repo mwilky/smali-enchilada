@@ -1929,325 +1929,329 @@
 
 .field public static final op_regulatory_info_for_03:I = 0x7f0803df
 
-.field public static final op_regulatory_info_other:I = 0x7f0803e0
+.field public static final op_regulatory_info_for_03_global:I = 0x7f0803e0
 
-.field public static final op_screen_show_1:I = 0x7f0803e1
+.field public static final op_regulatory_info_other:I = 0x7f0803e1
 
-.field public static final op_screen_show_2:I = 0x7f0803e2
+.field public static final op_screen_show_1:I = 0x7f0803e2
 
-.field public static final op_screen_show_3:I = 0x7f0803e3
+.field public static final op_screen_show_2:I = 0x7f0803e3
 
-.field public static final op_search_bar_bg:I = 0x7f0803e4
+.field public static final op_screen_show_3:I = 0x7f0803e4
 
-.field public static final op_search_cicle_bg:I = 0x7f0803e5
+.field public static final op_search_bar_bg:I = 0x7f0803e5
 
-.field public static final op_seekbar_thumb_material_anim_dark:I = 0x7f0803e6
+.field public static final op_search_cicle_bg:I = 0x7f0803e6
 
-.field public static final op_seekbar_thumb_material_anim_light:I = 0x7f0803e7
+.field public static final op_seekbar_thumb_material_anim_dark:I = 0x7f0803e7
 
-.field public static final op_seekbar_thumb_pressed_to_unpressed_animation_dark:I = 0x7f0803e8
+.field public static final op_seekbar_thumb_material_anim_light:I = 0x7f0803e8
 
-.field public static final op_seekbar_thumb_pressed_to_unpressed_animation_light:I = 0x7f0803e9
+.field public static final op_seekbar_thumb_pressed_to_unpressed_animation_dark:I = 0x7f0803e9
 
-.field public static final op_seekbar_thumb_pressed_to_unpressed_dark:I = 0x7f0803ea
+.field public static final op_seekbar_thumb_pressed_to_unpressed_animation_light:I = 0x7f0803ea
 
-.field public static final op_seekbar_thumb_pressed_to_unpressed_light:I = 0x7f0803eb
+.field public static final op_seekbar_thumb_pressed_to_unpressed_dark:I = 0x7f0803eb
 
-.field public static final op_seekbar_thumb_unpressed_to_pressed_animation_dark:I = 0x7f0803ec
+.field public static final op_seekbar_thumb_pressed_to_unpressed_light:I = 0x7f0803ec
 
-.field public static final op_seekbar_thumb_unpressed_to_pressed_animation_light:I = 0x7f0803ed
+.field public static final op_seekbar_thumb_unpressed_to_pressed_animation_dark:I = 0x7f0803ed
 
-.field public static final op_seekbar_thumb_unpressed_to_pressed_dark:I = 0x7f0803ee
+.field public static final op_seekbar_thumb_unpressed_to_pressed_animation_light:I = 0x7f0803ee
 
-.field public static final op_seekbar_thumb_unpressed_to_pressed_light:I = 0x7f0803ef
+.field public static final op_seekbar_thumb_unpressed_to_pressed_dark:I = 0x7f0803ef
 
-.field public static final op_seekbar_track_material_dark:I = 0x7f0803f0
+.field public static final op_seekbar_thumb_unpressed_to_pressed_light:I = 0x7f0803f0
 
-.field public static final op_seekbar_track_material_light:I = 0x7f0803f1
+.field public static final op_seekbar_track_material_dark:I = 0x7f0803f1
 
-.field public static final op_setup_fingerprint_guide:I = 0x7f0803f2
+.field public static final op_seekbar_track_material_light:I = 0x7f0803f2
 
-.field public static final op_shielding_notification_dark:I = 0x7f0803f3
+.field public static final op_setup_fingerprint_guide:I = 0x7f0803f3
 
-.field public static final op_shielding_notification_light:I = 0x7f0803f4
+.field public static final op_shielding_notification_dark:I = 0x7f0803f4
 
-.field public static final op_soft_version:I = 0x7f0803f5
+.field public static final op_shielding_notification_light:I = 0x7f0803f5
 
-.field public static final op_sound_no_file:I = 0x7f0803f6
+.field public static final op_soft_version:I = 0x7f0803f6
 
-.field public static final op_spinner_background_material:I = 0x7f0803f7
+.field public static final op_sound_no_file:I = 0x7f0803f7
 
-.field public static final op_spinner_mtrl_am_alpha:I = 0x7f0803f8
+.field public static final op_spinner_background_material:I = 0x7f0803f8
 
-.field public static final op_starting_window_background:I = 0x7f0803f9
+.field public static final op_spinner_mtrl_am_alpha:I = 0x7f0803f9
 
-.field public static final op_status_settings:I = 0x7f0803fa
+.field public static final op_starting_window_background:I = 0x7f0803fa
 
-.field public static final op_switch_floating_action_button:I = 0x7f0803fb
+.field public static final op_status_settings:I = 0x7f0803fb
 
-.field public static final op_switch_thumb_material_anim:I = 0x7f0803fc
+.field public static final op_switch_floating_action_button:I = 0x7f0803fc
 
-.field public static final op_switch_thumb_material_light_anim:I = 0x7f0803fd
+.field public static final op_switch_thumb_material_anim:I = 0x7f0803fd
 
-.field public static final op_switch_track_material:I = 0x7f0803fe
+.field public static final op_switch_thumb_material_light_anim:I = 0x7f0803fe
 
-.field public static final op_switchbar_background:I = 0x7f0803ff
+.field public static final op_switch_track_material:I = 0x7f0803ff
 
-.field public static final op_switchbar_bg_dark:I = 0x7f080400
+.field public static final op_switchbar_background:I = 0x7f080400
 
-.field public static final op_switchbar_bg_light:I = 0x7f080401
+.field public static final op_switchbar_bg_dark:I = 0x7f080401
 
-.field public static final op_tab_indicator_material:I = 0x7f080402
+.field public static final op_switchbar_bg_light:I = 0x7f080402
 
-.field public static final op_text_cursor_material:I = 0x7f080403
+.field public static final op_tab_indicator_material:I = 0x7f080403
 
-.field public static final op_text_cursor_material_dark:I = 0x7f080404
+.field public static final op_text_cursor_material:I = 0x7f080404
 
-.field public static final op_text_cursor_material_light:I = 0x7f080405
+.field public static final op_text_cursor_material_dark:I = 0x7f080405
 
-.field public static final op_text_select_handle_left_material_dark:I = 0x7f080406
+.field public static final op_text_cursor_material_light:I = 0x7f080406
 
-.field public static final op_text_select_handle_left_material_light:I = 0x7f080407
+.field public static final op_text_select_handle_left_material_dark:I = 0x7f080407
 
-.field public static final op_text_select_handle_middle_material_dark:I = 0x7f080408
+.field public static final op_text_select_handle_left_material_light:I = 0x7f080408
 
-.field public static final op_text_select_handle_middle_material_light:I = 0x7f080409
+.field public static final op_text_select_handle_middle_material_dark:I = 0x7f080409
 
-.field public static final op_text_select_handle_right_material_dark:I = 0x7f08040a
+.field public static final op_text_select_handle_middle_material_light:I = 0x7f08040a
 
-.field public static final op_text_select_handle_right_material_light:I = 0x7f08040b
+.field public static final op_text_select_handle_right_material_dark:I = 0x7f08040b
 
-.field public static final op_textfield_activated_mtrl_alpha:I = 0x7f08040c
+.field public static final op_text_select_handle_right_material_light:I = 0x7f08040c
 
-.field public static final op_textfield_default_mtrl_alpha:I = 0x7f08040d
+.field public static final op_textfield_activated_mtrl_alpha:I = 0x7f08040d
 
-.field public static final op_time_picker_editable_background:I = 0x7f08040e
+.field public static final op_textfield_default_mtrl_alpha:I = 0x7f08040e
 
-.field public static final op_time_separator:I = 0x7f08040f
+.field public static final op_time_picker_editable_background:I = 0x7f08040f
 
-.field public static final op_vector_drawable_progress_bar_large:I = 0x7f080410
+.field public static final op_time_separator:I = 0x7f080410
 
-.field public static final op_vector_drawable_progress_bar_large_light:I = 0x7f080411
+.field public static final op_vector_drawable_progress_bar_large:I = 0x7f080411
 
-.field public static final op_vector_drawable_progress_bar_medium:I = 0x7f080412
+.field public static final op_vector_drawable_progress_bar_large_light:I = 0x7f080412
 
-.field public static final op_vector_drawable_progress_bar_medium_light:I = 0x7f080413
+.field public static final op_vector_drawable_progress_bar_medium:I = 0x7f080413
 
-.field public static final op_vector_drawable_progress_bar_progressdialog:I = 0x7f080414
+.field public static final op_vector_drawable_progress_bar_medium_light:I = 0x7f080414
 
-.field public static final op_vector_drawable_progress_bar_small:I = 0x7f080415
+.field public static final op_vector_drawable_progress_bar_progressdialog:I = 0x7f080415
 
-.field public static final op_vector_drawable_progress_bar_small_light:I = 0x7f080416
+.field public static final op_vector_drawable_progress_bar_small:I = 0x7f080416
 
-.field public static final op_vector_drawable_progress_indeterminate_horizontal:I = 0x7f080417
+.field public static final op_vector_drawable_progress_bar_small_light:I = 0x7f080417
 
-.field public static final op_vector_drawable_progress_indeterminate_horizontal_light:I = 0x7f080418
+.field public static final op_vector_drawable_progress_indeterminate_horizontal:I = 0x7f080418
 
-.field public static final op_wechat_qrcode:I = 0x7f080419
+.field public static final op_vector_drawable_progress_indeterminate_horizontal_light:I = 0x7f080419
 
-.field public static final op_wechat_scanning:I = 0x7f08041a
+.field public static final op_wechat_qrcode:I = 0x7f08041a
 
-.field public static final opfinger_anim_bg:I = 0x7f08041b
+.field public static final op_wechat_scanning:I = 0x7f08041b
 
-.field public static final opfinger_anim_bg_02:I = 0x7f08041c
+.field public static final op_wifi_dialog_background:I = 0x7f08041c
 
-.field public static final opfinger_anim_color_bg:I = 0x7f08041d
+.field public static final opfinger_anim_bg:I = 0x7f08041d
 
-.field public static final opfinger_anim_color_bg_2:I = 0x7f08041e
+.field public static final opfinger_anim_bg_02:I = 0x7f08041e
 
-.field public static final opfinger_logo_bg:I = 0x7f08041f
+.field public static final opfinger_anim_color_bg:I = 0x7f08041f
 
-.field public static final pizza:I = 0x7f080420
+.field public static final opfinger_anim_color_bg_2:I = 0x7f080420
 
-.field public static final preference_background:I = 0x7f080421
+.field public static final opfinger_logo_bg:I = 0x7f080421
 
-.field public static final preference_highlight:I = 0x7f080422
+.field public static final pizza:I = 0x7f080422
 
-.field public static final preference_list_divider_material:I = 0x7f080423
+.field public static final preference_background:I = 0x7f080423
 
-.field public static final preview:I = 0x7f080424
+.field public static final preference_highlight:I = 0x7f080424
 
-.field public static final preview_seek_bar_outline:I = 0x7f080425
+.field public static final preference_list_divider_material:I = 0x7f080425
 
-.field public static final product_info_01:I = 0x7f080426
+.field public static final preview:I = 0x7f080426
 
-.field public static final product_info_02:I = 0x7f080427
+.field public static final preview_seek_bar_outline:I = 0x7f080427
 
-.field public static final product_info_03:I = 0x7f080428
+.field public static final product_info_01:I = 0x7f080428
 
-.field public static final product_info_04:I = 0x7f080429
+.field public static final product_info_02:I = 0x7f080429
 
-.field public static final product_info_05:I = 0x7f08042a
+.field public static final product_info_03:I = 0x7f08042a
 
-.field public static final product_info_06:I = 0x7f08042b
+.field public static final product_info_04:I = 0x7f08042b
 
-.field public static final product_info_07:I = 0x7f08042c
+.field public static final product_info_05:I = 0x7f08042c
 
-.field public static final product_info_08:I = 0x7f08042d
+.field public static final product_info_06:I = 0x7f08042d
 
-.field public static final product_info_09:I = 0x7f08042e
+.field public static final product_info_07:I = 0x7f08042e
 
-.field public static final product_info_10:I = 0x7f08042f
+.field public static final product_info_08:I = 0x7f08042f
 
-.field public static final product_info_11:I = 0x7f080430
+.field public static final product_info_09:I = 0x7f080430
 
-.field public static final product_info_12:I = 0x7f080431
+.field public static final product_info_10:I = 0x7f080431
 
-.field public static final product_info_13:I = 0x7f080432
+.field public static final product_info_11:I = 0x7f080432
 
-.field public static final product_info_14:I = 0x7f080433
+.field public static final product_info_12:I = 0x7f080433
 
-.field public static final product_info_15:I = 0x7f080434
+.field public static final product_info_13:I = 0x7f080434
 
-.field public static final product_info_16:I = 0x7f080435
+.field public static final product_info_14:I = 0x7f080435
 
-.field public static final product_info_17:I = 0x7f080436
+.field public static final product_info_15:I = 0x7f080436
 
-.field public static final product_info_18:I = 0x7f080437
+.field public static final product_info_16:I = 0x7f080437
 
-.field public static final product_info_19:I = 0x7f080438
+.field public static final product_info_17:I = 0x7f080438
 
-.field public static final product_info_20:I = 0x7f080439
+.field public static final product_info_18:I = 0x7f080439
 
-.field public static final product_info_21:I = 0x7f08043a
+.field public static final product_info_19:I = 0x7f08043a
 
-.field public static final product_info_6x_01:I = 0x7f08043b
+.field public static final product_info_20:I = 0x7f08043b
 
-.field public static final product_info_6x_02:I = 0x7f08043c
+.field public static final product_info_21:I = 0x7f08043c
 
-.field public static final product_info_6x_03:I = 0x7f08043d
+.field public static final product_info_6x_01:I = 0x7f08043d
 
-.field public static final product_info_6x_04:I = 0x7f08043e
+.field public static final product_info_6x_02:I = 0x7f08043e
 
-.field public static final product_info_6x_05:I = 0x7f08043f
+.field public static final product_info_6x_03:I = 0x7f08043f
 
-.field public static final product_info_6x_06:I = 0x7f080440
+.field public static final product_info_6x_04:I = 0x7f080440
 
-.field public static final product_info_6x_07:I = 0x7f080441
+.field public static final product_info_6x_05:I = 0x7f080441
 
-.field public static final product_info_6x_08:I = 0x7f080442
+.field public static final product_info_6x_06:I = 0x7f080442
 
-.field public static final product_info_6x_09:I = 0x7f080443
+.field public static final product_info_6x_07:I = 0x7f080443
 
-.field public static final product_info_6x_10:I = 0x7f080444
+.field public static final product_info_6x_08:I = 0x7f080444
 
-.field public static final product_info_6x_11:I = 0x7f080445
+.field public static final product_info_6x_09:I = 0x7f080445
 
-.field public static final progress_indeterminate_horizontal_material_trimmed:I = 0x7f080446
+.field public static final product_info_6x_10:I = 0x7f080446
 
-.field public static final regulatory_info:I = 0x7f080447
+.field public static final product_info_6x_11:I = 0x7f080447
 
-.field public static final ring_progress:I = 0x7f080448
+.field public static final progress_indeterminate_horizontal_material_trimmed:I = 0x7f080448
 
-.field public static final ripple_drawable:I = 0x7f080449
+.field public static final regulatory_info:I = 0x7f080449
 
-.field public static final screen_background_selector_light:I = 0x7f08044a
+.field public static final ring_progress:I = 0x7f08044a
 
-.field public static final selectable_card:I = 0x7f08044b
+.field public static final ripple_drawable:I = 0x7f08044b
 
-.field public static final shortcut_base:I = 0x7f08044c
+.field public static final screen_background_selector_light:I = 0x7f08044c
 
-.field public static final signal:I = 0x7f08044d
+.field public static final selectable_card:I = 0x7f08044d
 
-.field public static final spinner_default_holo_dark_am_no_underline:I = 0x7f08044e
+.field public static final shortcut_base:I = 0x7f08044e
 
-.field public static final suw_card_bg:I = 0x7f08044f
+.field public static final signal:I = 0x7f08044f
 
-.field public static final suw_card_bg_dark:I = 0x7f080450
+.field public static final spinner_default_holo_dark_am_no_underline:I = 0x7f080450
 
-.field public static final suw_card_bg_light:I = 0x7f080451
+.field public static final suw_card_bg:I = 0x7f080451
 
-.field public static final suw_edit_text_bg_shape:I = 0x7f080452
+.field public static final suw_card_bg_dark:I = 0x7f080452
 
-.field public static final suw_edittext_bg:I = 0x7f080453
+.field public static final suw_card_bg_light:I = 0x7f080453
 
-.field public static final suw_fourcolor_progress_bar:I = 0x7f080454
+.field public static final suw_edit_text_bg_shape:I = 0x7f080454
 
-.field public static final suw_ic_expand:I = 0x7f080455
+.field public static final suw_edittext_bg:I = 0x7f080455
 
-.field public static final suw_ic_expand_less:I = 0x7f080456
+.field public static final suw_fourcolor_progress_bar:I = 0x7f080456
 
-.field public static final suw_ic_expand_more:I = 0x7f080457
+.field public static final suw_ic_expand:I = 0x7f080457
 
-.field public static final suw_layout_background:I = 0x7f080458
+.field public static final suw_ic_expand_less:I = 0x7f080458
 
-.field public static final suw_navbar_btn_bg:I = 0x7f080459
+.field public static final suw_ic_expand_more:I = 0x7f080459
 
-.field public static final suw_navbar_btn_bg_dark:I = 0x7f08045a
+.field public static final suw_layout_background:I = 0x7f08045a
 
-.field public static final suw_navbar_btn_bg_light:I = 0x7f08045b
+.field public static final suw_navbar_btn_bg:I = 0x7f08045b
 
-.field public static final suw_navbar_ic_back:I = 0x7f08045c
+.field public static final suw_navbar_btn_bg_dark:I = 0x7f08045c
 
-.field public static final suw_navbar_ic_down_arrow:I = 0x7f08045d
+.field public static final suw_navbar_btn_bg_light:I = 0x7f08045d
 
-.field public static final suw_navbar_ic_left_arrow:I = 0x7f08045e
+.field public static final suw_navbar_ic_back:I = 0x7f08045e
 
-.field public static final suw_navbar_ic_more:I = 0x7f08045f
+.field public static final suw_navbar_ic_down_arrow:I = 0x7f08045f
 
-.field public static final suw_navbar_ic_next:I = 0x7f080460
+.field public static final suw_navbar_ic_left_arrow:I = 0x7f080460
 
-.field public static final suw_navbar_ic_right_arrow:I = 0x7f080461
+.field public static final suw_navbar_ic_more:I = 0x7f080461
 
-.field public static final switch_thumb_material_anim:I = 0x7f080462
+.field public static final suw_navbar_ic_next:I = 0x7f080462
 
-.field public static final switch_track_material:I = 0x7f080463
+.field public static final suw_navbar_ic_right_arrow:I = 0x7f080463
 
-.field public static final switchbar_background:I = 0x7f080464
+.field public static final switch_thumb_material_anim:I = 0x7f080464
 
-.field public static final tapandpay_emptystate:I = 0x7f080465
+.field public static final switch_track_material:I = 0x7f080465
 
-.field public static final text_select_handle_left_mtrl_alpha:I = 0x7f080466
+.field public static final switchbar_background:I = 0x7f080466
 
-.field public static final text_select_handle_middle_mtrl_alpha:I = 0x7f080467
+.field public static final tapandpay_emptystate:I = 0x7f080467
 
-.field public static final text_select_handle_right_mtrl_alpha:I = 0x7f080468
+.field public static final text_select_handle_left_mtrl_alpha:I = 0x7f080468
 
-.field public static final textfield_search_activated_mtrl_alpha:I = 0x7f080469
+.field public static final text_select_handle_middle_mtrl_alpha:I = 0x7f080469
 
-.field public static final textfield_search_default_mtrl_alpha:I = 0x7f08046a
+.field public static final text_select_handle_right_mtrl_alpha:I = 0x7f08046a
 
-.field public static final thumb:I = 0x7f08046b
+.field public static final textfield_search_activated_mtrl_alpha:I = 0x7f08046b
 
-.field public static final thumb_drawable:I = 0x7f08046c
+.field public static final textfield_search_default_mtrl_alpha:I = 0x7f08046c
 
-.field public static final tile_icon_animation_speed:I = 0x7f08046d
+.field public static final thumb:I = 0x7f08046d
 
-.field public static final tile_icon_force_rtl:I = 0x7f08046e
+.field public static final thumb_drawable:I = 0x7f08046e
 
-.field public static final tile_icon_graphics:I = 0x7f08046f
+.field public static final tile_icon_animation_speed:I = 0x7f08046f
 
-.field public static final tile_icon_show_layout:I = 0x7f080470
+.field public static final tile_icon_force_rtl:I = 0x7f080470
 
-.field public static final tile_icon_winscope_trace:I = 0x7f080471
+.field public static final tile_icon_graphics:I = 0x7f080471
 
-.field public static final title_bar:I = 0x7f080472
+.field public static final tile_icon_show_layout:I = 0x7f080472
 
-.field public static final toast_frame_dark:I = 0x7f080473
+.field public static final tile_icon_winscope_trace:I = 0x7f080473
 
-.field public static final toast_frame_light:I = 0x7f080474
+.field public static final title_bar:I = 0x7f080474
 
-.field public static final tooltip_frame_dark:I = 0x7f080475
+.field public static final toast_frame_dark:I = 0x7f080475
 
-.field public static final tooltip_frame_light:I = 0x7f080476
+.field public static final toast_frame_light:I = 0x7f080476
 
-.field public static final transparency:I = 0x7f080477
+.field public static final tooltip_frame_dark:I = 0x7f080477
 
-.field public static final transparency_tileable:I = 0x7f080478
+.field public static final tooltip_frame_light:I = 0x7f080478
 
-.field public static final vector_drawable_progress_indeterminate_horizontal_trimmed:I = 0x7f080479
+.field public static final transparency:I = 0x7f080479
 
-.field public static final wifi_friction:I = 0x7f08047a
+.field public static final transparency_tileable:I = 0x7f08047a
 
-.field public static final wifi_signal:I = 0x7f08047b
+.field public static final vector_drawable_progress_indeterminate_horizontal_trimmed:I = 0x7f08047b
 
-.field public static final wifi_signal_dark:I = 0x7f08047c
+.field public static final wifi_friction:I = 0x7f08047c
 
-.field public static final wifi_signal_lock_dark:I = 0x7f08047d
+.field public static final wifi_signal:I = 0x7f08047d
 
-.field public static final wifi_signal_open_dark:I = 0x7f08047e
+.field public static final wifi_signal_dark:I = 0x7f08047e
 
-.field public static final work_challenge_background:I = 0x7f08047f
+.field public static final wifi_signal_lock_dark:I = 0x7f08047f
+
+.field public static final wifi_signal_open_dark:I = 0x7f080480
+
+.field public static final work_challenge_background:I = 0x7f080481
 
 
 # direct methods

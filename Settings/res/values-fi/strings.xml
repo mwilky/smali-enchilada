@@ -2616,7 +2616,7 @@ Akunsäästäjä poistuu automaattisesti käytössä, kun laitetta ladataan."</s
     <string name="oneplus_broadcat_wifi_name">Lähetä verkon nimi (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Painikkeet ja eleet</string>
     <string name="oneplus_buttons_dashboard_summary">Hälytysliukusäädin, navigointi, eleet</string>
-    <string name="oneplus_buttons_settings">painikkeiden asetukset</string>
+    <string name="oneplus_buttons_settings">Painikkeiden asetukset</string>
     <string name="oneplus_buttons_settings_summary">Navigointiele</string>
     <string name="oneplus_call_information_broadcast">Sano soittajatunnus</string>
     <string name="oneplus_call_information_broadcast_summary">Sano saapuvan puhelun tunnus kuulokkeissa</string>
@@ -2687,6 +2687,9 @@ Akunsäästäjä poistuu automaattisesti käytössä, kun laitetta ladataan."</s
     <string name="oneplus_emergency_rescue_settings">Hätäpelastus</string>
     <string name="oneplus_emergency_rescue_settings_summary">Soita automaattisesti apua painamalla virtapainiketta nopeasti</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">Käytettävissä vasta, kun hätäpalautuksen VIRTAPAINIKKEEN asetuksia on muutettu</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1.Syötä sormenjälkesi uudelleen aina, kun vaihdat suojakalvon, jotta sormenjälki varmasti toimisi
+
+2.Syötä yhdessä asetusprosessissa vain yhden sormen sormenjälkitiedot"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Sormenjäljen asetuskehote</string>
     <string name="oneplus_enter_your_fingerprint">– rekisteröitävä sormenjälkesi</string>
     <string name="oneplus_experience_improvement_programs">Kokemusta parantavat ohjelmat</string>
@@ -2711,11 +2714,17 @@ Riskivinkki: Kasvojentunnistus on vähemmän turvallinen kuin sormenjälki ja sa
     <string name="oneplus_finger_input_error_tips">Virhe sormenjäljen rekisteröinnissä. Yritä uudelleen.</string>
     <string name="oneplus_finger_input_fail_tips">Syöttö epäonnistui. Muuta asentoa ja yritä uudelleen</string>
     <string name="oneplus_fingerprint">Sormenjälki</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">Vastaava sormenjälki havaittu. Siirrä sormeasi hieman antaaksesi muiden osien sormenjäljen.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">Sormenjäljen tunnistusalue on likainen. Pyyhi se puhtaaksi ja yritä uudelleen.</string>
+    <string name="oneplus_fingerprint_acquired_partial">Havaittu osittainen sormenjälki. Peitä sormenjäljen tunnistusalue täysin.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">Liian nopea; sormenjälkeäsi ei ehditty käsitellä. Pidä sormi paikoillaan hetken painaessasi.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">Havaittu samankaltainen sormenjälki. Siirrä sormea hieman antaaksesi eri osien sormenjäljet.</string>
     <string name="oneplus_fingerprint_animation_effect_title">Sormenjäljen animaatietehoste</string>
     <string name="oneplus_fingerprint_delete_confirm_message">Haluatko poistaa sen?</string>
     <string name="oneplus_fingerprint_detail">Tiedot</string>
     <string name="oneplus_fingerprint_enrol_completed">Sormenjälki on tallennettu</string>
+    <string name="oneplus_fingerprint_enroll_summary">Paina sormellasi siten, että se peittää sormenjäljen tunnistusalueen mahdollisimman hyvin, ja nosta se sitten ylös kun tunnet värinää</string>
+    <string name="oneplus_fingerprint_findsendor_summary">Sormenjälkesi malli näkyy näytön alalaidassa; voit käyttää sormenjälkitoimintoa yksinkertaisesti painamalla sormella sormenjäljen tunnistusaluetta.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">Sormenjäljen käyttö</string>
     <string name="oneplus_fingerprint_functional_declaration">Sormenjälkitoiminnon ilmoitus</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">Etsinnäytössä sormenjälkitunnistimen pitkä painallus ottaa kuvan</string>
     <string name="oneplus_fingerprint_gesture_camera_title">Pitkä painallus ottaa kuvan</string>
@@ -2799,6 +2808,9 @@ Voit siirtyä aloitusnäyttöön milloin vain pyyhkäisemällä näytön alareun
     <string name="oneplus_hide_navkeys_summary">Lisää painike, joka piilottaa tai näyttää siirtymispalkin</string>
     <string name="oneplus_hide_notch_display_summary">Kaikki sovellukset eivät voi käyttää lovialuetta</string>
     <string name="oneplus_hide_notch_display_title">Piilota lovialue</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"Kun sormenjälkesi malli näkyy näytön alalaidassa, voit käyttää sormenjälkitoimintoa yksinkertaisesti painamalla sormella sormenjäljen tunnistusaluetta herättääksesi puhelimen ja avataksesi sen lukituksen, valtuuttaaksesi ostoksia tai kirjautuaksesi sovelluksiin. 
+
+Huomautus: Sormenjälki saattaa olla vähemmän turvallinen kuin vahva kuvio tai PIN-koodi"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Kun näytön alalaidassa näkyy sormenjälkikuvio, paina sormellasi sormenjäljen tunnistusaluetta käyttääksesi sormenjälkitoimintoa, kuten puhelimen herättämistä ja lukituksen avaamista, ostosten valtuuttamista tai sovelluksiin kirjautumista.</string>
     <string name="oneplus_hydrogen_version">H₂OS-versio</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Saapuva puhelu</string>
@@ -2872,6 +2884,7 @@ Voit siirtyä aloitusnäyttöön milloin vain pyyhkäisemällä näytön alareun
     <string name="oneplus_normal_clear_way">Normaali tyhjennys</string>
     <string name="oneplus_normal_clear_way_summary">Tyhjennä tehtävälista ja välimuisti mutta älä taustaprosesseja.</string>
     <string name="oneplus_not_disturb_on">Älä häiritse -tila on päällä</string>
+    <string name="oneplus_not_disturb_summary">Mykistä puhelut ja imoitukset ja poista värinä käytöstä valitsemiasi poikkeuksia lukuun ottamatta</string>
     <string name="oneplus_not_show">Älä näytä tätä uudelleen</string>
     <string name="oneplus_notch_display_area">Lovi</string>
     <string name="oneplus_notch_display_choose_title">Lovialueen esittäminen</string>
@@ -2944,7 +2957,9 @@ Voit siirtyä aloitusnäyttöön milloin vain pyyhkäisemällä näytön alareun
     <string name="oneplus_quick_launch_how_to_use_summary">"1.Pidä sormea paikoillaan lukituksen avaamisen jälkeen avataksesi pikakäynnistyspaneelin
 2.Valitse pyyhkäisemällä pikavalinta ja käynnistä se nostamalla sormesi"</string>
     <string name="oneplus_quick_launch_how_to_use_title">Käytä pikakäynnistystä</string>
+    <string name="oneplus_quick_launch_summary">Paina sormenjäljen tunnistusaluetta pitkään käynnistääksesi lähimaksun tai aktivoidaksesi sovelluksia</string>
     <string name="oneplus_quick_launch_title">Pikakäynnistys</string>
+    <string name="oneplus_quick_launch_toggle_summary">Paina sormenjäljen tunnistusaluetta pitkään käynnistääksesi lähimaksun tai aktivoidaksesi sovelluksia puhelimen ollessa lukittu</string>
     <string name="oneplus_quick_launch_toggle_title">Kytke pikakäynnistys päälle</string>
     <string name="oneplus_quick_turn_on_assistant_app">Pika-aktivoi apusovellus</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">Pidä virtapainiketta painettuna 0,5 sekuntia aktivoidaksesi apusovellus ja 3 sekuntia sammuttaaksesi laitteen</string>
@@ -3047,13 +3062,26 @@ Voit siirtyä aloitusnäyttöön milloin vain pyyhkäisemällä näytön alareun
     <string name="oneplus_security_lock_settings_summary">Avaa asetukset, paikannuspalvelu, sovellusvarasto</string>
     <string name="oneplus_security_lock_settings_title">Turvallisuus ja tietosuoja</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">Määrittäminen epäonnistui</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"Voit avata puhelimen lukituksen, valtuuttaa oston ja kirjautua sovelluksiin yksinkertaisesti painamalla sormenjäljen tunnistusaluetta. 
+
+Huomautus: 
+1.Sormenjälki saattaa olla vähemmän turvallinen kuin vahva kuvio tai PIN-koodi.
+2.Syötä sormenjälkesi uudelleen aina, kun vaihdat suojakalvon, jotta sormenjälki varmasti toimisi."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">Tämä sormenjälki on jo määritetty, kokeile toista sormea.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">Näytä sormenjälkikuvake ympäristönäytössä</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">Siirrä puhelinta hieman nähdäksesi</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">Napauta näyttöä nähdäksesi</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\"Herätä kaksoisnapauttamalla\" on käytössä ja \"Näytä napauttamalla näyttöä\" poistetaan käytöstä</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">\"Näytä napauttamalla näyttöä\" on käytössä ja \"Herätä kaksoisnapauttamalla\" poistetaan käytöstä</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">Kosmos</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">Aalto</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">Raita</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">Valitse sormenjäljen animaatiotehoste</string>
     <string name="oneplus_set_time">Ajastettu yötila</string>
     <string name="oneplus_setting_ringtone">Aseta soittoääni</string>
     <string name="oneplus_setting_sim_ringtone_switch">Aseta soittoääni kullekin SIM-kortille</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">Smart Boost hyödyntää OnePlus-puhelinten suurta RAM-muistia täysin päivittäisen käyttösi perusteella hyödyntäen sovellusten ja pelien lataustehoa.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Smart Boost</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">– määrittää vaihtoehtoinen tapa näytön lukituksen avaamiseen</string>
     <string name="oneplus_share_this_wifi">Laajenna Wi-Fi-katetta</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi-jakaminen</string>
@@ -3131,7 +3159,7 @@ Huomautus: Lukituksen avaaminen kasvojentunnistuksella saattaa olla vähemmän t
     <string name="oneplus_weak_text_reminding">Vain teksti</string>
     <string name="oneplus_weak_text_reminding_summary">Sallii sovellusten näyttää ennakkoilmoituksia</string>
     <string name="oneplus_wifi_ap_error">Aseta SIM-kortti</string>
-    <string name="oneplus_wifi_hidden_network_warning">"Jos reitittimesi poistaa SSID-lähetyksen käytöstä, valitse Kyllä yhdistääksesi piilotettuun verkkoon.
+    <string name="oneplus_wifi_hidden_network_warning">"Jos reitittimesi on määritetty olemaan lähettämättä SSID-tunnusta, valitse Kyllä yhdistääksesi piilotettuun verkkoon.
 
 Tämä voi aiheuttaa turvallisuusriskin, sillä puhelimesi lähettää säännöllisesti signaaliaan löytääkseen verkon.
 
@@ -3212,6 +3240,8 @@ Verkon muuttaminen piilotetuksi ei muuta reitittimen asetuksia."</string>
     <string name="op_system_dashboard_summary">Kieli, aika, nollaus, päivitykset</string>
     <string name="op_theme_2__cannot_change_color_accent">The Avengers -teemaa voi käyttää vain järjestelmän väriteemana</string>
     <string name="op_theme_2__title">The Avengers</string>
+    <string name="op_theme_3_cannot_change_color_accent">McLaren-teema voi käyttää ainoastaan järjestelmän väriteemaa</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">Teema</string>
     <string name="op_user_manual_settings">Käyttöohje</string>
     <string name="op_volume">Äänenvoimakkuus</string>
@@ -3991,7 +4021,7 @@ Laitteeseesi asennettu luotettu varmenne tekee tämän mahdolliseksi."</string>
     <string name="status_bar_settings_cellular_title">Matkapuhelindata</string>
     <string name="status_bar_settings_dnd_title">Ei saa häiritä</string>
     <string name="status_bar_settings_headset_title">Kuulokkeet</string>
-    <string name="status_bar_settings_hotspot_title">Hotspot</string>
+    <string name="status_bar_settings_hotspot_title">Mobiilihotspot</string>
     <string name="status_bar_settings_network_speed_title">Näytä verkon nopeus</string>
     <string name="status_bar_settings_time_title">Aika</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -5068,7 +5098,7 @@ Muodosta yhteys toiseen Wi-Fi-verkkoon valitsemalla "<b>Takaisin</b>.</string>
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">10 min käyttämättömyyden jälkeen</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">15 min käyttämättömyyden jälkeen</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">5 min käyttämättömyyden jälkeen</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">Aina päällä</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Pysyy aina päällä</string>
     <string name="wifi_tether_disabled_by_airplane">Ei käytettävissä, koska lentokonetila on päällä</string>
     <string name="wifi_tether_enabled_subtext">%1$s on aktiivinen</string>
     <string name="wifi_tether_failed_subtext">Kannettavan Wi-Fi-hotspotin virhe</string>

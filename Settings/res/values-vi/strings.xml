@@ -2616,7 +2616,7 @@ Trình tiết kiệm pin sẽ tắt tự động khi thiết bị của bạn đ
     <string name="oneplus_broadcat_wifi_name">Tên mạng truyền phát (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Nút &amp; cử chỉ</string>
     <string name="oneplus_buttons_dashboard_summary">Thanh trượt cảnh báo, điều hướng, cử chỉ</string>
-    <string name="oneplus_buttons_settings">cài đặt nút</string>
+    <string name="oneplus_buttons_settings">Cài đặt nút</string>
     <string name="oneplus_buttons_settings_summary">Cử chỉ điều hướng</string>
     <string name="oneplus_call_information_broadcast">Nói ID Người gọi</string>
     <string name="oneplus_call_information_broadcast_summary">Nói ID người gọi đến qua tai nghe</string>
@@ -2687,6 +2687,9 @@ Trình tiết kiệm pin sẽ tắt tự động khi thiết bị của bạn đ
     <string name="oneplus_emergency_rescue_settings">Giải cứu khẩn cấp</string>
     <string name="oneplus_emergency_rescue_settings_summary">Tự động yêu cầu trợ giúp bằng cách nhấn nhanh nút nguồn</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">Có thể sử dụng sau khi sửa đổi cài đặt NÚT NGUỒN của Cứu hộ Khẩn cấp</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1.Vui lòng nhập lại vân tay của bạn mỗi lần thay lớp bảo vệ để đảm bảo tính khả dụng của vân tay
+
+2.Trong một quy trình thiết lập, vui lòng chỉ nhập thông tin vân tay của một ngón tay"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Thông báo nhắc thiết lập vân tay</string>
     <string name="oneplus_enter_your_fingerprint">· Đăng ký vân tay của bạn</string>
     <string name="oneplus_experience_improvement_programs">Chương trình cải thiện trải nghiệm</string>
@@ -2711,11 +2714,17 @@ Lời khuyên về rủi ro: Mở khóa bằng khuôn mặt kém an toàn hơn s
     <string name="oneplus_finger_input_error_tips">Lỗi đăng ký vân tay, vui lòng thử lại</string>
     <string name="oneplus_finger_input_fail_tips">Nhập liệu thất bại, vui lòng điều chỉnh vị trí và thử lại</string>
     <string name="oneplus_fingerprint">Dấu vân tay</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">Đã phát hiện thấy vân tay tương tự. Vui lòng di chuyển ngón tay của bạn một chút để nhập các phần khác của vân tay.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">Khu vực nhận dạng vân tay bị bẩn. Vui lòng lau sạch và thử lại.</string>
+    <string name="oneplus_fingerprint_acquired_partial">Phát hiện thấy một phần vân tay. Vui lòng đặt lên toàn bộ khu vực nhận dạng vân tay.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">Quá nhanh để có thể xử lý vân tay của bạn. Vui lòng giữ trong giây lát khi nhấn.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">Phát hiện thấy vân tay tương tự. Vui lòng di chuyển ngón tay của bạn một chút để nhập vân tay của phần khác.</string>
     <string name="oneplus_fingerprint_animation_effect_title">Hiệu ứng hoạt ảnh vân tay</string>
     <string name="oneplus_fingerprint_delete_confirm_message">Bạn có chắc bạn muốn xóa nó?</string>
     <string name="oneplus_fingerprint_detail">Chi tiết</string>
     <string name="oneplus_fingerprint_enrol_completed">Vân tay đã được lưu lại</string>
+    <string name="oneplus_fingerprint_enroll_summary">Nhấn và đặt ngón tay của bạn che lên khu vực nhận dạng vân tay nhiều nhất có thể và nhấc lên sau khi thấy điện thoại rung</string>
+    <string name="oneplus_fingerprint_findsendor_summary">Khi mẫu vân tay xuất hiện ở phía dưới cùng của màn hình, bạn chỉ cần nhấn ngón tay lên khu vực nhận dạng vân tay để sử dụng chức năng vân tay.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">Cách sử dụng vân tay</string>
     <string name="oneplus_fingerprint_functional_declaration">Khai báo chức năng vân tay</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">Từ màn hình khung ngắm, nhấn và giữ cảm biến vân tay để chụp ảnh</string>
     <string name="oneplus_fingerprint_gesture_camera_title">Nhấn giữ để chụp ảnh</string>
@@ -2799,6 +2808,9 @@ Bạn có thể tắt chúng bằng cách bật lại thanh điều hướng tro
     <string name="oneplus_hide_navkeys_summary">Bổ sung một nút để ẩn hoặc hiển thị thanh điều hướng</string>
     <string name="oneplus_hide_notch_display_summary">Tất cả ứng dụng không thể sử dụng khu vực tai thỏ</string>
     <string name="oneplus_hide_notch_display_title">Ẩn khu vực tai thỏ</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"Khi mẫu vân tay xuất hiện ở phía dưới cùng của màn hình, bạn chỉ cần nhấn ngón tay vào khu vực nhận dạng vân tay để sử dụng chức năng vân tay: đánh thức và mở khóa điện thoại, cho phép mua hàng hoặc đăng nhập vào các ứng dụng. 
+
+Lưu ý: Vân tay của bạn có thể không bảo mật bằng mẫu hình hoặc mã PIN mạnh"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Khi mẫu vân tay xuất hiện ở phía dưới cùng của màn hình, bạn chỉ cần nhấn ngón tay vào khu vực nhận dạng vân tay để sử dụng chức năng vân tay: đánh thức và mở khóa điện thoại, cho phép giao dịch mua hoặc đăng nhập vào ứng dụng.</string>
     <string name="oneplus_hydrogen_version">Phiên bản H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Cuộc gọi đến</string>
@@ -2872,6 +2884,7 @@ Bạn có thể tắt chúng bằng cách bật lại thanh điều hướng tro
     <string name="oneplus_normal_clear_way">Dọn dẹp thường</string>
     <string name="oneplus_normal_clear_way_summary">Xóa danh sách tác vụ và bộ nhớ đệm, không xóa các tiến trình trong nền.</string>
     <string name="oneplus_not_disturb_on">Chế độ Không Làm Phiền đang bật</string>
+    <string name="oneplus_not_disturb_summary">Tắt tiếng các cuộc gọi, thông báo và tắt rung, ngoại trừ các trường hợp ngoại lệ bạn đã chọn</string>
     <string name="oneplus_not_show">Không hiển thị lại</string>
     <string name="oneplus_notch_display_area">Tai thỏ</string>
     <string name="oneplus_notch_display_choose_title">Hướng dẫn cách hiển thị khu vực tai thỏ</string>
@@ -2944,7 +2957,9 @@ Còn %d lượt."</string>
     <string name="oneplus_quick_launch_how_to_use_summary">"1.Tiếp tục giữ ngón tay sau khi mở khóa để mở bảng khởi chạy nhanh
 2.Vuốt để chọn lối tắt và nhả ngón tay để khởi chạy lối tắt đó"</string>
     <string name="oneplus_quick_launch_how_to_use_title">Sử dụng khởi chạy nhanh</string>
+    <string name="oneplus_quick_launch_summary">Nhấn và giữ khu vực nhận dạng vân tay để khởi chạy thanh toán nhanh hoặc kích hoạt ứng dụng</string>
     <string name="oneplus_quick_launch_title">Khởi chạy nhanh</string>
+    <string name="oneplus_quick_launch_toggle_summary">Nhấn và giữ khu vực nhận dạng vân tay để khởi chạy thanh toán nhanh hoặc kích hoạt ứng dụng khi điện thoại đang khóa</string>
     <string name="oneplus_quick_launch_toggle_title">Bật Khởi chạy nhanh</string>
     <string name="oneplus_quick_turn_on_assistant_app">Kích hoạt nhanh ứng dụng trợ lý</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">Giữ nút nguồn trong 0,5 giây để kích hoạt ứng dụng trợ lý, và 3 giây để tắt nguồn</string>
@@ -3047,13 +3062,26 @@ Còn %d lượt."</string>
     <string name="oneplus_security_lock_settings_summary">Tùy chọn mở khóa, dịch vụ vị trí, trình khóa ứng dụng</string>
     <string name="oneplus_security_lock_settings_title">Bảo mật &amp; quyền riêng tư</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">Cài đặt thất bại</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"Chỉ cần nhấn vào khu vực nhận dạng vân tay để mở khóa điện thoại, cho phép mua hàng hoặc đăng nhập vào các ứng dụng. 
+
+Lưu ý: 
+1.Vân tay của bạn có thể không bảo mật bằng mẫu hình hoặc mã PIN mạnh.
+2.Vui lòng nhập lại vân tay của bạn mỗi lần thay lớp bảo vệ để đảm bảo tính khả dụng của vân tay."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">Vân tay này đã được ghi nhận, hãy thử một ngón tay khác.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">Hiển thị biểu tượng vân tay trong Hiển thị Môi trường</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">Di chuyển điện thoại của bạn một chút để hiển thị</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">Nhấn vào màn hình để hiển thị</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\"Nhấn đúp để đánh thức\" đã được bật và \"Nhấn vào màn hình để hiển thị\" sẽ bị tắt</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">\"Nhấn vào màn hình để hiển thị\" đã được bật và \"Nhấn đúp để đánh thức\" sẽ bị tắt</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">Vũ trụ</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">Sóng</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">Sọc</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">Chọn hiệu ứng hoạt ảnh vân tay</string>
     <string name="oneplus_set_time">Lập lịch cho Chế độ Ban Đêm</string>
     <string name="oneplus_setting_ringtone">Đặt nhạc chuông</string>
     <string name="oneplus_setting_sim_ringtone_switch">Đặt nhạc chuông cho mỗi thẻ SIM</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">Tính năng Tăng cường Thông minh tận dụng tối đa RAM lớn của điện thoại OnePlus dựa trên quá trình sử dụng hàng ngày của bạn, điều này sẽ giúp nâng cao hiệu suất tải ứng dụng và trò chơi.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Tăng cường Thông minh</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Đăng ký một cách khác để mở khóa màn hình</string>
     <string name="oneplus_share_this_wifi">Mở rộng vùng phủ sóng Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Chia sẻ Wi‑Fi</string>
@@ -3129,7 +3157,7 @@ Còn %d lượt."</string>
     <string name="oneplus_weak_text_reminding">Chỉ văn bản</string>
     <string name="oneplus_weak_text_reminding_summary">Cho phép các ứng dụng hiển thị thông báo trên đầu</string>
     <string name="oneplus_wifi_ap_error">Vui lòng lắp thẻ SIM</string>
-    <string name="oneplus_wifi_hidden_network_warning">"Nếu bộ định tuyến của bạn tắt truyền phát SSID, bạn cần chọn \"Có\" để kết nối với mạng ẩn.
+    <string name="oneplus_wifi_hidden_network_warning">"Nếu bộ định tuyến của bạn được cài đặt không truyền phát SSID, bạn cần chọn \"Có\" để kết nối với mạng ẩn.
 
 Điều này có thể gây rủi ro bảo mật do điện thoại của bạn sẽ thường xuyên phát tín hiệu để tìm mạng.
 
@@ -3210,6 +3238,8 @@ Việc cài đặt mạng dưới dạng ẩn sẽ không thay đổi cài đặ
     <string name="op_system_dashboard_summary">Ngôn ngữ, thời gian, đặt lại, cập nhật</string>
     <string name="op_theme_2__cannot_change_color_accent">Chủ đề The Avengers chỉ có thể sử dụng chủ đề màu hệ thống</string>
     <string name="op_theme_2__title">The Avengers</string>
+    <string name="op_theme_3_cannot_change_color_accent">Chủ đề McLaren chỉ có thể sử dụng chủ đề màu hệ thống</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">Chủ đề</string>
     <string name="op_user_manual_settings">Hướng dẫn Sử dụng</string>
     <string name="op_volume">Âm lượng</string>
@@ -3989,7 +4019,7 @@ Thông báo có thể bị chậm trễ đối với những ứng dụng này."
     <string name="status_bar_settings_cellular_title">Dữ liệu di động</string>
     <string name="status_bar_settings_dnd_title">Không làm phiền</string>
     <string name="status_bar_settings_headset_title">Bộ tai nghe</string>
-    <string name="status_bar_settings_hotspot_title">Hotspot</string>
+    <string name="status_bar_settings_hotspot_title">Điểm truy cập Di động</string>
     <string name="status_bar_settings_network_speed_title">Hiển thị tốc độ mạng</string>
     <string name="status_bar_settings_time_title">Thời gian</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -4990,7 +5020,7 @@ Cho phép cài đặt này đối với tất cả ứng dụng muốn quét?"</
     <string name="wifi_scan_notify_text">Để nâng cao độ chính xác của vị trí, các ứng dụng và dịch vụ có thể vẫn quét tìm mạng Wi‑Fi bất kỳ lúc nào, ngay cả khi Wi-Fi bị tắt. Chẳng hạn, bạn có thể sử dụng cài đặt này để cải thiện các tính năng và dịch vụ dựa trên vị trí. Bạn có thể thay đổi cài đặt này trong phần LINK_BEGINcài đặt quétLINK_END.</string>
     <string name="wifi_scan_notify_text_scanning_off">Để nâng cao độ chính xác về vị trí, hãy bật quét tìm Wi-Fi trong LINK_BEGINcài đặt quétLINK_END.</string>
     <string name="wifi_security">Bảo mật</string>
-    <string name="wifi_security_dialog">Với bảo mật Mở, bất kỳ thiết bị nào cũng có thể kết nối với Điểm truy cập Di động của bạn và sử dụng kết nối dữ liệu di động của bạn.</string>
+    <string name="wifi_security_dialog">Với bảo mật mở, bất kỳ thiết bị nào cũng có thể kết nối với Điểm truy cập Di động của bạn và sử dụng kết nối dữ liệu di động của bạn.</string>
     <string name="wifi_security_none">Không</string>
     <string name="wifi_security_open">Mở</string>
     <string name="wifi_select_network">Chọn Wi‑Fi</string>

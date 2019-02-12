@@ -221,8 +221,15 @@
 
     iget-object v0, v0, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->icon:Landroid/graphics/drawable/Drawable;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
+    invoke-virtual {p0}, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;->getIcon()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
+    :cond_0
     iget-object v0, p1, Landroid/support/v7/preference/PreferenceViewHolder;->itemView:Landroid/view/View;
 
     new-instance v1, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference$1;
@@ -231,7 +238,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    :cond_0
+    :cond_1
     invoke-virtual {p0}, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;->isDisabledByAdmin()Z
 
     move-result v0
@@ -244,28 +251,28 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_1
 
-    :cond_1
+    :cond_2
     iget-object v3, p0, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;->mState:Lcom/android/settings/datausage/AppStateDataUsageBridge$DataUsageState;
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_3
 
     iget-object v3, p0, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;->mState:Lcom/android/settings/datausage/AppStateDataUsageBridge$DataUsageState;
 
     iget-boolean v3, v3, Lcom/android/settings/datausage/AppStateDataUsageBridge$DataUsageState;->isDataSaverBlacklisted:Z
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_3
 
     const/4 v3, 0x4
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     move v3, v2
 
     :goto_0
@@ -286,13 +293,13 @@
 
     const/16 v4, 0x8
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     move v5, v2
 
     goto :goto_2
 
-    :cond_3
+    :cond_4
     nop
 
     move v5, v4
@@ -306,13 +313,13 @@
 
     move-result-object v3
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     move v2, v4
 
     goto :goto_3
 
-    :cond_4
+    :cond_5
     nop
 
     :goto_3

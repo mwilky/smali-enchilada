@@ -22,6 +22,8 @@
 
 .field private mCurrentColor:Ljava/lang/String;
 
+.field private mCurrentTempColor:Ljava/lang/String;
+
 .field private mEditColorDialog:Landroid/app/AlertDialog;
 
 .field private mPickerView:Lcom/oneplus/settings/ui/ColorPickerView;
@@ -435,7 +437,7 @@
 .end method
 
 .method public onBackPressed()V
-    .locals 4
+    .locals 3
 
     new-instance v0, Landroid/content/Intent;
 
@@ -443,15 +445,7 @@
 
     const-string v1, "current_temp_color"
 
-    invoke-virtual {p0}, Lcom/oneplus/settings/OPColorPickerActivity;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    const-string v3, "oneplus_accent_color"
-
-    invoke-static {v2, v3}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
+    iget-object v2, p0, Lcom/oneplus/settings/OPColorPickerActivity;->mCurrentTempColor:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
@@ -684,6 +678,14 @@
 
     iput-object v1, p0, Lcom/oneplus/settings/OPColorPickerActivity;->mCurrentColor:Ljava/lang/String;
 
+    const-string v1, "current_color"
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/oneplus/settings/OPColorPickerActivity;->mCurrentTempColor:Ljava/lang/String;
+
     iget-object v1, p0, Lcom/oneplus/settings/OPColorPickerActivity;->mCurrentColor:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -708,6 +710,10 @@
     const-string v1, "#FF0000"
 
     iput-object v1, p0, Lcom/oneplus/settings/OPColorPickerActivity;->mCurrentColor:Ljava/lang/String;
+
+    const-string v1, "#FF0000"
+
+    iput-object v1, p0, Lcom/oneplus/settings/OPColorPickerActivity;->mCurrentTempColor:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/oneplus/settings/OPColorPickerActivity;->mPickerView:Lcom/oneplus/settings/ui/ColorPickerView;
 

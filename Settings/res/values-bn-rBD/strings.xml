@@ -306,6 +306,9 @@
     <string name="oneplus_emergency_rescue_settings">জরুরি উদ্ধার</string>
     <string name="oneplus_emergency_rescue_settings_summary">পাওয়ার বোতাম দ্রুত টিপে স্বয়ংক্রিয়ভাবে সাহায্য চান</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">জরুরি উদ্ধারের পাওয়ার বোতাম সেটিংস পরিবর্তনের পরে উপলব্ধ</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1. ফিঙ্গারপ্রিন্টের উপলব্ধতা সুনিশ্চিত করতে অনুগ্রহ করে সুরক্ষা ফিল্মের প্রত্যেকবার প্রতিস্থাপনের পরে আপনার ফিঙ্গারপ্রিন্ট আবার এন্টার করুন
+
+2. একটি একক সেট আপ প্রক্রিয়ায়, অনুগ্রহ করে শুধুমাত্র একটি আঙুলের ফিঙ্গারপ্রিন্ট তথ্য এন্টার করুন"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">ফিঙ্গারপ্রিন্ট সেট আপ করা</string>
     <string name="oneplus_enter_your_fingerprint">· আপনার ফিঙ্গারপ্রিন্ট নথিভুক্ত করুন</string>
     <string name="oneplus_experience_improvement_programs">অভিজ্ঞতা উন্নতিসাধান প্রোগ্রাম</string>
@@ -330,11 +333,17 @@
     <string name="oneplus_finger_input_error_tips">ফিঙ্গারপ্রিন্ট রেজিস্ট্রেশন ত্রুটি, অনুগ্রহ করে পুনরায় চেষ্টা করুন</string>
     <string name="oneplus_finger_input_fail_tips">ইনপুট ব্যর্থ হয়েছে, অনুগ্রহ করে অবস্থান সমন্বয় করুন এবং আবার চেষ্টা করুন</string>
     <string name="oneplus_fingerprint">আঙ্গুলের ছাপ</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">অনুরূপ ফিঙ্গারপ্রিন্ট শনাক্ত করা হয়েছে। অনুগ্রহ করে বিভিন্ন অংশের ফিঙ্গারপ্রিন্ট এন্টার করতে আপনার আঙুল অল্পবিস্তর সরান।</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">ফিঙ্গারপ্রিন্ট শনাক্ত করা জায়গাটি নোংরা। অনুগ্রহ করে পরিষ্কার করে মুছে নিয়ে আবার চেষ্টা করুন।</string>
+    <string name="oneplus_fingerprint_acquired_partial">ফিঙ্গারপ্রিন্ট আংশিক ভাবে শনাক্ত হয়েছে। অনুগ্রহ করে ফিঙ্গারপ্রিন্ট শনাক্ত করা জায়গা সম্পূর্ণভাবে কভার করুন।</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">খুব বেশি তাড়াতাড়ি করেছেন, তাই ফিঙ্গারপ্রিন্ট প্রক্রিয়া করা যায়নি। অনুগ্রহ করে টিপে অল্প কিছু সময় ধরে রাখুন।</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">অনুরূপ ফিঙ্গারপ্রিন্ট শনাক্ত হয়েছে। অন্যান্য অংশের ফিঙ্গারপ্রিন্ট রাখতে আপনার আঙুল অল্প সরান।</string>
     <string name="oneplus_fingerprint_animation_effect_title">ফিঙ্গারপ্রিন্ট অ্যানিমেশন প্রভাব</string>
     <string name="oneplus_fingerprint_delete_confirm_message">আপনি কি এটি মুছে দিতে চান?</string>
     <string name="oneplus_fingerprint_detail">বিস্তারিত</string>
     <string name="oneplus_fingerprint_enrol_completed">আঙ্গুলের ছাপ সংরক্ষণ করা হয়েছে</string>
+    <string name="oneplus_fingerprint_enroll_summary">টিপুন এবং যতটা সম্ভব ততটা ফিঙ্গারপ্রিন্ট চিনে নেওয়ার জায়গা আপনার আঙুল দিয়ে কভার করুন, তারপরে কম্পন অনুভব করার পরে আঙুল তুলে নিন</string>
+    <string name="oneplus_fingerprint_findsendor_summary">যখন ফিঙ্গারপ্রিন্ট প্যাটার্ন স্ক্রিনের তলার দিকে দেখা যায় তখন, ফিঙ্গারপ্রিন্ট বৈশিষ্ট্য ব্যবহার করতে ফিঙ্গারপ্রিন্ট শনাক্ত করার জায়গায় আপনার আঙুল দিয়ে টিপুন।</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">ফিঙ্গারপ্রিন্ট কীভাবে ব্যবহার করতে হয়</string>
     <string name="oneplus_fingerprint_functional_declaration">ফিঙ্গারপ্রিন্ট বৈশিষ্ট্যের ডিক্লারেশন</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">ভিউফাইন্ডার স্ক্রীন থেকে, ছবি তুলতে আঙুলের ছাপের সেন্সর দীর্ঘক্ষণ টিপে রাখুন</string>
     <string name="oneplus_fingerprint_gesture_camera_title">ছবি তুলতে দীর্ঘক্ষণ টিপে ধরুন</string>
@@ -418,6 +427,9 @@
     <string name="oneplus_hide_navkeys_summary">নেভিগেশন বার লুকাতে বা দেখাতে একটি বোতাম যোগ করুন</string>
     <string name="oneplus_hide_notch_display_summary">সব অ্যাপ নচ এরিয়া ব্যবহার করতে পারবে না</string>
     <string name="oneplus_hide_notch_display_title">নচ এরিয়া লুকান</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"ফিঙ্গারপ্রিন্ট প্যাটার্ন স্ক্রীনের তলার দিকে দেখা গেলে, ফিঙ্গারপ্রিন্ট বৈশিষ্ট্যটি ব্যবহার করতে ফিঙ্গারপ্রিন্ট চিনে নেওয়ার অংশে আপনার আঙুল দিয়ে টিপুন: আপনার ফোনকে জাগান এবং আনলক করুন, কেনাকাটা অনুমোদন করুন অথবা অ্যাপে সাইন ইন করুন। 
+
+দ্রষ্টব্য: শক্তিশালী প্যাটার্ন অথবা PIN -এর তুলনায় আপনার ফিঙ্গারপ্রিন্ট কম নিরাপদ হতে পারে"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">ফিঙ্গারপ্রিন্ট প্যাটার্ন স্ক্রীনের নীচের অংশে দেখা দিলে, ফিঙ্গারপ্রিন্ট বৈশিষ্ট্য ব্যবহার করতে ফিঙ্গারপ্রিন্ট আইডেন্টিফিকেশন অংশে আপনার আঙুল দিয়ে টিপুন: আপনার ফোন জাগান এবং আনলক করুন, কেনাকাটা অনুমোদন করুন অথবা অ্যাপে সাইন ইন করুন।</string>
     <string name="oneplus_hydrogen_version">H₂OS ভার্সন</string>
     <string name="oneplus_incoming_call_vibrate_intensity">ইনকামিং কল</string>
@@ -491,6 +503,7 @@
     <string name="oneplus_normal_clear_way">স্বাভাবিক পরিষ্কার</string>
     <string name="oneplus_normal_clear_way_summary">ব্যাকগ্রাউন্ড প্রক্রিয়া পরিষ্কার করা ছাড়া কার্য তালিকা ও ক্যাশ পরিষ্কার করুন।</string>
     <string name="oneplus_not_disturb_on">বিরক্ত করবেন না চালু আছে</string>
+    <string name="oneplus_not_disturb_summary">আপনার নির্বাচিত ব্যতিক্রমগুলি ছাড়া কল এবং বিজ্ঞপ্তি নীরব করবে এবং কম্পন বন্ধ করবে</string>
     <string name="oneplus_not_show">এটা পুনরায় দেখাবেন না</string>
     <string name="oneplus_notch_display_area">নচ</string>
     <string name="oneplus_notch_display_choose_title">নচ এরিয়া কীভাবে দেখাবেন</string>
@@ -563,7 +576,9 @@
     <string name="oneplus_quick_launch_how_to_use_summary">"1.দ্রুত লঞ্চ প্যানেল খুলতে আনলক করার পরে আপনার আঙুল ধরেই রাখুন
 2.শর্টকাট নির্বাচন করতে সোয়াইপ করুন এবং তা লঞ্চ করতে আপনার আঙুল উঠিয়ে নিন"</string>
     <string name="oneplus_quick_launch_how_to_use_title">দ্রুত লঞ্চ ব্যবহার করুন</string>
+    <string name="oneplus_quick_launch_summary">দ্রুত পেমেন্ট লঞ্চ করতে অথবা অ্যাপ অ্যাক্টিভেট করতে ফিঙ্গারপ্রিন্ট চিনে নেওয়ার অংশে একটু বেশি সময় ধরে টিপে রাখুন</string>
     <string name="oneplus_quick_launch_title">দ্রুত লঞ্চ</string>
+    <string name="oneplus_quick_launch_toggle_summary">ফোন লক থাকা অবস্থায় দ্রুত পেমেন্ট লঞ্চ করতে অথবা অ্যাপ অ্যাক্টিভেট করতে ফিঙ্গারপ্রিন্ট চিনে নেওয়ার অংশে একটু বেশি সময় ধরে টিপে রাখুন</string>
     <string name="oneplus_quick_launch_toggle_title">দ্রুত লঞ্চ চালু করুন</string>
     <string name="oneplus_quick_turn_on_assistant_app">সহায়ক অ্যাপ দ্রুত সক্রিয় করুন</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">সহায়ক অ্যাপটিকে সক্রিয় করতে 0.5 সেকেন্ডের জন্য এবং পাওয়ার বন্ধ করতে 3 সেকেন্ডের জন্য পাওয়ার বোতামটি টিপে ধরুন</string>
@@ -666,13 +681,26 @@
     <string name="oneplus_security_lock_settings_summary">আনলক বিষয়ে পছন্দ, অবস্থান পরিষেবা, অ্যাপ লকার</string>
     <string name="oneplus_security_lock_settings_title">নিরাপত্তা ও গোপনীয়তা</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">সেটআপ ব্যর্থ হয়েছে</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"আপনার ফোন আনলক করতে, কেনাকাটা অনুমোদন করতে অথবা অ্যাপে সাইন ইন করতে ফিঙ্গারপ্রিন্ট চিনে নেওয়ার জায়গায় টিপুন। 
+
+দ্রষ্টব্য: 
+1. শক্তিশালী প্যাটার্ন অথবা PIN -এর তুলনায় আপনার ফিঙ্গারপ্রিন্ট কম নিরাপদ হতে পারে।
+2. ফিঙ্গারপ্রিন্টের উপলব্ধতা সুনিশ্চিত করতে অনুগ্রহ করে সুরক্ষা ফিল্মের প্রত্যেকবার প্রতিস্থাপনের পরে আপনার ফিঙ্গারপ্রিন্ট আবার এন্টার করুন।"</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">ফিঙ্গারপ্রিন্ট ইতিমধ্যেই নথিভুক্ত হয়েছে, অনুগ্রহ করে অন্য আঙুল দিয়ে চেষ্টা করুন।</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">পারিপার্শ্বিক ডিসপ্লেতে ফিঙ্গারপ্রিন্ট আইকন দেখান</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">দেখাতে আপনার ফোন অল্প একটু সরান</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">দেখাতে স্ক্রীনে আলতো চাপুন</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\"জাগাতে দুইবার আলতো চাপুন\" সক্ষম করা আছে এবং \"দেখাতে স্ক্রীনে আলতো চাপুন\" অক্ষম করা হবে</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">\"দেখাতে স্ক্রীনে আলতো চাপুন\" সক্ষম আছে এবং \"জাগাতে দুইবার আলতো চাপুন\" অক্ষম করা হবে</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">কসমস</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">ওয়েভ</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">স্ট্রাইপ</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">ফিঙ্গারপ্রিন্ট অ্যানিমেশন প্রভাব নির্বাচন করুন</string>
     <string name="oneplus_set_time">পরিকল্পিত রাত্রি মোড</string>
     <string name="oneplus_setting_ringtone">রিং সেট করুন</string>
     <string name="oneplus_setting_sim_ringtone_switch">প্রতিটি SIM কার্ডের জন্য রিংটোন সেট করুন</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">আপনার প্রতিদিনের ব্যবহার অনুসারে, স্মার্ট বুস্ট OnePlus ফোনের বড় RAM -এর পুরো সুবিধা নেয়, যা অ্যাপ এবং গেম লোড করতে পারফরম্যান্সকে উন্নত করে।</string>
+    <string name="oneplus_settings_lab_feature_boost_title">স্মার্ট বুস্ট</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">। স্ক্রীন আনলক করতে অন্য উপায় সেটআপ করুন</string>
     <string name="oneplus_share_this_wifi">Wi-Fi কভারেজ বাড়ান</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi শেয়ারিং</string>
@@ -750,9 +778,9 @@
     <string name="oneplus_weak_text_reminding">শুধুমাত্র টেক্সট</string>
     <string name="oneplus_weak_text_reminding_summary">অ্যাপগুলিকে আগে থেকে বিজ্ঞপ্তি জানাতে অনুমতি দিন</string>
     <string name="oneplus_wifi_ap_error">অনুগ্রহ করে সিম কার্ডটি ঢোকান</string>
-    <string name="oneplus_wifi_hidden_network_warning">"আপনার রাউটার SSID সম্প্রচার অক্ষম করলে, লুকানো নেটওয়ার্কে সংযোগ করতে আপনার \"হ্যাঁ\" বেছে নেওয়া উচিত।
+    <string name="oneplus_wifi_hidden_network_warning">"আপনার রাউটার SSID সম্প্রচার না করার জন্য সেট করা থাকলে, লুকানো নেটওয়ার্কে সংযোগ করতে আপনার \"হ্যাঁ\" বেছে নেওয়া উচিত।
 
-এতে নিরাপত্তা বিষয়ক ঝঁকি দেখা দিতে পারে কারণ নেটওয়ার্ক খুঁজে নিতে আপনার ফোন নিয়মিতভাবে তার সংকেতের সম্প্রচার করবে।
+এতে নিরাপত্তা বিষয়ক ঝুঁকি দেখা দিতে পারে কারণ নেটওয়ার্ক খুঁজে নিতে আপনার ফোন নিয়মিতভাবে তার সংকেতের সম্প্রচার করবে।
 
 নেটওয়ার্ক লুকানো হিসাবে সেট করলে, তা আপনার রাউটার সেটিংস বদলাবে না।"</string>
     <string name="oneplus_wifi_ipv6_surport_summary">IPv6 অক্ষম করলে কিছু Wi-Fi রাউটারের সামঞ্জস্যতার সমস্যা এড়িয়ে যাওয়া হতে পারে।</string>
@@ -830,6 +858,8 @@
     <string name="op_system_dashboard_summary">ভাষা, সময়, রিসেট, আপডেট</string>
     <string name="op_theme_2__cannot_change_color_accent">দ্য অ্যাভেঞ্জার্স থিম কেবল সিস্টেমের রঙের থিম ব্যবহার করতে পারবে</string>
     <string name="op_theme_2__title">দ্য অ্যাভেঞ্জার্স</string>
+    <string name="op_theme_3_cannot_change_color_accent">McLaren থীম শুধুমাত্র সিস্টেম কালার থীম ব্যবহার করতে পারবে</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">থিম</string>
     <string name="op_user_manual_settings">ব্যবহারকারীর ম্যানুয়াল</string>
     <string name="op_volume">ভলিউম</string>
@@ -895,7 +925,7 @@
     <string name="status_bar_settings_cellular_title">মোবাইল ডেটা</string>
     <string name="status_bar_settings_dnd_title">বিরক্ত করবেন না</string>
     <string name="status_bar_settings_headset_title">হেডসেট</string>
-    <string name="status_bar_settings_hotspot_title">হটস্পট</string>
+    <string name="status_bar_settings_hotspot_title">মোবাইল HotSpot</string>
     <string name="status_bar_settings_network_speed_title">নেটওয়ার্কের গতি প্রদর্শন করুন</string>
     <string name="status_bar_settings_time_title">সময়</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -980,7 +1010,7 @@
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">10 মিনিট নিষ্ক্রিয় থাকার পরে</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">15 মিনিট নিষ্ক্রিয় থাকার পরে</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">5 মিনিট নিষ্ক্রিয় থাকার পরে</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">সবসময় চালু</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">সবসময়ে চালু থাকবে</string>
     <string name="wifi_wapi_as_cert">AS সার্টিফিকেট</string>
     <string name="wifi_wapi_cert_cancel_button">বাতিল করুন</string>
     <string name="wifi_wapi_cert_create_subdir">ডিরেক্টরি তৈরি করুন</string>

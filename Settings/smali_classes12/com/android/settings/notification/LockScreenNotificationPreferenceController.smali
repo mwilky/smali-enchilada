@@ -112,6 +112,12 @@
 
     iget v1, p0, Lcom/android/settings/notification/LockScreenNotificationPreferenceController;->mProfileUserId:I
 
+    const/16 v2, 0x3e7
+
+    if-eq v1, v2, :cond_0
+
+    iget v1, p0, Lcom/android/settings/notification/LockScreenNotificationPreferenceController;->mProfileUserId:I
+
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/LockPatternUtils;->isSecure(I)Z
 
     move-result v1
@@ -820,6 +826,12 @@
     iget v0, p0, Lcom/android/settings/notification/LockScreenNotificationPreferenceController;->mProfileUserId:I
 
     const/16 v1, -0x2710
+
+    if-eq v0, v1, :cond_1
+
+    iget v0, p0, Lcom/android/settings/notification/LockScreenNotificationPreferenceController;->mProfileUserId:I
+
+    const/16 v1, 0x3e7
 
     if-eq v0, v1, :cond_1
 

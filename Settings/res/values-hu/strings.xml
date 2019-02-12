@@ -2616,7 +2616,7 @@ akkumulátor takarékállapota automatikusan kikapcsol a készülék töltéseko
     <string name="oneplus_broadcat_wifi_name">Hálózatnév sugárzás (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Gombok és gesztusok</string>
     <string name="oneplus_buttons_dashboard_summary">Riasztási csúszka, navigáció, gesztusok</string>
-    <string name="oneplus_buttons_settings">gombok beállításai</string>
+    <string name="oneplus_buttons_settings">Gombok beállításai</string>
     <string name="oneplus_buttons_settings_summary">Navigációs gesztus</string>
     <string name="oneplus_call_information_broadcast">Hívásazonosító mondása</string>
     <string name="oneplus_call_information_broadcast_summary">Mondja meg a bejövő hívásazonosítót a fejhallgatón keresztül</string>
@@ -2687,6 +2687,9 @@ akkumulátor takarékállapota automatikusan kikapcsol a készülék töltéseko
     <string name="oneplus_emergency_rescue_settings">Segélyhívó</string>
     <string name="oneplus_emergency_rescue_settings_summary">Automatikus gyors segélyhívás a főkapcsoló megnyomásával</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">Elérhető a Segélyhívó BEKAPCSOLÓ GOMB beállításainak módosítása után</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1. Kérjük, adja meg ismét az ujjlenyomatát a védőfólia kicserélése után az ujjlenyomata elérhetőségének biztosításához.
+
+2. Egy beállítási folyamatban csak egy ujjlenyomat-információt adjon meg."</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Ujjlenyomat-telepítési kérdés</string>
     <string name="oneplus_enter_your_fingerprint">· Készítsen felvételt ujjlenyomatáról</string>
     <string name="oneplus_experience_improvement_programs">Élményjavító programok</string>
@@ -2711,11 +2714,17 @@ Kockázati tipp: Az arcfelismerés kevésbé biztonságos, mint egy ujjlenyomat 
     <string name="oneplus_finger_input_error_tips">Ujjlenyomat-regisztráció hibája, próbálja újra</string>
     <string name="oneplus_finger_input_fail_tips">A bemenet nem sikerült, állítsa be a helyzetét, és próbálja újra</string>
     <string name="oneplus_fingerprint">Ujjlenyomat</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">Hasonló ujjlenyomat észlelve. Kérjük, mozgassa enyhén az ujját az ujjlenyomat másik részének beolvasásához.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">Az ujjlenyomat azonosító területe piszkos. Kérjük, törölje le, majd próbálja újra.</string>
+    <string name="oneplus_fingerprint_acquired_partial">Részleges ujjlenyomat észlelve. Kérjük, takarja le az ujjlenyomat azonosító területet.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">Túl gyors az ujjlenyomata feldolgozásához. Hagyja rajta az ujját egy kis ideig.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">Hasonló ujjlenyomat észlelve. Kérjük, mozgassa az ujját kicsit, hogy megadja az ujjlenyomatát más részeken.</string>
     <string name="oneplus_fingerprint_animation_effect_title">Ujjlenyomat-animációs effektus</string>
     <string name="oneplus_fingerprint_delete_confirm_message">Szeretné törölni?</string>
     <string name="oneplus_fingerprint_detail">Részletek</string>
     <string name="oneplus_fingerprint_enrol_completed">Az ujjlenyomatot elmentette</string>
+    <string name="oneplus_fingerprint_enroll_summary">Helyezze az ujját az ujjlenyomat-érzékelő területére úgy, hogy azt a lehető legjobban lefedje, majd emelje fel, amikor rezgést érez.</string>
+    <string name="oneplus_fingerprint_findsendor_summary">Ha az ujjlenyomat minta megjelenik a képernyő alján, egyszerűen helyezze az ujját az ujjlenyomat azonosító területre, hogy használja az ujjlenyomat funkciót.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">Az ujjlenyomat használatának módja</string>
     <string name="oneplus_fingerprint_functional_declaration">Az ujjlenyomat funkcióval kapcsolatos nyilatkozat</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">A kereső képernyőn nyomja meg hosszan az ujjlenyomat-érzékelőt fénykép készítéséhez</string>
     <string name="oneplus_fingerprint_gesture_camera_title">Nyomja meg hosszan fénykép készítéséhez</string>
@@ -2799,6 +2808,9 @@ Ha bármikor a kezdőképernyőre kíván lépni, legyintsen felfelé a képerny
     <string name="oneplus_hide_navkeys_summary">Adjon hozzá egy gombot a navigációs sáv megjelenítéséhez vagy elrejtéséhez</string>
     <string name="oneplus_hide_notch_display_summary">Egyik alkalmazás sem használhatja a beugró területet</string>
     <string name="oneplus_hide_notch_display_title">Beugró terület elrejtése</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"Amikor az ujjlenyomat-mintázata megjelenik a képernyő alján, egyszerűen nyomja meg az ujjával az ujjlenyomat-érzékelő területét az ujjlenyomat-funkció használatához: telefon felébresztése és zárolása, vásárlások jóváhagyása vagy alkalmazásokba való bejelentkezés. 
+
+Megjegyzés: Előfordulhat, hogy az ujjlenyomata kevésbé biztonságos, mint egy erős minta vagy PIN-kód"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Amikor az ujjlenyomat minta megjelenik a képernyő alján, egyszerűen csak nyomja meg az ujjlenyomat azonosítási felületet az ujjával, hogy használni tudja az ujjlenyomat funkciót: a telefonja felébresztéséhez, a zárolás feloldásához, vásárlások engedélyezéséhez, vagy alkalmazásokba való bejelentkezéshez.</string>
     <string name="oneplus_hydrogen_version">H₂OS változat</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Bejövő hívás</string>
@@ -2872,6 +2884,7 @@ Ha bármikor a kezdőképernyőre kíván lépni, legyintsen felfelé a képerny
     <string name="oneplus_normal_clear_way">Közönséges törlés</string>
     <string name="oneplus_normal_clear_way_summary">Törli a feladatlistát és a gyorsmemóriát anélkül, hogy törölné a háttér-folyamatokat.</string>
     <string name="oneplus_not_disturb_on">A Ne zavarjanak mód aktív</string>
+    <string name="oneplus_not_disturb_summary">Hívások és értesítések némítása és a vibrálás kikapcsolása, az Ön által kijelölt kivételeket leszámítva</string>
     <string name="oneplus_not_show">Ne jelenjen meg ismét</string>
     <string name="oneplus_notch_display_area">Beugrás</string>
     <string name="oneplus_notch_display_choose_title">Hogyan lehet megjeleníteni a beugró területet</string>
@@ -2944,7 +2957,9 @@ Ha bármikor a kezdőképernyőre kíván lépni, legyintsen felfelé a képerny
     <string name="oneplus_quick_launch_how_to_use_summary">"1.Tartsa a kijelzőn az ujját a feloldás után a gyorsindítási panel megnyitásához
 2.Húzással válassza ki a parancsikont, majd emelje fel az ujját az indításhoz"</string>
     <string name="oneplus_quick_launch_how_to_use_title">Gyorsindítás használata</string>
+    <string name="oneplus_quick_launch_summary">Nyomja hosszan az ujjlenyomat-olvasót a gyorsfizetéshez, vagy az aktív alkalmazások megjelenítéséhez</string>
     <string name="oneplus_quick_launch_title">Gyorsindítás</string>
+    <string name="oneplus_quick_launch_toggle_summary">Nyomja hosszan az ujjlenyomat-olvasót a gyorsfizetéshez, vagy az aktív alkalmazások megjelenítéséhez, ha a telefon zárolva van</string>
     <string name="oneplus_quick_launch_toggle_title">Gyorsindítás bekapcsolása</string>
     <string name="oneplus_quick_turn_on_assistant_app">Segédalkalmazás gyors aktiválása</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">Tartsa nyomva a bekapcsológombot 0,5 másodpercig, hogy aktiválja a segédalkalmazást, majd 3 másodpercig, hogy kikapcsolja</string>
@@ -3047,13 +3062,26 @@ Ha bármikor a kezdőképernyőre kíván lépni, legyintsen felfelé a képerny
     <string name="oneplus_security_lock_settings_summary">Feloldja a beállításokat, a helyszolgáltatást és az alkalmazászárat</string>
     <string name="oneplus_security_lock_settings_title">Biztonság és adatvédelem</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">A beállítás sikertelen volt</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"Nyomja meg az ujjlenyomat-érzékelő területét a telefon feloldásához, vásárlások jóváhagyásához vagy alkalmazásokba való bejelentkezéshez. 
+
+Megjegyzés: 
+1. Előfordulhat, hogy az ujjlenyomata kevésbé biztonságos, mint egy erős minta vagy PIN-kód.
+2. Kérjük, adja meg ismét az ujjlenyomatát a védőfólia kicserélése után az ujjlenyomata elérhetőségének biztosításához."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">Ezt az ujjlenyomatot már regisztrálta, próbálkozzon egy másikkal.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">Ujjlenyomatikon megjelenítése a Környezeti kijelzőn</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">Mozgassa egy kicsit a telefont a megjelenítéshez</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">Koppintson a képernyőre a megjelenítéshez</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">A \"Koppintson duplán az ébresztéshez\" engedélyezve van, a \"Koppintson a képernyőre a megjelenítéshez\" le lesz tiltva</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">A \"Koppintson a képernyőre a megjelenítéshez\" engedélyezve van, a \"Koppintson duplán az ébresztéshez\" le lesz tiltva</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">Kozmosz</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">Hullám</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">Csík</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">Ujjlenyomat-animációs effektus kiválasztása</string>
     <string name="oneplus_set_time">Ütemezett éjszakai mód</string>
     <string name="oneplus_setting_ringtone">Csenő beállítása</string>
     <string name="oneplus_setting_sim_ringtone_switch">Csengőhang beállítása mindegyik SIM kártyához</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">A napi használat alapján a Smart Boost teljes mértékben kihasználja a OnePlus telefonok nagyméretű RAM-ját, amely növeli az alkalmazások és játékok betöltésének teljesítményét.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Smart Boost</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Állítson be alternatív módot a képernyőzár feloldásához</string>
     <string name="oneplus_share_this_wifi">Wi-Fi lefedettség kibővítése</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi megosztás</string>
@@ -3131,11 +3159,11 @@ Megjegyzés: A zár feloldása arcfelismeréssel kevésbé biztonságos, mint az
     <string name="oneplus_weak_text_reminding">Csak szöveg</string>
     <string name="oneplus_weak_text_reminding_summary">Engedélyezi az alkalmazásoknak, hogy megjelenítsék a figyelmeztető értesítéseket</string>
     <string name="oneplus_wifi_ap_error">Kérjük, helyezze be a SIM-kártyát</string>
-    <string name="oneplus_wifi_hidden_network_warning">"Ha a routere kikapcsolja az SSID sugárzást, akkor kiválaszthatja az \"Igen\" lehetőséget, hogy csatlakozzon a rejtett hálózathoz.
+    <string name="oneplus_wifi_hidden_network_warning">"Ha a routere úgy van beállítva, hogy ne sugározza az SSID azonosítót, akkor válassza az \"Igen\" lehetőséget a rejtett hálózatokhoz való csatlakozáshoz.
 
-Ez biztonsági kockázatokkal járhat, mivel a telefonja rendszeresen sugározni fogja a jelet, hogy megtalálja a hálózatot.
+Ez biztonsági kockázatot teremthet, mivel a telefonja rendszeresen sugároz jelet a hálózat megtalálásához.
 
-Ha a hálózatot rejtett állapotra állítja be, az nem fogja megváltoztatni a router beállításait."</string>
+A hálózat rejtettként való beállítása nem módosítja a router beálításait."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">Az IPv6 kikapcsolása által elkerülhetők a kompatibilitási problémák bizonyos Wi-Fi útválasztókkal.</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6-támogatás</string>
     <string name="oneplus_wifi_list">Wi‑Fi lista</string>
@@ -3212,6 +3240,8 @@ Ha a hálózatot rejtett állapotra állítja be, az nem fogja megváltoztatni a
     <string name="op_system_dashboard_summary">Nyelv, idő, visszaállítás, frissítések</string>
     <string name="op_theme_2__cannot_change_color_accent">A bosszúállók téma csak a rendszer színtémáját használhatja</string>
     <string name="op_theme_2__title">A bosszúállók</string>
+    <string name="op_theme_3_cannot_change_color_accent">A McLaren téma csak a rendszer színbeállításait tudja használni</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">Téma</string>
     <string name="op_user_manual_settings">Felhasználói kézikönyv</string>
     <string name="op_volume">Kötet</string>
@@ -3991,7 +4021,7 @@ Ezt az Ön eszközére telepített megbízható hitelesítési adatok teszik leh
     <string name="status_bar_settings_cellular_title">Mobilhálózati adatkapcsolat</string>
     <string name="status_bar_settings_dnd_title">Ne zavarj</string>
     <string name="status_bar_settings_headset_title">Fülhallgató</string>
-    <string name="status_bar_settings_hotspot_title">Hotspot</string>
+    <string name="status_bar_settings_hotspot_title">Mobil hotspot</string>
     <string name="status_bar_settings_network_speed_title">Hálózat sebességének megjelenítése</string>
     <string name="status_bar_settings_time_title">Idő</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -4992,7 +5022,7 @@ Engedélyezi ezt az összes olyan alkalmazásnál, amely keresést akar végezni
     <string name="wifi_scan_notify_text">A pontosabb helyadatok érdekében az alkalmazások és a szolgáltatások továbbra is kereshetnek Wi-Fi-hálózatokat még akkor is, ha a Wi-Fi ki van kapcsolva. Ez például a helyalapú funkciók és szolgáltatások javítására használható. Ezt a LINK_BEGINkeresési beállításoknálLINK_END módosíthatja.</string>
     <string name="wifi_scan_notify_text_scanning_off">Pontosabb helyadatok érdekében kapcsolja be a Wi-Fi-alapú keresést a LINK_BEGINkeresési beállításokbanLINK_END.</string>
     <string name="wifi_security">Biztonság</string>
-    <string name="wifi_security_dialog">A nyílt biztonsággal bármelyik készülék csatlakozni tud a mobil hotspotjához, és használni tudja a mobiladat-kapcsolatát.</string>
+    <string name="wifi_security_dialog">Nyílt biztonsági beállításokkal akármilyen készülék csatlakozhat az Ön mobil hotspotjához és használhatja az Ön mobiladat-kapcsolatát.</string>
     <string name="wifi_security_none">Nincs</string>
     <string name="wifi_security_open">Megnyitás</string>
     <string name="wifi_select_network">Wi-Fi-hálózat kiválasztása</string>
@@ -5068,7 +5098,7 @@ Koppintson a "<b>Vissza</b> lehetőségre egy másik Wi-Fi-hálózathoz való cs
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">10 perc inaktivitás után</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">15 perc inaktivitás után</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">5 perc inaktivitás után</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">Mindig legyen bekapcsolva</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Mindig bekapcsolt állapotban</string>
     <string name="wifi_tether_disabled_by_airplane">Nem áll rendelkezésre, mert be van kapcsolva a Repülős üzemmód</string>
     <string name="wifi_tether_enabled_subtext">%1$s aktív</string>
     <string name="wifi_tether_failed_subtext">A hordozható wifi-hotspot kapcsolatos hiba</string>

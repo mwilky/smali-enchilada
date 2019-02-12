@@ -104,7 +104,7 @@
     goto :goto_0
 
     :goto_1
-    const/4 v5, 0x0
+    const v5, 0x7f130455
 
     move-object v0, v7
 

@@ -2616,7 +2616,7 @@
     <string name="oneplus_broadcat_wifi_name">Передавати ім’я мережі (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Кнопки та жести</string>
     <string name="oneplus_buttons_dashboard_summary">Перемикач оповіщень, навігація, жести</string>
-    <string name="oneplus_buttons_settings">налаштування кнопок</string>
+    <string name="oneplus_buttons_settings">Налаштування кнопок</string>
     <string name="oneplus_buttons_settings_summary">Жест навігації</string>
     <string name="oneplus_call_information_broadcast">Промовити номер вхідного абонента</string>
     <string name="oneplus_call_information_broadcast_summary">Промовити номер вхідного абонента через навушники</string>
@@ -2687,6 +2687,9 @@
     <string name="oneplus_emergency_rescue_settings">Екстрена допомога</string>
     <string name="oneplus_emergency_rescue_settings_summary">Автоматично зверніться по допомогу, швидко натиснувши кнопку живлення</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">Доступно після змінення налаштувань КНОПКИ ЖИВЛЕННЯ для функції \"Екстрена допомога\"</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1. Повторно реєструйте відбиток пальця після кожної заміни захисної плівки, щоб забезпечувати актуальність відбитка.
+
+2. У межах однієї операції з налаштування реєструйте лише один відбиток пальця."</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Підказка з налаштування відбитка пальця</string>
     <string name="oneplus_enter_your_fingerprint">· Зберегти відбиток пальця</string>
     <string name="oneplus_experience_improvement_programs">Програми покращення взаємодії</string>
@@ -2711,11 +2714,17 @@
     <string name="oneplus_finger_input_error_tips">Не вдалося зареєструвати відбиток пальця. Будь ласка, повторіть спробу</string>
     <string name="oneplus_finger_input_fail_tips">Не вдалося ввести дані. Будь ласка, відрегулюйте позицію та повторіть спробу</string>
     <string name="oneplus_fingerprint">Відбиток пальця</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">Виявлено схожий відбиток пальця. Злегка перемістіть палець, щоб застосувати різні частини відбитка.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">Область для ідентифікації відбитка пальця має забруднення. Очистьте її та спробуйте ще раз.</string>
+    <string name="oneplus_fingerprint_acquired_partial">Відбиток пальця виявлено частково. Повністю закрийте пальцем область для ідентифікації відбитка пальця.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">Замало часу, щоб ідентифікувати ваш відбиток пальця. Прикладіть палець і трохи потримайте так.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">Виявлено відбиток пальця, схожий на збережений. Трохи посуньте палець, щоб відсканувати іншу його частину.</string>
     <string name="oneplus_fingerprint_animation_effect_title">Ефект анімації відбитка пальця</string>
     <string name="oneplus_fingerprint_delete_confirm_message">Ви бажаєте це видалити?</string>
     <string name="oneplus_fingerprint_detail">Подробиці</string>
     <string name="oneplus_fingerprint_enrol_completed">Відбиток пальця збережено</string>
+    <string name="oneplus_fingerprint_enroll_summary">Прикладіть палець до ділянки датчика відбитків. Спробуйте охопити якнайбільшу площу ділянки. Підніміть палець, коли відчуєте вібрацію.</string>
+    <string name="oneplus_fingerprint_findsendor_summary">"Коли візерунок відбитка пальця з'явиться внизу екрана, просто прикладіть палець до області для його ідентифікації, щоб скористатися відповідною функцією."</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">Як користуватись ідентифікацією відбитка пальця</string>
     <string name="oneplus_fingerprint_functional_declaration">Оголошення функції відбитка пальця</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">На екрані видошукача натисніть датчик сканування відбитків пальців і утримуйте його, щоб зняти фото</string>
     <string name="oneplus_fingerprint_gesture_camera_title">Натисніть і утримуйте, щоб зробити знімок</string>
@@ -2799,6 +2808,9 @@
     <string name="oneplus_hide_navkeys_summary">Додати кнопку, за допомогою якої можна приховати або показати панель навігації</string>
     <string name="oneplus_hide_notch_display_summary">Додатки не можуть використовувати область виїмки</string>
     <string name="oneplus_hide_notch_display_title">Приховувати область виїмки</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"Коли внизу екрана з'являтиметься піктограма відбитка пальця, просто прикладайте палець до ділянки датчика відбитків, щоб використовувати функції відбитків пальців: будити та розблоковувати телефон, підтверджувати покупки і входити в додатки. 
+
+Примітка. Складний графічний ключ або PIN-код можуть гарантувати більшу безпеку, ніж ваш відбиток пальця."</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Коли внизу екрана з’являється піктограма відбитка пальця, просто прикладіть палець до ділянки датчика відбитків, щоб скористатися функцією відбитка пальця: активувати та розблокувати телефон, підтвердити покупку або ввійти в додаток.</string>
     <string name="oneplus_hydrogen_version">Версія H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Вхідний дзвінок</string>
@@ -2872,6 +2884,7 @@
     <string name="oneplus_normal_clear_way">Звичайне очищення</string>
     <string name="oneplus_normal_clear_way_summary">"Очищення списку задач і кеш-пам'яті, не чіпаючи фонових процесів."</string>
     <string name="oneplus_not_disturb_on">Увімкнено режим \"Не турбувати\"</string>
+    <string name="oneplus_not_disturb_summary">Вимкнути звук та вібрацію для викликів і сповіщень, крім вибраних винятків</string>
     <string name="oneplus_not_show">Більше не показувати</string>
     <string name="oneplus_notch_display_area">Виїмка</string>
     <string name="oneplus_notch_display_choose_title">Як відображати область виїмки</string>
@@ -2944,7 +2957,9 @@
     <string name="oneplus_quick_launch_how_to_use_summary">"1. Продовжуйте утримувати палець після розблокування, щоб відкрити панель швидкого запуску.
 2. Проведіть, щоб вибрати потрібний ярлик, і підніміть палець, щоб запустити."</string>
     <string name="oneplus_quick_launch_how_to_use_title">Використовувати швидкий запуск</string>
+    <string name="oneplus_quick_launch_summary">Утримувати натиснутою ділянку датчика відбитків, щоб здійснювати швидку оплату чи активувати додатки</string>
     <string name="oneplus_quick_launch_title">Швидкий запуск</string>
+    <string name="oneplus_quick_launch_toggle_summary">Утримувати натиснутою ділянку датчика відбитків, щоб здійснювати швидку оплату чи активувати додатки, коли телефон заблоковано</string>
     <string name="oneplus_quick_launch_toggle_title">Увімкнути Швидкий запуск</string>
     <string name="oneplus_quick_turn_on_assistant_app">Швидка активація додатка-помічника</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">Натиснути кнопку живлення та утримувати її протягом 0,5 секунди, щоб активувати додаток-помічник, і протягом 3 секунд, щоб вимкнути</string>
@@ -3047,13 +3062,26 @@
     <string name="oneplus_security_lock_settings_summary">Параметри розблокування, служба геоданих, засіб блокування додатків</string>
     <string name="oneplus_security_lock_settings_title">Безпека та конфіденційність</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">Помилка налаштування</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"Прикладайте палець до ділянки датчика відбитків, щоб розблоковувати телефон, підтверджувати покупки та входити в додатки. 
+
+Примітка. 
+1. Складний графічний ключ або PIN-код можуть гарантувати більшу безпеку, ніж ваш відбиток пальця.
+2. Повторно реєструйте відбиток пальця після кожної заміни захисної плівки, щоб забезпечувати актуальність відбитка."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">Цей відбиток пальця вже зареєстровано. Спробуйте інший палець.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">Показувати піктограму відбитка пальця під час Активації екрана</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">Злегка перемістити телефон, щоб показати</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">Торкнутись екрана, щоб показати</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">Функцію \"Увімкнення екрана подвійним дотиком\" увімкнено. Функцію \"Торкнутись екрана, щоб показати\" буде вимкнено.</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">Функцію \"Торкнутись екрана, щоб показати\" ввімкнено. Функцію \"Увімкнення екрана подвійним дотиком\" буде вимкнено.</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">Космос</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">Хвиля</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">Смуга</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">Виберіть ефект анімації відбитка пальця</string>
     <string name="oneplus_set_time">Нічний режим за розкладом</string>
     <string name="oneplus_setting_ringtone">Налаштування мелодії</string>
     <string name="oneplus_setting_sim_ringtone_switch">Встановити мелодію для кожної SIM-карти</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">"Smart Boost використовує весь потенціал великого обсягу оперативної пам'яті на телефонах OnePlus, щоб пришвидшувати завантаження додатків та ігор на основі даних про щоденне використання пристрою."</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Smart Boost</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Налаштувати альтернативний спосіб розблокування екрану</string>
     <string name="oneplus_share_this_wifi">Збільшити покриття мережі Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Роздача Wi‑Fi</string>
@@ -3131,7 +3159,7 @@
     <string name="oneplus_weak_text_reminding">Лише текст</string>
     <string name="oneplus_weak_text_reminding_summary">Дозволити додаткам показувати сповіщення в спливаючому вікні</string>
     <string name="oneplus_wifi_ap_error">Вставте SIM-картку</string>
-    <string name="oneplus_wifi_hidden_network_warning">"Якщо маршрутизатор вимикає передавання SSID, виберіть \"Так\", щоб підключитися до прихованої мережі.
+    <string name="oneplus_wifi_hidden_network_warning">"Якщо маршрутизатор налаштовано не передавати SSID, виберіть \"Так\", щоб підключитися до прихованої мережі.
 
 Це може створювати загрозу порушення безпеки, оскільки телефон регулярно передаватиме сигнал, щоб знайти мережу.
 
@@ -3212,6 +3240,8 @@
     <string name="op_system_dashboard_summary">Мови, час, скидання, оновлення</string>
     <string name="op_theme_2__cannot_change_color_accent">Тема \"Месники\" може використовувати лише кольорову тему системи.</string>
     <string name="op_theme_2__title">Месники</string>
+    <string name="op_theme_3_cannot_change_color_accent">Тема McLaren може використовувати лише колірну тему системи</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">Тема</string>
     <string name="op_user_manual_settings">Посібник користувача</string>
     <string name="op_volume">Гучність</string>
@@ -3991,7 +4021,7 @@
     <string name="status_bar_settings_cellular_title">Стільникові дані</string>
     <string name="status_bar_settings_dnd_title">Не турбувати</string>
     <string name="status_bar_settings_headset_title">Гарнітура</string>
-    <string name="status_bar_settings_hotspot_title">Точка доступу</string>
+    <string name="status_bar_settings_hotspot_title">Мобільна точка доступу</string>
     <string name="status_bar_settings_network_speed_title">Показати швидкість мережі</string>
     <string name="status_bar_settings_time_title">Час</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>

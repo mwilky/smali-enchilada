@@ -2685,6 +2685,9 @@ T馬などの動物はいないようでした。荷物は小さな緑色の手�
     <string name="oneplus_emergency_rescue_settings">緊急救助</string>
     <string name="oneplus_emergency_rescue_settings_summary">電源ボタンを押すと、自動的に助けを求めます</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">緊急救助の電源ボタン設定を変更した後に利用できます</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1.保護フィルムを交換するたびに指紋を再入力して指紋の有効性を確認してください。
+
+2.1回の設定で、指の指紋情報を1つだけ入力してください。"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">指紋セットアップ プロンプト</string>
     <string name="oneplus_enter_your_fingerprint">· あなたの指紋を登録します。</string>
     <string name="oneplus_experience_improvement_programs">エクスペリエンス向上プログラム</string>
@@ -2709,11 +2712,17 @@ T馬などの動物はいないようでした。荷物は小さな緑色の手�
     <string name="oneplus_finger_input_error_tips">指紋の登録エラー。もう一度やり直してください。</string>
     <string name="oneplus_finger_input_fail_tips">入力に失敗しました。位置を調整してもう一度やり直してください。</string>
     <string name="oneplus_fingerprint">指紋</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">類似の指紋が検出されました。指を少し動かして、違うところの指紋を入れてください。</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">指紋認証エリアに汚れがあります。汚れをふき取ってから、再度お試しください。</string>
+    <string name="oneplus_fingerprint_acquired_partial">指紋の一部が検出されました。指紋認証エリアを完全に覆ってください。</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">指を離すのが早すぎたため、指紋を処理できませんでした。指を当てた状態でしばらくお待ちください。</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">同様の指紋が検出されました。指紋の他の部分を入力するため、指を少しずらしてください。</string>
     <string name="oneplus_fingerprint_animation_effect_title">指紋アニメーション効果</string>
     <string name="oneplus_fingerprint_delete_confirm_message">削除しますか？</string>
     <string name="oneplus_fingerprint_detail">詳細</string>
     <string name="oneplus_fingerprint_enrol_completed">指紋が保存されました</string>
+    <string name="oneplus_fingerprint_enroll_summary">指で指紋識別エリアをできるだけ覆い、振動を感じた後に持ち上げてください。</string>
+    <string name="oneplus_fingerprint_findsendor_summary">画面下部に指紋パターンが表示されたら、指紋認証エリアを指で押さえるだけで、指紋認証機能を使用できます。</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">指紋の使用方法</string>
     <string name="oneplus_fingerprint_functional_declaration">指紋関数宣言</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">ファインダー画面から指紋センサーを長押しして、写真を撮影します</string>
     <string name="oneplus_fingerprint_gesture_camera_title">長押しで写真を撮影</string>
@@ -2797,6 +2806,9 @@ T馬などの動物はいないようでした。荷物は小さな緑色の手�
     <string name="oneplus_hide_navkeys_summary">ナビゲーションバーの表示/非表示を切り替えるボタンを追加します</string>
     <string name="oneplus_hide_notch_display_summary">すべてのアプリでノッチ領域を使用できません</string>
     <string name="oneplus_hide_notch_display_title">ノッチ領域を非表示</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"画面下部に指紋パターンが表示されたら、指紋識別エリアを指で押すだけで指紋機能を利用でき、携帯電話のスリープ解除やロック解除、購入の承認、アプリへのサインインができます。
+
+注意：指紋は、強力なパターンやPINよりも安全性が低い場合があります。"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">画面下部に指紋パターンが表示されたら、指紋識別エリアを指で押すだけで指紋機能を利用できます。それによって携帯電話のスリープ解除やロック解除、購入の承認、アプリへのサインインができます。</string>
     <string name="oneplus_hydrogen_version">H₂OS バージョン</string>
     <string name="oneplus_incoming_call_vibrate_intensity">着信通話</string>
@@ -2870,6 +2882,7 @@ T馬などの動物はいないようでした。荷物は小さな緑色の手�
     <string name="oneplus_normal_clear_way">通常クリア</string>
     <string name="oneplus_normal_clear_way_summary">バックグランドで動作中のプロセスを終了することなく、タスクリストとキャッシュを消去します。</string>
     <string name="oneplus_not_disturb_on">おやすみモードはオンです</string>
+    <string name="oneplus_not_disturb_summary">選択した例外を除き、着信や通知をミュートして、バイブをオフにします</string>
     <string name="oneplus_not_show">今後表示しない</string>
     <string name="oneplus_notch_display_area">ノッチ</string>
     <string name="oneplus_notch_display_choose_title">ノッチ領域を表示する方法</string>
@@ -2942,7 +2955,9 @@ T馬などの動物はいないようでした。荷物は小さな緑色の手�
     <string name="oneplus_quick_launch_how_to_use_summary">"1.ロック解除後も指を押し続けるとクイック起動パネルが開きます。
 2.スワイプしてショートカットを選択し、指を離すと起動します。"</string>
     <string name="oneplus_quick_launch_how_to_use_title">クイック起動を使用</string>
+    <string name="oneplus_quick_launch_summary">クイック決済を起動したり、アプリをアクティブ化したりするには、指紋認証エリアを長押ししてください</string>
     <string name="oneplus_quick_launch_title">Quick launch</string>
+    <string name="oneplus_quick_launch_toggle_summary">スマートフォンがロックされている際にクイック決済を起動したり、アプリをアクティブ化したりするには、指紋認証エリアを長押ししてください</string>
     <string name="oneplus_quick_launch_toggle_title">クイック起動をオンにする</string>
     <string name="oneplus_quick_turn_on_assistant_app">アシスタントアプリをすばやくアクティブ化する</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">アシスタントアプリをアクティブ化するには電源ボタンを 0.5 秒押し続け、電源をオフにするには 3 秒押し続けます</string>
@@ -3045,13 +3060,26 @@ T馬などの動物はいないようでした。荷物は小さな緑色の手�
     <string name="oneplus_security_lock_settings_summary">ロック解除設定、位置情報サービス、アプリロッカー</string>
     <string name="oneplus_security_lock_settings_title">セキュリティとプライバシー</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">セットアップに失敗しました</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"指紋認証エリアを押すだけで、携帯電話のロックを解除したり、購入を承認したり、アプリにサインインしたりできます。
+
+注意：
+1.指紋は、強力なパターンやPINよりも安全性が低い場合があります。
+2.保護フィルムを交換するたびに指紋を再入力して指紋の有効性を確認してください。"</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">この指紋はすでに登録されています。別の指でお試しください。</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">アンビエントディスプレイに指紋アイコンを表示します</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">表示するには、電話を少し移動します。</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">表示する画面をタップします</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">「ダブルタップでスリープ解除」は有効です。「画面をタップして表示」は無効です。</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">「画面をタップして表示」は有効であり、「ダブルタップでスリープ解除」は無効です</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">宇宙</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">ウェーブ</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">ストライプ</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">指紋アニメーション効果を選択</string>
     <string name="oneplus_set_time">定期なおやすみモード</string>
     <string name="oneplus_setting_ringtone">着信音を設定</string>
     <string name="oneplus_setting_sim_ringtone_switch">SIM カード別に着信音を設定</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">毎日の使用状況に応じて、スマート起動はOnePlus電話の大容量RAMを最大限に活用し、アプリやゲームの読み込みパフォーマンスを活用します。</string>
+    <string name="oneplus_settings_lab_feature_boost_title">スマート起動</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· 画面のロックを解除する別の方法を設定します</string>
     <string name="oneplus_share_this_wifi">Wi-Fi 通信範囲を拡張</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi 共有</string>
@@ -3129,7 +3157,7 @@ T馬などの動物はいないようでした。荷物は小さな緑色の手�
     <string name="oneplus_weak_text_reminding">テキストのみ</string>
     <string name="oneplus_weak_text_reminding_summary">アプリがポップアップ通知を表示することを許可する</string>
     <string name="oneplus_wifi_ap_error">SIM カードを挿入してください</string>
-    <string name="oneplus_wifi_hidden_network_warning">"ご使用のルーターで SSID ブロードキャストが無効にされている場合は、[はい] を選択して、非表示のネットワークに接続してください。
+    <string name="oneplus_wifi_hidden_network_warning">"ご使用のルーターで SSID ブロードキャストが無効に設定されている場合は、[はい] を選択して、非表示のネットワークに接続してください。
 
 これにより、ネットワークを検出するために携帯電話から信号が定期的に発信されるため、セキュリティリスクが生じる可能性があります。
 
@@ -3210,6 +3238,8 @@ T馬などの動物はいないようでした。荷物は小さな緑色の手�
     <string name="op_system_dashboard_summary">言語、時間、リセット、更新</string>
     <string name="op_theme_2__cannot_change_color_accent">アベンジャーズのテーマではシステムの色テーマのみを使用できます</string>
     <string name="op_theme_2__title">アベンジャーズ</string>
+    <string name="op_theme_3_cannot_change_color_accent">マクラーレンのテーマでは、システムカラーテーマのみを使用できます</string>
+    <string name="op_theme_3_title">マクラーレン</string>
     <string name="op_theme_mode_title">テーマ</string>
     <string name="op_user_manual_settings">ユーザー マニュアル</string>
     <string name="op_volume">音量</string>
@@ -3989,7 +4019,7 @@ PINが正しくない可能性があります。"</string>
     <string name="status_bar_settings_cellular_title">モバイルデータ通信</string>
     <string name="status_bar_settings_dnd_title">おやすみモード</string>
     <string name="status_bar_settings_headset_title">ヘッドセット</string>
-    <string name="status_bar_settings_hotspot_title">ホットスポット</string>
+    <string name="status_bar_settings_hotspot_title">モバイルホットスポット</string>
     <string name="status_bar_settings_network_speed_title">ネットワーク速度の表示</string>
     <string name="status_bar_settings_time_title">時間</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>

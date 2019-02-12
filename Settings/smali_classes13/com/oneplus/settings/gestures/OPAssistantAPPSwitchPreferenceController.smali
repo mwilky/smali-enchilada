@@ -374,8 +374,25 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x0
 
+    if-eqz v0, :cond_1
+
+    iget-object v2, p0, Lcom/oneplus/settings/gestures/OPAssistantAPPSwitchPreferenceController;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcom/oneplus/settings/utils/OPUtils;->isAppExist(Landroid/content/Context;Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    return-object v1
+
+    :cond_0
     new-instance v1, Lcom/android/settingslib/applications/DefaultAppInfo;
 
     iget-object v2, p0, Lcom/oneplus/settings/gestures/OPAssistantAPPSwitchPreferenceController;->mContext:Landroid/content/Context;
@@ -394,9 +411,7 @@
 
     return-object v1
 
-    :cond_0
-    const/4 v1, 0x0
-
+    :cond_1
     return-object v1
 .end method
 

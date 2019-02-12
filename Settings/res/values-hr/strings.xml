@@ -2616,7 +2616,7 @@ Aplikacija će također moći uključiti ili isključiti značajku Ne ometaj i p
     <string name="oneplus_broadcat_wifi_name">Emitirani naziv mreže (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Gumbi i geste</string>
     <string name="oneplus_buttons_dashboard_summary">Klizač upozorenja, navigacija, geste</string>
-    <string name="oneplus_buttons_settings">postavke gumba</string>
+    <string name="oneplus_buttons_settings">Postavke gumba</string>
     <string name="oneplus_buttons_settings_summary">Navigacijska gesta</string>
     <string name="oneplus_call_information_broadcast">Izgovori ID pozivatelja</string>
     <string name="oneplus_call_information_broadcast_summary">Izgovori dolazni ID pozivatelja na slušalice</string>
@@ -2687,6 +2687,9 @@ Aplikacija će također moći uključiti ili isključiti značajku Ne ometaj i p
     <string name="oneplus_emergency_rescue_settings">Spasilačka služba</string>
     <string name="oneplus_emergency_rescue_settings_summary">Automatski pozovite pomoć brzim pritiskom na gumb za uključivanje</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">Dostupno nakon promjene postavke za GUMB ZA UKLJUČIVANJE za značajku Spasilačka služba</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1.Ponovno unesite otisak prsta nakon svake promjene zaštitne folije da biste osigurali dostupnost otiska prsta
+
+2.U jednom postupku postavljanja unesite podatke samo jednog otiska prsta"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Upit za postavljanje otiska prsta</string>
     <string name="oneplus_enter_your_fingerprint">· Primijeniti vaš otisak prsta</string>
     <string name="oneplus_experience_improvement_programs">Programi poboljšanja iskustva</string>
@@ -2711,11 +2714,17 @@ Sigurnosni savjet: otključavanje licem manje je sigurno od otiska prsta i lozin
     <string name="oneplus_finger_input_error_tips">Greška registracije otiska prsta, pokušajte ponovno</string>
     <string name="oneplus_finger_input_fail_tips">Unos nije uspio, podesite položaj i pokušajte ponovno</string>
     <string name="oneplus_fingerprint">Otisak prsta</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">Otkriven je sličan otisak prsta. Pomaknite malo prst da biste unijeli otisak različitih dijelova prsta.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">Prljavo je područje identifikacije otiska prsta. Očistite ga i pokušajte ponovno.</string>
+    <string name="oneplus_fingerprint_acquired_partial">Otkriven je djelomični otisak prsta. Potpuno pokrijte područje identifikacije otiska prsta.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">Prebrzo da bi se obradio otisak prsta. Zadržite za trenutak pritisak.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">Otkriven je sličan otisak prsta. Pomaknite malo prst kako biste unijeli različite dijelove otiska prsta.</string>
     <string name="oneplus_fingerprint_animation_effect_title">Efekt animacije otiska prsta</string>
     <string name="oneplus_fingerprint_delete_confirm_message">Želite li izbrisati?</string>
     <string name="oneplus_fingerprint_detail">Pojedinosti</string>
     <string name="oneplus_fingerprint_enrol_completed">Otisak prsta je spremljen</string>
+    <string name="oneplus_fingerprint_enroll_summary">Pritisnite i pokrijte prstom što veći dio područja identifikacije otiska prsta, zatim podignite prst kada osjetite vibraciju</string>
+    <string name="oneplus_fingerprint_findsendor_summary">Kada se na dnu zaslona pojavi uzorak otiska prsta, jednostavno pritisnite svoj prst na područje identifikacije otiska prsta.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">Kako upotrebljavati otisak prsta</string>
     <string name="oneplus_fingerprint_functional_declaration">Deklaracija funkcije otiska prsta</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">Na zaslonu tražila dugo pritisnite senzor otiska prsta kako biste snimili fotografiju</string>
     <string name="oneplus_fingerprint_gesture_camera_title">Dugo pritisnite za snimanje fotografije</string>
@@ -2799,6 +2808,9 @@ Za prijelaz na početni zaslon u bilo kojem trenutku, prijeđite prstom od sredi
     <string name="oneplus_hide_navkeys_summary">Dodajte gumb za sakrivanje ili prikazivanje navigacijske trake</string>
     <string name="oneplus_hide_notch_display_summary">Niti jedna aplikacija ne može upotrebljavati područje poluotoka</string>
     <string name="oneplus_hide_notch_display_title">Skrivanje područja poluotoka</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"Kada se na dnu zaslona pojavi uzorak otiska prsta, jednostavno pritisnite svoj prst na područje identifikacije otiska prsta da biste upotrijebili funkciju otiska prsta: buđenje i otključavanje telefona, potvrđivanje kupovina ili prijava u aplikacije. 
+
+Napomena: Otisak prsta može biti manje siguran od snažnog obrasca ili PIN-a"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Kada se na dnu zaslona pojavi uzorak otiska prsta, jednostavno pritisnite svoj prst na područje za identifikaciju otiska prsta i moći ćete upotrebljavati funkciju otiska prsta za buđenje i otključavanje telefona, potvrdu kupovina ili prijave u aplikacije.</string>
     <string name="oneplus_hydrogen_version">H₂OS verzija</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Dolazni poziv</string>
@@ -2872,6 +2884,7 @@ Za prijelaz na početni zaslon u bilo kojem trenutku, prijeđite prstom od sredi
     <string name="oneplus_normal_clear_way">Normalno izbrisano</string>
     <string name="oneplus_normal_clear_way_summary">Očiste popis zadataka i međumemoriju, bez čišćenja pozadinskih procesa.</string>
     <string name="oneplus_not_disturb_on">Stavljeno je Ne ometaj</string>
+    <string name="oneplus_not_disturb_summary">Isključite pozive, upozorenja i vibraciju, osim za odabrane iznimke</string>
     <string name="oneplus_not_show">Ne pokazuj to više</string>
     <string name="oneplus_notch_display_area">Poluotok</string>
     <string name="oneplus_notch_display_choose_title">Kako prikazati područje poluotoka</string>
@@ -2944,7 +2957,9 @@ Za prijelaz na početni zaslon u bilo kojem trenutku, prijeđite prstom od sredi
     <string name="oneplus_quick_launch_how_to_use_summary">"1.Zadržite prst nakon otključavanja da biste otvorili ploču brzog pokretanja.
 2.Prevucite da biste odabrali prečac i zatim podignite prst da bi se aplikacija pokrenula"</string>
     <string name="oneplus_quick_launch_how_to_use_title">Upotreba brzog pokretanja</string>
+    <string name="oneplus_quick_launch_summary">Dugo pritisnite na područje identifikacije otiska prsta da biste pokrenuli brzo plaćanje ili da biste aktivirali aplikaciju</string>
     <string name="oneplus_quick_launch_title">Brzo pokretanje</string>
+    <string name="oneplus_quick_launch_toggle_summary">Dugo pritisnite na područje identifikacije otiska prsta da biste pokrenuli brzo plaćanje ili da biste aktivirali aplikaciju kada je telefon zaključan</string>
     <string name="oneplus_quick_launch_toggle_title">Uključivanje brzog pokretanja</string>
     <string name="oneplus_quick_turn_on_assistant_app">Brzo aktivirajte aplikaciju pomoćnika</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">Držite pritisnutim gumb za uključivanje 0,5 s da biste aktivirali aplikaciju pomoćnika, a 3 s za isključivanje</string>
@@ -3047,13 +3062,26 @@ Za prijelaz na početni zaslon u bilo kojem trenutku, prijeđite prstom od sredi
     <string name="oneplus_security_lock_settings_summary">Otključavanje osobnih postavki, lokacijskih usluga, ormarića aplikacija</string>
     <string name="oneplus_security_lock_settings_title">Sigurnost i privatnost</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">Postavljanje nije uspjelo</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"Jednostavno pritisnite područje za identifikaciju otiska prsta kako biste otključali svoj telefon, potvrdili kupnje ili se prijavili u aplikacije. 
+
+Napomena: 
+1.Otisak prsta može biti manje siguran od snažnog obrasca ili PIN-a.
+2.Ponovno unesite otisak prsta nakon svake promjene zaštitne folije da biste osigurali dostupnost otiska prsta."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">Ovaj otisak prsta već je upisan, pokušajte s drugim prstom.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">Prikaži ikonu otiska prsta u ambijentalnom zaslonu</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">Pomaknite malo telefon da biste prikazali</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">Dodirnite zaslon da biste prikazali</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">Omogućen je \"Dvostruki dodir za buđenje\", a onemogućeno je \"Dodir zaslona za prikaz\"</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">Omogućen je \"Dodir zaslona za prikaz\", a onemogućeno je \"Dvostruki dodir za buđenje\"</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">Svemir</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">Val</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">Traka</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">Odaberite efekt animacije otiska prsta</string>
     <string name="oneplus_set_time">Zakazan noćni način rada</string>
     <string name="oneplus_setting_ringtone">Postavi zvuk</string>
     <string name="oneplus_setting_sim_ringtone_switch">Postavi zvuk zvona za svaku SIM karticu</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">Pametno pojačavanje temeljem vaše dnevne upotrebe potpuno iskorištava veliku RAM memoriju OnePlus telefona za poboljšavanje učitavanja aplikacija i igara.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Pametno pojačavanje</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Postaviti alternativni način otključavanja zaslona</string>
     <string name="oneplus_share_this_wifi">Proširiti pokrivenost Wi-Fi-ja</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi dijeljenje</string>
@@ -3131,7 +3159,7 @@ Napomena: otključavanje licem može biti manje sigurno od otiska prsta, PIN kod
     <string name="oneplus_weak_text_reminding">Samo tekst</string>
     <string name="oneplus_weak_text_reminding_summary">Dopusti aplikacijama da prikazuje najave</string>
     <string name="oneplus_wifi_ap_error">Umetnite SIM karticu</string>
-    <string name="oneplus_wifi_hidden_network_warning">"Ako je na usmjerivaču onemogućeno emitiranje SSID-ja, morate odabrati \"Da\" da biste se povezali na skrivenu mrežu.
+    <string name="oneplus_wifi_hidden_network_warning">"Ako je na usmjerivaču postavljeno da ne emitira SSID, morate odabrati \"Da\" da biste se povezali na skrivenu mrežu.
 
 To može predstavljati sigurnosnu opasnost jer će vaš telefon redovito emitirati svoj signal kako bi tražio mrežu.
 
@@ -3212,6 +3240,8 @@ Postavljanje mreže kao skrivene neće promijeniti postavku usmjerivača."</stri
     <string name="op_system_dashboard_summary">Jezici, vrijeme, ponovno postavljanje, ažuriranja</string>
     <string name="op_theme_2__cannot_change_color_accent">Tema \"Osvetnici\" može koristiti samo tematsku boju sustava</string>
     <string name="op_theme_2__title">Osvetnici</string>
+    <string name="op_theme_3_cannot_change_color_accent">Tema McLaren može upotrebljavati samo sustavnu temu boja</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">Tema</string>
     <string name="op_user_manual_settings">Korisnički priručnik</string>
     <string name="op_volume">Glasnoća</string>
@@ -3991,7 +4021,7 @@ To omogućuje pouzdana vjerodajnica koja je instalirana na vašem uređaju."</st
     <string name="status_bar_settings_cellular_title">Mobilni podaci</string>
     <string name="status_bar_settings_dnd_title">Ne ometaj</string>
     <string name="status_bar_settings_headset_title">Slušalice</string>
-    <string name="status_bar_settings_hotspot_title">Žarišna točka</string>
+    <string name="status_bar_settings_hotspot_title">Mobilna žarišna točka</string>
     <string name="status_bar_settings_network_speed_title">Mrežna brzina zaslona</string>
     <string name="status_bar_settings_time_title">Vrijeme</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -5068,7 +5098,7 @@ Dodirnite "<b>Natrag</b> da biste se povezali s nekom drugom Wi‑Fi mrežom.</s
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Nakon 10 min neaktivnosti</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Nakon 15 min neaktivnosti</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Nakon 5 min neaktivnosti</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">Uvijek uključeno</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Uvijek ostaje uključeno</string>
     <string name="wifi_tether_disabled_by_airplane">Nije dostupno jer je uključen način rada u zrakoplovu</string>
     <string name="wifi_tether_enabled_subtext">%1$s je aktivan</string>
     <string name="wifi_tether_failed_subtext">Pogreška prijenosne Wi-Fi žarišne točke</string>

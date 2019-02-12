@@ -2616,7 +2616,7 @@ L'estalviador de bateria es desactiva automàticament quan el dispositiu s'està
     <string name="oneplus_broadcat_wifi_name">"Nom de la xarxa d'emissió (SSID)"</string>
     <string name="oneplus_buttons_and_gestures_settings">Botons i gestos</string>
     <string name="oneplus_buttons_dashboard_summary">"Control lliscant d'avisos, navegació, gestos"</string>
-    <string name="oneplus_buttons_settings">configuració dels botons</string>
+    <string name="oneplus_buttons_settings">Configuració dels botons</string>
     <string name="oneplus_buttons_settings_summary">Gest de navegació</string>
     <string name="oneplus_call_information_broadcast">"Digues l'ID de l'autor de la trucada"</string>
     <string name="oneplus_call_information_broadcast_summary">"Digues l'ID de l'autor de la trucada a través dels auriculars"</string>
@@ -2687,6 +2687,9 @@ L'estalviador de bateria es desactiva automàticament quan el dispositiu s'està
     <string name="oneplus_emergency_rescue_settings">"Rescat d'emergència"</string>
     <string name="oneplus_emergency_rescue_settings_summary">"Demaneu ajuda automàticament prement ràpidament el botó d'engegada"</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">"Disponible després de modificar la configuració de BOTÓ D'ENGEGADA del rescat d'emergència"</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1.Torneu a introduir l'empremta digital després de substituir la pel·lícula protectora per assegurar-vos que estigui disponible
+
+2.En un procés de configuració senzill, introduïu només la informació de l'empremta digital d'un dit"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">"Indicador de configuració d'empremta digital"</string>
     <string name="oneplus_enter_your_fingerprint">· Enregistrar la vostra empremta digital</string>
     <string name="oneplus_experience_improvement_programs">"Programes de millora d'experiència"</string>
@@ -2711,11 +2714,17 @@ Consell de seguretat: el desbloqueig facial és menys segur que l'empremta digit
     <string name="oneplus_finger_input_error_tips">"Error de registre d'empremta digital; torna-ho a provar"</string>
     <string name="oneplus_finger_input_fail_tips">"L'entrada ha fallat. Ajusteu la posició i torneu-ho a provar"</string>
     <string name="oneplus_fingerprint">Empremta digital</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">"Empremtes digitals similars detectades. Moveu dit lleugerament per introduir l'empremta digital de diferents parts."</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">"L'àrea d'identificació de l'empremta digital està bruta. Netegeu-la i torneu-ho a provar."</string>
+    <string name="oneplus_fingerprint_acquired_partial">"S'ha detectat una empremta digital parcial. Cobriu completament l'àrea d'identificació de l'empremta digital."</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">Massa ràpid per processar la vostra empremta digital. Manteniu-vos un moment mentre premeu.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">"S'ha detectat una empremta digital similar. Moveu el dit suaument per introduir les diferents parts de l'empremta digital."</string>
     <string name="oneplus_fingerprint_animation_effect_title">"Efecte d'animació d'empremta digital"</string>
     <string name="oneplus_fingerprint_delete_confirm_message">La voleu suprimir?</string>
     <string name="oneplus_fingerprint_detail">Detalls</string>
     <string name="oneplus_fingerprint_enrol_completed">"L'empremta digital s'ha desat"</string>
+    <string name="oneplus_fingerprint_enroll_summary">"Premeu i feu que el vostre dit cobreixi la zona d'identificació de l'empremta digital tant com sigui possible, a continuació aixequeu-lo després de sentir una vibració"</string>
+    <string name="oneplus_fingerprint_findsendor_summary">"Quan el patró d'empremta digital aparegui a la part inferior de la pantalla, simplement premeu amb el dit l'àrea d'identificació de l'empremta digital per utilitzar la funció d'empremta digital."</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">"Com utilitzar l'empremta digital"</string>
     <string name="oneplus_fingerprint_functional_declaration">"Declaració de la funció d'empremta digital"</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">"Des de la pantalla del visor, feu una pulsació llarga al sensor de l'empremta per fer una foto"</string>
     <string name="oneplus_fingerprint_gesture_camera_title">Feu una pulsació llarga per fer una foto</string>
@@ -2799,6 +2808,9 @@ Per anar a la pantalla d'inici en qualsevol moment, feu lliscar el dit cap amunt
     <string name="oneplus_hide_navkeys_summary">Afegeix un botó per amagar o mostrar la barra de navegació</string>
     <string name="oneplus_hide_notch_display_summary">No totes les aplicacions poden utilitzar la zona de la clivella</string>
     <string name="oneplus_hide_notch_display_title">Oculta la zona de la clivella</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"Quan el patró de l'empremta digital aparegui a la part inferior de la pantalla, senzillament premeu amb el dit sobre la zona d'identificació de l'empremta digital per utilitzar aquesta funció: reactivar i desbloquejar el telèfon, autoritzar compres o iniciar sessió a aplicacions. 
+
+Nota: L'empremta digital pot ser menys segura que un patró o un PIN fort"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">"Quan el patró d'empremta digital, apareix en la part inferior de la pantalla, senzillament premeu amb el dit la zona d'identificació d'empremta digital per utilitzar la funció d'empremta digital: activar i desbloquejar el telèfon, autoritzar compres o iniciar sessions en aolicacions."</string>
     <string name="oneplus_hydrogen_version">Versió H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Trucada entrant</string>
@@ -2872,6 +2884,7 @@ Per anar a la pantalla d'inici en qualsevol moment, feu lliscar el dit cap amunt
     <string name="oneplus_normal_clear_way">Neteja normal</string>
     <string name="oneplus_normal_clear_way_summary">Esborra la llista de tasques i la memòria cau, sense esborrar els processos de segon pla.</string>
     <string name="oneplus_not_disturb_on">\"No molestar\" està activat</string>
+    <string name="oneplus_not_disturb_summary">Silencia les trucades i les notificacions, i activa la vibració, excepte en les excepcions seleccionades</string>
     <string name="oneplus_not_show">"No m'ho tornis a mostrar"</string>
     <string name="oneplus_notch_display_area">Clivella</string>
     <string name="oneplus_notch_display_choose_title">Com es mostra la zona de la clivella</string>
@@ -2944,7 +2957,9 @@ Per anar a la pantalla d'inici en qualsevol moment, feu lliscar el dit cap amunt
     <string name="oneplus_quick_launch_how_to_use_summary">"1. Seguiu prement amb el dit després de desbloquejar per obrir el panel d'inici ràpid
 2. Feu lliscar el dit per seleccionar la drecera i deixeu anar el dit per obrir-la"</string>
     <string name="oneplus_quick_launch_how_to_use_title">"Utilitza l'inici ràpid"</string>
+    <string name="oneplus_quick_launch_summary">"Manteniu premuda la zona d'identificació d'empremta digital per obrir el pagament ràpid o per activar aplicacions"</string>
     <string name="oneplus_quick_launch_title">Inici ràpid</string>
+    <string name="oneplus_quick_launch_toggle_summary">"Manteniu premuda la zona d'identificació d'empremta digital per obrir el pagament ràpid o per activar aplicacions quan el telèfon està bloquejat"</string>
     <string name="oneplus_quick_launch_toggle_title">"Activa l'inici ràpid"</string>
     <string name="oneplus_quick_turn_on_assistant_app">"Activeu ràpidament l'aplicació de l'assistent"</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">"Mateniu premut el botó d'encesa durante 0,5 s per activar l'aplicació de l'assistent i 3 s per apagar"</string>
@@ -3047,13 +3062,26 @@ Per anar a la pantalla d'inici en qualsevol moment, feu lliscar el dit cap amunt
     <string name="oneplus_security_lock_settings_summary">"Desbloqueja les preferències, servei d'ubicació, bloqueig d'aplicacions"</string>
     <string name="oneplus_security_lock_settings_title">Seguretat i privacitat</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">Ha fallat la configuració</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"Només cal que premeu la zona d'identificació de l'empremta digital per desbloquejar el telèfon, autoritzar compres o iniciar sessió a aplicacions. 
+
+Nota: 
+1.L'empremta digital pot ser menys segura que un patró o un PIN fort.
+2.Torneu a introduir l'empremta digital després de substituir la pel·lícula protectora per assegurar-vos que estigui disponible."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">Aquesta empremta digital ja està registrada, proveu un altre dit.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">"Mostra la icona de l'empremta digital a la pantalla ambiental"</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">Moveu el telèfon lleugerament perquè es mostri</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">Toqueu la pantalla perquè es mostri</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">"S'ha habilitat \"Doble toc per activar\" i s'inhabilitarà \"Toqueu la pantalla per mostrar\""</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">"S'ha habilitat \"Toqueu la pantalla per mostrar\" i s'inhabilitarà \"Doble toc per activar\""</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">Cosmos</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">Ona</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">Ratlla</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">"Seleccioneu l'efecte d'animació d'empremta digital"</string>
     <string name="oneplus_set_time">Mode nocturn programat</string>
     <string name="oneplus_setting_ringtone">Estableix so de trucada</string>
     <string name="oneplus_setting_sim_ringtone_switch">Estableix el so de trucada de cada targeta SIM</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">"Smart Boost es basa en el vostre ús diari pe aprofitar al màxim la gran RAM dels telèfons OnePlus i així millorar el rendiment de càrrega d'aplicacions i jocs."</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Smart Boost</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Establir una manera alternativa de desbloquejar la pantalla</string>
     <string name="oneplus_share_this_wifi">Amplia la cobertura Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Compartint Wi‑Fi</string>
@@ -3131,7 +3159,7 @@ Nota: el desbloqueig facial pot ser menys segur que el d'empremta digital, PIN o
     <string name="oneplus_weak_text_reminding">Només text</string>
     <string name="oneplus_weak_text_reminding_summary">Permet que les aplicacions mostrin notificacions amb avisos</string>
     <string name="oneplus_wifi_ap_error">Introduïu la targeta SIM</string>
-    <string name="oneplus_wifi_hidden_network_warning">"Si l'encaminador inhabilita la transmissió de l'SSID, cal seleccionar \"Sí\" per connectar-se a la xarxa oculta.
+    <string name="oneplus_wifi_hidden_network_warning">"Si l'encaminador està establert per no transmetre l'SSID, cal seleccionar \"Sí\" per connectar-se a la xarxa oculta.
 
 Açò pot crear un risc de seguretat perquè el seu telèfon regularment transmetrà el seu senyal per trobar la xarxa.
 
@@ -3212,6 +3240,8 @@ Configurar la xarxa com oculta no canviarà la configuració de l'encaminador."<
     <string name="op_system_dashboard_summary">Idiomes, hora, restabliment, actualitzacions</string>
     <string name="op_theme_2__cannot_change_color_accent">El tema Els venjadors només pot utilitzar el tema de color del sistema</string>
     <string name="op_theme_2__title">Els venjadors</string>
+    <string name="op_theme_3_cannot_change_color_accent">El tema McLaren només pot utilitzar el tema de color del sistema</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">Tema</string>
     <string name="op_user_manual_settings">"Manual d'usuari"</string>
     <string name="op_volume">Volum</string>
@@ -3991,7 +4021,7 @@ Hi ha una credencial de confiança instal·lada al teu dispositiu que ho fa poss
     <string name="status_bar_settings_cellular_title">Dades mòbils</string>
     <string name="status_bar_settings_dnd_title">No molesteu</string>
     <string name="status_bar_settings_headset_title">Auricular</string>
-    <string name="status_bar_settings_hotspot_title">Zona Wi-Fi</string>
+    <string name="status_bar_settings_hotspot_title">"Punt d'accés del telèfon"</string>
     <string name="status_bar_settings_network_speed_title">Mostrar la velocitat de la xarxa</string>
     <string name="status_bar_settings_time_title">Hora</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -5068,7 +5098,7 @@ Toca "<b>Enrere</b> per connectar-te a una altra xarxa Wi-Fi.</string>
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">"Després de 10 minuts d'inactivitat"</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">"Després de 15 minuts d'inactivitat"</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">"Després de 5 minuts d'inactivitat"</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">Sempre activat</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Sempre encès</string>
     <string name="wifi_tether_disabled_by_airplane">"No està disponible perquè el mode d'avió està activat"</string>
     <string name="wifi_tether_enabled_subtext">%1$s està actiu</string>
     <string name="wifi_tether_failed_subtext">"Error de punt d'accés Wi-Fi"</string>

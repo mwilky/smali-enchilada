@@ -1390,7 +1390,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040149
+    const v2, 0x104014a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3504,19 +3504,11 @@
 
     iget-object v3, p0, Lcom/android/settings/DisplaySettings;->mDozePreference:Landroid/support/v7/preference/Preference;
 
-    const v4, 0x7f120b8c
-
-    invoke-virtual {v3, v4}, Landroid/support/v7/preference/Preference;->setSummary(I)V
-    
-    goto :goto_1
-
-    :cond_3
-    iget-object v3, p0, Lcom/android/settings/DisplaySettings;->mDozePreference:Landroid/support/v7/preference/Preference;
-
     const v4, 0x7f120b6d
 
     invoke-virtual {v3, v4}, Landroid/support/v7/preference/Preference;->setSummary(I)V
-    
+
+    :cond_3
     :goto_1
     iget-object v3, p0, Lcom/android/settings/DisplaySettings;->mDozePreference:Landroid/support/v7/preference/Preference;
 
@@ -4561,14 +4553,6 @@
     const-string v1, "oneplus.intent.action.ONEPLUS_COLOR_PICKER"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lcom/android/settings/DisplaySettings;->mCurrentTempColor:Ljava/lang/String;
-
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
 
     iget-object v1, p0, Lcom/android/settings/DisplaySettings;->mContext:Landroid/content/Context;
 

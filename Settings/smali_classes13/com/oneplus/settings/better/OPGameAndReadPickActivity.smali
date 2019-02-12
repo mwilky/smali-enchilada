@@ -296,7 +296,7 @@
 .end method
 
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 7
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -343,15 +343,76 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v2, 0x0
+    const/4 v7, 0x0
 
     goto :goto_0
 
     :cond_0
     nop
 
-    :goto_0
-    invoke-virtual {v3, v4, v5, v6, v2}, Landroid/app/AppOpsManager;->setMode(IILjava/lang/String;I)V
+    move v7, v2
 
+    :goto_0
+    invoke-virtual {v3, v4, v5, v6, v7}, Landroid/app/AppOpsManager;->setMode(IILjava/lang/String;I)V
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-static {p0}, Lcom/oneplus/settings/utils/OPUtils;->getGameModeAppListString(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v0}, Lcom/oneplus/settings/utils/OPUtils;->getGameModeAppString(Lcom/oneplus/settings/better/OPAppModel;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {p0, v0}, Lcom/oneplus/settings/utils/OPUtils;->isInRemovedGameAppListString(Landroid/content/Context;Lcom/oneplus/settings/better/OPAppModel;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    invoke-virtual {v0, v2}, Lcom/oneplus/settings/better/OPAppModel;->setEditMode(Z)V
+
+    :cond_1
+    invoke-virtual {v0}, Lcom/oneplus/settings/better/OPAppModel;->isEditMode()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    if-eqz v1, :cond_3
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->indexOf(Ljava/lang/String;)I
+
+    move-result v2
+
+    const/4 v5, -0x1
+
+    if-eq v2, v5, :cond_2
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/2addr v5, v2
+
+    invoke-virtual {v3, v2, v5}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
+
+    :cond_2
+    goto :goto_1
+
+    :cond_3
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :goto_1
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {p0, v2}, Lcom/oneplus/settings/utils/OPUtils;->saveGameModeRemovedAppLisStrings(Landroid/content/Context;Ljava/lang/String;)V
+
+    :cond_4
     return-void
 .end method

@@ -306,6 +306,9 @@
     <string name="oneplus_emergency_rescue_settings">அவசரகால மீட்பு</string>
     <string name="oneplus_emergency_rescue_settings_summary">பவர் பொத்தானை துரிதமாக அழுத்துவதன் மூலம், உதவி கேட்கலாம்</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">அவசரகால மீட்புப் பவர் பொத்தான் அமைப்புகளை மாற்றியமைத்தப் பிறகு கிடைக்கும்</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1.கைரேகை கிடைப்பதை உறுதிப்படுத்த பாதுகாப்பு படத்தின் ஒவ்வொரு மாற்றீட்டிற்கும் பிறகும் உங்கள் கைரேகையை மீண்டும் உள்ளிடவும்
+
+2.ஒற்றை அமைப்பு செயலாக்கத்தில், ஒரே ஒரு விரலின் கைரேகைத் தகவலை மட்டும் உள்ளிடவும்"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">கைரேகை அமைப்பு விழிப்பூட்டல்</string>
     <string name="oneplus_enter_your_fingerprint">உங்கள் கைரேகையைப் பதிவுசெய்க</string>
     <string name="oneplus_experience_improvement_programs">அனுபவ மேம்பாட்டுத் திட்டங்கள்</string>
@@ -330,11 +333,17 @@
     <string name="oneplus_finger_input_error_tips">கைரேகை பதிவு பிழை, தயவுசெய்து மீண்டும் முயற்சிக்கவும்</string>
     <string name="oneplus_finger_input_fail_tips">உள்ளீடு தோல்வியுற்றது, தயவுசெய்து நிலையை சரிசெய்து மீண்டும் முயற்சிக்கவும்</string>
     <string name="oneplus_fingerprint">கைரேகை</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">ஒரே மாதிரியான கைரேகை கண்டறியப்பட்டுள்ளது. விரலின் வெவ்வேறு பாகங்களின் கைரேகையை உள்ளிட உங்கள் விரலை சற்று நகர்த்தவும்.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">கைரேகை அடையாளம் காணும் பகுதி அழுக்காக உள்ளது. அதை சுத்தமாக துடைத்துவிட்டு, மீண்டும் முயற்சிக்கவும்.</string>
+    <string name="oneplus_fingerprint_acquired_partial">பாதி கைரேகை தான் கண்டறியப்பட்டுள்ளது. கைரேகை அடையாளம் காணும் பகுதியை முழுவதுமாக கவர் செய்யவும்.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">கைரேகையை செயல்முறைக்குள்ளாக்குவதற்குள் மிகவும் வேகமாக எடுத்துவிட்டீர்கள். விரலை வைத்து அழுத்தும்போது சிறிது நேரம் காத்திருக்கவும்.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">ஒரே மாதிரியான கைரேகை கண்டறியப்பட்டுள்ளது. கைரேகையின் வெவ்வேறு பகுதிகளை உள்ளிட, உங்கள் விரலை லேசாக நகர்த்தவும்.</string>
     <string name="oneplus_fingerprint_animation_effect_title">கைரேகை அனிமேஷன் விளைவு</string>
     <string name="oneplus_fingerprint_delete_confirm_message">நீங்கள் அதை நீக்க விரும்புகிறீர்களா?</string>
     <string name="oneplus_fingerprint_detail">விவரங்கள்</string>
     <string name="oneplus_fingerprint_enrol_completed">கைரேகை சேமிக்கப்பட்டுள்ளது</string>
+    <string name="oneplus_fingerprint_enroll_summary">கைரேகை அடையாளம் காணும் பகுதியை உங்கள் விரலைக் கொண்டு அழுத்தி முழுவதுமாக கவர் செய்யவும், அதிர்வை உணர்ந்தவுடன் விரலை எடுத்துவிடவும்</string>
+    <string name="oneplus_fingerprint_findsendor_summary">கைரேகை செயல்பாட்டைப் பயன்படுத்துவதற்கு திரையின் கீழ்பக்கத்தில் கைரேகை வடிவமைப்பு தோன்றியதும், கைரேகை அடையாளம் காணும் பகுதியில் உங்கள் விரலை வைத்து லேசாக அழுத்தவும்.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">கைரேகையை எப்படி பயன்படுத்துவது</string>
     <string name="oneplus_fingerprint_functional_declaration">கைரேகைச் செயல்பாடு அறிவிப்பு</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">புகைப்படமெடுக்க, வியூஃபைண்டர் திரையிலிருந்து கைரேகை சென்சாரை நீண்ட நேரம் அழுத்தவும்</string>
     <string name="oneplus_fingerprint_gesture_camera_title">புகைப்படமெடுக்க நீண்ட பிரஸ் செய்யவும்</string>
@@ -418,6 +427,9 @@
     <string name="oneplus_hide_navkeys_summary">நேவிகேஷன் பட்டியை மறைக்க அல்லது காண ஒரு பொத்தானைச் சேர்க்கவும்</string>
     <string name="oneplus_hide_notch_display_summary">அனைத்து செயலிகளாலும் நாட்ச் பகுதியைப் பயன்படுத்த முடியாது</string>
     <string name="oneplus_hide_notch_display_title">நாட்ச் பகுதியை மறை</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"கைரேகை வடிவமைப்பு திரையின் கீழ் பக்கத்தில் தோன்றும்போது, கைரேகைச் செயல்பாட்டைப் பயன்படுத்த கைரேகை அடையாளம் காணும் பகுதியில் உங்கள் விரலை வைத்து அழுத்தவும்: உங்கள் ஃபோனை எழுப்ப மற்றும் பூட்டுநீக்க, வாங்குதல்களை அங்கீகரிக்க, அல்லது பயன்பாடுகளுக்குள் உள்நுழைய. 
+
+குறிப்பு: உயர் பாதுகாப்பு கொண்ட வடிவமைப்பு அல்லது PIN-ஐ விட உங்கள் கைரேகையில் பாதுகாப்பு குறைவாக இருக்கலாம்"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">கைரேகைச் செயல்பாட்டைப் பயன்படுத்துவதற்கு, திரையின் கீழ்பகுதியில் கைரேகை வடிவமைப்பு தோன்றியவுடன், கைரேகை அடையாளம் காணும் பகுதியில் உங்கள் விரலை வைத்து அழுத்தவும்: உங்கள் ஃபோனை எழுப்ப மற்றும் பூட்டுநீக்க, வாங்குதல்களை அங்கீகரிக்க, அல்லது பயன்பாடுகளுக்குள் உள்நுழைய.</string>
     <string name="oneplus_hydrogen_version">H₂OS பதிப்பு</string>
     <string name="oneplus_incoming_call_vibrate_intensity">உள்வரும் அழைப்பு</string>
@@ -491,6 +503,7 @@
     <string name="oneplus_normal_clear_way">சாதாரணமாக அழிக்கவும்</string>
     <string name="oneplus_normal_clear_way_summary">பின்னணி செயல்முறைகளை அழிக்காமல், பணி பட்டியல் மற்றும் தேக்ககத்தை அழிக்கவும்.</string>
     <string name="oneplus_not_disturb_on">டூ நாட் டிஸ்டர்ப் ஆன் ஆக உள்ளது</string>
+    <string name="oneplus_not_disturb_summary">நீங்கள் தேர்ந்தெடுத்த விதிவிலக்குகளைத் தவிர, அழைப்புகள் மற்றும் அறிவிப்புகளை ஒலிதடுத்து அதிர்வுறுதலை ஆஃப் செய்யும்</string>
     <string name="oneplus_not_show">இதை மீண்டும் காண்பிக்காதே</string>
     <string name="oneplus_notch_display_area">நாட்ச்</string>
     <string name="oneplus_notch_display_choose_title">நாட்ச் பகுதியை எப்படிக் காண்பிப்பது</string>
@@ -563,7 +576,9 @@
     <string name="oneplus_quick_launch_how_to_use_summary">"1. விரைவான தொடக்க பேனலைத் திறக்க, பூட்டுநீக்கிய பிறகு விரலை தொடர்ந்து அப்படியே வைத்திருக்கவும்.
 2.குறுக்குவழியைத் தேர்ந்தெடுக்க ஸ்வைப் செய்து, அதைத் திறக்க விரலை எடுக்கவும்"</string>
     <string name="oneplus_quick_launch_how_to_use_title">விரைவான தொடக்கத்தைப் பயன்படுத்து</string>
+    <string name="oneplus_quick_launch_summary">குயிக் பே-வைத் தொடங்க அல்லது பயன்பாடுகளைச் செயல்படுத்த, கைரேகை அடையாளம் காணும் பகுதியை நீண்ட நேரம் அழுத்தவும்</string>
     <string name="oneplus_quick_launch_title">விரைவான தொடக்கம்</string>
+    <string name="oneplus_quick_launch_toggle_summary">ஃபோன் பூட்டப்பட்டிருக்கும்போது குயிக் பே-வைத் தொடங்க அல்லது பயன்பாடுகளைச் செயல்படுத்த, கைரேகை அடையாளம் காணும் பகுதியை நீண்ட நேரம் அழுத்தவும்</string>
     <string name="oneplus_quick_launch_toggle_title">விரைவான தொடக்கத்தை ஆன் செய்</string>
     <string name="oneplus_quick_turn_on_assistant_app">அசிஸ்டென்ட் பயன்பாட்டை விரைவாகச் செயல்படுத்துதல்</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">அசிஸ்டென்ட் பயன்பாட்டைச் செயல்படுத்த பவர் பொத்தானை 0.5 நொடி அழுத்திப் பிடிக்கவும், பவர் ஆஃப் செய்ய 3 நொடி அழுத்திப் பிடிக்கவும்</string>
@@ -666,13 +681,26 @@
     <string name="oneplus_security_lock_settings_summary">விருப்பங்கள், இருப்பிடச் சேவை, ஆப் லாக்கர் ஆகியவற்றைப் பூட்டுநீக்கவும்</string>
     <string name="oneplus_security_lock_settings_title">பாதுகாப்பு &amp; தனியுரிமை</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">அமைப்பு தோல்வியுற்றது</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"உங்கள் ஃபோனைப் பூட்டுநீக்க, வாங்குதல்களை அங்கீகரிக்க, அல்லது பயன்பாடுகளில் உள்நுழைய கைரேகை அடையாளம் காணும் பகுதியை அழுத்தவும். 
+
+குறிப்பு: 
+1.உயர் பாதுகாப்பு கொண்ட வடிவமைப்பு அல்லது PIN-ஐ விட உங்கள் கைரேகையில் பாதுகாப்பு குறைவாக இருக்கலாம்.
+2.கைரேகை கிடைப்பதை உறுதிப்படுத்த பாதுகாப்பு படத்தின் ஒவ்வொரு மாற்றீட்டிற்கும் பிறகும் உங்கள் கைரேகையை மீண்டும் உள்ளிடவும்."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">இந்தக் கைரேகை ஏற்கனவே பதியப்பட்டுள்ளது, தயவுசெய்து மற்றொரு விரலைப் பதிய முயற்சிக்கவும்.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">ஆம்பியன்ட் டிஸ்பிளேவில் கைரேகை ஐகானைக் காண்பி</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">காண்பிக்க உங்கள் ஃபோனை லேசாக நகர்த்தவும்</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">காண்பிக்கத் திரையைத் தட்டவும்</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\"எழுப்ப இரு முறைத் தட்டு\" செயல்படுத்தப்பட்டுள்ளது, \"காண்பிக்கத் திரையைத் தட்டு\" முடக்கப்படும்</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">\"காண்பிக்கத் திரையைத் தட்டு\" செயல்படுத்தப்பட்டுள்ளது, \"எழுப்ப இரு முறைத் தட்டு\" முடக்கப்படும்</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">காஸ்மோஸ்</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">வேவ்</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">ஸ்ட்ரைப்</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">கைரேகை அனிமேஷன் விளைவைத் தேர்வுசெய்யவும்</string>
     <string name="oneplus_set_time">அட்டவணையிடப்பட்ட இரவு பயன்முறை</string>
     <string name="oneplus_setting_ringtone">ரிங்கை அமைக்கவும்</string>
     <string name="oneplus_setting_sim_ringtone_switch">ஒவ்வொரு SIM அட்டைக்கும் ரிங்டோனை அமைக்கவும்</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">ஸ்மார்ட் பூஸ்ட் அம்சமானது உங்கள் தினசரி பயன்பாட்டின் அடிப்படையில், OnePlus ஃபோன்களின் பெரிய RAM-ஐ நன்றாகப் பயன்படுத்துகிறது, இது பயன்பாடுகள் மற்றும் கேம்களின் ஏற்றுதல் செயல்திறனை வேகப்படுத்துகிறது.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">ஸ்மார்ட் பூஸ்ட்</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">திரையைப் பூட்டுநீக்க ஓர் மாற்றுவழியை அமைக்கவும்</string>
     <string name="oneplus_share_this_wifi">Wi-Fi கவரேஜை விரிவுபடுத்து</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi பகிர்தல்</string>
@@ -750,7 +778,7 @@
     <string name="oneplus_weak_text_reminding">உரை மட்டும்</string>
     <string name="oneplus_weak_text_reminding_summary">ஹெட்ஸ் அப் அறிவிப்பைக் காட்ட பயன்பாடுகளை அனுமதி</string>
     <string name="oneplus_wifi_ap_error">SIM அட்டையை செருகவும்</string>
-    <string name="oneplus_wifi_hidden_network_warning">"உங்கள் ரூட்டர் SSID ஒளிபரப்புகளை முடக்கினால், மறைக்கப்பட்ட நெட்வொர்க்குடன் இணைய \"ஆம்\" என்பதை நீங்கள் தேர்வுசெய்ய வேண்டும்.
+    <string name="oneplus_wifi_hidden_network_warning">"உங்கள் ரூட்டரில் SSIDயை ஒளிபரப்ப வேண்டாம் என்று அமைக்கப்பட்டிருந்தால், மறைக்கப்பட்ட நெட்வொர்க்குடன் இணைய \"ஆம்\" என்பதை நீங்கள் தேர்வுசெய்ய வேண்டும்.
 
 உங்கள் ஃபோன், நெட்வொர்க்கைக் கண்டுபிடிக்க வழக்கமாக அதன் சிக்னலை ஒளிபரப்பும் என்பதால் இது பாதுகாப்பு அபாயத்தை ஏற்படுத்தக்கூடும்.
 
@@ -830,6 +858,8 @@
     <string name="op_system_dashboard_summary">மொழிகள், நேரம், மீட்டமை, புதுப்பிப்புகள்</string>
     <string name="op_theme_2__cannot_change_color_accent">தி அவென்ஜர்ஸ் தீம் ஆனது, சிஸ்டம் நிற தீமை மட்டுமே பயன்படுத்த முடியும்</string>
     <string name="op_theme_2__title">தி அவென்ஜர்ஸ்</string>
+    <string name="op_theme_3_cannot_change_color_accent">McLaren தீம், சிஸ்டம் கலர் தீமை மட்டுமே பயன்படுத்த முடியும்</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">தீம்</string>
     <string name="op_user_manual_settings">பயனர் கையேடு</string>
     <string name="op_volume">ஒலியளவு</string>
@@ -895,7 +925,7 @@
     <string name="status_bar_settings_cellular_title">செல்லுலார் தரவு</string>
     <string name="status_bar_settings_dnd_title">தொந்தரவு செய்யாதீர்</string>
     <string name="status_bar_settings_headset_title">ஹெட்செட்</string>
-    <string name="status_bar_settings_hotspot_title">ஹாட்ஸ்பாட்</string>
+    <string name="status_bar_settings_hotspot_title">மொபைல் ஹாட்ஸ்பாட்</string>
     <string name="status_bar_settings_network_speed_title">நெட்வொர்க் வேகத்தைக் காண்பி</string>
     <string name="status_bar_settings_time_title">நேரம்</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -980,7 +1010,7 @@
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">10 நிமிடம் செயலற்ற நிலையில் இருந்தப் பிறகு</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">15 நிமிடம் செயலற்ற நிலையில் இருந்தப் பிறகு</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">5 நிமிடம் செயலற்ற நிலையில் இருந்தப் பிறகு</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">எப்பொழுதும் ஆன்</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">எப்போதும் ஆனில் இருக்கும்</string>
     <string name="wifi_wapi_as_cert">AS சான்றிதழ்</string>
     <string name="wifi_wapi_cert_cancel_button">இரத்துசெய்க</string>
     <string name="wifi_wapi_cert_create_subdir">டைரக்டரியை உருவாக்குக</string>

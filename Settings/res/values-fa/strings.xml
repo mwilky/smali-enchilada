@@ -2685,6 +2685,9 @@
     <string name="oneplus_emergency_rescue_settings">نجات اضطراری</string>
     <string name="oneplus_emergency_rescue_settings_summary">برای درخواست کمک خودکار، دکمه روشن/خاموش را پشت سر هم فشار دهید</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">بعد از تغییر تنظیمات «دکمۀ روشن/خاموش» «نجات اضطراری» در دسترس خواهد بود</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1. لطفاً پس از هر جایگزینی فیلم محافظتی اثر انگشت خود را دوباره وارد کنید تا از دسترسی اثرانگشت مطمئن شوید 
+
+2.در یک پردازش تنظمیات مجرد، لطفاً تنها اطلاعات اثر مربوط به یک انگشت را وارد کنید."</string>
     <string name="oneplus_enroll_fingerprint_tips_title">تنظیم سریع اثرانگشت</string>
     <string name="oneplus_enter_your_fingerprint">· ثبت اثر انگشت</string>
     <string name="oneplus_experience_improvement_programs">برنامه‌های بهبود تجربه کاربری</string>
@@ -2709,11 +2712,17 @@
     <string name="oneplus_finger_input_error_tips">خطای اثر انگشت، لطفا دوباره سعی کنید</string>
     <string name="oneplus_finger_input_fail_tips">ورودی ناموفق ماند، لطفاً موقعیت را تنظیم کنید و دوباره تلاش کنید</string>
     <string name="oneplus_fingerprint">اثر انگشت</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">اثر انگشت مشابه شناسایی شد. برای وارد کردن اثر انگشت قسمت‌های مختلف، لطفاً انگشتتان را کمی حرکت دهید.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">محدوده شناسایی اثر انگشت کثیف است. لطفاً آن را تمیز نموده دوباره تلاش کنید.</string>
+    <string name="oneplus_fingerprint_acquired_partial">اثر انگشت به صورت ناقص شناسایی شد. لطفاً محدوده شناسایی اثر انگشت را به طور کامل بپوشانید.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">سرعت انجام عملیات برای پردازش اثر انگشت شما بیش از حد زیاد است. لطفاً انگشت خود را فشار دهید و اندکی نگه دارید.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">اثر انگشت مشابه شناسایی شد. لطفاً انگشت خود را کمی جابه‌جا کنید تا قسمت‌های مختلف اثر انگشت وارد شود.</string>
     <string name="oneplus_fingerprint_animation_effect_title">جلوه پویانمایی اثر انگشت</string>
     <string name="oneplus_fingerprint_delete_confirm_message">آیا قصد دارید آن را حذف کنید؟</string>
     <string name="oneplus_fingerprint_detail">جزئیات</string>
     <string name="oneplus_fingerprint_enrol_completed">اثر انگشت ذخیره شده است</string>
+    <string name="oneplus_fingerprint_enroll_summary">فشار بدهید و با انگشت خود روی قسمت شناسایی اثرانگشت را به اندازه ممکن بپوشانید، بعد از اینکه لرزش را احساس کردید انگشت خود را بردارید.</string>
+    <string name="oneplus_fingerprint_findsendor_summary">زمانی که الگوی اثر انگشت در پایین صفحه نمایش ظاهر شد، کافی است انگشت خود را روی محدوده شناسایی اثر انگشت فشار دهید تا بتوانید از عملکرد اثر انگشت استفاده کنید.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">نحوه استفاده از اثر انگشت</string>
     <string name="oneplus_fingerprint_functional_declaration">اظهارنامه عملکرد اثر انگشت</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">از داخل صفحۀ منظره‌یاب، حسگر اثر انگشت را فشار دهید و نگه دارید تا عکس گرفته شود</string>
     <string name="oneplus_fingerprint_gesture_camera_title">فشار طولانی برای گرفتن عکس</string>
@@ -2797,6 +2806,9 @@
     <string name="oneplus_hide_navkeys_summary">برای پنهان کردن یا نمایش نوار پیمایش، یک دکمه اضافه کنید</string>
     <string name="oneplus_hide_notch_display_summary">همه برنامه‌ها نمی‌توانند از قسمت برآمده استفاده کنند</string>
     <string name="oneplus_hide_notch_display_title">پنهان کردن قسمت برآمده</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"زمانی که الگوی اثرانگشت در پایین صفحه نشان داده می‌شود، فقط با انگشت خود روی قسمت شناسایی اثرانگشت فشار بدهید تا از قابلیت اثرانگشت استفاده کنید: گوشی خود را راه اندازی و قفل آن را باز کنید، خریدهای خود را تأیید کنید، یا به حساب برنامه‌های کاربردی خود وارد شوید. 
+
+توجه: ممکن است اثرانگشت از یک قفل الگو یا پین‌کد قوی‌ امنیت کمتری داشته باشد."</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">زمانی که الگوی اثر انگشت در پایین صفحه نمایش ظاهر می‌شود، کافی است انگشت خود را روی ناحیه شناسایی اثر انگشت فشار دهید تا بتوانید از عملکرد اثر انگشت استفاده کنید: تلفن خود را بیدار کنید و قفل آن را باز کنید، اجازه پرداخت بدهید یا وارد سیستم برنامه‌ها شوید.</string>
     <string name="oneplus_hydrogen_version">نسخۀ H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">تماس دریافتی</string>
@@ -2870,6 +2882,7 @@
     <string name="oneplus_normal_clear_way">حذف عادی</string>
     <string name="oneplus_normal_clear_way_summary">لیست وظایف و حافظه را بدون پاک کردن روندهای پیش زمینه پاک کنید.</string>
     <string name="oneplus_not_disturb_on">مزاحم نشوید روشن است</string>
+    <string name="oneplus_not_disturb_summary">بی‌صدا کردن تماس‌ها و اعلان‌ها و خاموش کردن لرزش، به جز موارد استثنای منتخب</string>
     <string name="oneplus_not_show">دیگر این مورد نمایش داده نشود</string>
     <string name="oneplus_notch_display_area">قسمت برآمده</string>
     <string name="oneplus_notch_display_choose_title">نحوه نمایش قسمت برآمده</string>
@@ -2942,7 +2955,9 @@
     <string name="oneplus_quick_launch_how_to_use_summary">"۱. بعد از باز کردن قفل، انگشتتان را در همان موقعیت نگه دارید تا پانل راه‌اندازی سریع باز شود
 ۲. برای انتخاب میان‌بر، صفحه را تند بکشید و برای اینکه راه‌اندازی شود، انگشتتان را رها کنید"</string>
     <string name="oneplus_quick_launch_how_to_use_title">استفاده از راه‌اندازی سریع</string>
+    <string name="oneplus_quick_launch_summary">برای راه‌اندازی پرداخت سریع یا برنامه‌های فعال، فشاری طولانی بر حسگر شناسایی اثر انگشت وارد کنید</string>
     <string name="oneplus_quick_launch_title">راه‌اندازی سریع</string>
+    <string name="oneplus_quick_launch_toggle_summary">برای راه‌اندازی پرداخت سریع یا برنامه‌های فعال وقتی تلفن قفل است، فشاری طولانی بر حسگر شناسایی اثر انگشت وارد کنید</string>
     <string name="oneplus_quick_launch_toggle_title">روشن کردن راه‌اندازی سریع</string>
     <string name="oneplus_quick_turn_on_assistant_app">فعال‌سازی سریع برنامه دستیار</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">برای فعال‌سازی برنامه دستیار، دکمه روشن/خاموش را 0.5 ثانیه و برای خاموش کردن، 3 ثانیه نگه دارید</string>
@@ -3045,13 +3060,26 @@
     <string name="oneplus_security_lock_settings_summary">ترجیحات قفل‌گشایی، خدمات موقعیت‌یابی، قفل‌کننده برنامه‌ها</string>
     <string name="oneplus_security_lock_settings_title">امنیت و حریم خصوصی</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">راه اندازی ناموفق بود</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"فقط قسمت شناسایی اثرانگشت را فشار دهید تا قفل گوشی شما باز شود، خریدهای خود را تأیید کنید و یا وارد حساب برنامه های خود شوید. 
+
+توجه: 
+1. ممکن است اثرانگشت از یک قفل الگو یا پین‌کد قوی امنیت کمتری داشته باشد. 
+2. لطفاً پس از هر جایگزینی فیلم محافظتی اثرانگشت خود را دوباره وارد کنید تا از دسترسی اثرانگشت مطمئن شوید."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">این اثر انگشت در حال حاضر ثبت شده است، لطفا انگشت دیگری را امتحان کنید.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">نشان دادن اثرانگشت در نمایش محیطی</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">برای نمایش، گوشی خود را کمی حرکت دهید.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">برای نمایش بروی صفحه ضربه بزنید.</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">گزینه «دو ضربه برای بیدار کردن» فعال است، گزینه «برای نمایش، به صفحۀ نمایش ضربه بزنید» غیرفعال می‌شود</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">گزینه «برای نمایش، به صفحۀ نمایش ضربه بزنید» فعال است، گزینه «دو ضربه برای بیدار کردن» غیرفعال می‌شود</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">کیهان</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">موج</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">راه‌راه</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">انتخاب جلوه پویانمایی اثر انگشت</string>
     <string name="oneplus_set_time">حالت شب برنامه ریزی شده</string>
     <string name="oneplus_setting_ringtone">تعیین آهنگ زنگ</string>
     <string name="oneplus_setting_sim_ringtone_switch">تنظیم آهنگ زنگ برای هر سیم کارت</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">بر اساس مصرف روزانه شما، افزایش سرعت هوشمند از حافظه تصادفی گوشی‌های OnePlus نهایت استفاده را می‌کند؛ که این امر عملکرد برنامه‌های کاربردی و بازی های در حال اجرا را افزایش می‌دهد.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">افزایش سرعت هوشمند</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· راه جایگزینی برای قفل‌گشایی صفحه نمایش تعیین کنید</string>
     <string name="oneplus_share_this_wifi">گسترش پوشش Wi-Fi</string>
     <string name="oneplus_share_wifi_title">اشتراک گذاری بی‑سیم</string>
@@ -3129,11 +3157,11 @@
     <string name="oneplus_weak_text_reminding">فقط متن</string>
     <string name="oneplus_weak_text_reminding_summary">اجازه به برنامه‌ها برای نشان دادن اعلان هشدار</string>
     <string name="oneplus_wifi_ap_error">لطفا سیم کارت را وارد کنید</string>
-    <string name="oneplus_wifi_hidden_network_warning">"اگر روتر شما پخش SSID را غیرفعال کرد، برای اتصال به شبکۀ پنهان، باید «بله» را انتخاب کنید.
+    <string name="oneplus_wifi_hidden_network_warning">"اگر روتر شما به گونه‌ای تنظیم شده باشد که SSID را پخش نکند، برای اتصال به شبکۀ پنهان باید گزینۀ «بله» را انتخاب کنید.
 
-این کار می‌تواند یک ریسک امنیتی ایجاد کند زیرا تلفنتان به منظور پیدا کردن شبکه، سیگنالش را به طور مرتب پخش می‌کند.
+در این صورت، ممکن است یک ریسک امنیتی ایجاد شود زیرا تلفن شما برای پیدا کردن شبکه، سیگنال خود را به طور مرتب پخش می‌کند.
 
-تنظیم شبکه به صورت پنهان تنظیمات روتر شما را تغییر نخواهد داد."</string>
+اگر شبکه را به صورت پنهان تنظیم کنید، تنظیمات روتر شما تغییر نمی‌کند."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">غیرفعال کردن IPv6 می‌تواند از مشکلات سازگاری بعضی روترهای Wi-Fi جلوگیری کند.</string>
     <string name="oneplus_wifi_ipv6_surport_title">پشتیبانی از IPv6</string>
     <string name="oneplus_wifi_list">لیست بی‑سیم</string>
@@ -3210,6 +3238,8 @@
     <string name="op_system_dashboard_summary">زبان‌ها، زمان، بازنشانی، به‌روزرسانی‌ها</string>
     <string name="op_theme_2__cannot_change_color_accent">تم «انتقام‌جویان» فقط می‌تواند از تم رنگ سیستم استفاده کند</string>
     <string name="op_theme_2__title">انتقام‌جویان</string>
+    <string name="op_theme_3_cannot_change_color_accent">تم McLaren فقط می‌تواند از تم رنگ سیستم استفاده کند</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">پوسته</string>
     <string name="op_user_manual_settings">دفترچه راهنمای کاربر</string>
     <string name="op_volume">حجم صدا</string>
@@ -3989,7 +4019,7 @@
     <string name="status_bar_settings_cellular_title">داده های شبکه موبایل</string>
     <string name="status_bar_settings_dnd_title">مزاحم نشوید</string>
     <string name="status_bar_settings_headset_title">هدست</string>
-    <string name="status_bar_settings_hotspot_title">هات اسپات</string>
+    <string name="status_bar_settings_hotspot_title">هات‌اسپات موبایل</string>
     <string name="status_bar_settings_network_speed_title">نمایش سرعت شبکه</string>
     <string name="status_bar_settings_time_title">زمان</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -4990,7 +5020,7 @@
     <string name="wifi_scan_notify_text">‏برای بهبود دقت مکان، برنامه‌ها و سرویس‌ها همچنان می‌توانند در هرزمانی شبکه‌های Wi-Fi را اسکن کنند (حتی وقتی Wi-Fi خاموش است). این تنظیم می‌تواند برای مثال برای بهبود ویژگی‌ها و سرویس‌های مکان‌مبنا استفاده شود. می‌توانید در LINK_BEGINتنظیمات اسکن کردنLINK_END، این تنظیم را تغییر دهید.</string>
     <string name="wifi_scan_notify_text_scanning_off">‏برای بهبود دقت مکان، اسکن Wi-Fi‌ را در LINK_BEGINتنظیمات اسکنLINK_END روشن کنید.</string>
     <string name="wifi_security">امنیت</string>
-    <string name="wifi_security_dialog">با «امنیت باز»، هر دستگاهی می‌تواند به هات اسپات دستگاه همراه شما متصل شود و از اتصال تلفن همراهتان استفاده کند.</string>
+    <string name="wifi_security_dialog">در حالت امنیت باز، هر دستگاهی می‌تواند به «نقطۀ اتصال همراه» شما متصل شود و از دادۀ تلفن همراهتان استفاده کند.</string>
     <string name="wifi_security_none">هیچ‌کدام</string>
     <string name="wifi_security_open">باز کردن</string>
     <string name="wifi_select_network">‏انتخاب Wi-Fi</string>
@@ -5066,7 +5096,7 @@
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">پس از 10 دقیقه عدم فعالیت</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">پس از 15 دقیقه عدم فعالیت</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">پس از 5 دقیقه عدم فعالیت</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">همیشه روشن</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">همیشه روشن می‌ماند</string>
     <string name="wifi_tether_disabled_by_airplane">دردسترس نیست، زیرا حالت هواپیما روشن است</string>
     <string name="wifi_tether_enabled_subtext">%1$s فعال است</string>
     <string name="wifi_tether_failed_subtext">‏خطای نقطه اتصال قابل حمل Wi-Fi</string>

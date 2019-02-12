@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">फिंगरप्रिंट ओळख क्षेत्र अस्वच्छ आहे. कृपया ते स्वच्छ करा आणि पुन्हा प्रयत्न करा.</string>
+    <string name="oneplus_fingerprint_acquired_partial">अपुरे फिंगरप्रिंट आढळले. कृपया फिंगरप्रिंट ओळख क्षेत्र पूर्णपणे झाका.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">आपल्या फिंगरप्रिंटवर फारच झटपट प्रक्रिया केली जात आहे. कृपया दाबत असताना क्षणभर वाट पहा.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">एकसारखा फिंगरप्रिंट आढळला. कृपया वेगळ्या भागाचा फिंगरप्रिंट प्रविष्ट करण्यासाठी आपले बोट थोडेसे हलवा.</string>
+    <string name="oneplus_fingerprint_enroll_summary">कृपया ओळख पडताळणी क्षेत्रावर आपल्या बोटाने दाबा आणि बोटाला कंपन जाणवल्यावर बोट उचला.</string>
+    <string name="oneplus_fingerprint_findsendor_summary">फिंगरप्रिंटचा पॅटर्न स्क्रीनच्या तळाशी दिसल्यावर फिंग़रप्रिंट ओळखचा वापर करण्यासाठी फिंगरप्रिंट ओळख क्षेत्रावर नुसते आपल्या बोटाने दाबा.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">फिंगरप्रिंट कसा वापरावा</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"आपला फोन अनलॉक करण्यासाठी, खरेद्यांना मंजुरी देण्यासाठी किंवा अ‍ॅप्समध्ये साइन इन करण्यासाठी नुसते फिंगरप्रिंट ओळख पडताळणी क्षेत्रावर दाबा. जोडण्यात आलेले कोणतेही फिंगरप्रिंट या गोष्टी करू शकतील. 
+
+टीप: आपला फिंगरप्रिंट हा अवघड पॅटर्न किंवा PIN पेक्षा कमी सुरक्षित असू शकेल."</string>
+</resources>

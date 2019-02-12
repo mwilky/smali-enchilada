@@ -202,6 +202,8 @@
 
 .field public static final OP_DOZE_MODE_ENABLED:Ljava/lang/String; = "doze_mode_enabaled"
 
+.field public static final OP_GAMEMODE_REMOVED_PACKAGES_BY_USER_KEY:Ljava/lang/String; = "op_gamemode_removed_packages_by_user"
+
 .field public static final OP_GAME_MODE_APP:I = 0x44
 
 .field public static final OP_GESTURE_BUTTON_ENABLED:Ljava/lang/String; = "op_gesture_button_enabled"

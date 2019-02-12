@@ -2687,6 +2687,9 @@
     <string name="oneplus_emergency_rescue_settings">అత్యవసర సహాయం</string>
     <string name="oneplus_emergency_rescue_settings_summary">పవర్ బటన్‌ను త్వరగా నొక్కడం ద్వారా సహాయం కోసం స్వయంచాలకంగా పిలవండి</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">అత్యవసర ప్రమాద సంరక్షణ పవర్ బటన్ సెట్టింగ్‌లను సవరించిన తరువాత అందుబాటులో ఉంటుంది</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1.వేలిముద్ర లభ్యతను నిర్ధారించడానికి ప్రొటెక్టివ్ ఫిల్మ్ మార్చిన ప్రతిసారి మీ వేలిముద్రను మళ్లీ నమోదు చేయాలి
+
+2.ఒక సెటప్ విధానంలో, దయచేసి మీ ఒక వేలి యొక్క వేలిముద్ర సమాచారాన్ని మాత్రమే నమోదు చేయాలి"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">వేలిముద్ర సెటప్ ప్రాంప్ట్</string>
     <string name="oneplus_enter_your_fingerprint">· మీ వేలిముద్రను నమోదు చేయి</string>
     <string name="oneplus_experience_improvement_programs">అనుభవ మెరుగుదల కార్యక్రమాలు</string>
@@ -2711,11 +2714,17 @@
     <string name="oneplus_finger_input_error_tips">వేలిముద్ర రిజిస్ట్రేషన్ దోషం, దయచేసి మళ్లీ ప్రయత్నించండి</string>
     <string name="oneplus_finger_input_fail_tips">ఇన్‌పుట్ విఫలమైంది, దయచేసి పొజిషన్ సర్దుబాటు చేయండి మరియు తిరిగి ప్రయత్నించండి</string>
     <string name="oneplus_fingerprint">వేలిముద్ర</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">సరిపోలే వేలిముద్ర గుర్తించబడింది. దయచేసి వేలిముద్ర వేర్వేరు భాగాలను నమోదు చేయడానికి మీ వేలిని కొద్దిగా కదపండి.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">వేలిముద్ర గుర్తింపు ప్రాంతం మురికిగా ఉంది. దయచేసి దానిని శుభ్రం చేసి, మళ్లీ ప్రయత్నించండి.</string>
+    <string name="oneplus_fingerprint_acquired_partial">పాక్షిక వేలిముద్ర గుర్తించబడింది. దయచేసి వేలిముద్ర గుర్తింపు ప్రాంతాన్ని పూర్తిగా కవర్ చేయండి.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">మీ వేలిముద్రను ప్రాసెస్ చేయడం చాలా వేగంగా చేశారు. దయచేసి నొక్కినప్పుడు కొంతసేపు ఉంచండి.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">సారూప్య వేలిముద్ర గుర్తించబడింది. దయచేసి వేర్వేరు భాగాల వేలిముద్రను నమోదు చేయడానికి మీ వేలిని కొద్దిగా కదపండి.</string>
     <string name="oneplus_fingerprint_animation_effect_title">వేలిముద్ర యానిమేషన్ ప్రభావం</string>
     <string name="oneplus_fingerprint_delete_confirm_message">దానిని మీరు డిలీట్ చేయాలా?</string>
     <string name="oneplus_fingerprint_detail">వివరాలు</string>
     <string name="oneplus_fingerprint_enrol_completed">వేలిముద్రలు సేవ్ చేయబడ్డాయి</string>
+    <string name="oneplus_fingerprint_enroll_summary">సాధ్యమైనంత వరకు మీ వేలితో వేలిముద్ర గుర్తింపు ప్రాంతాన్ని కవర్ చేసి నొక్కండి, అప్పుడు మీకు వైబ్రేషన్ తెలిసిన వెంటనే మీ వేలిని తీసివేయండి</string>
+    <string name="oneplus_fingerprint_findsendor_summary">వేలిముద్ర నమూనా స్క్రీన్ దిగువన కనిపించినప్పుడు, వేలిముద్ర పంక్షన్ ఉపయోగించడానికి వేలిముద్ర గుర్తింపు ప్రాంతంలో మీ వేలితో నెమ్మదిగా నొక్కండి.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">వేలిముద్రను ఎలా ఉపయోగించాలి</string>
     <string name="oneplus_fingerprint_functional_declaration">వేలిముద్ర ఫంక్షన్ నిర్ధారణ</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">వ్యూఫైండర్ స్క్రీన్ నుండి, ఫోటో తీయడానికి వేలిముద్ర సెన్సార్‌ను నొక్కి ఉంచండి</string>
     <string name="oneplus_fingerprint_gesture_camera_title">ఒక ఫోటో తీసుకోవడం కొరకు లాంగ్ ప్రెస్ చేయండి</string>
@@ -2799,6 +2808,9 @@
     <string name="oneplus_hide_navkeys_summary">నావిగేషన్ బాష్ దాచడానికి లేదా చూపడానికి బటన్ జోడించండి</string>
     <string name="oneplus_hide_notch_display_summary">అన్ని అప్లికేషన్‌లు నోచ్ ప్రాంతాన్ని ఉపయోగించలేవు</string>
     <string name="oneplus_hide_notch_display_title">నోచ్ ప్రాంతాన్ని దాచు</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"స్క్రీన్ దిగువన వేలిముద్ర నమూనా కనిపించినప్పుడు, వేలిముద్ర ఫంక్షన్ ఉపయోగించడానికి వేలిముద్ర గుర్తింపు ప్రాంతంలో మీ వేలితో నెమ్మదిగా నొక్కండి: మీ ఫోన్ మేల్కొలపడానికి మరియు అన్‌లాక్ చేయడానికి, కొనుగోళ్లను ధృవీకరించడానికి లేదా అప్లికేషన్‌లకు సైన్ ఇన్ చేయడానికి. 
+
+గమనిక: మీ వేలిముద్ర శక్తివంతమైన నమూనా లేదా PIN కంటే తక్కువ సురక్షితం కావచ్చు"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">స్క్రీన్ దిగువన వేలిముద్ర నమూనా కనిపించినప్పుడు, వేలిముద్ర ఫంక్షన్ ఉపయోగించడానికి వేలిముద్ర గుర్తింపు ప్రాంతంలో మీ వేలితో నెమ్మదిగా నొక్కండి: మీ ఫోన్‌ను మేల్కొలపడానికి మరియు అన్‌లాక్ చేయడానికి, కొనుగోళ్లు ప్రమాణీకరించడానికి లేదా అప్లికేషన్‌ల్లోకి సైన్ ఇన్ చేయడానికి.</string>
     <string name="oneplus_hydrogen_version">H₂OS వెర్షన్</string>
     <string name="oneplus_incoming_call_vibrate_intensity">ఇన్‌కమింగ్ కాల్</string>
@@ -2872,6 +2884,7 @@
     <string name="oneplus_normal_clear_way">సాధారణంగా క్లియర్ చేయడం</string>
     <string name="oneplus_normal_clear_way_summary">బ్యాక్‌గ్రౌండ్ ప్రాసెస్‌లు క్లియర్ చేయకుండానే టాస్క్ లిస్ట్ మరియు క్యాచే క్లియర్ చేయండి.</string>
     <string name="oneplus_not_disturb_on">అంతరాయం కలిగించవద్దు ఆన్ చేయబడింది</string>
+    <string name="oneplus_not_disturb_summary">మీరు ఎంచుకున్న మినహాయింపులకు మినహా కాల్‌లు మరియు నోటిఫికేషన్‌లను మ్యూట్ చేసి, వైబ్రేషన్‌ని ఆఫ్ చేయబడతాయి</string>
     <string name="oneplus_not_show">దీనిని మళ్లీ చూపించవద్దు</string>
     <string name="oneplus_notch_display_area">నోచ్</string>
     <string name="oneplus_notch_display_choose_title">నోచ్ ప్రాంతాన్ని ఎలా చూపాలి</string>
@@ -2944,7 +2957,9 @@
     <string name="oneplus_quick_launch_how_to_use_summary">"1.త్వరిత లాంచ్ ప్యానెల్ తెరవడానికి అన్‌లాక్ చేసిన తర్వాత మీ వేలిని నొక్కి ఉంచండి
 2.సత్వరమార్గాన్ని ఎంచుకోవడానికి స్వైప్ చేయండి, దానిని ప్రారంభించడానికి మీ వేలి ఎత్తండి"</string>
     <string name="oneplus_quick_launch_how_to_use_title">త్వరిత లాంచ్ ఉపయోగించండి</string>
+    <string name="oneplus_quick_launch_summary">త్వరిత చెల్లింపు ప్రారంభించడానికి లేదా అప్లికేషన్‌లను యాక్టివేట్ చేయడానికి వేలిముద్ర గుర్తింపును నొక్కి ఉంచండి</string>
     <string name="oneplus_quick_launch_title">త్వరిత లాంచ్</string>
+    <string name="oneplus_quick_launch_toggle_summary">ఫోన్ లాక్ అయ్యి ఉన్నప్పుడు, త్వరిత చెల్లింపు ప్రారంభించడానికి లేదా అప్లికేషన్‌లను యాక్టివేట్ చేయడానికి వేలిముద్ర గుర్తింపును నొక్కి ఉంచండి</string>
     <string name="oneplus_quick_launch_toggle_title">త్వరిత లాంచ్ ఆన్ చేయండి</string>
     <string name="oneplus_quick_turn_on_assistant_app">అసిస్టెంట్ అప్లికేషన్‌లను వేగంగా సక్రియం చేయండి</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">అసిస్టెంట్ అప్లికేషన్ యాక్టివేట్ చేయడానికి 0.5సెక్లనపాటు పవర్ బటన్ నొక్కి ఉంచండి మరియు పవర్ ఆఫ్ చేయడానికి 3సెకన్లపాటు నొక్కి ఉంచండి</string>
@@ -3047,13 +3062,26 @@
     <string name="oneplus_security_lock_settings_summary">అన్‌లాక్ ప్రాధాన్యతలు, స్థాన సేవ, అప్లికేషన్ లాకర్</string>
     <string name="oneplus_security_lock_settings_title">భద్రత &amp; గోప్యత</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">సెటప్ విఫలమైంది</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"మీ ఫోన్‌ను అన్‌లాక్ చేయడానికి, కొనుగోళ్లను ధృవీకరించడానికి లేదా అప్లికేషన్‌లకు సైన్ ఇన్ చేయడానికి మీ వేలిముద్ర గుర్తింపు ప్రాంతాన్ని నొక్కండి. 
+
+గమనిక: 
+1.మీ వేలిముద్ర శక్తివంతమైన నమూనా లేదా PIN కంటే తక్కువ భద్రతను అందిస్తుంది.
+2.వేలిముద్ర లభ్యతను నిర్ధారించడానికి ప్రొటెక్టివ్ ఫిల్మ్ మార్చిన ప్రతిసారి మీ వేలిముద్రను మళ్లీ నమోదు చేయాలి."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">ఈ వేలిముద్ర ఇప్పటికే నమోదు చేయబడింది, దయచేసి మరో వేలిని ప్రయత్నించండి.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">పరిసర డిస్‌ప్లేలో వేలిముద్ర ఐకాన్ చూపు</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">చూపడానికి మీ ఫోన్‌ను కొద్దిగా కదపండి</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">చూపడానికి స్క్రీన్‌పై నొక్కండి</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\"మేల్కొలపడానికి రెండుసార్లు నొక్కండి\" ప్రారంభించబడింది మరియు \"చూపడానికి స్క్రీన్‌ను నొక్కండి\" నిలిపివేయబడుతుంది</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">\"చూపడానికి స్క్రీన్ నొక్కండి\" ప్రారంభించబడింది మరియు \"మేల్కొలపడానికి రెండుసార్లు నొక్కండి\" నిలిపివేయబడుతుంది</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">కాస్మోస్</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">తరంగం</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">స్ట్రైప్</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">వేలిముద్ర యానిమేషన్ ప్రభావాన్ని ఎంచుకోండి</string>
     <string name="oneplus_set_time">షెడ్యూల్డ్ నైట్ మోడ్</string>
     <string name="oneplus_setting_ringtone">రింగ్ సెట్ చేయి</string>
     <string name="oneplus_setting_sim_ringtone_switch">ప్రతి SIM కార్డుకు రింగ్‌టోన్ సెట్ చేయి</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">మీ దైనందిన వినియోగానికి ఆధారంగా, స్మార్ట్ బూస్ట్ OnePlus ఫోన్‌ల యొక్క అతిపెద్ద RAM యొక్క పూర్తి ప్రయోజనాలను ఉపయోగిస్తుంది, దీని వలన అప్లికేషన్‌లు మరియు గేమ్‌ల లోడ్ కావడం సాధ్యమవుతుంది.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">స్మార్ట్ బూస్ట్</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· స్క్రీన్ అన్‌లాక్ చేయడానికి ప్రత్యామ్నాయ మార్గాన్ని సెట్ చేయి</string>
     <string name="oneplus_share_this_wifi">విస్తార Wi-Fi పరిధి</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi పంచుకుంటోంది</string>
@@ -3131,11 +3159,11 @@
     <string name="oneplus_weak_text_reminding">టెక్స్ట్ మాత్రమే</string>
     <string name="oneplus_weak_text_reminding_summary">రాబోయే వాటి గురించి నోటిఫికేషన్‌ను చూపడానికి అప్లికేషన్‌లు అనుమతించు</string>
     <string name="oneplus_wifi_ap_error">దయచేసి SIM కార్డ్‌ని చొప్పించండి</string>
-    <string name="oneplus_wifi_hidden_network_warning">"మీ రూటర్ SSID ప్రసారాన్ని నిలిపివేసినట్లయితే, మీరు దాచిన నెట్‌వర్క్‌కు కనెక్ట్ చేయడానికి \"అవును\" ఎంచుకోవాలి.
+    <string name="oneplus_wifi_hidden_network_warning">"మీ రూటర్ SSID ప్రసారం చేయరాదని సెట్ చేయబడినట్లయితే, మీరు గోప్య నెట్‌వర్క్‌కు కనెక్ట్ కావడానికి \"అవును\" ఎంచుకోవాలి.
 
-మీ ఫోన్ నెట్‌వర్క్‌ను కనుగొనడానికి నిరంతరంగా దాని సిగ్నల్‌ను ప్రసారం చేస్తుంది కనుక దీని వలన భద్రతా ప్రమాదం సృష్టించవచ్చు.
+మీ ఫోన్ నిరంతరంగా నెట్‌వర్క్ కనుగొనడానికి దాని సిగ్నల్‌ను ప్రసారం చేస్తుంది కనుక భద్రతా ప్రమాదం ఏర్పడవచ్చు.
 
-నెట్‌వర్క్‌ను దాచినట్లుగా సెట్ చేయడం వలన మీ రూటర్ సెట్టింగ్‌లు మారవు."</string>
+నెట్‌వర్క్‌ను గోప్యం వలె సెట్ చేయడం వలన మీ రూటర్ సెట్టింగ్‌లు మారవు."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">IPv6 డిసేబుల్ చేయడం వల్ల కొన్ని Wi-Fi రూటర్‌లతో కంపాటబిలిటీ సమస్యలు రావొచ్చు.</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6 సపోర్ట్</string>
     <string name="oneplus_wifi_list">Wi‑Fi లిస్ట్</string>
@@ -3212,6 +3240,8 @@
     <string name="op_system_dashboard_summary">భాషలు, సమయం, రీసెట్, నవీకరణలు</string>
     <string name="op_theme_2__cannot_change_color_accent">ది అవెంజర్స్ థీమ్ సిస్టమ్ కలర్ థీమ్‌న మాత్రమే ఉపయోగిస్తుంది</string>
     <string name="op_theme_2__title">ది అవెంజర్స్</string>
+    <string name="op_theme_3_cannot_change_color_accent">McLaren థీమ్ కేవలం సిస్టమ్ కలర్ థీమ్ మాత్రమే ఉపయోగించగలదు</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">థీమ్</string>
     <string name="op_user_manual_settings">యూజర్ మాన్యువల్</string>
     <string name="op_volume">వాల్యూం</string>
@@ -3991,7 +4021,7 @@ UT ఇంటర్‌ఫేస్: %5$s"</string>
     <string name="status_bar_settings_cellular_title">సెల్యూలర్ డేటా</string>
     <string name="status_bar_settings_dnd_title">అంతరాయం కలిగించవద్దు</string>
     <string name="status_bar_settings_headset_title">హెడ్‌సెట్</string>
-    <string name="status_bar_settings_hotspot_title">హాట్‌స్పాట్</string>
+    <string name="status_bar_settings_hotspot_title">మొబైల్ హాట్‌స్పాట్</string>
     <string name="status_bar_settings_network_speed_title">నెట్‌వర్క్ స్పీడ్ చూపించు</string>
     <string name="status_bar_settings_time_title">సమయం</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -5068,7 +5098,7 @@ UT ఇంటర్‌ఫేస్: %5$s"</string>
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">10 నిమిషాల నిష్క్రియం తర్వాత</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">15 నిమిషాల నిష్క్రియం తర్వాత</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">5 నిమిషాల నిష్క్రియం తర్వాత</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">ఎల్లప్పుడూ ఆన్</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">ఎల్లప్పుడూ ఆన్‌లో ఉండు</string>
     <string name="wifi_tether_disabled_by_airplane">విమానం మోడ్ ఆన్ చేయబడింది కనుక అందుబాటులో లేదు</string>
     <string name="wifi_tether_enabled_subtext">%1$s సక్రియంగా ఉంది</string>
     <string name="wifi_tether_failed_subtext">పోర్టబుల్ Wi‑Fi హాట్‌స్పాట్ ఎర్రర్</string>

@@ -2616,7 +2616,7 @@ El ahorro de batería se desactiva automáticamente cuando carga tu dispositivo.
     <string name="oneplus_broadcat_wifi_name">Nombre de la red de transmisión (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Botones y gestos</string>
     <string name="oneplus_buttons_dashboard_summary">Control deslizante de alerta, navegación, gestos</string>
-    <string name="oneplus_buttons_settings">ajustes de botones</string>
+    <string name="oneplus_buttons_settings">Ajustes de botones</string>
     <string name="oneplus_buttons_settings_summary">Gesto de navegación</string>
     <string name="oneplus_call_information_broadcast">Decir el id. del autor de la llamada</string>
     <string name="oneplus_call_information_broadcast_summary">Decir el id. del autor de la llamada entrante por los auriculares</string>
@@ -2687,6 +2687,9 @@ El ahorro de batería se desactiva automáticamente cuando carga tu dispositivo.
     <string name="oneplus_emergency_rescue_settings">Rescate de emergencia</string>
     <string name="oneplus_emergency_rescue_settings_summary">Pedir ayuda de forma automática pulsando rápidamente el botón de encendido</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">Disponible después de modificar la configuración del BOTÓN DE ENCENDIDO para rescate de emergencia</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1. Cada vez que cambies la película protectora de la pantalla, vuelve a introducir la huella digital para garantizar su disponibilidad.
+
+2.Introduce la información de una única huella digital en cada proceso de configuración."</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Solicitud de configuración de huella digital</string>
     <string name="oneplus_enter_your_fingerprint">· Registrar tu huella dactilar</string>
     <string name="oneplus_experience_improvement_programs">Programas de mejora de la experiencia</string>
@@ -2711,11 +2714,17 @@ Consejo de seguridad: El Desbloqueo facial es menos seguro que el desbloqueo med
     <string name="oneplus_finger_input_error_tips">Error de registro de la huella digital; inténtalo de nuevo</string>
     <string name="oneplus_finger_input_fail_tips">Error de entrada, por favor, ajuste la posición y vuelva a intentarlo</string>
     <string name="oneplus_fingerprint">Huella digital</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">Se ha detectado una huella digital similar. Mueve el dedo ligeramente para introducir distintas partes de la huella digital.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">La zona de identificación de huellas dactilares está sucia. Límpiala e inténtalo de nuevo.</string>
+    <string name="oneplus_fingerprint_acquired_partial">Se ha detectado una huella dactilar parcial. Cubre completamente la zona de identificación de huellas dactilares.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">Demasiado rápido para procesar la huella dactilar. Presiona el dedo durante un momento.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">Se ha detectado una huella dactilar similar. Mueve el dedo ligeramente para introducir distintas partes de la huella dactilar.</string>
     <string name="oneplus_fingerprint_animation_effect_title">Efecto de animación de huella digital</string>
     <string name="oneplus_fingerprint_delete_confirm_message">¿Deseas eliminarlo?</string>
     <string name="oneplus_fingerprint_detail">Detalles</string>
     <string name="oneplus_fingerprint_enrol_completed">Huella digital guardada</string>
+    <string name="oneplus_fingerprint_enroll_summary">Coloca el dedo sobre la zona de identificación de huellas digitales e intenta cubrir la máxima superficie posible. A continuación, levántalo cuando sientas una vibración</string>
+    <string name="oneplus_fingerprint_findsendor_summary">Cuando aparezca el patrón de huella dactilar en la parte inferior de la pantalla, presiona el dedo sobre la zona de identificación de huellas dactilares para utilizar la función de huellas dactilares.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">Uso de la función de huellas dactilares</string>
     <string name="oneplus_fingerprint_functional_declaration">Declaración de la función de huella digital</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">Desde la pantalla del visor, haz una pulsación larga en el sensor de huella digital para hacer una foto</string>
     <string name="oneplus_fingerprint_gesture_camera_title">Haz una pulsación larga para hacer una foto</string>
@@ -2799,6 +2808,9 @@ Para ir a la pantalla de inicio en cualquier momento, desliza hacia arriba desde
     <string name="oneplus_hide_navkeys_summary">Añadir un botón para ocultar o mostrar la barra de navegación</string>
     <string name="oneplus_hide_notch_display_summary">Ninguna aplicación puede utilizar la zona de la muesca</string>
     <string name="oneplus_hide_notch_display_title">Ocultar la zona de la muesca</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"Cuando aparezca el patrón de huella digital en la parte inferior de la pantalla, presiona el dedo sobre la zona de identificación de huellas digitales para utilizar la función de huellas digitales, con la que podrás activar y desbloquear el teléfono, autorizar compras o iniciar sesión en aplicaciones. 
+
+Nota: La huella digital puede ser menos segura que un PIN o patrón seguros."</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Cuando el patrón de huella digital aparece en la parte inferior de la pantalla, solo tienes que presionar el dedo sobre la zona de identificación de huellas digitales para utilizar la función de huella digital, con la que puedes desbloquear el teléfono, autorizar compras o iniciar sesión en aplicaciones.</string>
     <string name="oneplus_hydrogen_version">Versión H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Llamada entrante</string>
@@ -2872,6 +2884,7 @@ Para ir a la pantalla de inicio en cualquier momento, desliza hacia arriba desde
     <string name="oneplus_normal_clear_way">Limpieza normal</string>
     <string name="oneplus_normal_clear_way_summary">Limpiar la lista de tareas y caché, sin limpiar los procesos en segundo plano.</string>
     <string name="oneplus_not_disturb_on">\"No molestar\" está activado</string>
+    <string name="oneplus_not_disturb_summary">Silenciar llamadas y notificaciones y desactivar la vibración excepto para las excepciones seleccionadas</string>
     <string name="oneplus_not_show">No volver a mostrar</string>
     <string name="oneplus_notch_display_area">Muesca</string>
     <string name="oneplus_notch_display_choose_title">Cómo mostrar la zona de la muesca</string>
@@ -2944,7 +2957,9 @@ Quedan%dintentos."</string>
     <string name="oneplus_quick_launch_how_to_use_summary">"1. Para iniciar el panel Inicio rápido, sigue presionando el dedo después de desbloquear
 2. Desliza el dedo para seleccionar el acceso directo y levanta el dedo para iniciarlo"</string>
     <string name="oneplus_quick_launch_how_to_use_title">Uso de Inicio rápido</string>
+    <string name="oneplus_quick_launch_summary">Mantén presionado el dedo sobre la zona de identificación de huellas digitales para iniciar el pago rápido o activar aplicaciones</string>
     <string name="oneplus_quick_launch_title">Inicio rápido</string>
+    <string name="oneplus_quick_launch_toggle_summary">Mantén presionado el dedo sobre la zona de identificación de huellas digitales para iniciar el pago rápido o activar aplicaciones cuando el teléfono está bloqueado</string>
     <string name="oneplus_quick_launch_toggle_title">Activar Inicio rápido</string>
     <string name="oneplus_quick_turn_on_assistant_app">Activación rápida de la aplicación de asistente</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">Mantén presionado el botón de encendido durante 0,5 segundos para activar la aplicación de asistente y durante 3 segundos para apagar</string>
@@ -3047,13 +3062,26 @@ Quedan%dintentos."</string>
     <string name="oneplus_security_lock_settings_summary">Desbloquea las preferencias, servicio de ubicación, bloqueador de aplicaciones</string>
     <string name="oneplus_security_lock_settings_title">Seguridad y privacidad</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">Error de configuración</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"Presiona la zona de identificación de huellas digitales para desbloquear el teléfono, autorizar compras o iniciar sesión en aplicaciones. 
+
+Nota: 
+1. Puede que el uso de la huella digital sea menos seguro que un PIN o patrón seguros.
+2. Cada vez que cambies la película protectora de la pantalla, vuelve a introducir la huella digital para garantizar su disponibilidad."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">Esta huella digital ya ha sido registrada. Por favor, inténtalo con otro dedo.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">Mostrar icono de la huella digital en la pantalla ambiente</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">Mueve el teléfono ligeramente para ver</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">Toca la pantalla para ver</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">La opción \"Doble toque para activar\" está activada y la opción \"Tocar la pantalla para ver\" se desactivará</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">La opción \"Tocar la pantalla para ver\" está activada y la opción \"Doble toque para activar\" se desactivará</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">Cosmos</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">Onda</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">Raya</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">Selecciona el efecto de animación de huella digital</string>
     <string name="oneplus_set_time">Modo nocturno programado</string>
     <string name="oneplus_setting_ringtone">Establecer sonido de timbre</string>
     <string name="oneplus_setting_sim_ringtone_switch">Establecer tono de llamada para cada tarjeta SIM</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">Smart Boost aprovecha al máximo la gran memoria RAM de los teléfonos OnePlus en función de tu uso diario para mejorar el rendimiento de carga de juegos y aplicaciones.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Smart Boost</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Configurar una solución alternativa de desbloquear la pantalla</string>
     <string name="oneplus_share_this_wifi">Ampliar la cobertura de Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Compartiendo Wi-Fi</string>
@@ -3131,7 +3159,7 @@ Nota: El Desbloqueo facial puede ser menos seguro que la huella digital, el PIN 
     <string name="oneplus_weak_text_reminding">Solo texto</string>
     <string name="oneplus_weak_text_reminding_summary">Permitir que las aplicaciones muestren notificaciones de aviso</string>
     <string name="oneplus_wifi_ap_error">Introduzca la targeta SIM</string>
-    <string name="oneplus_wifi_hidden_network_warning">"Si el router desactiva la difusión de SSID, debes seleccionar \"Sí\" para conectar a la red oculta.
+    <string name="oneplus_wifi_hidden_network_warning">"Si el router está configurado para no difunfir SSID, debes seleccionar \"Sí\" para conectar a la red oculta.
 
 Esto puede crear un riesgo de seguridad porque el teléfono transmitirá su señal regularmente para detectar la red.
 
@@ -3212,6 +3240,8 @@ Configurar la red como oculta no cambiará la configuración del router."</strin
     <string name="op_system_dashboard_summary">Idioma, hora, restablecimiento, actualizaciones</string>
     <string name="op_theme_2__cannot_change_color_accent">En el tema \"Los Vengadores\" solo puede usar el tema de color del sistema</string>
     <string name="op_theme_2__title">Los Vengadores</string>
+    <string name="op_theme_3_cannot_change_color_accent">El tema McLaren solo puede utilizar el tema de color del sistema</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">Tema</string>
     <string name="op_user_manual_settings">Manual del usuario</string>
     <string name="op_volume">Volumen</string>
@@ -3991,7 +4021,7 @@ Esto es posible por una credencial de confianza instalada en tu dispositivo."</s
     <string name="status_bar_settings_cellular_title">Datos móviles</string>
     <string name="status_bar_settings_dnd_title">No molestar</string>
     <string name="status_bar_settings_headset_title">Auriculares</string>
-    <string name="status_bar_settings_hotspot_title">Punto de acceso</string>
+    <string name="status_bar_settings_hotspot_title">Punto de acceso móvil</string>
     <string name="status_bar_settings_network_speed_title">Mostrar la velocidad de la red</string>
     <string name="status_bar_settings_time_title">Hora</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>

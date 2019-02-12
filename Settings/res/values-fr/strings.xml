@@ -2616,7 +2616,7 @@ L'économiseur de batterie se désactive automatiquement quand votre téléphone
     <string name="oneplus_broadcat_wifi_name">Nom du réseau sans fil (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Boutons et gestes</string>
     <string name="oneplus_buttons_dashboard_summary">"Curseur d'alerte, navigation, gestes"</string>
-    <string name="oneplus_buttons_settings">paramètres des boutons</string>
+    <string name="oneplus_buttons_settings">Paramètres de boutons</string>
     <string name="oneplus_buttons_settings_summary">Geste de navigation</string>
     <string name="oneplus_call_information_broadcast">"Appeler l'identifiant de l'appelant"</string>
     <string name="oneplus_call_information_broadcast_summary">"Prendre l'appel entrant via les écouteurs"</string>
@@ -2687,6 +2687,9 @@ L'économiseur de batterie se désactive automatiquement quand votre téléphone
     <string name="oneplus_emergency_rescue_settings">Appels d’urgence</string>
     <string name="oneplus_emergency_rescue_settings_summary">"Appeler un numéro d'urgence automatiquement en appuyant rapidement sur le bouton d’alimentation"</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">"Disponible après la modification de la configuration BOUTON MARCHE/ARRÊT lors d'Appels d’urgence"</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1. Veuillez saisir à nouveau votre empreinte digitale après chaque remplacement du film de protection afin de garantir la disponibilité de l'empreinte digitale
+
+2.Lors d'un processus de configuration unique, veuillez entrer les informations d'empreinte digitale d'un seul doigt"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">"Invite de configuration du lecteur d'empreintes digitales"</string>
     <string name="oneplus_enter_your_fingerprint">· Inscrire votre empreinte digitale</string>
     <string name="oneplus_experience_improvement_programs">"Programmes d'amélioration d'expérience"</string>
@@ -2711,11 +2714,17 @@ Avertissement : la reconnaissance faciale est moins sécurisée qu'une empreinte
     <string name="oneplus_finger_input_error_tips">"Erreur lors de l'enregistrement de l'empreinte digitale. Veuillez réessayer"</string>
     <string name="oneplus_finger_input_fail_tips">Échec de la saisie. Veuillez ajuster la position et réessayer</string>
     <string name="oneplus_fingerprint">Empreinte digitale</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">"Des empreintes digitales similaires ont été détectées. Veuillez déplacer légèrement votre doigt pour entrer l'entièreté de l'empreinte."</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">"La zone d'identification d'empreinte est sale. Veuillez l'essuyer et essayer à nouveau."</string>
+    <string name="oneplus_fingerprint_acquired_partial">"Empreinte digitale partielle détectée. Veuillez couvrir complètement la zone d'identification d'empreinte."</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">Trop rapide pour traiter votre empreinte digitale. Veuillez laisser votre doigt appuyé pendant un moment.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">"Empreinte digitale similaire détectée. Veuillez déplacer légèrement votre doigt afin d'enregistrer toutes les parties de votre empreinte digitale."</string>
     <string name="oneplus_fingerprint_animation_effect_title">"Effet d'animation de l'empreinte digitale"</string>
     <string name="oneplus_fingerprint_delete_confirm_message">Voulez-vous la supprimer ?</string>
     <string name="oneplus_fingerprint_detail">Détails</string>
     <string name="oneplus_fingerprint_enrol_completed">"L'empreinte digitale a été enregistrée"</string>
+    <string name="oneplus_fingerprint_enroll_summary">"Appuyez et couvrez le zone d'identification d'empreinte digitale le plus possible avec votre doigt, puis retirez-le après avoir senti une vibration"</string>
+    <string name="oneplus_fingerprint_findsendor_summary">"Lorsque la séquence de l'empreinte digitale s'affiche au bas de l'écran, appuyez simplement avec votre doigt sur la zone d'identification d'empreinte digitale afin d'utiliser cette fonction."</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">"Comment utiliser l'empreinte digitale"</string>
     <string name="oneplus_fingerprint_functional_declaration">Déclaration de fonction d’empreintes digitales</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">"Depuis l'écran viseur, appuyez et maintenez le capteur d'empreinte digitale pour prendre une photo."</string>
     <string name="oneplus_fingerprint_gesture_camera_title">Pression longue pour prendre une photo</string>
@@ -2799,6 +2808,9 @@ Pour vous rendre à tout moment sur l'écran d'accueil, balayez vers le haut dep
     <string name="oneplus_hide_navkeys_summary">Ajouter un bouton pour masquer ou afficher la barre de navigation</string>
     <string name="oneplus_hide_notch_display_summary">"Toutes les applications ne peuvent utiliser la zone de l'encoche"</string>
     <string name="oneplus_hide_notch_display_title">"Masquer la zone de l'encoche"</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"Lorsque le motif de l'empreinte digitale s'affiche au bas de l'écran, appuyez simplement avec votre doigt sur la zone d'identification d'empreinte digitale afin d'utiliser les fonctions relatives : éveiller et déverrouiller le téléphone, autoriser les achats ou se connecter aux applications. 
+
+Remarque : votre empreinte digitale risque d'être moins sécurisée qu'un motif complexe ou un code PIN"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Lorsque le modèle de l’empreinte digitale apparaît au bas de l’écran, appuyez simplement sur la zone d’identification d’empreintes digitales pour utiliser la fonction d’empreintes digitales : réveillez et déverrouillez votre téléphone, autorisez les achats ou connectez-vous à des applications.</string>
     <string name="oneplus_hydrogen_version">Version H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Appel entrant</string>
@@ -2872,6 +2884,7 @@ Pour vous rendre à tout moment sur l'écran d'accueil, balayez vers le haut dep
     <string name="oneplus_normal_clear_way">Effacement normal</string>
     <string name="oneplus_normal_clear_way_summary">Effacer la liste des tâches et le cache, sans effacer les processus en arrière-plan.</string>
     <string name="oneplus_not_disturb_on">Ne pas déranger est activé</string>
+    <string name="oneplus_not_disturb_summary">Coupez le son des appels et des notifications et désactivez les vibrations, sauf dans certains cas que vous pouvez sélectionner.</string>
     <string name="oneplus_not_show">Ne pas afficher</string>
     <string name="oneplus_notch_display_area">Encoche</string>
     <string name="oneplus_notch_display_choose_title">"Comment afficher la zone de l'encoche"</string>
@@ -2944,7 +2957,9 @@ Pour vous rendre à tout moment sur l'écran d'accueil, balayez vers le haut dep
     <string name="oneplus_quick_launch_how_to_use_summary">"1. Continuez à appuyer votre doigt après le déverrouillage pour ouvrir le panneau du lancement rapide
 2. Faites glisser pour sélectionner le raccourci et relâchez votre doigt pour le lancer"</string>
     <string name="oneplus_quick_launch_how_to_use_title">Utiliser le lancement rapide</string>
+    <string name="oneplus_quick_launch_summary">"Appuyez longuement sur la zone d'identification de l'empreinte digitale pour lancer le paiement rapide ou activer les applications"</string>
     <string name="oneplus_quick_launch_title">Lancement rapide</string>
+    <string name="oneplus_quick_launch_toggle_summary">"Appuyez longuement sur la zone d'identification de l'empreinte digitale pour lancer le paiement rapide ou activer les applications lorsque le téléphone est verrouillé"</string>
     <string name="oneplus_quick_launch_toggle_title">Activer le lancement rapide</string>
     <string name="oneplus_quick_turn_on_assistant_app">"Activation rapide de l'application d'assistance"</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">"Maintenir enfoncé le bouton Marche/arrêt pendant 0,5 s pour activer l'application d'assistance, et pendant 3 s pour la désactiver"</string>
@@ -3047,13 +3062,26 @@ Pour vous rendre à tout moment sur l'écran d'accueil, balayez vers le haut dep
     <string name="oneplus_security_lock_settings_summary">"Préférences de déverrouillage, service d'emplacement, verrouilleur d'applications"</string>
     <string name="oneplus_security_lock_settings_title">Sécurité et confidentialité</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">Échec de la configuration</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"Appuyez simplement sur la zone d'identification d'empreinte digitale afin de déverrouiller votre téléphone, autoriser les achats ou vous connecter aux applications. 
+
+Remarque : 
+1.Votre empreinte digitale peut être moins sécurisée qu'un motif complexe ou un code PIN.
+2.Veuillez entrer votre empreinte digitale après chaque remplacement du film de protection afin d'assurer la disponibilité de l'empreinte digitale."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">Cette empreinte digitale a déjà été inscrite. Veuillez essayer un autre doigt.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">"Afficher l'icône empreinte digitale dans l'affichage ambiant"</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">Déplacez légèrement votre téléphone pour afficher</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">"Appuyez sur l'écran pour afficher"</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">La fonction « Double appui pour éveiller » est activée, la fonction « Appuyer pour afficher » sera désactivée</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">"La fonction « Appuyer sur l'écran pour afficher » est activée, la fonction « Double appui pour éveiller » sera désactivée"</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">Cosmos</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">Onde</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">Bande</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">Sélectionnez l’effet d’animation des empreintes digitales</string>
     <string name="oneplus_set_time">Mode nocturne planifié</string>
     <string name="oneplus_setting_ringtone">Définir une sonnerie</string>
     <string name="oneplus_setting_sim_ringtone_switch">Définissez une sonnerie pour chaque carte SIM</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">"Selon la langue que vous utilisez, Smart Boost tirera complètement parti de la grande mémoire RAM des téléphones OnePlus, ce qui permettra d'exploiter les performances de chargement d'applications et de jeux."</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Smart Boost</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">"· Définir une méthode alternative pour déverrouiller l'écran"</string>
     <string name="oneplus_share_this_wifi">Étendre la couverture Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Partage Wi-Fi</string>
@@ -3131,11 +3159,11 @@ Remarque : la reconnaissance faciale peut être moins sécurisée qu'une emprei
     <string name="oneplus_weak_text_reminding">Texte uniquement</string>
     <string name="oneplus_weak_text_reminding_summary">Autoriser les applications à afficher des notifications supérieures</string>
     <string name="oneplus_wifi_ap_error">Veuillez insérer la carte SIM</string>
-    <string name="oneplus_wifi_hidden_network_warning">"Si votre routeur désactive la diffusion SSID, vous devez sélectionner « Oui » pour vous connecter au réseau masqué.
+    <string name="oneplus_wifi_hidden_network_warning">"Si votre routeur est défini pour ne pas diffuser le nom du réseau (SSID), vous devez sélectionner « Oui » pour vous connecter au réseau masqué.
 
-Cela risque de créer un risque de sécurité car votre téléphone diffusera régulièrement son signal afin de trouver le réseau.
+Ceci pourra créer un risque de sécurité car votre téléphone diffusera régulièrement son signal pour rechercher le réseau.
 
-Configurer le réseau en tant que masqué ne changera pas les paramètres de votre routeur."</string>
+Définir le réseau tel que caché ne changera pas les paramètres de votre routeur."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">"Désactiver l'IPv6 peut permettre d'éviter les problèmes de compatibilité avec certains routeurs Wi-Fi."</string>
     <string name="oneplus_wifi_ipv6_surport_title">Prise en charge IPv6</string>
     <string name="oneplus_wifi_list">Liste Wi‑Fi</string>
@@ -3212,6 +3240,8 @@ Configurer le réseau en tant que masqué ne changera pas les paramètres de vot
     <string name="op_system_dashboard_summary">Langues, heure, réinitialisation, mises à jour</string>
     <string name="op_theme_2__cannot_change_color_accent">Le thème Les Avengers peut uniquement utiliser le thème des couleurs système</string>
     <string name="op_theme_2__title">Les Avengers</string>
+    <string name="op_theme_3_cannot_change_color_accent">Le thème McLaren ne peut utiliser que le thème de couleurs du système.</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">Thème</string>
     <string name="op_user_manual_settings">Manuel utilisateur</string>
     <string name="op_volume">Volume</string>
@@ -3991,7 +4021,7 @@ Un certificat de confiance installé sur votre appareil rend cela possible."</st
     <string name="status_bar_settings_cellular_title">Données cellulaires</string>
     <string name="status_bar_settings_dnd_title">Ne pas déranger</string>
     <string name="status_bar_settings_headset_title">Casque</string>
-    <string name="status_bar_settings_hotspot_title">"Point d'accès"</string>
+    <string name="status_bar_settings_hotspot_title">"Point d'accès mobile"</string>
     <string name="status_bar_settings_network_speed_title">Afficher la vitesse du réseau</string>
     <string name="status_bar_settings_time_title">Heure</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -4992,7 +5022,7 @@ Donner cette autorisation à toutes les applications souhaitant activer la reche
     <string name="wifi_scan_notify_text">"Pour améliorer la précision de la localisation, les applications et les services peuvent continuer de rechercher les réseaux Wi-Fi, même si le Wi-Fi est désactivé. Cette autorisation peut permettre, par exemple, d'améliorer les fonctionnalités et les services basés sur la localisation. Vous pouvez modifier cette option dans les LINK_BEGINparamètres de rechercheLINK_END."</string>
     <string name="wifi_scan_notify_text_scanning_off">Pour améliorer la précision de la position, activez la recherche Wi-Fi dans les LINK_BEGINparamètres de rechercheLINK_END.</string>
     <string name="wifi_security">Sécurité</string>
-    <string name="wifi_security_dialog">"Avec Open Security, tout appareil peut se connecter à votre point d'accès mobile et utiliser votre connexion mobile."</string>
+    <string name="wifi_security_dialog">"Avec une sécurité ouverte, tout appareil peut se connecter au point d'accès de votre téléphone et utiliser la connexion de vos données mobiles."</string>
     <string name="wifi_security_none">Aucune</string>
     <string name="wifi_security_open">Ouvrir</string>
     <string name="wifi_select_network">Sélectionner le Wi-Fi</string>
@@ -5068,7 +5098,7 @@ Appuyez sur "<b>Précédent</b> pour vous connecter à un autre réseau Wi-Fi.</
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">"Après 10 min d'activité"</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">"Après 15 min d'activité"</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">"Après 5 min d'activité"</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">Toujours activé</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Reste toujour activé</string>
     <string name="wifi_tether_disabled_by_airplane">Indisponible, car le mode Avion est activé</string>
     <string name="wifi_tether_enabled_subtext">%1$s est actif</string>
     <string name="wifi_tether_failed_subtext">"Erreur liée au point d'accès Wi-Fi mobile."</string>

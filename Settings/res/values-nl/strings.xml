@@ -2616,7 +2616,7 @@ Batterij sparen schakelt automatisch uit wanneer het toestel oplaadt."</string>
     <string name="oneplus_broadcat_wifi_name">Netwerknaam uitzenden (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Knoppen &amp; gebaren</string>
     <string name="oneplus_buttons_dashboard_summary">Waarschuw schuifregelaar, navigatie, gebaren</string>
-    <string name="oneplus_buttons_settings">instellingen voor knoppen</string>
+    <string name="oneplus_buttons_settings">Instellingen voor knoppen</string>
     <string name="oneplus_buttons_settings_summary">Navigatiegebaar</string>
     <string name="oneplus_call_information_broadcast">Beller-ID inspreken</string>
     <string name="oneplus_call_information_broadcast_summary">Spreken van de binnenkomende beller-ID via oortelefoon</string>
@@ -2687,6 +2687,9 @@ Batterij sparen schakelt automatisch uit wanneer het toestel oplaadt."</string>
     <string name="oneplus_emergency_rescue_settings">Noodhulp</string>
     <string name="oneplus_emergency_rescue_settings_summary">Automatisch noodoproep maken dor snel te drukken op de aan/uit-knop</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">Beschikbaar na het wijzigen van de instellingen van de AAN-UITKNOP van noodhulp</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1.Voer uw vingerafdruk elke keer dat de beschermlaag wordt vervangen opnieuw in om te zorgen dat de vingerafdruk beschikbaar is
+
+2.Voer in een enkele set-upprocedure de vingerafdruk van slechts één vinger in"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Prompt voor vingerafdruk instellen</string>
     <string name="oneplus_enter_your_fingerprint">· Uw vingerafdruk te registreren</string>
     <string name="oneplus_experience_improvement_programs">"Programma's voor betere gebruikerservaring"</string>
@@ -2711,11 +2714,17 @@ Tip: Face Unlock is minder veilig dan uw vingerafdruk en wachtwoord"</string>
     <string name="oneplus_finger_input_error_tips">Registratiefout vingerafdruk, probeer het opnieuw</string>
     <string name="oneplus_finger_input_fail_tips">Invoer mislukt, pas de positie aan en probeer het opnieuw</string>
     <string name="oneplus_fingerprint">Vingerafdruk</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">Soortgelijke vingerafdruk gedetecteerd. Beweeg uw vinger iets om de vingerafdruk van andere delen in te voeren.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">Het vingerafdrukidentificatiegebied is vuil. Veeg het schoon en probeer het opnieuw.</string>
+    <string name="oneplus_fingerprint_acquired_partial">Gedeeltelijke vingerafdruk gedetecteerd. Dek het vingerafdrukidentificatiegebied volledig af.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">Te snel om uw vingerafdruk te verwerken. Druk met uw vinger enkele seconden op het gebied.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">Gelijkaardige vingerafdruk gedetecteerd. Beweeg uw vinger een beetje om de vingerafdruk van verschillende delen in te voeren.</string>
     <string name="oneplus_fingerprint_animation_effect_title">Vingerafdruk animatie-effect</string>
     <string name="oneplus_fingerprint_delete_confirm_message">Wenst u het te verwijderen?</string>
     <string name="oneplus_fingerprint_detail">Details</string>
     <string name="oneplus_fingerprint_enrol_completed">Vingerafdruk werd opgeslagen</string>
+    <string name="oneplus_fingerprint_enroll_summary">Druk uw vinger op het vingerafdrukidentificatiegebied en zorg dat het gebied zo veel mogelijk wordt afgedekt, til uw vinger op als u een vibratie voelt</string>
+    <string name="oneplus_fingerprint_findsendor_summary">Wanneer het vingerafdrukpatroon onderaan het scherm verschijnt, drukt u eenvoudigweg met uw vinger op het vingerafdrukidentificatiegebied om de vingerafdrukfunctie te gebruiken.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">Hoe vingerafdruk gebruiken</string>
     <string name="oneplus_fingerprint_functional_declaration">Verklaring van de vingerafdrukfunctie</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">Houd de vingerafdruksensor ingedrukt via het zoekerscherm om een foto te nemen</string>
     <string name="oneplus_fingerprint_gesture_camera_title">Lang indrukken om een foto te nemen</string>
@@ -2799,6 +2808,9 @@ Om op elk moment naar het Home-scherm te gaan, veeg omhoog vanaf de onderste cen
     <string name="oneplus_hide_navkeys_summary">Voeg een knop toe om de navigatiebalk te verbergen of weer te geven</string>
     <string name="oneplus_hide_notch_display_summary">De apps mogen het notchgebied niet gebruiken</string>
     <string name="oneplus_hide_notch_display_title">Het notchgebied verbergen</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"Wanneer het vingerafdrukpatroon onder aan het scherm verschijnt, druk dan uw vinger op het vingerafdrukidentificatiegebied om de vingerafdrukfunctie te gebruiken: uw telefoon wekken en ontgrendelen, aankopen goedkeuren of aanmelden bij apps. 
+
+Opmerking: uw vingerafdruk kan minder veilig zijn dan een sterk patroon of een pincode"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Wanneer het vingerafdrukpatroon onderaan het scherm verschijnt, drukt u met uw vinger op het gebied van de vingerafdrukidentificatie om de vingerafdrukfunctie te gebruiken om uw telefoon te wekken of te ontgrendelen, aankopen te autoriseren of u aan te melden bij apps.</string>
     <string name="oneplus_hydrogen_version">H₂OS versie</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Inkomende oproep</string>
@@ -2872,6 +2884,7 @@ Om op elk moment naar het Home-scherm te gaan, veeg omhoog vanaf de onderste cen
     <string name="oneplus_normal_clear_way">Normaal opruimen</string>
     <string name="oneplus_normal_clear_way_summary">Wis de takenlijst en cache, zonder de achtergrondprocessen te wissen.</string>
     <string name="oneplus_not_disturb_on">Niet Storen is aan</string>
+    <string name="oneplus_not_disturb_summary">Oproepen en meldingen dempen en trillen uitschakelen, behalve voor geselecteerde uitzonderingen</string>
     <string name="oneplus_not_show">Niet opnieuw tonen</string>
     <string name="oneplus_notch_display_area">Notch</string>
     <string name="oneplus_notch_display_choose_title">Het notchgebied tonen</string>
@@ -2944,7 +2957,9 @@ Om op elk moment naar het Home-scherm te gaan, veeg omhoog vanaf de onderste cen
     <string name="oneplus_quick_launch_how_to_use_summary">"1.Houd uw vinger op het scherm nadat u hebt ontgrendeld om snel starten te openen
 2.Veeg over het scherm om de snelkoppeling te selecteren en haal uw vinger van het scherm om deze te starten"</string>
     <string name="oneplus_quick_launch_how_to_use_title">Snel starten gebruiken</string>
+    <string name="oneplus_quick_launch_summary">Druk lang op het vingerafdrukidentificatiegebied om Quick Pay te starten of apps te activeren.</string>
     <string name="oneplus_quick_launch_title">Snel starten</string>
+    <string name="oneplus_quick_launch_toggle_summary">Druk lang op het vingerafdrukidentificatiegebied om Quick Pay te starten of apps te activeren wanneer de telefoon vergrendeld is.</string>
     <string name="oneplus_quick_launch_toggle_title">Snel starten inschakelen</string>
     <string name="oneplus_quick_turn_on_assistant_app">Snel de assistent-app activeren</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">Houd de aan-uitknop 0,5 s ingedrukt om de assistent-app te activeren en 3 s om deze uit te schakelen</string>
@@ -3047,13 +3062,26 @@ Om op elk moment naar het Home-scherm te gaan, veeg omhoog vanaf de onderste cen
     <string name="oneplus_security_lock_settings_summary">Voorkeuren ontgrendelen, locatieservice, app-locker</string>
     <string name="oneplus_security_lock_settings_title">Veiligheid &amp; privacy</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">Installatie mislukt</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"Druk op het vingerafdrukidentificatiegebied om uw telefoon te ontgrendelen, aankopen goed te keuren, of aan te melden bij apps. 
+
+Opmerking: 
+1.Uw vingerafdruk kan minder veilig zijn dan een sterk patroon of een pincode.
+2.Voer uw vingerafdruk elke keer dat de beschermlaag wordt vervangen opnieuw in om te zorgen dat de vingerafdruk beschikbaar is."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">Deze vingerafdruk werd al geregistreerd, probeer een andere vinger.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">Vingerafdrukpictogram tonen in Ambient Display</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">Beweeg uw telefoon iets om te tonen</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">Tap op het scherm om te tonen</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\"Dubbeltik om te wekken\" is ingeschakeld, \"Tik om scherm te tonen\" wordt uitgeschakeld</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">\"Tik om scherm te tonen\" is ingeschakeld en \"Dubbeltik om te wekken\" wordt uitgeschakeld</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">Kosmos</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">Golf</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">Streep</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">Vingerafdruk animatie-effect selecteren</string>
     <string name="oneplus_set_time">Geplande Nachtmodus</string>
     <string name="oneplus_setting_ringtone">Stel beltoon in</string>
     <string name="oneplus_setting_sim_ringtone_switch">Stel beltoon in voor elke SIM-kaart</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">Op basis van uw dagelijks verbruik haalt Smart Boost het uiterste uit het grote RAM-geheugen van OnePlus-telefoons, wat ten goede komt aan de prestaties voor het laden van apps en games.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Smart Boost</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Een alternatieve manier in te stellen om het scherm te ontgrendelen</string>
     <string name="oneplus_share_this_wifi">Wi-Fi dekking uitbreiden</string>
     <string name="oneplus_share_wifi_title">Wi-Fi Delen</string>
@@ -3131,11 +3159,11 @@ Let op: gezichtontgrendeling kan minder veilig zijn dan vingerafdruk-, PIN- of a
     <string name="oneplus_weak_text_reminding">Alleen tekst</string>
     <string name="oneplus_weak_text_reminding_summary">Apps toestaan aankondigingsmeldingen te tonen</string>
     <string name="oneplus_wifi_ap_error">Plaats de SIM-kaart</string>
-    <string name="oneplus_wifi_hidden_network_warning">"Als uw router de SSID-broadcast uitschakelt, moet u 'Ja' selecteren om verbinding te maken met het verborgen netwerk.
+    <string name="oneplus_wifi_hidden_network_warning">"Als uw router de SSID niet uitzendt, moet u 'Ja' selecteren om verbinding te maken met het verborgen netwerk.
 
 Dit kan een beveiligingsrisico veroorzaken omdat uw telefoon regelmatig signalen stuurt om het netwerk te vinden.
 
-Als u het netwerk instelt als verborgen worden de instellingen van uw router niet gewijzigd."</string>
+Als u het netwerk instelt als verborgen, worden de instellingen van uw router niet gewijzigd."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">IPv6 uitschakelen kan compatibiliteitsproblemen vermijden met bepaalde Wi-Fi-routers.</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6 Ondersteuning</string>
     <string name="oneplus_wifi_list">Wi-Fi-lijst</string>
@@ -3212,6 +3240,8 @@ Als u het netwerk instelt als verborgen worden de instellingen van uw router nie
     <string name="op_system_dashboard_summary">Talen, tijd, reset, updates</string>
     <string name="op_theme_2__cannot_change_color_accent">Het The Avengers thema kan enkel het kleurenthema van het systeem gebruiken</string>
     <string name="op_theme_2__title">The Avengers</string>
+    <string name="op_theme_3_cannot_change_color_accent">Het McLaren-thema kan alleen het kleurenschema van het systeem gebruiken</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">Thema</string>
     <string name="op_user_manual_settings">Gebruikershandleiding</string>
     <string name="op_volume">Volume</string>
@@ -3991,7 +4021,7 @@ Dit is mogelijk omdat je een vertrouwd certificaat op je apparaat hebt opgeslage
     <string name="status_bar_settings_cellular_title">Mobiele data</string>
     <string name="status_bar_settings_dnd_title">Niet storen</string>
     <string name="status_bar_settings_headset_title">Hoofdtelefoon</string>
-    <string name="status_bar_settings_hotspot_title">Hotspot</string>
+    <string name="status_bar_settings_hotspot_title">Mobiele HotSpot</string>
     <string name="status_bar_settings_network_speed_title">Netwerksnelheid weergeven</string>
     <string name="status_bar_settings_time_title">Tijd</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -4992,7 +5022,7 @@ Dit toestaan voor alle apps die willen scannen?"</string>
     <string name="wifi_scan_notify_text">Apps en services kunnen gewoon wifi-netwerken detecteren, zelfs als wifi is uitgeschakeld, om de locatienauwkeurigheid te verbeteren. Dit kan worden gebruikt om bijvoorbeeld locatiegebaseerde functies en services te verbeteren. Je kunt dit wijzigen in de LINK_BEGINscaninstellingenLINK_END.</string>
     <string name="wifi_scan_notify_text_scanning_off">Schakel scannen via wifi in via de LINK_BEGINscaninstellingenLINK_END om de locatienauwkeurigheid te verbeteren.</string>
     <string name="wifi_security">Beveiliging</string>
-    <string name="wifi_security_dialog">Met Open beveiliging kan elk apparaat verbinding maken met uw mobiele hotspot en gebruikmaken van uw mobiele gegevensverbinding.</string>
+    <string name="wifi_security_dialog">Met een open beveiliging kan elk apparaat verbinding maken met uw mobiele hotspot en uw mobiele gegevensverbinding gebruiken.</string>
     <string name="wifi_security_none">Geen</string>
     <string name="wifi_security_open">Openen</string>
     <string name="wifi_select_network">Wifi selecteren</string>
@@ -5068,7 +5098,7 @@ Tik op "<b>Vorige</b> om verbinding te maken met een ander wifi-netwerk.</string
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Na 10 minuten van inactiviteit</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Na 15 minuten van inactiviteit</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Na 5 minuten van inactiviteit</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">Altijd aan</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Is altijd ingeschakeld</string>
     <string name="wifi_tether_disabled_by_airplane">Niet beschikbaar omdat de vliegtuigmodus is ingeschakeld</string>
     <string name="wifi_tether_enabled_subtext">%1$s is actief</string>
     <string name="wifi_tether_failed_subtext">Fout met draagbare wifi-hotspot</string>

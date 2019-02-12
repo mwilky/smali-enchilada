@@ -2685,6 +2685,9 @@ Battery נכבה אוטומטית כאשר המכשיר במצב טעינה."</s
     <string name="oneplus_emergency_rescue_settings">חירום והצלה</string>
     <string name="oneplus_emergency_rescue_settings_summary">התקשר לקבלת עזרה על ידי לחיצה מהירה בלחצן ההפעלה</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">זמין לאחר שינוי ההגדרות של לחצן ההפעלה עבור חירום והצלה</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1. הזן שוב את טביעת האצבע שלך לאחר כל החלפה של מגן מסך על מנת להבטיח את הזמינות של טביעת אצבע.
+
+2בהליך הגדרה אחד, הזן רק טביעה של אצבע אחת."</string>
     <string name="oneplus_enroll_fingerprint_tips_title">הנחייה להגדרת טביעת אצבע</string>
     <string name="oneplus_enter_your_fingerprint">רשום את טביעת האצבע שלך</string>
     <string name="oneplus_experience_improvement_programs">תכניות לשיפור החוויה</string>
@@ -2709,11 +2712,17 @@ Battery נכבה אוטומטית כאשר המכשיר במצב טעינה."</s
     <string name="oneplus_finger_input_error_tips">שגיאת רישום טביעת אצבע, אנא נסה שוב</string>
     <string name="oneplus_finger_input_fail_tips">הקלט נכשל, שנה את המיקום ונסה שנית</string>
     <string name="oneplus_fingerprint">טביעת אצבע</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">זוהתה טביעת אצבע דומה. הזז מעט את האצבע כדי להזין טביעות של חלקי אצבע שונים.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">אזור זיהוי טביעת האצבע מלוכלך. אנא נקה אותו ונסה שוב.</string>
+    <string name="oneplus_fingerprint_acquired_partial">זוהתה טביעת אצבע חלקית. אנא כסה את אזור זיהוי טביעת האצבע לחלוטין.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">הפעולה נעשתה מהר מכדי לעבד את טביעת האצבע שלך. אנא המתן במשך זמן מה תוך כדי לחיצה.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">זוהתה טביעת אצבע דומה. אנא הזז מעט את אצבעך כדי להזין את כל חלקי טביעת האצבע.</string>
     <string name="oneplus_fingerprint_animation_effect_title">אפקט ההנפשה של טביעות אצבע</string>
     <string name="oneplus_fingerprint_delete_confirm_message">האם ברצונך לבצע מחיקה?</string>
     <string name="oneplus_fingerprint_detail">פרטים</string>
     <string name="oneplus_fingerprint_enrol_completed">טביעת האצבע נשמרה</string>
+    <string name="oneplus_fingerprint_enroll_summary">לחץ ואפשר לאצבע לכסות ככל האפשר את כל אזור זיהוי טביעת האצבע, ולאחר מכן הרם לאחר שתרגיש רטט.</string>
+    <string name="oneplus_fingerprint_findsendor_summary">כאשר תבנית טביעת האצבע מופיעה בתחתית המסך, פשוט לחץ באצבעך על אזור זיהוי טביעת האצבע כדי להשתמש בפונקציית טביעת האצבע.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">כיצד להשתמש בטביעת האצבע</string>
     <string name="oneplus_fingerprint_functional_declaration">הכרזה על פונקציית טביעות אצבעות</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">ממסך העינית, לחץ לחיצה ארוכה על חיישן טביעת האצבע כדי לצלם תמונה</string>
     <string name="oneplus_fingerprint_gesture_camera_title">לחץ לחיצה ארוכה כדי לצלם תמונה</string>
@@ -2797,6 +2806,9 @@ Battery נכבה אוטומטית כאשר המכשיר במצב טעינה."</s
     <string name="oneplus_hide_navkeys_summary">הוסף לחצן כדי להסתיר או להציג את סרגל הניווט</string>
     <string name="oneplus_hide_notch_display_summary">כל היישומים לא יכולים להשתמש באזור החריץ</string>
     <string name="oneplus_hide_notch_display_title">הסתר את אזור החריץ</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"כאשר דוגמת טביעת האצבע מופיעה בתחתית המסך, לחץ עם האצבע על אזור זיהוי טביעת האצבע על מנת להשתמש בתכונת טביעת האצבע: עוררות ופתיחת הטלפון, אישור רכישות או כניסה ליישומים. 
+
+שים לב: טביעת האצבע שלך יכולה להיות פחות חזקה מאשר דוגמה חזקה או קוד PIN."</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">כאשר דפוס טביעות האצבעות מופיע בחלק התחתון של המסך, פשוט הקש עם האצבע באזור הזיהוי של טביעות אצבעות כדי להשתמש בפונקציה של טביעות אצבעות: כך תוכל להוציא את הטלפון ממצב שינה ולבטל את הנעילה שלו, לאשר רכישות או להיכנס לאפליקציות.</string>
     <string name="oneplus_hydrogen_version">גרסת H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">שיחה נכנסת</string>
@@ -2870,6 +2882,7 @@ Battery נכבה אוטומטית כאשר המכשיר במצב טעינה."</s
     <string name="oneplus_normal_clear_way">ניקוי רגיל</string>
     <string name="oneplus_normal_clear_way_summary">נקה את רשימת המשימות ואת הזיכרון הזמני בלי להפסיק תהליכים ברקע.</string>
     <string name="oneplus_not_disturb_on">האפשרות נא לא להפריע פעילה</string>
+    <string name="oneplus_not_disturb_summary">השתק שיחות והתראות וכבה את הרטט, למעט יוצאים מן הכלל נבחרים</string>
     <string name="oneplus_not_show">אל תציג שוב</string>
     <string name="oneplus_notch_display_area">Notch</string>
     <string name="oneplus_notch_display_choose_title">כיצד להציג את אזור החריץ</string>
@@ -2942,7 +2955,9 @@ Battery נכבה אוטומטית כאשר המכשיר במצב טעינה."</s
     <string name="oneplus_quick_launch_how_to_use_summary">"1. המשך להחזיק את האצבע לאחר נעילה כדי לפתוח את panel
 2 הפעלה מהירה. החלק על מנת לבחור את קיצור הדרך ולשחרר את האצבע שלך כדי להפעיל את זה"</string>
     <string name="oneplus_quick_launch_how_to_use_title">השתמש הפעלה מהירה</string>
+    <string name="oneplus_quick_launch_summary">לחץ לחיצה ארוכה על אזור מזהה טביעת האצבע להפעלת תשלום מהיר או הפעלת היישומים</string>
     <string name="oneplus_quick_launch_title">הפעלה מהירה</string>
+    <string name="oneplus_quick_launch_toggle_summary">לחץ לחיצה ארוכה על אזור מזהה טביעת האצבע להפעלת תשלום מהיר או הפעלת היישומים כשהטלפון נעול</string>
     <string name="oneplus_quick_launch_toggle_title">הפעל הפעלה מהירה</string>
     <string name="oneplus_quick_turn_on_assistant_app">הפעלה מהירה של אפליקציית העזרה</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">החזק את כפתור ההפעלה 0.5 שנייה על מנת להפעיל את אפליקציית העזרה, 3 שניות לכיבוי</string>
@@ -3045,13 +3060,26 @@ Battery נכבה אוטומטית כאשר המכשיר במצב טעינה."</s
     <string name="oneplus_security_lock_settings_summary">פתח את נעילת ההעדפות, שירותי מיקום, נועל היישומים</string>
     <string name="oneplus_security_lock_settings_title">אבטחה ופרטיות</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">הגדרה נכשלה</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"רק הקש על אזור זיהוי טביעת האצבע לפתיחת הטלפון, אישור רכישות או כניסה ליישומים. 
+
+שים לב: 
+1טביעת האצבע שלך יכולה להיות פחות חזקה מאשר דוגמה חזקה או קוד PIN.2
+ הזן שוב את טביעת האצבע שלך לאחר כל החלפה של מגן מסך על מנת להבטיח את הזמינות של טביעת אצבע."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">טביעת אצבע זו כבר נרשמה, נסה אצבע אחרת.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">הצג סמל טביעת אצבע בתצוגת תאורה סביבתית.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">להצגה, הזז מעט את הטלפון</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">להצגה, הקש על הטלפון</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\"הקשה כפולה לעורר\" מופעלת, \"הקש על מנת לצפות\" יושבת</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">\"הקש להראות מתי המסך כבוי\" מופעל, \"הקשה כפולה לעוררות\" תושבת</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">קוסמוס</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">גל</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">פס</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">בחר אפקט ההנפשה של טביעות אצבע</string>
     <string name="oneplus_set_time">מצב לילה מתוזמן</string>
     <string name="oneplus_setting_ringtone">הגדר צלצול</string>
     <string name="oneplus_setting_sim_ringtone_switch">הגדר רינגטון לכל כרטיס SIM</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">בהתאם לשימוש היומי שלך, Smart Boost מנצל את מלוא היתרון של ה-RAM של טלפון OnePlus, ובכך ממנף ביצועים של העלאת יישומים ומשחקים.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Smart Boost</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">להגדיר דרך חלופית לבטל נעילת מסך</string>
     <string name="oneplus_share_this_wifi">הרחב כיסוי Wi-Fi</string>
     <string name="oneplus_share_wifi_title">שיתוף Wi‑Fi</string>
@@ -3129,11 +3157,11 @@ Battery נכבה אוטומטית כאשר המכשיר במצב טעינה."</s
     <string name="oneplus_weak_text_reminding">טקסט בלבד</string>
     <string name="oneplus_weak_text_reminding_summary">אפשר לאפליקציות להציג התראות</string>
     <string name="oneplus_wifi_ap_error">אנא הכנס את כרטיס ה-SIM</string>
-    <string name="oneplus_wifi_hidden_network_warning">"אם הנתב שלך משבית את שידור SSID, עליך לבחור באפשרות 'כן' על-מנת להתחבר אל הרשת המוסתרת.
+    <string name="oneplus_wifi_hidden_network_warning">"אם הנתב שלך אינו משבית שידור SSID, עליך לבחור באפשרות \"כן\" כדי להתחבר אל הרשת המוסתרת.
 
-דבר זה עלול ליצור סיכון אבטחה מאחר שהטלפון שלך ישדר את האות שלו באופן קבוע כדי למצוא את הרשת.
+הדבר עלול ליצור סיכון אבטחה משום שהטלפון שלך ישדר את האות שלו באופן קבוע כדי למצוא את הרשת.
 
-הגדרת הרשת כמוסתרת לא תשנה את הגדרות הנתב."</string>
+הגדרת הרשת כמוסתרת לא תשנה את הגדרות הנתב שלך."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">הפסקת IPv6 עלולה להוביל לבעיות תאימות עם נתבי Wi-Fi מסוימים.</string>
     <string name="oneplus_wifi_ipv6_surport_title">תמיכת IPv6</string>
     <string name="oneplus_wifi_list">רשימת Wi‑Fi</string>
@@ -3210,6 +3238,8 @@ Battery נכבה אוטומטית כאשר המכשיר במצב טעינה."</s
     <string name="op_system_dashboard_summary">שפות, זמן, איפוס, עדכונים</string>
     <string name="op_theme_2__cannot_change_color_accent">ערכת הנושא של הנוקמים יכולה להשתמש רק בצבעי המערכת</string>
     <string name="op_theme_2__title">הנוקמים</string>
+    <string name="op_theme_3_cannot_change_color_accent">עבור ערכת הנושא McLaren ניתן להשתמש רק בערכת הצבעים של המערכת</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">ערכת נושא</string>
     <string name="op_user_manual_settings">מדריך למשתמש</string>
     <string name="op_volume">עצמת שמע</string>
@@ -3987,7 +4017,7 @@ Voice over Wi-Fi:‏ %3$s
     <string name="status_bar_settings_cellular_title">נתונים סלולרים</string>
     <string name="status_bar_settings_dnd_title">לא להפריע</string>
     <string name="status_bar_settings_headset_title">אוזניות</string>
-    <string name="status_bar_settings_hotspot_title">נקודת גישה</string>
+    <string name="status_bar_settings_hotspot_title">נקודה חמה לנייד</string>
     <string name="status_bar_settings_network_speed_title">הצגת מהירות רשת</string>
     <string name="status_bar_settings_time_title">זמן</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -4988,7 +5018,7 @@ Voice over Wi-Fi:‏ %3$s
     <string name="wifi_scan_notify_text">‏כדי לשפר את דיוק המיקום, אפליקציות ושירותים יוכלו לסרוק רשתות Wi‑Fi בכל עת, גם כאשר ה-Wi‑Fi כבוי. ניתן להשתמש בכך, למשל, כדי לשפר תכונות ושירותים מבוססי מיקום. אפשר לשנות זאת בLINK_BEGINהגדרות הסריקהLINK_END.</string>
     <string name="wifi_scan_notify_text_scanning_off">‏כדי לשפר את דיוק המיקום, הפעל את אפשרות הסריקה אחר רשתות Wi-Fi בLINK_BEGINהגדרות הסריקהLINK_END.</string>
     <string name="wifi_security">אבטחה</string>
-    <string name="wifi_security_dialog">עם אבטחה פתוחה, כל התקן יוכל להתחבר ל-Mobile HotSpot שלך ולהשתמש בחיבורי הנתונים של הנייד שלך.</string>
+    <string name="wifi_security_dialog">כאשר האבטחה פתוחה, כל התקן יכול להתחבר לנקודה החמה של הטלפון שלך ולהשתמש בחיבור הנתונים הסלולריים שלך.</string>
     <string name="wifi_security_none">ללא</string>
     <string name="wifi_security_open">פתוח</string>
     <string name="wifi_select_network">‏בחר Wi-Fi</string>

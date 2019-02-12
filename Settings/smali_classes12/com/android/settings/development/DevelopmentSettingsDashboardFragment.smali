@@ -1284,13 +1284,18 @@
 
     sget-object v0, Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;->mOemController:Lcom/android/settings/development/OemUnlockPreferenceController;
 
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;->mOemController:Lcom/android/settings/development/OemUnlockPreferenceController;
+
     invoke-virtual {v0}, Lcom/android/settings/development/OemUnlockPreferenceController;->unBindSimlockConnection()V
 
+    :cond_0
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iget-object v1, p0, Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;->mBluetoothA2dp:Landroid/bluetooth/BluetoothA2dp;
 
@@ -1300,26 +1305,26 @@
 
     iget-object v1, p0, Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;->mLastConnectedBluetoothA2dp:Landroid/bluetooth/BluetoothA2dp;
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     iget-object v1, p0, Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;->mLastConnectedBluetoothA2dp:Landroid/bluetooth/BluetoothA2dp;
 
     iget-object v3, p0, Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;->mBluetoothA2dp:Landroid/bluetooth/BluetoothA2dp;
 
-    if-eq v1, v3, :cond_0
+    if-eq v1, v3, :cond_1
 
     iget-object v1, p0, Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;->mLastConnectedBluetoothA2dp:Landroid/bluetooth/BluetoothA2dp;
 
     invoke-virtual {v0, v2, v1}, Landroid/bluetooth/BluetoothAdapter;->closeProfileProxy(ILandroid/bluetooth/BluetoothProfile;)V
 
-    :cond_0
+    :cond_1
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;->mLastConnectedBluetoothA2dp:Landroid/bluetooth/BluetoothA2dp;
 
     iput-object v1, p0, Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;->mBluetoothA2dp:Landroid/bluetooth/BluetoothA2dp;
 
-    :cond_1
+    :cond_2
     return-void
 .end method
 

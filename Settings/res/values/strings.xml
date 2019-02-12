@@ -2823,7 +2823,7 @@ Battery saver turns off automatically when your device is charging."</string>
     <string name="oneplus_broadcat_wifi_name">Broadcast network name (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Buttons &amp; gestures</string>
     <string name="oneplus_buttons_dashboard_summary">Alert Slider, navigation, gestures</string>
-    <string name="oneplus_buttons_settings">buttons settings</string>
+    <string name="oneplus_buttons_settings">Buttons settings</string>
     <string name="oneplus_buttons_settings_summary">Navigation gesture</string>
     <string name="oneplus_call_information_broadcast">Speak Caller ID</string>
     <string name="oneplus_call_information_broadcast_summary">Speak the incoming caller ID via earphones</string>
@@ -3394,9 +3394,9 @@ Go to \"Settings - Apps &amp; notifications\", click on the corresponding applic
     <string name="oneplus_set_time">Scheduled Night Mode</string>
     <string name="oneplus_setting_ringtone">Set ring</string>
     <string name="oneplus_setting_sim_ringtone_switch">Set ringtone for each SIM card</string>
-    <string name="oneplus_settings_lab_feature_boost_key" />
-    <string name="oneplus_settings_lab_feature_boost_summary" />
-    <string name="oneplus_settings_lab_feature_boost_title" />
+    <string name="oneplus_settings_lab_feature_boost_key">op_smartboost_enable</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">Based on your daily usage, Smart Boost takes full advantage of the large RAM of OnePlus phones, which leverages the performance of loading apps and games.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Smart Boost</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Set up an alternate way to unlock screen</string>
     <string name="oneplus_share_this_wifi">Extend Wi-Fi coverage</string>
     <string name="oneplus_share_wifi_title">Wi-Fi Sharing</string>
@@ -5986,11 +5986,4 @@ Update settings to:
     <item type="string" name="APKTOOL_DUMMY_d03">false</item>
     <item type="string" name="APKTOOL_DUMMY_d04">false</item>
     <item type="string" name="APKTOOL_DUMMY_1256">false</item>
-    <string name="hardware_keys_action_kill">Kill foreground app</string>
-    <string name="hardware_keys_action_screenshot">Full screenshot</string>
-    <string name="hardware_keys_action_screenshot2">Croppable screenshot</string>
-    <string name="hardware_keys_action_app">Launch custom app (select app in RiCE)</string>
-    <string name="hardware_keys_action_previous_app">Switch to previous app</string>
-    <string name="hardware_keys_action_default_double_recents">Nothing (Switch to previous app)</string>
-    <string name="oneplus_search_keyword_fingerprint_key">fingerprint</string>
 </resources>

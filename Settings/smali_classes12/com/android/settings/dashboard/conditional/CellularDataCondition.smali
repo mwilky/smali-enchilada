@@ -208,7 +208,7 @@
 .end method
 
 .method public onPrimaryClick()V
-    .locals 4
+    .locals 3
 
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/CellularDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
@@ -218,15 +218,9 @@
 
     new-instance v1, Landroid/content/Intent;
 
-    iget-object v2, p0, Lcom/android/settings/dashboard/conditional/CellularDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
+    const-string v2, "oneplus.intent.action.SIM_AND_NETWORK_SETTINGS"
 
-    invoke-virtual {v2}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    const-class v3, Lcom/android/settings/Settings$DataUsageSummaryActivity;
-
-    invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     const/high16 v2, 0x10000000
 

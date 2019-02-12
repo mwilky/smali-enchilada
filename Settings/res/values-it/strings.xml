@@ -2616,7 +2616,7 @@ La funzione di risparmio batteria è disattivata automaticamente quando il dispo
     <string name="oneplus_broadcat_wifi_name">Trasmetti nome rete (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Tasti e gesti</string>
     <string name="oneplus_buttons_dashboard_summary">Dispositivo di scorrimento avvisi, navigazione, gesti</string>
-    <string name="oneplus_buttons_settings">impostazioni tasti</string>
+    <string name="oneplus_buttons_settings">Impostazioni tasti</string>
     <string name="oneplus_buttons_settings_summary">Gesti di navigazione</string>
     <string name="oneplus_call_information_broadcast">Leggi ID chiamante</string>
     <string name="oneplus_call_information_broadcast_summary">"Leggi l'ID dell'autore della chiamata in arrivo attraverso gli auricolari"</string>
@@ -2687,6 +2687,9 @@ La funzione di risparmio batteria è disattivata automaticamente quando il dispo
     <string name="oneplus_emergency_rescue_settings">Salvataggio di emergenza</string>
     <string name="oneplus_emergency_rescue_settings_summary">Chiama automaticamente i soccorsi premendo brevemente il pulsante di accensione</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">Disponibile dopo aver modificato le impostazioni del PULSANTE DI ACCENSIONE del Salvataggio di emergenza</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1.Reinserire l'impronta digitale ogniqualvolta si sostituisce la pellicola protettiva per assicurare la disponibilità dell'impronta digitale
+
+2.Inserire le informazioni relative a una sola impronta digitale in un unico processo di configurazione"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">"Prompt per la configurazione dell'impronta digitale"</string>
     <string name="oneplus_enter_your_fingerprint">· Registrare la propria impronta digitale</string>
     <string name="oneplus_experience_improvement_programs">"Programmi di miglioramento dell'esperienza"</string>
@@ -2711,11 +2714,17 @@ Consiglio rischio: lo sblocco tramite riconoscimento facciale è meno sicuro del
     <string name="oneplus_finger_input_error_tips">Errore di registrazione impronta digitale, si prega di riprovare</string>
     <string name="oneplus_finger_input_fail_tips">Immissione non riuscita. Regola la posizione e riprova</string>
     <string name="oneplus_fingerprint">Impronta digitale</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">"Impronta digitale simile rilevata. Spostare leggermente il dito in modo tale da inserire l'impronta digitale di diverse parti."</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">"L'area di identificazione dell'impronta digitale è sporca. Pulirla e riprovare."</string>
+    <string name="oneplus_fingerprint_acquired_partial">"Impronta digitale rilevata parzialmente. Coprire completamente l'area di identificazione dell'impronta digitale."</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">"Troppo veloce per l'elaborazione dell'impronta digitale. Mantenere premuto più a lungo."</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">"Impronta digitale simile rilevata. Muovere leggermente il dito in modo da inserire altre parti dell'impronta digitale."</string>
     <string name="oneplus_fingerprint_animation_effect_title">Effetto di animazione impronta digitale</string>
     <string name="oneplus_fingerprint_delete_confirm_message">Eliminare?</string>
     <string name="oneplus_fingerprint_detail">Dettagli</string>
     <string name="oneplus_fingerprint_enrol_completed">Impronta digitale salvata</string>
+    <string name="oneplus_fingerprint_enroll_summary">"Premere e fare in modo che il dito copra la maggior parte dell'area d'identificazione dell'impronta digitale, quindi sollevarlo dopo aver percepito una vibrazione"</string>
+    <string name="oneplus_fingerprint_findsendor_summary">"Quando compare l'impronta digitale in basso sullo schermo, premere il dito sull'area di identificazione dell'impronta digitale per utilizzare la funzione."</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">"Come utilizzare l'impronta digitale"</string>
     <string name="oneplus_fingerprint_functional_declaration">Dichiarazione funzione Impronte digitali</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">Nella schermata del mirino, premere a lungo il sensore di impronte digitali per scattare una foto</string>
     <string name="oneplus_fingerprint_gesture_camera_title">Tieni premuto per scattare una foto</string>
@@ -2799,6 +2808,9 @@ Per andare alla schermata home in qualsiasi momento, scorri verso l'alto dal bor
     <string name="oneplus_hide_navkeys_summary">Aggiungi un tasto per nascondere o mostrare la barra di navigazione</string>
     <string name="oneplus_hide_notch_display_summary">"Nessuna app può utilizzare l'area notch"</string>
     <string name="oneplus_hide_notch_display_title">Nascondi area notch</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"Quando il pattern dell'impronta digitale appare in basso sullo schermo, premere semplicemente il dito sull'area d'identificazione dell'impronta digitale per utilizzare la funzione corrispondente di riattivazione e sblocco del telefono, autorizzazione di acquisti o accesso alle app. 
+
+Nota: l'impronta digitale potrebbe risultare meno sicura di un pattern o del PIN"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">"Quando la sequenza di impronte digitali viene visualizzata nella parte inferiore dello schermo, è sufficiente premere il dito sull'area di identificazione dell'impronta digitale per utilizzare la funzione impronte digitali: riattivare e sbloccare il telefono, autorizzare gli acquisti o effettuare l'accesso alle app."</string>
     <string name="oneplus_hydrogen_version">Versione H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Chiamata in arrivo</string>
@@ -2872,6 +2884,7 @@ Per andare alla schermata home in qualsiasi momento, scorri verso l'alto dal bor
     <string name="oneplus_normal_clear_way">Cancellazione normale</string>
     <string name="oneplus_normal_clear_way_summary">Cancellazione di elenco attività e cache, non dei processi in background.</string>
     <string name="oneplus_not_disturb_on">Non disturbare ON</string>
+    <string name="oneplus_not_disturb_summary">"Disattiva l'audio di chiamate e notifiche e spegni la vibrazione, tranne per le eccezioni selezionate"</string>
     <string name="oneplus_not_show">Non visualizzare di nuovo</string>
     <string name="oneplus_notch_display_area">Notch</string>
     <string name="oneplus_notch_display_choose_title">"Come mostrare l'area notch"</string>
@@ -2944,7 +2957,9 @@ Per andare alla schermata home in qualsiasi momento, scorri verso l'alto dal bor
     <string name="oneplus_quick_launch_how_to_use_summary">"1. Continuare a tenere il dito dopo aver sbloccato lo schermo per aprire il pannello Avvio veloce
 2. Scorrere per selezionare il collegamento e rilasciare il dito per lanciarlo"</string>
     <string name="oneplus_quick_launch_how_to_use_title">Usa Avvio veloce</string>
+    <string name="oneplus_quick_launch_summary">"Premere a lungo sull'area di identificazione dell'impronta digitale per lanciare Quick Pay o attivare delle app"</string>
     <string name="oneplus_quick_launch_title">Avvio veloce</string>
+    <string name="oneplus_quick_launch_toggle_summary">"Premere a lungo sull'area di identificazione dell'impronta digitale per lanciare Quick Pay o attivare delle app quando il telefono è bloccato"</string>
     <string name="oneplus_quick_launch_toggle_title">Attiva Avvio veloce</string>
     <string name="oneplus_quick_turn_on_assistant_app">"Attivare rapidamente l'app assistente"</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">"Tenere premuto il pulsante di accensione per 0, 5 s per attivare l'applicazione assistente e 3 s per spegnere il telefono"</string>
@@ -3047,13 +3062,25 @@ Per andare alla schermata home in qualsiasi momento, scorri verso l'alto dal bor
     <string name="oneplus_security_lock_settings_summary">Sblocca preferenze, servizio di localizzazione, blocco app</string>
     <string name="oneplus_security_lock_settings_title">Sicurezza e privacy</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">Configurazione non riuscita</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"Premere sull'area d'identificazione dell'impronta digitale per sbloccare il telefono, autorizzare acquisti o accedere alle app. 
+
+Nota: 
+1. il blocco tramite impronta digitale potrebbe risultare meno sicuro rispetto a quello che utilizza un pattern o un PIN.n2.Reinserire l'impronta digitale ogniqualvolta si sostituisce la pellicola protettiva per assicurare la disponibilità dell'impronta digitale."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">Questa impronta è già stata registrata. Prova con un altro dito.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">"Mostrare l'icona dell'impronta digitale in Display ambiente"</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">Muovere leggermente il telefono per visualizzarla</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">Toccare lo schermo per visualizzarla</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">La funzione \"Doppio tocco per riattivare\" è abilitata, mentre la funzione \"Tocca lo schermo per visualizzare\" verrà disabilitata</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">La funzione \"Tocca lo schermo per visualizzare\" è abilitata, mentre la funzione \"Doppio tocco per riattivare\" verrà disabilitata</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">Cosmos</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">Onda</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">Riga</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">"Selezionare l'effetto di animazione per l'impronta digitale"</string>
     <string name="oneplus_set_time">Modalità notturna pianificata</string>
     <string name="oneplus_setting_ringtone">Imposta suoneria</string>
     <string name="oneplus_setting_sim_ringtone_switch">Imposta la suoneria per ogni scheda SIM</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">"In base al proprio utilizzo giornaliero, la funzione Smart Boost sfrutta a pieno l'ampia RAM di cui sono dotati i telefoni OnePlus, ottenendo prestazioni ottimali ad esempio nel caricamento di app e giochi."</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Smart Boost</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Impostare un metodo alternativo per sbloccare lo schermo</string>
     <string name="oneplus_share_this_wifi">Estendere copertura Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Condivisione Wi‑Fi</string>
@@ -3131,7 +3158,7 @@ Nota: Face Unlock può risultare meno sicura dell'impronta digitale, del PIN o d
     <string name="oneplus_weak_text_reminding">Solo testo</string>
     <string name="oneplus_weak_text_reminding_summary">Consentire alle app di mostrare notifica degli heads-up</string>
     <string name="oneplus_wifi_ap_error">Inserisci la scheda SIM</string>
-    <string name="oneplus_wifi_hidden_network_warning">"Se il router disattiva la trasmissione SSID, è necessario selezionare \"Sì\" per connettersi alla rete nascosta.
+    <string name="oneplus_wifi_hidden_network_warning">"Se il router è impostato per disattivare la trasmissione SSID, è necessario selezionare \"Sì\" per connettersi alla rete nascosta.
 
 Ciò può creare un rischio a livello di sicurezza poiché il telefono trasmetterà regolarmente il segnale per trovare la rete.
 
@@ -3212,6 +3239,8 @@ Impostando la rete come nascosta, le impostazioni del router non cambieranno."</
     <string name="op_system_dashboard_summary">Lingue, ora, reset, aggiornamenti</string>
     <string name="op_theme_2__cannot_change_color_accent">Il tema The Avengers può utilizzare solo il tema di colore di sistema</string>
     <string name="op_theme_2__title">The Avengers</string>
+    <string name="op_theme_3_cannot_change_color_accent">Il tema McLaren può utilizzare solo il tema colori del sistema</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">Tema</string>
     <string name="op_user_manual_settings">Manuale utente</string>
     <string name="op_volume">Volume</string>
@@ -3991,7 +4020,7 @@ Questo è reso possibile da credenziali attendibili installate sul tuo dispositi
     <string name="status_bar_settings_cellular_title">Dati cellulare</string>
     <string name="status_bar_settings_dnd_title">Non disturbare</string>
     <string name="status_bar_settings_headset_title">Auricolare</string>
-    <string name="status_bar_settings_hotspot_title">Hotspot</string>
+    <string name="status_bar_settings_hotspot_title">Hotspot mobile</string>
     <string name="status_bar_settings_network_speed_title">Visualizza velocità rete</string>
     <string name="status_bar_settings_time_title">Ora</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>

@@ -2687,6 +2687,9 @@
     <string name="oneplus_emergency_rescue_settings">ทีมกู้ภัยฉุกเฉิน</string>
     <string name="oneplus_emergency_rescue_settings_summary">โทรโดยอัตโนมัติเพื่อขอความช่วยเหลือโดยการกดปุ่มเปิดปิดอย่างรวดเร็ว</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">พร้อมใช้งานหลังจากเปลี่ยนแปลงการตั้งค่าปุ่มเปิด/ปิดสำหรับการกู้ภัยฉุกเฉิน</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1. กรุณาป้อนลายนิ้วมืออีกครั้งหลังจากหลังการเปลี่ยนฟิล์มกันรอยในแต่ละครั้งเพื่อให้มั่นใจในความพร้อมใช้งานของลายนิ้วมือ
+
+2. ในขั้นตอนการติดตั้งครั้งเดียว กรุณาป้อนข้อมูลลายนิ้วมือเพียงนิ้วเดียว"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">ข้อความการตั้งค่าลายนิ้วมือ</string>
     <string name="oneplus_enter_your_fingerprint">· ลงทะเบียนลายนิ้วมือของคุณ</string>
     <string name="oneplus_experience_improvement_programs">โปรแกรมการปรับปรุงประสบการณ์</string>
@@ -2711,11 +2714,17 @@
     <string name="oneplus_finger_input_error_tips">มีข้อผิดพลาดในการลงทะเบียนลายนิ้วมือ กรุณาลองอีกครั้ง</string>
     <string name="oneplus_finger_input_fail_tips">การป้อนข้อมูลล้มเหลว กรุณาปรับตำแหน่งแล้วลองใหม่อีกครั้ง</string>
     <string name="oneplus_fingerprint">ลายนิ้วมือ</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">ตรวจพบลายนิ้วมือที่คล้ายกัน กรุณาขยับนิ้วของคุณเล็กน้อยเพื่อป้อนลายนิ้วมือส่วนอื่น</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">พื้นที่ระบุลายนิ้วมือไม่สะอาด กรุณาเช็ดพื้นที่ดังกล่าวและลองอีกครั้ง</string>
+    <string name="oneplus_fingerprint_acquired_partial">ตรวจพบลายนิ้วมือบางส่วน กรุณาทาบนิ้วมือบนพื้นที่ระบุลายนิ้วมือให้สนิท</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">เร็วเกินไปที่จะประมวลผลลายนิ้วมือของคุณ กรุณารอสักครู่เมื่อกดนิ้ว</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">ตรวจพบลายนิ้วมือที่คล้ายคลึงกัน กรุณาขยับนิ้วมือเล็กน้อยเพื่อป้อนลายนิ้วมือส่วนอื่น</string>
     <string name="oneplus_fingerprint_animation_effect_title">เอฟเฟ็กต์ภาพเคลื่อนไหวลายนิ้วมือ</string>
     <string name="oneplus_fingerprint_delete_confirm_message">คุณต้องการลบหรือไม่?</string>
     <string name="oneplus_fingerprint_detail">รายละเอียด</string>
     <string name="oneplus_fingerprint_enrol_completed">ลายนิ้วมือถูกบันทึกแล้ว</string>
+    <string name="oneplus_fingerprint_enroll_summary">กดและทาบนิ้วมือของคุณบนพื้นที่ระบุลายนิ้วมือให้แนบสนิทที่สุดเท่าที่จะทำได้ จากนั้นยกขึ้นเมื่อคุณรู้สึกถึงการสั่น</string>
+    <string name="oneplus_fingerprint_findsendor_summary">เมื่อรูปแบบลายนิ้วมือปรากฏที่ด้านล่างของหน้าจอ เพียงแค่กดนิ้วมือลงบนพื้นที่ระบุลายนิ้วมือเพื่อใช้ฟังก์ชันลายนิ้วมือ</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">วิธีการใช้ลายนิ้วมือ</string>
     <string name="oneplus_fingerprint_functional_declaration">ประกาศเกี่ยวกับฟังก์ชันลายนิ้วมือ</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">จากหน้าจอช่องมองภาพ กดค้างที่เซ็นเซอร์ลายนิ้วมือเพื่อถ่ายรูป</string>
     <string name="oneplus_fingerprint_gesture_camera_title">กดค้างเพื่อถ่ายรูป</string>
@@ -2799,6 +2808,9 @@
     <string name="oneplus_hide_navkeys_summary">เพิ่มปุ่มเพื่อซ่อนหรือแสดงแถบนำทาง</string>
     <string name="oneplus_hide_notch_display_summary">แอปทั้งหมดไม่สามารถใช้พื้นที่รอยบากได้</string>
     <string name="oneplus_hide_notch_display_title">ซ่อนพื้นที่รอยบาก</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"เมื่อรูปแบบลายนิ้วมือปรากฏที่ด้านล่างของหน้าจอ เพียงแค่กดนิ้วมือลงบนพื้นที่ระบุลายนิ้วมือเพื่อใช้ฟังก์ชันลายนิ้วมือ ได้แก่ การปลุกและปลดล็อคโทรศัพท์ของคุณ อนุมัติการสั่งซื้อ หรือลงชื่อเข้าใช้แอปต่าง ๆ 
+
+หมายเหตุ: ลายนิ้วมือของคุณอาจมีความปลอดภัยน้อยกว่ารูปแบบหรือ PIN ที่คาดเดาได้ยาก"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">เมื่อรูปแบบลายนิ้วมือปรากฏขึ้นที่ด้านล่างของหน้าจอ เพียงกดด้วยนิ้วมือของคุณบนพื้นที่ระบุลายนิ้วมือเพื่อใช้งานฟังก์ชันลายนิ้วมือ ได้แก่ การปลุกและการปลดล็อคโทรศัพท์ของคุณ การอนุมัติการชำระเงิน หรือการเข้าสู่ระบบแอป</string>
     <string name="oneplus_hydrogen_version">รุ่น H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">สายเรียกเข้า</string>
@@ -2872,6 +2884,7 @@
     <string name="oneplus_normal_clear_way">ล้างธรรมดา</string>
     <string name="oneplus_normal_clear_way_summary">ล้างรายการงานและแคชโดยไม่ต้องล้างการทำงานเบื้องหลัง</string>
     <string name="oneplus_not_disturb_on">ห้ามรบกวน เปิดอยู่</string>
+    <string name="oneplus_not_disturb_summary">ปิดเสียงการโทรและการแจ้งเตือนและปิดการสั่น แต่ไม่รวมถึงข้อยกเว้นที่คุณเลือกไว้</string>
     <string name="oneplus_not_show">ไม่ต้องแสดงอีก</string>
     <string name="oneplus_notch_display_area">บาก</string>
     <string name="oneplus_notch_display_choose_title">วิธีแสดงพื้นที่รอยบาก</string>
@@ -2944,7 +2957,9 @@
     <string name="oneplus_quick_launch_how_to_use_summary">"1. กดนิ้วค้างไว้ต่อไปหลังจากปลดล็อคเพื่อเปิดแผงเปิดใช้งานด่วน
 2. ปัดเพื่อเลือกทางลัดและปล่อยนิ้วมือของคุณเพื่อเรียกใช้งาน"</string>
     <string name="oneplus_quick_launch_how_to_use_title">ใช้การเปิดใช้งานด่วน</string>
+    <string name="oneplus_quick_launch_summary">กดค้างบนพื้นที่การระบุลายนิ้วมือเพื่อเรียกใช้การชำระเงินด่วนหรือเปิดใช้งานแอปต่าง ๆ</string>
     <string name="oneplus_quick_launch_title">เปิดการใช้งานด่วน</string>
+    <string name="oneplus_quick_launch_toggle_summary">กดค้างบนพื้นที่การระบุลายนิ้วมือเพื่อเรียกใช้การชำระเงินด่วนหรือเปิดใช้งานแอปต่าง ๆ เมื่อโทรศัพท์ล็อคอยู่</string>
     <string name="oneplus_quick_launch_toggle_title">เปิดการเปิดใช้งานด่วน</string>
     <string name="oneplus_quick_turn_on_assistant_app">เปิดใช้งานแอปผู้ช่วยอย่างรวดเร็ว</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">กดปุ่มเปิด/ปิดค้างไว้ 0.5 วินาทีเพื่อเปิดใช้งานแอปผู้ช่วย และกดค้างไว้ 3 วินาทีเพื่อปิด</string>
@@ -3047,13 +3062,26 @@
     <string name="oneplus_security_lock_settings_summary">การตั้งค่าการปลดล็อค, บริการตำแหน่งที่ตั้ง, ตัวล็อคแอป</string>
     <string name="oneplus_security_lock_settings_title">ความปลอดภัย &amp; ความเป็นส่วนตัว</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">การตั้งค่าล้มเหลว</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"เพียงแค่กดบริเวณพื้นที่ระบุลายนิ้วมือเพื่อปลดล็อคโทรศัพท์ของคุณ อนุมัติการสั่งซื้อ หรือลงชื่อเข้าใช้แอปต่าง ๆ 
+
+หมายเหตุ: 
+1. ลายนิ้วมือของคุณอาจมีความปลอดภัยน้อยกว่ารูปแบบหรือ PIN ที่คาดเดาได้ยาก
+2. กรุณาป้อนลายนิ้วมืออีกครั้งหลังจากหลังการเปลี่ยนฟิล์มกันรอยในแต่ละครั้งเพื่อให้มั่นใจในความพร้อมใช้งานของลายนิ้วมือ"</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">ลายนิ้วมือนี้ได้รับการลงทะเบียนไปแล้ว กรุณาลองใช้นิ้วมืออื่น</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">แสดงไอคอนลายนิ้วมือในการแจ้งเตือนโดยไม่ต้องเปิดหน้าจอ</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">ขยับโทรศัพท์เล็กน้อยเพื่อแสดง</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">แตะหน้าจอเพื่อแสดง</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">เปิดใช้งาน \"แตะสองครั้งเพื่อปลุก\" แล้ว และ \"แตะหน้าจอเพื่อแสดง\" จะถูกปิดใช้งาน</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">เปิดใช้งาน \" แตะหน้าจอเพื่อแสดง \" แล้ว และ \" แตะสองครั้งเพื่อปุก\" จะถูกปิดใช้งาน</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">อวกาศ</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">คลื่น</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">ลายแถบ</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">เลือกเอฟเฟ็กต์ภาพเคลื่อนไหวลายนิ้วมือ</string>
     <string name="oneplus_set_time">โหมดกลางคืนที่กำหนดเวลาไว้</string>
     <string name="oneplus_setting_ringtone">ตั้งค่าเสียงเข้า</string>
     <string name="oneplus_setting_sim_ringtone_switch">ตั้งเสียงเรียกเข้าสำหรับแต่ละซิมการ์ด</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">Smart Boost ใช้ประโยชน์จาก RAM ของโทรศัพท์ OnePlus อย่างเต็มประสิทธิภาพ ซึ่งช่วยยกระดับประสิทธิภาพในการโหลดแอปและเกมตามการใช้งานประจำวันของคุณ</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Smart Boost</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· ตั้งค่าวิธีอื่นเพื่อปลดล็อคหน้าจอ</string>
     <string name="oneplus_share_this_wifi">ขยายความครอบคลุม Wi-Fi</string>
     <string name="oneplus_share_wifi_title">การแบ่งปันวายฟาย</string>
@@ -3131,7 +3159,7 @@
     <string name="oneplus_weak_text_reminding">ข้อความเท่านั้น</string>
     <string name="oneplus_weak_text_reminding_summary">อนุญาตให้แอปแสดงการแจ้งเตือนล่วงหน้า</string>
     <string name="oneplus_wifi_ap_error">กรุณาใส่ซิมการ์ด</string>
-    <string name="oneplus_wifi_hidden_network_warning">"หากเราเตอร์ของคุณปิดใช้งานการกระจายข้อมูล SSID คุณควรเลือก \"ใช่\" เพื่อเชื่อมต่อเครือข่ายที่ซ่อนอยู่
+    <string name="oneplus_wifi_hidden_network_warning">"หากเราเตอร์ของคุณตั้งค่าไม่ให้มีการกระจายข้อมูล SSID คุณควรเลือก \"ใช่\" เพื่อเชื่อมต่อเครือข่ายที่ซ่อนอยู่
 
 ซึ่งอาจสร้างความเสี่ยงด้านความปลอดภัยเนื่องจากโทรศัพท์ของคุณจะกระจายข้อมูลสัญญาณเป็นระยะ ๆ เพื่อค้นหาเครือข่าย
 
@@ -3212,6 +3240,8 @@
     <string name="op_system_dashboard_summary">ภาษา, เวลา, รีเซ็ต, อัปเดต</string>
     <string name="op_theme_2__cannot_change_color_accent">ธีมอเวนเจอร์สสามารถใช้ธีมสีของระบบได้เท่านั้น</string>
     <string name="op_theme_2__title">อเวนเจอร์ส</string>
+    <string name="op_theme_3_cannot_change_color_accent">ธีม McLaren สามารถใช้งานได้เฉพาะธีมสีของระบบเท่านั้น</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">ธีม</string>
     <string name="op_user_manual_settings">คู่มือผู้ใช้งาน</string>
     <string name="op_volume">ระดับเสียง</string>
@@ -3991,7 +4021,7 @@ PIN อาจไม่ถูกต้อง"</string>
     <string name="status_bar_settings_cellular_title">ดาต้ามือถือ</string>
     <string name="status_bar_settings_dnd_title">ห้ามรบกวน</string>
     <string name="status_bar_settings_headset_title">ชุดหูฟัง</string>
-    <string name="status_bar_settings_hotspot_title">ฮอตสปอต</string>
+    <string name="status_bar_settings_hotspot_title">ฮอตสปอตมือถือ</string>
     <string name="status_bar_settings_network_speed_title">แสดงความเร็วเน็ตเวิร์ก</string>
     <string name="status_bar_settings_time_title">เวลา</string>
     <string name="status_bar_settings_wifi_title">วายฟาย</string>
@@ -5068,7 +5098,7 @@ PIN อาจไม่ถูกต้อง"</string>
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">หลังจากไม่ได้ใช้งานเป็นเวลา 10 นาที</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">หลังจากไม่ได้ใช้งานเป็นเวลา 15 นาที</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">หลังจากไม่ได้ใช้งานเป็นเวลา 5 นาที</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">เปิดอยู่เสมอ</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">เปิดไว้เสมอ</string>
     <string name="wifi_tether_disabled_by_airplane">ใช้งานไม่ได้เพราะโหมดบนเครื่องบินเปิดอยู่</string>
     <string name="wifi_tether_enabled_subtext">%1$s ใช้งานอยู่</string>
     <string name="wifi_tether_failed_subtext">ข้อผิดพลาดของ WiFi ฮอตสปอตแบบพกพา</string>

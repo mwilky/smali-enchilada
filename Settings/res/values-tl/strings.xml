@@ -2616,7 +2616,7 @@ Ang Battery saver ay awtomatikong pinapatay kapag ang iyong aparato ay nag-charg
     <string name="oneplus_broadcat_wifi_name">Broadcast network name (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Mga button at gesture</string>
     <string name="oneplus_buttons_dashboard_summary">Slider ng Alerto, navigation, mga gesture</string>
-    <string name="oneplus_buttons_settings">mga setting ng mga button</string>
+    <string name="oneplus_buttons_settings">Mga setting ng mga button</string>
     <string name="oneplus_buttons_settings_summary">Navigation gesture</string>
     <string name="oneplus_call_information_broadcast">Sabihin ang Caller ID</string>
     <string name="oneplus_call_information_broadcast_summary">Sabihin ang paparating na caller ID sa pamamagitan ng earphones</string>
@@ -2687,6 +2687,9 @@ Ang Battery saver ay awtomatikong pinapatay kapag ang iyong aparato ay nag-charg
     <string name="oneplus_emergency_rescue_settings">Emergency na pagsagip</string>
     <string name="oneplus_emergency_rescue_settings_summary">Awtomatikong tumawag ng tulong sa pamamagitan ng mabilis na pagpindot sa power button</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">Available pagkatapos baguhin ang mga setting ng POWER BUTTON ng Emergency Rescue</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1.Muling ilagay ang iyong fingerprint pagkatapos ng bawat pagpapalit ng protective na film para matiyak ang availability ng fingerprint
+
+2.Sa proseso ng isahang pag-set up, tanging impormasyon ng fingerprint ng isang daliri lang ang ilagay"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Prompt sa pag-set up ng fingerprint</string>
     <string name="oneplus_enter_your_fingerprint">· I-enroll ang iyong tatak ng daliri</string>
     <string name="oneplus_experience_improvement_programs">Mga program sa pagpapahusay ng karanasan</string>
@@ -2711,11 +2714,17 @@ Tip sa panganib: Hindi gaanong secure ang Face Unlock tulad ng fingerprint at pa
     <string name="oneplus_finger_input_error_tips">Error sa Rehistrasyon ng fingerprint, mangyaring subukin muli</string>
     <string name="oneplus_finger_input_fail_tips">Ang input ay nabigo, Mangyaring ayusin ang posisyon at subukin muli</string>
     <string name="oneplus_fingerprint">Tatak ng daliri</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">"Natukoy ang kaparehong fingerprint. Pakigalaw nang bahagya ang iyong daliri para mailagay ang fingerprint ng iba't ibang bahagi."</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">Marumi ang lugar ng pagkilala ng fingerprint. Pakipunasan ito nang malinis at subukang muli.</string>
+    <string name="oneplus_fingerprint_acquired_partial">Nadetekta ang partial na fingerprint. Pakitakpan nang husto ang lugar ng pagkilala ng fingerprint.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">Napakabilis para iproseso ang fingerprint mo. Pakitagalan nang ilang saglit kapag pumipindot.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">"Nadetekta ang katulad na fingerprint. Pakigalaw nang bahagya ang daliri mo para ipasok ang fingerprint ng iba't ibang bahagi."</string>
     <string name="oneplus_fingerprint_animation_effect_title">Fingerprint animation effect</string>
     <string name="oneplus_fingerprint_delete_confirm_message">Gusto mo bang i-delete ito?</string>
     <string name="oneplus_fingerprint_detail">Mga detalye</string>
     <string name="oneplus_fingerprint_enrol_completed">Ang tatak ng daliri ay nai-save</string>
+    <string name="oneplus_fingerprint_enroll_summary">"Pindutin at takpan ng iyong daliri ang bahagi ng pagkilala sa fingerprint nang buo hangga't maaari, pagkatapos ay alisin kapag nakaramdaman ng pag-vibrate"</string>
+    <string name="oneplus_fingerprint_findsendor_summary">Kapag lumitaw ang pattern ng fingerprint sa ibaba ng screen, pindutin lang ng daliri mo ang lugar ng pagkilala ng fingerprint para gamitin ang function na fingerprint.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">Paano gamitin ang fingerprint</string>
     <string name="oneplus_fingerprint_functional_declaration">Pahayag sa function ng fingerprint</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">Mula sa viewfinder screen, pindutin nang matagal ang sensor ng fingerprint para kumuha ng larawan</string>
     <string name="oneplus_fingerprint_gesture_camera_title">Pindutin nang matagal upang kumuha ng larawan</string>
@@ -2799,6 +2808,9 @@ Upang pumunta sa home screen kahit anu mang oras, i-swipe pataas mula sa ibabang
     <string name="oneplus_hide_navkeys_summary">Magdagdag ng button para itago o ipakita ang navigation bar</string>
     <string name="oneplus_hide_notch_display_summary">Hindi magagamit ng lahat ng app ang notch area</string>
     <string name="oneplus_hide_notch_display_title">Itago ang notch area</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"Kapag lumabas ang pattern para sa fingerprint sa ibaba ng screen, pumindot lang sa bahagi ng pagkilala sa fingerprint gamit ang iyong daliri para magamit ang function ng fingerprint: gisingin at i-unlock ang iyong telepono, pahintulutan ang mga pagbili, o mag-sign in sa mga app. 
+
+Paalala: Maaaring hindi gaanong secure ang iyong fingerprint kumpara sa isang mahirap hulaang pattern o PIN"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Kapag lumitaw ang pattern ng fingerprint sa ibaba ng screen, pumindot lang gamit ang iyong daliri sa bahagi ng pagkilala ng fingerprint para magamit ang function ng fingerprint: i-wake at i-unlock ang iyong telepono, pahintulutan ang mga pagbili, o mag-sign in sa mga app.</string>
     <string name="oneplus_hydrogen_version">Bersyon ng H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Papasok na tawag</string>
@@ -2872,6 +2884,7 @@ Upang pumunta sa home screen kahit anu mang oras, i-swipe pataas mula sa ibabang
     <string name="oneplus_normal_clear_way">Normal na malinaw</string>
     <string name="oneplus_normal_clear_way_summary">Linisin ang listahan ng task at cache, na hindi lilinisin ang mga proseso sa background.</string>
     <string name="oneplus_not_disturb_on">Ang huwag gambalain ay hindi umaandar</string>
+    <string name="oneplus_not_disturb_summary">I-mute ang mga tawag at notification at i-off ang pag-vibrate, maliban sa iyong mga piniling pagbubukod</string>
     <string name="oneplus_not_show">Huwag itong ipakitang muli</string>
     <string name="oneplus_notch_display_area">Notch</string>
     <string name="oneplus_notch_display_choose_title">Paano ipakita ang notch area</string>
@@ -2944,7 +2957,9 @@ Upang pumunta sa home screen kahit anu mang oras, i-swipe pataas mula sa ibabang
     <string name="oneplus_quick_launch_how_to_use_summary">"1.Panatilihing nakapindot ang iyong daliri pagkatapos mag-unlock para buksan ang quick launch panel
 2.Mag-swipe para piliin ang shortcut at iangat ang iyong daliri para ilunsad ito"</string>
     <string name="oneplus_quick_launch_how_to_use_title">Gamitin ang quick launch</string>
+    <string name="oneplus_quick_launch_summary">Pindutin nang matagal ang lugar ng pagkilala ng fingerprint para ilunsad ang mabilis na pagbabayad o i-activate ang mga app</string>
     <string name="oneplus_quick_launch_title">Mabilisang paglunsad</string>
+    <string name="oneplus_quick_launch_toggle_summary">Pindutin nang matagal ang lugar ng pagkilala ng fingerprint para ilunsad ang mabilis na pagbabayad o i-activate ang mga app kapag naka-lock ang telepono</string>
     <string name="oneplus_quick_launch_toggle_title">I-on ang Mabilisang paglunsad</string>
     <string name="oneplus_quick_turn_on_assistant_app">Mabilis na i-activate ang assistant app</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">Pindutin ang power button nang 0.5s upang i-activate ang assistant app, at 3s para i-off</string>
@@ -3047,13 +3062,26 @@ Upang pumunta sa home screen kahit anu mang oras, i-swipe pataas mula sa ibabang
     <string name="oneplus_security_lock_settings_summary">Mga kagustuhan sa pag-unlock, serbisyo ng lokasyon, app locker</string>
     <string name="oneplus_security_lock_settings_title">Seguridad at Privacy</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">Nabigo ang pag-set up</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"Pindutin lang ang bahagi ng pagkilala sa fingerprint para ma-unlock ang iyong telepono, mapahintulutan ang mga pagbili, o makapag-sign in sa mga app. 
+
+Paalala: 
+1.Maaaring hindi gaanong secure ang iyong fingerprint kumpara sa isang mahirap hulaang pattern o PIN.
+2.Muling ilagay ang iyong fingerprint pagkatapos ng bawat pagpapalit ng protective na film para matiyak ang availability ng fingerprint."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">Na-enrol na ang fingerprint na ito, mangyaring subukin ang isa pang daliri.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">Ipakita ang icon ng fingerprint sa Ambient na Display</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">Bahagyang igalaw ang iyong telepono para ipakita</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">I-tap ang screen para ipakita</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">Naka-enable ang \"I-double tap para i-wake\" at idi-disable ang \"I-tap ang screen para ipakita\"</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">Naka-enable ang \"I-tap ang screen para ipakita\" at idi-disable ang \"I-double tap para i-wake\"</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">Cosmos</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">Wave</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">Stripe</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">Pumili ng fingerprint animation effect</string>
     <string name="oneplus_set_time">Nakatakdang Night Mode</string>
     <string name="oneplus_setting_ringtone">Itakda ang tunog</string>
     <string name="oneplus_setting_sim_ringtone_switch">Itakda ang ringtone para sa bawat kard ng SIM</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">Batay sa iyong pang-araw-araw na paggamit, lubos na pinapakinabangan ng Smart Boost ang malaking RAM ng mga OnePlus phone, na pinapahusay ang performance ng pag-load ng mga app at laro.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Smart Boost</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Ituma ang isang kahaliling paraan upang ma-unlock ang screen</string>
     <string name="oneplus_share_this_wifi">I-extend ang sakop ng Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Pagbabahagi ng mga Wi‑Fi</string>
@@ -3131,7 +3159,7 @@ Tandaan: Maaaring hindi gaanong secure ang Face Unlock kumpara sa fingerprint, P
     <string name="oneplus_weak_text_reminding">Text lang</string>
     <string name="oneplus_weak_text_reminding_summary">Payagan ang mga app na magpakita ng heads up na notification</string>
     <string name="oneplus_wifi_ap_error">Mangyaring ipasok ang SIM card</string>
-    <string name="oneplus_wifi_hidden_network_warning">"Kung idi-disable ng iyong router ang SSID broadcast, dapat mong piliin ang \"Oo\" para kumonekta sa nakatagong network.
+    <string name="oneplus_wifi_hidden_network_warning">"Kung nakatakda ang iyong router sa hindi pag-broadcast ng SSID, dapat mong piliin ang \"Oo\" para kumonekta sa nakatagong network.
 
 Maaari itong makagawa ng banta sa seguridad dahil regular na ibo-broadcast ng iyong telepono ang signal nito para mahanap ang network.
 
@@ -3212,6 +3240,8 @@ Kahit gawing nakatago ang network, hindi nito mababago ang mga setting ng iyong 
     <string name="op_system_dashboard_summary">Mga wika, oras, pag-reset, mga update</string>
     <string name="op_theme_2__cannot_change_color_accent">Magagamit lang ng temang The Avengers ang tema ng kulay ng system</string>
     <string name="op_theme_2__title">The Avengers</string>
+    <string name="op_theme_3_cannot_change_color_accent">Ang tema ng kulay ng system lang ang magagamit ng temang McLaren</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">Tema</string>
     <string name="op_user_manual_settings">User Manual</string>
     <string name="op_volume">Tunog</string>
@@ -3989,7 +4019,7 @@ Ginagawa itong posible ng isang pinagkakatiwalaang credential na naka-install sa
     <string name="status_bar_settings_cellular_title">Data pang-selular</string>
     <string name="status_bar_settings_dnd_title">Huwag istorbohin</string>
     <string name="status_bar_settings_headset_title">Headset</string>
-    <string name="status_bar_settings_hotspot_title">Hotspot</string>
+    <string name="status_bar_settings_hotspot_title">Mobile HotSpot</string>
     <string name="status_bar_settings_network_speed_title">Magdispley ng mga bilis ng network</string>
     <string name="status_bar_settings_time_title">Oras</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -4990,7 +5020,7 @@ Payagan ito para sa lahat ng apps na gustong mag-scan?"</string>
     <string name="wifi_scan_notify_text">Para pahusayin ang katumpakan ng lokasyon, maaari pa ring mag-scan ng mga Wi-Fi network ang mga app at serbisyo anumang oras, kahit habang naka-off ang Wi‑Fi. Magagamit ito, halimbawa, para pahusayin ang mga feature at serbisyong batay sa lokasyon. Mababago mo ito sa LINK_BEGINmga setting ng pag-scanLINK_END.</string>
     <string name="wifi_scan_notify_text_scanning_off">Upang pahusayin ang katumpakan ng lokasyon, i-on ang pag-scan ng Wi-Fi sa LINK_BEGINmga setting ng pag-scanLINK_END.</string>
     <string name="wifi_security">Seguridad</string>
-    <string name="wifi_security_dialog">Gamit ang Open security, maaaring kumonekta ang anumang device sa iyong Mobile HotSpot at gamitin ang iyong koneksyon sa mobile data.</string>
+    <string name="wifi_security_dialog">Kapag bukas ang seguridad, makakakonekta ang anumang device sa iyong Mobile HotSpot at magagamit nito ang koneksyon mo sa mobile data.</string>
     <string name="wifi_security_none">Wala</string>
     <string name="wifi_security_open">Bukas</string>
     <string name="wifi_select_network">Pumili ng Wi-Fi</string>
@@ -5066,7 +5096,7 @@ I-tap ang "<b>Bumalik</b> upang kumonekta sa ibang Wi‑Fi network.</string>
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Pagkalipas ng 10 minuto na walang aktibidad</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Pagkalipas ng 15 minuto na walang aktibidad</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Pagkalipas ng 5 minuto na walang aktibidad</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">Palaging naka-on</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Palaging nananatiling naka-on</string>
     <string name="wifi_tether_disabled_by_airplane">Hindi available dahil naka-on ang airplane mode</string>
     <string name="wifi_tether_enabled_subtext">Aktibo ang %1$s</string>
     <string name="wifi_tether_failed_subtext">Error sa portable na Wi-Fi hotspot</string>

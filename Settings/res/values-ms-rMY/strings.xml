@@ -235,7 +235,7 @@ Penjimat bateri dipadamkan secara automatik apabila peranti anda sedang mengecas
     <string name="oneplus_broadcat_wifi_name">Penyiaran nama rangkaian (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Butang &amp; gerak isyarat</string>
     <string name="oneplus_buttons_dashboard_summary">Peluncur Amaran, navigasi, gerak isyarat</string>
-    <string name="oneplus_buttons_settings">seting butang</string>
+    <string name="oneplus_buttons_settings">Tetapan butang</string>
     <string name="oneplus_buttons_settings_summary">Gerak isyarat navigasi</string>
     <string name="oneplus_call_information_broadcast">Sebutkan ID Pemanggil</string>
     <string name="oneplus_call_information_broadcast_summary">Sebutkan ID pemanggil masuk melalui fon telinga</string>
@@ -306,6 +306,9 @@ Penjimat bateri dipadamkan secara automatik apabila peranti anda sedang mengecas
     <string name="oneplus_emergency_rescue_settings">Bantuan kecemasan</string>
     <string name="oneplus_emergency_rescue_settings_summary">Panggil bantuan secara automatik dengan menekan butang kuasa dengan cepat</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">Tersedia selepas mengubah suai tetapan BUTANG KUASA Bantuan Kecemasan</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1.Sila masukkan semula cap jari selepas setiap penggantian filem pelindung untuk memastikan kewujudan cap jari tersebut
+
+2.Dalam proses persediaan tunggal, sila masukkan maklumat jari cap untuk satu jari sahaja"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Prom persediaan cap jari</string>
     <string name="oneplus_enter_your_fingerprint">· Daftarkan cap jari anda</string>
     <string name="oneplus_experience_improvement_programs">Program peningkatan pengalaman</string>
@@ -335,6 +338,7 @@ Petua risiko: Buka Kunci Muka adalah kurang selamat berbanding cap jari dan kata
     <string name="oneplus_fingerprint_delete_confirm_message">Adakah anda mahu menghapuskannya?</string>
     <string name="oneplus_fingerprint_detail">Butiran</string>
     <string name="oneplus_fingerprint_enrol_completed">Cap jari telah disimpan</string>
+    <string name="oneplus_fingerprint_enroll_summary">Tekan dan pastikan jari anda meliputi kawasan pengecaman cap jari sebanyak mungkin, kemudian angkat jari anda selepas merasakan getaran</string>
     <string name="oneplus_fingerprint_functional_declaration">Deklarasi fungsi cap jari</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">Daripada skrin pemidang tilik, tekan lama pengesan cap jari untuk mengambil gambar</string>
     <string name="oneplus_fingerprint_gesture_camera_title">Tekan lama untuk mengambil gambar</string>
@@ -418,6 +422,9 @@ Untuk pergi ke skrin utama pada bila-bila masa, leret ke atas dari pinggir tenga
     <string name="oneplus_hide_navkeys_summary">Tambah butang untuk menyembunyikan atau menunjukkan bar navigasi</string>
     <string name="oneplus_hide_notch_display_summary">Semua aplikasi tidak dapat menggunakan kawasan takuk</string>
     <string name="oneplus_hide_notch_display_title">Sembunyikan kawasan takuk</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"Apabila ikon corak cap jari muncul di bahagian bawah skrin, hanya tekan dengan jari anda di kawasan pengecam cap jari untuk menggunakan fungsi cap jari: bangunkan dan buka kunci telefon anda, membenarkan pembelian atau log masuk ke aplikasi. 
+
+Perhatian: Cap jari anda mungkin kurang selamat berbanding corak atau PIN yang kukuh"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Apabila corak cap jari muncul di bahagian bawah skrin, hanya tekan dengan jari anda pada kawasan pengecaman cap jari untuk menggunakan fungsi cap jari: bangunkan dan buka kunci telefon anda, membenarkan pembelian atau log masuk ke aplikasi.</string>
     <string name="oneplus_hydrogen_version">Versi H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Panggilan masuk</string>
@@ -491,6 +498,7 @@ Untuk pergi ke skrin utama pada bila-bila masa, leret ke atas dari pinggir tenga
     <string name="oneplus_normal_clear_way">Padam yang biasa</string>
     <string name="oneplus_normal_clear_way_summary">Padam senarai tugas dan cache, tanpa proses memadamkan latar belakang.</string>
     <string name="oneplus_not_disturb_on">Tidak Mengganggu dihidupkan</string>
+    <string name="oneplus_not_disturb_summary">Bisukan panggilan dan pemberitahuan serta matikan getaran, kecuali untuk pengecualian yang anda pilih</string>
     <string name="oneplus_not_show">Jangan paparkan ini lagi</string>
     <string name="oneplus_notch_display_area">Takuk</string>
     <string name="oneplus_notch_display_choose_title">Cara untuk memaparkan kawasan takuk</string>
@@ -563,7 +571,9 @@ Untuk pergi ke skrin utama pada bila-bila masa, leret ke atas dari pinggir tenga
     <string name="oneplus_quick_launch_how_to_use_summary">"1.Terus tahan jari anda selepas membuka kunci untuk membuka panel lancar cepat
 2.Leret untuk memilih pintasan dan lepaskan jari anda untuk melancarkannya"</string>
     <string name="oneplus_quick_launch_how_to_use_title">Gunakan lancar cepat</string>
+    <string name="oneplus_quick_launch_summary">Tekan lama kawasan pengecaman cap jari untuk melancarkan pembayaran pantas atau mengaktifkan aplikasi</string>
     <string name="oneplus_quick_launch_title">Lancar cepat</string>
+    <string name="oneplus_quick_launch_toggle_summary">Tekan lama kawasan pengecaman cap jari untuk melancarkan pembayaran pantas atau mengaktifkan aplikasi semasa telefon dikunci</string>
     <string name="oneplus_quick_launch_toggle_title">Hidupkan Lancar cepat</string>
     <string name="oneplus_quick_turn_on_assistant_app">Aktifkan dengan pantas aplikasi pembantu</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">Tekan dan tahan butang kuasa selama 0.5s untuk mengaktifkan aplikasi pembantu dan 3s untuk mematikan kuasa</string>
@@ -666,13 +676,26 @@ Untuk pergi ke skrin utama pada bila-bila masa, leret ke atas dari pinggir tenga
     <string name="oneplus_security_lock_settings_summary">Keutamaan buka kunci, perkhidmatan lokasi, loker aplikasi</string>
     <string name="oneplus_security_lock_settings_title">Keselamatan &amp; privasi</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">Persediaan gagal</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"Hanya tekan kawasan pengecam cap jari untuk membuka kunci telefon anda, membenarkan pembelian atau log masuk ke aplikasi. 
+
+Perhatian: 
+1.Cap jari anda mungkin kurang selamat berbanding corak atau PIN yang kukuh.
+2.Sila masukkan semula cap jari selepas setiap penggantian filem pelindung untuk memastikan kewujudan cap jari tersebut."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">Cap jari ini sudah didaftarkan, sila cuba jari lain.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">Paparkan ikon cap jari dalam Paparan Ambien</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">Gerakkan telefon anda sedikit untuk paparkan</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">Ketik skrin untuk paparkan</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\"Ketik dua kali untuk bangun\" didayakan dan \"Ketik skrin untuk paparkan\" akan dinyahdayakan</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">\"Ketik skrin untuk paparkan\" didayakan dan \"Ketik dua kali untuk bangun\" akan dinyahdayakan</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">Kosmos</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">Ombak</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">Belang</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">Pilih kesan animasi cap jari</string>
     <string name="oneplus_set_time">Mod Malam Berjadual</string>
     <string name="oneplus_setting_ringtone">Tetapkan dering</string>
     <string name="oneplus_setting_sim_ringtone_switch">Tetapkan nada dering untuk setiap kad SIM</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">Berdasarkan penggunaan harian anda, Smart Boost menggunakan sepenuhnya kelebihan RAM yang besar pada telefon OnePlus, yang akan memanfaatkan prestasi memuatkan aplikasi dan permainan.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Smart Boost</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Sediakan cara alternatif untuk membuka kunci skrin</string>
     <string name="oneplus_share_this_wifi">Perluaskan liputan Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi Berkongsi</string>
@@ -750,7 +773,7 @@ Nota: Buka Kunci Muka mungkin kurang selamat berbanding cap jari, PIN atau pilih
     <string name="oneplus_weak_text_reminding">Teks sahaja</string>
     <string name="oneplus_weak_text_reminding_summary">Benarkan aplikasi untuk memaparkan pemberitahuan terapung</string>
     <string name="oneplus_wifi_ap_error">Sila masukkan kad SIM</string>
-    <string name="oneplus_wifi_hidden_network_warning">"Jika penghala anda menyahdayakan penyiaran SSID, anda perlu memilih \"Ya\" untuk menyambung ke rangkaian tersembunyi.
+    <string name="oneplus_wifi_hidden_network_warning">"Jika penghala anda tidak ditetapkan untuk menyiarkan SSID, anda perlu memilih \"Ya\" untuk menyambung ke rangkaian tersembunyi.
 
 Ini mungkin menimbulkan risiko keselamatan kerana telefon anda akan menyiarkan isyaratnya secara tetap untuk mencari rangkaian.
 
@@ -830,6 +853,8 @@ Menetapkan rangkaian sebagai tersembunyi tidak akan mengubah tetapan penghala an
     <string name="op_system_dashboard_summary">Bahasa, masa, tetap semula, kemas kini</string>
     <string name="op_theme_2__cannot_change_color_accent">Tema The Avengers hanya boleh menggunakan tema warna sistem</string>
     <string name="op_theme_2__title">The Avengers</string>
+    <string name="op_theme_3_cannot_change_color_accent">Tema McLaren hanya boleh menggunakan tema warna sistem</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">Tema</string>
     <string name="op_user_manual_settings">Manual Pengguna</string>
     <string name="op_volume">Kelantangan</string>
@@ -895,7 +920,7 @@ Menetapkan rangkaian sebagai tersembunyi tidak akan mengubah tetapan penghala an
     <string name="status_bar_settings_cellular_title">Data selular</string>
     <string name="status_bar_settings_dnd_title">Jangan ganggu</string>
     <string name="status_bar_settings_headset_title">Fon kepala</string>
-    <string name="status_bar_settings_hotspot_title">Kawasan khas</string>
+    <string name="status_bar_settings_hotspot_title">HotSpot Mudah Alih</string>
     <string name="status_bar_settings_network_speed_title">Paparkan kelajuan rangkaian</string>
     <string name="status_bar_settings_time_title">Masa</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -972,7 +997,7 @@ Menetapkan rangkaian sebagai tersembunyi tidak akan mengubah tetapan penghala an
     <string name="wifi_context_menu_change_wapi_certificate">Ubah Sijil WAPI</string>
     <string name="wifi_context_menu_connect">Sambung ke rangkaian</string>
     <string name="wifi_context_menu_forget">Lupa rangkaian</string>
-    <string name="wifi_security_dialog">Dengan keselamatan Terbuka, mana-mana peranti boleh bersambung ke Hotspot Mudah Alih anda dan menggunakan sambungan data mudah alih anda.</string>
+    <string name="wifi_security_dialog">Dengan keselamatan terbuka, mana-mana peranti boleh bersambung ke Hotspot Mudah Alih anda dan menggunakan sambungan data mudah alih anda.</string>
     <string name="wifi_security_open">Buka</string>
     <string name="wifi_setting_frequency_band_error">Terdapat masalah menetapkan jalur frekuensi.</string>
     <string name="wifi_setting_frequency_band_summary">Tetapkan julat frekuensi operasi</string>

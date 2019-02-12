@@ -295,6 +295,10 @@
 
     iget-object v9, v9, Lcom/oneplus/settings/ringtone/OPLocalRingtonePickerActivity;->mUriForDefaultItem:Landroid/net/Uri;
 
+    invoke-static {v9}, Landroid/content/ContentProvider;->getUriWithoutUserId(Landroid/net/Uri;)Landroid/net/Uri;
+
+    move-result-object v9
+
     invoke-virtual {v6, v9}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
 
     move-result v9

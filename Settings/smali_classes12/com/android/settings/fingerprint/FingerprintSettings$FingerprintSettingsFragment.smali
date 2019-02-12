@@ -647,7 +647,7 @@
 
     if-eqz v0, :cond_0
 
-    const v1, 0x7f080422
+    const v1, 0x7f080424
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

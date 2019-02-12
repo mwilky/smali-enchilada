@@ -2687,6 +2687,9 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="oneplus_emergency_rescue_settings">അടിയന്തരമായി രക്ഷപ്പെടുത്തൽ</string>
     <string name="oneplus_emergency_rescue_settings_summary">പവർ ബട്ടൺ വേഗത്തിൽ അമർത്തിക്കൊണ്ട് സഹായത്തിനായി സ്വയമേവ കോൾ ചെയ്യുക</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">എമർജൻസി റെസ്ക്യൂവിന്റെ പവർ ബട്ടൺ ക്രമീകരണങ്ങൾ പരിഷ്ക്കരിച്ചതിനുശേഷം ലഭ്യമാണ്</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1.വിരലടയാളത്തിന്റെ ലഭ്യത ഉറപ്പാക്കുന്നതിന് പരിരക്ഷിത ഫിലിമിന്റെ ഓരോ പുനഃസ്ഥാപനത്തിനുശേഷവും നിങ്ങളുടെ വിരലടയാളം വീണ്ടും നൽകുക
+
+2.ഒറ്റ ക്രമീകരണ പ്രോസസ്സിൽ, ഒരു വിരലിന്റെ മാത്രം വിരലടയാള വിവരങ്ങൾ നൽകുക"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">ഫിംഗർപ്രിൻ്റ് സെറ്റപ്പ് പ്രോംപ്റ്റ്</string>
     <string name="oneplus_enter_your_fingerprint">നിങ്ങളുടെ വിരലടയാളം ചേര്‍ക്കുക</string>
     <string name="oneplus_experience_improvement_programs">മെച്ചപ്പെടുത്തൽ പ്രോഗ്രാമുകൾ അനുഭവിക്കുക</string>
@@ -2711,11 +2714,17 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="oneplus_finger_input_error_tips">വിരലടയാളം രജിസ്ട്രേഷനില്‍ പിശക്, ദയവായി വീണ്ടും ശ്രമിക്കുക</string>
     <string name="oneplus_finger_input_fail_tips">ഇന്‍പുട്ട് പരാജയപ്പെട്ടു, ദയവായി സ്ഥാനം ക്രമീകരിച്ച് വീണ്ടും ശ്രമിക്കുക</string>
     <string name="oneplus_fingerprint">വിരലടയാളം</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">സമാനമായ വിരലടയാളം കണ്ടെത്തി. വിരലടയാളത്തിൻ്റെ വിവിധ ഭാഗങ്ങൾ നൽകാൻ നിങ്ങളുടെ വിരൽ അല്പം നീക്കുക.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">വിരലടയാളം തിരിച്ചറിയൽ പ്രദേശം മലിനമാണ്. അത് വൃത്തിയായി തുടച്ച് വീണ്ടും ശ്രമിക്കുക.</string>
+    <string name="oneplus_fingerprint_acquired_partial">ഭാഗികമായ വിരലടയാളം കണ്ടെത്തി. വിരലടയാളം തിരിച്ചറിയൽ പ്രദേശം പൂർണ്ണമായും മറയ്ക്കുക.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">നിങ്ങളുടെ വിരലടയാളം പ്രോസസ്സ് ചെയ്യാനാവുന്നതിലും വേഗത്തിലാണ്. അമർത്തുമ്പോൾ അൽപ്പസമയം കാത്തിരിക്കുക.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">സാമ്യമുള്ള വിരലടയാളം കണ്ടെത്തി. വിരലടയാളത്തിന്റെ വ്യത്യസ്ത ഭാഗങ്ങൾ നൽകുന്നതിന് വിരൽ അല്പം നീക്കുക.</string>
     <string name="oneplus_fingerprint_animation_effect_title">ഫിംഗർപ്രിൻ്റ് ആനിമേഷൻ ഇഫക്റ്റ്</string>
     <string name="oneplus_fingerprint_delete_confirm_message">നിങ്ങള്‍‌ ഇത് ഇല്ലാതാക്കാന്‍ ആഗ്രഹിക്കുന്നുണ്ടോ?</string>
     <string name="oneplus_fingerprint_detail">വിശദാംശങ്ങള്‍</string>
     <string name="oneplus_fingerprint_enrol_completed">വിരലടയാളം സംരക്ഷിച്ചു</string>
+    <string name="oneplus_fingerprint_enroll_summary">വിരലടയാളം തിരിച്ചറിയൽ പ്രദേശം നിങ്ങളുടെ വിരൽ കൊണ്ട് അമർത്തി സാധ്യമായത്ര മറയ്ക്കുക, വൈബ്രേഷൻ അനുഭവപ്പെട്ടതിനുശേഷം ഉയർത്തുക</string>
+    <string name="oneplus_fingerprint_findsendor_summary">സ്ക്രീനിന്റെ അടിയിൽ വിരലടയാള പാറ്റേൺ ദൃശ്യമാകുമ്പോൾ, വിരലടയാള ഫംഗ്ഷൻ ഉപയോഗിക്കാനായി വിരലടയാളം തിരിച്ചറിയൽ പ്രദേശത്ത് വിരൽ കൊണ്ട് അമർത്തുക.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">വിരലടയാളം എങ്ങനെ ഉപയോഗിക്കാം</string>
     <string name="oneplus_fingerprint_functional_declaration">വിരലടയാള ഫംഗ്ഷൻ പ്രഖ്യാപനം</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">ഒരു ഫോട്ടോ എടുക്കുന്നതിന് വ്യുഫൈന്‍ഡര്‍ സ്ക്രീനില്‍ നിന്ന്, വിരലടയാള സെന്‍സറില്‍ ദീർഘമായി അമര്‍ത്തുക</string>
     <string name="oneplus_fingerprint_gesture_camera_title">ഒരു ഫോട്ടോ എടുക്കാന്‍ അമര്‍ത്തിപ്പിടിക്കുക</string>
@@ -2799,6 +2808,9 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="oneplus_hide_navkeys_summary">നാവിഗേഷന്‍ ബാര്‍ കാണിക്കുന്നതിനോ മറയ്ക്കുന്നതിനോ ആയി ഒരു ബട്ടണ്‍ ചേര്‍ക്കുക</string>
     <string name="oneplus_hide_notch_display_summary">നോച്ച് മേഖല ഉപയോഗിക്കാൻ എല്ലാ ആപ്സുകൾക്കും ആവില്ല</string>
     <string name="oneplus_hide_notch_display_title">നോച്ച് ഏരിയ മറയ്ക്കുക</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"സ്ക്രീനിന്റെ അടിയിൽ വിരലടയാള പാറ്റേൺ ദൃശ്യമാകുമ്പോൾ, വിരലടയാള ഫംഗ്ഷൻ ഉപയോഗിക്കാനായി വിരലടയാളം തിരിച്ചറിയൽ പ്രദേശത്ത് വിരൽ കൊണ്ട് അമർത്തുക: നിങ്ങളുടെ ഫോൺ ഉണർത്തി അൺലോക്ക് ചെയ്യുക, വാങ്ങലുകൾ അംഗീകരിക്കുക അല്ലെങ്കിൽ ആപ്പുകളിലേയ്ക്ക് സൈനിൻ ചെയ്യുക. 
+
+ശ്രദ്ധിക്കുക: നിങ്ങളുടെ വിരലടയാളം ഒരു ദൃഢമായ പാറ്റേൺ അല്ലെങ്കിൽ PIN-നേക്കാളും സുരക്ഷ കുറഞ്ഞതായിരിക്കാം"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">വിരലടയാള പാറ്റേൺ സ്ക്രീനിൻ്റെ താഴെ ദൃശ്യമാകുമ്പോൾ, വിരലടയാള ഫംഗ്ഷൻ ഉപയോഗിക്കുന്നതിന് വിരലടയാള ഐഡൻ്റിഫിക്കേഷൻ ഏരിയയിൽ നിങ്ങളുടെ വിരൽ ഉപയോഗിച്ച് അമർത്തുക: ഉണർന്ന് നിങ്ങളുടെ ഫോൺ അൺലോക്കുചെയ്യുക, വാങ്ങലുകൾ അംഗീകരിക്കുക അല്ലെങ്കിൽ ആപ്പുകളിലേയ്ക്ക് സൈനിൻ ചെയ്യുക.</string>
     <string name="oneplus_hydrogen_version">H₂OS പതിപ്പ്</string>
     <string name="oneplus_incoming_call_vibrate_intensity">ഇന്‍കമിങ്ങ് കോള്‍</string>
@@ -2872,6 +2884,7 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="oneplus_normal_clear_way">നോര്‍മല്‍ ക്ലിയര്‍</string>
     <string name="oneplus_normal_clear_way_summary">പശ്ചാത്തല പ്രവര്‍ത്തനങ്ങള്‍ നീക്കം ചെയ്യാതെ ടാസ്ക് ലിസ്റ്റും ക്യാഷെയും നീക്കം ചെയ്യുന്നു.</string>
     <string name="oneplus_not_disturb_on">ശല്യപ്പെടുത്തരുത് ഓണ്‍ ആണ്</string>
+    <string name="oneplus_not_disturb_summary">തിരഞ്ഞടുത്ത ഒഴിവാക്കലുകൾ ഒഴികെ കോളുകളും അറിയിപ്പുകളും നിശബ്ദമാക്കുകയും വൈബ്രേഷൻ ഓഫാക്കുകയും ചെയ്യുക</string>
     <string name="oneplus_not_show">ഇത് വീണ്ടും കാണിക്കരുത്</string>
     <string name="oneplus_notch_display_area">നോച്ച്</string>
     <string name="oneplus_notch_display_choose_title">നോച്ച് ഏരിയ എങ്ങനെ കാണിക്കാം</string>
@@ -2944,7 +2957,9 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="oneplus_quick_launch_how_to_use_summary">"1.അതിവേഗ സമാരംഭ പാനൽ തുറക്കാൻ അൺലോക്കുചെയ്തശേഷം നിങ്ങൾ വിരൽ വയ്ക്കുന്നത് തുടരുക
 2.കുറുക്കുവഴി തിരഞ്ഞെടുക്കാൻ സ്വൈപ്പുചെയ്യുക, അത് സമാരംഭിക്കാൻ വിരലെടുക്കുക"</string>
     <string name="oneplus_quick_launch_how_to_use_title">അതിവേഗ സമാരംഭം ഉപയോഗിക്കുക</string>
+    <string name="oneplus_quick_launch_summary">ക്വിക്ക് പേ ആരംഭിക്കാനോ ആപ്പുകൾ സജീവമാക്കാനോ ഫിംഗർപ്രിന്റ് തിരിച്ചറിയൽ ഏരിയയിൽ ദീർഘനേരം അമർത്തുക</string>
     <string name="oneplus_quick_launch_title">അതിവേഗ സമാരംഭം</string>
+    <string name="oneplus_quick_launch_toggle_summary">ഫോൺ ലോക്കായിരിക്കുമ്പോൾ, ക്വിക്ക് പേ ആരംഭിക്കാനോ ആപ്പുകൾ സജീവമാക്കാനോ ഫിംഗർപ്രിന്റ് തിരിച്ചറിയൽ ഏരിയയിൽ ദീർഘനേരം അമർത്തുക</string>
     <string name="oneplus_quick_launch_toggle_title">അതിവേഗ സമാരംഭം ഓൺ ചെയ്യുക</string>
     <string name="oneplus_quick_turn_on_assistant_app">അസിസ്റ്റൻ്റ് ആപ്പ് വേഗത്തിൽ സജീവമാക്കുക</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">അസിസ്റ്റൻ്റ് ആപ്പ് സജീവമാക്കാൻ പവർ ബട്ടൺ 0.5 സെക്കൻഡ് അമർത്തുക, ഓഫാക്കാൻ 3 സെക്കൻഡും</string>
@@ -3047,13 +3062,26 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="oneplus_security_lock_settings_summary">അൺലോക്ക് താൽപ്പര്യങ്ങൾ, ലൊക്കേഷൻ സേവനം, ആപ്പ് ലോക്കർ</string>
     <string name="oneplus_security_lock_settings_title">സുരക്ഷയും സ്വകാര്യതയും</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">സജ്ജീകരണം പരാജയപ്പെട്ടു</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"നിങ്ങളുടെ ഫോൺ അൺലോക്ക് ചെയ്യാൻ, വാങ്ങലുകൾ അംഗീകരിക്കാൻ അല്ലെങ്കിൽ ആപ്പുകളിലേയ്ക്ക് സൈനിൻ ചെയ്യാൻ വിരലടയാളം തിരിച്ചറിയൽ പ്രദേശത്ത് അമർത്തുക. 
+
+ശ്രദ്ധിക്കുക: 
+1.നിങ്ങളുടെ വിരലടയാളം ഒരു ദൃഢമായ പാറ്റേൺ അല്ലെങ്കിൽ PIN-നേക്കാളും സുരക്ഷ കുറഞ്ഞതായിരിക്കാം.
+2.വിരലടയാളത്തിന്റെ ലഭ്യത ഉറപ്പാക്കുന്നതിന് പരിരക്ഷിത ഫിലിമിന്റെ ഓരോ പുനഃസ്ഥാപനത്തിനുശേഷവും നിങ്ങളുടെ വിരലടയാളം വീണ്ടും നൽകുക."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">ഈ വിരലടയാളം ഇതിനകം ചേര്‍ത്തിട്ടുണ്ട്, ദയവായി മറ്റൊരു വിരലടയാളം ശ്രമിക്കുക.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">ചുറ്റുമുള്ള ഡിസ്പ്ലേയിൽ വിരലടയാള ഐക്കൺ പ്രദർശിപ്പിക്കുക</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">പ്രദർശിപ്പിക്കുന്നതിന് നിങ്ങളുടെ വിരൽ അല്പം നീക്കുക</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">പ്രദർശിപ്പിക്കുന്നതിന് സ്ക്രീനിൽ ടാപ്പുചെയ്യുക</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\"ഉണർത്താൻ ഇരട്ട ടാപ്പ് ചെയ്യുക\" പ്രാപ്തമാക്കിയിരിക്കുന്നു, \"കാണിക്കാൻ സ്ക്രീൻ ടാപ്പ് ചെയ്യുക\" നിഷ്ക്രിയമാക്കപ്പെടും</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">\"കാണിക്കാൻ സ്ക്രീൻ ടാപ്പ് ചെയ്യുക\" പ്രാപ്തമാക്കിയിരിക്കുന്നു, \"ഉണർത്താൻ ഇരട്ട ടാപ്പ് ചെയ്യുക\" നിഷ്ക്രിയമാക്കപ്പെടും</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">കോസ്‌മോസ്</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">വേവ്</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">സ്ട്രൈപ്പ്</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">ഫിംഗർപ്രിൻ്റ് ആനിമേഷൻ ഇഫക്റ്റ് തിരഞ്ഞെടുക്കുക</string>
     <string name="oneplus_set_time">ഷെഡ്യൂള്‍ ചെയ്ത നൈറ്റ് മോഡ്</string>
     <string name="oneplus_setting_ringtone">റിംഗ് സജ്ജീകരിക്കുക</string>
     <string name="oneplus_setting_sim_ringtone_switch">ഓരോ SIM കാര്‍‍ഡിനും റിംഗ്‍ടോണ്‍ സജ്ജീകരിക്കുക</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">നിങ്ങളുടെ പ്രതിദിന ഉപയോഗത്തെ അടിസ്ഥാനമാക്കി, OnePlus ഫോണുകളുടെ വലിയ RAM-ന്റെ മുഴുവൻ ഗുണങ്ങളും സ്മാർട്ട് ബൂസ്റ്റ് പ്രയോജനപ്പെടുത്തുന്നു, അത് ആപ്പുകളും ഗെയിമുകളും ലോഡ് ചെയ്യുന്ന പ്രവർത്തനം പരമാവധി ഉപയോഗപ്പെടുത്തുന്നു.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">സ്മാർട്ട് ബൂസ്റ്റ്</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">സ്ക്രീന്‍ അണ്‍ലോക്ക് ചെയ്യാന്‍ മറ്റൊരു മാര്‍ഗ്ഗം സജ്ജീകരിക്കുക</string>
     <string name="oneplus_share_this_wifi">Wi-Fi കവറേജ് വിപുലീകരിക്കുക</string>
     <string name="oneplus_share_wifi_title">Wi-Fi ഷെയറിങ്ങ്</string>
@@ -3131,7 +3159,7 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="oneplus_weak_text_reminding">ടെക്സ്റ്റ് മാത്രം</string>
     <string name="oneplus_weak_text_reminding_summary">ഹെഡ്‌സ് അപ്പ് അറിയിപ്പ് കാണിക്കാൻ ആപ്പുകളെ അനുവദിക്കുക</string>
     <string name="oneplus_wifi_ap_error">ദയവായി SIM കാര്‍ഡ് ഇടുക</string>
-    <string name="oneplus_wifi_hidden_network_warning">"നിങ്ങളുടെ റൗട്ടർ SSID പ്രക്ഷേപണം അപ്രാപ്തമാക്കിയിട്ടുണ്ടെങ്കിൽ, മറഞ്ഞിരിക്കുന്ന നെറ്റ്‌വർക്കിലേക്ക് കണക്റ്റുചെയ്യുന്നതിന് നിങ്ങൾ \"അതെ\" തിരഞ്ഞെടുക്കണം.
+    <string name="oneplus_wifi_hidden_network_warning">"നിങ്ങളുടെ റൗട്ടർ SSID പ്രക്ഷേപണം ചെയ്യരുതെന്ന് സജ്ജമാക്കിയിട്ടുണ്ടെങ്കിൽ, മറഞ്ഞിരിക്കുന്ന നെറ്റ്‌വർക്കിലേക്ക് കണക്റ്റുചെയ്യുന്നതിന് നിങ്ങൾ \"അതെ\" തിരഞ്ഞെടുക്കണം.
 
 നെറ്റ്‌വർക്ക് കണ്ടെത്തുന്നതിന് നിങ്ങളുടെ ഫോൺ പതിവായി അതിന്റെ സിഗ്നൽ പ്രക്ഷേപണം ചെയ്യുന്നതിനാൽ ഇത് ഒരു സുരക്ഷാ അപകടസാധ്യത സൃഷ്ടിക്കാം.
 
@@ -3212,6 +3240,8 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="op_system_dashboard_summary">ഭാഷകൾ, സമയം, പുനഃക്രമീകരിക്കുക, അപ്‌ഡേറ്റുകൾ</string>
     <string name="op_theme_2__cannot_change_color_accent">ദി അവഞ്ചേഴ്സ് തീമിന് സിസ്റ്റം കളര്‍ തീം മാത്രമേ ഉപയോഗിക്കാനാവൂ</string>
     <string name="op_theme_2__title">ദി അവഞ്ചേഴ്സ്</string>
+    <string name="op_theme_3_cannot_change_color_accent">McLaren തീമിനു സിസ്റ്റം കളർ തീം മാത്രമേ ഉപയോഗിക്കാനാവൂ</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">തീം</string>
     <string name="op_user_manual_settings">ഉപയോക്തൃ മാനുവല്‍</string>
     <string name="op_volume">വോള്യം</string>
@@ -3991,7 +4021,7 @@ UT ഇന്റര്‍ഫേസ്: %5$s"</string>
     <string name="status_bar_settings_cellular_title">സെല്ലുലാര്‍ ‍ഡാറ്റ</string>
     <string name="status_bar_settings_dnd_title">ശല്യപ്പെടുത്തരുത്</string>
     <string name="status_bar_settings_headset_title">ഹെഡ്‍സെറ്റ്</string>
-    <string name="status_bar_settings_hotspot_title">ഹോട്ട്‍സ്പോട്ട്</string>
+    <string name="status_bar_settings_hotspot_title">മൊബൈൽ ഹോട്ട്‌സ്പോട്ട്</string>
     <string name="status_bar_settings_network_speed_title">നെറ്റ്‍വര്‍ക്ക് വേഗത പ്രദര്‍ശിപ്പിക്കുക</string>
     <string name="status_bar_settings_time_title">സമയം</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -4991,7 +5021,7 @@ UT ഇന്റര്‍ഫേസ്: %5$s"</string>
     <string name="wifi_scan_notify_text">ലൊക്കേഷൻ കൃത്യത മെച്ചപ്പെടുത്താൻ, വൈഫൈ ഓഫാണെങ്കിൽ പോലും, ഏത് സമയത്തും ആപ്പുകൾക്കും സേവനങ്ങൾക്കും തുടർന്നും വൈഫൈ നെറ്റ്‌വർക്കുകൾ സ്‌കാൻ ചെയ്യാനാവും. ഉദാഹരണത്തിന്, ലൊക്കേഷൻ‌ അടിസ്ഥാനമാക്കിയുള്ള ഫീച്ചറുകളും സേവനങ്ങളും മെച്ചപ്പെടുത്താൻ ഇത് ഉപയോഗിക്കാം. നിങ്ങൾക്ക് ഇത് LINK_BEGINസ്കാനിംഗ് ക്രമീകരണത്തിൽLINK_END മാറ്റാനാവും.</string>
     <string name="wifi_scan_notify_text_scanning_off">ലൊക്കേഷൻ കൃത്യത മെച്ചപ്പെടുത്താൻ, LINK_BEGINസ്‌കാനിംഗ് ക്രമീകരണത്തിൽLINK_END വൈഫൈ സ്കാനിംഗ് ഓണാക്കുക.</string>
     <string name="wifi_security">സുരക്ഷ</string>
-    <string name="wifi_security_dialog">ഓപ്പൺ സെക്യൂരിറ്റി ഉപയോഗിച്ച് ഏത് ഉപകരണത്തിനും നിങ്ങളുടെ മൊബൈൽ ഹോട്ട്‌സ്പോട്ടിലേക്ക് കണക്റ്റുചെയ്യാനും നിങ്ങളുടെ മൊബൈൽ ഡാറ്റ കണക്ഷൻ ഉപയോഗിക്കാനും കഴിയും.</string>
+    <string name="wifi_security_dialog">ഓപ്പൺ സെക്യൂരിറ്റി വഴി ഏത് ഉപകരണവും നിങ്ങളുടെ മൊബൈൽ ഹോട്ട്സ്പോട്ടിലേക്ക് കണക്റ്റ് ചെയ്ത് നിങ്ങളുടെ മൊബൈൽ ഡാറ്റ കണക്ഷൻ ഉപയോഗിക്കാം.</string>
     <string name="wifi_security_none">ഒന്നുമില്ല</string>
     <string name="wifi_security_open">തുറക്കുക</string>
     <string name="wifi_select_network">വൈഫൈ തിരഞ്ഞെടുക്കുക</string>
@@ -5067,7 +5097,7 @@ UT ഇന്റര്‍ഫേസ്: %5$s"</string>
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">10 മിനിറ്റ് നിഷ്ക്രിയത്വത്തിനുശേഷം</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">15 മിനിറ്റ് നിഷ്ക്രിയത്വത്തിനുശേഷം</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">5 മിനിറ്റ് നിഷ്ക്രിയത്വത്തിനുശേഷം</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">എല്ലായ്‍പ്പോഴും ഓണ്‍</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">എല്ലായ്പ്പോഴും ഓണായി നിലനിർത്തുക</string>
     <string name="wifi_tether_disabled_by_airplane">ഫ്ലൈറ്റ് മോഡ് ഓണായതിനാൽ ലഭ്യമല്ല</string>
     <string name="wifi_tether_enabled_subtext">%1$s സജീവമാണ്</string>
     <string name="wifi_tether_failed_subtext">പോർട്ടബിൾ വൈഫൈ ഹോട്ട്‌സ്പോട്ട് പിശക്</string>

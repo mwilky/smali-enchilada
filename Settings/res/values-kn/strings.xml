@@ -2687,6 +2687,9 @@
     <string name="oneplus_emergency_rescue_settings">ತುರ್ತುಸಮಯದ ಪಾರುಗಾಣಿಕೆ</string>
     <string name="oneplus_emergency_rescue_settings_summary">ಕ್ಷಿಪ್ರವಾಗಿ ಪವರ್ ಬಟನ್ ಒತ್ತುವ ಮೂಲಕ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ನೆರವಿಗೆ ಕರೆ ಮಾಡಿ</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">ತುರ್ತು ಸಂರಕ್ಷಣೆಯ ಪವರ್ ಬಟನ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಮಾರ್ಪಡಿಸಿದ ಬಳಿಕ ಲಭ್ಯವಿದೆ</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1.ಬೆರಳಚ್ಚಿನ ಲಭ್ಯತೆಯನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಲು ಸಂರಕ್ಷಣಾತ್ಮಕ ಚಿತ್ರದ ಪ್ರತಿಯೊಂದು ಬದಲಾವಣೆಯ ನಂತರ ನಿಮ್ಮ ಬೆರಳಚ್ಚನ್ನು ಮರು-ನಮೂದಿಸಿ
+
+2.ಸಿಂಗಲ್ ಸೆಟಪ್ ಪ್ರಕ್ರಿಯೆಯಲ್ಲಿ, ದಯವಿಟ್ಟು ಒಂದೇ ಒಂದು ಬೆರಳಿನ ಬೆರಳಚ್ಚು ಮಾಹಿತಿಯನ್ನು ನಮೂದಿಸಿ"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">ಬೆರಳಚ್ಚು ಸೆಟಪ್ ಎಚ್ಚರಿಕೆ</string>
     <string name="oneplus_enter_your_fingerprint">· ನಿಮ್ಮ ಬೆರಳಮುದ್ರೆ ನೋಂದಾಯಿಸಿಕೊಳ್ಳಿ</string>
     <string name="oneplus_experience_improvement_programs">ಅನುಭವ ಸುಧಾರಣೆ ಪ್ರೋಗ್ರಾಂಗಳು</string>
@@ -2711,11 +2714,17 @@
     <string name="oneplus_finger_input_error_tips">ಬೆರಳಮುದ್ರೆಯ ನೋಂದಣಿ ದೋಷ. ದಯವಿಟ್ಟು ಪುನಃ ಪ್ರಯತ್ನಿಸಿ</string>
     <string name="oneplus_finger_input_fail_tips">ಇನ್‌ಪುಟ್ ವಿಫಲವಾಗಿದೆ, ದಯವಿಟ್ಟು ಸ್ಥಾನವನ್ನು ಹೊಂದಿಸಿ ಮತ್ತು ಪುನಃ ಪ್ರಯತ್ನಿಸಿ</string>
     <string name="oneplus_fingerprint">ಬೆರಳಮುದ್ರೆ</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">ಒಂದೇ ರೀತಿಯ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಕಂಡುಬಂದಿದೆ. ನಿಮ್ಮ ಬೆರಳಿನ ವಿವಿಧ ಭಾಗಗಳ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ನಮೂದಿಸಲು ಸ್ವಲ್ಪ ಸರಿದಾಡಿಸಿ.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">ಬೆರಳಚ್ಚು ಗುರುತಿಸುವ ಪ್ರದೇಶವು ಕೊಳೆಯಾಗಿದೆ. ದಯವಿಟ್ಟು ಅದನ್ನು ಸ್ವಚ್ಛವಾಗಿ ಒರೆಸಿ ನಂತರ ಇನ್ನೊಮ್ಮೆ ಪ್ರಯತ್ನಿಸಿ.</string>
+    <string name="oneplus_fingerprint_acquired_partial">ಭಾಗಶಃ ಬೆರಳಚ್ಚು ಪತ್ತೆ ಮಾಡಲಾಗಿದೆ. ದಯವಿಟ್ಟು ಬೆರಳಚ್ಚು ಗುರುತಿಸುವ ಪ್ರದೇಶವನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ಆವರಿಸುವಂತೆ ಮಾಡಿ.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">ನಿಮ್ಮ ಬೆರಳಚ್ಚನ್ನು ಸಂಸ್ಕರಿಸಲು ಇದು ಬಹಳ ವೇಗವಾಗಿದೆ. ಒತ್ತಿದ ನಂತರ ಸ್ವಲ್ಪ ಸಮಯ ಹಾಗೆ ಇರಿಸಿಕೊಳ್ಳಿ.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">ಇದೇ ರೀತಿಯ ಬೆರಳಚ್ಚು ಕಂಡುಬಂದಿದೆ. ಭಿನ್ನವಾದ ಭಾಗಗಳ ಬೆರಳಚ್ಚನ್ನು ದಾಖಲಿಸಲು ದಯವಿಟ್ಟು ನಿಮ್ಮ ಬೆರಳನ್ನು ಸ್ವಲ್ಪ ಜರುಗಿಸಿ.</string>
     <string name="oneplus_fingerprint_animation_effect_title">ಬೆರಳಚ್ಚು ಆನಿಮೇಶನ್ ಪರಿಣಾಮ</string>
     <string name="oneplus_fingerprint_delete_confirm_message">ನೀವು ಇದನ್ನು ಅಳಿಸಲು ಬಯಸುವಿರಾ?</string>
     <string name="oneplus_fingerprint_detail">ವಿವರಗಳು</string>
     <string name="oneplus_fingerprint_enrol_completed">ಬೆರಳಮುದ್ರೆಯನ್ನು ಉಳಿಸಲಾಗಿದೆ</string>
+    <string name="oneplus_fingerprint_enroll_summary">ಬೆರಳಚ್ಚು ಗುರುತಿಸುವಿಕೆ ಪ್ರದೇಶವನ್ನು ನಿಮ್ಮ ಕೈಬೆರಳಿನಿಂದ ಒತ್ತಿರಿ ಹಾಗೂ ಸಾಧ್ಯವಾದಷ್ಟು ಮುಚ್ಚಿರಿ, ತದನಂತರ ನಿಮಗೆ ಕಂಪನದ ಅನುಭವವಾದಾಗ ಮೇಲೆತ್ತಿ</string>
+    <string name="oneplus_fingerprint_findsendor_summary">ಸ್ಕ್ರೀನಿನ ಕೆಳಭಾಗದಲ್ಲಿ ಬೆರಳಚ್ಚಿನ ವಿನ್ಯಾಸವು ಕಂಡುಬಂದಾಗ, ಬೆರಳಚ್ಚು ವೈಶಿಷ್ಟ್ಯವನ್ನು ಬಳಸಲು ನಿಮ್ಮ ಬೆರಳಿನಿಂದ ಬೆರಳಚ್ಚು ಗುರುತಿಸುವ ಪ್ರದೇಶವನ್ನು ಕೇವಲ ಒತ್ತಿದರೆ ಸಾಕು.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">ಬೆರಳಚ್ಚನ್ನು ಹೇಗೆ ಬಳಸಬೇಕು</string>
     <string name="oneplus_fingerprint_functional_declaration">ಫಿಂಗರ್ಪ್ರಿಂಟ್ ಕಾರ್ಯಭಾರದ ಘೋಷಣೆ</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">ಪೋಟೋ ತೆಗೆಯಲು, ವ್ಯೂಫೈಂಡರ್ ಸ್ಕ್ರೀನ್‌ನಿಂದ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಸೆನ್ಸರನ್ನು ದೀರ್ಘಕಾಲದವರೆಗೆ ಒತ್ತಿ</string>
     <string name="oneplus_fingerprint_gesture_camera_title">ಫೋಟೊ ತೆಗೆದುಕೊಳ್ಳಲು ದೀರ್ಘಕಾಲ ಒತ್ತಿರಿ</string>
@@ -2799,6 +2808,9 @@
     <string name="oneplus_hide_navkeys_summary">ನೇವಿಗೇಷನ್ ಬಾರ್ ಅಡಗಿಸಲು ಅಥವಾ ತೋರಿಸಲು ಒಂದು ಬಟನ್ ಸೇರಿಸಿ</string>
     <string name="oneplus_hide_notch_display_summary">ಎಲ್ಲಾ ಆ್ಯಪ್‌ಗಳು ನಾಚ್ ಪ್ರದೇಶವನ್ನು ಬಳಸಲು ಸಾಧ್ಯವಿರುವುದಿಲ್ಲ</string>
     <string name="oneplus_hide_notch_display_title">ನಾಚ್ ಪ್ರದೇಶವನ್ನು ಅಡಗಿಸು</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"ಪರದೆಯ ಕೆಳಭಾಗದಲ್ಲಿ ಬೆರಳಚ್ಚು ನಮೂನೆಯು ಕಾಣಿಸಿಕೊಂಡಲ್ಲಿ, ಬೆರಳಚ್ಚು ಕಾರ್ಯವನ್ನು ಬಳಸಲು ಬೆರಳಚ್ಚು ಗುರುತಿಸುವಿಕೆ ಪ್ರದೇಶದಲ್ಲಿ ನಿಮ್ಮ ಬೆರಳನ್ನು ಒತ್ತಿರಿ: ನಿಮ್ಮ ಪೋನ್ ಎಚ್ಚರಿಸಿ ಮತ್ತು ಅನ್‌ಲಾಕ್ ಮಾಡಿ, ಖರೀದಿಗಳನ್ನು ದೃಢೀಕರಿಸಿ ಅಥವಾ ಅಪ್ಲಿಕೇಶನ್‌ಗಳಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ. 
+
+ಗಮನಿಸಿ: ನಿಮ್ಮ ಬೆರಳಚ್ಚು ಪ್ರಬಲ ನಮೂನೆ ಅಥವಾ PIN ಗಿಂತ ಕಡಿಮೆ ಸುರಕ್ಷಿತವಾಗಿರಬಹುದು"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">ಸ್ಕ್ರೀನ್‌ನ ಕೆಳಭಾಗದಲ್ಲಿ ಫಿಂಗರ್ಪ್ರಿಂಟ್ ಪ್ಯಾಟರ್ನ್ ಕಾಣಿಸಿಕೊಂಡಾಗ, ಫಿಂಗರ್ಪ್ರಿಂಟ್ ಕಾರ್ಯಭಾರವನ್ನು ಬಳಸಲು ನಿಮ್ಮ ಬೆರಳನ್ನು ಫಿಂಗರ್ಪ್ರಿಂಟ್ ಗುರುತಿಸುವ ಪ್ರದೇಶದ ಮೇಲೆ ಒತ್ತಿ: ನಿಮ್ಮ ಫೋನ್ ಅನ್ನು ಎಚ್ಚರಗೊಳಿಸಿ ಮತ್ತು ಅನ್‌ಲಾಕ್ ಮಾಡಿ, ಖರೀದಿಗಳನ್ನು ದೃಢೀಕರಿಸಿ, ಅಥವಾ ಆಪ್‌ಗಳಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ.</string>
     <string name="oneplus_hydrogen_version">H₂OS ಆವೃತ್ತಿ</string>
     <string name="oneplus_incoming_call_vibrate_intensity">ಒಳಬರುವ ಕರೆ</string>
@@ -2872,6 +2884,7 @@
     <string name="oneplus_normal_clear_way">ಸಾಮಾನ್ಯ ತೆರವು</string>
     <string name="oneplus_normal_clear_way_summary">ಹಿನ್ನೆಲೆ ಪ್ರಕ್ರಿಯೆಗಳನ್ನು ತೆರವುಗೊಳಿಸದೆ, ಕಾರ್ಯ ಪಟ್ಟಿ ಮತ್ತು ಕ್ಯಾಶೆ ತೆರವುಗೊಳಿಸಿ.</string>
     <string name="oneplus_not_disturb_on">ಅಡ್ಡಿ ಮಾಡಬೇಡಿ ಆನ್ ಆಗಿದೆ</string>
+    <string name="oneplus_not_disturb_summary">ನೀವು ಆಯ್ಕೆ ಮಾಡಲಾದ ಆಕ್ಷೇಪಣೆಗಳನ್ನು ಹೊರತುಪಡಿಸಿ, ಕರೆಗಳು ಮತ್ತು ಅಧಿಸೂಚನೆಗಳನ್ನು ಮ್ಯೂಟ್ ಮಾಡಿ ಮತ್ತು ವೈಬ್ರೇಶನ್‌ ಅನ್ನು ಆಫ್ ಮಾಡಿ</string>
     <string name="oneplus_not_show">ಇದನ್ನು ಮತ್ತೊಮ್ಮೆ ತೋರಿಸಬೇಡ</string>
     <string name="oneplus_notch_display_area">ನಾಚ್</string>
     <string name="oneplus_notch_display_choose_title">ನಾಚ್ ಪ್ರದೇಶವನ್ನು ಹೇಗೆ ತೋರಿಸುವುದು</string>
@@ -2944,7 +2957,9 @@
     <string name="oneplus_quick_launch_how_to_use_summary">"1.ತ್ವರಿತ ಫಲಕವನ್ನು ತೆರೆಯಲು ಅನ್‌ಲಾಕ್ ಮಾಡಿದ ನಂತರ ನಿಮ್ಮ ಬೆರಳನ್ನು ಒತ್ತಿ ಹಿಡಿದಿರಿ
 2.ಶಾರ್ಟ್‌ಕಟ್ ಆಯ್ಕೆ ಮಾಡಲು ಸ್ವೈಪ್ ಮಾಡಿ ಮತ್ತು ಅದನ್ನು ಪ್ರಾರಂಭಿಸಲು ನಿಮ್ಮ ಬೆರಳನ್ನು ಮೇಲೆತ್ತಿ"</string>
     <string name="oneplus_quick_launch_how_to_use_title">ತ್ವರಿತ ಪ್ರಾರಂಭವನ್ನು ಬಳಸಿ</string>
+    <string name="oneplus_quick_launch_summary">ಕ್ಷಿಪ್ರ ಪಾವತಿಸುವಿಕೆಯನ್ನು ಲಾಂಚ್ ಮಾಡಲು ಅಥವಾ ಆಪ್‌ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲು ಬೆರಳಚ್ಚು ಗುರುತಿಸುವ ಪ್ರದೇಶದ ಮೇಲೆ ದೀರ್ಘವಾಗಿ ಒತ್ತಿ</string>
     <string name="oneplus_quick_launch_title">ತ್ವರಿತ ಪ್ರಾರಂಭ</string>
+    <string name="oneplus_quick_launch_toggle_summary">ಕ್ಷಿಪ್ರ ಪಾವತಿಸುವಿಕೆಯನ್ನು ಲಾಂಚ್ ಮಾಡಲು ಅಥವಾ ಆಪ್‌ಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲು ಬೆರಳಚ್ಚು ಗುರುತಿಸುವ ಪ್ರದೇಶದ ಮೇಲೆ ದೀರ್ಘವಾಗಿ ಒತ್ತಿ</string>
     <string name="oneplus_quick_launch_toggle_title">ತ್ವರಿತ ಪ್ರಾರಂಭವನ್ನು ಆನ್ ಮಾಡಿ</string>
     <string name="oneplus_quick_turn_on_assistant_app">ಸಹಾಯಕ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ತ್ವರಿತವಾಗಿ ಸಕ್ರಿಯಗೊಳಿಸಿ</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">ಸಹಾಯಕ ಅಪ್ಲಿಕೇಶನ್ ಸಕ್ರಿಯಗೊಳಿಸಲು 0.5 ಸೆಕೆಂಡುಗಳವರೆಗೆ ಪವರ್ ಬಟನ್ ಒತ್ತಿ ಹಿಡಿಯಿರಿ ಮತ್ತು ಪವರ್ ಆಫ್ ಮಾಡಲು 3 ಸೆಕೆಂಡುಗಳವರೆಗೆ ಒತ್ತಿ ಹಿಡಿಯಿರಿ</string>
@@ -3047,13 +3062,26 @@
     <string name="oneplus_security_lock_settings_summary">ಅನ್‌ಲಾಕ್ ಆದ್ಯತೆಗಳು, ಸ್ಥಳದ ಸೇವೆ, ಆಪ್‌ ಲಾಕರ್</string>
     <string name="oneplus_security_lock_settings_title">ಭದ್ರತೆ &amp; ಗೌಪ್ಯತೆ</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">ಸೆಟಪ್ ವಿಫಲವಾಗಿದೆ</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"ನಿಮ್ಮ ಫೋನ್ ಅನ್‌ಲಾಕ್ ಮಾಡಲು, ಖರೀದಿಗಳನ್ನು ದೃಢೀಕರಿಸಲು ಮತ್ತು ಅಪ್ಲಿಕೇಶನ್‌ಗಳಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಲು ಬೆರಳಚ್ಚು ಗುರುತಿಸುವಿಕೆ ಪ್ರದೇಶವನ್ನು ಒತ್ತಿರಿ. 
+
+ಗಮನಿಸಿ: 
+1.ನಿಮ್ಮ ಬೆರಳಚ್ಚು ಪ್ರಬಲ ನಮೂನೆ ಅಥವಾ PIN ಗಿಂತ ಕಡಿಮೆ ಸುರಕ್ಷಿತವಾಗಿರಬಹುದು.
+2.ಬೆರಳಚ್ಚಿನ ಲಭ್ಯತೆಯನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಲು ಸಂರಕ್ಷಣಾತ್ಮಕ ಚಿತ್ರದ ಪ್ರತಿಯೊಂದು ಬದಲಾವಣೆಯ ನಂತರ ನಿಮ್ಮ ಬೆರಳಚ್ಚನ್ನು ಮರು-ನಮೂದಿಸಿ."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">ಈ ಬೆರಳಮುದ್ರೆಯು ಈಗಾಗಲೇ ನೋಂದಾಯಿಸಲ್ಪಟ್ಟಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೊಂದು ಬೆರಳು ಪ್ರಯತ್ನಿಸಿ.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">ಆ್ಯಂಬಿಯೆಂಟ್ ಡಿಸ್‌ಪ್ಲೇ‌ನಲ್ಲಿ ಬೆರಳಚ್ಚು ಐಕಾನ್ ತೋರಿಸಿ</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">ತೋರಿಸಲು ನಿಮ್ಮ ಫೋನ್ ಅನ್ನು ಸ್ವಲ್ಪ ಸರಿಸಿ</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">ತೋರಿಸಲು ಪರದೆಯನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\"ಎಚ್ಚರಗೊಳಿಸಲು ಎರಡುಬಾರಿ ಟ್ಯಾಪ್ ಮಾಡಿ\" ಸಕ್ರಿಯಗೊಂಡಿದೆ ಮತ್ತು \"ತೋರಿಸಲು ಪರದೆ ಟ್ಯಾಪ್ ಮಾಡಿ\" ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗುತ್ತದೆ</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">\"ತೋರಿಸಲು ಪರದೆಯನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ\" ಸಕ್ರಿಯಗೊಂಡಿದೆ ಮತ್ತು \"ಎಚ್ಚರಗೊಳಿಸಲು ಎರಡುಬಾರಿ ಟ್ಯಾಪ್ ಮಾಡಿ\" ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗುತ್ತದೆ</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">ಕಾಸ್ಮೋಸ್</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">ಅಲೆ</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">ಸ್ಟ್ರೈಪ್</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">ಬೆರಳಚ್ಚು ಆನಿಮೇಶನ್ ಪರಿಣಾಮವನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
     <string name="oneplus_set_time">ನಿಗದಿತ ನೈಟ್ ಮೋಡ್</string>
     <string name="oneplus_setting_ringtone">ರಿಂಗ್ ಸೆಟ್ ಮಾಡಿ</string>
     <string name="oneplus_setting_sim_ringtone_switch">ಪ್ರತಿ SIM ಕಾರ್ಡ್‌ಗಾಗಿ ರಿಂಗ್‌ಟೋನ್ ಸೆಟ್ ಮಾಡಿ</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">ನಿಮ್ಮ ದೈನಂದಿನ ಬಳಕೆಯ ಆಧಾರದಲ್ಲಿ, ಸ್ಮಾರ್ಟ್ ಬೂಸ್ಟ್ OnePlus ಫೋನ್‌ಗಳ ದೊಡ್ಡ ಪ್ರಮಾಣದ RAM ನ ಪ್ರಯೋಜನಗಳನ್ನು ಪಡೆದುಕೊಳ್ಳುತ್ತವೆ, ಇದು ಲೋಡಿಂಗ್ ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ಮತ್ತು ಆಟಗಳ ಕಾರ್ಯಕ್ಷಮತೆಯ ಮೇಲೆ ಪ್ರಭಾವ ಬೀರುತ್ತದೆ.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">ಸ್ಮಾರ್ಟ್ ಬೂಸ್ಟ್</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· ಸ್ಕ್ರೀನ್ ಅನ್‍ಲಾಕ್ ಮಾಡಲು ಪರ್ಯಾಯ ಮಾರ್ಗವನ್ನು ಸೆಟಪ್ ಮಾಡಿ</string>
     <string name="oneplus_share_this_wifi">Wi-Fi ಕವರೇಜ್ ವ್ಯಾಪ್ತಿಯನ್ನು ವಿಸ್ತರಿಸಿ</string>
     <string name="oneplus_share_wifi_title">Wi-Fi ಶೇರಿಂಗ್</string>
@@ -3131,11 +3159,11 @@
     <string name="oneplus_weak_text_reminding">ಪಠ್ಯ ಮಾತ್ರ</string>
     <string name="oneplus_weak_text_reminding_summary">ಆಪ್‌ಗಳು ಹೆಡ್ಸ್ ಅಪ್ ಸೂಚನೆಯನ್ನು ತೋರಿಸಲು ಅವಕಾಶ ನೀಡುತ್ತದೆ</string>
     <string name="oneplus_wifi_ap_error">ದಯವಿಟ್ಟು SIM ಕಾರ್ಡ್ ಒಳಸೇರಿಸಿ</string>
-    <string name="oneplus_wifi_hidden_network_warning">"ನಿಮ್ಮ ರೂಟರ್ SSID ಬ್ರಾಡ್‌ಕಾಸ್ಟ್ ಅನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿದರೆ, ನೀವು ಮರೆಮಾಡಿದ ನೆಟ್‌ವರ್ಕ್‌ಗೆ ಸಂಪರ್ಕಿಸಲು \"ಹೌದು\" ಆಯ್ಕೆ ಮಾಡಬೇಕು.
+    <string name="oneplus_wifi_hidden_network_warning">"SSID ಅನ್ನು ಪ್ರಸಾರ ಮಾಡದಂತೆ ನಿಮ್ಮ ರೌಟರ್ ಅನ್ನು ಸೆಟ್ ಮಾಡಲಾಗಿದ್ದರೆ, ನೀವು ಮರೆಮಾಡಿದ ನೆಟ್‌ವರ್ಕ್‌ಗೆ ಸಂಪರ್ಕಿಸಲು \"ಹೌದು\" ಆಯ್ಕೆ ಮಾಡಬೇಕು.
 
 ನಿಮ್ಮ ಫೋನ್ ನೆಟ್‌ವರ್ಕ್ ಹುಡುಕುವ ಸಲುವಾಗಿ ತನ್ನ ಸಿಗ್ನಲ್ ಅನ್ನು ನಿಯಮಿತವಾಗಿ ಪ್ರಸಾರ ಮಾಡುವ ಕಾರಣದಿಂದಾಗಿ, ಇದು ಸುರಕ್ಷತೆ ಅಪಾಯವನ್ನು ಸೃಷ್ಟಿಸಬಹುದು.
 
-ನೆಟ್‌ವರ್ಕ್ ಅನ್ನು ಮರೆಮಾಡಿದೆ ಎಂಬಂತೆ ಹೊಂದಿಸುವುದರಿಂದ ನಿಮ್ಮ ರೂಟರ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಬದಲಾಗುವುದಿಲ್ಲ."</string>
+ನೆಟ್‌ವರ್ಕ್ ಅನ್ನು ಮರೆಮಾಡಿದೆ ಎಂಬಂತೆ ಹೊಂದಿಸುವುದರಿಂದ ನಿಮ್ಮ ರೌಟರ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಬದಲಾಗುವುದಿಲ್ಲ."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">IPv6 ನಿಷ್ಕ್ರಿಯಗೊಳಿಸುವಿಕೆಯು ನಿರ್ದಿಷ್ಟ Wi-Fi ರೂಟರ್‌ಗಳೊಂದಿಗೆ ಇರುವ ಹೊಂದಾಣಿಕೆ ಸಮಸ್ಯೆಗಳನ್ನು ತಪ್ಪಿಸಬಹುದು.</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6 ನೆರವು</string>
     <string name="oneplus_wifi_list">Wi-Fi ಪಟ್ಟಿ</string>
@@ -3212,6 +3240,8 @@
     <string name="op_system_dashboard_summary">ಭಾಷೆ, ಸಮಯ, ಮರುಹೊಂದಿಸಿ, ನವೀಕರಣಗಳು</string>
     <string name="op_theme_2__cannot_change_color_accent">ದಿ ಅವೆಂಜರ್ಸ್ ಥೀಮ್ ಕೇವಲ ಸಿಸ್ಟಂ ಕಲರ್ ಥೀಮ್ ಅನ್ನು ಮಾತ್ರ ಬಳಸಬಹುದು</string>
     <string name="op_theme_2__title">ದಿ ಅವೆಂಜರ್ಸ್</string>
+    <string name="op_theme_3_cannot_change_color_accent">McLaren ಥೀಮ್ ಕೇವಲ ಸಿಸ್ಟಂ ಬಣ್ಣದ ಥೀಮ್ ಅನ್ನು ಬಳಸುತ್ತದೆ</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">ಥೀಮ್</string>
     <string name="op_user_manual_settings">ಬಳಕೆದಾರ ಕೈಪಿಡಿ</string>
     <string name="op_volume">ವಾಲ್ಯೂಮ್</string>
@@ -3991,7 +4021,7 @@ UT ಇಂಟರ್ಫೇಸ್: %5$s"</string>
     <string name="status_bar_settings_cellular_title">ಸೆಲ್ಯುಲರ್ ಡೇಟಾ</string>
     <string name="status_bar_settings_dnd_title">ಅಡಚಣೆ ಮಾಡಬೇಡಿ</string>
     <string name="status_bar_settings_headset_title">ಹೆಡ್‌ಸೆಟ್</string>
-    <string name="status_bar_settings_hotspot_title">ಹಾಟ್‌ಸ್ಪಾಟ್</string>
+    <string name="status_bar_settings_hotspot_title">ಮೊಬೈಲ್ ಹಾಟ್‌ಸ್ಪಾಟ್</string>
     <string name="status_bar_settings_network_speed_title">ನೆಟ್‌ವರ್ಕ್ ವೇಗ ಪ್ರದರ್ಶಿಸಿ</string>
     <string name="status_bar_settings_time_title">ಸಮಯ</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -5068,7 +5098,7 @@ UT ಇಂಟರ್ಫೇಸ್: %5$s"</string>
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">10 ನಿಮಿಷದಷ್ಟು ನಿಷ್ಕ್ರಿಯತೆಯ ನಂತರ</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">15 ನಿಮಿಷದಷ್ಟು ನಿಷ್ಕ್ರಿಯತೆಯ ನಂತರ</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">5 ನಿಮಿಷದಷ್ಟು ನಿಷ್ಕ್ರಿಯತೆಯ ನಂತರ</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">ಯಾವಾಗಲೂ ಆನ್</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">ಯಾವಾಗಲೂ ಆನ್ ಆಗಿರುತ್ತದೆ</string>
     <string name="wifi_tether_disabled_by_airplane">ಏರ್‌ಪ್ಲೇನ್ ಮೋಡ್ ಆನ್ ಆಗಿರುವುದರಿಂದ ಲಭ್ಯವಿರುವುದಿಲ್ಲ</string>
     <string name="wifi_tether_enabled_subtext">%1$s ಸಕ್ರಿಯವಾಗಿದೆ</string>
     <string name="wifi_tether_failed_subtext">ಪೋರ್ಟಬಲ್ ವೈ-ಫೈ ಹಾಟ್‌ಸ್ಪಾಟ್ ದೋಷ ಎದುರಾಗಿದೆ</string>

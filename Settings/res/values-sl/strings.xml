@@ -2687,6 +2687,9 @@ Varčevanje akumulatorja je samodejno onemogočeno med polnjenjem naprave."</str
     <string name="oneplus_emergency_rescue_settings">Nujno reševanje</string>
     <string name="oneplus_emergency_rescue_settings_summary">Samodejni klic na pomoč s hitrim pritiskom na gumb za vklop</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">Na voljo po spreminjanju nastavitev gumba za vklop za nujno reševanje</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1. Svoj prstni odtis znova vnesite po vsaki zamenjavi zaščitne folije, da zagotovite razpoložljivost prstnega odtisa.
+
+2. Pri posamezni nastavitvi vnesite podatke zgolj enega prstnega odtisa"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Poziv za nastavitev prstnega odtisa</string>
     <string name="oneplus_enter_your_fingerprint">· Registrirati svoj prstni odtis</string>
     <string name="oneplus_experience_improvement_programs">Programi za izboljšanje izkušnje</string>
@@ -2711,11 +2714,17 @@ Varnostno opozorilo: Odklepanje z obrazom je manj varno kot odklepanje s prstnim
     <string name="oneplus_finger_input_error_tips">Registracija prstnega odtisa ni uspelo, poskusite znova</string>
     <string name="oneplus_finger_input_fail_tips">Vnos ni uspel, prilagodite položaj in poskusite znova</string>
     <string name="oneplus_fingerprint">Prstni odtis</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">Zaznan je bil podoben prstni odtis. Rahlo premaknite prst, da vnesete prstni odtis na različnih delih prsta.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">Območje za prepoznavanje prstnih odtisov je zamazano. Prosimo, obrišite ga in poskusite znova.</string>
+    <string name="oneplus_fingerprint_acquired_partial">Zaznan je bil delni prstni odtis. Prosimo, popolnoma pokrijte območje za prepoznavanje prstnih odtisov.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">Postopek ste izvedli prehitro, da bi lahko obdelali vaš prstni odtis. Medtem ko pritiskate na območje, nekaj časa počakajte.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">Zaznan je bil podoben prstni odtis. Prst rahlo premaknite, da vnesete različne dele prstnega odtisa.</string>
     <string name="oneplus_fingerprint_animation_effect_title">Animacijski učinek prstnega odtisa</string>
     <string name="oneplus_fingerprint_delete_confirm_message">Želite izbrisati?</string>
     <string name="oneplus_fingerprint_detail">Podrobnosti</string>
     <string name="oneplus_fingerprint_enrol_completed">Prstni odtis je shranjen</string>
+    <string name="oneplus_fingerprint_enroll_summary">S prstom pokrijte in močno pritisnite območje za identifikacijo s prstnim odtisom. Ko začutite tresljaj, dvignite prst</string>
+    <string name="oneplus_fingerprint_findsendor_summary">Ko se vzorec prstnega odtisa prikaže na dnu zaslona, s prstom preprosto pritisnite na območje za prepoznavanje prstnih odtisov, da uporabite funkcijo preverjanja pristnosti prstnega odtisa.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">Kako uporabiti funkcijo preverjanja pristnosti prstnega odtisa</string>
     <string name="oneplus_fingerprint_functional_declaration">Izjava o funkciji prstnega odtisa</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">Na zaslonu iskalnika z dolgim pritiskom bralnika prstnih odtisov zajamete fotografijo</string>
     <string name="oneplus_fingerprint_gesture_camera_title">Z dolgim pritiskom zajamete fotografijo</string>
@@ -2799,6 +2808,9 @@ Poteze lahko izklopite tako, da v nastavitvah omogočite vrstico za krmarjenje."
     <string name="oneplus_hide_navkeys_summary">Dodajte gumb za skrivanje ali prikaz vrstice za krmarjenje</string>
     <string name="oneplus_hide_notch_display_summary">Vse aplikacije ne morejo uporabljati območja izreza</string>
     <string name="oneplus_hide_notch_display_title">Skrij območje izreza</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"Ko se na dnu zaslona prikaže vzorec prstnega odtisa, s prstom pritisnite območje za identifikacijo prstnega odtisa, da s funkcijo prstnega odtisa zbudite in odklenete svoj telefon, pooblastite nakupe ali se vpišete v poljubne aplikacije. 
+
+Opomba: Vaš prstni odtis je morda manj varen od zapletenega vzorca ali kode PIN"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Ko se vzorec za prstni odtis pojavi na dnu zaslona, preprosto s prstom pritisnite na identifikacijsko območje za prstni odtis, da uporabite funkcijo prstnega odtisa: prebudite in odklenete telefon, odobrite nakupe ali se prijavite v aplikacije.</string>
     <string name="oneplus_hydrogen_version">Različica H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Dohodni klic</string>
@@ -2872,6 +2884,7 @@ Poteze lahko izklopite tako, da v nastavitvah omogočite vrstico za krmarjenje."
     <string name="oneplus_normal_clear_way">Običajno čiščenje</string>
     <string name="oneplus_normal_clear_way_summary">Počistite seznam opravil in predpomnilnik brez zapiranja procesov v ozadju.</string>
     <string name="oneplus_not_disturb_on">Funkcija Ne moti je vključena</string>
+    <string name="oneplus_not_disturb_summary">Utišaj klice in obvestila ter izklopi vibriranje, razen za izbrane izjeme</string>
     <string name="oneplus_not_show">Tega ne prikaži več</string>
     <string name="oneplus_notch_display_area">Izrez</string>
     <string name="oneplus_notch_display_choose_title">Kako prikazati območje izreza</string>
@@ -2944,7 +2957,9 @@ Poteze lahko izklopite tako, da v nastavitvah omogočite vrstico za krmarjenje."
     <string name="oneplus_quick_launch_how_to_use_summary">"1. Ko odklenete podokno hitrega zagona, še naprej držite prst
 2.Podrsajte, če želite izbrati bližnjico in spustite prst, da jo odprete"</string>
     <string name="oneplus_quick_launch_how_to_use_title">Uporabite hitri zagon</string>
+    <string name="oneplus_quick_launch_summary">Pritisnite in pridržite območje za prepoznavanje prstnih odtisov, da odprete način hitrega plačila ali aktivirate aplikacije</string>
     <string name="oneplus_quick_launch_title">Hitri zagon</string>
+    <string name="oneplus_quick_launch_toggle_summary">Pritisnite in pridržite območje za prepoznavanje prstnih odtisov, da odprete način hitrega plačila ali aktivirate aplikacije, ko je telefon zaklenjen</string>
     <string name="oneplus_quick_launch_toggle_title">Vklopite hitri zagon</string>
     <string name="oneplus_quick_turn_on_assistant_app">Hitro aktiviranje aplikacije za pomoč</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">Gumb za vklop držite pritisnjem 0,5 sekunde za aktivacijo aplikacije za pomoč in 3 sekunde za izklop</string>
@@ -3047,13 +3062,26 @@ Poteze lahko izklopite tako, da v nastavitvah omogočite vrstico za krmarjenje."
     <string name="oneplus_security_lock_settings_summary">Prednostne nastavitve odklepanja, lokacijska storitev, zaklep aplikacij</string>
     <string name="oneplus_security_lock_settings_title">Varnost &amp; zasebnost</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">Nastavitev ni uspela</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"Če želite odkleniti telefon, pooblastiti nakup ali se vpisati v poljubno aplikacijo, pritisnite območje za identifikacijo s prstnim odtisom. 
+
+Opomba: 
+1.Vaš prstni odtis je morda manj varen od zapletenega vzorca ali kode PIN.
+2.Svoj prstni odtis znova vnesite po vsaki zamenjavi zaščitne folije, da zagotovite razpoložljivost prstnega odtisa."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">Ta prstni odtis je že registriran, poskusite z drugim prstom.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">Pokaži ikono prstnega odtisa na ambientalnem zaslonu</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">Telefon narahlo premaknite, da prikažete vsebino</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">Tapnite zaslon, da prikažete vsebino</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">Možnost »Dvojni tap za aktiviranje« je omogočena. Možnost »Tapnite za prikaz« bo onemogočena</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">Možnost »Tapnite za prikaz« je omogočena in možnost »Dvojni tap za aktiviranje« je onemogočena</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">Vesolje</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">Val</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">Trak</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">Izberite animacijski učinek prstnega odtisa</string>
     <string name="oneplus_set_time">Načrtovani nočni način</string>
     <string name="oneplus_setting_ringtone">Nastavitve zvonjenja</string>
     <string name="oneplus_setting_sim_ringtone_switch">Nastavi zvonjenje za kartici SIM</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">Funkcija Smart Boost glede na dnevno uporabo v celoti izkoristi razpoložljivi pomnilnik RAM telefonov OnePlus in tako izboljša učinkovitost pri nalaganju aplikacij ter iger.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Smart Boost</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Nastaviti nadomestni način za odklepanje zaslona</string>
     <string name="oneplus_share_this_wifi">Razširitev pokritosti Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Deljenje Wi-Fi</string>
@@ -3131,9 +3159,9 @@ Opomba: odklepanje z obrazom je lahko manj varno od uporabe prstnega odtiska ali
     <string name="oneplus_weak_text_reminding">Samo besedilo</string>
     <string name="oneplus_weak_text_reminding_summary">Aplikacijam omogoči prikazovanje pojavnih obvestil</string>
     <string name="oneplus_wifi_ap_error">Vstavite kartico SIM</string>
-    <string name="oneplus_wifi_hidden_network_warning">"Če vaš strežnik onemogoči oddajanje SSID, izberite \"Da\", da vzpostavite povezavo s skritim omrežjem.
+    <string name="oneplus_wifi_hidden_network_warning">"Če je vaš usmerjevalnik nastavljen tako, da ne oddaja SSID, izberite \"Da\", da vzpostavite povezavo s skritim omrežjem.
 
-To lahko ustvari varnostno tveganje, saj bo vaš telefon pri iskanju signala redno oddajal svoj signal.
+To lahko ustvari varnostno tveganje, saj bo vaš telefon pri iskanju omrežja redno oddajal svoj signal.
 
 Če omrežje nastavite na skrito, se nastavitve vašega usmerjevalnika ne bodo spremenile."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">Če onemogočite podporo za IPv6, pri nekaterih brezžičnih usmerjevalnikih preprečite težave z združljivostjo.</string>
@@ -3212,6 +3240,8 @@ To lahko ustvari varnostno tveganje, saj bo vaš telefon pri iskanju signala red
     <string name="op_system_dashboard_summary">Jeziki, čas, ponastavitev, posodobitve</string>
     <string name="op_theme_2__cannot_change_color_accent">Tema Maščevalci lahko uporablja samo temo s sistemskimi barvami</string>
     <string name="op_theme_2__title">Maščevalci</string>
+    <string name="op_theme_3_cannot_change_color_accent">Téma McLaren lahko uporablja samo barvno témo sistema</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">Tema</string>
     <string name="op_user_manual_settings">Uporabniški priročnik</string>
     <string name="op_volume">Glasnost</string>
@@ -3991,7 +4021,7 @@ To ji omogoča zaupanja vredna poverilnica, ki je nameščena v vaši napravi."<
     <string name="status_bar_settings_cellular_title">Podatki o mobilnem omrežju</string>
     <string name="status_bar_settings_dnd_title">Ne moti</string>
     <string name="status_bar_settings_headset_title">Slušalke</string>
-    <string name="status_bar_settings_hotspot_title">Dostopna točka</string>
+    <string name="status_bar_settings_hotspot_title">Mobilna dostopna točka</string>
     <string name="status_bar_settings_network_speed_title">Prikaz hitrosti omrežja</string>
     <string name="status_bar_settings_time_title">Čas</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -5068,7 +5098,7 @@ To lahko povzroči varnostno tveganje, ker bo telefon redno oddajal svoj signal,
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Po 10 minutah nedejavnosti</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Po 15 minutah nedejavnosti</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Po 5 minutah nedejavnosti</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">Vedno prikazano</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Vedno vključeno</string>
     <string name="wifi_tether_disabled_by_airplane">Ni na voljo, ker je vklopljen način za letalo</string>
     <string name="wifi_tether_enabled_subtext">Povezava %1$s je aktivna</string>
     <string name="wifi_tether_failed_subtext">Napaka prenosne dostopne točke Wi-Fi</string>

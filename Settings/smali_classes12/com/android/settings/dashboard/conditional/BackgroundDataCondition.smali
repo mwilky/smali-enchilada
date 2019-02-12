@@ -156,7 +156,7 @@
 .end method
 
 .method public onPrimaryClick()V
-    .locals 4
+    .locals 3
 
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/BackgroundDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
@@ -164,45 +164,19 @@
 
     move-result-object v0
 
-    const-string v1, "settings_data_usage_v2"
+    new-instance v1, Landroid/content/Intent;
 
-    invoke-static {v0, v1}, Landroid/util/FeatureFlagUtils;->isEnabled(Landroid/content/Context;Ljava/lang/String;)Z
+    const-string v2, "com.oneplus.action.DATAUSAGE_SAVER"
 
-    move-result v0
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    if-eqz v0, :cond_0
+    const/high16 v2, 0x10000000
 
-    const-class v0, Lcom/android/settings/Settings$DataUsageSummaryActivity;
-
-    goto :goto_0
-
-    :cond_0
-    const-class v0, Lcom/android/settings/Settings$DataUsageSummaryLegacyActivity;
-
-    :goto_0
-    iget-object v1, p0, Lcom/android/settings/dashboard/conditional/BackgroundDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
-
-    invoke-virtual {v1}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
+    invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     move-result-object v1
 
-    new-instance v2, Landroid/content/Intent;
-
-    iget-object v3, p0, Lcom/android/settings/dashboard/conditional/BackgroundDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
-
-    invoke-virtual {v3}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3, v0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    const/high16 v3, 0x10000000
-
-    invoke-virtual {v2, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
     return-void
 .end method

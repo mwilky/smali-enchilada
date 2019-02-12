@@ -2616,7 +2616,7 @@ Batterisparing slås automatisk av når enheten lader."</string>
     <string name="oneplus_broadcat_wifi_name">Kringkast nettverksnavn (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Taster &amp; bevegelser</string>
     <string name="oneplus_buttons_dashboard_summary">Varselsglidebryter, navigasjon, bevegelser</string>
-    <string name="oneplus_buttons_settings">innstillingene for knapper</string>
+    <string name="oneplus_buttons_settings">Innstillingene for knapper</string>
     <string name="oneplus_buttons_settings_summary">Navigasjonsbevegelse</string>
     <string name="oneplus_call_information_broadcast">Si oppringer-ID</string>
     <string name="oneplus_call_information_broadcast_summary">Si ID-en til innkommende oppringer via hodetelefonen</string>
@@ -2687,6 +2687,9 @@ Batterisparing slås automatisk av når enheten lader."</string>
     <string name="oneplus_emergency_rescue_settings">Nødhjelp</string>
     <string name="oneplus_emergency_rescue_settings_summary">Ringe automatisk etter hjelp ved å trykke raskt på strømknappen</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">Tilgjengelig etter endring av STRØMKNAPP-innstillingene ved nødhjelp</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1.Legg inn fingeravtrykket på nytt eller hver gang den beskyttende filmen skiftes ut for å sikre at fingeravtrykket er tilgjengelig
+
+2.Ved en prosess med ett enkelt oppsett skal du bare legge inn fingeravtrykksinformasjon om én finger."</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Fingeravtrykk installasjonsprogramspørsmål</string>
     <string name="oneplus_enter_your_fingerprint">· registrere fingeravtrykk</string>
     <string name="oneplus_experience_improvement_programs">Opplev forbedringsprogrammer</string>
@@ -2711,11 +2714,17 @@ Risikotips: Ansiktsgjenkjenning er mindre sikkert enn fingeravtrykk og passord"<
     <string name="oneplus_finger_input_error_tips">Feil ved registrering av fingeravtrykk, prøv på nytt</string>
     <string name="oneplus_finger_input_fail_tips">Input mislyktes. Juster plasseringen og prøv på nytt</string>
     <string name="oneplus_fingerprint">Fingeravtrykk</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">Lignende fingeravtrykk oppdaget. Flytt fingeren litt å legge inn fingeravtrykk av ulike deler.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">Fingeravtrykks-ID-feltet er skittent. Tørk den ren, og prøv igjen.</string>
+    <string name="oneplus_fingerprint_acquired_partial">Delvis fingeravtrykk funnet. Dekk hele fingeravtrykks-ID-feltet.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">For raskt til å kunne behandle fingeravtrykket. La den sitte på plass litt mens du trykker.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">Lignende fingeravtrykk funnet. Flytt litt på fingeren for å registrere forskjellige deler av fingeravtrykket.</string>
     <string name="oneplus_fingerprint_animation_effect_title">Animasjonseffekt for fingeravtrykk</string>
     <string name="oneplus_fingerprint_delete_confirm_message">Ønsker du å slette?</string>
     <string name="oneplus_fingerprint_detail">Detaljer</string>
     <string name="oneplus_fingerprint_enrol_completed">Fingeravtrykk lagret</string>
+    <string name="oneplus_fingerprint_enroll_summary">Trykk og bruk fingeren for å dekke mest mulig av fingeravtrykks-ID-området. Løft deretter når du føler vibrasjon.</string>
+    <string name="oneplus_fingerprint_findsendor_summary">Når fingeravtykksmønsteret vises nederst på skjermen, tar du helt enkelt og trykker fingeren på fingeravtrykks-ID-feltet for å bruke fingeravtrykksfunksjonen.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">Slik bruker du fingeravtrykk</string>
     <string name="oneplus_fingerprint_functional_declaration">Erklæring om fingeravtrykksfunksjonen</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">Fra søkerskjermen trykker du lang tid på fingeravtrykksensoren for å ta et bilde</string>
     <string name="oneplus_fingerprint_gesture_camera_title">Trykk lang tid for å ta et bilde</string>
@@ -2799,6 +2808,9 @@ For å gå til hjemskjermen når du måtte ønske det, sveip oppover fra midten 
     <string name="oneplus_hide_navkeys_summary">Legg til en knapp for å skjule eller vise navigeringslinjen</string>
     <string name="oneplus_hide_notch_display_summary">Alle appene kan ikke bruke hakkområdet</string>
     <string name="oneplus_hide_notch_display_title">Skjul hakkområdet</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"Når fingeravtrykksmønsteret vises nederst på skjermen, trykk med fingeren på fingeravtrykks-ID-området for å bruke fingeravtrykksfunksjonen: våkne og låse opp telefonen, autorisere kjøp eller logge på apper. 
+
+Merk: Fingeravtrykket kan være mindre sikkert enn et sterkt mønster eller PIN-kode"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Når fingeravtrykkmønsteret vises nederst på skjermen, bare trykk med fingeren på fingeravtrykk-identifikasjonsområdet for å bruke fingeravtrykkfunksjonen: våkne og lås opp telefonen, godkjenn kjøp eller logg innpå apper.</string>
     <string name="oneplus_hydrogen_version">H₂OS-versjon</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Innkommende samtale</string>
@@ -2872,6 +2884,7 @@ For å gå til hjemskjermen når du måtte ønske det, sveip oppover fra midten 
     <string name="oneplus_normal_clear_way">Vanlig opprydding</string>
     <string name="oneplus_normal_clear_way_summary">Tøm oppgavelisten og cache uten å fjerne prosessene i bakgrunnen.</string>
     <string name="oneplus_not_disturb_on">Ikke forstyrr-innstilling er på</string>
+    <string name="oneplus_not_disturb_summary">Demp anrop og varslinger, og skru av vibrasjon, bortsett fra valgte unntak</string>
     <string name="oneplus_not_show">Ikke vis dette igjen</string>
     <string name="oneplus_notch_display_area">Hakk</string>
     <string name="oneplus_notch_display_choose_title">Slik vises hakkområdet</string>
@@ -2944,7 +2957,9 @@ For å gå til hjemskjermen når du måtte ønske det, sveip oppover fra midten 
     <string name="oneplus_quick_launch_how_to_use_summary">"1. Fortsett å holde fingeren der etter at du har låst opp for å åpne hurtigstartpanelet
 2. Sveip for å velge snarveien og slipp fingeren for å starte den"</string>
     <string name="oneplus_quick_launch_how_to_use_title">Bruk Hurtigstart</string>
+    <string name="oneplus_quick_launch_summary">Trykk lengde på fingeravtrykks-ID-området for å sette i gang hurtigbetaling eller aktivere apper</string>
     <string name="oneplus_quick_launch_title">Hurtigstart</string>
+    <string name="oneplus_quick_launch_toggle_summary">Trykk lengde på fingeravtrykks-ID-området for å sette i gang hurtigbetaling eller aktivere apper når telefonen er låst</string>
     <string name="oneplus_quick_launch_toggle_title">Slå på Hurtigstart</string>
     <string name="oneplus_quick_turn_on_assistant_app">Rask aktivering av assistentapp</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">Hold strømknappen i 0,5 sekunder for å aktivere assistentappen og 3 sekunder for å slå av</string>
@@ -3047,13 +3062,26 @@ For å gå til hjemskjermen når du måtte ønske det, sveip oppover fra midten 
     <string name="oneplus_security_lock_settings_summary">Lås opp preferanser, plasseringstjeneste, app-skapet</string>
     <string name="oneplus_security_lock_settings_title">Sikkerhet &amp; personvern</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">Konfigurering mislyktes</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"Trykk på fingeravtrykks-ID-området for å låse opp telefonen, autorisere kjøp eller logge på apper. 
+
+Merk: 
+1.Fingeravtrykket kan være mindre sikkert enn et sterkt mønster eller en PIN-kode.
+2.Legg inn fingeravtrykket på nytt etter hver gang den beskyttende filmen skiftes ut for å sikre at fingeravtrykket er tilgjengelig."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">Dette fingeravtrykket er allerede registrert. Prøv en annen finger.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">Vis fingeravtrykk-ikon i Ambient skjerm</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">Flytt telefonen litt for å vise</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">Trykk på skjermen for å vise</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\"Dobbeltrykk å vekke\" er aktivert og \"Trykk på skjermen for å vise\" deaktiveres</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">\"Trykk på skjermen for å vise\" aktiveres og \"Dobbeltrykk for å vekke\" deaktiveres</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">Kosmos</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">Bølge</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">Stripe</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">Velg animasjonseffekt for fingerantrykk</string>
     <string name="oneplus_set_time">Planlagt nattmodus</string>
     <string name="oneplus_setting_ringtone">Angi ringetone</string>
     <string name="oneplus_setting_sim_ringtone_switch">Angi ringetone for hvert SIM-kort</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">Basert på din daglige bruk, utnytter Smart Boost stor RAM på OnePlus-telefonene fullt ut. Dette påvirker ytelsen ved innlasting av apper og spill.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Smart Boost</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· angi alternativ måte å låse opp skjermen på</string>
     <string name="oneplus_share_this_wifi">Utvid trådløs Internett-forbindelse</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi -deling</string>
@@ -3131,9 +3159,9 @@ Merk: Ansiktsgjenkjenning kan være mindre sikkert enn fingeravtrykk, PIN eller 
     <string name="oneplus_weak_text_reminding">Bare tekst</string>
     <string name="oneplus_weak_text_reminding_summary">Tillat apper å vise heads-up-varsling</string>
     <string name="oneplus_wifi_ap_error">Sett inn SIM-kortet</string>
-    <string name="oneplus_wifi_hidden_network_warning">"Hvis ruteren deaktiverer SSID-kringkasting, bør du velge \"Ja\" for å koble til det skjulte nettverket.
+    <string name="oneplus_wifi_hidden_network_warning">"Hvis ruteren er stilt inn for å ikke å kringkaste SSID, skal du velge \"Ja\" for å koble til det skjulte nettverket.
 
-Dette kan skape en sikkerhetsrisiko fordi telefonen vil jevnlig sende signal å finne nettverk.
+Dette kan skape en sikkerhetsrisiko fordi telefonen vil jevnlig sende signal for å finne nettverk.
 
 Hvis du stiller inn nettverket som skjult, vil det ikke endre dine ruterinnstillinger."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">Deaktivering av IPv6 kan føre til at man unngår problemer med visse Wi-Fi-rutere.</string>
@@ -3212,6 +3240,8 @@ Hvis du stiller inn nettverket som skjult, vil det ikke endre dine ruterinnstill
     <string name="op_system_dashboard_summary">Språk, tid, tilbakestilling, oppdateringer</string>
     <string name="op_theme_2__cannot_change_color_accent">Avengers-temaet kan bare benytte systemets fargetema</string>
     <string name="op_theme_2__title">Avengers</string>
+    <string name="op_theme_3_cannot_change_color_accent">McLaren-tema kan bare bruke systemets fargetema</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">Tema</string>
     <string name="op_user_manual_settings">Bruksanvisning</string>
     <string name="op_volume">Volum</string>
@@ -3989,7 +4019,7 @@ Pålitelig legitimasjon, som er installert på enheten din, gjør dette mulig."<
     <string name="status_bar_settings_cellular_title">Mobildata</string>
     <string name="status_bar_settings_dnd_title">Ikke forstyrr</string>
     <string name="status_bar_settings_headset_title">Hodetelefon</string>
-    <string name="status_bar_settings_hotspot_title">Hotspot</string>
+    <string name="status_bar_settings_hotspot_title">Mobilt HotSpot</string>
     <string name="status_bar_settings_network_speed_title">Vis nettverkshastighet</string>
     <string name="status_bar_settings_time_title">Tid</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -5066,7 +5096,7 @@ Trykk på "<b>Tilbake</b> for å koble til et annet Wi-Fi-nettverk.</string>
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Etter 10 minutter uten aktivitet</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Etter 15 minutter uten aktivitet</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Etter 5 minutter uten aktivitet</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">Alltid på</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Er alltid på</string>
     <string name="wifi_tether_disabled_by_airplane">Utilgjengelig fordi flymodus er slått på</string>
     <string name="wifi_tether_enabled_subtext">%1$s er aktiv</string>
     <string name="wifi_tether_failed_subtext">Feil med flyttbar Wi-Fi-sone</string>

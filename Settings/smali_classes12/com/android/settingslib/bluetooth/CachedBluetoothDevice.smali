@@ -2210,46 +2210,68 @@
 .end method
 
 .method public getMaxConnectionState()I
-    .locals 4
+    .locals 5
 
     const/4 v0, 0x0
 
+    iget-object v1, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mProfiles:Ljava/util/List;
+
+    monitor-enter v1
+
+    :try_start_0
+    const-string v2, "CachedBluetoothDevice"
+
+    const-string v3, "getMaxConnectionState"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     invoke-virtual {p0}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->getProfiles()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lcom/android/settingslib/bluetooth/LocalBluetoothProfile;
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    if-eqz v2, :cond_0
+    move-result-object v2
 
-    invoke-virtual {p0, v2}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->getProfileConnectionState(Lcom/android/settingslib/bluetooth/LocalBluetoothProfile;)I
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-le v3, v0, :cond_0
+    if-eqz v3, :cond_1
 
-    move v0, v3
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/android/settingslib/bluetooth/LocalBluetoothProfile;
+
+    if-eqz v3, :cond_0
+
+    invoke-virtual {p0, v3}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->getProfileConnectionState(Lcom/android/settingslib/bluetooth/LocalBluetoothProfile;)I
+
+    move-result v4
+
+    if-le v4, v0, :cond_0
+
+    move v0, v4
 
     :cond_0
     goto :goto_0
 
     :cond_1
+    monitor-exit v1
+
     return v0
+
+    :catchall_0
+    move-exception v2
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v2
 .end method
 
 .method public getMessagePermissionChoice()I
@@ -3125,12 +3147,9 @@
     return-void
 .end method
 
-.method declared-synchronized onProfileStateChanged(Lcom/android/settingslib/bluetooth/LocalBluetoothProfile;I)V
-    .locals 3
+.method onProfileStateChanged(Lcom/android/settingslib/bluetooth/LocalBluetoothProfile;I)V
+    .locals 4
 
-    monitor-enter p0
-
-    :try_start_0
     const-string v0, "CachedBluetoothDevice"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3170,15 +3189,10 @@
     const-string v1, " BT Turninig Off...Profile conn state change ignored..."
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
 
     return-void
 
     :cond_0
-    :try_start_1
     iget-object v0, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mProfileConnectionState:Ljava/util/HashMap;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3214,15 +3228,24 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    const-string v0, "CachedBluetoothDevice"
-
-    const-string v2, "Add profile"
-
-    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     iget-object v0, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mProfiles:Ljava/util/List;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    monitor-enter v0
+
+    :try_start_0
+    const-string v2, "CachedBluetoothDevice"
+
+    const-string v3, "Add profile"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v2, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mProfiles:Ljava/util/List;
+
+    invoke-interface {v2, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     instance-of v0, p1, Lcom/android/settingslib/bluetooth/PanProfile;
 
@@ -3243,6 +3266,16 @@
     iput-boolean v1, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mLocalNapRoleConnected:Z
 
     goto :goto_0
+
+    :catchall_0
+    move-exception v1
+
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v1
 
     :cond_2
     instance-of v0, p1, Lcom/android/settingslib/bluetooth/MapProfile;
@@ -3290,7 +3323,22 @@
 
     iget-object v0, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mProfiles:Ljava/util/List;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+    monitor-enter v0
+
+    :try_start_2
+    const-string v2, "CachedBluetoothDevice"
+
+    const-string v3, "Remove profile"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v2, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mProfiles:Ljava/util/List;
+
+    invoke-interface {v2, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+
+    monitor-exit v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     iget-object v0, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mRemovedProfiles:Ljava/util/List;
 
@@ -3298,22 +3346,23 @@
 
     iput-boolean v1, p0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->mLocalNapRoleConnected:Z
 
+    goto :goto_0
+
+    :catchall_1
+    move-exception v1
+
+    :try_start_3
+    monitor-exit v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    throw v1
+
     :cond_4
     :goto_0
     invoke-direct {p0}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->fetchActiveDevices()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    monitor-exit p0
 
     return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
 .end method
 
 .method onUuidChanged()V

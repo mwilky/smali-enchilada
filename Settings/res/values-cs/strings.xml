@@ -2616,7 +2616,7 @@ Spořič baterie se automaticky vypne, až se bude zařízení nabíjet."</strin
     <string name="oneplus_broadcat_wifi_name">Vysílat název sítě (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Tlačítka &amp; gesta</string>
     <string name="oneplus_buttons_dashboard_summary">Posuvník upozornění, navigace, gesta</string>
-    <string name="oneplus_buttons_settings">nastavení tlačítek</string>
+    <string name="oneplus_buttons_settings">Nastavení tlačítek</string>
     <string name="oneplus_buttons_settings_summary">Navigační gesto</string>
     <string name="oneplus_call_information_broadcast">Vyslovit ID volajícího</string>
     <string name="oneplus_call_information_broadcast_summary">Vyslovit do sluchátek ID volajícího příchozího hovoru</string>
@@ -2687,6 +2687,9 @@ Spořič baterie se automaticky vypne, až se bude zařízení nabíjet."</strin
     <string name="oneplus_emergency_rescue_settings">Tísňová záchrana</string>
     <string name="oneplus_emergency_rescue_settings_summary">Automaticky volejte o pomoc rychlým stisknutím tlačítka napájení</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">Dostupné po úpravě nastavení tísňové záchrany TLAČÍTKA NAPÁJENÍ</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1. Po každé výměně ochranného filmu prosím znovu zadejte otisk prstu, abyste zajistili čitelnost otisku prstu.
+
+2.Během jednoho procesu nastavení zadejte prosím pouze informace o otisku jednoho prstu"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Výzva nastavení otisku prstu</string>
     <string name="oneplus_enter_your_fingerprint">· Registrace otisku prstu</string>
     <string name="oneplus_experience_improvement_programs">Programy zlepšovaní zážitku</string>
@@ -2711,11 +2714,17 @@ Tip ohledně rizika: Odemknutí obličejem je méně bezpečné než otisk prstu
     <string name="oneplus_finger_input_error_tips">Chyba registrace otisku prstu, zkuste to prosím znovu</string>
     <string name="oneplus_finger_input_fail_tips">Vstup selhal, upravte pozici a opakujte akci</string>
     <string name="oneplus_fingerprint">Otisk prstu</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">Detekován podobný otisk prstu. Posuňte mírně prst, abyste zadali otisk jiné části prstu.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">Oblast identifikace otisků prstů je zašpiněná. Očistěte ji hadříkem a zkuste to znovu.</string>
+    <string name="oneplus_fingerprint_acquired_partial">Detekován částečný otisk prstu. Zakryjte úplně oblast identifikace otisků prstů.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">Příliš rychlé pro zpracování otisku prstu. Nechte prst nějakou dobu přitisknutý.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">Detekován podobný otisk prstu. Mírně prst posuňte, abyste zadali otisk jiných částí prstu.</string>
     <string name="oneplus_fingerprint_animation_effect_title">Efekt animace otisku prstu</string>
     <string name="oneplus_fingerprint_delete_confirm_message">Chcete ji odstranit?</string>
     <string name="oneplus_fingerprint_detail">Podrobnosti</string>
     <string name="oneplus_fingerprint_enrol_completed">Otisk byl uložen</string>
+    <string name="oneplus_fingerprint_enroll_summary">Přitiskněte prst a zakryjte co největší část oblasti identifikace otisku prstu, jakmile ucítíte vibrace, prst zvedněte</string>
+    <string name="oneplus_fingerprint_findsendor_summary">Když se v dolní části obrazovky zobrazí vzor otisku prstu, jednoduše přitisknutím prstu na oblast identifikace otisků prstů použijte funkci otisku prstu.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">Jak používat otisk prstu</string>
     <string name="oneplus_fingerprint_functional_declaration">Prohlášení funkce otisku prstů</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">Z náhledové obrazovky stačí dlouze stisknout snímač otisků prstů a tím pořídit fotografii</string>
     <string name="oneplus_fingerprint_gesture_camera_title">Dlouhým stiskem pořídíte fotografii</string>
@@ -2799,6 +2808,9 @@ Pokud chcete kdykoliv přejít na úvodní obrazovku, potáhněte prstem nahoru 
     <string name="oneplus_hide_navkeys_summary">Přidat tlačítko pro skrytí nebo zobrazení navigačního panelu</string>
     <string name="oneplus_hide_notch_display_summary">Všechny aplikace nemohou používat oblast zářezu</string>
     <string name="oneplus_hide_notch_display_title">Skrýt oblast zářezu</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"Když se v dolní části obrazovky zobrazí vzor otisku prstu, jednoduše přitiskněte prst na oblast identifikace otisku prstu a použijte funkci otisku prstu: probuzení a zamknutí telefonu, autorizace nákupů nebo přihlášení do aplikací. 
+
+Poznámka: Váš otisk prstu může být méně bezpečný než silný vzor nebo kód PIN"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Když se v dolní části obrazovky zobrazí vzor otisk prstu, jednoduše přitiskněte prst na oblast identifikace otisku prstu, abyste použili funkci otisku prstu: probuďte a odemkněte svůj telefon, autorizujte nákupy nebo se přihlaste do aplikací.</string>
     <string name="oneplus_hydrogen_version">Verze H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Příchozí hovor</string>
@@ -2872,6 +2884,7 @@ Pokud chcete kdykoliv přejít na úvodní obrazovku, potáhněte prstem nahoru 
     <string name="oneplus_normal_clear_way">Normální čištění</string>
     <string name="oneplus_normal_clear_way_summary">Vymažte seznam úkolů a mezipaměti, aniž by byly vymazány procesy na pozadí.</string>
     <string name="oneplus_not_disturb_on">Je zapnut režim Nerušit</string>
+    <string name="oneplus_not_disturb_summary">Ztišit hovory, oznámení a vypnout vibrace kromě vybraných výjimek</string>
     <string name="oneplus_not_show">Znovu nezobrazovat</string>
     <string name="oneplus_notch_display_area">Zářez</string>
     <string name="oneplus_notch_display_choose_title">Jak zobrazit oblast zářezu</string>
@@ -2944,7 +2957,9 @@ Pokud chcete kdykoliv přejít na úvodní obrazovku, potáhněte prstem nahoru 
     <string name="oneplus_quick_launch_how_to_use_summary">"1. Po odemknutí držte prst dále na obrazovce, abyste otevřeli panel rychlého spuštění
 2. Potažením vyberte zkratku a uvolněním prstu ji spusťte"</string>
     <string name="oneplus_quick_launch_how_to_use_title">Použít rychlé spuštění</string>
+    <string name="oneplus_quick_launch_summary">Dlouhým stisknutím oblasti identifikace otisku prstu spusťte rychlou platbu nebo aktivujte aplikace</string>
     <string name="oneplus_quick_launch_title">Rychlé spuštění</string>
+    <string name="oneplus_quick_launch_toggle_summary">Dlouhým stisknutím oblasti identifikace otisku prstu spusťte rychlou platbu nebo aktivujte aplikace, když je telefon uzamčen</string>
     <string name="oneplus_quick_launch_toggle_title">Zapnout rychlé spuštění</string>
     <string name="oneplus_quick_turn_on_assistant_app">Rychle aktivovat aplikaci asistenta</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">Pro rychlou aktivaci aplikace asistenta podržte stlačené tlačítko napájení 0,5 s a pro její vypnutí 3 s</string>
@@ -3047,13 +3062,26 @@ Pokud chcete kdykoliv přejít na úvodní obrazovku, potáhněte prstem nahoru 
     <string name="oneplus_security_lock_settings_summary">Předvolby odemknutí, umístění služby, zámek aplikace</string>
     <string name="oneplus_security_lock_settings_title">Bezpečnost &amp; soukromí</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">Nastavení se nezdařilo</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"Jen stiskněte na telefonu oblast identifikace otisku prstu a autorizujte nákupy nebo se přihlašujte do aplikací. 
+
+Poznámka: 
+1.Váš otisk prstu může být méně bezpečný než silný vzor nebo kód PIN.
+2.Po každé výměně ochranného filmu prosím vyměňte ochranný film, abyste zajistili čitelnost otisku prstu."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">Tento otisk již byl zapsán, prosím zkuste jiný prst.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">Zobrazit ikonu otisku prstu na ambientním displeji</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">Pro zobrazení pomalu posunujte telefonem</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">Pro zobrazení klepněte na obrazovku</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">„Dvojitým klepnutím probudit“ je zapnuto, „Klepnutím zobrazit, když je obrazovka vypnuta“ bude vypnuto</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">„Klepnutím zobrazit, když je obrazovka vypnuta“ je zapnuto, „Dvojitým klepnutím probudit“ bude vypnuto,</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">Vesmír</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">Vlna</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">Pruh</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">Vybrat efekt animace otisku prstu</string>
     <string name="oneplus_set_time">Pravidelný noční režim</string>
     <string name="oneplus_setting_ringtone">Nastavte vyzvánění</string>
     <string name="oneplus_setting_sim_ringtone_switch">Nastavit vyzvánění pro každou SIM kartu</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">Chytré posílení využije na základě vašeho denního používání plně výhod velké paměti RAM na telefonech OnePlus, čímž zvýší výkon načítání aplikací a her.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Chytré posílení</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Nastavit alternativní způsob odemknutí obrazovky</string>
     <string name="oneplus_share_this_wifi">Rozšířit pokrytí Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi Sdílení</string>
@@ -3131,9 +3159,9 @@ Poznámka: Funkce Odemknutí obličejem je méně bezpečná než otisk prstu, k
     <string name="oneplus_weak_text_reminding">Pouze text</string>
     <string name="oneplus_weak_text_reminding_summary">Povolit aplikacím zobrazit oznámení pro přípravu</string>
     <string name="oneplus_wifi_ap_error">Vložte prosím SIM kartu</string>
-    <string name="oneplus_wifi_hidden_network_warning">"Pokud směrovač zakáže vysílání SSID, měli byste pro přijení se ke skryté síti vybrat „Ano“.
+    <string name="oneplus_wifi_hidden_network_warning">"Pokud je váš směrovač nastaven, aby nevysílal SSID, měli byste pro přijení se ke skryté síti vybrat „Ano“.
 
-Toto může vytvořit bezpečnostní riziko, protože telefon pravidelně vysílá signál k nalezení sítě.
+Toto může vytvořit bezpečnostní riziko, protože telefon bude pravidelně vysílat signál k nalezení sítě.
 
 Nastavení sítě jako skryté nezmění nastavení směrovače."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">Zakázáním protokolu IPv6 se můžete vyhnout problémům s kompatibilitou některých směrovačů Wi-Fi.</string>
@@ -3212,6 +3240,8 @@ Nastavení sítě jako skryté nezmění nastavení směrovače."</string>
     <string name="op_system_dashboard_summary">Jazyky, čas, reset, aktualizace</string>
     <string name="op_theme_2__cannot_change_color_accent">Motiv Mstitelé může používat pouze motiv systémových barev</string>
     <string name="op_theme_2__title">Mstitelé</string>
+    <string name="op_theme_3_cannot_change_color_accent">Motiv McLaren může používat pouze barevný motiv systému</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">Téma</string>
     <string name="op_user_manual_settings">Uživatelská příručka</string>
     <string name="op_volume">Hlasitost</string>
@@ -3991,7 +4021,7 @@ Umožňují to důvěryhodné identifikační údaje nainstalované ve vašem za
     <string name="status_bar_settings_cellular_title">Mobilní data</string>
     <string name="status_bar_settings_dnd_title">Nerušit</string>
     <string name="status_bar_settings_headset_title">Sluchátka s mikrofonem</string>
-    <string name="status_bar_settings_hotspot_title">HotSpot</string>
+    <string name="status_bar_settings_hotspot_title">Mobilní hotspot</string>
     <string name="status_bar_settings_network_speed_title">Zobrazit rychlost sítě</string>
     <string name="status_bar_settings_time_title">Čas</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>

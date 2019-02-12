@@ -2662,7 +2662,7 @@
     <string name="oneplus_face_auto_unlock_while_screen_on_title">亮屏后自动解锁</string>
     <string name="oneplus_face_setup_unlock_settings_summary">"人脸解锁是一种快捷的解锁方式。你只需要点亮屏幕后，正面看向手机，就可以解锁并使用手机。
 
- 风险提示：人脸识别的安全性低于指纹及密码"</string>
+ 风险提示：人脸识别的安全性低于指纹及密码，您的手机可能会被容貌与您相近的人或外形与您相似的物品解锁。"</string>
     <string name="oneplus_face_setup_unlock_settings_title">试试看人脸解锁吧</string>
     <string name="oneplus_face_unlock_add_title">添加人脸数据</string>
     <string name="oneplus_face_unlock_assistive_lighting_summary">在黑暗环境下，屏幕会进行补光帮助完成人脸识别</string>
@@ -3158,7 +3158,7 @@
     <string name="oneplus_unlock_set_unlock_mode_pin">数字密码</string>
     <string name="oneplus_use_faceunlock_and_fingerprint_settings_summary">"使用人脸解锁配合指纹解锁，能够获得更快速、更便捷的解锁体验。你只需要在点亮屏幕后，正面看向手机，即可解锁并使用手机。
 
-请注意：人脸解锁的安全性可能不及安全系数更高的指纹或密码。"</string>
+请注意：人脸识别的安全性低于指纹及密码，您的手机可能会被容貌与您相近的人或外形与您相似的物品解锁。"</string>
     <string name="oneplus_use_faceunlock_and_fingerprint_settings_title">推荐使用人脸配合指纹解锁</string>
     <string name="oneplus_use_fingerprint_to_unlock">使用指纹解锁</string>
     <string name="oneplus_used_storage">已用存储</string>

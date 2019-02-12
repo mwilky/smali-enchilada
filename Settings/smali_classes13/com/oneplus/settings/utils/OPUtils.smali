@@ -376,6 +376,46 @@
     return-object v0
 .end method
 
+.method public static deleteGameModeAppString(Lcom/oneplus/settings/better/OPAppModel;)V
+    .locals 5
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    sget-object v1, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-static {v1}, Lcom/oneplus/settings/utils/OPUtils;->getGameModeAppListString(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-static {p0}, Lcom/oneplus/settings/utils/OPUtils;->getGameModeAppString(Lcom/oneplus/settings/better/OPAppModel;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->indexOf(Ljava/lang/String;)I
+
+    move-result v2
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/2addr v3, v2
+
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
+
+    sget-object v3, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Lcom/oneplus/settings/utils/OPUtils;->saveGameModeRemovedAppLisStrings(Landroid/content/Context;Ljava/lang/String;)V
+
+    return-void
+.end method
+
 .method public static dip2px(Landroid/content/Context;F)I
     .locals 3
 
@@ -1317,6 +1357,62 @@
     return v0
 .end method
 
+.method public static getGameModeAppListString(Landroid/content/Context;)Ljava/lang/String;
+    .locals 2
+
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "op_gamemode_removed_packages_by_user"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const-string v0, ""
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public static getGameModeAppString(Lcom/oneplus/settings/better/OPAppModel;)Ljava/lang/String;
+    .locals 2
+
+    if-nez p0, :cond_0
+
+    const-string v0, ""
+
+    return-object v0
+
+    :cond_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p0}, Lcom/oneplus/settings/better/OPAppModel;->getPkgName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ";"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public static getImei(Landroid/content/Context;)Ljava/lang/String;
     .locals 5
 
@@ -1580,7 +1676,7 @@
 .method public static getQuickPayIconByType(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
     .locals 2
 
-    const v0, 0x7f080419
+    const v0, 0x7f08041a
 
     packed-switch p1, :pswitch_data_0
 
@@ -1597,12 +1693,12 @@
     goto :goto_0
 
     :pswitch_2
-    const v0, 0x7f08041a
+    const v0, 0x7f08041b
 
     goto :goto_0
 
     :pswitch_3
-    const v0, 0x7f080419
+    const v0, 0x7f08041a
 
     nop
 
@@ -3038,6 +3134,45 @@
     return v0
 .end method
 
+.method public static isInRemovedGameAppListString(Landroid/content/Context;Lcom/oneplus/settings/better/OPAppModel;)Z
+    .locals 2
+
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "op_gamemode_removed_packages_by_user"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    invoke-virtual {p1}, Lcom/oneplus/settings/better/OPAppModel;->getPkgName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :cond_0
+    const/4 v1, 0x0
+
+    return v1
+.end method
+
 .method public static isLTRLayout(Landroid/content/Context;)Z
     .locals 2
 
@@ -3576,156 +3711,8 @@
     invoke-static {v0}, Lcom/oneplus/lib/util/ReflectUtil;->isFeatureSupported(Ljava/lang/String;)Z
 
     move-result v0
-	
-	invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isAODAllowed()Z
-	
-	move-result v0
 
     return v0
-.end method
-
-.method public static isAODAllowed()Z
-    .registers 5
-
-    .line 22
-    new-instance v0, Ljava/lang/String;
-
-    const/16 v1, 0x13
-
-    new-array v1, v1, [C
-
-    fill-array-data v1, :array_42
-
-    invoke-direct {v0, v1}, Ljava/lang/String;-><init>([C)V
-
-    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 23
-    .local v0, "str":Ljava/lang/String;
-    new-instance v1, Ljava/lang/String;
-
-    const/16 v2, 0x14
-
-    new-array v2, v2, [C
-
-    fill-array-data v2, :array_5a
-
-    invoke-direct {v1, v2}, Ljava/lang/String;-><init>([C)V
-
-    .line 24
-    .local v1, "path":Ljava/lang/String;
-    new-instance v2, Ljava/io/File;
-
-    invoke-direct {v2, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    .line 25
-    .local v2, "file":Ljava/io/File;
-    invoke-virtual {v2}, Ljava/io/File;->exists()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3e
-
-    if-eqz v0, :cond_3e
-
-    new-instance v3, Ljava/lang/String;
-
-    const/16 v4, 0x8
-
-    new-array v4, v4, [C
-
-    fill-array-data v4, :array_72
-
-    invoke-direct {v3, v4}, Ljava/lang/String;-><init>([C)V
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_3c
-
-    goto :goto_3e
-
-    .line 28
-    :cond_3c
-    const/4 v3, 0x1
-
-    return v3
-
-    .line 25
-    :cond_3e
-    :goto_3e
-    nop
-
-    .line 26
-    const/4 v3, 0x0
-
-    return v3
-
-    nop
-
-    :array_42
-    .array-data 2
-        0x72s
-        0x6fs
-        0x2es
-        0x62s
-        0x75s
-        0x69s
-        0x6cs
-        0x64s
-        0x2es
-        0x64s
-        0x69s
-        0x73s
-        0x70s
-        0x6cs
-        0x61s
-        0x79s
-        0x2es
-        0x69s
-        0x64s
-    .end array-data
-
-    nop
-
-    :array_5a
-    .array-data 2
-        0x2fs
-        0x73s
-        0x79s
-        0x73s
-        0x74s
-        0x65s
-        0x6ds
-        0x2fs
-        0x65s
-        0x74s
-        0x63s
-        0x2fs
-        0x72s
-        0x65s
-        0x6es
-        0x6fs
-        0x76s
-        0x61s
-        0x74s
-        0x65s
-    .end array-data
-
-    :array_72
-    .array-data 2
-        0x52s
-        0x45s
-        0x4es
-        0x4fs
-        0x56s
-        0x41s
-        0x54s
-        0x45s
-    .end array-data
 .end method
 
 .method public static isSupportCustomBlinkLight()Z
@@ -5715,6 +5702,20 @@
     return-void
 .end method
 
+.method public static saveGameModeRemovedAppLisStrings(Landroid/content/Context;Ljava/lang/String;)V
+    .locals 2
+
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "op_gamemode_removed_packages_by_user"
+
+    invoke-static {v0, v1, p1}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
+
+    return-void
+.end method
+
 .method public static saveQuickLaunchStrings(Landroid/content/Context;Ljava/lang/String;)V
     .locals 2
 
@@ -6623,6 +6624,28 @@
     const-string v1, "game_mode_notification_show"
 
     invoke-static {v1, v0}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static sendAppTrackerForGameModeRemovedApps()V
+    .locals 2
+
+    sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
+
+    invoke-virtual {v0}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "op_gamemode_removed_packages_by_user"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "op_gamemode_removed_packages_by_user"
+
+    invoke-static {v1, v0}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

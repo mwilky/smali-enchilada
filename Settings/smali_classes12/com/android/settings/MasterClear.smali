@@ -803,7 +803,7 @@
 
 # virtual methods
 .method establishInitialState()V
-    .locals 2
+    .locals 4
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 
@@ -817,12 +817,34 @@
 
     iput-object v0, p0, Lcom/android/settings/MasterClear;->mOptionalSwitchPreference:Landroid/support/v14/preference/SwitchPreference;
 
+    const/4 v0, 0x1
+
+    new-array v1, v0, [I
+
+    const/4 v2, 0x0
+
+    const/16 v3, 0x54
+
+    aput v3, v1, v2
+
+    invoke-static {v1}, Landroid/util/OpFeatures;->isSupport([I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/settings/MasterClear;->mOptionalSwitchPreference:Landroid/support/v14/preference/SwitchPreference;
+
+    invoke-virtual {v1, v0}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
+
+    goto :goto_0
+
+    :cond_0
     iget-object v0, p0, Lcom/android/settings/MasterClear;->mOptionalSwitchPreference:Landroid/support/v14/preference/SwitchPreference;
 
-    const/4 v1, 0x0
+    invoke-virtual {v0, v2}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
 
-    invoke-virtual {v0, v1}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
-
+    :goto_0
     iget-object v0, p0, Lcom/android/settings/MasterClear;->mOptionalSwitchPreference:Landroid/support/v14/preference/SwitchPreference;
 
     invoke-virtual {v0, p0}, Landroid/support/v14/preference/SwitchPreference;->setOnPreferenceChangeListener(Landroid/support/v7/preference/Preference$OnPreferenceChangeListener;)V

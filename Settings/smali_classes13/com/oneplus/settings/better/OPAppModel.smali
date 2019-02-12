@@ -23,6 +23,8 @@
 
 .field private appLabel:Ljava/lang/String;
 
+.field private editMode:Z
+
 .field private isGameAPP:Z
 
 .field private isSelected:Z
@@ -181,6 +183,14 @@
     return v0
 .end method
 
+.method public isEditMode()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/oneplus/settings/better/OPAppModel;->editMode:Z
+
+    return v0
+.end method
+
 .method public isGameAPP()Z
     .locals 1
 
@@ -272,6 +282,14 @@
     .locals 0
 
     iput-object p1, p0, Lcom/oneplus/settings/better/OPAppModel;->appLabel:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setEditMode(Z)V
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/oneplus/settings/better/OPAppModel;->editMode:Z
 
     return-void
 .end method

@@ -499,7 +499,7 @@
 
     iget-object v7, p0, Lcom/android/settings/dashboard/suggestions/SuggestionAdapter;->mContext:Landroid/content/Context;
 
-    const v8, 0x1040157
+    const v8, 0x1040158
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

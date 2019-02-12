@@ -2618,7 +2618,7 @@ bateria desliga-se automaticamente quando o dispositivo está a carregar."</stri
     <string name="oneplus_broadcat_wifi_name">Nome da rede de transmissão (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Botões &amp; gestos</string>
     <string name="oneplus_buttons_dashboard_summary">Controlo de deslize de alerta, navegação, gestos</string>
-    <string name="oneplus_buttons_settings">configurações de botões</string>
+    <string name="oneplus_buttons_settings">Configurações de botões</string>
     <string name="oneplus_buttons_settings_summary">Gesto de navegação</string>
     <string name="oneplus_call_information_broadcast">Dizer a ID do autor da chamada</string>
     <string name="oneplus_call_information_broadcast_summary">Dizer a ID do autor da chamada através dos auriculares</string>
@@ -2689,6 +2689,9 @@ bateria desliga-se automaticamente quando o dispositivo está a carregar."</stri
     <string name="oneplus_emergency_rescue_settings">Resgate de emergência</string>
     <string name="oneplus_emergency_rescue_settings_summary">Liga automaticamente a pedir ajuda ao premir rapidamente o botão de alimentação</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">Disponível depois de modificar as configurações do BOTÃO LIGAR/DESLIGAR do Resgate de emergência</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1.Volte a inserir a sua impressão digital após cada substituição da película de proteção para assegurar a disponibilidade da impressão digital
+
+2.Num único processo de configuração, introduza a informação da impressão digital de um dedo apenas"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Indicação de configuração de impressão digital</string>
     <string name="oneplus_enter_your_fingerprint">· Registar a sua impressão digital</string>
     <string name="oneplus_experience_improvement_programs">Programas de melhoramento da experiência</string>
@@ -2713,11 +2716,17 @@ Aviso de risco: o Desbloqueio facial é menos seguro que a impressão digital e 
     <string name="oneplus_finger_input_error_tips">Erro de registo das impressões digitais, tente novamente</string>
     <string name="oneplus_finger_input_fail_tips">Entrada falhou, ajuste a posição e tente novmente</string>
     <string name="oneplus_fingerprint">Impressão digital</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">Impressão digital semelhante detetada. Mova ligeiramente o seu dedo para registar as diferentes partes da impressão digital.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">A área de identificação de impressões digitais está suja. Limpe-a e tente novamente.</string>
+    <string name="oneplus_fingerprint_acquired_partial">Impressões digitais parciais detetadas. Cubra totalmente a área de identificação de impressões digitais.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">Foi demasiado rápido para processar as suas impressões digitais. Faça pressão com o dedo durante algum tempo.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">Impressões digitais semelhantes detetadas. Mova ligeiramente o dedo para inserir as impressões digitais de várias partes.</string>
     <string name="oneplus_fingerprint_animation_effect_title">Efeito de animação de impressão digital</string>
     <string name="oneplus_fingerprint_delete_confirm_message">Pretende eliminá-lo?</string>
     <string name="oneplus_fingerprint_detail">Pormenores</string>
     <string name="oneplus_fingerprint_enrol_completed">A impressão digital foi gravada</string>
+    <string name="oneplus_fingerprint_enroll_summary">Pressione e cubra o máximo possível da área de identificação da impressão digital com o seu dedo e, em seguida, levante-o quando sentir uma vibração</string>
+    <string name="oneplus_fingerprint_findsendor_summary">Quando o padrão de impressões digitais surgir na parte inferior do ecrã, basta premir com o dedo a área de identificação de impressões digitais para utilizar a função de impressões digitais.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">Como utilizar as impressões digitais</string>
     <string name="oneplus_fingerprint_functional_declaration">Declaração da função da impressão digital</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">No ecrã do visor, prima continuamente no sensor de impressões digitais para tirar uma fotografia</string>
     <string name="oneplus_fingerprint_gesture_camera_title">Pressione demoradamente para tirar uma foto</string>
@@ -2801,6 +2810,9 @@ Para ir para o ecrã inicial a qualquer momento, deslize para cima a partir do c
     <string name="oneplus_hide_navkeys_summary">Adicione um botão para ocultar ou mostrar a barra de navegação</string>
     <string name="oneplus_hide_notch_display_summary">Nenhuma aplicação pode usar a área do entalhe</string>
     <string name="oneplus_hide_notch_display_title">Ocultar a área de entalhe</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"Quando o padrão da impressão digital aparece no fundo do ecrã, basta premir o dedo na área de identificação da impressão digital para utilizar a função de impressão digital: ative e desbloqueie o seu telefone, autorize compras ou inicie sessão em aplicações. 
+
+Nota: a sua impressão digital poderá ser menos segura que um padrão forte ou um PIN"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Quando o padrão da impressão digital aparece no fundo do ecrã, basta premir no seu dedo contra a área de identificação da impressão digital para utilizar esta função: ative e desbloqueie o seu telefone, autorize compras ou iniciar sessão em aplicações.</string>
     <string name="oneplus_hydrogen_version">Versão H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Chamada recebida</string>
@@ -2874,6 +2886,7 @@ Para ir para o ecrã inicial a qualquer momento, deslize para cima a partir do c
     <string name="oneplus_normal_clear_way">Limpeza normal</string>
     <string name="oneplus_normal_clear_way_summary">Limpar a lista de tarefas e cache, sem limpar os processos de segundo plano.</string>
     <string name="oneplus_not_disturb_on">Não Perturbar está ativado</string>
+    <string name="oneplus_not_disturb_summary">Silenciar chamadas e notificações e desligar a vibração, exceto nas exceções selecionadas</string>
     <string name="oneplus_not_show">Não voltar a mostrar isto</string>
     <string name="oneplus_notch_display_area">Entalhe</string>
     <string name="oneplus_notch_display_choose_title">Como mostrar a área do entalhe</string>
@@ -2946,7 +2959,9 @@ Para ir para o ecrã inicial a qualquer momento, deslize para cima a partir do c
     <string name="oneplus_quick_launch_how_to_use_summary">"1. Mantenha o dedo premido depois de desbloquear para abrir o painel de início rápido
 2.Deslize para selecionar o atalho e solte o dedo para iniciar"</string>
     <string name="oneplus_quick_launch_how_to_use_title">Utilizar início rápido</string>
+    <string name="oneplus_quick_launch_summary">Mantenha premida a área de identificação de impressões digitais para iniciar o pagamento rápido ou ativar aplicações</string>
     <string name="oneplus_quick_launch_title">Início rápido</string>
+    <string name="oneplus_quick_launch_toggle_summary">Mantenha premida a área de identificação de impressões digitais para iniciar o pagamento rápido ou ativar aplicações quando o telemóvel está bloqueado</string>
     <string name="oneplus_quick_launch_toggle_title">Ativar Início rápido</string>
     <string name="oneplus_quick_turn_on_assistant_app">Ativar rapidamente a aplicação de assistência</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">Mantenha o botão ligar/desligar premido durante 0,5 s para ativar a aplicação de assistência e durante 3 s para desligar</string>
@@ -3049,13 +3064,26 @@ Para ir para o ecrã inicial a qualquer momento, deslize para cima a partir do c
     <string name="oneplus_security_lock_settings_summary">Preferências de desbloqueio, serviço de localização, bloqueador de aplicações</string>
     <string name="oneplus_security_lock_settings_title">Segurança &amp; privacidade</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">Falha na configuração</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"Basta premir a área de identificação da impressão digital para desbloquear o seu telefone, autorizar compras ou iniciar sessão em aplicações. 
+
+Nota: 
+1.A sua impressão digital poderá ser menos segura que um padrão forte ou um PIN.
+2.Volte a inserir a sua impressão digital após cada substituição da película protetora para assegurar a disponibilidade da impressão digital."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">Esta impressão digital já foi registada. Tente outro dedo.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">Mostrar o ícone da impressão digital na Vista ambiental</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">Mova ligeiramente o seu telefone para mostrar</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">Toque no ecrã para mostrar</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\"Duplo toque para ativar\" está ativado e \"Tocar no ecrã para mostrar\" será desativado</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">\"Tocar no ecrã para mostrar\" é ativado e \"Duplo toque de ativar\" será desativado</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">Cosmos</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">Onda</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">Faixa</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">Selecione o efeito de animação de impressão digital</string>
     <string name="oneplus_set_time">Modo noturno programado</string>
     <string name="oneplus_setting_ringtone">Definir toque</string>
     <string name="oneplus_setting_sim_ringtone_switch">Definir o toque para cada cartão SIM</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">Com base na sua utilização diária, o Smart Boost aproveita totalmente a RAM grande dos telefones OnePlus, o que equilibra o desempenho de carregar aplicações e jogos.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Smart Boost</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Configurar um método alternativo para desbloquear o ecrã</string>
     <string name="oneplus_share_this_wifi">Expandir a cobertura do Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Partilha de Wi‑Fi</string>
@@ -3133,7 +3161,7 @@ Nota: o Desbloqueio com o rosto pode ser menos seguro do que a impressão digita
     <string name="oneplus_weak_text_reminding">Apenas texto</string>
     <string name="oneplus_weak_text_reminding_summary">Permitir que as aplicações mostrem uma notificação de atenção</string>
     <string name="oneplus_wifi_ap_error">Introduza o cartão SIM</string>
-    <string name="oneplus_wifi_hidden_network_warning">"Se o seu router desativar a transmissão SSID, deve selecionar \"Sim\" para ligar à rede ocultada.
+    <string name="oneplus_wifi_hidden_network_warning">"Se o seu router estiver configurado para não transmitir o SSID, deve selecionar \"Sim\" para ligar à rede ocultada.
 
 Isto poderá criar um risco de segurança porque o seu telefone irá transmitir regularmente o seu sinal para localizar a rede.
 
@@ -3214,6 +3242,8 @@ Definir a rede como ocultada não irá alterar as definições do seu router."</
     <string name="op_system_dashboard_summary">Idiomas, hora, reposição, atualizações</string>
     <string name="op_theme_2__cannot_change_color_accent">O tema The Avengers apenas pode utilizar o tema das cores do sistema</string>
     <string name="op_theme_2__title">The Avengers</string>
+    <string name="op_theme_3_cannot_change_color_accent">O tema McLaren apenas pode utilizar o tema de cores do sistema</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">Tema</string>
     <string name="op_user_manual_settings">Manual do Utilizador</string>
     <string name="op_volume">Volume</string>
@@ -3993,7 +4023,7 @@ Uma credencial confiável instalada no dispositivo permite isso."</string>
     <string name="status_bar_settings_cellular_title">Dados de telemóvel</string>
     <string name="status_bar_settings_dnd_title">Não incomodar</string>
     <string name="status_bar_settings_headset_title">Auriculares</string>
-    <string name="status_bar_settings_hotspot_title">Ponto de acesso</string>
+    <string name="status_bar_settings_hotspot_title">Ponto de acesso móvel</string>
     <string name="status_bar_settings_network_speed_title">Mostrar velocidade da rede</string>
     <string name="status_bar_settings_time_title">Hora</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -4993,7 +5023,7 @@ Permitir isto para todos os apps que quiserem verificar?"</string>
     <string name="wifi_scan_notify_text">Para melhorar a precisão da localização, os apps e serviços ainda podem procurar redes Wi‑Fi a qualquer momento, mesmo quando o Wi‑Fi está desativado. Essa configuração pode ser usada, por exemplo, para melhorar os recursos e serviços baseados na localização. É possível alterar isso nas LINK_BEGINconfigurações de verificaçãoLINK_END.</string>
     <string name="wifi_scan_notify_text_scanning_off">Para aumentar a precisão da localização, ative a verificação Wi-Fi nas LINK_BEGINconfigurações de verificaçãoLINK_END.</string>
     <string name="wifi_security">Segurança</string>
-    <string name="wifi_security_dialog">Com a segurança do Open, qualquer dispositivo pode ligar-se ao seu ponto de acesso móvel e utilizar os seus dados móveis.</string>
+    <string name="wifi_security_dialog">Com a segurança aberta, qualquer dispositivo pode ligar-se ao seu Ponto de acesso móvel e usar a sua ligação de dados móvel.</string>
     <string name="wifi_security_none">Nenhuma</string>
     <string name="wifi_security_open">Abrir</string>
     <string name="wifi_select_network">Selecionar Wi-Fi</string>
@@ -5069,7 +5099,7 @@ Toque em "<b>Voltar</b> para conectar-se a outra rede Wi-Fi.</string>
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Após 10 min. de inatividade</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Após 15 min. de inatividade</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Após 5 min. de inatividade</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">Sempre ativado</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Sempre ligado</string>
     <string name="wifi_tether_disabled_by_airplane">Indisponível porque o modo avião está ativado</string>
     <string name="wifi_tether_enabled_subtext">A rede %1$s está ativa</string>
     <string name="wifi_tether_failed_subtext">Erro de ponto de acesso Wi-Fi portátil</string>

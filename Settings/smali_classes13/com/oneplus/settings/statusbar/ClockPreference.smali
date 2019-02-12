@@ -47,7 +47,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/statusbar/ClockPreference;->mUtils:Lcom/oneplus/settings/statusbar/Utils;
 
-    const v0, 0x1040640
+    const v0, 0x1040641
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

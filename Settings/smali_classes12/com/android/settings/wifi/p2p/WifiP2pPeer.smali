@@ -249,7 +249,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pPeer;->mSignal:Landroid/widget/ImageView;
 
-    const v1, 0x7f08047c
+    const v1, 0x7f08047e
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 

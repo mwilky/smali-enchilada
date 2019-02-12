@@ -2679,8 +2679,13 @@
 
     iget-object v0, p0, Lcom/android/settings/password/ChooseLockGeneric$ChooseLockGenericFragment;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/settings/password/ChooseLockGeneric$ChooseLockGenericFragment;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils;->sanitizePassword()V
 
+    :cond_0
     invoke-direct {p0}, Lcom/android/settings/password/ChooseLockGeneric$ChooseLockGenericFragment;->unbindFaceUnlockService()V
 
     return-void

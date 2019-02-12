@@ -306,6 +306,9 @@
     <string name="oneplus_emergency_rescue_settings">आणीबाणीतील सुटका</string>
     <string name="oneplus_emergency_rescue_settings_summary">त्वरीत पॉवर बटण दाबून मदतीसाठी स्वयंचलितपणे कॉल करा</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">आपात्‍कालीन सुटकेच्‍या पॉवर बटण सेटिंग्‍जमध्‍ये सुधारणा केल्‍यानंतर उपलब्‍ध</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1.संरक्षित फिल्मच्या प्रत्येक बदली नंतर फिंगरप्रिंटच्या उपलब्धतेची खात्री देण्यासाठी कृपया आपली फिंगरप्रिंट पुन्हा प्रविष्ट करा
+
+2.एकाच सेटअप प्रक्रियेमध्ये, केवळ एका बोटाची फिंगरप्रिंट माहिती प्रविष्ट करा"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">फिंगरप्रिंट सेटअप सूचना</string>
     <string name="oneplus_enter_your_fingerprint">· आपल्या बोटाच्या ठस्याची नोंदणी करा</string>
     <string name="oneplus_experience_improvement_programs">अनुभव सुधारणा कार्यक्रम</string>
@@ -335,6 +338,7 @@
     <string name="oneplus_fingerprint_delete_confirm_message">आपण ते हटवू इच्छिता का?</string>
     <string name="oneplus_fingerprint_detail">तपशील</string>
     <string name="oneplus_fingerprint_enrol_completed">बोटाचा ठसा जतन केला गेला</string>
+    <string name="oneplus_fingerprint_enroll_summary">दाबा आणि आपल्या बोटाला फिंगरप्रिंट ओळख क्षेत्र शक्य तितके कव्हर करू द्या, नंतर आपल्याला कंपन जाणवल्यावर वर उचला</string>
     <string name="oneplus_fingerprint_functional_declaration">फिंगरप्रिंट फंक्शन जाहीरनामा</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">फोटो घेण्यासाठी दृश्यशोध घेणार्‍या स्क्रीनकडून, फिंगरप्रिंट सेन्सर दीर्घकाळ दाबा</string>
     <string name="oneplus_fingerprint_gesture_camera_title">फोटो घेण्यासाठी दीर्घकाळ दाबा</string>
@@ -418,6 +422,9 @@
     <string name="oneplus_hide_navkeys_summary">नॅव्हिगेशन बार लपविण्यासाठी किंवा दर्शविण्यासाठी एक बटण जोडा</string>
     <string name="oneplus_hide_notch_display_summary">नॉच क्षेत्र सर्व अॅप वापरू शकत नाही</string>
     <string name="oneplus_hide_notch_display_title">नॉच क्षेत्र लपवा</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"जेव्हा स्क्रीनच्या तळाशी फिंगरप्रिंट पॅटर्न दिसतो, तेव्हा आपले बोट फिंगरप्रिंट फंक्शन वापरण्यासाठी फक्त दाबा: आपला फोन वेक आणि अनलॉक करण्यासाठी, खरेदी अधिकृत करण्यासाठी किंवा अनुप्रयोगांमध्ये साइन इन करण्यासाठी. 
+
+टीप: आपली फिंगरप्रिंट मजबूत पॅटर्न किंवा PIN पेक्षा कमी सुरक्षित असू शकते"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">स्क्रीनच्या तळाशी जेव्हा फिंगरप्रिंट पॅटर्न आढळतो, तेव्हा फिंगरप्रिंट फंक्शन वापरण्यासाठी आपले बोट फिंगरप्रिंट ओळख पडताळणी क्षेत्रामध्ये दाबा: आपल्या फोनला जागे करा आणि तो अनलॉक करा, खरेद्या प्रमाणित करा किंवा अ‍ॅप्समध्ये साइन इन करा.</string>
     <string name="oneplus_hydrogen_version">H₂OS आवृत्‍ती</string>
     <string name="oneplus_incoming_call_vibrate_intensity">येणारा कॉल</string>
@@ -491,6 +498,7 @@
     <string name="oneplus_normal_clear_way">सर्वसाधारण साफ करा</string>
     <string name="oneplus_normal_clear_way_summary">पार्श्वभूमीतील प्रक्रिया साफ करण्यापूर्वी कामांची सूची आणि कॅशे साफ करा.</string>
     <string name="oneplus_not_disturb_on">डू नॉट डिस्टर्ब चालू आहे</string>
+    <string name="oneplus_not_disturb_summary">आपले निवडलेले अपवाद वगळता, कॉल आणि सूचना मूक करा आणि कंपन बंद करा</string>
     <string name="oneplus_not_show">हे पुन्हा दर्शवू नका</string>
     <string name="oneplus_notch_display_area">नॉच</string>
     <string name="oneplus_notch_display_choose_title">नॉच क्षेत्र कसे दर्शवावे</string>
@@ -563,7 +571,9 @@
     <string name="oneplus_quick_launch_how_to_use_summary">"1.क्विक लॉंच पॅनेल उघडण्यासाठी, अनलॉक केल्यानंतर आपले बोट धरून ठेवणे सुरू ठेवा
 2.शॉर्टकट निवडण्यासाठी स्वाइप करा आणि ते लॉंच करण्यासाठी आपले बोट सोडा"</string>
     <string name="oneplus_quick_launch_how_to_use_title">क्विक लॉंच वापरा</string>
+    <string name="oneplus_quick_launch_summary">त्वरित पे लॉन्च करण्यासाठी किंवा अॅप्स सक्रिय करण्यासाठी फिंगरप्रिंट ओळख क्षेत्र जास्त वेळ दाबा</string>
     <string name="oneplus_quick_launch_title">क्विक लॉंच</string>
+    <string name="oneplus_quick_launch_toggle_summary">फोन लॉक केल्यावर त्वरित पे लॉन्च करण्यासाठी किंवा अॅप्स सक्रिय करण्यासाठी फिंगरप्रिंट ओळख क्षेत्र जास्त वेळ दाबा</string>
     <string name="oneplus_quick_launch_toggle_title">क्विक लॉंच चालू करा</string>
     <string name="oneplus_quick_turn_on_assistant_app">सहाय्यक अॅपला त्वरित सक्रिय करा</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">सहाय्यक अॅप सक्रिय करण्यासाठी 0.5s आणि बंद करण्यासाठी 3s साठी पॉवर बटण धरून ठेवा</string>
@@ -666,13 +676,26 @@
     <string name="oneplus_security_lock_settings_summary">अनलॉक प्राधान्ये, स्थान सेवा, अॅप लॉकर</string>
     <string name="oneplus_security_lock_settings_title">सुरक्षा &amp; गोपनीयता</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">सेट अप अयशस्वी झाला</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"आपला फोन अनलॉक करण्यासाठी फिंगरप्रिंट ओळख क्षेत्र फक्त दाबा, खरेदी अधिकृत करा, किंवा अनुप्रयोगांमध्ये साइन इन करा. 
+
+टीप: 
+1.आपली फिंगरप्रिंट मजबूत पॅटर्न किंवा PIN पेक्षा कमी सुरक्षित असू शकतो.
+2.फिंगरप्रिंटच्या उपलब्धतेची खात्री देण्यासाठी संरक्षित फिल्मच्या प्रत्येक बदली नंतर कृपया आपले फिंगरप्रिंट पु्न्हा प्रविष्ट करा."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">या बोटाचा ठसा आधीच दाखल केला आहे, कृपया दुसरे बोट वापरुन पहा.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">सभोवतालच्या प्रदर्शनात फिंगरप्रिंट आयकॉन दर्शवा</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">दर्शवण्यासाठी आपला फोन किंचित हलवा</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">दर्शवण्यासाठी स्क्रीन टॅप करा</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\"वेक करण्यासाठी दोनदा टॅप करा\" सक्षम केले आहे आणि \"दर्शवण्यासाठी स्क्रीनवर टॅप करा\" अक्षम केले जाईल</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">\"दर्शवण्यासाठी स्क्रीनवर टॅप करा\" सक्षम केले आहे आणि \"वेक करण्यासाठी दोनदा टॅप करा\" अक्षम केले जाईल</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">कॉसमॉस</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">लाट</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">पट्टी</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">फिंगरप्रिंट अ‍ॅनिमेशन परिणाम निवडा</string>
     <string name="oneplus_set_time">नियोजित रात्र स्वरूप</string>
     <string name="oneplus_setting_ringtone">रिंग सेट करा</string>
     <string name="oneplus_setting_sim_ringtone_switch">प्रत्येक सिम कार्डसाठी रिंगटोन सेट करा</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">आपल्या दैनिक वापरावर आधारित, स्मार्ट बूस्ट OnePlus फोन्सच्या मोठ्या RAM चा पूर्ण फायदा घेते, जे लोडिंग अनुप्रयोग आणि खेळांच्या कामगिरीचा लाभ घेतात.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">स्मार्ट बूस्ट</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· स्क्रीन अनलॉक करण्याचा पर्यायी मार्ग सेट अप करा</string>
     <string name="oneplus_share_this_wifi">Wi-Fi कव्‍हरेज वाढवा</string>
     <string name="oneplus_share_wifi_title">वाय‑फाय शेयरिंग</string>
@@ -750,11 +773,11 @@
     <string name="oneplus_weak_text_reminding">फक्त मजकूर</string>
     <string name="oneplus_weak_text_reminding_summary">अॅप्सना चालू ठेवण्याच्या सूचना दाखवण्याची परवानगी द्या</string>
     <string name="oneplus_wifi_ap_error">कृपया सिम कार्ड घाला</string>
-    <string name="oneplus_wifi_hidden_network_warning">"आपला राउटर SSID ब्रॉडकास्‍ट अक्षम करत असल्‍यास, आपण लपलेल्‍या नेटवर्कशी कनेक्‍ट करण्‍यासाठी ''होय\" निवडण्‍याची आवश्‍यकता आहे.
+    <string name="oneplus_wifi_hidden_network_warning">"आपला राउटर SSID प्रसारित न करण्यासाठी सेट केलेला असल्यास, आपण लपविलेल्या नेटवर्कशी कनेक्ट करण्यासाठी \"होय\" निवडणे आवश्यक आहे.
 
-अशाने सुरक्षितता धोका निर्माण होऊ शकतो कारण आपला फोन नियमितपणे नेटवर्क शोधण्‍यासाठी त्‍यांचे सिग्‍नल ब्रॉडकास्‍ट करेल.
+यामुळे एक सुरक्षा जोखीम निर्माण होऊ शकते कारण नेटवर्क शोधण्यासाठी आपला फोन नियमितपणे त्याचे सिग्नल प्रसारित करेल.
 
-लपलेले म्‍हणून नेटवर्क सेट केल्‍यास आपल्‍या राउटर सेटिंग्‍ज बदलणार नाहीत."</string>
+नेटवर्कला लपवलेले म्हणून सेट केल्याने आपल्या राउटर सेटिंग्ज बदलणार नाहीत."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">IPv6 निष्क्रिय करणे काही वायफाय राऊटर्स बरोबरच्या सुसंगतता समस्या टाळू शकते.</string>
     <string name="oneplus_wifi_ipv6_surport_title">IPv6 समर्थन</string>
     <string name="oneplus_wifi_list">वाय‑फाय सूची</string>
@@ -830,6 +853,8 @@
     <string name="op_system_dashboard_summary">भाषा, वेळ, रीसेट, अद्यतने</string>
     <string name="op_theme_2__cannot_change_color_accent">द अॅव्हेंजर्स थीम केवळ सिस्टिम कलर थीम वापरू शकते</string>
     <string name="op_theme_2__title">द अॅव्हेंजर्स</string>
+    <string name="op_theme_3_cannot_change_color_accent">McLaren थीम केवळ सिस्टम रंग थीम वापरू शकते</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">थीम</string>
     <string name="op_user_manual_settings">वापरकर्ता पुस्तिका</string>
     <string name="op_volume">वॉल्यूम</string>
@@ -895,7 +920,7 @@
     <string name="status_bar_settings_cellular_title">सेल्युलर डेटा</string>
     <string name="status_bar_settings_dnd_title">व्यत्यय आणू नका</string>
     <string name="status_bar_settings_headset_title">हेडसेट</string>
-    <string name="status_bar_settings_hotspot_title">हॉटस्पॉट</string>
+    <string name="status_bar_settings_hotspot_title">मोबाईल HotSpot</string>
     <string name="status_bar_settings_network_speed_title">नेटवर्कचा वेग दर्शवा</string>
     <string name="status_bar_settings_time_title">वेळ</string>
     <string name="status_bar_settings_wifi_title">वायफाय</string>
@@ -972,7 +997,7 @@
     <string name="wifi_context_menu_change_wapi_certificate">वापी प्रमाणपत्र बदला</string>
     <string name="wifi_context_menu_connect">नेटवर्कशी जोडा</string>
     <string name="wifi_context_menu_forget">नेटवर्क विसरले</string>
-    <string name="wifi_security_dialog">खुल्या सुरक्षेसह, कोणतेही उपकरण आपल्या मोबाईल हॉटस्पॉटशी कनेक्ट होऊ शकते आणि आपला मोबाईल डेटा वापरू शकते.</string>
+    <string name="wifi_security_dialog">खुल्या सुरक्षेसह, कोणतेही उपकरण आपल्या मोबाईल हॉटस्पॉटशी कनेक्ट होऊ शकते आणि आपले मोबाईल डेटा कनेक्शन वापरू शकते.</string>
     <string name="wifi_security_open">उघडा</string>
     <string name="wifi_setting_frequency_band_error">फ्रिक्वेन्सी बॅंड सेट करताना समस्या आली.</string>
     <string name="wifi_setting_frequency_band_summary">कार्याची फ्रिक्वेन्सी रेंज नमूद करा</string>
@@ -980,7 +1005,7 @@
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">निष्क्रियतेच्या 10 मिनिटानंतर</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">निष्क्रियतेच्या 15 मिनिटानंतर</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">निष्क्रियतेचा 5 मिनिटानंतर</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">कायम चालू</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">नेहमीच चालू राहते</string>
     <string name="wifi_wapi_as_cert">एएस प्रमाणपत्र</string>
     <string name="wifi_wapi_cert_cancel_button">रद्द करा</string>
     <string name="wifi_wapi_cert_create_subdir">एक डिरेक्टरी बनवा</string>

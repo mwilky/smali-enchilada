@@ -643,7 +643,7 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0803f5
+    const v4, 0x7f0803f6
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -815,7 +815,7 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0803fa
+    const v4, 0x7f0803fb
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

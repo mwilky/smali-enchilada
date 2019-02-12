@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:androidprv="http://schemas.android.com/apk/prv/res/android" android:compileSdkVersion="28" android:compileSdkVersionCodename="9" android:sharedUserId="android.uid.system" coreApp="true" package="com.android.settings" platformBuildVersionCode="28" platformBuildVersionName="0.0.1.181210001831.0a4ae44">
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:androidprv="http://schemas.android.com/apk/prv/res/android" android:compileSdkVersion="28" android:compileSdkVersionCodename="9" android:sharedUserId="android.uid.system" coreApp="true" package="com.android.settings" platformBuildVersionCode="28" platformBuildVersionName="0.0.1.190112211804.fef5fee">
     <original-package android:name="com.android.settings"/>
     <protected-broadcast android:name="com.android.settings.POWER_OP_ON"/>
     <protected-broadcast android:name="com.android.settings.action.REQUEST_POWER_OFF"/>

@@ -2687,6 +2687,9 @@
     <string name="oneplus_emergency_rescue_settings">긴급 구조</string>
     <string name="oneplus_emergency_rescue_settings_summary">전원 버튼을 빠르게 눌러 자동으로 도움을 청합니다.</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">긴급 구조의 전원 버튼 설정을 수정한 후 사용 가능</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1. 지문 가용성을 보장하기 위해 보호 필름을 교체할 때마다 지문을 다시 입력하세요.
+
+2. 설정 과정 하나당 손가락 하나의 지문 정보만 입력하세요."</string>
     <string name="oneplus_enroll_fingerprint_tips_title">지문 설정 프롬프트</string>
     <string name="oneplus_enter_your_fingerprint">· 지문 등록</string>
     <string name="oneplus_experience_improvement_programs">경험 개선 프로그램</string>
@@ -2711,11 +2714,17 @@
     <string name="oneplus_finger_input_error_tips">지문 등록 오류입니다. 다시 시도하십시오.</string>
     <string name="oneplus_finger_input_fail_tips">입력 실패함. 위치를 조정하고 다시 시도하세요.</string>
     <string name="oneplus_fingerprint">지문</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">유사한 지문이 감지되었습니다. 다른 지문 부분을 입력하려면 손가락을 약간 움직여주세요.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">지문 인식 영역이 더럽습니다. 닦아서 다시 시도하세요.</string>
+    <string name="oneplus_fingerprint_acquired_partial">부분 지문이 감지되었습니다. 지문 인식 영역을 완전히 덮으세요.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">지문을 대는 속도가 너무 빠릅니다. 누를 때 잠시 머물러 주세요.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">유사한 지문이 감지되었습니다. 다른 부분의 지문을 입력하기 위해 손가락을 약간 움직이세요.</string>
     <string name="oneplus_fingerprint_animation_effect_title">지문 애니메이션 효과</string>
     <string name="oneplus_fingerprint_delete_confirm_message">이를 삭제하시겠습니까?</string>
     <string name="oneplus_fingerprint_detail">세부 정보</string>
     <string name="oneplus_fingerprint_enrol_completed">지문이 저장되었습니다</string>
+    <string name="oneplus_fingerprint_enroll_summary">손가락이 지문 인식 영역을 최대한 덮도록 누른 뒤 진동이 느껴지면 들어 올리세요.</string>
+    <string name="oneplus_fingerprint_findsendor_summary">지문 패턴이 화면 하단에 나타나면 지문 인식 영역을 손가락으로 간단하게 눌러 지문 기능을 사용하면 됩니다.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">지문 사용법</string>
     <string name="oneplus_fingerprint_functional_declaration">지문 기능 선언</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">뷰파인더 화면에서 지문 센서를 길게 눌러 사진을 찍습니다</string>
     <string name="oneplus_fingerprint_gesture_camera_title">사진을 찍으려면 길게 누르기</string>
@@ -2799,6 +2808,9 @@
     <string name="oneplus_hide_navkeys_summary">탐색 표시줄을 숨기거나 표시할 버튼을 추가합니다</string>
     <string name="oneplus_hide_notch_display_summary">모든 앱이 노치 영역을 사용할 수 없습니다.</string>
     <string name="oneplus_hide_notch_display_title">노치 영역 숨기기</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"지문 패턴이 화면 하단에 나타나면 지문 인식 영역을 손가락으로 간단하게 눌러 지문 기능(휴대폰 슬립 모드 해제 및 잠금 해제, 구매 승인 또는 앱 로그인)을 사용하세요. 
+
+참고: 지문은 강력한 패턴 또는 PIN보다 덜 안전할 수 있습니다."</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">지문 패턴이 화면 하단에 나타나면 지문 인식 영역에서 손가락을 누르기만 하면 됩니다. 이를 통해 휴대폰 슬립 모드 해제 및 잠금 해제, 구매 승인 또는 앱 로그인과 같은 지문 기능을 사용할 수 있습니다.</string>
     <string name="oneplus_hydrogen_version">H₂OS 버전</string>
     <string name="oneplus_incoming_call_vibrate_intensity">수신 전화</string>
@@ -2872,6 +2884,7 @@
     <string name="oneplus_normal_clear_way">기본 지우기</string>
     <string name="oneplus_normal_clear_way_summary">백그라운드 프로세스를 지우지 않고, 작업 목록 및 캐시를 지웁니다.</string>
     <string name="oneplus_not_disturb_on">방해 금지가 켜져 있습니다.</string>
+    <string name="oneplus_not_disturb_summary">선택한 예외를 제외하고 통화 및 알림이 음소거되고 진동이 꺼집니다.</string>
     <string name="oneplus_not_show">다시 표시 안 함</string>
     <string name="oneplus_notch_display_area">노치</string>
     <string name="oneplus_notch_display_choose_title">노치 영역 표시 방법</string>
@@ -2944,7 +2957,9 @@
     <string name="oneplus_quick_launch_how_to_use_summary">"1. 빠른 실행 패널을 열려면 잠금 해제 후 손가락으로 계속 누릅니다.
 2. 살짝 밀어서 바로 가기를 선택하고 손가락을 떼서 실행합니다."</string>
     <string name="oneplus_quick_launch_how_to_use_title">빠른 실행 사용</string>
+    <string name="oneplus_quick_launch_summary">지문 인식 영역을 길게 눌러 빠른 결제를 실행하거나 앱을 활성화합니다.</string>
     <string name="oneplus_quick_launch_title">빠른 실행</string>
+    <string name="oneplus_quick_launch_toggle_summary">휴대폰이 잠겼을 때 지문 인식 영역을 길게 눌러 빠른 결제를 실행하거나 앱을 활성화합니다.</string>
     <string name="oneplus_quick_launch_toggle_title">빠른 실행 켜기</string>
     <string name="oneplus_quick_turn_on_assistant_app">도우미 앱 빠른 활성화</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">도우미 앱을 활성화하려면 전원 버튼을 0.5초 동안 길게 누르고, 전원을 끄려면 3초 동안 길게 누릅니다</string>
@@ -3047,13 +3062,25 @@
     <string name="oneplus_security_lock_settings_summary">잠금 해제 기본 설정, 위치 서비스, 앱 락커</string>
     <string name="oneplus_security_lock_settings_title">보안 및 개인 정보 보호</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">설정 실패함</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"지문 인식 영역을 누르는 것만으로 휴대폰을 잠금 해제하거나, 구매를 승인하거나, 앱에 로그인할 수 있습니다. 
+
+참고:  n1. 지문은 강력한 패턴이나 PIN보다 덜 안전할 수 있습니다.
+2. 지문 가용성을 보장하기 위해 보호 필름을 교체할 때마다 지문을 다시 입력하세요."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">이 지문은 이미 등록되었습니다. 다른 손가락으로 시도하세요.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">앰비언트 디스플레이에 지문 아이콘 표시</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">휴대폰을 약간 움직여서 표시</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">화면을 탭하여 표시</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\"더블 탭으로 슬립 모드 해제\"가 사용되며 \"탭하여 화면 표시\"가 사용되지 않습니다</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">\"탭하여 화면 표시\"가 사용되며 \"더블 탭으로 슬립 모드 해제\"가 사용되지 않습니다</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">코스모스</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">웨이브</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">스트라이프</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">지문 애니메이션 효과 선택</string>
     <string name="oneplus_set_time">예약된 야간 모드</string>
     <string name="oneplus_setting_ringtone">벨소리 설정</string>
     <string name="oneplus_setting_sim_ringtone_switch">각 SIM 카드에 대한 벨소리 설정</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">스마트 부스트는 일일 사용량에 따라 OnePlus 휴대폰의 대용량 RAM을 최대한 이용하여 앱 및 게임 로드 성능에 활용합니다.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">스마트 부스트</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· 화면을 잠금 해제하는 대체 방법 설정</string>
     <string name="oneplus_share_this_wifi">Wi-Fi 범위 확장</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi 공유</string>
@@ -3131,7 +3158,7 @@
     <string name="oneplus_weak_text_reminding">텍스트 전용</string>
     <string name="oneplus_weak_text_reminding_summary">앱이 헤즈업 알림을 표시하도록 허용합니다.</string>
     <string name="oneplus_wifi_ap_error">SIM 카드를 삽입하세요.</string>
-    <string name="oneplus_wifi_hidden_network_warning">"라우터에서 SSID 브로드캐스트를 사용하지 않는 경우 숨겨진 네트워크에 연결하려면 \"예\"를 선택해야 합니다.
+    <string name="oneplus_wifi_hidden_network_warning">"라우터가 SSID를 브로드캐스트하지 않도록 설정된 경우 숨겨진 네트워크에 연결하려면 \"예\"를 선택해야 합니다.
 
 그러면 휴대폰이 네트워크를 찾기 위해 정기적으로 신호를 브로드캐스트하기 때문에 보안 위험이 발생할 수 있습니다.
 
@@ -3212,6 +3239,8 @@
     <string name="op_system_dashboard_summary">언어, 시간, 초기화, 업데이트</string>
     <string name="op_theme_2__cannot_change_color_accent">어벤져스 테마는 시스템 컬러 테마만 사용할 수 있습니다.</string>
     <string name="op_theme_2__title">어벤져스</string>
+    <string name="op_theme_3_cannot_change_color_accent">맥라렌 테마는 시스템 컬러 테마만 사용할 수 있습니다</string>
+    <string name="op_theme_3_title">맥라렌</string>
     <string name="op_theme_mode_title">테마</string>
     <string name="op_user_manual_settings">사용자 설명서</string>
     <string name="op_volume">볼륨</string>
@@ -3991,7 +4020,7 @@ PIN이 잘못된 것 같습니다."</string>
     <string name="status_bar_settings_cellular_title">셀룰러 데이터</string>
     <string name="status_bar_settings_dnd_title">방해 금지</string>
     <string name="status_bar_settings_headset_title">헤드셋</string>
-    <string name="status_bar_settings_hotspot_title">핫스팟</string>
+    <string name="status_bar_settings_hotspot_title">모바일 핫스팟</string>
     <string name="status_bar_settings_network_speed_title">네트워크 속도 표시</string>
     <string name="status_bar_settings_time_title">시간</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>

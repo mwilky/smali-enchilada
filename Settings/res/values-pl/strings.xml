@@ -2616,7 +2616,7 @@ Oszczędzanie baterii zostanie automatycznie wyłączone w czasie ładowania two
     <string name="oneplus_broadcat_wifi_name">Nazwa sieci transmisji (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Przyciski i gesty</string>
     <string name="oneplus_buttons_dashboard_summary">Suwak alertów, nawigacja, gesty</string>
-    <string name="oneplus_buttons_settings">ustawienia przycisków</string>
+    <string name="oneplus_buttons_settings">Ustawienia przycisków</string>
     <string name="oneplus_buttons_settings_summary">Gest nawigacyjny</string>
     <string name="oneplus_call_information_broadcast">Powiedz identyfikator rozmówcy</string>
     <string name="oneplus_call_information_broadcast_summary">Powiedz przez słuchawki identyfikator rozmówcy</string>
@@ -2687,6 +2687,9 @@ Oszczędzanie baterii zostanie automatycznie wyłączone w czasie ładowania two
     <string name="oneplus_emergency_rescue_settings">Ratowanie awaryjne</string>
     <string name="oneplus_emergency_rescue_settings_summary">Automatycznie wzywaj pomoc, szybko naciskając przycisk zasilania</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">Dostępna po zmianie ustawień PRZYCISKU ZASILANIA w przypadku ratowania awaryjnego</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1. Aby umożliwić stałe korzystanie z tej funkcji, pamiętaj, aby dodać odcisk palca za każdym razem, gdy wymieniasz warstwę ochronną
+
+2. Podczas konfiguracji wprowadź tylko jeden odcisk palcainformacje o odcisku palca"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Monit konfiguracji odcisku palca</string>
     <string name="oneplus_enter_your_fingerprint">· Zarejestruj odcisk palca</string>
     <string name="oneplus_experience_improvement_programs">Programy poprawy wrażeń</string>
@@ -2711,11 +2714,17 @@ Informacja o ryzyku: funkcja odblokowania twarzą jest mniej bezpieczna niż odc
     <string name="oneplus_finger_input_error_tips">Błąd rejestracji odcisku palca. Ponów próbę.</string>
     <string name="oneplus_finger_input_fail_tips">Błąd wprowadzenia, dopasuj położenie i ponów próbę</string>
     <string name="oneplus_fingerprint">Odcisk palca</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">Wykryto podobne linie papilarne. Przesuń lekko palec, aby wprowadzić odcisk innego miejsca.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">Czytnik linii papilarnych jest zabrudzony. Wyczyść czytnik i spróbuj ponownie.</string>
+    <string name="oneplus_fingerprint_acquired_partial">Wykryto częściowy odcisk palca. Przyłóż palec na całej długości czytnika linii papilarnych.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">Zbyt szybko zdejmujesz palec z czytnika. Przytrzymaj palec przez dłuższą chwilę, aby dodać odcisk.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">Rozpoznano podobny odcisk palca. Delikatnie zmieniaj ułożenie palca, aby zeskanować krawędzie.</string>
     <string name="oneplus_fingerprint_animation_effect_title">Efekt animacji odcisku palca</string>
     <string name="oneplus_fingerprint_delete_confirm_message">Czy chcesz go usunąć?</string>
     <string name="oneplus_fingerprint_detail">Szczegóły</string>
     <string name="oneplus_fingerprint_enrol_completed">Odcisk palca został zapisany</string>
+    <string name="oneplus_fingerprint_enroll_summary">Naciśnij i w miarę możliwości zakryj cały obszar czytnika linii papilarnych, następnie podnieś palec po wibracji</string>
+    <string name="oneplus_fingerprint_findsendor_summary">Aby skorzystać z funkcji odcisku palca, przyłóż palec do czytnika, gdy na dole ekranu wyświetli się wzór linii papilarnych.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">Jak korzystać z odcisku palca</string>
     <string name="oneplus_fingerprint_functional_declaration">Oświadczenie dotyczące funkcji odcisku palca</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">Aby zrobić zdjęcie, otwórz ekran wizjera i naciśnij dłużej czytnik odcisku palca</string>
     <string name="oneplus_fingerprint_gesture_camera_title">Naciśnij dłużej, aby zrobić zdjęcie</string>
@@ -2799,6 +2808,9 @@ Aby w każdej chwili przejść do ekranu domowego, przesuń palcem w górę od �
     <string name="oneplus_hide_navkeys_summary">Dodaj przycisk, aby ukryć lub pokazać pasek nawigacji</string>
     <string name="oneplus_hide_notch_display_summary">Żadne aplikacje nie mogą korzystać z obszaru wycięcia</string>
     <string name="oneplus_hide_notch_display_title">Ukryj obszar wycięcia</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"Gdy na dole ekranu pojawi się ikona odcisku palca, naciśnij czytnik linii papilarnych, aby skorzystać z funkcji odblokowywania za pomocą odcisku palca: wybudź i odblokuj telefon, autoryzuj płatności i loguj się w aplikacjach. 
+
+Uwaga: Odblokowywanie za pomocą odcisku palca jest mniej bezpieczne niż silne hasło lub kod PIN"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Gdy wzór linii papilarnych wyświetli się na dole ekranu, przyciśnij palec w obszarze czytnika, aby uruchomić funkcję odcisku palca: wybudź i odblokuj telefon, autoryzuj płatności lub zaloguj się do aplikacji.</string>
     <string name="oneplus_hydrogen_version">Wersja H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Połączenie przychodzące</string>
@@ -2872,6 +2884,7 @@ Aby w każdej chwili przejść do ekranu domowego, przesuń palcem w górę od �
     <string name="oneplus_normal_clear_way">Zwykłe oczyszczenie</string>
     <string name="oneplus_normal_clear_way_summary">Wyczyść listę zadań i pamięć podręczną bez czyszczenia procesów w tle.</string>
     <string name="oneplus_not_disturb_on">Tryb Nie przeszkadzać włączony</string>
+    <string name="oneplus_not_disturb_summary">Wycisz połączenia i powiadomienia oraz wyłącz wibrację oprócz wybranych wyjątków</string>
     <string name="oneplus_not_show">Nie pokazuj tego ponownie</string>
     <string name="oneplus_notch_display_area">Wycięcie</string>
     <string name="oneplus_notch_display_choose_title">Jak pokazać obszar wycięcia</string>
@@ -2944,7 +2957,9 @@ Pozostało prób:%d."</string>
     <string name="oneplus_quick_launch_how_to_use_summary">"1. Przytrzymaj palec po odblokowaniu, aby otworzyć panel szybkiego uruchamiania
 2. Przesuń palcem, aby wybrać skrót i zdejmij palec, aby uruchomić ten skrót"</string>
     <string name="oneplus_quick_launch_how_to_use_title">Korzystanie z szybkiego uruchamiania</string>
+    <string name="oneplus_quick_launch_summary">Naciśnij dłużej czytnik linii papilarnych, aby uruchomić szybką płatność lub aplikacje</string>
     <string name="oneplus_quick_launch_title">Szybkie uruchamianie</string>
+    <string name="oneplus_quick_launch_toggle_summary">Naciśnij dłużej czytnik linii papilarnych, aby uruchomić szybką płatność lub aplikacje przy zablokowanym telefonie</string>
     <string name="oneplus_quick_launch_toggle_title">Włączanie szybkiego uruchamiania</string>
     <string name="oneplus_quick_turn_on_assistant_app">Szybko aktywuj aplikację asystującą</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">Przytrzymaj przycisk zasilania przez 0,5 s, żeby włączyć aplikację asystującą, oraz 3 s, aby wyłączyć urządzenie</string>
@@ -3047,13 +3062,26 @@ Pozostało prób:%d."</string>
     <string name="oneplus_security_lock_settings_summary">Preferencje odblokowania, usługa lokalizacji, blokada aplikacji</string>
     <string name="oneplus_security_lock_settings_title">Bezpieczeństwo i prywatność</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">Konfiguracja nie powiodła się</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"Naciśnij czytnik linii papilarnych, aby odblokować telefon, autoryzować płatności i logować się w aplikacjach. 
+
+Uwaga: 
+1.Odblokowywanie za pomocą odcisku palca jest mniej bezpieczne niż silne hasło lub kod PIN.
+2. Aby umożliwić stałe korzystanie z tej funkcji, pamiętaj, aby dodać odcisk palca za każdym razem, gdy wymieniasz warstwę ochronną."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">Ten odcisk palca już zarejestrowano. Spróbuj użyć innego palca.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">Pokaż ikonkę odcisk palca w funkcji Ambient Display</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">Przesuń nieco telefon, aby wyświetlić</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">Dotknij ekranu, aby wyświetlić</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">Funkcja „Stuknij dwukrotnie, aby wybudzić” jest włączona. Funkcja „Dotknij ekranu, aby zobaczyć” zostanie wyłączona</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">Funkcja „Dotknij ekranu, aby zobaczyć” jest włączona. Funkcja „Stuknij dwukrotnie, aby wybudzić” zostanie wyłączona</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">Kosmos</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">Fala</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">Pasek</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">Wybieranie efektu animacji odcisku palca</string>
     <string name="oneplus_set_time">Zaplanowany tryb nocny</string>
     <string name="oneplus_setting_ringtone">Ustaw dzwonek</string>
     <string name="oneplus_setting_sim_ringtone_switch">Ustaw dzwonek dla każdej karty SIM</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">W oparciu o codzienne zużycie funkcja Smart Boost zarządza znaczącą częścią pamięci RAM telefonów OnePlus, optymalizując w ten sposób wydajność aplikacji i gier.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Smart Boost</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Skonfiguruj alternatywny sposób odblokowania ekranu</string>
     <string name="oneplus_share_this_wifi">Zwiększ zasięg Wi-Fi</string>
     <string name="oneplus_share_wifi_title">Udostępnianie Wi‑Fi</string>
@@ -3212,6 +3240,8 @@ Ustawienie sieci jako ukrytej nie ma wpływa na ustawienia routera."</string>
     <string name="op_system_dashboard_summary">Języki, czas, resetowanie, aktualizacje</string>
     <string name="op_theme_2__cannot_change_color_accent">Motyw Avengers może używać tylko koloru systemowego</string>
     <string name="op_theme_2__title">Avengers</string>
+    <string name="op_theme_3_cannot_change_color_accent">Motyw McLaren może korzystać tylko z systemowego motywu kolorów</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">Motyw</string>
     <string name="op_user_manual_settings">Instrukcja obsługi</string>
     <string name="op_volume">Głośność</string>
@@ -3991,7 +4021,7 @@ Umożliwiają to dane uwierzytelniające zainstalowane na Twoim urządzeniu."</s
     <string name="status_bar_settings_cellular_title">Dane komórkowe</string>
     <string name="status_bar_settings_dnd_title">Nie przeszkadzać</string>
     <string name="status_bar_settings_headset_title">Zestaw słuchawkowy</string>
-    <string name="status_bar_settings_hotspot_title">Hotspot</string>
+    <string name="status_bar_settings_hotspot_title">HotSpot mobilny</string>
     <string name="status_bar_settings_network_speed_title">Wyświetlaj prędkość sieci</string>
     <string name="status_bar_settings_time_title">Czas</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -5068,7 +5098,7 @@ Dotknij przycisku "<b>Wróć</b>, by połączyć się z inną siecią Wi-Fi.</st
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Po 10 min. bezczynności</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Po 15 min. bezczynności</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Po 5 min. bezczynności</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">Zawsze wł.</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Zawsze jest włączone</string>
     <string name="wifi_tether_disabled_by_airplane">Brak dostępu z powodu włączenia trybu samolotowego</string>
     <string name="wifi_tether_enabled_subtext">Sieć %1$s jest aktywna</string>
     <string name="wifi_tether_failed_subtext">Błąd przenośnego hotspotu Wi-Fi</string>

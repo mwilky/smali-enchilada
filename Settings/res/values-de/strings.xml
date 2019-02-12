@@ -2616,7 +2616,7 @@ Der Akku-Schoner wird beim Aufladen des Geräts automatisch deaktiviert."</strin
     <string name="oneplus_broadcat_wifi_name">Broadcast Network Name (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Tasten &amp; Gesten</string>
     <string name="oneplus_buttons_dashboard_summary">Alarm-Schieberegler, Navigation, Gesten</string>
-    <string name="oneplus_buttons_settings">Schaltflächen-Einstellungen</string>
+    <string name="oneplus_buttons_settings">Tasteneinstellungen</string>
     <string name="oneplus_buttons_settings_summary">Navigationsgeste</string>
     <string name="oneplus_call_information_broadcast">Anrufer-ID sprechen</string>
     <string name="oneplus_call_information_broadcast_summary">Die eingehende Anrufer-ID über Kopfhörer sprechen</string>
@@ -2687,6 +2687,9 @@ Der Akku-Schoner wird beim Aufladen des Geräts automatisch deaktiviert."</strin
     <string name="oneplus_emergency_rescue_settings">Notfallrettung</string>
     <string name="oneplus_emergency_rescue_settings_summary">Durch schnelles Drücken der Einschalt-/Ausschalttaste automatisch um Hilfe rufen</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">Nach Änderung der Einstellungen für EIN-/AUSSCHALTTASTE der Notfallrettung verfügbar</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1. Geben Sie Ihre Fingerabdruckdaten nach jedem Austausch der Schutzfolie erneut ein, um die Verfügbarkeit des Fingerabdrucks sicherzustellen.
+
+2. Geben Sie in einem einzigen Einrichtungsvorgang nur Fingerabdruckdaten zu einem Finger ein."</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Hinweis zum Einrichten des Fingerabdrucks</string>
     <string name="oneplus_enter_your_fingerprint">· Ihren Fingerabdruck registrieren</string>
     <string name="oneplus_experience_improvement_programs">Programme zur Verbesserung der Benutzerfreundlichkeit</string>
@@ -2711,11 +2714,17 @@ Risikohinweis: Die Gesichtsentsperrung ist unsicherer als die Entsperrung per Fi
     <string name="oneplus_finger_input_error_tips">Fehler bei der Registrierung des Fingerabdrucks, bitte erneut versuchen</string>
     <string name="oneplus_finger_input_fail_tips">Fehler bei der Eingabe. Bitte anders positionieren und erneut versuchen</string>
     <string name="oneplus_fingerprint">Fingerabdruck</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">Ähnlicher Fingerabdruck erkannt. Bewegen Sie Ihren Finger leicht, um unterschiedliche Bereiche des Fingerabdrucks aufzurufen.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">Der Identifizierungsbereich für den Fingerabdruck ist schmutzig. Wischen Sie ihn sauber und versuchen Sie es erneut.</string>
+    <string name="oneplus_fingerprint_acquired_partial">Teilweiser Fingerabdruck erkannt. Bedecken Sie den Identifizierungsbereich für den Fingerabdruck vollständig.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">Für die Verarbeitung Ihres Fingerabdrucks zu schnell. Halten Sie den Fingerabdruck einige Zeit gedrückt.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">Ähnlicher Fingerabdruck erkannt. Bewegen Sie Ihren Finger leicht, um verschiedene Teile des Fingerabdrucks zu erfassen.</string>
     <string name="oneplus_fingerprint_animation_effect_title">Fingerabdruckanimationseffekt</string>
     <string name="oneplus_fingerprint_delete_confirm_message">Löschen?</string>
     <string name="oneplus_fingerprint_detail">Details</string>
     <string name="oneplus_fingerprint_enrol_completed">Fingerabdruck wurde gespeichert</string>
+    <string name="oneplus_fingerprint_enroll_summary">Drücken Sie bzw. legen Sie den Finger möglichst auf den Identifizierungsbereich für den Fingerabdruck und heben Sie ihn an, sobald Sie eine Vibration spüren.</string>
+    <string name="oneplus_fingerprint_findsendor_summary">Wenn das Fingerabdruckmuster unten auf dem Bildschirm angezeigt wird, drücken Sie einfach mit dem Finger auf den Identifizierungsbereich für den Fingerabdruck, um die Fingerabdruckfunktion zu verwenden.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">Verwenden des Fingerabdrucks</string>
     <string name="oneplus_fingerprint_functional_declaration">Erklärung der Fingerabdruckfunktion</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">Auf dem Sucherbildschirm lange auf den Fingerabdrucksensor drücken, um ein Foto aufzunehmen</string>
     <string name="oneplus_fingerprint_gesture_camera_title">Lang drücken, um ein Foto aufzunehmen</string>
@@ -2799,6 +2808,9 @@ Von der Mitte des unteren Bildschirmrands nach oben wischen, um jederzeit zum St
     <string name="oneplus_hide_navkeys_summary">Eine Schaltfläche zum Ein- oder Ausblenden der Navigationsleiste hinzufügen</string>
     <string name="oneplus_hide_notch_display_summary">Alle Apps können den Notch-Bereich nicht verwenden</string>
     <string name="oneplus_hide_notch_display_title">Notch-Bereich ausblenden</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"Wenn das Fingerabdruckmuster unten auf dem Bildschirm angezeigt wird, drücken Sie einfach mit dem Finger auf den Identifizierungsbereich für den Fingerabdruck, um die Fingerabdruckfunktion zu verwenden: Ihr Telefon aktivieren bzw. entsperren, Einkäufe genehmigen oder bei Apps anmelden. 
+
+Hinweis: Ihr Fingerabdruck ist möglicherweise weniger sicher als ein starkes Muster oder eine PIN."</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Wenn das Fingerabdruckmuster unten auf dem Bildschirm angezeigt wird, drücken Sie einfach mit dem Finger auf den Identifikationsbereich für den Fingerabdruck, um die Fingerabdruckfunktion zu verwenden: Aufwecken und Entsperren Ihres Telefons, Genehmigen von Käufen oder Anmelden bei Apps.</string>
     <string name="oneplus_hydrogen_version">H₂OS-Version</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Eingehender Anruf</string>
@@ -2872,6 +2884,7 @@ Von der Mitte des unteren Bildschirmrands nach oben wischen, um jederzeit zum St
     <string name="oneplus_normal_clear_way">Normal bereinigen</string>
     <string name="oneplus_normal_clear_way_summary">Aufgabenliste und Cache bereinigen, ohne Hintergrundprozesse zu bereinigen.</string>
     <string name="oneplus_not_disturb_on">Bitte nicht stören aktiviert</string>
+    <string name="oneplus_not_disturb_summary">Anrufe und Benachrichtigungen stummschalten, Vibration deaktivieren (außer ausgewählte Ausnahmen)</string>
     <string name="oneplus_not_show">Dies nicht erneut anzeigen</string>
     <string name="oneplus_notch_display_area">Notch</string>
     <string name="oneplus_notch_display_choose_title">Anzeigemodus des Notch-Bereichs</string>
@@ -2944,7 +2957,9 @@ Von der Mitte des unteren Bildschirmrands nach oben wischen, um jederzeit zum St
     <string name="oneplus_quick_launch_how_to_use_summary">"1.Halten Sie Ihren Finger nach dem Entsperren weiterhin gedrückt, um die Schnellstartleiste zu öffnen
 2.Wischen Sie, um die Verknüpfung auszuwählen, und lassen Sie den Finger los, um zu starten"</string>
     <string name="oneplus_quick_launch_how_to_use_title">Schnellstart verwenden</string>
+    <string name="oneplus_quick_launch_summary">Durch langes Drücken auf den Identifizierungsbereich für den Fingerabdruck Quick Pay starten oder Apps aktivieren</string>
     <string name="oneplus_quick_launch_title">Schnellstart</string>
+    <string name="oneplus_quick_launch_toggle_summary">Bei gesperrtem Telefon durch langes Drücken auf den Identifizierungsbereich für den Fingerabdruck Quick Pay starten oder Apps aktivieren</string>
     <string name="oneplus_quick_launch_toggle_title">Schnellstart aktivieren</string>
     <string name="oneplus_quick_turn_on_assistant_app">Die Assistenten-App schnell aktivieren</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">Die Einschalt-/Ausschalttaste zum Aktivieren der Assistenten-App 0,5 Sekunden und zum Ausschalten 3 Sekunden lang gedrückt halten</string>
@@ -3047,13 +3062,26 @@ Von der Mitte des unteren Bildschirmrands nach oben wischen, um jederzeit zum St
     <string name="oneplus_security_lock_settings_summary">Entsperreinstellungen, Standortdienst, App Locker</string>
     <string name="oneplus_security_lock_settings_title">Sicherheit &amp; Datenschutz</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">Einrichtung fehlgeschlagen</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"Drücken Sie einfach auf den Identifizierungsbereich für den Fingerabdruck, um Ihr Telefon zu entsperren, Einkäufe zu genehmigen oder sich bei Apps anzumelden. 
+
+Hinweis: 
+1. Ihr Fingerabdruck ist möglicherweise weniger sicher als ein starkes Muster oder eine PIN.
+2. Geben Sie Ihre Fingerabdruckdaten nach jedem Austausch der Schutzfolie erneut ein, um die Verfügbarkeit des Fingerabdrucks sicherzustellen."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">Der Fingerabdruck wurde bereits registriert. Bitte versuchen Sie es mit einem anderen Finger.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">Fingerabdruck auf Inaktivitätsdisplay anzeigen</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">Zum Anzeigen leicht Ihr Telefon bewegen</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">Zum Anzeigen auf den Bildschirm tippen</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\"Doppeltippen zum Aufwecken\" ist aktiviert und \"Zum Anzeigen auf den Bildschirm tippen\" wird deaktiviert</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">\"Zum Anzeigen auf den Bildschirm tippen\" ist aktiviert und \"Doppeltippen zum Aufwecken\" wird deaktiviert</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">Kosmos</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">Wellen</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">Streifen</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">Fingerabdruckanimationseffekt auswählen</string>
     <string name="oneplus_set_time">Geplanter Nachtmodus</string>
     <string name="oneplus_setting_ringtone">Ton festlegen</string>
     <string name="oneplus_setting_sim_ringtone_switch">Klingelton für jede SIM-Karte festlegen</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">Je nach Ihrer täglichen Nutzung nutzt Smart Boost den großen RAM-Speicher von OnePlus-Telefonen in vollem Umfang, wodurch die Leistung beim Laden von Apps und Spielen optimiert wird.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Smart Boost</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· eine alternative Möglichkeit zum Entsperren des Bildschirms einrichten</string>
     <string name="oneplus_share_this_wifi">Wi-Fi-Abdeckung erweitern</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi-Sharing</string>
@@ -3212,6 +3240,8 @@ Wird das Netzwerk als verborgen eingestellt, ändern sich die Einstellungen Ihre
     <string name="op_system_dashboard_summary">Sprachen, Zeit, Zurücksetzen, Updates</string>
     <string name="op_theme_2__cannot_change_color_accent">Das Thema The Avengers kann nur das System-Farbschema verwenden</string>
     <string name="op_theme_2__title">The Avengers</string>
+    <string name="op_theme_3_cannot_change_color_accent">Für das McLaren-Theme kann nur das Systemfarben-Theme verwendet werden</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">Thema</string>
     <string name="op_user_manual_settings">Bedienungshandbuch</string>
     <string name="op_volume">Lautstärke</string>
@@ -3991,7 +4021,7 @@ Dies wird durch vertrauenswürdige Anmeldedaten ermöglicht, die auf deinem Ger�
     <string name="status_bar_settings_cellular_title">Handy-Daten</string>
     <string name="status_bar_settings_dnd_title">Bitte nicht stören</string>
     <string name="status_bar_settings_headset_title">Kopfhörer</string>
-    <string name="status_bar_settings_hotspot_title">Hotspot</string>
+    <string name="status_bar_settings_hotspot_title">Mobiler HotSpot</string>
     <string name="status_bar_settings_network_speed_title">Netzwerkgeschwindigkeit anzeigen</string>
     <string name="status_bar_settings_time_title">Zeit</string>
     <string name="status_bar_settings_wifi_title">WLAN</string>
@@ -5068,7 +5098,7 @@ Tippe auf "<b>Zurück</b>, um dich mit einem anderen WLAN zu verbinden.</string>
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">Nach 10 Minuten Inaktivität</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">Nach 15 Minuten Inaktivität</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">Nach 5 Minuten Inaktivität</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">Immer an</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Bleibt immer eingeschaltet</string>
     <string name="wifi_tether_disabled_by_airplane">Nicht verfügbar, da der Flugmodus aktiviert ist</string>
     <string name="wifi_tether_enabled_subtext">%1$s ist aktiviert</string>
     <string name="wifi_tether_failed_subtext">Fehler beim mobilen WLAN-Hotspot</string>

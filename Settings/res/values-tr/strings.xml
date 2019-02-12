@@ -2616,7 +2616,7 @@ Pil tasarrufu, cihazınız şarj olduğunda otomatik olarak kapanır."</string>
     <string name="oneplus_broadcat_wifi_name">Yayın ağ adı (SSID)</string>
     <string name="oneplus_buttons_and_gestures_settings">Düğmeler &amp; işlem kısayolları</string>
     <string name="oneplus_buttons_dashboard_summary">Uyarı Kaydırıcı, navigasyon, işlem kısayolları</string>
-    <string name="oneplus_buttons_settings">düğme ayarları</string>
+    <string name="oneplus_buttons_settings">Düğme ayarları</string>
     <string name="oneplus_buttons_settings_summary">Navigasyon işlem kısayolu</string>
     <string name="oneplus_call_information_broadcast">Arayan Kişinin Kimliği ile Konuşma</string>
     <string name="oneplus_call_information_broadcast_summary">Kulaklık vasıtasıyla gelen arayıcı ile konuşur</string>
@@ -2687,6 +2687,9 @@ Pil tasarrufu, cihazınız şarj olduğunda otomatik olarak kapanır."</string>
     <string name="oneplus_emergency_rescue_settings">Acil kurtarma</string>
     <string name="oneplus_emergency_rescue_settings_summary">Güç düğmesine hızlı bir şekilde basarak otomatik olarak yardım çağrısında bulunun</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">Acil Kurtarma ile ilgili GÜÇ DÜĞMESİ ayarlarının değiştirilmesinden sonra kullanılabilir</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1.Parmak izinizi kullanabileceğinizden emin olmak için koruyucu filmi değiştirdikten sonra lütfen parmak izinizi tekrar girin
+
+2.Her kurulum işleminde lütfen yalnızca bir parmağınızın bilgisini girin"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">Parmak izi kurulumu istemi</string>
     <string name="oneplus_enter_your_fingerprint">· Parmak izinizi kaydedin</string>
     <string name="oneplus_experience_improvement_programs">İyileştirme programlarını deneyin</string>
@@ -2711,11 +2714,17 @@ Risk ipucu: Yüz Kilidi, parmak izi ve parola kadar güvenli değildir"</string>
     <string name="oneplus_finger_input_error_tips">Parmak izi kayıt hatası. Lütfen tekrar deneyin</string>
     <string name="oneplus_finger_input_fail_tips">Giriş başarısız oldu, lütfen konumu ayarlayın ve yeniden deneyin</string>
     <string name="oneplus_fingerprint">Parmak izi</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">Benzer parmak izi tespit edildi. Parmak izini farklı kısımlara girmek için lütfen parmağınızı biraz hareket ettirin.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">Parmak izi tanımlama alanı kirlenmiştir. Lütfen temizledikten sonra tekrar deneyin.</string>
+    <string name="oneplus_fingerprint_acquired_partial">Kısmi parmak izi algılandı. Lütfen parmak izi tanımlama alanını tamamen kapatın.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">Çok hızlı olduğu için parmak iziniz tanımlanamıyor. Lütfen parmağınızı basarken bir süre bekleyin.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">Benzer bir parmak izi algılandı. Farklı bölgelerin parmak izini girmek için lütfen parmağınızı yavaş bir şekilde hareket ettirin.</string>
     <string name="oneplus_fingerprint_animation_effect_title">Parmak izi animasyon efekti</string>
     <string name="oneplus_fingerprint_delete_confirm_message">Silmek istiyor musunuz?</string>
     <string name="oneplus_fingerprint_detail">Ayrıntılar</string>
     <string name="oneplus_fingerprint_enrol_completed">Parmak izi kaydedildi</string>
+    <string name="oneplus_fingerprint_enroll_summary">Parmağınızı parmak izi alanını mümkün olduğunca kaplayacak şekilde alana basın ve bir titreşim hissettikten sonra kaldırın</string>
+    <string name="oneplus_fingerprint_findsendor_summary">Parmak izi deseni ekranın alt kısmında görünür, tek yapmanız gereken, parmak izi işlevini kullanmak için parmak izi tanımlama alanına parmağınızı basmaktır.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">Parmak izinin kullanımı</string>
     <string name="oneplus_fingerprint_functional_declaration">Parmak izi fonksiyon bildirimi</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">Vizör ekranından bir fotoğraf çekmek için parmak izi sensörüne uzun basın</string>
     <string name="oneplus_fingerprint_gesture_camera_title">Fotoğraf çekmek için basılı tutun</string>
@@ -2798,6 +2807,9 @@ Ekrana gitmek için, parmağınızı ekranın alt orta köşesinden yukarıya do
     <string name="oneplus_hide_navkeys_summary">Gezinme çubuğunu gizlemek veya göstermek için bir düğme ekleyin</string>
     <string name="oneplus_hide_notch_display_summary">Uygulamaların tümü tam ekran alanını kullanamıyor</string>
     <string name="oneplus_hide_notch_display_title">Tam ekran alanını gizle</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"Parmak izi deseni ekranın alt kısmında göründüğünde, parmak izi işlevini kullanmak için parmağınızla parmak izi alanına basmanız yeterlidir. Parmak izinizle telefonunuzu uyandırıp kilidini açabilir, satın alma işlemlerine yetki verebilir, uygulamalarda oturum açabilirsiniz. 
+
+Not: Parmak iziniz güçlü bir desen veya PIN'den daha az güvenli olabilir"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">Ekranın alt kısmında parmak izi deseni göründüğünde, parmak izi fonksiyonunu kullanmak, yani telefonunuzu uyandırmak ve kilidini açmak, alışverişleri onaylamak veya uygulamalarda oturum açmak için parmak izi tanımlama alanına parmağınızla basmanız yeterlidir.</string>
     <string name="oneplus_hydrogen_version">H₂OS sürümü</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Gelen arama</string>
@@ -2871,6 +2883,7 @@ Ekrana gitmek için, parmağınızı ekranın alt orta köşesinden yukarıya do
     <string name="oneplus_normal_clear_way">Normal temizlik</string>
     <string name="oneplus_normal_clear_way_summary">Arka plan işlemlerinin dışındaki görev listelerini ve önbelleği temizler.</string>
     <string name="oneplus_not_disturb_on">\"Rahatsız Etmeyin\" özelliği açık</string>
+    <string name="oneplus_not_disturb_summary">Seçtiğiniz istisnalar hariç, aramaları ve bildirimleri sessize alır ve titreşimi kapatır</string>
     <string name="oneplus_not_show">Bunu tekrar gösterme</string>
     <string name="oneplus_notch_display_area">Tam ekran</string>
     <string name="oneplus_notch_display_choose_title">Tam ekran alanı nasıl gösterilir</string>
@@ -2943,7 +2956,9 @@ Ekrana gitmek için, parmağınızı ekranın alt orta köşesinden yukarıya do
     <string name="oneplus_quick_launch_how_to_use_summary">"1.Hızlı başlatma panelini açmak için, kilidi açtıktan sonra parmağınızı tutmaya devam edin
 2.Kısayolu seçmek için kaydırın ve başlatmak için parmağınızı serbest bırakın"</string>
     <string name="oneplus_quick_launch_how_to_use_title">Hızlı başlatmayı kullan</string>
+    <string name="oneplus_quick_launch_summary">Hızlı ödemeyi başlatmak veya uygulamaları etkinleştirmek için parmak izi tanıma alanına uzun basın</string>
     <string name="oneplus_quick_launch_title">Hızlı başlatma</string>
+    <string name="oneplus_quick_launch_toggle_summary">Telefon kilitliyken hızlı ödemeyi başlatmak veya uygulamaları etkinleştirmek için parmak izi tanıma alanına uzun basın</string>
     <string name="oneplus_quick_launch_toggle_title">Hızlı başlatmayı aç</string>
     <string name="oneplus_quick_turn_on_assistant_app">Yardımcı uygulamayı hızla etkinleştirin</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">Güç düğmesini, yardımcı uygulamayı hızla etkinleştirmek için 0,5 sn. ve gücü kapatmak için 3 sn. basılı tutun</string>
@@ -3046,13 +3061,26 @@ Ekrana gitmek için, parmağınızı ekranın alt orta köşesinden yukarıya do
     <string name="oneplus_security_lock_settings_summary">Tercihleri, konum hizmetini, uygulama kilidini aç</string>
     <string name="oneplus_security_lock_settings_title">Güvenlik &amp; gizlilik</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">Kurulum başarısız oldu</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"Telefonunuzun kilidini açmak, satın alma işlemlerine yetki vermek veya uygulamalarda oturum açmak için parmağınızı parmak izi alanına basmanız yeterlidir. 
+
+Not: 
+1.Parmak iziniz güçlü bir desen veya PIN'den daha az güvenli olabilir.
+2.Parmak izinizi kullanabileceğinizden emin olmak için koruyucu filmi değiştirdikten sonra lütfen parmak izinizi tekrar girin."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">Bu parmak izi zaten kayıtlı, lütfen işlem için başka bir parmağınızı deneyin.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">Ambiyans Ekranında parmak izi simgesini gösterin</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">Göstermek için telefonunuzu yavaşça hareket ettirin</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">Göstermek için ekrana dokunun</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\"Uyandırmak için çift dokunun\" etkin ve \"Göstermek için ekrana dokunun\" devre dışı bırakılacak</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">\"Göstermek için ekrana dokunun\" etkin ve \"Uyandırmak için çift dokunun\" devre dışı bırakılacak</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">Kozmos</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">Dalga</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">Çizgi</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">Parmak izi animasyon efekti seçin</string>
     <string name="oneplus_set_time">Zamanlanmış Gece Modu</string>
     <string name="oneplus_setting_ringtone">Zil sesini ayarla</string>
     <string name="oneplus_setting_sim_ringtone_switch">Her SIM kart için zil sesi ata</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">Günlük kullanımınıza bağlı olarak Smart Boost, OnePlus telefonların uygulama ve oyunların hızlı yüklenmesini sağlayan yüksek RAM avantajından tümüyle yararlanır.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">Smart Boost</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· Ekran kilidini açmak için alternatif bir yol oluşturun</string>
     <string name="oneplus_share_this_wifi">Wi-Fi kapsama alanını genişlet</string>
     <string name="oneplus_share_wifi_title">Wi‑Fi Paylaşımı</string>
@@ -3130,7 +3158,7 @@ Not: Yüz Kilidi parmak izi, PIN veya diğer ekran kilidi seçeneklerinden daha 
     <string name="oneplus_weak_text_reminding">Yalnızca metin</string>
     <string name="oneplus_weak_text_reminding_summary">Uygulamaların göz hizası bildirimleri göstermesine izin ver</string>
     <string name="oneplus_wifi_ap_error">Lütfen SIM kartı takın</string>
-    <string name="oneplus_wifi_hidden_network_warning">"Yönlendiriciniz SSID yayınını devre dışı bırakırsa, gizli ağa bağlanmak için \"Evet\" tercihini seçmelisiniz.
+    <string name="oneplus_wifi_hidden_network_warning">"Yönlendiriciniz SSID yayını yapmamaya ayarlıysa, gizli ağa bağlanmak için \"Evet\" tercihini seçmelisiniz.
 
 Telefonunuz ağı bulmak için düzenli olarak sinyal yayınlayacağından dolayı, bu durum bir güvenlik riski oluşturabilir.
 
@@ -3211,6 +3239,8 @@ Ağın gizli olarak ayarlanması yönlendirici ayarlarınızı değiştirmeyecek
     <string name="op_system_dashboard_summary">Diller, saat, sıfırlama, güncelleştirmeler</string>
     <string name="op_theme_2__cannot_change_color_accent">Avengers teması sadece sistem renk temasını kullanır</string>
     <string name="op_theme_2__title">Avengers</string>
+    <string name="op_theme_3_cannot_change_color_accent">McLaren temasında sadece sistem renk teması kullanılabilir</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">Tema</string>
     <string name="op_user_manual_settings">Kullanım Kılavuzu</string>
     <string name="op_volume">Ses</string>
@@ -3990,7 +4020,7 @@ Cihazınızda yüklü durumdaki güvenilen bir kimlik bilgisi bunu mümkün kıl
     <string name="status_bar_settings_cellular_title">Hücresel veri</string>
     <string name="status_bar_settings_dnd_title">Rahatsız etmeyin</string>
     <string name="status_bar_settings_headset_title">Kulaklık-mikrofon</string>
-    <string name="status_bar_settings_hotspot_title">Bağlantı noktası</string>
+    <string name="status_bar_settings_hotspot_title">Mobil Ortak Erişim Noktası</string>
     <string name="status_bar_settings_network_speed_title">Ağ hızını göster</string>
     <string name="status_bar_settings_time_title">Zaman</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -5067,7 +5097,7 @@ Farklı bir Kablosuz ağa bağlanmak için "<b>Geri</b>"'ye dokunun."</string>
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">10 dak. etkinlik olmadığında</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">15 dak. etkinlik olmadığında</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">5 dak. etkinlik olmadığında</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">Her zaman açık</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">Her zaman açık kalır</string>
     <string name="wifi_tether_disabled_by_airplane">Uçak modu açık olduğundan kullanılamıyor</string>
     <string name="wifi_tether_enabled_subtext">%1$s etkin durumda</string>
     <string name="wifi_tether_failed_subtext">Taşınabilir Kablosuz hotspot</string>

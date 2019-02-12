@@ -2687,6 +2687,9 @@
     <string name="oneplus_emergency_rescue_settings">الإنقاذ في حالات الطوارئ</string>
     <string name="oneplus_emergency_rescue_settings_summary">الاتصال التلقائي للحصول على المساعدة عن طريق الضغط بسرعة على زر الطاقة</string>
     <string name="oneplus_emergency_tap_power_gesture_tips">متاح بعد تعديل إعدادات مفتاح الطاقة للإنقاذ في حالة الطوارئ</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary">"1.الرجاء إدخال بصمة الإصبع كلما استبدلت فيلم الحماية لضمان إتاحة بصمة الإصبع
+
+2. الرجاء إدخال معلومات بصمة إصبع واحدة في كل عملية إعداد"</string>
     <string name="oneplus_enroll_fingerprint_tips_title">طلب إعداد بصمة الإصبع</string>
     <string name="oneplus_enter_your_fingerprint">· تسجيل بصمة إصبعك</string>
     <string name="oneplus_experience_improvement_programs">برامج تحسين التجربة</string>
@@ -2711,11 +2714,17 @@
     <string name="oneplus_finger_input_error_tips">خطأ في تسجيل البصمة، الرجاء إعادة المحاولة</string>
     <string name="oneplus_finger_input_fail_tips">فشل الإدخال، الرجاء ضبط الوضع وإعادة المحاولة</string>
     <string name="oneplus_fingerprint">بصمة الإصبع</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">تم الكشف عن بصمة مشابهة. الرجاء تحريك أصابعك قليلاً لإدخال بصمات الأصابع لأجزاء أخرى.</string>
+    <string name="oneplus_fingerprint_acquired_imager_dirty">منطقة التعرف على بصمة الأصبع غير متسخة. يُرجى تنظيفها والمحاولة مرة أخرى.</string>
+    <string name="oneplus_fingerprint_acquired_partial">تم اكتشاف بصمة إصبع جزئية. يُرجى تغطية منطقة التعرف على بصمة الأصبع بالكامل.</string>
+    <string name="oneplus_fingerprint_acquired_too_fast">سريع للغاية لمعالجة بصمة إصبعك. يُرجى البقاء لفترة من الوقت عند الضغط.</string>
+    <string name="oneplus_fingerprint_acquired_too_similar">تم اكتشاف بصمة إصبع مماثلة. يُرجى تحريك إصبعك بلطف لإدخال بصمة الأصبع للأجزاء المختلفة.</string>
     <string name="oneplus_fingerprint_animation_effect_title">تأثير حركة بصمة الإصبع</string>
     <string name="oneplus_fingerprint_delete_confirm_message">هل تريد حذفها؟</string>
     <string name="oneplus_fingerprint_detail">التفاصيل</string>
     <string name="oneplus_fingerprint_enrol_completed">تم حفظ بصمة الإصبع</string>
+    <string name="oneplus_fingerprint_enroll_summary">اضغط واجعل إصبعك يغطي منطقة التعرف على البصمة قدر الإمكان، ثم ارفعه عند الشعور بإهتزاز</string>
+    <string name="oneplus_fingerprint_findsendor_summary">عندما يظهر نمط بصمة الأصبع في أسفل الشاشة، ببساطة اضغط بإصبعك على منطقة التعرف على بصمة الأصبع لاستخدام وظيفة بصمة الأصبع.</string>
+    <string name="oneplus_fingerprint_findsendor_tilte">كيفية استخدام بصمة الأصبع</string>
     <string name="oneplus_fingerprint_functional_declaration">تعريف وظيفة بصمة الإصبع</string>
     <string name="oneplus_fingerprint_gesture_camera_summary">من شاشة معين المنظر، اضغط مطولًا على مستشعر بصمة الإصبع لالتقاط صورة</string>
     <string name="oneplus_fingerprint_gesture_camera_title">الضغط مطولا لالتقاط صورة</string>
@@ -2799,6 +2808,9 @@
     <string name="oneplus_hide_navkeys_summary">إضافة زر لإخفاء شريط التنقل أو إظهاره</string>
     <string name="oneplus_hide_notch_display_summary">لا يمكن لجميع التطبيقات استخدام منطقة الحز</string>
     <string name="oneplus_hide_notch_display_title">إخفاء منطقة الحز</string>
+    <string name="oneplus_how_to_use_fingerprint_summary">"اضغط على منطقة التعرف على بصمة الإصبع عند ظهور النمط في أسفل الشاشة لاستخدام بصمة الإصبع في: إيقاظ الهاتف وفتحه، وتصديق عمليات الشراء، وتسجيل الدخول للتطبيقات. 
+
+ملاحظة: قد تكون بصمة الإصبع أقل أماناً من نمط قوي أو رمز PIN"</string>
     <string name="oneplus_how_to_use_fingerprint_summary_no_note">عندما يظهر نمط بصمة الإصبع في أسفل الشاشة، فما عليك سوى الضغط بإصبعك على منطقة التعرف على بصمة الإصبع لاستخدام وظيفة بصمة الإصبع: قم بإبقاظ هاتفك وإلغاء قفله أو إصدار أذونات عمليات الشراء أو تسجيل الدخول إلى التطبيقات.</string>
     <string name="oneplus_hydrogen_version">إصدار H₂OS</string>
     <string name="oneplus_incoming_call_vibrate_intensity">مكالمة واردة</string>
@@ -2872,6 +2884,7 @@
     <string name="oneplus_normal_clear_way">المسح العادي</string>
     <string name="oneplus_normal_clear_way_summary">مسح قائمة المهام والذاكرة المؤقتة بدون مسح العمليات في الخلفية.</string>
     <string name="oneplus_not_disturb_on">تم تشغيل \"عدم الإزعاج\"</string>
+    <string name="oneplus_not_disturb_summary">كتم صوت المكالمات والتنبيهات وإيقاف تشغيل الاهتزاز، باستثناء المنبهات المحددة</string>
     <string name="oneplus_not_show">لا تعرض هذا مجددًا</string>
     <string name="oneplus_notch_display_area">الحز</string>
     <string name="oneplus_notch_display_choose_title">كيفية إظهار منطقة الحز</string>
@@ -2944,7 +2957,9 @@
     <string name="oneplus_quick_launch_how_to_use_summary">"استمر في الضغط بإصبعك بعد إلغاء القفل لفتح لوحة التشغيل السريع.
 مرر لتحديد الاختصار وحرّر إصبعك لتشغيله"</string>
     <string name="oneplus_quick_launch_how_to_use_title">استخدام التشغيل السريع</string>
+    <string name="oneplus_quick_launch_summary">اضغط مطولاً على منطقة تحديد بصمات الأصابع لبدء الدفع السريع أو تنشيط التطبيقات</string>
     <string name="oneplus_quick_launch_title">التشغيل السريع</string>
+    <string name="oneplus_quick_launch_toggle_summary">اضغط مطولاً على منطقة تحديد بصمات الأصابع لبدء الدفع السريع أو تنشيط التطبيقات عندما يكون الهاتف مقفلاً</string>
     <string name="oneplus_quick_launch_toggle_title">تشغيل التشغيل السريع</string>
     <string name="oneplus_quick_turn_on_assistant_app">تفعيل التطبيق المساعد سريعًا</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">المس مع الاستمرار زر الطاقة لمدة 0.5 ثانية لتنشيط التطبيق المساعد، ولمدة 3 ثوانٍ لإيقاف تشغيله</string>
@@ -3047,13 +3062,26 @@
     <string name="oneplus_security_lock_settings_summary">فتح قفل التفضيلات، وخدمة الموقع، ووحدة قفل التطبيق</string>
     <string name="oneplus_security_lock_settings_title">الأمان والخصوصية</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">فشل الإعداد</string>
+    <string name="oneplus_security_settings_fingerprint_enroll_introduction_message">"كل ما عليك فعله لفتح الهاتف أو تصديق عمليات الشراء أو تسجيل الدخول إلى التطبيقات هو ملامسة منطقة التعرف على بصمة الإصبع فقط. 
+
+ملاحظة: 
+ 1. قد تكون بصمة الإصبع أقل أماناً من نمط قوي أو رمز PIN.
+2. الرجاء إدخال بصمة الإصبع كلما استبدلت فيلم الحماية لضمان إتاحة بصمة الإصبع."</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">تم بالفعل تسجيل بصمة الإصبع هذه، الرجاء المحاولة بإصبع آخر.</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_category_title">اظهر أيقونة بصمة الإصبع في شاشة العرض المحيطي</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_one_title">حرك هاتفك قليلاً للإظهار</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_title">المس الشاشة للإظهار</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\"النقر المزدوج لايقاظ الشاشة\" ممكّن وسيتم تعطيل \"النقر على الشاشة للإظهار\"</string>
     <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">\"النقر على الشاشة للإظهار\" ممكّن وسيتم تعطيل \"النقر المزدوج لايقاظ الشاشة\"</string>
+    <string name="oneplus_select_fingerprint_animation_effect_1">الكون</string>
+    <string name="oneplus_select_fingerprint_animation_effect_2">الموجة</string>
+    <string name="oneplus_select_fingerprint_animation_effect_3">الخط</string>
     <string name="oneplus_select_fingerprint_animation_effect_title">حدد تأثير حركة بصمة الإصبع</string>
     <string name="oneplus_set_time">وضع ليلي مجدول</string>
     <string name="oneplus_setting_ringtone">إعداد نغمة</string>
     <string name="oneplus_setting_sim_ringtone_switch">إعداد نغمة رنين لكل بطاقة SIM</string>
+    <string name="oneplus_settings_lab_feature_boost_summary">يستغل التعزيز الذكي ذاكرة RAM الكبيرة في هواتف OnePlus وفقاً لاستخدامك اليومي، وذلك لتقوية الأداء في تحميل التطبيقات والألعاب.</string>
+    <string name="oneplus_settings_lab_feature_boost_title">التعزيز الذكي</string>
     <string name="oneplus_setup_an_alternate_way_to_0unlock">· إعداد طريقة بديلة لقفل الشاشة</string>
     <string name="oneplus_share_this_wifi">تمديد تغطية الـ Wi-Fi</string>
     <string name="oneplus_share_wifi_title">مشاركة عبر Wi‑Fi</string>
@@ -3131,11 +3159,11 @@
     <string name="oneplus_weak_text_reminding">النص فقط</string>
     <string name="oneplus_weak_text_reminding_summary">السماح للتطبيقات بعرض إشعارات المتابعة</string>
     <string name="oneplus_wifi_ap_error">الرجاء إدخال بطاقة SIM</string>
-    <string name="oneplus_wifi_hidden_network_warning">"إذا عطل جهاز التوجيه خاص بك بث SSID فيجب عليك اختيار \"نعم\" للاتصال بالشبكة المخفية.
+    <string name="oneplus_wifi_hidden_network_warning">"إذا تم ضبط جهاز التوجيه الخاص بك على عدم بث SSID، فيجب عليك اختيار \"نعم\" للاتصال بالشبكة المخفية.
 
-قد يخلق هذا خطراً أمنياً لأن هاتفك سيحاول بانتظام بث إشارته لإيجاد الشبكة.
+قد يسبب هذا خطرًا أمنيًا لأن هاتفك سيحاول بانتظام بث إشارته لإيجاد الشبكة.
 
-تعيين الشبكة كشبكة مخفية لن يغير إعدادات جهاز التوجيه خاصتك."</string>
+تعيين الشبكة كشبكة مخفية لن يغيّر إعدادات جهاز التوجيه الخاص بك."</string>
     <string name="oneplus_wifi_ipv6_surport_summary">تعطيل IPv6 يمكن أن يجنب مشكلات التوافق مع أجهزة توجيه Wi-Fi معينة.</string>
     <string name="oneplus_wifi_ipv6_surport_title">دعم IPv6</string>
     <string name="oneplus_wifi_list">قائمة Wi‑Fi</string>
@@ -3212,6 +3240,8 @@
     <string name="op_system_dashboard_summary">اللغات والوقت وإعادة التعيين والتحديثات</string>
     <string name="op_theme_2__cannot_change_color_accent">لا يمكن استخدام موضوع المنتقمون (Avengers) إلا لموضوع لون النظام</string>
     <string name="op_theme_2__title">المنتقمون (Avengers)</string>
+    <string name="op_theme_3_cannot_change_color_accent">يمكن ان يستخدم نسق Mclaren نسق الوان النظام</string>
+    <string name="op_theme_3_title">McLaren</string>
     <string name="op_theme_mode_title">الموضوع</string>
     <string name="op_user_manual_settings">دليل المستخدم</string>
     <string name="op_volume">مستوى الصوت</string>
@@ -3991,7 +4021,7 @@
     <string name="status_bar_settings_cellular_title">البيانات الخلوية</string>
     <string name="status_bar_settings_dnd_title">عدم الإزعاج</string>
     <string name="status_bar_settings_headset_title">سماعة الرأس</string>
-    <string name="status_bar_settings_hotspot_title">نقطة فعالة</string>
+    <string name="status_bar_settings_hotspot_title">نقطة الهاتف الفعالة</string>
     <string name="status_bar_settings_network_speed_title">عرض سرعة الشبكة</string>
     <string name="status_bar_settings_time_title">الوقت</string>
     <string name="status_bar_settings_wifi_title">Wi-Fi</string>
@@ -5068,7 +5098,7 @@
     <string name="wifi_tether_custom_auto_turn_off_10_min_summary">بعد 10 دقائق من عدم النشاط</string>
     <string name="wifi_tether_custom_auto_turn_off_15_min_summary">بعد 15 دقيقة من عدم النشاط</string>
     <string name="wifi_tether_custom_auto_turn_off_5_min_summary">بعد 5 دقائق من عدم النشاط</string>
-    <string name="wifi_tether_custom_auto_turn_off_always_summary">تشغيل دائمًا</string>
+    <string name="wifi_tether_custom_auto_turn_off_always_summary">اجعله دائمًا قيد التشغيل</string>
     <string name="wifi_tether_disabled_by_airplane">غير متاح نظرًا لتشغيل وضع الطائرة.</string>
     <string name="wifi_tether_enabled_subtext">%1$s نشطة</string>
     <string name="wifi_tether_failed_subtext">‏خطأ في نقطة اتصال Wi-Fi المحمولة</string>

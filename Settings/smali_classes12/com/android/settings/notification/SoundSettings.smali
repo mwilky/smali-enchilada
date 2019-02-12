@@ -1359,7 +1359,7 @@
 
     iget-object v1, p0, Lcom/android/settings/notification/SoundSettings;->mContext:Landroid/content/Context;
 
-    const v2, 0x10403e6
+    const v2, 0x10403e7
 
     const/4 v3, 0x1
 
@@ -1581,7 +1581,7 @@
     move-result-object v1
 
     :goto_0
-    const v2, 0x10405c1
+    const v2, 0x10405c2
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1589,7 +1589,7 @@
 
     if-nez v1, :cond_2
 
-    const v0, 0x10405c0
+    const v0, 0x10405c1
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1615,13 +1615,7 @@
 
     if-eqz v2, :cond_4
 
-    invoke-virtual {v1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "internal"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-static {p1, v1, p2}, Lcom/oneplus/settings/ringtone/OPRingtoneManager;->isSystemRingtone(Landroid/content/Context;Landroid/net/Uri;I)Z
 
     move-result v2
 
