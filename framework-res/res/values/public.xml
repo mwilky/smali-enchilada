@@ -6754,6 +6754,7 @@
     <public type="array" name="wfcOperatorErrorAlertMessages" id="0x01070078" />
     <public type="array" name="wfcOperatorErrorNotificationMessages" id="0x01070079" />
     <public type="array" name="wfcSpnFormats" id="0x0107007a" />
+    <public type="array" name="config_screenBrightnessBacklight_alt" id="0x0107007b" />
     <public type="drawable" name="alert_dark_frame" id="0x01080000" />
     <public type="drawable" name="alert_light_frame" id="0x01080001" />
     <public type="drawable" name="btn_default" id="0x01080004" />
