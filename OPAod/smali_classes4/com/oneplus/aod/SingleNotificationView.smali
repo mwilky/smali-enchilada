@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final IME_PICKER_ID:I = 0x10405e9
+.field private static final IME_PICKER_ID:I = 0x10405ea
 
 
 # instance fields
@@ -1119,7 +1119,7 @@
 
     const/4 v2, 0x1
 
-    const v3, 0x10405e9
+    const v3, 0x10405ea
 
     if-ne v0, v3, :cond_0
 

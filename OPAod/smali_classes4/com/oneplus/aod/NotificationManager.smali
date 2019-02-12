@@ -67,6 +67,8 @@
 
 .field private mNotificationData:Lcom/oneplus/aod/NotificationData;
 
+.field private final mProvisionObserver:Landroid/database/ContentObserver;
+
 .field protected final mSettingsObserver:Landroid/database/ContentObserver;
 
 .field protected mShowLockscreenNotifications:Z
@@ -137,6 +139,14 @@
     invoke-direct {v1, p0, v2}, Lcom/oneplus/aod/NotificationManager$3;-><init>(Lcom/oneplus/aod/NotificationManager;Landroid/os/Handler;)V
 
     iput-object v1, p0, Lcom/oneplus/aod/NotificationManager;->mSettingsObserver:Landroid/database/ContentObserver;
+
+    new-instance v1, Lcom/oneplus/aod/NotificationManager$4;
+
+    iget-object v2, p0, Lcom/oneplus/aod/NotificationManager;->mHandler:Landroid/os/Handler;
+
+    invoke-direct {v1, p0, v2}, Lcom/oneplus/aod/NotificationManager$4;-><init>(Lcom/oneplus/aod/NotificationManager;Landroid/os/Handler;)V
+
+    iput-object v1, p0, Lcom/oneplus/aod/NotificationManager;->mProvisionObserver:Landroid/database/ContentObserver;
 
     new-instance v1, Lcom/oneplus/aod/NotificationManager$SystemNotificationAsyncTask;
 
@@ -242,6 +252,12 @@
 
     invoke-virtual {v1, v2}, Lcom/oneplus/aod/NotificationData;->setForeGroundServiceController(Lcom/oneplus/aod/ForegroundServiceControllerImpl;)V
 
+    iget-object v1, p0, Lcom/oneplus/aod/NotificationManager;->mProvisionObserver:Landroid/database/ContentObserver;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2}, Landroid/database/ContentObserver;->onChange(Z)V
+
     iget-object v1, p0, Lcom/oneplus/aod/NotificationManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -250,21 +266,15 @@
 
     const-string v2, "device_provisioned"
 
-    invoke-static {v1, v2, v0}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v2}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
-    move-result v1
+    move-result-object v2
 
-    if-eqz v1, :cond_0
+    iget-object v3, p0, Lcom/oneplus/aod/NotificationManager;->mProvisionObserver:Landroid/database/ContentObserver;
 
-    const/4 v1, 0x1
+    const/4 v4, -0x1
 
-    goto :goto_0
-
-    :cond_0
-    move v1, v0
-
-    :goto_0
-    iput-boolean v1, p0, Lcom/oneplus/aod/NotificationManager;->mDeviceProvisioned:Z
+    invoke-virtual {v1, v2, v0, v3, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
     iget-object v1, p0, Lcom/oneplus/aod/NotificationManager;->mContext:Landroid/content/Context;
 
@@ -272,15 +282,13 @@
 
     move-result-object v1
 
-    const-string v2, "aod_show_notifications"
+    const-string v2, "lock_screen_show_notifications"
 
     invoke-static {v2}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v2
 
     iget-object v3, p0, Lcom/oneplus/aod/NotificationManager;->mLockscreenSettingsObserver:Landroid/database/ContentObserver;
-
-    const/4 v4, -0x1
 
     invoke-virtual {v1, v2, v0, v3, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
@@ -713,7 +721,7 @@
 
     move-result-object v0
 
-    const-string v1, "aod_show_notifications"
+    const-string v1, "lock_screen_show_notifications"
 
     iget v2, p0, Lcom/oneplus/aod/NotificationManager;->mCurrentUserId:I
 
@@ -866,11 +874,11 @@
 
     move-result-object v0
 
-    const-string v2, "aod_show_notifications"
+    const-string v2, "lock_screen_show_notifications"
 
     const/4 v3, 0x0
 
-    invoke-static {v0, v2, v1, p1}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+    invoke-static {v0, v2, v3, p1}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v0
 

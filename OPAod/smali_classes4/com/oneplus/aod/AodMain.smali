@@ -2,9 +2,6 @@
 .super Landroid/widget/LinearLayout;
 .source "AodMain.java"
 
-# static fields
-.field private static mMinutesSinceLastReposition:I
-
 
 # instance fields
 .field private TAG:Ljava/lang/String;
@@ -14,6 +11,10 @@
 .field mDisplay:Landroid/view/Display;
 
 .field mDisplayMetrics:Landroid/util/DisplayMetrics;
+
+.field private mFirstChangedPosition:Z
+
+.field private mLastRePositionTime:J
 
 
 # direct methods
@@ -91,6 +92,23 @@
     return-void
 .end method
 
+.method private checkPeriod()I
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/oneplus/aod/AodMain;->mFirstChangedPosition:Z
+
+    if-eqz v0, :cond_0
+
+    const v0, 0x493e0
+
+    return v0
+
+    :cond_0
+    const v0, 0xdbba0
+
+    return v0
+.end method
+
 .method private init()V
     .locals 2
 
@@ -109,10 +127,6 @@
     move-result-object v0
 
     iput-object v0, p0, Lcom/oneplus/aod/AodMain;->mDisplay:Landroid/view/Display;
-    
-    const/4 v0, 0x0
-    
-    sput v0, Lcom/oneplus/aod/AodMain;->mMinutesSinceLastReposition:I
 
     return-void
 .end method
@@ -191,23 +205,57 @@
 
     invoke-virtual {p0, v1}, Lcom/oneplus/aod/AodMain;->setHorizontalGravity(I)V
 
-    :goto_0    
+    :goto_0
+    iput-boolean v3, p0, Lcom/oneplus/aod/AodMain;->mFirstChangedPosition:Z
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v1
+
+    iput-wide v1, p0, Lcom/oneplus/aod/AodMain;->mLastRePositionTime:J
+
     return-void
 .end method
 
 .method public resetPosition()V
     .locals 11
-    
-    invoke-virtual {p0}, Lcom/oneplus/aod/AodMain;->shouldReposition()Z
-    
-    move-result v0
-    
-    if-nez v0, :cond_move
-    
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    iget-wide v2, p0, Lcom/oneplus/aod/AodMain;->mLastRePositionTime:J
+
+    sub-long/2addr v0, v2
+
+    invoke-direct {p0}, Lcom/oneplus/aod/AodMain;->checkPeriod()I
+
+    move-result v2
+
+    int-to-long v2, v2
+
+    div-long v2, v0, v2
+
+    const-wide/16 v4, 0x1
+
+    cmp-long v2, v2, v4
+
+    if-gez v2, :cond_0
+
     return-void
-   
-	:cond_move
-	iget-object v2, p0, Lcom/oneplus/aod/AodMain;->mDisplay:Landroid/view/Display;
+
+    :cond_0
+    const/4 v2, 0x0
+
+    iput-boolean v2, p0, Lcom/oneplus/aod/AodMain;->mFirstChangedPosition:Z
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    iput-wide v2, p0, Lcom/oneplus/aod/AodMain;->mLastRePositionTime:J
+
+    iget-object v2, p0, Lcom/oneplus/aod/AodMain;->mDisplay:Landroid/view/Display;
 
     iget-object v3, p0, Lcom/oneplus/aod/AodMain;->mDisplayMetrics:Landroid/util/DisplayMetrics;
 
@@ -290,34 +338,4 @@
     invoke-virtual {p0, v7}, Lcom/oneplus/aod/AodMain;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
-.end method
-
-.method public shouldReposition()Z
-    .registers 5
-
-    .line 369
-    sget v0, Lcom/oneplus/aod/AodMain;->mMinutesSinceLastReposition:I
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x5
-
-    if-ne v0, v3, :cond_a
-
-    .line 370
-    sput v1, Lcom/oneplus/aod/AodMain;->mMinutesSinceLastReposition:I
-
-    .line 371
-    return v2
-
-    .line 373
-    :cond_a
-    add-int/2addr v0, v2
-
-    sput v0, Lcom/oneplus/aod/AodMain;->mMinutesSinceLastReposition:I
-
-    .line 374
-    return v1
 .end method

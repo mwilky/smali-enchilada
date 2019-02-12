@@ -901,6 +901,10 @@
 
     invoke-virtual {v0, v2}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
+    const/4 v2, 0x3
+
+    iput v2, v0, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
+
     return-object v0
 .end method
 
@@ -1583,164 +1587,11 @@
 .end method
 
 .method public inDisplayPeriod()Z
-    .locals 11
+    .locals 1
 
-    const/4 v10, 0x2
+    const/4 v0, 0x1
 
-    const/4 v9, 0x0
-
-    const/4 v8, 0x1
-
-    invoke-virtual {p0}, Lcom/oneplus/aod/AodUpdateMonitor;->inverseCalculate()Z
-
-    move-result v3
-
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/util/Date;->getHours()I
-
-    move-result v2
-
-    invoke-virtual {v1}, Ljava/util/Date;->getMinutes()I
-
-    move-result v4
-
-    new-instance v0, Lcom/oneplus/settings/TextTime;
-
-    iget-object v5, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mContext:Landroid/content/Context;
-
-    const-string/jumbo v6, ""
-
-    invoke-direct {v0, v5, v6}, Lcom/oneplus/settings/TextTime;-><init>(Landroid/content/Context;Ljava/lang/String;)V
-
-    invoke-virtual {v0, v2, v4}, Lcom/oneplus/settings/TextTime;->setTime(II)V
-
-    sget-boolean v5, Lcom/oneplus/aod/Utils;->DEBUG_ONEPLUS:Z
-
-    if-eqz v5, :cond_0
-
-    const-string/jumbo v5, "AodUpdateMonitor"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v7, "inDisplayPeriod: current time="
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v0}, Lcom/oneplus/settings/TextTime;->toStringIn24()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string/jumbo v7, ", from="
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    iget-object v7, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mDisplayPeriodFrom:Lcom/oneplus/settings/TextTime;
-
-    invoke-virtual {v7}, Lcom/oneplus/settings/TextTime;->toStringIn24()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string/jumbo v7, ", to="
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    iget-object v7, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mDisplayPeriodTo:Lcom/oneplus/settings/TextTime;
-
-    invoke-virtual {v7}, Lcom/oneplus/settings/TextTime;->toStringIn24()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string/jumbo v7, ", inverse="
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_0
-    if-nez v3, :cond_2
-
-    iget-object v5, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mDisplayPeriodFrom:Lcom/oneplus/settings/TextTime;
-
-    invoke-virtual {v0, v5}, Lcom/oneplus/settings/TextTime;->comapreTo(Lcom/oneplus/settings/TextTime;)I
-
-    move-result v5
-
-    if-eq v5, v8, :cond_1
-
-    iget-object v5, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mDisplayPeriodTo:Lcom/oneplus/settings/TextTime;
-
-    invoke-virtual {v0, v5}, Lcom/oneplus/settings/TextTime;->comapreTo(Lcom/oneplus/settings/TextTime;)I
-
-    move-result v5
-
-    if-eq v5, v10, :cond_1
-
-    return v8
-
-    :cond_1
-    return v9
-
-    :cond_2
-    iget-object v5, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mDisplayPeriodFrom:Lcom/oneplus/settings/TextTime;
-
-    invoke-virtual {v0, v5}, Lcom/oneplus/settings/TextTime;->comapreTo(Lcom/oneplus/settings/TextTime;)I
-
-    move-result v5
-
-    if-eq v5, v8, :cond_3
-
-    return v8
-
-    :cond_3
-    iget-object v5, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mDisplayPeriodTo:Lcom/oneplus/settings/TextTime;
-
-    invoke-virtual {v0, v5}, Lcom/oneplus/settings/TextTime;->comapreTo(Lcom/oneplus/settings/TextTime;)I
-
-    move-result v5
-
-    if-eq v5, v10, :cond_4
-
-    return v8
-
-    :cond_4
-    return v9
+    return v0
 .end method
 
 .method protected inflateAodView(Landroid/content/Context;)Landroid/widget/RelativeLayout;
@@ -1975,6 +1826,22 @@
 
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mContext:Landroid/content/Context;
 
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "oem_acc_blackscreen_gestrue_enable"
+
+    invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mSettingsOberver:Lcom/oneplus/aod/AodUpdateMonitor$SettingObserver;
+
+    invoke-virtual {v0, v1, v4, v2, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
+
+    iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mContext:Landroid/content/Context;
+
     iget v1, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mCurrentUserId:I
 
     invoke-static {v0, v1}, Lcom/oneplus/aod/Utils;->init(Landroid/content/Context;I)V
@@ -2123,6 +1990,12 @@
     iput p1, p0, Lcom/oneplus/aod/AodUpdateMonitor;->mZenMode:I
 
     invoke-static {}, Lcom/oneplus/aod/Utils;->isMotionAwakeOn()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-static {}, Lcom/oneplus/aod/Utils;->isSingleTapEnabled()Z
 
     move-result v0
 

@@ -147,6 +147,30 @@
 
 
 # virtual methods
+.method public onActivityCreated(Landroid/os/Bundle;)V
+    .locals 2
+
+    invoke-super {p0, p1}, Landroid/app/DialogFragment;->onActivityCreated(Landroid/os/Bundle;)V
+
+    iget-object v0, p0, Lcom/oneplus/settings/AodDisplayTextSettings;->mOwnerInfo:Landroid/widget/EditText;
+
+    invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
+
+    invoke-virtual {p0}, Lcom/oneplus/settings/AodDisplayTextSettings;->getDialog()Landroid/app/Dialog;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    const/4 v1, 0x4
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
+
+    return-void
+.end method
+
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 4
 
@@ -269,7 +293,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 

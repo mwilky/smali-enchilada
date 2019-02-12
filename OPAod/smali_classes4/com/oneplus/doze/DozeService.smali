@@ -497,16 +497,7 @@
 
 .method private checkLightSensor()V
     .locals 1
-    
-    invoke-static {}, Lcom/oneplus/aod/Utils;->isSupportAlwaysOn()Z
 
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
     new-instance v0, Lcom/oneplus/doze/DozeService$7;
 
     invoke-direct {v0, p0}, Lcom/oneplus/doze/DozeService$7;-><init>(Lcom/oneplus/doze/DozeService;)V
@@ -549,9 +540,7 @@
 
     if-nez v1, :cond_2
 
-    iget-object v1, p0, Lcom/oneplus/doze/DozeService;->mContext:Landroid/content/Context;
-
-    invoke-static {v1, v0}, Lcom/oneplus/aod/Utils;->isSingleTapEnabled(Landroid/content/Context;I)Z
+    invoke-static {}, Lcom/oneplus/aod/Utils;->isSingleTapEnabled()Z
 
     move-result v1
 

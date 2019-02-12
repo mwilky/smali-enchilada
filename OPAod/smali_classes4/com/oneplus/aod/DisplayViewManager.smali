@@ -206,10 +206,24 @@
 
     if-ne v0, v3, :cond_2
 
+    invoke-static {}, Lcom/oneplus/aod/Utils;->isAlwaysOnEnabled()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
     iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mMainView:Lcom/oneplus/aod/AodMain;
 
     invoke-virtual {v0, v1}, Lcom/oneplus/aod/AodMain;->setVisibility(I)V
 
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mMainView:Lcom/oneplus/aod/AodMain;
+
+    invoke-virtual {v0, v2}, Lcom/oneplus/aod/AodMain;->setVisibility(I)V
+
+    :goto_0
     iget-object v0, p0, Lcom/oneplus/aod/DisplayViewManager;->mSingleNotificationView:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->setVisibility(I)V

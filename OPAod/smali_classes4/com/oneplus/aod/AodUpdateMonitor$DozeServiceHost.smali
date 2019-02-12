@@ -611,21 +611,19 @@
 
     if-eqz v2, :cond_5
 
-    iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
+    iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
-    invoke-static {v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1100(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$1100(Lcom/oneplus/aod/AodUpdateMonitor;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v2, "FINGERPRINT"
+    const-string v3, "FINGERPRINT"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v2, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_4
-
-    const/16 v1, 0x12c
+    if-eqz v2, :cond_4
 
     goto :goto_1
 

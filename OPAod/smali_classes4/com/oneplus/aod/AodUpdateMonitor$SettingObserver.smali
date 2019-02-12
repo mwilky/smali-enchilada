@@ -95,7 +95,7 @@
 
     invoke-static {v0, v1}, Lcom/oneplus/aod/Utils;->updateAlwaysOnState(Landroid/content/Context;I)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :cond_1
     sget-object v0, Lcom/oneplus/aod/Utils;->KEY_MOTION_AWAKE:Ljava/lang/String;
@@ -214,7 +214,36 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/settings/TextTime;->setTime(Ljava/lang/String;)V
 
+    goto :goto_0
+
     :cond_4
+    const-string v0, "oem_acc_blackscreen_gestrue_enable"
+
+    invoke-static {v0}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$SettingObserver;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
+
+    invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$200(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/content/Context;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$SettingObserver;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
+
+    invoke-static {v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$100(Lcom/oneplus/aod/AodUpdateMonitor;)I
+
+    move-result v1
+
+    invoke-static {v0, v1}, Lcom/oneplus/aod/Utils;->updateSingleTapAwakeState(Landroid/content/Context;I)V
+
+    :cond_5
     :goto_0
     return-void
 .end method

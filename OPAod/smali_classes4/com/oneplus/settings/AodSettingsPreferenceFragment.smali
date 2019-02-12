@@ -1064,20 +1064,9 @@
     iput-boolean v0, p0, Lcom/oneplus/settings/AodSettingsPreferenceFragment;->mSingleTapEnabled:Z
 
     iget-object v0, p0, Lcom/oneplus/settings/AodSettingsPreferenceFragment;->mSwitchPreference:Lcom/oneplus/lib/widget/preference/OPSwitchPreference;
-    
-    invoke-static {}, Lcom/oneplus/aod/Utils;->isSupportAlwaysOn()Z
-    
-    move-result v0
 
-    if-eqz v0, :cond_ambient
-    
-    iget-object v0, p0, Lcom/oneplus/settings/AodSettingsPreferenceFragment;->mSwitchPreference:Lcom/oneplus/lib/widget/preference/OPSwitchPreference;
-    
-    const v1, 0x7f100144
-    
-    invoke-virtual {v0, v1}, Lcom/oneplus/lib/widget/preference/OPSwitchPreference;->setTitle(I)V
-	
-    :cond_ambient
+    if-eqz v0, :cond_5
+
     invoke-static {}, Lcom/oneplus/aod/Utils;->isCustomFingerprint()Z
 
     move-result v0
@@ -1803,8 +1792,6 @@
     invoke-direct {p0}, Lcom/oneplus/settings/AodSettingsPreferenceFragment;->setDisplayPeriodSummary()V
 
     :cond_0
-    invoke-direct {p0}, Lcom/oneplus/settings/AodSettingsPreferenceFragment;->updatePreference()V
-    
     return-void
 .end method
 
