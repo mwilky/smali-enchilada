@@ -266,7 +266,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/server/twilight/TwilightService;->mLocationManager:Landroid/location/LocationManager;
 
-    const-string v1, "gps"
+    const-string/jumbo v1, "gps"
 
     invoke-virtual {v0, v1}, Landroid/location/LocationManager;->isProviderEnabled(Ljava/lang/String;)Z
 
@@ -276,7 +276,7 @@
 
     iget-object v0, p0, Lcom/android/server/twilight/TwilightService;->mLocationManager:Landroid/location/LocationManager;
 
-    const-string v1, "gps"
+    const-string/jumbo v1, "gps"
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 

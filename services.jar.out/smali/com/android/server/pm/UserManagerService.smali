@@ -3093,7 +3093,7 @@
 
     move-result-object v0
 
-    const v1, 0x1040437
+    const v1, 0x1040438
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -4770,7 +4770,7 @@
     goto :goto_4
 
     :cond_9
-    const-string v9, "guestRestrictions"
+    const-string/jumbo v9, "guestRestrictions"
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4841,7 +4841,7 @@
 
     if-nez v9, :cond_d
 
-    const-string v9, "globalRestrictionOwnerUserId"
+    const-string/jumbo v9, "globalRestrictionOwnerUserId"
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -6434,7 +6434,7 @@
 
     move-result-object v5
 
-    const v6, 0x1040437
+    const v6, 0x1040438
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -7383,7 +7383,7 @@
 
     invoke-interface {v3, v6, v4, v5}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v4, "guestRestrictions"
+    const-string/jumbo v4, "guestRestrictions"
 
     invoke-interface {v3, v6, v4}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -7405,7 +7405,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     :try_start_2
-    const-string v4, "guestRestrictions"
+    const-string/jumbo v4, "guestRestrictions"
 
     invoke-interface {v3, v6, v4}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -12284,7 +12284,7 @@
     move v15, v6
 
     :cond_4
-    const-string v6, "guestToRemove"
+    const-string/jumbo v6, "guestToRemove"
 
     invoke-interface {v3, v5, v6}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -14102,7 +14102,7 @@
 
     if-eqz v2, :cond_3
 
-    const-string v2, "guestToRemove"
+    const-string/jumbo v2, "guestToRemove"
 
     const-string/jumbo v4, "true"
 

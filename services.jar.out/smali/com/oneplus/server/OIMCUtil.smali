@@ -16,7 +16,7 @@
 
 .field private static sOemSceneButtonController:Lcom/android/server/OemSceneButtonController;
 
-.field private static sOemSceneModeUtils:Lcom/oneplus/util/OemSceneModeUtils;
+.field private static sOemSceneCallBlocker:Lcom/oneplus/util/OemSceneCallBlocker;
 
 
 # direct methods
@@ -77,10 +77,19 @@
     sget-object v0, Lcom/oneplus/server/OIMCUtil;->sOemSceneAnswerWithoutUIController:Lcom/android/server/OemSceneAnswerWithoutUIController;
 
     invoke-virtual {v0, p1}, Lcom/android/server/OemSceneAnswerWithoutUIController;->addOrRemoveRule(I)V
+
+    :cond_0
+    invoke-static {}, Lcom/android/server/am/OemSceneWiFiBoostController;->getInstance()Lcom/android/server/am/OemSceneWiFiBoostController;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0, p1}, Lcom/android/server/am/OemSceneWiFiBoostController;->addOrRemoveRule(I)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_0
+    :cond_1
     goto :goto_0
 
     :catch_0
@@ -129,7 +138,7 @@
 .end method
 
 .method public static registerOIMCFunctions(Lcom/oneplus/server/OIMCService;)V
-    .locals 4
+    .locals 5
 
     :try_start_0
     new-instance v0, Lcom/oneplus/server/ColorManager;
@@ -166,118 +175,129 @@
 
     invoke-virtual {p0, v1, v3, v2}, Lcom/oneplus/server/OIMCService;->registerFunction(Ljava/lang/String;ILjava/lang/String;)V
 
-    invoke-virtual {p0}, Lcom/oneplus/server/OIMCService;->getContext()Landroid/content/Context;
+    invoke-static {}, Lcom/android/server/am/OemSceneWiFiBoostController;->getInstance()Lcom/android/server/am/OemSceneWiFiBoostController;
 
     move-result-object v1
-
-    invoke-static {v1}, Lcom/oneplus/util/OemSceneModeUtils;->getInstance(Landroid/content/Context;)Lcom/oneplus/util/OemSceneModeUtils;
-
-    move-result-object v1
-
-    sput-object v1, Lcom/oneplus/server/OIMCUtil;->sOemSceneModeUtils:Lcom/oneplus/util/OemSceneModeUtils;
-
-    sget-object v1, Lcom/oneplus/server/OIMCUtil;->sOemSceneModeUtils:Lcom/oneplus/util/OemSceneModeUtils;
 
     if-eqz v1, :cond_0
 
-    const-string v1, "NotifyFor3PtyCallsBlocking"
+    const-string v2, "WiFiBackgroudNetLimit"
 
-    sget-object v2, Lcom/oneplus/server/OIMCUtil;->sOemSceneModeUtils:Lcom/oneplus/util/OemSceneModeUtils;
-
-    invoke-virtual {p0, v1, v3, v2}, Lcom/oneplus/server/OIMCService;->registerFunction(Ljava/lang/String;ILcom/oneplus/oimc/IOPFunction;)V
+    invoke-virtual {p0, v2, v3, v1}, Lcom/oneplus/server/OIMCService;->registerFunction(Ljava/lang/String;ILcom/oneplus/oimc/IOPFunction;)V
 
     :cond_0
     invoke-virtual {p0}, Lcom/oneplus/server/OIMCService;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1}, Lcom/android/server/OemSceneAutoBrightnessController;->getInstance(Landroid/content/Context;)Lcom/android/server/OemSceneAutoBrightnessController;
+    invoke-static {v2}, Lcom/oneplus/util/OemSceneCallBlocker;->getInstance(Landroid/content/Context;)Lcom/oneplus/util/OemSceneCallBlocker;
 
-    move-result-object v1
+    move-result-object v2
 
-    sput-object v1, Lcom/oneplus/server/OIMCUtil;->sOemSceneAutoBrightnessController:Lcom/android/server/OemSceneAutoBrightnessController;
+    sput-object v2, Lcom/oneplus/server/OIMCUtil;->sOemSceneCallBlocker:Lcom/oneplus/util/OemSceneCallBlocker;
 
-    sget-object v1, Lcom/oneplus/server/OIMCUtil;->sOemSceneAutoBrightnessController:Lcom/android/server/OemSceneAutoBrightnessController;
+    sget-object v2, Lcom/oneplus/server/OIMCUtil;->sOemSceneCallBlocker:Lcom/oneplus/util/OemSceneCallBlocker;
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
-    const-string v1, "TurnOffAutoBacklight"
+    const-string v2, "NotifyFor3PtyCallsBlocking"
+
+    sget-object v4, Lcom/oneplus/server/OIMCUtil;->sOemSceneCallBlocker:Lcom/oneplus/util/OemSceneCallBlocker;
+
+    invoke-virtual {p0, v2, v3, v4}, Lcom/oneplus/server/OIMCService;->registerFunction(Ljava/lang/String;ILcom/oneplus/oimc/IOPFunction;)V
+
+    :cond_1
+    invoke-virtual {p0}, Lcom/oneplus/server/OIMCService;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/android/server/OemSceneAutoBrightnessController;->getInstance(Landroid/content/Context;)Lcom/android/server/OemSceneAutoBrightnessController;
+
+    move-result-object v2
+
+    sput-object v2, Lcom/oneplus/server/OIMCUtil;->sOemSceneAutoBrightnessController:Lcom/android/server/OemSceneAutoBrightnessController;
 
     sget-object v2, Lcom/oneplus/server/OIMCUtil;->sOemSceneAutoBrightnessController:Lcom/android/server/OemSceneAutoBrightnessController;
 
-    invoke-virtual {p0, v1, v3, v2}, Lcom/oneplus/server/OIMCService;->registerFunction(Ljava/lang/String;ILcom/oneplus/oimc/IOPFunction;)V
+    if-eqz v2, :cond_2
 
-    :cond_1
-    sget-boolean v1, Lcom/oneplus/server/OIMCUtil;->HAS_HW_KEYS:Z
+    const-string v2, "TurnOffAutoBacklight"
 
-    if-eqz v1, :cond_2
+    sget-object v4, Lcom/oneplus/server/OIMCUtil;->sOemSceneAutoBrightnessController:Lcom/android/server/OemSceneAutoBrightnessController;
+
+    invoke-virtual {p0, v2, v3, v4}, Lcom/oneplus/server/OIMCService;->registerFunction(Ljava/lang/String;ILcom/oneplus/oimc/IOPFunction;)V
+
+    :cond_2
+    sget-boolean v2, Lcom/oneplus/server/OIMCUtil;->HAS_HW_KEYS:Z
+
+    if-eqz v2, :cond_3
 
     invoke-virtual {p0}, Lcom/oneplus/server/OIMCService;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1}, Lcom/android/server/OemSceneButtonController;->getInstance(Landroid/content/Context;)Lcom/android/server/OemSceneButtonController;
+    invoke-static {v2}, Lcom/android/server/OemSceneButtonController;->getInstance(Landroid/content/Context;)Lcom/android/server/OemSceneButtonController;
 
-    move-result-object v1
+    move-result-object v2
 
-    sput-object v1, Lcom/oneplus/server/OIMCUtil;->sOemSceneButtonController:Lcom/android/server/OemSceneButtonController;
-
-    sget-object v1, Lcom/oneplus/server/OIMCUtil;->sOemSceneButtonController:Lcom/android/server/OemSceneButtonController;
-
-    if-eqz v1, :cond_2
-
-    const-string v1, "KeyBlocking"
+    sput-object v2, Lcom/oneplus/server/OIMCUtil;->sOemSceneButtonController:Lcom/android/server/OemSceneButtonController;
 
     sget-object v2, Lcom/oneplus/server/OIMCUtil;->sOemSceneButtonController:Lcom/android/server/OemSceneButtonController;
 
-    invoke-virtual {p0, v1, v3, v2}, Lcom/oneplus/server/OIMCService;->registerFunction(Ljava/lang/String;ILcom/oneplus/oimc/IOPFunction;)V
+    if-eqz v2, :cond_3
 
-    :cond_2
-    const-string v1, "AnswerWithoutUI"
+    const-string v2, "KeyBlocking"
 
-    const-string/jumbo v2, "op_oimc_func_answer_without_ui"
+    sget-object v4, Lcom/oneplus/server/OIMCUtil;->sOemSceneButtonController:Lcom/android/server/OemSceneButtonController;
 
-    invoke-virtual {p0, v1, v3, v2}, Lcom/oneplus/server/OIMCService;->registerFunction(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-virtual {p0, v2, v3, v4}, Lcom/oneplus/server/OIMCService;->registerFunction(Ljava/lang/String;ILcom/oneplus/oimc/IOPFunction;)V
 
-    invoke-virtual {p0}, Lcom/oneplus/server/OIMCService;->getContext()Landroid/content/Context;
+    :cond_3
+    const-string v2, "AnswerWithoutUI"
 
-    move-result-object v1
+    const-string/jumbo v4, "op_oimc_func_answer_without_ui"
 
-    invoke-static {v1}, Lcom/android/server/OemSceneAnswerWithoutUIController;->getInstance(Landroid/content/Context;)Lcom/android/server/OemSceneAnswerWithoutUIController;
-
-    move-result-object v1
-
-    sput-object v1, Lcom/oneplus/server/OIMCUtil;->sOemSceneAnswerWithoutUIController:Lcom/android/server/OemSceneAnswerWithoutUIController;
-
-    sget-object v1, Lcom/oneplus/server/OIMCUtil;->sOemSceneAnswerWithoutUIController:Lcom/android/server/OemSceneAnswerWithoutUIController;
-
-    invoke-virtual {v1}, Lcom/android/server/OemSceneAnswerWithoutUIController;->registerAnswerWithoutUIContentObServer()V
-
-    const-string v1, "FingerprintGestureLimit"
+    invoke-virtual {p0, v2, v3, v4}, Lcom/oneplus/server/OIMCService;->registerFunction(Ljava/lang/String;ILjava/lang/String;)V
 
     invoke-virtual {p0}, Lcom/oneplus/server/OIMCService;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/oneplus/server/FingerprintGestureLimit;->getInstance(Landroid/content/Context;)Lcom/oneplus/server/FingerprintGestureLimit;
+    invoke-static {v2}, Lcom/android/server/OemSceneAnswerWithoutUIController;->getInstance(Landroid/content/Context;)Lcom/android/server/OemSceneAnswerWithoutUIController;
 
     move-result-object v2
 
-    invoke-virtual {p0, v1, v3, v2}, Lcom/oneplus/server/OIMCService;->registerFunction(Ljava/lang/String;ILcom/oneplus/oimc/IOPFunction;)V
+    sput-object v2, Lcom/oneplus/server/OIMCUtil;->sOemSceneAnswerWithoutUIController:Lcom/android/server/OemSceneAnswerWithoutUIController;
+
+    sget-object v2, Lcom/oneplus/server/OIMCUtil;->sOemSceneAnswerWithoutUIController:Lcom/android/server/OemSceneAnswerWithoutUIController;
+
+    invoke-virtual {v2}, Lcom/android/server/OemSceneAnswerWithoutUIController;->registerAnswerWithoutUIContentObServer()V
+
+    const-string v2, "FingerprintGestureLimit"
+
+    invoke-virtual {p0}, Lcom/oneplus/server/OIMCService;->getContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/oneplus/server/FingerprintGestureLimit;->getInstance(Landroid/content/Context;)Lcom/oneplus/server/FingerprintGestureLimit;
+
+    move-result-object v4
+
+    invoke-virtual {p0, v2, v3, v4}, Lcom/oneplus/server/OIMCService;->registerFunction(Ljava/lang/String;ILcom/oneplus/oimc/IOPFunction;)V
 
     invoke-static {}, Lcom/android/server/am/OnePlusRamBoostManager;->getInstance()Lcom/android/server/am/OnePlusRamBoostManager;
 
-    move-result-object v1
+    move-result-object v2
 
-    if-eqz v1, :cond_3
+    if-eqz v2, :cond_4
 
-    const-string v2, "OnePlusRamboost"
+    const-string v4, "OnePlusRamboost"
 
-    invoke-virtual {p0, v2, v3, v1}, Lcom/oneplus/server/OIMCService;->registerFunction(Ljava/lang/String;ILcom/oneplus/oimc/IOPFunction;)V
+    invoke-virtual {p0, v4, v3, v2}, Lcom/oneplus/server/OIMCService;->registerFunction(Ljava/lang/String;ILcom/oneplus/oimc/IOPFunction;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_3
+    :cond_4
     goto :goto_0
 
     :catch_0
@@ -356,37 +376,54 @@
     invoke-virtual {v0, v1}, Lcom/android/server/OemSceneAnswerWithoutUIController;->addOrRemoveRule(I)V
 
     :cond_2
-    sget-object v0, Lcom/oneplus/oimc/OIMCRule;->Rule_NightMode_ColorBalance:Lcom/oneplus/oimc/OIMCRule;
+    invoke-static {}, Lcom/android/server/am/OemSceneWiFiBoostController;->getInstance()Lcom/android/server/am/OemSceneWiFiBoostController;
 
-    invoke-virtual {p0, v0}, Lcom/oneplus/server/OIMCService;->addFuncRuleGlobal(Lcom/oneplus/oimc/OIMCRule;)V
+    move-result-object v0
 
-    sget-object v0, Lcom/oneplus/oimc/OIMCRule;->Rule_ReadMode_GrayColor:Lcom/oneplus/oimc/OIMCRule;
+    if-eqz v0, :cond_3
 
-    invoke-virtual {p0, v0}, Lcom/oneplus/server/OIMCService;->addFuncRuleGlobal(Lcom/oneplus/oimc/OIMCRule;)V
+    invoke-virtual {v0}, Lcom/android/server/am/OemSceneWiFiBoostController;->isInitFunc()Z
 
-    sget-object v0, Lcom/oneplus/oimc/OIMCRule;->Rule_ReadMode_Disable_ColorBalance:Lcom/oneplus/oimc/OIMCRule;
+    move-result v1
 
-    invoke-virtual {p0, v0}, Lcom/oneplus/server/OIMCService;->addFuncRuleGlobal(Lcom/oneplus/oimc/OIMCRule;)V
+    if-eqz v1, :cond_3
 
-    sget-object v0, Lcom/oneplus/oimc/OIMCRule;->Rule_FingerPrintMode_Disable_GrayColor:Lcom/oneplus/oimc/OIMCRule;
+    sget-object v1, Lcom/oneplus/oimc/OIMCRule;->Rule_WiFiBackgroudNetLimit:Lcom/oneplus/oimc/OIMCRule;
 
-    invoke-virtual {p0, v0}, Lcom/oneplus/server/OIMCService;->addFuncRuleGlobal(Lcom/oneplus/oimc/OIMCRule;)V
+    invoke-virtual {p0, v1}, Lcom/oneplus/server/OIMCService;->addFuncRuleGlobal(Lcom/oneplus/oimc/OIMCRule;)V
 
-    sget-object v0, Lcom/oneplus/oimc/OIMCRule;->Rule_FingerPrintMode_Disable_ColorBalance:Lcom/oneplus/oimc/OIMCRule;
+    :cond_3
+    sget-object v1, Lcom/oneplus/oimc/OIMCRule;->Rule_NightMode_ColorBalance:Lcom/oneplus/oimc/OIMCRule;
 
-    invoke-virtual {p0, v0}, Lcom/oneplus/server/OIMCService;->addFuncRuleGlobal(Lcom/oneplus/oimc/OIMCRule;)V
+    invoke-virtual {p0, v1}, Lcom/oneplus/server/OIMCService;->addFuncRuleGlobal(Lcom/oneplus/oimc/OIMCRule;)V
 
-    sget-object v0, Lcom/oneplus/oimc/OIMCRule;->Rule_FingerPrintMode_ColorDisable:Lcom/oneplus/oimc/OIMCRule;
+    sget-object v1, Lcom/oneplus/oimc/OIMCRule;->Rule_ReadMode_GrayColor:Lcom/oneplus/oimc/OIMCRule;
 
-    invoke-virtual {p0, v0}, Lcom/oneplus/server/OIMCService;->addFuncRuleGlobal(Lcom/oneplus/oimc/OIMCRule;)V
+    invoke-virtual {p0, v1}, Lcom/oneplus/server/OIMCService;->addFuncRuleGlobal(Lcom/oneplus/oimc/OIMCRule;)V
 
-    sget-object v0, Lcom/oneplus/oimc/OIMCRule;->Rule_Disable_FingerprintGesture:Lcom/oneplus/oimc/OIMCRule;
+    sget-object v1, Lcom/oneplus/oimc/OIMCRule;->Rule_ReadMode_Disable_ColorBalance:Lcom/oneplus/oimc/OIMCRule;
 
-    invoke-virtual {p0, v0}, Lcom/oneplus/server/OIMCService;->addFuncRuleGlobal(Lcom/oneplus/oimc/OIMCRule;)V
+    invoke-virtual {p0, v1}, Lcom/oneplus/server/OIMCService;->addFuncRuleGlobal(Lcom/oneplus/oimc/OIMCRule;)V
 
-    sget-object v0, Lcom/oneplus/oimc/OIMCRule;->Rule_NotifyFor3PtyCallsBlocking:Lcom/oneplus/oimc/OIMCRule;
+    sget-object v1, Lcom/oneplus/oimc/OIMCRule;->Rule_FingerPrintMode_Disable_GrayColor:Lcom/oneplus/oimc/OIMCRule;
 
-    invoke-virtual {p0, v0}, Lcom/oneplus/server/OIMCService;->addFuncRuleGlobal(Lcom/oneplus/oimc/OIMCRule;)V
+    invoke-virtual {p0, v1}, Lcom/oneplus/server/OIMCService;->addFuncRuleGlobal(Lcom/oneplus/oimc/OIMCRule;)V
+
+    sget-object v1, Lcom/oneplus/oimc/OIMCRule;->Rule_FingerPrintMode_Disable_ColorBalance:Lcom/oneplus/oimc/OIMCRule;
+
+    invoke-virtual {p0, v1}, Lcom/oneplus/server/OIMCService;->addFuncRuleGlobal(Lcom/oneplus/oimc/OIMCRule;)V
+
+    sget-object v1, Lcom/oneplus/oimc/OIMCRule;->Rule_FingerPrintMode_ColorDisable:Lcom/oneplus/oimc/OIMCRule;
+
+    invoke-virtual {p0, v1}, Lcom/oneplus/server/OIMCService;->addFuncRuleGlobal(Lcom/oneplus/oimc/OIMCRule;)V
+
+    sget-object v1, Lcom/oneplus/oimc/OIMCRule;->Rule_Disable_FingerprintGesture:Lcom/oneplus/oimc/OIMCRule;
+
+    invoke-virtual {p0, v1}, Lcom/oneplus/server/OIMCService;->addFuncRuleGlobal(Lcom/oneplus/oimc/OIMCRule;)V
+
+    sget-object v1, Lcom/oneplus/oimc/OIMCRule;->Rule_NotifyFor3PtyCallsBlocking:Lcom/oneplus/oimc/OIMCRule;
+
+    invoke-virtual {p0, v1}, Lcom/oneplus/server/OIMCService;->addFuncRuleGlobal(Lcom/oneplus/oimc/OIMCRule;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

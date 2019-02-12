@@ -52,7 +52,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "handleMessage("
+    const-string/jumbo v2, "handleMessage("
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -282,8 +282,6 @@
     :cond_1
     :goto_0
     return-void
-
-    nop
 
     nop
 

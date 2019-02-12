@@ -180,21 +180,58 @@
 
     iput-object v0, p0, Lcom/android/server/camera/CameraServiceProxy;->mHandler:Landroid/os/Handler;
 
+    const-string/jumbo v0, "msm8998"
+
+    const-string/jumbo v1, "ro.board.platform"
+
+    invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    const-string/jumbo v0, "ro.camera.notify_nfc"
+
+    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    move v1, v2
+
+    :goto_0
+    iput-boolean v1, p0, Lcom/android/server/camera/CameraServiceProxy;->mNotifyNfc:Z
+
+    goto :goto_2
+
+    :cond_1
     const-string/jumbo v0, "ro.camera.notify_nfc"
 
     invoke-static {v0, v2}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
-    if-lez v0, :cond_0
+    if-lez v0, :cond_2
 
-    const/4 v2, 0x1
+    goto :goto_1
 
-    nop
+    :cond_2
+    move v1, v2
 
-    :cond_0
-    iput-boolean v2, p0, Lcom/android/server/camera/CameraServiceProxy;->mNotifyNfc:Z
+    :goto_1
+    iput-boolean v1, p0, Lcom/android/server/camera/CameraServiceProxy;->mNotifyNfc:Z
 
+    :goto_2
     return-void
 .end method
 
@@ -521,6 +558,24 @@
     const/16 v2, 0x1000
 
     :goto_0
+    const-string v3, "CameraService_proxy"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "Setting NFC reader mode to flags "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
     :try_start_0
     sget-object v3, Lcom/android/server/camera/CameraServiceProxy;->nfcInterfaceToken:Landroid/os/IBinder;
 

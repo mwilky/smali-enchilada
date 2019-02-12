@@ -154,7 +154,7 @@
 
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    const-string v1, "gscan"
+    const-string/jumbo v1, "gscan"
 
     const/16 v11, 0x9
 

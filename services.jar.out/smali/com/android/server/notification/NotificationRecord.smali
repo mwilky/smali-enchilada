@@ -1094,7 +1094,7 @@
 
     move-result-object v0
 
-    const v1, 0x10402b5
+    const v1, 0x10402b6
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1121,7 +1121,7 @@
 
     move-result-object v0
 
-    const v1, 0x10402b6
+    const v1, 0x10402b7
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2168,7 +2168,7 @@
 
     invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v9, "groupKey="
+    const-string/jumbo v9, "groupKey="
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

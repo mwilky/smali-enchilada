@@ -2444,6 +2444,7 @@
     :goto_1
     if-ge v4, v2, :cond_3
 
+    :try_start_0
     iget-object v5, p0, Lcom/android/server/am/ProcessRecord;->services:Landroid/util/ArraySet;
 
     invoke-virtual {v5, v4}, Landroid/util/ArraySet;->valueAt(I)Ljava/lang/Object;
@@ -2455,12 +2456,22 @@
     if-eqz v5, :cond_2
 
     iget-boolean v6, v5, Lcom/android/server/am/ServiceRecord;->isForeground:Z
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     if-eqz v6, :cond_2
 
     return v3
 
     :cond_2
+    goto :goto_2
+
+    :catch_0
+    move-exception v5
+
+    invoke-virtual {v5}, Ljava/lang/Exception;->printStackTrace()V
+
+    :goto_2
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_1

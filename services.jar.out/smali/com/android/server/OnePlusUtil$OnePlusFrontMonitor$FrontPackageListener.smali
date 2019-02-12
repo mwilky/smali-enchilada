@@ -15,5 +15,5 @@
 
 
 # virtual methods
-.method public abstract frontPackageChanged(Ljava/lang/String;)V
+.method public abstract frontPackageChanged(Ljava/lang/String;IILjava/lang/String;II)V
 .end method

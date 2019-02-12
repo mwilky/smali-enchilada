@@ -529,7 +529,7 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "gps"
+    const-string/jumbo v0, "gps"
 
     invoke-direct {p0, v0}, Lcom/android/server/LocationManagerService;->DumpUpdateRecordProvider(Ljava/lang/String;)V
 
@@ -2413,7 +2413,7 @@
 .method private getMinimumResolutionLevelForProviderUse(Ljava/lang/String;)I
     .locals 5
 
-    const-string v0, "gps"
+    const-string/jumbo v0, "gps"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2813,7 +2813,7 @@
 
     const-string v8, "LocationManagerService"
 
-    const-string v9, "handleLocationChangedLocked() updateLastLocation failed"
+    const-string/jumbo v9, "handleLocationChangedLocked() updateLastLocation failed"
 
     invoke-static {v8, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -3559,7 +3559,7 @@
 
     move-result v0
 
-    const-string v1, "gps"
+    const-string/jumbo v1, "gps"
 
     invoke-direct {p0, v0, v1}, Lcom/android/server/LocationManagerService;->checkResolutionLevelIsSufficientForProviderUse(ILjava/lang/String;)V
 
@@ -4079,7 +4079,7 @@
 
     iget-object v3, v0, Lcom/android/server/LocationManagerService;->mRealProviders:Ljava/util/HashMap;
 
-    const-string v4, "gps"
+    const-string/jumbo v4, "gps"
 
     invoke-virtual {v3, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -4164,7 +4164,7 @@
 
     const v10, 0x1120066
 
-    const v11, 0x104016c
+    const v11, 0x104016d
 
     const v12, 0x107002e
 
@@ -4206,7 +4206,7 @@
 
     const v12, 0x112005d
 
-    const v13, 0x1040153
+    const v13, 0x1040154
 
     const v14, 0x107002e
 
@@ -4258,7 +4258,7 @@
 
     const v9, 0x112005e
 
-    const v10, 0x1040154
+    const v10, 0x1040155
 
     iget-object v11, v0, Lcom/android/server/LocationManagerService;->mLocationHandler:Lcom/android/server/LocationManagerService$LocationWorkerHandler;
 
@@ -4283,7 +4283,7 @@
 
     const v10, 0x112005f
 
-    const v11, 0x1040155
+    const v11, 0x1040156
 
     const v12, 0x107002e
 
@@ -4808,7 +4808,7 @@
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "gnss measurements listener from uid "
+    const-string/jumbo v7, "gnss measurements listener from uid "
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4934,7 +4934,7 @@
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "gnss navigation message listener from uid "
+    const-string/jumbo v7, "gnss navigation message listener from uid "
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5043,7 +5043,7 @@
         }
     .end annotation
 
-    const-string v0, "gps"
+    const-string/jumbo v0, "gps"
 
     invoke-interface {p1, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
@@ -5051,7 +5051,7 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "gps"
+    const-string/jumbo v0, "gps"
 
     return-object v0
 
@@ -5942,7 +5942,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/server/LocationManagerService;->mProvidersByName:Ljava/util/HashMap;
 
-    const-string v1, "gps"
+    const-string/jumbo v1, "gps"
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -6869,7 +6869,7 @@
     monitor-enter v2
 
     :try_start_0
-    const-string v3, "gps"
+    const-string/jumbo v3, "gps"
 
     invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -8382,7 +8382,7 @@
 
     if-eqz v8, :cond_0
 
-    const-string v9, "gps"
+    const-string/jumbo v9, "gps"
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -11317,7 +11317,7 @@
 
     invoke-direct {p0}, Lcom/android/server/LocationManagerService;->checkCallerIsProvider()V
 
-    const-string v0, "gps"
+    const-string/jumbo v0, "gps"
 
     invoke-direct {p0, v0}, Lcom/android/server/LocationManagerService;->isAllowedByCurrentUserSettingsLocked(Ljava/lang/String;)Z
 
@@ -11975,7 +11975,7 @@
 
     if-nez p1, :cond_0
 
-    const-string v5, "gps"
+    const-string/jumbo v5, "gps"
 
     invoke-interface {v4, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 

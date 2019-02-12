@@ -1193,7 +1193,7 @@
 
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v1, "globalProxySpec="
+    const-string/jumbo v1, "globalProxySpec="
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -1208,7 +1208,7 @@
 
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v1, "globalProxyEclusionList="
+    const-string/jumbo v1, "globalProxyEclusionList="
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -2001,7 +2001,7 @@
     goto/16 :goto_1
 
     :cond_10
-    const-string v5, "global-proxy-spec"
+    const-string/jumbo v5, "global-proxy-spec"
 
     invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2020,7 +2020,7 @@
     goto/16 :goto_1
 
     :cond_11
-    const-string v5, "global-proxy-exclusion-list"
+    const-string/jumbo v5, "global-proxy-exclusion-list"
 
     invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -3300,7 +3300,7 @@
 
     if-eqz v0, :cond_b
 
-    const-string v0, "global-proxy-spec"
+    const-string/jumbo v0, "global-proxy-spec"
 
     invoke-interface {p1, v1, v0}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -3310,7 +3310,7 @@
 
     invoke-interface {p1, v1, v0, v2}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v0, "global-proxy-spec"
+    const-string/jumbo v0, "global-proxy-spec"
 
     invoke-interface {p1, v1, v0}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -3319,7 +3319,7 @@
 
     if-eqz v0, :cond_c
 
-    const-string v0, "global-proxy-exclusion-list"
+    const-string/jumbo v0, "global-proxy-exclusion-list"
 
     invoke-interface {p1, v1, v0}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -3329,7 +3329,7 @@
 
     invoke-interface {p1, v1, v0, v2}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v0, "global-proxy-exclusion-list"
+    const-string/jumbo v0, "global-proxy-exclusion-list"
 
     invoke-interface {p1, v1, v0}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 

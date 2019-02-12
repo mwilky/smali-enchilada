@@ -346,7 +346,7 @@
 
     move-result v0
 
-    const v1, 0x10401be
+    const v1, 0x10401bf
 
     if-eqz v0, :cond_0
 
@@ -2533,7 +2533,7 @@
     goto :goto_3
 
     :cond_6
-    const-string v9, "groups"
+    const-string/jumbo v9, "groups"
 
     invoke-virtual {v6, v9, v8}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
     :try_end_2
@@ -3697,7 +3697,7 @@
 
     move-result-object v5
 
-    const v6, 0x10401be
+    const v6, 0x10401bf
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -4798,7 +4798,7 @@
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v10, "gsk="
+    const-string/jumbo v10, "gsk="
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

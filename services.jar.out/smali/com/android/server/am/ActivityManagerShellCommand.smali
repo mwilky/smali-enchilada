@@ -17,8 +17,6 @@
 # static fields
 .field private static final CMDTIMEOUT:I = 0x2710
 
-.field private static final ISAGINGVERSION:Z
-
 .field public static final NO_CLASS_ERROR_CODE:Ljava/lang/String; = "Error type 3"
 
 .field private static final SHELL_PACKAGE_NAME:Ljava/lang/String; = "com.android.shell"
@@ -83,22 +81,6 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    const-string/jumbo v0, "sys.debug.watchdog"
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    sput-boolean v0, Lcom/android/server/am/ActivityManagerShellCommand;->ISAGINGVERSION:Z
-
-    return-void
-.end method
-
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService;Z)V
     .locals 1
 
@@ -211,14 +193,6 @@
     iput-boolean p1, p0, Lcom/android/server/am/ActivityManagerShellCommand;->mIsLockTask:Z
 
     return p1
-.end method
-
-.method static synthetic access$1800()Z
-    .locals 1
-
-    sget-boolean v0, Lcom/android/server/am/ActivityManagerShellCommand;->ISAGINGVERSION:Z
-
-    return v0
 .end method
 
 .method static synthetic access$202(Lcom/android/server/am/ActivityManagerShellCommand;Ljava/lang/String;)Ljava/lang/String;

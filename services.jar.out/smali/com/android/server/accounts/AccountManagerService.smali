@@ -2321,7 +2321,7 @@
 
     aput-object v4, v3, v5
 
-    const v4, 0x10404d4
+    const v4, 0x10404d5
 
     invoke-virtual {v2, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2551,7 +2551,7 @@
 
     invoke-virtual {v10, v4}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    const v4, 0x1040426
+    const v4, 0x1040427
 
     invoke-virtual {v0, v4}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -18620,7 +18620,7 @@
     :goto_1
     const-string v0, "AccountManagerService"
 
-    const-string v1, "grantAppPermission: called with invalid arguments"
+    const-string/jumbo v1, "grantAppPermission: called with invalid arguments"
 
     new-instance v2, Ljava/lang/Exception;
 

@@ -114,7 +114,7 @@
 
     iget-object v1, p0, Lcom/android/server/connectivity/NetworkMonitor$ValidatedState;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
 
-    const-string/jumbo v6, "https://www.baidu.com"
+    const-string/jumbo v6, "www.baidu.com"
 
     invoke-static {v1, v6, v5, v2}, Lcom/android/server/connectivity/NetworkMonitor;->access$2800(Lcom/android/server/connectivity/NetworkMonitor;Ljava/lang/String;II)Z
 
@@ -125,7 +125,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/server/connectivity/NetworkMonitor$ValidatedState;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
 
-    const-string/jumbo v6, "https://www.google.com"
+    const-string/jumbo v6, "www.google.com"
 
     invoke-static {v1, v6, v5, v2}, Lcom/android/server/connectivity/NetworkMonitor;->access$2800(Lcom/android/server/connectivity/NetworkMonitor;Ljava/lang/String;II)Z
 
@@ -154,7 +154,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "in validatestate ,the network reachable is: "
+    const-string/jumbo v5, "in validatestate, the network reachable is: "
 
     invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -194,7 +194,7 @@
 
     move-result-object v1
 
-    const-string v2, "current network is OK now,stop checking it "
+    const-string v2, "current network is OK now, stop checking it "
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 

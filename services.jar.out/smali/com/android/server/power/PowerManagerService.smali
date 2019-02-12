@@ -1248,7 +1248,9 @@
 
     move-result-object v4
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    check-cast v4, Ljava/lang/CharSequence;
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
@@ -6730,7 +6732,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "goToSleepNoUpdateLocked: eventTime="
+    const-string/jumbo v3, "goToSleepNoUpdateLocked: eventTime="
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6807,7 +6809,7 @@
     :cond_3
     iput-boolean v1, p0, Lcom/android/server/power/PowerManagerService;->mBlockFingerprintSleep:Z
 
-    const-string v0, "goToSleep"
+    const-string/jumbo v0, "goToSleep"
 
     const-wide/32 v4, 0x20000
 

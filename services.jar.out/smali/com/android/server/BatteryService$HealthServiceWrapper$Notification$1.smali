@@ -42,7 +42,7 @@
 
     iget-object v0, v0, Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;->this$0:Lcom/android/server/BatteryService$HealthServiceWrapper;
 
-    invoke-static {v0}, Lcom/android/server/BatteryService$HealthServiceWrapper;->access$3100(Lcom/android/server/BatteryService$HealthServiceWrapper;)Lcom/android/server/BatteryService$HealthServiceWrapper$IHealthSupplier;
+    invoke-static {v0}, Lcom/android/server/BatteryService$HealthServiceWrapper;->access$3300(Lcom/android/server/BatteryService$HealthServiceWrapper;)Lcom/android/server/BatteryService$HealthServiceWrapper$IHealthSupplier;
 
     move-result-object v0
 
@@ -50,7 +50,7 @@
 
     iget-object v1, v1, Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;->this$0:Lcom/android/server/BatteryService$HealthServiceWrapper;
 
-    invoke-static {v1}, Lcom/android/server/BatteryService$HealthServiceWrapper;->access$3000(Lcom/android/server/BatteryService$HealthServiceWrapper;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/android/server/BatteryService$HealthServiceWrapper;->access$3200(Lcom/android/server/BatteryService$HealthServiceWrapper;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -62,7 +62,7 @@
 
     iget-object v1, v1, Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;->this$0:Lcom/android/server/BatteryService$HealthServiceWrapper;
 
-    invoke-static {v1}, Lcom/android/server/BatteryService$HealthServiceWrapper;->access$3200(Lcom/android/server/BatteryService$HealthServiceWrapper;)Ljava/util/concurrent/atomic/AtomicReference;
+    invoke-static {v1}, Lcom/android/server/BatteryService$HealthServiceWrapper;->access$3400(Lcom/android/server/BatteryService$HealthServiceWrapper;)Ljava/util/concurrent/atomic/AtomicReference;
 
     move-result-object v1
 
@@ -95,7 +95,7 @@
 
     iget-object v4, v4, Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;->this$0:Lcom/android/server/BatteryService$HealthServiceWrapper;
 
-    invoke-static {v4}, Lcom/android/server/BatteryService$HealthServiceWrapper;->access$3000(Lcom/android/server/BatteryService$HealthServiceWrapper;)Ljava/lang/String;
+    invoke-static {v4}, Lcom/android/server/BatteryService$HealthServiceWrapper;->access$3200(Lcom/android/server/BatteryService$HealthServiceWrapper;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -111,7 +111,7 @@
 
     iget-object v2, v2, Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;->this$0:Lcom/android/server/BatteryService$HealthServiceWrapper;
 
-    invoke-static {v2}, Lcom/android/server/BatteryService$HealthServiceWrapper;->access$3300(Lcom/android/server/BatteryService$HealthServiceWrapper;)Lcom/android/server/BatteryService$HealthServiceWrapper$Callback;
+    invoke-static {v2}, Lcom/android/server/BatteryService$HealthServiceWrapper;->access$3500(Lcom/android/server/BatteryService$HealthServiceWrapper;)Lcom/android/server/BatteryService$HealthServiceWrapper$Callback;
 
     move-result-object v2
 
@@ -119,7 +119,7 @@
 
     iget-object v3, v3, Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;->this$0:Lcom/android/server/BatteryService$HealthServiceWrapper;
 
-    invoke-static {v3}, Lcom/android/server/BatteryService$HealthServiceWrapper;->access$3000(Lcom/android/server/BatteryService$HealthServiceWrapper;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/android/server/BatteryService$HealthServiceWrapper;->access$3200(Lcom/android/server/BatteryService$HealthServiceWrapper;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -147,7 +147,7 @@
 
     iget-object v3, v3, Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;->this$0:Lcom/android/server/BatteryService$HealthServiceWrapper;
 
-    invoke-static {v3}, Lcom/android/server/BatteryService$HealthServiceWrapper;->access$3000(Lcom/android/server/BatteryService$HealthServiceWrapper;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/android/server/BatteryService$HealthServiceWrapper;->access$3200(Lcom/android/server/BatteryService$HealthServiceWrapper;)Ljava/lang/String;
 
     move-result-object v3
 

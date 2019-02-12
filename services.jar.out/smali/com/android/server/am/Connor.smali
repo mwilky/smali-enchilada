@@ -2337,7 +2337,7 @@
 
     const-string v3, "Connor"
 
-    const-string v4, "got exception when apply_model"
+    const-string/jumbo v4, "got exception when apply_model"
 
     invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 

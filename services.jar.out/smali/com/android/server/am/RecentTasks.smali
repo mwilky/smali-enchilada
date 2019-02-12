@@ -6131,7 +6131,7 @@
 .method loadRecentsComponent(Landroid/content/res/Resources;)V
     .locals 6
 
-    const v0, 0x1040174
+    const v0, 0x1040175
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

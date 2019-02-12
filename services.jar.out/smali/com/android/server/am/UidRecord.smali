@@ -282,7 +282,7 @@
 
     const/4 v1, 0x1
 
-    const-string v2, "gone"
+    const-string/jumbo v2, "gone"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

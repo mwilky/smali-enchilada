@@ -9091,7 +9091,7 @@
 
     iget-object v2, v1, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
-    invoke-static {v3, v2}, Lcom/oneplus/util/OemSceneModeUtils;->isMutedByStatusBar(Landroid/content/Context;Landroid/service/notification/StatusBarNotification;)Z
+    invoke-static {v3, v2}, Lcom/oneplus/util/OemSceneCallBlocker;->isNotificationMutedByCallBlocker(Landroid/content/Context;Landroid/service/notification/StatusBarNotification;)Z
 
     move-result v2
 
@@ -13058,7 +13058,7 @@
 
     invoke-virtual {v0, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const v14, 0x1040162
+    const v14, 0x1040163
 
     invoke-virtual {v4, v14}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -15051,7 +15051,7 @@
 
     move-result-object v0
 
-    const v1, 0x104013e
+    const v1, 0x104013f
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -15136,7 +15136,7 @@
 
     move-result-object v3
 
-    const v4, 0x104013d
+    const v4, 0x104013e
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

@@ -499,7 +499,7 @@
 
     move-result-object v8
 
-    const v1, 0x10e0093
+    const v1, 0x10e0096
 
     invoke-virtual {v8, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -509,7 +509,7 @@
 
     move-result v7
 
-    const v1, 0x10e0089
+    const v1, 0x10e008c
 
     invoke-virtual {v8, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -521,7 +521,7 @@
 
     iput v1, v15, Lcom/android/server/display/DisplayPowerController;->mScreenBrightnessDozeConfig:I
 
-    const v1, 0x10e0088
+    const v1, 0x10e008b
 
     invoke-virtual {v8, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -555,7 +555,7 @@
 
     iput v1, v15, Lcom/android/server/display/DisplayPowerController;->mBrightnessRampRateFast:I
 
-    const v1, 0x10e0091
+    const v1, 0x10e0094
 
     invoke-virtual {v8, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -578,7 +578,7 @@
 
     iput v1, v15, Lcom/android/server/display/DisplayPowerController;->mBrightnessRampRateFast:I
 
-    const v1, 0x10e0090
+    const v1, 0x10e0093
 
     invoke-virtual {v8, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -591,7 +591,7 @@
     iput v1, v15, Lcom/android/server/display/DisplayPowerController;->mScreenBrightnessRangeMaximum:I
 
     :goto_0
-    const v1, 0x10e008d
+    const v1, 0x10e0090
 
     invoke-virtual {v8, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -603,7 +603,7 @@
 
     iput v1, v15, Lcom/android/server/display/DisplayPowerController;->mScreenBrightnessDefault:I
 
-    const v1, 0x10e008c
+    const v1, 0x10e008f
 
     invoke-virtual {v8, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -615,7 +615,7 @@
 
     iput v1, v15, Lcom/android/server/display/DisplayPowerController;->mScreenBrightnessForVrRangeMinimum:I
 
-    const v1, 0x10e008b
+    const v1, 0x10e008e
 
     invoke-virtual {v8, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -627,7 +627,7 @@
 
     iput v1, v15, Lcom/android/server/display/DisplayPowerController;->mScreenBrightnessForVrRangeMaximum:I
 
-    const v1, 0x10e008a
+    const v1, 0x10e008d
 
     invoke-virtual {v8, v1}, Landroid/content/res/Resources;->getInteger(I)I
 

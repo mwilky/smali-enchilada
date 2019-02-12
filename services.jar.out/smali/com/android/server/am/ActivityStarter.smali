@@ -5298,7 +5298,7 @@
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
 
-    invoke-static {v0, v10, v8, v12}, Lcom/oneplus/util/OemSceneModeUtils;->isBlockedByGameModeWithUid(Landroid/content/Context;Landroid/content/Intent;Landroid/content/pm/ResolveInfo;I)Z
+    invoke-static {v0, v10, v8, v12}, Lcom/oneplus/util/OemSceneCallBlocker;->isCallBlockedWithUid(Landroid/content/Context;Landroid/content/Intent;Landroid/content/pm/ResolveInfo;I)Z
 
     move-result v0
 

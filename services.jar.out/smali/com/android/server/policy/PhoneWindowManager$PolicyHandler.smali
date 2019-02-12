@@ -88,7 +88,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "handleAuthStateChange, authenticating:"
+    const-string/jumbo v5, "handleAuthStateChange, authenticating:"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -468,6 +468,8 @@
     :cond_5
     :goto_3
     return-void
+
+    nop
 
     nop
 

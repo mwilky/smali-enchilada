@@ -903,7 +903,7 @@
 
     iput v1, p0, Lcom/android/server/wm/PinnedStackController;->mDefaultAspectRatio:F
 
-    const v1, 0x1040141
+    const v1, 0x1040142
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

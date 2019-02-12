@@ -11600,7 +11600,7 @@
 
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v0, "gids="
+    const-string/jumbo v0, "gids="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -12081,7 +12081,7 @@
     goto :goto_b
 
     :cond_a
-    const-string v3, "ha"
+    const-string/jumbo v3, "ha"
 
     :goto_b
     invoke-virtual {v7, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -17155,7 +17155,7 @@
     goto :goto_0
 
     :cond_3
-    const-string v7, "granted"
+    const-string/jumbo v7, "granted"
 
     invoke-interface {p1, v5, v7}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -25081,7 +25081,7 @@
 
     invoke-interface {p1, v1, v3, v4}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v3, "granted"
+    const-string/jumbo v3, "granted"
 
     invoke-virtual {v2}, Lcom/android/server/pm/permission/PermissionsState$PermissionState;->isGranted()Z
 

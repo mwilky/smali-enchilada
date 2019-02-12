@@ -915,7 +915,7 @@
 
     sget-object v0, Lcom/android/server/wm/RemoteAnimationController;->TAG:Ljava/lang/String;
 
-    const-string v1, "goodToGo()"
+    const-string/jumbo v1, "goodToGo()"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -973,7 +973,7 @@
 
     sget-object v1, Lcom/android/server/wm/RemoteAnimationController;->TAG:Ljava/lang/String;
 
-    const-string v2, "goodToGo(): No apps to animate"
+    const-string/jumbo v2, "goodToGo(): No apps to animate"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -1011,7 +1011,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "goodToGo(): Animation finished already, canceled="
+    const-string/jumbo v2, "goodToGo(): Animation finished already, canceled="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

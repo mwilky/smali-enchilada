@@ -50,7 +50,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "handleMessage("
+    const-string/jumbo v4, "handleMessage("
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -330,6 +330,18 @@
     sget-object v9, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
     invoke-virtual {v0, v8, v9}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
+
+    invoke-static {}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->getInstance()Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_6
+
+    invoke-static {}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->getInstance()Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v6, v3}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->notifyDozeEvent(ZLjava/lang/String;)V
 
     :cond_6
     if-eqz v7, :cond_7
@@ -731,6 +743,20 @@
 
     invoke-virtual {v0, v4, v7}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
+    invoke-static {}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->getInstance()Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_e
+
+    invoke-static {}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->getInstance()Lcom/android/server/am/OnePlusPowerConsumptionStatistic;
+
+    move-result-object v0
+
+    const-string v4, "becomeDeepIdle"
+
+    invoke-virtual {v0, v5, v4}, Lcom/android/server/am/OnePlusPowerConsumptionStatistic;->notifyDozeEvent(ZLjava/lang/String;)V
+
     :cond_e
     if-eqz v6, :cond_f
 
@@ -918,8 +944,6 @@
 
     :goto_b
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

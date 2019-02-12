@@ -5402,7 +5402,7 @@
 
     move-object v11, v0
 
-    const-string v0, "gs"
+    const-string/jumbo v0, "gs"
 
     invoke-virtual {v0, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -5660,7 +5660,7 @@
     goto/16 :goto_e
 
     :cond_7
-    const-string v0, "h"
+    const-string/jumbo v0, "h"
 
     invoke-virtual {v0, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -5996,7 +5996,7 @@
     :goto_b
     iput-object v10, v0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->options:Landroid/os/Bundle;
 
-    const-string v3, "h"
+    const-string/jumbo v3, "h"
 
     const/4 v14, 0x0
 
@@ -7567,7 +7567,7 @@
 
     invoke-interface {p0, v1, v0, v2}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v0, "h"
+    const-string/jumbo v0, "h"
 
     iget-object v2, p1, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->host:Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
@@ -7735,7 +7735,7 @@
         }
     .end annotation
 
-    const-string v0, "h"
+    const-string/jumbo v0, "h"
 
     const/4 v1, 0x0
 
@@ -7771,7 +7771,7 @@
 
     invoke-interface {p0, v1, v0, v2}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    const-string v0, "h"
+    const-string/jumbo v0, "h"
 
     invoke-interface {p0, v1, v0}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -8039,7 +8039,7 @@
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "haha_widget # updateAppBootPackages # "
+    const-string/jumbo v7, "haha_widget # updateAppBootPackages # "
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -8798,7 +8798,7 @@
 
     invoke-interface {v1, v4, v3}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    const-string v3, "gs"
+    const-string/jumbo v3, "gs"
 
     invoke-interface {v1, v4, v3}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -8982,7 +8982,7 @@
     goto :goto_6
 
     :cond_8
-    const-string v6, "gs"
+    const-string/jumbo v6, "gs"
 
     invoke-interface {v1, v4, v6}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 

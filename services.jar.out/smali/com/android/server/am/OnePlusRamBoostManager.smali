@@ -28,6 +28,8 @@
 
 .field private static ENABLE:Z = false
 
+.field public static IN_USING:Z = false
+
 .field private static IOPPRELOAD:Z = false
 
 .field private static final IOP_TIMEOUT:J = 0x2710L
@@ -189,17 +191,35 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 3
 
     const/4 v0, 0x1
 
+    new-array v0, v0, [I
+
+    const/4 v1, 0x0
+
+    const/16 v2, 0x67
+
+    aput v2, v0, v1
+
+    invoke-static {v0}, Landroid/util/OpFeatures;->isSupport([I)Z
+
+    move-result v0
+
+    sput-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->IN_USING:Z
+
+    sget-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->IN_USING:Z
+
     sput-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->ENABLE:Z
+
+    sget-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->IN_USING:Z
 
     sput-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->IOPPRELOAD:Z
 
-    const/4 v0, 0x0
+    sput-boolean v1, Lcom/android/server/am/OnePlusRamBoostManager;->DEBUG:Z
 
-    sput-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->DEBUG:Z
+    sget-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->IN_USING:Z
 
     sput-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->mUserSwitch:Z
 
@@ -283,6 +303,10 @@
 
     iput-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager;->suffixList:Ljava/util/List;
 
+    sget-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->IN_USING:Z
+
+    if-eqz v0, :cond_0
+
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string/jumbo v1, "ramboost"
@@ -337,6 +361,7 @@
 
     sput-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->DEBUG:Z
 
+    :cond_0
     return-void
 .end method
 
@@ -3092,6 +3117,13 @@
 .method private updateSwitch(Z)V
     .locals 3
 
+    sget-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->IN_USING:Z
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
     invoke-direct {p0}, Lcom/android/server/am/OnePlusRamBoostManager;->getRamBoostSwitchStatus()Z
 
     move-result v0
@@ -3100,11 +3132,11 @@
 
     sget-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->mUserSwitch:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     invoke-direct {p0}, Lcom/android/server/am/OnePlusRamBoostManager;->disableRamBoost()V
 
-    :cond_0
+    :cond_1
     const-string/jumbo v0, "persist.sys.ramboost.olhotcount"
 
     const/4 v1, 0x1
@@ -3115,13 +3147,13 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     sget-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->mUserSwitch:Z
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     move v0, v2
 
     :goto_0
@@ -3133,13 +3165,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     sget-boolean v2, Lcom/android/server/am/OnePlusRamBoostManager;->mUserSwitch:Z
 
     nop
 
-    :cond_2
+    :cond_3
     sput-boolean v2, Lcom/android/server/am/OnePlusRamBoostManager;->IOPPRELOAD:Z
 
     const-string/jumbo v0, "persist.sys.ramboost.enable"
@@ -3162,19 +3194,19 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/server/am/OnePlusRamBoostManager;->setPropValue(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_5
 
     const-string v0, "/proc/sys/vm/page_cache_reside_switch"
 
     sget-boolean v1, Lcom/android/server/am/OnePlusRamBoostManager;->ENABLE:Z
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
     const-string v1, "1"
 
     goto :goto_1
 
-    :cond_3
+    :cond_4
     const-string v1, "0"
 
     :goto_1
@@ -3182,7 +3214,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     const-string v0, "OnePlusSmartBoostManager"
 
@@ -3204,7 +3236,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_4
+    :cond_5
     return-void
 .end method
 
@@ -3356,112 +3388,19 @@
 
 # virtual methods
 .method public config(Ljava/lang/Object;)I
-    .locals 5
+    .locals 1
 
-    move-object v0, p1
+    const/4 v0, 0x0
 
-    check-cast v0, Ljava/lang/String;
-
-    const-string v1, "DEBUG true"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x1
-
-    sput-boolean v1, Lcom/android/server/am/OnePlusRamBoostManager;->DEBUG:Z
-
-    goto :goto_0
-
-    :cond_0
-    const-string v1, "DEBUG false"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    sput-boolean v2, Lcom/android/server/am/OnePlusRamBoostManager;->DEBUG:Z
-
-    goto :goto_0
-
-    :cond_1
-    const-string/jumbo v1, "update highlist"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mRamBoostHandler:Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;
-
-    const/4 v3, 0x5
-
-    invoke-virtual {v1, v3}, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->removeMessages(I)V
-
-    const-wide/32 v3, 0x5265c00
-
-    invoke-direct {p0, v3, v4}, Lcom/android/server/am/OnePlusRamBoostManager;->updateHighUsagePkg(J)V
-
-    const-string v1, "OnePlusSmartBoostManager"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "mHighUsagePkgList size="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v4, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mHighUsagePkgList:Ljava/util/ArrayList;
-
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-
-    :cond_2
-    const-string v1, "dump List"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    invoke-direct {p0}, Lcom/android/server/am/OnePlusRamBoostManager;->dumpList()V
-
-    goto :goto_0
-
-    :cond_3
-    const-string v1, "OnePlusSmartBoostManager"
-
-    const-string/jumbo v3, "invalid config cmd!"
-
-    invoke-static {v1, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    :goto_0
-    return v2
+    return v0
 .end method
 
 .method public initEnv(Landroid/content/Context;)V
     .locals 5
+
+    sget-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->IN_USING:Z
+
+    if-eqz v0, :cond_0
 
     iput-object p1, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mContext:Landroid/content/Context;
 
@@ -3487,6 +3426,12 @@
 
     iput-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager;->URI_RAMBOOST_SWITCH:Landroid/net/Uri;
 
+    invoke-static {}, Lcom/android/server/am/RestartProcessManager;->getInstance()Lcom/android/server/am/RestartProcessManager;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager;->usageMgr:Lcom/android/server/am/RestartProcessManager;
+
     iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mRamBoostHandler:Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;
 
     iget-object v1, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mRamBoostHandler:Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;
@@ -3499,33 +3444,35 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/am/OnePlusRamBoostManager$RamBoostHandler;->sendMessage(Landroid/os/Message;)Z
 
-    invoke-static {}, Lcom/android/server/am/RestartProcessManager;->getInstance()Lcom/android/server/am/RestartProcessManager;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager;->usageMgr:Lcom/android/server/am/RestartProcessManager;
-
     iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mResolver:Landroid/content/ContentResolver;
 
     iget-object v1, p0, Lcom/android/server/am/OnePlusRamBoostManager;->URI_RAMBOOST_SWITCH:Landroid/net/Uri;
 
-    iget-object v2, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mSwitchContentObserver:Lcom/android/server/am/OnePlusRamBoostManager$SwitchContentObserver;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    iget-object v3, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mSwitchContentObserver:Lcom/android/server/am/OnePlusRamBoostManager$SwitchContentObserver;
 
     const/4 v4, -0x1
 
-    invoke-virtual {v0, v1, v3, v2, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
+    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
+    :cond_0
     return-void
 .end method
 
 .method public initOnlineConfig(Landroid/content/Context;)V
     .locals 5
 
+    sget-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->IN_USING:Z
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
     sget-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->DEBUG:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     const-string v0, "OnePlusSmartBoostManager"
 
@@ -3533,7 +3480,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_0
+    :cond_1
     new-instance v0, Lcom/oneplus/config/ConfigObserver;
 
     iget-object v1, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mContext:Landroid/content/Context;
@@ -3574,9 +3521,13 @@
 
     sget-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->IOPPRELOAD:Z
 
+    if-eqz v0, :cond_3
+
+    sget-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->IN_USING:Z
+
     if-nez v0, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/OnePlusRamBoostManager;->mBlackIopList:Ljava/util/ArrayList;
@@ -3642,6 +3593,10 @@
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
     return-void
+
+    :cond_3
+    :goto_0
+    return-void
 .end method
 
 .method public notifyRamBoost(Ljava/lang/String;IZ)V
@@ -3649,9 +3604,13 @@
 
     sget-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->ENABLE:Z
 
+    if-eqz v0, :cond_9
+
+    sget-boolean v0, Lcom/android/server/am/OnePlusRamBoostManager;->IN_USING:Z
+
     if-nez v0, :cond_0
 
-    return-void
+    goto/16 :goto_1
 
     :cond_0
     const/4 v0, 0x0
@@ -3830,6 +3789,10 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     throw v2
+
+    :cond_9
+    :goto_1
+    return-void
 .end method
 
 .method public start(Ljava/lang/Object;)I

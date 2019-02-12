@@ -9650,7 +9650,7 @@
 
     move-result-object v0
 
-    const v1, 0x10401bd
+    const v1, 0x10401be
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -14004,13 +14004,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_3
 
     invoke-direct {p0, p1}, Lcom/android/server/pm/PackageManagerService;->queryIsGame(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_3
 
     const-string v0, "PackageManager"
 
@@ -14089,13 +14089,95 @@
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    const/16 v3, 0x44
+    iget-object v3, p0, Lcom/android/server/pm/PackageManagerService;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v0, v3, p2, p1, v2}, Landroid/app/AppOpsManager;->setMode(IILjava/lang/String;I)V
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v3
+
+    const-string/jumbo v4, "op_gamemode_removed_packages_by_user"
+
+    invoke-static {v3, v4}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_2
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v5, ";"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    const-string v2, "PackageManager"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "checkGameMode: ignore setting game mode of \'"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v5, "\'"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v2, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    sget-boolean v2, Lcom/android/server/pm/PackageManagerService;->DEBUG_INSTALL:Z
+
+    if-eqz v2, :cond_1
+
+    const-string v2, "PackageManager"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "checkGameMode no_game_mode_list = "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v2, v4}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    return-void
+
+    :cond_2
+    const/16 v4, 0x44
+
+    invoke-virtual {v0, v4, p2, p1, v2}, Landroid/app/AppOpsManager;->setMode(IILjava/lang/String;I)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_1
+    :cond_3
     goto :goto_0
 
     :catch_0
@@ -22236,7 +22318,7 @@
 
     if-eqz v27, :cond_6
 
-    const-string v5, "android.intent.action.OEM_PACKAGE_ADDED"
+    const-string/jumbo v5, "oneplus.intent.action.OEM_PACKAGE_ADDED"
 
     invoke-virtual {v4, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
@@ -22245,14 +22327,14 @@
     :cond_6
     if-eqz v28, :cond_7
 
-    const-string v5, "android.intent.action.OEM_PACKAGE_REMOVED"
+    const-string/jumbo v5, "oneplus.intent.action.OEM_PACKAGE_REMOVED"
 
     invoke-virtual {v4, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
     goto :goto_3
 
     :cond_7
-    const-string v5, "android.intent.action.OEM_PACKAGE_REPLACED"
+    const-string/jumbo v5, "oneplus.intent.action.OEM_PACKAGE_REPLACED"
 
     invoke-virtual {v4, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
@@ -28255,7 +28337,7 @@
 
     move-result-object v2
 
-    const v4, 0x1040170
+    const v4, 0x1040171
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -29601,7 +29683,7 @@
 
     move-result-object v2
 
-    const v4, 0x1040170
+    const v4, 0x1040171
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -43793,7 +43875,7 @@
 
     move-result-object v12
 
-    const-string v2, "grant"
+    const-string/jumbo v2, "grant"
 
     invoke-virtual {v12, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -48965,7 +49047,7 @@
 .end method
 
 .method private removeAbnormalDozeWhiteList()V
-    .locals 8
+    .locals 9
 
     const-string v0, "deviceidle"
 
@@ -48977,69 +49059,85 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     :try_start_0
     invoke-interface {v0}, Landroid/os/IDeviceIdleController;->getUserPowerWhitelist()[Ljava/lang/String;
 
     move-result-object v1
 
-    array-length v2, v1
+    invoke-static {}, Lcom/android/server/am/OnePlusProcessManager;->getTrafficeWhiteUids()Ljava/util/ArrayList;
 
-    const/4 v3, 0x0
+    move-result-object v2
+
+    array-length v3, v1
+
+    const/4 v4, 0x0
 
     :goto_0
-    if-ge v3, v2, :cond_1
+    if-ge v4, v3, :cond_2
 
-    aget-object v4, v1, v3
+    aget-object v5, v1, v4
 
-    iget-object v5, p0, Lcom/android/server/pm/PackageManagerService;->mOemDeviceIdleWhiteList:Ljava/util/List;
+    iget-object v6, p0, Lcom/android/server/pm/PackageManagerService;->mOemDeviceIdleWhiteList:Ljava/util/List;
 
-    invoke-interface {v5, v4}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v6, v5}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v6
 
-    if-nez v5, :cond_0
+    if-nez v6, :cond_1
 
-    invoke-static {v4}, Lcom/android/server/am/OnePlusAppControlModeService;->isSetted(Ljava/lang/String;)Z
+    invoke-static {v5}, Lcom/android/server/am/OnePlusAppControlModeService;->isSetted(Ljava/lang/String;)Z
 
-    move-result v5
+    move-result v6
 
-    if-nez v5, :cond_0
+    if-nez v6, :cond_1
 
-    invoke-interface {v0, v4}, Landroid/os/IDeviceIdleController;->removePowerSaveWhitelistApp(Ljava/lang/String;)V
+    if-eqz v2, :cond_0
 
-    const-string v5, "PackageManager"
+    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    move-result v6
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    if-eqz v6, :cond_0
 
-    const-string v7, "[OnlineConfig] remove "
+    goto :goto_1
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_0
+    invoke-interface {v0, v5}, Landroid/os/IDeviceIdleController;->removePowerSaveWhitelistApp(Ljava/lang/String;)V
 
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v6, "PackageManager"
 
-    const-string v7, "from DozeWhitelist complete"
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v8, "[OnlineConfig] remove "
 
-    move-result-object v6
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v5, v6}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v8, "from DozeWhitelist complete"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_0
-    add-int/lit8 v3, v3, 0x1
+    :cond_1
+    :goto_1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    :cond_1
-    goto :goto_1
+    :cond_2
+    goto :goto_2
 
     :catch_0
     move-exception v1
@@ -49050,8 +49148,8 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_2
-    :goto_1
+    :cond_3
+    :goto_2
     return-void
 .end method
 
@@ -53705,6 +53803,8 @@
     goto :goto_1
 
     :cond_2
+    invoke-direct {p0}, Lcom/android/server/pm/PackageManagerService;->removeAbnormalDozeWhiteList()V
+
     monitor-exit v4
 
     goto :goto_2
@@ -58124,7 +58224,7 @@
 
     if-nez v7, :cond_1
 
-    const-string v15, "grant"
+    const-string/jumbo v15, "grant"
 
     invoke-interface {v1, v3, v15}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -58233,7 +58333,7 @@
     :cond_a
     if-eqz v7, :cond_b
 
-    const-string v0, "grant"
+    const-string/jumbo v0, "grant"
 
     invoke-interface {v1, v3, v0}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -82051,7 +82151,7 @@
 
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService;->mContext:Landroid/content/Context;
 
-    const v1, 0x1040142
+    const v1, 0x1040143
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -82333,7 +82433,7 @@
 .method public grantDefaultPermissionsToActiveLuiApp(Ljava/lang/String;I)V
     .locals 4
 
-    const-string v0, "grantDefaultPermissionsToActiveLuiApp"
+    const-string/jumbo v0, "grantDefaultPermissionsToActiveLuiApp"
 
     invoke-static {v0}, Lcom/android/server/pm/PackageManagerService;->enforceSystemOrPhoneCaller(Ljava/lang/String;)V
 
@@ -82384,7 +82484,7 @@
 .method public grantDefaultPermissionsToEnabledCarrierApps([Ljava/lang/String;I)V
     .locals 4
 
-    const-string v0, "grantPermissionsToEnabledCarrierApps"
+    const-string/jumbo v0, "grantPermissionsToEnabledCarrierApps"
 
     invoke-static {v0}, Lcom/android/server/pm/PackageManagerService;->enforceSystemOrPhoneCaller(Ljava/lang/String;)V
 
@@ -82435,7 +82535,7 @@
 .method public grantDefaultPermissionsToEnabledImsServices([Ljava/lang/String;I)V
     .locals 4
 
-    const-string v0, "grantDefaultPermissionsToEnabledImsServices"
+    const-string/jumbo v0, "grantDefaultPermissionsToEnabledImsServices"
 
     invoke-static {v0}, Lcom/android/server/pm/PackageManagerService;->enforceSystemOrPhoneCaller(Ljava/lang/String;)V
 
@@ -82486,7 +82586,7 @@
 .method public grantDefaultPermissionsToEnabledTelephonyDataServices([Ljava/lang/String;I)V
     .locals 2
 
-    const-string v0, "grantDefaultPermissionsToEnabledTelephonyDataServices"
+    const-string/jumbo v0, "grantDefaultPermissionsToEnabledTelephonyDataServices"
 
     invoke-static {v0}, Lcom/android/server/pm/PackageManagerService;->enforceSystemOrPhoneCaller(Ljava/lang/String;)V
 

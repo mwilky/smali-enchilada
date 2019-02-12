@@ -231,11 +231,9 @@
 
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$1;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-static {v1}, Lcom/android/server/DeviceIdleController;->access$500(Lcom/android/server/DeviceIdleController;)I
+    invoke-static {v1}, Lcom/android/server/DeviceIdleController;->access$500(Lcom/android/server/DeviceIdleController;)F
 
-    move-result v1
-
-    int-to-float v7, v1
+    move-result v7
 
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$1;->this$0:Lcom/android/server/DeviceIdleController;
 
@@ -457,6 +455,8 @@
     :cond_f
     :goto_4
     return-void
+
+    nop
 
     nop
 

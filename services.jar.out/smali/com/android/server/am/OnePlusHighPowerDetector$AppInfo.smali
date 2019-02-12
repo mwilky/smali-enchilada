@@ -15,6 +15,8 @@
 
 
 # instance fields
+.field public final info_uid:I
+
 .field public final pid:I
 
 .field public pkgName:Ljava/lang/String;
@@ -23,7 +25,7 @@
 
 
 # direct methods
-.method constructor <init>(IILjava/lang/String;)V
+.method constructor <init>(IILjava/lang/String;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,6 +35,8 @@
     iput p2, p0, Lcom/android/server/am/OnePlusHighPowerDetector$AppInfo;->pid:I
 
     iput-object p3, p0, Lcom/android/server/am/OnePlusHighPowerDetector$AppInfo;->pkgName:Ljava/lang/String;
+
+    iput p4, p0, Lcom/android/server/am/OnePlusHighPowerDetector$AppInfo;->info_uid:I
 
     return-void
 .end method

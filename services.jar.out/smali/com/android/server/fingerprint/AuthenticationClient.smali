@@ -275,15 +275,25 @@
     :cond_5
     const/4 v0, 0x4
 
-    if-eq p2, v0, :cond_6
+    if-eq p2, v0, :cond_7
 
     const/4 v0, 0x5
 
-    if-eq p2, v0, :cond_6
+    if-eq p2, v0, :cond_7
 
-    if-ne p2, v2, :cond_7
+    if-ne p2, v2, :cond_6
+
+    goto :goto_1
 
     :cond_6
+    invoke-super {p0, p1, p2}, Lcom/android/server/fingerprint/ClientMonitor;->onAcquired(II)Z
+
+    move-result v0
+
+    return v0
+
+    :cond_7
+    :goto_1
     const-string v0, "com.android.systemui"
 
     invoke-virtual {p0}, Lcom/android/server/fingerprint/AuthenticationClient;->getOwnerString()Ljava/lang/String;
@@ -294,7 +304,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_8
 
     packed-switch p2, :pswitch_data_0
 
@@ -304,7 +314,7 @@
 
     invoke-static {v0, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_1
+    goto :goto_2
 
     :pswitch_0
     const-string/jumbo v0, "lock_unlock_success"
@@ -315,7 +325,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/oneplus/onlineconfig/MdmLogger;->log(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_1
+    goto :goto_2
 
     :pswitch_1
     const-string/jumbo v0, "lock_unlock_success"
@@ -326,7 +336,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/oneplus/onlineconfig/MdmLogger;->log(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_1
+    goto :goto_2
 
     :pswitch_2
     const-string/jumbo v0, "lock_unlock_failed"
@@ -339,7 +349,8 @@
 
     nop
 
-    :goto_1
+    :cond_8
+    :goto_2
     const-string v0, "FingerprintService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -360,12 +371,7 @@
 
     return v1
 
-    :cond_7
-    invoke-super {p0, p1, p2}, Lcom/android/server/fingerprint/ClientMonitor;->onAcquired(II)Z
-
-    move-result v0
-
-    return v0
+    nop
 
     :pswitch_data_0
     .packed-switch 0x4
@@ -427,7 +433,7 @@
 
     move-result-object v5
 
-    const v6, 0x1040244
+    const v6, 0x1040245
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

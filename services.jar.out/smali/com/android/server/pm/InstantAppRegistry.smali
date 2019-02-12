@@ -1422,7 +1422,7 @@
 
     invoke-interface {p1, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string v2, "granted"
+    const-string/jumbo v2, "granted"
 
     invoke-static {p0, v2}, Lcom/android/internal/util/XmlUtils;->readBooleanAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
@@ -2851,7 +2851,7 @@
 
     if-eqz v11, :cond_1
 
-    const-string v11, "granted"
+    const-string/jumbo v11, "granted"
 
     invoke-static {v7}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
 

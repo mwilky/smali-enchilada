@@ -14872,7 +14872,7 @@
 
     invoke-virtual {v4, v5, v6}, Lcom/android/server/wm/WindowManagerService;->prepareAppTransition(IZ)V
 
-    const-string v4, "handleAppCrashedLocked"
+    const-string/jumbo v4, "handleAppCrashedLocked"
 
     invoke-virtual {p0, v3, v6, v6, v4}, Lcom/android/server/am/ActivityStack;->finishCurrentActivityLocked(Lcom/android/server/am/ActivityRecord;IZLjava/lang/String;)Lcom/android/server/am/ActivityRecord;
     :try_end_0
@@ -14886,7 +14886,7 @@
 
     const-string v4, "ActivityManager"
 
-    const-string v5, "handleAppCrashLocked error:"
+    const-string/jumbo v5, "handleAppCrashLocked error:"
 
     invoke-static {v4, v5, v3}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 

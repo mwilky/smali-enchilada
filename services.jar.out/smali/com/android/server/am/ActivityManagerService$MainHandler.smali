@@ -850,7 +850,7 @@
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
 
-    const v15, 0x10401d9
+    const v15, 0x10401da
 
     new-array v3, v11, [Ljava/lang/Object;
 
@@ -963,7 +963,7 @@
 
     iget-object v4, v4, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
 
-    const v5, 0x10401da
+    const v5, 0x10401db
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -2217,7 +2217,7 @@
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
 
-    const v7, 0x1040284
+    const v7, 0x1040285
 
     const/4 v8, 0x1
 
@@ -2293,7 +2293,7 @@
 
     iget-object v6, v6, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
 
-    const v7, 0x1040285
+    const v7, 0x1040286
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

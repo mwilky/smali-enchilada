@@ -1630,7 +1630,7 @@
 
     move-wide/from16 v10, p5
 
-    goto/16 :goto_a
+    goto/16 :goto_e
 
     :cond_4
     :goto_3
@@ -1640,7 +1640,7 @@
 
     cmp-long v2, v0, v2
 
-    if-ltz v2, :cond_8
+    if-ltz v2, :cond_a
 
     const/16 v2, 0x3e8
 
@@ -1687,8 +1687,34 @@
     const/4 v2, 0x0
 
     :goto_5
+    iget v3, v7, Lcom/android/server/OverHeatingDiagnosis;->mCurrentPlugType:I
+
+    and-int/lit8 v3, v3, 0x8
+
+    if-eqz v3, :cond_8
+
+    const/16 v3, 0x17
+
+    :goto_6
+    goto :goto_7
+
+    :cond_8
+    iget v3, v7, Lcom/android/server/OverHeatingDiagnosis;->mCurrentPlugType:I
+
+    and-int/lit8 v3, v3, 0x7
+
+    if-eqz v3, :cond_9
+
+    const/16 v3, 0x18
+
+    goto :goto_6
+
+    :cond_9
     const/16 v3, 0x19
 
+    goto :goto_6
+
+    :goto_7
     invoke-virtual {v15, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-wide/from16 v18, v0
@@ -1697,17 +1723,14 @@
 
     move/from16 v22, v3
 
-    :goto_6
-    move-wide/from16 v10, p5
+    goto :goto_a
 
-    goto :goto_9
-
-    :cond_8
+    :cond_a
     iget-wide v2, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalForeground:J
 
     cmp-long v2, v16, v2
 
-    if-lez v2, :cond_a
+    if-lez v2, :cond_c
 
     const-string v2, "camera hardware"
 
@@ -1717,19 +1740,19 @@
 
     and-int/lit8 v2, v2, 0xf
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_b
 
     const/16 v2, 0x1b
 
-    :goto_7
-    goto :goto_8
+    :goto_8
+    goto :goto_9
 
-    :cond_9
+    :cond_b
     const/16 v2, 0x1c
 
-    goto :goto_7
+    goto :goto_8
 
-    :goto_8
+    :goto_9
     const/4 v3, 0x0
 
     move-wide/from16 v18, v0
@@ -1738,9 +1761,12 @@
 
     move/from16 v20, v3
 
-    goto :goto_6
+    :goto_a
+    move-wide/from16 v10, p5
 
-    :cond_a
+    goto :goto_d
+
+    :cond_c
     iget v2, v7, Lcom/android/server/OverHeatingDiagnosis;->mCriticalTotalCpu:I
 
     int-to-long v2, v2
@@ -1749,10 +1775,36 @@
 
     cmp-long v2, v10, v2
 
-    if-ltz v2, :cond_b
+    if-ltz v2, :cond_f
 
+    iget v2, v7, Lcom/android/server/OverHeatingDiagnosis;->mCurrentPlugType:I
+
+    and-int/lit8 v2, v2, 0x8
+
+    if-eqz v2, :cond_d
+
+    const/16 v2, 0x17
+
+    :goto_b
+    goto :goto_c
+
+    :cond_d
+    iget v2, v7, Lcom/android/server/OverHeatingDiagnosis;->mCurrentPlugType:I
+
+    and-int/lit8 v2, v2, 0x7
+
+    if-eqz v2, :cond_e
+
+    const/16 v2, 0x18
+
+    goto :goto_b
+
+    :cond_e
     const/16 v2, 0x19
 
+    goto :goto_b
+
+    :goto_c
     move-wide v0, v10
 
     const-string v3, "fg:total_cpu_load"
@@ -1763,9 +1815,9 @@
 
     move/from16 v22, v2
 
-    goto :goto_9
+    goto :goto_d
 
-    :cond_b
+    :cond_f
     const/4 v2, 0x0
 
     const-string/jumbo v3, "unknown"
@@ -1776,8 +1828,8 @@
 
     move/from16 v20, v2
 
-    :goto_9
-    if-eqz v14, :cond_c
+    :goto_d
+    if-eqz v14, :cond_10
 
     const-string v0, ""
 
@@ -1785,7 +1837,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_10
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1803,7 +1855,7 @@
 
     invoke-virtual {v15, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_c
+    :cond_10
     invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -1824,7 +1876,7 @@
 
     move-wide/from16 v0, v18
 
-    :goto_a
+    :goto_e
     iget-object v2, v7, Lcom/android/server/OverHeatingDiagnosis;->mBatteryHistory:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V

@@ -528,7 +528,7 @@
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "got the new MAC: "
+    const-string/jumbo v0, "got the new MAC: "
 
     invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1328,7 +1328,7 @@
 .end method
 
 .method public doDupArp(Ljava/lang/String;Ljava/net/Inet4Address;Ljava/net/Inet4Address;)Z
-    .locals 3
+    .locals 4
 
     iput-object p1, p0, Landroid/net/arp/OPArpPeer;->mIfaceName:Ljava/lang/String;
 
@@ -1343,13 +1343,26 @@
 
     iput-object p3, p0, Landroid/net/arp/OPArpPeer;->mTarget:Ljava/net/Inet4Address;
 
+    const/4 v0, 0x0
+
     :try_start_0
     invoke-direct {p0}, Landroid/net/arp/OPArpPeer;->initInterface()Z
 
+    move-result v1
+
+    if-eqz v1, :cond_2
+
     invoke-direct {p0}, Landroid/net/arp/OPArpPeer;->initSocket()Z
+
+    move-result v1
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    if-nez v1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
     nop
 
     new-instance v0, Ljava/lang/Thread;
@@ -1368,18 +1381,20 @@
 
     return v1
 
+    :cond_2
+    :goto_0
+    return v0
+
     :catch_0
-    move-exception v0
+    move-exception v1
 
-    const-string v1, "arp_OPArpPeer"
+    const-string v2, "arp_OPArpPeer"
 
-    const-string v2, "doDupArp "
+    const-string v3, "doDupArp "
 
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    const/4 v1, 0x0
-
-    return v1
+    return v0
 .end method
 
 .method protected finalize()V

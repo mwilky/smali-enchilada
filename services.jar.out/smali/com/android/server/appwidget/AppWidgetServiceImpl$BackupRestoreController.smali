@@ -2199,7 +2199,7 @@
     move-object/from16 v17, v5
 
     :try_start_7
-    const-string v4, "h"
+    const-string/jumbo v4, "h"
 
     invoke-virtual {v4, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2317,7 +2317,7 @@
 
     move-result v4
 
-    const-string v10, "h"
+    const-string/jumbo v10, "h"
 
     const/4 v11, 0x0
 

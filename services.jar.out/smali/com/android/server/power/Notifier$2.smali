@@ -43,7 +43,7 @@
 
     const-string v0, "PowerManagerNotifier"
 
-    const-string v1, "handleEarlyInteractiveChange: mPolicy.startedWakingUp"
+    const-string/jumbo v1, "handleEarlyInteractiveChange: mPolicy.startedWakingUp"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 

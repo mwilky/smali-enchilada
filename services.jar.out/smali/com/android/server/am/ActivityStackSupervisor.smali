@@ -12557,48 +12557,70 @@
     .catchall {:try_start_12 .. :try_end_12} :catchall_0
 
     :cond_e
+    :try_start_13
+    invoke-static {}, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->getInstance()Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;
+
+    move-result-object v0
+
+    iget-object v7, v2, Lcom/android/server/am/ActivityRecord;->info:Landroid/content/pm/ActivityInfo;
+
+    iget-object v7, v7, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+
+    iget-object v10, v2, Lcom/android/server/am/ActivityRecord;->packageName:Ljava/lang/String;
+
+    iget-object v5, v2, Lcom/android/server/am/ActivityRecord;->appInfo:Landroid/content/pm/ApplicationInfo;
+
+    iget v5, v5, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    iget v9, v3, Lcom/android/server/am/ProcessRecord;->pid:I
+
+    invoke-virtual {v0, v7, v10, v5, v9}, Lcom/android/server/OnePlusUtil$OnePlusFrontMonitor;->setFront(Ljava/lang/String;Ljava/lang/String;II)V
+
     const/16 v0, 0x7536
 
-    :try_start_13
-    new-array v7, v9, [Ljava/lang/Object;
+    const/4 v5, 0x4
 
-    iget v9, v2, Lcom/android/server/am/ActivityRecord;->userId:I
+    new-array v5, v5, [Ljava/lang/Object;
 
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget v7, v2, Lcom/android/server/am/ActivityRecord;->userId:I
 
-    move-result-object v9
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    aput-object v9, v7, v5
+    move-result-object v7
+
+    const/4 v9, 0x0
+
+    aput-object v7, v5, v9
 
     invoke-static/range {p1 .. p1}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
-    move-result v9
+    move-result v7
 
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v9
+    move-result-object v7
 
-    const/4 v10, 0x1
+    const/4 v9, 0x1
 
-    aput-object v9, v7, v10
+    aput-object v7, v5, v9
 
-    iget v9, v6, Lcom/android/server/am/TaskRecord;->taskId:I
+    iget v7, v6, Lcom/android/server/am/TaskRecord;->taskId:I
 
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v9
+    move-result-object v7
 
-    const/4 v10, 0x2
+    const/4 v9, 0x2
 
-    aput-object v9, v7, v10
+    aput-object v7, v5, v9
 
-    iget-object v9, v2, Lcom/android/server/am/ActivityRecord;->shortComponentName:Ljava/lang/String;
+    iget-object v7, v2, Lcom/android/server/am/ActivityRecord;->shortComponentName:Ljava/lang/String;
 
-    const/4 v10, 0x3
+    const/4 v9, 0x3
 
-    aput-object v9, v7, v10
+    aput-object v7, v5, v9
 
-    invoke-static {v0, v7}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+    invoke-static {v0, v5}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/am/ActivityRecord;->isActivityTypeHome()Z
 
@@ -12612,17 +12634,19 @@
     :try_start_14
     iget-object v0, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    iget-object v7, v6, Lcom/android/server/am/TaskRecord;->mActivities:Ljava/util/ArrayList;
+    iget-object v5, v6, Lcom/android/server/am/TaskRecord;->mActivities:Ljava/util/ArrayList;
 
-    invoke-virtual {v7, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    const/4 v7, 0x0
 
-    move-result-object v7
+    invoke-virtual {v5, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    check-cast v7, Lcom/android/server/am/ActivityRecord;
+    move-result-object v5
 
-    iget-object v7, v7, Lcom/android/server/am/ActivityRecord;->app:Lcom/android/server/am/ProcessRecord;
+    check-cast v5, Lcom/android/server/am/ActivityRecord;
 
-    iput-object v7, v0, Lcom/android/server/am/ActivityManagerService;->mHomeProcess:Lcom/android/server/am/ProcessRecord;
+    iget-object v5, v5, Lcom/android/server/am/ActivityRecord;->app:Lcom/android/server/am/ProcessRecord;
+
+    iput-object v5, v0, Lcom/android/server/am/ActivityManagerService;->mHomeProcess:Lcom/android/server/am/ProcessRecord;
     :try_end_14
     .catch Landroid/os/RemoteException; {:try_start_14 .. :try_end_14} :catch_0
     .catchall {:try_start_14 .. :try_end_14} :catchall_0
@@ -12631,21 +12655,23 @@
     :try_start_15
     iget-object v0, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    iget-object v7, v2, Lcom/android/server/am/ActivityRecord;->intent:Landroid/content/Intent;
+    iget-object v5, v2, Lcom/android/server/am/ActivityRecord;->intent:Landroid/content/Intent;
 
-    invoke-virtual {v7}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+    invoke-virtual {v5}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
-    move-result-object v7
+    move-result-object v5
 
-    invoke-virtual {v7}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+    invoke-virtual {v5}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v5
 
-    invoke-virtual {v0, v7, v5}, Lcom/android/server/am/ActivityManagerService;->notifyPackageUse(Ljava/lang/String;I)V
+    const/4 v7, 0x0
 
-    iput-boolean v5, v2, Lcom/android/server/am/ActivityRecord;->sleeping:Z
+    invoke-virtual {v0, v5, v7}, Lcom/android/server/am/ActivityManagerService;->notifyPackageUse(Ljava/lang/String;I)V
 
-    iput-boolean v5, v2, Lcom/android/server/am/ActivityRecord;->forceNewConfig:Z
+    iput-boolean v7, v2, Lcom/android/server/am/ActivityRecord;->sleeping:Z
+
+    iput-boolean v7, v2, Lcom/android/server/am/ActivityRecord;->forceNewConfig:Z
 
     iget-object v0, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
 
@@ -12661,17 +12687,17 @@
 
     iget-object v0, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    iget-object v7, v2, Lcom/android/server/am/ActivityRecord;->info:Landroid/content/pm/ActivityInfo;
+    iget-object v5, v2, Lcom/android/server/am/ActivityRecord;->info:Landroid/content/pm/ActivityInfo;
 
-    iget-object v7, v7, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v5, v5, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    invoke-virtual {v0, v7}, Lcom/android/server/am/ActivityManagerService;->compatibilityInfoForPackageLocked(Landroid/content/pm/ApplicationInfo;)Landroid/content/res/CompatibilityInfo;
+    invoke-virtual {v0, v5}, Lcom/android/server/am/ActivityManagerService;->compatibilityInfoForPackageLocked(Landroid/content/pm/ApplicationInfo;)Landroid/content/res/CompatibilityInfo;
 
     move-result-object v0
 
     iput-object v0, v2, Lcom/android/server/am/ActivityRecord;->compat:Landroid/content/res/CompatibilityInfo;
 
-    const/4 v7, 0x0
+    const/4 v5, 0x0
 
     iget-object v0, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
 
@@ -12687,9 +12713,9 @@
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mProfileApp:Ljava/lang/String;
 
-    iget-object v9, v3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+    iget-object v7, v3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
-    invoke-virtual {v0, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -12716,15 +12742,15 @@
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mProfilerInfo:Landroid/app/ProfilerInfo;
 
-    move-object v9, v0
+    move-object v7, v0
 
-    if-eqz v9, :cond_12
+    if-eqz v7, :cond_12
 
-    iget-object v0, v9, Landroid/app/ProfilerInfo;->profileFile:Ljava/lang/String;
+    iget-object v0, v7, Landroid/app/ProfilerInfo;->profileFile:Ljava/lang/String;
 
     if-eqz v0, :cond_12
 
-    iget-object v0, v9, Landroid/app/ProfilerInfo;->profileFd:Landroid/os/ParcelFileDescriptor;
+    iget-object v0, v7, Landroid/app/ProfilerInfo;->profileFd:Landroid/os/ParcelFileDescriptor;
     :try_end_16
     .catch Landroid/os/RemoteException; {:try_start_16 .. :try_end_16} :catch_0
     .catchall {:try_start_16 .. :try_end_16} :catchall_0
@@ -12732,13 +12758,13 @@
     if-eqz v0, :cond_11
 
     :try_start_17
-    iget-object v0, v9, Landroid/app/ProfilerInfo;->profileFd:Landroid/os/ParcelFileDescriptor;
+    iget-object v0, v7, Landroid/app/ProfilerInfo;->profileFd:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->dup()Landroid/os/ParcelFileDescriptor;
 
     move-result-object v0
 
-    iput-object v0, v9, Landroid/app/ProfilerInfo;->profileFd:Landroid/os/ParcelFileDescriptor;
+    iput-object v0, v7, Landroid/app/ProfilerInfo;->profileFd:Landroid/os/ParcelFileDescriptor;
     :try_end_17
     .catch Ljava/io/IOException; {:try_start_17 .. :try_end_17} :catch_1
     .catch Landroid/os/RemoteException; {:try_start_17 .. :try_end_17} :catch_0
@@ -12750,13 +12776,13 @@
     move-exception v0
 
     :try_start_18
-    invoke-virtual {v9}, Landroid/app/ProfilerInfo;->closeFd()V
+    invoke-virtual {v7}, Landroid/app/ProfilerInfo;->closeFd()V
 
     :cond_11
     :goto_3
     new-instance v0, Landroid/app/ProfilerInfo;
 
-    invoke-direct {v0, v9}, Landroid/app/ProfilerInfo;-><init>(Landroid/app/ProfilerInfo;)V
+    invoke-direct {v0, v7}, Landroid/app/ProfilerInfo;-><init>(Landroid/app/ProfilerInfo;)V
     :try_end_18
     .catch Landroid/os/RemoteException; {:try_start_18 .. :try_end_18} :catch_0
     .catchall {:try_start_18 .. :try_end_18} :catchall_0
@@ -12764,75 +12790,75 @@
     goto :goto_4
 
     :cond_12
-    move-object v0, v7
+    move-object v0, v5
 
     :goto_4
-    const/4 v7, 0x1
+    const/4 v5, 0x1
 
     :try_start_19
-    iput-boolean v7, v3, Lcom/android/server/am/ProcessRecord;->hasShownUi:Z
+    iput-boolean v5, v3, Lcom/android/server/am/ProcessRecord;->hasShownUi:Z
 
-    iput-boolean v7, v3, Lcom/android/server/am/ProcessRecord;->pendingUiClean:Z
+    iput-boolean v5, v3, Lcom/android/server/am/ProcessRecord;->pendingUiClean:Z
+
+    iget-object v5, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
+
+    iget v5, v5, Lcom/android/server/am/ActivityManagerService;->mTopProcessState:I
+
+    invoke-virtual {v3, v5}, Lcom/android/server/am/ProcessRecord;->forceProcessStateUpTo(I)V
+
+    new-instance v5, Landroid/util/MergedConfiguration;
 
     iget-object v7, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    iget v7, v7, Lcom/android/server/am/ActivityManagerService;->mTopProcessState:I
+    invoke-virtual {v7}, Lcom/android/server/am/ActivityManagerService;->getGlobalConfiguration()Landroid/content/res/Configuration;
 
-    invoke-virtual {v3, v7}, Lcom/android/server/am/ProcessRecord;->forceProcessStateUpTo(I)V
-
-    new-instance v7, Landroid/util/MergedConfiguration;
-
-    iget-object v9, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
-
-    invoke-virtual {v9}, Lcom/android/server/am/ActivityManagerService;->getGlobalConfiguration()Landroid/content/res/Configuration;
-
-    move-result-object v9
+    move-result-object v7
 
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/am/ActivityRecord;->getMergedOverrideConfiguration()Landroid/content/res/Configuration;
 
-    move-result-object v10
-
-    invoke-direct {v7, v9, v10}, Landroid/util/MergedConfiguration;-><init>(Landroid/content/res/Configuration;Landroid/content/res/Configuration;)V
-
-    invoke-virtual {v2, v7}, Lcom/android/server/am/ActivityRecord;->setLastReportedConfiguration(Landroid/util/MergedConfiguration;)V
-
-    iget-object v9, v2, Lcom/android/server/am/ActivityRecord;->intent:Landroid/content/Intent;
-
-    iget-object v10, v2, Lcom/android/server/am/ActivityRecord;->icicle:Landroid/os/Bundle;
-
-    invoke-direct {v1, v9, v10}, Lcom/android/server/am/ActivityStackSupervisor;->logIfTransactionTooLarge(Landroid/content/Intent;Landroid/os/Bundle;)V
-
-    iget-object v9, v3, Lcom/android/server/am/ProcessRecord;->thread:Landroid/app/IApplicationThread;
-
-    iget-object v10, v2, Lcom/android/server/am/ActivityRecord;->appToken:Landroid/view/IApplicationToken$Stub;
-
-    invoke-static {v9, v10}, Landroid/app/servertransaction/ClientTransaction;->obtain(Landroid/app/IApplicationThread;Landroid/os/IBinder;)Landroid/app/servertransaction/ClientTransaction;
-
     move-result-object v9
 
-    new-instance v10, Landroid/content/Intent;
+    invoke-direct {v5, v7, v9}, Landroid/util/MergedConfiguration;-><init>(Landroid/content/res/Configuration;Landroid/content/res/Configuration;)V
 
-    iget-object v5, v2, Lcom/android/server/am/ActivityRecord;->intent:Landroid/content/Intent;
+    invoke-virtual {v2, v5}, Lcom/android/server/am/ActivityRecord;->setLastReportedConfiguration(Landroid/util/MergedConfiguration;)V
 
-    invoke-direct {v10, v5}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
+    iget-object v7, v2, Lcom/android/server/am/ActivityRecord;->intent:Landroid/content/Intent;
+
+    iget-object v9, v2, Lcom/android/server/am/ActivityRecord;->icicle:Landroid/os/Bundle;
+
+    invoke-direct {v1, v7, v9}, Lcom/android/server/am/ActivityStackSupervisor;->logIfTransactionTooLarge(Landroid/content/Intent;Landroid/os/Bundle;)V
+
+    iget-object v7, v3, Lcom/android/server/am/ProcessRecord;->thread:Landroid/app/IApplicationThread;
+
+    iget-object v9, v2, Lcom/android/server/am/ActivityRecord;->appToken:Landroid/view/IApplicationToken$Stub;
+
+    invoke-static {v7, v9}, Landroid/app/servertransaction/ClientTransaction;->obtain(Landroid/app/IApplicationThread;Landroid/os/IBinder;)Landroid/app/servertransaction/ClientTransaction;
+
+    move-result-object v7
+
+    new-instance v9, Landroid/content/Intent;
+
+    iget-object v10, v2, Lcom/android/server/am/ActivityRecord;->intent:Landroid/content/Intent;
+
+    invoke-direct {v9, v10}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
     invoke-static/range {p1 .. p1}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v18
 
-    iget-object v5, v2, Lcom/android/server/am/ActivityRecord;->info:Landroid/content/pm/ActivityInfo;
+    iget-object v10, v2, Lcom/android/server/am/ActivityRecord;->info:Landroid/content/pm/ActivityInfo;
 
-    invoke-virtual {v7}, Landroid/util/MergedConfiguration;->getGlobalConfiguration()Landroid/content/res/Configuration;
+    invoke-virtual {v5}, Landroid/util/MergedConfiguration;->getGlobalConfiguration()Landroid/content/res/Configuration;
 
     move-result-object v20
 
-    invoke-virtual {v7}, Landroid/util/MergedConfiguration;->getOverrideConfiguration()Landroid/content/res/Configuration;
+    invoke-virtual {v5}, Landroid/util/MergedConfiguration;->getOverrideConfiguration()Landroid/content/res/Configuration;
 
     move-result-object v21
 
-    move-object/from16 v32, v7
+    move-object/from16 v32, v5
 
-    iget-object v7, v2, Lcom/android/server/am/ActivityRecord;->compat:Landroid/content/res/CompatibilityInfo;
+    iget-object v5, v2, Lcom/android/server/am/ActivityRecord;->compat:Landroid/content/res/CompatibilityInfo;
     :try_end_19
     .catch Landroid/os/RemoteException; {:try_start_19 .. :try_end_19} :catch_b
     .catchall {:try_start_19 .. :try_end_19} :catchall_8
@@ -12878,11 +12904,11 @@
 
     move-result v30
 
-    move-object/from16 v17, v10
+    move-object/from16 v17, v9
 
-    move-object/from16 v19, v5
+    move-object/from16 v19, v10
 
-    move-object/from16 v22, v7
+    move-object/from16 v22, v5
 
     move-object/from16 v23, v12
 
@@ -12904,7 +12930,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v9, v2}, Landroid/app/servertransaction/ClientTransaction;->addCallback(Landroid/app/servertransaction/ClientTransactionItem;)V
+    invoke-virtual {v7, v2}, Landroid/app/servertransaction/ClientTransaction;->addCallback(Landroid/app/servertransaction/ClientTransactionItem;)V
     :try_end_1e
     .catch Landroid/os/RemoteException; {:try_start_1e .. :try_end_1e} :catch_5
     .catchall {:try_start_1e .. :try_end_1e} :catchall_4
@@ -12952,7 +12978,7 @@
     move-result-object v2
 
     :goto_5
-    invoke-virtual {v9, v2}, Landroid/app/servertransaction/ClientTransaction;->setLifecycleStateRequest(Landroid/app/servertransaction/ActivityLifecycleItem;)V
+    invoke-virtual {v7, v2}, Landroid/app/servertransaction/ClientTransaction;->setLifecycleStateRequest(Landroid/app/servertransaction/ActivityLifecycleItem;)V
 
     iget-object v5, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
 
@@ -12960,7 +12986,7 @@
 
     move-result-object v5
 
-    invoke-virtual {v5, v9}, Lcom/android/server/am/ClientLifecycleManager;->scheduleTransaction(Landroid/app/servertransaction/ClientTransaction;)V
+    invoke-virtual {v5, v7}, Lcom/android/server/am/ClientLifecycleManager;->scheduleTransaction(Landroid/app/servertransaction/ClientTransaction;)V
 
     iget-object v5, v3, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
 
@@ -13016,21 +13042,21 @@
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "Starting new heavy weight process "
+    const-string v9, "Starting new heavy weight process "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v7, " when already running "
+    const-string v9, " when already running "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v7, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
+    iget-object v9, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    iget-object v7, v7, Lcom/android/server/am/ActivityManagerService;->mHeavyWeightProcess:Lcom/android/server/am/ProcessRecord;
+    iget-object v9, v9, Lcom/android/server/am/ActivityManagerService;->mHeavyWeightProcess:Lcom/android/server/am/ProcessRecord;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -13065,11 +13091,11 @@
     :try_start_24
     iput-object v6, v5, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    iget-object v7, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
+    iget-object v9, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    iget-object v7, v7, Lcom/android/server/am/ActivityManagerService;->mHandler:Lcom/android/server/am/ActivityManagerService$MainHandler;
+    iget-object v9, v9, Lcom/android/server/am/ActivityManagerService;->mHandler:Lcom/android/server/am/ActivityManagerService$MainHandler;
 
-    invoke-virtual {v7, v5}, Lcom/android/server/am/ActivityManagerService$MainHandler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v9, v5}, Lcom/android/server/am/ActivityManagerService$MainHandler;->sendMessage(Landroid/os/Message;)Z
     :try_end_24
     .catch Landroid/os/RemoteException; {:try_start_24 .. :try_end_24} :catch_3
     .catchall {:try_start_24 .. :try_end_24} :catchall_2

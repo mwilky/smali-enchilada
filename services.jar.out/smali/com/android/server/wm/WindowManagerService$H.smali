@@ -128,7 +128,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "handleMessage: entry what="
+    const-string/jumbo v2, "handleMessage: entry what="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2084,7 +2084,7 @@
 
     const-string v0, "WindowManager"
 
-    const-string v1, "handleMessage: exit"
+    const-string/jumbo v1, "handleMessage: exit"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 

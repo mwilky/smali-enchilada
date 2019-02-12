@@ -104,7 +104,7 @@
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_1
-    const-string v1, "gps"
+    const-string/jumbo v1, "gps"
 
     invoke-virtual {p2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -197,7 +197,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/server/LocationManagerService$UpdateRecord;->mProvider:Ljava/lang/String;
 
-    const-string v2, "gps"
+    const-string/jumbo v2, "gps"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

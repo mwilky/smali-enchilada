@@ -418,6 +418,8 @@
 
 .field private mState:I
 
+.field private mTempDisableCriteriaUpdate:Z
+
 .field private mTempWhitelistAppIdArray:[I
 
 .field private final mTempWhitelistAppIdEndTimes:Landroid/util/SparseArray;
@@ -432,7 +434,7 @@
     .end annotation
 .end field
 
-.field private m_mA_Criteria:I
+.field private m_mA_Criteria:F
 
 
 # direct methods
@@ -501,9 +503,11 @@
 
     iput v0, p0, Lcom/android/server/DeviceIdleController;->mBatteryCapacity:I
 
-    const/16 v1, 0x3c
+    const/high16 v1, 0x42700000    # 60.0f
 
-    iput v1, p0, Lcom/android/server/DeviceIdleController;->m_mA_Criteria:I
+    iput v1, p0, Lcom/android/server/DeviceIdleController;->m_mA_Criteria:F
+
+    iput-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mTempDisableCriteriaUpdate:Z
 
     iput-boolean v0, p0, Lcom/android/server/DeviceIdleController;->mSIMULATE_REPORT:Z
 
@@ -1060,10 +1064,10 @@
     return v0
 .end method
 
-.method static synthetic access$500(Lcom/android/server/DeviceIdleController;)I
+.method static synthetic access$500(Lcom/android/server/DeviceIdleController;)F
     .locals 1
 
-    iget v0, p0, Lcom/android/server/DeviceIdleController;->m_mA_Criteria:I
+    iget v0, p0, Lcom/android/server/DeviceIdleController;->m_mA_Criteria:F
 
     return v0
 .end method
@@ -1390,7 +1394,7 @@
 
     if-eqz v8, :cond_4
 
-    const-string v8, "gps"
+    const-string/jumbo v8, "gps"
 
     invoke-virtual {v3, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1415,7 +1419,7 @@
 
     if-nez v10, :cond_6
 
-    const-string v10, "gps"
+    const-string/jumbo v10, "gps"
 
     invoke-virtual {v3, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1939,7 +1943,7 @@
 
     if-eqz v8, :cond_5
 
-    const-string v8, "gps"
+    const-string/jumbo v8, "gps"
 
     invoke-virtual {v3, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1965,7 +1969,7 @@
 
     if-nez v10, :cond_6
 
-    const-string v10, "gps"
+    const-string/jumbo v10, "gps"
 
     invoke-virtual {v3, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2758,7 +2762,7 @@
 
     move-result v2
 
-    if-ge v1, v2, :cond_2f
+    if-ge v1, v2, :cond_30
 
     invoke-virtual {p1, v1}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
@@ -2794,7 +2798,7 @@
 
     sget-boolean v3, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v3, :cond_29
+    if-eqz v3, :cond_2a
 
     const-string v3, "DeviceIdleController"
 
@@ -2831,19 +2835,31 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_3
+
+    iget-boolean v3, p0, Lcom/android/server/DeviceIdleController;->mTempDisableCriteriaUpdate:Z
+
+    if-nez v3, :cond_2
 
     const-string/jumbo v3, "value"
 
-    invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljava/lang/Float;->valueOf(Ljava/lang/String;)Ljava/lang/Float;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Float;->floatValue()F
 
     move-result v3
 
-    iput v3, p0, Lcom/android/server/DeviceIdleController;->m_mA_Criteria:I
+    iput v3, p0, Lcom/android/server/DeviceIdleController;->m_mA_Criteria:F
 
     sget-boolean v3, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v3, :cond_29
+    if-eqz v3, :cond_2a
 
     const-string v3, "DeviceIdleController"
 
@@ -2855,9 +2871,9 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v5, p0, Lcom/android/server/DeviceIdleController;->m_mA_Criteria:I
+    iget v5, p0, Lcom/android/server/DeviceIdleController;->m_mA_Criteria:F
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -2868,6 +2884,19 @@
     goto/16 :goto_1
 
     :cond_2
+    sget-boolean v3, Lcom/android/server/DeviceIdleController;->DEBUG:Z
+
+    if-eqz v3, :cond_2a
+
+    const-string v3, "DeviceIdleController"
+
+    const-string v4, "[OnlineConfig] Has config for config_ma_criteria, but adb-configuration is set, so skip this way"
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_1
+
+    :cond_3
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -2880,7 +2909,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_4
 
     const-string/jumbo v3, "value"
 
@@ -2892,7 +2921,7 @@
 
     sget-boolean v3, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v3, :cond_29
+    if-eqz v3, :cond_2a
 
     const-string v3, "DeviceIdleController"
 
@@ -2916,7 +2945,7 @@
 
     goto/16 :goto_1
 
-    :cond_3
+    :cond_4
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -2929,7 +2958,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_5
 
     const-string/jumbo v3, "value"
 
@@ -2941,7 +2970,7 @@
 
     sget-boolean v3, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v3, :cond_29
+    if-eqz v3, :cond_2a
 
     const-string v3, "DeviceIdleController"
 
@@ -2965,7 +2994,7 @@
 
     goto/16 :goto_1
 
-    :cond_4
+    :cond_5
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -2978,7 +3007,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_7
 
     const-string/jumbo v3, "value"
 
@@ -3002,7 +3031,7 @@
 
     sget-boolean v4, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_6
 
     const-string v4, "DeviceIdleController"
 
@@ -3022,10 +3051,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_5
+    :cond_6
     goto/16 :goto_1
 
-    :cond_6
+    :cond_7
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -3038,7 +3067,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_9
 
     const-string/jumbo v3, "value"
 
@@ -3062,7 +3091,7 @@
 
     sget-boolean v4, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_8
 
     const-string v4, "DeviceIdleController"
 
@@ -3082,10 +3111,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_7
+    :cond_8
     goto/16 :goto_1
 
-    :cond_8
+    :cond_9
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -3098,7 +3127,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_a
+    if-eqz v3, :cond_b
 
     const-string/jumbo v3, "value"
 
@@ -3122,7 +3151,7 @@
 
     sget-boolean v4, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v4, :cond_9
+    if-eqz v4, :cond_a
 
     const-string v4, "DeviceIdleController"
 
@@ -3142,10 +3171,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_9
+    :cond_a
     goto/16 :goto_1
 
-    :cond_a
+    :cond_b
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -3158,7 +3187,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_c
+    if-eqz v3, :cond_d
 
     const-string/jumbo v3, "value"
 
@@ -3182,7 +3211,7 @@
 
     sget-boolean v4, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v4, :cond_b
+    if-eqz v4, :cond_c
 
     const-string v4, "DeviceIdleController"
 
@@ -3202,10 +3231,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_b
+    :cond_c
     goto/16 :goto_1
 
-    :cond_c
+    :cond_d
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -3218,7 +3247,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_e
+    if-eqz v3, :cond_f
 
     const-string/jumbo v3, "value"
 
@@ -3236,7 +3265,7 @@
 
     sget-boolean v4, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v4, :cond_d
+    if-eqz v4, :cond_e
 
     const-string v4, "DeviceIdleController"
 
@@ -3256,10 +3285,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_d
+    :cond_e
     goto/16 :goto_1
 
-    :cond_e
+    :cond_f
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -3272,7 +3301,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_10
+    if-eqz v3, :cond_11
 
     const-string/jumbo v3, "value"
 
@@ -3290,7 +3319,7 @@
 
     sget-boolean v4, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v4, :cond_f
+    if-eqz v4, :cond_10
 
     const-string v4, "DeviceIdleController"
 
@@ -3310,10 +3339,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_f
+    :cond_10
     goto/16 :goto_1
 
-    :cond_10
+    :cond_11
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -3326,7 +3355,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_12
+    if-eqz v3, :cond_13
 
     const-string/jumbo v3, "value"
 
@@ -3350,7 +3379,7 @@
 
     sget-boolean v4, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v4, :cond_11
+    if-eqz v4, :cond_12
 
     const-string v4, "DeviceIdleController"
 
@@ -3370,10 +3399,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_11
+    :cond_12
     goto/16 :goto_1
 
-    :cond_12
+    :cond_13
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -3386,7 +3415,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_14
+    if-eqz v3, :cond_15
 
     const-string/jumbo v3, "value"
 
@@ -3410,7 +3439,7 @@
 
     sget-boolean v4, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v4, :cond_13
+    if-eqz v4, :cond_14
 
     const-string v4, "DeviceIdleController"
 
@@ -3430,10 +3459,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_13
+    :cond_14
     goto/16 :goto_1
 
-    :cond_14
+    :cond_15
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -3446,7 +3475,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_16
+    if-eqz v3, :cond_17
 
     const-string/jumbo v3, "value"
 
@@ -3470,7 +3499,7 @@
 
     sget-boolean v4, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v4, :cond_15
+    if-eqz v4, :cond_16
 
     const-string v4, "DeviceIdleController"
 
@@ -3490,10 +3519,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_15
+    :cond_16
     goto/16 :goto_1
 
-    :cond_16
+    :cond_17
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -3506,7 +3535,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_18
+    if-eqz v3, :cond_19
 
     const-string/jumbo v3, "value"
 
@@ -3530,7 +3559,7 @@
 
     sget-boolean v4, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v4, :cond_17
+    if-eqz v4, :cond_18
 
     const-string v4, "DeviceIdleController"
 
@@ -3550,10 +3579,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_17
+    :cond_18
     goto/16 :goto_1
 
-    :cond_18
+    :cond_19
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -3566,7 +3595,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_1b
 
     const-string/jumbo v3, "value"
 
@@ -3590,7 +3619,7 @@
 
     sget-boolean v4, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v4, :cond_19
+    if-eqz v4, :cond_1a
 
     const-string v4, "DeviceIdleController"
 
@@ -3610,10 +3639,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_19
+    :cond_1a
     goto/16 :goto_1
 
-    :cond_1a
+    :cond_1b
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -3626,7 +3655,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1c
+    if-eqz v3, :cond_1d
 
     const-string/jumbo v3, "value"
 
@@ -3650,7 +3679,7 @@
 
     sget-boolean v4, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v4, :cond_1b
+    if-eqz v4, :cond_1c
 
     const-string v4, "DeviceIdleController"
 
@@ -3670,10 +3699,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_1b
+    :cond_1c
     goto/16 :goto_1
 
-    :cond_1c
+    :cond_1d
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -3686,7 +3715,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1e
+    if-eqz v3, :cond_1f
 
     const-string/jumbo v3, "value"
 
@@ -3710,7 +3739,7 @@
 
     sget-boolean v4, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v4, :cond_1d
+    if-eqz v4, :cond_1e
 
     const-string v4, "DeviceIdleController"
 
@@ -3730,10 +3759,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_1d
+    :cond_1e
     goto/16 :goto_1
 
-    :cond_1e
+    :cond_1f
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -3746,7 +3775,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_20
+    if-eqz v3, :cond_21
 
     const-string/jumbo v3, "value"
 
@@ -3770,7 +3799,7 @@
 
     sget-boolean v4, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v4, :cond_1f
+    if-eqz v4, :cond_20
 
     const-string v4, "DeviceIdleController"
 
@@ -3790,10 +3819,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_1f
+    :cond_20
     goto/16 :goto_1
 
-    :cond_20
+    :cond_21
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -3806,7 +3835,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_22
+    if-eqz v3, :cond_23
 
     const-string/jumbo v3, "value"
 
@@ -3820,7 +3849,7 @@
 
     sget-boolean v5, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v5, :cond_21
+    if-eqz v5, :cond_22
 
     const-string v5, "DeviceIdleController"
 
@@ -3840,10 +3869,10 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_21
+    :cond_22
     goto/16 :goto_1
 
-    :cond_22
+    :cond_23
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -3856,7 +3885,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_25
 
     const-string/jumbo v3, "value"
 
@@ -3870,7 +3899,7 @@
 
     sget-boolean v5, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v5, :cond_23
+    if-eqz v5, :cond_24
 
     const-string v5, "DeviceIdleController"
 
@@ -3890,10 +3919,10 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_23
+    :cond_24
     goto/16 :goto_1
 
-    :cond_24
+    :cond_25
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -3906,7 +3935,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_26
+    if-eqz v3, :cond_27
 
     const-string/jumbo v3, "value"
 
@@ -3920,7 +3949,7 @@
 
     sget-boolean v5, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v5, :cond_25
+    if-eqz v5, :cond_26
 
     const-string v5, "DeviceIdleController"
 
@@ -3940,10 +3969,10 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_25
+    :cond_26
     goto :goto_1
 
-    :cond_26
+    :cond_27
     const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -3956,7 +3985,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_28
+    if-eqz v3, :cond_29
 
     const-string/jumbo v3, "value"
 
@@ -3968,7 +3997,7 @@
 
     sget-boolean v3, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v3, :cond_27
+    if-eqz v3, :cond_28
 
     const-string v3, "DeviceIdleController"
 
@@ -3990,17 +4019,17 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_27
+    :cond_28
     iget-object v3, p0, Lcom/android/server/DeviceIdleController;->mConstants:Lcom/android/server/DeviceIdleController$Constants;
 
     invoke-static {v3}, Lcom/android/server/DeviceIdleController$Constants;->access$3700(Lcom/android/server/DeviceIdleController$Constants;)V
 
     goto :goto_1
 
-    :cond_28
+    :cond_29
     sget-boolean v3, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v3, :cond_29
+    if-eqz v3, :cond_2a
 
     const-string v3, "DeviceIdleController"
 
@@ -4008,7 +4037,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_29
+    :cond_2a
     :goto_1
     const-string/jumbo v3, "ro.build.beta"
 
@@ -4018,7 +4047,7 @@
 
     const/4 v4, 0x1
 
-    if-eq v3, v4, :cond_2b
+    if-eq v3, v4, :cond_2c
 
     const-string/jumbo v3, "ro.build.alpha"
 
@@ -4026,20 +4055,20 @@
 
     move-result v3
 
-    if-ne v3, v4, :cond_2a
+    if-ne v3, v4, :cond_2b
 
     goto :goto_2
 
-    :cond_2a
+    :cond_2b
     move v4, v0
 
     nop
 
-    :cond_2b
+    :cond_2c
     :goto_2
     move v3, v4
 
-    if-eqz v3, :cond_2e
+    if-eqz v3, :cond_2f
 
     const-string/jumbo v4, "name"
 
@@ -4053,11 +4082,11 @@
 
     move-result v4
 
-    if-eqz v4, :cond_2d
+    if-eqz v4, :cond_2e
 
     sget-boolean v4, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v4, :cond_2c
+    if-eqz v4, :cond_2d
 
     const-string v4, "DeviceIdleController"
 
@@ -4079,7 +4108,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_2c
+    :cond_2d
     const-string/jumbo v4, "value"
 
     invoke-virtual {v2, v4}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
@@ -4094,10 +4123,10 @@
 
     invoke-virtual {v4, v5}, Lcom/android/server/OnePlusStandbyAnalyzer;->updateReportingFlag(Z)V
 
-    :cond_2d
+    :cond_2e
     sget-boolean v4, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v4, :cond_2e
+    if-eqz v4, :cond_2f
 
     const-string v4, "DeviceIdleController"
 
@@ -4122,7 +4151,7 @@
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_2e
+    :cond_2f
     add-int/lit8 v1, v1, 0x1
 
     goto/16 :goto_0
@@ -4179,7 +4208,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_2f
+    :cond_30
     nop
 
     :goto_3
@@ -7878,9 +7907,9 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v5, p0, Lcom/android/server/DeviceIdleController;->m_mA_Criteria:I
+    iget v5, p0, Lcom/android/server/DeviceIdleController;->m_mA_Criteria:F
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
     const-string v5, " mA"
 
@@ -7893,9 +7922,7 @@
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_1
-    iget v3, p0, Lcom/android/server/DeviceIdleController;->m_mA_Criteria:I
-
-    int-to-float v3, v3
+    iget v3, p0, Lcom/android/server/DeviceIdleController;->m_mA_Criteria:F
 
     cmpl-float v3, v2, v3
 
@@ -8977,9 +9004,9 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v3, p0, Lcom/android/server/DeviceIdleController;->m_mA_Criteria:I
+    iget v3, p0, Lcom/android/server/DeviceIdleController;->m_mA_Criteria:F
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
     const-string v3, " mA"
 
@@ -10236,7 +10263,7 @@
     :goto_c
     move-object v2, v9
 
-    goto/16 :goto_38
+    goto/16 :goto_3a
 
     :catchall_9
     move-exception v0
@@ -12089,13 +12116,13 @@
     throw v0
 
     :cond_5a
-    const-string/jumbo v0, "qxdm"
+    const-string/jumbo v0, "standby"
 
     invoke-virtual {v0, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_71
+    if-eqz v0, :cond_5f
 
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
@@ -12107,21 +12134,188 @@
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
 
     move-result-object v0
+
+    if-eqz v0, :cond_5e
+
+    sget-boolean v3, Lcom/android/server/DeviceIdleController;->DEBUG:Z
+
+    if-eqz v3, :cond_5b
+
+    const-string v3, "DeviceIdleController"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v6, "standby: "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v3, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_5b
+    const-string/jumbo v3, "set_criteria"
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_5d
+
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
+
+    move-result-object v3
+
+    move-object v0, v3
+
+    if-eqz v0, :cond_5e
+
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(Ljava/lang/String;)Ljava/lang/Float;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Float;->floatValue()F
+
+    move-result v3
+
+    const/4 v5, 0x0
+
+    cmpl-float v5, v3, v5
+
+    if-lez v5, :cond_5c
+
+    iput v3, v7, Lcom/android/server/DeviceIdleController;->m_mA_Criteria:F
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "config standby criteria to "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v6, v7, Lcom/android/server/DeviceIdleController;->m_mA_Criteria:F
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v6, " mA, and not allow update via online-config."
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v10, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    const-string v6, "DeviceIdleController"
+
+    invoke-static {v6, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iput-boolean v4, v7, Lcom/android/server/DeviceIdleController;->mTempDisableCriteriaUpdate:Z
+
+    goto :goto_30
+
+    :cond_5c
+    const-string/jumbo v4, "invalid standby criteria."
+
+    invoke-virtual {v10, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    :goto_30
+    goto :goto_31
+
+    :cond_5d
+    const-string v3, "get_criteria"
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_5e
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "current standby criteria : "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v4, v7, Lcom/android/server/DeviceIdleController;->m_mA_Criteria:F
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v4, " mA"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v10, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    const-string v4, "DeviceIdleController"
+
+    invoke-static {v4, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_2d
-    .catchall {:try_start_2d .. :try_end_2d} :catchall_18
+    .catchall {:try_start_2d .. :try_end_2d} :catchall_16
+
+    :cond_5e
+    :goto_31
+    invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    nop
+
+    goto/16 :goto_c
+
+    :catchall_16
+    move-exception v0
+
+    invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    throw v0
+
+    :cond_5f
+    const-string/jumbo v0, "qxdm"
+
+    invoke-virtual {v0, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_76
+
+    invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
+
+    move-result-wide v0
+
+    move-wide v1, v0
+
+    :try_start_2e
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
+
+    move-result-object v0
+    :try_end_2e
+    .catchall {:try_start_2e .. :try_end_2e} :catchall_19
 
     move-object v3, v0
 
-    if-eqz v3, :cond_6f
-
-    :try_start_2e
-    sget-boolean v0, Lcom/android/server/DeviceIdleController;->DEBUG:Z
-    :try_end_2e
-    .catchall {:try_start_2e .. :try_end_2e} :catchall_17
-
-    if-eqz v0, :cond_5b
+    if-eqz v3, :cond_74
 
     :try_start_2f
+    sget-boolean v0, Lcom/android/server/DeviceIdleController;->DEBUG:Z
+    :try_end_2f
+    .catchall {:try_start_2f .. :try_end_2f} :catchall_18
+
+    if-eqz v0, :cond_60
+
+    :try_start_30
     const-string v0, "DeviceIdleController"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -12139,18 +12333,18 @@
     move-result-object v6
 
     invoke-static {v0, v6}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_2f
-    .catchall {:try_start_2f .. :try_end_2f} :catchall_18
+    :try_end_30
+    .catchall {:try_start_30 .. :try_end_30} :catchall_19
 
-    :cond_5b
-    :try_start_30
+    :cond_60
+    :try_start_31
     const-string/jumbo v0, "status"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_5c
+    if-eqz v0, :cond_61
 
     sget-object v0, Lcom/android/server/DeviceIdleController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
 
@@ -12369,8 +12563,8 @@
     const/16 v16, 0x0
 
     aput-object v9, v11, v16
-    :try_end_30
-    .catchall {:try_start_30 .. :try_end_30} :catchall_17
+    :try_end_31
+    .catchall {:try_start_31 .. :try_end_31} :catchall_18
 
     move/from16 v29, v0
 
@@ -12378,7 +12572,7 @@
 
     move-wide/from16 v0, v19
 
-    :try_start_31
+    :try_start_32
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
@@ -12549,9 +12743,9 @@
 
     invoke-virtual {v10, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    goto/16 :goto_35
+    goto/16 :goto_37
 
-    :cond_5c
+    :cond_61
     move-wide/from16 v27, v1
 
     const-string/jumbo v0, "time_reset"
@@ -12562,7 +12756,7 @@
 
     const-wide/16 v1, 0x0
 
-    if-eqz v0, :cond_5d
+    if-eqz v0, :cond_62
 
     sget-object v0, Lcom/android/server/DeviceIdleController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
 
@@ -12572,20 +12766,20 @@
 
     invoke-virtual {v10, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    goto/16 :goto_35
+    goto/16 :goto_37
 
-    :cond_5d
+    :cond_62
     const-string/jumbo v0, "time_set"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
-    :try_end_31
-    .catchall {:try_start_31 .. :try_end_31} :catchall_16
+    :try_end_32
+    .catchall {:try_start_32 .. :try_end_32} :catchall_17
 
-    if-eqz v0, :cond_66
+    if-eqz v0, :cond_6b
 
-    :try_start_32
+    :try_start_33
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
 
     move-result-object v0
@@ -12598,7 +12792,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5f
+    if-eqz v0, :cond_64
 
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
 
@@ -12612,7 +12806,7 @@
 
     cmp-long v0, v4, v1
 
-    if-gez v0, :cond_5e
+    if-gez v0, :cond_63
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -12634,9 +12828,9 @@
 
     invoke-virtual {v10, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    goto :goto_30
+    goto :goto_32
 
-    :cond_5e
+    :cond_63
     sget-object v0, Lcom/android/server/DeviceIdleController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
 
     invoke-virtual {v0, v4, v5}, Lcom/android/server/OnePlusStandbyAnalyzer;->setLastQXDMGrabTimeStamp(J)V
@@ -12661,17 +12855,17 @@
 
     invoke-virtual {v10, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    :goto_30
-    goto/16 :goto_34
+    :goto_32
+    goto/16 :goto_36
 
-    :cond_5f
+    :cond_64
     const-string/jumbo v0, "min"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_61
+    if-eqz v0, :cond_66
 
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
 
@@ -12685,7 +12879,7 @@
 
     cmp-long v0, v4, v1
 
-    if-gez v0, :cond_60
+    if-gez v0, :cond_65
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -12707,9 +12901,9 @@
 
     invoke-virtual {v10, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    goto :goto_31
+    goto :goto_33
 
-    :cond_60
+    :cond_65
     sget-object v0, Lcom/android/server/DeviceIdleController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
 
     invoke-virtual {v0, v4, v5}, Lcom/android/server/OnePlusStandbyAnalyzer;->updateQXDMGrabMinimumPeriod(J)V
@@ -12734,17 +12928,17 @@
 
     invoke-virtual {v10, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    :goto_31
-    goto/16 :goto_34
+    :goto_33
+    goto/16 :goto_36
 
-    :cond_61
+    :cond_66
     const-string v0, "gap"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_63
+    if-eqz v0, :cond_68
 
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
 
@@ -12758,7 +12952,7 @@
 
     cmp-long v0, v4, v1
 
-    if-gez v0, :cond_62
+    if-gez v0, :cond_67
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -12780,9 +12974,9 @@
 
     invoke-virtual {v10, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    goto :goto_32
+    goto :goto_34
 
-    :cond_62
+    :cond_67
     sget-object v0, Lcom/android/server/DeviceIdleController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
 
     invoke-virtual {v0, v4, v5}, Lcom/android/server/OnePlusStandbyAnalyzer;->updateQXDMGrabGapAfterStandbyStart(J)V
@@ -12807,17 +13001,17 @@
 
     invoke-virtual {v10, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    :goto_32
-    goto :goto_34
+    :goto_34
+    goto :goto_36
 
-    :cond_63
+    :cond_68
     const-string/jumbo v0, "middle"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_65
+    if-eqz v0, :cond_6a
 
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
 
@@ -12831,7 +13025,7 @@
 
     cmp-long v0, v4, v1
 
-    if-gez v0, :cond_64
+    if-gez v0, :cond_69
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -12853,9 +13047,9 @@
 
     invoke-virtual {v10, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    goto :goto_33
+    goto :goto_35
 
-    :cond_64
+    :cond_69
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -12876,34 +13070,34 @@
 
     invoke-virtual {v10, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    :goto_33
+    :goto_35
     sget-object v0, Lcom/android/server/DeviceIdleController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
 
     invoke-virtual {v0, v4, v5}, Lcom/android/server/OnePlusStandbyAnalyzer;->updateStandbyMiddleCheck(J)V
-    :try_end_32
-    .catch Ljava/lang/Exception; {:try_start_32 .. :try_end_32} :catch_3
-    .catchall {:try_start_32 .. :try_end_32} :catchall_16
+    :try_end_33
+    .catch Ljava/lang/Exception; {:try_start_33 .. :try_end_33} :catch_3
+    .catchall {:try_start_33 .. :try_end_33} :catchall_17
 
-    goto :goto_34
+    goto :goto_36
 
     :catch_3
     move-exception v0
 
-    :try_start_33
+    :try_start_34
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    :cond_65
-    :goto_34
-    goto/16 :goto_35
+    :cond_6a
+    :goto_36
+    goto/16 :goto_37
 
-    :cond_66
-    const-string v0, "grab"
+    :cond_6b
+    const-string/jumbo v0, "grab"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_68
+    if-eqz v0, :cond_6d
 
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
 
@@ -12915,7 +13109,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_67
+    if-eqz v1, :cond_6c
 
     sget-object v1, Lcom/android/server/DeviceIdleController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
 
@@ -12927,16 +13121,16 @@
 
     invoke-virtual {v10, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    goto/16 :goto_35
+    goto/16 :goto_37
 
-    :cond_67
+    :cond_6c
     const-string v1, "disabled"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_70
+    if-eqz v1, :cond_75
 
     sget-object v1, Lcom/android/server/DeviceIdleController;->mOnePlusStandbyAnalyzer:Lcom/android/server/OnePlusStandbyAnalyzer;
 
@@ -12948,16 +13142,16 @@
 
     invoke-virtual {v10, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    goto/16 :goto_35
+    goto/16 :goto_37
 
-    :cond_68
+    :cond_6d
     const-string v0, "enabled"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_6a
+    if-eqz v0, :cond_6f
 
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
 
@@ -12969,7 +13163,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_69
+    if-eqz v1, :cond_6e
 
     const-string/jumbo v1, "qxdm short is enabled(20sec auto-stop)"
 
@@ -12981,16 +13175,16 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/OnePlusStandbyAnalyzer;->simulateTelephonyAbnormal(Z)V
 
-    goto/16 :goto_35
+    goto/16 :goto_37
 
-    :cond_69
+    :cond_6e
     const-string/jumbo v1, "normal"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_70
+    if-eqz v1, :cond_75
 
     const-string/jumbo v1, "qxdm normal is enabled(2 min auto-stop)"
 
@@ -13002,16 +13196,16 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/OnePlusStandbyAnalyzer;->simulateTelephonyAbnormal(Z)V
 
-    goto/16 :goto_35
+    goto/16 :goto_37
 
-    :cond_6a
+    :cond_6f
     const-string v0, "clean"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_6b
+    if-eqz v0, :cond_70
 
     const-string v0, "Try to clean up the latest QXDM logs under sdcard..."
 
@@ -13035,16 +13229,16 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    goto :goto_35
+    goto :goto_37
 
-    :cond_6b
+    :cond_70
     const-string v0, "copy1"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_6c
+    if-eqz v0, :cond_71
 
     const-string v0, "copy1"
 
@@ -13056,16 +13250,16 @@
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_35
+    goto :goto_37
 
-    :cond_6c
+    :cond_71
     const-string v0, "copy2"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_6d
+    if-eqz v0, :cond_72
 
     const-string v0, "copy2"
 
@@ -13077,16 +13271,16 @@
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_35
+    goto :goto_37
 
-    :cond_6d
+    :cond_72
     const-string v0, "copy3"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_6e
+    if-eqz v0, :cond_73
 
     const-string/jumbo v0, "persist.sys.power_mask"
 
@@ -13094,34 +13288,34 @@
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_35
+    goto :goto_37
 
-    :cond_6e
+    :cond_73
     const-string/jumbo v0, "please enter qxdm [enabled|disabled]"
 
     invoke-virtual {v10, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-    :try_end_33
-    .catchall {:try_start_33 .. :try_end_33} :catchall_16
+    :try_end_34
+    .catchall {:try_start_34 .. :try_end_34} :catchall_17
 
-    goto :goto_35
-
-    :catchall_16
-    move-exception v0
-
-    move-wide/from16 v1, v27
-
-    goto :goto_36
+    goto :goto_37
 
     :catchall_17
     move-exception v0
 
-    goto :goto_36
+    move-wide/from16 v1, v27
 
-    :cond_6f
+    goto :goto_38
+
+    :catchall_18
+    move-exception v0
+
+    goto :goto_38
+
+    :cond_74
     move-wide/from16 v27, v1
 
-    :cond_70
-    :goto_35
+    :cond_75
+    :goto_37
     move-wide/from16 v1, v27
 
     invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
@@ -13132,17 +13326,17 @@
 
     move-object/from16 v2, p2
 
-    goto/16 :goto_38
+    goto/16 :goto_3a
 
-    :catchall_18
+    :catchall_19
     move-exception v0
 
-    :goto_36
+    :goto_38
     invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     throw v0
 
-    :cond_71
+    :cond_76
     const-string v0, "fast_report"
 
     move-object/from16 v2, p2
@@ -13151,7 +13345,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_76
+    if-eqz v0, :cond_7b
 
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
@@ -13159,16 +13353,16 @@
 
     move-wide v3, v0
 
-    :try_start_34
+    :try_start_35
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/DeviceIdleController$Shell;->getNextArg()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_75
+    if-eqz v0, :cond_7a
 
     sget-boolean v1, Lcom/android/server/DeviceIdleController;->DEBUG:Z
 
-    if-eqz v1, :cond_72
+    if-eqz v1, :cond_77
 
     const-string v1, "DeviceIdleController"
 
@@ -13188,14 +13382,14 @@
 
     invoke-static {v1, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_72
+    :cond_77
     const-string v1, "enabled"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_73
+    if-eqz v1, :cond_78
 
     const/4 v1, 0x1
 
@@ -13205,16 +13399,16 @@
 
     invoke-virtual {v10, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    goto :goto_37
+    goto :goto_39
 
-    :cond_73
+    :cond_78
     const-string v1, "disabled"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_74
+    if-eqz v1, :cond_79
 
     const/4 v1, 0x0
 
@@ -13224,16 +13418,16 @@
 
     invoke-virtual {v10, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    goto :goto_37
+    goto :goto_39
 
-    :cond_74
+    :cond_79
     const-string/jumbo v1, "please enter fast_report [enabled|disabled]"
 
     invoke-virtual {v10, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    goto :goto_37
+    goto :goto_39
 
-    :cond_75
+    :cond_7a
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -13251,31 +13445,31 @@
     move-result-object v1
 
     invoke-virtual {v10, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-    :try_end_34
-    .catchall {:try_start_34 .. :try_end_34} :catchall_19
+    :try_end_35
+    .catchall {:try_start_35 .. :try_end_35} :catchall_1a
 
-    :goto_37
+    :goto_39
     invoke-static {v3, v4}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     nop
 
-    goto :goto_38
+    goto :goto_3a
 
-    :catchall_19
+    :catchall_1a
     move-exception v0
 
     invoke-static {v3, v4}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     throw v0
 
-    :cond_76
+    :cond_7b
     const-string/jumbo v0, "motion"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_77
+    if-eqz v0, :cond_7c
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->getContext()Landroid/content/Context;
 
@@ -13287,16 +13481,16 @@
 
     monitor-enter p0
 
-    :try_start_35
+    :try_start_36
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
-    :try_end_35
-    .catchall {:try_start_35 .. :try_end_35} :catchall_1b
+    :try_end_36
+    .catchall {:try_start_36 .. :try_end_36} :catchall_1c
 
     move-wide v3, v0
 
-    :try_start_36
+    :try_start_37
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/DeviceIdleController;->motionLocked()V
 
     const-string v0, "Light state: "
@@ -13322,38 +13516,38 @@
     move-result-object v0
 
     invoke-virtual {v10, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-    :try_end_36
-    .catchall {:try_start_36 .. :try_end_36} :catchall_1a
+    :try_end_37
+    .catchall {:try_start_37 .. :try_end_37} :catchall_1b
 
-    :try_start_37
+    :try_start_38
     invoke-static {v3, v4}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     nop
 
     monitor-exit p0
 
-    :goto_38
+    :goto_3a
     const/4 v1, 0x0
 
     return v1
 
-    :catchall_1a
+    :catchall_1b
     move-exception v0
 
     invoke-static {v3, v4}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     throw v0
 
-    :catchall_1b
+    :catchall_1c
     move-exception v0
 
     monitor-exit p0
-    :try_end_37
-    .catchall {:try_start_37 .. :try_end_37} :catchall_1b
+    :try_end_38
+    .catchall {:try_start_38 .. :try_end_38} :catchall_1c
 
     throw v0
 
-    :cond_77
+    :cond_7c
     invoke-virtual/range {p1 .. p2}, Lcom/android/server/DeviceIdleController$Shell;->handleDefaultCommands(Ljava/lang/String;)I
 
     move-result v0
@@ -15108,7 +15302,7 @@
 
     iget-object v4, v0, Lcom/android/server/DeviceIdleController;->mLocationManager:Landroid/location/LocationManager;
 
-    const-string v11, "gps"
+    const-string/jumbo v11, "gps"
 
     invoke-virtual {v4, v11}, Landroid/location/LocationManager;->getProvider(Ljava/lang/String;)Landroid/location/LocationProvider;
 
@@ -15118,7 +15312,7 @@
 
     iget-object v4, v0, Lcom/android/server/DeviceIdleController;->mLocationManager:Landroid/location/LocationManager;
 
-    const-string v11, "gps"
+    const-string/jumbo v11, "gps"
 
     invoke-virtual {v4, v11}, Landroid/location/LocationManager;->isProviderEnabled(Ljava/lang/String;)Z
 
@@ -15132,7 +15326,7 @@
 
     iget-object v11, v0, Lcom/android/server/DeviceIdleController;->mLocationManager:Landroid/location/LocationManager;
 
-    const-string v12, "gps"
+    const-string/jumbo v12, "gps"
 
     const-wide/16 v13, 0x3e8
 
@@ -15197,7 +15391,7 @@
 
     iget-object v4, v0, Lcom/android/server/DeviceIdleController;->mLocationManager:Landroid/location/LocationManager;
 
-    const-string v5, "gps"
+    const-string/jumbo v5, "gps"
 
     invoke-virtual {v4, v5}, Landroid/location/LocationManager;->getProvider(Ljava/lang/String;)Landroid/location/LocationProvider;
 
@@ -15209,7 +15403,7 @@
 
     iget-object v11, v0, Lcom/android/server/DeviceIdleController;->mLocationManager:Landroid/location/LocationManager;
 
-    const-string v12, "gps"
+    const-string/jumbo v12, "gps"
 
     const-wide/16 v13, 0x3e8
 
@@ -15494,8 +15688,6 @@
 
     :cond_14
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

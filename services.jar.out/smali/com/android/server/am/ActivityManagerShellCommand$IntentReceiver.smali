@@ -140,35 +140,18 @@
     :try_start_0
     iget-boolean v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$IntentReceiver;->mFinished:Z
 
-    if-nez v0, :cond_1
-
-    invoke-static {}, Lcom/android/server/am/ActivityManagerShellCommand;->access$1800()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
     const-wide/16 v0, 0x2710
 
     invoke-virtual {p0, v0, v1}, Ljava/lang/Object;->wait(J)V
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$IntentReceiver;->mFinished:Z
-
-    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->wait()V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     nop
 
     monitor-exit p0

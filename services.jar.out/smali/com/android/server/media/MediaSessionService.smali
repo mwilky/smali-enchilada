@@ -189,7 +189,7 @@
 
     check-cast v0, Landroid/os/PowerManager;
 
-    const-string v1, "handleMediaEvent"
+    const-string/jumbo v1, "handleMediaEvent"
 
     const/4 v2, 0x1
 

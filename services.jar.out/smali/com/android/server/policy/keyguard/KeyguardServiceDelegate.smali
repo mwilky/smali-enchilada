@@ -230,7 +230,7 @@
 
     nop
 
-    const v1, 0x1040164
+    const v1, 0x1040165
 
     invoke-virtual {v7, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -808,7 +808,7 @@
 .method public isPocketModeActive()Z
     .locals 2
 
-    iget-object v0, p0, Lcom/android/server/policy/keyguard/KeyguardServiceDelegate;->mKeyguardState:Lcom/android/server/policy/keyguard/KeyguardServiceDelegate$KeyguardState;
+    iget-object v0, p0, Lcom/android/server/policy/keyguard/KeyguardServiceDelegate;->mKeyguardService:Lcom/android/server/policy/keyguard/KeyguardServiceWrapper;
 
     if-eqz v0, :cond_0
 

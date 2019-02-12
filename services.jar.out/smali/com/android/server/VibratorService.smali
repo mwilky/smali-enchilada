@@ -333,7 +333,7 @@
 
     move-result-object v6
 
-    const v7, 0x10e0083
+    const v7, 0x10e0086
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1608,7 +1608,7 @@
 
     iget v1, p1, Lcom/android/server/VibratorService$Vibration;->usageHint:I
 
-    invoke-static {v0, v1}, Lcom/oneplus/util/OemSceneModeUtils;->isUsageMutedByGameMode(Landroid/content/Context;I)Z
+    invoke-static {v0, v1}, Lcom/oneplus/util/OemSceneCallBlocker;->isUsageMutedByCallBlocker(Landroid/content/Context;I)Z
 
     move-result v0
 
@@ -3132,7 +3132,7 @@
 
     iget-object v0, v9, Lcom/android/server/VibratorService;->mContext:Landroid/content/Context;
 
-    invoke-static {v0, v10}, Lcom/oneplus/util/OemSceneModeUtils;->isUsageMutedByGameMode(Landroid/content/Context;I)Z
+    invoke-static {v0, v10}, Lcom/oneplus/util/OemSceneCallBlocker;->isVibratorUsageMutedByCallBlocker(Landroid/content/Context;I)Z
 
     move-result v0
 

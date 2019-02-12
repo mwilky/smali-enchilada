@@ -125,7 +125,7 @@
 
     const/4 v1, 0x0
 
-    iput-object v1, v0, Lcom/android/server/ConnectivityService;->mDialog:Landroid/app/AlertDialog;
+    invoke-static {v0, v1}, Lcom/android/server/ConnectivityService;->access$5302(Lcom/android/server/ConnectivityService;Z)Z
 
     return-void
 .end method

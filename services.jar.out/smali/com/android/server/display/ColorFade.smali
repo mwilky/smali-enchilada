@@ -225,7 +225,7 @@
 
     invoke-static {v2, v0, v1}, Landroid/opengl/GLES20;->glGenTextures(I[II)V
 
-    const-string v0, "glGenTextures"
+    const-string/jumbo v0, "glGenTextures"
 
     invoke-static {v0}, Lcom/android/server/display/ColorFade;->checkGlErrors(Ljava/lang/String;)Z
 
@@ -876,7 +876,7 @@
 
     invoke-static {v1, v0, v2}, Landroid/opengl/GLES20;->glDeleteBuffers(I[II)V
 
-    const-string v0, "glDeleteBuffers"
+    const-string/jumbo v0, "glDeleteBuffers"
 
     invoke-static {v0}, Lcom/android/server/display/ColorFade;->checkGlErrors(Ljava/lang/String;)Z
 
@@ -890,7 +890,7 @@
 
     invoke-static {v0}, Landroid/opengl/GLES20;->glDeleteProgram(I)V
 
-    const-string v0, "glDeleteProgram"
+    const-string/jumbo v0, "glDeleteProgram"
 
     invoke-static {v0}, Lcom/android/server/display/ColorFade;->checkGlErrors(Ljava/lang/String;)Z
 
@@ -914,7 +914,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/opengl/GLES20;->glDeleteTextures(I[II)V
 
-    const-string v0, "glDeleteTextures"
+    const-string/jumbo v0, "glDeleteTextures"
 
     invoke-static {v0}, Lcom/android/server/display/ColorFade;->checkGlErrors(Ljava/lang/String;)Z
 
