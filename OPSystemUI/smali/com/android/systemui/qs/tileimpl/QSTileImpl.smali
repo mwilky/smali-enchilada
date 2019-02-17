@@ -381,6 +381,10 @@
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
+    
+    sget-boolean v2, Lcom/android/mwilky/Renovate;->mOreoQs:Z
+    
+    if-nez v2, :cond_oreo
 
     const/4 v0, -0x1
 
@@ -401,6 +405,11 @@
 
     :cond_stock
     return v0
+    
+    :cond_oreo
+    const v0, 0x0
+    
+    goto :goto_0
 
     :pswitch_1
     sget v0, Lcom/android/systemui/util/ThemeColorUtils;->QS_TILE_CIRCLE_DISABLE:I
@@ -479,6 +488,10 @@
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
+    
+    sget-boolean v3, Lcom/android/mwilky/Renovate;->mOreoQs:Z
+    
+    if-nez v3, :cond_white
 
     const/high16 v0, -0x1000000
 
@@ -504,6 +517,15 @@
     :goto_0
     :cond_stock
     return v0
+    
+    :cond_white
+    const-string v0, "#FFF5F5F5"
+
+    invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+
+    move-result v0
+    
+    goto :goto_0
 
     :pswitch_1
     sget v0, Lcom/android/systemui/util/ThemeColorUtils;->QS_TILE_OFF:I
