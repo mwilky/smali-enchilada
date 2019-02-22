@@ -10,6 +10,8 @@
 
 
 # instance fields
+.field private final mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
+
 .field private mApplySpeedUpPolicy:Z
 
 .field private final mContext:Landroid/content/Context;
@@ -98,6 +100,16 @@
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsFingerprintAuthenticating:Z
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mApplySpeedUpPolicy:Z
+    
+    const-class v0, Lcom/android/systemui/statusbar/policy/FlashlightController;
+
+    invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/systemui/statusbar/policy/FlashlightController;
+
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     new-instance v0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController$1;
 
@@ -118,6 +130,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mScreenObserver:Lcom/android/systemui/keyguard/ScreenLifecycle$Observer;
 
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mContext:Landroid/content/Context;
+    
 
     const-class v0, Landroid/os/PowerManager;
 
@@ -1970,7 +1983,22 @@
 
 .method public startWakeAndUnlock(I)V
     .locals 9
+    
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mTorchPowerScreenOff:Z
+    
+    if-eqz v0, :cond_stock
+    
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mTorchAutoOff:Z
+    
+    if-eqz v0, :cond_stock
+    
+    const/4 v0, 0x0
+    
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
+    invoke-interface {v1, v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->setFlashlight(Z)V
+
+    :cond_stock
     const-string v0, "FingerprintController"
 
     new-instance v1, Ljava/lang/StringBuilder;
