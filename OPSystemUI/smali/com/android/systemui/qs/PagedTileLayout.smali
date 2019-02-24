@@ -20,6 +20,8 @@
 
 
 # instance fields
+.field private oldOrientation:I
+
 .field private final mAdapter:Landroid/support/v4/view/PagerAdapter;
 
 .field private mAnimatingToPage:I
@@ -805,6 +807,25 @@
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method protected onConfigurationChanged(Landroid/content/res/Configuration;)V
+    .locals 6
+
+    invoke-super {p0, p1}, Lcom/android/systemui/qs/PagedTileLayout;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+
+    iget v1, p1, Landroid/content/res/Configuration;->orientation:I
+
+    iget v2, p0, Lcom/android/systemui/qs/PagedTileLayout;->oldOrientation:I
+
+    if-eq v2, v1, :cond_0
+	
+    invoke-virtual {p0}, Lcom/android/systemui/qs/PagedTileLayout;->updateTileLayout()V
+
+    iput v1, p0, Lcom/android/systemui/qs/PagedTileLayout;->oldOrientation:I
+    
+	:cond_0
+    return-void
 .end method
 
 .method protected onFinishInflate()V

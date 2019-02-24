@@ -57,7 +57,16 @@
     move-result v0
     
     iget v0, p0, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->mQsRows:I
-
+    
+    invoke-static {}, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->isLandscapeMode()Z
+    
+    move-result v1
+    
+    if-eqz v1, :cond_potrait
+    
+    const v0, 0x2
+    
+    :cond_potrait
     return v0
 .end method
 
@@ -147,19 +156,10 @@
 .end method
 
 .method public readRenovateMods()V
-    .locals 2
+    .locals 1
     
     sget v0, Lcom/android/mwilky/Renovate;->mQsRows:I
-    
-    invoke-static {}, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->isLandscapeMode()Z
-    
-    move-result v1
-    
-    if-eqz v1, :cond_potrait
-    
-    const v0, 0x2
-    
-    :cond_potrait
+
     iput v0, p0, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->mQsRows:I
 	
     return-void
