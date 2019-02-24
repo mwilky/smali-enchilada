@@ -19,6 +19,8 @@
 
 .field public mQsRows:I
 
+.field private oldOrientation:I
+
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -145,11 +147,71 @@
 .end method
 
 .method public readRenovateMods()V
-    .locals 1
+    .locals 2
     
     sget v0, Lcom/android/mwilky/Renovate;->mQsRows:I
     
+    invoke-static {}, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->isLandscapeMode()Z
+    
+    move-result v1
+    
+    if-eqz v1, :cond_potrait
+    
+    const v0, 0x2
+    
+    :cond_potrait
     iput v0, p0, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->mQsRows:I
 	
     return-void
+.end method
+
+.method protected onConfigurationChanged(Landroid/content/res/Configuration;)V
+    .locals 6
+
+    invoke-super {p0, p1}, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+
+    iget v1, p1, Landroid/content/res/Configuration;->orientation:I
+
+    iget v2, p0, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->oldOrientation:I
+
+    if-eq v2, v1, :cond_0
+	
+    invoke-virtual {p0}, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->updateResources()Z
+
+    iput v1, p0, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->oldOrientation:I
+    
+	:cond_0
+    return-void
+.end method
+
+.method static isLandscapeMode()Z
+    .locals 2
+    
+    invoke-static {}, Lcom/android/systemui/SystemUIApplication;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+    
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/content/res/Configuration;->orientation:I
+
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
 .end method
