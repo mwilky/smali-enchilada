@@ -461,6 +461,10 @@
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->setImportantForAccessibility(I)V
 
     invoke-direct {p0}, Lcom/android/systemui/qs/QSContainerImpl;->setMargins()V
+    
+    iget-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mContext:Landroid/content/Context;
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsBackgroundColor(Landroid/content/Context;)V
 
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSContainerImpl;->updateThemeColor()V
 
