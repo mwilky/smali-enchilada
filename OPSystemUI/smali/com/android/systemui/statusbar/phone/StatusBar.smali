@@ -17099,8 +17099,6 @@
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setTorchAutoOff(Landroid/content/Context;)V
     
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->unlockColors(Landroid/content/Context;)V
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsBackgroundColor(Landroid/content/Context;)V
 
     const-class v0, Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
 
