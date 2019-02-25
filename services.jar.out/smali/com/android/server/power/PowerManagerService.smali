@@ -30,6 +30,10 @@
 
 
 # static fields
+.field public static mTorchAutoOff:Z
+
+.field public static mTorchPowerScreenOff:Z
+
 .field private static final BUTTON_OFF_TIMEOUT:I = 0x3e8
 
 .field private static DEBUG:Z = false
@@ -210,6 +214,10 @@
 
 
 # instance fields
+.field private mRearFlashCameraId:Ljava/lang/String;
+
+.field private mCameraManager:Landroid/hardware/camera2/CameraManager;
+
 .field private mActivityManager:Landroid/app/ActivityManager;
 
 .field private mAlwaysOnEnabled:Z
@@ -687,7 +695,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 12
+    .locals 14
 
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
@@ -804,6 +812,18 @@
     iput-object v0, p0, Lcom/android/server/power/PowerManagerService;->mVrStateCallbacks:Landroid/service/vr/IVrStateCallbacks;
 
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
+    
+    iget-object v12, p0, Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
+
+    const-string v13, "camera"
+
+    invoke-virtual {v12, v13}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Landroid/hardware/camera2/CameraManager;
+
+    iput-object v12, p0, Lcom/android/server/power/PowerManagerService;->mCameraManager:Landroid/hardware/camera2/CameraManager;
 
     iput v2, p0, Lcom/android/server/power/PowerManagerService;->mDeviceIdleState:I
 
@@ -12696,6 +12716,10 @@
     .locals 10
 
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService;->mContext:Landroid/content/Context;
+    
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->setTorchPower(Landroid/content/Context;)V
+    
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->setTorchAutoOff(Landroid/content/Context;)V
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -14591,7 +14615,18 @@
     .locals 16
 
     move-object/from16 v7, p0
+    
+    sget-boolean v0, Lcom/android/server/power/PowerManagerService;->mTorchPowerScreenOff:Z
+    
+    if-eqz v0, :cond_stock
+    
+    sget-boolean v0, Lcom/android/server/power/PowerManagerService;->mTorchAutoOff:Z
+    
+    if-eqz v0, :cond_stock
+    
+    invoke-virtual {v7}, Lcom/android/server/power/PowerManagerService;->turnOffFlashlight()V
 
+    :cond_stock
     move-wide/from16 v8, p1
 
     move-object/from16 v10, p3
@@ -17980,6 +18015,26 @@
     const/4 v5, 0x0
 
     invoke-virtual {v0, v1, v5, v2, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
+    
+    const-string/jumbo v1, "tweaks_torch_power"
+
+    invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/server/power/PowerManagerService;->mSettingsObserver:Lcom/android/server/power/PowerManagerService$SettingsObserver;
+
+    invoke-virtual {v0, v1, v5, v2, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
+    
+    const-string/jumbo v1, "tweaks_torch_auto_off"
+
+    invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/server/power/PowerManagerService;->mSettingsObserver:Lcom/android/server/power/PowerManagerService$SettingsObserver;
+
+    invoke-virtual {v0, v1, v5, v2, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
     const-string/jumbo v1, "screensaver_activate_on_sleep"
 
@@ -18530,4 +18585,152 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
+.end method
+
+.method public getRearFlashCameraId()Ljava/lang/String;
+    .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/hardware/camera2/CameraAccessException;
+        }
+    .end annotation
+
+    iget-object v0, p0, Lcom/android/server/power/PowerManagerService;->mRearFlashCameraId:Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    return-object v0
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/server/power/PowerManagerService;->mCameraManager:Landroid/hardware/camera2/CameraManager;
+
+    invoke-virtual {v0}, Landroid/hardware/camera2/CameraManager;->getCameraIdList()[Ljava/lang/String;
+
+    move-result-object v0
+
+    array-length v1, v0
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v1, :cond_2
+
+    aget-object v3, v0, v2
+
+    iget-object v4, p0, Lcom/android/server/power/PowerManagerService;->mCameraManager:Landroid/hardware/camera2/CameraManager;
+
+    invoke-virtual {v4, v3}, Landroid/hardware/camera2/CameraManager;->getCameraCharacteristics(Ljava/lang/String;)Landroid/hardware/camera2/CameraCharacteristics;
+
+    move-result-object v4
+
+    sget-object v5, Landroid/hardware/camera2/CameraCharacteristics;->FLASH_INFO_AVAILABLE:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-virtual {v4, v5}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/Boolean;
+
+    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v5
+
+    sget-object v6, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-virtual {v4, v6}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/Integer;
+
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+
+    move-result v4
+
+    if-eqz v5, :cond_1
+
+    const/4 v5, 0x1
+
+    if-ne v4, v5, :cond_1
+
+    iput-object v3, p0, Lcom/android/server/power/PowerManagerService;->mRearFlashCameraId:Ljava/lang/String;
+
+    :cond_1
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v0, p0, Lcom/android/server/power/PowerManagerService;->mRearFlashCameraId:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public turnOffFlashlight()V
+    .locals 3
+
+    invoke-virtual {p0}, Lcom/android/server/power/PowerManagerService;->getRearFlashCameraId()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_mw
+
+    iget-object v1, p0, Lcom/android/server/power/PowerManagerService;->mCameraManager:Landroid/hardware/camera2/CameraManager;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, v2}, Landroid/hardware/camera2/CameraManager;->setTorchMode(Ljava/lang/String;Z)V
+
+    :cond_mw
+    return-void
+.end method
+
+.method public static setTorchAutoOff(Landroid/content/Context;)V
+    .registers 4
+    .param p0, "Context"    # Landroid/content/Context;
+
+    .line 957
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    .line 958
+    .local v0, "ContentResolver":Landroid/content/ContentResolver;
+    const-string v1, "tweaks_torch_auto_off"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    sput-boolean v1, Lcom/android/server/power/PowerManagerService;->mTorchAutoOff:Z
+
+    .line 959
+    return-void
+.end method
+
+.method public static setTorchPower(Landroid/content/Context;)V
+    .registers 4
+    .param p0, "Context"    # Landroid/content/Context;
+
+    .line 962
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    .line 963
+    .local v0, "ContentResolver":Landroid/content/ContentResolver;
+    const-string v1, "tweaks_torch_power"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    sput-boolean v1, Lcom/android/server/power/PowerManagerService;->mTorchPowerScreenOff:Z
+
+    .line 964
+    return-void
 .end method
