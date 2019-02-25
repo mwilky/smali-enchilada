@@ -5842,6 +5842,14 @@
     goto :goto_6
 
     :cond_11
+    const v5, 0x6
+    
+    invoke-virtual {p1}, Landroid/view/KeyEvent;->getDownTime()J
+
+    move-result-wide v4
+
+    invoke-direct {p0, v4, v5}, Lcom/android/server/policy/PhoneWindowManager;->wakeUpFromPowerKey(J)V
+    
     iget-boolean v6, p0, Lcom/android/server/policy/PhoneWindowManager;->mPowerKeyAssistantEnable:Z
 
     if-eqz v6, :cond_12
