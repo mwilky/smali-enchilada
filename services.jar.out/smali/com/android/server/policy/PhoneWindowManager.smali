@@ -5740,6 +5740,18 @@
     iget-boolean v6, p0, Lcom/android/server/policy/PhoneWindowManager;->mSupportLongPressPowerWhenNonInteractive:Z
 
     if-eqz v6, :cond_11
+    
+    invoke-direct {p0}, Lcom/android/server/policy/PhoneWindowManager;->getResolvedLongPressOnPowerBehavior()I
+
+    move-result v6
+
+    iput v6, p0, Lcom/android/server/policy/PhoneWindowManager;->mResolvedLongPressOnPowerBehavior:I
+
+    iget v6, p0, Lcom/android/server/policy/PhoneWindowManager;->mResolvedLongPressOnPowerBehavior:I
+
+    const/4 v3, 0x6
+
+    if-ne v6, v3, :cond_11
 
     invoke-direct {p0}, Lcom/android/server/policy/PhoneWindowManager;->hasLongPressOnPowerBehavior()Z
 
