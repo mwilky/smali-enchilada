@@ -17094,10 +17094,6 @@
     
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setOreoQs(Landroid/content/Context;)V
     
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setTorchPower(Landroid/content/Context;)V
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setTorchAutoOff(Landroid/content/Context;)V
-    
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->unlockColors(Landroid/content/Context;)V
 
     const-class v0, Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
@@ -21844,32 +21840,6 @@
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->reloadTiles()V
 
     :cond_oq
-    const-string v0, "tweaks_torch_power"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_tp
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setTorchPower(Landroid/content/Context;)V
-
-    :cond_tp
-    const-string v0, "tweaks_torch_auto_off"
-    
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_too
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setTorchAutoOff(Landroid/content/Context;)V
-
-    :cond_too
     const-string v0, "tweaks_unlock_qs_colors"
     
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -22135,14 +22105,6 @@
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     
     const-string v4, "tweaks_oreo_qs"
-    
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_torch_power"
-    
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    
-    const-string v4, "tweaks_torch_auto_off"
     
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     
